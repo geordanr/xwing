@@ -6,6 +6,12 @@ class exportObj.SquadBuilder
     # Superclass for faction builders.
     # Tracks which pilots are in use.
     constructor: (args) ->
+        @faction = args.faction
+
+    getPilotNames: () ->
+        # Returns list of pilot names for this faction.
+        ships = (ship_name for ship_name, ship_data of exportObj.ships when ship_data.faction == @faction)
+        pilots = (pilot_name for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships).sort()
 
 class Pilot
     # Represents a pilot with upgrades.
