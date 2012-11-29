@@ -12,11 +12,12 @@
   %body
     -# body layout
 
-    .row
-      .four.columns
-        %select.chzn-select{"data-placeholder" => "Select a pilot", :style => "width: 20em;"}
-      .eight.columns
-        Upgrade info goes here.
+    .rebel-builder
+      .row
+        .four.columns
+          %select.chzn-select{"data-placeholder" => "Select a pilot", :style => "width: 20em;"}
+        .eight.columns
+          Upgrade info goes here.
 
     -# Foundation/JS linkages
     %script{:src => "http://code.jquery.com/jquery-1.8.3.min.js"}
@@ -27,4 +28,8 @@
     %script{:src => "main.js"}
     :coffee
       $(document).ready ->
+        window.foo = rebel_sb = new window.SquadBuilder
+            faction: "Rebel Alliance"
+        rebel_sb.populate_pilots
+            
         $('.chzn-select').chosen()

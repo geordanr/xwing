@@ -9,12 +9,14 @@
     <script src='foundation/javascripts/modernizr.foundation.js'></script>
   </head>
   <body>
-    <div class='row'>
-      <div class='four columns'>
-        <select class='chzn-select' data-placeholder='Select a pilot' style='width: 20em;'></select>
-      </div>
-      <div class='eight columns'>
-        Upgrade info goes here.
+    <div class='rebel-builder'>
+      <div class='row'>
+        <div class='four columns'>
+          <select class='chzn-select' data-placeholder='Select a pilot' style='width: 20em;'></select>
+        </div>
+        <div class='eight columns'>
+          Upgrade info goes here.
+        </div>
       </div>
     </div>
     <script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
@@ -27,6 +29,11 @@
       (function() {
       
         $(document).ready(function() {
+          var rebel_sb;
+          window.foo = rebel_sb = new window.SquadBuilder({
+            faction: "Rebel Alliance"
+          });
+          rebel_sb.populate_pilots;
           return $('.chzn-select').chosen();
         });
       
