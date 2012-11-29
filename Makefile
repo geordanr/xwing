@@ -1,12 +1,14 @@
-.PHONY: all javascripts
+.PHONY: all
 
 HAMLS=$(wildcard *.haml)
 HTMLS=$(HAMLS:.haml=.html)
+COFFEES=$(wildcard *.coffee)
+JAVASCRIPTS=$(COFFEES:.coffee=.js)
 
-all: javascripts $(HTMLS)
+all: $(COFFEES) $(HTMLS)
 
-javascripts:
-	coffee -c *.coffee
+%.js: %.coffee
+	coffee -c $<
 
 %.html: %.haml
 	haml -f html5 $< $@
