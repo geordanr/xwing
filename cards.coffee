@@ -47,6 +47,7 @@ exportObj.ships =
 
 exportObj.pilots =
     "Wedge Antilles":
+        unique: true
         ship: "X-Wing"
         skill: 9
         points: 29
@@ -57,6 +58,7 @@ exportObj.pilots =
         ],
         text: """When attacking, reduce the defender's agility value by 1 (to a minimum of "0")."""
     "Garven Dreis":
+        unique: true
         ship: "X-Wing"
         skill: 6
         points: 26
@@ -82,6 +84,7 @@ exportObj.pilots =
             "Astromech",
         ]
     "Biggs Darklighter":
+        unique: true
         ship: "X-Wing"
         skill: 5
         points: 25
@@ -91,6 +94,7 @@ exportObj.pilots =
         ]
         text: """Other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."""
     "Luke Skywalker":
+        unique: true
         ship: "X-Wing"
         skill: 8
         points: 28
@@ -111,6 +115,7 @@ exportObj.pilots =
             "Astromech",
         ]
     '"Dutch" Vander':
+        unique: true
         ship: "Y-Wing"
         skill: 6
         points: 23
@@ -122,6 +127,7 @@ exportObj.pilots =
         ]
         text: """After acquiring a target lock, choose another friendly ship at Range 1-2.  The chosen ship may immediately acquire a target lock."""
     "Horton Salm":
+        unique: true
         ship: "Y-Wing"
         skill: 8
         points: 25
@@ -160,30 +166,35 @@ exportObj.pilots =
             "Elite",
         ]
     '"Winged Gundark"':
+        unique: true
         ship: "TIE Fighter"
         skill: 5
         points: 15
         upgrades: [ ]
         text: """When attacking at Range 1, you may change 1 of your %HIT% results to a %CRIT% result."""
     '"Night Beast"':
+        unique: true
         ship: "TIE Fighter"
         skill: 5
         points: 15
         upgrades: [ ]
         text: """After executing a green maneuver, you may perform a free focus action."""
     '"Backstabber"':
+        unique: true
         ship: "TIE Fighter"
         skill: 6
         points: 16
         upgrades: [ ]
         text: """When attacking from outside the defender's firing arc, roll 1 additional attack die."""
     '"Dark Curse"':
+        unique: true
         ship: "TIE Fighter"
         skill: 6
         points: 16
         upgrades: [ ]
         text: """When defending, ships attacking you cannot spend focus tokens or reroll attack dice."""
     '"Mauler Mithel"':
+        unique: true
         ship: "TIE Fighter"
         skill: 7
         points: 17
@@ -192,6 +203,7 @@ exportObj.pilots =
         ]
         text: """When attacking at Range 1, roll 1 additional attack die."""
     '"Howlrunner"':
+        unique: true
         ship: "TIE Fighter"
         skill: 8
         points: 18
@@ -200,6 +212,7 @@ exportObj.pilots =
         ]
         text: """When another friendly ship at Range 1 is attacking with its primary weapon, it may reroll 1 attack die."""
     "Maarek Stele":
+        unique: true
         ship: "TIE Advanced"
         skill: 7
         points: 27
@@ -223,6 +236,7 @@ exportObj.pilots =
             "Missile",
         ]
     "Darth Vader":
+        unique: true
         ship: "TIE Advanced"
         skill: 9
         points: 29
