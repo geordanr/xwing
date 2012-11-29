@@ -247,77 +247,87 @@ exportObj.pilots =
         text: """During your "Perform Action" step, you may perform 2 actions."""
 
 exportObj.upgrades =
-    "Ion Cannon":
-        "Ion Cannon Turret":
-            points: 5
-            attack: 3
-            range: "1-2"
-            text: """Attack: Attack 1 ship (even a ship outside your firing arc).
+    "Ion Cannon Turret":
+        slot: "Ion Cannon"
+        points: 5
+        attack: 3
+        range: "1-2"
+        text: """Attack: Attack 1 ship (even a ship outside your firing arc).
 
-                     If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
-    "Torpedo":
-        "Proton Torpedoes":
-            points: 4
-            attack: 4
-            range: "2-3"
-            text: """Attack (target lock): Spend your target lock and discard this card to perform this attack.
+                    If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
+    "Proton Torpedoes":
+        slot: "Torpedo"
+        points: 4
+        attack: 4
+        range: "2-3"
+        text: """Attack (target lock): Spend your target lock and discard this card to perform this attack.
 
-                  You may change 1 of your %FOCUS% results to a %CRIT% result."""
-    "Astromech":
-        "R2 Astromech":
-            points: 1
-            text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
-        "R2-D2":
-            points: 4
-            text: """After executing a green maneuver, you may recover 1 shield (up to your shield value)."""
-        "R2-F2":
-            points: 3
-            text: """Action: Increase your agility value by 1 until the end of this game round."""
-        "R5-D8":
-            points: 3
-            text: """Action: Roll 1 defense die.
+                You may change 1 of your %FOCUS% results to a %CRIT% result."""
+    "R2 Astromech":
+        slot: "Astromech"
+        points: 1
+        text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
+    "R2-D2":
+        slot: "Astromech"
+        points: 4
+        text: """After executing a green maneuver, you may recover 1 shield (up to your shield value)."""
+    "R2-F2":
+        slot: "Astromech"
+        points: 3
+        text: """Action: Increase your agility value by 1 until the end of this game round."""
+    "R5-D8":
+        slot: "Astromech"
+        points: 3
+        text: """Action: Roll 1 defense die.
 
-                  On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."""
-        "R5-K6":
-            points: 2
-            text: """After spending your target lock, roll 1 defense die.
+                On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."""
+    "R5-K6":
+        slot: "Astromech"
+        points: 2
+        text: """After spending your target lock, roll 1 defense die.
 
-                  On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
-        "R5 Astromech":
-            points: 1
-            text: """During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."""
-    "Elite":
-        "Determination":
-            points: 1
-            text: """When you are dealt a faceup Damage card with the Pilot trait, discard it immediately without resolving its effect."""
-        "Swarm Tactics":
-            points: 2
-            text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.
+                On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
+    "R5 Astromech":
+        slot: "Astromech"
+        points: 1
+        text: """During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."""
+    "Determination":
+        slot: "Elite"
+        points: 1
+        text: """When you are dealt a faceup Damage card with the Pilot trait, discard it immediately without resolving its effect."""
+    "Swarm Tactics":
+        slot: "Elite"
+        points: 2
+        text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.
 
-                  Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
-        "Squad Leader":
-            points: 2
-            text: """Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.
+                Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
+    "Squad Leader":
+        slot: "Elite"
+        points: 2
+        text: """Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.
 
-                  The chosen ship my immediately perform 1 free action."""
-        "Expert Handling":
-            points: 2
-            text: """Action: Perform a barrel roll.  If you do not have the %BARREL_ROLL% action icon, receive 1 stress token.
+                The chosen ship my immediately perform 1 free action."""
+    "Expert Handling":
+        slot: "Elite"
+        points: 2
+        text: """Action: Perform a barrel roll.  If you do not have the %BARREL_ROLL% action icon, receive 1 stress token.
 
-                  You may then remove 1 enemy target lock from your ship."""
-        "Marksmanship":
-            points: 3
-            text: """Action: When attacking this round, you may change 1 of your %FOCUS% results to a %CRIT% result and all of your other %FOCUS% results to %HIT% results."""
-    "Missile":
-        "Concussion Missiles":
-            points: 4
-            attack: 4
-            range: "2-3"
-            text: """Attack (target lock):  Spend your target lock and discard this card to perform this attack.
+                You may then remove 1 enemy target lock from your ship."""
+    "Marksmanship":
+        slot: "Elite"
+        points: 3
+        text: """Action: When attacking this round, you may change 1 of your %FOCUS% results to a %CRIT% result and all of your other %FOCUS% results to %HIT% results."""
+    "Concussion Missiles":
+        slot: "Missile"
+        points: 4
+        attack: 4
+        range: "2-3"
+        text: """Attack (target lock):  Spend your target lock and discard this card to perform this attack.
 
-                  You may change 1 of your blank results to a %HIT% result."""
-        "Cluster Missiles":
-            points: 4
-            attack: 3
-            range: "1-2"
-            text: """Attack (target lock): Spend your target lock and discard this card to perform this attack twice."""
+                You may change 1 of your blank results to a %HIT% result."""
+    "Cluster Missiles":
+        slot: "Missile"
+        points: 4
+        attack: 3
+        range: "1-2"
+        text: """Attack (target lock): Spend your target lock and discard this card to perform this attack twice."""
