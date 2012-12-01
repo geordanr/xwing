@@ -29,8 +29,21 @@ class exportObj.SquadBuilder
         # Add initial row
         # TODO deserialize a previous configuration
         @rows.push new PilotRow this
-        @rows.push new PilotRow this
-        @rows.push new PilotRow this
+
+        # Add pilot button
+        @button_row = $(document.createElement 'DIV')
+        @button_row.addClass 'row'
+        @container.append @button_row
+        button_cell = $(document.createElement 'DIV')
+        button_cell.addClass 'twelve columns'
+        @button_row.append button_cell
+        add_pilot_button = $(document.createElement 'A')
+        add_pilot_button.addClass 'button'
+        add_pilot_button.text 'Add Pilot'
+        add_pilot_button.click (e) =>
+            e.preventDefault()
+            @rows.push new PilotRow this
+        button_cell.append add_pilot_button
 
         $(window).bind 'xwing:pilotChanged', (e, triggering_row) =>
             @pilots = (row.name for row in @rows when row.name? and row.name != '')
@@ -70,7 +83,7 @@ class PilotRow
         # set up UI elements
         @row = $(document.createElement 'DIV')
         @row.addClass 'row'
-        @builder.container.append @row
+        @row.insertBefore @builder.container
 
         @pilot_cell = $(document.createElement 'DIV')
         @pilot_cell.addClass 'four columns'
@@ -101,8 +114,16 @@ class PilotRow
             allow_single_deselect: true
 
         @upgrade_cell = $(document.createElement 'DIV')
-        @upgrade_cell.addClass 'eight columns upgrades'
+        @upgrade_cell.addClass 'seven columns upgrades'
         @row.append @upgrade_cell
+
+        @remove_cell = $(document.createElement 'DIV')
+        @remove_cell.addClass 'one column'
+        @remove_cell.append """<span class="remove">&nbsp;&#215;&nbsp;</span>"""
+        @remove_cell.click (e) =>
+            e.preventDefault()
+            @destroy()
+        @row.append @remove_cell
 
         @update()
         @pilot_selector.change()
@@ -127,6 +148,13 @@ class PilotRow
             @pilot_selector.append option
         @pilot_selector.val @name
         @pilot_selector.trigger 'liszt:updated'
+
+    destroy: () ->
+        # Deregister everything from the builder and remove this row.
+        @builder.rows.splice @builder.rows.indexOf(this), 1
+        $(window).trigger 'xwing:pilotChanged', null
+        $(window).trigger 'xwing:upgradeChanged', null
+        @row.remove()
 
 class UpgradeSelector
     # Represents an upgrade selector in the UI.

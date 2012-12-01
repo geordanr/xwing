@@ -21,15 +21,28 @@
   exportObj.SquadBuilder = (function() {
 
     function SquadBuilder(args) {
-      var _this = this;
+      var add_pilot_button, button_cell,
+        _this = this;
       this.container = $(args.container);
       this.faction = args.faction;
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
       this.rows.push(new PilotRow(this));
-      this.rows.push(new PilotRow(this));
-      this.rows.push(new PilotRow(this));
+      this.button_row = $(document.createElement('DIV'));
+      this.button_row.addClass('row');
+      this.container.append(this.button_row);
+      button_cell = $(document.createElement('DIV'));
+      button_cell.addClass('twelve columns');
+      this.button_row.append(button_cell);
+      add_pilot_button = $(document.createElement('A'));
+      add_pilot_button.addClass('button');
+      add_pilot_button.text('Add Pilot');
+      add_pilot_button.click(function(e) {
+        e.preventDefault();
+        return _this.rows.push(new PilotRow(_this));
+      });
+      button_cell.append(add_pilot_button);
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
         var row, _i, _len, _ref, _results;
         _this.pilots = (function() {
@@ -160,7 +173,7 @@
       this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row');
-      this.builder.container.append(this.row);
+      this.row.insertBefore(this.builder.container);
       this.pilot_cell = $(document.createElement('DIV'));
       this.pilot_cell.addClass('four columns');
       this.row.append(this.pilot_cell);
@@ -193,8 +206,16 @@
         allow_single_deselect: true
       });
       this.upgrade_cell = $(document.createElement('DIV'));
-      this.upgrade_cell.addClass('eight columns upgrades');
+      this.upgrade_cell.addClass('seven columns upgrades');
       this.row.append(this.upgrade_cell);
+      this.remove_cell = $(document.createElement('DIV'));
+      this.remove_cell.addClass('one column');
+      this.remove_cell.append("<span class=\"remove\">&nbsp;&#215;&nbsp;</span>");
+      this.remove_cell.click(function(e) {
+        e.preventDefault();
+        return _this.destroy();
+      });
+      this.row.append(this.remove_cell);
       this.update();
       this.pilot_selector.change();
     }
@@ -220,6 +241,13 @@
       }
       this.pilot_selector.val(this.name);
       return this.pilot_selector.trigger('liszt:updated');
+    };
+
+    PilotRow.prototype.destroy = function() {
+      this.builder.rows.splice(this.builder.rows.indexOf(this), 1);
+      $(window).trigger('xwing:pilotChanged', null);
+      $(window).trigger('xwing:upgradeChanged', null);
+      return this.row.remove();
     };
 
     return PilotRow;
