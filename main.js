@@ -25,6 +25,8 @@
         _this = this;
       this.container = $(args.container);
       this.faction = args.faction;
+      this.pilot_tooltip = $(args.pilot_tooltip);
+      this.upgrade_tooltip = $(args.upgrade_tooltip);
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
@@ -170,6 +172,24 @@
       }).call(this)).sort(exportObj.sortHelper);
     };
 
+    SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
+      var reference_pos, _ref;
+      if ((pilot_name != null) && pilot_name !== '') {
+        this.pilot_tooltip.find('.ship').text(pilot_data.ship);
+        this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
+        this.pilot_tooltip.find('.attack').text(ship.attack);
+        this.pilot_tooltip.find('.agility').text(ship.agility);
+        this.pilot_tooltip.find('.hull').text(ship.hull);
+        this.pilot_tooltip.find('.shields').text(ship.shields);
+        this.pilot_tooltip.find('.actions').text(ship.actions.join(', '));
+        reference_pos = $(elem).offset();
+        this.pilot_tooltip.css('width', parseInt($(elem).css('width')) + 'px');
+        this.pilot_tooltip.css('top', reference_pos.top + parseInt($(elem).css('height')) + 'px');
+        this.pilot_tooltip.css('left', reference_pos.left + 'px');
+        return this.pilot_tooltip.show();
+      }
+    };
+
     return SquadBuilder;
 
   })();
@@ -216,6 +236,12 @@
       this.pilot_cell.append(this.pilot_selector);
       this.pilot_selector.chosen({
         allow_single_deselect: true
+      });
+      $("#" + (this.pilot_selector.attr('id')) + "_chzn").mouseover(function(e) {
+        return _this.builder.showPilotInfo($(e.delegateTarget), _this.name, _this.pilot, _this.ship);
+      });
+      $("#" + (this.pilot_selector.attr('id')) + "_chzn").mouseleave(function(e) {
+        return _this.builder.pilot_tooltip.hide();
       });
       this.upgrade_cell = $(document.createElement('DIV'));
       this.upgrade_cell.addClass('eight columns upgrades');

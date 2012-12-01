@@ -31,10 +31,49 @@
       
       div.total-points {
         font-size: 2em; }
+      
+      div.info-tooltip {
+        width: 300px;
+        float: right;
+        clear: both;
+        position: absolute;
+        display: none; }
     </style>
   </head>
   <body>
     <div id='rebel-builder'></div>
+    <div class='info-tooltip' id='rebel-pilot-tooltip'>
+      <table>
+        <tbody>
+          <tr>
+            <th>Ship</th>
+            <td class='ship'></td>
+          </tr>
+          <tr>
+            <th>Attack</th>
+            <td class='attack'></td>
+          </tr>
+          <tr>
+            <th>Agility</th>
+            <td class='agility'></td>
+          </tr>
+          <tr>
+            <th>Hull</th>
+            <td class='hull'></td>
+          </tr>
+          <tr>
+            <th>Shields</th>
+            <td class='shields'></td>
+          </tr>
+          <tr>
+            <th>Actions</th>
+            <td class='actions'></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class='flavortext'></p>
+    </div>
+    <div class='info-tooltip' id='rebel-upgrade-tooltip'></div>
     <script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
     <script src='foundation/javascripts/foundation.min.js'></script>
     <script src='foundation/javascripts/app.js'></script>
@@ -48,7 +87,9 @@
           var rebel_sb;
           return window.foo = rebel_sb = new window.SquadBuilder({
             container: '#rebel-builder',
-            faction: 'Rebel Alliance'
+            faction: 'Rebel Alliance',
+            pilot_tooltip: '#rebel-pilot-tooltip',
+            upgrade_tooltip: '#rebel-upgrade-tooltip'
           });
         });
       

@@ -20,8 +20,13 @@ class exportObj.SquadBuilder
     #       container: '#empire-builder'
     #       faction: "Galactic Empire"
     constructor: (args) ->
+        # arguments
         @container = $(args.container)
         @faction = args.faction
+        @pilot_tooltip = $(args.pilot_tooltip)
+        @upgrade_tooltip = $(args.upgrade_tooltip)
+
+        # internal state
         @rows = []
         @pilots = []
         @unique_upgrades = []
@@ -91,6 +96,23 @@ class exportObj.SquadBuilder
     getAvailableUpgrades: (slot) ->
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades).sort exportObj.sortHelper
 
+    showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
+        if pilot_name? and pilot_name != ''
+            @pilot_tooltip.find('.ship').text pilot_data.ship
+            @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
+            @pilot_tooltip.find('.attack').text ship.attack
+            @pilot_tooltip.find('.agility').text ship.agility
+            @pilot_tooltip.find('.hull').text ship.hull
+            @pilot_tooltip.find('.shields').text ship.shields
+            @pilot_tooltip.find('.actions').text ship.actions.join ', '
+
+            reference_pos = $(elem).offset()
+            @pilot_tooltip.css 'width', parseInt($(elem).css('width')) + 'px'
+            @pilot_tooltip.css 'top', reference_pos.top + parseInt($(elem).css('height')) + 'px'
+            @pilot_tooltip.css 'left', reference_pos.left + 'px'
+
+            @pilot_tooltip.show()
+
 class PilotRow
     # Represents a pilot row in the UI.
     constructor: (builder) ->
@@ -132,6 +154,11 @@ class PilotRow
         @pilot_cell.append @pilot_selector
         @pilot_selector.chosen
             allow_single_deselect: true
+        # mouseover handler
+        $("##{@pilot_selector.attr 'id'}_chzn").mouseover (e) =>
+            @builder.showPilotInfo $(e.delegateTarget), @name, @pilot, @ship
+        $("##{@pilot_selector.attr 'id'}_chzn").mouseleave (e) =>
+            @builder.pilot_tooltip.hide()
 
         @upgrade_cell = $(document.createElement 'DIV')
         @upgrade_cell.addClass 'eight columns upgrades'

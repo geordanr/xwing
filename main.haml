@@ -34,10 +34,42 @@
       div.total-points
         font-size: 2em
 
+      div.info-tooltip
+        width: 300px
+        float: right
+        clear: both
+        position: absolute
+        display: none
+        zIndex: 999
+
   %body
     -# body layout
 
     #rebel-builder
+    #rebel-pilot-tooltip.info-tooltip
+      %table
+        %tbody
+          %tr
+            %th Ship
+            %td.ship
+          %tr
+            %th Attack
+            %td.attack
+          %tr
+            %th Agility
+            %td.agility
+          %tr
+            %th Hull
+            %td.hull
+          %tr
+            %th Shields
+            %td.shields
+          %tr
+            %th Actions
+            %td.actions
+      %p.flavortext
+
+    #rebel-upgrade-tooltip.info-tooltip
 
     -# Foundation/JS linkages
     %script{:src => "http://code.jquery.com/jquery-1.8.3.min.js"}
@@ -51,3 +83,5 @@
         window.foo = rebel_sb = new window.SquadBuilder
             container: '#rebel-builder'
             faction: 'Rebel Alliance'
+            pilot_tooltip: '#rebel-pilot-tooltip'
+            upgrade_tooltip: '#rebel-upgrade-tooltip'
