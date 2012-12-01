@@ -1,5 +1,5 @@
 (function() {
-  var PilotRow, exportObj,
+  var PilotRow, UpgradeSelector, exportObj,
     __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -26,6 +26,8 @@
       this.faction = args.faction;
       this.rows = [];
       this.pilots = [];
+      this.unique_upgrades = [];
+      this.rows.push(new PilotRow(this));
       this.rows.push(new PilotRow(this));
       this.rows.push(new PilotRow(this));
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
@@ -49,6 +51,50 @@
           } else {
             _results.push(void 0);
           }
+        }
+        return _results;
+      });
+      $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
+        var row, selector, upgrade, _i, _j, _k, _len, _len2, _len3, _ref, _ref2, _ref3, _results;
+        _this.unique_upgrades = [];
+        _ref = _this.rows;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          row = _ref[_i];
+          _ref2 = (function() {
+            var _k, _len2, _ref2, _results;
+            _ref2 = row.upgrade_selectors;
+            _results = [];
+            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+              selector = _ref2[_k];
+              _results.push(selector.upgrade);
+            }
+            return _results;
+          })();
+          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+            upgrade = _ref2[_j];
+            if ((upgrade != null ? upgrade.unique : void 0) != null) {
+              _this.unique_upgrades.push(selector.upgrade_name);
+            }
+          }
+        }
+        _ref3 = _this.rows;
+        _results = [];
+        for (_k = 0, _len3 = _ref3.length; _k < _len3; _k++) {
+          row = _ref3[_k];
+          _results.push((function() {
+            var _l, _len4, _ref4, _results2;
+            _ref4 = row.upgrade_selectors;
+            _results2 = [];
+            for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
+              selector = _ref4[_l];
+              if (selector !== triggering_selector) {
+                _results2.push(selector.update());
+              } else {
+                _results2.push(void 0);
+              }
+            }
+            return _results2;
+          })());
         }
         return _results;
       });
@@ -80,6 +126,25 @@
       return _results;
     };
 
+    SquadBuilder.prototype.getAvailableUpgrades = function(slot) {
+      var upgrade_data, upgrade_name;
+      return ((function() {
+        var _ref, _results;
+        _ref = exportObj.upgrades;
+        _results = [];
+        for (upgrade_name in _ref) {
+          upgrade_data = _ref[upgrade_name];
+          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0) {
+            _results.push({
+              name: upgrade_name,
+              points: upgrade_data.points
+            });
+          }
+        }
+        return _results;
+      }).call(this)).sort(exportObj.sortHelper);
+    };
+
     return SquadBuilder;
 
   })();
@@ -92,7 +157,7 @@
       this.name = null;
       this.pilot = null;
       this.ship = null;
-      this.active_upgrades = [];
+      this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row');
       this.builder.container.append(this.row);
@@ -100,11 +165,12 @@
       this.pilot_cell.addClass('four columns');
       this.row.append(this.pilot_cell);
       this.pilot_selector = $(document.createElement('SELECT'));
+      this.pilot_selector.append($(document.createElement('OPTION')));
       this.pilot_selector.addClass('pilot');
       this.pilot_selector.attr('data-placeholder', 'Select a pilot');
       this.pilot_selector.change(function(e) {
         var slot, _i, _len, _ref;
-        _this.active_upgrades = [];
+        _this.upgrade_selectors = [];
         _this.name = _this.pilot_selector.val();
         if (_this.name === '') {
           _this.pilot = null;
@@ -117,14 +183,15 @@
           _ref = _this.pilot.slots;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             slot = _ref[_i];
-            _this.active_upgrades.push(null);
-            _this.addUpgradeSelector(slot);
+            _this.upgrade_selectors.push(new UpgradeSelector(_this.builder, slot, _this.upgrade_cell));
           }
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
       this.pilot_cell.append(this.pilot_selector);
-      this.pilot_selector.chosen();
+      this.pilot_selector.chosen({
+        allow_single_deselect: true
+      });
       this.upgrade_cell = $(document.createElement('DIV'));
       this.upgrade_cell.addClass('eight columns upgrades');
       this.row.append(this.upgrade_cell);
@@ -134,8 +201,6 @@
 
     PilotRow.prototype.update = function() {
       var available_pilots, option, pilot, _i, _len;
-      this.pilot_selector.text('');
-      this.pilot_selector.append(document.createElement('OPTION'));
       available_pilots = this.builder.getAvailablePilots();
       if (this.pilot) {
         available_pilots.push({
@@ -144,6 +209,8 @@
         });
       }
       available_pilots.sort(exportObj.sortHelper);
+      this.pilot_selector.text('');
+      this.pilot_selector.append(document.createElement('OPTION'));
       for (_i = 0, _len = available_pilots.length; _i < _len; _i++) {
         pilot = available_pilots[_i];
         option = $(document.createElement('OPTION'));
@@ -155,43 +222,59 @@
       return this.pilot_selector.trigger('liszt:updated');
     };
 
-    PilotRow.prototype.addUpgradeSelector = function(slot, slot_index) {
-      var option, selector, upgrade, upgrade_data, upgrade_name, upgrades, _i, _len,
-        _this = this;
-      upgrades = ((function() {
-        var _ref, _results;
-        _ref = exportObj.upgrades;
-        _results = [];
-        for (upgrade_name in _ref) {
-          upgrade_data = _ref[upgrade_name];
-          if (upgrade_data.slot === slot) {
-            _results.push({
-              name: upgrade_name,
-              points: upgrade_data.points
-            });
-          }
-        }
-        return _results;
-      })()).sort(exportObj.sortHelper);
-      selector = $(document.createElement('SELECT'));
-      selector.addClass('upgrade');
-      selector.append(document.createElement('OPTION'));
-      selector.attr('data-placeholder', "Select " + slot + " Upgrade");
-      for (_i = 0, _len = upgrades.length; _i < _len; _i++) {
-        upgrade = upgrades[_i];
+    return PilotRow;
+
+  })();
+
+  UpgradeSelector = (function() {
+
+    function UpgradeSelector(builder, slot, container) {
+      var _this = this;
+      this.builder = builder;
+      this.slot = slot;
+      this.upgrade_name = null;
+      this.upgrade = null;
+      this.selector = $(document.createElement('SELECT'));
+      this.selector.append($(document.createElement('OPTION')));
+      this.selector.addClass('upgrade');
+      this.selector.attr('data-placeholder', "Select " + this.slot + " Upgrade");
+      this.selector.change(function(e) {
+        _this.upgrade_name = _this.selector.val();
+        _this.upgrade = exportObj.upgrades[_this.selector.val()];
+        return $(window).trigger('xwing:upgradeChanged', _this.selector);
+      });
+      container.append(this.selector);
+      this.selector.chosen({
+        allow_single_deselect: true
+      });
+      this.update();
+      this.selector.change();
+    }
+
+    UpgradeSelector.prototype.update = function() {
+      var available_upgrades, option, upgrade, _i, _len;
+      available_upgrades = this.builder.getAvailableUpgrades(this.slot);
+      if (this.upgrade && (this.upgrade.unique != null)) {
+        available_upgrades.push({
+          name: this.upgrade_name,
+          points: this.upgrade.points
+        });
+      }
+      available_upgrades.sort(exportObj.sortHelper);
+      this.selector.text('');
+      this.selector.append(document.createElement('OPTION'));
+      for (_i = 0, _len = available_upgrades.length; _i < _len; _i++) {
+        upgrade = available_upgrades[_i];
         option = $(document.createElement('OPTION'));
         option.text("" + upgrade.name + " (" + upgrade.points + ")");
-        option.val(upgrade);
-        selector.append(option);
+        option.val(upgrade.name);
+        this.selector.append(option);
       }
-      selector.change(function(e) {
-        return _this.active_upgrades[slot_index] = selector.val();
-      });
-      this.upgrade_cell.append(selector);
-      return selector.chosen();
+      this.selector.val(this.upgrade_name);
+      return this.selector.trigger('liszt:updated');
     };
 
-    return PilotRow;
+    return UpgradeSelector;
 
   })();
 

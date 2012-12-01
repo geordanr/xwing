@@ -5,16 +5,16 @@
     %meta{:name => "viewport", :content => "width=device-width"}
 
     %link{:rel => "stylesheet", :href => "chosen-master/chosen/chosen.css"}
-    %link{:rel => "stylesheet", :href=> "foundation/stylesheets/foundation.min.css"}
-    %link{:rel => "stylesheet", :href=> "foundation/stylesheets/app.css"}
+    %link{:rel => "stylesheet", :href => "foundation/stylesheets/foundation.min.css"}
+    %link{:rel => "stylesheet", :href => "foundation/stylesheets/app.css"}
 
     %script{:src => "foundation/javascripts/modernizr.foundation.js"}
     :sass
       select.pilot
-        width: 20em
+        width: 100%
 
       select.upgrade
-        width: 20em
+        width: 350px
   %body
     -# body layout
 
@@ -24,7 +24,8 @@
     %script{:src => "http://code.jquery.com/jquery-1.8.3.min.js"}
     %script{:src => "foundation/javascripts/foundation.min.js"}
     %script{:src => "foundation/javascripts/app.js"}
-    %script{:src => "chosen-master/chosen/chosen.jquery.min.js"}
+    %script{:src => "chosen-master/chosen/chosen.jquery.js"}
+    -#%script{:src => "chosen-master/chosen/chosen.jquery.min.js"}
     %script{:src => "cards.js"}
     %script{:src => "main.js"}
     :coffee
