@@ -5,7 +5,7 @@ HTMLS=$(HAMLS:.haml=.html)
 COFFEES=$(wildcard *.coffee)
 JAVASCRIPTS=$(COFFEES:.coffee=.js)
 
-all: $(COFFEES) $(HTMLS)
+all: $(JAVASCRIPTS) $(HTMLS)
 
 %.js: %.coffee
 	coffee -c $<
