@@ -51,7 +51,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 9
         points: 29
-        upgrades: [
+        slots: [
             "Elite",
             "Torpedo",
             "Astromech",
@@ -62,7 +62,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 6
         points: 26
-        upgrades: [
+        slots: [
             "Torpedo",
             "Astromech",
         ]
@@ -71,7 +71,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 4
         points: 23
-        upgrades: [
+        slots: [
             "Torpedo",
             "Astromech",
         ]
@@ -79,7 +79,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 2
         points: 21
-        upgrades: [
+        slots: [
             "Torpedo",
             "Astromech",
         ]
@@ -88,7 +88,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 5
         points: 25
-        upgrades: [
+        slots: [
             "Torpedo",
             "Astromech",
         ]
@@ -98,7 +98,7 @@ exportObj.pilots =
         ship: "X-Wing"
         skill: 8
         points: 28
-        upgrades: [
+        slots: [
             "Elite",
             "Torpedo",
             "Astromech",
@@ -108,7 +108,7 @@ exportObj.pilots =
         ship: "Y-Wing"
         skill: 4
         points: 20
-        upgrades: [
+        slots: [
             "Turret",
             "Torpedo",
             "Torpedo",
@@ -119,7 +119,7 @@ exportObj.pilots =
         ship: "Y-Wing"
         skill: 6
         points: 23
-        upgrades: [
+        slots: [
             "Turret",
             "Torpedo",
             "Torpedo",
@@ -131,7 +131,7 @@ exportObj.pilots =
         ship: "Y-Wing"
         skill: 8
         points: 25
-        upgrades: [
+        slots: [
             "Turret",
             "Torpedo",
             "Torpedo",
@@ -142,7 +142,7 @@ exportObj.pilots =
         ship: "Y-Wing"
         skill: 2
         points: 18
-        upgrades: [
+        slots: [
             "Turret",
             "Torpedo",
             "Torpedo",
@@ -152,17 +152,17 @@ exportObj.pilots =
         ship: "TIE Fighter"
         skill: 1
         points: 12
-        upgrades: []
+        slots: []
     "Obsidian Squadron Pilot":
         ship: "TIE Fighter"
         skill: 3
         points: 13
-        upgrades: []
+        slots: []
     "Black Squadron Pilot":
         ship: "TIE Fighter"
         skill: 4
         points: 14
-        upgrades: [
+        slots: [
             "Elite",
         ]
     '"Winged Gundark"':
@@ -170,35 +170,35 @@ exportObj.pilots =
         ship: "TIE Fighter"
         skill: 5
         points: 15
-        upgrades: [ ]
+        slots: [ ]
         text: """When attacking at Range 1, you may change 1 of your %HIT% results to a %CRIT% result."""
     '"Night Beast"':
         unique: true
         ship: "TIE Fighter"
         skill: 5
         points: 15
-        upgrades: [ ]
+        slots: [ ]
         text: """After executing a green maneuver, you may perform a free focus action."""
     '"Backstabber"':
         unique: true
         ship: "TIE Fighter"
         skill: 6
         points: 16
-        upgrades: [ ]
+        slots: [ ]
         text: """When attacking from outside the defender's firing arc, roll 1 additional attack die."""
     '"Dark Curse"':
         unique: true
         ship: "TIE Fighter"
         skill: 6
         points: 16
-        upgrades: [ ]
+        slots: [ ]
         text: """When defending, ships attacking you cannot spend focus tokens or reroll attack dice."""
     '"Mauler Mithel"':
         unique: true
         ship: "TIE Fighter"
         skill: 7
         points: 17
-        upgrades: [
+        slots: [
             "Elite",
         ]
         text: """When attacking at Range 1, roll 1 additional attack die."""
@@ -207,7 +207,7 @@ exportObj.pilots =
         ship: "TIE Fighter"
         skill: 8
         points: 18
-        upgrades: [
+        slots: [
             "Elite",
         ]
         text: """When another friendly ship at Range 1 is attacking with its primary weapon, it may reroll 1 attack die."""
@@ -216,7 +216,7 @@ exportObj.pilots =
         ship: "TIE Advanced"
         skill: 7
         points: 27
-        upgrades: [
+        slots: [
             "Elite",
             "Missile",
         ]
@@ -225,14 +225,14 @@ exportObj.pilots =
         ship: "TIE Advanced"
         skill: 2
         points: 21
-        upgrades: [
+        slots: [
             "Missile",
         ]
     "Storm Squadron Pilot":
         ship: "TIE Advanced"
         skill: 4
         points: 23
-        upgrades: [
+        slots: [
             "Missile",
         ]
     "Darth Vader":
@@ -240,7 +240,7 @@ exportObj.pilots =
         ship: "TIE Advanced"
         skill: 9
         points: 29
-        upgrades: [
+        slots: [
             "Elite",
             "Missile",
         ]
