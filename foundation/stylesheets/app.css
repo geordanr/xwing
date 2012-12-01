@@ -26,5 +26,8 @@
    Page Name 2
 ----------------------------------------- */
 
-div.row { margin: 0px; }
+div.row {
+    width: 100%;
+    margin: 7px 0px;
+}
 

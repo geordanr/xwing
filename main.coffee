@@ -26,9 +26,14 @@ class exportObj.SquadBuilder
         @pilots = []
         @unique_upgrades = []
 
-        # Add initial row
-        # TODO deserialize a previous configuration
-        @rows.push new PilotRow this
+        # Add status row
+        @status_row = $(document.createElement 'DIV')
+        @status_row.addClass 'row'
+        @container.append @status_row
+        @points_cell = $(document.createElement 'DIV')
+        @points_cell.addClass 'three columns total-points'
+        @points_cell.text '0'
+        @status_row.append @points_cell
 
         # Add pilot button
         @button_row = $(document.createElement 'DIV')
@@ -45,11 +50,16 @@ class exportObj.SquadBuilder
             @rows.push new PilotRow this
         button_cell.append add_pilot_button
 
+        # Add initial row
+        # TODO deserialize a previous configuration
+        @rows.push new PilotRow this
+
         $(window).bind 'xwing:pilotChanged', (e, triggering_row) =>
             @pilots = (row.name for row in @rows when row.name? and row.name != '')
             for row in @rows
                 if row != triggering_row
                     row.update()
+            @updatePoints()
 
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
@@ -62,6 +72,16 @@ class exportObj.SquadBuilder
                 for selector in row.upgrade_selectors
                     if selector != triggering_selector
                         selector.update()
+            @updatePoints()
+
+    updatePoints: () ->
+        total = 0
+        for pilot in @pilots
+            total += parseInt(exportObj.pilots[pilot]?.points ? 0)
+        for row in @rows
+            for selector in row.upgrade_selectors
+                total += parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
+        @points_cell.text total
 
     getAvailablePilots: () ->
         # Returns list of available pilot names for this faction.
@@ -83,10 +103,10 @@ class PilotRow
         # set up UI elements
         @row = $(document.createElement 'DIV')
         @row.addClass 'row'
-        @row.insertBefore @builder.container
+        @row.insertBefore @builder.button_row
 
         @pilot_cell = $(document.createElement 'DIV')
-        @pilot_cell.addClass 'four columns'
+        @pilot_cell.addClass 'three columns'
         @row.append @pilot_cell
 
         @pilot_selector = $(document.createElement 'SELECT')
@@ -114,7 +134,7 @@ class PilotRow
             allow_single_deselect: true
 
         @upgrade_cell = $(document.createElement 'DIV')
-        @upgrade_cell.addClass 'seven columns upgrades'
+        @upgrade_cell.addClass 'eight columns upgrades'
         @row.append @upgrade_cell
 
         @remove_cell = $(document.createElement 'DIV')

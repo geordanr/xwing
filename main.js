@@ -28,7 +28,13 @@
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
-      this.rows.push(new PilotRow(this));
+      this.status_row = $(document.createElement('DIV'));
+      this.status_row.addClass('row');
+      this.container.append(this.status_row);
+      this.points_cell = $(document.createElement('DIV'));
+      this.points_cell.addClass('three columns total-points');
+      this.points_cell.text('0');
+      this.status_row.append(this.points_cell);
       this.button_row = $(document.createElement('DIV'));
       this.button_row.addClass('row');
       this.container.append(this.button_row);
@@ -43,8 +49,9 @@
         return _this.rows.push(new PilotRow(_this));
       });
       button_cell.append(add_pilot_button);
+      this.rows.push(new PilotRow(this));
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
-        var row, _i, _len, _ref, _results;
+        var row, _i, _len, _ref;
         _this.pilots = (function() {
           var _i, _len, _ref, _results;
           _ref = this.rows;
@@ -56,19 +63,14 @@
           return _results;
         }).call(_this);
         _ref = _this.rows;
-        _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           row = _ref[_i];
-          if (row !== triggering_row) {
-            _results.push(row.update());
-          } else {
-            _results.push(void 0);
-          }
+          if (row !== triggering_row) row.update();
         }
-        return _results;
+        return _this.updatePoints();
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
-        var row, selector, upgrade, _i, _j, _k, _len, _len2, _len3, _ref, _ref2, _ref3, _results;
+        var row, selector, upgrade, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4;
         _this.unique_upgrades = [];
         _ref = _this.rows;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -91,27 +93,37 @@
           }
         }
         _ref3 = _this.rows;
-        _results = [];
         for (_k = 0, _len3 = _ref3.length; _k < _len3; _k++) {
           row = _ref3[_k];
-          _results.push((function() {
-            var _l, _len4, _ref4, _results2;
-            _ref4 = row.upgrade_selectors;
-            _results2 = [];
-            for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
-              selector = _ref4[_l];
-              if (selector !== triggering_selector) {
-                _results2.push(selector.update());
-              } else {
-                _results2.push(void 0);
-              }
-            }
-            return _results2;
-          })());
+          _ref4 = row.upgrade_selectors;
+          for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
+            selector = _ref4[_l];
+            if (selector !== triggering_selector) selector.update();
+          }
         }
-        return _results;
+        return _this.updatePoints();
       });
     }
+
+    SquadBuilder.prototype.updatePoints = function() {
+      var pilot, row, selector, total, _i, _j, _k, _len, _len2, _len3, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+      total = 0;
+      _ref = this.pilots;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        pilot = _ref[_i];
+        total += parseInt((_ref2 = (_ref3 = exportObj.pilots[pilot]) != null ? _ref3.points : void 0) != null ? _ref2 : 0);
+      }
+      _ref4 = this.rows;
+      for (_j = 0, _len2 = _ref4.length; _j < _len2; _j++) {
+        row = _ref4[_j];
+        _ref5 = row.upgrade_selectors;
+        for (_k = 0, _len3 = _ref5.length; _k < _len3; _k++) {
+          selector = _ref5[_k];
+          total += parseInt((_ref6 = (_ref7 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref7.points : void 0) != null ? _ref6 : 0);
+        }
+      }
+      return this.points_cell.text(total);
+    };
 
     SquadBuilder.prototype.getAvailablePilots = function() {
       var pilot_data, pilot_name, ship_data, ship_name, ships, _ref, _ref2, _results;
@@ -173,9 +185,9 @@
       this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row');
-      this.row.insertBefore(this.builder.container);
+      this.row.insertBefore(this.builder.button_row);
       this.pilot_cell = $(document.createElement('DIV'));
-      this.pilot_cell.addClass('four columns');
+      this.pilot_cell.addClass('three columns');
       this.row.append(this.pilot_cell);
       this.pilot_selector = $(document.createElement('SELECT'));
       this.pilot_selector.append($(document.createElement('OPTION')));
@@ -206,7 +218,7 @@
         allow_single_deselect: true
       });
       this.upgrade_cell = $(document.createElement('DIV'));
-      this.upgrade_cell.addClass('seven columns upgrades');
+      this.upgrade_cell.addClass('eight columns upgrades');
       this.row.append(this.upgrade_cell);
       this.remove_cell = $(document.createElement('DIV'));
       this.remove_cell.addClass('one column');
