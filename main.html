@@ -7,18 +7,16 @@
     <link href='foundation/stylesheets/foundation.min.css' rel='stylesheet'>
     <link href='foundation/stylesheets/app.css' rel='stylesheet'>
     <script src='foundation/javascripts/modernizr.foundation.js'></script>
+    <style>
+      select.pilot {
+        width: 20em; }
+      
+      select.upgrade {
+        width: 20em; }
+    </style>
   </head>
   <body>
-    <div class='rebel-builder'>
-      <div class='row'>
-        <div class='four columns'>
-          <select class='chzn-select' data-placeholder='Select a pilot' style='width: 20em;'></select>
-        </div>
-        <div class='eight columns'>
-          Upgrade info goes here.
-        </div>
-      </div>
-    </div>
+    <div id='rebel-builder'></div>
     <script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
     <script src='foundation/javascripts/foundation.min.js'></script>
     <script src='foundation/javascripts/app.js'></script>
@@ -30,11 +28,10 @@
       
         $(document).ready(function() {
           var rebel_sb;
-          window.foo = rebel_sb = new window.SquadBuilder({
-            faction: "Rebel Alliance"
+          return window.foo = rebel_sb = new window.SquadBuilder({
+            container: '#rebel-builder',
+            faction: 'Rebel Alliance'
           });
-          rebel_sb.populate_pilots;
-          return $('.chzn-select').chosen();
         });
       
       }).call(this);
