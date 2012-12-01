@@ -87,14 +87,14 @@
       ship: "Y-Wing",
       skill: 4,
       points: 20,
-      upgrades: ["Ion Cannon", "Torpedo", "Torpedo", "Astromech"]
+      upgrades: ["Turret", "Torpedo", "Torpedo", "Astromech"]
     },
     '"Dutch" Vander': {
       unique: true,
       ship: "Y-Wing",
       skill: 6,
       points: 23,
-      upgrades: ["Ion Cannon", "Torpedo", "Torpedo", "Astromech"],
+      upgrades: ["Turret", "Torpedo", "Torpedo", "Astromech"],
       text: "After acquiring a target lock, choose another friendly ship at Range 1-2.  The chosen ship may immediately acquire a target lock."
     },
     "Horton Salm": {
@@ -102,14 +102,14 @@
       ship: "Y-Wing",
       skill: 8,
       points: 25,
-      upgrades: ["Ion Cannon", "Torpedo", "Torpedo", "Astromech"],
+      upgrades: ["Turret", "Torpedo", "Torpedo", "Astromech"],
       text: "When attacking at Range 2-3, you may reroll any of your blank results."
     },
     "Gold Squadron Pilot": {
       ship: "Y-Wing",
       skill: 2,
       points: 18,
-      upgrades: ["Ion Cannon", "Torpedo", "Torpedo", "Astromech"]
+      upgrades: ["Turret", "Torpedo", "Torpedo", "Astromech"]
     },
     "Academy Pilot": {
       ship: "TIE Fighter",
@@ -209,7 +209,7 @@
 
   exportObj.upgrades = {
     "Ion Cannon Turret": {
-      slot: "Ion Cannon",
+      slot: "Turret",
       points: 5,
       attack: 3,
       range: "1-2",
@@ -228,21 +228,25 @@
       text: "You may treat all 1- and 2-speed maneuvers as green maneuvers."
     },
     "R2-D2": {
+      unique: true,
       slot: "Astromech",
       points: 4,
       text: "After executing a green maneuver, you may recover 1 shield (up to your shield value)."
     },
     "R2-F2": {
+      unique: true,
       slot: "Astromech",
       points: 3,
       text: "Action: Increase your agility value by 1 until the end of this game round."
     },
     "R5-D8": {
+      unique: true,
       slot: "Astromech",
       points: 3,
       text: "Action: Roll 1 defense die.\n\nOn a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."
     },
     "R5-K6": {
+      unique: true,
       slot: "Astromech",
       points: 2,
       text: "After spending your target lock, roll 1 defense die.\n\nOn a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."
