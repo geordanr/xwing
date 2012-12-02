@@ -98,7 +98,6 @@ class exportObj.SquadBuilder
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
         if pilot_name? and pilot_name != ''
-            console.log "Show data for #{pilot_name} near elem #{elem}"
             @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
             @pilot_tooltip.find('.attack td').text ship.attack
@@ -113,6 +112,28 @@ class exportObj.SquadBuilder
             @pilot_tooltip.css 'left', reference_pos.left + 'px'
 
             @pilot_tooltip.show()
+
+    showUpgradeInfo: (elem, upgrade_name, upgrade_data) ->
+        if upgrade_name? and upgrade_name != ''
+            if upgrade_data.attack?
+                @upgrade_tooltip.find('tr.attack').show()
+                @upgrade_tooltip.find('tr.attack td').text upgrade_data.attack
+            else
+                @upgrade_tooltip.find('tr.attack').hide()
+            if upgrade_data.range?
+                @upgrade_tooltip.find('tr.range').show()
+                @upgrade_tooltip.find('tr.range td').text upgrade_data.range
+            else
+                @upgrade_tooltip.find('tr.range').hide()
+            @upgrade_tooltip.find('.flavortext').text upgrade_data.text
+
+            reference_pos = $(elem).offset()
+            @upgrade_tooltip.css 'width', parseInt($(elem).css('width')) + 'px'
+            @upgrade_tooltip.css 'top', reference_pos.top + parseInt($(elem).css('height')) + 'px'
+            @upgrade_tooltip.css 'left', reference_pos.left + 'px'
+
+            @upgrade_tooltip.show()
+
 
 class PilotRow
     # Represents a pilot row in the UI.
@@ -227,6 +248,12 @@ class UpgradeSelector
         container.append @selector
         @selector.chosen
             allow_single_deselect: true
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
+            @builder.showUpgradeInfo $(e.delegateTarget), @upgrade_name, @upgrade
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>
+            @builder.upgrade_tooltip.hide()
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").click (e) =>
+            @builder.upgrade_tooltip.hide()
 
         @update()
         @selector.change()

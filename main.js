@@ -175,7 +175,6 @@
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
       var reference_pos, _ref;
       if ((pilot_name != null) && pilot_name !== '') {
-        console.log("Show data for " + pilot_name + " near elem " + elem);
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
         this.pilot_tooltip.find('.attack td').text(ship.attack);
@@ -188,6 +187,30 @@
         this.pilot_tooltip.css('top', reference_pos.top + parseInt($(elem).css('height')) + 'px');
         this.pilot_tooltip.css('left', reference_pos.left + 'px');
         return this.pilot_tooltip.show();
+      }
+    };
+
+    SquadBuilder.prototype.showUpgradeInfo = function(elem, upgrade_name, upgrade_data) {
+      var reference_pos;
+      if ((upgrade_name != null) && upgrade_name !== '') {
+        if (upgrade_data.attack != null) {
+          this.upgrade_tooltip.find('tr.attack').show();
+          this.upgrade_tooltip.find('tr.attack td').text(upgrade_data.attack);
+        } else {
+          this.upgrade_tooltip.find('tr.attack').hide();
+        }
+        if (upgrade_data.range != null) {
+          this.upgrade_tooltip.find('tr.range').show();
+          this.upgrade_tooltip.find('tr.range td').text(upgrade_data.range);
+        } else {
+          this.upgrade_tooltip.find('tr.range').hide();
+        }
+        this.upgrade_tooltip.find('.flavortext').text(upgrade_data.text);
+        reference_pos = $(elem).offset();
+        this.upgrade_tooltip.css('width', parseInt($(elem).css('width')) + 'px');
+        this.upgrade_tooltip.css('top', reference_pos.top + parseInt($(elem).css('height')) + 'px');
+        this.upgrade_tooltip.css('left', reference_pos.left + 'px');
+        return this.upgrade_tooltip.show();
       }
     };
 
@@ -317,6 +340,15 @@
       container.append(this.selector);
       this.selector.chosen({
         allow_single_deselect: true
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
+        return _this.builder.showUpgradeInfo($(e.delegateTarget), _this.upgrade_name, _this.upgrade);
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseleave(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
       });
       this.update();
       this.selector.change();
