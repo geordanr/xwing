@@ -44,7 +44,7 @@
       button_cell.addClass('twelve columns');
       this.button_row.append(button_cell);
       add_pilot_button = $(document.createElement('A'));
-      add_pilot_button.addClass('button');
+      add_pilot_button.addClass('radius button');
       add_pilot_button.text('Add Pilot');
       add_pilot_button.click(function(e) {
         e.preventDefault();
@@ -205,6 +205,7 @@
       this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row');
+      this.row.css('z-index', 0);
       this.row.insertBefore(this.builder.button_row);
       this.pilot_cell = $(document.createElement('DIV'));
       this.pilot_cell.addClass('three columns');
@@ -248,7 +249,7 @@
       this.row.append(this.upgrade_cell);
       this.remove_cell = $(document.createElement('DIV'));
       this.remove_cell.addClass('one column');
-      this.remove_cell.append("<span class=\"remove\">&nbsp;&#215;&nbsp;</span>");
+      this.remove_cell.append("<a class=\"small alert radius button remove\">&#215;</span>");
       this.remove_cell.click(function(e) {
         e.preventDefault();
         return _this.destroy();

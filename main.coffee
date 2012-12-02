@@ -48,7 +48,7 @@ class exportObj.SquadBuilder
         button_cell.addClass 'twelve columns'
         @button_row.append button_cell
         add_pilot_button = $(document.createElement 'A')
-        add_pilot_button.addClass 'button'
+        add_pilot_button.addClass 'radius button'
         add_pilot_button.text 'Add Pilot'
         add_pilot_button.click (e) =>
             e.preventDefault()
@@ -125,6 +125,7 @@ class PilotRow
         # set up UI elements
         @row = $(document.createElement 'DIV')
         @row.addClass 'row'
+        @row.css 'z-index', 0
         @row.insertBefore @builder.button_row
 
         @pilot_cell = $(document.createElement 'DIV')
@@ -166,7 +167,7 @@ class PilotRow
 
         @remove_cell = $(document.createElement 'DIV')
         @remove_cell.addClass 'one column'
-        @remove_cell.append """<span class="remove">&nbsp;&#215;&nbsp;</span>"""
+        @remove_cell.append """<a class="small alert radius button remove">&#215;</span>"""
         @remove_cell.click (e) =>
             e.preventDefault()
             @destroy()
