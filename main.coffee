@@ -98,13 +98,14 @@ class exportObj.SquadBuilder
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
         if pilot_name? and pilot_name != ''
-            @pilot_tooltip.find('.ship').text pilot_data.ship
+            console.log "Show data for #{pilot_name} near elem #{elem}"
+            @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
-            @pilot_tooltip.find('.attack').text ship.attack
-            @pilot_tooltip.find('.agility').text ship.agility
-            @pilot_tooltip.find('.hull').text ship.hull
-            @pilot_tooltip.find('.shields').text ship.shields
-            @pilot_tooltip.find('.actions').text ship.actions.join ', '
+            @pilot_tooltip.find('.attack td').text ship.attack
+            @pilot_tooltip.find('.agility td').text ship.agility
+            @pilot_tooltip.find('.hull td').text ship.hull
+            @pilot_tooltip.find('.shields td').text ship.shields
+            @pilot_tooltip.find('.actions td').text ship.actions.join ', '
 
             reference_pos = $(elem).offset()
             @pilot_tooltip.css 'width', parseInt($(elem).css('width')) + 'px'
@@ -156,9 +157,11 @@ class PilotRow
         @pilot_selector.chosen
             allow_single_deselect: true
         # mouseover handler
-        $("##{@pilot_selector.attr 'id'}_chzn").mouseover (e) =>
+        $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
             @builder.showPilotInfo $(e.delegateTarget), @name, @pilot, @ship
-        $("##{@pilot_selector.attr 'id'}_chzn").mouseleave (e) =>
+        $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>
+            @builder.pilot_tooltip.hide()
+        $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").click (e) =>
             @builder.pilot_tooltip.hide()
 
         @upgrade_cell = $(document.createElement 'DIV')

@@ -175,13 +175,14 @@
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
       var reference_pos, _ref;
       if ((pilot_name != null) && pilot_name !== '') {
-        this.pilot_tooltip.find('.ship').text(pilot_data.ship);
+        console.log("Show data for " + pilot_name + " near elem " + elem);
+        this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
-        this.pilot_tooltip.find('.attack').text(ship.attack);
-        this.pilot_tooltip.find('.agility').text(ship.agility);
-        this.pilot_tooltip.find('.hull').text(ship.hull);
-        this.pilot_tooltip.find('.shields').text(ship.shields);
-        this.pilot_tooltip.find('.actions').text(ship.actions.join(', '));
+        this.pilot_tooltip.find('.attack td').text(ship.attack);
+        this.pilot_tooltip.find('.agility td').text(ship.agility);
+        this.pilot_tooltip.find('.hull td').text(ship.hull);
+        this.pilot_tooltip.find('.shields td').text(ship.shields);
+        this.pilot_tooltip.find('.actions td').text(ship.actions.join(', '));
         reference_pos = $(elem).offset();
         this.pilot_tooltip.css('width', parseInt($(elem).css('width')) + 'px');
         this.pilot_tooltip.css('top', reference_pos.top + parseInt($(elem).css('height')) + 'px');
@@ -238,10 +239,13 @@
       this.pilot_selector.chosen({
         allow_single_deselect: true
       });
-      $("#" + (this.pilot_selector.attr('id')) + "_chzn").mouseover(function(e) {
+      $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
         return _this.builder.showPilotInfo($(e.delegateTarget), _this.name, _this.pilot, _this.ship);
       });
-      $("#" + (this.pilot_selector.attr('id')) + "_chzn").mouseleave(function(e) {
+      $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").mouseleave(function(e) {
+        return _this.builder.pilot_tooltip.hide();
+      });
+      $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
         return _this.builder.pilot_tooltip.hide();
       });
       this.upgrade_cell = $(document.createElement('DIV'));
