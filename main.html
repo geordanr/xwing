@@ -42,8 +42,23 @@
     </style>
   </head>
   <body>
-    <div id='rebel-builder'></div>
-    <div id='empire-builder'></div>
+    <p></p>
+    <dl class='tabs two-up'>
+      <dd>
+        <a href='#rebelContent'>Rebel Alliance</a>
+      </dd>
+      <dd>
+        <a href='#empireContent'>Galactic Empire</a>
+      </dd>
+    </dl>
+    <ul class='tabs-content'>
+      <li id='rebelContentTab'>
+        <div id='rebel-builder'></div>
+      </li>
+      <li id='empireContentTab'>
+        <div id='empire-builder'></div>
+      </li>
+    </ul>
     <div class='info-tooltip' id='rebel-pilot-tooltip'>
       <table>
         <tbody>
@@ -153,12 +168,13 @@
             pilot_tooltip: '#rebel-pilot-tooltip',
             upgrade_tooltip: '#rebel-upgrade-tooltip'
           });
-          return window.bar = empire_sb = new window.SquadBuilder({
+          window.bar = empire_sb = new window.SquadBuilder({
             container: '#empire-builder',
             faction: 'Galactic Empire',
             pilot_tooltip: '#empire-pilot-tooltip',
             upgrade_tooltip: '#empire-upgrade-tooltip'
           });
+          return $('dl.tabs dd:first a').click();
         });
       
       }).call(this);

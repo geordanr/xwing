@@ -45,8 +45,18 @@
   %body
     -# body layout
 
-    #rebel-builder
-    #empire-builder
+    %p
+
+    %dl.tabs.two-up
+      %dd
+        %a{:href => '#rebelContent'} Rebel Alliance
+      %dd
+        %a{:href => '#empireContent'} Galactic Empire
+    %ul.tabs-content
+      %li#rebelContentTab
+        #rebel-builder
+      %li#empireContentTab
+        #empire-builder
 
     #rebel-pilot-tooltip.info-tooltip
       %table
@@ -133,3 +143,4 @@
             faction: 'Galactic Empire'
             pilot_tooltip: '#empire-pilot-tooltip'
             upgrade_tooltip: '#empire-upgrade-tooltip'
+        $('dl.tabs dd:first a').click()
