@@ -7,40 +7,10 @@
     %link{:rel => "stylesheet", :href => "chosen-master/chosen/chosen.css"}
     %link{:rel => "stylesheet", :href => "foundation/stylesheets/foundation.min.css"}
     %link{:rel => "stylesheet", :href => "foundation/stylesheets/app.css"}
+    %link{:rel => "stylesheet", :href => "main.css"}
+    %link{:rel => "stylesheet", :href => "backgrounds.css"}
 
     %script{:src => "foundation/javascripts/modernizr.foundation.js"}
-    :sass
-      select.pilot
-        width: 20em
-
-      select.upgrade
-        width: 20em
-
-      abbr
-        cursor: pointer
-
-      a.remove.button
-        font-size: 1.25em
-
-      div.total-points
-        font-size: 2em
-
-      div.info-tooltip
-        width: 300px
-        float: right
-        clear: both
-        position: absolute
-        display: none
-        z-index: 9999
-        background-color: lightgray
-        border: thin solid black
-        padding: 5px
-
-      div.info-tooltip table
-        width: 100%
-
-      .chzn-container
-        padding: 3px
 
   %body
     -# body layout

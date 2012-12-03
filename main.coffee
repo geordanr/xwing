@@ -37,7 +37,7 @@ class exportObj.SquadBuilder
         @container.append @status_row
         @points_cell = $(document.createElement 'DIV')
         @points_cell.addClass 'three columns total-points'
-        @points_cell.text '0'
+        @points_cell.text 'Points: 0'
         @status_row.append @points_cell
 
         # Add pilot button
@@ -88,7 +88,7 @@ class exportObj.SquadBuilder
         for row in @rows
             for selector in row.upgrade_selectors
                 total += parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
-        @points_cell.text total
+        @points_cell.text "Points: #{total}"
 
     getAvailablePilots: () ->
         # Returns list of available pilot names for this faction.
@@ -151,8 +151,7 @@ class PilotRow
 
         # set up UI elements
         @row = $(document.createElement 'DIV')
-        @row.addClass 'row'
-        @row.css 'z-index', 0
+        @row.addClass 'row pilot'
         @row.insertBefore @builder.button_row
 
         @pilot_cell = $(document.createElement 'DIV')
@@ -171,12 +170,29 @@ class PilotRow
             if @name == ''
                 @pilot = null
                 @ship = null
+                for cls in @row.attr('class').split ' '
+                    if cls.indexOf('ship-') == 0
+                        @row.removeClass cls
             else
                 @pilot = exportObj.pilots[@name]
                 @ship = exportObj.ships[@pilot.ship]
                 #  Set upgrade selectors
                 for slot in @pilot.slots
                     @upgrade_selectors.push new UpgradeSelector @builder, slot, @upgrade_cell
+                shipbg_class = switch @pilot.ship
+                    when 'X-Wing'
+                        "xwing#{parseInt(Math.random() * 2)}"
+                    when 'Y-Wing'
+                        "ywing0"
+                    when 'TIE Fighter'
+                        "tiefighter#{parseInt(Math.random() * 2)}"
+                    when 'TIE Advanced'
+                        "tieadvanced#{parseInt(Math.random() * 2)}"
+                    else
+                        null
+                if shipbg_class?
+                    @row.addClass "ship-#{shipbg_class}"
+
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
         @pilot_selector.chosen
@@ -230,7 +246,8 @@ class PilotRow
         @builder.rows.splice @builder.rows.indexOf(this), 1
         $(window).trigger 'xwing:pilotChanged', null
         $(window).trigger 'xwing:upgradeChanged', null
-        @row.remove()
+        @row.slideUp 'fast', () =>
+            @row.remove()
 
 class UpgradeSelector
     # Represents an upgrade selector in the UI.

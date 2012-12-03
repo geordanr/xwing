@@ -35,7 +35,7 @@
       this.container.append(this.status_row);
       this.points_cell = $(document.createElement('DIV'));
       this.points_cell.addClass('three columns total-points');
-      this.points_cell.text('0');
+      this.points_cell.text('Points: 0');
       this.status_row.append(this.points_cell);
       this.button_row = $(document.createElement('DIV'));
       this.button_row.addClass('row');
@@ -126,7 +126,7 @@
           total += parseInt((_ref6 = (_ref7 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref7.points : void 0) != null ? _ref6 : 0);
         }
       }
-      return this.points_cell.text(total);
+      return this.points_cell.text("Points: " + total);
     };
 
     SquadBuilder.prototype.getAvailablePilots = function() {
@@ -233,8 +233,7 @@
       this.ship = null;
       this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
-      this.row.addClass('row');
-      this.row.css('z-index', 0);
+      this.row.addClass('row pilot');
       this.row.insertBefore(this.builder.button_row);
       this.pilot_cell = $(document.createElement('DIV'));
       this.pilot_cell.addClass('three columns');
@@ -244,21 +243,41 @@
       this.pilot_selector.addClass('pilot');
       this.pilot_selector.attr('data-placeholder', 'Select a pilot');
       this.pilot_selector.change(function(e) {
-        var slot, _i, _len, _ref;
+        var cls, shipbg_class, slot, _i, _j, _len, _len2, _ref, _ref2;
         _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
         _this.name = _this.pilot_selector.val();
         if (_this.name === '') {
           _this.pilot = null;
           _this.ship = null;
+          _ref = _this.row.attr('class').split(' ');
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            cls = _ref[_i];
+            if (cls.indexOf('ship-') === 0) _this.row.removeClass(cls);
+          }
         } else {
           _this.pilot = exportObj.pilots[_this.name];
           _this.ship = exportObj.ships[_this.pilot.ship];
-          _ref = _this.pilot.slots;
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            slot = _ref[_i];
+          _ref2 = _this.pilot.slots;
+          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+            slot = _ref2[_j];
             _this.upgrade_selectors.push(new UpgradeSelector(_this.builder, slot, _this.upgrade_cell));
           }
+          shipbg_class = (function() {
+            switch (this.pilot.ship) {
+              case 'X-Wing':
+                return "xwing" + (parseInt(Math.random() * 2));
+              case 'Y-Wing':
+                return "ywing0";
+              case 'TIE Fighter':
+                return "tiefighter" + (parseInt(Math.random() * 2));
+              case 'TIE Advanced':
+                return "tieadvanced" + (parseInt(Math.random() * 2));
+              default:
+                return null;
+            }
+          }).call(_this);
+          if (shipbg_class != null) _this.row.addClass("ship-" + shipbg_class);
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
@@ -314,10 +333,13 @@
     };
 
     PilotRow.prototype.destroy = function() {
+      var _this = this;
       this.builder.rows.splice(this.builder.rows.indexOf(this), 1);
       $(window).trigger('xwing:pilotChanged', null);
       $(window).trigger('xwing:upgradeChanged', null);
-      return this.row.remove();
+      return this.row.slideUp('fast', function() {
+        return _this.row.remove();
+      });
     };
 
     return PilotRow;
