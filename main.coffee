@@ -65,6 +65,7 @@ class exportObj.SquadBuilder
                 if row != triggering_row
                     row.update()
             @updatePoints()
+            @pilot_tooltip.hide()
 
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
@@ -78,6 +79,7 @@ class exportObj.SquadBuilder
                     if selector != triggering_selector
                         selector.update()
             @updatePoints()
+            @upgrade_tooltip.hide()
 
     updatePoints: () ->
         total = 0
@@ -115,14 +117,17 @@ class exportObj.SquadBuilder
 
     showUpgradeInfo: (elem, upgrade_name, upgrade_data) ->
         if upgrade_name? and upgrade_name != ''
+            $('table.weapon-stats').hide()
             if upgrade_data.attack?
                 @upgrade_tooltip.find('tr.attack').show()
                 @upgrade_tooltip.find('tr.attack td').text upgrade_data.attack
+                $('table.weapon-stats').show()
             else
                 @upgrade_tooltip.find('tr.attack').hide()
             if upgrade_data.range?
                 @upgrade_tooltip.find('tr.range').show()
                 @upgrade_tooltip.find('tr.range td').text upgrade_data.range
+                $('table.weapon-stats').show()
             else
                 @upgrade_tooltip.find('tr.range').hide()
             @upgrade_tooltip.find('.flavortext').text upgrade_data.text
@@ -159,15 +164,14 @@ class PilotRow
         @pilot_selector.addClass 'pilot'
         @pilot_selector.attr 'data-placeholder', 'Select a pilot'
         @pilot_selector.change (e) =>
+            # Clear upgrades
+            @upgrade_cell.text ''
             @upgrade_selectors = []
             @name = @pilot_selector.val()
             if @name == ''
                 @pilot = null
                 @ship = null
-                # Clear upgrades
-                @upgrade_cell.text 'Select a pilot to view upgrades'
             else
-                @upgrade_cell.text ''
                 @pilot = exportObj.pilots[@name]
                 @ship = exportObj.ships[@pilot.ship]
                 #  Set upgrade selectors
@@ -248,6 +252,7 @@ class UpgradeSelector
         container.append @selector
         @selector.chosen
             allow_single_deselect: true
+            disable_search_threshold: 8
         $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
             @builder.showUpgradeInfo $(e.delegateTarget), @upgrade_name, @upgrade
         $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>

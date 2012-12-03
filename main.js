@@ -69,7 +69,8 @@
           row = _ref[_i];
           if (row !== triggering_row) row.update();
         }
-        return _this.updatePoints();
+        _this.updatePoints();
+        return _this.pilot_tooltip.hide();
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
         var row, selector, upgrade, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4;
@@ -103,7 +104,8 @@
             if (selector !== triggering_selector) selector.update();
           }
         }
-        return _this.updatePoints();
+        _this.updatePoints();
+        return _this.upgrade_tooltip.hide();
       });
     }
 
@@ -193,15 +195,18 @@
     SquadBuilder.prototype.showUpgradeInfo = function(elem, upgrade_name, upgrade_data) {
       var reference_pos;
       if ((upgrade_name != null) && upgrade_name !== '') {
+        $('table.weapon-stats').hide();
         if (upgrade_data.attack != null) {
           this.upgrade_tooltip.find('tr.attack').show();
           this.upgrade_tooltip.find('tr.attack td').text(upgrade_data.attack);
+          $('table.weapon-stats').show();
         } else {
           this.upgrade_tooltip.find('tr.attack').hide();
         }
         if (upgrade_data.range != null) {
           this.upgrade_tooltip.find('tr.range').show();
           this.upgrade_tooltip.find('tr.range td').text(upgrade_data.range);
+          $('table.weapon-stats').show();
         } else {
           this.upgrade_tooltip.find('tr.range').hide();
         }
@@ -240,14 +245,13 @@
       this.pilot_selector.attr('data-placeholder', 'Select a pilot');
       this.pilot_selector.change(function(e) {
         var slot, _i, _len, _ref;
+        _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
         _this.name = _this.pilot_selector.val();
         if (_this.name === '') {
           _this.pilot = null;
           _this.ship = null;
-          _this.upgrade_cell.text('Select a pilot to view upgrades');
         } else {
-          _this.upgrade_cell.text('');
           _this.pilot = exportObj.pilots[_this.name];
           _this.ship = exportObj.ships[_this.pilot.ship];
           _ref = _this.pilot.slots;
@@ -339,7 +343,8 @@
       });
       container.append(this.selector);
       this.selector.chosen({
-        allow_single_deselect: true
+        allow_single_deselect: true,
+        disable_search_threshold: 8
       });
       $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
         return _this.builder.showUpgradeInfo($(e.delegateTarget), _this.upgrade_name, _this.upgrade);
