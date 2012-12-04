@@ -99,6 +99,7 @@ class exportObj.SquadBuilder
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades).sort exportObj.sortHelper
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
+        console.log "Show info for '#{pilot_name}'"
         if pilot_name? and pilot_name != ''
             @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
@@ -167,12 +168,12 @@ class PilotRow
             @upgrade_cell.text ''
             @upgrade_selectors = []
             @name = @pilot_selector.val()
+            for cls in @row.attr('class').split ' '
+                if cls.indexOf('ship-') == 0
+                    @row.removeClass cls
             if @name == ''
                 @pilot = null
                 @ship = null
-                for cls in @row.attr('class').split ' '
-                    if cls.indexOf('ship-') == 0
-                        @row.removeClass cls
             else
                 @pilot = exportObj.pilots[@name]
                 @ship = exportObj.ships[@pilot.ship]
@@ -196,6 +197,7 @@ class PilotRow
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
         @pilot_selector.chosen
+            search_contains: true
             allow_single_deselect: true
         # mouseover handler
         $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
@@ -268,6 +270,7 @@ class UpgradeSelector
             $(window).trigger 'xwing:upgradeChanged', @selector
         container.append @selector
         @selector.chosen
+            search_contains: true
             allow_single_deselect: true
             disable_search_threshold: 8
         $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>

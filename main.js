@@ -176,6 +176,7 @@
 
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
       var reference_pos, _ref;
+      console.log("Show info for '" + pilot_name + "'");
       if ((pilot_name != null) && pilot_name !== '') {
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
@@ -247,14 +248,14 @@
         _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
         _this.name = _this.pilot_selector.val();
+        _ref = _this.row.attr('class').split(' ');
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          cls = _ref[_i];
+          if (cls.indexOf('ship-') === 0) _this.row.removeClass(cls);
+        }
         if (_this.name === '') {
           _this.pilot = null;
           _this.ship = null;
-          _ref = _this.row.attr('class').split(' ');
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            cls = _ref[_i];
-            if (cls.indexOf('ship-') === 0) _this.row.removeClass(cls);
-          }
         } else {
           _this.pilot = exportObj.pilots[_this.name];
           _this.ship = exportObj.ships[_this.pilot.ship];
@@ -283,6 +284,7 @@
       });
       this.pilot_cell.append(this.pilot_selector);
       this.pilot_selector.chosen({
+        search_contains: true,
         allow_single_deselect: true
       });
       $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
@@ -365,6 +367,7 @@
       });
       container.append(this.selector);
       this.selector.chosen({
+        search_contains: true,
         allow_single_deselect: true,
         disable_search_threshold: 8
       });
