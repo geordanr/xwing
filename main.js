@@ -347,7 +347,7 @@
       this.row.addClass('row pilot');
       this.row.insertBefore(this.builder.button_row);
       this.pilot_cell = $(document.createElement('DIV'));
-      this.pilot_cell.addClass('three columns');
+      this.pilot_cell.addClass('four columns');
       this.row.append(this.pilot_cell);
       this.pilot_selector = $(document.createElement('SELECT'));
       this.pilot_selector.append($(document.createElement('OPTION')));
@@ -383,7 +383,7 @@
               case 'TIE Fighter':
                 return "tiefighter" + (parseInt(Math.random() * 2));
               case 'TIE Advanced':
-                return "tieadvanced" + (parseInt(Math.random() * 2));
+                return "tieadvanced0";
               default:
                 return null;
             }
@@ -407,7 +407,7 @@
         return _this.builder.pilot_tooltip.hide();
       });
       this.upgrade_cell = $(document.createElement('DIV'));
-      this.upgrade_cell.addClass('eight columns upgrades');
+      this.upgrade_cell.addClass('seven columns upgrades');
       this.row.append(this.upgrade_cell);
       this.remove_cell = $(document.createElement('DIV'));
       this.remove_cell.addClass('one column');

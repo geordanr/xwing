@@ -201,7 +201,7 @@ class PilotRow
         @row.insertBefore @builder.button_row
 
         @pilot_cell = $(document.createElement 'DIV')
-        @pilot_cell.addClass 'three columns'
+        @pilot_cell.addClass 'four columns'
         @row.append @pilot_cell
 
         @pilot_selector = $(document.createElement 'SELECT')
@@ -233,7 +233,7 @@ class PilotRow
                     when 'TIE Fighter'
                         "tiefighter#{parseInt(Math.random() * 2)}"
                     when 'TIE Advanced'
-                        "tieadvanced#{parseInt(Math.random() * 2)}"
+                        "tieadvanced0"
                     else
                         null
                 if shipbg_class?
@@ -253,7 +253,7 @@ class PilotRow
             @builder.pilot_tooltip.hide()
 
         @upgrade_cell = $(document.createElement 'DIV')
-        @upgrade_cell.addClass 'eight columns upgrades'
+        @upgrade_cell.addClass 'seven columns upgrades'
         @row.append @upgrade_cell
 
         @remove_cell = $(document.createElement 'DIV')
