@@ -94,8 +94,11 @@
             %td
       %p.flavortext
 
+    #urlModal.reveal-modal
+      %input{:type => 'text', :readonly => 'readonly'}
+
     -# Foundation/JS linkages
-    %script{:src => "http://code.jquery.com/jquery-1.8.3.min.js"}
+    %script{:src => "jquery-1.8.3.min.js"}
     %script{:src => "foundation/javascripts/foundation.min.js"}
     %script{:src => "foundation/javascripts/app.js"}
     %script{:src => "chosen-master/chosen/chosen.jquery.min.js"}
@@ -108,9 +111,11 @@
             faction: 'Rebel Alliance'
             pilot_tooltip: '#rebel-pilot-tooltip'
             upgrade_tooltip: '#rebel-upgrade-tooltip'
+            url_modal: '#urlModal'
         window.bar = empire_sb = new window.SquadBuilder
             container: '#empire-builder'
             faction: 'Galactic Empire'
             pilot_tooltip: '#empire-pilot-tooltip'
             upgrade_tooltip: '#empire-upgrade-tooltip'
+            url_modal: '#urlModal'
         $('dl.tabs dd:first a').click()

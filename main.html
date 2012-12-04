@@ -120,7 +120,10 @@
       </table>
       <p class='flavortext'></p>
     </div>
-    <script src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
+    <div class='reveal-modal' id='urlModal'>
+      <input readonly='readonly' type='text'>
+    </div>
+    <script src='jquery-1.8.3.min.js'></script>
     <script src='foundation/javascripts/foundation.min.js'></script>
     <script src='foundation/javascripts/app.js'></script>
     <script src='chosen-master/chosen/chosen.jquery.min.js'></script>
@@ -135,13 +138,15 @@
             container: '#rebel-builder',
             faction: 'Rebel Alliance',
             pilot_tooltip: '#rebel-pilot-tooltip',
-            upgrade_tooltip: '#rebel-upgrade-tooltip'
+            upgrade_tooltip: '#rebel-upgrade-tooltip',
+            url_modal: '#urlModal'
           });
           window.bar = empire_sb = new window.SquadBuilder({
             container: '#empire-builder',
             faction: 'Galactic Empire',
             pilot_tooltip: '#empire-pilot-tooltip',
-            upgrade_tooltip: '#empire-upgrade-tooltip'
+            upgrade_tooltip: '#empire-upgrade-tooltip',
+            url_modal: '#urlModal'
           });
           return $('dl.tabs dd:first a').click();
         });

@@ -18,15 +18,29 @@
     }
   };
 
+  exportObj.getParameterByName = function(name) {
+    var regex, regexS, results;
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    regexS = "[\\?&]" + name + "=([^&#]*)";
+    regex = new RegExp(regexS);
+    results = regex.exec(window.location.search);
+    if (results === null) {
+      return "";
+    } else {
+      return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+  };
+
   exportObj.SquadBuilder = (function() {
 
     function SquadBuilder(args) {
-      var add_pilot_button, button_cell,
+      var add_pilot_button, button_cell, get_url_button,
         _this = this;
       this.container = $(args.container);
       this.faction = args.faction;
       this.pilot_tooltip = $(args.pilot_tooltip);
       this.upgrade_tooltip = $(args.upgrade_tooltip);
+      this.url_modal = $(args.url_modal);
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
@@ -51,7 +65,16 @@
         return _this.rows.push(new PilotRow(_this));
       });
       button_cell.append(add_pilot_button);
-      this.rows.push(new PilotRow(this));
+      button_cell.append("&nbsp;");
+      get_url_button = $(document.createElement('A'));
+      get_url_button.addClass('radius button');
+      get_url_button.text('Get Squad URL');
+      get_url_button.click(function(e) {
+        e.preventDefault();
+        _this.url_modal.find('input').val("" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
+        return _this.url_modal.reveal();
+      });
+      button_cell.append(get_url_button);
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
         var row, _i, _len, _ref;
         _this.pilots = (function() {
@@ -107,6 +130,10 @@
         _this.updatePoints();
         return _this.upgrade_tooltip.hide();
       });
+      this.rows.push(new PilotRow(this));
+      if (exportObj.getParameterByName('f') === this.faction) {
+        this.loadFromSerialized(exportObj.getParameterByName('d'));
+      }
     }
 
     SquadBuilder.prototype.updatePoints = function() {
@@ -176,7 +203,6 @@
 
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
       var reference_pos, _ref;
-      console.log("Show info for '" + pilot_name + "'");
       if ((pilot_name != null) && pilot_name !== '') {
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
@@ -218,6 +244,90 @@
         this.upgrade_tooltip.css('left', reference_pos.left + 'px');
         return this.upgrade_tooltip.show();
       }
+    };
+
+    SquadBuilder.prototype.serialize = function() {
+      var row, selector;
+      return ((function() {
+        var _i, _len, _ref, _results;
+        _ref = this.rows;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          row = _ref[_i];
+          if ((row.name != null) && row.name !== '') {
+            _results.push("" + row.pilot.id + ":" + (((function() {
+              var _j, _len2, _ref2, _ref3, _ref4, _results2;
+              _ref2 = row.upgrade_selectors;
+              _results2 = [];
+              for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+                selector = _ref2[_j];
+                _results2.push((_ref3 = (_ref4 = selector.upgrade) != null ? _ref4.id : void 0) != null ? _ref3 : -1);
+              }
+              return _results2;
+            })()).join(',')));
+          }
+        }
+        return _results;
+      }).call(this)).join(';');
+    };
+
+    SquadBuilder.prototype.loadFromSerialized = function(serialized) {
+      var row, _i, _len, _ref, _results,
+        _this = this;
+      _ref = this.rows;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        row = _ref[_i];
+        _results.push(row.destroy(function() {
+          var i, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
+          if (_this.rows.length === 0) {
+            _ref2 = serialized.split(';');
+            for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+              pilot_str = _ref2[_j];
+              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1];
+              pilot_id = parseInt(pilot_id);
+              new_pilot_row = new PilotRow(_this);
+              new_pilot_row.pilot_selector.val(((function() {
+                var _ref4, _results2;
+                _ref4 = exportObj.pilots;
+                _results2 = [];
+                for (pilot_name in _ref4) {
+                  pilot_data = _ref4[pilot_name];
+                  if (parseInt(pilot_data.id) === pilot_id) {
+                    _results2.push(pilot_name);
+                  }
+                }
+                return _results2;
+              })())[0]);
+              new_pilot_row.pilot_selector.change();
+              _ref4 = upgrade_list.split(',');
+              for (i = 0, _len3 = _ref4.length; i < _len3; i++) {
+                upgrade_id = _ref4[i];
+                upgrade_id = parseInt(upgrade_id);
+                if (upgrade_id >= 0) {
+                  selector = new_pilot_row.upgrade_selectors[i];
+                  selector.selector.val((function() {
+                    var _ref5, _results2;
+                    _ref5 = exportObj.upgrades;
+                    _results2 = [];
+                    for (upgrade_name in _ref5) {
+                      upgrade_data = _ref5[upgrade_name];
+                      if (parseInt(upgrade_data.id) === upgrade_id) {
+                        _results2.push(upgrade_name);
+                      }
+                    }
+                    return _results2;
+                  })());
+                  selector.selector.change();
+                }
+              }
+              _this.rows.push(new_pilot_row);
+            }
+            return $('select').trigger('liszt:updated');
+          }
+        }));
+      }
+      return _results;
     };
 
     return SquadBuilder;
@@ -334,13 +444,14 @@
       return this.pilot_selector.trigger('liszt:updated');
     };
 
-    PilotRow.prototype.destroy = function() {
+    PilotRow.prototype.destroy = function(callback) {
       var _this = this;
-      this.builder.rows.splice(this.builder.rows.indexOf(this), 1);
-      $(window).trigger('xwing:pilotChanged', null);
-      $(window).trigger('xwing:upgradeChanged', null);
       return this.row.slideUp('fast', function() {
-        return _this.row.remove();
+        _this.row.remove();
+        _this.builder.rows.splice(_this.builder.rows.indexOf(_this), 1);
+        $(window).trigger('xwing:pilotChanged', null);
+        $(window).trigger('xwing:upgradeChanged', null);
+        return callback();
       });
     };
 

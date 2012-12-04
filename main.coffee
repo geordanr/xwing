@@ -10,6 +10,17 @@ exportObj.sortHelper = (a, b) ->
     else
         if a > b then 1 else -1
 
+# ripped from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+exportObj.getParameterByName = (name) ->
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
+  regexS = "[\\?&]" + name + "=([^&#]*)"
+  regex = new RegExp(regexS)
+  results = regex.exec(window.location.search)
+  if results == null
+    return ""
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "))
+
 class exportObj.SquadBuilder
     # Superclass for faction builders.
     # Tracks which pilots are in use.
@@ -25,6 +36,7 @@ class exportObj.SquadBuilder
         @faction = args.faction
         @pilot_tooltip = $(args.pilot_tooltip)
         @upgrade_tooltip = $(args.upgrade_tooltip)
+        @url_modal = $(args.url_modal)
 
         # internal state
         @rows = []
@@ -54,10 +66,15 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @rows.push new PilotRow this
         button_cell.append add_pilot_button
-
-        # Add initial row
-        # TODO deserialize a previous configuration
-        @rows.push new PilotRow this
+        button_cell.append "&nbsp;"
+        get_url_button = $(document.createElement 'A')
+        get_url_button.addClass 'radius button'
+        get_url_button.text 'Get Squad URL'
+        get_url_button.click (e) =>
+            e.preventDefault()
+            @url_modal.find('input').val "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+            @url_modal.reveal()
+        button_cell.append get_url_button
 
         $(window).bind 'xwing:pilotChanged', (e, triggering_row) =>
             @pilots = (row.name for row in @rows when row.name? and row.name != '')
@@ -81,6 +98,12 @@ class exportObj.SquadBuilder
             @updatePoints()
             @upgrade_tooltip.hide()
 
+        # Add initial row; need at least one row present for loadFromSerialized to work properly.
+        @rows.push new PilotRow this
+        # Check if there's data for us to deserialize.
+        if exportObj.getParameterByName('f') == @faction
+            @loadFromSerialized exportObj.getParameterByName('d')
+
     updatePoints: () ->
         total = 0
         for pilot in @pilots
@@ -99,7 +122,6 @@ class exportObj.SquadBuilder
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades).sort exportObj.sortHelper
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
-        console.log "Show info for '#{pilot_name}'"
         if pilot_name? and pilot_name != ''
             @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
@@ -140,6 +162,29 @@ class exportObj.SquadBuilder
 
             @upgrade_tooltip.show()
 
+    serialize: () ->
+        # PILOT_ID:UPGRADEID1,UPGRADEID2; ...
+        ( "#{row.pilot.id}:#{( selector.upgrade?.id ? -1 for selector in row.upgrade_selectors ).join ','}" for row in @rows when row.name? and row.name != '' ).join ';'
+
+    loadFromSerialized: (serialized) ->
+        for row in @rows
+            row.destroy () =>
+                # When the last one is gone...
+                if @rows.length == 0
+                    for pilot_str in serialized.split ';'
+                        [pilot_id, upgrade_list] = pilot_str.split ':'
+                        pilot_id = parseInt pilot_id
+                        new_pilot_row = new PilotRow this
+                        new_pilot_row.pilot_selector.val (pilot_name for pilot_name, pilot_data of exportObj.pilots when parseInt(pilot_data.id) == pilot_id)[0]
+                        new_pilot_row.pilot_selector.change()
+                        for upgrade_id, i in upgrade_list.split ','
+                            upgrade_id = parseInt upgrade_id
+                            if upgrade_id >= 0
+                                selector = new_pilot_row.upgrade_selectors[i]
+                                selector.selector.val (upgrade_name for upgrade_name, upgrade_data of exportObj.upgrades when parseInt(upgrade_data.id) == upgrade_id)
+                                selector.selector.change()
+                        @rows.push new_pilot_row
+                    $('select').trigger 'liszt:updated'
 
 class PilotRow
     # Represents a pilot row in the UI.
@@ -243,13 +288,14 @@ class PilotRow
         @pilot_selector.val @name
         @pilot_selector.trigger 'liszt:updated'
 
-    destroy: () ->
+    destroy: (callback) ->
         # Deregister everything from the builder and remove this row.
-        @builder.rows.splice @builder.rows.indexOf(this), 1
-        $(window).trigger 'xwing:pilotChanged', null
-        $(window).trigger 'xwing:upgradeChanged', null
         @row.slideUp 'fast', () =>
             @row.remove()
+            @builder.rows.splice @builder.rows.indexOf(this), 1
+            $(window).trigger 'xwing:pilotChanged', null
+            $(window).trigger 'xwing:upgradeChanged', null
+            callback()
 
 class UpgradeSelector
     # Represents an upgrade selector in the UI.
