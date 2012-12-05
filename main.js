@@ -175,7 +175,8 @@
         if ((_ref2 = pilot_data.ship, __indexOf.call(ships, _ref2) >= 0) && (!(pilot_data.unique != null) || __indexOf.call(this.pilots, pilot_name) < 0)) {
           _results.push({
             name: pilot_name,
-            points: pilot_data.points
+            points: pilot_data.points,
+            ship: pilot_data.ship
           });
         }
       }
@@ -422,23 +423,42 @@
     }
 
     PilotRow.prototype.update = function() {
-      var available_pilots, option, pilot, _i, _len;
+      var available_pilots, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
       available_pilots = this.builder.getAvailablePilots();
       if (this.pilot) {
         available_pilots.push({
           name: this.name,
-          points: this.pilot.points
+          points: this.pilot.points,
+          ship: this.pilot.ship
         });
       }
-      available_pilots.sort(exportObj.sortHelper);
-      this.pilot_selector.text('');
-      this.pilot_selector.append(document.createElement('OPTION'));
+      pilots_by_ship = {};
       for (_i = 0, _len = available_pilots.length; _i < _len; _i++) {
         pilot = available_pilots[_i];
-        option = $(document.createElement('OPTION'));
-        option.text("" + pilot.name + " (" + pilot.points + ")");
-        option.val(pilot.name);
-        this.pilot_selector.append(option);
+        if (!(pilot.ship in pilots_by_ship)) pilots_by_ship[pilot.ship] = [];
+        pilots_by_ship[pilot.ship].push(pilot);
+      }
+      window.omg = pilots_by_ship;
+      for (ship in pilots_by_ship) {
+        pilots = pilots_by_ship[ship];
+        pilots.sort(exportObj.sortHelper);
+      }
+      this.pilot_selector.text('');
+      this.pilot_selector.append(document.createElement('OPTION'));
+      _ref = Object.keys(pilots_by_ship).sort();
+      for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
+        ship = _ref[_j];
+        optgroup = $(document.createElement('OPTGROUP'));
+        optgroup.attr('label', ship);
+        this.pilot_selector.append(optgroup);
+        _ref2 = pilots_by_ship[ship];
+        for (_k = 0, _len3 = _ref2.length; _k < _len3; _k++) {
+          pilot = _ref2[_k];
+          option = $(document.createElement('OPTION'));
+          option.text("" + pilot.name + " (" + pilot.points + ")");
+          option.val(pilot.name);
+          optgroup.append(option);
+        }
       }
       this.pilot_selector.val(this.name);
       return this.pilot_selector.trigger('liszt:updated');
