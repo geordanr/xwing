@@ -1,5 +1,5 @@
 (function() {
-  var PilotRow, UpgradeSelector, exportObj,
+  var PilotRow, RandomizerPilot, UpgradeSelector, exportObj,
     __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -47,13 +47,12 @@
   exportObj.SquadBuilder = (function() {
 
     function SquadBuilder(args) {
-      var add_pilot_button, button_cell, get_url_button,
+      var button_cell, permalink_cell,
         _this = this;
       this.container = $(args.container);
       this.faction = args.faction;
       this.pilot_tooltip = $(args.pilot_tooltip);
       this.upgrade_tooltip = $(args.upgrade_tooltip);
-      this.url_modal = $(args.url_modal);
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
@@ -66,32 +65,19 @@
       this.points_cell.addClass('three columns total-points');
       this.points_cell.text('Points: 0');
       this.status_row.append(this.points_cell);
+      permalink_cell = $(document.createElement('DIV'));
+      permalink_cell.addClass('three columns permalink');
+      this.status_row.append(permalink_cell);
+      this.permalink = $(document.createElement('A'));
+      this.permalink.text('Permalink');
+      this.permalink.attr('href', '#');
+      permalink_cell.append(this.permalink);
       this.button_row = $(document.createElement('DIV'));
       this.button_row.addClass('row');
       this.container.append(this.button_row);
       button_cell = $(document.createElement('DIV'));
       button_cell.addClass('twelve columns');
       this.button_row.append(button_cell);
-      add_pilot_button = $(document.createElement('A'));
-      add_pilot_button.addClass('radius button');
-      add_pilot_button.text('Add Pilot');
-      add_pilot_button.click(function(e) {
-        e.preventDefault();
-        return _this.rows.push(new PilotRow(_this));
-      });
-      button_cell.append(add_pilot_button);
-      button_cell.append("&nbsp;");
-      get_url_button = $(document.createElement('A'));
-      get_url_button.addClass('radius button');
-      get_url_button.text('Get Squad URL');
-      get_url_button.click(function(e) {
-        e.preventDefault();
-        _this.url_modal.find('input').val("" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
-        _this.url_modal.find('a.url-placeholder').attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
-        _this.url_modal.find('a.url-placeholder').text("" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
-        return _this.url_modal.reveal();
-      });
-      button_cell.append(get_url_button);
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
         var row, _i, _len, _ref;
         _this.pilots = (function() {
@@ -110,7 +96,11 @@
           if (row !== triggering_row) row.update();
         }
         _this.updatePoints();
-        return _this.pilot_tooltip.hide();
+        _this.pilot_tooltip.hide();
+        if (_this.rows.length === _this.pilots.length) {
+          _this.rows.push(new PilotRow(_this));
+        }
+        return _this.updatePermalink();
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
         var row, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4, _ref5;
@@ -138,7 +128,8 @@
           }
         }
         _this.updatePoints();
-        return _this.upgrade_tooltip.hide();
+        _this.upgrade_tooltip.hide();
+        return _this.updatePermalink();
       });
       this.rows.push(new PilotRow(this));
       if (exportObj.getParameterByName('f') === this.faction) {
@@ -164,6 +155,10 @@
         }
       }
       return this.points_cell.text("Points: " + total);
+    };
+
+    SquadBuilder.prototype.updatePermalink = function() {
+      return this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
     };
 
     SquadBuilder.prototype.getAvailablePilots = function() {
@@ -291,7 +286,7 @@
         row = _ref[_i];
         _results.push(row.destroy(function() {
           var i, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
-          if (_this.rows.length === 0) {
+          if (_this.rows.length === 1) {
             _ref2 = serialized.split(';');
             for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
               pilot_str = _ref2[_j];
@@ -334,14 +329,55 @@
               }
               _this.rows.push(new_pilot_row);
             }
-            return $('select').trigger('liszt:updated');
+            $('select').trigger('liszt:updated');
           }
+          return _this.rows[0].destroy();
         }));
       }
       return _results;
     };
 
+    SquadBuilder.prototype.randomSquad = function(max_points, max_iterations) {
+      var cur_points, iterations, pilots, _results;
+      if (max_iterations == null) max_iterations = 1000;
+      cur_points = 0;
+      iterations = 0;
+      pilots = [];
+      _results = [];
+      while (iterations < max_iterations && cur_points !== max_points) {
+        iterations++;
+        if (cur_points < max_points) {
+          if (Math.random() < 0.5) {
+            _results.push($.noop());
+          } else {
+            _results.push($.noop());
+          }
+        } else {
+          if (Math.random() < 0.5) {
+            _results.push($.noop());
+          } else {
+            _results.push($.noop());
+          }
+        }
+      }
+      return _results;
+    };
+
     return SquadBuilder;
+
+  })();
+
+  RandomizerPilot = (function() {
+
+    function RandomizerPilot(name) {
+      this.name = name;
+      this.data = exportObj.pilots[name];
+      this.ship = this.data.ship;
+      this.upgrades = [];
+      this.points = 0;
+    }
+
+    return RandomizerPilot;
 
   })();
 
@@ -382,8 +418,7 @@
           if (cls.indexOf('ship-') === 0) _this.row.removeClass(cls);
         }
         if (_this.name === '') {
-          _this.pilot = null;
-          _this.ship = null;
+          _this.destroy();
         } else {
           _this.pilot = exportObj.pilots[_this.name];
           _this.ship = exportObj.ships[_this.pilot.ship];
@@ -395,11 +430,11 @@
           shipbg_class = (function() {
             switch (this.pilot.ship) {
               case 'X-Wing':
-                return "xwing" + (parseInt(Math.random() * 2));
+                return "xwing1";
               case 'Y-Wing':
                 return "ywing0";
               case 'TIE Fighter':
-                return "tiefighter" + (parseInt(Math.random() * 2));
+                return "tiefighter0";
               case 'TIE Advanced':
                 return "tieadvanced0";
               default:
@@ -407,14 +442,14 @@
             }
           }).call(_this);
           if (shipbg_class != null) _this.row.addClass("ship-" + shipbg_class);
+          _this.remove_cell.fadeIn('fast');
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
       this.pilot_cell.append(this.pilot_selector);
       if (!$.isMobile()) {
         this.pilot_selector.chosen({
-          search_contains: true,
-          allow_single_deselect: true
+          search_contains: true
         });
       }
       $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
@@ -437,8 +472,8 @@
         return _this.destroy();
       });
       this.row.append(this.remove_cell);
+      this.remove_cell.hide();
       this.update();
-      this.pilot_selector.change();
     }
 
     PilotRow.prototype.update = function() {
@@ -457,7 +492,6 @@
         if (!(pilot.ship in pilots_by_ship)) pilots_by_ship[pilot.ship] = [];
         pilots_by_ship[pilot.ship].push(pilot);
       }
-      window.omg = pilots_by_ship;
       for (ship in pilots_by_ship) {
         pilots = pilots_by_ship[ship];
         pilots.sort(exportObj.sortHelper);
@@ -491,6 +525,7 @@
 
     PilotRow.prototype.destroy = function(callback) {
       var _this = this;
+      if (callback == null) callback = $.noop;
       return this.row.slideUp('fast', function() {
         _this.row.remove();
         _this.builder.rows.splice(_this.builder.rows.indexOf(_this), 1);

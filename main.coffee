@@ -42,7 +42,6 @@ class exportObj.SquadBuilder
         @faction = args.faction
         @pilot_tooltip = $(args.pilot_tooltip)
         @upgrade_tooltip = $(args.upgrade_tooltip)
-        @url_modal = $(args.url_modal)
 
         # internal state
         @rows = []
@@ -56,10 +55,19 @@ class exportObj.SquadBuilder
         @status_row = $(document.createElement 'DIV')
         @status_row.addClass 'row'
         @container.append @status_row
+
         @points_cell = $(document.createElement 'DIV')
         @points_cell.addClass 'three columns total-points'
         @points_cell.text 'Points: 0'
         @status_row.append @points_cell
+
+        permalink_cell = $(document.createElement 'DIV')
+        permalink_cell.addClass 'three columns permalink'
+        @status_row.append permalink_cell
+        @permalink = $(document.createElement 'A')
+        @permalink.text 'Permalink'
+        @permalink.attr 'href', '#'
+        permalink_cell.append @permalink
 
         # Add pilot button
         @button_row = $(document.createElement 'DIV')
@@ -68,24 +76,6 @@ class exportObj.SquadBuilder
         button_cell = $(document.createElement 'DIV')
         button_cell.addClass 'twelve columns'
         @button_row.append button_cell
-        add_pilot_button = $(document.createElement 'A')
-        add_pilot_button.addClass 'radius button'
-        add_pilot_button.text 'Add Pilot'
-        add_pilot_button.click (e) =>
-            e.preventDefault()
-            @rows.push new PilotRow this
-        button_cell.append add_pilot_button
-        button_cell.append "&nbsp;"
-        get_url_button = $(document.createElement 'A')
-        get_url_button.addClass 'radius button'
-        get_url_button.text 'Get Squad URL'
-        get_url_button.click (e) =>
-            e.preventDefault()
-            @url_modal.find('input').val "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
-            @url_modal.find('a.url-placeholder').attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
-            @url_modal.find('a.url-placeholder').text "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
-            @url_modal.reveal()
-        button_cell.append get_url_button
 
         $(window).bind 'xwing:pilotChanged', (e, triggering_row) =>
             @pilots = (row.name for row in @rows when row.name? and row.name != '')
@@ -94,6 +84,9 @@ class exportObj.SquadBuilder
                     row.update()
             @updatePoints()
             @pilot_tooltip.hide()
+            if @rows.length == @pilots.length
+                @rows.push new PilotRow this
+            @updatePermalink()
 
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
@@ -108,6 +101,7 @@ class exportObj.SquadBuilder
                         upgrade_selector.update()
             @updatePoints()
             @upgrade_tooltip.hide()
+            @updatePermalink()
 
         # Add initial row; need at least one row present for loadFromSerialized to work properly.
         @rows.push new PilotRow this
@@ -123,6 +117,9 @@ class exportObj.SquadBuilder
             for selector in row.upgrade_selectors
                 total += parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
         @points_cell.text "Points: #{total}"
+
+    updatePermalink: () ->
+        @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
 
     getAvailablePilots: () ->
         # Returns list of available pilot names for this faction.
@@ -180,8 +177,8 @@ class exportObj.SquadBuilder
     loadFromSerialized: (serialized) ->
         for row in @rows
             row.destroy () =>
-                # When the last one is gone...
-                if @rows.length == 0
+                # When the last one is gone, there will be one empty one...
+                if @rows.length == 1
                     for pilot_str in serialized.split ';'
                         [pilot_id, upgrade_list] = pilot_str.split ':'
                         pilot_id = parseInt pilot_id
@@ -196,6 +193,38 @@ class exportObj.SquadBuilder
                                 selector.selector.change()
                         @rows.push new_pilot_row
                     $('select').trigger 'liszt:updated'
+                # And then remove that initial one.
+                @rows[0].destroy()
+
+    randomSquad: (max_points, max_iterations=1000) ->
+        cur_points = 0
+        iterations = 0
+        pilots = []
+        while iterations < max_iterations and cur_points != max_points
+            iterations++
+            if cur_points < max_points
+                if Math.random() < 0.5
+                    # Try adding a pilot.
+                    $.noop()
+                else
+                    # Try adding an upgrade.
+                    $.noop()
+            else
+                if Math.random() < 0.5
+                    # Try removing a pilot.
+                    $.noop()
+                else
+                    # Try removing an upgrade.
+                    $.noop()
+
+class RandomizerPilot
+    # Pilot and associated upgrades.
+    constructor: (name) ->
+        @name = name
+        @data = exportObj.pilots[name]
+        @ship = @data.ship
+        @upgrades = []
+        @points = 0
 
 class PilotRow
     # Represents a pilot row in the UI.
@@ -216,7 +245,7 @@ class PilotRow
         @row.append @pilot_cell
 
         @pilot_selector = $(document.createElement 'SELECT')
-        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        opt = $(document.createElement 'OPTION')
         if $.isMobile()
             opt.text 'Select a pilot'
             opt.val ''
@@ -233,8 +262,7 @@ class PilotRow
                 if cls.indexOf('ship-') == 0
                     @row.removeClass cls
             if @name == ''
-                @pilot = null
-                @ship = null
+                @destroy()
             else
                 @pilot = exportObj.pilots[@name]
                 @ship = exportObj.ships[@pilot.ship]
@@ -243,24 +271,24 @@ class PilotRow
                     @upgrade_selectors.push new UpgradeSelector @builder, slot, @upgrade_cell
                 shipbg_class = switch @pilot.ship
                     when 'X-Wing'
-                        "xwing#{parseInt(Math.random() * 2)}"
+                        "xwing1"
                     when 'Y-Wing'
                         "ywing0"
                     when 'TIE Fighter'
-                        "tiefighter#{parseInt(Math.random() * 2)}"
+                        "tiefighter0"
                     when 'TIE Advanced'
                         "tieadvanced0"
                     else
                         null
                 if shipbg_class?
                     @row.addClass "ship-#{shipbg_class}"
+                @remove_cell.fadeIn 'fast'
 
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
         if not $.isMobile()
             @pilot_selector.chosen
                 search_contains: true
-                allow_single_deselect: true
         # mouseover handler
         $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
             @builder.showPilotInfo $(e.delegateTarget), @name, @pilot, @ship
@@ -280,9 +308,10 @@ class PilotRow
             e.preventDefault()
             @destroy()
         @row.append @remove_cell
+        @remove_cell.hide()
 
         @update()
-        @pilot_selector.change()
+        #@pilot_selector.change()
 
     update: () ->
         # Update the contents of the selector when another pilot is selected
@@ -299,7 +328,6 @@ class PilotRow
         for pilot in available_pilots
             pilots_by_ship[pilot.ship] = [] if pilot.ship not of pilots_by_ship
             pilots_by_ship[pilot.ship].push pilot
-        window.omg = pilots_by_ship
         for ship, pilots of pilots_by_ship
             pilots.sort exportObj.sortHelper
 
@@ -323,7 +351,7 @@ class PilotRow
         @pilot_selector.val @name
         @pilot_selector.trigger 'liszt:updated'
 
-    destroy: (callback) ->
+    destroy: (callback=$.noop) ->
         # Deregister everything from the builder and remove this row.
         @row.slideUp 'fast', () =>
             @row.remove()
