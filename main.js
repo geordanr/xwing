@@ -5,12 +5,21 @@
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.sortHelper = function(a, b) {
-    a = a.name.replace(/[^a-z0-9]/ig, '');
-    b = b.name.replace(/[^a-z0-9]/ig, '');
-    if (a === b) {
-      return 0;
+    var a_name, b_name;
+    if (a.points === b.points) {
+      a_name = a.name.replace(/[^a-z0-9]/ig, '');
+      b_name = b.name.replace(/[^a-z0-9]/ig, '');
+      if (a_name === b_name) {
+        return 0;
+      } else {
+        if (a_name > b_name) {
+          return 1;
+        } else {
+          return -1;
+        }
+      }
     } else {
-      if (a > b) {
+      if (a.points > b.points) {
         return 1;
       } else {
         return -1;

@@ -3,12 +3,15 @@ exportObj = exports ? this
 # Assumes that cards.js has been loaded already and data is on exportObj.
 
 exportObj.sortHelper = (a, b) ->
-    a = a.name.replace(/[^a-z0-9]/ig, '')
-    b = b.name.replace(/[^a-z0-9]/ig, '')
-    if a == b
-        0
+    if a.points == b.points
+        a_name = a.name.replace(/[^a-z0-9]/ig, '')
+        b_name = b.name.replace(/[^a-z0-9]/ig, '')
+        if a_name == b_name
+            0
+        else
+            if a_name > b_name then 1 else -1
     else
-        if a > b then 1 else -1
+        if a.points > b.points then 1 else -1
 
 # ripped from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
 exportObj.getParameterByName = (name) ->
