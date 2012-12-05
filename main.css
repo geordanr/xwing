@@ -65,5 +65,5 @@ div.info-tooltip table tbody tr.hull th, div.info-tooltip table tbody tr.hull td
 div.info-tooltip table tbody tr.shields th, div.info-tooltip table tbody tr.shields td {
   color: #7ed3e5; }
 
-#urlModal {
-  font-weight: bold; }
+div.permalink {
+  text-align: right; }
