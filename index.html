@@ -121,6 +121,14 @@
       </table>
       <p class='flavortext'></p>
     </div>
+    <div class='reveal-modal' id='rebel-list'>
+      <dl class='text-list'></dl>
+      <a class='close-reveal-modal'>&#215;</a>
+    </div>
+    <div class='reveal-modal' id='empire-list'>
+      <dl class='text-list'></dl>
+      <a class='close-reveal-modal'>&#215;</a>
+    </div>
     <script src='jquery-1.8.3.min.js'></script>
     <script src='foundation/javascripts/foundation.min.js'></script>
     <script src='foundation/javascripts/app.js'></script>
@@ -136,14 +144,14 @@
             faction: 'Rebel Alliance',
             pilot_tooltip: '#rebel-pilot-tooltip',
             upgrade_tooltip: '#rebel-upgrade-tooltip',
-            url_modal: '#urlModal'
+            list_modal: '#rebel-list'
           });
           window.empire_sb = new window.SquadBuilder({
             container: '#empire-builder',
             faction: 'Galactic Empire',
             pilot_tooltip: '#empire-pilot-tooltip',
             upgrade_tooltip: '#empire-upgrade-tooltip',
-            url_modal: '#urlModal'
+            list_modal: '#empire-list'
           });
           return $('dl.tabs dd:first a').click();
         });

@@ -67,3 +67,6 @@ div.info-tooltip table tbody tr.shields th, div.info-tooltip table tbody tr.shie
 
 div.permalink {
   text-align: right; }
+
+dl.text-list ul li {
+  margin-left: 20px; }
