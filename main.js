@@ -40,6 +40,10 @@
     }
   };
 
+  $.isMobile = function() {
+    return navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i);
+  };
+
   exportObj.SquadBuilder = (function() {
 
     function SquadBuilder(args) {
@@ -53,6 +57,8 @@
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
+      this.pilot_tooltip.hide();
+      this.upgrade_tooltip.hide();
       this.status_row = $(document.createElement('DIV'));
       this.status_row.addClass('row');
       this.container.append(this.status_row);
@@ -340,7 +346,8 @@
   PilotRow = (function() {
 
     function PilotRow(builder) {
-      var _this = this;
+      var opt,
+        _this = this;
       this.builder = builder;
       this.name = null;
       this.pilot = null;
@@ -353,7 +360,13 @@
       this.pilot_cell.addClass('four columns');
       this.row.append(this.pilot_cell);
       this.pilot_selector = $(document.createElement('SELECT'));
-      this.pilot_selector.append($(document.createElement('OPTION')));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text('Select a pilot');
+        opt.val('');
+        opt.attr('disabled', true);
+      }
+      this.pilot_selector.append(opt);
       this.pilot_selector.addClass('pilot');
       this.pilot_selector.attr('data-placeholder', 'Select a pilot');
       this.pilot_selector.change(function(e) {
@@ -396,10 +409,12 @@
         return $(window).trigger('xwing:pilotChanged', _this);
       });
       this.pilot_cell.append(this.pilot_selector);
-      this.pilot_selector.chosen({
-        search_contains: true,
-        allow_single_deselect: true
-      });
+      if (!$.isMobile()) {
+        this.pilot_selector.chosen({
+          search_contains: true,
+          allow_single_deselect: true
+        });
+      }
       $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
         return _this.builder.showPilotInfo($(e.delegateTarget), _this.name, _this.pilot, _this.ship);
       });
@@ -425,7 +440,7 @@
     }
 
     PilotRow.prototype.update = function() {
-      var available_pilots, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
+      var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
       available_pilots = this.builder.getAvailablePilots();
       if (this.pilot) {
         available_pilots.push({
@@ -446,7 +461,13 @@
         pilots.sort(exportObj.sortHelper);
       }
       this.pilot_selector.text('');
-      this.pilot_selector.append(document.createElement('OPTION'));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("Select a pilot");
+        opt.val('');
+        opt.attr('disabled', true);
+      }
+      this.pilot_selector.append(opt);
       _ref = Object.keys(pilots_by_ship).sort();
       for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
         ship = _ref[_j];
@@ -484,13 +505,19 @@
   UpgradeSelector = (function() {
 
     function UpgradeSelector(builder, slot, container) {
-      var _this = this;
+      var opt,
+        _this = this;
       this.builder = builder;
       this.slot = slot;
       this.upgrade_name = null;
       this.upgrade = null;
       this.selector = $(document.createElement('SELECT'));
-      this.selector.append($(document.createElement('OPTION')));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No " + this.slot + " Upgrade");
+        opt.val('');
+      }
+      this.selector.append(opt);
       this.selector.addClass('upgrade');
       this.selector.attr('data-placeholder', "Select " + this.slot + " Upgrade");
       this.selector.change(function(e) {
@@ -499,11 +526,13 @@
         return $(window).trigger('xwing:upgradeChanged', _this.selector);
       });
       container.append(this.selector);
-      this.selector.chosen({
-        search_contains: true,
-        allow_single_deselect: true,
-        disable_search_threshold: 8
-      });
+      if (!$.isMobile()) {
+        this.selector.chosen({
+          search_contains: true,
+          allow_single_deselect: true,
+          disable_search_threshold: 8
+        });
+      }
       $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
         return _this.builder.showUpgradeInfo($(e.delegateTarget), _this.upgrade_name, _this.upgrade);
       });
@@ -518,7 +547,7 @@
     }
 
     UpgradeSelector.prototype.update = function() {
-      var available_upgrades, option, upgrade, _i, _len;
+      var available_upgrades, opt, option, upgrade, _i, _len;
       available_upgrades = this.builder.getAvailableUpgrades(this.slot);
       if (this.upgrade && (this.upgrade.unique != null)) {
         available_upgrades.push({
@@ -528,7 +557,12 @@
       }
       available_upgrades.sort(exportObj.sortHelper);
       this.selector.text('');
-      this.selector.append(document.createElement('OPTION'));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No " + this.slot + " Upgrade");
+        opt.val('');
+      }
+      this.selector.append(opt);
       for (_i = 0, _len = available_upgrades.length; _i < _len; _i++) {
         upgrade = available_upgrades[_i];
         option = $(document.createElement('OPTION'));

@@ -24,6 +24,9 @@ exportObj.getParameterByName = (name) ->
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "))
 
+$.isMobile = () ->
+    navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
+
 class exportObj.SquadBuilder
     # Superclass for faction builders.
     # Tracks which pilots are in use.
@@ -45,6 +48,9 @@ class exportObj.SquadBuilder
         @rows = []
         @pilots = []
         @unique_upgrades = []
+
+        @pilot_tooltip.hide()
+        @upgrade_tooltip.hide()
 
         # Add status row
         @status_row = $(document.createElement 'DIV')
@@ -208,7 +214,12 @@ class PilotRow
         @row.append @pilot_cell
 
         @pilot_selector = $(document.createElement 'SELECT')
-        @pilot_selector.append $(document.createElement 'OPTION') # required for allow_single_deselect
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text 'Select a pilot'
+            opt.val ''
+            opt.attr 'disabled', true
+        @pilot_selector.append opt
         @pilot_selector.addClass 'pilot'
         @pilot_selector.attr 'data-placeholder', 'Select a pilot'
         @pilot_selector.change (e) =>
@@ -244,9 +255,10 @@ class PilotRow
 
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
-        @pilot_selector.chosen
-            search_contains: true
-            allow_single_deselect: true
+        if not $.isMobile()
+            @pilot_selector.chosen
+                search_contains: true
+                allow_single_deselect: true
         # mouseover handler
         $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
             @builder.showPilotInfo $(e.delegateTarget), @name, @pilot, @ship
@@ -290,7 +302,12 @@ class PilotRow
             pilots.sort exportObj.sortHelper
 
         @pilot_selector.text ''
-        @pilot_selector.append document.createElement 'OPTION'
+        opt = $(document.createElement 'OPTION')
+        if $.isMobile()
+            opt.text "Select a pilot"
+            opt.val ''
+            opt.attr 'disabled', true
+        @pilot_selector.append opt
         for ship in Object.keys(pilots_by_ship).sort()
             optgroup = $(document.createElement 'OPTGROUP')
             optgroup.attr 'label', ship
@@ -323,7 +340,11 @@ class UpgradeSelector
         @upgrade = null
 
         @selector = $(document.createElement 'SELECT')
-        @selector.append $(document.createElement 'OPTION') # required for allow_single_deselect
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No #{@slot} Upgrade"
+            opt.val ''
+        @selector.append opt
         @selector.addClass 'upgrade'
         @selector.attr 'data-placeholder', "Select #{@slot} Upgrade"
         @selector.change (e) =>
@@ -331,10 +352,11 @@ class UpgradeSelector
             @upgrade = exportObj.upgrades[@selector.val()]
             $(window).trigger 'xwing:upgradeChanged', @selector
         container.append @selector
-        @selector.chosen
-            search_contains: true
-            allow_single_deselect: true
-            disable_search_threshold: 8
+        if not $.isMobile()
+            @selector.chosen
+                search_contains: true
+                allow_single_deselect: true
+                disable_search_threshold: 8
         $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
             @builder.showUpgradeInfo $(e.delegateTarget), @upgrade_name, @upgrade
         $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>
@@ -355,7 +377,11 @@ class UpgradeSelector
         available_upgrades.sort exportObj.sortHelper
 
         @selector.text ''
-        @selector.append document.createElement 'OPTION'
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No #{@slot} Upgrade"
+            opt.val ''
+        @selector.append opt
         for upgrade in available_upgrades
             option = $(document.createElement 'OPTION')
             option.text "#{upgrade.name} (#{upgrade.points})"
