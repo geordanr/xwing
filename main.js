@@ -87,6 +87,8 @@
       get_url_button.click(function(e) {
         e.preventDefault();
         _this.url_modal.find('input').val("" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
+        _this.url_modal.find('a.url-placeholder').attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
+        _this.url_modal.find('a.url-placeholder').text("" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
         return _this.url_modal.reveal();
       });
       button_cell.append(get_url_button);
