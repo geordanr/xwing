@@ -130,6 +130,7 @@ class exportObj.SquadBuilder
             for selector in row.upgrade_selectors
                 total += parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
         @points_cell.text "Points: #{total}"
+        @list_modal.find('span.total').text total
 
     updatePermalink: () ->
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
@@ -267,7 +268,7 @@ class PilotRow
                     @row.addClass "ship-#{shipbg_class}"
                 @remove_cell.fadeIn 'fast'
 
-                @list_dd.text @name
+                @list_dd.text "#{@name} (#{@pilot.points})"
 
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
@@ -379,7 +380,7 @@ class UpgradeSelector
             @upgrade = exportObj.upgrades[@selector.val()]
             if @upgrade_name? and @upgrade_name != ''
                 @list_li.show()
-                @list_li.text @upgrade_name
+                @list_li.text "#{@upgrade_name} (#{@upgrade.points})"
             else
                 @list_li.hide()
             $(window).trigger 'xwing:upgradeChanged', @selector

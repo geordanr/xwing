@@ -169,7 +169,8 @@
           total += parseInt((_ref6 = (_ref7 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref7.points : void 0) != null ? _ref6 : 0);
         }
       }
-      return this.points_cell.text("Points: " + total);
+      this.points_cell.text("Points: " + total);
+      return this.list_modal.find('span.total').text(total);
     };
 
     SquadBuilder.prototype.updatePermalink = function() {
@@ -418,7 +419,7 @@
           }).call(_this);
           if (shipbg_class != null) _this.row.addClass("ship-" + shipbg_class);
           _this.remove_cell.fadeIn('fast');
-          _this.list_dd.text(_this.name);
+          _this.list_dd.text("" + _this.name + " (" + _this.pilot.points + ")");
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
@@ -548,7 +549,7 @@
         _this.upgrade = exportObj.upgrades[_this.selector.val()];
         if ((_this.upgrade_name != null) && _this.upgrade_name !== '') {
           _this.list_li.show();
-          _this.list_li.text(_this.upgrade_name);
+          _this.list_li.text("" + _this.upgrade_name + " (" + _this.upgrade.points + ")");
         } else {
           _this.list_li.hide();
         }
