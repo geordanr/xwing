@@ -96,7 +96,8 @@
       %p.flavortext
 
     #urlModal.reveal-modal.large
-      %input{:type => 'text', :readonly => 'readonly'}
+      %input.hide-for-touch{:type => 'text', :readonly => 'readonly'}
+      %a.url-placeholder.show-for-touch{:href => '#'}
       %a.close-reveal-modal &#215;
 
     -# Foundation/JS linkages

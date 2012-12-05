@@ -82,6 +82,8 @@ class exportObj.SquadBuilder
         get_url_button.click (e) =>
             e.preventDefault()
             @url_modal.find('input').val "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+            @url_modal.find('a.url-placeholder').attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+            @url_modal.find('a.url-placeholder').text "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
             @url_modal.reveal()
         button_cell.append get_url_button
 
