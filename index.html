@@ -135,15 +135,14 @@
       (function() {
       
         $(document).ready(function() {
-          var empire_sb, rebel_sb;
-          window.foo = rebel_sb = new window.SquadBuilder({
+          window.rebel_sb = new window.SquadBuilder({
             container: '#rebel-builder',
             faction: 'Rebel Alliance',
             pilot_tooltip: '#rebel-pilot-tooltip',
             upgrade_tooltip: '#rebel-upgrade-tooltip',
             url_modal: '#urlModal'
           });
-          window.bar = empire_sb = new window.SquadBuilder({
+          window.empire_sb = new window.SquadBuilder({
             container: '#empire-builder',
             faction: 'Galactic Empire',
             pilot_tooltip: '#empire-pilot-tooltip',
