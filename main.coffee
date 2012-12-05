@@ -42,6 +42,7 @@ class exportObj.SquadBuilder
         @faction = args.faction
         @pilot_tooltip = $(args.pilot_tooltip)
         @upgrade_tooltip = $(args.upgrade_tooltip)
+        @list_modal = $(args.list_modal)
 
         # internal state
         @rows = []
@@ -76,6 +77,14 @@ class exportObj.SquadBuilder
         button_cell = $(document.createElement 'DIV')
         button_cell.addClass 'twelve columns'
         @button_row.append button_cell
+        @view_list_button = $(document.createElement 'BUTTON')
+        @view_list_button.addClass 'nice radius button'
+        @view_list_button.text 'View as text'
+        @view_list_button.click (e) =>
+            e.preventDefault()
+            @list_modal.reveal()
+        button_cell.append @view_list_button
+        @view_list_button.hide()
 
         $(window).bind 'xwing:pilotChanged', (e, triggering_row) =>
             @pilots = (row.name for row in @rows when row.name? and row.name != '')
@@ -87,6 +96,10 @@ class exportObj.SquadBuilder
             if @rows.length == @pilots.length
                 @rows.push new PilotRow this
             @updatePermalink()
+            if @pilots.length > 0
+                @view_list_button.show()
+            else
+                @view_list_button.hide()
 
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
@@ -196,36 +209,6 @@ class exportObj.SquadBuilder
                 # And then remove that initial one.
                 @rows[0].destroy()
 
-    randomSquad: (max_points, max_iterations=1000) ->
-        cur_points = 0
-        iterations = 0
-        pilots = []
-        while iterations < max_iterations and cur_points != max_points
-            iterations++
-            if cur_points < max_points
-                if Math.random() < 0.5
-                    # Try adding a pilot.
-                    $.noop()
-                else
-                    # Try adding an upgrade.
-                    $.noop()
-            else
-                if Math.random() < 0.5
-                    # Try removing a pilot.
-                    $.noop()
-                else
-                    # Try removing an upgrade.
-                    $.noop()
-
-class RandomizerPilot
-    # Pilot and associated upgrades.
-    constructor: (name) ->
-        @name = name
-        @data = exportObj.pilots[name]
-        @ship = @data.ship
-        @upgrades = []
-        @points = 0
-
 class PilotRow
     # Represents a pilot row in the UI.
     constructor: (builder) ->
@@ -268,7 +251,7 @@ class PilotRow
                 @ship = exportObj.ships[@pilot.ship]
                 #  Set upgrade selectors
                 for slot in @pilot.slots
-                    @upgrade_selectors.push new UpgradeSelector @builder, slot, @upgrade_cell
+                    @upgrade_selectors.push new UpgradeSelector this, slot, @upgrade_cell
                 shipbg_class = switch @pilot.ship
                     when 'X-Wing'
                         "xwing1"
@@ -283,6 +266,8 @@ class PilotRow
                 if shipbg_class?
                     @row.addClass "ship-#{shipbg_class}"
                 @remove_cell.fadeIn 'fast'
+
+                @list_dd.text @name
 
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
@@ -309,6 +294,14 @@ class PilotRow
             @destroy()
         @row.append @remove_cell
         @remove_cell.hide()
+
+        # Add to text list
+        @list_dd = $(document.createElement 'DD')
+        @builder.list_modal.find('dl').append @list_dd
+        @list_dt = $(document.createElement 'DT')
+        @builder.list_modal.find('dl').append @list_dt
+        @list_ul = $(document.createElement 'UL')
+        @list_dt.append @list_ul
 
         @update()
         #@pilot_selector.change()
@@ -355,6 +348,9 @@ class PilotRow
         # Deregister everything from the builder and remove this row.
         @row.slideUp 'fast', () =>
             @row.remove()
+            @list_dd.remove()
+            @list_dt.remove()
+            @list_ul.remove()
             @builder.rows.splice @builder.rows.indexOf(this), 1
             $(window).trigger 'xwing:pilotChanged', null
             $(window).trigger 'xwing:upgradeChanged', null
@@ -363,8 +359,9 @@ class PilotRow
 class UpgradeSelector
     # Represents an upgrade selector in the UI.
 
-    constructor: (builder, slot, container) ->
-        @builder = builder
+    constructor: (row, slot, container) ->
+        @row = row
+        @builder = @row.builder
         @slot = slot
         @upgrade_name = null
         @upgrade = null
@@ -380,6 +377,11 @@ class UpgradeSelector
         @selector.change (e) =>
             @upgrade_name = @selector.val()
             @upgrade = exportObj.upgrades[@selector.val()]
+            if @upgrade_name? and @upgrade_name != ''
+                @list_li.show()
+                @list_li.text @upgrade_name
+            else
+                @list_li.hide()
             $(window).trigger 'xwing:upgradeChanged', @selector
         container.append @selector
         if not $.isMobile()
@@ -394,8 +396,12 @@ class UpgradeSelector
         $("##{@selector.attr 'id'}_chzn a.chzn-single").click (e) =>
             @builder.upgrade_tooltip.hide()
 
+        @list_li = $(document.createElement 'LI')
+        @row.list_ul.append @list_li
+        @list_li.hide()
+
         @update()
-        @selector.change()
+        #@selector.change()
 
     update: () ->
         available_upgrades = @builder.getAvailableUpgrades @slot

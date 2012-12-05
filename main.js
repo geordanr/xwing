@@ -1,5 +1,5 @@
 (function() {
-  var PilotRow, RandomizerPilot, UpgradeSelector, exportObj,
+  var PilotRow, UpgradeSelector, exportObj,
     __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -53,6 +53,7 @@
       this.faction = args.faction;
       this.pilot_tooltip = $(args.pilot_tooltip);
       this.upgrade_tooltip = $(args.upgrade_tooltip);
+      this.list_modal = $(args.list_modal);
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
@@ -78,6 +79,15 @@
       button_cell = $(document.createElement('DIV'));
       button_cell.addClass('twelve columns');
       this.button_row.append(button_cell);
+      this.view_list_button = $(document.createElement('BUTTON'));
+      this.view_list_button.addClass('nice radius button');
+      this.view_list_button.text('View as text');
+      this.view_list_button.click(function(e) {
+        e.preventDefault();
+        return _this.list_modal.reveal();
+      });
+      button_cell.append(this.view_list_button);
+      this.view_list_button.hide();
       $(window).bind('xwing:pilotChanged', function(e, triggering_row) {
         var row, _i, _len, _ref;
         _this.pilots = (function() {
@@ -100,7 +110,12 @@
         if (_this.rows.length === _this.pilots.length) {
           _this.rows.push(new PilotRow(_this));
         }
-        return _this.updatePermalink();
+        _this.updatePermalink();
+        if (_this.pilots.length > 0) {
+          return _this.view_list_button.show();
+        } else {
+          return _this.view_list_button.hide();
+        }
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
         var row, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4, _ref5;
@@ -337,47 +352,7 @@
       return _results;
     };
 
-    SquadBuilder.prototype.randomSquad = function(max_points, max_iterations) {
-      var cur_points, iterations, pilots, _results;
-      if (max_iterations == null) max_iterations = 1000;
-      cur_points = 0;
-      iterations = 0;
-      pilots = [];
-      _results = [];
-      while (iterations < max_iterations && cur_points !== max_points) {
-        iterations++;
-        if (cur_points < max_points) {
-          if (Math.random() < 0.5) {
-            _results.push($.noop());
-          } else {
-            _results.push($.noop());
-          }
-        } else {
-          if (Math.random() < 0.5) {
-            _results.push($.noop());
-          } else {
-            _results.push($.noop());
-          }
-        }
-      }
-      return _results;
-    };
-
     return SquadBuilder;
-
-  })();
-
-  RandomizerPilot = (function() {
-
-    function RandomizerPilot(name) {
-      this.name = name;
-      this.data = exportObj.pilots[name];
-      this.ship = this.data.ship;
-      this.upgrades = [];
-      this.points = 0;
-    }
-
-    return RandomizerPilot;
 
   })();
 
@@ -425,7 +400,7 @@
           _ref2 = _this.pilot.slots;
           for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
             slot = _ref2[_j];
-            _this.upgrade_selectors.push(new UpgradeSelector(_this.builder, slot, _this.upgrade_cell));
+            _this.upgrade_selectors.push(new UpgradeSelector(_this, slot, _this.upgrade_cell));
           }
           shipbg_class = (function() {
             switch (this.pilot.ship) {
@@ -443,6 +418,7 @@
           }).call(_this);
           if (shipbg_class != null) _this.row.addClass("ship-" + shipbg_class);
           _this.remove_cell.fadeIn('fast');
+          _this.list_dd.text(_this.name);
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
@@ -473,6 +449,12 @@
       });
       this.row.append(this.remove_cell);
       this.remove_cell.hide();
+      this.list_dd = $(document.createElement('DD'));
+      this.builder.list_modal.find('dl').append(this.list_dd);
+      this.list_dt = $(document.createElement('DT'));
+      this.builder.list_modal.find('dl').append(this.list_dt);
+      this.list_ul = $(document.createElement('UL'));
+      this.list_dt.append(this.list_ul);
       this.update();
     }
 
@@ -528,6 +510,9 @@
       if (callback == null) callback = $.noop;
       return this.row.slideUp('fast', function() {
         _this.row.remove();
+        _this.list_dd.remove();
+        _this.list_dt.remove();
+        _this.list_ul.remove();
         _this.builder.rows.splice(_this.builder.rows.indexOf(_this), 1);
         $(window).trigger('xwing:pilotChanged', null);
         $(window).trigger('xwing:upgradeChanged', null);
@@ -541,10 +526,11 @@
 
   UpgradeSelector = (function() {
 
-    function UpgradeSelector(builder, slot, container) {
+    function UpgradeSelector(row, slot, container) {
       var opt,
         _this = this;
-      this.builder = builder;
+      this.row = row;
+      this.builder = this.row.builder;
       this.slot = slot;
       this.upgrade_name = null;
       this.upgrade = null;
@@ -560,6 +546,12 @@
       this.selector.change(function(e) {
         _this.upgrade_name = _this.selector.val();
         _this.upgrade = exportObj.upgrades[_this.selector.val()];
+        if ((_this.upgrade_name != null) && _this.upgrade_name !== '') {
+          _this.list_li.show();
+          _this.list_li.text(_this.upgrade_name);
+        } else {
+          _this.list_li.hide();
+        }
         return $(window).trigger('xwing:upgradeChanged', _this.selector);
       });
       container.append(this.selector);
@@ -579,8 +571,10 @@
       $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
         return _this.builder.upgrade_tooltip.hide();
       });
+      this.list_li = $(document.createElement('LI'));
+      this.row.list_ul.append(this.list_li);
+      this.list_li.hide();
       this.update();
-      this.selector.change();
     }
 
     UpgradeSelector.prototype.update = function() {
