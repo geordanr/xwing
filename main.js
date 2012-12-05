@@ -81,7 +81,7 @@
       this.button_row.append(button_cell);
       this.view_list_button = $(document.createElement('BUTTON'));
       this.view_list_button.addClass('nice radius button');
-      this.view_list_button.text('View as text');
+      this.view_list_button.text('View list as text');
       this.view_list_button.click(function(e) {
         e.preventDefault();
         return _this.list_modal.reveal();

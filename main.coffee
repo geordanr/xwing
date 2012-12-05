@@ -79,7 +79,7 @@ class exportObj.SquadBuilder
         @button_row.append button_cell
         @view_list_button = $(document.createElement 'BUTTON')
         @view_list_button.addClass 'nice radius button'
-        @view_list_button.text 'View as text'
+        @view_list_button.text 'View list as text'
         @view_list_button.click (e) =>
             e.preventDefault()
             @list_modal.reveal()
