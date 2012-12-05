@@ -1,5 +1,5 @@
-X-Wing Miniatures Squad Builder
-===============================
+(Yet Another) X-Wing Miniatures Squad Builder
+=============================================
 
 What?
 -----
