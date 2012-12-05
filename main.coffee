@@ -90,14 +90,14 @@ class exportObj.SquadBuilder
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
             for row in @rows
-                for upgrade in (selector.upgrade for selector in row.upgrade_selectors)
-                    if upgrade?.unique?
-                        @unique_upgrades.push(selector.upgrade_name)
+                for upgrade_selector in row.upgrade_selectors
+                    if upgrade_selector.upgrade?.unique?
+                        @unique_upgrades.push(upgrade_selector.upgrade_name)
             # Update the other selectors
             for row in @rows
-                for selector in row.upgrade_selectors
-                    if selector != triggering_selector
-                        selector.update()
+                for upgrade_selector in row.upgrade_selectors
+                    if upgrade_selector != triggering_selector
+                        upgrade_selector.update()
             @updatePoints()
             @upgrade_tooltip.hide()
 

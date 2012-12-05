@@ -105,35 +105,28 @@
         return _this.pilot_tooltip.hide();
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
-        var row, selector, upgrade, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4;
+        var row, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4, _ref5;
         _this.unique_upgrades = [];
         _ref = _this.rows;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           row = _ref[_i];
-          _ref2 = (function() {
-            var _k, _len2, _ref2, _results;
-            _ref2 = row.upgrade_selectors;
-            _results = [];
-            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-              selector = _ref2[_k];
-              _results.push(selector.upgrade);
-            }
-            return _results;
-          })();
+          _ref2 = row.upgrade_selectors;
           for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-            upgrade = _ref2[_j];
-            if ((upgrade != null ? upgrade.unique : void 0) != null) {
-              _this.unique_upgrades.push(selector.upgrade_name);
+            upgrade_selector = _ref2[_j];
+            if (((_ref3 = upgrade_selector.upgrade) != null ? _ref3.unique : void 0) != null) {
+              _this.unique_upgrades.push(upgrade_selector.upgrade_name);
             }
           }
         }
-        _ref3 = _this.rows;
-        for (_k = 0, _len3 = _ref3.length; _k < _len3; _k++) {
-          row = _ref3[_k];
-          _ref4 = row.upgrade_selectors;
-          for (_l = 0, _len4 = _ref4.length; _l < _len4; _l++) {
-            selector = _ref4[_l];
-            if (selector !== triggering_selector) selector.update();
+        _ref4 = _this.rows;
+        for (_k = 0, _len3 = _ref4.length; _k < _len3; _k++) {
+          row = _ref4[_k];
+          _ref5 = row.upgrade_selectors;
+          for (_l = 0, _len4 = _ref5.length; _l < _len4; _l++) {
+            upgrade_selector = _ref5[_l];
+            if (upgrade_selector !== triggering_selector) {
+              upgrade_selector.update();
+            }
           }
         }
         _this.updatePoints();
