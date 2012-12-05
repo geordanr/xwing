@@ -116,7 +116,7 @@ class exportObj.SquadBuilder
     getAvailablePilots: () ->
         # Returns list of available pilot names for this faction.
         ships = (ship_name for ship_name, ship_data of exportObj.ships when ship_data.faction == @faction)
-        ({name: pilot_name, points: pilot_data.points} for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships and (not pilot_data.unique? or pilot_name not in @pilots))
+        ({name: pilot_name, points: pilot_data.points, ship: pilot_data.ship} for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships and (not pilot_data.unique? or pilot_name not in @pilots))
 
     getAvailableUpgrades: (slot) ->
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades).sort exportObj.sortHelper
@@ -276,15 +276,28 @@ class PilotRow
             available_pilots.push
                 name: @name
                 points: @pilot.points
-        available_pilots.sort exportObj.sortHelper
+                ship: @pilot.ship
+        # Organize by ship
+        pilots_by_ship = {}
+        for pilot in available_pilots
+            pilots_by_ship[pilot.ship] = [] if pilot.ship not of pilots_by_ship
+            pilots_by_ship[pilot.ship].push pilot
+        window.omg = pilots_by_ship
+        for ship, pilots of pilots_by_ship
+            pilots.sort exportObj.sortHelper
 
         @pilot_selector.text ''
         @pilot_selector.append document.createElement 'OPTION'
-        for pilot in available_pilots
-            option = $(document.createElement 'OPTION')
-            option.text "#{pilot.name} (#{pilot.points})"
-            option.val pilot.name
-            @pilot_selector.append option
+        for ship in Object.keys(pilots_by_ship).sort()
+            optgroup = $(document.createElement 'OPTGROUP')
+            optgroup.attr 'label', ship
+            @pilot_selector.append optgroup
+            for pilot in pilots_by_ship[ship]
+                option = $(document.createElement 'OPTION')
+                option.text "#{pilot.name} (#{pilot.points})"
+                option.val pilot.name
+                optgroup.append option
+
         @pilot_selector.val @name
         @pilot_selector.trigger 'liszt:updated'
 
