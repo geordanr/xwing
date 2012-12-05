@@ -340,6 +340,7 @@ exportObj.upgrades =
                 Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
     "Squad Leader":
         id: 10
+        unique: true
         slot: "Elite"
         points: 2
         text: """Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.
