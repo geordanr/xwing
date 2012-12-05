@@ -301,6 +301,7 @@
     },
     "Squad Leader": {
       id: 10,
+      unique: true,
       slot: "Elite",
       points: 2,
       text: "Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.\n\nThe chosen ship my immediately perform 1 free action."
