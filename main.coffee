@@ -126,14 +126,23 @@ class exportObj.SquadBuilder
         total = 0
         for row in @rows
             row_points = 0
+
             if row.name? and row.name != ''
                 pilot_points = parseInt row.pilot.points
                 total += pilot_points
                 row_points += pilot_points
-            for selector in row.upgrade_selectors
-                upgrade_points = parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
-                total += upgrade_points
-                row_points += upgrade_points
+
+                for selector in row.upgrade_selectors
+                    upgrade_points = parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
+                    total += upgrade_points
+                    row_points += upgrade_points
+
+                if row_points != pilot_points
+                    row.pilot_points_li.text "Total: #{row_points}"
+                    row.pilot_points_li.show()
+                else
+                    row.pilot_points_li.hide()
+
             row.pilot_points_cell.text row_points
         @points_cell.text "Points: #{total}"
         @list_modal.find('span.total').text total
@@ -228,7 +237,7 @@ class PilotRow
         # set up UI elements
         @row = $(document.createElement 'DIV')
         @row.addClass 'row pilot'
-        @row.insertBefore @builder.button_row
+        @builder.button_row.before @row
 
         @pilot_cell = $(document.createElement 'DIV')
         @pilot_cell.addClass 'four columns'
@@ -315,6 +324,9 @@ class PilotRow
         @builder.list_modal.find('dl').append @list_dt
         @list_ul = $(document.createElement 'UL')
         @list_dt.append @list_ul
+        @pilot_points_li = $(document.createElement 'SPAN')
+        @list_ul.append @pilot_points_li
+        @pilot_points_li.hide()
 
         @update()
         #@pilot_selector.change()
@@ -410,7 +422,7 @@ class UpgradeSelector
             @builder.upgrade_tooltip.hide()
 
         @list_li = $(document.createElement 'LI')
-        @row.list_ul.append @list_li
+        @row.pilot_points_li.before @list_li
         @list_li.hide()
 
         @update()

@@ -163,13 +163,19 @@
           pilot_points = parseInt(row.pilot.points);
           total += pilot_points;
           row_points += pilot_points;
-        }
-        _ref2 = row.upgrade_selectors;
-        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-          selector = _ref2[_j];
-          upgrade_points = parseInt((_ref3 = (_ref4 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref4.points : void 0) != null ? _ref3 : 0);
-          total += upgrade_points;
-          row_points += upgrade_points;
+          _ref2 = row.upgrade_selectors;
+          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+            selector = _ref2[_j];
+            upgrade_points = parseInt((_ref3 = (_ref4 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref4.points : void 0) != null ? _ref3 : 0);
+            total += upgrade_points;
+            row_points += upgrade_points;
+          }
+          if (row_points !== pilot_points) {
+            row.pilot_points_li.text("Total: " + row_points);
+            row.pilot_points_li.show();
+          } else {
+            row.pilot_points_li.hide();
+          }
         }
         row.pilot_points_cell.text(row_points);
       }
@@ -373,7 +379,7 @@
       this.upgrade_selectors = [];
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row pilot');
-      this.row.insertBefore(this.builder.button_row);
+      this.builder.button_row.before(this.row);
       this.pilot_cell = $(document.createElement('DIV'));
       this.pilot_cell.addClass('four columns');
       this.row.append(this.pilot_cell);
@@ -465,6 +471,9 @@
       this.builder.list_modal.find('dl').append(this.list_dt);
       this.list_ul = $(document.createElement('UL'));
       this.list_dt.append(this.list_ul);
+      this.pilot_points_li = $(document.createElement('SPAN'));
+      this.list_ul.append(this.pilot_points_li);
+      this.pilot_points_li.hide();
       this.update();
     }
 
@@ -582,7 +591,7 @@
         return _this.builder.upgrade_tooltip.hide();
       });
       this.list_li = $(document.createElement('LI'));
-      this.row.list_ul.append(this.list_li);
+      this.row.pilot_points_li.before(this.list_li);
       this.list_li.hide();
       this.update();
     }
