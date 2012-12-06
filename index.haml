@@ -20,9 +20,9 @@
 
     %dl.tabs.two-up
       %dd
-        %a{:href => '#rebelContent'} Rebel Alliance
+        %a#rebelTab{:href => '#rebelContent'} Rebel Alliance
       %dd
-        %a{:href => '#empireContent'} Galactic Empire
+        %a#empireTab{:href => '#empireContent'} Galactic Empire
     %ul.tabs-content
       %li#rebelContentTab
         #rebel-builder
@@ -129,4 +129,10 @@
             pilot_tooltip: '#empire-pilot-tooltip'
             upgrade_tooltip: '#empire-upgrade-tooltip'
             list_modal: '#empire-list'
-        $('dl.tabs dd:first a').click()
+        switch window.getParameterByName 'f'
+          when 'Rebel Alliance'
+              $('#rebelTab').click()
+          when 'Galactic Empire'
+              $('#empireTab').click()
+          else
+              $('#rebelTab').click()

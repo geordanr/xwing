@@ -15,10 +15,10 @@
     <p></p>
     <dl class='tabs two-up'>
       <dd>
-        <a href='#rebelContent'>Rebel Alliance</a>
+        <a href='#rebelContent' id='rebelTab'>Rebel Alliance</a>
       </dd>
       <dd>
-        <a href='#empireContent'>Galactic Empire</a>
+        <a href='#empireContent' id='empireTab'>Galactic Empire</a>
       </dd>
     </dl>
     <ul class='tabs-content'>
@@ -161,7 +161,14 @@
             upgrade_tooltip: '#empire-upgrade-tooltip',
             list_modal: '#empire-list'
           });
-          return $('dl.tabs dd:first a').click();
+          switch (window.getParameterByName('f')) {
+            case 'Galactic Empire':
+              return $('#empireTab').click();
+            case 'Rebel Alliance':
+              return $('#rebelTab').click();
+            default:
+              return $('#rebelTab').click();
+          }
         });
       
       }).call(this);
