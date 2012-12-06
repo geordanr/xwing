@@ -153,21 +153,25 @@
     }
 
     SquadBuilder.prototype.updatePoints = function() {
-      var pilot, row, selector, total, _i, _j, _k, _len, _len2, _len3, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4;
       total = 0;
-      _ref = this.pilots;
+      _ref = this.rows;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        pilot = _ref[_i];
-        total += parseInt((_ref2 = (_ref3 = exportObj.pilots[pilot]) != null ? _ref3.points : void 0) != null ? _ref2 : 0);
-      }
-      _ref4 = this.rows;
-      for (_j = 0, _len2 = _ref4.length; _j < _len2; _j++) {
-        row = _ref4[_j];
-        _ref5 = row.upgrade_selectors;
-        for (_k = 0, _len3 = _ref5.length; _k < _len3; _k++) {
-          selector = _ref5[_k];
-          total += parseInt((_ref6 = (_ref7 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref7.points : void 0) != null ? _ref6 : 0);
+        row = _ref[_i];
+        row_points = 0;
+        if ((row.name != null) && row.name !== '') {
+          pilot_points = parseInt(row.pilot.points);
+          total += pilot_points;
+          row_points += pilot_points;
         }
+        _ref2 = row.upgrade_selectors;
+        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+          selector = _ref2[_j];
+          upgrade_points = parseInt((_ref3 = (_ref4 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref4.points : void 0) != null ? _ref3 : 0);
+          total += upgrade_points;
+          row_points += upgrade_points;
+        }
+        row.pilot_points_cell.text(row_points);
       }
       this.points_cell.text("Points: " + total);
       return this.list_modal.find('span.total').text(total);
@@ -420,6 +424,7 @@
           if (shipbg_class != null) _this.row.addClass("ship-" + shipbg_class);
           _this.remove_cell.fadeIn('fast');
           _this.list_dd.text("" + _this.name + " (" + _this.pilot.points + ")");
+          _this.pilot_points_cell.show();
         }
         return $(window).trigger('xwing:pilotChanged', _this);
       });
@@ -438,8 +443,12 @@
       $("#" + (this.pilot_selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
         return _this.builder.pilot_tooltip.hide();
       });
+      this.pilot_points_cell = $(document.createElement('DIV'));
+      this.pilot_points_cell.addClass('one column points');
+      this.row.append(this.pilot_points_cell);
+      this.pilot_points_cell.hide();
       this.upgrade_cell = $(document.createElement('DIV'));
-      this.upgrade_cell.addClass('seven columns upgrades');
+      this.upgrade_cell.addClass('six columns upgrades');
       this.row.append(this.upgrade_cell);
       this.remove_cell = $(document.createElement('DIV'));
       this.remove_cell.addClass('one column');

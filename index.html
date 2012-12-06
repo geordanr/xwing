@@ -162,10 +162,10 @@
             list_modal: '#empire-list'
           });
           switch (window.getParameterByName('f')) {
-            case 'Galactic Empire':
-              return $('#empireTab').click();
             case 'Rebel Alliance':
               return $('#rebelTab').click();
+            case 'Galactic Empire':
+              return $('#empireTab').click();
             default:
               return $('#rebelTab').click();
           }

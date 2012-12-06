@@ -124,11 +124,17 @@ class exportObj.SquadBuilder
 
     updatePoints: () ->
         total = 0
-        for pilot in @pilots
-            total += parseInt(exportObj.pilots[pilot]?.points ? 0)
         for row in @rows
+            row_points = 0
+            if row.name? and row.name != ''
+                pilot_points = parseInt row.pilot.points
+                total += pilot_points
+                row_points += pilot_points
             for selector in row.upgrade_selectors
-                total += parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
+                upgrade_points = parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
+                total += upgrade_points
+                row_points += upgrade_points
+            row.pilot_points_cell.text row_points
         @points_cell.text "Points: #{total}"
         @list_modal.find('span.total').text total
 
@@ -269,6 +275,7 @@ class PilotRow
                 @remove_cell.fadeIn 'fast'
 
                 @list_dd.text "#{@name} (#{@pilot.points})"
+                @pilot_points_cell.show()
 
             $(window).trigger 'xwing:pilotChanged', this
         @pilot_cell.append @pilot_selector
@@ -283,8 +290,13 @@ class PilotRow
         $("##{@pilot_selector.attr 'id'}_chzn a.chzn-single").click (e) =>
             @builder.pilot_tooltip.hide()
 
+        @pilot_points_cell = $(document.createElement 'DIV')
+        @pilot_points_cell.addClass 'one column points'
+        @row.append @pilot_points_cell
+        @pilot_points_cell.hide()
+
         @upgrade_cell = $(document.createElement 'DIV')
-        @upgrade_cell.addClass 'seven columns upgrades'
+        @upgrade_cell.addClass 'six columns upgrades'
         @row.append @upgrade_cell
 
         @remove_cell = $(document.createElement 'DIV')
