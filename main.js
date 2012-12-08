@@ -238,6 +238,7 @@
       if ((pilot_name != null) && pilot_name !== '') {
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
+        this.pilot_tooltip.find('.skill td').text(pilot_data.skill);
         this.pilot_tooltip.find('.attack td').text(ship.attack);
         this.pilot_tooltip.find('.agility td').text(ship.agility);
         this.pilot_tooltip.find('.hull td').text(ship.hull);

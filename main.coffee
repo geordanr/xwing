@@ -162,6 +162,7 @@ class exportObj.SquadBuilder
         if pilot_name? and pilot_name != ''
             @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
+            @pilot_tooltip.find('.skill td').text pilot_data.skill
             @pilot_tooltip.find('.attack td').text ship.attack
             @pilot_tooltip.find('.agility td').text ship.agility
             @pilot_tooltip.find('.hull td').text ship.hull
