@@ -274,10 +274,14 @@ class PilotRow
                         "xwing1"
                     when 'Y-Wing'
                         "ywing0"
+                    when 'A-Wing'
+                        "awing0"
                     when 'TIE Fighter'
                         "tiefighter0"
                     when 'TIE Advanced'
                         "tieadvanced0"
+                    when 'TIE Interceptor'
+                        "tieinterceptor0"
                     else
                         null
                 if shipbg_class?

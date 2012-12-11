@@ -420,10 +420,14 @@
                 return "xwing1";
               case 'Y-Wing':
                 return "ywing0";
+              case 'A-Wing':
+                return "awing0";
               case 'TIE Fighter':
                 return "tiefighter0";
               case 'TIE Advanced':
                 return "tieadvanced0";
+              case 'TIE Interceptor':
+                return "tieinterceptor0";
               default:
                 return null;
             }
