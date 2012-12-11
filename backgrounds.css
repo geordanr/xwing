@@ -13,6 +13,11 @@
   background-repeat: no-repeat;
   background-position: 0px -20px; }
 
+.ship-awing0 {
+  background-image: url("images/awing0.png");
+  background-repeat: no-repeat;
+  background-position: 250px -60px; }
+
 .ship-tiefighter0 {
   background-image: url("images/tiefighter0.png");
   background-repeat: no-repeat;
@@ -27,3 +32,8 @@
   background-image: url("images/tieadvanced0.png");
   background-repeat: no-repeat;
   background-position: 120px -50px; }
+
+.ship-tieinterceptor0 {
+  background-image: url("images/tieinterceptor0.png");
+  background-repeat: no-repeat;
+  background-position: 200px -70px; }
