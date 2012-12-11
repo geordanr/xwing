@@ -20,6 +20,30 @@
       shields: 3,
       actions: ["Focus", "Target Lock"]
     },
+    "A-Wing": {
+      faction: "Rebel Alliance",
+      attack: 2,
+      agility: 3,
+      hull: 2,
+      shields: 2,
+      actions: ["Focus", "Target Lock", "Boost", "Evade"]
+    },
+    "YT-1300": {
+      faction: "Rebel Alliance",
+      attack: 2,
+      agility: 1,
+      hull: 6,
+      shields: 4,
+      actions: ["Focus", "Target Lock"]
+    },
+    "Millennium Falcon": {
+      faction: "Rebel Alliance",
+      attack: 3,
+      agility: 1,
+      hull: 8,
+      shields: 5,
+      actions: ["Focus", "Target Lock"]
+    },
     "TIE Fighter": {
       faction: "Galactic Empire",
       attack: 2,
@@ -35,6 +59,14 @@
       hull: 3,
       shields: 2,
       actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"]
+    },
+    "TIE Interceptor": {
+      faction: "Galactic Empire",
+      attack: 3,
+      agility: 3,
+      hull: 3,
+      shields: 0,
+      actions: ["Focus", "Barrel Roll", "Boost", "Evade"]
     }
   };
 
@@ -227,6 +259,86 @@
       points: 29,
       slots: ["Elite", "Missile"],
       text: "During your \"Perform Action\" step, you may perform 2 actions."
+    },
+    "Alpha Squadron Pilot": {
+      id: 23,
+      ship: "TIE Interceptor",
+      skill: 1,
+      points: 18,
+      slots: []
+    },
+    "Avenger Squadron Pilot": {
+      id: 24,
+      ship: "TIE Interceptor",
+      skill: 3,
+      points: 20,
+      slots: []
+    },
+    "Saber Squadron Pilot": {
+      id: 25,
+      ship: "TIE Interceptor",
+      skill: 4,
+      points: 21,
+      slots: ["Elite"]
+    },
+    "\"Fel's Wrath\"": {
+      id: 26,
+      unique: true,
+      ship: "TIE Interceptor",
+      skill: 5,
+      points: 23,
+      slots: [],
+      text: "When the number of Damage cards assigned to you equals or exceeds your hull value, you are not destroyed until the end of the Combat phase."
+    },
+    "Turr Phennir": {
+      id: 27,
+      unique: true,
+      ship: "TIE Interceptor",
+      skill: 7,
+      points: 25,
+      slots: ["Elite"],
+      text: "After you perform an attack, you may perform a free boost or barrel roll action."
+    },
+    "Soontir Fel": {
+      id: 28,
+      unique: true,
+      ship: "TIE Interceptor",
+      skill: 9,
+      points: 27,
+      slots: ["Elite"],
+      text: "When you receive a stress token, you may assign 1 focus token to your ship."
+    },
+    "Tycho Celchu": {
+      id: 29,
+      unique: true,
+      ship: "A-Wing",
+      skill: 8,
+      points: 26,
+      slots: ["Elite", "Missile"],
+      text: "You may perform actions even while you have stress tokens."
+    },
+    "Arvel Crynyd": {
+      id: 30,
+      unique: true,
+      ship: "A-Wing",
+      skill: 6,
+      points: 23,
+      slots: ["Missile"],
+      text: "You may declare an enemy ship inside your firing arc that you are touching as the target of your attack."
+    },
+    "Green Squadron Pilot": {
+      id: 31,
+      ship: "A-Wing",
+      skill: 3,
+      points: 19,
+      slots: ["Elite", "Missile"]
+    },
+    "Prototype Pilot": {
+      id: 32,
+      ship: "A-Wing",
+      skill: 1,
+      points: 17,
+      slots: ["Missile"]
     }
   };
 
@@ -333,6 +445,38 @@
       attack: 3,
       range: "1-2",
       text: "Attack (target lock): Spend your target lock and discard this card to perform this attack twice."
+    },
+    "Daredevil": {
+      id: 15,
+      slot: "Elite",
+      points: 3,
+      text: "Action: Execute a red (%HARDLEFT% 1) or (%HARDRIGHT% 1) maneuver.\n\nThen, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (%HIT%) and any critical damage (%CRIT%) rolled."
+    },
+    "Elusiveness": {
+      id: 16,
+      slot: "Elite",
+      points: 2,
+      text: "When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.\n\nIf you have at least 1 stress token, you cannot use this ability."
+    },
+    "Homing Missiles": {
+      id: 17,
+      slot: "Missile",
+      attack: 4,
+      range: "2-3",
+      points: 5,
+      text: "Attack (target lock): Discard this card to perform this attack.\n\nThe defender cannot spend evade tokens during this attack."
+    },
+    "Push the Limit": {
+      id: 18,
+      slot: "Elite",
+      points: 3,
+      text: "Once per round, after you perform and action, you may perform 1 free action shown in your action bar.\n\nThen receive 1 stress token."
+    },
+    "Deadeye": {
+      id: 19,
+      slot: "Elite",
+      points: 1,
+      text: "You may treat the 'Attack (target lock):' header as 'Attack (focus):'.\n\nWhen an attack instructs you to spend a target lock, you may spend a focus token instead."
     }
   };
 

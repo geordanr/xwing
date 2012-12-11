@@ -21,6 +21,38 @@ exportObj.ships =
             "Focus",
             "Target Lock",
         ]
+    "A-Wing":
+        faction: "Rebel Alliance"
+        attack: 2
+        agility: 3
+        hull: 2
+        shields: 2
+        actions: [
+            "Focus",
+            "Target Lock",
+            "Boost",
+            "Evade",
+        ]
+    "YT-1300":
+        faction: "Rebel Alliance"
+        attack: 2
+        agility: 1
+        hull: 6
+        shields: 4
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
+    "Millennium Falcon":
+        faction: "Rebel Alliance"
+        attack: 3
+        agility: 1
+        hull: 8
+        shields: 5
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
     "TIE Fighter":
         faction: "Galactic Empire"
         attack: 2
@@ -42,6 +74,18 @@ exportObj.ships =
             "Focus",
             "Target Lock",
             "Barrel Roll",
+            "Evade",
+        ]
+    "TIE Interceptor":
+        faction: "Galactic Empire"
+        attack: 3
+        agility: 3
+        hull: 3
+        shields: 0
+        actions: [
+            "Focus",
+            "Barrel Roll",
+            "Boost",
             "Evade",
         ]
 
@@ -268,6 +312,114 @@ exportObj.pilots =
             "Missile",
         ]
         text: """During your "Perform Action" step, you may perform 2 actions."""
+    "Alpha Squadron Pilot":
+        id: 23
+        ship: "TIE Interceptor"
+        skill: 1
+        points: 18
+        slots: [ ]
+    "Avenger Squadron Pilot":
+        id: 24
+        ship: "TIE Interceptor"
+        skill: 3
+        points: 20
+        slots: [ ]
+    "Saber Squadron Pilot":
+        id: 25
+        ship: "TIE Interceptor"
+        skill: 4
+        points: 21
+        slots: [
+            "Elite",
+        ]
+    "\"Fel's Wrath\"":
+        id: 26
+        unique: true
+        ship: "TIE Interceptor"
+        skill: 5
+        points: 23
+        slots: [ ]
+        text: """When the number of Damage cards assigned to you equals or exceeds your hull value, you are not destroyed until the end of the Combat phase."""
+    "Turr Phennir":
+        id: 27
+        unique: true
+        ship: "TIE Interceptor"
+        skill: 7
+        points: 25
+        slots: [
+            "Elite",
+        ]
+        text: """After you perform an attack, you may perform a free boost or barrel roll action."""
+    "Soontir Fel":
+        id: 28
+        unique: true
+        ship: "TIE Interceptor"
+        skill: 9
+        points: 27
+        slots: [
+            "Elite",
+        ]
+        text: """When you receive a stress token, you may assign 1 focus token to your ship."""
+    "Tycho Celchu":
+        id: 29
+        unique: true
+        ship: "A-Wing"
+        skill: 8
+        points: 26
+        slots: [
+            "Elite",
+            "Missile",
+        ]
+        text: """You may perform actions even while you have stress tokens."""
+    "Arvel Crynyd":
+        id: 30
+        unique: true
+        ship: "A-Wing"
+        skill: 6
+        points: 23
+        slots: [
+            "Missile",
+        ]
+        text: """You may declare an enemy ship inside your firing arc that you are touching as the target of your attack."""
+    "Green Squadron Pilot":
+        id: 31
+        ship: "A-Wing"
+        skill: 3
+        points: 19
+        slots: [
+            "Elite",
+            "Missile",
+        ]
+    "Prototype Pilot":
+        id: 32
+        ship: "A-Wing"
+        skill: 1
+        points: 17
+        slots: [
+            "Missile",
+        ]
+    #"Outer Rim Smuggler":
+    #    id: 33
+    #    ship: "YT-1300"
+    #    skill: 1
+    #    points: 27
+    #    slots: [
+    #        "Crew",
+    #        "Crew",
+    #    ]
+    #"Chewbacca":
+    #    id: 34
+    #    unique: true
+    #    ship: "Millennium Falcon"
+    #    skill: 5
+    #    points: 42
+    #    slots: [
+    #        "Elite",
+    #        "Missile",
+    #        "Crew",
+    #        "Crew",
+    #    ]
+
 
 exportObj.upgrades =
     "Ion Cannon Turret":
@@ -278,7 +430,7 @@ exportObj.upgrades =
         range: "1-2"
         text: """Attack: Attack 1 ship (even a ship outside your firing arc).
 
-                    If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
+                 If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
     "Proton Torpedoes":
         id: 1
         slot: "Torpedo"
@@ -312,7 +464,7 @@ exportObj.upgrades =
         points: 3
         text: """Action: Roll 1 defense die.
 
-                On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."""
+                 On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."""
     "R5-K6":
         id: 6
         unique: true
@@ -320,7 +472,7 @@ exportObj.upgrades =
         points: 2
         text: """After spending your target lock, roll 1 defense die.
 
-                On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
+                 On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
     "R5 Astromech":
         id: 7
         slot: "Astromech"
@@ -337,7 +489,7 @@ exportObj.upgrades =
         points: 2
         text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.
 
-                Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
+                 Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
     "Squad Leader":
         id: 10
         unique: true
@@ -345,14 +497,14 @@ exportObj.upgrades =
         points: 2
         text: """Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.
 
-                The chosen ship my immediately perform 1 free action."""
+                 The chosen ship my immediately perform 1 free action."""
     "Expert Handling":
         id: 11
         slot: "Elite"
         points: 2
         text: """Action: Perform a barrel roll.  If you do not have the %BARREL_ROLL% action icon, receive 1 stress token.
 
-                You may then remove 1 enemy target lock from your ship."""
+                 You may then remove 1 enemy target lock from your ship."""
     "Marksmanship":
         id: 12
         slot: "Elite"
@@ -366,7 +518,7 @@ exportObj.upgrades =
         range: "2-3"
         text: """Attack (target lock):  Spend your target lock and discard this card to perform this attack.
 
-                You may change 1 of your blank results to a %HIT% result."""
+                 You may change 1 of your blank results to a %HIT% result."""
     "Cluster Missiles":
         id: 14
         slot: "Missile"
@@ -374,3 +526,40 @@ exportObj.upgrades =
         attack: 3
         range: "1-2"
         text: """Attack (target lock): Spend your target lock and discard this card to perform this attack twice."""
+    "Daredevil":
+        id: 15
+        slot: "Elite"
+        points: 3
+        text: """Action: Execute a red (%HARDLEFT% 1) or (%HARDRIGHT% 1) maneuver.
+
+                 Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (%HIT%) and any critical damage (%CRIT%) rolled."""
+    "Elusiveness":
+        id: 16
+        slot: "Elite"
+        points: 2
+        text: """When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.
+
+                 If you have at least 1 stress token, you cannot use this ability."""
+    "Homing Missiles":
+        id: 17
+        slot: "Missile"
+        attack: 4
+        range: "2-3"
+        points: 5
+        text: """Attack (target lock): Discard this card to perform this attack.
+
+                 The defender cannot spend evade tokens during this attack."""
+    "Push the Limit":
+        id: 18
+        slot: "Elite"
+        points: 3
+        text: """Once per round, after you perform and action, you may perform 1 free action shown in your action bar.
+
+                 Then receive 1 stress token."""
+    "Deadeye":
+        id: 19
+        slot: "Elite"
+        points: 1
+        text: """You may treat the 'Attack (target lock):' header as 'Attack (focus):'.
+
+                 When an attack instructs you to spend a target lock, you may spend a focus token instead."""
