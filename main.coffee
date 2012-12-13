@@ -163,10 +163,10 @@ class exportObj.SquadBuilder
             @pilot_tooltip.find('.ship td').text pilot_data.ship
             @pilot_tooltip.find('.flavortext').text pilot_data.text ? ''
             @pilot_tooltip.find('.skill td').text pilot_data.skill
-            @pilot_tooltip.find('.attack td').text ship.attack
-            @pilot_tooltip.find('.agility td').text ship.agility
-            @pilot_tooltip.find('.hull td').text ship.hull
-            @pilot_tooltip.find('.shields td').text ship.shields
+            @pilot_tooltip.find('.attack td').text pilot_data.ship_override?.attack ? ship.attack
+            @pilot_tooltip.find('.agility td').text pilot_data.ship_override?.agility ? ship.agility
+            @pilot_tooltip.find('.hull td').text pilot_data.ship_override?.hull ? ship.hull
+            @pilot_tooltip.find('.shields td').text pilot_data.ship_override?.shields ? ship.shields
             @pilot_tooltip.find('.actions td').text ship.actions.join ', '
 
             reference_pos = $(elem).offset()

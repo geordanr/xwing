@@ -234,15 +234,15 @@
     };
 
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
-      var reference_pos, _ref;
+      var reference_pos, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if ((pilot_name != null) && pilot_name !== '') {
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
         this.pilot_tooltip.find('.skill td').text(pilot_data.skill);
-        this.pilot_tooltip.find('.attack td').text(ship.attack);
-        this.pilot_tooltip.find('.agility td').text(ship.agility);
-        this.pilot_tooltip.find('.hull td').text(ship.hull);
-        this.pilot_tooltip.find('.shields td').text(ship.shields);
+        this.pilot_tooltip.find('.attack td').text((_ref2 = (_ref3 = pilot_data.ship_override) != null ? _ref3.attack : void 0) != null ? _ref2 : ship.attack);
+        this.pilot_tooltip.find('.agility td').text((_ref4 = (_ref5 = pilot_data.ship_override) != null ? _ref5.agility : void 0) != null ? _ref4 : ship.agility);
+        this.pilot_tooltip.find('.hull td').text((_ref6 = (_ref7 = pilot_data.ship_override) != null ? _ref7.hull : void 0) != null ? _ref6 : ship.hull);
+        this.pilot_tooltip.find('.shields td').text((_ref8 = (_ref9 = pilot_data.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : ship.shields);
         this.pilot_tooltip.find('.actions td').text(ship.actions.join(', '));
         reference_pos = $(elem).offset();
         this.pilot_tooltip.css('width', parseInt($(elem).css('width')) + 'px');
