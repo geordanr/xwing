@@ -222,7 +222,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade_data = _ref[upgrade_name];
-          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0) {
+          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0 && (!(upgrade_data.faction != null) || upgrade_data.faction === this.faction)) {
             _results.push({
               name: upgrade_name,
               points: upgrade_data.points
