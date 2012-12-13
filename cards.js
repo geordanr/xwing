@@ -36,14 +36,6 @@
       shields: 4,
       actions: ["Focus", "Target Lock"]
     },
-    "Millennium Falcon": {
-      faction: "Rebel Alliance",
-      attack: 3,
-      agility: 1,
-      hull: 8,
-      shields: 5,
-      actions: ["Focus", "Target Lock"]
-    },
     "TIE Fighter": {
       faction: "Galactic Empire",
       attack: 2,
@@ -67,6 +59,14 @@
       hull: 3,
       shields: 0,
       actions: ["Focus", "Barrel Roll", "Boost", "Evade"]
+    },
+    "Firespray-31": {
+      faction: "Galactic Empire",
+      attack: 3,
+      agility: 2,
+      hull: 6,
+      shields: 4,
+      actions: ["Focus", "Target Lock", "Evade"]
     }
   };
 
@@ -339,6 +339,92 @@
       skill: 1,
       points: 17,
       slots: ["Missile"]
+    },
+    "Outer Rim Smuggler": {
+      id: 33,
+      ship: "YT-1300",
+      skill: 1,
+      points: 27,
+      slots: ["Crew", "Crew"]
+    },
+    "Chewbacca": {
+      id: 34,
+      unique: true,
+      ship: "YT-1300",
+      skill: 5,
+      points: 42,
+      slots: ["Elite", "Missile", "Crew", "Crew"],
+      text: "When you are dealt a faceup Damage card, immediately flip it facedown (without resolving its ability).",
+      ship_override: {
+        attack: 3,
+        agility: 1,
+        hull: 8,
+        shields: 5
+      }
+    },
+    "Lando Calrissian": {
+      id: 35,
+      unique: true,
+      ship: "YT-1300",
+      skill: 7,
+      points: 44,
+      slots: ["Elite", "Missile", "Crew", "Crew"],
+      ship_override: {
+        attack: 3,
+        agility: 1,
+        hull: 8,
+        shields: 5
+      },
+      text: "After you execute a green maneuver, choose 1 other friendly ship at Range 1.  That ship may perform 1 free action shown on its action bar."
+    },
+    "Han Solo": {
+      id: 36,
+      unique: true,
+      ship: "YT-1300",
+      skill: 9,
+      points: 46,
+      slots: ["Elite", "Missile", "Crew", "Crew"],
+      ship_override: {
+        attack: 3,
+        agility: 1,
+        hull: 8,
+        shields: 5
+      },
+      text: "When attacking, you may reroll all of your dice.  If you choose to do so, you must reroll as many of your dice as possible."
+    },
+    "Kath Scarlet": {
+      id: 37,
+      unique: true,
+      ship: "Firespray-31",
+      skill: 7,
+      points: 38,
+      slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile"],
+      text: "When attacking, the defender receives 1 stress token if he cancels at least 1 %CRIT% result."
+    },
+    "Boba Fett": {
+      id: 38,
+      unique: true,
+      ship: "Firespray-31",
+      skill: 8,
+      points: 39,
+      slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile"],
+      text: "When you reveal a bank maneuver (%EASYLEFT% or %EASYRIGHT%), you may rotate your dial to the other bank maneuver of the same speed."
+    },
+    "Krassis Trelix": {
+      id: 39,
+      unique: true,
+      ship: "Firespray-31",
+      skill: 5,
+      points: 36,
+      slots: ["Cannon", "Bomb", "Crew", "Missile"],
+      text: "When attacking with a secondary weapon, you may reroll 1 attack die."
+    },
+    "Bounty Hunter": {
+      id: 40,
+      ship: "Firespray-31",
+      skill: 3,
+      points: 33,
+      slots: ["Cannon", "Bomb", "Crew", "Missile"]
     }
   };
 
@@ -477,6 +563,139 @@
       slot: "Elite",
       points: 1,
       text: "You may treat the 'Attack (target lock):' header as 'Attack (focus):'.\n\nWhen an attack instructs you to spend a target lock, you may spend a focus token instead."
+    },
+    "Expose": {
+      id: 20,
+      slot: "Elite",
+      points: 4,
+      text: "Action: Until the end of the round, increase your primary weapon value by 1 and decrease your agility value by 1."
+    },
+    "Gunner": {
+      id: 21,
+      slot: "Crew",
+      points: 5,
+      text: "After you perform an attack that does not hit, immediately perform a primary weapon attack.  You cannot perform another attack this round."
+    },
+    "Ion Cannon": {
+      id: 22,
+      slot: "Cannon",
+      points: 3,
+      attack: 3,
+      range: "1-3",
+      text: "Attack: Attack 1 ship.\n\nIf this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
+    },
+    "Heavy Laser Cannon": {
+      id: 23,
+      slot: "Cannon",
+      points: 7,
+      attack: 4,
+      range: "2-3",
+      text: "Attack: Attack 1 ship.\n\nImmediately after rolling your attack dice, you must change all of your %CRIT% results to %HIT% results."
+    },
+    "Seismic Charges": {
+      id: 24,
+      slot: "Bomb",
+      points: 2,
+      text: "When you reveal your maneuver dial, you may discard this card to drop 1 seismic charge token.\n\nThis token detonates at the end of the Activation phase."
+    },
+    "Mercenary Copilot": {
+      id: 25,
+      slot: "Crew",
+      points: 2,
+      text: "When attacking at Range 3, you may change 1 of your %HIT% results to a %CRIT% result."
+    },
+    "Assault Missiles": {
+      id: 26,
+      slot: "Missile",
+      points: 5,
+      attack: 4,
+      range: "2-3",
+      text: "Attack (target lock): Spend your target lock and discard this card to perform this attack.\n\nIf this attack hits, each other ship at Range 1 of the defender suffers 1 damage."
+    },
+    "Veteran Instincts": {
+      id: 27,
+      slot: "Elite",
+      points: 1,
+      text: "Increase your pilot skill value by 2."
+    },
+    "Proximity Mines": {
+      id: 28,
+      slot: "Bomb",
+      points: 3,
+      text: "Action: Discard this card to drop 1 proximity mine token.\n\nWhen a ship executes a maneuver, if its base or maneuver template overlaps this token, this token detonates."
+    },
+    "Weapons Engineer": {
+      id: 29,
+      slot: "Crew",
+      points: 3,
+      text: "You may maintain 2 target locks (only 1 per enemy ship).\n\nWhen you acquire a target lock, you may lock onto 2 different ships."
+    },
+    "Draw Their Fire": {
+      id: 30,
+      slot: "Elite",
+      points: 1,
+      text: "When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled %CRIT% results instead of the target ship."
+    },
+    "Luke Skywalker": {
+      id: 31,
+      unique: true,
+      faction: "Rebel Alliance",
+      slot: "Crew",
+      points: 7,
+      text: "After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."
+    },
+    "Nien Nunb": {
+      id: 32,
+      unique: true,
+      faction: "Rebel Alliance",
+      slot: "Crew",
+      points: 1,
+      text: "You may treat all %STRAIGHT% maneuvers as green maneuvers."
+    },
+    "Chewbacca": {
+      id: 33,
+      unique: true,
+      faction: "Rebel Alliance",
+      slot: "Crew",
+      points: 4,
+      text: "When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.\n\nThen, discard this Upgrade card."
+    }
+  };
+
+  exportObj.modifications = {
+    "Stealth Device": {
+      id: 1,
+      points: 3,
+      text: "Increase your agility value by 1.  If you are hit by an attack, discard this card."
+    },
+    "Shield Upgrade": {
+      id: 2,
+      points: 4,
+      text: "Increase your shield value by 1."
+    },
+    "Engine Upgrade": {
+      id: 3,
+      points: 4,
+      text: "Your action bar gains the %BOOST% action icon."
+    }
+  };
+
+  exportObj.titles = {
+    "Slave I": {
+      id: 1,
+      unique: true,
+      points: 0,
+      ship: "Firespray-31",
+      slots: ["Torpedo"],
+      text: "Your upgrade bar gains the %TORPEDO% upgrade icon."
+    },
+    "Millennium Falcon": {
+      id: 2,
+      unique: true,
+      points: 1,
+      ship: "YT-1300",
+      actions: "Evade",
+      text: "Your action bar gains the %EVADE% action icon."
     }
   };
 
