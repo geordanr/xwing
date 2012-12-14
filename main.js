@@ -398,6 +398,7 @@
         var cls, shipbg_class, slot, _i, _j, _len, _len2, _ref, _ref2;
         _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
+        _this.list_ul.find('li').remove();
         _this.name = _this.pilot_selector.val();
         _ref = _this.row.attr('class').split(' ');
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -477,6 +478,7 @@
       this.list_ul = $(document.createElement('UL'));
       this.list_dt.append(this.list_ul);
       this.pilot_points_li = $(document.createElement('SPAN'));
+      this.pilot_points_li.addClass('points');
       this.list_ul.append(this.pilot_points_li);
       this.pilot_points_li.hide();
       this.update();

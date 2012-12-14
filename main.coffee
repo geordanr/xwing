@@ -257,6 +257,7 @@ class PilotRow
             # Clear upgrades
             @upgrade_cell.text ''
             @upgrade_selectors = []
+            @list_ul.find('li').remove()
             @name = @pilot_selector.val()
             for cls in @row.attr('class').split ' '
                 if cls.indexOf('ship-') == 0
@@ -330,6 +331,7 @@ class PilotRow
         @list_ul = $(document.createElement 'UL')
         @list_dt.append @list_ul
         @pilot_points_li = $(document.createElement 'SPAN')
+        @pilot_points_li.addClass 'points'
         @list_ul.append @pilot_points_li
         @pilot_points_li.hide()
 
