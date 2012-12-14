@@ -398,6 +398,7 @@
         var cls, shipbg_class, slot, _i, _j, _len, _len2, _ref, _ref2;
         _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
+        _this.list_ul.find('li').remove();
         _this.name = _this.pilot_selector.val();
         _ref = _this.row.attr('class').split(' ');
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -477,6 +478,7 @@
       this.list_ul = $(document.createElement('UL'));
       this.list_dt.append(this.list_ul);
       this.pilot_points_li = $(document.createElement('SPAN'));
+      this.pilot_points_li.addClass('points');
       this.list_ul.append(this.pilot_points_li);
       this.pilot_points_li.hide();
       this.update();
@@ -485,7 +487,7 @@
     PilotRow.prototype.update = function() {
       var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
       available_pilots = this.builder.getAvailablePilots();
-      if (this.pilot) {
+      if (this.pilot && (this.pilot.unique != null)) {
         available_pilots.push({
           name: this.name,
           points: this.pilot.points,
