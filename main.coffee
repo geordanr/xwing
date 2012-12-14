@@ -343,7 +343,7 @@ class PilotRow
 
         available_pilots = @builder.getAvailablePilots()
         # Re-add our selected pilot if there is one
-        if @pilot
+        if @pilot and @pilot.unique?
             available_pilots.push
                 name: @name
                 points: @pilot.points

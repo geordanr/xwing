@@ -487,7 +487,7 @@
     PilotRow.prototype.update = function() {
       var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
       available_pilots = this.builder.getAvailablePilots();
-      if (this.pilot) {
+      if (this.pilot && (this.pilot.unique != null)) {
         available_pilots.push({
           name: this.name,
           points: this.pilot.points,
