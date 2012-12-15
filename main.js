@@ -214,7 +214,7 @@
       return _results;
     };
 
-    SquadBuilder.prototype.getAvailableUpgrades = function(slot) {
+    SquadBuilder.prototype.getAvailableUpgrades = function(slot, current_pilot) {
       var upgrade_data, upgrade_name;
       return ((function() {
         var _ref, _results;
@@ -222,7 +222,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade_data = _ref[upgrade_name];
-          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0 && __indexOf.call(this.pilots, upgrade_name) < 0 && (!(upgrade_data.faction != null) || upgrade_data.faction === this.faction)) {
+          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0 && __indexOf.call(this.pilots, upgrade_name) < 0 && (!(upgrade_data.faction != null) || upgrade_data.faction === this.faction) && upgrade_name !== current_pilot) {
             _results.push({
               name: upgrade_name,
               points: upgrade_data.points
@@ -603,7 +603,7 @@
 
     UpgradeSelector.prototype.update = function() {
       var available_upgrades, opt, option, upgrade, _i, _len;
-      available_upgrades = this.builder.getAvailableUpgrades(this.slot);
+      available_upgrades = this.builder.getAvailableUpgrades(this.slot, this.row.name);
       if (this.upgrade && (this.upgrade.unique != null)) {
         available_upgrades.push({
           name: this.upgrade_name,

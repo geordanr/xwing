@@ -155,8 +155,8 @@ class exportObj.SquadBuilder
         ships = (ship_name for ship_name, ship_data of exportObj.ships when ship_data.faction == @faction)
         ({name: pilot_name, points: pilot_data.points, ship: pilot_data.ship} for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships and (not pilot_data.unique? or pilot_name not in @pilots))
 
-    getAvailableUpgrades: (slot) ->
-        ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades and upgrade_name not in @pilots and (not upgrade_data.faction? or upgrade_data.faction == @faction)).sort exportObj.sortHelper
+    getAvailableUpgrades: (slot, current_pilot) ->
+        ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades and upgrade_name not in @pilots and (not upgrade_data.faction? or upgrade_data.faction == @faction) and upgrade_name != current_pilot).sort exportObj.sortHelper
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
         if pilot_name? and pilot_name != ''
@@ -434,7 +434,7 @@ class UpgradeSelector
         #@selector.change()
 
     update: () ->
-        available_upgrades = @builder.getAvailableUpgrades @slot
+        available_upgrades = @builder.getAvailableUpgrades @slot, @row.name
         # re-add our upgrade
         if @upgrade and @upgrade.unique?
             available_upgrades.push
