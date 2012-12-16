@@ -1,5 +1,5 @@
 (function() {
-  var ModificationSelector, PilotRow, UpgradeSelector, exportObj,
+  var ModificationSelector, PilotRow, TitleSelector, UpgradeSelector, exportObj,
     __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -57,6 +57,7 @@
       this.rows = [];
       this.pilots = [];
       this.unique_upgrades = [];
+      this.titles = [];
       this.pilot_tooltip.hide();
       this.upgrade_tooltip.hide();
       this.status_row = $(document.createElement('DIV'));
@@ -152,6 +153,25 @@
         _this.upgrade_tooltip.hide();
         return _this.updatePermalink();
       });
+      $(window).bind('xwing:titleChanged', function(e, triggering_selector) {
+        var i, row, _len, _len2, _ref, _ref2;
+        _this.titles = [];
+        _ref = _this.rows;
+        for (i = 0, _len = _ref.length; i < _len; i++) {
+          row = _ref[i];
+          if (row.title_selector != null) {
+            _this.titles.push(row.title_selector.title_name);
+          }
+        }
+        _ref2 = _this.rows;
+        for (i = 0, _len2 = _ref2.length; i < _len2; i++) {
+          row = _ref2[i];
+          if (row.title_selector != null) row.title_selector.update();
+        }
+        _this.updatePoints();
+        _this.upgrade_tooltip.hide();
+        return _this.updatePermalink();
+      });
       this.rows.push(new PilotRow(this));
       if (exportObj.getParameterByName('f') === this.faction) {
         this.loadFromSerialized(exportObj.getParameterByName('d'));
@@ -159,7 +179,7 @@
     }
 
     SquadBuilder.prototype.updatePoints = function() {
-      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4, _ref5, _ref6;
+      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
       total = 0;
       _ref = this.rows;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -175,6 +195,7 @@
             row_points += upgrade_points;
           }
           row_points += parseInt((_ref5 = (_ref6 = exportObj.modifications[row.modification_selector.modification_name]) != null ? _ref6.points : void 0) != null ? _ref5 : 0);
+          row_points += parseInt((_ref7 = (_ref8 = exportObj.titles[row.title_selector.title_name]) != null ? _ref8.points : void 0) != null ? _ref7 : 0);
           if (row_points !== pilot_points) {
             row.pilot_points_li.text("Total: " + row_points);
             row.pilot_points_li.show();
@@ -239,6 +260,22 @@
       }).call(this)).sort(exportObj.sortHelper);
     };
 
+    SquadBuilder.prototype.getAvailableTitles = function(current_ship) {
+      var title_data, title_name, _ref, _results;
+      _ref = exportObj.titles;
+      _results = [];
+      for (title_name in _ref) {
+        title_data = _ref[title_name];
+        if (title_data.ship === current_ship && __indexOf.call(this.titles, title_name) < 0) {
+          _results.push({
+            name: title_name,
+            points: title_data.points
+          });
+        }
+      }
+      return _results;
+    };
+
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
       var reference_pos, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if ((pilot_name != null) && pilot_name !== '') {
@@ -288,7 +325,7 @@
     SquadBuilder.prototype.serialize = function() {
       var row, selector;
       return ((function() {
-        var _i, _len, _ref, _ref2, _ref3, _results;
+        var _i, _len, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
         _ref = this.rows;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -303,7 +340,7 @@
                 _results2.push((_ref3 = (_ref4 = selector.upgrade) != null ? _ref4.id : void 0) != null ? _ref3 : -1);
               }
               return _results2;
-            })()).join(',')) + ":" + ((_ref2 = (_ref3 = row.modification_selector.modification) != null ? _ref3.id : void 0) != null ? _ref2 : -1));
+            })()).join(',')) + ":" + ((_ref2 = (_ref3 = row.modification_selector.modification) != null ? _ref3.id : void 0) != null ? _ref2 : -1) + ":" + ((_ref4 = (_ref5 = row.title_selector) != null ? (_ref6 = _ref5.title) != null ? _ref6.id : void 0 : void 0) != null ? _ref4 : -1));
           }
         }
         return _results;
@@ -318,12 +355,12 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         row = _ref[_i];
         _results.push(row.destroy(function() {
-          var i, modification_data, modification_id, modification_name, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
+          var i, modification_data, modification_id, modification_name, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, title_data, title_id, title_name, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
           if (_this.rows.length === 1) {
             _ref2 = serialized.split(';');
             for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
               pilot_str = _ref2[_j];
-              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1], modification_id = _ref3[2];
+              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1], modification_id = _ref3[2], title_id = _ref3[3];
               pilot_id = parseInt(pilot_id);
               new_pilot_row = new PilotRow(_this);
               new_pilot_row.pilot_selector.val(((function() {
@@ -377,11 +414,32 @@
                 })());
                 selector.selector.change();
               }
+              console.log("Titles was " + _this.titles);
+              title_id = parseInt(title_id);
+              if (title_id >= 0) {
+                selector = new_pilot_row.title_selector;
+                selector.selector.val((function() {
+                  var _ref5, _results2;
+                  _ref5 = exportObj.titles;
+                  _results2 = [];
+                  for (title_name in _ref5) {
+                    title_data = _ref5[title_name];
+                    if (parseInt(title_data.id) === title_id) {
+                      _results2.push(title_name);
+                    }
+                  }
+                  return _results2;
+                })());
+                selector.selector.change();
+              }
+              console.log("Titles now " + _this.titles);
               _this.rows.push(new_pilot_row);
             }
             $('select').trigger('liszt:updated');
           }
-          return _this.rows[0].destroy();
+          return _this.rows[0].destroy(function() {
+            return $(window).trigger('xwing:titleChanged');
+          });
         }));
       }
       return _results;
@@ -439,6 +497,7 @@
             _this.upgrade_selectors.push(new UpgradeSelector(_this, slot, _this.upgrade_cell));
           }
           _this.modification_selector = new ModificationSelector(_this, _this.upgrade_cell);
+          _this.title_selector = new TitleSelector(_this, _this.upgrade_cell);
           shipbg_class = (function() {
             switch (this.pilot.ship) {
               case 'X-Wing':
@@ -753,6 +812,95 @@
     };
 
     return ModificationSelector;
+
+  })();
+
+  TitleSelector = (function() {
+
+    function TitleSelector(row, container) {
+      var opt,
+        _this = this;
+      this.row = row;
+      this.builder = row.builder;
+      this.title_name = null;
+      this.title = null;
+      this.selector = $(document.createElement('SELECT'));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No " + this.slot + " Upgrade");
+        opt.val('');
+      }
+      this.selector.append(opt);
+      this.selector.addClass('title');
+      this.selector.attr('data-placeholder', "Select Title");
+      this.selector.change(function(e) {
+        _this.title_name = _this.selector.val();
+        _this.title = exportObj.titles[_this.selector.val()];
+        if ((_this.title_name != null) && _this.title_name !== '') {
+          _this.list_li.show();
+          _this.list_li.text("" + _this.title_name + " (" + _this.title.points + ")");
+        } else {
+          _this.list_li.hide();
+        }
+        return $(window).trigger('xwing:titleChanged', _this.selector);
+      });
+      container.append(this.selector);
+      if (!$.isMobile()) {
+        this.selector.chosen({
+          search_contains: true,
+          allow_single_deselect: true,
+          disable_search_threshold: 8
+        });
+      }
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
+        return _this.builder.showUpgradeInfo($(e.delegateTarget), _this.title_name, _this.title);
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseleave(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
+      });
+      this.list_li = $(document.createElement('LI'));
+      this.row.pilot_points_li.before(this.list_li);
+      this.list_li.hide();
+      this.update();
+    }
+
+    TitleSelector.prototype.update = function() {
+      var available_titles, opt, option, title, _i, _len;
+      available_titles = this.builder.getAvailableTitles(this.row.pilot.ship);
+      if (this.title != null) {
+        available_titles.push({
+          name: this.title_name,
+          points: this.title.points
+        });
+      }
+      available_titles.sort(exportObj.sortHelper);
+      if (available_titles.length > 0) {
+        this.selector.data('chosen').container.show();
+      } else {
+        this.selector.data('chosen').container.hide();
+      }
+      this.selector.text('');
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No title");
+        opt.val('');
+      }
+      this.selector.append(opt);
+      for (_i = 0, _len = available_titles.length; _i < _len; _i++) {
+        title = available_titles[_i];
+        option = $(document.createElement('OPTION'));
+        option.text("" + title.name + " (" + title.points + ")");
+        option.val(title.name);
+        this.selector.append(option);
+      }
+      this.selector.val(this.title_name);
+      return this.selector.trigger('liszt:updated');
+    };
+
+    return TitleSelector;
 
   })();
 

@@ -48,6 +48,7 @@ class exportObj.SquadBuilder
         @rows = []
         @pilots = []
         @unique_upgrades = []
+        @titles = []
 
         @pilot_tooltip.hide()
         @upgrade_tooltip.hide()
@@ -107,7 +108,7 @@ class exportObj.SquadBuilder
                 row.update()
                 for upgrade_selector in row.upgrade_selectors
                     if upgrade_selector.upgrade?.unique?
-                        @unique_upgrades.push(upgrade_selector.upgrade_name)
+                        @unique_upgrades.push upgrade_selector.upgrade_name
             # Update the other selectors
             for row in @rows
                 for upgrade_selector in row.upgrade_selectors
@@ -118,6 +119,17 @@ class exportObj.SquadBuilder
             @updatePermalink()
 
         $(window).bind 'xwing:modificationChanged', (e, triggering_selector) =>
+            @updatePoints()
+            @upgrade_tooltip.hide()
+            @updatePermalink()
+
+        $(window).bind 'xwing:titleChanged', (e, triggering_selector) =>
+            @titles = []
+            for row, i in @rows
+                @titles.push row.title_selector.title_name if row.title_selector?
+
+            for row, i in @rows
+                row.title_selector.update() if row.title_selector?
             @updatePoints()
             @upgrade_tooltip.hide()
             @updatePermalink()
@@ -143,6 +155,8 @@ class exportObj.SquadBuilder
 
                 row_points += parseInt(exportObj.modifications[row.modification_selector.modification_name]?.points ? 0)
 
+                row_points += parseInt(exportObj.titles[row.title_selector.title_name]?.points ? 0)
+
                 if row_points != pilot_points
                     row.pilot_points_li.text "Total: #{row_points}"
                     row.pilot_points_li.show()
@@ -165,6 +179,9 @@ class exportObj.SquadBuilder
 
     getAvailableUpgrades: (slot, current_pilot) ->
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades and upgrade_name not in @pilots and (not upgrade_data.faction? or upgrade_data.faction == @faction) and upgrade_name != current_pilot).sort exportObj.sortHelper
+
+    getAvailableTitles: (current_ship) ->
+        ({name:title_name, points: title_data.points} for title_name, title_data of exportObj.titles when title_data.ship == current_ship and title_name not in @titles)
 
     showPilotInfo: (elem, pilot_name, pilot_data, ship) ->
         if pilot_name? and pilot_name != ''
@@ -209,8 +226,8 @@ class exportObj.SquadBuilder
             @upgrade_tooltip.show()
 
     serialize: () ->
-        # PILOT_ID:UPGRADEID1,UPGRADEID2:MODIFICATIONID; ...
-        ( "#{row.pilot.id}:#{( selector.upgrade?.id ? -1 for selector in row.upgrade_selectors ).join ','}:#{row.modification_selector.modification?.id ? -1}" for row in @rows when row.name? and row.name != '' ).join ';'
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:MODIFICATIONID:TITLEID; ...
+        ( "#{row.pilot.id}:#{( selector.upgrade?.id ? -1 for selector in row.upgrade_selectors ).join ','}:#{row.modification_selector.modification?.id ? -1}:#{row.title_selector?.title?.id ? -1}" for row in @rows when row.name? and row.name != '' ).join ';'
 
     loadFromSerialized: (serialized) ->
         for row in @rows
@@ -218,7 +235,7 @@ class exportObj.SquadBuilder
                 # When the last one is gone, there will be one empty one...
                 if @rows.length == 1
                     for pilot_str in serialized.split ';'
-                        [pilot_id, upgrade_list, modification_id] = pilot_str.split ':'
+                        [pilot_id, upgrade_list, modification_id, title_id] = pilot_str.split ':'
                         pilot_id = parseInt pilot_id
                         new_pilot_row = new PilotRow this
                         new_pilot_row.pilot_selector.val (pilot_name for pilot_name, pilot_data of exportObj.pilots when parseInt(pilot_data.id) == pilot_id)[0]
@@ -236,10 +253,23 @@ class exportObj.SquadBuilder
                             selector.selector.val (modification_name for modification_name, modification_data of exportObj.modifications when parseInt(modification_data.id) == modification_id)
                             selector.selector.change()
 
+                        console.log "Titles was #{@titles}"
+
+                        title_id = parseInt title_id
+                        if title_id >= 0
+                            selector = new_pilot_row.title_selector
+                            selector.selector.val (title_name for title_name, title_data of exportObj.titles when parseInt(title_data.id) == title_id)
+                            selector.selector.change()
+
+                        console.log "Titles now #{@titles}"
+
                         @rows.push new_pilot_row
                     $('select').trigger 'liszt:updated'
                 # And then remove that initial one.
-                @rows[0].destroy()
+                @rows[0].destroy () =>
+                    # HACK: because of serialized event handling, this will occur after
+                    # all previous titleChanged handlers get processed.
+                    $(window).trigger 'xwing:titleChanged'
 
 class PilotRow
     # Represents a pilot row in the UI.
@@ -287,6 +317,8 @@ class PilotRow
                     @upgrade_selectors.push new UpgradeSelector this, slot, @upgrade_cell
                 # Modification selector
                 @modification_selector = new ModificationSelector this, @upgrade_cell
+                # Title selector
+                @title_selector = new TitleSelector this, @upgrade_cell
                 shipbg_class = switch @pilot.ship
                     when 'X-Wing'
                         "xwing1"
@@ -539,4 +571,76 @@ class ModificationSelector
             option.val modification.name
             @selector.append option
         @selector.val @modification_name
+        @selector.trigger 'liszt:updated'
+
+class TitleSelector
+    constructor: (row, container) ->
+        @row = row
+        @builder = row.builder
+        @title_name = null
+        @title = null
+
+        @selector = $(document.createElement 'SELECT')
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No #{@slot} Upgrade"
+            opt.val ''
+        @selector.append opt
+        @selector.addClass 'title'
+        @selector.attr 'data-placeholder', "Select Title"
+        @selector.change (e) =>
+            @title_name = @selector.val()
+            @title = exportObj.titles[@selector.val()]
+            if @title_name? and @title_name != ''
+                @list_li.show()
+                @list_li.text "#{@title_name} (#{@title.points})"
+            else
+                @list_li.hide()
+            $(window).trigger 'xwing:titleChanged', @selector
+        container.append @selector
+        if not $.isMobile()
+            @selector.chosen
+                search_contains: true
+                allow_single_deselect: true
+                disable_search_threshold: 8
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
+            @builder.showUpgradeInfo $(e.delegateTarget), @title_name, @title
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>
+            @builder.upgrade_tooltip.hide()
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").click (e) =>
+            @builder.upgrade_tooltip.hide()
+
+        @list_li = $(document.createElement 'LI')
+        @row.pilot_points_li.before @list_li
+        @list_li.hide()
+
+        @update()
+        #@selector.change()
+
+    update: () ->
+        available_titles = @builder.getAvailableTitles @row.pilot.ship
+        # re-add our title
+        if @title?
+            available_titles.push
+                name: @title_name
+                points: @title.points
+        available_titles.sort exportObj.sortHelper
+
+        if available_titles.length > 0
+            @selector.data('chosen').container.show()
+        else
+            @selector.data('chosen').container.hide()
+
+        @selector.text ''
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No title"
+            opt.val ''
+        @selector.append opt
+        for title in available_titles
+            option = $(document.createElement 'OPTION')
+            option.text "#{title.name} (#{title.points})"
+            option.val title.name
+            @selector.append option
+        @selector.val @title_name
         @selector.trigger 'liszt:updated'
