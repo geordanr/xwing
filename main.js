@@ -1,5 +1,5 @@
 (function() {
-  var PilotRow, UpgradeSelector, exportObj,
+  var ModificationSelector, PilotRow, UpgradeSelector, exportObj,
     __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -123,6 +123,7 @@
         _ref = _this.rows;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           row = _ref[_i];
+          row.update();
           _ref2 = row.upgrade_selectors;
           for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
             upgrade_selector = _ref2[_j];
@@ -146,6 +147,11 @@
         _this.upgrade_tooltip.hide();
         return _this.updatePermalink();
       });
+      $(window).bind('xwing:modificationChanged', function(e, triggering_selector) {
+        _this.updatePoints();
+        _this.upgrade_tooltip.hide();
+        return _this.updatePermalink();
+      });
       this.rows.push(new PilotRow(this));
       if (exportObj.getParameterByName('f') === this.faction) {
         this.loadFromSerialized(exportObj.getParameterByName('d'));
@@ -153,7 +159,7 @@
     }
 
     SquadBuilder.prototype.updatePoints = function() {
-      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4;
+      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4, _ref5, _ref6;
       total = 0;
       _ref = this.rows;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -161,21 +167,21 @@
         row_points = 0;
         if ((row.name != null) && row.name !== '') {
           pilot_points = parseInt(row.pilot.points);
-          total += pilot_points;
           row_points += pilot_points;
           _ref2 = row.upgrade_selectors;
           for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
             selector = _ref2[_j];
             upgrade_points = parseInt((_ref3 = (_ref4 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref4.points : void 0) != null ? _ref3 : 0);
-            total += upgrade_points;
             row_points += upgrade_points;
           }
+          row_points += parseInt((_ref5 = (_ref6 = exportObj.modifications[row.modification_selector.modification_name]) != null ? _ref6.points : void 0) != null ? _ref5 : 0);
           if (row_points !== pilot_points) {
             row.pilot_points_li.text("Total: " + row_points);
             row.pilot_points_li.show();
           } else {
             row.pilot_points_li.hide();
           }
+          total += row_points;
         }
         row.pilot_points_cell.text(row_points);
       }
@@ -203,7 +209,7 @@
       _results = [];
       for (pilot_name in _ref) {
         pilot_data = _ref[pilot_name];
-        if ((_ref2 = pilot_data.ship, __indexOf.call(ships, _ref2) >= 0) && (!(pilot_data.unique != null) || __indexOf.call(this.pilots, pilot_name) < 0)) {
+        if ((_ref2 = pilot_data.ship, __indexOf.call(ships, _ref2) >= 0) && (!(pilot_data.unique != null) || __indexOf.call(this.pilots, pilot_name) < 0) && __indexOf.call(this.unique_upgrades, pilot_name) < 0) {
           _results.push({
             name: pilot_name,
             points: pilot_data.points,
@@ -282,7 +288,7 @@
     SquadBuilder.prototype.serialize = function() {
       var row, selector;
       return ((function() {
-        var _i, _len, _ref, _results;
+        var _i, _len, _ref, _ref2, _ref3, _results;
         _ref = this.rows;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -297,7 +303,7 @@
                 _results2.push((_ref3 = (_ref4 = selector.upgrade) != null ? _ref4.id : void 0) != null ? _ref3 : -1);
               }
               return _results2;
-            })()).join(',')));
+            })()).join(',')) + ":" + ((_ref2 = (_ref3 = row.modification_selector.modification) != null ? _ref3.id : void 0) != null ? _ref2 : -1));
           }
         }
         return _results;
@@ -312,12 +318,12 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         row = _ref[_i];
         _results.push(row.destroy(function() {
-          var i, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
+          var i, modification_data, modification_id, modification_name, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
           if (_this.rows.length === 1) {
             _ref2 = serialized.split(';');
             for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
               pilot_str = _ref2[_j];
-              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1];
+              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1], modification_id = _ref3[2];
               pilot_id = parseInt(pilot_id);
               new_pilot_row = new PilotRow(_this);
               new_pilot_row.pilot_selector.val(((function() {
@@ -353,6 +359,23 @@
                   })());
                   selector.selector.change();
                 }
+              }
+              modification_id = parseInt(modification_id);
+              if (modification_id >= 0) {
+                selector = new_pilot_row.modification_selector;
+                selector.selector.val((function() {
+                  var _ref5, _results2;
+                  _ref5 = exportObj.modifications;
+                  _results2 = [];
+                  for (modification_name in _ref5) {
+                    modification_data = _ref5[modification_name];
+                    if (parseInt(modification_data.id) === modification_id) {
+                      _results2.push(modification_name);
+                    }
+                  }
+                  return _results2;
+                })());
+                selector.selector.change();
               }
               _this.rows.push(new_pilot_row);
             }
@@ -415,6 +438,7 @@
             slot = _ref2[_j];
             _this.upgrade_selectors.push(new UpgradeSelector(_this, slot, _this.upgrade_cell));
           }
+          _this.modification_selector = new ModificationSelector(_this, _this.upgrade_cell);
           shipbg_class = (function() {
             switch (this.pilot.ship) {
               case 'X-Wing':
@@ -485,7 +509,7 @@
     }
 
     PilotRow.prototype.update = function() {
-      var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, _i, _j, _k, _len, _len2, _len3, _ref, _ref2;
+      var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _results;
       available_pilots = this.builder.getAvailablePilots();
       if (this.pilot && (this.pilot.unique != null)) {
         available_pilots.push({
@@ -528,7 +552,14 @@
         }
       }
       this.pilot_selector.val(this.name);
-      return this.pilot_selector.trigger('liszt:updated');
+      this.pilot_selector.trigger('liszt:updated');
+      _ref3 = this.upgrade_selectors;
+      _results = [];
+      for (_l = 0, _len4 = _ref3.length; _l < _len4; _l++) {
+        upgrade_selector = _ref3[_l];
+        _results.push(upgrade_selector.update());
+      }
+      return _results;
     };
 
     PilotRow.prototype.destroy = function(callback) {
@@ -632,6 +663,96 @@
     };
 
     return UpgradeSelector;
+
+  })();
+
+  ModificationSelector = (function() {
+
+    function ModificationSelector(row, container) {
+      var opt,
+        _this = this;
+      this.row = row;
+      this.builder = row.builder;
+      this.modification_name = null;
+      this.modification = null;
+      this.selector = $(document.createElement('SELECT'));
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No " + this.slot + " Upgrade");
+        opt.val('');
+      }
+      this.selector.append(opt);
+      this.selector.addClass('modification');
+      this.selector.attr('data-placeholder', "Select Modification");
+      this.selector.change(function(e) {
+        _this.modification_name = _this.selector.val();
+        _this.modification = exportObj.modifications[_this.selector.val()];
+        if ((_this.modification_name != null) && _this.modification_name !== '') {
+          _this.list_li.show();
+          _this.list_li.text("" + _this.modification_name + " (" + _this.modification.points + ")");
+        } else {
+          _this.list_li.hide();
+        }
+        return $(window).trigger('xwing:modificationChanged', _this.selector);
+      });
+      container.append(this.selector);
+      if (!$.isMobile()) {
+        this.selector.chosen({
+          search_contains: true,
+          allow_single_deselect: true,
+          disable_search_threshold: 8
+        });
+      }
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseover(function(e) {
+        return _this.builder.showUpgradeInfo($(e.delegateTarget), _this.modification_name, _this.modification);
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").mouseleave(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
+      });
+      $("#" + (this.selector.attr('id')) + "_chzn a.chzn-single").click(function(e) {
+        return _this.builder.upgrade_tooltip.hide();
+      });
+      this.list_li = $(document.createElement('LI'));
+      this.row.pilot_points_li.before(this.list_li);
+      this.list_li.hide();
+      this.update();
+    }
+
+    ModificationSelector.prototype.update = function() {
+      var available_modifications, modification, modification_data, modification_name, opt, option, _i, _len;
+      available_modifications = (function() {
+        var _ref, _results;
+        _ref = exportObj.modifications;
+        _results = [];
+        for (modification_name in _ref) {
+          modification_data = _ref[modification_name];
+          _results.push({
+            name: modification_name,
+            points: modification_data.points
+          });
+        }
+        return _results;
+      })();
+      available_modifications.sort(exportObj.sortHelper);
+      this.selector.text('');
+      opt = $(document.createElement('OPTION'));
+      if ($.isMobile()) {
+        opt.text("No modification");
+        opt.val('');
+      }
+      this.selector.append(opt);
+      for (_i = 0, _len = available_modifications.length; _i < _len; _i++) {
+        modification = available_modifications[_i];
+        option = $(document.createElement('OPTION'));
+        option.text("" + modification.name + " (" + modification.points + ")");
+        option.val(modification.name);
+        this.selector.append(option);
+      }
+      this.selector.val(this.modification_name);
+      return this.selector.trigger('liszt:updated');
+    };
+
+    return ModificationSelector;
 
   })();
 

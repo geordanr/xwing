@@ -104,6 +104,7 @@ class exportObj.SquadBuilder
         $(window).bind 'xwing:upgradeChanged', (e, triggering_selector) =>
             @unique_upgrades = []
             for row in @rows
+                row.update()
                 for upgrade_selector in row.upgrade_selectors
                     if upgrade_selector.upgrade?.unique?
                         @unique_upgrades.push(upgrade_selector.upgrade_name)
@@ -112,6 +113,11 @@ class exportObj.SquadBuilder
                 for upgrade_selector in row.upgrade_selectors
                     if upgrade_selector != triggering_selector
                         upgrade_selector.update()
+            @updatePoints()
+            @upgrade_tooltip.hide()
+            @updatePermalink()
+
+        $(window).bind 'xwing:modificationChanged', (e, triggering_selector) =>
             @updatePoints()
             @upgrade_tooltip.hide()
             @updatePermalink()
@@ -129,19 +135,21 @@ class exportObj.SquadBuilder
 
             if row.name? and row.name != ''
                 pilot_points = parseInt row.pilot.points
-                total += pilot_points
                 row_points += pilot_points
 
                 for selector in row.upgrade_selectors
                     upgrade_points = parseInt(exportObj.upgrades[selector.upgrade_name]?.points ? 0)
-                    total += upgrade_points
                     row_points += upgrade_points
+
+                row_points += parseInt(exportObj.modifications[row.modification_selector.modification_name]?.points ? 0)
 
                 if row_points != pilot_points
                     row.pilot_points_li.text "Total: #{row_points}"
                     row.pilot_points_li.show()
                 else
                     row.pilot_points_li.hide()
+
+                total += row_points
 
             row.pilot_points_cell.text row_points
         @points_cell.text "Points: #{total}"
@@ -153,7 +161,7 @@ class exportObj.SquadBuilder
     getAvailablePilots: () ->
         # Returns list of available pilot names for this faction.
         ships = (ship_name for ship_name, ship_data of exportObj.ships when ship_data.faction == @faction)
-        ({name: pilot_name, points: pilot_data.points, ship: pilot_data.ship} for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships and (not pilot_data.unique? or pilot_name not in @pilots))
+        ({name: pilot_name, points: pilot_data.points, ship: pilot_data.ship} for pilot_name, pilot_data of exportObj.pilots when pilot_data.ship in ships and (not pilot_data.unique? or pilot_name not in @pilots) and pilot_name not in @unique_upgrades)
 
     getAvailableUpgrades: (slot, current_pilot) ->
         ({name: upgrade_name, points: upgrade_data.points} for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and upgrade_name not in @unique_upgrades and upgrade_name not in @pilots and (not upgrade_data.faction? or upgrade_data.faction == @faction) and upgrade_name != current_pilot).sort exportObj.sortHelper
@@ -201,8 +209,8 @@ class exportObj.SquadBuilder
             @upgrade_tooltip.show()
 
     serialize: () ->
-        # PILOT_ID:UPGRADEID1,UPGRADEID2; ...
-        ( "#{row.pilot.id}:#{( selector.upgrade?.id ? -1 for selector in row.upgrade_selectors ).join ','}" for row in @rows when row.name? and row.name != '' ).join ';'
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:MODIFICATIONID; ...
+        ( "#{row.pilot.id}:#{( selector.upgrade?.id ? -1 for selector in row.upgrade_selectors ).join ','}:#{row.modification_selector.modification?.id ? -1}" for row in @rows when row.name? and row.name != '' ).join ';'
 
     loadFromSerialized: (serialized) ->
         for row in @rows
@@ -210,7 +218,7 @@ class exportObj.SquadBuilder
                 # When the last one is gone, there will be one empty one...
                 if @rows.length == 1
                     for pilot_str in serialized.split ';'
-                        [pilot_id, upgrade_list] = pilot_str.split ':'
+                        [pilot_id, upgrade_list, modification_id] = pilot_str.split ':'
                         pilot_id = parseInt pilot_id
                         new_pilot_row = new PilotRow this
                         new_pilot_row.pilot_selector.val (pilot_name for pilot_name, pilot_data of exportObj.pilots when parseInt(pilot_data.id) == pilot_id)[0]
@@ -221,6 +229,13 @@ class exportObj.SquadBuilder
                                 selector = new_pilot_row.upgrade_selectors[i]
                                 selector.selector.val (upgrade_name for upgrade_name, upgrade_data of exportObj.upgrades when parseInt(upgrade_data.id) == upgrade_id)
                                 selector.selector.change()
+
+                        modification_id = parseInt modification_id
+                        if modification_id >= 0
+                            selector = new_pilot_row.modification_selector
+                            selector.selector.val (modification_name for modification_name, modification_data of exportObj.modifications when parseInt(modification_data.id) == modification_id)
+                            selector.selector.change()
+
                         @rows.push new_pilot_row
                     $('select').trigger 'liszt:updated'
                 # And then remove that initial one.
@@ -270,6 +285,8 @@ class PilotRow
                 #  Set upgrade selectors
                 for slot in @pilot.slots
                     @upgrade_selectors.push new UpgradeSelector this, slot, @upgrade_cell
+                # Modification selector
+                @modification_selector = new ModificationSelector this, @upgrade_cell
                 shipbg_class = switch @pilot.ship
                     when 'X-Wing'
                         "xwing1"
@@ -376,6 +393,10 @@ class PilotRow
         @pilot_selector.val @name
         @pilot_selector.trigger 'liszt:updated'
 
+        # Cascade update to upgrade selectors
+        for upgrade_selector in @upgrade_selectors
+            upgrade_selector.update()
+
     destroy: (callback=$.noop) ->
         # Deregister everything from the builder and remove this row.
         @row.slideUp 'fast', () =>
@@ -456,4 +477,66 @@ class UpgradeSelector
             option.val upgrade.name
             @selector.append option
         @selector.val @upgrade_name
+        @selector.trigger 'liszt:updated'
+
+class ModificationSelector
+    constructor: (row, container) ->
+        @row = row
+        @builder = row.builder
+        @modification_name = null
+        @modification = null
+
+        @selector = $(document.createElement 'SELECT')
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No #{@slot} Upgrade"
+            opt.val ''
+        @selector.append opt
+        @selector.addClass 'modification'
+        @selector.attr 'data-placeholder', "Select Modification"
+        @selector.change (e) =>
+            @modification_name = @selector.val()
+            @modification = exportObj.modifications[@selector.val()]
+            if @modification_name? and @modification_name != ''
+                @list_li.show()
+                @list_li.text "#{@modification_name} (#{@modification.points})"
+            else
+                @list_li.hide()
+            $(window).trigger 'xwing:modificationChanged', @selector
+        container.append @selector
+        if not $.isMobile()
+            @selector.chosen
+                search_contains: true
+                allow_single_deselect: true
+                disable_search_threshold: 8
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseover (e) =>
+            @builder.showUpgradeInfo $(e.delegateTarget), @modification_name, @modification
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").mouseleave (e) =>
+            @builder.upgrade_tooltip.hide()
+        $("##{@selector.attr 'id'}_chzn a.chzn-single").click (e) =>
+            @builder.upgrade_tooltip.hide()
+
+        @list_li = $(document.createElement 'LI')
+        @row.pilot_points_li.before @list_li
+        @list_li.hide()
+
+        @update()
+        #@selector.change()
+
+    update: () ->
+        available_modifications = ({name: modification_name, points: modification_data.points} for modification_name, modification_data of exportObj.modifications)
+        available_modifications.sort exportObj.sortHelper
+
+        @selector.text ''
+        opt = $(document.createElement 'OPTION') # required for allow_single_deselect
+        if $.isMobile()
+            opt.text "No modification"
+            opt.val ''
+        @selector.append opt
+        for modification in available_modifications
+            option = $(document.createElement 'OPTION')
+            option.text "#{modification.name} (#{modification.points})"
+            option.val modification.name
+            @selector.append option
+        @selector.val @modification_name
         @selector.trigger 'liszt:updated'
