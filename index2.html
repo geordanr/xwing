@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>(Yet Another) X-Wing Miniatures Squad Builder</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+    <link href='chosen-master/chosen/chosen.css' rel='stylesheet'>
+    <link href='foundation/stylesheets/foundation.min.css' rel='stylesheet'>
+    <link href='foundation/stylesheets/app.css' rel='stylesheet'>
+    <link href='main.css' rel='stylesheet'>
+    <link href='backgrounds.css' rel='stylesheet'>
+    <script src='foundation/javascripts/modernizr.foundation.js'></script>
+  </head>
+  <body>
+    <p></p>
+    <dl class='tabs two-up'>
+      <dd>
+        <a href='#rebelContent' id='rebelTab'>Rebel Alliance</a>
+      </dd>
+      <dd>
+        <a href='#empireContent' id='empireTab'>Galactic Empire</a>
+      </dd>
+    </dl>
+    <ul class='tabs-content'>
+      <li id='rebelContentTab'>
+        <div id='rebel-builder'></div>
+      </li>
+      <li id='empireContentTab'>
+        <div id='empire-builder'></div>
+      </li>
+    </ul>
+    <div class='info-tooltip' id='rebel-pilot-tooltip'>
+      <table>
+        <tbody>
+          <tr class='ship'>
+            <th>Ship</th>
+            <td></td>
+          </tr>
+          <tr class='skill'>
+            <th>Skill</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='attack'>
+            <th>Attack</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='agility'>
+            <th>Agility</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='hull'>
+            <th>Hull</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='shields'>
+            <th>Shields</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='actions'>
+            <th>Actions</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class='flavortext'></p>
+    </div>
+    <div class='info-tooltip' id='rebel-upgrade-tooltip'>
+      <table class='weapon-stats'>
+        <tbody>
+          <tr class='attack'>
+            <th>Attack</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='range'>
+            <th>Range</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class='flavortext'></p>
+    </div>
+    <div class='info-tooltip' id='empire-pilot-tooltip'>
+      <table>
+        <tbody>
+          <tr class='ship'>
+            <th>Ship</th>
+            <td></td>
+          </tr>
+          <tr class='skill'>
+            <th>Skill</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='attack'>
+            <th>Attack</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='agility'>
+            <th>Agility</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='hull'>
+            <th>Hull</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='shields'>
+            <th>Shields</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='actions'>
+            <th>Actions</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class='flavortext'></p>
+    </div>
+    <div class='info-tooltip' id='empire-upgrade-tooltip'>
+      <table class='weapon-stats'>
+        <tbody>
+          <tr class='attack'>
+            <th>Attack</th>
+            <td class='card-stat'></td>
+          </tr>
+          <tr class='range'>
+            <th>Range</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class='flavortext'></p>
+    </div>
+    <div class='reveal-modal' id='rebel-list'>
+      <p>
+        Points:
+        <span class='total'></span>
+      </p>
+      <dl class='text-list'></dl>
+      <a class='close-reveal-modal'>&#215;</a>
+    </div>
+    <div class='reveal-modal' id='empire-list'>
+      <p>
+        Points:
+        <span class='total'></span>
+      </p>
+      <dl class='text-list'></dl>
+      <a class='close-reveal-modal'>&#215;</a>
+    </div>
+    <script src='jquery-1.8.3.min.js'></script>
+    <script src='foundation/javascripts/foundation.min.js'></script>
+    <script src='foundation/javascripts/app.js'></script>
+    <script src='chosen-master/chosen/chosen.jquery.min.js'></script>
+    <script src='cards.js'></script>
+    <script src='main2.js'></script>
+    <script>
+      (function() {
+      
+        $(document).ready(function() {
+          window.rebel_sb = new window.SquadBuilder({
+            faction: 'Rebel Alliance',
+            container: '#rebel-builder'
+          });
+          switch ($.getParameterByName('f')) {
+            case 'Rebel Alliance':
+              return $('#rebelTab').click();
+            case 'Galactic Empire':
+              return $('#empireTab').click();
+            default:
+              return $('#rebelTab').click();
+          }
+        });
+      
+      }).call(this);
+    </script>
+  </body>
+</html>

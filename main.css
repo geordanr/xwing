@@ -16,7 +16,7 @@ select {
 abbr {
   cursor: pointer; }
 
-a.remove.button {
+button.remove {
   font-size: 1.25em; }
 
 .chzn-container {
