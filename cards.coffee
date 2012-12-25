@@ -890,3 +890,9 @@ exportObj.titles =
 exportObj.titlesById = {}
 for title_name, title of exportObj.titles
     exportObj.titlesById[title.id] = title
+
+exportObj.titlesByShip = {}
+for title_name, title of exportObj.titles
+    if title.ship not of exportObj.titlesByShip
+        exportObj.titlesByShip[title.ship] = []
+    exportObj.titlesByShip[title.ship].push title
