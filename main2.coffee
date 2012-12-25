@@ -85,7 +85,7 @@ class exportObj.SquadBuilder
             # update permalink while we're at it
 
     serialize: () ->
-        # PILOT_ID:UPGRADEID1,UPGRADEID2:MODIFICATIONID:TITLEID; ...
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:TITLEUPGRADE1,TITLEUPGRADE2:MODIFICATIONID; ...
 
     loadFromSerialized: (serialized) ->
 
@@ -107,7 +107,7 @@ class exportObj.SquadBuilder
                         @uniques_in_use['Upgrade'].push crew
                     else
                         throw "Unique #{type} '#{unique.name}' already claimed as crew"
-            else if type == 'Upgrade' and unique.slot = 'Crew'
+            else if type == 'Upgrade' and unique.slot == 'Crew'
                 # Check pilots
                 pilot = exportObj.pilots[unique.name]
                 if pilot? and pilot?.unique?
@@ -133,7 +133,7 @@ class exportObj.SquadBuilder
                     if idx < 0
                         throw "Unique crew accompanying #{unique.name} was not also claimed!"
                     @uniques_in_use['Upgrade'].splice idx, 1
-            else if type == 'Upgrade' and unique.slot = 'Crew'
+            else if type == 'Upgrade' and unique.slot == 'Crew'
                 pilot = exportObj.pilots[unique.name]
                 if pilot? and pilot?.unique?
                     idx = @uniqueIndex pilot, 'Pilot'

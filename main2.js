@@ -164,7 +164,7 @@
               throw "Unique " + type + " '" + unique.name + "' already claimed as crew";
             }
           }
-        } else if (type === 'Upgrade' && (unique.slot = 'Crew')) {
+        } else if (type === 'Upgrade' && unique.slot === 'Crew') {
           pilot = exportObj.pilots[unique.name];
           if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
             if (this.uniqueIndex(pilot, 'Pilot') < 0) {
@@ -195,7 +195,7 @@
             }
             this.uniques_in_use['Upgrade'].splice(idx, 1);
           }
-        } else if (type === 'Upgrade' && (unique.slot = 'Crew')) {
+        } else if (type === 'Upgrade' && unique.slot === 'Crew') {
           pilot = exportObj.pilots[unique.name];
           if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
             idx = this.uniqueIndex(pilot, 'Pilot');
