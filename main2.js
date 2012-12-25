@@ -338,7 +338,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0)) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction)) {
             _results.push(upgrade);
           }
         }
@@ -371,7 +371,7 @@
         _results = [];
         for (modification_name in _ref) {
           modification = _ref[modification_name];
-          if (this.matcher(modification_name, term) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0)) {
+          if (this.matcher(modification_name, term) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction)) {
             _results.push(modification);
           }
         }
@@ -404,7 +404,7 @@
         _results = [];
         for (title_name in _ref) {
           title = _ref[title_name];
-          if (title.ship === ship_name && this.matcher(title_name, term) && __indexOf.call(this.uniques_in_use['Title'], title) < 0) {
+          if (title.ship === ship_name && this.matcher(title_name, term) && __indexOf.call(this.uniques_in_use['Title'], title) < 0 && ((title.faction == null) || title.faction === this.faction)) {
             _results.push(title);
           }
         }

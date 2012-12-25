@@ -181,7 +181,7 @@ class exportObj.SquadBuilder
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, term='') ->
         # Returns data formatted for Select2
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']))
+        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction))
         # Re-add selected upgrade
         if include_upgrade? and include_upgrade.unique? and @matcher(include_upgrade.name, term)
             unclaimed_upgrades.push include_upgrade
@@ -189,7 +189,7 @@ class exportObj.SquadBuilder
 
     getAvailableModificationsIncluding: (include_modification, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']))
+        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction))
         # Re-add selected modification
         if include_modification? and include_modification.unique? and @matcher(include_modification.name, term)
             unclaimed_modifications.push include_modification
@@ -198,7 +198,7 @@ class exportObj.SquadBuilder
     getAvailableTitlesIncluding: (ship_name, include_title, term='') ->
         # Returns data formatted for Select2
         # All titles are unique
-        unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship_name and @matcher(title_name, term) and title not in @uniques_in_use['Title'])
+        unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship_name and @matcher(title_name, term) and title not in @uniques_in_use['Title'] and (not title.faction? or title.faction == @faction))
         # Re-add selected title
         if include_title? and @matcher(include_title.name, term)
             unclaimed_titles.push include_title
