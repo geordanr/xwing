@@ -10,7 +10,7 @@ CSSES=$(SASSES:.sass=.css)
 all: $(JAVASCRIPTS) $(HTMLS) $(CSSES)
 
 %.js: %.coffee
-	coffee -c $<
+	iced -I window -c $<
 
 %.html: %.haml
 	haml -f html5 $< $@

@@ -3,122 +3,104 @@
   %head
     %title (Yet Another) X-Wing Miniatures Squad Builder
     %meta{:charset => "utf-8"}
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
 
-    %link{:rel => "stylesheet", :href => "chosen-master/chosen/chosen.css"}
-    %link{:rel => "stylesheet", :href => "foundation/stylesheets/foundation.min.css"}
-    %link{:rel => "stylesheet", :href => "foundation/stylesheets/app.css"}
-    %link{:rel => "stylesheet", :href => "main.css"}
-    %link{:rel => "stylesheet", :href => "backgrounds.css"}
+    %link{:rel => "stylesheet", :href => "bootstrap/css/bootstrap.min.css", :media => "screen"}
+    %link{:rel => "stylesheet", :href => "select2-release-3.2/select2.css"}
 
-    %script{:src => "foundation/javascripts/modernizr.foundation.js"}
+    -#%link{:rel => "stylesheet", :href => "main.css"}
+    -#%link{:rel => "stylesheet", :href => "backgrounds.css"}
 
   %body
     -# body layout
 
-    %p
+    .tabbable
+      %ul.nav.nav-tabs
+        %li
+          %a#rebelTab{'data-toggle' => "tab", :href => '#rebelContent'} Rebel Alliance
+        %li
+          %a#empireTab{'data-toggle' => "tab", :href => '#empireContent'} Galactic Empire
+      .tab-content
+        .tab-pane#rebelContent
+          #rebel-builder
+        .tab-pane#empireContent
+          #empire-builder
 
-    %dl.tabs.two-up
-      %dd
-        %a#rebelTab{:href => '#rebelContent'} Rebel Alliance
-      %dd
-        %a#empireTab{:href => '#empireContent'} Galactic Empire
-    %ul.tabs-content
-      %li#rebelContentTab
-        #rebel-builder
-      %li#empireContentTab
-        #empire-builder
+    -##rebel-pilot-tooltip.info-tooltip
+    -#  %table
+    -#    %tbody
+    -#      %tr.ship
+    -#        %th Ship
+    -#        %td
+    -#      %tr.skill
+    -#        %th Skill
+    -#        %td.card-stat
+    -#      %tr.attack
+    -#        %th Attack
+    -#        %td.card-stat
+    -#      %tr.agility
+    -#        %th Agility
+    -#        %td.card-stat
+    -#      %tr.hull
+    -#        %th Hull
+    -#        %td.card-stat
+    -#      %tr.shields
+    -#        %th Shields
+    -#        %td.card-stat
+    -#      %tr.actions
+    -#        %th Actions
+    -#        %td
+    -#  %p.flavortext
+    -##rebel-upgrade-tooltip.info-tooltip
+    -#  %table.weapon-stats
+    -#    %tbody
+    -#      %tr.attack
+    -#        %th Attack
+    -#        %td.card-stat
+    -#      %tr.range
+    -#        %th Range
+    -#        %td
+    -#  %p.flavortext
 
-    #rebel-pilot-tooltip.info-tooltip
-      %table
-        %tbody
-          %tr.ship
-            %th Ship
-            %td
-          %tr.skill
-            %th Skill
-            %td.card-stat
-          %tr.attack
-            %th Attack
-            %td.card-stat
-          %tr.agility
-            %th Agility
-            %td.card-stat
-          %tr.hull
-            %th Hull
-            %td.card-stat
-          %tr.shields
-            %th Shields
-            %td.card-stat
-          %tr.actions
-            %th Actions
-            %td
-      %p.flavortext
-    #rebel-upgrade-tooltip.info-tooltip
-      %table.weapon-stats
-        %tbody
-          %tr.attack
-            %th Attack
-            %td.card-stat
-          %tr.range
-            %th Range
-            %td
-      %p.flavortext
+    -##empire-pilot-tooltip.info-tooltip
+    -#  %table
+    -#    %tbody
+    -#      %tr.ship
+    -#        %th Ship
+    -#        %td
+    -#      %tr.skill
+    -#        %th Skill
+    -#        %td.card-stat
+    -#      %tr.attack
+    -#        %th Attack
+    -#        %td.card-stat
+    -#      %tr.agility
+    -#        %th Agility
+    -#        %td.card-stat
+    -#      %tr.hull
+    -#        %th Hull
+    -#        %td.card-stat
+    -#      %tr.shields
+    -#        %th Shields
+    -#        %td.card-stat
+    -#      %tr.actions
+    -#        %th Actions
+    -#        %td
+    -#  %p.flavortext
+    -##empire-upgrade-tooltip.info-tooltip
+    -#  %table.weapon-stats
+    -#    %tbody
+    -#      %tr.attack
+    -#        %th Attack
+    -#        %td.card-stat
+    -#      %tr.range
+    -#        %th Range
+    -#        %td
+    -#  %p.flavortext
 
-    #empire-pilot-tooltip.info-tooltip
-      %table
-        %tbody
-          %tr.ship
-            %th Ship
-            %td
-          %tr.skill
-            %th Skill
-            %td.card-stat
-          %tr.attack
-            %th Attack
-            %td.card-stat
-          %tr.agility
-            %th Agility
-            %td.card-stat
-          %tr.hull
-            %th Hull
-            %td.card-stat
-          %tr.shields
-            %th Shields
-            %td.card-stat
-          %tr.actions
-            %th Actions
-            %td
-      %p.flavortext
-    #empire-upgrade-tooltip.info-tooltip
-      %table.weapon-stats
-        %tbody
-          %tr.attack
-            %th Attack
-            %td.card-stat
-          %tr.range
-            %th Range
-            %td
-      %p.flavortext
-
-    #rebel-list.reveal-modal
-      %p
-        Points:
-        %span.total
-      %dl.text-list
-      %a.close-reveal-modal &#215;
-    #empire-list.reveal-modal
-      %p
-        Points:
-        %span.total
-      %dl.text-list
-      %a.close-reveal-modal &#215;
-
-    -# Foundation/JS linkages
+    -# JS linkages
     %script{:src => "jquery-1.8.3.min.js"}
-    %script{:src => "foundation/javascripts/foundation.min.js"}
-    %script{:src => "foundation/javascripts/app.js"}
-    %script{:src => "chosen-master/chosen/chosen.jquery.min.js"}
+    %script{:src => "bootstrap/js/bootstrap.min.js"}
+    %script{:src => "select2-release-3.2/select2.min.js"}
     %script{:src => "cards.js"}
     %script{:src => "main2.js"}
     :coffee
@@ -133,3 +115,6 @@
               $('#empireTab').click()
           else
               $('#rebelTab').click()
+
+        window.rebel_sb.addShip()
+        window.rebel_sb.addShip()

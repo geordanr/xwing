@@ -2,8 +2,8 @@ exportObj = exports ? this
 
 exportObj.sortHelper = (a, b) ->
     if a.points == b.points
-        a_name = a.name.replace(/[^a-z0-9]/ig, '')
-        b_name = b.name.replace(/[^a-z0-9]/ig, '')
+        a_name = a.text.replace(/[^a-z0-9]/ig, '')
+        b_name = b.text.replace(/[^a-z0-9]/ig, '')
         if a_name == b_name
             0
         else
@@ -25,296 +25,244 @@ $.getParameterByName = (name) ->
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "))
 
-# Events:
-#   xwing:shipUpdated
-#       emitted when any aspect of a ship has changed
-#   xwing:availablePilotsChanged
-#   xwing:availableUpgradesChanged
-#   xwing:availableModificationsChanged
-#   xwing:availableTitlesChanged
-
 # Assumes cards.js has been loaded
 
 class exportObj.SquadBuilder
-    # rebel_builder = new SquadBuilder
-    #   faction: "Rebel Alliance"
-    #   container: "#rebel-builder"
     constructor: (args) ->
-        @faction = args.faction
-        @container = $(args.container)
-        @points = 0
+        # args
+        @container = $ args.container
+        @faction = $.trim args.faction
 
-        # State
+        # internal state
         @ships = []
+        @uniques_in_use =
+            Pilot:
+                []
+            Upgrade:
+                []
+            Modification:
+                []
+            Title:
+                []
 
+        @setupUI()
+        @setupEventHandlers()
+
+    setupUI: () ->
+        @ship_container = $ document.createElement 'DIV'
+        @ship_container.addClass 'container-fluid'
+        @container.append @ship_container
+
+        @button_container = $ document.createElement 'DIV'
+        @button_container.addClass 'container-fluid'
+        @container.append @button_container
+
+        @button_container.text 'This would have buttons.'
+
+    setupEventHandlers: () ->
+        @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
+            @claimUnique unique, type, cb
+        .on 'xwing:releaseUnique', (e, unique, type, cb) =>
+            @releaseUnique unique, type, cb
+
+    uniqueIndex: (unique, type) ->
+        if type not of @uniques_in_use
+            throw "Invalid unique type '#{type}'"
+        @uniques_in_use[type].indexOf unique
+
+    claimUnique: (unique, type, cb) =>
+        if @uniqueIndex(unique, type) < 0
+            # Special case: pilots may be crew and vice versa
+            if type == 'Pilot'
+                # Check crew
+                crew = exportObj.upgrades[unique.name]
+                if crew? and crew?.unique?
+                    if @uniqueIndex(crew, 'Upgrade') < 0
+                        # Not in crew either; claim it in use as well
+                        @uniques_in_use['Upgrade'].push crew
+                    else
+                        throw "Unique #{type} '#{unique.name}' already claimed as crew"
+            else if type == 'Upgrade' and unique.slot = 'Crew'
+                # Check pilots
+                pilot = exportObj.pilots[unique.name]
+                if pilot? and pilot?.unique?
+                    if @uniqueIndex(pilot, 'Pilot') < 0
+                        # Not a pilot either; claim it in use as well
+                        @uniques_in_use['Upgrade'].push pilot
+                    else
+                        throw "Unique #{type} '#{unique.name}' already claimed as pilot"
+            @uniques_in_use[type].push unique
+        else
+            throw "Unique #{type} '#{unique.name}' already claimed"
+        cb()
+
+    releaseUnique: (unique, type, cb) =>
+        idx = @uniqueIndex(unique, type)
+        if idx >= 0
+            @uniques_in_use[type].splice idx, 1
+            # Special case: releasing pilot needs to release equivalent crew (and vice versa)
+            if type == 'Pilot'
+                crew = exportObj.upgrades[unique.name]
+                if crew? and crew?.unique?
+                    idx = @uniqueIndex crew, 'Upgrade'
+                    if idx < 0
+                        throw "Unique crew accompanying #{unique.name} was not also claimed!"
+                    @uniques_in_use['Upgrade'].splice idx, 1
+            else if type == 'Upgrade' and unique.slot = 'Crew'
+                pilot = exportObj.pilots[unique.name]
+                if pilot? and pilot?.unique?
+                    idx = @uniqueIndex pilot, 'Pilot'
+                    if idx < 0
+                        throw "Unique pilot accompanying #{unique.name} was not also claimed!"
+                    @uniques_in_use['Pilot'].splice idx, 1
+        else
+            throw "Unique #{type} '#{unique.name}' not in use"
+        cb()
+
+    addShip: () ->
         @ships.push new Ship
             builder: this
+            container: @ship_container
 
-        @ships.push new Ship
-            builder: this
+    removeShip: (ship) ->
+        idx = @ships.indexOf ship
+        if idx < 0
+            throw "Ship not found"
+        await ship.destroy defer()
+        console.log "Removing ship from array..."
+        @ships.splice idx, 1
 
-        @container.on 'xwing:shipUpdated', (e, ship) =>
-            # Points may have changed.  Query all ships for points.
-            @points = 0
-            for ship in @ships
-                @points += ship.tallyPoints()
-
-    getUniquePilots: () ->
-        (ship.pilot.name for ship in @ships when ship.pilot? and ship.pilot.unique?)
-
-    getUniqueUpgrades: (slot) ->
-        unique_upgrades = []
-        for ship in @ships
-            if ship.pilot?
-                unique_upgrades.push.apply unique_upgrades, (upgrade_slot.upgrade.name for upgrade_slot in ship.upgrade_slots when upgrade_slot.slot == slot and upgrade_slot.upgrade?.unique?) # via http://stackoverflow.com/questions/1374126/how-to-append-an-array-to-an-existing-javascript-array
-        unique_upgrades
-
-    getAvailablePilots: () ->
-        # All pilots except uniques flying or crewing ships
-        unique_pilot_names = @getUniquePilots()
-        unique_crew_names = @getUniqueUpgrades 'Crew'
-        (pilot_data for pilot_name, pilot_data of exportObj.pilots when exportObj.ships[pilot_data.ship].faction == @faction and ( not pilot_data.unique? or (pilot_name not in unique_pilot_names and pilot_name not in unique_crew_names)))
-
-    getAvailableUpgrades: (slot) ->
-        # All upgrades except uniques used or crew flying other ships
-        unique_pilot_names = @getUniquePilots()
-        unique_upgrade_names = @getUniqueUpgrades slot
-        (upgrade_data for upgrade_name, upgrade_data of exportObj.upgrades when upgrade_data.slot == slot and (not upgrade_data.unique? or (upgrade_name not in unique_pilot_names and upgrade_name not in unique_upgrade_names)))
+    getAvailablePilotsIncluding: (include_pilot, term='') ->
+        # Returns data formatted for Select2
+        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when exportObj.ships[pilot.ship].faction == @faction and pilot_name.toUpperCase().indexOf(term.toUpperCase()) >= 0 and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        # Re-add selected pilot
+        if include_pilot? and include_pilot.unique? and include_pilot.name.toUpperCase().indexOf(term.toUpperCase()) >= 0
+            unclaimed_faction_pilots.push include_pilot
+        result_pilots_by_ship = {}
+        for result_pilot in ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots)
+            if result_pilot.ship not of result_pilots_by_ship
+                result_pilots_by_ship[result_pilot.ship] = []
+            result_pilots_by_ship[result_pilot.ship].push result_pilot
+        results = []
+        for ship in Object.keys(result_pilots_by_ship).sort()
+            results.push
+                text: ship
+                children: result_pilots_by_ship[ship].sort exportObj.sortHelper
+        results
 
 class Ship
-    # ship = new Ship
-    #   builder: rebel_builder
-    # ship.setPilotByName('Luke Skywalker')
-    # ship.setPilotById(42)
-    # ship.reset()
     constructor: (args) ->
+        # args
         @builder = args.builder
+        @container = args.container
+
+        # internal state
         @pilot = null
-        @ship = null
-        @upgrade_slots = []
+        @data = null # ship data
+        @upgrades = []
         @modification = null
         @title = null
 
-        # Create row containing ship UI elements
-        @row = $ document.createElement 'DIV'
-        @row.addClass 'row ship'
-        @builder.container.append @row
+        @setupUI()
 
-        # Create the pilot selector in a grid cell
-        pilot_cell = $ document.createElement 'DIV'
-        pilot_cell.addClass 'four columns'
-        @row.append pilot_cell
-        @pilot_selector = $ document.createElement 'SELECT'
-        @addEmptyPilotOption()
-        @pilot_selector.addClass 'pilot'
-        @pilot_selector.attr 'data-placeholder', 'Select a pilot'
-        @pilot_selector.change @onPilotChange
-        pilot_cell.append @pilot_selector
-        if not $.isMobile()
-            @pilot_selector.chosen
-                search_contains: true
+    destroy: (cb) ->
+        console.log "Destroying ship..."
+        @resetPilot()
+        @resetAddons()
+        @teardownUI()
+        console.log "Done destroying ship"
+        cb()
 
-        # Create the points grid cell
-        @points_cell = $ document.createElement 'DIV'
-        @points_cell.addClass 'one column points'
-        @row.append @points_cell
-        @points_cell.hide()
+    setPilotById: (id) ->
+        @setPilot exportObj.pilotsById[parseInt id]
 
-        # Create the upgrades grid cell
-        @upgrade_cell = $ document.createElement 'DIV'
-        @upgrade_cell.addClass 'six columns upgrades'
-        @row.append @upgrade_cell
+    setPilotByName: (name) ->
+        @setPilot exportObj.pilots[$.trim name]
 
-        # Create the delete pilot button grid cell
-        @remove_cell = $ document.createElement 'DIV'
-        @remove_cell.addClass 'one column'
-        @remove_cell.append """<button class="small alert radius button remove">&#215;</button>"""
-        @remove_cell.click (e) =>
-            e.preventDefault()
-            @row.slideUp 'fast', () =>
-                @destroy()
-        @row.append @remove_cell
-        @remove_cell.hide()
-
-        # Event handlers
-        @builder.container.on 'xwing:availablePilotsChanged', @onAvailablePilotsChanged
-
-        # Finally, populate pilot selector
-        @updatePilotSelector @builder.getAvailablePilots()
-
-    addEmptyPilotOption: () ->
-        opt = $ document.createElement 'OPTION'
-        if $.isMobile()
-            opt.text 'Select a pilot'
-            opt.val ''
-            opt.attr 'disabled', true
-        @pilot_selector.append opt
-
-    updatePilotSelector: (pilots) ->
-        # Update pilot selector to contain available pilots.
-
-        available_pilots = pilots.slice() # cheap copy
-        # Re-add our selected pilot if there is one and they're a unique
+    setPilot: (new_pilot) ->
+        if new_pilot != @pilot
+            @resetPilot()
+            @resetAddons()
+        @pilot = new_pilot
+        @data = exportObj.ships[@pilot?.ship]
         if @pilot?.unique?
-            available_pilots.push @pilot
-        # Organize by ship
-        pilots_by_ship = {}
-        for pilot in available_pilots
-            pilots_by_ship[pilot.ship] = [] if pilot.ship not of pilots_by_ship
-            pilots_by_ship[pilot.ship].push pilot
-        for ship, pilots of pilots_by_ship
-            pilots.sort exportObj.sortHelper
+            await @builder.container.trigger 'xwing:claimUnique', [ @pilot, 'Pilot', defer() ]
+        @pilot
 
-        # Reset pilot selector
-        @pilot_selector.text ''
-        @addEmptyPilotOption()
-        for ship in Object.keys(pilots_by_ship).sort()
-            optgroup = $ document.createElement 'OPTGROUP'
-            optgroup.attr 'label', ship
-            @pilot_selector.append optgroup
-            for pilot in pilots_by_ship[ship]
-                option = $ document.createElement 'OPTION'
-                option.text "#{pilot.name} (#{pilot.points})"
-                option.val pilot.name
-                optgroup.append option
-
-        @pilot_selector.val @pilot?.name
-        @pilot_selector.trigger 'liszt:updated'
-
-    onAvailablePilotsChanged: (e, pilots) =>
-        @updatePilotSelector pilots
-
-    onPilotChange: (e) =>
-        # Set internal state
-        old_pilot = @pilot
-        @pilot = exportObj.pilots[@pilot_selector.val()]
-        @ship = exportObj.ships[@pilot?.ship]
-
-        # Clear upgrades, modification, and title
-        for upgrade_slot in @upgrade_slots
-            upgrade_slot.destroy()
-        @upgrade_slots = []
-        @modification = null
-        @title = null
-
-        # Set up upgrade slots
-        for slot in @pilot?.slots
-            @upgrade_slots.push new UpgradeSlot
-                ship: this
-                slot: slot
-
-        if @pilot?
-            @points_cell.show()
-            @remove_cell.show()
-
-        # Emit update events
-        @builder.container.trigger 'xwing:shipUpdated', this
-        if old_pilot?.unique? or @pilot.unique?
-            # Addition or removal of a unique pilot requires other selectors
-            # to refresh their contents.
-            @builder.container.trigger 'xwing:availablePilotsChanged', [ @builder.getAvailablePilots() ]
-            @builder.container.trigger 'xwing:availableUpgradesChanged', [ 'Crew', @builder.getAvailableUpgrades 'Crew' ]
-
-    tallyPoints: () ->
-        points = 0
-        if @pilot?
-            points += @pilot.points
-            for upgrade_slot in @upgrade_slots
-                points += upgrade_slot.upgrade?.points ? 0
-            # Tally modification
-            # Tally title
-        @points_cell.text points
-        points
-
-    destroy: () ->
-        @builder.container.off 'xwing:availablePilotsChanged', @onAvailablePilotsChanged
-        @row.text ''
+    resetPilot: () ->
+        console.log "Resetting pilot..."
+        if @pilot?.unique?
+            await @builder.container.trigger 'xwing:releaseUnique', [ @pilot, 'Pilot', defer() ]
         @pilot = null
-        @upgrade_slots = []
-        @modification = null
-        @title = null
-        @builder.container.trigger 'xwing:shipUpdated', this
-        @builder.container.trigger 'xwing:availablePilotsChanged', [ @builder.getAvailablePilots() ]
-        @builder.container.trigger 'xwing:availableUpgradesChanged', [ 'Crew', @builder.getAvailableUpgrades 'Crew' ]
 
-class UpgradeSlot
+    resetAddons: () ->
+        console.log "Resetting addons..."
+        await
+            for upgrade in @upgrades
+                upgrade.destroy defer()
+                idx = @upgrades.indexOf upgrade
+                @upgrades.splice idx, 1
+            @modification.destroy defer() if @modification?
+            @modification = null
+            @title.destroy defer() if @title?
+            @title = null
+
+    setupUI: () ->
+        @row = $ document.createElement 'DIV'
+        @row.addClass 'row'
+        @container.append @row
+
+        @row.append $.trim '''
+            <div class="span4 pilot-selector-container">
+                <input type="hidden" />
+            </div>
+            <div class="span1 points-display-container" />
+            <div class="span6 addon-container" />
+            <div class="span1 remove-btn-container" />
+        '''
+        @pilot_selector = $ @row.find('div.pilot-selector-container input[type=hidden]')
+        @pilot_selector.select2
+            width: '100%'
+            placeholder: 'Select a pilot'
+            query: (query) =>
+                query.callback
+                    more: false
+                    results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
+        @pilot_selector.on 'change', (e) =>
+            @setPilotById @pilot_selector.select2('val')
+
+    teardownUI: () ->
+        @row.remove()
+
+class GenericAddon
     constructor: (args) ->
+        # args
+        @type = null
         @ship = args.ship
+        @container = $ args.container
+
+        # internal state
+        @data = null
+
+    destroy: (cb, args...) ->
+        if @data?.unique?
+            await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
+        @container.remove()
+        cb args
+
+class Upgrade extends GenericAddon
+    constructor: (args) ->
+        # args
+        super args
         @slot = args.slot
-        @upgrade = null
+        @type = 'Upgrade'
 
-        @selector = $ document.createElement 'SELECT'
-        @addEmptyUpgradeOption()
-        @selector.addClass 'upgrade'
-        @selector.attr 'data-placeholder', "No #{@slot} Upgrade"
-        @selector.change @onUpgradeChange
-        @ship.upgrade_cell.append @selector
-        if not $.isMobile()
-            @selector.chosen
-                search_contains: true
-                allow_single_deselect: true
-                disable_search_threshold: 8
+class Modification extends GenericAddon
+    constructor: (args) ->
+        super args
+        @type = 'Modification'
 
-        @ship.builder.container.on 'xwing:availableUpgradesChanged', @onAvailableUpgradesChanged
-
-        @updateSelector @ship.builder.getAvailableUpgrades @slot
-
-    addEmptyUpgradeOption: () ->
-        opt = $ document.createElement 'OPTION'
-        if $.isMobile()
-            opt.text "No #{@slot} Upgrade"
-            opt.val ''
-            opt.attr 'disabled', true
-        @selector.append opt
-
-    updateSelector: (upgrades) ->
-        # Update selector to contain available upgrades.
-
-        available_upgrades = upgrades.slice() # cheap copy
-        # Re-add our selected upgrade if there is one and they're a unique
-        if @upgrade?.unique?
-            available_upgrades.push @upgrade
-        available_upgrades.sort exportObj.sortHelper
-
-        # Reset upgrade selector
-        @selector.text ''
-        @addEmptyUpgradeOption()
-        for upgrade in available_upgrades
-            option = $ document.createElement 'OPTION'
-            option.text "#{upgrade.name} (#{upgrade.points})"
-            option.val upgrade.name
-            @selector.append option
-        @selector.val @upgrade?.name
-        @selector.trigger 'liszt:updated'
-
-    onAvailableUpgradesChanged: (e, slot, upgrades) =>
-        if slot == @slot
-            @updateSelector upgrades
-
-    onUpgradeChange: (e) =>
-        # Set internal state
-
-        old_upgrade = @upgrade
-        @upgrade = exportObj.upgrades[@selector.val()]
-
-        # Emit update events
-        @ship.builder.container.trigger 'xwing:shipUpdated', this
-
-        if old_upgrade?.unique? or @upgrade?.unique?
-            # Addition or removal of a unique upgrade requires other selectors
-            # to refresh their contents.
-            @ship.builder.container.trigger 'xwing:availableUpgradesChanged', [ @slot, @ship.builder.getAvailableUpgrades @slot ]
-            if @slot == 'Crew'
-                # A change in unique crew may change the list of available pilots
-                @ship.builder.container.trigger 'xwing:availablePilotsChanged', [ @ship.builder.getAvailablePilots() ]
-
-
-    destroy: () ->
-        @ship.builder.container.off 'xwing:availableUpgradesChanged', @onAvailableUpgradesChanged
-        @selector.data('chosen').container.remove()
-        @selector.remove()
-        @selector = null
-        @ship.builder.container.trigger 'xwing:availableUpgradesChanged', [ @slot, @ship.builder.getAvailableUpgrades @slot ]
-        if @slot == 'Crew' and @upgrade?.unique?
-            # A change in unique crew may change the list of available pilots
-            @ship.builder.container.trigger 'xwing:availablePilotsChanged', [ @ship.builder.getAvailablePilots() ]
+class Title extends GenericAddon
+    constructor: (args) ->
+        super args
+        @type = 'Title'
