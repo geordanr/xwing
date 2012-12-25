@@ -48,15 +48,19 @@ class exportObj.SquadBuilder
         @setupUI()
         @setupEventHandlers()
 
+        @addShip()
+
     setupUI: () ->
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
             <div class="span4 points-display-container">Total Points: 0</div>
+            <div class="span4 offset4 permalink-container"><a href="#">Permalink</a></div>
         '''
         @container.append @status_container
 
         @points_container = $ @status_container.find('div.points-display-container')
+        @permalink = $ @status_container.find('div.permalink-container a')
 
         @ship_container = $ document.createElement 'DIV'
         @ship_container.addClass 'container-fluid'
@@ -73,11 +77,18 @@ class exportObj.SquadBuilder
             @claimUnique unique, type, cb
         .on 'xwing:releaseUnique', (e, unique, type, cb) =>
             @releaseUnique unique, type, cb
-        .on 'xwing:pointsUpdated', (e, cb) =>
+        .on 'xwing:pointsUpdated', (e) =>
             total_points = 0
             for ship, i in @ships
                 total_points += ship.getPoints()
             @points_container.text "Total Points: #{total_points}"
+            # update permalink while we're at it
+
+    serialize: () ->
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:MODIFICATIONID:TITLEID; ...
+
+    loadFromSerialized: (serialized) ->
+
 
     uniqueIndex: (unique, type) ->
         if type not of @uniques_in_use
@@ -144,6 +155,7 @@ class exportObj.SquadBuilder
             throw "Ship not found"
         await ship.destroy defer()
         @ships.splice idx, 1
+        @container.trigger 'xwing:pointsUpdated'
 
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
@@ -170,7 +182,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']))
         # Re-add selected upgrade
-        if include_upgrade? and include_upgrade.unique? and @matcher(include_upgrade, term)
+        if include_upgrade? and include_upgrade.unique? and @matcher(include_upgrade.name, term)
             unclaimed_upgrades.push include_upgrade
         ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
 
@@ -178,7 +190,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']))
         # Re-add selected modification
-        if include_modification? and include_modification.unique? and @matcher(include_modification, term)
+        if include_modification? and include_modification.unique? and @matcher(include_modification.name, term)
             unclaimed_modifications.push include_modification
         ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points } for modification in unclaimed_modifications).sort exportObj.sortHelper
 
@@ -187,7 +199,7 @@ class exportObj.SquadBuilder
         # All titles are unique
         unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship_name and @matcher(title_name, term) and title not in @uniques_in_use['Title'])
         # Re-add selected title
-        if include_title? and @matcher(include_title, term)
+        if include_title? and @matcher(include_title.name, term)
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
@@ -220,6 +232,9 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
+            if not @pilot?
+                @builder.addShip()
+                @remove_button.fadeIn 'fast'
             @resetPilot()
             @resetAddons()
             @data = exportObj.ships[new_pilot?.ship]
@@ -302,10 +317,12 @@ class Ship
 
         @addon_container = $ @row.find('div.addon-container')
 
-        $(@row.find('div.remove-btn-container button')).click (e) =>
+        @remove_button = $ @row.find('div.remove-btn-container button')
+        @remove_button.click (e) =>
             e.preventDefault()
             @row.slideUp 'fast', () =>
                 @builder.removeShip this
+        @remove_button.hide()
 
     teardownUI: () ->
         @row.text ''
@@ -328,7 +345,7 @@ class GenericAddon
     destroy: (cb, args...) ->
         if @data?.unique?
             await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
-        @container.text ''
+        @selector.select2 'destroy'
         cb args
 
     setupSelector: (args) ->
@@ -372,6 +389,7 @@ class Upgrade extends GenericAddon
         super
             width: '50%'
             placeholder: "No #{@slot} Upgrade"
+            allowClear: true
             query: (query) =>
                 query.callback
                     more: false
@@ -390,6 +408,7 @@ class Modification extends GenericAddon
         super
             width: '50%'
             placeholder: "No Modification"
+            allowClear: true
             query: (query) =>
                 query.callback
                     more: false
@@ -401,21 +420,41 @@ class Title extends GenericAddon
         @type = 'Title'
         @dataById = exportObj.titlesById
         @dataByName = exportObj.titles
+        @conferredUpgrades = []
 
         @setupSelector()
 
     setData: (new_data) ->
         # All titles are unique
         if new_data != @data
-            await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, 'Title', defer() ] if @data?
+            if @data?
+                await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, 'Title', defer() ]
+                await
+                    # Rescind any conferred upgrades
+                    for upgrade in @conferredUpgrades
+                        upgrade.destroy defer()
+                for upgrade in @conferredUpgrades
+                    idx = @ship.upgrades.indexOf upgrade
+                    @ship.upgrades.splice idx, 1
+                @conferredUpgrades = []
             await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, 'Title', defer() ]
             @data = new_data
             @ship.builder.container.trigger 'xwing:pointsUpdated'
+            # Confer any upgrades
+            if @data?.slots? and @data.slots.length > 0
+                for slot in @data.slots
+                    upgrade = new Upgrade
+                        ship: @ship
+                        container: @container
+                        slot: slot
+                    @ship.upgrades.push upgrade
+                    @conferredUpgrades.push upgrade
 
     setupSelector: () ->
         super
             width: '50%'
             placeholder: "No Title"
+            allowClear: true
             query: (query) =>
                 query.callback
                     more: false

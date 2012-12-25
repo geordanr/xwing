@@ -38,18 +38,18 @@
             faction: 'Rebel Alliance',
             container: '#rebel-builder'
           });
+          window.empire_sb = new window.SquadBuilder({
+            faction: 'Galactic Empire',
+            container: '#empire-builder'
+          });
           switch ($.getParameterByName('f')) {
             case 'Rebel Alliance':
-              $('#rebelTab').click();
-              break;
+              return $('#rebelTab').click();
             case 'Galactic Empire':
-              $('#empireTab').click();
-              break;
+              return $('#empireTab').click();
             default:
-              $('#rebelTab').click();
+              return $('#rebelTab').click();
           }
-          window.rebel_sb.addShip();
-          return window.rebel_sb.addShip();
         });
       
       }).call(this);

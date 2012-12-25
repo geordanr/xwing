@@ -108,6 +108,9 @@
         window.rebel_sb = new window.SquadBuilder
             faction: 'Rebel Alliance'
             container: '#rebel-builder'
+        window.empire_sb = new window.SquadBuilder
+            faction: 'Galactic Empire'
+            container: '#empire-builder'
         switch $.getParameterByName 'f'
           when 'Rebel Alliance'
               $('#rebelTab').click()
@@ -115,6 +118,3 @@
               $('#empireTab').click()
           else
               $('#rebelTab').click()
-
-        window.rebel_sb.addShip()
-        window.rebel_sb.addShip()

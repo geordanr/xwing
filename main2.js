@@ -104,14 +104,16 @@
       };
       this.setupUI();
       this.setupEventHandlers();
+      this.addShip();
     }
 
     SquadBuilder.prototype.setupUI = function() {
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>'));
+      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span4 offset4 permalink-container"><a href="#">Permalink</a></div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
+      this.permalink = $(this.status_container.find('div.permalink-container a'));
       this.ship_container = $(document.createElement('DIV'));
       this.ship_container.addClass('container-fluid');
       this.container.append(this.ship_container);
@@ -127,7 +129,7 @@
         return _this.claimUnique(unique, type, cb);
       }).on('xwing:releaseUnique', function(e, unique, type, cb) {
         return _this.releaseUnique(unique, type, cb);
-      }).on('xwing:pointsUpdated', function(e, cb) {
+      }).on('xwing:pointsUpdated', function(e) {
         var i, ship, total_points, _i, _len, _ref;
         total_points = 0;
         _ref = _this.ships;
@@ -138,6 +140,10 @@
         return _this.points_container.text("Total Points: " + total_points);
       });
     };
+
+    SquadBuilder.prototype.serialize = function() {};
+
+    SquadBuilder.prototype.loadFromSerialized = function(serialized) {};
 
     SquadBuilder.prototype.uniqueIndex = function(unique, type) {
       if (!(type in this.uniques_in_use)) {
@@ -226,11 +232,12 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 144
+          lineno: 155
         }));
         __iced_deferrals._fulfill();
       })(function() {
-        return _this.ships.splice(idx, 1);
+        _this.ships.splice(idx, 1);
+        return _this.container.trigger('xwing:pointsUpdated');
       });
     };
 
@@ -305,7 +312,7 @@
         }
         return _results;
       }).call(this);
-      if ((include_upgrade != null) && (include_upgrade.unique != null) && this.matcher(include_upgrade, term)) {
+      if ((include_upgrade != null) && (include_upgrade.unique != null) && this.matcher(include_upgrade.name, term)) {
         unclaimed_upgrades.push(include_upgrade);
       }
       return ((function() {
@@ -338,7 +345,7 @@
         }
         return _results;
       }).call(this);
-      if ((include_modification != null) && (include_modification.unique != null) && this.matcher(include_modification, term)) {
+      if ((include_modification != null) && (include_modification.unique != null) && this.matcher(include_modification.name, term)) {
         unclaimed_modifications.push(include_modification);
       }
       return ((function() {
@@ -371,7 +378,7 @@
         }
         return _results;
       }).call(this);
-      if ((include_title != null) && this.matcher(include_title, term)) {
+      if ((include_title != null) && this.matcher(include_title.name, term)) {
         unclaimed_titles.push(include_title);
       }
       return ((function() {
@@ -427,6 +434,10 @@
       __iced_k = __iced_k_noop;
       ___iced_passed_deferral = iced.findDeferral(arguments);
       if (new_pilot !== this.pilot) {
+        if (this.pilot == null) {
+          this.builder.addShip();
+          this.remove_button.fadeIn('fast');
+        }
         this.resetPilot();
         this.resetAddons();
         this.data = exportObj.ships[new_pilot != null ? new_pilot.ship : void 0];
@@ -440,7 +451,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 226
+                  lineno: 241
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -474,7 +485,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 233
+                lineno: 248
               })
             ]);
             __iced_deferrals._fulfill();
@@ -526,17 +537,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 256
+            lineno: 271
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 257
+            lineno: 272
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 258
+            lineno: 273
           }));
         }
         __iced_deferrals._fulfill();
@@ -583,12 +594,14 @@
       this.points_container = $(this.row.find('div.points-display-container'));
       this.points_container.hide();
       this.addon_container = $(this.row.find('div.addon-container'));
-      return $(this.row.find('div.remove-btn-container button')).click(function(e) {
+      this.remove_button = $(this.row.find('div.remove-btn-container button'));
+      this.remove_button.click(function(e) {
         e.preventDefault();
         return _this.row.slideUp('fast', function() {
           return _this.builder.removeShip(_this);
         });
       });
+      return this.remove_button.hide();
     };
 
     Ship.prototype.teardownUI = function() {
@@ -628,7 +641,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 329
+                lineno: 346
               })
             ]);
             __iced_deferrals._fulfill();
@@ -637,7 +650,7 @@
           return __iced_k();
         }
       })(function() {
-        _this.container.text('');
+        _this.selector.select2('destroy');
         return cb(args);
       });
     };
@@ -678,7 +691,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 350
+                  lineno: 367
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -697,7 +710,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 352
+                    lineno: 369
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -742,6 +755,7 @@
       return Upgrade.__super__.setupSelector.call(this, {
         width: '50%',
         placeholder: "No " + this.slot + " Upgrade",
+        allowClear: true,
         query: function(query) {
           return query.callback({
             more: false,
@@ -772,6 +786,7 @@
       return Modification.__super__.setupSelector.call(this, {
         width: '50%',
         placeholder: "No Modification",
+        allowClear: true,
         query: function(query) {
           return query.callback({
             more: false,
@@ -794,11 +809,12 @@
       this.type = 'Title';
       this.dataById = exportObj.titlesById;
       this.dataByName = exportObj.titles;
+      this.conferredUpgrades = [];
       this.setupSelector();
     }
 
     Title.prototype.setData = function(new_data) {
-      var ___iced_passed_deferral, __iced_deferrals, __iced_k,
+      var idx, slot, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k,
         _this = this;
       __iced_k = __iced_k_noop;
       ___iced_passed_deferral = iced.findDeferral(arguments);
@@ -813,11 +829,37 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 409
+                  lineno: 430
                 })
               ]);
               __iced_deferrals._fulfill();
-            })(__iced_k);
+            })(function() {
+              (function(__iced_k) {
+                var _i, _len, _ref;
+                __iced_deferrals = new iced.Deferrals(__iced_k, {
+                  parent: ___iced_passed_deferral,
+                  filename: "main2.coffee",
+                  funcname: "Title.setData"
+                });
+                _ref = _this.conferredUpgrades;
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                  upgrade = _ref[_i];
+                  upgrade.destroy(__iced_deferrals.defer({
+                    lineno: 434
+                  }));
+                }
+                __iced_deferrals._fulfill();
+              })(function() {
+                var _i, _len, _ref;
+                _ref = _this.conferredUpgrades;
+                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                  upgrade = _ref[_i];
+                  idx = _this.ship.upgrades.indexOf(upgrade);
+                  _this.ship.upgrades.splice(idx, 1);
+                }
+                return __iced_k(_this.conferredUpgrades = []);
+              });
+            });
           } else {
             return __iced_k();
           }
@@ -830,13 +872,28 @@
             });
             _this.ship.builder.container.trigger('xwing:claimUnique', [
               new_data, 'Title', __iced_deferrals.defer({
-                lineno: 410
+                lineno: 439
               })
             ]);
             __iced_deferrals._fulfill();
           })(function() {
+            var _i, _len, _ref, _ref1;
             _this.data = new_data;
-            return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
+            _this.ship.builder.container.trigger('xwing:pointsUpdated');
+            if ((((_ref = _this.data) != null ? _ref.slots : void 0) != null) && _this.data.slots.length > 0) {
+              _ref1 = _this.data.slots;
+              for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+                slot = _ref1[_i];
+                upgrade = new Upgrade({
+                  ship: _this.ship,
+                  container: _this.container,
+                  slot: slot
+                });
+                _this.ship.upgrades.push(upgrade);
+                _this.conferredUpgrades.push(upgrade);
+              }
+            }
+            return __iced_k();
           });
         });
       } else {
@@ -849,6 +906,7 @@
       return Title.__super__.setupSelector.call(this, {
         width: '50%',
         placeholder: "No Title",
+        allowClear: true,
         query: function(query) {
           return query.callback({
             more: false,
