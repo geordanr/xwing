@@ -11,7 +11,7 @@ Yes.
 
 So...?
 ------
-I wanted a project to work on and screw around with stuff like HAML and Foundation 3.
+I wanted a project to work on and screw around with stuff like HAML and Bootstrap and Select2, etc.
 
 When will this be done?
 -----------------------
