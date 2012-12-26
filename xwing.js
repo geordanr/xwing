@@ -93,7 +93,8 @@
 
     function SquadBuilder(args) {
       this.releaseUnique = __bind(this.releaseUnique, this);
-      this.claimUnique = __bind(this.claimUnique, this);      this.container = $(args.container);
+      this.claimUnique = __bind(this.claimUnique, this);
+      this.onPointsUpdated = __bind(this.onPointsUpdated, this);      this.container = $(args.container);
       this.faction = $.trim(args.faction);
       this.ships = [];
       this.uniques_in_use = {
@@ -130,8 +131,9 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade');
       $(document).append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + " List</h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
-      return this.text_ul = $(this.list_modal.find('div.modal-body ul'));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.text_ul = $(this.list_modal.find('div.modal-body ul'));
+      return this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
     };
 
     SquadBuilder.prototype.setupEventHandlers = function() {
@@ -141,17 +143,8 @@
       }).on('xwing:releaseUnique', function(e, unique, type, cb) {
         return _this.releaseUnique(unique, type, cb);
       }).on('xwing:pointsUpdated', function(e, cb) {
-        var i, ship, total_points, _i, _len, _ref;
         if (cb == null) cb = $.noop;
-        total_points = 0;
-        _ref = _this.ships;
-        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-          ship = _ref[i];
-          total_points += ship.getPoints();
-        }
-        _this.points_container.text("Total Points: " + total_points);
-        _this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
-        return cb(total_points);
+        return _this.onPointsUpdated(cb);
       });
       return this.view_list_button.click(function(e) {
         e.preventDefault();
@@ -159,7 +152,51 @@
       });
     };
 
+    SquadBuilder.prototype.onPointsUpdated = function(cb) {
+      var i, ship, total_points, _i, _len, _ref;
+      total_points = 0;
+      _ref = this.ships;
+      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+        ship = _ref[i];
+        total_points += ship.getPoints();
+      }
+      this.points_container.text("Total Points: " + total_points);
+      this.text_total_points_container.text(total_points);
+      this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
+      return cb(total_points);
+    };
+
     SquadBuilder.prototype.showTextListModal = function() {
+      var addon_list, ship, total_points, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+      this.text_ul.text('');
+      _ref = this.ships;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        ship = _ref[_i];
+        if (ship.pilot != null) {
+          if (ship.getPoints() !== ship.pilot.points) {
+            addon_list = '<ul>';
+            if (ship.title != null) {
+              addon_list += "<li>" + (ship.title.toString()) + "</li>";
+            }
+            _ref1 = ship.upgrades;
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              upgrade = _ref1[_j];
+              if (upgrade.data != null) {
+                addon_list += "<li>" + (upgrade.toString()) + "</li>";
+              }
+            }
+            if (((_ref2 = ship.modification) != null ? _ref2.data : void 0) != null) {
+              addon_list += "<li>" + (ship.modification.toString()) + "</li>";
+            }
+            addon_list += '</ul>';
+            total_points = "Total: " + (ship.getPoints());
+          } else {
+            total_points = '';
+            addon_list = '';
+          }
+          this.text_ul.append($.trim("<li>\n    <strong>" + ship.pilot.name + " (" + ship.pilot.points + ")</strong>\n    <br />\n    " + addon_list + "\n    <em>" + total_points + "</em>\n</li>"));
+        }
+      }
       return this.list_modal.modal('show');
     };
 
@@ -218,7 +255,7 @@
         }
         title_id = parseInt(title_id);
         if (title_id >= 0) new_ship.title.setById(title_id);
-        if (new_ship.title.conferredUpgrades.length > 0) {
+        if ((new_ship.title != null) && new_ship.title.conferredUpgrades.length > 0) {
           _ref3 = title_conferred_upgrade_ids.split(',');
           for (i = _k = 0, _len2 = _ref3.length; _k < _len2; i = ++_k) {
             upgrade_id = _ref3[i];
@@ -320,21 +357,21 @@
       (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "main2.coffee",
+          filename: "xwing.coffee",
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 220
+          lineno: 248
         }));
         __iced_deferrals._fulfill();
       })(function() {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "main2.coffee",
+          filename: "xwing.coffee",
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 221
+          lineno: 249
         }));
         __iced_deferrals._fulfill();
       });
@@ -549,12 +586,12 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "main2.coffee",
+                filename: "xwing.coffee",
                 funcname: "Ship.setPilot"
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 309
+                  lineno: 337
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -583,12 +620,12 @@
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral,
-              filename: "main2.coffee",
+              filename: "xwing.coffee",
               funcname: "Ship.resetPilot"
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 316
+                lineno: 344
               })
             ]);
             __iced_deferrals._fulfill();
@@ -633,24 +670,24 @@
         var _i, _len, _ref;
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "main2.coffee",
+          filename: "xwing.coffee",
           funcname: "Ship.resetAddons"
         });
         _ref = _this.upgrades;
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 339
+            lineno: 367
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 340
+            lineno: 368
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 341
+            lineno: 369
           }));
         }
         __iced_deferrals._fulfill();
@@ -758,12 +795,12 @@
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral,
-              filename: "main2.coffee",
+              filename: "xwing.coffee",
               funcname: "GenericAddon.destroy"
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 426
+                lineno: 454
               })
             ]);
             __iced_deferrals._fulfill();
@@ -808,12 +845,12 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "main2.coffee",
+                filename: "xwing.coffee",
                 funcname: "GenericAddon.setData"
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 447
+                  lineno: 475
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -827,12 +864,12 @@
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "main2.coffee",
+                  filename: "xwing.coffee",
                   funcname: "GenericAddon.setData"
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 449
+                    lineno: 477
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -863,6 +900,14 @@
         });
       } else {
         return this.selector.select2('data', null);
+      }
+    };
+
+    GenericAddon.prototype.toString = function() {
+      if (this.data != null) {
+        return "" + this.data.name + " (" + this.data.points + ")";
+      } else {
+        return "No " + this.type;
       }
     };
 
@@ -957,12 +1002,12 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "main2.coffee",
+                filename: "xwing.coffee",
                 funcname: "Title.setData"
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 518
+                  lineno: 552
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -971,14 +1016,14 @@
                 var _i, _len, _ref;
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "main2.coffee",
+                  filename: "xwing.coffee",
                   funcname: "Title.setData"
                 });
                 _ref = _this.conferredUpgrades;
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 522
+                    lineno: 556
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1002,12 +1047,12 @@
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "main2.coffee",
+                  filename: "xwing.coffee",
                   funcname: "Title.setData"
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 527
+                    lineno: 561
                   })
                 ]);
                 __iced_deferrals._fulfill();

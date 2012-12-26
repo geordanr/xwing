@@ -85,7 +85,7 @@ class exportObj.SquadBuilder
         @list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>#{@faction} List</h3>
+                <h3>#{@faction}: <span class="total-points">0</span> Points </h3>
             </div>
             <div class="modal-body">
                 <ul></ul>
@@ -95,6 +95,7 @@ class exportObj.SquadBuilder
             </div>
         """
         @text_ul = $ @list_modal.find('div.modal-body ul')
+        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
 
     setupEventHandlers: () ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
@@ -102,20 +103,47 @@ class exportObj.SquadBuilder
         .on 'xwing:releaseUnique', (e, unique, type, cb) =>
             @releaseUnique unique, type, cb
         .on 'xwing:pointsUpdated', (e, cb=$.noop) =>
-            total_points = 0
-            for ship, i in @ships
-                total_points += ship.getPoints()
-            @points_container.text "Total Points: #{total_points}"
-            # update permalink while we're at it
-            @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
-            cb total_points
+            @onPointsUpdated cb
 
         @view_list_button.click (e) =>
             e.preventDefault()
             @showTextListModal()
 
+    onPointsUpdated: (cb) =>
+        total_points = 0
+        for ship, i in @ships
+            total_points += ship.getPoints()
+        @points_container.text "Total Points: #{total_points}"
+        @text_total_points_container.text total_points
+        # update permalink while we're at it
+        @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+        cb total_points
+
     showTextListModal: () ->
         # Update data in list
+        @text_ul.text ''
+        for ship in @ships
+            if ship.pilot?
+                if ship.getPoints() != ship.pilot.points
+                    addon_list = '<ul>'
+                    addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?
+                    for upgrade in ship.upgrades
+                        if upgrade.data?
+                            addon_list += "<li>#{upgrade.toString()}</li>"
+                    addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
+                    addon_list += '</ul>'
+                    total_points = "Total: #{ship.getPoints()}"
+                else
+                    total_points = ''
+                    addon_list = ''
+                @text_ul.append $.trim """
+                    <li>
+                        <strong>#{ship.pilot.name} (#{ship.pilot.points})</strong>
+                        <br />
+                        #{addon_list}
+                        <em>#{total_points}</em>
+                    </li>
+                """
         # Display modal
         @list_modal.modal 'show'
 
@@ -142,7 +170,7 @@ class exportObj.SquadBuilder
             title_id = parseInt title_id
             new_ship.title.setById title_id if title_id >= 0
 
-            if new_ship.title.conferredUpgrades.length > 0
+            if new_ship.title? and new_ship.title.conferredUpgrades.length > 0
                 for upgrade_id, i in title_conferred_upgrade_ids.split ','
                     upgrade_id = parseInt upgrade_id
                     new_ship.title.conferredUpgrades[i].setById upgrade_id if upgrade_id >= 0
@@ -461,6 +489,12 @@ class GenericAddon
                 text: "#{@data.name} (#{@data.points})"
         else
             @selector.select2 'data', null
+
+    toString: () ->
+        if @data?
+            "#{@data.name} (#{@data.points})"
+        else
+            "No #{@type}"
 
 class Upgrade extends GenericAddon
     constructor: (args) ->
