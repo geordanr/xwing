@@ -125,12 +125,18 @@
       this.button_container = $(document.createElement('DIV'));
       this.button_container.addClass('container-fluid');
       this.container.append(this.button_container);
-      return this.button_container.text('This would have buttons.');
+      this.button_container.append($.trim('<button class="btn">View as Text</button>'));
+      this.view_list_button = $(this.button_container.find('button'));
+      this.list_modal = $(document.createElement('DIV'));
+      this.list_modal.addClass('modal hide fade');
+      $(document).append(this.list_modal);
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + " List</h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      return this.text_ul = $(this.list_modal.find('div.modal-body ul'));
     };
 
     SquadBuilder.prototype.setupEventHandlers = function() {
       var _this = this;
-      return this.container.on('xwing:claimUnique', function(e, unique, type, cb) {
+      this.container.on('xwing:claimUnique', function(e, unique, type, cb) {
         return _this.claimUnique(unique, type, cb);
       }).on('xwing:releaseUnique', function(e, unique, type, cb) {
         return _this.releaseUnique(unique, type, cb);
@@ -147,6 +153,14 @@
         _this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(_this.faction)) + "&d=" + (encodeURI(_this.serialize())));
         return cb(total_points);
       });
+      return this.view_list_button.click(function(e) {
+        e.preventDefault();
+        return _this.showTextListModal();
+      });
+    };
+
+    SquadBuilder.prototype.showTextListModal = function() {
+      return this.list_modal.modal('show');
     };
 
     SquadBuilder.prototype.serialize = function() {
@@ -310,7 +324,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 191
+          lineno: 220
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -320,7 +334,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 192
+          lineno: 221
         }));
         __iced_deferrals._fulfill();
       });
@@ -540,7 +554,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 280
+                  lineno: 309
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -574,7 +588,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 287
+                lineno: 316
               })
             ]);
             __iced_deferrals._fulfill();
@@ -626,17 +640,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 310
+            lineno: 339
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 311
+            lineno: 340
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 312
+            lineno: 341
           }));
         }
         __iced_deferrals._fulfill();
@@ -749,7 +763,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 397
+                lineno: 426
               })
             ]);
             __iced_deferrals._fulfill();
@@ -799,7 +813,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 418
+                  lineno: 447
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -818,7 +832,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 420
+                    lineno: 449
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -948,7 +962,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 489
+                  lineno: 518
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -964,7 +978,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 493
+                    lineno: 522
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -993,7 +1007,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 498
+                    lineno: 527
                   })
                 ]);
                 __iced_deferrals._fulfill();

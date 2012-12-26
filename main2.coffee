@@ -74,7 +74,27 @@ class exportObj.SquadBuilder
         @button_container.addClass 'container-fluid'
         @container.append @button_container
 
-        @button_container.text 'This would have buttons.'
+        @button_container.append $.trim '''
+            <button class="btn">View as Text</button>
+        '''
+        @view_list_button = $ @button_container.find('button')
+
+        @list_modal = $ document.createElement 'DIV'
+        @list_modal.addClass 'modal hide fade'
+        $(document).append @list_modal
+        @list_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>#{@faction} List</h3>
+            </div>
+            <div class="modal-body">
+                <ul></ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @text_ul = $ @list_modal.find('div.modal-body ul')
 
     setupEventHandlers: () ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
@@ -89,6 +109,15 @@ class exportObj.SquadBuilder
             # update permalink while we're at it
             @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
             cb total_points
+
+        @view_list_button.click (e) =>
+            e.preventDefault()
+            @showTextListModal()
+
+    showTextListModal: () ->
+        # Update data in list
+        # Display modal
+        @list_modal.modal 'show'
 
     serialize: () ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:TITLEUPGRADE1,TITLEUPGRADE2:MODIFICATIONID; ...

@@ -565,10 +565,6 @@ exportObj.pilots =
         ]
 
 
-exportObj.pilotsById = {}
-for pilot_name, pilot of exportObj.pilots
-    exportObj.pilotsById[pilot.id] = pilot
-
 exportObj.upgrades =
     "Ion Cannon Turret":
         name: "Ion Cannon Turret"
@@ -842,10 +838,6 @@ exportObj.upgrades =
 
                  Then, discard this Upgrade card."""
 
-exportObj.upgradesById = {}
-for upgrade_name, upgrade of exportObj.upgrades
-    exportObj.upgradesById[upgrade.id] = upgrade
-
 exportObj.modifications =
     "Stealth Device":
         name: "Stealth Device"
@@ -863,9 +855,6 @@ exportObj.modifications =
         points: 4
         text: """Your action bar gains the %BOOST% action icon."""
 
-exportObj.modificationsById = {}
-for modification_name, modification of exportObj.modifications
-    exportObj.modificationsById[modification.id] = modification
 
 exportObj.titles =
     "Slave I":
@@ -886,6 +875,18 @@ exportObj.titles =
         ship: "YT-1300"
         actions: "Evade"
         text: """Your action bar gains the %EVADE% action icon."""
+
+exportObj.pilotsById = {}
+for pilot_name, pilot of exportObj.pilots
+    exportObj.pilotsById[pilot.id] = pilot
+
+exportObj.upgradesById = {}
+for upgrade_name, upgrade of exportObj.upgrades
+    exportObj.upgradesById[upgrade.id] = upgrade
+
+exportObj.modificationsById = {}
+for modification_name, modification of exportObj.modifications
+    exportObj.modificationsById[modification.id] = modification
 
 exportObj.titlesById = {}
 for title_name, title of exportObj.titles
