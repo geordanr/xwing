@@ -44,11 +44,15 @@ class exportObj.SquadBuilder
                 []
             Title:
                 []
+        @loading_from_serialized = false
 
         @setupUI()
         @setupEventHandlers()
 
-        @addShip()
+        if $.getParameterByName('f') == @faction
+            @loadFromSerialized $.getParameterByName('d')
+        else
+            @addShip()
 
     setupUI: () ->
         @status_container = $ document.createElement 'DIV'
@@ -77,19 +81,50 @@ class exportObj.SquadBuilder
             @claimUnique unique, type, cb
         .on 'xwing:releaseUnique', (e, unique, type, cb) =>
             @releaseUnique unique, type, cb
-        .on 'xwing:pointsUpdated', (e) =>
+        .on 'xwing:pointsUpdated', (e, cb=$.noop) =>
             total_points = 0
             for ship, i in @ships
                 total_points += ship.getPoints()
             @points_container.text "Total Points: #{total_points}"
             # update permalink while we're at it
+            @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+            cb total_points
 
     serialize: () ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:TITLEUPGRADE1,TITLEUPGRADE2:MODIFICATIONID; ...
         ( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
     loadFromSerialized: (serialized) ->
+        @loading_from_serialized = true
+        # Clear all existing ships
+        while @ships.length > 0
+            @removeShip @ships[0]
+        throw "Ships not emptied" if @ships.length > 0
+        for ship_str in serialized.split ';'
+            [ pilot_id, upgrade_ids, title_id, title_conferred_upgrade_ids, modification_id ] = ship_str.split ':'
 
+            new_ship = @addShip()
+            new_ship.setPilotById parseInt(pilot_id)
+
+            for upgrade_id, i in upgrade_ids.split ','
+                upgrade_id = parseInt upgrade_id
+                new_ship.upgrades[i].setById upgrade_id if upgrade_id >= 0
+
+            title_id = parseInt title_id
+            new_ship.title.setById title_id if title_id >= 0
+
+            if new_ship.title.conferredUpgrades.length > 0
+                for upgrade_id, i in title_conferred_upgrade_ids.split ','
+                    upgrade_id = parseInt upgrade_id
+                    new_ship.title.conferredUpgrades[i].setById upgrade_id if upgrade_id >= 0
+
+            modification_id = parseInt modification_id
+            new_ship.modification.setById modification_id if modification_id >= 0
+
+            new_ship.updateSelections()
+        @loading_from_serialized = false
+        # Finally, the unassigned ship
+        @addShip()
 
     uniqueIndex: (unique, type) ->
         if type not of @uniques_in_use
@@ -146,17 +181,16 @@ class exportObj.SquadBuilder
         cb()
 
     addShip: () ->
-        @ships.push new Ship
+        new_ship = new Ship
             builder: this
             container: @ship_container
+        @ships.push new_ship
+        new_ship
+
 
     removeShip: (ship) ->
-        idx = @ships.indexOf ship
-        if idx < 0
-            throw "Ship not found"
         await ship.destroy defer()
-        @ships.splice idx, 1
-        @container.trigger 'xwing:pointsUpdated'
+        await @container.trigger 'xwing:pointsUpdated', defer()
 
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
@@ -223,6 +257,10 @@ class Ship
         @resetPilot()
         @resetAddons()
         @teardownUI()
+        idx = @builder.ships.indexOf this
+        if idx < 0
+            throw "Ship not registered with builder"
+        @builder.ships.splice idx, 1
         cb()
 
     setPilotById: (id) ->
@@ -234,7 +272,7 @@ class Ship
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
             if not @pilot?
-                @builder.addShip()
+                @builder.addShip() unless @builder.loading_from_serialized
                 @remove_button.fadeIn 'fast'
             @resetPilot()
             @resetAddons()
@@ -286,6 +324,18 @@ class Ship
         @points_container.text points
         @points_container.show() if @pilot?
         points
+
+    updateSelections: () ->
+        if @pilot?
+            @pilot_selector.select2 'data',
+                id: @pilot.id
+                text: "#{@pilot.name} (#{@pilot.points})"
+            for upgrade in @upgrades
+                upgrade.updateSelection()
+            @title.updateSelection() if @title?
+            @modification.updateSelection() if @modification?
+        else
+            @pilot_selector.select2 'data', null
 
     setupUI: () ->
         @row = $ document.createElement 'DIV'
@@ -375,6 +425,14 @@ class GenericAddon
     getPoints: () ->
         @data?.points ? 0
 
+    updateSelection: () ->
+        if @data?
+            @selector.select2 'data'
+                id: @data.id
+                text: "#{@data.name} (#{@data.points})"
+        else
+            @selector.select2 'data', null
+
 class Upgrade extends GenericAddon
     constructor: (args) ->
         # args
@@ -438,7 +496,7 @@ class Title extends GenericAddon
                     idx = @ship.upgrades.indexOf upgrade
                     @ship.upgrades.splice idx, 1
                 @conferredUpgrades = []
-            await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, 'Title', defer() ]
+            await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, 'Title', defer() ] if new_data?
             @data = new_data
             @ship.builder.container.trigger 'xwing:pointsUpdated'
             # Confer any upgrades
