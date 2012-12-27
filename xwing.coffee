@@ -1,3 +1,8 @@
+###
+    X-Wing Squad Builder
+    Geordan Rosario <geordan@gmail.com>
+    https://github.com/geordanr/xwing
+###
 exportObj = exports ? this
 
 exportObj.sortHelper = (a, b) ->
