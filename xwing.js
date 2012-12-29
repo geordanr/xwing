@@ -134,7 +134,7 @@
       content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span10 ship-container\" />\n    <div class=\"span2 hidden-phone info-container\" />\n</div>"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
-      this.info_container.append($.trim("<table>\n    <tbody>\n        <tr class=\"info-name\">\n            <td>Name</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-ship\">\n            <td>Ship</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-skill\">\n            <td>Skill</td>\n            <td class=\"info-data info-skill\"></td>\n        </tr>\n        <tr class=\"info-attack\">\n            <td>Attack</td>\n            <td class=\"info-data info-attack\"></td>\n        </tr>\n        <tr class=\"info-agility\">\n            <td>Agility</td>\n            <td class=\"info-data info-agility\"></td>\n        </tr>\n        <tr class=\"info-hull\">\n            <td>Hull</td>\n            <td class=\"info-data info-hull\"></td>\n        </tr>\n        <tr class=\"info-shields info-shields\">\n            <td>Shields</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-actions\">\n            <td>Actions</td>\n            <td class=\"info-data\"></td>\n        </tr>\n    </tbody>\n</table>\n<p class=\"info-text\" />"));
+      this.info_container.append($.trim("<h5 class=\"info-name\"></h5>\n<table>\n    <tbody>\n        <tr class=\"info-ship\">\n            <td>Ship</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-skill\">\n            <td>Skill</td>\n            <td class=\"info-data info-skill\"></td>\n        </tr>\n        <tr class=\"info-attack\">\n            <td>Attack</td>\n            <td class=\"info-data info-attack\"></td>\n        </tr>\n        <tr class=\"info-range\">\n            <td>Range</td>\n            <td class=\"info-data info-range\"></td>\n        </tr>\n        <tr class=\"info-agility\">\n            <td>Agility</td>\n            <td class=\"info-data info-agility\"></td>\n        </tr>\n        <tr class=\"info-hull\">\n            <td>Hull</td>\n            <td class=\"info-data info-hull\"></td>\n        </tr>\n        <tr class=\"info-shields info-shields\">\n            <td>Shields</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-actions\">\n            <td>Actions</td>\n            <td class=\"info-data\"></td>\n        </tr>\n    </tbody>\n</table>\n<p class=\"info-text\" />"));
       this.info_container.hide();
       this.button_container = $(document.createElement('DIV'));
       this.button_container.addClass('container-fluid');
@@ -373,7 +373,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 303
+          lineno: 304
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -382,7 +382,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 304
+          lineno: 305
         }));
         __iced_deferrals._fulfill();
       });
@@ -544,16 +544,44 @@
     };
 
     SquadBuilder.prototype.showTooltip = function(type, data) {
+      this.info_container.find('.info-name').text(data.name);
       switch (type) {
         case 'Pilot':
-          this.info_container.find('tr.info-name td.info-data').text(data.name);
           this.info_container.find('tr.info-ship td.info-data').text(data.ship);
+          this.info_container.find('tr.info-ship').show();
           this.info_container.find('tr.info-skill td.info-data').text(data.skill);
+          this.info_container.find('tr.info-skill').show();
           this.info_container.find('tr.info-attack td.info-data').text(exportObj.ships[data.ship].attack);
+          this.info_container.find('tr.info-range').hide();
           this.info_container.find('tr.info-agility td.info-data').text(exportObj.ships[data.ship].agility);
+          this.info_container.find('tr.info-agility').show();
           this.info_container.find('tr.info-hull td.info-data').text(exportObj.ships[data.ship].hull);
+          this.info_container.find('tr.info-hull').show();
           this.info_container.find('tr.info-shields td.info-data').text(exportObj.ships[data.ship].shields);
+          this.info_container.find('tr.info-shields').show();
           this.info_container.find('tr.info-actions td.info-data').text(exportObj.ships[data.ship].actions);
+          this.info_container.find('tr.info-actions').show();
+          this.info_container.find('p.info-text').text(data.text);
+          break;
+        case 'Addon':
+          this.info_container.find('tr.info-ship').hide();
+          this.info_container.find('tr.info-skill').hide();
+          if (data.attack != null) {
+            this.info_container.find('tr.info-attack td.info-data').text(data.attack);
+            this.info_container.find('tr.info-attack').show();
+          } else {
+            this.info_container.find('tr.info-attack').hide();
+          }
+          if (data.range != null) {
+            this.info_container.find('tr.info-range td.info-data').text(data.range);
+            this.info_container.find('tr.info-range').show();
+          } else {
+            this.info_container.find('tr.info-range').hide();
+          }
+          this.info_container.find('tr.info-agility').hide();
+          this.info_container.find('tr.info-hull').hide();
+          this.info_container.find('tr.info-shields').hide();
+          this.info_container.find('tr.info-actions').hide();
           this.info_container.find('p.info-text').text(data.text);
       }
       return this.info_container.show();
@@ -617,7 +645,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 406
+                  lineno: 432
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -650,7 +678,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 413
+                lineno: 439
               })
             ]);
             __iced_deferrals._fulfill();
@@ -701,17 +729,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 436
+            lineno: 462
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 437
+            lineno: 463
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 438
+            lineno: 464
           }));
         }
         __iced_deferrals._fulfill();
@@ -830,7 +858,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 526
+                lineno: 552
               })
             ]);
             __iced_deferrals._fulfill();
@@ -850,8 +878,15 @@
       this.selector.attr('type', 'hidden');
       this.container.append(this.selector);
       this.selector.select2(args);
-      return this.selector.on('change', function(e) {
+      this.selector.on('change', function(e) {
         return _this.setById(_this.selector.select2('val'));
+      });
+      return this.selector.data('select2').results.on('mousemove-filtered', function(e) {
+        var select2_data;
+        select2_data = $(e.target).closest('.select2-result-selectable').data('select2-data');
+        if ((select2_data != null ? select2_data.id : void 0) != null) {
+          return _this.ship.builder.showTooltip('Addon', _this.dataById[select2_data.id]);
+        }
       });
     };
 
@@ -879,7 +914,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 547
+                  lineno: 576
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -897,7 +932,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 549
+                    lineno: 578
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1034,7 +1069,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 624
+                  lineno: 653
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1049,7 +1084,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 628
+                    lineno: 657
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1077,7 +1112,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 633
+                    lineno: 662
                   })
                 ]);
                 __iced_deferrals._fulfill();

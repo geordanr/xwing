@@ -85,12 +85,9 @@ class exportObj.SquadBuilder
         @info_container = $ content_container.find('div.info-container')
 
         @info_container.append $.trim """
+            <h5 class="info-name"></h5>
             <table>
                 <tbody>
-                    <tr class="info-name">
-                        <td>Name</td>
-                        <td class="info-data"></td>
-                    </tr>
                     <tr class="info-ship">
                         <td>Ship</td>
                         <td class="info-data"></td>
@@ -102,6 +99,10 @@ class exportObj.SquadBuilder
                     <tr class="info-attack">
                         <td>Attack</td>
                         <td class="info-data info-attack"></td>
+                    </tr>
+                    <tr class="info-range">
+                        <td>Range</td>
+                        <td class="info-data info-range"></td>
                     </tr>
                     <tr class="info-agility">
                         <td>Agility</td>
@@ -351,16 +352,41 @@ class exportObj.SquadBuilder
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
     showTooltip: (type, data) ->
+        @info_container.find('.info-name').text data.name
         switch type
             when 'Pilot'
-                @info_container.find('tr.info-name td.info-data').text data.name
                 @info_container.find('tr.info-ship td.info-data').text data.ship
+                @info_container.find('tr.info-ship').show()
                 @info_container.find('tr.info-skill td.info-data').text data.skill
+                @info_container.find('tr.info-skill').show()
                 @info_container.find('tr.info-attack td.info-data').text exportObj.ships[data.ship].attack
+                @info_container.find('tr.info-range').hide()
                 @info_container.find('tr.info-agility td.info-data').text exportObj.ships[data.ship].agility
+                @info_container.find('tr.info-agility').show()
                 @info_container.find('tr.info-hull td.info-data').text exportObj.ships[data.ship].hull
+                @info_container.find('tr.info-hull').show()
                 @info_container.find('tr.info-shields td.info-data').text exportObj.ships[data.ship].shields
+                @info_container.find('tr.info-shields').show()
                 @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions
+                @info_container.find('tr.info-actions').show()
+                @info_container.find('p.info-text').text data.text
+            when 'Addon'
+                @info_container.find('tr.info-ship').hide()
+                @info_container.find('tr.info-skill').hide()
+                if data.attack?
+                    @info_container.find('tr.info-attack td.info-data').text data.attack
+                    @info_container.find('tr.info-attack').show()
+                else
+                    @info_container.find('tr.info-attack').hide()
+                if data.range?
+                    @info_container.find('tr.info-range td.info-data').text data.range
+                    @info_container.find('tr.info-range').show()
+                else
+                    @info_container.find('tr.info-range').hide()
+                @info_container.find('tr.info-agility').hide()
+                @info_container.find('tr.info-hull').hide()
+                @info_container.find('tr.info-shields').hide()
+                @info_container.find('tr.info-actions').hide()
                 @info_container.find('p.info-text').text data.text
         @info_container.show()
 
@@ -535,6 +561,9 @@ class GenericAddon
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
+        @selector.data('select2').results.on 'mousemove-filtered', (e) =>
+            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
 
     setById: (id) ->
         @setData @dataById[parseInt id]
