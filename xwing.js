@@ -121,15 +121,21 @@
     }
 
     SquadBuilder.prototype.setupUI = function() {
+      var content_container;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
       this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span4 offset4 permalink-container"><a href="#">Permalink</a></div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
       this.permalink = $(this.status_container.find('div.permalink-container a'));
-      this.ship_container = $(document.createElement('DIV'));
-      this.ship_container.addClass('container-fluid');
-      this.container.append(this.ship_container);
+      content_container = $(document.createElement('DIV'));
+      content_container.addClass('container-fluid');
+      this.container.append(content_container);
+      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span10 ship-container\" />\n    <div class=\"span2 hidden-phone info-container\" />\n</div>"));
+      this.ship_container = $(content_container.find('div.ship-container'));
+      this.info_container = $(content_container.find('div.info-container'));
+      this.info_container.append($.trim("<table>\n    <tbody>\n        <tr class=\"info-name\">\n            <td>Name</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-ship\">\n            <td>Ship</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-skill\">\n            <td>Skill</td>\n            <td class=\"info-data info-skill\"></td>\n        </tr>\n        <tr class=\"info-attack\">\n            <td>Attack</td>\n            <td class=\"info-data info-attack\"></td>\n        </tr>\n        <tr class=\"info-agility\">\n            <td>Agility</td>\n            <td class=\"info-data info-agility\"></td>\n        </tr>\n        <tr class=\"info-hull\">\n            <td>Hull</td>\n            <td class=\"info-data info-hull\"></td>\n        </tr>\n        <tr class=\"info-shields info-shields\">\n            <td>Shields</td>\n            <td class=\"info-data\"></td>\n        </tr>\n        <tr class=\"info-actions\">\n            <td>Actions</td>\n            <td class=\"info-data\"></td>\n        </tr>\n    </tbody>\n</table>\n<p class=\"info-text\" />"));
+      this.info_container.hide();
       this.button_container = $(document.createElement('DIV'));
       this.button_container.addClass('container-fluid');
       this.container.append(this.button_container);
@@ -367,7 +373,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 253
+          lineno: 303
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -376,7 +382,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 254
+          lineno: 304
         }));
         __iced_deferrals._fulfill();
       });
@@ -537,6 +543,22 @@
       })()).sort(exportObj.sortHelper);
     };
 
+    SquadBuilder.prototype.showTooltip = function(type, data) {
+      switch (type) {
+        case 'Pilot':
+          this.info_container.find('tr.info-name td.info-data').text(data.name);
+          this.info_container.find('tr.info-ship td.info-data').text(data.ship);
+          this.info_container.find('tr.info-skill td.info-data').text(data.skill);
+          this.info_container.find('tr.info-attack td.info-data').text(exportObj.ships[data.ship].attack);
+          this.info_container.find('tr.info-agility td.info-data').text(exportObj.ships[data.ship].agility);
+          this.info_container.find('tr.info-hull td.info-data').text(exportObj.ships[data.ship].hull);
+          this.info_container.find('tr.info-shields td.info-data').text(exportObj.ships[data.ship].shields);
+          this.info_container.find('tr.info-actions td.info-data').text(exportObj.ships[data.ship].actions);
+          this.info_container.find('p.info-text').text(data.text);
+      }
+      return this.info_container.show();
+    };
+
     return SquadBuilder;
 
   })();
@@ -595,7 +617,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 342
+                  lineno: 406
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -628,7 +650,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 349
+                lineno: 413
               })
             ]);
             __iced_deferrals._fulfill();
@@ -679,17 +701,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 372
+            lineno: 436
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 373
+            lineno: 437
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 374
+            lineno: 438
           }));
         }
         __iced_deferrals._fulfill();
@@ -735,7 +757,7 @@
     Ship.prototype.setupUI = function() {
       var _this = this;
       this.row = $(document.createElement('DIV'));
-      this.row.addClass('row');
+      this.row.addClass('row-fluid');
       this.container.append(this.row);
       this.row.append($.trim('<div class="span4 pilot-selector-container">\n    <input type="hidden" />\n</div>\n<div class="span1 points-display-container" />\n<div class="span6 addon-container" />\n<div class="span1 remove-btn-container">\n    <button class="btn btn-danger">&times;</button>\n</div>'));
       this.pilot_selector = $(this.row.find('div.pilot-selector-container input[type=hidden]'));
@@ -751,6 +773,13 @@
       });
       this.pilot_selector.on('change', function(e) {
         return _this.setPilotById(_this.pilot_selector.select2('val'));
+      });
+      this.pilot_selector.data('select2').results.on('mousemove-filtered', function(e) {
+        var select2_data;
+        select2_data = $(e.target).closest('.select2-result-selectable').data('select2-data');
+        if ((select2_data != null ? select2_data.id : void 0) != null) {
+          return _this.builder.showTooltip('Pilot', exportObj.pilotsById[select2_data.id]);
+        }
       });
       this.points_container = $(this.row.find('div.points-display-container'));
       this.points_container.hide();
@@ -801,7 +830,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 459
+                lineno: 526
               })
             ]);
             __iced_deferrals._fulfill();
@@ -850,7 +879,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 480
+                  lineno: 547
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -868,7 +897,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 482
+                    lineno: 549
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1005,7 +1034,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 557
+                  lineno: 624
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1020,7 +1049,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 561
+                    lineno: 628
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1048,7 +1077,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 566
+                    lineno: 633
                   })
                 ]);
                 __iced_deferrals._fulfill();

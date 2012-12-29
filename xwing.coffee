@@ -71,9 +71,59 @@ class exportObj.SquadBuilder
         @points_container = $ @status_container.find('div.points-display-container')
         @permalink = $ @status_container.find('div.permalink-container a')
 
-        @ship_container = $ document.createElement 'DIV'
-        @ship_container.addClass 'container-fluid'
-        @container.append @ship_container
+        content_container = $ document.createElement 'DIV'
+        content_container.addClass 'container-fluid'
+        @container.append content_container
+        content_container.append $.trim """
+            <div class="row-fluid">
+                <div class="span10 ship-container" />
+                <div class="span2 hidden-phone info-container" />
+            </div>
+        """
+
+        @ship_container = $ content_container.find('div.ship-container')
+        @info_container = $ content_container.find('div.info-container')
+
+        @info_container.append $.trim """
+            <table>
+                <tbody>
+                    <tr class="info-name">
+                        <td>Name</td>
+                        <td class="info-data"></td>
+                    </tr>
+                    <tr class="info-ship">
+                        <td>Ship</td>
+                        <td class="info-data"></td>
+                    </tr>
+                    <tr class="info-skill">
+                        <td>Skill</td>
+                        <td class="info-data info-skill"></td>
+                    </tr>
+                    <tr class="info-attack">
+                        <td>Attack</td>
+                        <td class="info-data info-attack"></td>
+                    </tr>
+                    <tr class="info-agility">
+                        <td>Agility</td>
+                        <td class="info-data info-agility"></td>
+                    </tr>
+                    <tr class="info-hull">
+                        <td>Hull</td>
+                        <td class="info-data info-hull"></td>
+                    </tr>
+                    <tr class="info-shields info-shields">
+                        <td>Shields</td>
+                        <td class="info-data"></td>
+                    </tr>
+                    <tr class="info-actions">
+                        <td>Actions</td>
+                        <td class="info-data"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="info-text" />
+        """
+        @info_container.hide()
 
         @button_container = $ document.createElement 'DIV'
         @button_container.addClass 'container-fluid'
@@ -300,6 +350,20 @@ class exportObj.SquadBuilder
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
+    showTooltip: (type, data) ->
+        switch type
+            when 'Pilot'
+                @info_container.find('tr.info-name td.info-data').text data.name
+                @info_container.find('tr.info-ship td.info-data').text data.ship
+                @info_container.find('tr.info-skill td.info-data').text data.skill
+                @info_container.find('tr.info-attack td.info-data').text exportObj.ships[data.ship].attack
+                @info_container.find('tr.info-agility td.info-data').text exportObj.ships[data.ship].agility
+                @info_container.find('tr.info-hull td.info-data').text exportObj.ships[data.ship].hull
+                @info_container.find('tr.info-shields td.info-data').text exportObj.ships[data.ship].shields
+                @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions
+                @info_container.find('p.info-text').text data.text
+        @info_container.show()
+
 class Ship
     constructor: (args) ->
         # args
@@ -401,7 +465,7 @@ class Ship
 
     setupUI: () ->
         @row = $ document.createElement 'DIV'
-        @row.addClass 'row'
+        @row.addClass 'row-fluid'
         @container.append @row
 
         @row.append $.trim '''
@@ -424,6 +488,9 @@ class Ship
                     results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
+        @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
+            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
 
         @points_container = $ @row.find('div.points-display-container')
         @points_container.hide()
