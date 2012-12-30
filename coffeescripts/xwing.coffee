@@ -514,7 +514,9 @@ class Ship
             <div class="span4 pilot-selector-container">
                 <input type="hidden" />
             </div>
-            <div class="span1 points-display-container" />
+            <div class="span1 points-display-container">
+                <span></span>
+            </div>
             <div class="span6 addon-container" />
             <div class="span1 remove-btn-container">
                 <button class="btn btn-danger">&times;</button>
@@ -536,7 +538,7 @@ class Ship
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Pilot', @pilot if @pilot?
 
-        @points_container = $ @row.find('div.points-display-container')
+        @points_container = $ @row.find('.points-display-container span')
         @points_container.hide()
 
         @addon_container = $ @row.find('div.addon-container')

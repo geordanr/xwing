@@ -801,7 +801,7 @@
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row-fluid');
       this.container.append(this.row);
-      this.row.append($.trim('<div class="span4 pilot-selector-container">\n    <input type="hidden" />\n</div>\n<div class="span1 points-display-container" />\n<div class="span6 addon-container" />\n<div class="span1 remove-btn-container">\n    <button class="btn btn-danger">&times;</button>\n</div>'));
+      this.row.append($.trim('<div class="span4 pilot-selector-container">\n    <input type="hidden" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span1 remove-btn-container">\n    <button class="btn btn-danger">&times;</button>\n</div>'));
       this.pilot_selector = $(this.row.find('div.pilot-selector-container input[type=hidden]'));
       this.pilot_selector.select2({
         width: '100%',
@@ -828,7 +828,7 @@
           return _this.builder.showTooltip('Pilot', _this.pilot);
         }
       });
-      this.points_container = $(this.row.find('div.points-display-container'));
+      this.points_container = $(this.row.find('.points-display-container span'));
       this.points_container.hide();
       this.addon_container = $(this.row.find('div.addon-container'));
       this.remove_button = $(this.row.find('div.remove-btn-container button'));
@@ -877,7 +877,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 570
+                lineno: 572
               })
             ]);
             __iced_deferrals._fulfill();
@@ -938,7 +938,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 596
+                  lineno: 598
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -956,7 +956,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 598
+                    lineno: 600
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1093,7 +1093,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 673
+                  lineno: 675
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1108,7 +1108,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 677
+                    lineno: 679
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1136,7 +1136,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 682
+                    lineno: 684
                   })
                 ]);
                 __iced_deferrals._fulfill();
