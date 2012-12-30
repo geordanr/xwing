@@ -66,12 +66,20 @@ class exportObj.SquadBuilder
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
             <div class="span4 points-display-container">Total Points: 0</div>
-            <div class="span4 offset4 pull-right permalink-container"><a href="#">Permalink</a></div>
+            <div class="span8 pull-right button-container">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-info view-as-text">View as Text</button>
+                    <button class="btn btn-info print-list">Print List</button>
+                    <a class="btn btn-info permalink">Permalink</a>
+                </div>
+            </div>
         '''
         @container.append @status_container
 
         @points_container = $ @status_container.find('div.points-display-container')
-        @permalink = $ @status_container.find('div.permalink-container a')
+        @permalink = $ @status_container.find('div.button-container a.permalink')
+        @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
+        @print_list_button = $ @status_container.find('div.button-container button.print-list')
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -130,21 +138,8 @@ class exportObj.SquadBuilder
         """
         @info_container.hide()
 
-        @button_container = $ document.createElement 'DIV'
-        @button_container.addClass 'container-fluid'
-        @container.append @button_container
-
-        @button_container.append $.trim '''
-            <div class="btn-group">
-                <button class="btn view-as-text">View as Text</button>
-                <button class="btn print-list">Print List</button>
-            </div>
-        '''
-        @view_list_button = $ @button_container.find('button.view-as-text')
-        @print_list_button = $ @button_container.find('button.print-list')
-
         @list_modal = $ document.createElement 'DIV'
-        @list_modal.addClass 'modal hide fade'
+        @list_modal.addClass 'modal hide fade text-list-modal'
         $(document).append @list_modal
         @list_modal.append $.trim """
             <div class="modal-header">
@@ -193,7 +188,7 @@ class exportObj.SquadBuilder
             if ship.pilot?
                 if ship.getPoints() != ship.pilot.points
                     addon_list = '<ul>'
-                    addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?
+                    addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
                     for upgrade in ship.upgrades
                         if upgrade.data?
                             addon_list += "<li>#{upgrade.toString()}</li>"

@@ -28,7 +28,8 @@
   padding: 2px; }
 
 .info-well {
-  color: black; }
+  color: black;
+  margin-top: 10px; }
 
 .info-well table > tbody > tr > td:first-child {
   font-weight: bold;
@@ -37,4 +38,8 @@
 .points-display-container {
   font-size: 1.2em;
   font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 5px; }
+
+.text-list-modal {
+  color: black; }

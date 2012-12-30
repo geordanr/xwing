@@ -126,10 +126,12 @@
       var content_container;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span4 offset4 pull-right permalink-container"><a href="#">Permalink</a></div>'));
+      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
-      this.permalink = $(this.status_container.find('div.permalink-container a'));
+      this.permalink = $(this.status_container.find('div.button-container a.permalink'));
+      this.view_list_button = $(this.status_container.find('div.button-container button.view-as-text'));
+      this.print_list_button = $(this.status_container.find('div.button-container button.print-list'));
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
@@ -138,14 +140,8 @@
       this.info_container = $(content_container.find('div.info-container'));
       this.info_container.append($.trim("<div class=\"well info-well\">\n    <h5 class=\"info-name\"></h5>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td>Attack</td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td>Agility</td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td>Hull</td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td>Shields</td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
-      this.button_container = $(document.createElement('DIV'));
-      this.button_container.addClass('container-fluid');
-      this.container.append(this.button_container);
-      this.button_container.append($.trim('<div class="btn-group">\n    <button class="btn view-as-text">View as Text</button>\n    <button class="btn print-list">Print List</button>\n</div>'));
-      this.view_list_button = $(this.button_container.find('button.view-as-text'));
-      this.print_list_button = $(this.button_container.find('button.print-list'));
       this.list_modal = $(document.createElement('DIV'));
-      this.list_modal.addClass('modal hide fade');
+      this.list_modal.addClass('modal hide fade text-list-modal');
       $(document).append(this.list_modal);
       this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.text_ul = $(this.list_modal.find('div.modal-body ul'));
@@ -174,7 +170,7 @@
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
-      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3;
+      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4;
       total_points = 0;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -191,17 +187,17 @@
         if (ship.pilot != null) {
           if (ship.getPoints() !== ship.pilot.points) {
             addon_list = '<ul>';
-            if (ship.title != null) {
+            if (((_ref2 = ship.title) != null ? _ref2.data : void 0) != null) {
               addon_list += "<li>" + (ship.title.toString()) + "</li>";
             }
-            _ref2 = ship.upgrades;
-            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-              upgrade = _ref2[_k];
+            _ref3 = ship.upgrades;
+            for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+              upgrade = _ref3[_k];
               if (upgrade.data != null) {
                 addon_list += "<li>" + (upgrade.toString()) + "</li>";
               }
             }
-            if (((_ref3 = ship.modification) != null ? _ref3.data : void 0) != null) {
+            if (((_ref4 = ship.modification) != null ? _ref4.data : void 0) != null) {
               addon_list += "<li>" + (ship.modification.toString()) + "</li>";
             }
             addon_list += '</ul>';
@@ -380,7 +376,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 318
+          lineno: 313
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -389,7 +385,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 319
+          lineno: 314
         }));
         __iced_deferrals._fulfill();
       });
@@ -655,7 +651,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 448
+                  lineno: 443
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -688,7 +684,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 455
+                lineno: 450
               })
             ]);
             __iced_deferrals._fulfill();
@@ -739,17 +735,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 478
+            lineno: 473
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 479
+            lineno: 474
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 480
+            lineno: 475
           }));
         }
         __iced_deferrals._fulfill();
@@ -873,7 +869,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 570
+                lineno: 565
               })
             ]);
             __iced_deferrals._fulfill();
@@ -934,7 +930,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 596
+                  lineno: 591
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -952,7 +948,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 598
+                    lineno: 593
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1089,7 +1085,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 673
+                  lineno: 668
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1104,7 +1100,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 677
+                    lineno: 672
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1132,7 +1128,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 682
+                    lineno: 677
                   })
                 ]);
                 __iced_deferrals._fulfill();
