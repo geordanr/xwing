@@ -7,9 +7,11 @@
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <link href='bootstrap/css/bootstrap-responsive.css' rel='stylesheet'>
     <link href='select2-release-3.2/select2.css' rel='stylesheet'>
+    <link href='xwing.css' media='screen,handheld' rel='stylesheet'>
+    <link href='xwing-print.css' media='print' rel='stylesheet'>
   </head>
   <body>
-    <div class='tabbable'>
+    <div class='tabbable hide-on-print'>
       <ul class='nav nav-tabs'>
         <li>
           <a data-toggle='tab' href='#rebelContent' id='rebelTab'>Rebel Alliance</a>
@@ -27,6 +29,7 @@
         </div>
       </div>
     </div>
+    <div class='show-on-print' id='printable'></div>
     <script src='jquery-1.8.3.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src='select2-release-3.2/select2.min.js'></script>
@@ -38,11 +41,13 @@
         $(document).ready(function() {
           window.rebel_sb = new window.SquadBuilder({
             faction: 'Rebel Alliance',
-            container: '#rebel-builder'
+            container: '#rebel-builder',
+            printable_container: '#printable'
           });
           window.empire_sb = new window.SquadBuilder({
             faction: 'Galactic Empire',
-            container: '#empire-builder'
+            container: '#empire-builder',
+            printable_container: '#printable'
           });
           switch ($.getParameterByName('f')) {
             case 'Rebel Alliance':

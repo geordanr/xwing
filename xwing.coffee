@@ -37,6 +37,7 @@ class exportObj.SquadBuilder
         # args
         @container = $ args.container
         @faction = $.trim args.faction
+        @printable_container = $ args.printable_container
 
         # internal state
         @ships = []
@@ -131,22 +132,26 @@ class exportObj.SquadBuilder
         @container.append @button_container
 
         @button_container.append $.trim '''
-            <button class="btn">View as Text</button>
+            <div class="btn-group">
+                <button class="btn view-as-text">View as Text</button>
+                <button class="btn print-list">Print List</button>
+            </div>
         '''
-        @view_list_button = $ @button_container.find('button')
+        @view_list_button = $ @button_container.find('button.view-as-text')
+        @print_list_button = $ @button_container.find('button.print-list')
 
         @list_modal = $ document.createElement 'DIV'
         @list_modal.addClass 'modal hide fade'
         $(document).append @list_modal
         @list_modal.append $.trim """
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>#{@faction}: <span class="total-points">0</span> Points </h3>
             </div>
             <div class="modal-body">
                 <ul></ul>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer hide-on-print">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -165,6 +170,12 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @showTextListModal()
 
+        @print_list_button.click (e) =>
+            e.preventDefault()
+            # Copy text list to printable
+            @printable_container.html @list_modal.html()
+            window.print()
+
     onPointsUpdated: (cb) =>
         total_points = 0
         for ship, i in @ships
@@ -173,10 +184,7 @@ class exportObj.SquadBuilder
         @text_total_points_container.text total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
-        cb total_points
-
-    showTextListModal: () ->
-        # Update data in list
+        # and text list
         @text_ul.text ''
         for ship in @ships
             if ship.pilot?
@@ -200,6 +208,9 @@ class exportObj.SquadBuilder
                         <em>#{total_points}</em>
                     </li>
                 """
+        cb total_points
+
+    showTextListModal: () ->
         # Display modal
         @list_modal.modal 'show'
 

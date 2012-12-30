@@ -81,3 +81,6 @@ div.permalink {
 
 dl.text-list ul li {
   margin-left: 20px; }
+
+.show-on-print {
+  display: none; }

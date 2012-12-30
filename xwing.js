@@ -103,6 +103,7 @@
       this.claimUnique = __bind(this.claimUnique, this);
       this.onPointsUpdated = __bind(this.onPointsUpdated, this);      this.container = $(args.container);
       this.faction = $.trim(args.faction);
+      this.printable_container = $(args.printable_container);
       this.ships = [];
       this.uniques_in_use = {
         Pilot: [],
@@ -139,12 +140,13 @@
       this.button_container = $(document.createElement('DIV'));
       this.button_container.addClass('container-fluid');
       this.container.append(this.button_container);
-      this.button_container.append($.trim('<button class="btn">View as Text</button>'));
-      this.view_list_button = $(this.button_container.find('button'));
+      this.button_container.append($.trim('<div class="btn-group">\n    <button class="btn view-as-text">View as Text</button>\n    <button class="btn print-list">Print List</button>\n</div>'));
+      this.view_list_button = $(this.button_container.find('button.view-as-text'));
+      this.print_list_button = $(this.button_container.find('button.print-list'));
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade');
       $(document).append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.text_ul = $(this.list_modal.find('div.modal-body ul'));
       return this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
     };
@@ -159,14 +161,19 @@
         if (cb == null) cb = $.noop;
         return _this.onPointsUpdated(cb);
       });
-      return this.view_list_button.click(function(e) {
+      this.view_list_button.click(function(e) {
         e.preventDefault();
         return _this.showTextListModal();
+      });
+      return this.print_list_button.click(function(e) {
+        e.preventDefault();
+        _this.printable_container.html(_this.list_modal.html());
+        return window.print();
       });
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
-      var i, ship, total_points, _i, _len, _ref;
+      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3;
       total_points = 0;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -176,29 +183,24 @@
       this.points_container.text("Total Points: " + total_points);
       this.text_total_points_container.text(total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
-      return cb(total_points);
-    };
-
-    SquadBuilder.prototype.showTextListModal = function() {
-      var addon_list, ship, total_points, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
       this.text_ul.text('');
-      _ref = this.ships;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        ship = _ref[_i];
+      _ref1 = this.ships;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        ship = _ref1[_j];
         if (ship.pilot != null) {
           if (ship.getPoints() !== ship.pilot.points) {
             addon_list = '<ul>';
             if (ship.title != null) {
               addon_list += "<li>" + (ship.title.toString()) + "</li>";
             }
-            _ref1 = ship.upgrades;
-            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-              upgrade = _ref1[_j];
+            _ref2 = ship.upgrades;
+            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+              upgrade = _ref2[_k];
               if (upgrade.data != null) {
                 addon_list += "<li>" + (upgrade.toString()) + "</li>";
               }
             }
-            if (((_ref2 = ship.modification) != null ? _ref2.data : void 0) != null) {
+            if (((_ref3 = ship.modification) != null ? _ref3.data : void 0) != null) {
               addon_list += "<li>" + (ship.modification.toString()) + "</li>";
             }
             addon_list += '</ul>';
@@ -210,6 +212,10 @@
           this.text_ul.append($.trim("<li>\n    <strong>" + ship.pilot.name + " (" + ship.pilot.points + ")</strong>\n    <br />\n    " + addon_list + "\n    <em>" + total_points + "</em>\n</li>"));
         }
       }
+      return cb(total_points);
+    };
+
+    SquadBuilder.prototype.showTextListModal = function() {
       return this.list_modal.modal('show');
     };
 
@@ -373,7 +379,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 304
+          lineno: 315
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -382,7 +388,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 305
+          lineno: 316
         }));
         __iced_deferrals._fulfill();
       });
@@ -645,7 +651,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 432
+                  lineno: 443
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -678,7 +684,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 439
+                lineno: 450
               })
             ]);
             __iced_deferrals._fulfill();
@@ -729,17 +735,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 462
+            lineno: 473
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 463
+            lineno: 474
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 464
+            lineno: 475
           }));
         }
         __iced_deferrals._fulfill();
@@ -858,7 +864,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 552
+                lineno: 563
               })
             ]);
             __iced_deferrals._fulfill();
@@ -914,7 +920,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 576
+                  lineno: 587
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -932,7 +938,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 578
+                    lineno: 589
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1069,7 +1075,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 653
+                  lineno: 664
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1084,7 +1090,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 657
+                    lineno: 668
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1112,7 +1118,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 662
+                    lineno: 673
                   })
                 ]);
                 __iced_deferrals._fulfill();

@@ -14,7 +14,8 @@ hamls = [
 ]
 
 sasses = [
-    'main.sass'
+    'xwing.sass'
+    'xwing-print.sass'
 ]
 
 task 'build', 'build X-Wing from source', (cb) ->
