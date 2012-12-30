@@ -379,7 +379,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
                     @info_container.find('tr.info-actions').show()
-                    @info_container.find('p.info-text').text data.text
+                    @info_container.find('p.info-text').text data.text ? ''
                 when 'Addon'
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-skill').hide()
@@ -445,6 +445,11 @@ class Ship
             @pilot = new_pilot
             @setupAddons() if @pilot?
             @builder.container.trigger 'xwing:pointsUpdated'
+            # Optional background
+            for cls in @row.attr('class').split ' '
+                if cls.indexOf('ship-') == 0
+                    @row.removeClass cls
+            @row.addClass "ship-#{@data.name.toLowerCase().replace(/[^a-z0-9]/gi, '')}0"
 
     resetPilot: () ->
         if @pilot?.unique?
