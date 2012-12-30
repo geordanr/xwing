@@ -125,7 +125,7 @@
       var content_container;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span4 offset4 permalink-container"><a href="#">Permalink</a></div>'));
+      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span4 offset4 pull-right permalink-container"><a href="#">Permalink</a></div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
       this.permalink = $(this.status_container.find('div.permalink-container a'));

@@ -10,12 +10,15 @@ javascript_dir = 'javascripts'
 sass_dir = 'sass'
 stylesheet_dir = 'stylesheets'
 
+String.prototype.endswith = (suffix) ->
+    this.indexOf(suffix) == (this.length - suffix.length)
+
 hamls = [
     'index.haml'
 ]
 
 task 'build', 'build X-Wing from source', (cb) ->
-    for coffee_filename in (path.basename(filename) for filename in fs.readdirSync(coffeescript_dir))
+    for coffee_filename in (path.basename(filename) for filename in fs.readdirSync(coffeescript_dir) when filename.endswith('.coffee'))
         js_filename = path.join javascript_dir, coffee_filename.replace(/\.coffee$/, '.js')
         minjs_filename = path.join javascript_dir, coffee_filename.replace(/\.coffee$/, '.min.js')
 
@@ -28,7 +31,7 @@ task 'build', 'build X-Wing from source', (cb) ->
         uglified_js = uglify.minify js_filename
         fs.writeFileSync minjs_filename, uglified_js.code
 
-    for sass_filename in (path.basename(filename) for filename in fs.readdirSync(sass_dir))
+    for sass_filename in (path.basename(filename) for filename in fs.readdirSync(sass_dir) when filename.endswith('.sass'))
         css_filename = path.join stylesheet_dir, sass_filename.replace(/\.sass$/, '.css')
         console.log "Compiling #{sass_filename} ..."
         sass_proc = spawn 'sass', [ path.join(sass_dir, sass_filename), css_filename ]
