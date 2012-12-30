@@ -1,6 +1,6 @@
 (function() {
   var ModificationSelector, PilotRow, TitleSelector, UpgradeSelector, exportObj,
-    __indexOf = Array.prototype.indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -119,26 +119,26 @@
         }
       });
       $(window).bind('xwing:upgradeChanged', function(e, triggering_selector) {
-        var row, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _ref4, _ref5;
+        var row, upgrade_selector, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4;
         _this.unique_upgrades = [];
         _ref = _this.rows;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           row = _ref[_i];
           row.update();
-          _ref2 = row.upgrade_selectors;
-          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-            upgrade_selector = _ref2[_j];
-            if (((_ref3 = upgrade_selector.upgrade) != null ? _ref3.unique : void 0) != null) {
+          _ref1 = row.upgrade_selectors;
+          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+            upgrade_selector = _ref1[_j];
+            if (((_ref2 = upgrade_selector.upgrade) != null ? _ref2.unique : void 0) != null) {
               _this.unique_upgrades.push(upgrade_selector.upgrade_name);
             }
           }
         }
-        _ref4 = _this.rows;
-        for (_k = 0, _len3 = _ref4.length; _k < _len3; _k++) {
-          row = _ref4[_k];
-          _ref5 = row.upgrade_selectors;
-          for (_l = 0, _len4 = _ref5.length; _l < _len4; _l++) {
-            upgrade_selector = _ref5[_l];
+        _ref3 = _this.rows;
+        for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+          row = _ref3[_k];
+          _ref4 = row.upgrade_selectors;
+          for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
+            upgrade_selector = _ref4[_l];
             if (upgrade_selector !== triggering_selector) {
               upgrade_selector.update();
             }
@@ -154,18 +154,18 @@
         return _this.updatePermalink();
       });
       $(window).bind('xwing:titleChanged', function(e, triggering_selector) {
-        var i, row, _len, _len2, _ref, _ref2;
+        var i, row, _i, _j, _len, _len1, _ref, _ref1;
         _this.titles = [];
         _ref = _this.rows;
-        for (i = 0, _len = _ref.length; i < _len; i++) {
+        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           row = _ref[i];
           if (row.title_selector != null) {
             _this.titles.push(row.title_selector.title_name);
           }
         }
-        _ref2 = _this.rows;
-        for (i = 0, _len2 = _ref2.length; i < _len2; i++) {
-          row = _ref2[i];
+        _ref1 = _this.rows;
+        for (i = _j = 0, _len1 = _ref1.length; _j < _len1; i = ++_j) {
+          row = _ref1[i];
           if (row.title_selector != null) row.title_selector.update();
         }
         _this.updatePoints();
@@ -179,7 +179,7 @@
     }
 
     SquadBuilder.prototype.updatePoints = function() {
-      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len2, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+      var pilot_points, row, row_points, selector, total, upgrade_points, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
       total = 0;
       _ref = this.rows;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -188,14 +188,14 @@
         if ((row.name != null) && row.name !== '') {
           pilot_points = parseInt(row.pilot.points);
           row_points += pilot_points;
-          _ref2 = row.upgrade_selectors;
-          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-            selector = _ref2[_j];
-            upgrade_points = parseInt((_ref3 = (_ref4 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref4.points : void 0) != null ? _ref3 : 0);
+          _ref1 = row.upgrade_selectors;
+          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+            selector = _ref1[_j];
+            upgrade_points = parseInt((_ref2 = (_ref3 = exportObj.upgrades[selector.upgrade_name]) != null ? _ref3.points : void 0) != null ? _ref2 : 0);
             row_points += upgrade_points;
           }
-          row_points += parseInt((_ref5 = (_ref6 = exportObj.modifications[row.modification_selector.modification_name]) != null ? _ref6.points : void 0) != null ? _ref5 : 0);
-          row_points += parseInt((_ref7 = (_ref8 = exportObj.titles[row.title_selector.title_name]) != null ? _ref8.points : void 0) != null ? _ref7 : 0);
+          row_points += parseInt((_ref4 = (_ref5 = exportObj.modifications[row.modification_selector.modification_name]) != null ? _ref5.points : void 0) != null ? _ref4 : 0);
+          row_points += parseInt((_ref6 = (_ref7 = exportObj.titles[row.title_selector.title_name]) != null ? _ref7.points : void 0) != null ? _ref6 : 0);
           if (row_points !== pilot_points) {
             row.pilot_points_li.text("Total: " + row_points);
             row.pilot_points_li.show();
@@ -215,7 +215,7 @@
     };
 
     SquadBuilder.prototype.getAvailablePilots = function() {
-      var pilot_data, pilot_name, ship_data, ship_name, ships, _ref, _ref2, _results;
+      var pilot_data, pilot_name, ship_data, ship_name, ships, _ref, _ref1, _results;
       ships = (function() {
         var _ref, _results;
         _ref = exportObj.ships;
@@ -230,7 +230,7 @@
       _results = [];
       for (pilot_name in _ref) {
         pilot_data = _ref[pilot_name];
-        if ((_ref2 = pilot_data.ship, __indexOf.call(ships, _ref2) >= 0) && (!(pilot_data.unique != null) || __indexOf.call(this.pilots, pilot_name) < 0) && __indexOf.call(this.unique_upgrades, pilot_name) < 0) {
+        if ((_ref1 = pilot_data.ship, __indexOf.call(ships, _ref1) >= 0) && ((pilot_data.unique == null) || __indexOf.call(this.pilots, pilot_name) < 0) && __indexOf.call(this.unique_upgrades, pilot_name) < 0) {
           _results.push({
             name: pilot_name,
             points: pilot_data.points,
@@ -249,7 +249,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade_data = _ref[upgrade_name];
-          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0 && __indexOf.call(this.pilots, upgrade_name) < 0 && (!(upgrade_data.faction != null) || upgrade_data.faction === this.faction) && upgrade_name !== current_pilot) {
+          if (upgrade_data.slot === slot && __indexOf.call(this.unique_upgrades, upgrade_name) < 0 && __indexOf.call(this.pilots, upgrade_name) < 0 && ((upgrade_data.faction == null) || upgrade_data.faction === this.faction) && upgrade_name !== current_pilot) {
             _results.push({
               name: upgrade_name,
               points: upgrade_data.points
@@ -277,15 +277,15 @@
     };
 
     SquadBuilder.prototype.showPilotInfo = function(elem, pilot_name, pilot_data, ship) {
-      var reference_pos, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var reference_pos, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
       if ((pilot_name != null) && pilot_name !== '') {
         this.pilot_tooltip.find('.ship td').text(pilot_data.ship);
         this.pilot_tooltip.find('.flavortext').text((_ref = pilot_data.text) != null ? _ref : '');
         this.pilot_tooltip.find('.skill td').text(pilot_data.skill);
-        this.pilot_tooltip.find('.attack td').text((_ref2 = (_ref3 = pilot_data.ship_override) != null ? _ref3.attack : void 0) != null ? _ref2 : ship.attack);
-        this.pilot_tooltip.find('.agility td').text((_ref4 = (_ref5 = pilot_data.ship_override) != null ? _ref5.agility : void 0) != null ? _ref4 : ship.agility);
-        this.pilot_tooltip.find('.hull td').text((_ref6 = (_ref7 = pilot_data.ship_override) != null ? _ref7.hull : void 0) != null ? _ref6 : ship.hull);
-        this.pilot_tooltip.find('.shields td').text((_ref8 = (_ref9 = pilot_data.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : ship.shields);
+        this.pilot_tooltip.find('.attack td').text((_ref1 = (_ref2 = pilot_data.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : ship.attack);
+        this.pilot_tooltip.find('.agility td').text((_ref3 = (_ref4 = pilot_data.ship_override) != null ? _ref4.agility : void 0) != null ? _ref3 : ship.agility);
+        this.pilot_tooltip.find('.hull td').text((_ref5 = (_ref6 = pilot_data.ship_override) != null ? _ref6.hull : void 0) != null ? _ref5 : ship.hull);
+        this.pilot_tooltip.find('.shields td').text((_ref7 = (_ref8 = pilot_data.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : ship.shields);
         this.pilot_tooltip.find('.actions td').text(ship.actions.join(', '));
         reference_pos = $(elem).offset();
         this.pilot_tooltip.css('width', parseInt($(elem).css('width')) + 'px');
@@ -325,22 +325,22 @@
     SquadBuilder.prototype.serialize = function() {
       var row, selector;
       return ((function() {
-        var _i, _len, _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
+        var _i, _len, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _results;
         _ref = this.rows;
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           row = _ref[_i];
           if ((row.name != null) && row.name !== '') {
             _results.push("" + row.pilot.id + ":" + (((function() {
-              var _j, _len2, _ref2, _ref3, _ref4, _results2;
-              _ref2 = row.upgrade_selectors;
-              _results2 = [];
-              for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-                selector = _ref2[_j];
-                _results2.push((_ref3 = (_ref4 = selector.upgrade) != null ? _ref4.id : void 0) != null ? _ref3 : -1);
+              var _j, _len1, _ref1, _ref2, _ref3, _results1;
+              _ref1 = row.upgrade_selectors;
+              _results1 = [];
+              for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+                selector = _ref1[_j];
+                _results1.push((_ref2 = (_ref3 = selector.upgrade) != null ? _ref3.id : void 0) != null ? _ref2 : -1);
               }
-              return _results2;
-            })()).join(',')) + ":" + ((_ref2 = (_ref3 = row.modification_selector.modification) != null ? _ref3.id : void 0) != null ? _ref2 : -1) + ":" + ((_ref4 = (_ref5 = row.title_selector) != null ? (_ref6 = _ref5.title) != null ? _ref6.id : void 0 : void 0) != null ? _ref4 : -1));
+              return _results1;
+            })()).join(',')) + ":" + ((_ref1 = (_ref2 = row.modification_selector.modification) != null ? _ref2.id : void 0) != null ? _ref1 : -1) + ":" + ((_ref3 = (_ref4 = row.title_selector) != null ? (_ref5 = _ref4.title) != null ? _ref5.id : void 0 : void 0) != null ? _ref3 : -1));
           }
         }
         return _results;
@@ -355,44 +355,44 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         row = _ref[_i];
         _results.push(row.destroy(function() {
-          var i, modification_data, modification_id, modification_name, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, title_data, title_id, title_name, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _len2, _len3, _ref2, _ref3, _ref4;
+          var i, modification_data, modification_id, modification_name, new_pilot_row, pilot_data, pilot_id, pilot_name, pilot_str, selector, title_data, title_id, title_name, upgrade_data, upgrade_id, upgrade_list, upgrade_name, _j, _k, _len1, _len2, _ref1, _ref2, _ref3;
           if (_this.rows.length === 1) {
-            _ref2 = serialized.split(';');
-            for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-              pilot_str = _ref2[_j];
-              _ref3 = pilot_str.split(':'), pilot_id = _ref3[0], upgrade_list = _ref3[1], modification_id = _ref3[2], title_id = _ref3[3];
+            _ref1 = serialized.split(';');
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              pilot_str = _ref1[_j];
+              _ref2 = pilot_str.split(':'), pilot_id = _ref2[0], upgrade_list = _ref2[1], modification_id = _ref2[2], title_id = _ref2[3];
               pilot_id = parseInt(pilot_id);
               new_pilot_row = new PilotRow(_this);
               new_pilot_row.pilot_selector.val(((function() {
-                var _ref4, _results2;
-                _ref4 = exportObj.pilots;
-                _results2 = [];
-                for (pilot_name in _ref4) {
-                  pilot_data = _ref4[pilot_name];
+                var _ref3, _results1;
+                _ref3 = exportObj.pilots;
+                _results1 = [];
+                for (pilot_name in _ref3) {
+                  pilot_data = _ref3[pilot_name];
                   if (parseInt(pilot_data.id) === pilot_id) {
-                    _results2.push(pilot_name);
+                    _results1.push(pilot_name);
                   }
                 }
-                return _results2;
+                return _results1;
               })())[0]);
               new_pilot_row.pilot_selector.change();
-              _ref4 = upgrade_list.split(',');
-              for (i = 0, _len3 = _ref4.length; i < _len3; i++) {
-                upgrade_id = _ref4[i];
+              _ref3 = upgrade_list.split(',');
+              for (i = _k = 0, _len2 = _ref3.length; _k < _len2; i = ++_k) {
+                upgrade_id = _ref3[i];
                 upgrade_id = parseInt(upgrade_id);
                 if (upgrade_id >= 0) {
                   selector = new_pilot_row.upgrade_selectors[i];
                   selector.selector.val((function() {
-                    var _ref5, _results2;
-                    _ref5 = exportObj.upgrades;
-                    _results2 = [];
-                    for (upgrade_name in _ref5) {
-                      upgrade_data = _ref5[upgrade_name];
+                    var _ref4, _results1;
+                    _ref4 = exportObj.upgrades;
+                    _results1 = [];
+                    for (upgrade_name in _ref4) {
+                      upgrade_data = _ref4[upgrade_name];
                       if (parseInt(upgrade_data.id) === upgrade_id) {
-                        _results2.push(upgrade_name);
+                        _results1.push(upgrade_name);
                       }
                     }
-                    return _results2;
+                    return _results1;
                   })());
                   selector.selector.change();
                 }
@@ -401,16 +401,16 @@
               if (modification_id >= 0) {
                 selector = new_pilot_row.modification_selector;
                 selector.selector.val((function() {
-                  var _ref5, _results2;
-                  _ref5 = exportObj.modifications;
-                  _results2 = [];
-                  for (modification_name in _ref5) {
-                    modification_data = _ref5[modification_name];
+                  var _ref4, _results1;
+                  _ref4 = exportObj.modifications;
+                  _results1 = [];
+                  for (modification_name in _ref4) {
+                    modification_data = _ref4[modification_name];
                     if (parseInt(modification_data.id) === modification_id) {
-                      _results2.push(modification_name);
+                      _results1.push(modification_name);
                     }
                   }
-                  return _results2;
+                  return _results1;
                 })());
                 selector.selector.change();
               }
@@ -419,16 +419,16 @@
               if (title_id >= 0) {
                 selector = new_pilot_row.title_selector;
                 selector.selector.val((function() {
-                  var _ref5, _results2;
-                  _ref5 = exportObj.titles;
-                  _results2 = [];
-                  for (title_name in _ref5) {
-                    title_data = _ref5[title_name];
+                  var _ref4, _results1;
+                  _ref4 = exportObj.titles;
+                  _results1 = [];
+                  for (title_name in _ref4) {
+                    title_data = _ref4[title_name];
                     if (parseInt(title_data.id) === title_id) {
-                      _results2.push(title_name);
+                      _results1.push(title_name);
                     }
                   }
-                  return _results2;
+                  return _results1;
                 })());
                 selector.selector.change();
               }
@@ -476,7 +476,7 @@
       this.pilot_selector.addClass('pilot');
       this.pilot_selector.attr('data-placeholder', 'Select a pilot');
       this.pilot_selector.change(function(e) {
-        var cls, shipbg_class, slot, _i, _j, _len, _len2, _ref, _ref2;
+        var cls, shipbg_class, slot, _i, _j, _len, _len1, _ref, _ref1;
         _this.upgrade_cell.text('');
         _this.upgrade_selectors = [];
         _this.list_ul.find('li').remove();
@@ -491,9 +491,9 @@
         } else {
           _this.pilot = exportObj.pilots[_this.name];
           _this.ship = exportObj.ships[_this.pilot.ship];
-          _ref2 = _this.pilot.slots;
-          for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-            slot = _ref2[_j];
+          _ref1 = _this.pilot.slots;
+          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+            slot = _ref1[_j];
             _this.upgrade_selectors.push(new UpgradeSelector(_this, slot, _this.upgrade_cell));
           }
           _this.modification_selector = new ModificationSelector(_this, _this.upgrade_cell);
@@ -568,7 +568,7 @@
     }
 
     PilotRow.prototype.update = function() {
-      var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, upgrade_selector, _i, _j, _k, _l, _len, _len2, _len3, _len4, _ref, _ref2, _ref3, _results;
+      var available_pilots, opt, optgroup, option, pilot, pilots, pilots_by_ship, ship, upgrade_selector, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _results;
       available_pilots = this.builder.getAvailablePilots();
       if (this.pilot && (this.pilot.unique != null)) {
         available_pilots.push({
@@ -596,14 +596,14 @@
       }
       this.pilot_selector.append(opt);
       _ref = Object.keys(pilots_by_ship).sort();
-      for (_j = 0, _len2 = _ref.length; _j < _len2; _j++) {
+      for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
         ship = _ref[_j];
         optgroup = $(document.createElement('OPTGROUP'));
         optgroup.attr('label', ship);
         this.pilot_selector.append(optgroup);
-        _ref2 = pilots_by_ship[ship];
-        for (_k = 0, _len3 = _ref2.length; _k < _len3; _k++) {
-          pilot = _ref2[_k];
+        _ref1 = pilots_by_ship[ship];
+        for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
+          pilot = _ref1[_k];
           option = $(document.createElement('OPTION'));
           option.text("" + pilot.name + " (" + pilot.points + ")");
           option.val(pilot.name);
@@ -612,10 +612,10 @@
       }
       this.pilot_selector.val(this.name);
       this.pilot_selector.trigger('liszt:updated');
-      _ref3 = this.upgrade_selectors;
+      _ref2 = this.upgrade_selectors;
       _results = [];
-      for (_l = 0, _len4 = _ref3.length; _l < _len4; _l++) {
-        upgrade_selector = _ref3[_l];
+      for (_l = 0, _len3 = _ref2.length; _l < _len3; _l++) {
+        upgrade_selector = _ref2[_l];
         _results.push(upgrade_selector.update());
       }
       return _results;

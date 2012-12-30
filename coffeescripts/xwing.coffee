@@ -65,7 +65,7 @@ class exportObj.SquadBuilder
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
             <div class="span4 points-display-container">Total Points: 0</div>
-            <div class="span4 offset4 permalink-container"><a href="#">Permalink</a></div>
+            <div class="span4 offset4 pull-right permalink-container"><a href="#">Permalink</a></div>
         '''
         @container.append @status_container
 
