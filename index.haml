@@ -11,7 +11,7 @@
 
     %link{:rel => "stylesheet", :href => "stylesheets/xwing.css", :media => "screen,handheld"}
     %link{:rel => "stylesheet", :href => "stylesheets/xwing-print.css", :media => "print"}
-    %link{:rel => "stylesheet", :href => "backgrounds.css"}
+    %link{:rel => "stylesheet", :href => "stylesheets/backgrounds.css?#{Time.now.to_i}"}
 
   %body
     -# body layout
@@ -34,8 +34,8 @@
     %script{:src => "jquery-1.8.3.min.js"}
     %script{:src => "bootstrap/js/bootstrap.min.js"}
     %script{:src => "select2-release-3.2/select2.min.js"}
-    %script{:src => "javascripts/cards.js"}
-    %script{:src => "javascripts/xwing.js"}
+    %script{:src => "javascripts/cards.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/xwing.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
         window.rebel_sb = new window.SquadBuilder
