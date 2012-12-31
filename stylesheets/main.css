@@ -1,0 +1,86 @@
+body {
+  background-color: black; }
+
+dl.tabs {
+  background-color: black; }
+
+dl.tabs dd.active a {
+  background-color: lightgrey; }
+
+dl.tabs a {
+  color: white; }
+
+select {
+  width: 20em; }
+
+abbr {
+  cursor: pointer; }
+
+button.remove {
+  font-size: 1.25em; }
+
+.chzn-container {
+  padding: 3px; }
+
+.row.pilot {
+  z-index: 0;
+  padding: 10px 0px; }
+
+div.total-points {
+  color: lightgrey;
+  font-size: 2em; }
+
+div.points {
+  color: lightgrey;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center; }
+
+div.info-tooltip {
+  width: 300px;
+  float: right;
+  clear: both;
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  background-color: lightgrey;
+  border: thin solid black;
+  padding: 5px; }
+
+div.info-tooltip table {
+  width: 100%; }
+
+div.info-tooltip table tr th, div.info-tooltip table tr td {
+  color: lightgrey; }
+
+div.info-tooltip table tbody tr {
+  background-color: black; }
+
+.card-stat {
+  font-weight: bold;
+  font-size: 1.5em; }
+
+div.info-tooltip table tbody tr.skill th, div.info-tooltip table tbody tr.skill td {
+  color: #cd6d2d; }
+
+div.info-tooltip table tbody tr.attack th, div.info-tooltip table tbody tr.attack td {
+  color: #ef232b; }
+
+div.info-tooltip table tbody tr.agility th, div.info-tooltip table tbody tr.agility td {
+  color: #6bbe44; }
+
+div.info-tooltip table tbody tr.hull th, div.info-tooltip table tbody tr.hull td {
+  color: #f0ec1e; }
+
+div.info-tooltip table tbody tr.shields th, div.info-tooltip table tbody tr.shields td {
+  color: #7ed3e5; }
+
+div.permalink {
+  text-align: right; }
+
+dl.text-list ul li {
+  margin-left: 20px; }
+
+.show-on-print {
+  display: none; }

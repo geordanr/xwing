@@ -1,0 +1,6 @@
+A less error occured trying to build your bundle. You've likely entered an invalid input into the less variable field. Check your syntax and try again!
+
+ thanks!
+
+
+{"type":"Name","message":"variable @ghostWhite is undefined","filename":"bootstrap.css","index":9179,"line":303,"column":12,"extract":["@bodyBackground: @black;","@textColor: @ghostWhite;",""]}

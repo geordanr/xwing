@@ -1,0 +1,49 @@
+.ship-xwing0 {
+  background-image: url("../images/xwing1.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px -40px; }
+
+.ship-xwing1 {
+  background-image: url("../images/xwing0.png");
+  background-repeat: no-repeat;
+  background-position: 200px -65px; }
+
+.ship-ywing0 {
+  background-image: url("../images/ywing0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -20px; }
+
+.ship-awing0 {
+  background-image: url("../images/awing0.png");
+  background-repeat: no-repeat;
+  background-position: 250px -60px; }
+
+.ship-tiefighter0 {
+  background-image: url("../images/tiefighter0.png");
+  background-repeat: no-repeat;
+  background-position: 150px -80px; }
+
+.ship-tiefighter1 {
+  background-image: url("../images/tiefighter1.png");
+  background-repeat: no-repeat;
+  background-position: 350px -60px; }
+
+.ship-tieadvanced0 {
+  background-image: url("../images/tieadvanced0.png");
+  background-repeat: no-repeat;
+  background-position: 270px -50px; }
+
+.ship-tieinterceptor0 {
+  background-image: url("../images/tieinterceptor0.png");
+  background-repeat: no-repeat;
+  background-position: 325px -70px; }
+
+.ship-yt13000 {
+  background-image: url("../images/millennium_falcon.png");
+  background-repeat: no-repeat;
+  background-position: 0px -45px; }
+
+.ship-firespray310 {
+  background-image: url("../images/slave_i.png");
+  background-repeat: no-repeat;
+  background-position: 0px -80px; }

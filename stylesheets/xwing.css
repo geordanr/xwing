@@ -1,0 +1,49 @@
+.show-on-print {
+  display: none; }
+
+.nav-tabs > .active > a {
+  color: white !important; }
+
+.ship-container > .row-fluid {
+  padding: 10px 0px; }
+
+.card-stat, .info-data.info-skill, .info-data.info-attack, .info-data.info-agility, .info-data.info-hull, .info-data.info-shields {
+  font-weight: bold;
+  font-size: 1.25em; }
+
+.info-data.info-skill {
+  color: #cd6d2d; }
+
+.info-data.info-attack {
+  color: #ef232b; }
+
+.info-data.info-agility {
+  color: #6bbe44; }
+
+.info-data.info-hull {
+  color: #f0ec1e; }
+
+.info-data.info-shields {
+  color: #7ed3e5;
+  padding: 2px; }
+
+.info-well {
+  color: black;
+  margin-top: 10px; }
+
+.info-well table > tbody > tr > td:first-child {
+  font-weight: bold;
+  vertical-align: top; }
+
+.points-display-container {
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 5px;
+  text-align: center; }
+
+.points-display-container span {
+  padding: 5px 0px; }
+
+.text-list-modal {
+  color: black; }
