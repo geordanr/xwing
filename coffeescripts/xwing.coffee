@@ -19,6 +19,9 @@ exportObj.sortHelper = (a, b) ->
 $.isMobile = () ->
     navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
 
+$.randomInt = (n) ->
+    Math.floor(Math.random() * n)
+
 # ripped from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
 $.getParameterByName = (name) ->
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -29,6 +32,12 @@ $.getParameterByName = (name) ->
     return ""
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "))
+
+Array.prototype.intersects = (other) ->
+    for item in this
+        if item in other
+            return true
+    return false
 
 # Assumes cards.js has been loaded
 
@@ -50,7 +59,7 @@ class exportObj.SquadBuilder
                 []
             Title:
                 []
-        @loading_from_serialized = false
+        @suppress_automatic_new_ship = false
         @tooltipCurrentlyDisplaying = null
 
         @setupUI()
@@ -175,11 +184,11 @@ class exportObj.SquadBuilder
             window.print()
 
     onPointsUpdated: (cb) =>
-        total_points = 0
+        @total_points = 0
         for ship, i in @ships
-            total_points += ship.getPoints()
-        @points_container.text "Total Points: #{total_points}"
-        @text_total_points_container.text total_points
+            @total_points += ship.getPoints()
+        @points_container.text "Total Points: #{@total_points}"
+        @text_total_points_container.text @total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
@@ -206,7 +215,7 @@ class exportObj.SquadBuilder
                         <em>#{total_points}</em>
                     </li>
                 """
-        cb total_points
+        cb @total_points
 
     showTextListModal: () ->
         # Display modal
@@ -217,7 +226,7 @@ class exportObj.SquadBuilder
         ( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
     loadFromSerialized: (serialized) ->
-        @loading_from_serialized = true
+        @suppress_automatic_new_ship = true
         # Clear all existing ships
         while @ships.length > 0
             @removeShip @ships[0]
@@ -244,7 +253,7 @@ class exportObj.SquadBuilder
             new_ship.modification.setById modification_id if modification_id >= 0
 
             new_ship.updateSelections()
-        @loading_from_serialized = false
+        @suppress_automatic_new_ship = false
         # Finally, the unassigned ship
         @addShip()
 
@@ -400,6 +409,103 @@ class exportObj.SquadBuilder
             @info_container.show()
             @tooltipCurrentlyDisplaying = data
 
+    _randomizerLoopBody: (data) =>
+        if data.keep_running and data.iterations < data.max_iterations
+            data.iterations++
+            #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
+            if @total_points == data.max_points
+                # Exact hit!
+                #console.log "Points reached exactly"
+                data.keep_running = false
+            else if @total_points < data.max_points
+                #console.log "Need to add something"
+                # Add something
+                if Math.random() < 0.5
+                    # Add random ship
+                    #console.log "Add ship"
+                    available_pilots = @getAvailablePilotsIncluding()
+                    ship_group = available_pilots[$.randomInt available_pilots.length]
+                    pilot = ship_group.children[$.randomInt ship_group.children.length]
+                    if exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
+                        new_ship = @addShip()
+                        new_ship.setPilotById pilot.id
+                else
+                    # Add upgrade/title/modification
+                    #console.log "Add addon"
+                    unused_addons = []
+                    for ship in @ships
+                        for upgrade in ship.upgrades
+                            unused_addons.push upgrade unless upgrade.data?
+                        unused_addons.push ship.title if ship.title? and not ship.title.data?
+                        unused_addons.push ship.modification if ship.modification? and not ship.modification.data?
+                    if unused_addons.length > 0
+                        addon = unused_addons[$.randomInt unused_addons.length]
+                        switch addon.type
+                            when 'Upgrade'
+                                available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                                addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
+                            when 'Title'
+                                available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
+                                addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
+                            when 'Modification'
+                                available_modifications = (modification for modification in @getAvailableModificationsIncluding() when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                                addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
+                            else
+                                throw "Invalid addon type #{addon.type}"
+            else
+                #console.log "Need to remove something"
+                # Remove something
+                removable_things = []
+                for ship in @ships
+                    removable_things.push ship
+                    for upgrade in ship.upgrades
+                        removable_things.push upgrade if upgrade.data?
+                    removable_things.push ship.title if ship.title?.data?
+                    removable_things.push ship.modification if ship.modification?.data?
+                if removable_things.length > 0
+                    thing_to_remove = removable_things[$.randomInt removable_things.length]
+                    #console.log "Removing #{thing_to_remove}"
+                    if thing_to_remove instanceof Ship
+                        @removeShip thing_to_remove
+                    else if thing_to_remove instanceof GenericAddon
+                        thing_to_remove.setData null
+                    else
+                        throw "Unknown thing to remove #{thing_to_remove}"
+            # continue the "loop"
+            window.setTimeout @_makeRandomizerLoopFunc(data), 0
+        else
+            #console.log "Clearing timer #{data.timer}, iterations=#{data.iterations}, keep_running=#{data.keep_running}"
+            window.clearTimeout data.timer
+            # Update all selectors
+            for ship in @ships
+                ship.updateSelections()
+            @suppress_automatic_new_ship = false
+            @addShip()
+
+    _makeRandomizerLoopFunc: (data) =>
+        () =>
+            @_randomizerLoopBody(data)
+
+    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=100, max_iterations=1000) ->
+        @suppress_automatic_new_ship = true
+        # Clear all existing ships
+        while @ships.length > 0
+            @removeShip @ships[0]
+        throw "Ships not emptied" if @ships.length > 0
+        data =
+            iterations: 0
+            max_points: max_points
+            allowed_sources: allowed_sources
+            max_iterations: max_iterations
+            keep_running: true
+            allowed_sources: allowed_sources ? exportObj.expansions
+        stopHandler = () =>
+            #console.log "*** TIMEOUT *** TIMEOUT *** TIMEOUT ***"
+            data.keep_running = false
+        data.timer = window.setTimeout stopHandler , timeout_ms
+        #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
+        window.setTimeout @_makeRandomizerLoopFunc(data), 0
+
 class Ship
     constructor: (args) ->
         # args
@@ -434,7 +540,7 @@ class Ship
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
             if not @pilot?
-                @builder.addShip() unless @builder.loading_from_serialized
+                @builder.addShip() unless @builder.suppress_automatic_new_ship
                 @remove_button.fadeIn 'fast'
             @resetPilot()
             @resetAddons()
@@ -552,6 +658,12 @@ class Ship
     teardownUI: () ->
         @row.text ''
         @row.remove()
+
+    toString: () ->
+        if @pilot?
+            "Pilot #{@pilot.name} flying #{@data.name}"
+        else
+            "Ship without pilot"
 
 class GenericAddon
     constructor: (args) ->
