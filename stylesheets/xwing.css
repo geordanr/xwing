@@ -47,3 +47,69 @@
 
 .text-list-modal {
   color: black; }
+
+.icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit {
+  background-image: url("../images/xwing-icons.png");
+  background-size: 254px 32px;
+  background-position-y: -4px;
+  background-repeat: no-repeat; }
+
+img.icon-straight {
+  width: 9px;
+  height: 18px;
+  background-position-x: 0px; }
+
+img.icon-bankleft {
+  width: 11px;
+  height: 18px;
+  background-position-x: -12px; }
+
+img.icon-bankright {
+  width: 10px;
+  height: 18px;
+  background-position-x: -27px; }
+
+img.icon-turnleft {
+  width: 16px;
+  height: 18px;
+  background-position-x: -39px; }
+
+img.icon-turnright {
+  width: 19px;
+  height: 18px;
+  background-position-x: -55px; }
+
+img.icon-uturn {
+  width: 17px;
+  height: 18px;
+  background-position-x: -73px; }
+
+img.icon-focus {
+  width: 25px;
+  height: 18px;
+  background-position-x: -94px; }
+
+img.icon-evade {
+  width: 13px;
+  height: 21px;
+  background-position-x: -123px; }
+
+img.icon-barrel-roll {
+  width: 34px;
+  height: 21px;
+  background-position-x: -140px; }
+
+img.icon-target-lock {
+  width: 27px;
+  height: 21px;
+  background-position-x: -175px; }
+
+img.icon-hit {
+  width: 18px;
+  height: 21px;
+  background-position-x: -205px; }
+
+img.icon-crit {
+  width: 25px;
+  height: 25px;
+  background-position-x: -227px; }
