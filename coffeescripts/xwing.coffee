@@ -519,7 +519,7 @@ class Ship
             </div>
             <div class="span6 addon-container" />
             <div class="span1 remove-btn-container">
-                <button class="btn btn-danger">&times;</button>
+                <button class="btn btn-danger"><span class="visible-desktop visible-tablet hidden-phone">&times;</span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
             </div>
         '''
         @pilot_selector = $ @row.find('div.pilot-selector-container input[type=hidden]')
