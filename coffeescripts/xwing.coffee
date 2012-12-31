@@ -60,7 +60,10 @@ class exportObj.SquadBuilder
             Title:
                 []
         @suppress_automatic_new_ship = false
-        @tooltipCurrentlyDisplaying = null
+        @tooltip_currently_displaying = null
+        @randomizer_options =
+            sources: null
+            points: 100
 
         @setupUI()
         @setupEventHandlers()
@@ -80,6 +83,14 @@ class exportObj.SquadBuilder
                     <button class="btn btn-info view-as-text">View as Text</button>
                     <button class="btn btn-info print-list">Print List</button>
                     <a class="btn btn-info permalink">Permalink</a>
+
+                    <button class="btn btn-info randomize">Random Squad!</button>
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="randomize-options">Options...</a></li>
+                    <ul>
                 </div>
             </div>
         '''
@@ -89,6 +100,58 @@ class exportObj.SquadBuilder
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @print_list_button = $ @status_container.find('div.button-container button.print-list')
+        @randomize_button = $ @status_container.find('div.button-container button.randomize')
+        @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+
+        @randomizer_options_modal = $ document.createElement('DIV')
+        @randomizer_options_modal.addClass 'modal hide fade'
+        $(document).append @randomizer_options_modal
+        @randomizer_options_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Random Squad Builder Options</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label>
+                        Desired Points
+                        <input type="text" class="randomizer-points" placeholder="100" />
+                    </label>
+                    <label>
+                        Sets and Expansions
+                        <select class="randomizer-sources" multiple="1">
+                        </select>
+                    </label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary do-randomize" aria-hidden="true">Randomize!</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @randomizer_source_selector = $ @randomizer_options_modal.find('select.randomizer-sources')
+        for expansion in exportObj.expansions
+            opt = $ document.createElement('OPTION')
+            opt.text expansion
+            @randomizer_source_selector.append opt
+        @randomizer_source_selector.select2
+            placeholder: "Use all sets and expansions"
+            width: "100%"
+
+        @randomize_button.click (e) =>
+            e.preventDefault()
+            points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
+            points = 100 if isNaN(points)
+            @randomSquad points, @randomizer_source_selector.val()
+
+        @randomizer_options_modal.find('button.do-randomize').click (e) =>
+            e.preventDefault()
+            @randomizer_options_modal.modal('hide')
+            @randomize_button.click()
+
+        @customize_randomizer.click (e) =>
+            e.preventDefault()
+            @randomizer_options_modal.modal()
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -370,7 +433,7 @@ class exportObj.SquadBuilder
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
     showTooltip: (type, data) ->
-        if data != @tooltipCurrentlyDisplaying
+        if data != @tooltip_currently_displaying
             @info_container.find('.info-name').text data.name
             @info_container.find('p.info-text').html data.text ? ''
             switch type
@@ -407,7 +470,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
             @info_container.show()
-            @tooltipCurrentlyDisplaying = data
+            @tooltip_currently_displaying = data
 
     _randomizerLoopBody: (data) =>
         if data.keep_running and data.iterations < data.max_iterations
@@ -486,7 +549,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=100, max_iterations=1000) ->
+    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000) ->
         @suppress_automatic_new_ship = true
         # Clear all existing ships
         while @ships.length > 0
