@@ -142,11 +142,14 @@
     }
 
     SquadBuilder.prototype.setupUI = function() {
-      var content_container, expansion, opt, _i, _len, _ref,
+      var DEFAULT_RANDOMIZER_ITERATIONS, DEFAULT_RANDOMIZER_POINTS, DEFAULT_RANDOMIZER_TIMEOUT_SEC, content_container, expansion, opt, _i, _len, _ref,
         _this = this;
+      DEFAULT_RANDOMIZER_POINTS = 100;
+      DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2;
+      DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Options...</a></li>\n        <ul>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        <ul>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
       this.permalink = $(this.status_container.find('div.button-container a.permalink'));
@@ -157,7 +160,7 @@
       this.randomizer_options_modal = $(document.createElement('DIV'));
       this.randomizer_options_modal.addClass('modal hide fade');
       $(document).append(this.randomizer_options_modal);
-      this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"text\" class=\"randomizer-points\" placeholder=\"100\" />\n        </label>\n        <label>\n            Sets and Expansions\n            <select class=\"randomizer-sources\" multiple=\"1\">\n            </select>\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"number\" class=\"randomizer-points\" value=\"" + DEFAULT_RANDOMIZER_POINTS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_POINTS + "\" />\n        </label>\n        <label>\n            Sets and Expansions\n            <select class=\"randomizer-sources\" multiple=\"1\">\n            </select>\n        </label>\n        <label>\n            Maximum Seconds to Spend Randomizing\n            <input type=\"number\" class=\"randomizer-timeout\" value=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" placeholder=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" />\n        </label>\n        <label>\n            Maximum Randomization Iterations\n            <input type=\"number\" class=\"randomizer-iterations\" value=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" />\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.randomizer_source_selector = $(this.randomizer_options_modal.find('select.randomizer-sources'));
       _ref = exportObj.expansions;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -171,11 +174,20 @@
         width: "100%"
       });
       this.randomize_button.click(function(e) {
-        var points;
+        var iterations, points, timeout_sec;
         e.preventDefault();
         points = parseInt($(_this.randomizer_options_modal.find('.randomizer-points')).val());
-        if (isNaN(points)) points = 100;
-        return _this.randomSquad(points, _this.randomizer_source_selector.val());
+        if (isNaN(points) || points <= 0) points = DEFAULT_RANDOMIZER_POINTS;
+        timeout_sec = parseInt($(_this.randomizer_options_modal.find('.randomizer-timeout')).val());
+        if (isNaN(timeout_sec) || timeout_sec <= 0) {
+          timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC;
+        }
+        iterations = parseInt($(_this.randomizer_options_modal.find('.randomizer-iterations')).val());
+        if (isNaN(iterations) || iterations <= 0) {
+          iterations = DEFAULT_RANDOMIZER_ITERATIONS;
+        }
+        console.log("points=" + points + ", sources=" + (_this.randomizer_source_selector.val()) + ", timeout=" + timeout_sec + ", iterations=" + iterations);
+        return _this.randomSquad(points, _this.randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations);
       });
       this.randomizer_options_modal.find('button.do-randomize').click(function(e) {
         e.preventDefault();
@@ -430,7 +442,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 385
+          lineno: 402
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -439,7 +451,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 386
+          lineno: 403
         }));
         __iced_deferrals._fulfill();
       });
@@ -769,6 +781,7 @@
         }
         return window.setTimeout(this._makeRandomizerLoopFunc(data), 0);
       } else {
+        console.log("Clearing timer " + data.timer + ", iterations=" + data.iterations + ", keep_running=" + data.keep_running);
         window.clearTimeout(data.timer);
         _ref6 = this.ships;
         for (_m = 0, _len4 = _ref6.length; _m < _len4; _m++) {
@@ -872,7 +885,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 611
+                  lineno: 628
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -912,7 +925,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 623
+                lineno: 640
               })
             ]);
             __iced_deferrals._fulfill();
@@ -963,17 +976,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 646
+            lineno: 663
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 647
+            lineno: 664
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 648
+            lineno: 665
           }));
         }
         __iced_deferrals._fulfill();
@@ -1105,7 +1118,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 746
+                lineno: 763
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1166,7 +1179,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 772
+                  lineno: 789
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1184,7 +1197,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 774
+                    lineno: 791
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1321,7 +1334,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 849
+                  lineno: 866
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1336,7 +1349,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 853
+                    lineno: 870
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1364,7 +1377,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 858
+                    lineno: 875
                   })
                 ]);
                 __iced_deferrals._fulfill();

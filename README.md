@@ -32,7 +32,7 @@ CHANGELOG
 
 31 Dec 2012
 -----------
-* Add random squad builder.  Will attempt to generate a squad totalling the given number of points, stopping after a certain period of time or iterations.
+* Add random squad builder.  Will attempt to generate a squad totalling the given number of points, stopping after a certain period of time or iterations.  May go over.  It's random.
 
 30 Dec 2012
 -----------

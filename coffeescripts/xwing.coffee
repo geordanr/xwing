@@ -74,6 +74,10 @@ class exportObj.SquadBuilder
             @addShip()
 
     setupUI: () ->
+        DEFAULT_RANDOMIZER_POINTS = 100
+        DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2
+        DEFAULT_RANDOMIZER_ITERATIONS = 1000
+
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
@@ -89,7 +93,7 @@ class exportObj.SquadBuilder
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="randomize-options">Options...</a></li>
+                        <li><a class="randomize-options">Randomizer Options...</a></li>
                     <ul>
                 </div>
             </div>
@@ -115,12 +119,20 @@ class exportObj.SquadBuilder
                 <form>
                     <label>
                         Desired Points
-                        <input type="text" class="randomizer-points" placeholder="100" />
+                        <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
                     </label>
                     <label>
                         Sets and Expansions
                         <select class="randomizer-sources" multiple="1">
                         </select>
+                    </label>
+                    <label>
+                        Maximum Seconds to Spend Randomizing
+                        <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
+                    </label>
+                    <label>
+                        Maximum Randomization Iterations
+                        <input type="number" class="randomizer-iterations" value="#{DEFAULT_RANDOMIZER_ITERATIONS}" placeholder="#{DEFAULT_RANDOMIZER_ITERATIONS}" />
                     </label>
                 </form>
             </div>
@@ -141,8 +153,13 @@ class exportObj.SquadBuilder
         @randomize_button.click (e) =>
             e.preventDefault()
             points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
-            points = 100 if isNaN(points)
-            @randomSquad points, @randomizer_source_selector.val()
+            points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
+            timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
+            timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
+            iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
+            iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
+            #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
+            @randomSquad(points, @randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
