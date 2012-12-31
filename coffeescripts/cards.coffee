@@ -168,7 +168,7 @@ exportObj.pilots =
             "Torpedo",
             "Astromech",
         ]
-        text: """When defending, you may change 1 of your %FOCUS% results to a %EVADE% result."""
+        text: """When defending, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-evade" src="images/transparent.png" /> result."""
     "Gray Squadron Pilot":
         name: "Gray Squadron Pilot"
         id: 6
@@ -252,7 +252,7 @@ exportObj.pilots =
         skill: 5
         points: 15
         slots: [ ]
-        text: """When attacking at Range 1, you may change 1 of your %HIT% results to a %CRIT% result."""
+        text: """When attacking at Range 1, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
     '"Night Beast"':
         name: '"Night Beast"'
         id: 14
@@ -521,7 +521,7 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 %CRIT% result."""
+        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 <img class="icon-crit" src="images/transparent.png" /> result."""
     "Boba Fett":
         name: "Boba Fett"
         id: 38
@@ -536,7 +536,7 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When you reveal a bank maneuver (%EASYLEFT% or %EASYRIGHT%), you may rotate your dial to the other bank maneuver of the same speed."""
+        text: """When you reveal a bank maneuver (<img class="icon-bankleft" src="images/transparent.png" /> or <img class="icon-bankright" src="images/transparent.png" />), you may rotate your dial to the other bank maneuver of the same speed."""
     "Krassis Trelix":
         name: "Krassis Trelix"
         id: 39
@@ -573,9 +573,7 @@ exportObj.upgrades =
         points: 5
         attack: 3
         range: "1-2"
-        text: """Attack: Attack 1 ship (even a ship outside your firing arc).
-
-                 If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
+        text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).<br /><br />If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
     "Proton Torpedoes":
         name: "Proton Torpedoes"
         id: 1
@@ -583,9 +581,7 @@ exportObj.upgrades =
         points: 4
         attack: 4
         range: "2-3"
-        text: """Attack (target lock): Spend your target lock and discard this card to perform this attack.
-
-                You may change 1 of your %FOCUS% results to a %CRIT% result."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
     "R2 Astromech":
         name: "R2 Astromech"
         id: 2
@@ -605,25 +601,21 @@ exportObj.upgrades =
         unique: true
         slot: "Astromech"
         points: 3
-        text: """Action: Increase your agility value by 1 until the end of this game round."""
+        text: """<strong>Action:</strong> Increase your agility value by 1 until the end of this game round."""
     "R5-D8":
         name: "R5-D8"
         id: 5
         unique: true
         slot: "Astromech"
         points: 3
-        text: """Action: Roll 1 defense die.
-
-                 On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."""
+        text: """<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> or <img class="icon-focus" src="images/transparent.png" /> result, discard 1 of your facedown Damage cards."""
     "R5-K6":
         name: "R5-K6"
         id: 6
         unique: true
         slot: "Astromech"
         points: 2
-        text: """After spending your target lock, roll 1 defense die.
-
-                 On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
+        text: """After spending your target lock, roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
     "R5 Astromech":
         name: "R5 Astromech"
         id: 7
@@ -641,32 +633,26 @@ exportObj.upgrades =
         id: 9
         slot: "Elite"
         points: 2
-        text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.
-
-                 Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
+        text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.<br /><br />Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
     "Squad Leader":
         name: "Squad Leader"
         id: 10
         unique: true
         slot: "Elite"
         points: 2
-        text: """Action: Choose 1 ship at Range 1-2 that has a lower pilot skill than you.
-
-                 The chosen ship my immediately perform 1 free action."""
+        text: """<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship my immediately perform 1 free action."""
     "Expert Handling":
         name: "Expert Handling"
         id: 11
         slot: "Elite"
         points: 2
-        text: """Action: Perform a barrel roll.  If you do not have the %BARREL_ROLL% action icon, receive 1 stress token.
-
-                 You may then remove 1 enemy target lock from your ship."""
+        text: """<strong>Action:</strong> Perform a barrel roll.  If you do not have the <img class="icon-barrel-roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
     "Marksmanship":
         name: "Marksmanship"
         id: 12
         slot: "Elite"
         points: 3
-        text: """Action: When attacking this round, you may change 1 of your %FOCUS% results to a %CRIT% result and all of your other %FOCUS% results to %HIT% results."""
+        text: """<strong>Action:</strong> When attacking this round, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result and all of your other <img class="icon-focus" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
     "Concussion Missiles":
         name: "Concussion Missiles"
         id: 13
@@ -674,9 +660,7 @@ exportObj.upgrades =
         points: 4
         attack: 4
         range: "2-3"
-        text: """Attack (target lock):  Spend your target lock and discard this card to perform this attack.
-
-                 You may change 1 of your blank results to a %HIT% result."""
+        text: """<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class="icon-hit" src="images/transparent.png" /> result."""
     "Cluster Missiles":
         name: "Cluster Missiles"
         id: 14
@@ -684,23 +668,19 @@ exportObj.upgrades =
         points: 4
         attack: 3
         range: "1-2"
-        text: """Attack (target lock): Spend your target lock and discard this card to perform this attack twice."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack twice."""
     "Daredevil":
         name: "Daredevil"
         id: 15
         slot: "Elite"
         points: 3
-        text: """Action: Execute a red (%HARDLEFT% 1) or (%HARDRIGHT% 1) maneuver.
-
-                 Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (%HIT%) and any critical damage (%CRIT%) rolled."""
+        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" src="images/transparent.png" /> 1) or (<img class="icon-turnright" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" src="images/transparent.png" />) rolled."""
     "Elusiveness":
         name: "Elusiveness"
         id: 16
         slot: "Elite"
         points: 2
-        text: """When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.
-
-                 If you have at least 1 stress token, you cannot use this ability."""
+        text: """When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.<br /><br />If you have at least 1 stress token, you cannot use this ability."""
     "Homing Missiles":
         name: "Homing Missiles"
         id: 17
@@ -708,31 +688,25 @@ exportObj.upgrades =
         attack: 4
         range: "2-3"
         points: 5
-        text: """Attack (target lock): Discard this card to perform this attack.
-
-                 The defender cannot spend evade tokens during this attack."""
+        text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.<br /><br />The defender cannot spend evade tokens during this attack."""
     "Push the Limit":
         name: "Push the Limit"
         id: 18
         slot: "Elite"
         points: 3
-        text: """Once per round, after you perform and action, you may perform 1 free action shown in your action bar.
-
-                 Then receive 1 stress token."""
+        text: """Once per round, after you perform and action, you may perform 1 free action shown in your action bar.<br /><br />Then receive 1 stress token."""
     "Deadeye":
         name: "Deadeye"
         id: 19
         slot: "Elite"
         points: 1
-        text: """You may treat the 'Attack (target lock):' header as 'Attack (focus):'.
-
-                 When an attack instructs you to spend a target lock, you may spend a focus token instead."""
+        text: """You may treat the <strong>Attack (target lock):</strong> header as <strong>Attack (focus):</strong>.<br /><br />When an attack instructs you to spend a target lock, you may spend a focus token instead."""
     "Expose":
         name: "Expose"
         id: 20
         slot: "Elite"
         points: 4
-        text: """Action: Until the end of the round, increase your primary weapon value by 1 and decrease your agility value by 1."""
+        text: """<strong>Action:</strong> Until the end of the round, increase your primary weapon value by 1 and decrease your agility value by 1."""
     "Gunner":
         name: "Gunner"
         id: 21
@@ -746,9 +720,7 @@ exportObj.upgrades =
         points: 3
         attack: 3
         range: "1-3"
-        text: """Attack: Attack 1 ship.
-
-                 If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
+        text: """Attack: Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
     "Heavy Laser Cannon":
         name: "Heavy Laser Cannon"
         id: 23
@@ -756,23 +728,19 @@ exportObj.upgrades =
         points: 7
         attack: 4
         range: "2-3"
-        text: """Attack: Attack 1 ship.
-
-                 Immediately after rolling your attack dice, you must change all of your %CRIT% results to %HIT% results."""
+        text: """Attack: Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
     "Seismic Charges":
         name: "Seismic Charges"
         id: 24
         slot: "Bomb"
         points: 2
-        text: """When you reveal your maneuver dial, you may discard this card to drop 1 seismic charge token.
-
-                 This token detonates at the end of the Activation phase."""
+        text: """When you reveal your maneuver dial, you may discard this card to drop 1 seismic charge token.<br /><br />This token detonates at the end of the Activation phase."""
     "Mercenary Copilot":
         name: "Mercenary Copilot"
         id: 25
         slot: "Crew"
         points: 2
-        text: """When attacking at Range 3, you may change 1 of your %HIT% results to a %CRIT% result."""
+        text: """When attacking at Range 3, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
     "Assault Missiles":
         name: "Assault Missiles"
         id: 26
@@ -780,9 +748,7 @@ exportObj.upgrades =
         points: 5
         attack: 4
         range: "2-3"
-        text: """Attack (target lock): Spend your target lock and discard this card to perform this attack.
-
-                 If this attack hits, each other ship at Range 1 of the defender suffers 1 damage."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, each other ship at Range 1 of the defender suffers 1 damage."""
     "Veteran Instincts":
         name: "Veteran Instincts"
         id: 27
@@ -794,23 +760,19 @@ exportObj.upgrades =
         id: 28
         slot: "Bomb"
         points: 3
-        text: """Action: Discard this card to drop 1 proximity mine token.
-
-                 When a ship executes a maneuver, if its base or maneuver template overlaps this token, this token detonates."""
+        text: """<strong>Action:</strong> Discard this card to drop 1 proximity mine token.<br /><br />When a ship executes a maneuver, if its base or maneuver template overlaps this token, this token detonates."""
     "Weapons Engineer":
         name: "Weapons Engineer"
         id: 29
         slot: "Crew"
         points: 3
-        text: """You may maintain 2 target locks (only 1 per enemy ship).
-
-                 When you acquire a target lock, you may lock onto 2 different ships."""
+        text: """You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."""
     "Draw Their Fire":
         name: "Draw Their Fire"
         id: 30
         slot: "Elite"
         points: 1
-        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled %CRIT% results instead of the target ship."""
+        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class="icon-crit" src="images/transparent.png" /> results instead of the target ship."""
     "Luke Skywalker":
         name: "Luke Skywalker"
         id: 31
@@ -818,7 +780,7 @@ exportObj.upgrades =
         faction: "Rebel Alliance"
         slot: "Crew"
         points: 7
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" src="images/transparent.png" /> result to a <img class="icon-hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
     "Nien Nunb":
         name: "Nien Nunb"
         id: 32
@@ -826,7 +788,7 @@ exportObj.upgrades =
         faction: "Rebel Alliance"
         slot: "Crew"
         points: 1
-        text: """You may treat all %STRAIGHT% maneuvers as green maneuvers."""
+        text: """You may treat all <img class="icon-straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
     "Chewbacca":
         name: "Chewbacca"
         id: 33
@@ -834,9 +796,7 @@ exportObj.upgrades =
         faction: "Rebel Alliance"
         slot: "Crew"
         points: 4
-        text: """When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.
-
-                 Then, discard this Upgrade card."""
+        text: """When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."""
 
 exportObj.modifications =
     "Stealth Device":
@@ -874,7 +834,7 @@ exportObj.titles =
         points: 1
         ship: "YT-1300"
         actions: "Evade"
-        text: """Your action bar gains the %EVADE% action icon."""
+        text: """Your action bar gains the <img class="icon-evade" src="images/transparent.png" /> action icon."""
 
 exportObj.pilotsById = {}
 for pilot_name, pilot of exportObj.pilots

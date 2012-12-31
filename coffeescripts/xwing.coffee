@@ -363,6 +363,7 @@ class exportObj.SquadBuilder
     showTooltip: (type, data) ->
         if data != @tooltipCurrentlyDisplaying
             @info_container.find('.info-name').text data.name
+            @info_container.find('p.info-text').html data.text ? ''
             switch type
                 when 'Pilot'
                     @info_container.find('tr.info-ship td.info-data').text data.ship
@@ -379,7 +380,6 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
                     @info_container.find('tr.info-actions').show()
-                    @info_container.find('p.info-text').text data.text ? ''
                 when 'Addon'
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-skill').hide()
@@ -397,7 +397,6 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
-                    @info_container.find('p.info-text').text data.text
             @info_container.show()
             @tooltipCurrentlyDisplaying = data
 
