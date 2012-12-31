@@ -801,7 +801,7 @@
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row-fluid');
       this.container.append(this.row);
-      this.row.append($.trim('<div class="span4 pilot-selector-container">\n    <input type="hidden" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span1 remove-btn-container">\n    <button class="btn btn-danger">&times;</button>\n</div>'));
+      this.row.append($.trim('<div class="span4 pilot-selector-container">\n    <input type="hidden" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span1 remove-btn-container">\n    <button class="btn btn-danger"><span class="visible-desktop visible-tablet hidden-phone">&times;</span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>\n</div>'));
       this.pilot_selector = $(this.row.find('div.pilot-selector-container input[type=hidden]'));
       this.pilot_selector.select2({
         width: '100%',
