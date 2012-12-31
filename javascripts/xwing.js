@@ -186,7 +186,6 @@
         if (isNaN(iterations) || iterations <= 0) {
           iterations = DEFAULT_RANDOMIZER_ITERATIONS;
         }
-        console.log("points=" + points + ", sources=" + (_this.randomizer_source_selector.val()) + ", timeout=" + timeout_sec + ", iterations=" + iterations);
         return _this.randomSquad(points, _this.randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations);
       });
       this.randomizer_options_modal.find('button.do-randomize').click(function(e) {
@@ -781,7 +780,6 @@
         }
         return window.setTimeout(this._makeRandomizerLoopFunc(data), 0);
       } else {
-        console.log("Clearing timer " + data.timer + ", iterations=" + data.iterations + ", keep_running=" + data.keep_running);
         window.clearTimeout(data.timer);
         _ref6 = this.ships;
         for (_m = 0, _len4 = _ref6.length; _m < _len4; _m++) {
