@@ -184,7 +184,7 @@ class exportObj.SquadBuilder
 
         @info_container.append $.trim """
             <div class="well info-well">
-                <h4 class="info-name"></h4>
+                <span class="info-name"></span>
                 <table>
                     <tbody>
                         <tr class="info-ship">
@@ -288,7 +288,7 @@ class exportObj.SquadBuilder
                     addon_list = ''
                 @text_ul.append $.trim """
                     <li>
-                        <strong>#{ship.pilot.name} (#{ship.pilot.points})</strong>
+                        <span class="info-name">#{ship.pilot.name} (#{ship.pilot.points})</span>
                         <br />
                         #{addon_list}
                         <em>#{total_points}</em>

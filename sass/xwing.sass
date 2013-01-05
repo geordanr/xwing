@@ -5,15 +5,19 @@ $xwing_icons_png: '../images/xwing-icons.png'
   src: url('../fonts/kimberley bl.ttf')
 
 @font-face
-  font-family: EurostileStandardCondensed
-  src: url('../fonts/EurostileLTStd-Cn.otf')
+  font-family: EurostileStandard
+  src: url('../fonts/EurostileLTStd.otf')
 
 @font-face
-  font-family: EurostileStandardCondensedBold
-  src: url('../fonts/EurostileLTStd-BoldCn.otf')
+  font-family: EurostileStandardBold
+  src: url('../fonts/EurostileLTStd-Bold.otf')
 
 @font-face
   font-family: EurostileStandardOblique
+  src: url('../fonts/EurostileLTStd-Oblique.otf')
+
+@font-face
+  font-family: EurostileStandardBoldOblique
   src: url('../fonts/EurostileLTStd-BoldOblique.otf')
 
 @font-face
@@ -25,16 +29,20 @@ $xwing_icons_png: '../images/xwing-icons.png'
   src: url('../fonts/bankgthd.ttf')
 
 body, button
-  font-family: EurostileStandardCondensed
-  font-size: 15px
+  font-family: EurostileStandard
 
 strong
-  font-family: EurostileStandardCondensedBold
+  font-family: EurostileStandardBold
   font-weight: normal
 
 em
   font-family: EurostileStandardOblique
   font-style: normal
+
+strong em, em strong
+  font-family: EurostileStandardBoldOblique
+  font-style: normal
+  font-weight: normal
 
 .show-on-print
   display: none
@@ -75,6 +83,7 @@ em
 
 .info-name
   font-family: BankGothicHD
+  font-size: 1.5em
 
 .info-well
   color: black
@@ -86,7 +95,6 @@ em
 
 .points-display-container
   font-size: 1.2em
-  font-weight: bold
   background-color: rgba(0, 0, 0, 0.5)
   padding-top: 5px
   text-align: center

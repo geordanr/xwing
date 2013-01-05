@@ -333,7 +333,7 @@ exportObj.pilots =
             "Elite",
             "Missile",
         ]
-        text: """When you attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+        text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
     "Tempest Squadron Pilot":
         name: "Tempest Squadron Pilot"
         id: 20
