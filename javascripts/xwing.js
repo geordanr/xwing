@@ -9,8 +9,8 @@
 (function() {
   var GenericAddon, Modification, Ship, Title, Upgrade, exportObj,
     __slice = [].slice,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
@@ -83,6 +83,10 @@
     return navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/i);
   };
 
+  $.randomInt = function(n) {
+    return Math.floor(Math.random() * n);
+  };
+
   $.getParameterByName = function(name) {
     var regex, regexS, results;
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -96,9 +100,20 @@
     }
   };
 
+  Array.prototype.intersects = function(other) {
+    var item, _i, _len;
+    for (_i = 0, _len = this.length; _i < _len; _i++) {
+      item = this[_i];
+      if (__indexOf.call(other, item) >= 0) return true;
+    }
+    return false;
+  };
+
   exportObj.SquadBuilder = (function() {
 
     function SquadBuilder(args) {
+      this._makeRandomizerLoopFunc = __bind(this._makeRandomizerLoopFunc, this);
+      this._randomizerLoopBody = __bind(this._randomizerLoopBody, this);
       this.releaseUnique = __bind(this.releaseUnique, this);
       this.claimUnique = __bind(this.claimUnique, this);
       this.onPointsUpdated = __bind(this.onPointsUpdated, this);      this.container = $(args.container);
@@ -111,8 +126,12 @@
         Modification: [],
         Title: []
       };
-      this.loading_from_serialized = false;
-      this.tooltipCurrentlyDisplaying = null;
+      this.suppress_automatic_new_ship = false;
+      this.tooltip_currently_displaying = null;
+      this.randomizer_options = {
+        sources: null,
+        points: 100
+      };
       this.setupUI();
       this.setupEventHandlers();
       if ($.getParameterByName('f') === this.faction) {
@@ -123,15 +142,60 @@
     }
 
     SquadBuilder.prototype.setupUI = function() {
-      var content_container;
+      var DEFAULT_RANDOMIZER_ITERATIONS, DEFAULT_RANDOMIZER_POINTS, DEFAULT_RANDOMIZER_TIMEOUT_SEC, content_container, expansion, opt, _i, _len, _ref,
+        _this = this;
+      DEFAULT_RANDOMIZER_POINTS = 100;
+      DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2;
+      DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="span4 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        <ul>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
       this.permalink = $(this.status_container.find('div.button-container a.permalink'));
       this.view_list_button = $(this.status_container.find('div.button-container button.view-as-text'));
       this.print_list_button = $(this.status_container.find('div.button-container button.print-list'));
+      this.randomize_button = $(this.status_container.find('div.button-container button.randomize'));
+      this.customize_randomizer = $(this.status_container.find('div.button-container a.randomize-options'));
+      this.randomizer_options_modal = $(document.createElement('DIV'));
+      this.randomizer_options_modal.addClass('modal hide fade');
+      $(document).append(this.randomizer_options_modal);
+      this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"number\" class=\"randomizer-points\" width=\"4\" value=\"" + DEFAULT_RANDOMIZER_POINTS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_POINTS + "\" />\n        </label>\n        <label>\n            Sets and Expansions (default all)\n            <select class=\"randomizer-sources\" multiple=\"1\" data-placeholder=\"Use all sets and expansions\">\n            </select>\n        </label>\n        <label>\n            Maximum Seconds to Spend Randomizing\n            <input type=\"number\" class=\"randomizer-timeout\" width=\"2\" value=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" placeholder=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" />\n        </label>\n        <label>\n            Maximum Randomization Iterations\n            <input type=\"number\" class=\"randomizer-iterations\" width=\"4\" value=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" />\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.randomizer_source_selector = $(this.randomizer_options_modal.find('select.randomizer-sources'));
+      _ref = exportObj.expansions;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        expansion = _ref[_i];
+        opt = $(document.createElement('OPTION'));
+        opt.text(expansion);
+        this.randomizer_source_selector.append(opt);
+      }
+      this.randomizer_source_selector.select2({
+        width: "100%"
+      });
+      this.randomize_button.click(function(e) {
+        var iterations, points, timeout_sec;
+        e.preventDefault();
+        points = parseInt($(_this.randomizer_options_modal.find('.randomizer-points')).val());
+        if (isNaN(points) || points <= 0) points = DEFAULT_RANDOMIZER_POINTS;
+        timeout_sec = parseInt($(_this.randomizer_options_modal.find('.randomizer-timeout')).val());
+        if (isNaN(timeout_sec) || timeout_sec <= 0) {
+          timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC;
+        }
+        iterations = parseInt($(_this.randomizer_options_modal.find('.randomizer-iterations')).val());
+        if (isNaN(iterations) || iterations <= 0) {
+          iterations = DEFAULT_RANDOMIZER_ITERATIONS;
+        }
+        return _this.randomSquad(points, _this.randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations);
+      });
+      this.randomizer_options_modal.find('button.do-randomize').click(function(e) {
+        e.preventDefault();
+        _this.randomizer_options_modal.modal('hide');
+        return _this.randomize_button.click();
+      });
+      this.customize_randomizer.click(function(e) {
+        e.preventDefault();
+        return _this.randomizer_options_modal.modal();
+      });
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
@@ -171,14 +235,14 @@
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
       var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4;
-      total_points = 0;
+      this.total_points = 0;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
         ship = _ref[i];
-        total_points += ship.getPoints();
+        this.total_points += ship.getPoints();
       }
-      this.points_container.text("Total Points: " + total_points);
-      this.text_total_points_container.text(total_points);
+      this.points_container.text("Total Points: " + this.total_points);
+      this.text_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
       this.text_ul.text('');
       _ref1 = this.ships;
@@ -209,7 +273,7 @@
           this.text_ul.append($.trim("<li>\n    <strong>" + ship.pilot.name + " (" + ship.pilot.points + ")</strong>\n    <br />\n    " + addon_list + "\n    <em>" + total_points + "</em>\n</li>"));
         }
       }
-      return cb(total_points);
+      return cb(this.total_points);
     };
 
     SquadBuilder.prototype.showTextListModal = function() {
@@ -252,7 +316,7 @@
 
     SquadBuilder.prototype.loadFromSerialized = function(serialized) {
       var i, modification_id, new_ship, pilot_id, ship_str, title_conferred_upgrade_ids, title_id, upgrade_id, upgrade_ids, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3;
-      this.loading_from_serialized = true;
+      this.suppress_automatic_new_ship = true;
       while (this.ships.length > 0) {
         this.removeShip(this.ships[0]);
       }
@@ -285,7 +349,7 @@
         if (modification_id >= 0) new_ship.modification.setById(modification_id);
         new_ship.updateSelections();
       }
-      this.loading_from_serialized = false;
+      this.suppress_automatic_new_ship = false;
       return this.addShip();
     };
 
@@ -376,7 +440,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 313
+          lineno: 401
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -385,7 +449,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 314
+          lineno: 402
         }));
         __iced_deferrals._fulfill();
       });
@@ -548,7 +612,7 @@
 
     SquadBuilder.prototype.showTooltip = function(type, data) {
       var _ref;
-      if (data !== this.tooltipCurrentlyDisplaying) {
+      if (data !== this.tooltip_currently_displaying) {
         this.info_container.find('.info-name').text(data.name);
         this.info_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
         switch (type) {
@@ -589,8 +653,174 @@
             this.info_container.find('tr.info-actions').hide();
         }
         this.info_container.show();
-        return this.tooltipCurrentlyDisplaying = data;
+        return this.tooltip_currently_displaying = data;
       }
+    };
+
+    SquadBuilder.prototype._randomizerLoopBody = function(data) {
+      var addon, available_modifications, available_pilots, available_titles, available_upgrades, idx, modification, new_ship, pilot, removable_things, ship, ship_group, thing_to_remove, title, unused_addons, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
+      if (data.keep_running && data.iterations < data.max_iterations) {
+        data.iterations++;
+        if (this.total_points === data.max_points) {
+          data.keep_running = false;
+        } else if (this.total_points < data.max_points) {
+          unused_addons = [];
+          _ref = this.ships;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            ship = _ref[_i];
+            _ref1 = ship.upgrades;
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              upgrade = _ref1[_j];
+              if (upgrade.data == null) unused_addons.push(upgrade);
+            }
+            if ((ship.title != null) && (ship.title.data == null)) {
+              unused_addons.push(ship.title);
+            }
+            if ((ship.modification != null) && (ship.modification.data == null)) {
+              unused_addons.push(ship.modification);
+            }
+          }
+          idx = $.randomInt(1 + unused_addons.length);
+          if (idx === 0) {
+            available_pilots = this.getAvailablePilotsIncluding();
+            ship_group = available_pilots[$.randomInt(available_pilots.length)];
+            pilot = ship_group.children[$.randomInt(ship_group.children.length)];
+            if (exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)) {
+              new_ship = this.addShip();
+              new_ship.setPilotById(pilot.id);
+            }
+          } else {
+            addon = unused_addons[idx - 1];
+            switch (addon.type) {
+              case 'Upgrade':
+                available_upgrades = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableUpgradesIncluding(addon.slot);
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    upgrade = _ref2[_k];
+                    if (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(upgrade);
+                    }
+                  }
+                  return _results;
+                }).call(this);
+                if (available_upgrades.length > 0) {
+                  addon.setById(available_upgrades[$.randomInt(available_upgrades.length)].id);
+                }
+                break;
+              case 'Title':
+                available_titles = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableTitlesIncluding(addon.ship.name);
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    title = _ref2[_k];
+                    if (exportObj.titlesById[title.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(title);
+                    }
+                  }
+                  return _results;
+                }).call(this);
+                if (available_titles.length > 0) {
+                  addon.setById(available_titles[$.randomInt(available_titles.length)].id);
+                }
+                break;
+              case 'Modification':
+                available_modifications = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableModificationsIncluding();
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    modification = _ref2[_k];
+                    if (exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(modification);
+                    }
+                  }
+                  return _results;
+                }).call(this);
+                if (available_modifications.length > 0) {
+                  addon.setById(available_modifications[$.randomInt(available_modifications.length)].id);
+                }
+                break;
+              default:
+                throw "Invalid addon type " + addon.type;
+            }
+          }
+        } else {
+          removable_things = [];
+          _ref2 = this.ships;
+          for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+            ship = _ref2[_k];
+            removable_things.push(ship);
+            _ref3 = ship.upgrades;
+            for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+              upgrade = _ref3[_l];
+              if (upgrade.data != null) removable_things.push(upgrade);
+            }
+            if (((_ref4 = ship.title) != null ? _ref4.data : void 0) != null) {
+              removable_things.push(ship.title);
+            }
+            if (((_ref5 = ship.modification) != null ? _ref5.data : void 0) != null) {
+              removable_things.push(ship.modification);
+            }
+          }
+          if (removable_things.length > 0) {
+            thing_to_remove = removable_things[$.randomInt(removable_things.length)];
+            if (thing_to_remove instanceof Ship) {
+              this.removeShip(thing_to_remove);
+            } else if (thing_to_remove instanceof GenericAddon) {
+              thing_to_remove.setData(null);
+            } else {
+              throw "Unknown thing to remove " + thing_to_remove;
+            }
+          }
+        }
+        return window.setTimeout(this._makeRandomizerLoopFunc(data), 0);
+      } else {
+        window.clearTimeout(data.timer);
+        _ref6 = this.ships;
+        for (_m = 0, _len4 = _ref6.length; _m < _len4; _m++) {
+          ship = _ref6[_m];
+          ship.updateSelections();
+        }
+        this.suppress_automatic_new_ship = false;
+        return this.addShip();
+      }
+    };
+
+    SquadBuilder.prototype._makeRandomizerLoopFunc = function(data) {
+      var _this = this;
+      return function() {
+        return _this._randomizerLoopBody(data);
+      };
+    };
+
+    SquadBuilder.prototype.randomSquad = function(max_points, allowed_sources, timeout_ms, max_iterations) {
+      var data, stopHandler,
+        _this = this;
+      if (max_points == null) max_points = 100;
+      if (allowed_sources == null) allowed_sources = null;
+      if (timeout_ms == null) timeout_ms = 1000;
+      if (max_iterations == null) max_iterations = 1000;
+      this.suppress_automatic_new_ship = true;
+      while (this.ships.length > 0) {
+        this.removeShip(this.ships[0]);
+      }
+      if (this.ships.length > 0) throw "Ships not emptied";
+      data = {
+        iterations: 0,
+        max_points: max_points,
+        allowed_sources: allowed_sources,
+        max_iterations: max_iterations,
+        keep_running: true,
+        allowed_sources: allowed_sources != null ? allowed_sources : exportObj.expansions
+      };
+      stopHandler = function() {
+        return data.keep_running = false;
+      };
+      data.timer = window.setTimeout(stopHandler, timeout_ms);
+      return window.setTimeout(this._makeRandomizerLoopFunc(data), 0);
     };
 
     return SquadBuilder;
@@ -636,7 +866,7 @@
       ___iced_passed_deferral = iced.findDeferral(arguments);
       if (new_pilot !== this.pilot) {
         if (this.pilot == null) {
-          if (!this.builder.loading_from_serialized) this.builder.addShip();
+          if (!this.builder.suppress_automatic_new_ship) this.builder.addShip();
           this.remove_button.fadeIn('fast');
         }
         this.resetPilot();
@@ -651,7 +881,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 442
+                  lineno: 630
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -691,7 +921,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 454
+                lineno: 642
               })
             ]);
             __iced_deferrals._fulfill();
@@ -742,17 +972,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 477
+            lineno: 665
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 478
+            lineno: 666
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 479
+            lineno: 667
           }));
         }
         __iced_deferrals._fulfill();
@@ -845,6 +1075,14 @@
       return this.row.remove();
     };
 
+    Ship.prototype.toString = function() {
+      if (this.pilot != null) {
+        return "Pilot " + this.pilot.name + " flying " + this.data.name;
+      } else {
+        return "Ship without pilot";
+      }
+    };
+
     return Ship;
 
   })();
@@ -876,7 +1114,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 571
+                lineno: 765
               })
             ]);
             __iced_deferrals._fulfill();
@@ -937,7 +1175,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 597
+                  lineno: 791
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -955,7 +1193,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 599
+                    lineno: 793
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1092,7 +1330,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 674
+                  lineno: 868
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1107,7 +1345,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 678
+                    lineno: 872
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1135,7 +1373,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 683
+                    lineno: 877
                   })
                 ]);
                 __iced_deferrals._fulfill();

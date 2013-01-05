@@ -19,6 +19,9 @@ exportObj.sortHelper = (a, b) ->
 $.isMobile = () ->
     navigator.userAgent.match /(iPhone|iPod|iPad|Android)/i
 
+$.randomInt = (n) ->
+    Math.floor(Math.random() * n)
+
 # ripped from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
 $.getParameterByName = (name) ->
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]")
@@ -29,6 +32,12 @@ $.getParameterByName = (name) ->
     return ""
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "))
+
+Array::intersects = (other) ->
+    for item in this
+        if item in other
+            return true
+    return false
 
 # Assumes cards.js has been loaded
 
@@ -50,8 +59,11 @@ class exportObj.SquadBuilder
                 []
             Title:
                 []
-        @loading_from_serialized = false
-        @tooltipCurrentlyDisplaying = null
+        @suppress_automatic_new_ship = false
+        @tooltip_currently_displaying = null
+        @randomizer_options =
+            sources: null
+            points: 100
 
         @setupUI()
         @setupEventHandlers()
@@ -62,6 +74,10 @@ class exportObj.SquadBuilder
             @addShip()
 
     setupUI: () ->
+        DEFAULT_RANDOMIZER_POINTS = 100
+        DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2
+        DEFAULT_RANDOMIZER_ITERATIONS = 1000
+
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
@@ -71,6 +87,14 @@ class exportObj.SquadBuilder
                     <button class="btn btn-info view-as-text">View as Text</button>
                     <button class="btn btn-info print-list">Print List</button>
                     <a class="btn btn-info permalink">Permalink</a>
+
+                    <button class="btn btn-info randomize">Random Squad!</button>
+                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="randomize-options">Randomizer Options...</a></li>
+                    <ul>
                 </div>
             </div>
         '''
@@ -80,6 +104,70 @@ class exportObj.SquadBuilder
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @print_list_button = $ @status_container.find('div.button-container button.print-list')
+        @randomize_button = $ @status_container.find('div.button-container button.randomize')
+        @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+
+        @randomizer_options_modal = $ document.createElement('DIV')
+        @randomizer_options_modal.addClass 'modal hide fade'
+        $(document).append @randomizer_options_modal
+        @randomizer_options_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Random Squad Builder Options</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label>
+                        Desired Points
+                        <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
+                    </label>
+                    <label>
+                        Sets and Expansions (default all)
+                        <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
+                        </select>
+                    </label>
+                    <label>
+                        Maximum Seconds to Spend Randomizing
+                        <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
+                    </label>
+                    <label>
+                        Maximum Randomization Iterations
+                        <input type="number" class="randomizer-iterations" value="#{DEFAULT_RANDOMIZER_ITERATIONS}" placeholder="#{DEFAULT_RANDOMIZER_ITERATIONS}" />
+                    </label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary do-randomize" aria-hidden="true">Randomize!</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @randomizer_source_selector = $ @randomizer_options_modal.find('select.randomizer-sources')
+        for expansion in exportObj.expansions
+            opt = $ document.createElement('OPTION')
+            opt.text expansion
+            @randomizer_source_selector.append opt
+        @randomizer_source_selector.select2
+            width: "100%"
+
+        @randomize_button.click (e) =>
+            e.preventDefault()
+            points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
+            points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
+            timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
+            timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
+            iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
+            iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
+            #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
+            @randomSquad(points, @randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations)
+
+        @randomizer_options_modal.find('button.do-randomize').click (e) =>
+            e.preventDefault()
+            @randomizer_options_modal.modal('hide')
+            @randomize_button.click()
+
+        @customize_randomizer.click (e) =>
+            e.preventDefault()
+            @randomizer_options_modal.modal()
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -175,11 +263,11 @@ class exportObj.SquadBuilder
             window.print()
 
     onPointsUpdated: (cb) =>
-        total_points = 0
+        @total_points = 0
         for ship, i in @ships
-            total_points += ship.getPoints()
-        @points_container.text "Total Points: #{total_points}"
-        @text_total_points_container.text total_points
+            @total_points += ship.getPoints()
+        @points_container.text "Total Points: #{@total_points}"
+        @text_total_points_container.text @total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
@@ -206,7 +294,7 @@ class exportObj.SquadBuilder
                         <em>#{total_points}</em>
                     </li>
                 """
-        cb total_points
+        cb @total_points
 
     showTextListModal: () ->
         # Display modal
@@ -217,7 +305,7 @@ class exportObj.SquadBuilder
         ( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
     loadFromSerialized: (serialized) ->
-        @loading_from_serialized = true
+        @suppress_automatic_new_ship = true
         # Clear all existing ships
         while @ships.length > 0
             @removeShip @ships[0]
@@ -244,7 +332,7 @@ class exportObj.SquadBuilder
             new_ship.modification.setById modification_id if modification_id >= 0
 
             new_ship.updateSelections()
-        @loading_from_serialized = false
+        @suppress_automatic_new_ship = false
         # Finally, the unassigned ship
         @addShip()
 
@@ -361,7 +449,7 @@ class exportObj.SquadBuilder
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
     showTooltip: (type, data) ->
-        if data != @tooltipCurrentlyDisplaying
+        if data != @tooltip_currently_displaying
             @info_container.find('.info-name').text data.name
             @info_container.find('p.info-text').html data.text ? ''
             switch type
@@ -398,7 +486,107 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
             @info_container.show()
-            @tooltipCurrentlyDisplaying = data
+            @tooltip_currently_displaying = data
+
+    _randomizerLoopBody: (data) =>
+        if data.keep_running and data.iterations < data.max_iterations
+            data.iterations++
+            #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
+            if @total_points == data.max_points
+                # Exact hit!
+                #console.log "Points reached exactly"
+                data.keep_running = false
+            else if @total_points < data.max_points
+                #console.log "Need to add something"
+                # Add something
+                # Possible options: ship or empty addon slot
+                unused_addons = []
+                for ship in @ships
+                    for upgrade in ship.upgrades
+                        unused_addons.push upgrade unless upgrade.data?
+                    unused_addons.push ship.title if ship.title? and not ship.title.data?
+                    unused_addons.push ship.modification if ship.modification? and not ship.modification.data?
+                # 0 is ship, otherwise addon
+                idx = $.randomInt(1 + unused_addons.length)
+                if idx == 0
+                    # Add random ship
+                    #console.log "Add ship"
+                    available_pilots = @getAvailablePilotsIncluding()
+                    ship_group = available_pilots[$.randomInt available_pilots.length]
+                    pilot = ship_group.children[$.randomInt ship_group.children.length]
+                    if exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
+                        new_ship = @addShip()
+                        new_ship.setPilotById pilot.id
+                else
+                    # Add upgrade/title/modification
+                    #console.log "Add addon"
+                    addon = unused_addons[idx - 1]
+                    switch addon.type
+                        when 'Upgrade'
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
+                        when 'Title'
+                            available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
+                        when 'Modification'
+                            available_modifications = (modification for modification in @getAvailableModificationsIncluding() when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
+                        else
+                            throw "Invalid addon type #{addon.type}"
+
+            else
+                #console.log "Need to remove something"
+                # Remove something
+                removable_things = []
+                for ship in @ships
+                    removable_things.push ship
+                    for upgrade in ship.upgrades
+                        removable_things.push upgrade if upgrade.data?
+                    removable_things.push ship.title if ship.title?.data?
+                    removable_things.push ship.modification if ship.modification?.data?
+                if removable_things.length > 0
+                    thing_to_remove = removable_things[$.randomInt removable_things.length]
+                    #console.log "Removing #{thing_to_remove}"
+                    if thing_to_remove instanceof Ship
+                        @removeShip thing_to_remove
+                    else if thing_to_remove instanceof GenericAddon
+                        thing_to_remove.setData null
+                    else
+                        throw "Unknown thing to remove #{thing_to_remove}"
+            # continue the "loop"
+            window.setTimeout @_makeRandomizerLoopFunc(data), 0
+        else
+            #console.log "Clearing timer #{data.timer}, iterations=#{data.iterations}, keep_running=#{data.keep_running}"
+            window.clearTimeout data.timer
+            # Update all selectors
+            for ship in @ships
+                ship.updateSelections()
+            @suppress_automatic_new_ship = false
+            @addShip()
+
+    _makeRandomizerLoopFunc: (data) =>
+        () =>
+            @_randomizerLoopBody(data)
+
+    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000) ->
+        @suppress_automatic_new_ship = true
+        # Clear all existing ships
+        while @ships.length > 0
+            @removeShip @ships[0]
+        throw "Ships not emptied" if @ships.length > 0
+        data =
+            iterations: 0
+            max_points: max_points
+            allowed_sources: allowed_sources
+            max_iterations: max_iterations
+            keep_running: true
+            allowed_sources: allowed_sources ? exportObj.expansions
+        stopHandler = () =>
+            #console.log "*** TIMEOUT *** TIMEOUT *** TIMEOUT ***"
+            data.keep_running = false
+        data.timer = window.setTimeout stopHandler , timeout_ms
+        #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
+        window.setTimeout @_makeRandomizerLoopFunc(data), 0
 
 class Ship
     constructor: (args) ->
@@ -434,7 +622,7 @@ class Ship
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
             if not @pilot?
-                @builder.addShip() unless @builder.loading_from_serialized
+                @builder.addShip() unless @builder.suppress_automatic_new_ship
                 @remove_button.fadeIn 'fast'
             @resetPilot()
             @resetAddons()
@@ -552,6 +740,12 @@ class Ship
     teardownUI: () ->
         @row.text ''
         @row.remove()
+
+    toString: () ->
+        if @pilot?
+            "Pilot #{@pilot.name} flying #{@data.name}"
+        else
+            "Ship without pilot"
 
 class GenericAddon
     constructor: (args) ->
