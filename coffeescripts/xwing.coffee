@@ -174,8 +174,8 @@ class exportObj.SquadBuilder
         @container.append content_container
         content_container.append $.trim """
             <div class="row-fluid">
-                <div class="span10 ship-container" />
-                <div class="span2 hidden-phone info-container" />
+                <div class="span9 ship-container" />
+                <div class="span3 hidden-phone info-container" />
             </div>
         """
 
@@ -184,7 +184,7 @@ class exportObj.SquadBuilder
 
         @info_container.append $.trim """
             <div class="well info-well">
-                <h5 class="info-name"></h5>
+                <h4 class="info-name"></h4>
                 <table>
                     <tbody>
                         <tr class="info-ship">
@@ -196,7 +196,7 @@ class exportObj.SquadBuilder
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-attack">
-                            <td>Attack</td>
+                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
@@ -204,15 +204,15 @@ class exportObj.SquadBuilder
                             <td class="info-data info-range"></td>
                         </tr>
                         <tr class="info-agility">
-                            <td>Agility</td>
+                            <td><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
                             <td class="info-data info-agility"></td>
                         </tr>
                         <tr class="info-hull">
-                            <td>Hull</td>
+                            <td><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
                             <td class="info-data info-hull"></td>
                         </tr>
                         <tr class="info-shields">
-                            <td>Shields</td>
+                            <td><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
                             <td class="info-data info-shields"></td>
                         </tr>
                         <tr class="info-actions">
@@ -459,6 +459,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill td.info-data').text data.skill
                     @info_container.find('tr.info-skill').show()
                     @info_container.find('tr.info-attack td.info-data').text exportObj.ships[data.ship].attack
+                    @info_container.find('tr.info-attack').show()
                     @info_container.find('tr.info-range').hide()
                     @info_container.find('tr.info-agility td.info-data').text exportObj.ships[data.ship].agility
                     @info_container.find('tr.info-agility').show()
@@ -698,13 +699,13 @@ class Ship
         @container.append @row
 
         @row.append $.trim '''
-            <div class="span4 pilot-selector-container">
+            <div class="span3 pilot-selector-container">
                 <input type="hidden" />
             </div>
             <div class="span1 points-display-container">
                 <span></span>
             </div>
-            <div class="span6 addon-container" />
+            <div class="span7 addon-container" />
             <div class="span1 remove-btn-container">
                 <button class="btn btn-danger"><span class="visible-desktop visible-tablet hidden-phone">&times;</span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
             </div>

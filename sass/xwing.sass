@@ -1,5 +1,40 @@
 $xwing_icons_png: '../images/xwing-icons.png'
 
+@font-face
+  font-family: kimberley
+  src: url('../fonts/kimberley bl.ttf')
+
+@font-face
+  font-family: EurostileStandardCondensed
+  src: url('../fonts/EurostileLTStd-Cn.otf')
+
+@font-face
+  font-family: EurostileStandardCondensedBold
+  src: url('../fonts/EurostileLTStd-BoldCn.otf')
+
+@font-face
+  font-family: EurostileStandardOblique
+  src: url('../fonts/EurostileLTStd-BoldOblique.otf')
+
+@font-face
+  font-family: BankGothicMediumBT
+  src: url('../fonts/Bank Gothic Medium BT.ttf')
+
+@font-face
+  font-family: BankGothicHD
+  src: url('../fonts/bankgthd.ttf')
+
+body, button
+  font-family: EurostileStandardCondensed
+
+strong
+  font-family: EurostileStandardCondensedBold
+  font-weight: normal
+
+em
+  font-family: EurostileStandardOblique
+  font-style: normal
+
 .show-on-print
   display: none
 
@@ -13,7 +48,7 @@ $xwing_icons_png: '../images/xwing-icons.png'
   border: medium solid black
 
 .card-stat
-  font-weight: bold
+  font-family: kimberley
   font-size: 1.25em
 
 .info-data.info-skill
@@ -36,6 +71,9 @@ $xwing_icons_png: '../images/xwing-icons.png'
   @extend .card-stat
   color: #7ED3E5
   padding: 2px
+
+.info-name
+  font-family: BankGothicHD
 
 .info-well
   color: black
@@ -60,81 +98,159 @@ $xwing_icons_png: '../images/xwing-icons.png'
 
 .icon
   background-image: url($xwing_icons_png)
-  background-size: 254px 32px
   background-position-y: -4px
   background-repeat: no-repeat
 
 img.icon-straight
   @extend .icon
   width: 9px
-  height: 18px
+  height: 19px
   background-position-x: 0px
+  margin-top: -2px
 
 img.icon-bankleft
   @extend .icon
-  width: 11px
-  height: 18px
-  background-position-x: -12px
+  width: 12px
+  height: 19px
+  background-position-x: -11px
+  margin-top: -1px
 
 img.icon-bankright
   @extend .icon
   width: 10px
   height: 18px
-  background-position-x: -27px
+  background-position-x: -25px
+  margin-top: -1px
 
 img.icon-turnleft
   @extend .icon
   width: 16px
-  height: 18px
-  background-position-x: -39px
+  height: 19px
+  background-position-x: -38px
+  margin-top: -3px
 
 img.icon-turnright
   @extend .icon
-  width: 19px
-  height: 18px
+  width: 17px
+  height: 19px
   background-position-x: -55px
+  margin-top: -3px
 
 img.icon-uturn
   @extend .icon
   width: 17px
-  height: 18px
+  height: 19px
   background-position-x: -73px
 
 img.icon-focus
   @extend .icon
-  width: 25px
-  height: 18px
-  background-position-x: -94px
+  width: 27px
+  height: 13px
+  background-position-x: -93px
+  background-position-y: -10px
 
 img.icon-evade
   @extend .icon
-  width: 13px
-  height: 21px
-  background-position-x: -123px
+  width: 16px
+  height: 22px
+  background-position-x: -121px
+  margin-top: -4px
 
 img.icon-barrel-roll
   @extend .icon
-  width: 34px
-  height: 21px
-  background-position-x: -140px
+  width: 37px
+  height: 22px
+  background-position-x: -138px
+  margin-top: -2px
 
 img.icon-target-lock
   @extend .icon
-  width: 27px
-  height: 21px
-  background-position-x: -175px
+  width: 28px
+  height: 23px
+  background-position-x: -174px
+  background-position-y: -3px
 
 img.icon-hit
   @extend .icon
-  width: 18px
-  height: 21px
-  background-position-x: -205px
+  width: 21px
+  height: 22px
+  background-position-x: -203px
+  margin-top: -2px
 
 img.icon-crit
   @extend .icon
-  width: 25px
-  height: 25px
-  background-position-x: -227px
+  width: 28px
+  height: 29px
+  background-position-x: -225px
+  background-position-y: -1px
+  margin-top: -5px
+
+img.icon-turret
+  @extend .icon
+  width: 33px
+  height: 33px
+  background-position-x: -2px
+  background-position-y: -31px
+
+img.icon-elite
+  @extend .icon
+  width: 33px
+  height: 33px
+  background-position-x: -44px
+  background-position-y: -31px
+  margin-top: -10px
+
+img.icon-missile
+  @extend .icon
+  width: 33px
+  height: 33px
+  background-position-x: -83px
+  background-position-y: -31px
+  margin-top: -10px
+
+img.icon-torpedo
+  @extend .icon
+  width: 33px
+  height: 33px
+  background-position-x: -123px
+  background-position-y: -31px
+  margin-top: -10px
+
+img.icon-astromech
+  @extend .icon
+  width: 33px
+  height: 33px
+  background-position-x: -163px
+  background-position-y: -31px
+  margin-top: -10px
+
+img.icon-attack
+  @extend .icon
+  width: 32px
+  height: 30px
+  background-position-x: -200px
+  background-position-y: -32px
+
+img.icon-agility
+  @extend .icon
+  width: 32px
+  height: 30px
+  background-position-x: -254px
+  background-position-y: 0px
+
+img.icon-hull
+  @extend .icon
+  width: 32px
+  height: 30px
+  background-position-x: -234px
+  background-position-y: -32px
+
+img.icon-shields
+  @extend .icon
+  width: 32px
+  height: 30px
+  background-position-x: -266px
+  background-position-y: -32px
 
 div.tab-content
   overflow: visible

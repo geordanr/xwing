@@ -27,6 +27,11 @@ When will this be done?
 -----------------------
 It's an ongoing process.
 
+Credits
+-------
+[X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
+Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
+
 CHANGELOG
 =========
 

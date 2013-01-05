@@ -754,7 +754,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "A-Wing Expansion Pack", ]
         points: 3
-        text: """Once per round, after you perform and action, you may perform 1 free action shown in your action bar.<br /><br />Then receive 1 stress token."""
+        text: """Once per round, after you perform an action, you may perform 1 free action shown in your action bar.<br /><br />Then receive 1 stress token."""
     "Deadeye":
         name: "Deadeye"
         id: 19
@@ -905,7 +905,7 @@ exportObj.titles =
         slots: [
             "Torpedo",
         ]
-        text: """Your upgrade bar gains the %TORPEDO% upgrade icon."""
+        text: """Your upgrade bar gains the <img class="icon-torpedo" src="images/transparent.png" /> upgrade icon."""
     "Millennium Falcon":
         name: "Millennium Falcon"
         id: 2
