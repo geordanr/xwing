@@ -454,18 +454,19 @@ class exportObj.SquadBuilder
             @info_container.find('p.info-text').html data.text ? ''
             switch type
                 when 'Pilot'
+                    ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
                     @info_container.find('tr.info-ship').show()
                     @info_container.find('tr.info-skill td.info-data').text data.skill
                     @info_container.find('tr.info-skill').show()
-                    @info_container.find('tr.info-attack td.info-data').text exportObj.ships[data.ship].attack
+                    @info_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                     @info_container.find('tr.info-attack').show()
                     @info_container.find('tr.info-range').hide()
-                    @info_container.find('tr.info-agility td.info-data').text exportObj.ships[data.ship].agility
+                    @info_container.find('tr.info-agility td.info-data').text(data.ship_override?.agility ? ship.agility)
                     @info_container.find('tr.info-agility').show()
-                    @info_container.find('tr.info-hull td.info-data').text exportObj.ships[data.ship].hull
+                    @info_container.find('tr.info-hull td.info-data').text(data.ship_override?.hull ? ship.hull)
                     @info_container.find('tr.info-hull').show()
-                    @info_container.find('tr.info-shields td.info-data').text exportObj.ships[data.ship].shields
+                    @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
                     @info_container.find('tr.info-actions').show()
