@@ -45,8 +45,8 @@ strong em, em strong {
 .show-on-print {
   display: none; }
 
-.nav-tabs > .active > a {
-  color: white !important; }
+.nav-pills {
+  border-bottom: thin solid darkgrey; }
 
 .ship-container > .row-fluid {
   padding: 10px 0px; }
@@ -56,7 +56,7 @@ strong em, em strong {
 
 .card-stat, .info-data.info-skill, .info-data.info-attack, .info-data.info-agility, .info-data.info-hull, .info-data.info-shields {
   font-family: kimberley;
-  font-size: 1.25em; }
+  font-size: 1.5em; }
 
 .info-data.info-skill {
   color: #cd6d2d; }

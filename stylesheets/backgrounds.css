@@ -16,12 +16,12 @@
 .ship-awing0 {
   background-image: url("../images/awing0.png");
   background-repeat: no-repeat;
-  background-position: 250px -60px; }
+  background-position: 147px -60px; }
 
 .ship-tiefighter0 {
   background-image: url("../images/tiefighter0.png");
   background-repeat: no-repeat;
-  background-position: 150px -80px; }
+  background-position: 35px -80px; }
 
 .ship-tiefighter1 {
   background-image: url("../images/tiefighter1.png");
@@ -31,12 +31,12 @@
 .ship-tieadvanced0 {
   background-image: url("../images/tieadvanced0.png");
   background-repeat: no-repeat;
-  background-position: 270px -50px; }
+  background-position: 120px -50px; }
 
 .ship-tieinterceptor0 {
   background-image: url("../images/tieinterceptor0.png");
   background-repeat: no-repeat;
-  background-position: 325px -70px; }
+  background-position: 194px -70px; }
 
 .ship-yt13000 {
   background-image: url("../images/millennium_falcon.png");
