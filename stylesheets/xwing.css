@@ -45,8 +45,8 @@ strong em, em strong {
 .show-on-print {
   display: none; }
 
-.nav-tabs > .active > a {
-  color: white !important; }
+.nav-pills {
+  border-bottom: thin solid darkgrey; }
 
 .ship-container > .row-fluid {
   padding: 10px 0px; }

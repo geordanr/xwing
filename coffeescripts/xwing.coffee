@@ -81,7 +81,7 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="span4 points-display-container">Total Points: 0</div>
+            <div class="span3 points-display-container">Total Points: 0</div>
             <div class="span8 pull-right button-container">
                 <div class="btn-group pull-right">
                     <button class="btn btn-info view-as-text">View as Text</button>
