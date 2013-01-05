@@ -694,7 +694,7 @@ class Ship
 
     setupUI: () ->
         @row = $ document.createElement 'DIV'
-        @row.addClass 'row-fluid'
+        @row.addClass 'row-fluid ship'
         @container.append @row
 
         @row.append $.trim '''
