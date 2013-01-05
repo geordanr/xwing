@@ -183,7 +183,7 @@ class exportObj.SquadBuilder
         @info_container = $ content_container.find('div.info-container')
 
         @info_container.append $.trim """
-            <div class="well info-well">
+            <div class="well well-small info-well">
                 <span class="info-name"></span>
                 <table>
                     <tbody>
