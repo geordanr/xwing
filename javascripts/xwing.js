@@ -160,7 +160,7 @@
       this.randomizer_options_modal = $(document.createElement('DIV'));
       this.randomizer_options_modal.addClass('modal hide fade');
       $(document).append(this.randomizer_options_modal);
-      this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"number\" class=\"randomizer-points\" value=\"" + DEFAULT_RANDOMIZER_POINTS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_POINTS + "\" />\n        </label>\n        <label>\n            Sets and Expansions\n            <select class=\"randomizer-sources\" multiple=\"1\">\n            </select>\n        </label>\n        <label>\n            Maximum Seconds to Spend Randomizing\n            <input type=\"number\" class=\"randomizer-timeout\" value=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" placeholder=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" />\n        </label>\n        <label>\n            Maximum Randomization Iterations\n            <input type=\"number\" class=\"randomizer-iterations\" value=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" />\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"number\" class=\"randomizer-points\" width=\"4\" value=\"" + DEFAULT_RANDOMIZER_POINTS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_POINTS + "\" />\n        </label>\n        <label>\n            Sets and Expansions (default all)\n            <select class=\"randomizer-sources\" multiple=\"1\" data-placeholder=\"Use all sets and expansions\">\n            </select>\n        </label>\n        <label>\n            Maximum Seconds to Spend Randomizing\n            <input type=\"number\" class=\"randomizer-timeout\" width=\"2\" value=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" placeholder=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" />\n        </label>\n        <label>\n            Maximum Randomization Iterations\n            <input type=\"number\" class=\"randomizer-iterations\" width=\"4\" value=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" />\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.randomizer_source_selector = $(this.randomizer_options_modal.find('select.randomizer-sources'));
       _ref = exportObj.expansions;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -170,7 +170,6 @@
         this.randomizer_source_selector.append(opt);
       }
       this.randomizer_source_selector.select2({
-        placeholder: "Use all sets and expansions",
         width: "100%"
       });
       this.randomize_button.click(function(e) {
@@ -441,7 +440,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 402
+          lineno: 401
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -450,7 +449,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 403
+          lineno: 402
         }));
         __iced_deferrals._fulfill();
       });
@@ -659,13 +658,30 @@
     };
 
     SquadBuilder.prototype._randomizerLoopBody = function(data) {
-      var addon, available_modifications, available_pilots, available_titles, available_upgrades, modification, new_ship, pilot, removable_things, ship, ship_group, thing_to_remove, title, unused_addons, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
+      var addon, available_modifications, available_pilots, available_titles, available_upgrades, idx, modification, new_ship, pilot, removable_things, ship, ship_group, thing_to_remove, title, unused_addons, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
       if (data.keep_running && data.iterations < data.max_iterations) {
         data.iterations++;
         if (this.total_points === data.max_points) {
           data.keep_running = false;
         } else if (this.total_points < data.max_points) {
-          if (Math.random() < 0.5) {
+          unused_addons = [];
+          _ref = this.ships;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            ship = _ref[_i];
+            _ref1 = ship.upgrades;
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              upgrade = _ref1[_j];
+              if (upgrade.data == null) unused_addons.push(upgrade);
+            }
+            if ((ship.title != null) && (ship.title.data == null)) {
+              unused_addons.push(ship.title);
+            }
+            if ((ship.modification != null) && (ship.modification.data == null)) {
+              unused_addons.push(ship.modification);
+            }
+          }
+          idx = $.randomInt(1 + unused_addons.length);
+          if (idx === 0) {
             available_pilots = this.getAvailablePilotsIncluding();
             ship_group = available_pilots[$.randomInt(available_pilots.length)];
             pilot = ship_group.children[$.randomInt(ship_group.children.length)];
@@ -674,79 +690,61 @@
               new_ship.setPilotById(pilot.id);
             }
           } else {
-            unused_addons = [];
-            _ref = this.ships;
-            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-              ship = _ref[_i];
-              _ref1 = ship.upgrades;
-              for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-                upgrade = _ref1[_j];
-                if (upgrade.data == null) unused_addons.push(upgrade);
-              }
-              if ((ship.title != null) && (ship.title.data == null)) {
-                unused_addons.push(ship.title);
-              }
-              if ((ship.modification != null) && (ship.modification.data == null)) {
-                unused_addons.push(ship.modification);
-              }
-            }
-            if (unused_addons.length > 0) {
-              addon = unused_addons[$.randomInt(unused_addons.length)];
-              switch (addon.type) {
-                case 'Upgrade':
-                  available_upgrades = (function() {
-                    var _k, _len2, _ref2, _results;
-                    _ref2 = this.getAvailableUpgradesIncluding(addon.slot);
-                    _results = [];
-                    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-                      upgrade = _ref2[_k];
-                      if (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources)) {
-                        _results.push(upgrade);
-                      }
+            addon = unused_addons[idx - 1];
+            switch (addon.type) {
+              case 'Upgrade':
+                available_upgrades = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableUpgradesIncluding(addon.slot);
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    upgrade = _ref2[_k];
+                    if (exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(upgrade);
                     }
-                    return _results;
-                  }).call(this);
-                  if (available_upgrades.length > 0) {
-                    addon.setById(available_upgrades[$.randomInt(available_upgrades.length)].id);
                   }
-                  break;
-                case 'Title':
-                  available_titles = (function() {
-                    var _k, _len2, _ref2, _results;
-                    _ref2 = this.getAvailableTitlesIncluding(addon.ship.name);
-                    _results = [];
-                    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-                      title = _ref2[_k];
-                      if (exportObj.titlesById[title.id].sources.intersects(data.allowed_sources)) {
-                        _results.push(title);
-                      }
+                  return _results;
+                }).call(this);
+                if (available_upgrades.length > 0) {
+                  addon.setById(available_upgrades[$.randomInt(available_upgrades.length)].id);
+                }
+                break;
+              case 'Title':
+                available_titles = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableTitlesIncluding(addon.ship.name);
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    title = _ref2[_k];
+                    if (exportObj.titlesById[title.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(title);
                     }
-                    return _results;
-                  }).call(this);
-                  if (available_titles.length > 0) {
-                    addon.setById(available_titles[$.randomInt(available_titles.length)].id);
                   }
-                  break;
-                case 'Modification':
-                  available_modifications = (function() {
-                    var _k, _len2, _ref2, _results;
-                    _ref2 = this.getAvailableModificationsIncluding();
-                    _results = [];
-                    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-                      modification = _ref2[_k];
-                      if (exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources)) {
-                        _results.push(modification);
-                      }
+                  return _results;
+                }).call(this);
+                if (available_titles.length > 0) {
+                  addon.setById(available_titles[$.randomInt(available_titles.length)].id);
+                }
+                break;
+              case 'Modification':
+                available_modifications = (function() {
+                  var _k, _len2, _ref2, _results;
+                  _ref2 = this.getAvailableModificationsIncluding();
+                  _results = [];
+                  for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                    modification = _ref2[_k];
+                    if (exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources)) {
+                      _results.push(modification);
                     }
-                    return _results;
-                  }).call(this);
-                  if (available_modifications.length > 0) {
-                    addon.setById(available_modifications[$.randomInt(available_modifications.length)].id);
                   }
-                  break;
-                default:
-                  throw "Invalid addon type " + addon.type;
-              }
+                  return _results;
+                }).call(this);
+                if (available_modifications.length > 0) {
+                  addon.setById(available_modifications[$.randomInt(available_modifications.length)].id);
+                }
+                break;
+              default:
+                throw "Invalid addon type " + addon.type;
             }
           }
         } else {
@@ -883,7 +881,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 628
+                  lineno: 630
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -923,7 +921,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 640
+                lineno: 642
               })
             ]);
             __iced_deferrals._fulfill();
@@ -974,17 +972,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 663
+            lineno: 665
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 664
+            lineno: 666
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 665
+            lineno: 667
           }));
         }
         __iced_deferrals._fulfill();
@@ -1116,7 +1114,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 763
+                lineno: 765
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1177,7 +1175,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 789
+                  lineno: 791
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1195,7 +1193,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 791
+                    lineno: 793
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1332,7 +1330,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 866
+                  lineno: 868
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1347,7 +1345,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 870
+                    lineno: 872
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1375,7 +1373,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 875
+                    lineno: 877
                   })
                 ]);
                 __iced_deferrals._fulfill();

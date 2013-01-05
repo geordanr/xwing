@@ -33,7 +33,7 @@ $.getParameterByName = (name) ->
   else
     return decodeURIComponent(results[1].replace(/\+/g, " "))
 
-Array.prototype.intersects = (other) ->
+Array::intersects = (other) ->
     for item in this
         if item in other
             return true
@@ -122,8 +122,8 @@ class exportObj.SquadBuilder
                         <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
                     </label>
                     <label>
-                        Sets and Expansions
-                        <select class="randomizer-sources" multiple="1">
+                        Sets and Expansions (default all)
+                        <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
                         </select>
                     </label>
                     <label>
@@ -147,7 +147,6 @@ class exportObj.SquadBuilder
             opt.text expansion
             @randomizer_source_selector.append opt
         @randomizer_source_selector.select2
-            placeholder: "Use all sets and expansions"
             width: "100%"
 
         @randomize_button.click (e) =>
@@ -500,7 +499,16 @@ class exportObj.SquadBuilder
             else if @total_points < data.max_points
                 #console.log "Need to add something"
                 # Add something
-                if Math.random() < 0.5
+                # Possible options: ship or empty addon slot
+                unused_addons = []
+                for ship in @ships
+                    for upgrade in ship.upgrades
+                        unused_addons.push upgrade unless upgrade.data?
+                    unused_addons.push ship.title if ship.title? and not ship.title.data?
+                    unused_addons.push ship.modification if ship.modification? and not ship.modification.data?
+                # 0 is ship, otherwise addon
+                idx = $.randomInt(1 + unused_addons.length)
+                if idx == 0
                     # Add random ship
                     #console.log "Add ship"
                     available_pilots = @getAvailablePilotsIncluding()
@@ -512,26 +520,20 @@ class exportObj.SquadBuilder
                 else
                     # Add upgrade/title/modification
                     #console.log "Add addon"
-                    unused_addons = []
-                    for ship in @ships
-                        for upgrade in ship.upgrades
-                            unused_addons.push upgrade unless upgrade.data?
-                        unused_addons.push ship.title if ship.title? and not ship.title.data?
-                        unused_addons.push ship.modification if ship.modification? and not ship.modification.data?
-                    if unused_addons.length > 0
-                        addon = unused_addons[$.randomInt unused_addons.length]
-                        switch addon.type
-                            when 'Upgrade'
-                                available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
-                                addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
-                            when 'Title'
-                                available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
-                                addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
-                            when 'Modification'
-                                available_modifications = (modification for modification in @getAvailableModificationsIncluding() when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
-                                addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
-                            else
-                                throw "Invalid addon type #{addon.type}"
+                    addon = unused_addons[idx - 1]
+                    switch addon.type
+                        when 'Upgrade'
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
+                        when 'Title'
+                            available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
+                        when 'Modification'
+                            available_modifications = (modification for modification in @getAvailableModificationsIncluding() when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
+                        else
+                            throw "Invalid addon type #{addon.type}"
+
             else
                 #console.log "Need to remove something"
                 # Remove something
