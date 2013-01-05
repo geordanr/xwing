@@ -22,11 +22,25 @@
           %a#rebelTab{'data-toggle' => "tab", :href => '#rebelContent'} Rebel Alliance
         %li
           %a#empireTab{'data-toggle' => "tab", :href => '#empireContent'} Galactic Empire
+        %li
+          %a#aboutTab{'data-toggle' => "tab", :href => '#aboutContent'} About
       .tab-content
         .tab-pane#rebelContent
           #rebel-builder
         .tab-pane#empireContent
           #empire-builder
+        .tab-pane#aboutContent
+          .container-fluid
+            .row-fluid
+              .span8
+                %h2 (Yet Another) X-Wing Miniatures Squad Builder
+                %p
+                  :markdown
+                    This is a simple, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
+
+                    Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
+
+                    Interested in playing with the source or contributing features or bug fixes?  [Fork it on GitHub](http://github.com/geordanr/xwing).
 
     #printable.show-on-print
 
