@@ -7,6 +7,9 @@
 .ship-container > .row-fluid {
   padding: 10px 0px; }
 
+.ship {
+  border: medium solid black; }
+
 .card-stat, .info-data.info-skill, .info-data.info-attack, .info-data.info-agility, .info-data.info-hull, .info-data.info-shields {
   font-weight: bold;
   font-size: 1.25em; }
@@ -113,3 +116,6 @@ img.icon-crit {
   width: 25px;
   height: 25px;
   background-position-x: -227px; }
+
+div.tab-content {
+  overflow: none; }
