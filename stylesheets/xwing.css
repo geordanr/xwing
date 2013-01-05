@@ -23,7 +23,8 @@
   src: url("../fonts/bankgthd.ttf"); }
 
 body, button {
-  font-family: EurostileStandardCondensed; }
+  font-family: EurostileStandardCondensed;
+  font-size: 15px; }
 
 strong {
   font-family: EurostileStandardCondensedBold;
