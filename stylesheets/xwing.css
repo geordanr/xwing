@@ -100,138 +100,125 @@ strong em, em strong {
 
 .icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-attack, img.icon-agility, img.icon-hull, img.icon-shields {
   background-image: url("../images/xwing-icons.png");
-  background-position-y: -4px;
   background-repeat: no-repeat; }
 
 img.icon-straight {
   width: 9px;
   height: 19px;
-  background-position-x: 0px;
+  background-position: 0px -4px;
   margin-top: -2px; }
 
 img.icon-bankleft {
   width: 12px;
   height: 19px;
-  background-position-x: -11px;
+  background-position: -11px -4px;
   margin-top: -1px; }
 
 img.icon-bankright {
   width: 10px;
   height: 18px;
-  background-position-x: -25px;
+  background-position: -25px -4px;
   margin-top: -1px; }
 
 img.icon-turnleft {
   width: 16px;
   height: 19px;
-  background-position-x: -38px;
+  background-position: -38px -4px;
   margin-top: -3px; }
 
 img.icon-turnright {
   width: 17px;
   height: 19px;
-  background-position-x: -55px;
+  background-position: -55px -4px;
   margin-top: -3px; }
 
 img.icon-uturn {
   width: 17px;
   height: 19px;
-  background-position-x: -73px; }
+  background-position: -73px -4px; }
 
 img.icon-focus {
   width: 27px;
   height: 13px;
-  background-position-x: -93px;
-  background-position-y: -10px; }
+  background-position: -93px -10px; }
 
 img.icon-evade {
   width: 16px;
   height: 22px;
-  background-position-x: -121px;
+  background-position: -121px -4px;
   margin-top: -4px; }
 
 img.icon-barrel-roll {
   width: 37px;
   height: 22px;
-  background-position-x: -138px;
+  background-position: -138px -4px;
   margin-top: -2px; }
 
 img.icon-target-lock {
   width: 28px;
   height: 23px;
-  background-position-x: -174px;
-  background-position-y: -3px; }
+  background-position: -174px -3px; }
 
 img.icon-hit {
   width: 21px;
   height: 22px;
-  background-position-x: -203px;
+  background-position: -203px -4px;
   margin-top: -2px; }
 
 img.icon-crit {
   width: 28px;
   height: 29px;
-  background-position-x: -225px;
-  background-position-y: -1px;
+  background-position: -225px -1px;
   margin-top: -5px; }
 
 img.icon-turret {
   width: 33px;
   height: 33px;
-  background-position-x: -2px;
-  background-position-y: -31px; }
+  background-position: -2px -31px; }
 
 img.icon-elite {
   width: 33px;
   height: 33px;
-  background-position-x: -44px;
-  background-position-y: -31px;
+  background-position: -44px -31px;
   margin-top: -10px; }
 
 img.icon-missile {
   width: 33px;
   height: 33px;
-  background-position-x: -83px;
-  background-position-y: -31px;
+  background-position: -83px -31px;
   margin-top: -10px; }
 
 img.icon-torpedo {
   width: 33px;
   height: 33px;
-  background-position-x: -123px;
-  background-position-y: -31px;
+  background-position: -123px -31px;
   margin-top: -10px; }
 
 img.icon-astromech {
   width: 33px;
   height: 33px;
-  background-position-x: -163px;
-  background-position-y: -31px;
+  background-position: -163px -31px;
   margin-top: -10px; }
 
 img.icon-attack {
   width: 32px;
   height: 30px;
-  background-position-x: -200px;
-  background-position-y: -32px; }
+  background-position: -200px -32px; }
 
 img.icon-agility {
   width: 32px;
   height: 30px;
-  background-position-x: -254px;
-  background-position-y: 0px; }
+  background-position: -254px 0px; }
 
 img.icon-hull {
   width: 32px;
   height: 30px;
-  background-position-x: -234px;
-  background-position-y: -32px; }
+  background-position: -234px -32px; }
 
 img.icon-shields {
   width: 32px;
   height: 30px;
-  background-position-x: -266px;
-  background-position-y: -32px; }
+  background-position: -266px -32px; }
 
 div.tab-content {
   overflow: visible; }
