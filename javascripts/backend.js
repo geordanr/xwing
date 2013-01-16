@@ -1,0 +1,282 @@
+
+/*
+    X-Wing Squad Builder
+    Geordan Rosario <geordan@gmail.com>
+    https://github.com/geordanr/xwing
+*/
+
+
+(function() {
+  var exportObj,
+    __slice = [].slice;
+
+  window.iced = {
+    Deferrals: (function() {
+
+      function _Class(_arg) {
+        this.continuation = _arg;
+        this.count = 1;
+        this.ret = null;
+      }
+
+      _Class.prototype._fulfill = function() {
+        if (!--this.count) return this.continuation(this.ret);
+      };
+
+      _Class.prototype.defer = function(defer_params) {
+        var _this = this;
+        ++this.count;
+        return function() {
+          var inner_params, _ref;
+          inner_params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+          if (defer_params != null) {
+            if ((_ref = defer_params.assign_fn) != null) {
+              _ref.apply(null, inner_params);
+            }
+          }
+          return _this._fulfill();
+        };
+      };
+
+      return _Class;
+
+    })(),
+    findDeferral: function() {
+      return null;
+    },
+    trampoline: function(_fn) {
+      return _fn();
+    }
+  };
+  window.__iced_k = window.__iced_k_noop = function() {};
+
+  exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
+
+  exportObj.SquadBuilderBackend = (function() {
+    /*
+            Usage:
+    
+                rebel_builder = new SquadBuilder
+                    faction: 'Rebel Alliance'
+                    ...
+                empire_builder = new SquadBuilder
+                    faction: 'Galactic Empire'
+                    ...
+                backend = new SquadBuilderBackend
+                    server: 'https://xwing.example.com'
+                    builders: [ rebel_builder, empire_builder ]
+    */
+
+    function SquadBuilderBackend(args) {
+      var builder, _i, _len, _ref;
+      this.server = args.server;
+      this.builders = args.builders;
+      this.authenticated = false;
+      this.ui_ready = false;
+      this.oauth_window = null;
+      this.method_metadata = {
+        google_oauth2: {
+          icon: 'icon-google-plus-sign',
+          text: 'Google'
+        },
+        facebook: {
+          icon: 'icon-facebook-sign',
+          text: 'Facebook'
+        }
+      };
+      _ref = this.builders;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        builder = _ref[_i];
+        builder.setBackend(this);
+      }
+      this.setupHandlers();
+      this.setupUI();
+      $.ajaxSetup({
+        xhrFields: {
+          withCredentials: true
+        }
+      });
+    }
+
+    SquadBuilderBackend.prototype.save = function(serialized, id, name, faction, additional_data, cb) {
+      var post_args, post_url,
+        _this = this;
+      if (id == null) id = null;
+      if (additional_data == null) additional_data = {};
+      post_args = {
+        name: $.trim(name),
+        faction: $.trim(faction),
+        additional_data: additional_data
+      };
+      if (id != null) {
+        post_url = "" + this.server + "/" + id;
+      } else {
+        post_url = "" + this.server + "/new";
+        post_args['_method'] = 'put';
+      }
+      return $.post(post_args, function(data, textStatus, jqXHR) {
+        return cb({
+          id: data.id,
+          success: data.success,
+          error: data.error
+        });
+      });
+    };
+
+    SquadBuilderBackend.prototype["delete"] = function(id, cb) {
+      var post_args,
+        _this = this;
+      post_args = {
+        '_method': 'delete'
+      };
+      return $.post("" + this.server + "/" + id, post_args, function(data, textStatus, jqXHR) {
+        return cb({
+          success: data.success,
+          error: data.error
+        });
+      });
+    };
+
+    SquadBuilderBackend.prototype.list = function() {
+      var data, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          funcname: "SquadBuilderBackend.list"
+        });
+        $.get("" + _this.server + "/squads/list", __iced_deferrals.defer({
+          assign_fn: (function() {
+            return function() {
+              return data = arguments[0];
+            };
+          })(),
+          lineno: 74
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        return data;
+      });
+    };
+
+    SquadBuilderBackend.prototype.listAll = function(cb) {
+      var data, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          funcname: "SquadBuilderBackend.listAll"
+        });
+        $.get("" + _this.server + "/all", __iced_deferrals.defer({
+          assign_fn: (function() {
+            return function() {
+              return data = arguments[0];
+            };
+          })(),
+          lineno: 78
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        return data;
+      });
+    };
+
+    SquadBuilderBackend.prototype.authenticate = function(cb) {
+      var data, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          funcname: "SquadBuilderBackend.authenticate"
+        });
+        $.get("" + _this.server + "/ping", __iced_deferrals.defer({
+          assign_fn: (function() {
+            return function() {
+              return data = arguments[0];
+            };
+          })(),
+          lineno: 82
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        if (typeof data !== "undefined" && data !== null ? data.success : void 0) {
+          cb();
+          _this.authenticated = true;
+        } else {
+          _this.authenticated = false;
+        }
+        _this.oauth_window = null;
+        return _this.authenticated;
+      });
+    };
+
+    SquadBuilderBackend.prototype.login = function() {
+      if (this.ui_ready) return null;
+    };
+
+    SquadBuilderBackend.prototype.logout = function(cb) {
+      var _this = this;
+      return $.get("" + this.server + "/auth/logout", function(data, textStatus, jqXHR) {
+        _this.authenticated = false;
+        return cb();
+      });
+    };
+
+    SquadBuilderBackend.prototype.setupUI = function() {
+      var _this = this;
+      this.login_modal = $(document.createElement('DIV'));
+      this.login_modal.addClass('modal hide fade');
+      $(document.body).append(this.login_modal);
+      this.login_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Log in with OAuth</h3>\n</div>\n<div class=\"modal-body\">\n    <p>\n        Select one of the OAuth providers below to log in and start saving squads.\n        <a class=\"login-help\" href=\"#\">What's this?</a>\n    </p>\n    <ul class=\"login-providers inline\"></ul>\n    <p>\n        This will cause a new window to pop up and authenticate with the chosen provider.  You may have to allow pop ups just this time.  (Sorry.)\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      return $.get("" + this.server + "/methods", function(data, textStatus, jqXHR) {
+        var a, li, method, methods_ul, _i, _len, _ref;
+        methods_ul = $(_this.login_modal.find('ul.login-providers'));
+        _ref = data.methods;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          method = _ref[_i];
+          a = $(document.createElement('A'));
+          a.addClass('btn btn-inverse');
+          a.data('url', "" + _this.server + "/auth/" + method);
+          a.append("<i class=\"" + _this.method_metadata[method].icon + "\"></i>&nbsp;" + _this.method_metadata[method].text);
+          a.click(function(e) {
+            e.preventDefault();
+            return _this.oauth_window = window.open($(e.target).data('url'), "xwing_login");
+          });
+          li = $(document.createElement('LI'));
+          li.append(a);
+          methods_ul.append(li);
+        }
+        return _this.ui_ready = true;
+      });
+    };
+
+    SquadBuilderBackend.prototype.setupHandlers = function() {
+      var _this = this;
+      return $(window).on('message', function(e) {
+        var ev, _ref, _ref1;
+        ev = e.originalEvent;
+        if (ev.origin === _this.server) {
+          switch ((_ref = ev.data) != null ? _ref.command : void 0) {
+            case 'close_this':
+              return ev.source.close();
+            default:
+              return console.log("Unexpected command " + ((_ref1 = ev.data) != null ? _ref1.command : void 0));
+          }
+        } else {
+          console.log("Message received from unapproved origin " + ev.origin);
+          return window.last_ev = e;
+        }
+      });
+    };
+
+    return SquadBuilderBackend;
+
+  })();
+
+}).call(this);

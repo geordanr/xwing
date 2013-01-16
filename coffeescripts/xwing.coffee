@@ -65,6 +65,8 @@ class exportObj.SquadBuilder
             sources: null
             points: 100
 
+        @backend = null
+
         @setupUI()
         @setupEventHandlers()
 
@@ -589,6 +591,9 @@ class exportObj.SquadBuilder
         data.timer = window.setTimeout stopHandler , timeout_ms
         #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
         window.setTimeout @_makeRandomizerLoopFunc(data), 0
+
+    setBackend: (backend) ->
+        @backend = backend
 
 class Ship
     constructor: (args) ->
