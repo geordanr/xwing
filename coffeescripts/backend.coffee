@@ -74,13 +74,40 @@ class exportObj.SquadBuilderBackend
                 success: data.success
                 error: data.error
 
-    list: () ->
-        await $.get "#{@server}/squads/list", defer data
-        data
+    list: (builder, all=false) ->
+        if all
+            @squad_list_modal.find('.modal-header h3').text("Everyone's #{builder.faction} Squads")
+        else
+            @squad_list_modal.find('.modal-header h3').text("Your #{builder.faction} Squads")
+        list_ul = $ @squad_list_modal.find('ul.squad-list')
+        list_ul.text ''
+        list_ul.hide()
+        loading_pane = $ @squad_list_modal.find('p.squad-list-loading')
+        loading_pane.show()
+        @squad_list_modal.modal 'show'
 
-    listAll: () ->
-        await $.get "#{@server}/all", defer data
-        data
+        url = if all then "#{@server}/all" else "#{@server}/squads/list"
+        $.get url, (data, textStatus, jqXHR) =>
+            for squad in data[builder.faction]
+                li = $ document.createElement('LI')
+                li.data 'squad_id', squad.id
+                li.data 'builder', builder
+                li.data 'serialized', squad.serialized
+                list_ul.append li
+                li.append $.trim """
+                    <h4>#{squad.name}</h4>
+                    <span>Points: <strong>#{squad.additional_data.points}</strong></span>
+                    <button class="btn load-squad">Load</button>
+                """
+                li.find('button.load-squad').click (e) =>
+                    e.preventDefault()
+                    button = $ e.target
+                    li = button.closest 'li'
+                    li.data('builder').loadFromSerialized(li.data('serialized'))
+                    @squad_list_modal.modal 'hide'
+
+            loading_pane.fadeOut 'fast'
+            list_ul.fadeIn 'fast'
 
     authenticate: (cb=$.noop) ->
         old_auth_state = @authenticated
@@ -108,7 +135,7 @@ class exportObj.SquadBuilderBackend
 
     setupUI: () ->
         @login_modal = $ document.createElement('DIV')
-        @login_modal.addClass 'modal hide fade'
+        @login_modal.addClass 'modal hide fade hide-on-print'
         $(document.body).append @login_modal
         @login_modal.append $.trim """
             <div class="modal-header">
@@ -120,15 +147,40 @@ class exportObj.SquadBuilderBackend
                     Select one of the OAuth providers below to log in and start saving squads.
                     <a class="login-help" href="#">What's this?</a>
                 </p>
+                <div class="well well-small oauth-explanation">
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> is an authorization system which lets you prove your identity at a web site without having to create a new account.  Instead, you tell some provider with whom you already have an account (e.g. Google or Facebook) to prove to this web site that you say who you are.  That way, the next time you visit, this site remembers that you're that user from Google.
+                    </p>
+                    <p>
+                        The best part about this is that you don't have to come up with a new username and password to remember.  And don't worry, I'm not collecting any data from the providers about you.  I've tried to set the scope of data to be as small as possible, but some places send a bunch of data at minimum.  I throw it away.  All I look at is a unique identifier (usually some giant number).
+                    </p>
+                    <p>
+                        For more information, check out this <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">introduction to OAuth</a>.
+                    </p>
+                    <button class="btn">Got it!</button>
+                </div>
                 <ul class="login-providers inline"></ul>
                 <p>
-                    This will cause a new window to pop up and authenticate with the chosen provider.  You may have to allow pop ups just this time.  (Sorry.)
+                    This will open a new window to let you authenticate with the chosen provider.  You may have to allow pop ups for this site.  (Sorry.)
+                </p>
+                <p class="login-in-progress">
+                    <em>OAuth login is in progress.  Please finish authorization at the specified provider using the window that was just created.</em>
                 </p>
             </div>
             <div class="modal-footer">
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
+        oauth_explanation = $ @login_modal.find('.oauth-explanation')
+        oauth_explanation.hide()
+        @login_modal.find('.login-in-progress').hide()
+        @login_modal.find('a.login-help').click (e) =>
+            e.preventDefault()
+            if not oauth_explanation.is ':visible'
+                oauth_explanation.slideDown 'fast'
+        oauth_explanation.find('button').click (e) =>
+            e.preventDefault()
+            oauth_explanation.slideUp 'fast'
         $.get "#{@server}/methods", (data, textStatus, jqXHR) =>
             methods_ul = $ @login_modal.find('ul.login-providers')
             for method in data.methods
@@ -138,11 +190,35 @@ class exportObj.SquadBuilderBackend
                 a.append """<i class="#{@method_metadata[method].icon}"></i>&nbsp;#{@method_metadata[method].text}"""
                 a.click (e) =>
                     e.preventDefault()
+                    methods_ul.slideUp 'fast'
+                    @login_modal.find('.login-in-progress').slideDown 'fast'
                     @oauth_window = window.open $(e.target).data('url'), "xwing_login"
                 li = $ document.createElement('LI')
                 li.append a
                 methods_ul.append li
             @ui_ready = true
+
+        @squad_list_modal = $ document.createElement('DIV')
+        @squad_list_modal.addClass 'modal hide fade hide-on-print'
+        $(document.body).append @squad_list_modal
+        @squad_list_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3></h3>
+            </div>
+            <div class="modal-body">
+                <ul class="squad-list"></ul>
+                <p class="pagination-centered squad-list-loading">
+                    <i class="icon-spinner icon-spin icon-3x"></i>
+                    <br />
+                    Fetching squads...
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @squad_list_modal.find('ul.squad-list').hide()
 
     setupHandlers: () ->
         $(window).on 'message', (e) =>
@@ -152,6 +228,8 @@ class exportObj.SquadBuilderBackend
                     when 'auth_successful'
                         @authenticate $.noop
                         @login_modal.modal 'hide'
+                        @login_modal.find('.login-in-progress').hide()
+                        @login_modal.find('ul.login-providers').show()
                         ev.source.close()
                     else
                         console.log "Unexpected command #{ev.data?.command}"

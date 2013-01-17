@@ -87,12 +87,14 @@ class exportObj.SquadBuilder
             <div class="span8 pull-right button-container">
                 <div class="btn-group pull-right">
                     <button class="btn btn-info backend-login-logout">
-                        <span class="show-unauthenticated hide-authenticated">Log In</span>
-                        <span class="show-authenticated hide-unauthenticated">Log Out</span>
+                        <span class="hide-authenticated">Log In</span>
+                        <span class="show-authenticated">Log Out</span>
                     </button>
+                    <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>
+                    <button class="btn btn-info backend-list-all-squads">Everyone's Squads</button>
                     <button class="btn btn-info view-as-text">View as Text</button>
-                    <button class="btn btn-info print-list hidden-phone"><i class="icon-print"></i></button>
-                    <a class="btn btn-info permalink">Permalink</a>
+                    <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>
+                    <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>
 
                     <button class="btn btn-info randomize">Random Squad!</button>
                     <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
@@ -109,7 +111,6 @@ class exportObj.SquadBuilder
         @points_container = $ @status_container.find('div.points-display-container')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
-        @print_list_button = $ @container.find('button.print-list')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
 
@@ -184,6 +185,16 @@ class exportObj.SquadBuilder
                     @backend.logout()
                 else
                     @backend.login()
+        @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
+        @backend_list_squads_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                @backend.list this
+        @backend_list_all_squads_button = $ @container.find('button.backend-list-all-squads')
+        @backend_list_all_squads_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                @backend.list this, true
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -244,7 +255,7 @@ class exportObj.SquadBuilder
 
         @list_modal = $ document.createElement 'DIV'
         @list_modal.addClass 'modal hide fade text-list-modal'
-        $(document).append @list_modal
+        @container.append @list_modal
         @list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -254,12 +265,16 @@ class exportObj.SquadBuilder
                 <ul></ul>
             </div>
             <div class="modal-footer hide-on-print">
-                <button class="btn print-list hidden-phone"><i class="icon-print"></i>Print</button>
+                <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @text_ul = $ @list_modal.find('div.modal-body ul')
         @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+
+        @print_list_button = $ @container.find('button.print-list')
+
+        @container.find('[rel=tooltip]').tooltip()
 
     setupEventHandlers: () ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
@@ -618,8 +633,8 @@ class exportObj.SquadBuilder
             @container.find('.show-authenticated').show()
             @container.find('.hide-authenticated').hide()
         else
-            @container.find('.show-unauthenticated').show()
-            @container.find('.hide-unauthenticated').hide()
+            @container.find('.show-authenticated').hide()
+            @container.find('.hide-authenticated').show()
 
 class Ship
     constructor: (args) ->
