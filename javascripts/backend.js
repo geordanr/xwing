@@ -145,7 +145,7 @@
       if (all) {
         this.squad_list_modal.find('.modal-header h3').text("Everyone's " + builder.faction + " Squads");
       } else {
-        this.squad_list_modal.find('.modal-header h3').text("My " + builder.faction + " Squads");
+        this.squad_list_modal.find('.modal-header h3').text("Your " + builder.faction + " Squads");
       }
       list_ul = $(this.squad_list_modal.find('ul.squad-list'));
       list_ul.text('');

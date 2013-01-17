@@ -39,6 +39,8 @@ Array::intersects = (other) ->
             return true
     return false
 
+SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
+
 # Assumes cards.js has been loaded
 
 class exportObj.SquadBuilder
@@ -66,6 +68,8 @@ class exportObj.SquadBuilder
             points: 100
 
         @backend = null
+        @current_squad =
+            name: "Unnamed Squad"
 
         @setupUI()
         @setupEventHandlers()
@@ -83,8 +87,18 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="span3 points-display-container">Total Points: 0</div>
-            <div class="span8 pull-right button-container">
+            <div class="span4 squad-name-container">
+                <div class="display-name">
+                    <span class="display-name">Unnamed Squadron</span>
+                    <i class="icon-pencil"></i>
+                </div>
+                <div class="input-append">
+                    <input type="text" maxlength="64" placeholder="Name your squad..." />
+                    <button class="btn save"><i class="icon-save"></i></button>
+                </div>
+            </div>
+            <div class="span2 points-display-container">Total Points: 0</div>
+            <div class="span5 pull-right button-container">
                 <div class="btn-group pull-right">
                     <button class="btn btn-info backend-login-logout">
                         <span class="hide-authenticated">Log In</span>
@@ -108,11 +122,36 @@ class exportObj.SquadBuilder
         '''
         @container.append @status_container
 
+        @squad_name_container = $ @status_container.find('div.squad-name-container')
+        @squad_name_display = $ @squad_name_container.find('.display-name')
+        @squad_name_input = $ @squad_name_container.find('input')
+        @squad_name_save_button = $ @squad_name_container.find('button.save')
+        @squad_name_input.closest('div').hide()
         @points_container = $ @status_container.find('div.points-display-container')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+
+        @squad_name_input.keypress (e) =>
+            if e.which == 13
+                @squad_name_save_button.click()
+                false
+
+        @squad_name_display.click (e) =>
+            e.preventDefault()
+            @squad_name_display.hide()
+            @squad_name_input.val $.trim(@current_squad.name)
+            @squad_name_input.select()
+            @squad_name_input.closest('div').show()
+        @squad_name_save_button.click (e) =>
+            name = @current_squad.name = $.trim(@squad_name_input.val())
+            if name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
+                name = "#{name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
+            @squad_name_display.find('span').text ''
+            @squad_name_display.find('span').append name
+            @squad_name_display.show()
+            @squad_name_input.closest('div').hide()
 
         @randomizer_options_modal = $ document.createElement('DIV')
         @randomizer_options_modal.addClass 'modal hide fade'
