@@ -36,15 +36,19 @@ class exportObj.SquadBuilderBackend
                 icon: 'icon-facebook-sign'
                 text: 'Facebook'
 
-        for builder in @builders
-            builder.setBackend this
-
         @setupHandlers()
         @setupUI()
 
         $.ajaxSetup
             xhrFields:
                 withCredentials: true
+
+        # Check initial authentication status
+        @authenticate $.noop
+
+        # Finally, hook up the builders
+        for builder in @builders
+            builder.setBackend this
 
     save: (serialized, id=null, name, faction, additional_data={}, cb) ->
         post_args =
@@ -74,28 +78,32 @@ class exportObj.SquadBuilderBackend
         await $.get "#{@server}/squads/list", defer data
         data
 
-    listAll: (cb) ->
+    listAll: () ->
         await $.get "#{@server}/all", defer data
         data
 
-    authenticate: (cb) ->
+    authenticate: (cb=$.noop) ->
+        old_auth_state = @authenticated
         await $.get "#{@server}/ping", defer data
         if data?.success
-            cb()
             @authenticated = true
+            cb()
         else
             @authenticated = false
+        if old_auth_state != @authenticated
+            $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
         @oauth_window = null
         @authenticated
 
     login: () ->
         # Display login dialog.
         if @ui_ready
-            null
+            @login_modal.modal 'show'
 
-    logout: (cb) ->
+    logout: (cb=$.noop) ->
         $.get "#{@server}/auth/logout", (data, textStatus, jqXHR) =>
             @authenticated = false
+            $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
             cb()
 
     setupUI: () ->
@@ -143,6 +151,7 @@ class exportObj.SquadBuilderBackend
                 switch ev.data?.command
                     when 'auth_successful'
                         @authenticate $.noop
+                        @login_modal.modal 'hide'
                         ev.source.close()
                     else
                         console.log "Unexpected command #{ev.data?.command}"

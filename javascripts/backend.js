@@ -84,11 +84,6 @@
           text: 'Facebook'
         }
       };
-      _ref = this.builders;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        builder = _ref[_i];
-        builder.setBackend(this);
-      }
       this.setupHandlers();
       this.setupUI();
       $.ajaxSetup({
@@ -96,6 +91,12 @@
           withCredentials: true
         }
       });
+      this.authenticate($.noop);
+      _ref = this.builders;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        builder = _ref[_i];
+        builder.setBackend(this);
+      }
     }
 
     SquadBuilderBackend.prototype.save = function(serialized, id, name, faction, additional_data, cb) {
@@ -153,7 +154,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 74
+          lineno: 78
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -161,7 +162,7 @@
       });
     };
 
-    SquadBuilderBackend.prototype.listAll = function(cb) {
+    SquadBuilderBackend.prototype.listAll = function() {
       var data, ___iced_passed_deferral, __iced_deferrals, __iced_k,
         _this = this;
       __iced_k = __iced_k_noop;
@@ -177,7 +178,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 78
+          lineno: 82
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -186,10 +187,12 @@
     };
 
     SquadBuilderBackend.prototype.authenticate = function(cb) {
-      var data, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+      var data, old_auth_state, ___iced_passed_deferral, __iced_deferrals, __iced_k,
         _this = this;
       __iced_k = __iced_k_noop;
       ___iced_passed_deferral = iced.findDeferral(arguments);
+      if (cb == null) cb = $.noop;
+      old_auth_state = this.authenticated;
       (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
@@ -201,15 +204,18 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 82
+          lineno: 87
         }));
         __iced_deferrals._fulfill();
       })(function() {
         if (typeof data !== "undefined" && data !== null ? data.success : void 0) {
-          cb();
           _this.authenticated = true;
+          cb();
         } else {
           _this.authenticated = false;
+        }
+        if (old_auth_state !== _this.authenticated) {
+          $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
         }
         _this.oauth_window = null;
         return _this.authenticated;
@@ -217,13 +223,15 @@
     };
 
     SquadBuilderBackend.prototype.login = function() {
-      if (this.ui_ready) return null;
+      if (this.ui_ready) return this.login_modal.modal('show');
     };
 
     SquadBuilderBackend.prototype.logout = function(cb) {
       var _this = this;
+      if (cb == null) cb = $.noop;
       return $.get("" + this.server + "/auth/logout", function(data, textStatus, jqXHR) {
         _this.authenticated = false;
+        $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
         return cb();
       });
     };
@@ -263,7 +271,9 @@
         ev = e.originalEvent;
         if (ev.origin === _this.server) {
           switch ((_ref = ev.data) != null ? _ref.command : void 0) {
-            case 'close_this':
+            case 'auth_successful':
+              _this.authenticate($.noop);
+              _this.login_modal.modal('hide');
               return ev.source.close();
             default:
               return console.log("Unexpected command " + ((_ref1 = ev.data) != null ? _ref1.command : void 0));

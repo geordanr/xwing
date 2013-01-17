@@ -150,12 +150,12 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span3 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list">Print List</button>\n        <a class="btn btn-info permalink">Permalink</a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        <ul>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="span3 points-display-container">Total Points: 0</div>\n<div class="span8 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info backend-login-logout">\n            <span class="show-unauthenticated hide-authenticated">Log In</span>\n            <span class="show-authenticated hide-unauthenticated">Log Out</span>\n        </button>\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list hidden-phone"><i class="icon-print"></i></button>\n        <a class="btn btn-info permalink">Permalink</a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        <ul>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.points_container = $(this.status_container.find('div.points-display-container'));
       this.permalink = $(this.status_container.find('div.button-container a.permalink'));
       this.view_list_button = $(this.status_container.find('div.button-container button.view-as-text'));
-      this.print_list_button = $(this.status_container.find('div.button-container button.print-list'));
+      this.print_list_button = $(this.container.find('button.print-list'));
       this.randomize_button = $(this.status_container.find('div.button-container button.randomize'));
       this.customize_randomizer = $(this.status_container.find('div.button-container a.randomize-options'));
       this.randomizer_options_modal = $(document.createElement('DIV'));
@@ -197,6 +197,17 @@
         e.preventDefault();
         return _this.randomizer_options_modal.modal();
       });
+      this.backend_login_logout_button = $(this.container.find('button.backend-login-logout'));
+      this.backend_login_logout_button.click(function(e) {
+        e.preventDefault();
+        if (_this.backend != null) {
+          if (_this.backend.authenticated) {
+            return _this.backend.logout();
+          } else {
+            return _this.backend.login();
+          }
+        }
+      });
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
@@ -208,7 +219,7 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       $(document).append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.text_ul = $(this.list_modal.find('div.modal-body ul'));
       return this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
     };
@@ -441,7 +452,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 403
+          lineno: 418
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -450,7 +461,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 404
+          lineno: 419
         }));
         __iced_deferrals._fulfill();
       });
@@ -827,7 +838,22 @@
     };
 
     SquadBuilder.prototype.setBackend = function(backend) {
-      return this.backend = backend;
+      var _this = this;
+      this.backend = backend;
+      this.updateAuthenticationVisibility();
+      return $(window).on('xwing-backend:authenticationChanged', function() {
+        return _this.updateAuthenticationVisibility();
+      });
+    };
+
+    SquadBuilder.prototype.updateAuthenticationVisibility = function() {
+      if (this.backend.authenticated) {
+        this.container.find('.show-authenticated').show();
+        return this.container.find('.hide-authenticated').hide();
+      } else {
+        this.container.find('.show-unauthenticated').show();
+        return this.container.find('.hide-unauthenticated').hide();
+      }
     };
 
     return SquadBuilder;
@@ -888,7 +914,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 637
+                  lineno: 663
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -928,7 +954,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 649
+                lineno: 675
               })
             ]);
             __iced_deferrals._fulfill();
@@ -979,17 +1005,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 672
+            lineno: 698
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 673
+            lineno: 699
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 674
+            lineno: 700
           }));
         }
         __iced_deferrals._fulfill();
@@ -1121,7 +1147,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 772
+                lineno: 798
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1182,7 +1208,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 798
+                  lineno: 824
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1200,7 +1226,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 800
+                    lineno: 826
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1337,7 +1363,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 875
+                  lineno: 901
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1352,7 +1378,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 879
+                    lineno: 905
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1380,7 +1406,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 884
+                    lineno: 910
                   })
                 ]);
                 __iced_deferrals._fulfill();

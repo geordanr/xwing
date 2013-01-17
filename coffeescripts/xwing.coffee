@@ -86,8 +86,12 @@ class exportObj.SquadBuilder
             <div class="span3 points-display-container">Total Points: 0</div>
             <div class="span8 pull-right button-container">
                 <div class="btn-group pull-right">
+                    <button class="btn btn-info backend-login-logout">
+                        <span class="show-unauthenticated hide-authenticated">Log In</span>
+                        <span class="show-authenticated hide-unauthenticated">Log Out</span>
+                    </button>
                     <button class="btn btn-info view-as-text">View as Text</button>
-                    <button class="btn btn-info print-list">Print List</button>
+                    <button class="btn btn-info print-list hidden-phone"><i class="icon-print"></i></button>
                     <a class="btn btn-info permalink">Permalink</a>
 
                     <button class="btn btn-info randomize">Random Squad!</button>
@@ -105,7 +109,7 @@ class exportObj.SquadBuilder
         @points_container = $ @status_container.find('div.points-display-container')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
-        @print_list_button = $ @status_container.find('div.button-container button.print-list')
+        @print_list_button = $ @container.find('button.print-list')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
 
@@ -170,6 +174,16 @@ class exportObj.SquadBuilder
         @customize_randomizer.click (e) =>
             e.preventDefault()
             @randomizer_options_modal.modal()
+
+        # Backend
+        @backend_login_logout_button = $ @container.find('button.backend-login-logout')
+        @backend_login_logout_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                if @backend.authenticated
+                    @backend.logout()
+                else
+                    @backend.login()
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -240,6 +254,7 @@ class exportObj.SquadBuilder
                 <ul></ul>
             </div>
             <div class="modal-footer hide-on-print">
+                <button class="btn print-list hidden-phone"><i class="icon-print"></i>Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -594,6 +609,17 @@ class exportObj.SquadBuilder
 
     setBackend: (backend) ->
         @backend = backend
+        @updateAuthenticationVisibility()
+        $(window).on 'xwing-backend:authenticationChanged', () =>
+            @updateAuthenticationVisibility()
+
+    updateAuthenticationVisibility: () ->
+        if @backend.authenticated
+            @container.find('.show-authenticated').show()
+            @container.find('.hide-authenticated').hide()
+        else
+            @container.find('.show-unauthenticated').show()
+            @container.find('.hide-unauthenticated').hide()
 
 class Ship
     constructor: (args) ->
