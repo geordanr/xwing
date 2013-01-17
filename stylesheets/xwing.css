@@ -87,6 +87,7 @@ strong em, em strong {
   vertical-align: top; }
 
 .squad-name-container {
+  padding-top: 5px;
   font-size: 1.2em; }
 
 .display-name {
