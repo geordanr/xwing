@@ -21,6 +21,12 @@ class exportObj.SquadBuilderBackend
 
     ###
     constructor: (args) ->
+        # Might as well do this right away
+        $.ajaxSetup
+            dataType: "json" # Because Firefox sucks for some reason
+            xhrFields:
+                withCredentials: true
+
         # args
         @server = args.server
         @builders = args.builders
@@ -39,12 +45,8 @@ class exportObj.SquadBuilderBackend
         @setupHandlers()
         @setupUI()
 
-        $.ajaxSetup
-            xhrFields:
-                withCredentials: true
-
         # Check initial authentication status
-        @authenticate $.noop
+        @authenticate()
 
         # Finally, hook up the builders
         for builder in @builders
@@ -54,13 +56,14 @@ class exportObj.SquadBuilderBackend
         post_args =
             name: $.trim name
             faction: $.trim faction
+            serialized: serialized
             additional_data: additional_data
         if id?
-            post_url = "#{@server}/#{id}"
+            post_url = "#{@server}/squads/#{id}"
         else
-            post_url = "#{@server}/new"
+            post_url = "#{@server}/squads/new"
             post_args['_method'] = 'put'
-        $.post post_args, (data, textStatus, jqXHR) =>
+        $.post post_url, post_args, (data, textStatus, jqXHR) =>
             cb
                 id: data.id
                 success: data.success
@@ -69,12 +72,13 @@ class exportObj.SquadBuilderBackend
     delete: (id, cb) ->
         post_args =
             '_method': 'delete'
-        $.post "#{@server}/#{id}", post_args, (data, textStatus, jqXHR) =>
+        $.post "#{@server}/delete/#{id}", post_args, (data, textStatus, jqXHR) =>
             cb
                 success: data.success
                 error: data.error
 
     list: (builder, all=false) ->
+        # TODO: Pagination
         if all
             @squad_list_modal.find('.modal-header h3').text("Everyone's #{builder.faction} Squads")
         else
@@ -88,23 +92,28 @@ class exportObj.SquadBuilderBackend
 
         url = if all then "#{@server}/all" else "#{@server}/squads/list"
         $.get url, (data, textStatus, jqXHR) =>
-            for squad in data[builder.faction]
-                li = $ document.createElement('LI')
-                li.data 'squad_id', squad.id
-                li.data 'builder', builder
-                li.data 'serialized', squad.serialized
-                list_ul.append li
-                li.append $.trim """
-                    <h4>#{squad.name}</h4>
-                    <span>Points: <strong>#{squad.additional_data.points}</strong></span>
-                    <button class="btn load-squad">Load</button>
+            if data[builder.faction].length == 0
+                list_ul.append $.trim """
+                    <li>You have no squads saved.  Go save one!</li>
                 """
-                li.find('button.load-squad').click (e) =>
-                    e.preventDefault()
-                    button = $ e.target
-                    li = button.closest 'li'
-                    li.data('builder').loadFromSerialized(li.data('serialized'))
-                    @squad_list_modal.modal 'hide'
+            else
+                for squad in data[builder.faction]
+                    li = $ document.createElement('LI')
+                    li.data 'squad_id', squad.id
+                    li.data 'builder', builder
+                    li.data 'serialized', squad.serialized
+                    list_ul.append li
+                    li.append $.trim """
+                        <h4>#{squad.name}</h4>
+                        <span>Points: <strong>#{squad.additional_data.points}</strong></span>
+                        <button class="btn pull-right load-squad">Load</button>
+                    """
+                    li.find('button.load-squad').click (e) =>
+                        e.preventDefault()
+                        button = $ e.target
+                        li = button.closest 'li'
+                        li.data('builder').loadFromSerialized(li.data('serialized'))
+                        @squad_list_modal.modal 'hide'
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
@@ -226,7 +235,7 @@ class exportObj.SquadBuilderBackend
             if ev.origin == @server
                 switch ev.data?.command
                     when 'auth_successful'
-                        @authenticate $.noop
+                        @authenticate()
                         @login_modal.modal 'hide'
                         @login_modal.find('.login-in-progress').hide()
                         @login_modal.find('ul.login-providers').show()

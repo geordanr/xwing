@@ -136,6 +136,7 @@
       };
       this.backend = null;
       this.current_squad = {
+        id: null,
         name: "Unnamed Squad"
       };
       this.setupUI();
@@ -155,7 +156,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span4 squad-name-container">\n    <div class="display-name">\n        <span class="display-name">Unnamed Squadron</span>\n        <i class="icon-pencil"></i>\n    </div>\n    <div class="input-append">\n        <input type="text" maxlength="64" placeholder="Name your squad..." />\n        <button class="btn save"><i class="icon-save"></i></button>\n    </div>\n</div>\n<div class="span2 points-display-container">Total Points: 0</div>\n<div class="span5 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info backend-login-logout">\n            <span class="hide-authenticated">Log In</span>\n            <span class="show-authenticated">Log Out</span>\n        </button>\n        <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>\n        <button class="btn btn-info backend-list-all-squads">Everyone\'s Squads</button>\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>\n        <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>\n\n        <button class="btn btn-info randomize">Random Squad!</button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        <ul>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="span3 squad-name-container">\n    <div class="display-name">\n        <span class="display-name">Unnamed Squadron</span>\n        <i class="icon-pencil"></i>\n    </div>\n    <div class="input-append">\n        <input type="text" maxlength="64" placeholder="Name your squad..." />\n        <button class="btn save"><i class="icon-save"></i></button>\n    </div>\n</div>\n<div class="span2 points-display-container">Total Points: 0</div>\n<div class="span7 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info backend-login-logout">\n            <span class="hide-authenticated">Log In</span>\n            <span class="show-authenticated">Log Out</span>\n        </button>\n        <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>\n        <button class="btn btn-info backend-list-all-squads show-authenticated">Everyone\'s Squads</button>\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info save-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Save Squad..."><i class="icon-save"></i></button>\n        <button class="btn btn-info delete-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Delete Squad..."><i class="icon-trash"></i></button>\n        <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>\n        <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>\n\n        <button class="btn btn-info randomize" rel="tooltip" data-placement="bottom" title="Random Squad!"><i class="icon-random"></i></button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.squad_name_container = $(this.status_container.find('div.squad-name-container'));
       this.squad_name_display = $(this.squad_name_container.find('.display-name'));
@@ -250,6 +251,43 @@
       this.backend_list_all_squads_button.click(function(e) {
         e.preventDefault();
         if (_this.backend != null) return _this.backend.list(_this, true);
+      });
+      this.backend_save_list_button = $(this.container.find('button.save-list'));
+      this.backend_save_list_button.click(function(e) {
+        var additional_data, results, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+        __iced_k = __iced_k_noop;
+        ___iced_passed_deferral = iced.findDeferral(arguments);
+        e.preventDefault();
+        if (_this.backend != null) {
+          additional_data = {
+            points: _this.total_points,
+            description: null,
+            cards: []
+          };
+          (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral
+            });
+            _this.backend.save(_this.serialize(), _this.current_squad.id, _this.current_squad.name, _this.faction, additional_data, __iced_deferrals.defer({
+              assign_fn: (function() {
+                return function() {
+                  return results = arguments[0];
+                };
+              })(),
+              lineno: 247
+            }));
+            __iced_deferrals._fulfill();
+          })(function() {
+            return __iced_k(results.success ? _this.current_squad.id != null ? console.log("squad updated") : (console.log("new squad created with id=" + results.id), _this.current_squad.id = results.id) : console.log("Could not save because " + results.error));
+          });
+        } else {
+          return __iced_k();
+        }
+      });
+      this.backend_delete_list_button = $(this.container.find('button.delete-list'));
+      this.backend_delete_list_button.click(function(e) {
+        e.preventDefault();
+        if (_this.backend != null) return console.log("baleete");
       });
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
@@ -497,7 +535,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 472
+          lineno: 497
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -506,7 +544,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 473
+          lineno: 498
         }));
         __iced_deferrals._fulfill();
       });
@@ -959,7 +997,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 717
+                  lineno: 742
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -999,7 +1037,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 729
+                lineno: 754
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1050,17 +1088,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 752
+            lineno: 777
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 753
+            lineno: 778
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 754
+            lineno: 779
           }));
         }
         __iced_deferrals._fulfill();
@@ -1192,7 +1230,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 852
+                lineno: 877
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1253,7 +1291,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 878
+                  lineno: 903
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1271,7 +1309,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 880
+                    lineno: 905
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1408,7 +1446,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 955
+                  lineno: 980
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1423,7 +1461,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 959
+                    lineno: 984
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1451,7 +1489,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 964
+                    lineno: 989
                   })
                 ]);
                 __iced_deferrals._fulfill();

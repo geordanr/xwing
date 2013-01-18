@@ -69,6 +69,12 @@
 
     function SquadBuilderBackend(args) {
       var builder, _i, _len, _ref;
+      $.ajaxSetup({
+        dataType: "json",
+        xhrFields: {
+          withCredentials: true
+        }
+      });
       this.server = args.server;
       this.builders = args.builders;
       this.authenticated = false;
@@ -86,12 +92,7 @@
       };
       this.setupHandlers();
       this.setupUI();
-      $.ajaxSetup({
-        xhrFields: {
-          withCredentials: true
-        }
-      });
-      this.authenticate($.noop);
+      this.authenticate();
       _ref = this.builders;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         builder = _ref[_i];
@@ -107,15 +108,16 @@
       post_args = {
         name: $.trim(name),
         faction: $.trim(faction),
+        serialized: serialized,
         additional_data: additional_data
       };
       if (id != null) {
-        post_url = "" + this.server + "/" + id;
+        post_url = "" + this.server + "/squads/" + id;
       } else {
-        post_url = "" + this.server + "/new";
+        post_url = "" + this.server + "/squads/new";
         post_args['_method'] = 'put';
       }
-      return $.post(post_args, function(data, textStatus, jqXHR) {
+      return $.post(post_url, post_args, function(data, textStatus, jqXHR) {
         return cb({
           id: data.id,
           success: data.success,
@@ -130,7 +132,7 @@
       post_args = {
         '_method': 'delete'
       };
-      return $.post("" + this.server + "/" + id, post_args, function(data, textStatus, jqXHR) {
+      return $.post("" + this.server + "/delete/" + id, post_args, function(data, textStatus, jqXHR) {
         return cb({
           success: data.success,
           error: data.error
@@ -156,23 +158,27 @@
       url = all ? "" + this.server + "/all" : "" + this.server + "/squads/list";
       return $.get(url, function(data, textStatus, jqXHR) {
         var li, squad, _i, _len, _ref;
-        _ref = data[builder.faction];
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          squad = _ref[_i];
-          li = $(document.createElement('LI'));
-          li.data('squad_id', squad.id);
-          li.data('builder', builder);
-          li.data('serialized', squad.serialized);
-          list_ul.append(li);
-          li.append($.trim("<h4>" + squad.name + "</h4>\n<span>Points: <strong>" + squad.additional_data.points + "</strong></span>\n<button class=\"btn load-squad\">Load</button>"));
-          li.find('button.load-squad').click(function(e) {
-            var button;
-            e.preventDefault();
-            button = $(e.target);
-            li = button.closest('li');
-            li.data('builder').loadFromSerialized(li.data('serialized'));
-            return _this.squad_list_modal.modal('hide');
-          });
+        if (data[builder.faction].length === 0) {
+          list_ul.append($.trim("<li>You have no squads saved.  Go save one!</li>"));
+        } else {
+          _ref = data[builder.faction];
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            squad = _ref[_i];
+            li = $(document.createElement('LI'));
+            li.data('squad_id', squad.id);
+            li.data('builder', builder);
+            li.data('serialized', squad.serialized);
+            list_ul.append(li);
+            li.append($.trim("<h4>" + squad.name + "</h4>\n<span>Points: <strong>" + squad.additional_data.points + "</strong></span>\n<button class=\"btn pull-right load-squad\">Load</button>"));
+            li.find('button.load-squad').click(function(e) {
+              var button;
+              e.preventDefault();
+              button = $(e.target);
+              li = button.closest('li');
+              li.data('builder').loadFromSerialized(li.data('serialized'));
+              return _this.squad_list_modal.modal('hide');
+            });
+          }
         }
         loading_pane.fadeOut('fast');
         return list_ul.fadeIn('fast');
@@ -197,7 +203,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 114
+          lineno: 123
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -286,7 +292,7 @@
         if (ev.origin === _this.server) {
           switch ((_ref = ev.data) != null ? _ref.command : void 0) {
             case 'auth_successful':
-              _this.authenticate($.noop);
+              _this.authenticate();
               _this.login_modal.modal('hide');
               _this.login_modal.find('.login-in-progress').hide();
               _this.login_modal.find('ul.login-providers').show();

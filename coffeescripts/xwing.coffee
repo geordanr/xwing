@@ -69,6 +69,7 @@ class exportObj.SquadBuilder
 
         @backend = null
         @current_squad =
+            id: null
             name: "Unnamed Squad"
 
         @setupUI()
@@ -87,7 +88,7 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="span4 squad-name-container">
+            <div class="span3 squad-name-container">
                 <div class="display-name">
                     <span class="display-name">Unnamed Squadron</span>
                     <i class="icon-pencil"></i>
@@ -98,25 +99,27 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="span2 points-display-container">Total Points: 0</div>
-            <div class="span5 pull-right button-container">
+            <div class="span7 pull-right button-container">
                 <div class="btn-group pull-right">
                     <button class="btn btn-info backend-login-logout">
                         <span class="hide-authenticated">Log In</span>
                         <span class="show-authenticated">Log Out</span>
                     </button>
                     <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>
-                    <button class="btn btn-info backend-list-all-squads">Everyone's Squads</button>
+                    <button class="btn btn-info backend-list-all-squads show-authenticated">Everyone's Squads</button>
                     <button class="btn btn-info view-as-text">View as Text</button>
+                    <button class="btn btn-info save-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Save Squad..."><i class="icon-save"></i></button>
+                    <button class="btn btn-info delete-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Delete Squad..."><i class="icon-trash"></i></button>
                     <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>
                     <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>
 
-                    <button class="btn btn-info randomize">Random Squad!</button>
+                    <button class="btn btn-info randomize" rel="tooltip" data-placement="bottom" title="Random Squad!"><i class="icon-random"></i></button>
                     <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="randomize-options">Randomizer Options...</a></li>
-                    <ul>
+                    </ul>
                 </div>
             </div>
         '''
@@ -234,6 +237,28 @@ class exportObj.SquadBuilder
             e.preventDefault()
             if @backend?
                 @backend.list this, true
+        @backend_save_list_button = $ @container.find('button.save-list')
+        @backend_save_list_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                additional_data =
+                    points: @total_points
+                    description: null
+                    cards: []
+                await @backend.save @serialize(), @current_squad.id, @current_squad.name, @faction, additional_data, defer(results)
+                if results.success
+                    if @current_squad.id?
+                        console.log "squad updated"
+                    else
+                        console.log "new squad created with id=#{results.id}"
+                        @current_squad.id = results.id
+                else
+                    console.log "Could not save because #{results.error}"
+        @backend_delete_list_button = $ @container.find('button.delete-list')
+        @backend_delete_list_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                console.log "baleete"
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
