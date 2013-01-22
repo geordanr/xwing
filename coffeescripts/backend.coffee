@@ -99,9 +99,8 @@ class exportObj.SquadBuilderBackend
             else
                 for squad in data[builder.faction]
                     li = $ document.createElement('LI')
-                    li.data 'squad_id', squad.id
+                    li.data 'squad', squad
                     li.data 'builder', builder
-                    li.data 'serialized', squad.serialized
                     list_ul.append li
                     li.append $.trim """
                         <h4>#{squad.name}</h4>
@@ -112,7 +111,7 @@ class exportObj.SquadBuilderBackend
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
-                        li.data('builder').loadFromSerialized(li.data('serialized'))
+                        li.data('builder').container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
                         @squad_list_modal.modal 'hide'
 
             loading_pane.fadeOut 'fast'

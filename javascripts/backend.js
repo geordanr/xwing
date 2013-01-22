@@ -165,9 +165,8 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             squad = _ref[_i];
             li = $(document.createElement('LI'));
-            li.data('squad_id', squad.id);
+            li.data('squad', squad);
             li.data('builder', builder);
-            li.data('serialized', squad.serialized);
             list_ul.append(li);
             li.append($.trim("<h4>" + squad.name + "</h4>\n<span>Points: <strong>" + squad.additional_data.points + "</strong></span>\n<button class=\"btn pull-right load-squad\">Load</button>"));
             li.find('button.load-squad').click(function(e) {
@@ -175,7 +174,7 @@
               e.preventDefault();
               button = $(e.target);
               li = button.closest('li');
-              li.data('builder').loadFromSerialized(li.data('serialized'));
+              li.data('builder').container.trigger('xwing-backend:squadLoadRequested', li.data('squad'));
               return _this.squad_list_modal.modal('hide');
             });
           }
@@ -203,7 +202,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 123
+          lineno: 122
         }));
         __iced_deferrals._fulfill();
       })(function() {

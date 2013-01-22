@@ -118,6 +118,8 @@
       this._randomizerLoopBody = __bind(this._randomizerLoopBody, this);
       this.releaseUnique = __bind(this.releaseUnique, this);
       this.claimUnique = __bind(this.claimUnique, this);
+      this.onSquadDirtinessChanged = __bind(this.onSquadDirtinessChanged, this);
+      this.onSquadLoadRequested = __bind(this.onSquadLoadRequested, this);
       this.onPointsUpdated = __bind(this.onPointsUpdated, this);      this.container = $(args.container);
       this.faction = $.trim(args.faction);
       this.printable_container = $(args.printable_container);
@@ -137,7 +139,8 @@
       this.backend = null;
       this.current_squad = {
         id: null,
-        name: "Unnamed Squad"
+        name: "Unnamed Squad",
+        dirty: false
       };
       this.setupUI();
       this.setupEventHandlers();
@@ -156,10 +159,17 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="span3 squad-name-container">\n    <div class="display-name">\n        <span class="display-name">Unnamed Squadron</span>\n        <i class="icon-pencil"></i>\n    </div>\n    <div class="input-append">\n        <input type="text" maxlength="64" placeholder="Name your squad..." />\n        <button class="btn save"><i class="icon-save"></i></button>\n    </div>\n</div>\n<div class="span2 points-display-container">Total Points: 0</div>\n<div class="span7 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info backend-login-logout">\n            <span class="hide-authenticated">Log In</span>\n            <span class="show-authenticated">Log Out</span>\n        </button>\n        <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>\n        <button class="btn btn-info backend-list-all-squads show-authenticated">Everyone\'s Squads</button>\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info save-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Save Squad..."><i class="icon-save"></i></button>\n        <button class="btn btn-info delete-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Delete Squad..."><i class="icon-trash"></i></button>\n        <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>\n        <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>\n\n        <button class="btn btn-info randomize" rel="tooltip" data-placement="bottom" title="Random Squad!"><i class="icon-random"></i></button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="span3 squad-name-container">\n    <div class="row">\n        <div class="span12">\n            <div class="display-name">\n                <span class="squad-name">Unnamed Squadron</span>\n                <i class="icon-pencil"></i>\n            </div>\n            <div class="input-append">\n                <input type="text" maxlength="64" placeholder="Name your squad..." />\n                <button class="btn save"><i class="icon-save"></i></button>\n            </div>\n        </div>\n    </div class="row">\n    <div class="row show-authenticated">\n        <div class="span12">\n            <button class="btn btn-info save-list"><i class="icon-save"></i>&nbsp;Save</button>\n            <button class="btn btn-info save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n            <button class="btn btn-info delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n            <span class="backend-status"></span>\n        </div>\n    </div>\n</div>\n<div class="span2 points-display-container">Total Points: 0</div>\n<div class="span7 pull-right button-container">\n    <div class="btn-group pull-right">\n        <button class="btn btn-info backend-login-logout">\n            <span class="hide-authenticated">Log In</span>\n            <span class="show-authenticated">Log Out</span>\n        </button>\n        <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>\n        <button class="btn btn-info backend-list-all-squads show-authenticated">Everyone\'s Squads</button>\n        <button class="btn btn-info view-as-text">View as Text</button>\n        <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>\n        <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>\n\n        <button class="btn btn-info randomize" rel="tooltip" data-placement="bottom" title="Random Squad!"><i class="icon-random"></i></button>\n        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>'));
       this.container.append(this.status_container);
+      this.list_modal = $(document.createElement('DIV'));
+      this.list_modal.addClass('modal hide fade text-list-modal');
+      this.container.append(this.list_modal);
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3><span class=\"squad-name\"></span> (" + this.faction + "): <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.text_ul = $(this.list_modal.find('div.modal-body ul'));
+      this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
       this.squad_name_container = $(this.status_container.find('div.squad-name-container'));
-      this.squad_name_display = $(this.squad_name_container.find('.display-name'));
+      this.squad_name_display = $(this.container.find('.display-name'));
+      this.squad_name_placeholder = $(this.container.find('.squad-name'));
       this.squad_name_input = $(this.squad_name_container.find('input'));
       this.squad_name_save_button = $(this.squad_name_container.find('button.save'));
       this.squad_name_input.closest('div').hide();
@@ -168,16 +178,23 @@
       this.view_list_button = $(this.status_container.find('div.button-container button.view-as-text'));
       this.randomize_button = $(this.status_container.find('div.button-container button.randomize'));
       this.customize_randomizer = $(this.status_container.find('div.button-container a.randomize-options'));
+      this.backend_status = $(this.status_container.find('.backend-status'));
+      this.backend_status.hide();
       this.squad_name_input.keypress(function(e) {
         if (e.which === 13) {
           _this.squad_name_save_button.click();
           return false;
         }
       });
+      this.squad_name_input.change(function(e) {
+        _this.current_squad.dirty = true;
+        return _this.container.trigger('xwing-backend:squadDirtinessChanged');
+      });
       this.squad_name_display.click(function(e) {
         e.preventDefault();
         _this.squad_name_display.hide();
         _this.squad_name_input.val($.trim(_this.current_squad.name));
+        _this.squad_name_input.focus();
         _this.squad_name_input.select();
         return _this.squad_name_input.closest('div').show();
       });
@@ -187,8 +204,7 @@
         if (name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH) {
           name = "" + (name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)) + "&hellip;";
         }
-        _this.squad_name_display.find('span').text('');
-        _this.squad_name_display.find('span').append(name);
+        _this.squad_name_placeholder.text(name);
         _this.squad_name_display.show();
         return _this.squad_name_input.closest('div').hide();
       });
@@ -264,6 +280,9 @@
             description: null,
             cards: []
           };
+          _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
+          _this.backend_status.show();
+          _this.backend_save_list_button.addClass('disabled');
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral
@@ -274,12 +293,39 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 247
+              lineno: 289
             }));
             __iced_deferrals._fulfill();
           })(function() {
-            return __iced_k(results.success ? _this.current_squad.id != null ? console.log("squad updated") : (console.log("new squad created with id=" + results.id), _this.current_squad.id = results.id) : console.log("Could not save because " + results.error));
+            return __iced_k(results.success ? _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;Error saving squad.")), _this.backend_save_list_button.removeClass('disabled')));
           });
+        } else {
+          return __iced_k();
+        }
+      });
+      this.backend_save_list_as_button = $(this.container.find('button.save-list-as'));
+      this.backend_save_list_as_button.click(function(e) {
+        var results, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+        __iced_k = __iced_k_noop;
+        ___iced_passed_deferral = iced.findDeferral(arguments);
+        e.preventDefault();
+        if (_this.backend != null) {
+          _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
+          _this.backend_status.show();
+          (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral
+            });
+            _this.backend.showSaveAsModal(_this, __iced_deferrals.defer({
+              assign_fn: (function() {
+                return function() {
+                  return results = arguments[0];
+                };
+              })(),
+              lineno: 314
+            }));
+            __iced_deferrals._fulfill();
+          })(__iced_k);
         } else {
           return __iced_k();
         }
@@ -287,7 +333,11 @@
       this.backend_delete_list_button = $(this.container.find('button.delete-list'));
       this.backend_delete_list_button.click(function(e) {
         e.preventDefault();
-        if (_this.backend != null) return console.log("baleete");
+        if (_this.backend != null) {
+          _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Deleting squad..."));
+          _this.backend_status.show();
+          return _this.backend_delete_list_button.addClass('disabled');
+        }
       });
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
@@ -297,12 +347,6 @@
       this.info_container = $(content_container.find('div.info-container'));
       this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
-      this.list_modal = $(document.createElement('DIV'));
-      this.list_modal.addClass('modal hide fade text-list-modal');
-      this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>" + this.faction + ": <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
-      this.text_ul = $(this.list_modal.find('div.modal-body ul'));
-      this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
       this.print_list_button = $(this.container.find('button.print-list'));
       return this.container.find('[rel=tooltip]').tooltip();
     };
@@ -316,6 +360,10 @@
       }).on('xwing:pointsUpdated', function(e, cb) {
         if (cb == null) cb = $.noop;
         return _this.onPointsUpdated(cb);
+      }).on('xwing-backend:squadLoadRequested', function(e, squad) {
+        return _this.onSquadLoadRequested(squad);
+      }).on('xwing-backend:squadDirtinessChanged', function(e) {
+        return _this.onSquadDirtinessChanged();
       });
       this.view_list_button.click(function(e) {
         e.preventDefault();
@@ -369,6 +417,28 @@
         }
       }
       return cb(this.total_points);
+    };
+
+    SquadBuilder.prototype.onSquadLoadRequested = function(squad) {
+      this.current_squad.id = squad.id;
+      this.current_squad.name = squad.name;
+      this.current_squad.dirty = false;
+      this.container.trigger('xwing-backend:squadDirtinessChanged');
+      this.backend_delete_list_button.removeClass('disabled');
+      this.squad_name_input.val(this.current_squad.name);
+      this.squad_name_placeholder.text(this.current_squad.name);
+      return this.loadFromSerialized(squad.serialized);
+    };
+
+    SquadBuilder.prototype.onSquadDirtinessChanged = function() {
+      this.backend_status.fadeOut('slow');
+      if (this.current_squad.dirty) {
+        this.backend_save_list_button.removeClass('disabled');
+        return this.backend_delete_list_button.removeClass('disabled');
+      } else {
+        this.backend_save_list_button.addClass('disabled');
+        return this.backend_delete_list_button.addClass('disabled');
+      }
     };
 
     SquadBuilder.prototype.showTextListModal = function() {
@@ -535,7 +605,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 497
+          lineno: 564
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -544,7 +614,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 498
+          lineno: 565
         }));
         __iced_deferrals._fulfill();
       });
@@ -997,7 +1067,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 742
+                  lineno: 809
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1037,7 +1107,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 754
+                lineno: 821
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1088,17 +1158,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 777
+            lineno: 844
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 778
+            lineno: 845
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 779
+            lineno: 846
           }));
         }
         __iced_deferrals._fulfill();
@@ -1159,7 +1229,9 @@
         }
       });
       this.pilot_selector.on('change', function(e) {
-        return _this.setPilotById(_this.pilot_selector.select2('val'));
+        _this.setPilotById(_this.pilot_selector.select2('val'));
+        _this.builder.current_squad.dirty = true;
+        return _this.builder.container.trigger('xwing-backend:squadDirtinessChanged');
       });
       this.pilot_selector.data('select2').results.on('mousemove-filtered', function(e) {
         var select2_data;
@@ -1230,7 +1302,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 877
+                lineno: 946
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1251,7 +1323,9 @@
       this.container.append(this.selector);
       this.selector.select2(args);
       this.selector.on('change', function(e) {
-        return _this.setById(_this.selector.select2('val'));
+        _this.setById(_this.selector.select2('val'));
+        _this.ship.builder.current_squad.dirty = true;
+        return _this.ship.builder.container.trigger('xwing-backend:squadDirtinessChanged');
       });
       this.selector.data('select2').results.on('mousemove-filtered', function(e) {
         var select2_data;
@@ -1291,7 +1365,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 903
+                  lineno: 974
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1309,7 +1383,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 905
+                    lineno: 976
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1446,7 +1520,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 980
+                  lineno: 1051
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1461,7 +1535,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 984
+                    lineno: 1055
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1489,7 +1563,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 989
+                    lineno: 1060
                   })
                 ]);
                 __iced_deferrals._fulfill();

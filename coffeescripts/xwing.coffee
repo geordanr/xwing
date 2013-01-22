@@ -71,6 +71,7 @@ class exportObj.SquadBuilder
         @current_squad =
             id: null
             name: "Unnamed Squad"
+            dirty: false
 
         @setupUI()
         @setupEventHandlers()
@@ -89,13 +90,25 @@ class exportObj.SquadBuilder
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
             <div class="span3 squad-name-container">
-                <div class="display-name">
-                    <span class="display-name">Unnamed Squadron</span>
-                    <i class="icon-pencil"></i>
-                </div>
-                <div class="input-append">
-                    <input type="text" maxlength="64" placeholder="Name your squad..." />
-                    <button class="btn save"><i class="icon-save"></i></button>
+                <div class="row">
+                    <div class="span12">
+                        <div class="display-name">
+                            <span class="squad-name">Unnamed Squadron</span>
+                            <i class="icon-pencil"></i>
+                        </div>
+                        <div class="input-append">
+                            <input type="text" maxlength="64" placeholder="Name your squad..." />
+                            <button class="btn save"><i class="icon-save"></i></button>
+                        </div>
+                    </div>
+                </div class="row">
+                <div class="row show-authenticated">
+                    <div class="span12">
+                        <button class="btn btn-info save-list"><i class="icon-save"></i>&nbsp;Save</button>
+                        <button class="btn btn-info save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
+                        <button class="btn btn-info delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
+                        <span class="backend-status"></span>
+                    </div>
                 </div>
             </div>
             <div class="span2 points-display-container">Total Points: 0</div>
@@ -108,8 +121,6 @@ class exportObj.SquadBuilder
                     <button class="btn btn-info backend-list-my-squads show-authenticated">Your Squads</button>
                     <button class="btn btn-info backend-list-all-squads show-authenticated">Everyone's Squads</button>
                     <button class="btn btn-info view-as-text">View as Text</button>
-                    <button class="btn btn-info save-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Save Squad..."><i class="icon-save"></i></button>
-                    <button class="btn btn-info delete-list hidden-phone show-authenticated" rel="tooltip" data-placement="bottom" title="Delete Squad..."><i class="icon-trash"></i></button>
                     <button class="btn btn-info print-list hidden-phone" rel="tooltip" data-placement="bottom" title="Print"><i class="icon-print"></i></button>
                     <a class="btn btn-info permalink" rel="tooltip" data-placement="bottom" title="Permalink"><i class="icon-link"></i></a>
 
@@ -125,8 +136,28 @@ class exportObj.SquadBuilder
         '''
         @container.append @status_container
 
+        @list_modal = $ document.createElement 'DIV'
+        @list_modal.addClass 'modal hide fade text-list-modal'
+        @container.append @list_modal
+        @list_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3><span class="squad-name"></span> (#{@faction}): <span class="total-points">0</span> Points </h3>
+            </div>
+            <div class="modal-body">
+                <ul></ul>
+            </div>
+            <div class="modal-footer hide-on-print">
+                <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @text_ul = $ @list_modal.find('div.modal-body ul')
+        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+
         @squad_name_container = $ @status_container.find('div.squad-name-container')
-        @squad_name_display = $ @squad_name_container.find('.display-name')
+        @squad_name_display = $ @container.find('.display-name')
+        @squad_name_placeholder = $ @container.find('.squad-name')
         @squad_name_input = $ @squad_name_container.find('input')
         @squad_name_save_button = $ @squad_name_container.find('button.save')
         @squad_name_input.closest('div').hide()
@@ -135,24 +166,30 @@ class exportObj.SquadBuilder
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+        @backend_status = $ @status_container.find('.backend-status')
+        @backend_status.hide()
 
         @squad_name_input.keypress (e) =>
             if e.which == 13
                 @squad_name_save_button.click()
                 false
 
+        @squad_name_input.change (e) =>
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+
         @squad_name_display.click (e) =>
             e.preventDefault()
             @squad_name_display.hide()
             @squad_name_input.val $.trim(@current_squad.name)
+            @squad_name_input.focus()
             @squad_name_input.select()
             @squad_name_input.closest('div').show()
         @squad_name_save_button.click (e) =>
             name = @current_squad.name = $.trim(@squad_name_input.val())
             if name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
                 name = "#{name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
-            @squad_name_display.find('span').text ''
-            @squad_name_display.find('span').append name
+            @squad_name_placeholder.text name
             @squad_name_display.show()
             @squad_name_input.closest('div').hide()
 
@@ -245,20 +282,45 @@ class exportObj.SquadBuilder
                     points: @total_points
                     description: null
                     cards: []
+                @backend_status.html $.trim """
+                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                """
+                @backend_status.show()
+                @backend_save_list_button.addClass 'disabled'
                 await @backend.save @serialize(), @current_squad.id, @current_squad.name, @faction, additional_data, defer(results)
                 if results.success
                     if @current_squad.id?
-                        console.log "squad updated"
+                        @backend_status.html $.trim """
+                            <i class="icon-ok"></i>&nbsp;Squad updated successfully.
+                        """
                     else
-                        console.log "new squad created with id=#{results.id}"
+                        @backend_status.html $.trim """
+                            <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                        """
                         @current_squad.id = results.id
                 else
-                    console.log "Could not save because #{results.error}"
+                    @backend_status.html $.trim """
+                        <i class="icon-exclamation-sign"></i>&nbsp;Error saving squad.
+                    """
+                    @backend_save_list_button.removeClass 'disabled'
+        @backend_save_list_as_button = $ @container.find('button.save-list-as')
+        @backend_save_list_as_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                @backend_status.html $.trim """
+                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                """
+                @backend_status.show()
+                await @backend.showSaveAsModal this, defer results
         @backend_delete_list_button = $ @container.find('button.delete-list')
         @backend_delete_list_button.click (e) =>
             e.preventDefault()
             if @backend?
-                console.log "baleete"
+                @backend_status.html $.trim """
+                    <i class="icon-refresh icon-spin"></i>&nbsp;Deleting squad...
+                """
+                @backend_status.show()
+                @backend_delete_list_button.addClass 'disabled'
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -317,25 +379,6 @@ class exportObj.SquadBuilder
         """
         @info_container.hide()
 
-        @list_modal = $ document.createElement 'DIV'
-        @list_modal.addClass 'modal hide fade text-list-modal'
-        @container.append @list_modal
-        @list_modal.append $.trim """
-            <div class="modal-header">
-                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>#{@faction}: <span class="total-points">0</span> Points </h3>
-            </div>
-            <div class="modal-body">
-                <ul></ul>
-            </div>
-            <div class="modal-footer hide-on-print">
-                <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        """
-        @text_ul = $ @list_modal.find('div.modal-body ul')
-        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
-
         @print_list_button = $ @container.find('button.print-list')
 
         @container.find('[rel=tooltip]').tooltip()
@@ -347,6 +390,10 @@ class exportObj.SquadBuilder
             @releaseUnique unique, type, cb
         .on 'xwing:pointsUpdated', (e, cb=$.noop) =>
             @onPointsUpdated cb
+        .on 'xwing-backend:squadLoadRequested', (e, squad) =>
+            @onSquadLoadRequested squad
+        .on 'xwing-backend:squadDirtinessChanged', (e) =>
+            @onSquadDirtinessChanged()
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -391,6 +438,26 @@ class exportObj.SquadBuilder
                     </li>
                 """
         cb @total_points
+
+    onSquadLoadRequested: (squad) =>
+        @current_squad.id = squad.id
+        @current_squad.name = squad.name
+        @current_squad.dirty = false
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
+        @backend_delete_list_button.removeClass 'disabled'
+        @squad_name_input.val @current_squad.name
+        @squad_name_placeholder.text @current_squad.name
+        @loadFromSerialized squad.serialized
+
+    onSquadDirtinessChanged: () =>
+        @backend_status.fadeOut 'slow'
+        if @current_squad.dirty
+            @backend_save_list_button.removeClass 'disabled'
+            @backend_delete_list_button.removeClass 'disabled'
+        else
+            @backend_save_list_button.addClass 'disabled'
+            @backend_delete_list_button.addClass 'disabled'
+
 
     showTextListModal: () ->
         # Display modal
@@ -831,6 +898,8 @@ class Ship
                     results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
+            @builder.current_squad.dirty = true
+            @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
@@ -886,6 +955,8 @@ class GenericAddon
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
+            @ship.builder.current_squad.dirty = true
+            @ship.builder.container.trigger 'xwing-backend:squadDirtinessChanged'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
