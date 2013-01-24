@@ -107,25 +107,45 @@
         _this = this;
       if (id == null) id = null;
       if (additional_data == null) additional_data = {};
-      post_args = {
-        name: $.trim(name),
-        faction: $.trim(faction),
-        serialized: serialized,
-        additional_data: additional_data
-      };
-      if (id != null) {
-        post_url = "" + this.server + "/squads/" + id;
-      } else {
-        post_url = "" + this.server + "/squads/new";
-        post_args['_method'] = 'put';
-      }
-      return $.post(post_url, post_args, function(data, textStatus, jqXHR) {
+      if (serialized === "") {
+        console.log("empty squad");
         return cb({
-          id: data.id,
-          success: data.success,
-          error: data.error
+          id: null,
+          success: false,
+          error: "You cannot save an empty squad"
         });
-      });
+      } else if ($.trim(name) === "") {
+        console.log("empty squad name");
+        return cb({
+          id: null,
+          success: false,
+          error: "Squad name cannot be empty"
+        });
+      } else if ((faction == null) || faction === "") {
+        console.log("No faction");
+        throw "Faction unspecified to save()";
+      } else {
+        console.log("ok to POST");
+        post_args = {
+          name: $.trim(name),
+          faction: $.trim(faction),
+          serialized: serialized,
+          additional_data: additional_data
+        };
+        if (id != null) {
+          post_url = "" + this.server + "/squads/" + id;
+        } else {
+          post_url = "" + this.server + "/squads/new";
+          post_args['_method'] = 'put';
+        }
+        return $.post(post_url, post_args, function(data, textStatus, jqXHR) {
+          return cb({
+            id: data.id,
+            success: data.success,
+            error: data.error
+          });
+        });
+      }
     };
 
     SquadBuilderBackend.prototype["delete"] = function(id, cb) {
@@ -134,7 +154,7 @@
       post_args = {
         '_method': 'delete'
       };
-      return $.post("" + this.server + "/delete/" + id, post_args, function(data, textStatus, jqXHR) {
+      return $.post("" + this.server + "/squads/" + id, post_args, function(data, textStatus, jqXHR) {
         return cb({
           success: data.success,
           error: data.error
@@ -204,7 +224,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 122
+          lineno: 139
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -244,35 +264,31 @@
       return this.save_as_modal.modal('show');
     };
 
+    SquadBuilderBackend.prototype.showDeleteModal = function(builder) {
+      this.delete_modal.data('builder', builder);
+      this.delete_name_container.text(builder.current_squad.name);
+      return this.delete_modal.modal('show');
+    };
+
     SquadBuilderBackend.prototype.nameCheck = function() {
-      var data, name, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+      var name,
         _this = this;
-      __iced_k = __iced_k_noop;
-      ___iced_passed_deferral = iced.findDeferral(arguments);
       window.clearInterval(this.save_as_modal.data('timer'));
       this.name_availability_container.text('');
       name = $.trim(this.save_as_input.val());
       if (name.length === 0) {
-        return __iced_k(this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> A name is required")));
+        return this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> A name is required"));
       } else {
-        (function(__iced_k) {
-          __iced_deferrals = new iced.Deferrals(__iced_k, {
-            parent: ___iced_passed_deferral,
-            funcname: "SquadBuilderBackend.nameCheck"
-          });
-          $.post("" + _this.server + "/squads/namecheck", {
-            name: name
-          }, __iced_deferrals.defer({
-            assign_fn: (function() {
-              return function() {
-                return data = arguments[0];
-              };
-            })(),
-            lineno: 160
-          }));
-          __iced_deferrals._fulfill();
-        })(function() {
-          return __iced_k(data.available ? (_this.name_availability_container.append($.trim("<i class=\"icon-thumbs-up\"> Name is available")), _this.save_as_save_button.removeClass('disabled')) : (_this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> You already have a squad with that name")), _this.save_as_save_button.addClass('disabled')));
+        return $.post("" + this.server + "/squads/namecheck", {
+          name: name
+        }, function(data) {
+          if (data.available) {
+            _this.name_availability_container.append($.trim("<i class=\"icon-thumbs-up\"> Name is available"));
+            return _this.save_as_save_button.removeClass('disabled');
+          } else {
+            _this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> You already have a squad with that name"));
+            return _this.save_as_save_button.addClass('disabled');
+          }
         });
       }
     };
@@ -330,9 +346,7 @@
       this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" data-dismiss=\"modal\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.save_as_save_button = this.save_as_modal.find('button.save');
       this.save_as_save_button.click(function(e) {
-        var additional_data, builder, results, timer, ___iced_passed_deferral, __iced_deferrals, __iced_k;
-        __iced_k = __iced_k_noop;
-        ___iced_passed_deferral = iced.findDeferral(arguments);
+        var additional_data, builder, timer;
         if (!_this.save_as_save_button.hasClass('disabled')) {
           timer = _this.save_as_modal.data('timer');
           if (timer != null) window.clearInterval(timer);
@@ -346,38 +360,23 @@
           builder.backend_save_list_as_button.addClass('disabled');
           builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
           builder.backend_status.show();
-          (function(__iced_k) {
-            __iced_deferrals = new iced.Deferrals(__iced_k, {
-              parent: ___iced_passed_deferral
-            });
-            _this.save(builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, __iced_deferrals.defer({
-              assign_fn: (function() {
-                return function() {
-                  return results = arguments[0];
-                };
-              })(),
-              lineno: 295
-            }));
-            __iced_deferrals._fulfill();
-          })(function() {
+          return _this.save(builder.serialize(), null, $.trim(_this.save_as_input.val()), builder.faction, additional_data, function(results) {
             if (results.success) {
               builder.current_squad.dirty = false;
               builder.container.trigger('xwing-backend:squadDirtinessChanged');
               builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully."));
             } else {
-              builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;Error saving squad."));
+              builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error));
             }
-            return __iced_k(builder.backend_save_list_as_button.removeClass('disabled'));
+            return builder.backend_save_list_as_button.removeClass('disabled');
           });
-        } else {
-          return __iced_k();
         }
       });
       this.save_as_input = $(this.save_as_modal.find('input'));
       this.save_as_input.keypress(function(e) {
         var timer;
         if (e.which === 13) {
-          _this.squad_name_save_button.click();
+          _this.save_as_save_button.click();
           return false;
         } else {
           _this.name_availability_container.text('');
@@ -387,7 +386,31 @@
           return _this.save_as_modal.data('timer', window.setInterval(_this.nameCheck, 500));
         }
       });
-      return this.name_availability_container = $(this.save_as_modal.find('.name-availability'));
+      this.name_availability_container = $(this.save_as_modal.find('.name-availability'));
+      this.delete_modal = $(document.createElement('DIV'));
+      this.delete_modal.addClass('modal hide fade hide-on-print');
+      $(document.body).append(this.delete_modal);
+      this.delete_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Really Delete <span class=\"squad-name-placeholder\"></span>?</h3>\n</div>\n<div class=\"modal-body\">\n    <p>Are you sure you want to delete this squad?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-danger delete\" data-dismiss=\"modal\" aria-hidden=\"true\">Yes, Delete <i class=\"squad-name-placeholder\"></i></button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Never Mind</button>\n</div>"));
+      this.delete_name_container = $(this.delete_modal.find('.squad-name-placeholder'));
+      this.delete_button = $(this.delete_modal.find('button.delete'));
+      return this.delete_button.click(function(e) {
+        var builder;
+        builder = _this.delete_modal.data('builder');
+        builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Deleting squad..."));
+        builder.backend_status.show();
+        builder.backend_delete_list_button.addClass('disabled');
+        _this.delete_modal.modal('hide');
+        return _this["delete"](builder.current_squad.id, function(results) {
+          if (results.success) {
+            builder.resetCurrentSquad();
+            builder.container.trigger('xwing-backend:squadDirtinessChanged');
+            return builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad deleted."));
+          } else {
+            builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error));
+            return builder.backend_delete_list_button.removeClass('disabled');
+          }
+        });
+      });
     };
 
     SquadBuilderBackend.prototype.setupHandlers = function() {

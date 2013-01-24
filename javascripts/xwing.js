@@ -137,25 +137,30 @@
         points: 100
       };
       this.backend = null;
-      this.current_squad = {
-        id: null,
-        name: "Unnamed Squad",
-        dirty: false,
-        additional_data: {
-          points: 0,
-          description: '',
-          cards: []
-        },
-        faction: this.faction
-      };
+      this.current_squad = {};
       this.setupUI();
       this.setupEventHandlers();
+      this.resetCurrentSquad();
       if ($.getParameterByName('f') === this.faction) {
         this.loadFromSerialized($.getParameterByName('d'));
       } else {
         this.addShip();
       }
     }
+
+    SquadBuilder.prototype.resetCurrentSquad = function() {
+      return this.current_squad = {
+        id: null,
+        name: $.trim(this.squad_name_input.val()),
+        dirty: true,
+        additional_data: {
+          points: this.total_points,
+          description: '',
+          cards: []
+        },
+        faction: this.faction
+      };
+    };
 
     SquadBuilder.prototype.setupUI = function() {
       var DEFAULT_RANDOMIZER_ITERATIONS, DEFAULT_RANDOMIZER_POINTS, DEFAULT_RANDOMIZER_TIMEOUT_SEC, content_container, expansion, opt, _i, _len, _ref,
@@ -301,11 +306,11 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 300
+              lineno: 305
             }));
             __iced_deferrals._fulfill();
           })(function() {
-            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.container.trigger('xwing-backend:squadDirtinessChanged'), _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id)) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;Error saving squad.")), _this.backend_save_list_button.removeClass('disabled')));
+            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.container.trigger('xwing-backend:squadDirtinessChanged'), _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id)) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error)), _this.backend_save_list_button.removeClass('disabled')));
           });
         } else {
           return __iced_k();
@@ -322,9 +327,7 @@
       this.backend_delete_list_button.click(function(e) {
         e.preventDefault();
         if ((_this.backend != null) && !$(e.target).hasClass('disabled')) {
-          _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Deleting squad..."));
-          _this.backend_status.show();
-          return _this.backend_delete_list_button.addClass('disabled');
+          return _this.backend.showDeleteModal(_this);
         }
       });
       content_container = $(document.createElement('DIV'));
@@ -418,7 +421,10 @@
     };
 
     SquadBuilder.prototype.onSquadDirtinessChanged = function() {
-      this.backend_status.fadeOut('slow');
+      var _this = this;
+      window.setTimeout(function() {
+        return _this.backend_status.fadeOut('slow');
+      }, 1000);
       if (this.current_squad.dirty) {
         this.backend_save_list_button.removeClass('disabled');
         return this.backend_delete_list_button.removeClass('disabled');
@@ -592,7 +598,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 573
+          lineno: 576
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -601,7 +607,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 574
+          lineno: 577
         }));
         __iced_deferrals._fulfill();
       });
@@ -1054,7 +1060,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 818
+                  lineno: 821
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1094,7 +1100,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 830
+                lineno: 833
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1145,17 +1151,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 853
+            lineno: 856
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 854
+            lineno: 857
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 855
+            lineno: 858
           }));
         }
         __iced_deferrals._fulfill();
@@ -1289,7 +1295,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 955
+                lineno: 958
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1352,7 +1358,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 983
+                  lineno: 986
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1370,7 +1376,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 985
+                    lineno: 988
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1507,7 +1513,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 1060
+                  lineno: 1063
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1522,7 +1528,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 1064
+                    lineno: 1067
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1550,7 +1556,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 1069
+                    lineno: 1072
                   })
                 ]);
                 __iced_deferrals._fulfill();

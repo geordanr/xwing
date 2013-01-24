@@ -68,23 +68,28 @@ class exportObj.SquadBuilder
             points: 100
 
         @backend = null
-        @current_squad =
-            id: null
-            name: "Unnamed Squad"
-            dirty: false
-            additional_data:
-                points: 0
-                description: ''
-                cards: []
-            faction: @faction
+        @current_squad = {}
 
         @setupUI()
         @setupEventHandlers()
+
+        @resetCurrentSquad()
 
         if $.getParameterByName('f') == @faction
             @loadFromSerialized $.getParameterByName('d')
         else
             @addShip()
+
+    resetCurrentSquad: () ->
+        @current_squad =
+            id: null
+            name: $.trim(@squad_name_input.val())
+            dirty: true
+            additional_data:
+                points: @total_points
+                description: ''
+                cards: []
+            faction: @faction
 
     setupUI: () ->
         DEFAULT_RANDOMIZER_POINTS = 100
@@ -313,7 +318,7 @@ class exportObj.SquadBuilder
                         @current_squad.id = results.id
                 else
                     @backend_status.html $.trim """
-                        <i class="icon-exclamation-sign"></i>&nbsp;#{result.error}
+                        <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
                     """
                     @backend_save_list_button.removeClass 'disabled'
         @backend_save_list_as_button = $ @container.find('button.save-list-as')
@@ -325,12 +330,8 @@ class exportObj.SquadBuilder
         @backend_delete_list_button.click (e) =>
             e.preventDefault()
             if @backend? and not $(e.target).hasClass('disabled')
-                # TODO - show delete confirmation dialog
-                @backend_status.html $.trim """
-                    <i class="icon-refresh icon-spin"></i>&nbsp;Deleting squad...
-                """
-                @backend_status.show()
-                @backend_delete_list_button.addClass 'disabled'
+
+                @backend.showDeleteModal this
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'

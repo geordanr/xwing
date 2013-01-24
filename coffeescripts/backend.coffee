@@ -53,26 +53,39 @@ class exportObj.SquadBuilderBackend
             builder.setBackend this
 
     save: (serialized, id=null, name, faction, additional_data={}, cb) ->
-        post_args =
-            name: $.trim name
-            faction: $.trim faction
-            serialized: serialized
-            additional_data: additional_data
-        if id?
-            post_url = "#{@server}/squads/#{id}"
-        else
-            post_url = "#{@server}/squads/new"
-            post_args['_method'] = 'put'
-        $.post post_url, post_args, (data, textStatus, jqXHR) =>
+        if serialized == ""
             cb
-                id: data.id
-                success: data.success
-                error: data.error
+                id: null
+                success: false
+                error: "You cannot save an empty squad"
+        else if $.trim(name) == ""
+            cb
+                id: null
+                success: false
+                error: "Squad name cannot be empty"
+        else if not faction? or faction == ""
+            throw "Faction unspecified to save()"
+        else
+            post_args =
+                name: $.trim(name)
+                faction: $.trim(faction)
+                serialized: serialized
+                additional_data: additional_data
+            if id?
+                post_url = "#{@server}/squads/#{id}"
+            else
+                post_url = "#{@server}/squads/new"
+                post_args['_method'] = 'put'
+            $.post post_url, post_args, (data, textStatus, jqXHR) =>
+                cb
+                    id: data.id
+                    success: data.success
+                    error: data.error
 
     delete: (id, cb) ->
         post_args =
             '_method': 'delete'
-        $.post "#{@server}/delete/#{id}", post_args, (data, textStatus, jqXHR) =>
+        $.post "#{@server}/squads/#{id}", post_args, (data, textStatus, jqXHR) =>
             cb
                 success: data.success
                 error: data.error
@@ -148,6 +161,11 @@ class exportObj.SquadBuilderBackend
         @nameCheck()
         @save_as_modal.modal 'show'
 
+    showDeleteModal: (builder) ->
+        @delete_modal.data 'builder', builder
+        @delete_name_container.text builder.current_squad.name
+        @delete_modal.modal 'show'
+
     nameCheck: () =>
         window.clearInterval @save_as_modal.data('timer')
         @name_availability_container.text ''
@@ -158,17 +176,17 @@ class exportObj.SquadBuilderBackend
                 <i class="icon-thumbs-down"> A name is required
             """
         else
-            await $.post "#{@server}/squads/namecheck", { name: name }, defer(data)
-            if data.available
-                @name_availability_container.append $.trim """
-                    <i class="icon-thumbs-up"> Name is available
-                """
-                @save_as_save_button.removeClass 'disabled'
-            else
-                @name_availability_container.append $.trim """
-                    <i class="icon-thumbs-down"> You already have a squad with that name
-                """
-                @save_as_save_button.addClass 'disabled'
+            $.post "#{@server}/squads/namecheck", { name: name }, (data) =>
+                if data.available
+                    @name_availability_container.append $.trim """
+                        <i class="icon-thumbs-up"> Name is available
+                    """
+                    @save_as_save_button.removeClass 'disabled'
+                else
+                    @name_availability_container.append $.trim """
+                        <i class="icon-thumbs-down"> You already have a squad with that name
+                    """
+                    @save_as_save_button.addClass 'disabled'
 
     setupUI: () ->
         @login_modal = $ document.createElement('DIV')
@@ -277,6 +295,7 @@ class exportObj.SquadBuilderBackend
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
+
         @save_as_save_button = @save_as_modal.find('button.save')
         @save_as_save_button.click (e) =>
             if not @save_as_save_button.hasClass('disabled')
@@ -293,23 +312,23 @@ class exportObj.SquadBuilderBackend
                     <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
                 """
                 builder.backend_status.show()
-                await @save builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, defer(results)
-                if results.success
-                    builder.current_squad.dirty = false
-                    builder.container.trigger 'xwing-backend:squadDirtinessChanged'
-                    builder.backend_status.html $.trim """
-                        <i class="icon-ok"></i>&nbsp;New squad saved successfully.
-                    """
-                else
-                    builder.backend_status.html $.trim """
-                        <i class="icon-exclamation-sign"></i>&nbsp;#{result.error}
-                    """
-                builder.backend_save_list_as_button.removeClass 'disabled'
+                @save builder.serialize(), null, $.trim(@save_as_input.val()), builder.faction, additional_data, (results) =>
+                    if results.success
+                        builder.current_squad.dirty = false
+                        builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+                        builder.backend_status.html $.trim """
+                            <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                        """
+                    else
+                        builder.backend_status.html $.trim """
+                            <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                        """
+                    builder.backend_save_list_as_button.removeClass 'disabled'
 
         @save_as_input = $ @save_as_modal.find('input')
         @save_as_input.keypress (e) =>
             if e.which == 13
-                @squad_name_save_button.click()
+                @save_as_save_button.click()
                 false
             else
                 @name_availability_container.text ''
@@ -321,6 +340,46 @@ class exportObj.SquadBuilderBackend
                 @save_as_modal.data 'timer', window.setInterval(@nameCheck, 500)
 
         @name_availability_container = $ @save_as_modal.find('.name-availability')
+
+        @delete_modal = $ document.createElement('DIV')
+        @delete_modal.addClass 'modal hide fade hide-on-print'
+        $(document.body).append @delete_modal
+        @delete_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Really Delete <span class="squad-name-placeholder"></span>?</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this squad?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger delete" data-dismiss="modal" aria-hidden="true">Yes, Delete <i class="squad-name-placeholder"></i></button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Never Mind</button>
+            </div>
+        """
+        @delete_name_container = $ @delete_modal.find('.squad-name-placeholder')
+        @delete_button = $ @delete_modal.find('button.delete')
+        @delete_button.click (e) =>
+            builder = @delete_modal.data 'builder'
+            builder.backend_status.html $.trim """
+                <i class="icon-refresh icon-spin"></i>&nbsp;Deleting squad...
+            """
+            builder.backend_status.show()
+            builder.backend_delete_list_button.addClass 'disabled'
+            @delete_modal.modal 'hide'
+            @delete builder.current_squad.id, (results) =>
+                if results.success
+                    builder.resetCurrentSquad()
+                    builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+                    builder.backend_status.html $.trim """
+                        <i class="icon-ok"></i>&nbsp;Squad deleted.
+                    """
+                else
+                    builder.backend_status.html $.trim """
+                        <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                    """
+                    # Failed, so offer chance to delete again
+                    builder.backend_delete_list_button.removeClass 'disabled'
 
     setupHandlers: () ->
         $(window).on 'message', (e) =>
