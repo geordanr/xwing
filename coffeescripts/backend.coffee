@@ -141,6 +141,35 @@ class exportObj.SquadBuilderBackend
             $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
             cb()
 
+    showSaveAsModal: (builder) ->
+        @save_as_modal.data 'builder', builder
+        @save_as_input.val builder.current_squad.name
+        @save_as_save_button.addClass 'disabled'
+        @nameCheck()
+        @save_as_modal.modal 'show'
+
+    nameCheck: () =>
+        window.clearInterval @save_as_modal.data('timer')
+        @name_availability_container.text ''
+        # trivial check
+        name = $.trim(@save_as_input.val())
+        if name.length == 0
+            @name_availability_container.append $.trim """
+                <i class="icon-thumbs-down"> A name is required
+            """
+        else
+            await $.post "#{@server}/squads/namecheck", { name: name }, defer(data)
+            if data.available
+                @name_availability_container.append $.trim """
+                    <i class="icon-thumbs-up"> Name is available
+                """
+                @save_as_save_button.removeClass 'disabled'
+            else
+                @name_availability_container.append $.trim """
+                    <i class="icon-thumbs-down"> You already have a squad with that name
+                """
+                @save_as_save_button.addClass 'disabled'
+
     setupUI: () ->
         @login_modal = $ document.createElement('DIV')
         @login_modal.addClass 'modal hide fade hide-on-print'
@@ -227,6 +256,71 @@ class exportObj.SquadBuilderBackend
             </div>
         """
         @squad_list_modal.find('ul.squad-list').hide()
+
+        @save_as_modal = $ document.createElement('DIV')
+        @save_as_modal.addClass 'modal hide fade hide-on-print'
+        $(document.body).append @save_as_modal
+        @save_as_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Save Squad As...</h3>
+            </div>
+            <div class="modal-body">
+                <label for="xw-be-squad-save-as">
+                    New Squad Name
+                    <input id="xw-be-squad-save-as"></input>
+                </label>
+                <span class="name-availability"></span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary save" data-dismiss="modal" aria-hidden="true">Save</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @save_as_save_button = @save_as_modal.find('button.save')
+        @save_as_save_button.click (e) =>
+            if not @save_as_save_button.hasClass('disabled')
+                timer = @save_as_modal.data('timer')
+                window.clearInterval(timer) if timer?
+                @save_as_modal.modal 'hide'
+                builder = @save_as_modal.data 'builder'
+                additional_data =
+                    points: builder.total_points
+                    description: 'Placeholder description'
+                    cards: []
+                builder.backend_save_list_as_button.addClass 'disabled'
+                builder.backend_status.html $.trim """
+                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                """
+                builder.backend_status.show()
+                await @save builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, defer(results)
+                if results.success
+                    builder.current_squad.dirty = false
+                    builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+                    builder.backend_status.html $.trim """
+                        <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                    """
+                else
+                    builder.backend_status.html $.trim """
+                        <i class="icon-exclamation-sign"></i>&nbsp;#{result.error}
+                    """
+                builder.backend_save_list_as_button.removeClass 'disabled'
+
+        @save_as_input = $ @save_as_modal.find('input')
+        @save_as_input.keypress (e) =>
+            if e.which == 13
+                @squad_name_save_button.click()
+                false
+            else
+                @name_availability_container.text ''
+                @name_availability_container.append $.trim """
+                    <i class="icon-spin icon-spinner"></i> Checking name availability...
+                """
+                timer = @save_as_modal.data('timer')
+                window.clearInterval(timer) if timer?
+                @save_as_modal.data 'timer', window.setInterval(@nameCheck, 500)
+
+        @name_availability_container = $ @save_as_modal.find('.name-availability')
 
     setupHandlers: () ->
         $(window).on 'message', (e) =>

@@ -8,7 +8,8 @@
 
 (function() {
   var exportObj,
-    __slice = [].slice;
+    __slice = [].slice,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.iced = {
     Deferrals: (function() {
@@ -68,6 +69,7 @@
     */
 
     function SquadBuilderBackend(args) {
+      this.nameCheck = __bind(this.nameCheck, this);
       var builder, _i, _len, _ref;
       $.ajaxSetup({
         dataType: "json",
@@ -234,6 +236,47 @@
       });
     };
 
+    SquadBuilderBackend.prototype.showSaveAsModal = function(builder) {
+      this.save_as_modal.data('builder', builder);
+      this.save_as_input.val(builder.current_squad.name);
+      this.save_as_save_button.addClass('disabled');
+      this.nameCheck();
+      return this.save_as_modal.modal('show');
+    };
+
+    SquadBuilderBackend.prototype.nameCheck = function() {
+      var data, name, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
+      window.clearInterval(this.save_as_modal.data('timer'));
+      this.name_availability_container.text('');
+      name = $.trim(this.save_as_input.val());
+      if (name.length === 0) {
+        return __iced_k(this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> A name is required")));
+      } else {
+        (function(__iced_k) {
+          __iced_deferrals = new iced.Deferrals(__iced_k, {
+            parent: ___iced_passed_deferral,
+            funcname: "SquadBuilderBackend.nameCheck"
+          });
+          $.post("" + _this.server + "/squads/namecheck", {
+            name: name
+          }, __iced_deferrals.defer({
+            assign_fn: (function() {
+              return function() {
+                return data = arguments[0];
+              };
+            })(),
+            lineno: 160
+          }));
+          __iced_deferrals._fulfill();
+        })(function() {
+          return __iced_k(data.available ? (_this.name_availability_container.append($.trim("<i class=\"icon-thumbs-up\"> Name is available")), _this.save_as_save_button.removeClass('disabled')) : (_this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> You already have a squad with that name")), _this.save_as_save_button.addClass('disabled')));
+        });
+      }
+    };
+
     SquadBuilderBackend.prototype.setupUI = function() {
       var oauth_explanation,
         _this = this;
@@ -280,7 +323,71 @@
       this.squad_list_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.squad_list_modal);
       this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3></h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"icon-spinner icon-spin icon-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
-      return this.squad_list_modal.find('ul.squad-list').hide();
+      this.squad_list_modal.find('ul.squad-list').hide();
+      this.save_as_modal = $(document.createElement('DIV'));
+      this.save_as_modal.addClass('modal hide fade hide-on-print');
+      $(document.body).append(this.save_as_modal);
+      this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" data-dismiss=\"modal\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.save_as_save_button = this.save_as_modal.find('button.save');
+      this.save_as_save_button.click(function(e) {
+        var additional_data, builder, results, timer, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+        __iced_k = __iced_k_noop;
+        ___iced_passed_deferral = iced.findDeferral(arguments);
+        if (!_this.save_as_save_button.hasClass('disabled')) {
+          timer = _this.save_as_modal.data('timer');
+          if (timer != null) window.clearInterval(timer);
+          _this.save_as_modal.modal('hide');
+          builder = _this.save_as_modal.data('builder');
+          additional_data = {
+            points: builder.total_points,
+            description: 'Placeholder description',
+            cards: []
+          };
+          builder.backend_save_list_as_button.addClass('disabled');
+          builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
+          builder.backend_status.show();
+          (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral
+            });
+            _this.save(builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, __iced_deferrals.defer({
+              assign_fn: (function() {
+                return function() {
+                  return results = arguments[0];
+                };
+              })(),
+              lineno: 295
+            }));
+            __iced_deferrals._fulfill();
+          })(function() {
+            if (results.success) {
+              builder.current_squad.dirty = false;
+              builder.container.trigger('xwing-backend:squadDirtinessChanged');
+              builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully."));
+            } else {
+              builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;Error saving squad."));
+            }
+            return __iced_k(builder.backend_save_list_as_button.removeClass('disabled'));
+          });
+        } else {
+          return __iced_k();
+        }
+      });
+      this.save_as_input = $(this.save_as_modal.find('input'));
+      this.save_as_input.keypress(function(e) {
+        var timer;
+        if (e.which === 13) {
+          _this.squad_name_save_button.click();
+          return false;
+        } else {
+          _this.name_availability_container.text('');
+          _this.name_availability_container.append($.trim("<i class=\"icon-spin icon-spinner\"></i> Checking name availability..."));
+          timer = _this.save_as_modal.data('timer');
+          if (timer != null) window.clearInterval(timer);
+          return _this.save_as_modal.data('timer', window.setInterval(_this.nameCheck, 500));
+        }
+      });
+      return this.name_availability_container = $(this.save_as_modal.find('.name-availability'));
     };
 
     SquadBuilderBackend.prototype.setupHandlers = function() {
