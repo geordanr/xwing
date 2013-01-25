@@ -108,24 +108,20 @@
       if (id == null) id = null;
       if (additional_data == null) additional_data = {};
       if (serialized === "") {
-        console.log("empty squad");
         return cb({
           id: null,
           success: false,
           error: "You cannot save an empty squad"
         });
       } else if ($.trim(name) === "") {
-        console.log("empty squad name");
         return cb({
           id: null,
           success: false,
           error: "Squad name cannot be empty"
         });
       } else if ((faction == null) || faction === "") {
-        console.log("No faction");
         throw "Faction unspecified to save()";
       } else {
-        console.log("ok to POST");
         post_args = {
           name: $.trim(name),
           faction: $.trim(faction),
@@ -224,7 +220,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 139
+          lineno: 135
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -293,6 +289,10 @@
       }
     };
 
+    SquadBuilderBackend.prototype.warnUnsaved = function(builder, action) {
+      return this.unsaved_modal;
+    };
+
     SquadBuilderBackend.prototype.setupUI = function() {
       var oauth_explanation,
         _this = this;
@@ -347,6 +347,7 @@
       this.save_as_save_button = this.save_as_modal.find('button.save');
       this.save_as_save_button.click(function(e) {
         var additional_data, builder, timer;
+        e.preventDefault();
         if (!_this.save_as_save_button.hasClass('disabled')) {
           timer = _this.save_as_modal.data('timer');
           if (timer != null) window.clearInterval(timer);
@@ -393,8 +394,9 @@
       this.delete_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Really Delete <span class=\"squad-name-placeholder\"></span>?</h3>\n</div>\n<div class=\"modal-body\">\n    <p>Are you sure you want to delete this squad?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-danger delete\" data-dismiss=\"modal\" aria-hidden=\"true\">Yes, Delete <i class=\"squad-name-placeholder\"></i></button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Never Mind</button>\n</div>"));
       this.delete_name_container = $(this.delete_modal.find('.squad-name-placeholder'));
       this.delete_button = $(this.delete_modal.find('button.delete'));
-      return this.delete_button.click(function(e) {
+      this.delete_button.click(function(e) {
         var builder;
+        e.preventDefault();
         builder = _this.delete_modal.data('builder');
         builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Deleting squad..."));
         builder.backend_status.show();
@@ -410,6 +412,18 @@
             return builder.backend_delete_list_button.removeClass('disabled');
           }
         });
+      });
+      this.unsaved_modal = $(document.createElement('DIV'));
+      this.unsaved_modal.addClass('modal hide fade hide-on-print');
+      $(document.body).append(this.unsaved_modal);
+      this.unsaved_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Unsaved Changes</h3>\n</div>\n<div class=\"modal-body\">\n    <p>You have not saved changes to this squad.  Save and continue?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" data-dismiss=\"modal\" aria-hidden=\"true\"><i class=\"icon-save\"></i> Save Changes</button>\n    <button class=\"btn btn-danger discard\" data-dismiss=\"modal\" aria-hidden=\"true\"><i class=\"icon-trash\"></i> Discard Changes</button>\n    <button class=\"btn cancel\" data-dismiss=\"modal\" aria-hidden=\"true\">Cancel</button>\n</div>"));
+      this.unsaved_save_button = $(this.unsaved_modal.find('button.save'));
+      this.unsaved_save_button.click(function(e) {
+        return e.preventDefault();
+      });
+      this.unsaved_discard_button = $(this.unsaved_modal.find('button.discard'));
+      return this.unsaved_discard_button.click(function(e) {
+        return e.preventDefault();
       });
     };
 

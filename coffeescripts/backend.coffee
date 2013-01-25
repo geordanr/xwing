@@ -188,6 +188,9 @@ class exportObj.SquadBuilderBackend
                     """
                     @save_as_save_button.addClass 'disabled'
 
+    warnUnsaved: (builder, action) ->
+        @unsaved_modal
+
     setupUI: () ->
         @login_modal = $ document.createElement('DIV')
         @login_modal.addClass 'modal hide fade hide-on-print'
@@ -298,6 +301,7 @@ class exportObj.SquadBuilderBackend
 
         @save_as_save_button = @save_as_modal.find('button.save')
         @save_as_save_button.click (e) =>
+            e.preventDefault()
             if not @save_as_save_button.hasClass('disabled')
                 timer = @save_as_modal.data('timer')
                 window.clearInterval(timer) if timer?
@@ -357,9 +361,11 @@ class exportObj.SquadBuilderBackend
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Never Mind</button>
             </div>
         """
+
         @delete_name_container = $ @delete_modal.find('.squad-name-placeholder')
         @delete_button = $ @delete_modal.find('button.delete')
         @delete_button.click (e) =>
+            e.preventDefault()
             builder = @delete_modal.data 'builder'
             builder.backend_status.html $.trim """
                 <i class="icon-refresh icon-spin"></i>&nbsp;Deleting squad...
@@ -380,6 +386,30 @@ class exportObj.SquadBuilderBackend
                     """
                     # Failed, so offer chance to delete again
                     builder.backend_delete_list_button.removeClass 'disabled'
+
+        @unsaved_modal = $ document.createElement('DIV')
+        @unsaved_modal.addClass 'modal hide fade hide-on-print'
+        $(document.body).append @unsaved_modal
+        @unsaved_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Unsaved Changes</h3>
+            </div>
+            <div class="modal-body">
+                <p>You have not saved changes to this squad.  Save and continue?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary save" data-dismiss="modal" aria-hidden="true"><i class="icon-save"></i> Save Changes</button>
+                <button class="btn btn-danger discard" data-dismiss="modal" aria-hidden="true"><i class="icon-trash"></i> Discard Changes</button>
+                <button class="btn cancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+        """
+        @unsaved_save_button = $ @unsaved_modal.find('button.save')
+        @unsaved_save_button.click (e) =>
+            e.preventDefault()
+        @unsaved_discard_button = $ @unsaved_modal.find('button.discard')
+        @unsaved_discard_button.click (e) =>
+            e.preventDefault()
 
     setupHandlers: () ->
         $(window).on 'message', (e) =>

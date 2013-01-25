@@ -199,7 +199,8 @@
       });
       this.squad_name_input.change(function(e) {
         _this.current_squad.dirty = true;
-        return _this.container.trigger('xwing-backend:squadDirtinessChanged');
+        _this.container.trigger('xwing-backend:squadDirtinessChanged');
+        return _this.backend_status.fadeOut('slow');
       });
       this.squad_name_display.click(function(e) {
         e.preventDefault();
@@ -211,6 +212,7 @@
       });
       this.squad_name_save_button.click(function(e) {
         var name;
+        e.preventDefault();
         name = _this.current_squad.name = $.trim(_this.squad_name_input.val());
         if (name.length > 0) {
           if (name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH) {
@@ -240,8 +242,10 @@
       this.randomize_button.click(function(e) {
         var iterations, points, timeout_sec;
         e.preventDefault();
-        if (_this.current_squad.dirty) {
-          return console.log("Warn user about unsaved changes");
+        if (_this.current_squad.dirty && (_this.backend != null)) {
+          return _this.backend.warnUnsaved(_this, function() {
+            return _this.randomize_button.click();
+          });
         } else {
           points = parseInt($(_this.randomizer_options_modal.find('.randomizer-points')).val());
           if (isNaN(points) || points <= 0) points = DEFAULT_RANDOMIZER_POINTS;
@@ -306,11 +310,11 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 305
+              lineno: 307
             }));
             __iced_deferrals._fulfill();
           })(function() {
-            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.container.trigger('xwing-backend:squadDirtinessChanged'), _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id)) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error)), _this.backend_save_list_button.removeClass('disabled')));
+            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id), _this.container.trigger('xwing-backend:squadDirtinessChanged')) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error)), _this.backend_save_list_button.removeClass('disabled')));
           });
         } else {
           return __iced_k();
@@ -421,15 +425,14 @@
     };
 
     SquadBuilder.prototype.onSquadDirtinessChanged = function() {
-      var _this = this;
-      window.setTimeout(function() {
-        return _this.backend_status.fadeOut('slow');
-      }, 1000);
       if (this.current_squad.dirty) {
         this.backend_save_list_button.removeClass('disabled');
-        return this.backend_delete_list_button.removeClass('disabled');
       } else {
         this.backend_save_list_button.addClass('disabled');
+      }
+      if (this.current_squad.id != null) {
+        return this.backend_delete_list_button.removeClass('disabled');
+      } else {
         return this.backend_delete_list_button.addClass('disabled');
       }
     };
@@ -598,7 +601,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 576
+          lineno: 577
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -607,7 +610,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 577
+          lineno: 578
         }));
         __iced_deferrals._fulfill();
       });
@@ -1060,7 +1063,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 821
+                  lineno: 822
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1100,7 +1103,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 833
+                lineno: 834
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1151,17 +1154,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 856
+            lineno: 857
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 857
+            lineno: 858
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 858
+            lineno: 859
           }));
         }
         __iced_deferrals._fulfill();
@@ -1224,7 +1227,8 @@
       this.pilot_selector.on('change', function(e) {
         _this.setPilotById(_this.pilot_selector.select2('val'));
         _this.builder.current_squad.dirty = true;
-        return _this.builder.container.trigger('xwing-backend:squadDirtinessChanged');
+        _this.builder.container.trigger('xwing-backend:squadDirtinessChanged');
+        return _this.builder.backend_status.fadeOut('slow');
       });
       this.pilot_selector.data('select2').results.on('mousemove-filtered', function(e) {
         var select2_data;
@@ -1295,7 +1299,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 958
+                lineno: 960
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1318,7 +1322,8 @@
       this.selector.on('change', function(e) {
         _this.setById(_this.selector.select2('val'));
         _this.ship.builder.current_squad.dirty = true;
-        return _this.ship.builder.container.trigger('xwing-backend:squadDirtinessChanged');
+        _this.ship.builder.container.trigger('xwing-backend:squadDirtinessChanged');
+        return _this.ship.builder.backend_status.fadeOut('slow');
       });
       this.selector.data('select2').results.on('mousemove-filtered', function(e) {
         var select2_data;
@@ -1358,7 +1363,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 986
+                  lineno: 989
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1376,7 +1381,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 988
+                    lineno: 991
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1513,7 +1518,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 1063
+                  lineno: 1066
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1528,7 +1533,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 1067
+                    lineno: 1070
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1556,7 +1561,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 1072
+                    lineno: 1075
                   })
                 ]);
                 __iced_deferrals._fulfill();

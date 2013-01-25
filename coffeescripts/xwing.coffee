@@ -187,6 +187,7 @@ class exportObj.SquadBuilder
         @squad_name_input.change (e) =>
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
+            @backend_status.fadeOut 'slow'
 
         @squad_name_display.click (e) =>
             e.preventDefault()
@@ -196,6 +197,7 @@ class exportObj.SquadBuilder
             @squad_name_input.select()
             @squad_name_input.closest('div').show()
         @squad_name_save_button.click (e) =>
+            e.preventDefault()
             name = @current_squad.name = $.trim(@squad_name_input.val())
             if name.length > 0
                 if name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
@@ -249,9 +251,9 @@ class exportObj.SquadBuilder
 
         @randomize_button.click (e) =>
             e.preventDefault()
-            if @current_squad.dirty
-                # TODO - Warn user about unsaved changes
-                console.log "Warn user about unsaved changes"
+            if @current_squad.dirty and @backend?
+                @backend.warnUnsaved this, () =>
+                    @randomize_button.click()
             else
                 points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
@@ -306,7 +308,6 @@ class exportObj.SquadBuilder
                 await @backend.save @serialize(), @current_squad.id, @current_squad.name, @faction, additional_data, defer(results)
                 if results.success
                     @current_squad.dirty = false
-                    @container.trigger 'xwing-backend:squadDirtinessChanged'
                     if @current_squad.id?
                         @backend_status.html $.trim """
                             <i class="icon-ok"></i>&nbsp;Squad updated successfully.
@@ -316,6 +317,7 @@ class exportObj.SquadBuilder
                             <i class="icon-ok"></i>&nbsp;New squad saved successfully.
                         """
                         @current_squad.id = results.id
+                    @container.trigger 'xwing-backend:squadDirtinessChanged'
                 else
                     @backend_status.html $.trim """
                         <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
@@ -460,12 +462,13 @@ class exportObj.SquadBuilder
         @loadFromSerialized squad.serialized
 
     onSquadDirtinessChanged: () =>
-        @backend_status.fadeOut 'slow'
         if @current_squad.dirty
             @backend_save_list_button.removeClass 'disabled'
-            @backend_delete_list_button.removeClass 'disabled'
         else
             @backend_save_list_button.addClass 'disabled'
+        if @current_squad.id?
+            @backend_delete_list_button.removeClass 'disabled'
+        else
             @backend_delete_list_button.addClass 'disabled'
 
 
@@ -910,6 +913,7 @@ class Ship
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
             @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+            @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
@@ -967,6 +971,7 @@ class GenericAddon
             @setById @selector.select2('val')
             @ship.builder.current_squad.dirty = true
             @ship.builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+            @ship.builder.backend_status.fadeOut 'slow'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
