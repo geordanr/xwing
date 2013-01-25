@@ -270,14 +270,15 @@
       var name,
         _this = this;
       window.clearInterval(this.save_as_modal.data('timer'));
-      this.name_availability_container.text('');
       name = $.trim(this.save_as_input.val());
       if (name.length === 0) {
+        this.name_availability_container.text('');
         return this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> A name is required"));
       } else {
         return $.post("" + this.server + "/squads/namecheck", {
           name: name
         }, function(data) {
+          _this.name_availability_container.text('');
           if (data.available) {
             _this.name_availability_container.append($.trim("<i class=\"icon-thumbs-up\"> Name is available"));
             return _this.save_as_save_button.removeClass('disabled');
@@ -343,7 +344,7 @@
       this.save_as_modal = $(document.createElement('DIV'));
       this.save_as_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.save_as_modal);
-      this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" data-dismiss=\"modal\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.save_as_save_button = this.save_as_modal.find('button.save');
       this.save_as_save_button.click(function(e) {
         var additional_data, builder, timer;
@@ -391,7 +392,7 @@
       this.delete_modal = $(document.createElement('DIV'));
       this.delete_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.delete_modal);
-      this.delete_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Really Delete <span class=\"squad-name-placeholder\"></span>?</h3>\n</div>\n<div class=\"modal-body\">\n    <p>Are you sure you want to delete this squad?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-danger delete\" data-dismiss=\"modal\" aria-hidden=\"true\">Yes, Delete <i class=\"squad-name-placeholder\"></i></button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Never Mind</button>\n</div>"));
+      this.delete_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Really Delete <span class=\"squad-name-placeholder\"></span>?</h3>\n</div>\n<div class=\"modal-body\">\n    <p>Are you sure you want to delete this squad?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-danger delete\" aria-hidden=\"true\">Yes, Delete <i class=\"squad-name-placeholder\"></i></button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Never Mind</button>\n</div>"));
       this.delete_name_container = $(this.delete_modal.find('.squad-name-placeholder'));
       this.delete_button = $(this.delete_modal.find('button.delete'));
       this.delete_button.click(function(e) {
@@ -416,7 +417,7 @@
       this.unsaved_modal = $(document.createElement('DIV'));
       this.unsaved_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.unsaved_modal);
-      this.unsaved_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Unsaved Changes</h3>\n</div>\n<div class=\"modal-body\">\n    <p>You have not saved changes to this squad.  Save and continue?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" data-dismiss=\"modal\" aria-hidden=\"true\"><i class=\"icon-save\"></i> Save Changes</button>\n    <button class=\"btn btn-danger discard\" data-dismiss=\"modal\" aria-hidden=\"true\"><i class=\"icon-trash\"></i> Discard Changes</button>\n    <button class=\"btn cancel\" data-dismiss=\"modal\" aria-hidden=\"true\">Cancel</button>\n</div>"));
+      this.unsaved_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Unsaved Changes</h3>\n</div>\n<div class=\"modal-body\">\n    <p>You have not saved changes to this squad.  Save and continue?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" aria-hidden=\"true\"><i class=\"icon-save\"></i> Save Changes</button>\n    <button class=\"btn btn-danger discard\" aria-hidden=\"true\"><i class=\"icon-trash\"></i> Discard Changes</button>\n    <button class=\"btn cancel\" data-dismiss=\"modal\" aria-hidden=\"true\">Cancel</button>\n</div>"));
       this.unsaved_save_button = $(this.unsaved_modal.find('button.save'));
       this.unsaved_save_button.click(function(e) {
         return e.preventDefault();

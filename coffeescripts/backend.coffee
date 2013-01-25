@@ -168,15 +168,16 @@ class exportObj.SquadBuilderBackend
 
     nameCheck: () =>
         window.clearInterval @save_as_modal.data('timer')
-        @name_availability_container.text ''
         # trivial check
         name = $.trim(@save_as_input.val())
         if name.length == 0
+            @name_availability_container.text ''
             @name_availability_container.append $.trim """
                 <i class="icon-thumbs-down"> A name is required
             """
         else
             $.post "#{@server}/squads/namecheck", { name: name }, (data) =>
+                @name_availability_container.text ''
                 if data.available
                     @name_availability_container.append $.trim """
                         <i class="icon-thumbs-up"> Name is available
@@ -234,7 +235,7 @@ class exportObj.SquadBuilderBackend
         @login_modal.find('.login-in-progress').hide()
         @login_modal.find('a.login-help').click (e) =>
             e.preventDefault()
-            if not oauth_explanation.is ':visible'
+            unless oauth_explanation.is ':visible'
                 oauth_explanation.slideDown 'fast'
         oauth_explanation.find('button').click (e) =>
             e.preventDefault()
@@ -294,7 +295,7 @@ class exportObj.SquadBuilderBackend
                 <span class="name-availability"></span>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary save" data-dismiss="modal" aria-hidden="true">Save</button>
+                <button class="btn btn-primary save" aria-hidden="true">Save</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -302,7 +303,7 @@ class exportObj.SquadBuilderBackend
         @save_as_save_button = @save_as_modal.find('button.save')
         @save_as_save_button.click (e) =>
             e.preventDefault()
-            if not @save_as_save_button.hasClass('disabled')
+            unless @save_as_save_button.hasClass('disabled')
                 timer = @save_as_modal.data('timer')
                 window.clearInterval(timer) if timer?
                 @save_as_modal.modal 'hide'
@@ -357,7 +358,7 @@ class exportObj.SquadBuilderBackend
                 <p>Are you sure you want to delete this squad?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger delete" data-dismiss="modal" aria-hidden="true">Yes, Delete <i class="squad-name-placeholder"></i></button>
+                <button class="btn btn-danger delete" aria-hidden="true">Yes, Delete <i class="squad-name-placeholder"></i></button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Never Mind</button>
             </div>
         """
@@ -399,8 +400,8 @@ class exportObj.SquadBuilderBackend
                 <p>You have not saved changes to this squad.  Save and continue?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary save" data-dismiss="modal" aria-hidden="true"><i class="icon-save"></i> Save Changes</button>
-                <button class="btn btn-danger discard" data-dismiss="modal" aria-hidden="true"><i class="icon-trash"></i> Discard Changes</button>
+                <button class="btn btn-primary save" aria-hidden="true"><i class="icon-save"></i> Save Changes</button>
+                <button class="btn btn-danger discard" aria-hidden="true"><i class="icon-trash"></i> Discard Changes</button>
                 <button class="btn cancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
             </div>
         """

@@ -813,7 +813,7 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
-            if not @pilot?
+            unless @pilot?
                 @builder.addShip() unless @builder.suppress_automatic_new_ship
                 @remove_button.fadeIn 'fast'
             @resetPilot()
