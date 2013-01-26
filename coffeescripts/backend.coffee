@@ -142,6 +142,8 @@ class exportObj.SquadBuilderBackend
                         if builder.current_squad.dirty
                             @warnUnsaved builder, () =>
                                 builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
+                        else
+                            builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
@@ -317,6 +319,12 @@ class exportObj.SquadBuilderBackend
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
+        @save_as_modal.on 'shown', () =>
+            # Because Firefox handles this badly
+            window.setTimeout () =>
+                @save_as_input.focus()
+                @save_as_input.select()
+            , 100
 
         @save_as_save_button = @save_as_modal.find('button.save')
         @save_as_save_button.click (e) =>

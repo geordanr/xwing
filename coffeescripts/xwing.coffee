@@ -197,8 +197,11 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @squad_name_display.hide()
             @squad_name_input.val $.trim(@current_squad.name)
-            @squad_name_input.focus()
-            @squad_name_input.select()
+            # Because Firefox handles this badly
+            window.setTimeout () =>
+                @squad_name_input.focus()
+                @squad_name_input.select()
+            , 100
             @squad_name_input.closest('div').show()
         @squad_name_save_button.click (e) =>
             e.preventDefault()

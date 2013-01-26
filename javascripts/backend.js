@@ -198,6 +198,8 @@
                 return _this.warnUnsaved(builder, function() {
                   return builder.container.trigger('xwing-backend:squadLoadRequested', li.data('squad'));
                 });
+              } else {
+                return builder.container.trigger('xwing-backend:squadLoadRequested', li.data('squad'));
               }
             });
           }
@@ -225,7 +227,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 151
+          lineno: 153
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -352,6 +354,12 @@
       this.save_as_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.save_as_modal);
       this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.save_as_modal.on('shown', function() {
+        return window.setTimeout(function() {
+          _this.save_as_input.focus();
+          return _this.save_as_input.select();
+        }, 100);
+      });
       this.save_as_save_button = this.save_as_modal.find('button.save');
       this.save_as_save_button.click(function(e) {
         var additional_data, builder, new_name, timer;
