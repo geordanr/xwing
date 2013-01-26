@@ -116,16 +116,32 @@ class exportObj.SquadBuilderBackend
                     li.data 'builder', builder
                     list_ul.append li
                     li.append $.trim """
-                        <h4>#{squad.name}</h4>
-                        <span>Points: <strong>#{squad.additional_data.points}</strong></span>
-                        <button class="btn pull-right load-squad">Load</button>
+                        <div class="row-fluid">
+                            <div class="span9">
+                                <h4>#{squad.name}</h4>
+                            </div>
+                            <div class="span3">
+                                <h5>#{squad.additional_data.points} Points</h5>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span10">
+                                #{squad.additional_data.description}
+                            </div>
+                            <div class="span2">
+                                <button class="btn load-squad">Load</button>
+                            </div>
+                        </div>
                     """
                     li.find('button.load-squad').click (e) =>
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
-                        li.data('builder').container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
+                        builder = li.data('builder')
                         @squad_list_modal.modal 'hide'
+                        if builder.current_squad.dirty
+                            @warnUnsaved builder, () =>
+                                builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'
@@ -190,7 +206,9 @@ class exportObj.SquadBuilderBackend
                     @save_as_save_button.addClass 'disabled'
 
     warnUnsaved: (builder, action) ->
-        @unsaved_modal
+        @unsaved_modal.data 'builder', builder
+        @unsaved_modal.data 'callback', action
+        @unsaved_modal.modal 'show'
 
     setupUI: () ->
         @login_modal = $ document.createElement('DIV')
@@ -258,7 +276,7 @@ class exportObj.SquadBuilderBackend
             @ui_ready = true
 
         @squad_list_modal = $ document.createElement('DIV')
-        @squad_list_modal.addClass 'modal hide fade hide-on-print'
+        @squad_list_modal.addClass 'modal hide fade hide-on-print squad-list'
         $(document.body).append @squad_list_modal
         @squad_list_modal.append $.trim """
             <div class="modal-header">
@@ -310,17 +328,21 @@ class exportObj.SquadBuilderBackend
                 builder = @save_as_modal.data 'builder'
                 additional_data =
                     points: builder.total_points
-                    description: 'Placeholder description'
-                    cards: []
+                    description: builder.describeSquad()
+                    cards: builder.listCards()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
                     <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
                 """
                 builder.backend_status.show()
-                @save builder.serialize(), null, $.trim(@save_as_input.val()), builder.faction, additional_data, (results) =>
+                new_name = $.trim @save_as_input.val()
+                @save builder.serialize(), null, new_name, builder.faction, additional_data, (results) =>
                     if results.success
+                        builder.current_squad.id = results.id
+                        builder.current_squad.name = new_name
                         builder.current_squad.dirty = false
                         builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+                        builder.container.trigger 'xwing-backend:squadNameChanged'
                         builder.backend_status.html $.trim """
                             <i class="icon-ok"></i>&nbsp;New squad saved successfully.
                         """
@@ -377,6 +399,7 @@ class exportObj.SquadBuilderBackend
             @delete builder.current_squad.id, (results) =>
                 if results.success
                     builder.resetCurrentSquad()
+                    builder.current_squad.dirty = true
                     builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                     builder.backend_status.html $.trim """
                         <i class="icon-ok"></i>&nbsp;Squad deleted.
@@ -397,20 +420,19 @@ class exportObj.SquadBuilderBackend
                 <h3>Unsaved Changes</h3>
             </div>
             <div class="modal-body">
-                <p>You have not saved changes to this squad.  Save and continue?</p>
+                <p>You have not saved changes to this squad.  Do you want to go back and save?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary save" aria-hidden="true"><i class="icon-save"></i> Save Changes</button>
-                <button class="btn btn-danger discard" aria-hidden="true"><i class="icon-trash"></i> Discard Changes</button>
-                <button class="btn cancel" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                <button class="btn btn-primary" aria-hidden="true" data-dismiss="modal">Go Back</button>
+                <button class="btn btn-danger discard" aria-hidden="true">Discard Changes</button>
             </div>
         """
-        @unsaved_save_button = $ @unsaved_modal.find('button.save')
-        @unsaved_save_button.click (e) =>
-            e.preventDefault()
         @unsaved_discard_button = $ @unsaved_modal.find('button.discard')
         @unsaved_discard_button.click (e) =>
             e.preventDefault()
+            @unsaved_modal.data('builder').current_squad.dirty = false
+            @unsaved_modal.data('callback')()
+            @unsaved_modal.modal 'hide'
 
     setupHandlers: () ->
         $(window).on 'message', (e) =>

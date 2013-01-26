@@ -234,3 +234,6 @@ img.icon-shields {
 
 div.tab-content {
   overflow: visible; }
+
+.squad-list > li:hover {
+  background-color: #cccccc; }

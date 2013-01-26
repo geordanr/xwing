@@ -186,14 +186,19 @@
             li.data('squad', squad);
             li.data('builder', builder);
             list_ul.append(li);
-            li.append($.trim("<h4>" + squad.name + "</h4>\n<span>Points: <strong>" + squad.additional_data.points + "</strong></span>\n<button class=\"btn pull-right load-squad\">Load</button>"));
+            li.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9\">\n        <h4>" + squad.name + "</h4>\n    </div>\n    <div class=\"span3\">\n        <h5>" + squad.additional_data.points + " Points</h5>\n    </div>\n</div>\n<div class=\"row-fluid\">\n    <div class=\"span10\">\n        " + squad.additional_data.description + "\n    </div>\n    <div class=\"span2\">\n        <button class=\"btn load-squad\">Load</button>\n    </div>\n</div>"));
             li.find('button.load-squad').click(function(e) {
               var button;
               e.preventDefault();
               button = $(e.target);
               li = button.closest('li');
-              li.data('builder').container.trigger('xwing-backend:squadLoadRequested', li.data('squad'));
-              return _this.squad_list_modal.modal('hide');
+              builder = li.data('builder');
+              _this.squad_list_modal.modal('hide');
+              if (builder.current_squad.dirty) {
+                return _this.warnUnsaved(builder, function() {
+                  return builder.container.trigger('xwing-backend:squadLoadRequested', li.data('squad'));
+                });
+              }
             });
           }
         }
@@ -220,7 +225,7 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 135
+          lineno: 151
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -291,7 +296,9 @@
     };
 
     SquadBuilderBackend.prototype.warnUnsaved = function(builder, action) {
-      return this.unsaved_modal;
+      this.unsaved_modal.data('builder', builder);
+      this.unsaved_modal.data('callback', action);
+      return this.unsaved_modal.modal('show');
     };
 
     SquadBuilderBackend.prototype.setupUI = function() {
@@ -337,7 +344,7 @@
         return _this.ui_ready = true;
       });
       this.squad_list_modal = $(document.createElement('DIV'));
-      this.squad_list_modal.addClass('modal hide fade hide-on-print');
+      this.squad_list_modal.addClass('modal hide fade hide-on-print squad-list');
       $(document.body).append(this.squad_list_modal);
       this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3></h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"icon-spinner icon-spin icon-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.squad_list_modal.find('ul.squad-list').hide();
@@ -347,7 +354,7 @@
       this.save_as_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Save Squad As...</h3>\n</div>\n<div class=\"modal-body\">\n    <label for=\"xw-be-squad-save-as\">\n        New Squad Name\n        <input id=\"xw-be-squad-save-as\"></input>\n    </label>\n    <span class=\"name-availability\"></span>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" aria-hidden=\"true\">Save</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.save_as_save_button = this.save_as_modal.find('button.save');
       this.save_as_save_button.click(function(e) {
-        var additional_data, builder, timer;
+        var additional_data, builder, new_name, timer;
         e.preventDefault();
         if (!_this.save_as_save_button.hasClass('disabled')) {
           timer = _this.save_as_modal.data('timer');
@@ -356,16 +363,20 @@
           builder = _this.save_as_modal.data('builder');
           additional_data = {
             points: builder.total_points,
-            description: 'Placeholder description',
-            cards: []
+            description: builder.describeSquad(),
+            cards: builder.listCards()
           };
           builder.backend_save_list_as_button.addClass('disabled');
           builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
           builder.backend_status.show();
-          return _this.save(builder.serialize(), null, $.trim(_this.save_as_input.val()), builder.faction, additional_data, function(results) {
+          new_name = $.trim(_this.save_as_input.val());
+          return _this.save(builder.serialize(), null, new_name, builder.faction, additional_data, function(results) {
             if (results.success) {
+              builder.current_squad.id = results.id;
+              builder.current_squad.name = new_name;
               builder.current_squad.dirty = false;
               builder.container.trigger('xwing-backend:squadDirtinessChanged');
+              builder.container.trigger('xwing-backend:squadNameChanged');
               builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully."));
             } else {
               builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error));
@@ -406,6 +417,7 @@
         return _this["delete"](builder.current_squad.id, function(results) {
           if (results.success) {
             builder.resetCurrentSquad();
+            builder.current_squad.dirty = true;
             builder.container.trigger('xwing-backend:squadDirtinessChanged');
             return builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad deleted."));
           } else {
@@ -417,14 +429,13 @@
       this.unsaved_modal = $(document.createElement('DIV'));
       this.unsaved_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.unsaved_modal);
-      this.unsaved_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Unsaved Changes</h3>\n</div>\n<div class=\"modal-body\">\n    <p>You have not saved changes to this squad.  Save and continue?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary save\" aria-hidden=\"true\"><i class=\"icon-save\"></i> Save Changes</button>\n    <button class=\"btn btn-danger discard\" aria-hidden=\"true\"><i class=\"icon-trash\"></i> Discard Changes</button>\n    <button class=\"btn cancel\" data-dismiss=\"modal\" aria-hidden=\"true\">Cancel</button>\n</div>"));
-      this.unsaved_save_button = $(this.unsaved_modal.find('button.save'));
-      this.unsaved_save_button.click(function(e) {
-        return e.preventDefault();
-      });
+      this.unsaved_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Unsaved Changes</h3>\n</div>\n<div class=\"modal-body\">\n    <p>You have not saved changes to this squad.  Do you want to go back and save?</p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary\" aria-hidden=\"true\" data-dismiss=\"modal\">Go Back</button>\n    <button class=\"btn btn-danger discard\" aria-hidden=\"true\">Discard Changes</button>\n</div>"));
       this.unsaved_discard_button = $(this.unsaved_modal.find('button.discard'));
       return this.unsaved_discard_button.click(function(e) {
-        return e.preventDefault();
+        e.preventDefault();
+        _this.unsaved_modal.data('builder').current_squad.dirty = false;
+        _this.unsaved_modal.data('callback')();
+        return _this.unsaved_modal.modal('hide');
       });
     };
 

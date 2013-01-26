@@ -84,7 +84,7 @@ class exportObj.SquadBuilder
         @current_squad =
             id: null
             name: $.trim(@squad_name_input.val())
-            dirty: true
+            dirty: false
             additional_data:
                 points: @total_points
                 description: ''
@@ -108,7 +108,7 @@ class exportObj.SquadBuilder
                         </div>
                         <div class="input-append">
                             <input type="text" maxlength="64" placeholder="Name your squad..." />
-                            <button class="btn save"><i class="icon-save"></i></button>
+                            <button class="btn save"><i class="icon-edit"></i></button>
                         </div>
                     </div>
                 </div class="row">
@@ -125,8 +125,8 @@ class exportObj.SquadBuilder
             <div class="span7 pull-right button-container">
                 <div class="btn-group pull-right">
                     <button class="btn btn-primary backend-login-logout">
-                        <span class="hide-authenticated">Log In</span>
-                        <span class="show-authenticated">Log Out</span>
+                        <span class="hide-authenticated"><i class="icon-signin"></i> Log In</span>
+                        <span class="show-authenticated"><i class="icon-signout"></i> Log Out</span>
                     </button>
                     <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
                     <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
@@ -189,6 +189,10 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
             @backend_status.fadeOut 'slow'
 
+        @squad_name_input.blur (e) =>
+            @squad_name_input.change()
+            @squad_name_save_button.click()
+
         @squad_name_display.click (e) =>
             e.preventDefault()
             @squad_name_display.hide()
@@ -200,11 +204,8 @@ class exportObj.SquadBuilder
             e.preventDefault()
             name = @current_squad.name = $.trim(@squad_name_input.val())
             if name.length > 0
-                if name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
-                    name = "#{name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
-                @squad_name_placeholder.text ''
-                @squad_name_placeholder.append name
                 @squad_name_display.show()
+                @container.trigger 'xwing-backend:squadNameChanged'
                 @squad_name_input.closest('div').hide()
 
         @randomizer_options_modal = $ document.createElement('DIV')
@@ -298,8 +299,8 @@ class exportObj.SquadBuilder
             if @backend? and not $(e.target).hasClass('disabled')
                 additional_data =
                     points: @total_points
-                    description: 'Placeholder description'
-                    cards: []
+                    description: @describeSquad()
+                    cards: @listCards()
                 @backend_status.html $.trim """
                     <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
                 """
@@ -407,6 +408,8 @@ class exportObj.SquadBuilder
             @onSquadLoadRequested squad
         .on 'xwing-backend:squadDirtinessChanged', (e) =>
             @onSquadDirtinessChanged()
+        .on 'xwing-backend:squadNameChanged', (e) =>
+            @onSquadNameChanged()
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -470,6 +473,15 @@ class exportObj.SquadBuilder
             @backend_delete_list_button.removeClass 'disabled'
         else
             @backend_delete_list_button.addClass 'disabled'
+
+    onSquadNameChanged: () =>
+        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
+            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
+        else
+            short_name = @current_squad.name
+        @squad_name_placeholder.text ''
+        @squad_name_placeholder.append short_name
+        @squad_name_input.val @current_squad.name
 
 
     showTextListModal: () ->
@@ -765,6 +777,9 @@ class exportObj.SquadBuilder
         data.timer = window.setTimeout stopHandler , timeout_ms
         #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
         window.setTimeout @_makeRandomizerLoopFunc(data), 0
+        @resetCurrentSquad()
+        @current_squad.name = 'Random Squad'
+        @container.trigger 'xwing-backend:squadNameChanged'
 
     setBackend: (backend) ->
         @backend = backend
@@ -779,6 +794,20 @@ class exportObj.SquadBuilder
         else
             @container.find('.show-authenticated').hide()
             @container.find('.hide-authenticated').show()
+
+    describeSquad: () ->
+        (ship.pilot.name for ship in @ships when ship.pilot?).join ', '
+
+    listCards: () ->
+        card_obj = {}
+        for ship in @ships
+            if ship.pilot?
+                card_obj[ship.pilot.name] = null
+                for upgrade in ship.upgrades
+                    card_obj[upgrade.data.name] = null if upgrade.data?
+                card_obj[ship.title.data.name] = null if ship.title?.data?
+                card_obj[ship.modification.data.name] = null if ship.modification?.data?
+        return Object.keys(card_obj).sort()
 
 class Ship
     constructor: (args) ->
