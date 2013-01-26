@@ -377,7 +377,7 @@
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
-      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4;
+      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
       this.total_points = 0;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -392,19 +392,28 @@
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         ship = _ref1[_j];
         if (ship.pilot != null) {
-          if (ship.getPoints() !== ship.pilot.points) {
+          if (((function() {
+            var _k, _len2, _ref2, _results;
+            _ref2 = ship.upgrades;
+            _results = [];
+            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+              upgrade = _ref2[_k];
+              if (upgrade.data != null) _results.push(upgrade);
+            }
+            return _results;
+          })()).length > 0 || (((_ref2 = ship.modification) != null ? _ref2.data : void 0) != null) || (((_ref3 = ship.title) != null ? _ref3.data : void 0) != null)) {
             addon_list = '<ul>';
-            if (((_ref2 = ship.title) != null ? _ref2.data : void 0) != null) {
+            if (((_ref4 = ship.title) != null ? _ref4.data : void 0) != null) {
               addon_list += "<li>" + (ship.title.toString()) + "</li>";
             }
-            _ref3 = ship.upgrades;
-            for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
-              upgrade = _ref3[_k];
+            _ref5 = ship.upgrades;
+            for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
+              upgrade = _ref5[_k];
               if (upgrade.data != null) {
                 addon_list += "<li>" + (upgrade.toString()) + "</li>";
               }
             }
-            if (((_ref4 = ship.modification) != null ? _ref4.data : void 0) != null) {
+            if (((_ref6 = ship.modification) != null ? _ref6.data : void 0) != null) {
               addon_list += "<li>" + (ship.modification.toString()) + "</li>";
             }
             addon_list += '</ul>';

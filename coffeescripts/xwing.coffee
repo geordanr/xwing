@@ -436,7 +436,7 @@ class exportObj.SquadBuilder
         @text_ul.text ''
         for ship in @ships
             if ship.pilot?
-                if ship.getPoints() != ship.pilot.points
+                if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
                     addon_list = '<ul>'
                     addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
                     for upgrade in ship.upgrades
