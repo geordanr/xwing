@@ -18,6 +18,7 @@ class exportObj.SquadBuilderBackend
             backend = new SquadBuilderBackend
                 server: 'https://xwing.example.com'
                 builders: [ rebel_builder, empire_builder ]
+                login_logout_button: '#login-logout'
 
     ###
     constructor: (args) ->
@@ -30,6 +31,7 @@ class exportObj.SquadBuilderBackend
         # args
         @server = args.server
         @builders = args.builders
+        @login_logout_button = $ args.login_logout_button
         @authenticated = false
         @ui_ready = false
         @oauth_window = null
@@ -41,16 +43,30 @@ class exportObj.SquadBuilderBackend
             facebook:
                 icon: 'icon-facebook-sign'
                 text: 'Facebook'
+            twitter:
+                icon: 'icon-twitter-sign'
+                text: 'Twitter'
 
         @setupHandlers()
         @setupUI()
 
         # Check initial authentication status
-        @authenticate()
+        await @authenticate defer()
 
         # Finally, hook up the builders
         for builder in @builders
             builder.setBackend this
+
+        @updateAuthenticationVisibility()
+        @login_logout_button.removeClass 'hidden'
+
+    updateAuthenticationVisibility: () ->
+        if @authenticated
+            $('.show-authenticated').show()
+            $('.hide-authenticated').hide()
+        else
+            $('.show-authenticated').hide()
+            $('.hide-authenticated').show()
 
     save: (serialized, id=null, name, faction, additional_data={}, cb) ->
         if serialized == ""
@@ -153,12 +169,12 @@ class exportObj.SquadBuilderBackend
         await $.get "#{@server}/ping", defer data
         if data?.success
             @authenticated = true
-            cb()
         else
             @authenticated = false
         if old_auth_state != @authenticated
             $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
         @oauth_window = null
+        cb @authenticated
         @authenticated
 
     login: () ->
@@ -443,6 +459,16 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.modal 'hide'
 
     setupHandlers: () ->
+        $(window).on 'xwing-backend:authenticationChanged', () =>
+            @updateAuthenticationVisibility()
+
+        @login_logout_button.click (e) =>
+            e.preventDefault()
+            if @authenticated
+                @logout()
+            else
+                @login()
+
         $(window).on 'message', (e) =>
             ev = e.originalEvent
             if ev.origin == @server

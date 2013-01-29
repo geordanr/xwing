@@ -9,7 +9,7 @@
     <link href='select2-release-3.2/select2.css' rel='stylesheet'>
     <link href='stylesheets/xwing.css' media='screen,handheld' rel='stylesheet'>
     <link href='stylesheets/xwing-print.css' media='print' rel='stylesheet'>
-    <link href='stylesheets/backgrounds.css?1359183995' rel='stylesheet'>
+    <link href='stylesheets/backgrounds.css?1359444108' rel='stylesheet'>
   </head>
   <body>
     <div class='tabbable hide-on-print'>
@@ -22,6 +22,18 @@
         </li>
         <li>
           <a data-toggle='tab' href='#aboutContent' id='aboutTab'>About</a>
+        </li>
+        <li>
+          <a class='hidden' href='#' id='login-logout'>
+            <span class='hide-authenticated'>
+              <i class='icon-signin hidden-phone hidden-tablet'></i>
+              Log In
+            </span>
+            <span class='show-authenticated'>
+              <i class='icon-signout hidden-phone hidden-tablet'></i>
+              Log Out
+            </span>
+          </a>
         </li>
       </ul>
       <div class='tab-content'>
@@ -42,6 +54,8 @@
                   <p>Icons and fonts courtesy GeckoTH&#39;s excellent PSD, available on <a href="http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&amp;t=183">A Few Maneuvers</a>.</p>
                   
                   <p>Interested in playing with the source or contributing features or bug fixes?  <a href="http://github.com/geordanr/xwing">Fork it on GitHub</a>.  (Issues can also be filed via GitHub.)</p>
+                  
+                  <p>A backend is available if the ability to save squadrons is needed; it can be <a href="http://github.com/geordanr/xwing-backend">forked on GitHub here</a>.</p>
                 </p>
               </div>
             </div>
@@ -53,9 +67,9 @@
     <script src='javascripts/jquery-1.8.3.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src='select2-release-3.2/select2.min.js'></script>
-    <script src='javascripts/cards.min.js?1359183995'></script>
-    <script src='javascripts/xwing.js?1359183995'></script>
-    <script src='javascripts/backend.js?1359183995'></script>
+    <script src='javascripts/cards.min.js?1359444108'></script>
+    <script src='javascripts/xwing.min.js?1359444108'></script>
+    <script src='javascripts/backend.min.js?1359444108'></script>
     <script>
       (function() {
       
@@ -82,7 +96,8 @@
           }
           return window.backend = new SquadBuilderBackend({
             server: 'https://enigmatic-cove-7638.herokuapp.com',
-            builders: [window.rebel_sb, window.empire_sb]
+            builders: [window.rebel_sb, window.empire_sb],
+            login_logout_button: '#login-logout'
           });
         });
       

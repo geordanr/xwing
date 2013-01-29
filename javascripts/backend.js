@@ -66,11 +66,15 @@
                 backend = new SquadBuilderBackend
                     server: 'https://xwing.example.com'
                     builders: [ rebel_builder, empire_builder ]
+                    login_logout_button: '#login-logout'
     */
 
     function SquadBuilderBackend(args) {
+      var builder, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
       this.nameCheck = __bind(this.nameCheck, this);
-      var builder, _i, _len, _ref;
       $.ajaxSetup({
         dataType: "json",
         xhrFields: {
@@ -79,6 +83,7 @@
       });
       this.server = args.server;
       this.builders = args.builders;
+      this.login_logout_button = $(args.login_logout_button);
       this.authenticated = false;
       this.ui_ready = false;
       this.oauth_window = null;
@@ -90,17 +95,44 @@
         facebook: {
           icon: 'icon-facebook-sign',
           text: 'Facebook'
+        },
+        twitter: {
+          icon: 'icon-twitter-sign',
+          text: 'Twitter'
         }
       };
       this.setupHandlers();
       this.setupUI();
-      this.authenticate();
-      _ref = this.builders;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        builder = _ref[_i];
-        builder.setBackend(this);
-      }
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          funcname: "SquadBuilderBackend"
+        });
+        _this.authenticate(__iced_deferrals.defer({
+          lineno: 53
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        var _i, _len, _ref;
+        _ref = _this.builders;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          builder = _ref[_i];
+          builder.setBackend(_this);
+        }
+        _this.updateAuthenticationVisibility();
+        return _this.login_logout_button.removeClass('hidden');
+      });
     }
+
+    SquadBuilderBackend.prototype.updateAuthenticationVisibility = function() {
+      if (this.authenticated) {
+        $('.show-authenticated').show();
+        return $('.hide-authenticated').hide();
+      } else {
+        $('.show-authenticated').hide();
+        return $('.hide-authenticated').show();
+      }
+    };
 
     SquadBuilderBackend.prototype.save = function(serialized, id, name, faction, additional_data, cb) {
       var post_args, post_url,
@@ -227,13 +259,12 @@
               return data = arguments[0];
             };
           })(),
-          lineno: 153
+          lineno: 169
         }));
         __iced_deferrals._fulfill();
       })(function() {
         if (typeof data !== "undefined" && data !== null ? data.success : void 0) {
           _this.authenticated = true;
-          cb();
         } else {
           _this.authenticated = false;
         }
@@ -241,6 +272,7 @@
           $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
         }
         _this.oauth_window = null;
+        cb(_this.authenticated);
         return _this.authenticated;
       });
     };
@@ -449,6 +481,17 @@
 
     SquadBuilderBackend.prototype.setupHandlers = function() {
       var _this = this;
+      $(window).on('xwing-backend:authenticationChanged', function() {
+        return _this.updateAuthenticationVisibility();
+      });
+      this.login_logout_button.click(function(e) {
+        e.preventDefault();
+        if (_this.authenticated) {
+          return _this.logout();
+        } else {
+          return _this.login();
+        }
+      });
       return $(window).on('message', function(e) {
         var ev, _ref, _ref1;
         ev = e.originalEvent;

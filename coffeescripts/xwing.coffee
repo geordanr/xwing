@@ -99,48 +99,48 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="span3 squad-name-container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="display-name">
-                            <span class="squad-name">Unnamed Squadron</span>
-                            <i class="icon-pencil"></i>
-                        </div>
-                        <div class="input-append">
-                            <input type="text" maxlength="64" placeholder="Name your squad..." />
-                            <button class="btn save"><i class="icon-edit"></i></button>
+            <div class="row-fluid">
+                <div class="span4 squad-name-container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="display-name">
+                                <span class="squad-name">Unnamed Squadron</span>
+                                <i class="icon-pencil"></i>
+                            </div>
+                            <div class="input-append">
+                                <input type="text" maxlength="64" placeholder="Name your squad..." />
+                                <button class="btn save"><i class="icon-edit"></i></button>
+                            </div>
                         </div>
                     </div>
-                </div class="row">
-                <div class="row show-authenticated">
-                    <div class="span12">
-                        <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
-                        <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
-                        <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
-                        <span class="backend-status"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="span2 points-display-container">Total Points: 0</div>
-            <div class="span7 pull-right button-container">
-                <div class="btn-group pull-right">
-                    <button class="btn btn-primary backend-login-logout">
-                        <span class="hide-authenticated"><i class="icon-signin"></i> Log In</span>
-                        <span class="show-authenticated"><i class="icon-signout"></i> Log Out</span>
-                    </button>
-                    <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
-                    <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
-                    <button class="btn btn-primary view-as-text">View as Text</button>
-                    <button class="btn btn-primary print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
-                    <a class="btn btn-primary permalink"><i class="icon-link"></i>&nbsp;Permalink</a>
+                    <div class="row-fluid show-authenticated">
+                        <div class="span12">
+                            <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
+                            <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
+                            <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
 
-                    <button class="btn btn-primary randomize" ><i class="icon-random"></i>&nbsp;Random Squad!</button>
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="randomize-options">Randomizer Options...</a></li>
-                    </ul>
+                            <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
+                            <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
+                                <span class="backend-status"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span2 points-display-container">Total Points: 0</div>
+                    <div class="span6 pull-right button-container">
+                        <div class="btn-group pull-right">
+
+                        <button class="btn btn-primary view-as-text">View as Text</button>
+                        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
+                        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
+
+                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
+                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="randomize-options">Randomizer Options...</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         '''
@@ -278,14 +278,7 @@ class exportObj.SquadBuilder
             @randomizer_options_modal.modal()
 
         # Backend
-        @backend_login_logout_button = $ @container.find('button.backend-login-logout')
-        @backend_login_logout_button.click (e) =>
-            e.preventDefault()
-            if @backend?
-                if @backend.authenticated
-                    @backend.logout()
-                else
-                    @backend.login()
+
         @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
         @backend_list_squads_button.click (e) =>
             e.preventDefault()
@@ -762,6 +755,7 @@ class exportObj.SquadBuilder
             @_randomizerLoopBody(data)
 
     randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000) ->
+        @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
         while @ships.length > 0
@@ -786,17 +780,6 @@ class exportObj.SquadBuilder
 
     setBackend: (backend) ->
         @backend = backend
-        @updateAuthenticationVisibility()
-        $(window).on 'xwing-backend:authenticationChanged', () =>
-            @updateAuthenticationVisibility()
-
-    updateAuthenticationVisibility: () ->
-        if @backend.authenticated
-            @container.find('.show-authenticated').show()
-            @container.find('.hide-authenticated').hide()
-        else
-            @container.find('.show-authenticated').hide()
-            @container.find('.hide-authenticated').show()
 
     describeSquad: () ->
         (ship.pilot.name for ship in @ships when ship.pilot?).join ', '
@@ -962,6 +945,7 @@ class Ship
             e.preventDefault()
             @row.slideUp 'fast', () =>
                 @builder.removeShip this
+                @backend_status.fadeOut 'slow'
         @remove_button.hide()
 
     teardownUI: () ->
