@@ -51,14 +51,14 @@ class exportObj.SquadBuilderBackend
         @setupUI()
 
         # Check initial authentication status
-        await @authenticate defer()
+        @authenticate () =>
+            @login_logout_button.removeClass 'hidden'
 
         # Finally, hook up the builders
         for builder in @builders
             builder.setBackend this
 
         @updateAuthenticationVisibility()
-        @login_logout_button.removeClass 'hidden'
 
     updateAuthenticationVisibility: () ->
         if @authenticated
@@ -166,11 +166,20 @@ class exportObj.SquadBuilderBackend
 
     authenticate: (cb=$.noop) ->
         old_auth_state = @authenticated
-        await $.get "#{@server}/ping", defer data
-        if data?.success
-            @authenticated = true
-        else
-            @authenticated = false
+
+        $.ajax
+            url: "#{@server}/ping"
+            success: (data) =>
+                if data?.success
+                    @authenticated = true
+                else
+                    @authenticated = false
+                @maybeAuthenticationChanged old_auth_state, cb
+            error: (jqXHR, textStatus, errorThrown) =>
+                @authenticated = false
+                @maybeAuthenticationChanged old_auth_state, cb
+
+    maybeAuthenticationChanged: (old_auth_state, cb) =>
         if old_auth_state != @authenticated
             $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
         @oauth_window = null

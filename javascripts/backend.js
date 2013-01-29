@@ -8,48 +8,7 @@
 
 (function() {
   var exportObj,
-    __slice = [].slice,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-  window.iced = {
-    Deferrals: (function() {
-
-      function _Class(_arg) {
-        this.continuation = _arg;
-        this.count = 1;
-        this.ret = null;
-      }
-
-      _Class.prototype._fulfill = function() {
-        if (!--this.count) return this.continuation(this.ret);
-      };
-
-      _Class.prototype.defer = function(defer_params) {
-        var _this = this;
-        ++this.count;
-        return function() {
-          var inner_params, _ref;
-          inner_params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-          if (defer_params != null) {
-            if ((_ref = defer_params.assign_fn) != null) {
-              _ref.apply(null, inner_params);
-            }
-          }
-          return _this._fulfill();
-        };
-      };
-
-      return _Class;
-
-    })(),
-    findDeferral: function() {
-      return null;
-    },
-    trampoline: function(_fn) {
-      return _fn();
-    }
-  };
-  window.__iced_k = window.__iced_k_noop = function() {};
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -70,11 +29,10 @@
     */
 
     function SquadBuilderBackend(args) {
-      var builder, ___iced_passed_deferral, __iced_deferrals, __iced_k,
-        _this = this;
-      __iced_k = __iced_k_noop;
-      ___iced_passed_deferral = iced.findDeferral(arguments);
       this.nameCheck = __bind(this.nameCheck, this);
+      this.maybeAuthenticationChanged = __bind(this.maybeAuthenticationChanged, this);
+      var builder, _i, _len, _ref,
+        _this = this;
       $.ajaxSetup({
         dataType: "json",
         xhrFields: {
@@ -103,25 +61,15 @@
       };
       this.setupHandlers();
       this.setupUI();
-      (function(__iced_k) {
-        __iced_deferrals = new iced.Deferrals(__iced_k, {
-          parent: ___iced_passed_deferral,
-          funcname: "SquadBuilderBackend"
-        });
-        _this.authenticate(__iced_deferrals.defer({
-          lineno: 53
-        }));
-        __iced_deferrals._fulfill();
-      })(function() {
-        var _i, _len, _ref;
-        _ref = _this.builders;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          builder = _ref[_i];
-          builder.setBackend(_this);
-        }
-        _this.updateAuthenticationVisibility();
+      this.authenticate(function() {
         return _this.login_logout_button.removeClass('hidden');
       });
+      _ref = this.builders;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        builder = _ref[_i];
+        builder.setBackend(this);
+      }
+      this.updateAuthenticationVisibility();
     }
 
     SquadBuilderBackend.prototype.updateAuthenticationVisibility = function() {
@@ -242,39 +190,34 @@
     };
 
     SquadBuilderBackend.prototype.authenticate = function(cb) {
-      var data, old_auth_state, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+      var old_auth_state,
         _this = this;
-      __iced_k = __iced_k_noop;
-      ___iced_passed_deferral = iced.findDeferral(arguments);
       if (cb == null) cb = $.noop;
       old_auth_state = this.authenticated;
-      (function(__iced_k) {
-        __iced_deferrals = new iced.Deferrals(__iced_k, {
-          parent: ___iced_passed_deferral,
-          funcname: "SquadBuilderBackend.authenticate"
-        });
-        $.get("" + _this.server + "/ping", __iced_deferrals.defer({
-          assign_fn: (function() {
-            return function() {
-              return data = arguments[0];
-            };
-          })(),
-          lineno: 169
-        }));
-        __iced_deferrals._fulfill();
-      })(function() {
-        if (typeof data !== "undefined" && data !== null ? data.success : void 0) {
-          _this.authenticated = true;
-        } else {
+      return $.ajax({
+        url: "" + this.server + "/ping",
+        success: function(data) {
+          if (data != null ? data.success : void 0) {
+            _this.authenticated = true;
+          } else {
+            _this.authenticated = false;
+          }
+          return _this.maybeAuthenticationChanged(old_auth_state, cb);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
           _this.authenticated = false;
+          return _this.maybeAuthenticationChanged(old_auth_state, cb);
         }
-        if (old_auth_state !== _this.authenticated) {
-          $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
-        }
-        _this.oauth_window = null;
-        cb(_this.authenticated);
-        return _this.authenticated;
       });
+    };
+
+    SquadBuilderBackend.prototype.maybeAuthenticationChanged = function(old_auth_state, cb) {
+      if (old_auth_state !== this.authenticated) {
+        $(window).trigger('xwing-backend:authenticationChanged', this.authenticated);
+      }
+      this.oauth_window = null;
+      cb(this.authenticated);
+      return this.authenticated;
     };
 
     SquadBuilderBackend.prototype.login = function() {
