@@ -101,46 +101,41 @@ class exportObj.SquadBuilder
         @status_container.append $.trim '''
             <div class="row-fluid">
                 <div class="span4 squad-name-container">
-                    <div class="row-fluid">
-                        <div class="span12">
-                            <div class="display-name">
-                                <span class="squad-name">Unnamed Squadron</span>
-                                <i class="icon-pencil"></i>
-                            </div>
-                            <div class="input-append">
-                                <input type="text" maxlength="64" placeholder="Name your squad..." />
-                                <button class="btn save"><i class="icon-edit"></i></button>
-                            </div>
-                        </div>
+                    <div class="display-name">
+                        <span class="squad-name">Unnamed Squadron</span>
+                        <i class="icon-pencil"></i>
                     </div>
-                    <div class="row-fluid show-authenticated">
-                        <div class="span12">
-                            <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
-                            <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
-                            <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
-
-                            <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
-                            <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
-                                <span class="backend-status"></span>
-                            </div>
-                        </div>
+                    <div class="input-append">
+                        <input type="text" maxlength="64" placeholder="Name your squad..." />
+                        <button class="btn save"><i class="icon-edit"></i></button>
                     </div>
-                    <div class="span2 points-display-container">Total Points: 0</div>
-                    <div class="span6 pull-right button-container">
-                        <div class="btn-group pull-right">
+                </div>
+                <div class="span2 points-display-container">Total Points: 0</div>
+                <div class="span6 pull-right button-container">
+                    <div class="btn-group pull-right">
 
-                        <button class="btn btn-primary view-as-text">View as Text</button>
-                        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
-                        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
+                    <button class="btn btn-primary view-as-text">View as Text</button>
+                    <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
+                    <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
-                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
-                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="randomize-options">Randomizer Options...</a></li>
-                        </ul>
-                    </div>
+                    <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="randomize-options">Randomizer Options...</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row-fluid show-authenticated">
+                <div class="span12">
+                    <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
+                    <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
+                    <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
+                    <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
+                    <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
+                    <span class="backend-status"></span>
                 </div>
             </div>
         '''
