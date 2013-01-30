@@ -26,6 +26,7 @@
                     server: 'https://xwing.example.com'
                     builders: [ rebel_builder, empire_builder ]
                     login_logout_button: '#login-logout'
+                    auth_status: '#auth-status'
     */
 
     function SquadBuilderBackend(args) {
@@ -42,6 +43,7 @@
       this.server = args.server;
       this.builders = args.builders;
       this.login_logout_button = $(args.login_logout_button);
+      this.auth_status = $(args.auth_status);
       this.authenticated = false;
       this.ui_ready = false;
       this.oauth_window = null;
@@ -62,6 +64,7 @@
       this.setupHandlers();
       this.setupUI();
       this.authenticate(function() {
+        _this.auth_status.hide();
         return _this.login_logout_button.removeClass('hidden');
       });
       _ref = this.builders;
@@ -193,6 +196,8 @@
       var old_auth_state,
         _this = this;
       if (cb == null) cb = $.noop;
+      $(this.auth_status.find('.payload')).text('Checking auth status...');
+      this.auth_status.show();
       old_auth_state = this.authenticated;
       return $.ajax({
         url: "" + this.server + "/ping",
@@ -216,6 +221,7 @@
         $(window).trigger('xwing-backend:authenticationChanged', this.authenticated);
       }
       this.oauth_window = null;
+      this.auth_status.hide();
       cb(this.authenticated);
       return this.authenticated;
     };
@@ -227,9 +233,12 @@
     SquadBuilderBackend.prototype.logout = function(cb) {
       var _this = this;
       if (cb == null) cb = $.noop;
+      $(this.auth_status.find('.payload')).text('Logging out...');
+      this.auth_status.show();
       return $.get("" + this.server + "/auth/logout", function(data, textStatus, jqXHR) {
         _this.authenticated = false;
         $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
+        _this.auth_status.hide();
         return cb();
       });
     };
@@ -281,6 +290,10 @@
     SquadBuilderBackend.prototype.setupUI = function() {
       var oauth_explanation,
         _this = this;
+      this.auth_status.addClass('disabled');
+      this.auth_status.click(function(e) {
+        return false;
+      });
       this.login_modal = $(document.createElement('DIV'));
       this.login_modal.addClass('modal hide fade hide-on-print');
       $(document.body).append(this.login_modal);

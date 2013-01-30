@@ -26,6 +26,10 @@
         %li
           %a#aboutTab{'data-toggle' => "tab", :href => '#aboutContent'} About
         %li
+          %a#auth-status{:href => '#'}
+            %i.icon-spinner.icon-spin
+            %span.payload
+        %li
           %a#login-logout.hidden{:href => '#'}
             %span.hide-authenticated
               %i.icon-signin.hidden-phone.hidden-tablet
@@ -85,3 +89,4 @@
             server: 'https://enigmatic-cove-7638.herokuapp.com'
             builders: [ window.rebel_sb, window.empire_sb ]
             login_logout_button: '#login-logout'
+            auth_status: '#auth-status'

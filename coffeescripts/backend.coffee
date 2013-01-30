@@ -19,6 +19,7 @@ class exportObj.SquadBuilderBackend
                 server: 'https://xwing.example.com'
                 builders: [ rebel_builder, empire_builder ]
                 login_logout_button: '#login-logout'
+                auth_status: '#auth-status'
 
     ###
     constructor: (args) ->
@@ -32,6 +33,8 @@ class exportObj.SquadBuilderBackend
         @server = args.server
         @builders = args.builders
         @login_logout_button = $ args.login_logout_button
+        @auth_status = $ args.auth_status
+
         @authenticated = false
         @ui_ready = false
         @oauth_window = null
@@ -52,6 +55,7 @@ class exportObj.SquadBuilderBackend
 
         # Check initial authentication status
         @authenticate () =>
+            @auth_status.hide()
             @login_logout_button.removeClass 'hidden'
 
         # Finally, hook up the builders
@@ -165,6 +169,8 @@ class exportObj.SquadBuilderBackend
             list_ul.fadeIn 'fast'
 
     authenticate: (cb=$.noop) ->
+        $(@auth_status.find('.payload')).text 'Checking auth status...'
+        @auth_status.show()
         old_auth_state = @authenticated
 
         $.ajax
@@ -183,6 +189,7 @@ class exportObj.SquadBuilderBackend
         if old_auth_state != @authenticated
             $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
         @oauth_window = null
+        @auth_status.hide()
         cb @authenticated
         @authenticated
 
@@ -192,9 +199,12 @@ class exportObj.SquadBuilderBackend
             @login_modal.modal 'show'
 
     logout: (cb=$.noop) ->
+        $(@auth_status.find('.payload')).text 'Logging out...'
+        @auth_status.show()
         $.get "#{@server}/auth/logout", (data, textStatus, jqXHR) =>
             @authenticated = false
             $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
+            @auth_status.hide()
             cb()
 
     showSaveAsModal: (builder) ->
@@ -238,6 +248,10 @@ class exportObj.SquadBuilderBackend
         @unsaved_modal.modal 'show'
 
     setupUI: () ->
+        @auth_status.addClass 'disabled'
+        @auth_status.click (e) =>
+            false
+
         @login_modal = $ document.createElement('DIV')
         @login_modal.addClass 'modal hide fade hide-on-print'
         $(document.body).append @login_modal

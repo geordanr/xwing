@@ -9,7 +9,7 @@
     <link href='select2-release-3.2/select2.css' rel='stylesheet'>
     <link href='stylesheets/xwing.css' media='screen,handheld' rel='stylesheet'>
     <link href='stylesheets/xwing-print.css' media='print' rel='stylesheet'>
-    <link href='stylesheets/backgrounds.css?1359444938' rel='stylesheet'>
+    <link href='stylesheets/backgrounds.css?1359526636' rel='stylesheet'>
   </head>
   <body>
     <div class='tabbable hide-on-print'>
@@ -22,6 +22,12 @@
         </li>
         <li>
           <a data-toggle='tab' href='#aboutContent' id='aboutTab'>About</a>
+        </li>
+        <li>
+          <a href='#' id='auth-status'>
+            <i class='icon-spinner icon-spin'></i>
+            <span class='payload'></span>
+          </a>
         </li>
         <li>
           <a class='hidden' href='#' id='login-logout'>
@@ -67,9 +73,9 @@
     <script src='javascripts/jquery-1.8.3.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src='select2-release-3.2/select2.min.js'></script>
-    <script src='javascripts/cards.min.js?1359444938'></script>
-    <script src='javascripts/xwing.min.js?1359444938'></script>
-    <script src='javascripts/backend.min.js?1359444938'></script>
+    <script src='javascripts/cards.min.js?1359526636'></script>
+    <script src='javascripts/xwing.min.js?1359526636'></script>
+    <script src='javascripts/backend.min.js?1359526636'></script>
     <script>
       (function() {
       
@@ -97,7 +103,8 @@
           return window.backend = new SquadBuilderBackend({
             server: 'https://enigmatic-cove-7638.herokuapp.com',
             builders: [window.rebel_sb, window.empire_sb],
-            login_logout_button: '#login-logout'
+            login_logout_button: '#login-logout',
+            auth_status: '#auth-status'
           });
         });
       
