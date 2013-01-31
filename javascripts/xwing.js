@@ -150,7 +150,7 @@
     }
 
     SquadBuilder.prototype.resetCurrentSquad = function() {
-      return this.current_squad = {
+      this.current_squad = {
         id: null,
         name: $.trim(this.squad_name_input.val()),
         dirty: false,
@@ -161,6 +161,12 @@
         },
         faction: this.faction
       };
+      if (this.total_points > 0) {
+        this.current_squad.name = 'Unsaved Squad';
+        this.current_squad.dirty = true;
+        this.container.trigger('xwing-backend:squadNameChanged');
+      }
+      return this.container.trigger('xwing-backend:squadDirtinessChanged');
     };
 
     SquadBuilder.prototype.setupUI = function() {
@@ -171,7 +177,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name">Unnamed Squadron</span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n\n    <div class="span2 points-display-container">Total Points: 0</div>\n\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n        <button class="btn btn-primary view-as-text">View as Text</button>\n        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n\n</div>\n\n<div class="row-fluid show-authenticated">\n    <div class="span12">\n        <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>\n        <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone\'s Squads</button> -->\n        <span class="backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name">Unnamed Squadron</span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n        <button class="btn btn-primary view-as-text">View as Text</button>\n        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>\n\n<div class="row-fluid show-authenticated">\n    <div class="span12">\n        <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>\n        <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone\'s Squads</button> -->\n        <span class="backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
@@ -199,8 +205,6 @@
         }
       });
       this.squad_name_input.change(function(e) {
-        _this.current_squad.dirty = true;
-        _this.container.trigger('xwing-backend:squadDirtinessChanged');
         return _this.backend_status.fadeOut('slow');
       });
       this.squad_name_input.blur(function(e) {
@@ -220,6 +224,8 @@
       this.squad_name_save_button.click(function(e) {
         var name;
         e.preventDefault();
+        _this.current_squad.dirty = true;
+        _this.container.trigger('xwing-backend:squadDirtinessChanged');
         name = _this.current_squad.name = $.trim(_this.squad_name_input.val());
         if (name.length > 0) {
           _this.squad_name_display.show();
@@ -302,7 +308,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 303
+              lineno: 304
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -353,6 +359,9 @@
         return _this.onSquadDirtinessChanged();
       }).on('xwing-backend:squadNameChanged', function(e) {
         return _this.onSquadNameChanged();
+      });
+      $(window).on('xwing-backend:authenticationChanged', function(e) {
+        return _this.resetCurrentSquad();
       });
       this.view_list_button.click(function(e) {
         e.preventDefault();
@@ -616,7 +625,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 584
+          lineno: 588
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -625,7 +634,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 585
+          lineno: 589
         }));
         __iced_deferrals._fulfill();
       });
@@ -1105,7 +1114,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 836
+                  lineno: 840
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1145,7 +1154,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 848
+                lineno: 852
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1196,17 +1205,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 871
+            lineno: 875
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 872
+            lineno: 876
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 873
+            lineno: 877
           }));
         }
         __iced_deferrals._fulfill();
@@ -1342,7 +1351,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 975
+                lineno: 979
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1406,7 +1415,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1004
+                  lineno: 1008
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1424,7 +1433,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1006
+                    lineno: 1010
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1561,7 +1570,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 1081
+                  lineno: 1085
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1576,7 +1585,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 1085
+                    lineno: 1089
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1604,7 +1613,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 1090
+                    lineno: 1094
                   })
                 ]);
                 __iced_deferrals._fulfill();

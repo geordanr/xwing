@@ -90,6 +90,11 @@ class exportObj.SquadBuilder
                 description: ''
                 cards: []
             faction: @faction
+        if @total_points > 0
+            @current_squad.name = 'Unsaved Squad'
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     setupUI: () ->
         DEFAULT_RANDOMIZER_POINTS = 100
@@ -180,8 +185,6 @@ class exportObj.SquadBuilder
                 false
 
         @squad_name_input.change (e) =>
-            @current_squad.dirty = true
-            @container.trigger 'xwing-backend:squadDirtinessChanged'
             @backend_status.fadeOut 'slow'
 
         @squad_name_input.blur (e) =>
@@ -200,6 +203,8 @@ class exportObj.SquadBuilder
             @squad_name_input.closest('div').show()
         @squad_name_save_button.click (e) =>
             e.preventDefault()
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
             name = @current_squad.name = $.trim(@squad_name_input.val())
             if name.length > 0
                 @squad_name_display.show()
@@ -401,6 +406,9 @@ class exportObj.SquadBuilder
             @onSquadDirtinessChanged()
         .on 'xwing-backend:squadNameChanged', (e) =>
             @onSquadNameChanged()
+
+        $(window).on 'xwing-backend:authenticationChanged', (e) =>
+            @resetCurrentSquad()
 
         @view_list_button.click (e) =>
             e.preventDefault()
