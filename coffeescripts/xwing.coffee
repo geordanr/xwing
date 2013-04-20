@@ -133,7 +133,7 @@ class exportObj.SquadBuilder
                 </div>
             </div>
 
-            <div class="row-fluid show-authenticated">
+            <div class="row-fluid show-authenticated" style="display: none;">
                 <div class="span12">
                     <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
                     <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
