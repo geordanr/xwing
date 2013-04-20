@@ -39,6 +39,8 @@ Array::intersects = (other) ->
             return true
     return false
 
+SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
+
 # Assumes cards.js has been loaded
 
 class exportObj.SquadBuilder
@@ -65,13 +67,34 @@ class exportObj.SquadBuilder
             sources: null
             points: 100
 
+        @backend = null
+        @current_squad = {}
+
         @setupUI()
         @setupEventHandlers()
+
+        @resetCurrentSquad()
 
         if $.getParameterByName('f') == @faction
             @loadFromSerialized $.getParameterByName('d')
         else
             @addShip()
+
+    resetCurrentSquad: () ->
+        @current_squad =
+            id: null
+            name: $.trim(@squad_name_input.val())
+            dirty: false
+            additional_data:
+                points: @total_points
+                description: ''
+                cards: []
+            faction: @faction
+        if @total_points > 0
+            @current_squad.name = 'Unsaved Squad'
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     setupUI: () ->
         DEFAULT_RANDOMIZER_POINTS = 100
@@ -81,31 +104,112 @@ class exportObj.SquadBuilder
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
-            <div class="span3 points-display-container">Total Points: 0</div>
-            <div class="span8 pull-right button-container">
-                <div class="btn-group pull-right">
-                    <button class="btn btn-info view-as-text">View as Text</button>
-                    <button class="btn btn-info print-list">Print List</button>
-                    <a class="btn btn-info permalink">Permalink</a>
+            <div class="row-fluid">
+                <div class="span4 squad-name-container">
+                    <div class="display-name">
+                        <span class="squad-name">Unnamed Squadron</span>
+                        <i class="icon-pencil"></i>
+                    </div>
+                    <div class="input-append">
+                        <input type="text" maxlength="64" placeholder="Name your squad..." />
+                        <button class="btn save"><i class="icon-edit"></i></button>
+                    </div>
+                </div>
+                <div class="span2 points-display-container">Total Points: 0</div>
+                <div class="span6 pull-right button-container">
+                    <div class="btn-group pull-right">
 
-                    <button class="btn btn-info randomize">Random Squad!</button>
-                    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    <button class="btn btn-primary view-as-text">View as Text</button>
+                    <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
+                    <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
+
+                    <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="randomize-options">Randomizer Options...</a></li>
-                    <ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row-fluid show-authenticated" style="display: none;">
+                <div class="span12">
+                    <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
+                    <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
+                    <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
+                    <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
+                    <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
+                    <span class="backend-status"></span>
                 </div>
             </div>
         '''
         @container.append @status_container
 
+        @list_modal = $ document.createElement 'DIV'
+        @list_modal.addClass 'modal hide fade text-list-modal'
+        @container.append @list_modal
+        @list_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3><span class="squad-name"></span> (#{@faction}): <span class="total-points">0</span> Points </h3>
+            </div>
+            <div class="modal-body">
+                <ul></ul>
+            </div>
+            <div class="modal-footer hide-on-print">
+                <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @text_ul = $ @list_modal.find('div.modal-body ul')
+        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+
+        @squad_name_container = $ @status_container.find('div.squad-name-container')
+        @squad_name_display = $ @container.find('.display-name')
+        @squad_name_placeholder = $ @container.find('.squad-name')
+        @squad_name_input = $ @squad_name_container.find('input')
+        @squad_name_save_button = $ @squad_name_container.find('button.save')
+        @squad_name_input.closest('div').hide()
         @points_container = $ @status_container.find('div.points-display-container')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
-        @print_list_button = $ @status_container.find('div.button-container button.print-list')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+        @backend_status = $ @status_container.find('.backend-status')
+        @backend_status.hide()
+
+        @squad_name_input.keypress (e) =>
+            if e.which == 13
+                @squad_name_save_button.click()
+                false
+
+        @squad_name_input.change (e) =>
+            @backend_status.fadeOut 'slow'
+
+        @squad_name_input.blur (e) =>
+            @squad_name_input.change()
+            @squad_name_save_button.click()
+
+        @squad_name_display.click (e) =>
+            e.preventDefault()
+            @squad_name_display.hide()
+            @squad_name_input.val $.trim(@current_squad.name)
+            # Because Firefox handles this badly
+            window.setTimeout () =>
+                @squad_name_input.focus()
+                @squad_name_input.select()
+            , 100
+            @squad_name_input.closest('div').show()
+        @squad_name_save_button.click (e) =>
+            e.preventDefault()
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+            name = @current_squad.name = $.trim(@squad_name_input.val())
+            if name.length > 0
+                @squad_name_display.show()
+                @container.trigger 'xwing-backend:squadNameChanged'
+                @squad_name_input.closest('div').hide()
 
         @randomizer_options_modal = $ document.createElement('DIV')
         @randomizer_options_modal.addClass 'modal hide fade'
@@ -151,14 +255,18 @@ class exportObj.SquadBuilder
 
         @randomize_button.click (e) =>
             e.preventDefault()
-            points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
-            points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
-            timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
-            timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
-            iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
-            iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
-            #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
-            @randomSquad(points, @randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations)
+            if @current_squad.dirty and @backend?
+                @backend.warnUnsaved this, () =>
+                    @randomize_button.click()
+            else
+                points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
+                points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
+                timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
+                timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
+                iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
+                iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
+                #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
+                @randomSquad(points, @randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -168,6 +276,61 @@ class exportObj.SquadBuilder
         @customize_randomizer.click (e) =>
             e.preventDefault()
             @randomizer_options_modal.modal()
+
+        # Backend
+
+        @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
+        @backend_list_squads_button.click (e) =>
+            e.preventDefault()
+            if @backend?
+                @backend.list this
+        #@backend_list_all_squads_button = $ @container.find('button.backend-list-all-squads')
+        #@backend_list_all_squads_button.click (e) =>
+        #    e.preventDefault()
+        #    if @backend?
+        #        @backend.list this, true
+        @backend_save_list_button = $ @container.find('button.save-list')
+        @backend_save_list_button.click (e) =>
+            e.preventDefault()
+            if @backend? and not $(e.target).hasClass('disabled')
+                additional_data =
+                    points: @total_points
+                    description: @describeSquad()
+                    cards: @listCards()
+                @backend_status.html $.trim """
+                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                """
+                @backend_status.show()
+                @backend_save_list_button.addClass 'disabled'
+                await @backend.save @serialize(), @current_squad.id, @current_squad.name, @faction, additional_data, defer(results)
+                if results.success
+                    @current_squad.dirty = false
+                    if @current_squad.id?
+                        @backend_status.html $.trim """
+                            <i class="icon-ok"></i>&nbsp;Squad updated successfully.
+                        """
+                    else
+                        @backend_status.html $.trim """
+                            <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                        """
+                        @current_squad.id = results.id
+                    @container.trigger 'xwing-backend:squadDirtinessChanged'
+                else
+                    @backend_status.html $.trim """
+                        <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                    """
+                    @backend_save_list_button.removeClass 'disabled'
+        @backend_save_list_as_button = $ @container.find('button.save-list-as')
+        @backend_save_list_as_button.click (e) =>
+            e.preventDefault()
+            if @backend? and not $(e.target).hasClass('disabled')
+                @backend.showSaveAsModal this
+        @backend_delete_list_button = $ @container.find('button.delete-list')
+        @backend_delete_list_button.click (e) =>
+            e.preventDefault()
+            if @backend? and not $(e.target).hasClass('disabled')
+
+                @backend.showDeleteModal this
 
         content_container = $ document.createElement 'DIV'
         content_container.addClass 'container-fluid'
@@ -226,23 +389,9 @@ class exportObj.SquadBuilder
         """
         @info_container.hide()
 
-        @list_modal = $ document.createElement 'DIV'
-        @list_modal.addClass 'modal hide fade text-list-modal'
-        $(document).append @list_modal
-        @list_modal.append $.trim """
-            <div class="modal-header">
-                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>#{@faction}: <span class="total-points">0</span> Points </h3>
-            </div>
-            <div class="modal-body">
-                <ul></ul>
-            </div>
-            <div class="modal-footer hide-on-print">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        """
-        @text_ul = $ @list_modal.find('div.modal-body ul')
-        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+        @print_list_button = $ @container.find('button.print-list')
+
+        @container.find('[rel=tooltip]').tooltip()
 
     setupEventHandlers: () ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
@@ -251,6 +400,15 @@ class exportObj.SquadBuilder
             @releaseUnique unique, type, cb
         .on 'xwing:pointsUpdated', (e, cb=$.noop) =>
             @onPointsUpdated cb
+        .on 'xwing-backend:squadLoadRequested', (e, squad) =>
+            @onSquadLoadRequested squad
+        .on 'xwing-backend:squadDirtinessChanged', (e) =>
+            @onSquadDirtinessChanged()
+        .on 'xwing-backend:squadNameChanged', (e) =>
+            @onSquadNameChanged()
+
+        $(window).on 'xwing-backend:authenticationChanged', (e) =>
+            @resetCurrentSquad()
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -274,7 +432,7 @@ class exportObj.SquadBuilder
         @text_ul.text ''
         for ship in @ships
             if ship.pilot?
-                if ship.getPoints() != ship.pilot.points
+                if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
                     addon_list = '<ul>'
                     addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
                     for upgrade in ship.upgrades
@@ -295,6 +453,35 @@ class exportObj.SquadBuilder
                     </li>
                 """
         cb @total_points
+
+    onSquadLoadRequested: (squad) =>
+        @current_squad = squad
+        @current_squad.dirty = false
+        @container.trigger 'xwing-backend:squadDirtinessChanged'
+        @backend_delete_list_button.removeClass 'disabled'
+        @squad_name_input.val @current_squad.name
+        @squad_name_placeholder.text @current_squad.name
+        @loadFromSerialized squad.serialized
+
+    onSquadDirtinessChanged: () =>
+        if @current_squad.dirty
+            @backend_save_list_button.removeClass 'disabled'
+        else
+            @backend_save_list_button.addClass 'disabled'
+        if @current_squad.id?
+            @backend_delete_list_button.removeClass 'disabled'
+        else
+            @backend_delete_list_button.addClass 'disabled'
+
+    onSquadNameChanged: () =>
+        if @current_squad.name.length > SQUAD_DISPLAY_NAME_MAX_LENGTH
+            short_name = "#{@current_squad.name.substr(0, SQUAD_DISPLAY_NAME_MAX_LENGTH)}&hellip;"
+        else
+            short_name = @current_squad.name
+        @squad_name_placeholder.text ''
+        @squad_name_placeholder.append short_name
+        @squad_name_input.val @current_squad.name
+
 
     showTextListModal: () ->
         # Display modal
@@ -571,6 +758,7 @@ class exportObj.SquadBuilder
             @_randomizerLoopBody(data)
 
     randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000) ->
+        @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
         while @ships.length > 0
@@ -589,6 +777,26 @@ class exportObj.SquadBuilder
         data.timer = window.setTimeout stopHandler , timeout_ms
         #console.log "Timer set for #{timeout_ms}ms, timer is #{data.timer}"
         window.setTimeout @_makeRandomizerLoopFunc(data), 0
+        @resetCurrentSquad()
+        @current_squad.name = 'Random Squad'
+        @container.trigger 'xwing-backend:squadNameChanged'
+
+    setBackend: (backend) ->
+        @backend = backend
+
+    describeSquad: () ->
+        (ship.pilot.name for ship in @ships when ship.pilot?).join ', '
+
+    listCards: () ->
+        card_obj = {}
+        for ship in @ships
+            if ship.pilot?
+                card_obj[ship.pilot.name] = null
+                for upgrade in ship.upgrades
+                    card_obj[upgrade.data.name] = null if upgrade.data?
+                card_obj[ship.title.data.name] = null if ship.title?.data?
+                card_obj[ship.modification.data.name] = null if ship.modification?.data?
+        return Object.keys(card_obj).sort()
 
 class Ship
     constructor: (args) ->
@@ -623,7 +831,7 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
-            if not @pilot?
+            unless @pilot?
                 @builder.addShip() unless @builder.suppress_automatic_new_ship
                 @remove_button.fadeIn 'fast'
             @resetPilot()
@@ -721,6 +929,9 @@ class Ship
                     results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
+            @builder.current_squad.dirty = true
+            @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+            @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
@@ -737,6 +948,7 @@ class Ship
             e.preventDefault()
             @row.slideUp 'fast', () =>
                 @builder.removeShip this
+                @backend_status.fadeOut 'slow'
         @remove_button.hide()
 
     teardownUI: () ->
@@ -776,6 +988,9 @@ class GenericAddon
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
+            @ship.builder.current_squad.dirty = true
+            @ship.builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+            @ship.builder.backend_status.fadeOut 'slow'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?

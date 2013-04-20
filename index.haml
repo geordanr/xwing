@@ -5,6 +5,7 @@
     %meta{:charset => "utf-8"}
 
     %link{:rel => "stylesheet", :href => "bootstrap/css/bootstrap.min.css", :media => "screen"}
+    %link{:rel => "stylesheet", :href => "fontawesome/css/font-awesome.min.css", :media => "screen"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     -#%link{:href => "bootstrap/css/bootstrap-responsive.css", :rel =>"stylesheet"}
     %link{:rel => "stylesheet", :href => "select2-release-3.2/select2.css"}
@@ -24,6 +25,19 @@
           %a#empireTab{'data-toggle' => "tab", :href => '#empireContent'} Galactic Empire
         %li
           %a#aboutTab{'data-toggle' => "tab", :href => '#aboutContent'} About
+        %li
+          %a#auth-status{:href => '#'}
+            %i.icon-spinner.icon-spin
+            %span.payload
+        %li
+          %a#login-logout.hidden{:href => '#'}
+            %span.hide-authenticated
+              %i.icon-signin.hidden-phone.hidden-tablet
+              Log In
+            %span.show-authenticated
+              %i.icon-signout.hidden-phone.hidden-tablet
+              Log Out
+
       .tab-content
         .tab-pane#rebelContent
           #rebel-builder
@@ -42,6 +56,8 @@
 
                     Interested in playing with the source or contributing features or bug fixes?  [Fork it on GitHub](http://github.com/geordanr/xwing).  (Issues can also be filed via GitHub.)
 
+                    A backend is available if the ability to save squadrons is needed; it can be [forked on GitHub here](http://github.com/geordanr/xwing-backend).
+
     #printable.show-on-print
 
     -# JS linkages
@@ -50,6 +66,7 @@
     %script{:src => "select2-release-3.2/select2.min.js"}
     %script{:src => "javascripts/cards.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/xwing.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
         window.rebel_sb = new window.SquadBuilder
@@ -67,3 +84,9 @@
               $('#empireTab').click()
           else
               $('#rebelTab').click()
+
+        window.backend = new SquadBuilderBackend
+            server: 'https://yasb-backend.herokuapp.com'
+            builders: [ window.rebel_sb, window.empire_sb ]
+            login_logout_button: '#login-logout'
+            auth_status: '#auth-status'

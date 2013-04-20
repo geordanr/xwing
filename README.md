@@ -13,7 +13,7 @@ some CSS trickery if you're using some other incompatible framework
 
 Can I save squads or share them on `$SOCIAL_NETWORK`?
 -----------------------------------------------------
-No, but you can use the Permalink button in the top right.
+Yes, if you provide a backend that adheres to the API.  See my [X-Wing Backend](https://github.com/geordanr/xwing-backend) project for an example.
 
 Aren't there other squad builders out there already?
 ----------------------------------------------------
@@ -34,6 +34,10 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 
 CHANGELOG
 =========
+
+20 Apr 2013
+-----------
+* Add support for backend storage.
 
 5 Jan 2013
 ----------
