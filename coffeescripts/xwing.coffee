@@ -382,6 +382,10 @@ class exportObj.SquadBuilder
                             <td>Actions</td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-upgrades">
+                            <td>Upgrades</td>
+                            <td class="info-data"></td>
+                        </tr>
                     </tbody>
                 </table>
                 <p class="info-text" />
@@ -657,6 +661,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
                     @info_container.find('tr.info-actions').show()
+                    @info_container.find('tr.info-upgrades').show()
+                    @info_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') or 'None')
                 when 'Addon'
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-skill').hide()
@@ -674,6 +680,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
+                    @info_container.find('tr.info-upgrades').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
 
