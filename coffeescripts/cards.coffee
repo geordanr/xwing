@@ -97,6 +97,52 @@ exportObj.ships =
             "Target Lock",
             "Evade",
         ]
+    "HWK-290":
+        name: "HWK-290"
+        faction: "Rebel Alliance"
+        attack: 1
+        agility: 2
+        hull: 4
+        shields: 1
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
+    "Lambda-Class Shuttle":
+        name: "Lambda-Class Shuttle"
+        faction: "Galactic Empire"
+        attack: 3
+        agility: 1
+        hull: 5
+        shields: 5
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
+    "B-Wing":
+        name: "B-Wing"
+        faction: "Rebel Alliance"
+        attack: 3
+        agility: 1
+        hull: 3
+        shields: 5
+        actions: [
+            "Focus",
+            "Target Lock",
+            "Barrel Roll"
+        ]
+    "TIE Bomber":
+        name: "TIE Bomber"
+        faction: "Galactic Empire"
+        attack: 2
+        agility: 2
+        hull: 6
+        shields: 0
+        actions: [
+            "Focus",
+            "Target Lock",
+            "Barrel Roll"
+        ]
 
 exportObj.pilots =
     "Wedge Antilles":
