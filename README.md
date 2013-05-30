@@ -35,6 +35,11 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+29 May 2013
+-----------
+* Add card browser.
+* Upgrade to Select2 3.4.0.
+
 20 Apr 2013
 -----------
 * Add support for backend storage.
