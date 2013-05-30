@@ -1,6 +1,8 @@
 (function() {
   var exportObj, modification, modification_name, pilot, pilot_name, source, title, title_name, upgrade, upgrade_name, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
 
+
+
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.ships = {
@@ -718,7 +720,7 @@
       points: 3,
       attack: 3,
       range: "1-3",
-      text: "Attack: Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
+      text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
     },
     "Heavy Laser Cannon": {
       name: "Heavy Laser Cannon",
@@ -728,7 +730,7 @@
       points: 7,
       attack: 4,
       range: "2-3",
-      text: "Attack: Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class=\"icon-crit\" src=\"images/transparent.png\" /> results to <img class=\"icon-hit\" src=\"images/transparent.png\" /> results."
+      text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class=\"icon-crit\" src=\"images/transparent.png\" /> results to <img class=\"icon-hit\" src=\"images/transparent.png\" /> results."
     },
     "Seismic Charges": {
       name: "Seismic Charges",
@@ -878,7 +880,9 @@
     _ref1 = pilot.sources;
     for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
       source = _ref1[_i];
-      if (!(source in exportObj.expansions)) exportObj.expansions[source] = 1;
+      if (!(source in exportObj.expansions)) {
+        exportObj.expansions[source] = 1;
+      }
     }
   }
 
@@ -891,7 +895,9 @@
     _ref3 = upgrade.sources;
     for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
       source = _ref3[_j];
-      if (!(source in exportObj.expansions)) exportObj.expansions[source] = 1;
+      if (!(source in exportObj.expansions)) {
+        exportObj.expansions[source] = 1;
+      }
     }
   }
 
@@ -904,7 +910,9 @@
     _ref5 = modification.sources;
     for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
       source = _ref5[_k];
-      if (!(source in exportObj.expansions)) exportObj.expansions[source] = 1;
+      if (!(source in exportObj.expansions)) {
+        exportObj.expansions[source] = 1;
+      }
     }
   }
 
@@ -917,7 +925,9 @@
     _ref7 = title.sources;
     for (_l = 0, _len3 = _ref7.length; _l < _len3; _l++) {
       source = _ref7[_l];
-      if (!(source in exportObj.expansions)) exportObj.expansions[source] = 1;
+      if (!(source in exportObj.expansions)) {
+        exportObj.expansions[source] = 1;
+      }
     }
   }
 
