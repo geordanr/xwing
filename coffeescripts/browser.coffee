@@ -10,7 +10,6 @@ exportObj = exports ? this
 TYPES = [ 'pilots', 'upgrades', 'modifications', 'titles' ]
 TYPE_TO_SINGULAR =
     'pilots': 'Pilot'
-    'upgrades': 'Upgrade'
     'modifications': 'Modification'
     'titles': 'Title'
 
@@ -40,7 +39,7 @@ class exportObj.CardBrowser
         @setupUI()
         @setupHandlers()
 
-        @renderList()
+        @sort_selector.change()
 
     setupUI: () ->
         @container.append $.trim """
@@ -49,8 +48,8 @@ class exportObj.CardBrowser
                     <div class="span12">
                         Sort cards by: <select class="sort-by">
                             <option value="name">Name</option>
-                            <option value="type">Type</option>
                             <option value="source">Source</option>
+                            <option value="type" selected="1">Type</option>
                         </select>
                     </div>
                 </div>
@@ -128,7 +127,14 @@ class exportObj.CardBrowser
         @all_cards = []
 
         for type in TYPES
-            @all_cards = @all_cards.concat ( { name: card_name, type: type, data: card_data } for card_name, card_data of exportObj[type] )
+            if type == 'upgrades'
+                @all_cards = @all_cards.concat ( { name: card_name, type: "#{card_data.slot} Upgrade", data: card_data } for card_name, card_data of exportObj[type] )
+            else
+                @all_cards = @all_cards.concat ( { name: card_name, type: TYPE_TO_SINGULAR[type], data: card_data } for card_name, card_data of exportObj[type] )
+
+        @types = [ 'Pilot', 'Modification', 'Title' ]
+        for card_name, card_data of exportObj.upgrades
+            @types.push "#{card_data.slot} Upgrade" if "#{card_data.slot} Upgrade" not in @types
 
         @all_cards.sort byName
 
@@ -138,7 +144,7 @@ class exportObj.CardBrowser
                 @sources.push(source) if source not in @sources
 
         @cards_by_type = {}
-        for type in TYPES
+        for type in @types.sort()
             @cards_by_type[type] = ( card for card in @all_cards when card.type == type ).sort byName
 
         @cards_by_source = {}
@@ -159,9 +165,9 @@ class exportObj.CardBrowser
 
         switch sort_by
             when 'type'
-                for type in TYPES
+                for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
-                    optgroup.attr 'label', type.capitalize()
+                    optgroup.attr 'label', type
                     @card_selector.append optgroup
 
                     for card in @cards_by_type[type]
@@ -169,7 +175,7 @@ class exportObj.CardBrowser
             when 'source'
                 for source in @sources
                     optgroup = $ document.createElement('OPTGROUP')
-                    optgroup.attr 'label', source.capitalize()
+                    optgroup.attr 'label', source
                     @card_selector.append optgroup
 
                     for card in @cards_by_source[source]
@@ -191,7 +197,7 @@ class exportObj.CardBrowser
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text data.sources.sort().join(', ')
         switch type
-            when 'pilots'
+            when 'Pilot'
                 ship = exportObj.ships[data.ship]
                 @card_viewer_container.find('.info-type').text "#{data.ship} Pilot (#{ship.faction})"
                 @card_viewer_container.find('tr.info-skill td.info-data').text data.skill
@@ -210,6 +216,7 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-upgrades').show()
                 @card_viewer_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') or 'None')
             else
+                @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
                 @card_viewer_container.find('tr.info-ship').hide()
                 @card_viewer_container.find('tr.info-skill').hide()
@@ -228,11 +235,6 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-shields').hide()
                 @card_viewer_container.find('tr.info-actions').hide()
                 @card_viewer_container.find('tr.info-upgrades').hide()
-                switch type
-                    when 'upgrades'
-                        @card_viewer_container.find('.info-type').text "#{data.slot} Upgrade"
-                    else
-                        @card_viewer_container.find('.info-type').text "#{TYPE_TO_SINGULAR[type]}"
 
         @card_viewer_container.show()
         @card_viewer_placeholder.hide()
