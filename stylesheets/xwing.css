@@ -78,13 +78,18 @@ strong em, em strong {
   font-family: BankGothicHD;
   font-size: 1.5em; }
 
+.info-type, .info-sources {
+  font-family: BankGothicHD;
+  font-size: 1.2em; }
+
 .info-well {
   color: black;
   margin-top: 10px; }
 
 .info-well table > tbody > tr > td:first-child {
   font-weight: bold;
-  vertical-align: top; }
+  vertical-align: top;
+  padding-right: 5px; }
 
 .info-text {
   margin-top: 15px; }
@@ -240,3 +245,6 @@ div.tab-content {
 
 .squad-list > li:hover {
   background-color: #cccccc; }
+
+select.card-selector {
+  width: 100%; }

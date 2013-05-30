@@ -1024,7 +1024,7 @@ class GenericAddon
 
     updateSelection: () ->
         if @data?
-            @selector.select2 'data'
+            @selector.select2 'data',
                 id: @data.id
                 text: "#{@data.name} (#{@data.points})"
         else
