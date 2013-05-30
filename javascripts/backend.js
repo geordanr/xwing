@@ -1,4 +1,3 @@
-
 /*
     X-Wing Squad Builder
     Geordan Rosario <geordan@gmail.com>
@@ -10,23 +9,25 @@
   var exportObj,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+
+
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.SquadBuilderBackend = (function() {
     /*
-            Usage:
+        Usage:
     
-                rebel_builder = new SquadBuilder
-                    faction: 'Rebel Alliance'
-                    ...
-                empire_builder = new SquadBuilder
-                    faction: 'Galactic Empire'
-                    ...
-                backend = new SquadBuilderBackend
-                    server: 'https://xwing.example.com'
-                    builders: [ rebel_builder, empire_builder ]
-                    login_logout_button: '#login-logout'
-                    auth_status: '#auth-status'
+            rebel_builder = new SquadBuilder
+                faction: 'Rebel Alliance'
+                ...
+            empire_builder = new SquadBuilder
+                faction: 'Galactic Empire'
+                ...
+            backend = new SquadBuilderBackend
+                server: 'https://xwing.example.com'
+                builders: [ rebel_builder, empire_builder ]
+                login_logout_button: '#login-logout'
+                auth_status: '#auth-status'
     */
 
     function SquadBuilderBackend(args) {
@@ -88,8 +89,12 @@
     SquadBuilderBackend.prototype.save = function(serialized, id, name, faction, additional_data, cb) {
       var post_args, post_url,
         _this = this;
-      if (id == null) id = null;
-      if (additional_data == null) additional_data = {};
+      if (id == null) {
+        id = null;
+      }
+      if (additional_data == null) {
+        additional_data = {};
+      }
       if (serialized === "") {
         return cb({
           id: null,
@@ -144,7 +149,9 @@
     SquadBuilderBackend.prototype.list = function(builder, all) {
       var list_ul, loading_pane, url,
         _this = this;
-      if (all == null) all = false;
+      if (all == null) {
+        all = false;
+      }
       if (all) {
         this.squad_list_modal.find('.modal-header h3').text("Everyone's " + builder.faction + " Squads");
       } else {
@@ -195,7 +202,9 @@
     SquadBuilderBackend.prototype.authenticate = function(cb) {
       var old_auth_state,
         _this = this;
-      if (cb == null) cb = $.noop;
+      if (cb == null) {
+        cb = $.noop;
+      }
       $(this.auth_status.find('.payload')).text('Checking auth status...');
       this.auth_status.show();
       old_auth_state = this.authenticated;
@@ -227,12 +236,16 @@
     };
 
     SquadBuilderBackend.prototype.login = function() {
-      if (this.ui_ready) return this.login_modal.modal('show');
+      if (this.ui_ready) {
+        return this.login_modal.modal('show');
+      }
     };
 
     SquadBuilderBackend.prototype.logout = function(cb) {
       var _this = this;
-      if (cb == null) cb = $.noop;
+      if (cb == null) {
+        cb = $.noop;
+      }
       $(this.auth_status.find('.payload')).text('Logging out...');
       this.auth_status.show();
       return $.get("" + this.server + "/auth/logout", function(data, textStatus, jqXHR) {
@@ -354,7 +367,9 @@
         e.preventDefault();
         if (!_this.save_as_save_button.hasClass('disabled')) {
           timer = _this.save_as_modal.data('timer');
-          if (timer != null) window.clearInterval(timer);
+          if (timer != null) {
+            window.clearInterval(timer);
+          }
           _this.save_as_modal.modal('hide');
           builder = _this.save_as_modal.data('builder');
           additional_data = {
@@ -391,7 +406,9 @@
           _this.name_availability_container.text('');
           _this.name_availability_container.append($.trim("<i class=\"icon-spin icon-spinner\"></i> Checking name availability..."));
           timer = _this.save_as_modal.data('timer');
-          if (timer != null) window.clearInterval(timer);
+          if (timer != null) {
+            window.clearInterval(timer);
+          }
           return _this.save_as_modal.data('timer', window.setInterval(_this.nameCheck, 500));
         }
       });

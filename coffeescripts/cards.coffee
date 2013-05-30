@@ -784,7 +784,7 @@ exportObj.upgrades =
         points: 3
         attack: 3
         range: "1-3"
-        text: """Attack: Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
+        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
     "Heavy Laser Cannon":
         name: "Heavy Laser Cannon"
         id: 23
@@ -793,7 +793,7 @@ exportObj.upgrades =
         points: 7
         attack: 4
         range: "2-3"
-        text: """Attack: Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
+        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
     "Seismic Charges":
         name: "Seismic Charges"
         id: 24
