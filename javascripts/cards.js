@@ -1161,8 +1161,6 @@
       text: "(Unconfirmed) After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class=\"icon-hit\" src=\"images/transparent.png\" /> or <img class=\"icon-crit\" src=\"images/transparent.png\" /> result, the enemy ship suffers 1 damage.",
       restriction_func: function(ship) {
         var _ref;
-        console.log("Check restriction against ship");
-        console.dir(ship);
         return (_ref = ship.large) != null ? _ref : false;
       }
     }
