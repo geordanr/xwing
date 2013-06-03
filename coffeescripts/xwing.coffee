@@ -622,9 +622,9 @@ class exportObj.SquadBuilder
             unclaimed_upgrades.push include_upgrade
         ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
 
-    getAvailableModificationsIncluding: (include_modification, term='') ->
+    getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction))
+        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
         # Re-add selected modification
         if include_modification? and include_modification.unique? and @matcher(include_modification.name, term)
             unclaimed_modifications.push include_modification
@@ -725,7 +725,7 @@ class exportObj.SquadBuilder
                             available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
                             addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
                         when 'Modification'
-                            available_modifications = (modification for modification in @getAvailableModificationsIncluding() when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship.data) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
                             addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
                         else
                             throw "Invalid addon type #{addon.type}"
@@ -1074,7 +1074,7 @@ class Modification extends GenericAddon
             query: (query) =>
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableModificationsIncluding(@data, query.term)
+                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship.data, query.term)
 
 class Title extends GenericAddon
     constructor: (args) ->
