@@ -653,9 +653,10 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-    "Unspoiled PS8 B-Wing Pilot":
-        name: "Unspoiled PS8 B-Wing Pilot"
+    "Ten Numb":
+        name: "Ten Numb"
         id: 41
+        unique: true
         ship: "B-Wing"
         sources: [ "B-Wing Expansion Pack", ]
         skill: 8
@@ -667,6 +668,7 @@ exportObj.pilots =
             "Torpedo",
             "Torpedo",
         ]
+        text: """When attacking, 1 of your <img class="icon-crit" src="images/transparent.png" /> ??? cannot be canceled ???"""
     "Unspoiled PS6 B-Wing Pilot":
         name: "Unspoiled PS6 B-Wing Pilot"
         id: 42
@@ -787,9 +789,10 @@ exportObj.pilots =
             "Missile",
             "Bomb",
         ]
-    "Unspoiled PS6 TIE Bomber Pilot":
-        name: "Unspoiled PS6 TIE Bomber Pilot"
+    "Captain Jonus":
+        name: "Captain Jonus"
         id: 51
+        unique: true
         ship: "TIE Bomber"
         sources: [ "TIE Bomber Expansion Pack", ]
         skill: 6
@@ -802,6 +805,7 @@ exportObj.pilots =
             "Missile",
             "Bomb",
         ]
+        text: """When another friendly ship at Range 1 attacks with a secondary weapon, it may reroll up to ???"""
     "Unspoiled PS8 TIE Bomber Pilot":
         name: "Unspoiled PS8 TIE Bomber Pilot"
         id: 52
