@@ -1132,6 +1132,14 @@
       sources: ["Lambda-Class Shuttle Expansion Pack"],
       points: 99,
       text: "This card has not yet been revealed."
+    },
+    "Navigator": {
+      name: "Navigator",
+      id: 48,
+      slot: "Crew",
+      sources: ["Lambda-Class Shuttle Expansion Pack"],
+      points: 99,
+      text: "This card has not yet been revealed."
     }
   };
 
