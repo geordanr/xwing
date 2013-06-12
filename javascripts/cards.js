@@ -643,7 +643,7 @@
       ship: "TIE Bomber",
       sources: ["TIE Bomber Expansion Pack"],
       skill: 2,
-      points: 22,
+      points: 16,
       slots: ["Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
     },
     "Gamma Squadron Pilot": {
@@ -1070,7 +1070,7 @@
       id: 40,
       slot: "Crew",
       sources: ["HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
-      points: 99,
+      points: 1,
       text: "This card has not yet been revealed."
     },
     "Proton Bomb": {
