@@ -118,7 +118,7 @@ ul.squad-list {
 .modal {
   color: black; }
 
-.icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-attack, img.icon-agility, img.icon-hull, img.icon-shields {
+.icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-attack, img.icon-agility, img.icon-hull, img.icon-shields, img.icon-boost, img.icon-crew, img.icon-cannon {
   background-image: url("../images/xwing-icons.png");
   background-repeat: no-repeat; }
 
@@ -239,6 +239,21 @@ img.icon-shields {
   width: 32px;
   height: 30px;
   background-position: -266px -32px; }
+
+img.icon-boost {
+  width: 30px;
+  height: 29px;
+  background-position: -287px 0px; }
+
+img.icon-crew {
+  width: 35px;
+  height: 34px;
+  background-position: -325px 0px; }
+
+img.icon-cannon {
+  width: 34px;
+  height: 33px;
+  background-position: -298px -30px; }
 
 div.tab-content {
   overflow: visible; }

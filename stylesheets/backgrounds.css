@@ -47,3 +47,18 @@
   background-image: url("../images/slave_i1.png");
   background-repeat: no-repeat;
   background-position: 0px -80px; }
+
+.ship-bwing0 {
+  background-image: url("../images/bwing.png");
+  background-repeat: no-repeat;
+  background-position: 10px -31px; }
+
+.ship-tiebomber0 {
+  background-image: url("../images/tie_bomber.png");
+  background-repeat: no-repeat;
+  background-position: -32px -27px; }
+
+.ship-lambdaclassshuttle0 {
+  background-image: url("../images/lambda_shuttle.png");
+  background-repeat: no-repeat;
+  background-position: -5px -65px; }

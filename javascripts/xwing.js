@@ -751,7 +751,7 @@
       })()).sort(exportObj.sortHelper);
     };
 
-    SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, term) {
+    SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term) {
       var modification, modification_name, unclaimed_modifications;
       if (term == null) {
         term = '';
@@ -762,7 +762,7 @@
         _results = [];
         for (modification_name in _ref) {
           modification = _ref[modification_name];
-          if (this.matcher(modification_name, term) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction)) {
+          if (this.matcher(modification_name, term) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
             _results.push(modification);
           }
         }
@@ -947,7 +947,7 @@
               case 'Modification':
                 available_modifications = (function() {
                   var _k, _len2, _ref2, _results;
-                  _ref2 = this.getAvailableModificationsIncluding();
+                  _ref2 = this.getAvailableModificationsIncluding(null, addon.ship.data);
                   _results = [];
                   for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
                     modification = _ref2[_k];
@@ -1589,7 +1589,7 @@
         query: function(query) {
           return query.callback({
             more: false,
-            results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, query.term)
+            results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, _this.ship.data, query.term)
           });
         }
       });
