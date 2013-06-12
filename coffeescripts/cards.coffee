@@ -767,7 +767,7 @@ exportObj.pilots =
         ship: "TIE Bomber"
         sources: [ "TIE Bomber Expansion Pack", ]
         skill: 2
-        points: 22
+        points: 16
         slots: [
             "Torpedo",
             "Torpedo",
@@ -1192,7 +1192,7 @@ exportObj.upgrades =
         id: 40
         slot: "Crew"
         sources: [ "HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
-        points: 99
+        points: 1
         text: """This card has not yet been revealed."""
     "Proton Bomb":
         name: "Proton Bomb"
@@ -1243,6 +1243,13 @@ exportObj.upgrades =
     "Flight Instructor?":
         name: "Flight Instructor?"
         id: 47
+        slot: "Crew"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 99
+        text: """This card has not yet been revealed."""
+    "Navigator":
+        name: "Navigator"
+        id: 48
         slot: "Crew"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         points: 99
