@@ -1004,7 +1004,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "TIE Interceptor Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" src="images/transparent.png" /> 1) or (<img class="icon-turnright" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" src="images/transparent.png" />) rolled."""
+        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" src="images/transparent.png" /> 1) or (<img class="icon-turnright" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the <img class="icon-boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" src="images/transparent.png" />) rolled."""
     "Elusiveness":
         name: "Elusiveness"
         id: 16
@@ -1266,7 +1266,7 @@ exportObj.modifications =
         id: 3
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
-        text: """Your action bar gains the %BOOST% action icon."""
+        text: """Your action bar gains the <img class="icon-boost" src="images/transparent.png" /> action icon."""
     "Anti-Pursuit Lasers":
         name: "Anti-Pursuit Lasers"
         id: 4
