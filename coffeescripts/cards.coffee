@@ -223,7 +223,7 @@ exportObj.pilots =
             "Torpedo",
             "Astromech",
         ]
-        text: """When defending, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-evade" src="images/transparent.png" /> result."""
+        text: """When defending, you may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> result."""
     "Gray Squadron Pilot":
         name: "Gray Squadron Pilot"
         id: 6
@@ -315,7 +315,7 @@ exportObj.pilots =
         skill: 5
         points: 15
         slots: [ ]
-        text: """When attacking at Range 1, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking at Range 1, you may change 1 of your <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     '"Night Beast"':
         name: '"Night Beast"'
         id: 14
@@ -608,7 +608,7 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "Boba Fett":
         name: "Boba Fett"
         id: 38
@@ -624,7 +624,7 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When you reveal a bank maneuver (<img class="icon-bankleft" src="images/transparent.png" /> or <img class="icon-bankright" src="images/transparent.png" />), you may rotate your dial to the other bank maneuver of the same speed."""
+        text: """When you reveal a bank maneuver (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> or <img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />), you may rotate your dial to the other bank maneuver of the same speed."""
     "Krassis Trelix":
         name: "Krassis Trelix"
         id: 39
@@ -668,7 +668,7 @@ exportObj.pilots =
             "Torpedo",
             "Torpedo",
         ]
-        text: """When attacking, 1 of your <img class="icon-crit" src="images/transparent.png" /> ??? cannot be canceled ???"""
+        text: """When attacking, 1 of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ??? cannot be canceled ???"""
     "Unspoiled PS6 B-Wing Pilot":
         name: "Unspoiled PS6 B-Wing Pilot"
         id: 42
@@ -732,7 +732,7 @@ exportObj.pilots =
             "Turret",
             "Crew",
         ]
-        text: '''At the start of the Combat phase, choose 1 other friendly ship at Range ???.  Until the end of the phase, treat that ship's pilot skill value as "12."'''
+        text: '''At the start of the Combat phase, choose 1 other friendly ship at Range 1-3.  Until the end of the phase, treat that ship's pilot skill value as "12."'''
     "Kyle Katarn":
         name: "Kyle Katarn"
         id: 47
@@ -851,19 +851,21 @@ exportObj.pilots =
             "Crew",
         ]
         text: """At the start of the Combat phase, you may assign 1 of your blue target lock tokens to a friendly ship at Range 1 if it does not have a blue target lock token."""
-    "Unspoiled PS4 Lambda-Class Shuttle Pilot":
-        name: "Unspoiled PS4 Lambda-Class Shuttle Pilot"
+    "Captain Yorr":
+        name: "Captain Yorr"
         id: 55
+        unique: true
         ship: "Lambda-Class Shuttle"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         skill: 4
-        points: 99
+        points: 24
         slots: [
             "System",
             "Cannon",
             "Crew",
             "Crew",
         ]
+        text: """When another friendly ship at Range 1-2 would receive a stress token, if you have 2 or fewer stress tokens, you may receive that token instead."""
     "Unspoiled PS2 Lambda-Class Shuttle Pilot":
         name: "Unspoiled PS2 Lambda-Class Shuttle Pilot"
         id: 56
@@ -897,7 +899,7 @@ exportObj.upgrades =
         points: 4
         attack: 4
         range: "2-3"
-        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "R2 Astromech":
         name: "R2 Astromech"
         id: 2
@@ -928,7 +930,7 @@ exportObj.upgrades =
         slot: "Astromech"
         sources: [ "Y-Wing Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> or <img class="icon-focus" src="images/transparent.png" /> result, discard 1 of your facedown Damage cards."""
+        text: """<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> or <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result, discard 1 of your facedown Damage cards."""
     "R5-K6":
         name: "R5-K6"
         id: 6
@@ -936,7 +938,7 @@ exportObj.upgrades =
         slot: "Astromech"
         sources: [ "X-Wing Expansion Pack", ]
         points: 2
-        text: """After spending your target lock, roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
+        text: """After spending your target lock, roll 1 defense die.<br /><br />On a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
     "R5 Astromech":
         name: "R5 Astromech"
         id: 7
@@ -972,14 +974,14 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack", ]
         points: 2
-        text: """<strong>Action:</strong> Perform a barrel roll.  If you do not have the <img class="icon-barrel-roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
+        text: """<strong>Action:</strong> Perform a barrel roll.  If you do not have the <img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
     "Marksmanship":
         name: "Marksmanship"
         id: 12
         slot: "Elite"
         sources: [ "Core", "X-Wing Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> When attacking this round, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result and all of your other <img class="icon-focus" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
+        text: """<strong>Action:</strong> When attacking this round, you may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result and all of your other <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results."""
     "Concussion Missiles":
         name: "Concussion Missiles"
         id: 13
@@ -988,7 +990,7 @@ exportObj.upgrades =
         points: 4
         attack: 4
         range: "2-3"
-        text: """<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class="icon-hit" src="images/transparent.png" /> result."""
+        text: """<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result."""
     "Cluster Missiles":
         name: "Cluster Missiles"
         id: 14
@@ -1004,7 +1006,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "TIE Interceptor Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" src="images/transparent.png" /> 1) or (<img class="icon-turnright" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the <img class="icon-boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" src="images/transparent.png" />) rolled."""
+        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" /> 1) or (<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" alt="Hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" alt="Crit" src="images/transparent.png" />) rolled."""
     "Elusiveness":
         name: "Elusiveness"
         id: 16
@@ -1066,7 +1068,7 @@ exportObj.upgrades =
         points: 7
         attack: 4
         range: "2-3"
-        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
+        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results."""
     "Seismic Charges":
         name: "Seismic Charges"
         id: 24
@@ -1080,7 +1082,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Slave I Expansion Pack", ]
         points: 2
-        text: """When attacking at Range 3, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking at Range 3, you may change 1 of your <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "Assault Missiles":
         name: "Assault Missiles"
         id: 26
@@ -1117,7 +1119,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 1
-        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class="icon-crit" src="images/transparent.png" /> results instead of the target ship."""
+        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results instead of the target ship."""
     "Luke Skywalker":
         name: "Luke Skywalker"
         id: 31
@@ -1126,7 +1128,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 7
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" src="images/transparent.png" /> result to a <img class="icon-hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
     "Nien Nunb":
         name: "Nien Nunb"
         id: 32
@@ -1135,7 +1137,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 1
-        text: """You may treat all <img class="icon-straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
+        text: """You may treat all <img class="icon-straight" alt="Straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
     "Chewbacca":
         name: "Chewbacca"
         id: 33
@@ -1151,7 +1153,7 @@ exportObj.upgrades =
         slot: "Torpedo"
         sources: [ "B-Wing Expansion Pack", "TIE Bomber Expansion Pack", ]
         points: 6
-        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class="icon-focus" src="images/transparent.png" /> results."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results."""
     "Auto Blaster":
         name: "Auto Blaster"
         id: 35
@@ -1171,8 +1173,10 @@ exportObj.upgrades =
         id: 37
         slot: "Turret"
         sources: [ "HWK-290 Expansion Pack", ]
-        points: 99
-        text: """This card has not yet been revealed."""
+        points: 4
+        attack: 3
+        range: "1-2"
+        text: """<strong>Attack (focus):</strong> Spend 1 focus token to perform this attack against 1 ship (even a ship outside your firing arc)."""
     "Recon Specialist":
         name: "Recon Specialist"
         id: 38
@@ -1185,22 +1189,22 @@ exportObj.upgrades =
         id: 39
         slot: "Crew"
         sources: [ "HWK-290 Expansion Pack", ]
-        points: 99
-        text: """This card has not yet been revealed."""
+        points: 2
+        text: """<strong>Action:</strong> Choose 1 enemy ship at Range 1 and roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> or <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result, choose 1 random facedown Damage card assigned to that ship, flip it faceup, and resolve it."""
     "Intelligence Agent":
         name: "Intelligence Agent"
         id: 40
         slot: "Crew"
         sources: [ "HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
         points: 1
-        text: """This card has not yet been revealed."""
+        text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."""
     "Proton Bomb":
         name: "Proton Bomb"
         id: 41
         slot: "Bomb"
         sources: [ "TIE Bomber Expansion Pack", ]
         points: 99
-        text: """This card has not yet been revealed."""
+        text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase."""
     "Adrenaline Rush":
         name: "Adrenaline Rush"
         id: 42
@@ -1221,7 +1225,7 @@ exportObj.upgrades =
         slot: "System"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         points: 4
-        text: """When defending, you may change 1 of the attacker's <img class="icon-hit" src="images/transparent.png" /> results into a <img class="icon-focus" src="images/transparent.png" /> result.<br /><br />The attacker cannot reroll the die with the changed result."""
+        text: """When defending, you may change 1 of the attacker's <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results into a <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result.<br /><br />The attacker cannot reroll the die with the changed result."""
     "Darth Vader":
         name: "Darth Vader"
         id: 45
@@ -1229,8 +1233,8 @@ exportObj.upgrades =
         faction: "Galactic Empire"
         slot: "Crew"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-        points: 99
-        text: """This card has not yet been revealed."""
+        points: 3
+        text: """After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."""
     "Rebel Captive":
         name: "Rebel Captive"
         id: 46
@@ -1252,8 +1256,8 @@ exportObj.upgrades =
         id: 48
         slot: "Crew"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-        points: 99
-        text: """This card has not yet been revealed."""
+        points: 3
+        text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same bearing.<br /><br />You cannot rotate to a red maneuver if you have any stress tokens."""
 
 exportObj.modifications =
     "Stealth Device":
@@ -1273,13 +1277,13 @@ exportObj.modifications =
         id: 3
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
-        text: """Your action bar gains the <img class="icon-boost" src="images/transparent.png" /> action icon."""
+        text: """Your action bar gains the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon."""
     "Anti-Pursuit Lasers":
         name: "Anti-Pursuit Lasers"
         id: 4
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         points: 2
-        text: """(Unconfirmed) After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class="icon-hit" src="images/transparent.png" /> or <img class="icon-crit" src="images/transparent.png" /> result, the enemy ship suffers 1 damage."""
+        text: """After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> or <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result, the enemy ship suffers 1 damage."""
         restriction_func: (ship) ->
             ship.large ? false
 
@@ -1295,7 +1299,7 @@ exportObj.titles =
         slots: [
             "Torpedo",
         ]
-        text: """Your upgrade bar gains the <img class="icon-torpedo" src="images/transparent.png" /> upgrade icon."""
+        text: """Your upgrade bar gains the <img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" /> upgrade icon."""
     "Millennium Falcon":
         name: "Millennium Falcon"
         id: 2
@@ -1304,7 +1308,7 @@ exportObj.titles =
         points: 1
         ship: "YT-1300"
         actions: "Evade"
-        text: """Your action bar gains the <img class="icon-evade" src="images/transparent.png" /> action icon."""
+        text: """Your action bar gains the <img class="icon-evade" alt="Evade" src="images/transparent.png" /> action icon."""
     "Moldy Crow":
         name: "Moldy Crow"
         id: 3
@@ -1312,7 +1316,7 @@ exportObj.titles =
         unique: true
         points: 3
         ship: "HWK-290"
-        text: """This card has not yet been revealed."""
+        text: """During the End phase, do not remove unused focus tokens from your ship."""
     "ST-321":
         name: "ST-321"
         id: 4
