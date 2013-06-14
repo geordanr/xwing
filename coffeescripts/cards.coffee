@@ -1324,7 +1324,7 @@ exportObj.titles =
         unique: true
         points: 3
         ship: "Lambda-Class Shuttle"
-        text: """This card has not yet been revealed."""
+        text: """When acquiring a target lock, you may lock onto any enemy ship in the play area."""
 
 exportObj.expansions = {}
 
