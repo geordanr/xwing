@@ -660,7 +660,7 @@ exportObj.pilots =
         ship: "B-Wing"
         sources: [ "B-Wing Expansion Pack", ]
         skill: 8
-        points: 99
+        points: 31
         slots: [
             "Elite",
             "System",
@@ -668,7 +668,7 @@ exportObj.pilots =
             "Torpedo",
             "Torpedo",
         ]
-        text: """When attacking, 1 of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ??? cannot be canceled ???"""
+        text: """When attacking, 1 of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results cannot be canceled by defense dice."""
     "Unspoiled PS6 B-Wing Pilot":
         name: "Unspoiled PS6 B-Wing Pilot"
         id: 42
