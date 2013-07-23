@@ -974,7 +974,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack", ]
         points: 2
-        text: """<strong>Action:</strong> Perform a barrel roll.  If you do not have the <img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
+        text: """<strong>Action:</strong> Perform a free barrel roll action.  If you do not have the <img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
     "Marksmanship":
         name: "Marksmanship"
         id: 12
@@ -1006,7 +1006,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "TIE Interceptor Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" /> 1) or (<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" alt="Hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" alt="Crit" src="images/transparent.png" />) rolled."""
+        text: """<strong>Action:</strong> Execute a white (<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" /> 1) or (<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" /> 1) maneuver.  Then, receive 1 stress token.<br /><br />Then, if you do not have the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" alt="Hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" alt="Crit" src="images/transparent.png" />) rolled."""
     "Elusiveness":
         name: "Elusiveness"
         id: 16
@@ -1050,7 +1050,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Slave I Expansion Pack", ]
         points: 5
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You cannot perform another attack this round."""
     "Ion Cannon":
         name: "Ion Cannon"
         id: 22
@@ -1128,7 +1128,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 7
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
     "Nien Nunb":
         name: "Nien Nunb"
         id: 32
