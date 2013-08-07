@@ -1209,7 +1209,7 @@ exportObj.upgrades =
         id: 41
         slot: "Bomb"
         sources: [ "TIE Bomber Expansion Pack", ]
-        points: 99
+        points: 5
         text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase."""
     "Adrenaline Rush":
         name: "Adrenaline Rush"
