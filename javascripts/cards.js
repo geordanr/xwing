@@ -568,17 +568,19 @@
       slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"],
       text: "When attacking, 1 of your <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results cannot be canceled by defense dice."
     },
-    "Unspoiled PS6 B-Wing Pilot": {
-      name: "Unspoiled PS6 B-Wing Pilot",
+    "Ibitsam": {
+      name: "Ibitsam",
       id: 42,
+      unique: true,
       ship: "B-Wing",
       sources: ["B-Wing Expansion Pack"],
       skill: 6,
-      points: 99,
-      slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
+      points: 28,
+      slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"],
+      text: "When attacking or defending, if you have at least 1 stress token, you may reroll 1 of your dice."
     },
-    "Nova Squadron Pilot": {
-      name: "Nova Squadron Pilot",
+    "Dagger Squadron Pilot": {
+      name: "Dagger Squadron Pilot",
       id: 43,
       ship: "B-Wing",
       sources: ["B-Wing Expansion Pack"],
@@ -662,18 +664,20 @@
       ship: "TIE Bomber",
       sources: ["TIE Bomber Expansion Pack"],
       skill: 6,
-      points: 99,
+      points: 22,
       slots: ["Elite", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb"],
-      text: "When another friendly ship at Range 1 attacks with a secondary weapon, it may reroll up to ???"
+      text: "When another friendly ship at Range 1 attacks with a secondary weapon, it may reroll up to 2 attack dice."
     },
-    "Unspoiled PS8 TIE Bomber Pilot": {
-      name: "Unspoiled PS8 TIE Bomber Pilot",
+    "Major Rhymer": {
+      name: "Major Rhymer",
       id: 52,
+      unique: true,
       ship: "TIE Bomber",
       sources: ["TIE Bomber Expansion Pack"],
-      skill: 8,
-      points: 99,
-      slots: ["Elite", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
+      skill: 7,
+      points: 26,
+      slots: ["Elite", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb"],
+      text: "When attacking with a secondary weapon, you may increase or decrease the weapon range by 1 to a limit of Range 1-3."
     },
     "Captain Kagi": {
       name: "Captain Kagi",
@@ -1027,13 +1031,15 @@
       points: 6,
       text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results."
     },
-    "Auto Blaster": {
-      name: "Auto Blaster",
+    "Autoblaster": {
+      name: "Autoblaster",
       id: 35,
       slot: "Cannon",
+      attack: 3,
+      range: "1",
       sources: ["B-Wing Expansion Pack"],
-      points: 99,
-      text: "This card has not yet been revealed."
+      points: 5,
+      text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Your <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results cannot be canceled by defense dice.<br /><br />The defender may cancel <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results before <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results."
     },
     "Fire-Control System": {
       name: "Fire-Control System",
@@ -1090,8 +1096,8 @@
       id: 42,
       slot: "Elite",
       sources: ["TIE Bomber Expansion Pack"],
-      points: 99,
-      text: "This card has not yet been revealed."
+      points: 1,
+      text: "When you reveal a red maneuver, you may discard this card to treat that maneuver as a white maneuver until the end of the Activation phase."
     },
     "Advanced Sensors": {
       name: "Advanced Sensors",
