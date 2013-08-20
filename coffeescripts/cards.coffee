@@ -1250,13 +1250,13 @@ exportObj.upgrades =
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         points: 3
         text: """Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."""
-    "Flight Instructor?":
-        name: "Flight Instructor?"
+    "Flight Instructor":
+        name: "Flight Instructor"
         id: 47
         slot: "Crew"
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-        points: 99
-        text: """This card has not yet been revealed."""
+        points: 4
+        text: """<strong>(Unconfirmed)</strong> When defending, you may reroll one of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results.  If the attacker's pilot skill value is 2 or lower, you may reroll 1 of your blank results instead."""
     "Navigator":
         name: "Navigator"
         id: 48
