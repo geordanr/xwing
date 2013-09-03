@@ -597,13 +597,13 @@
       points: 22,
       slots: ["System", "Cannon", "Torpedo", "Torpedo"]
     },
-    "Unspoiled PS2 HWK-290 Pilot": {
-      name: "Unspoiled PS2 HWK-290 Pilot",
+    "Rebel Operative": {
+      name: "Rebel Operative",
       id: 45,
       ship: "HWK-290",
       sources: ["HWK-290 Expansion Pack"],
       skill: 2,
-      points: 99,
+      points: 16,
       slots: ["Turret", "Crew"]
     },
     "Roark Garnet": {
@@ -712,13 +712,13 @@
       slots: ["System", "Cannon", "Crew", "Crew"],
       text: "When another friendly ship at Range 1-2 would receive a stress token, if you have 2 or fewer stress tokens, you may receive that token instead."
     },
-    "Unspoiled PS2 Lambda-Class Shuttle Pilot": {
-      name: "Unspoiled PS2 Lambda-Class Shuttle Pilot",
+    "Omicron Group Pilot": {
+      name: "Omicron Group Pilot",
       id: 56,
       ship: "Lambda-Class Shuttle",
       sources: ["Lambda-Class Shuttle Expansion Pack"],
       skill: 2,
-      points: 99,
+      points: 21,
       slots: ["System", "Cannon", "Crew", "Crew"]
     }
   };
