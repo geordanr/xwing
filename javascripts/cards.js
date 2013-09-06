@@ -1027,6 +1027,8 @@
       name: "Advanced Proton Torpedoes",
       id: 34,
       slot: "Torpedo",
+      attack: 5,
+      range: "1",
       sources: ["B-Wing Expansion Pack", "TIE Bomber Expansion Pack"],
       points: 6,
       text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results."
