@@ -16,6 +16,12 @@
 
   %body
     -# body layout
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-43758422-1', 'geordanr.github.io');
 
     .tabbable.hide-on-print
       %ul.nav.nav-pills
@@ -74,6 +80,22 @@
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
+        $('#rebelTab').click (e) ->
+          ga 'send', 'pageview',
+            page: '/rebels'
+            title: 'Rebel Alliance'
+        $('#empireTab').click (e) ->
+          ga 'send', 'pageview',
+            page: '/empire'
+            title: 'Galactic Empire'
+        $('#browserTab').click (e) ->
+          ga 'send', 'pageview',
+            page: '/browser'
+            title: 'Card Browser'
+        $('#aboutTab').click (e) ->
+          ga 'send', 'pageview',
+            page: '/about'
+            title: 'About'
         window.rebel_sb = new window.SquadBuilder
             faction: 'Rebel Alliance'
             container: '#rebel-builder'
@@ -98,3 +120,4 @@
 
         window.browser = new CardBrowser
             container: '#card-browser'
+

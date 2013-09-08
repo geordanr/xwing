@@ -193,7 +193,7 @@ class exportObj.CardBrowser
         type = card.data 'type'
         data = card.data 'card'
 
-        @card_viewer_container.find('.info-name').text "#{name} (#{data.points})"
+        @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text data.sources.sort().join(', ')
         switch type

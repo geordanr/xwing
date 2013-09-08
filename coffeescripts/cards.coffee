@@ -47,6 +47,7 @@ exportObj.ships =
             "Focus",
             "Target Lock",
         ]
+        large: true
     "TIE Fighter":
         name: "TIE Fighter"
         faction: "Galactic Empire"
@@ -97,12 +98,60 @@ exportObj.ships =
             "Target Lock",
             "Evade",
         ]
+        large: true
+    "HWK-290":
+        name: "HWK-290"
+        faction: "Rebel Alliance"
+        attack: 1
+        agility: 2
+        hull: 4
+        shields: 1
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
+    "Lambda-Class Shuttle":
+        name: "Lambda-Class Shuttle"
+        faction: "Galactic Empire"
+        attack: 3
+        agility: 1
+        hull: 5
+        shields: 5
+        actions: [
+            "Focus",
+            "Target Lock",
+        ]
+        large: true
+    "B-Wing":
+        name: "B-Wing"
+        faction: "Rebel Alliance"
+        attack: 3
+        agility: 1
+        hull: 3
+        shields: 5
+        actions: [
+            "Focus",
+            "Target Lock",
+            "Barrel Roll",
+        ]
+    "TIE Bomber":
+        name: "TIE Bomber"
+        faction: "Galactic Empire"
+        attack: 2
+        agility: 2
+        hull: 6
+        shields: 0
+        actions: [
+            "Focus",
+            "Target Lock",
+            "Barrel Roll",
+        ]
 
 exportObj.pilots =
     "Wedge Antilles":
         name: "Wedge Antilles"
         id: 0
-        sources: [ "X-Wing Expansion Pack" ]
+        sources: [ "X-Wing Expansion Pack", ]
         unique: true
         ship: "X-Wing"
         skill: 9
@@ -116,7 +165,7 @@ exportObj.pilots =
     "Garven Dreis":
         name: "Garven Dreis"
         id: 1
-        sources: [ "X-Wing Expansion Pack" ]
+        sources: [ "X-Wing Expansion Pack", ]
         unique: true
         ship: "X-Wing"
         skill: 6
@@ -129,7 +178,7 @@ exportObj.pilots =
     "Red Squadron Pilot":
         name: "Red Squadron Pilot"
         id: 2
-        sources: [ "Core", "X-Wing Expansion Pack" ]
+        sources: [ "Core", "X-Wing Expansion Pack", ]
         ship: "X-Wing"
         skill: 4
         points: 23
@@ -140,7 +189,7 @@ exportObj.pilots =
     "Rookie Pilot":
         name: "Rookie Pilot"
         id: 3
-        sources: [ "Core", "X-Wing Expansion Pack" ]
+        sources: [ "Core", "X-Wing Expansion Pack", ]
         ship: "X-Wing"
         skill: 2
         points: 21
@@ -174,12 +223,12 @@ exportObj.pilots =
             "Torpedo",
             "Astromech",
         ]
-        text: """When defending, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-evade" src="images/transparent.png" /> result."""
+        text: """When defending, you may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> result."""
     "Gray Squadron Pilot":
         name: "Gray Squadron Pilot"
         id: 6
         ship: "Y-Wing"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         skill: 4
         points: 20
         slots: [
@@ -193,7 +242,7 @@ exportObj.pilots =
         id: 7
         unique: true
         ship: "Y-Wing"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         skill: 6
         points: 23
         slots: [
@@ -208,7 +257,7 @@ exportObj.pilots =
         id: 8
         unique: true
         ship: "Y-Wing"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         skill: 8
         points: 25
         slots: [
@@ -222,7 +271,7 @@ exportObj.pilots =
         name: "Gold Squadron Pilot"
         id: 9
         ship: "Y-Wing"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         skill: 2
         points: 18
         slots: [
@@ -235,7 +284,7 @@ exportObj.pilots =
         name: "Academy Pilot"
         id: 10
         ship: "TIE Fighter"
-        sources: [ "Core", "TIE Fighter Expansion Pack" ]
+        sources: [ "Core", "TIE Fighter Expansion Pack", ]
         skill: 1
         points: 12
         slots: []
@@ -243,7 +292,7 @@ exportObj.pilots =
         name: "Obsidian Squadron Pilot"
         id: 11
         ship: "TIE Fighter"
-        sources: [ "Core", "TIE Fighter Expansion Pack" ]
+        sources: [ "Core", "TIE Fighter Expansion Pack", ]
         skill: 3
         points: 13
         slots: []
@@ -251,7 +300,7 @@ exportObj.pilots =
         name: "Black Squadron Pilot"
         id: 12
         ship: "TIE Fighter"
-        sources: [ "Core", "TIE Fighter Expansion Pack" ]
+        sources: [ "Core", "TIE Fighter Expansion Pack", ]
         skill: 4
         points: 14
         slots: [
@@ -262,17 +311,17 @@ exportObj.pilots =
         id: 13
         unique: true
         ship: "TIE Fighter"
-        sources: [ "TIE Fighter Expansion Pack" ]
+        sources: [ "TIE Fighter Expansion Pack", ]
         skill: 5
         points: 15
         slots: [ ]
-        text: """When attacking at Range 1, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking at Range 1, you may change 1 of your <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     '"Night Beast"':
         name: '"Night Beast"'
         id: 14
         unique: true
         ship: "TIE Fighter"
-        sources: [ "Core" ]
+        sources: [ "Core", ]
         skill: 5
         points: 15
         slots: [ ]
@@ -282,7 +331,7 @@ exportObj.pilots =
         id: 15
         unique: true
         ship: "TIE Fighter"
-        sources: [ "TIE Fighter Expansion Pack" ]
+        sources: [ "TIE Fighter Expansion Pack", ]
         skill: 6
         points: 16
         slots: [ ]
@@ -292,7 +341,7 @@ exportObj.pilots =
         id: 16
         unique: true
         ship: "TIE Fighter"
-        sources: [ "Core" ]
+        sources: [ "Core", ]
         skill: 6
         points: 16
         slots: [ ]
@@ -302,7 +351,7 @@ exportObj.pilots =
         id: 17
         unique: true
         ship: "TIE Fighter"
-        sources: [ "Core" ]
+        sources: [ "Core", ]
         skill: 7
         points: 17
         slots: [
@@ -314,7 +363,7 @@ exportObj.pilots =
         id: 18
         unique: true
         ship: "TIE Fighter"
-        sources: [ "TIE Fighter Expansion Pack" ]
+        sources: [ "TIE Fighter Expansion Pack", ]
         skill: 8
         points: 18
         slots: [
@@ -326,7 +375,7 @@ exportObj.pilots =
         id: 19
         unique: true
         ship: "TIE Advanced"
-        sources: [ "TIE Advanced Expansion Pack" ]
+        sources: [ "TIE Advanced Expansion Pack", ]
         skill: 7
         points: 27
         slots: [
@@ -338,7 +387,7 @@ exportObj.pilots =
         name: "Tempest Squadron Pilot"
         id: 20
         ship: "TIE Advanced"
-        sources: [ "TIE Advanced Expansion Pack" ]
+        sources: [ "TIE Advanced Expansion Pack", ]
         skill: 2
         points: 21
         slots: [
@@ -348,7 +397,7 @@ exportObj.pilots =
         name: "Storm Squadron Pilot"
         id: 21
         ship: "TIE Advanced"
-        sources: [ "TIE Advanced Expansion Pack" ]
+        sources: [ "TIE Advanced Expansion Pack", ]
         skill: 4
         points: 23
         slots: [
@@ -359,7 +408,7 @@ exportObj.pilots =
         id: 22
         unique: true
         ship: "TIE Advanced"
-        sources: [ "TIE Advanced Expansion Pack" ]
+        sources: [ "TIE Advanced Expansion Pack", ]
         skill: 9
         points: 29
         slots: [
@@ -371,7 +420,7 @@ exportObj.pilots =
         name: "Alpha Squadron Pilot"
         id: 23
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 1
         points: 18
         slots: [ ]
@@ -379,7 +428,7 @@ exportObj.pilots =
         name: "Avenger Squadron Pilot"
         id: 24
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 3
         points: 20
         slots: [ ]
@@ -387,7 +436,7 @@ exportObj.pilots =
         name: "Saber Squadron Pilot"
         id: 25
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 4
         points: 21
         slots: [
@@ -398,7 +447,7 @@ exportObj.pilots =
         id: 26
         unique: true
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 5
         points: 23
         slots: [ ]
@@ -408,7 +457,7 @@ exportObj.pilots =
         id: 27
         unique: true
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 7
         points: 25
         slots: [
@@ -420,7 +469,7 @@ exportObj.pilots =
         id: 28
         unique: true
         ship: "TIE Interceptor"
-        sources: [ "TIE Interceptor Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", ]
         skill: 9
         points: 27
         slots: [
@@ -432,7 +481,7 @@ exportObj.pilots =
         id: 29
         unique: true
         ship: "A-Wing"
-        sources: [ "A-Wing Expansion Pack" ]
+        sources: [ "A-Wing Expansion Pack", ]
         skill: 8
         points: 26
         slots: [
@@ -445,7 +494,7 @@ exportObj.pilots =
         id: 30
         unique: true
         ship: "A-Wing"
-        sources: [ "A-Wing Expansion Pack" ]
+        sources: [ "A-Wing Expansion Pack", ]
         skill: 6
         points: 23
         slots: [
@@ -456,7 +505,7 @@ exportObj.pilots =
         name: "Green Squadron Pilot"
         id: 31
         ship: "A-Wing"
-        sources: [ "A-Wing Expansion Pack" ]
+        sources: [ "A-Wing Expansion Pack", ]
         skill: 3
         points: 19
         slots: [
@@ -467,7 +516,7 @@ exportObj.pilots =
         name: "Prototype Pilot"
         id: 32
         ship: "A-Wing"
-        sources: [ "A-Wing Expansion Pack" ]
+        sources: [ "A-Wing Expansion Pack", ]
         skill: 1
         points: 17
         slots: [
@@ -477,7 +526,7 @@ exportObj.pilots =
         name: "Outer Rim Smuggler"
         id: 33
         ship: "YT-1300"
-        sources: [ "Millennium Falcon Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", ]
         skill: 1
         points: 27
         slots: [
@@ -489,7 +538,7 @@ exportObj.pilots =
         id: 34
         unique: true
         ship: "YT-1300"
-        sources: [ "Millennium Falcon Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", ]
         skill: 5
         points: 42
         slots: [
@@ -509,7 +558,7 @@ exportObj.pilots =
         id: 35
         unique: true
         ship: "YT-1300"
-        sources: [ "Millennium Falcon Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", ]
         skill: 7
         points: 44
         slots: [
@@ -529,7 +578,7 @@ exportObj.pilots =
         id: 36
         unique: true
         ship: "YT-1300"
-        sources: [ "Millennium Falcon Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", ]
         skill: 9
         points: 46
         slots: [
@@ -549,7 +598,7 @@ exportObj.pilots =
         id: 37
         unique: true
         ship: "Firespray-31"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         skill: 7
         points: 38
         slots: [
@@ -559,13 +608,13 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking, the defender receives 1 stress token if he cancels at least 1 <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "Boba Fett":
         name: "Boba Fett"
         id: 38
         unique: true
         ship: "Firespray-31"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         skill: 8
         points: 39
         slots: [
@@ -575,13 +624,13 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
-        text: """When you reveal a bank maneuver (<img class="icon-bankleft" src="images/transparent.png" /> or <img class="icon-bankright" src="images/transparent.png" />), you may rotate your dial to the other bank maneuver of the same speed."""
+        text: """When you reveal a bank maneuver (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> or <img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />), you may rotate your dial to the other bank maneuver of the same speed."""
     "Krassis Trelix":
         name: "Krassis Trelix"
         id: 39
         unique: true
         ship: "Firespray-31"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         skill: 5
         points: 36
         slots: [
@@ -595,7 +644,7 @@ exportObj.pilots =
         name: "Bounty Hunter"
         id: 40
         ship: "Firespray-31"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         skill: 3
         points: 33
         slots: [
@@ -604,6 +653,236 @@ exportObj.pilots =
             "Crew",
             "Missile",
         ]
+    "Ten Numb":
+        name: "Ten Numb"
+        id: 41
+        unique: true
+        ship: "B-Wing"
+        sources: [ "B-Wing Expansion Pack", ]
+        skill: 8
+        points: 31
+        slots: [
+            "Elite",
+            "System",
+            "Cannon",
+            "Torpedo",
+            "Torpedo",
+        ]
+        text: """When attacking, 1 of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results cannot be canceled by defense dice."""
+    "Ibitsam":
+        name: "Ibitsam"
+        id: 42
+        unique: true
+        ship: "B-Wing"
+        sources: [ "B-Wing Expansion Pack", ]
+        skill: 6
+        points: 28
+        slots: [
+            "Elite",
+            "System",
+            "Cannon",
+            "Torpedo",
+            "Torpedo",
+        ]
+        text: """When attacking or defending, if you have at least 1 stress token, you may reroll 1 of your dice."""
+    "Dagger Squadron Pilot":
+        name: "Dagger Squadron Pilot"
+        id: 43
+        ship: "B-Wing"
+        sources: [ "B-Wing Expansion Pack", ]
+        skill: 4
+        points: 24
+        slots: [
+            "System",
+            "Cannon",
+            "Torpedo",
+            "Torpedo",
+        ]
+    "Blue Squadron Pilot":
+        name: "Blue Squadron Pilot"
+        id: 44
+        ship: "B-Wing"
+        sources: [ "B-Wing Expansion Pack", ]
+        skill: 2
+        points: 22
+        slots: [
+            "System",
+            "Cannon",
+            "Torpedo",
+            "Torpedo",
+        ]
+    "Rebel Operative":
+        name: "Rebel Operative"
+        id: 45
+        ship: "HWK-290"
+        sources: [ "HWK-290 Expansion Pack", ]
+        skill: 2
+        points: 16
+        slots: [
+            "Turret",
+            "Crew",
+        ]
+    "Roark Garnet":
+        name: "Roark Garnet"
+        id: 46
+        unique: true
+        ship: "HWK-290"
+        sources: [ "HWK-290 Expansion Pack", ]
+        skill: 4
+        points: 19
+        slots: [
+            "Turret",
+            "Crew",
+        ]
+        text: '''At the start of the Combat phase, choose 1 other friendly ship at Range 1-3.  Until the end of the phase, treat that ship's pilot skill value as "12."'''
+    "Kyle Katarn":
+        name: "Kyle Katarn"
+        id: 47
+        unique: true
+        ship: "HWK-290"
+        sources: [ "HWK-290 Expansion Pack", ]
+        skill: 6
+        points: 21
+        slots: [
+            "Elite",
+            "Turret",
+            "Crew",
+        ]
+        text: """At the start of the Combat phase, you may assign 1 of your focus tokens to another friendly ship at Range 1-3."""
+    "Jan Ors":
+        name: "Jan Ors"
+        id: 48
+        unique: true
+        ship: "HWK-290"
+        sources: [ "HWK-290 Expansion Pack", ]
+        skill: 8
+        points: 25
+        slots: [
+            "Elite",
+            "Turret",
+            "Crew",
+        ]
+        text: """When another friendly ship at Range 1-3 is attacking, if you have no stress tokens, you may receive 1 stress token to allow that ship to roll 1 additional attack die."""
+    "Scimitar Squadron Pilot":
+        name: "Scimitar Squadron Pilot"
+        id: 49
+        ship: "TIE Bomber"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        skill: 2
+        points: 16
+        slots: [
+            "Torpedo",
+            "Torpedo",
+            "Missile",
+            "Missile",
+            "Bomb",
+        ]
+    "Gamma Squadron Pilot":
+        name: "Gamma Squadron Pilot"
+        id: 50
+        ship: "TIE Bomber"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        skill: 4
+        points: 18
+        slots: [
+            "Torpedo",
+            "Torpedo",
+            "Missile",
+            "Missile",
+            "Bomb",
+        ]
+    "Captain Jonus":
+        name: "Captain Jonus"
+        id: 51
+        unique: true
+        ship: "TIE Bomber"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        skill: 6
+        points: 22
+        slots: [
+            "Elite",
+            "Torpedo",
+            "Torpedo",
+            "Missile",
+            "Missile",
+            "Bomb",
+        ]
+        text: """When another friendly ship at Range 1 attacks with a secondary weapon, it may reroll up to 2 attack dice."""
+    "Major Rhymer":
+        name: "Major Rhymer"
+        id: 52
+        unique: true
+        ship: "TIE Bomber"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        skill: 7
+        points: 26
+        slots: [
+            "Elite",
+            "Torpedo",
+            "Torpedo",
+            "Missile",
+            "Missile",
+            "Bomb",
+        ]
+        text: """When attacking with a secondary weapon, you may increase or decrease the weapon range by 1 to a limit of Range 1-3."""
+    "Captain Kagi":
+        name: "Captain Kagi"
+        id: 53
+        unique: true
+        ship: "Lambda-Class Shuttle"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        skill: 8
+        points: 27
+        slots: [
+            "System",
+            "Cannon",
+            "Crew",
+            "Crew",
+        ]
+        text: """When an enemy ship acquires a target lock, it must lock onto your ship if able."""
+    "Colonel Jendon":
+        name: "Colonel Jendon"
+        id: 54
+        unique: true
+        ship: "Lambda-Class Shuttle"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        skill: 6
+        points: 26
+        slots: [
+            "System",
+            "Cannon",
+            "Crew",
+            "Crew",
+        ]
+        text: """At the start of the Combat phase, you may assign 1 of your blue target lock tokens to a friendly ship at Range 1 if it does not have a blue target lock token."""
+    "Captain Yorr":
+        name: "Captain Yorr"
+        id: 55
+        unique: true
+        ship: "Lambda-Class Shuttle"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        skill: 4
+        points: 24
+        slots: [
+            "System",
+            "Cannon",
+            "Crew",
+            "Crew",
+        ]
+        text: """When another friendly ship at Range 1-2 would receive a stress token, if you have 2 or fewer stress tokens, you may receive that token instead."""
+    "Omicron Group Pilot":
+        name: "Omicron Group Pilot"
+        id: 56
+        ship: "Lambda-Class Shuttle"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        skill: 2
+        points: 21
+        slots: [
+            "System",
+            "Cannon",
+            "Crew",
+            "Crew",
+        ]
 
 
 exportObj.upgrades =
@@ -611,7 +890,7 @@ exportObj.upgrades =
         name: "Ion Cannon Turret"
         id: 0
         slot: "Turret"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", ]
         points: 5
         attack: 3
         range: "1-2"
@@ -620,16 +899,16 @@ exportObj.upgrades =
         name: "Proton Torpedoes"
         id: 1
         slot: "Torpedo"
-        sources: [ "Core", "X-Wing Expansion Pack", "Y-Wing Expansion Pack" ]
+        sources: [ "Core", "X-Wing Expansion Pack", "Y-Wing Expansion Pack", "B-Wing Expansion Pack", ]
         points: 4
         attack: 4
         range: "2-3"
-        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "R2 Astromech":
         name: "R2 Astromech"
         id: 2
         slot: "Astromech"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         points: 1
         text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
     "R2-D2":
@@ -637,7 +916,7 @@ exportObj.upgrades =
         id: 3
         unique: true
         slot: "Astromech"
-        sources: [ "Core" ]
+        sources: [ "Core", ]
         points: 4
         text: """After executing a green maneuver, you may recover 1 shield (up to your shield value)."""
     "R2-F2":
@@ -645,7 +924,7 @@ exportObj.upgrades =
         id: 4
         unique: true
         slot: "Astromech"
-        sources: [ "Core" ]
+        sources: [ "Core", ]
         points: 3
         text: """<strong>Action:</strong> Increase your agility value by 1 until the end of this game round."""
     "R5-D8":
@@ -653,29 +932,29 @@ exportObj.upgrades =
         id: 5
         unique: true
         slot: "Astromech"
-        sources: [ "Y-Wing Expansion Pack" ]
+        sources: [ "Y-Wing Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> or <img class="icon-focus" src="images/transparent.png" /> result, discard 1 of your facedown Damage cards."""
+        text: """<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> or <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result, discard 1 of your facedown Damage cards."""
     "R5-K6":
         name: "R5-K6"
         id: 6
         unique: true
         slot: "Astromech"
-        sources: [ "X-Wing Expansion Pack" ]
+        sources: [ "X-Wing Expansion Pack", ]
         points: 2
-        text: """After spending your target lock, roll 1 defense die.<br /><br />On a <img class="icon-evade" src="images/transparent.png" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
+        text: """After spending your target lock, roll 1 defense die.<br /><br />On a <img class="icon-evade" alt="Evade" src="images/transparent.png" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."""
     "R5 Astromech":
         name: "R5 Astromech"
         id: 7
         slot: "Astromech"
-        sources: [ "X-Wing Expansion Pack" ]
+        sources: [ "X-Wing Expansion Pack", ]
         points: 1
         text: """During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."""
     "Determination":
         name: "Determination"
         id: 8
         slot: "Elite"
-        sources: [ "Core", "TIE Fighter Expansion Pack" ]
+        sources: [ "Core", "TIE Fighter Expansion Pack", ]
         points: 1
         text: """When you are dealt a faceup Damage card with the Pilot trait, discard it immediately without resolving its effect."""
     "Swarm Tactics":
@@ -697,25 +976,25 @@ exportObj.upgrades =
         name: "Expert Handling"
         id: 11
         slot: "Elite"
-        sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack" ]
+        sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack", ]
         points: 2
-        text: """<strong>Action:</strong> Perform a barrel roll.  If you do not have the <img class="icon-barrel-roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
+        text: """<strong>Action:</strong> Perform a free barrel roll action.  If you do not have the <img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."""
     "Marksmanship":
         name: "Marksmanship"
         id: 12
         slot: "Elite"
-        sources: [ "Core", "X-Wing Expansion Pack" ]
+        sources: [ "Core", "X-Wing Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> When attacking this round, you may change 1 of your <img class="icon-focus" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result and all of your other <img class="icon-focus" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
+        text: """<strong>Action:</strong> When attacking this round, you may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result and all of your other <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results."""
     "Concussion Missiles":
         name: "Concussion Missiles"
         id: 13
         slot: "Missile"
-        sources: [ "TIE Advanced Expansion Pack", "A-Wing Expansion Pack", "Millennium Falcon Expansion Pack" ]
+        sources: [ "TIE Advanced Expansion Pack", "A-Wing Expansion Pack", "Millennium Falcon Expansion Pack", ]
         points: 4
         attack: 4
         range: "2-3"
-        text: """<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class="icon-hit" src="images/transparent.png" /> result."""
+        text: """<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result."""
     "Cluster Missiles":
         name: "Cluster Missiles"
         id: 14
@@ -731,19 +1010,19 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "TIE Interceptor Expansion Pack", ]
         points: 3
-        text: """<strong>Action:</strong> Execute a red (<img class="icon-turnleft" src="images/transparent.png" /> 1) or (<img class="icon-turnright" src="images/transparent.png" /> 1) maneuver.<br /><br />Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" src="images/transparent.png" />) rolled."""
+        text: """<strong>Action:</strong> Execute a white (<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" /> 1) or (<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" /> 1) maneuver.  Then, receive 1 stress token.<br /><br />Then, if you do not have the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon, roll 2 attack dice.  Suffer any damage (<img class="icon-hit" alt="Hit" src="images/transparent.png" />) and any critical damage (<img class="icon-crit" alt="Crit" src="images/transparent.png" />) rolled."""
     "Elusiveness":
         name: "Elusiveness"
         id: 16
         slot: "Elite"
-        sources: [ "TIE Interceptor Expansion Pack", "Millennium Falcon Expansion Pack" ]
+        sources: [ "TIE Interceptor Expansion Pack", "Millennium Falcon Expansion Pack", ]
         points: 2
         text: """When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.<br /><br />If you have at least 1 stress token, you cannot use this ability."""
     "Homing Missiles":
         name: "Homing Missiles"
         id: 17
         slot: "Missile"
-        sources: [ "A-Wing Expansion Pack", "Slave I Expansion Pack" ]
+        sources: [ "A-Wing Expansion Pack", "Slave I Expansion Pack", ]
         attack: 4
         range: "2-3"
         points: 5
@@ -766,21 +1045,21 @@ exportObj.upgrades =
         name: "Expose"
         id: 20
         slot: "Elite"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         points: 4
         text: """<strong>Action:</strong> Until the end of the round, increase your primary weapon value by 1 and decrease your agility value by 1."""
     "Gunner":
         name: "Gunner"
         id: 21
         slot: "Crew"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         points: 5
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You cannot perform another attack this round."""
     "Ion Cannon":
         name: "Ion Cannon"
         id: 22
         slot: "Cannon"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", "B-Wing Expansion Pack", ]
         points: 3
         attack: 3
         range: "1-3"
@@ -789,30 +1068,30 @@ exportObj.upgrades =
         name: "Heavy Laser Cannon"
         id: 23
         slot: "Cannon"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
         points: 7
         attack: 4
         range: "2-3"
-        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" src="images/transparent.png" /> results to <img class="icon-hit" src="images/transparent.png" /> results."""
+        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results."""
     "Seismic Charges":
         name: "Seismic Charges"
         id: 24
         slot: "Bomb"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
         points: 2
         text: """When you reveal your maneuver dial, you may discard this card to drop 1 seismic charge token.<br /><br />This token detonates at the end of the Activation phase."""
     "Mercenary Copilot":
         name: "Mercenary Copilot"
         id: 25
         slot: "Crew"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         points: 2
-        text: """When attacking at Range 3, you may change 1 of your <img class="icon-hit" src="images/transparent.png" /> results to a <img class="icon-crit" src="images/transparent.png" /> result."""
+        text: """When attacking at Range 3, you may change 1 of your <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
     "Assault Missiles":
         name: "Assault Missiles"
         id: 26
         slot: "Missile"
-        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
         points: 5
         attack: 4
         range: "2-3"
@@ -821,21 +1100,21 @@ exportObj.upgrades =
         name: "Veteran Instincts"
         id: 27
         slot: "Elite"
-        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", ]
         points: 1
         text: """Increase your pilot skill value by 2."""
     "Proximity Mines":
         name: "Proximity Mines"
         id: 28
         slot: "Bomb"
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         points: 3
         text: """<strong>Action:</strong> Discard this card to drop 1 proximity mine token.<br /><br />When a ship executes a maneuver, if its base or maneuver template overlaps this token, this token detonates."""
     "Weapons Engineer":
         name: "Weapons Engineer"
         id: 29
         slot: "Crew"
-        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack" ]
+        sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
         points: 3
         text: """You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."""
     "Draw Their Fire":
@@ -844,7 +1123,7 @@ exportObj.upgrades =
         slot: "Elite"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 1
-        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class="icon-crit" src="images/transparent.png" /> results instead of the target ship."""
+        text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results instead of the target ship."""
     "Luke Skywalker":
         name: "Luke Skywalker"
         id: 31
@@ -853,7 +1132,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 7
-        text: """After you perform an attack that does not hit, immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" src="images/transparent.png" /> result to a <img class="icon-hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
+        text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result.  You cannot perform another attack this round."""
     "Nien Nunb":
         name: "Nien Nunb"
         id: 32
@@ -862,7 +1141,7 @@ exportObj.upgrades =
         slot: "Crew"
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 1
-        text: """You may treat all <img class="icon-straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
+        text: """You may treat all <img class="icon-straight" alt="Straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
     "Chewbacca":
         name: "Chewbacca"
         id: 33
@@ -872,13 +1151,128 @@ exportObj.upgrades =
         sources: [ "Millennium Falcon Expansion Pack", ]
         points: 4
         text: """When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."""
+    "Advanced Proton Torpedoes":
+        name: "Advanced Proton Torpedoes"
+        id: 34
+        slot: "Torpedo"
+        attack: 5
+        range: "1"
+        sources: [ "B-Wing Expansion Pack", "TIE Bomber Expansion Pack", ]
+        points: 6
+        text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results."""
+    "Autoblaster":
+        name: "Autoblaster"
+        id: 35
+        slot: "Cannon"
+        attack: 3
+        range: "1"
+        sources: [ "B-Wing Expansion Pack", ]
+        points: 5
+        text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Your <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results cannot be canceled by defense dice.<br /><br />The defender may cancel <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results before <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results."""
+    "Fire-Control System":
+        name: "Fire-Control System"
+        id: 36
+        slot: "System"
+        sources: [ "B-Wing Expansion Pack", ]
+        points: 2
+        text: """After you perform an attack, you may acquire a target lock on the defender."""
+    "Blaster Turret":
+        name: "Blaster Turret"
+        id: 37
+        slot: "Turret"
+        sources: [ "HWK-290 Expansion Pack", ]
+        points: 4
+        attack: 3
+        range: "1-2"
+        text: """<strong>Attack (focus):</strong> Spend 1 focus token to perform this attack against 1 ship (even a ship outside your firing arc)."""
+    "Recon Specialist":
+        name: "Recon Specialist"
+        id: 38
+        slot: "Crew"
+        sources: [ "HWK-290 Expansion Pack", ]
+        points: 3
+        text: """When you perform a focus action, assign 1 additional focus token to your ship."""
+    "Saboteur":
+        name: "Saboteur"
+        id: 39
+        slot: "Crew"
+        sources: [ "HWK-290 Expansion Pack", ]
+        points: 2
+        text: """<strong>Action:</strong> Choose 1 enemy ship at Range 1 and roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> or <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result, choose 1 random facedown Damage card assigned to that ship, flip it faceup, and resolve it."""
+    "Intelligence Agent":
+        name: "Intelligence Agent"
+        id: 40
+        slot: "Crew"
+        sources: [ "HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
+        points: 1
+        text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."""
+    "Proton Bomb":
+        name: "Proton Bomb"
+        id: 41
+        slot: "Bomb"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        points: 5
+        text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase."""
+    "Adrenaline Rush":
+        name: "Adrenaline Rush"
+        id: 42
+        slot: "Elite"
+        sources: [ "TIE Bomber Expansion Pack", ]
+        points: 1
+        text: """When you reveal a red maneuver, you may discard this card to treat that maneuver as a white maneuver until the end of the Activation phase."""
+    "Advanced Sensors":
+        name: "Advanced Sensors"
+        id: 43
+        slot: "System"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 3
+        text: """Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your "Perform Action" step during this round."""
+    "Sensor Jammer":
+        name: "Sensor Jammer"
+        id: 44
+        slot: "System"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 4
+        text: """When defending, you may change 1 of the attacker's <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results into a <img class="icon-focus" alt="Focus" src="images/transparent.png" /> result.<br /><br />The attacker cannot reroll the die with the changed result."""
+    "Darth Vader":
+        name: "Darth Vader"
+        id: 45
+        unique: true
+        faction: "Galactic Empire"
+        slot: "Crew"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 3
+        text: """After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."""
+    "Rebel Captive":
+        name: "Rebel Captive"
+        id: 46
+        unique: true
+        faction: "Galactic Empire"
+        slot: "Crew"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 3
+        text: """Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."""
+    "Flight Instructor":
+        name: "Flight Instructor"
+        id: 47
+        slot: "Crew"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 4
+        text: """When defending, you may reroll 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results.  If the attacker's pilot skill value is "2" or lower, you may reroll 1 of your blank results instead."""
+    "Navigator":
+        name: "Navigator"
+        id: 48
+        slot: "Crew"
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 3
+        text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same bearing.<br /><br />You cannot rotate to a red maneuver if you have any stress tokens."""
 
 exportObj.modifications =
     "Stealth Device":
         name: "Stealth Device"
         id: 1
         points: 3
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         text: """Increase your agility value by 1.  If you are hit by an attack, discard this card."""
     "Shield Upgrade":
         name: "Shield Upgrade"
@@ -891,21 +1285,29 @@ exportObj.modifications =
         id: 3
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
-        text: """Your action bar gains the %BOOST% action icon."""
+        text: """Your action bar gains the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon."""
+    "Anti-Pursuit Lasers":
+        name: "Anti-Pursuit Lasers"
+        id: 4
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        points: 2
+        text: """After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> or <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result, the enemy ship suffers 1 damage."""
+        restriction_func: (ship) ->
+            ship.large ? false
 
 
 exportObj.titles =
     "Slave I":
         name: "Slave I"
         id: 1
-        sources: [ "Slave I Expansion Pack" ]
+        sources: [ "Slave I Expansion Pack", ]
         unique: true
         points: 0
         ship: "Firespray-31"
         slots: [
             "Torpedo",
         ]
-        text: """Your upgrade bar gains the <img class="icon-torpedo" src="images/transparent.png" /> upgrade icon."""
+        text: """Your upgrade bar gains the <img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" /> upgrade icon."""
     "Millennium Falcon":
         name: "Millennium Falcon"
         id: 2
@@ -914,7 +1316,23 @@ exportObj.titles =
         points: 1
         ship: "YT-1300"
         actions: "Evade"
-        text: """Your action bar gains the <img class="icon-evade" src="images/transparent.png" /> action icon."""
+        text: """Your action bar gains the <img class="icon-evade" alt="Evade" src="images/transparent.png" /> action icon."""
+    "Moldy Crow":
+        name: "Moldy Crow"
+        id: 3
+        sources: [ "HWK-290 Expansion Pack", ]
+        unique: true
+        points: 3
+        ship: "HWK-290"
+        text: """During the End phase, do not remove unused focus tokens from your ship."""
+    "ST-321":
+        name: "ST-321"
+        id: 4
+        sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+        unique: true
+        points: 3
+        ship: "Lambda-Class Shuttle"
+        text: """When acquiring a target lock, you may lock onto any enemy ship in the play area."""
 
 exportObj.expansions = {}
 
@@ -923,24 +1341,32 @@ for pilot_name, pilot of exportObj.pilots
     exportObj.pilotsById[pilot.id] = pilot
     for source in pilot.sources
         exportObj.expansions[source] = 1 if source not of exportObj.expansions
+if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
+    throw "At least one pilot shares an ID with another"
 
 exportObj.upgradesById = {}
 for upgrade_name, upgrade of exportObj.upgrades
     exportObj.upgradesById[upgrade.id] = upgrade
     for source in upgrade.sources
         exportObj.expansions[source] = 1 if source not of exportObj.expansions
+if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
+    throw "At least one upgrade shares an ID with another"
 
 exportObj.modificationsById = {}
 for modification_name, modification of exportObj.modifications
     exportObj.modificationsById[modification.id] = modification
     for source in modification.sources
         exportObj.expansions[source] = 1 if source not of exportObj.expansions
+if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
+    throw "At least one modification shares an ID with another"
 
 exportObj.titlesById = {}
 for title_name, title of exportObj.titles
     exportObj.titlesById[title.id] = title
     for source in title.sources
         exportObj.expansions[source] = 1 if source not of exportObj.expansions
+if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
+    throw "At least one title shares an ID with another"
 
 exportObj.titlesByShip = {}
 for title_name, title of exportObj.titles
