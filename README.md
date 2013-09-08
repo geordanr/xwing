@@ -13,7 +13,7 @@ some CSS trickery if you're using some other incompatible framework
 
 Can I save squads or share them on `$SOCIAL_NETWORK`?
 -----------------------------------------------------
-Yes, if you provide a backend that adheres to the API.  See my [X-Wing Backend](https://github.com/geordanr/xwing-backend) project for an example.
+Saving: yes, if you provide a backend that adheres to the API.  See my [X-Wing Backend](https://github.com/geordanr/xwing-backend) project for an example.  Sharing, no.
 
 Aren't there other squad builders out there already?
 ----------------------------------------------------
@@ -34,6 +34,11 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 
 CHANGELOG
 =========
+
+8 Sep 2013
+----------
+* Finish Wave 3 ship integration.
+* Add unique dots.
 
 29 May 2013
 -----------
