@@ -641,7 +641,7 @@ class exportObj.SquadBuilder
 
     showTooltip: (type, data) ->
         if data != @tooltip_currently_displaying
-            @info_container.find('.info-name').text data.name
+            @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
             @info_container.find('p.info-text').html data.text ? ''
             switch type
                 when 'Pilot'

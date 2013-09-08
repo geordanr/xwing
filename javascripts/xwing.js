@@ -824,7 +824,7 @@
     SquadBuilder.prototype.showTooltip = function(type, data) {
       var ship, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
       if (data !== this.tooltip_currently_displaying) {
-        this.info_container.find('.info-name').text(data.name);
+        this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name);
         this.info_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
         switch (type) {
           case 'Pilot':
