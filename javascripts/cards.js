@@ -1143,7 +1143,7 @@
       slot: "Crew",
       sources: ["Lambda-Class Shuttle Expansion Pack"],
       points: 4,
-      text: "<strong>(Unconfirmed)</strong> When defending, you may reroll one of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results.  If the attacker's pilot skill value is 2 or lower, you may reroll 1 of your blank results instead."
+      text: "When defending, you may reroll 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results.  If the attacker's pilot skill value is \"2\" or lower, you may reroll 1 of your blank results instead."
     },
     "Navigator": {
       name: "Navigator",
