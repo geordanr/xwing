@@ -1727,7 +1727,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
                 this.search.val(this.focusser.val());
             }
-            this.search.focus();
+            if (this.opts.minimumResultsForSearch >= 0) this.search.focus();
             // in IE we have to move the cursor to the end after focussing, otherwise it will be at the beginning and
             // new text will appear *before* focusser.val()
             el = this.search.get(0);
@@ -1747,7 +1747,7 @@ the specific language governing permissions and limitations under the Apache Lic
             if (!this.opened()) return;
             this.parent.close.apply(this, arguments);
             this.focusser.removeAttr("disabled");
-            this.focusser.focus();
+            if (this.opts.minimumResultsForSearch >= 0) this.focusser.focus();
         },
 
         // single
@@ -1756,7 +1756,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 this.close();
             } else {
                 this.focusser.removeAttr("disabled");
-                this.focusser.focus();
+                if (this.opts.minimumResultsForSearch >= 0) this.focusser.focus();
             }
         },
 
@@ -1769,7 +1769,7 @@ the specific language governing permissions and limitations under the Apache Lic
         cancel: function () {
             this.parent.cancel.apply(this, arguments);
             this.focusser.removeAttr("disabled");
-            this.focusser.focus();
+            if (this.opts.minimumResultsForSearch >= 0) this.focusser.focus();
         },
 
         // single
@@ -1827,7 +1827,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 // without this the search field loses focus which is annoying
                 if (document.activeElement === this.body().get(0)) {
                     window.setTimeout(this.bind(function() {
-                        this.search.focus();
+                        if (this.opts.minimumResultsForSearch >= 0) this.search.focus();
                     }), 0);
                 }
             }));
@@ -1891,7 +1891,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 killEvent(e);
             }));
 
-            dropdown.on("mousedown", this.bind(function() { this.search.focus(); }));
+            dropdown.on("mousedown", this.bind(function() { if (this.opts.minimumResultsForSearch >= 0) this.search.focus(); }));
 
             selection.on("focus", this.bind(function(e) {
                 killEvent(e);

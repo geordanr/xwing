@@ -39,6 +39,7 @@ CHANGELOG
 ----------
 * Finish Wave 3 ship integration.
 * Add unique dots.
+* Monkeypatch Select2 to stop focusing on the search input when on mobile.
 
 29 May 2013
 -----------

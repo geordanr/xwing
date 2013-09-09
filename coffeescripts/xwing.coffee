@@ -252,6 +252,7 @@ class exportObj.SquadBuilder
             @randomizer_source_selector.append opt
         @randomizer_source_selector.select2
             width: "100%"
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
 
         @randomize_button.click (e) =>
             e.preventDefault()
@@ -934,6 +935,7 @@ class Ship
                 query.callback
                     more: false
                     results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
@@ -992,6 +994,7 @@ class GenericAddon
         @selector = $ document.createElement 'INPUT'
         @selector.attr 'type', 'hidden'
         @container.append @selector
+        args.minimumResultsForSearch = -1 if $.isMobile()
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
