@@ -42,9 +42,6 @@ strong em, em strong {
   font-style: normal;
   font-weight: normal; }
 
-.show-on-print {
-  display: none; }
-
 .nav-pills {
   border-bottom: thin solid darkgrey; }
 
@@ -263,3 +260,19 @@ div.tab-content {
 
 select.card-selector {
   width: 100%; }
+
+.fancy-list {
+  width: 100%; }
+
+.fancy-list tr.pilot-header, .fancy-list tr.pilot-header > td {
+  background-color: black;
+  color: white;
+  font-family: BankGothicHD;
+  font-size: 1.2em; }
+
+.fancy-list .omg-hax > td {
+  height: 1px; }
+
+.fancy-list .info-data {
+  position: relative;
+  top: -5px; }

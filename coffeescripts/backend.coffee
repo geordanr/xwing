@@ -253,7 +253,7 @@ class exportObj.SquadBuilderBackend
             false
 
         @login_modal = $ document.createElement('DIV')
-        @login_modal.addClass 'modal hide fade hide-on-print'
+        @login_modal.addClass 'modal hide fade hidden-print'
         $(document.body).append @login_modal
         @login_modal.append $.trim """
             <div class="modal-header">
@@ -317,7 +317,7 @@ class exportObj.SquadBuilderBackend
             @ui_ready = true
 
         @squad_list_modal = $ document.createElement('DIV')
-        @squad_list_modal.addClass 'modal hide fade hide-on-print squad-list'
+        @squad_list_modal.addClass 'modal hide fade hidden-print squad-list'
         $(document.body).append @squad_list_modal
         @squad_list_modal.append $.trim """
             <div class="modal-header">
@@ -339,7 +339,7 @@ class exportObj.SquadBuilderBackend
         @squad_list_modal.find('ul.squad-list').hide()
 
         @save_as_modal = $ document.createElement('DIV')
-        @save_as_modal.addClass 'modal hide fade hide-on-print'
+        @save_as_modal.addClass 'modal hide fade hidden-print'
         $(document.body).append @save_as_modal
         @save_as_modal.append $.trim """
             <div class="modal-header">
@@ -416,7 +416,7 @@ class exportObj.SquadBuilderBackend
         @name_availability_container = $ @save_as_modal.find('.name-availability')
 
         @delete_modal = $ document.createElement('DIV')
-        @delete_modal.addClass 'modal hide fade hide-on-print'
+        @delete_modal.addClass 'modal hide fade hidden-print'
         $(document.body).append @delete_modal
         @delete_modal.append $.trim """
             <div class="modal-header">
@@ -459,7 +459,7 @@ class exportObj.SquadBuilderBackend
                     builder.backend_delete_list_button.removeClass 'disabled'
 
         @unsaved_modal = $ document.createElement('DIV')
-        @unsaved_modal.addClass 'modal hide fade hide-on-print'
+        @unsaved_modal.addClass 'modal hide fade hidden-print'
         $(document.body).append @unsaved_modal
         @unsaved_modal.append $.trim """
             <div class="modal-header">

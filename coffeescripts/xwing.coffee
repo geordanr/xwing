@@ -151,18 +151,21 @@ class exportObj.SquadBuilder
         @container.append @list_modal
         @list_modal.append $.trim """
             <div class="modal-header">
-                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3><span class="squad-name"></span> (#{@faction}): <span class="total-points">0</span> Points </h3>
             </div>
             <div class="modal-body">
-                <ul></ul>
+                <table class="fancy-list">
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
-            <div class="modal-footer hide-on-print">
+            <div class="modal-footer hidden-print">
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
-        @text_ul = $ @list_modal.find('div.modal-body ul')
+        @text_container = $ @list_modal.find('div.modal-body .fancy-list tbody')
         @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
 
         @squad_name_container = $ @status_container.find('div.squad-name-container')
@@ -422,7 +425,8 @@ class exportObj.SquadBuilder
         @print_list_button.click (e) =>
             e.preventDefault()
             # Copy text list to printable
-            @printable_container.html @list_modal.html()
+            @printable_container.find('.printable-header').html @list_modal.find('.modal-header').html()
+            @printable_container.find('.printable-body').html @list_modal.find('.modal-body').html()
             window.print()
 
     onPointsUpdated: (cb) =>
@@ -434,29 +438,9 @@ class exportObj.SquadBuilder
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
-        @text_ul.text ''
+        @text_container.text ''
         for ship in @ships
-            if ship.pilot?
-                if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
-                    addon_list = '<ul>'
-                    addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
-                    for upgrade in ship.upgrades
-                        if upgrade.data?
-                            addon_list += "<li>#{upgrade.toString()}</li>"
-                    addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
-                    addon_list += '</ul>'
-                    total_points = "Total: #{ship.getPoints()}"
-                else
-                    total_points = ''
-                    addon_list = ''
-                @text_ul.append $.trim """
-                    <li>
-                        <span class="info-name">#{ship.pilot.name} (#{ship.pilot.points})</span>
-                        <br />
-                        #{addon_list}
-                        <em>#{total_points}</em>
-                    </li>
-                """
+            @text_container.append ship.toHTML() if ship.pilot?
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -969,6 +953,61 @@ class Ship
             "Pilot #{@pilot.name} flying #{@data.name}"
         else
             "Ship without pilot"
+
+    toHTML: () ->
+        ###
+        if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
+            addon_list = '<ul>'
+            addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
+            for upgrade in ship.upgrades
+                if upgrade.data?
+                    addon_list += "<li>#{upgrade.toString()}</li>"
+            addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
+            addon_list += '</ul>'
+            total_points = "Total: #{ship.getPoints()}"
+        else
+            total_points = ''
+            addon_list = ''
+        ###
+
+        action_bar = ""
+        for action in exportObj.ships[@data.name].actions
+            action_bar += switch action
+                when 'Focus'
+                    """<img class="icon-focus" src="images/transparent.png" />"""
+                when 'Evade'
+                    """<img class="icon-evade" src="images/transparent.png" />"""
+                when 'Barrel Roll'
+                    """<img class="icon-barrel-roll" src="images/transparent.png" />"""
+                when 'Target Lock'
+                    """<img class="icon-target-lock" src="images/transparent.png" />"""
+                when 'Boost'
+                    """<img class="icon-boost" src="images/transparent.png" />"""
+                else
+                    """<span>&nbsp;#{action}<span>"""
+
+        $.trim """
+            <tr class="omg-hax"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="pilot-header">
+                <td colspan="10" class="pilot-name">#{@pilot.name} / #{@data.name}</td>
+                <td colspan="2" class="pilot-points">#{@pilot.points}</td>
+            </tr>
+            <tr class="stats">
+                <td colspan="12" class="stat-block">
+                    <span class="info-data info-skill">#{@pilot.skill}</span>
+                    <img class="icon-attack" src="images/transparent.png" />
+                    <span class="info-data info-attack">#{@pilot.ship_override?.attack ? @data.attack}</span>
+                    <img class="icon-agility" src="images/transparent.png" />
+                    <span class="info-data info-agility">#{@pilot.ship_override?.agility ? @data.agility}</span>
+                    <img class="icon-hull" src="images/transparent.png" />
+                    <span class="info-data info-hull">#{@pilot.ship_override?.hull ? @data.hull}</span>
+                    <img class="icon-shields" src="images/transparent.png" />
+                    <span class="info-data info-shields">#{@pilot.ship_override?.shields ? @data.shields}</span>
+                    &nbsp;
+                    #{action_bar}
+                </td>
+            </tr>
+        """
 
 class GenericAddon
     constructor: (args) ->
