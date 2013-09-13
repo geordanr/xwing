@@ -1,0 +1,161 @@
+$fancy-header-height: 38px
+$header-circle-diameter: $fancy-header-height * 1.5
+$header-circle-border-width: 10px
+
+$fancy-pilot-header-height: 30px
+$pilot-circle-diameter: $fancy-pilot-header-height * 1.5
+$pilot-circle-border-width: 10px
+
+$upgrade-circle-diameter: $pilot-circle-diameter * 0.75
+$upgrade-circle-border-width: 5px
+
+.fancy-header
+  border: $fancy-header-height solid black
+  color: white
+  border-left-color: transparent
+  border-top-color: transparent
+  border-right-color: transparent
+  font-family: BankGothicHD, Impact, sans-serif
+
+  .squad-name
+    position: absolute
+    font-size: $fancy-header-height * 0.8
+    margin-top: $fancy-header-height * 0.2
+    font-weight: 100
+
+  .mask
+    position: absolute
+    right: 0
+    width: $header-circle-diameter
+    background-color: white
+    height: $header-circle-diameter
+    z-index: 999
+
+  .outer-circle
+    width: $header-circle-diameter
+    height: $header-circle-diameter
+    border-radius: $header-circle-diameter / 2
+    margin-left: -$header-circle-diameter / 2
+    background-color: white
+
+    .inner-circle
+      width: $header-circle-diameter - $header-circle-border-width
+      height: $header-circle-diameter - $header-circle-border-width
+      border-radius: ($header-circle-diameter - $header-circle-border-width) / 2
+      background-color: gray
+      position: relative
+      top: $header-circle-border-width / 2
+      left: $header-circle-border-width / 2
+      line-height: $header-circle-diameter - $header-circle-border-width
+      font-size: $fancy-header-height / 2
+      text-align: center
+
+.fancy-under-header
+  border: $fancy-header-height / 2 solid gray
+  border-left-color: transparent
+  border-bottom-color: transparent
+  border-right-color: transparent
+  position: relative
+  left: $fancy-header-height
+
+.fancy-pilot-header
+  border: $fancy-pilot-header-height solid lightgray
+  color: black
+  border-left-color: transparent
+  border-bottom-color: transparent
+  border-right-color: transparent
+  font-family: EurostileStandard, Impact, sans-serif
+  height: 0px
+
+  .pilot-header-text
+    position: absolute
+    font-size: $fancy-pilot-header-height * 0.8
+    margin-top: -($fancy-pilot-header-height * 0.8)
+    font-weight: 100
+
+  .mask.movable
+    position: relative
+    right: 0
+    top: -30px
+    width: $pilot-circle-diameter
+    background-color: white
+    height: $pilot-circle-diameter
+    z-index: 999
+
+  .outer-circle
+    width: $pilot-circle-diameter
+    height: $pilot-circle-diameter
+    border-radius: $pilot-circle-diameter / 2
+    margin-left: -$pilot-circle-diameter / 2
+    background-color: white
+
+    .inner-circle
+      width: $pilot-circle-diameter - $pilot-circle-border-width
+      height: $pilot-circle-diameter - $pilot-circle-border-width
+      border-radius: ($pilot-circle-diameter - $pilot-circle-border-width) / 2
+      background-color: gray
+      position: relative
+      top: $pilot-circle-border-width / 2
+      left: $pilot-circle-border-width / 2
+      line-height: $pilot-circle-diameter - ($pilot-circle-border-width / 2)
+      font-size: $fancy-pilot-header-height / 2
+      text-align: center
+      color: white
+
+.fancy-pilot-stats
+
+  .pilot-stats-content
+    margin-top: -($fancy-pilot-header-height - ($pilot-circle-border-width / 2))
+    position: relative
+    left: $fancy-pilot-header-height * 2
+    margin-right: ($fancy-pilot-header-height * 2) + (($pilot-circle-diameter - $pilot-circle-border-width) / 2)
+    background-color: gray
+    border-left: 10px solid gray
+
+.fancy-pilot-text
+  margin-left: $fancy-pilot-header-height * 2
+  padding: 5px
+
+.fancy-upgrade-container
+  color: black
+  margin-left: $fancy-pilot-header-height
+  margin-bottom: 10px
+  padding-top: 10px
+  padding-bottom: 1px
+
+  .upgrade-container
+    margin-bottom: -15px
+
+    .mask.movable
+      position: relative
+      right: 0
+      top: -24px
+      width: $upgrade-circle-diameter
+      height: $upgrade-circle-diameter
+      z-index: 999
+
+    .outer-circle
+      width: $upgrade-circle-diameter
+      height: $upgrade-circle-diameter
+      border-radius: $upgrade-circle-diameter / 2
+      margin-left: -$upgrade-circle-diameter / 2
+      background-color: white
+
+      .inner-circle
+        width: $upgrade-circle-diameter - $upgrade-circle-border-width
+        height: $upgrade-circle-diameter - $upgrade-circle-border-width
+        border-radius: ($upgrade-circle-diameter - $upgrade-circle-border-width) / 2
+        background-color: gray
+        position: relative
+        top: $upgrade-circle-border-width / 2
+        left: $upgrade-circle-border-width / 2
+        line-height: $upgrade-circle-diameter
+        font-size: $fancy-pilot-header-height / 2
+        text-align: center
+        color: white
+
+    .upgrade-name
+      margin-right: $upgrade-circle-diameter + $upgrade-circle-border-width
+      position: relative
+      top: 5px
+      text-align: right

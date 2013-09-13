@@ -1,0 +1,135 @@
+.fancy-header {
+  border: 38px solid black;
+  color: white;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  font-family: BankGothicHD, Impact, sans-serif; }
+  .fancy-header .squad-name {
+    position: absolute;
+    font-size: 30.4px;
+    margin-top: 7.6px;
+    font-weight: 100; }
+  .fancy-header .mask {
+    position: absolute;
+    right: 0;
+    width: 57px;
+    background-color: white;
+    height: 57px;
+    z-index: 999; }
+  .fancy-header .outer-circle {
+    width: 57px;
+    height: 57px;
+    border-radius: 28.5px;
+    margin-left: -28.5px;
+    background-color: white; }
+    .fancy-header .outer-circle .inner-circle {
+      width: 47px;
+      height: 47px;
+      border-radius: 23.5px;
+      background-color: gray;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      line-height: 47px;
+      font-size: 19px;
+      text-align: center; }
+
+.fancy-under-header {
+  border: 19px solid gray;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  position: relative;
+  left: 38px; }
+
+.fancy-pilot-header {
+  border: 30px solid lightgrey;
+  color: black;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  font-family: EurostileStandard, Impact, sans-serif;
+  height: 0px; }
+  .fancy-pilot-header .pilot-header-text {
+    position: absolute;
+    font-size: 24px;
+    margin-top: -24px;
+    font-weight: 100; }
+  .fancy-pilot-header .mask.movable {
+    position: relative;
+    right: 0;
+    top: -30px;
+    width: 45px;
+    background-color: white;
+    height: 45px;
+    z-index: 999; }
+  .fancy-pilot-header .outer-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    margin-left: -22.5px;
+    background-color: white; }
+    .fancy-pilot-header .outer-circle .inner-circle {
+      width: 35px;
+      height: 35px;
+      border-radius: 17.5px;
+      background-color: gray;
+      position: relative;
+      top: 5px;
+      left: 5px;
+      line-height: 40px;
+      font-size: 15px;
+      text-align: center;
+      color: white; }
+
+.fancy-pilot-stats .pilot-stats-content {
+  margin-top: -25px;
+  position: relative;
+  left: 60px;
+  margin-right: 77.5px;
+  background-color: gray;
+  border-left: 10px solid gray; }
+
+.fancy-pilot-text {
+  margin-left: 60px;
+  padding: 5px; }
+
+.fancy-upgrade-container {
+  color: black;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 1px; }
+  .fancy-upgrade-container .upgrade-container {
+    margin-bottom: -15px; }
+    .fancy-upgrade-container .upgrade-container .mask.movable {
+      position: relative;
+      right: 0;
+      top: -24px;
+      width: 33.75px;
+      height: 33.75px;
+      z-index: 999; }
+    .fancy-upgrade-container .upgrade-container .outer-circle {
+      width: 33.75px;
+      height: 33.75px;
+      border-radius: 16.875px;
+      margin-left: -16.875px;
+      background-color: white; }
+      .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
+        width: 28.75px;
+        height: 28.75px;
+        border-radius: 14.375px;
+        background-color: gray;
+        position: relative;
+        top: 2.5px;
+        left: 2.5px;
+        line-height: 33.75px;
+        font-size: 15px;
+        text-align: center;
+        color: white; }
+    .fancy-upgrade-container .upgrade-container .upgrade-name {
+      margin-right: 38.75px;
+      position: relative;
+      top: 5px;
+      text-align: right; }

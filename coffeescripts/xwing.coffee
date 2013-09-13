@@ -83,7 +83,7 @@ class exportObj.SquadBuilder
     resetCurrentSquad: () ->
         @current_squad =
             id: null
-            name: $.trim(@squad_name_input.val())
+            name: $.trim(@squad_name_input.val()) or "Unnamed Squadron"
             dirty: false
             additional_data:
                 points: @total_points
@@ -91,9 +91,9 @@ class exportObj.SquadBuilder
                 cards: []
             faction: @faction
         if @total_points > 0
-            @current_squad.name = 'Unsaved Squad'
+            @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
-            @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     setupUI: () ->
@@ -107,7 +107,7 @@ class exportObj.SquadBuilder
             <div class="row-fluid">
                 <div class="span4 squad-name-container">
                     <div class="display-name">
-                        <span class="squad-name">Unnamed Squadron</span>
+                        <span class="squad-name"></span>
                         <i class="icon-pencil"></i>
                     </div>
                     <div class="input-append">
@@ -152,21 +152,28 @@ class exportObj.SquadBuilder
         @list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3><span class="squad-name"></span> (#{@faction}): <span class="total-points">0</span> Points </h3>
+                <div class="fancy-header">
+                    <div class="squad-name"></div>
+                    <div class="mask">
+                        <div class="outer-circle">
+                            <div class="inner-circle">
+                                <span class="total-points"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fancy-under-header"></div>
             </div>
             <div class="modal-body">
-                <table class="fancy-list">
-                    <tbody>
-                    </tbody>
-                </table>
+                <div class="fancy-list"></div>
             </div>
             <div class="modal-footer hidden-print">
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
-        @text_container = $ @list_modal.find('div.modal-body .fancy-list tbody')
-        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+        @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
+        @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
 
         @squad_name_container = $ @status_container.find('div.squad-name-container')
         @squad_name_display = $ @container.find('.display-name')
@@ -427,20 +434,27 @@ class exportObj.SquadBuilder
             # Copy text list to printable
             @printable_container.find('.printable-header').html @list_modal.find('.modal-header').html()
             @printable_container.find('.printable-body').html @list_modal.find('.modal-body').html()
+            @printable_container.find('.printable-body').text ''
+            for ship in @ships
+                @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
             window.print()
+
+        @list_modal.on 'shown', (e) =>
+            # Fix positioning
+            @list_modal.find('.mask.movable').css 'right', 50 - $('.fancy-list').width()
 
     onPointsUpdated: (cb) =>
         @total_points = 0
         for ship, i in @ships
             @total_points += ship.getPoints()
         @points_container.text "Total Points: #{@total_points}"
-        @text_total_points_container.text @total_points
+        @fancy_total_points_container.text @total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
-        @text_container.text ''
+        @fancy_container.text ''
         for ship in @ships
-            @text_container.append ship.toHTML() if ship.pilot?
+            @fancy_container.append ship.toHTML() if ship.pilot?
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -986,14 +1000,17 @@ class Ship
                 else
                     """<span>&nbsp;#{action}<span>"""
 
-        $.trim """
-            <tr class="omg-hax"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr class="pilot-header">
-                <td colspan="10" class="pilot-name">#{@pilot.name} / #{@data.name}</td>
-                <td colspan="2" class="pilot-points">#{@pilot.points}</td>
-            </tr>
-            <tr class="stats">
-                <td colspan="12" class="stat-block">
+        html = $.trim """
+            <div class="fancy-pilot-header">
+                <div class="pilot-header-text">#{@pilot.name} / #{@data.name}</div>
+                <div class="mask movable">
+                    <div class="outer-circle">
+                        <div class="inner-circle pilot-points">#{@pilot.points}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fancy-pilot-stats">
+                <div class="pilot-stats-content">
                     <span class="info-data info-skill">#{@pilot.skill}</span>
                     <img class="icon-attack" src="images/transparent.png" />
                     <span class="info-data info-attack">#{@pilot.ship_override?.attack ? @data.attack}</span>
@@ -1005,9 +1022,29 @@ class Ship
                     <span class="info-data info-shields">#{@pilot.ship_override?.shields ? @data.shields}</span>
                     &nbsp;
                     #{action_bar}
-                </td>
-            </tr>
+                </div>
+            </div>
         """
+
+        if @pilot.text
+            html += $.trim """
+                <div class="fancy-pilot-text">#{@pilot.text}</div>
+            """
+
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+        if slotted_upgrades.length > 0
+            html += $.trim """
+                <div class="fancy-upgrade-container">
+            """
+
+            for upgrade in slotted_upgrades
+                html += upgrade.toHTML()
+
+            html += $.trim """
+                </div>
+            """
+
+        """<div class="fancy-ship">#{html}</div>"""
 
 class GenericAddon
     constructor: (args) ->
@@ -1077,6 +1114,21 @@ class GenericAddon
             "#{@data.name} (#{@data.points})"
         else
             "No #{@type}"
+
+    toHTML: () ->
+        if @data?
+            $.trim """
+                <div class="upgrade-container">
+                    <div class="upgrade-name">#{@data.name}</div>
+                    <div class="mask movable">
+                        <div class="outer-circle">
+                            <div class="inner-circle upgrade-points">#{@data.points}</div>
+                        </div>
+                    </div>
+                </div>
+            """
+        else
+            ''
 
 class Upgrade extends GenericAddon
     constructor: (args) ->
