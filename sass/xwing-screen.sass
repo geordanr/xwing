@@ -9,6 +9,9 @@ $pilot-circle-border-width: 10px
 $upgrade-circle-diameter: $pilot-circle-diameter * 0.75
 $upgrade-circle-border-width: 5px
 
+.text-list-modal .modal-header
+  overflow: hidden
+
 .fancy-header
   border: $fancy-header-height solid black
   color: white
@@ -58,104 +61,119 @@ $upgrade-circle-border-width: 5px
   position: relative
   left: $fancy-header-height
 
-.fancy-pilot-header
-  border: $fancy-pilot-header-height solid lightgray
-  color: black
-  border-left-color: transparent
-  border-bottom-color: transparent
-  border-right-color: transparent
-  font-family: EurostileStandard, Impact, sans-serif
-  height: 0px
-
-  .pilot-header-text
-    position: absolute
-    font-size: $fancy-pilot-header-height * 0.8
-    margin-top: -($fancy-pilot-header-height * 0.8)
-    font-weight: 100
-
-  .mask.movable
-    position: relative
-    right: 0
-    top: -30px
-    width: $pilot-circle-diameter
-    background-color: white
-    height: $pilot-circle-diameter
-    z-index: 999
-
-  .outer-circle
-    width: $pilot-circle-diameter
-    height: $pilot-circle-diameter
-    border-radius: $pilot-circle-diameter / 2
-    margin-left: -$pilot-circle-diameter / 2
-    background-color: white
-
-    .inner-circle
-      width: $pilot-circle-diameter - $pilot-circle-border-width
-      height: $pilot-circle-diameter - $pilot-circle-border-width
-      border-radius: ($pilot-circle-diameter - $pilot-circle-border-width) / 2
-      background-color: gray
-      position: relative
-      top: $pilot-circle-border-width / 2
-      left: $pilot-circle-border-width / 2
-      line-height: $pilot-circle-diameter - ($pilot-circle-border-width / 2)
-      font-size: $fancy-pilot-header-height / 2
-      text-align: center
-      color: white
-
-.fancy-pilot-stats
-
-  .pilot-stats-content
-    margin-top: -($fancy-pilot-header-height - ($pilot-circle-border-width / 2))
-    position: relative
-    left: $fancy-pilot-header-height * 2
-    margin-right: ($fancy-pilot-header-height * 2) + (($pilot-circle-diameter - $pilot-circle-border-width) / 2)
-    background-color: gray
-    border-left: 10px solid gray
-
-.fancy-pilot-text
-  margin-left: $fancy-pilot-header-height * 2
-  padding: 5px
-
-.fancy-upgrade-container
-  color: black
-  margin-left: $fancy-pilot-header-height
+.fancy-ship
+  overflow: hidden
   margin-bottom: 10px
-  padding-top: 10px
-  padding-bottom: 1px
 
-  .upgrade-container
-    margin-bottom: -15px
+  .fancy-pilot-header
+    border: $fancy-pilot-header-height solid lightgray
+    color: black
+    border-left-color: transparent
+    border-bottom-color: transparent
+    border-right-color: transparent
+    font-family: EurostileStandard, Impact, sans-serif
+    height: 0px
 
-    .mask.movable
+    .pilot-header-text
+      position: absolute
+      font-size: $fancy-pilot-header-height * 0.8
+      margin-top: -($fancy-pilot-header-height * 0.8)
+      font-weight: 100
+
+    .mask
       position: relative
-      right: 0
-      top: -24px
-      width: $upgrade-circle-diameter
-      height: $upgrade-circle-diameter
+      float: right
+      clear: both
+      right: -$pilot-circle-diameter
+      top: -$fancy-pilot-header-height
+      width: $pilot-circle-diameter
+      background-color: white
+      height: $fancy-pilot-header-height * 2
       z-index: 999
 
     .outer-circle
-      width: $upgrade-circle-diameter
-      height: $upgrade-circle-diameter
-      border-radius: $upgrade-circle-diameter / 2
-      margin-left: -$upgrade-circle-diameter / 2
+      width: $pilot-circle-diameter
+      height: $pilot-circle-diameter
+      border-radius: $pilot-circle-diameter / 2
+      margin-left: -$pilot-circle-diameter / 2
       background-color: white
 
       .inner-circle
-        width: $upgrade-circle-diameter - $upgrade-circle-border-width
-        height: $upgrade-circle-diameter - $upgrade-circle-border-width
-        border-radius: ($upgrade-circle-diameter - $upgrade-circle-border-width) / 2
+        width: $pilot-circle-diameter - $pilot-circle-border-width
+        height: $pilot-circle-diameter - $pilot-circle-border-width
+        border-radius: ($pilot-circle-diameter - $pilot-circle-border-width) / 2
         background-color: gray
         position: relative
-        top: $upgrade-circle-border-width / 2
-        left: $upgrade-circle-border-width / 2
-        line-height: $upgrade-circle-diameter
+        top: $pilot-circle-border-width / 2
+        left: $pilot-circle-border-width / 2
+        line-height: $pilot-circle-diameter - ($pilot-circle-border-width / 2)
         font-size: $fancy-pilot-header-height / 2
         text-align: center
         color: white
 
-    .upgrade-name
-      margin-right: $upgrade-circle-diameter + $upgrade-circle-border-width
+  .fancy-pilot-stats
+    position: relative
+    left: $fancy-pilot-header-height
+    top: -$fancy-pilot-header-height
+    border: $fancy-pilot-header-height solid gray
+    border-left-color: transparent
+    border-bottom-color: transparent
+    border-right-color: transparent
+    margin-bottom: -$fancy-pilot-header-height * 2
+
+    .pilot-stats-content
       position: relative
-      top: 5px
-      text-align: right
+      margin-top: -$fancy-pilot-header-height
+
+  .fancy-pilot-text
+    margin-left: $fancy-pilot-header-height * 2
+    padding: 5px
+
+  .fancy-upgrade-container
+    color: black
+    position: relative
+    // margin-left: $fancy-pilot-header-height
+    // margin-bottom: 10px
+    // padding-top: 10px
+    // padding-bottom: 1px
+
+    .upgrade-container
+      position: relative
+      margin-bottom: -15px
+      margin-right: -2.5px
+
+      .mask
+        position: relative
+        float: right
+        clear: both
+        width: $upgrade-circle-diameter
+        height: $upgrade-circle-diameter
+        z-index: 999
+
+      .outer-circle
+        width: $upgrade-circle-diameter
+        height: $upgrade-circle-diameter
+        border-radius: $upgrade-circle-diameter / 2
+        margin-left: -$upgrade-circle-diameter / 2
+        background-color: white
+
+        .inner-circle
+          width: $upgrade-circle-diameter - $upgrade-circle-border-width
+          height: $upgrade-circle-diameter - $upgrade-circle-border-width
+          border-radius: ($upgrade-circle-diameter - $upgrade-circle-border-width) / 2
+          background-color: gray
+          position: relative
+          top: $upgrade-circle-border-width / 2
+          left: $upgrade-circle-border-width / 2
+          line-height: $upgrade-circle-diameter
+          font-size: $fancy-pilot-header-height / 2
+          text-align: center
+          color: white
+
+      .upgrade-name
+        position: relative
+        float: right
+        top: 5px
+        text-align: right
+        line-height: $upgrade-circle-diameter
+        margin-right: $upgrade-circle-diameter - 10px

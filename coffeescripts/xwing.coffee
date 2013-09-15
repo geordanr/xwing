@@ -439,10 +439,6 @@ class exportObj.SquadBuilder
                 @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
             window.print()
 
-        @list_modal.on 'shown', (e) =>
-            # Fix positioning
-            @list_modal.find('.mask.movable').css 'right', 50 - $('.fancy-list').width()
-
     onPointsUpdated: (cb) =>
         @total_points = 0
         for ship, i in @ships
@@ -1003,7 +999,7 @@ class Ship
         html = $.trim """
             <div class="fancy-pilot-header">
                 <div class="pilot-header-text">#{@pilot.name} / #{@data.name}</div>
-                <div class="mask movable">
+                <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{@pilot.points}</div>
                     </div>
@@ -1032,6 +1028,9 @@ class Ship
             """
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+        slotted_upgrades.push @modification if @modification?.data?
+        slotted_upgrades.push @title if @title?.data?
+
         if slotted_upgrades.length > 0
             html += $.trim """
                 <div class="fancy-upgrade-container">
@@ -1119,12 +1118,12 @@ class GenericAddon
         if @data?
             $.trim """
                 <div class="upgrade-container">
-                    <div class="upgrade-name">#{@data.name}</div>
-                    <div class="mask movable">
+                    <div class="mask">
                         <div class="outer-circle">
                             <div class="inner-circle upgrade-points">#{@data.points}</div>
                         </div>
                     </div>
+                    <div class="upgrade-name">#{@data.name}</div>
                 </div>
             """
         else

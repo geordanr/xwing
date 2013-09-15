@@ -1,81 +1,91 @@
+@page
+  size: 8.5in 11in
+  margin: 0.5in
+
 body
   -webkit-print-color-adjust: exact
   background-color: transparent !important
+  zoom: 75%
 
 .modal-backdrop
   display: none
 
 #printable
+  overflow: hidden
+
   .info-data
     color: black
     position: relative
     top: -5px
 
-  .fancy-ship
-    page-break-inside: avoid
-    position: relative
-    left: 1.25in
+$fancy-header-height: 0.5in
+$header-circle-diameter: $fancy-header-height * 1.5
+$header-circle-border-width: 0.0625in
 
-  $fancy-header-height: 0.75in
-  $header-circle-diameter: $fancy-header-height * 1.5
-  $header-circle-border-width: 0.125in
+$fancy-pilot-header-height: 0.375in
+$pilot-circle-diameter: $fancy-pilot-header-height * 1.5
+$pilot-circle-border-width: 0.0625in
 
-  $fancy-pilot-header-height: 0.375in
-  $pilot-circle-diameter: $fancy-pilot-header-height * 1.5
-  $pilot-circle-border-width: 0.125in
+$upgrade-circle-diameter: $pilot-circle-diameter * 0.75
+$upgrade-circle-border-width: 0.0625in
 
-  $upgrade-circle-diameter: $pilot-circle-diameter * 0.75
-  $upgrade-circle-border-width: 0.0625in
+.text-list-modal .modal-header
+  overflow: hidden
 
-  .fancy-header
-    border: $fancy-header-height solid black
-    color: white
-    border-left-color: transparent
-    border-top-color: transparent
-    border-right-color: transparent
-    font-family: BankGothicHD, Impact, sans-serif
+.fancy-header
+  border: $fancy-header-height solid black
+  color: white
+  border-left-color: transparent
+  border-top-color: transparent
+  border-right-color: transparent
+  font-family: BankGothicHD, Impact, sans-serif
 
-    .squad-name
-      position: absolute
-      font-size: 24pt
-      margin-top: 0.25in
-      font-weight: 100
+  .squad-name
+    position: absolute
+    font-size: $fancy-header-height * 0.8
+    margin-top: $fancy-header-height * 0.2
+    font-weight: 100
 
-    .mask
+  .mask
+    position: absolute
+    right: 0
+    width: $header-circle-diameter
+    background-color: white
+    height: $header-circle-diameter
+    z-index: 999
+
+  .outer-circle
+    width: $header-circle-diameter
+    height: $header-circle-diameter
+    border-radius: $header-circle-diameter / 2
+    margin-left: -$header-circle-diameter / 2
+    background-color: white
+
+    .inner-circle
+      width: $header-circle-diameter - $header-circle-border-width
+      height: $header-circle-diameter - $header-circle-border-width
+      border-radius: ($header-circle-diameter - $header-circle-border-width) / 2
+      background-color: gray
       position: relative
-      float: right
-      right: -2.5in
-      width: 3in
-      background-color: white
-      height: $header-circle-diameter
-      z-index: 999
+      top: $header-circle-border-width / 2
+      left: $header-circle-border-width / 2
+      line-height: $header-circle-diameter - $header-circle-border-width
+      font-size: $fancy-header-height / 2
+      text-align: center
 
-    .outer-circle
-      width: $header-circle-diameter
-      height: $header-circle-diameter
-      border-radius: $header-circle-diameter / 2
-      margin-left: -$header-circle-diameter / 2
-      background-color: white
+.fancy-under-header
+  border: $fancy-header-height / 2 solid gray
+  border-left-color: transparent
+  border-bottom-color: transparent
+  border-right-color: transparent
+  position: relative
+  left: $fancy-header-height
 
-      .inner-circle
-        width: $header-circle-diameter - $header-circle-border-width
-        height: $header-circle-diameter - $header-circle-border-width
-        border-radius: ($header-circle-diameter - $header-circle-border-width) / 2
-        background-color: gray
-        position: relative
-        top: $header-circle-border-width / 2
-        left: $header-circle-border-width / 2
-        line-height: $header-circle-diameter - $header-circle-border-width
-        font-size: $fancy-header-height / 2
-        text-align: center
-
-  .fancy-under-header
-    border: $fancy-header-height / 2 solid gray
-    border-left-color: transparent
-    border-bottom-color: transparent
-    border-right-color: transparent
-    position: relative
-    left: $fancy-header-height
+.fancy-ship
+  overflow: hidden
+  margin-bottom: 10px
+  page-break-inside: avoid
+  position: relative
 
   .fancy-pilot-header
     border: $fancy-pilot-header-height solid lightgray
@@ -85,9 +95,6 @@ body
     border-right-color: transparent
     font-family: EurostileStandard, Impact, sans-serif
     height: 0px
-    width: 10in
-    left: 0in
-    position: relative
 
     .pilot-header-text
       position: absolute
@@ -95,13 +102,15 @@ body
       margin-top: -($fancy-pilot-header-height * 0.8)
       font-weight: 100
 
-    .mask.movable
+    .mask
       position: relative
-      right: -9.4in
-      top: -36px
-      width: 3in
+      float: right
+      clear: both
+      right: -$pilot-circle-diameter
+      top: -$fancy-pilot-header-height
+      width: $pilot-circle-diameter
       background-color: white
-      height: 1in
+      height: $fancy-pilot-header-height * 2
       z-index: 999
 
     .outer-circle
@@ -127,38 +136,39 @@ body
   .fancy-pilot-stats
     position: relative
     left: $fancy-pilot-header-height
+    top: -$fancy-pilot-header-height
+    border: $fancy-pilot-header-height solid gray
+    border-left-color: transparent
+    border-bottom-color: transparent
+    border-right-color: transparent
+    margin-bottom: -$fancy-pilot-header-height * 2
 
     .pilot-stats-content
-      margin-top: -($fancy-pilot-header-height - ($pilot-circle-border-width / 2))
       position: relative
-      margin-right: ($fancy-pilot-header-height * 2) + (($pilot-circle-diameter - $pilot-circle-border-width) / 2)
-      //background-color: gray
-      //border-left: 0.5in solid gray
+      margin-top: -$fancy-pilot-header-height
 
   .fancy-pilot-text
-    margin-left: $fancy-pilot-header-height
-    padding: 0.25in
+    margin-left: $fancy-pilot-header-height * 2
+    padding: 5px
     color: black
-    position: relative
-    width: 8in
 
   .fancy-upgrade-container
     color: black
-    margin-left: $fancy-pilot-header-height
-    margin-bottom: 0.25in
-    padding-top: 0.25in
-    padding-bottom: 1px
     position: relative
-    left: 2in
-    width: 7.4in
+    // margin-left: $fancy-pilot-header-height
+    // margin-bottom: 10px
+    // padding-top: 10px
+    // padding-bottom: 1px
 
     .upgrade-container
+      position: relative
       margin-bottom: -15px
+      margin-right: -2.5px
 
-      .mask.movable
+      .mask
         position: relative
-        left: 7.4in
-        top: -24px
+        float: right
+        clear: both
         width: $upgrade-circle-diameter
         height: $upgrade-circle-diameter
         z-index: 999
@@ -184,8 +194,9 @@ body
           color: white
 
       .upgrade-name
-        margin-right: $upgrade-circle-diameter + $upgrade-circle-border-width
         position: relative
+        float: right
         top: 5px
         text-align: right
-        right: 0in
+        line-height: $upgrade-circle-diameter
+        margin-right: $upgrade-circle-diameter - 10px

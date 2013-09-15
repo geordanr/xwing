@@ -376,7 +376,7 @@
         e.preventDefault();
         return _this.showTextListModal();
       });
-      this.print_list_button.click(function(e) {
+      return this.print_list_button.click(function(e) {
         var ship, _i, _len, _ref;
         e.preventDefault();
         _this.printable_container.find('.printable-header').html(_this.list_modal.find('.modal-header').html());
@@ -390,9 +390,6 @@
           }
         }
         return window.print();
-      });
-      return this.list_modal.on('shown', function(e) {
-        return _this.list_modal.find('.mask.movable').css('right', 50 - $('.fancy-list').width());
       });
     };
 
@@ -625,7 +622,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 591
+          lineno: 587
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -634,7 +631,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 592
+          lineno: 588
         }));
         __iced_deferrals._fulfill();
       });
@@ -1146,7 +1143,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 846
+                  lineno: 842
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1190,7 +1187,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 858
+                lineno: 854
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1241,17 +1238,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 881
+            lineno: 877
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 882
+            lineno: 878
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 883
+            lineno: 879
           }));
         }
         __iced_deferrals._fulfill();
@@ -1379,7 +1376,7 @@
           addon_list = ''
       */
 
-      var action, action_bar, html, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+      var action, action_bar, html, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       action_bar = "";
       _ref = exportObj.ships[this.data.name].actions;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -1401,7 +1398,7 @@
           }
         })();
       }
-      html = $.trim("<div class=\"fancy-pilot-header\">\n    <div class=\"pilot-header-text\">" + this.pilot.name + " / " + this.data.name + "</div>\n    <div class=\"mask movable\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle pilot-points\">" + this.pilot.points + "</div>\n        </div>\n    </div>\n</div>\n<div class=\"fancy-pilot-stats\">\n    <div class=\"pilot-stats-content\">\n        <span class=\"info-data info-skill\">" + this.pilot.skill + "</span>\n        <img class=\"icon-attack\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-attack\">" + ((_ref1 = (_ref2 = this.pilot.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : this.data.attack) + "</span>\n        <img class=\"icon-agility\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-agility\">" + ((_ref3 = (_ref4 = this.pilot.ship_override) != null ? _ref4.agility : void 0) != null ? _ref3 : this.data.agility) + "</span>\n        <img class=\"icon-hull\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-hull\">" + ((_ref5 = (_ref6 = this.pilot.ship_override) != null ? _ref6.hull : void 0) != null ? _ref5 : this.data.hull) + "</span>\n        <img class=\"icon-shields\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-shields\">" + ((_ref7 = (_ref8 = this.pilot.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : this.data.shields) + "</span>\n        &nbsp;\n        " + action_bar + "\n    </div>\n</div>");
+      html = $.trim("<div class=\"fancy-pilot-header\">\n    <div class=\"pilot-header-text\">" + this.pilot.name + " / " + this.data.name + "</div>\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle pilot-points\">" + this.pilot.points + "</div>\n        </div>\n    </div>\n</div>\n<div class=\"fancy-pilot-stats\">\n    <div class=\"pilot-stats-content\">\n        <span class=\"info-data info-skill\">" + this.pilot.skill + "</span>\n        <img class=\"icon-attack\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-attack\">" + ((_ref1 = (_ref2 = this.pilot.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : this.data.attack) + "</span>\n        <img class=\"icon-agility\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-agility\">" + ((_ref3 = (_ref4 = this.pilot.ship_override) != null ? _ref4.agility : void 0) != null ? _ref3 : this.data.agility) + "</span>\n        <img class=\"icon-hull\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-hull\">" + ((_ref5 = (_ref6 = this.pilot.ship_override) != null ? _ref6.hull : void 0) != null ? _ref5 : this.data.hull) + "</span>\n        <img class=\"icon-shields\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-shields\">" + ((_ref7 = (_ref8 = this.pilot.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : this.data.shields) + "</span>\n        &nbsp;\n        " + action_bar + "\n    </div>\n</div>");
       if (this.pilot.text) {
         html += $.trim("<div class=\"fancy-pilot-text\">" + this.pilot.text + "</div>");
       }
@@ -1417,6 +1414,12 @@
         }
         return _results;
       }).call(this);
+      if (((_ref9 = this.modification) != null ? _ref9.data : void 0) != null) {
+        slotted_upgrades.push(this.modification);
+      }
+      if (((_ref10 = this.title) != null ? _ref10.data : void 0) != null) {
+        slotted_upgrades.push(this.title);
+      }
       if (slotted_upgrades.length > 0) {
         html += $.trim("<div class=\"fancy-upgrade-container\">");
         for (_j = 0, _len1 = slotted_upgrades.length; _j < _len1; _j++) {
@@ -1458,7 +1461,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1064
+                lineno: 1063
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1525,7 +1528,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1094
+                  lineno: 1093
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1543,7 +1546,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1096
+                    lineno: 1095
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1587,7 +1590,7 @@
 
     GenericAddon.prototype.toHTML = function() {
       if (this.data != null) {
-        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"upgrade-name\">" + this.data.name + "</div>\n    <div class=\"mask movable\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n</div>");
+        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\">" + this.data.name + "</div>\n</div>");
       } else {
         return '';
       }
@@ -1685,7 +1688,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 1186
+                  lineno: 1185
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1700,7 +1703,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 1190
+                    lineno: 1189
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1728,7 +1731,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 1195
+                    lineno: 1194
                   })
                 ]);
                 __iced_deferrals._fulfill();

@@ -35,6 +35,10 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+13 Sep 2013
+-----------
+* Fancy printout; design inspired by TheKestrel off the FFG forums.
+
 8 Sep 2013
 ----------
 * Finish Wave 3 ship integration.
