@@ -154,7 +154,7 @@
     SquadBuilder.prototype.resetCurrentSquad = function() {
       this.current_squad = {
         id: null,
-        name: $.trim(this.squad_name_input.val()),
+        name: $.trim(this.squad_name_input.val()) || "Unnamed Squadron",
         dirty: false,
         additional_data: {
           points: this.total_points,
@@ -164,10 +164,10 @@
         faction: this.faction
       };
       if (this.total_points > 0) {
-        this.current_squad.name = 'Unsaved Squad';
+        this.current_squad.name = 'Unsaved Squadron';
         this.current_squad.dirty = true;
-        this.container.trigger('xwing-backend:squadNameChanged');
       }
+      this.container.trigger('xwing-backend:squadNameChanged');
       return this.container.trigger('xwing-backend:squadDirtinessChanged');
     };
 
@@ -179,14 +179,14 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name">Unnamed Squadron</span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n        <button class="btn btn-primary view-as-text">View as Text</button>\n        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>\n\n<div class="row-fluid show-authenticated" style="display: none;">\n    <div class="span12">\n        <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>\n        <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone\'s Squads</button> -->\n        <span class="backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n        <button class="btn btn-primary view-as-text">View as Text</button>\n        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>\n\n<div class="row-fluid show-authenticated" style="display: none;">\n    <div class="span12">\n        <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>\n        <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone\'s Squads</button> -->\n        <span class="backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hide-on-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3><span class=\"squad-name\"></span> (" + this.faction + "): <span class=\"total-points\">0</span> Points </h3>\n</div>\n<div class=\"modal-body\">\n    <ul></ul>\n</div>\n<div class=\"modal-footer hide-on-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
-      this.text_ul = $(this.list_modal.find('div.modal-body ul'));
-      this.text_total_points_container = $(this.list_modal.find('div.modal-header span.total-points'));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
+      this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.squad_name_container = $(this.status_container.find('div.squad-name-container'));
       this.squad_name_display = $(this.container.find('.display-name'));
       this.squad_name_placeholder = $(this.container.find('.squad-name'));
@@ -315,7 +315,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 305
+              lineno: 315
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -377,14 +377,24 @@
         return _this.showTextListModal();
       });
       return this.print_list_button.click(function(e) {
+        var ship, _i, _len, _ref;
         e.preventDefault();
-        _this.printable_container.html(_this.list_modal.html());
+        _this.printable_container.find('.printable-header').html(_this.list_modal.find('.modal-header').html());
+        _this.printable_container.find('.printable-body').html(_this.list_modal.find('.modal-body').html());
+        _this.printable_container.find('.printable-body').text('');
+        _ref = _this.ships;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          ship = _ref[_i];
+          if (ship.pilot != null) {
+            _this.printable_container.find('.printable-body').append(ship.toHTML());
+          }
+        }
         return window.print();
       });
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
-      var addon_list, i, ship, total_points, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
+      var i, ship, _i, _j, _len, _len1, _ref, _ref1;
       this.total_points = 0;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
@@ -392,46 +402,14 @@
         this.total_points += ship.getPoints();
       }
       this.points_container.text("Total Points: " + this.total_points);
-      this.text_total_points_container.text(this.total_points);
+      this.fancy_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
-      this.text_ul.text('');
+      this.fancy_container.text('');
       _ref1 = this.ships;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         ship = _ref1[_j];
         if (ship.pilot != null) {
-          if (((function() {
-            var _k, _len2, _ref2, _results;
-            _ref2 = ship.upgrades;
-            _results = [];
-            for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-              upgrade = _ref2[_k];
-              if (upgrade.data != null) {
-                _results.push(upgrade);
-              }
-            }
-            return _results;
-          })()).length > 0 || (((_ref2 = ship.modification) != null ? _ref2.data : void 0) != null) || (((_ref3 = ship.title) != null ? _ref3.data : void 0) != null)) {
-            addon_list = '<ul>';
-            if (((_ref4 = ship.title) != null ? _ref4.data : void 0) != null) {
-              addon_list += "<li>" + (ship.title.toString()) + "</li>";
-            }
-            _ref5 = ship.upgrades;
-            for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
-              upgrade = _ref5[_k];
-              if (upgrade.data != null) {
-                addon_list += "<li>" + (upgrade.toString()) + "</li>";
-              }
-            }
-            if (((_ref6 = ship.modification) != null ? _ref6.data : void 0) != null) {
-              addon_list += "<li>" + (ship.modification.toString()) + "</li>";
-            }
-            addon_list += '</ul>';
-            total_points = "Total: " + (ship.getPoints());
-          } else {
-            total_points = '';
-            addon_list = '';
-          }
-          this.text_ul.append($.trim("<li>\n    <span class=\"info-name\">" + ship.pilot.name + " (" + ship.pilot.points + ")</span>\n    <br />\n    " + addon_list + "\n    <em>" + total_points + "</em>\n</li>"));
+          this.fancy_container.append(ship.toHTML());
         }
       }
       return cb(this.total_points);
@@ -644,7 +622,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 593
+          lineno: 587
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -653,7 +631,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-          lineno: 594
+          lineno: 588
         }));
         __iced_deferrals._fulfill();
       });
@@ -1165,7 +1143,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 848
+                  lineno: 842
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1209,7 +1187,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 860
+                lineno: 854
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1260,17 +1238,17 @@
         for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
           upgrade = _ref[i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 883
+            lineno: 877
           }));
         }
         if (_this.modification != null) {
           _this.modification.destroy(__iced_deferrals.defer({
-            lineno: 884
+            lineno: 878
           }));
         }
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 885
+            lineno: 879
           }));
         }
         __iced_deferrals._fulfill();
@@ -1382,6 +1360,77 @@
       }
     };
 
+    Ship.prototype.toHTML = function() {
+      /*
+      if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
+          addon_list = '<ul>'
+          addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
+          for upgrade in ship.upgrades
+              if upgrade.data?
+                  addon_list += "<li>#{upgrade.toString()}</li>"
+          addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
+          addon_list += '</ul>'
+          total_points = "Total: #{ship.getPoints()}"
+      else
+          total_points = ''
+          addon_list = ''
+      */
+
+      var action, action_bar, html, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      action_bar = "";
+      _ref = exportObj.ships[this.data.name].actions;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        action = _ref[_i];
+        action_bar += (function() {
+          switch (action) {
+            case 'Focus':
+              return "<img class=\"icon-focus\" src=\"images/transparent.png\" />";
+            case 'Evade':
+              return "<img class=\"icon-evade\" src=\"images/transparent.png\" />";
+            case 'Barrel Roll':
+              return "<img class=\"icon-barrel-roll\" src=\"images/transparent.png\" />";
+            case 'Target Lock':
+              return "<img class=\"icon-target-lock\" src=\"images/transparent.png\" />";
+            case 'Boost':
+              return "<img class=\"icon-boost\" src=\"images/transparent.png\" />";
+            default:
+              return "<span>&nbsp;" + action + "<span>";
+          }
+        })();
+      }
+      html = $.trim("<div class=\"fancy-pilot-header\">\n    <div class=\"pilot-header-text\">" + this.pilot.name + " / " + this.data.name + "</div>\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle pilot-points\">" + this.pilot.points + "</div>\n        </div>\n    </div>\n</div>\n<div class=\"fancy-pilot-stats\">\n    <div class=\"pilot-stats-content\">\n        <span class=\"info-data info-skill\">" + this.pilot.skill + "</span>\n        <img class=\"icon-attack\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-attack\">" + ((_ref1 = (_ref2 = this.pilot.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : this.data.attack) + "</span>\n        <img class=\"icon-agility\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-agility\">" + ((_ref3 = (_ref4 = this.pilot.ship_override) != null ? _ref4.agility : void 0) != null ? _ref3 : this.data.agility) + "</span>\n        <img class=\"icon-hull\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-hull\">" + ((_ref5 = (_ref6 = this.pilot.ship_override) != null ? _ref6.hull : void 0) != null ? _ref5 : this.data.hull) + "</span>\n        <img class=\"icon-shields\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-shields\">" + ((_ref7 = (_ref8 = this.pilot.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : this.data.shields) + "</span>\n        &nbsp;\n        " + action_bar + "\n    </div>\n</div>");
+      if (this.pilot.text) {
+        html += $.trim("<div class=\"fancy-pilot-text\">" + this.pilot.text + "</div>");
+      }
+      slotted_upgrades = (function() {
+        var _j, _len1, _ref9, _results;
+        _ref9 = this.upgrades;
+        _results = [];
+        for (_j = 0, _len1 = _ref9.length; _j < _len1; _j++) {
+          upgrade = _ref9[_j];
+          if (upgrade.data != null) {
+            _results.push(upgrade);
+          }
+        }
+        return _results;
+      }).call(this);
+      if (((_ref9 = this.modification) != null ? _ref9.data : void 0) != null) {
+        slotted_upgrades.push(this.modification);
+      }
+      if (((_ref10 = this.title) != null ? _ref10.data : void 0) != null) {
+        slotted_upgrades.push(this.title);
+      }
+      if (slotted_upgrades.length > 0) {
+        html += $.trim("<div class=\"fancy-upgrade-container\">");
+        for (_j = 0, _len1 = slotted_upgrades.length; _j < _len1; _j++) {
+          upgrade = slotted_upgrades[_j];
+          html += upgrade.toHTML();
+        }
+        html += $.trim("</div>");
+      }
+      return "<div class=\"fancy-ship\">" + html + "</div>";
+    };
+
     return Ship;
 
   })();
@@ -1412,7 +1461,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 988
+                lineno: 1063
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1479,7 +1528,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1018
+                  lineno: 1093
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1497,7 +1546,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1020
+                    lineno: 1095
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1536,6 +1585,14 @@
         return "" + this.data.name + " (" + this.data.points + ")";
       } else {
         return "No " + this.type;
+      }
+    };
+
+    GenericAddon.prototype.toHTML = function() {
+      if (this.data != null) {
+        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\">" + this.data.name + "</div>\n</div>");
+      } else {
+        return '';
       }
     };
 
@@ -1631,7 +1688,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, 'Title', __iced_deferrals.defer({
-                  lineno: 1095
+                  lineno: 1185
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1646,7 +1703,7 @@
                 for (_i = 0, _len = _ref.length; _i < _len; _i++) {
                   upgrade = _ref[_i];
                   upgrade.destroy(__iced_deferrals.defer({
-                    lineno: 1099
+                    lineno: 1189
                   }));
                 }
                 __iced_deferrals._fulfill();
@@ -1674,7 +1731,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, 'Title', __iced_deferrals.defer({
-                    lineno: 1104
+                    lineno: 1194
                   })
                 ]);
                 __iced_deferrals._fulfill();
