@@ -72,6 +72,9 @@
     #printable.visible-print
       .printable-header
       .printable-body
+      .printable-footer
+        Created at
+        %strong.site-placeholder
 
     -# JS linkages
     %script{:src => "javascripts/jquery-1.8.3.min.js?#{Time.now.to_i}"}
@@ -83,6 +86,7 @@
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
+        $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
         $('#rebelTab').click (e) ->
           ga 'send', 'pageview',
             page: '/rebels'

@@ -16,153 +16,153 @@ body {
     color: black;
     position: relative;
     top: -5px; }
-
-.text-list-modal .modal-header {
-  overflow: hidden; }
-
-.fancy-header {
-  border: 0.5in solid black;
-  color: white;
-  border-left-color: transparent;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  font-family: BankGothicHD, Impact, sans-serif; }
-  .fancy-header .squad-name {
-    position: absolute;
-    font-size: 0.4in;
-    margin-top: 0.1in;
-    font-weight: 100; }
-  .fancy-header .mask {
-    position: absolute;
-    right: 0;
-    width: 0.75in;
-    background-color: white;
-    height: 0.75in;
-    z-index: 999; }
-  .fancy-header .outer-circle {
-    width: 0.75in;
-    height: 0.75in;
-    border-radius: 0.375in;
-    margin-left: -0.375in;
-    background-color: white; }
-    .fancy-header .outer-circle .inner-circle {
-      width: 0.6875in;
-      height: 0.6875in;
-      border-radius: 0.34375in;
-      background-color: gray;
-      position: relative;
-      top: 0.03125in;
-      left: 0.03125in;
-      line-height: 0.6875in;
-      font-size: 0.25in;
-      text-align: center; }
-
-.fancy-under-header {
-  border: 0.25in solid gray;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  position: relative;
-  left: 0.5in; }
-
-.fancy-ship {
-  overflow: hidden;
-  margin-bottom: 10px;
-  page-break-inside: avoid;
-  position: relative; }
-  .fancy-ship .fancy-pilot-header {
-    border: 0.375in solid lightgrey;
-    color: black;
+  #printable .fancy-header {
+    border: 0.5in solid black;
+    color: white;
     border-left-color: transparent;
-    border-bottom-color: transparent;
+    border-top-color: transparent;
     border-right-color: transparent;
-    font-family: EurostileStandard, Impact, sans-serif;
-    height: 0px; }
-    .fancy-ship .fancy-pilot-header .pilot-header-text {
+    font-family: BankGothicHD, Impact, sans-serif; }
+    #printable .fancy-header .squad-name {
       position: absolute;
-      font-size: 0.3in;
-      margin-top: -0.3in;
+      font-size: 0.4in;
+      margin-top: 0.1in;
       font-weight: 100; }
-    .fancy-ship .fancy-pilot-header .mask {
-      position: relative;
-      float: right;
-      clear: both;
-      right: -0.5625in;
-      top: -0.375in;
-      width: 0.5625in;
+    #printable .fancy-header .mask {
+      position: absolute;
+      right: 0;
+      width: 0.75in;
       background-color: white;
       height: 0.75in;
       z-index: 999; }
-    .fancy-ship .fancy-pilot-header .outer-circle {
-      width: 0.5625in;
-      height: 0.5625in;
-      border-radius: 0.28125in;
-      margin-left: -0.28125in;
+    #printable .fancy-header .outer-circle {
+      width: 0.75in;
+      height: 0.75in;
+      border-radius: 0.375in;
+      margin-left: -0.375in;
       background-color: white; }
-      .fancy-ship .fancy-pilot-header .outer-circle .inner-circle {
-        width: 0.5in;
-        height: 0.5in;
-        border-radius: 0.25in;
+      #printable .fancy-header .outer-circle .inner-circle {
+        width: 0.6875in;
+        height: 0.6875in;
+        border-radius: 0.34375in;
         background-color: gray;
         position: relative;
         top: 0.03125in;
         left: 0.03125in;
-        line-height: 0.53125in;
-        font-size: 0.1875in;
-        text-align: center;
-        color: white; }
-  .fancy-ship .fancy-pilot-stats {
-    position: relative;
-    left: 0.375in;
-    top: -0.375in;
-    border: 0.375in solid gray;
+        line-height: 0.6875in;
+        font-size: 0.25in;
+        text-align: center; }
+  #printable .fancy-under-header {
+    border: 0.25in solid gray;
     border-left-color: transparent;
     border-bottom-color: transparent;
     border-right-color: transparent;
-    margin-bottom: -0.75in; }
-    .fancy-ship .fancy-pilot-stats .pilot-stats-content {
-      position: relative;
-      margin-top: -0.375in; }
-  .fancy-ship .fancy-pilot-text {
-    margin-left: 0.75in;
-    padding: 5px;
-    color: black; }
-  .fancy-ship .fancy-upgrade-container {
-    color: black;
+    position: relative;
+    left: 0.5in; }
+  #printable .fancy-ship {
+    overflow: hidden;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
     position: relative; }
-    .fancy-ship .fancy-upgrade-container .upgrade-container {
-      position: relative;
-      margin-bottom: -15px;
-      margin-right: -2.5px; }
-      .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
+    #printable .fancy-ship .fancy-pilot-header {
+      border: 0.375in solid lightgrey;
+      color: black;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      font-family: EurostileStandard, Impact, sans-serif;
+      height: 0px; }
+      #printable .fancy-ship .fancy-pilot-header .pilot-header-text {
+        position: absolute;
+        font-size: 0.3in;
+        margin-top: -0.3in;
+        font-weight: 100; }
+      #printable .fancy-ship .fancy-pilot-header .mask {
         position: relative;
         float: right;
         clear: both;
-        width: 0.42188in;
-        height: 0.42188in;
+        right: -0.5625in;
+        top: -0.375in;
+        width: 0.5625in;
+        background-color: white;
+        height: 0.75in;
         z-index: 999; }
-      .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle {
-        width: 0.42188in;
-        height: 0.42188in;
-        border-radius: 0.21094in;
-        margin-left: -0.21094in;
+      #printable .fancy-ship .fancy-pilot-header .outer-circle {
+        width: 0.5625in;
+        height: 0.5625in;
+        border-radius: 0.28125in;
+        margin-left: -0.28125in;
         background-color: white; }
-        .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
-          width: 0.35938in;
-          height: 0.35938in;
-          border-radius: 0.17969in;
+        #printable .fancy-ship .fancy-pilot-header .outer-circle .inner-circle {
+          width: 0.5in;
+          height: 0.5in;
+          border-radius: 0.25in;
           background-color: gray;
           position: relative;
           top: 0.03125in;
           left: 0.03125in;
-          line-height: 0.42188in;
+          line-height: 0.53125in;
           font-size: 0.1875in;
           text-align: center;
           color: white; }
-      .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
+    #printable .fancy-ship .fancy-pilot-stats {
+      position: relative;
+      left: 0.375in;
+      top: -0.375in;
+      border: 0.375in solid gray;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      margin-bottom: -0.75in; }
+      #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content {
         position: relative;
-        float: right;
-        top: 5px;
-        text-align: right;
-        line-height: 0.42188in;
-        margin-right: 0.31771in; }
+        margin-top: -0.375in; }
+    #printable .fancy-ship .fancy-pilot-text {
+      margin-left: 0.75in;
+      padding: 5px;
+      color: black; }
+    #printable .fancy-ship .fancy-upgrade-container {
+      color: black;
+      position: relative; }
+      #printable .fancy-ship .fancy-upgrade-container .upgrade-container {
+        position: relative;
+        margin-bottom: -15px;
+        margin-right: -2.5px; }
+        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
+          position: relative;
+          float: right;
+          clear: both;
+          width: 0.42188in;
+          height: 0.42188in;
+          z-index: 999; }
+        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle {
+          width: 0.42188in;
+          height: 0.42188in;
+          border-radius: 0.21094in;
+          margin-left: -0.21094in;
+          background-color: white; }
+          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
+            width: 0.35938in;
+            height: 0.35938in;
+            border-radius: 0.17969in;
+            background-color: gray;
+            position: relative;
+            top: 0.03125in;
+            left: 0.03125in;
+            line-height: 0.42188in;
+            font-size: 0.1875in;
+            text-align: center;
+            color: white; }
+        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
+          position: relative;
+          float: right;
+          top: 5px;
+          text-align: right;
+          line-height: 0.42188in;
+          margin-right: 0.31771in; }
+  #printable .printable-footer {
+    position: fixed;
+    bottom: 0;
+    color: black;
+    width: 8.5in;
+    text-align: right; }
