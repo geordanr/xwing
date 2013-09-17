@@ -4,15 +4,16 @@
     %title (Yet Another) X-Wing Miniatures Squad Builder
     %meta{:charset => "utf-8"}
 
-    %link{:rel => "stylesheet", :href => "bootstrap/css/bootstrap.min.css", :media => "screen"}
-    %link{:rel => "stylesheet", :href => "fontawesome/css/font-awesome.min.css", :media => "screen"}
-    %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"}
-    -#%link{:href => "bootstrap/css/bootstrap-responsive.css", :rel =>"stylesheet"}
-    %link{:rel => "stylesheet", :href => "select2-3.4.0/select2.css"}
+    %link{:rel => "stylesheet", :href => "bootstrap/css/bootstrap.min.css?#{Time.now.to_i}"}
+    %link{:rel => "stylesheet", :href => "fontawesome/css/font-awesome.min.css?#{Time.now.to_i}"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"}
+    %link{:href => "bootstrap/css/bootstrap-responsive.css?#{Time.now.to_i}", :rel =>"stylesheet", :media => "screen"}
+    %link{:rel => "stylesheet", :href => "select2-3.4.0/select2.css?#{Time.now.to_i}"}
 
-    %link{:rel => "stylesheet", :href => "stylesheets/xwing.css", :media => "screen,handheld"}
-    %link{:rel => "stylesheet", :href => "stylesheets/xwing-print.css", :media => "print"}
-    %link{:rel => "stylesheet", :href => "stylesheets/backgrounds.css?#{Time.now.to_i}"}
+    %link{:rel => "stylesheet", :href => "stylesheets/xwing.css?#{Time.now.to_i}"}
+    %link{:rel => "stylesheet", :href => "stylesheets/xwing-screen.css?#{Time.now.to_i}", :media => "screen,handheld"}
+    %link{:rel => "stylesheet", :href => "stylesheets/xwing-print.css?#{Time.now.to_i}", :media => "print"}
+    %link{:rel => "stylesheet", :href => "stylesheets/backgrounds.css?#{Time.now.to_i}", :media => "screen,handheld"}
 
   %body
     -# body layout
@@ -23,7 +24,7 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-43758422-1', 'geordanr.github.io');
 
-    .tabbable.hide-on-print
+    .tabbable.hidden-print
       %ul.nav.nav-pills
         %li
           %a#rebelTab{'data-toggle' => "tab", :href => '#rebelContent'} Rebel Alliance
@@ -68,18 +69,24 @@
 
                     A backend is available if the ability to save squadrons is needed; it can be [forked on GitHub here](http://github.com/geordanr/xwing-backend).
 
-    #printable.show-on-print
+    #printable.visible-print
+      .printable-header
+      .printable-body
+      .printable-footer
+        Created at
+        %strong.site-placeholder
 
     -# JS linkages
-    %script{:src => "javascripts/jquery-1.8.3.min.js"}
-    %script{:src => "bootstrap/js/bootstrap.min.js"}
-    %script{:src => "select2-3.4.0/select2.min.js"}
+    %script{:src => "javascripts/jquery-1.8.3.min.js?#{Time.now.to_i}"}
+    %script{:src => "bootstrap/js/bootstrap.min.js?#{Time.now.to_i}"}
+    %script{:src => "select2-3.4.0/select2.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/xwing.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
+        $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
         $('#rebelTab').click (e) ->
           ga 'send', 'pageview',
             page: '/rebels'
@@ -121,3 +128,8 @@
         window.browser = new CardBrowser
             container: '#card-browser'
 
+.font-hax
+  %span{:style => "font-family: BankGothicHD"}
+    &nbsp;
+  %span{:style => "font-family: kimberley"}
+    &nbsp;

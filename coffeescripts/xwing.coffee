@@ -83,7 +83,7 @@ class exportObj.SquadBuilder
     resetCurrentSquad: () ->
         @current_squad =
             id: null
-            name: $.trim(@squad_name_input.val())
+            name: $.trim(@squad_name_input.val()) or "Unnamed Squadron"
             dirty: false
             additional_data:
                 points: @total_points
@@ -91,9 +91,9 @@ class exportObj.SquadBuilder
                 cards: []
             faction: @faction
         if @total_points > 0
-            @current_squad.name = 'Unsaved Squad'
+            @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
-            @container.trigger 'xwing-backend:squadNameChanged'
+        @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     setupUI: () ->
@@ -107,7 +107,7 @@ class exportObj.SquadBuilder
             <div class="row-fluid">
                 <div class="span4 squad-name-container">
                     <div class="display-name">
-                        <span class="squad-name">Unnamed Squadron</span>
+                        <span class="squad-name"></span>
                         <i class="icon-pencil"></i>
                     </div>
                     <div class="input-append">
@@ -151,19 +151,29 @@ class exportObj.SquadBuilder
         @container.append @list_modal
         @list_modal.append $.trim """
             <div class="modal-header">
-                <button type="button" class="close hide-on-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3><span class="squad-name"></span> (#{@faction}): <span class="total-points">0</span> Points </h3>
+                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="fancy-header">
+                    <div class="squad-name"></div>
+                    <div class="mask">
+                        <div class="outer-circle">
+                            <div class="inner-circle">
+                                <span class="total-points"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fancy-under-header"></div>
             </div>
             <div class="modal-body">
-                <ul></ul>
+                <div class="fancy-list"></div>
             </div>
-            <div class="modal-footer hide-on-print">
+            <div class="modal-footer hidden-print">
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
-        @text_ul = $ @list_modal.find('div.modal-body ul')
-        @text_total_points_container = $ @list_modal.find('div.modal-header span.total-points')
+        @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
+        @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
 
         @squad_name_container = $ @status_container.find('div.squad-name-container')
         @squad_name_display = $ @container.find('.display-name')
@@ -422,7 +432,11 @@ class exportObj.SquadBuilder
         @print_list_button.click (e) =>
             e.preventDefault()
             # Copy text list to printable
-            @printable_container.html @list_modal.html()
+            @printable_container.find('.printable-header').html @list_modal.find('.modal-header').html()
+            @printable_container.find('.printable-body').html @list_modal.find('.modal-body').html()
+            @printable_container.find('.printable-body').text ''
+            for ship in @ships
+                @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
             window.print()
 
     onPointsUpdated: (cb) =>
@@ -430,33 +444,13 @@ class exportObj.SquadBuilder
         for ship, i in @ships
             @total_points += ship.getPoints()
         @points_container.text "Total Points: #{@total_points}"
-        @text_total_points_container.text @total_points
+        @fancy_total_points_container.text @total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
-        @text_ul.text ''
+        @fancy_container.text ''
         for ship in @ships
-            if ship.pilot?
-                if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
-                    addon_list = '<ul>'
-                    addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
-                    for upgrade in ship.upgrades
-                        if upgrade.data?
-                            addon_list += "<li>#{upgrade.toString()}</li>"
-                    addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
-                    addon_list += '</ul>'
-                    total_points = "Total: #{ship.getPoints()}"
-                else
-                    total_points = ''
-                    addon_list = ''
-                @text_ul.append $.trim """
-                    <li>
-                        <span class="info-name">#{ship.pilot.name} (#{ship.pilot.points})</span>
-                        <br />
-                        #{addon_list}
-                        <em>#{total_points}</em>
-                    </li>
-                """
+            @fancy_container.append ship.toHTML() if ship.pilot?
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -970,6 +964,87 @@ class Ship
         else
             "Ship without pilot"
 
+    toHTML: () ->
+        ###
+        if (upgrade for upgrade in ship.upgrades when upgrade.data?).length > 0 or ship.modification?.data? or ship.title?.data?
+            addon_list = '<ul>'
+            addon_list += "<li>#{ship.title.toString()}</li>" if ship.title?.data?
+            for upgrade in ship.upgrades
+                if upgrade.data?
+                    addon_list += "<li>#{upgrade.toString()}</li>"
+            addon_list += "<li>#{ship.modification.toString()}</li>" if ship.modification?.data?
+            addon_list += '</ul>'
+            total_points = "Total: #{ship.getPoints()}"
+        else
+            total_points = ''
+            addon_list = ''
+        ###
+
+        action_bar = ""
+        for action in exportObj.ships[@data.name].actions
+            action_bar += switch action
+                when 'Focus'
+                    """<img class="icon-focus" src="images/transparent.png" />"""
+                when 'Evade'
+                    """<img class="icon-evade" src="images/transparent.png" />"""
+                when 'Barrel Roll'
+                    """<img class="icon-barrel-roll" src="images/transparent.png" />"""
+                when 'Target Lock'
+                    """<img class="icon-target-lock" src="images/transparent.png" />"""
+                when 'Boost'
+                    """<img class="icon-boost" src="images/transparent.png" />"""
+                else
+                    """<span>&nbsp;#{action}<span>"""
+
+        html = $.trim """
+            <div class="fancy-pilot-header">
+                <div class="pilot-header-text">#{@pilot.name} / #{@data.name}</div>
+                <div class="mask">
+                    <div class="outer-circle">
+                        <div class="inner-circle pilot-points">#{@pilot.points}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fancy-pilot-stats">
+                <div class="pilot-stats-content">
+                    <span class="info-data info-skill">#{@pilot.skill}</span>
+                    <img class="icon-attack" src="images/transparent.png" />
+                    <span class="info-data info-attack">#{@pilot.ship_override?.attack ? @data.attack}</span>
+                    <img class="icon-agility" src="images/transparent.png" />
+                    <span class="info-data info-agility">#{@pilot.ship_override?.agility ? @data.agility}</span>
+                    <img class="icon-hull" src="images/transparent.png" />
+                    <span class="info-data info-hull">#{@pilot.ship_override?.hull ? @data.hull}</span>
+                    <img class="icon-shields" src="images/transparent.png" />
+                    <span class="info-data info-shields">#{@pilot.ship_override?.shields ? @data.shields}</span>
+                    &nbsp;
+                    #{action_bar}
+                </div>
+            </div>
+        """
+
+        if @pilot.text
+            html += $.trim """
+                <div class="fancy-pilot-text">#{@pilot.text}</div>
+            """
+
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+        slotted_upgrades.push @modification if @modification?.data?
+        slotted_upgrades.push @title if @title?.data?
+
+        if slotted_upgrades.length > 0
+            html += $.trim """
+                <div class="fancy-upgrade-container">
+            """
+
+            for upgrade in slotted_upgrades
+                html += upgrade.toHTML()
+
+            html += $.trim """
+                </div>
+            """
+
+        """<div class="fancy-ship">#{html}</div>"""
+
 class GenericAddon
     constructor: (args) ->
         # args
@@ -1038,6 +1113,21 @@ class GenericAddon
             "#{@data.name} (#{@data.points})"
         else
             "No #{@type}"
+
+    toHTML: () ->
+        if @data?
+            $.trim """
+                <div class="upgrade-container">
+                    <div class="mask">
+                        <div class="outer-circle">
+                            <div class="inner-circle upgrade-points">#{@data.points}</div>
+                        </div>
+                    </div>
+                    <div class="upgrade-name">#{@data.name}</div>
+                </div>
+            """
+        else
+            ''
 
 class Upgrade extends GenericAddon
     constructor: (args) ->
