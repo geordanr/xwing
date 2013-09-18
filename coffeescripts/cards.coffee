@@ -1158,6 +1158,8 @@ exportObj.upgrades =
         sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", ]
         points: 1
         text: """Increase your pilot skill value by 2."""
+        modifier_func: (stats) ->
+            stats.skill += 2
     "Proximity Mines":
         name: "Proximity Mines"
         id: 28
@@ -1336,18 +1338,24 @@ exportObj.modifications =
         points: 3
         sources: [ "Slave I Expansion Pack", ]
         text: """Increase your agility value by 1.  If you are hit by an attack, discard this card."""
+        modifier_func: (stats) ->
+            stats.agility += 1
     "Shield Upgrade":
         name: "Shield Upgrade"
         id: 2
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
         text: """Increase your shield value by 1."""
+        modifier_func: (stats) ->
+            stats.shields += 1
     "Engine Upgrade":
         name: "Engine Upgrade"
         id: 3
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
         text: """Your action bar gains the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Boost' if 'Boost' not in stats.actions
     "Anti-Pursuit Lasers":
         name: "Anti-Pursuit Lasers"
         id: 4
@@ -1362,12 +1370,16 @@ exportObj.modifications =
         sources: [ "Imperial Aces Expansion Pack", ]
         points: 2
         text: """Your action bar gains the <img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
     "Hull Upgrade":
         name: "Hull Upgrade"
         id: 6
         sources: [ "Imperial Aces Expansion Pack", ]
         points: 3
         text: """Increase your hull value by 1."""
+        modifier_func: (stats) ->
+            stats.hull += 1
 
 
 exportObj.titles =
@@ -1394,6 +1406,8 @@ exportObj.titles =
         ship: "YT-1300"
         actions: "Evade"
         text: """Your action bar gains the <img class="icon-evade" alt="Evade" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Evade' if 'Evade' not in stats.actions
     "Moldy Crow":
         name: "Moldy Crow"
         id: 3
@@ -1422,7 +1436,7 @@ exportObj.titles =
                 type: exportObj.Modification,
             },
         ]
-        restriction_func: (pilot) ->
+        restriction_func: (ship) ->
             ''
 
 exportObj.expansions = {}

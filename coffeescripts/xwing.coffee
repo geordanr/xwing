@@ -41,7 +41,10 @@ Array::intersects = (other) ->
 
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
-# Assumes cards.js has been loaded
+statAndEffectiveStat = (base_stat, effective_stats, key) ->
+    """#{base_stat}#{if effective_stats[key] != base_stat then " (#{effective_stats[key]})" else ""}"""
+
+# Assumes cards.js will be loaded
 
 class exportObj.SquadBuilder
     constructor: (args) ->
@@ -633,6 +636,27 @@ class exportObj.SquadBuilder
             @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
             @info_container.find('p.info-text').html data.text ? ''
             switch type
+                when 'Ship'
+                    effective_stats = data.effectiveStats()
+                    extra_actions = $.grep effective_stats.actions, (el, i) ->
+                        el not in data.data.actions
+                    @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
+                    @info_container.find('tr.info-ship').show()
+                    @info_container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.pilot.skill, effective_stats, 'skill')
+                    @info_container.find('tr.info-skill').show()
+                    @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
+                    @info_container.find('tr.info-attack').show()
+                    @info_container.find('tr.info-range').hide()
+                    @info_container.find('tr.info-agility td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.agility ? data.data.agility), effective_stats, 'agility')
+                    @info_container.find('tr.info-agility').show()
+                    @info_container.find('tr.info-hull td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.hull ? data.data.hull), effective_stats, 'hull')
+                    @info_container.find('tr.info-hull').show()
+                    @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
+                    @info_container.find('tr.info-shields').show()
+                    @info_container.find('tr.info-actions td.info-data').html data.data.actions.concat( ("<strong>#{action}</strong>" for action in extra_actions)).join ', '
+                    @info_container.find('tr.info-actions').show()
+                    @info_container.find('tr.info-upgrades').show()
+                    @info_container.find('tr.info-upgrades td.info-data').text(data.pilot.slots.join(', ') or 'None')
                 when 'Pilot'
                     ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
@@ -936,7 +960,7 @@ class Ship
             select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
-            @builder.showTooltip 'Pilot', @pilot if @pilot?
+            @builder.showTooltip 'Ship', this if @data?
 
         @points_container = $ @row.find('.points-display-container span')
         @points_container.hide()
@@ -962,8 +986,9 @@ class Ship
             "Ship without pilot"
 
     toHTML: ->
+        effective_stats = @effectiveStats()
         action_bar = ""
-        for action in exportObj.ships[@data.name].actions
+        for action in effective_stats.actions
             action_bar += switch action
                 when 'Focus'
                     """<img class="icon-focus" src="images/transparent.png" />"""
@@ -989,15 +1014,15 @@ class Ship
             </div>
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
-                    <span class="info-data info-skill">#{@pilot.skill}</span>
+                    <span class="info-data info-skill">#{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     <img class="icon-attack" src="images/transparent.png" />
-                    <span class="info-data info-attack">#{@pilot.ship_override?.attack ? @data.attack}</span>
+                    <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
                     <img class="icon-agility" src="images/transparent.png" />
-                    <span class="info-data info-agility">#{@pilot.ship_override?.agility ? @data.agility}</span>
+                    <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
                     <img class="icon-hull" src="images/transparent.png" />
-                    <span class="info-data info-hull">#{@pilot.ship_override?.hull ? @data.hull}</span>
+                    <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
                     <img class="icon-shields" src="images/transparent.png" />
-                    <span class="info-data info-shields">#{@pilot.ship_override?.shields ? @data.shields}</span>
+                    <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
                     &nbsp;
                     #{action_bar}
                 </div>
@@ -1098,6 +1123,21 @@ class Ship
                             throw "Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there"
 
         @updateSelections()
+
+    effectiveStats: ->
+        stats =
+            skill: @pilot.skill
+            attack: @pilot.ship_override?.attack ? @data.attack
+            agility: @pilot.ship_override?.agility ? @data.agility
+            hull: @pilot.ship_override?.hull ? @data.hull
+            shields: @pilot.ship_override?.shields ? @data.shields
+            actions: @data.actions.slice 0
+        for upgrade in @upgrades
+            upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
+        @title.data.modifier_func(stats) if @title?.data?.modifier_func?
+        for modification in @modifications
+            modification.data.modifier_func(stats) if modification?.data?.modifier_func?
+        stats
 
 
 class GenericAddon

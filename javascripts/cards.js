@@ -1,5 +1,6 @@
 (function() {
-  var exportObj, modification, modification_name, pilot, pilot_name, source, title, title_name, upgrade, upgrade_name, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+  var exportObj, modification, modification_name, pilot, pilot_name, source, title, title_name, upgrade, upgrade_name, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 
 
@@ -1025,7 +1026,10 @@
       slot: "Elite",
       sources: ["Millennium Falcon Expansion Pack", "Slave I Expansion Pack"],
       points: 1,
-      text: "Increase your pilot skill value by 2."
+      text: "Increase your pilot skill value by 2.",
+      modifier_func: function(stats) {
+        return stats.skill += 2;
+      }
     },
     "Proximity Mines": {
       name: "Proximity Mines",
@@ -1227,21 +1231,32 @@
       id: 1,
       points: 3,
       sources: ["Slave I Expansion Pack"],
-      text: "Increase your agility value by 1.  If you are hit by an attack, discard this card."
+      text: "Increase your agility value by 1.  If you are hit by an attack, discard this card.",
+      modifier_func: function(stats) {
+        return stats.agility += 1;
+      }
     },
     "Shield Upgrade": {
       name: "Shield Upgrade",
       id: 2,
       points: 4,
       sources: ["Millennium Falcon Expansion Pack"],
-      text: "Increase your shield value by 1."
+      text: "Increase your shield value by 1.",
+      modifier_func: function(stats) {
+        return stats.shields += 1;
+      }
     },
     "Engine Upgrade": {
       name: "Engine Upgrade",
       id: 3,
       points: 4,
       sources: ["Millennium Falcon Expansion Pack"],
-      text: "Your action bar gains the <img class=\"icon-boost\" alt=\"Boost\" src=\"images/transparent.png\" /> action icon."
+      text: "Your action bar gains the <img class=\"icon-boost\" alt=\"Boost\" src=\"images/transparent.png\" /> action icon.",
+      modifier_func: function(stats) {
+        if (__indexOf.call(stats.actions, 'Boost') < 0) {
+          return stats.actions.push('Boost');
+        }
+      }
     },
     "Anti-Pursuit Lasers": {
       name: "Anti-Pursuit Lasers",
@@ -1259,14 +1274,22 @@
       id: 5,
       sources: ["Imperial Aces Expansion Pack"],
       points: 2,
-      text: "Your action bar gains the <img class=\"icon-target-lock\" alt=\"Target Lock\" src=\"images/transparent.png\" /> action icon."
+      text: "Your action bar gains the <img class=\"icon-target-lock\" alt=\"Target Lock\" src=\"images/transparent.png\" /> action icon.",
+      modifier_func: function(stats) {
+        if (__indexOf.call(stats.actions, 'Target Lock') < 0) {
+          return stats.actions.push('Target Lock');
+        }
+      }
     },
     "Hull Upgrade": {
       name: "Hull Upgrade",
       id: 6,
       sources: ["Imperial Aces Expansion Pack"],
       points: 3,
-      text: "Increase your hull value by 1."
+      text: "Increase your hull value by 1.",
+      modifier_func: function(stats) {
+        return stats.hull += 1;
+      }
     }
   };
 
@@ -1294,7 +1317,12 @@
       points: 1,
       ship: "YT-1300",
       actions: "Evade",
-      text: "Your action bar gains the <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> action icon."
+      text: "Your action bar gains the <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> action icon.",
+      modifier_func: function(stats) {
+        if (__indexOf.call(stats.actions, 'Evade') < 0) {
+          return stats.actions.push('Evade');
+        }
+      }
     },
     "Moldy Crow": {
       name: "Moldy Crow",
@@ -1326,7 +1354,7 @@
           type: exportObj.Modification
         }
       ],
-      restriction_func: function(pilot) {
+      restriction_func: function(ship) {
         return '';
       }
     }
