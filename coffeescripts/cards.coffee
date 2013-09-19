@@ -1437,7 +1437,7 @@ exportObj.titles =
             },
         ]
         restriction_func: (ship) ->
-            ''
+            ship.effectiveStats().skill > 4
 
 exportObj.expansions = {}
 

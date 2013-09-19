@@ -39,6 +39,11 @@ Array::intersects = (other) ->
             return true
     return false
 
+Array::removeItem = (item) ->
+    idx = @indexOf item
+    @splice(idx, 1) unless idx == -1
+    this
+
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -445,6 +450,7 @@ class exportObj.SquadBuilder
     onPointsUpdated: (cb) =>
         @total_points = 0
         for ship, i in @ships
+            ship.validate()
             @total_points += ship.getPoints()
         @points_container.text "Total Points: #{@total_points}"
         @fancy_total_points_container.text @total_points
@@ -617,17 +623,27 @@ class exportObj.SquadBuilder
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
         unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+
+        # I finally had to add a special case :(  If something else demands it
+        # then I will try to make this more systematic, but I haven't come up
+        # with a good solution... yet.
+        current_mod_forcibly_removed = false
+        if ship?.title?.data?.name == 'Royal Guard TIE'
+            for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
+                unclaimed_modifications.removeItem equipped_modification
+                current_mod_forcibly_removed = true if equipped_modification == include_modification
+
         # Re-add selected modification
-        if include_modification? and include_modification.unique? and @matcher(include_modification.name, term)
+        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)) or current_mod_forcibly_removed)
             unclaimed_modifications.push include_modification
         ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points } for modification in unclaimed_modifications).sort exportObj.sortHelper
 
-    getAvailableTitlesIncluding: (ship_name, include_title, term='') ->
+    getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
-        # All titles are unique
-        unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship_name and @matcher(title_name, term) and title not in @uniques_in_use['Title'] and (not title.faction? or title.faction == @faction))
+        # Titles are no longer unique!
+        unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship.data.name and @matcher(title_name, term) and (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
         # Re-add selected title
-        if include_title? and @matcher(include_title.name, term)
+        if include_title? and include_title.unique? and @matcher(include_title.name, term)
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
@@ -718,7 +734,8 @@ class exportObj.SquadBuilder
                     for upgrade in ship.upgrades
                         unused_addons.push upgrade unless upgrade.data?
                     unused_addons.push ship.title if ship.title? and not ship.title.data?
-                    unused_addons.push ship.modification if ship.modification? and not ship.modification.data?
+                    for modification in ship.modifications
+                        unused_addons.push modification unless modification.data?
                 # 0 is ship, otherwise addon
                 idx = $.randomInt(1 + unused_addons.length)
                 if idx == 0
@@ -739,10 +756,10 @@ class exportObj.SquadBuilder
                             available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
                             addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
                         when 'Title'
-                            available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship.name) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
+                            available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
                             addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
                         when 'Modification'
-                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship.data) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
                             addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
                         else
                             throw "Invalid addon type #{addon.type}"
@@ -976,7 +993,7 @@ class Ship
             e.preventDefault()
             @row.slideUp 'fast', () =>
                 @builder.removeShip this
-                @backend_status.fadeOut 'slow'
+                @backend_status?.fadeOut 'slow'
         @remove_button.hide()
 
     teardownUI: ->
@@ -1143,6 +1160,27 @@ class Ship
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         stats
 
+    validate: ->
+        # Remove addons that violate their restriction functions (if any) one by one
+        # until everything checks out
+        max_checks = 32 # that's a lot of addons
+        for i in [0..max_checks]
+            valid = true
+            for upgrade in @upgrades
+                if upgrade?.data?.restriction_func? and not upgrade?.data?.restriction_func this
+                    upgrade.setById null
+                    valid = false
+                    break
+            if @title?.data?.restriction_func? and not @title?.data?.restriction_func this
+                @title.setById null
+                continue
+            for modification in @modifications
+                if modification?.data?.restriction_func? and not modification.data.restriction_func this
+                    modification.setById null
+                    valid = false
+                    break
+            break if valid
+        @updateSelections()
 
 class GenericAddon
     constructor: (args) ->
@@ -1193,7 +1231,7 @@ class GenericAddon
         if new_data != @data
             if @data?.unique?
                 await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
-                @rescindAddons()
+            @rescindAddons()
             if new_data?.unique?
                 await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
             @data = new_data
@@ -1223,11 +1261,9 @@ class GenericAddon
                 addon.destroy defer()
         for addon in @conferredAddons
             if addon instanceof exportObj.Upgrade
-                idx = @ship.upgrades.indexOf addon
-                @ship.upgrades.splice idx, 1
+                @ship.upgrades.removeItem addon
             else if addon instanceof exportObj.Modification
-                idx = @ship.modifications.indexOf addon
-                @ship.modifications.splice idx, 1
+                @ship.modifications.removeItem addon
             else
                 throw "Unexpected addon type for addon #{addon}"
         @conferredAddons = []
@@ -1307,7 +1343,7 @@ class exportObj.Modification extends GenericAddon
             query: (query) =>
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship.data, query.term)
+                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term)
 
 class exportObj.Title extends GenericAddon
     constructor: (args) ->
@@ -1316,35 +1352,8 @@ class exportObj.Title extends GenericAddon
         @dataById = exportObj.titlesById
         @dataByName = exportObj.titles
         @serialization_code = 'T'
-        #@conferredUpgrades = []
 
         @setupSelector()
-
-    #setData: (new_data) ->
-    #    # All titles are unique
-    #    if new_data != @data
-    #        if @data?
-    #            await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, 'Title', defer() ]
-    #            await
-    #                # Rescind any conferred upgrades
-    #                for upgrade in @conferredUpgrades
-    #                    upgrade.destroy defer()
-    #            for upgrade in @conferredUpgrades
-    #                idx = @ship.upgrades.indexOf upgrade
-    #                @ship.upgrades.splice idx, 1
-    #            @conferredUpgrades = []
-    #        await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, 'Title', defer() ] if new_data?
-    #        @data = new_data
-    #        @ship.builder.container.trigger 'xwing:pointsUpdated'
-    #        # Confer any upgrades
-    #        if @data?.slots? and @data.slots.length > 0
-    #            for slot in @data.slots
-    #                upgrade = new Upgrade
-    #                    ship: @ship
-    #                    container: @container
-    #                    slot: slot
-    #                @ship.upgrades.push upgrade
-    #                @conferredUpgrades.push upgrade
 
     setupSelector: ->
         super
@@ -1354,7 +1363,7 @@ class exportObj.Title extends GenericAddon
             query: (query) =>
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableTitlesIncluding(@ship.data.name, @data, query.term)
+                    results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)
 
 SERIALIZATION_CODE_TO_CLASS =
     'M': exportObj.Modification

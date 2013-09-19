@@ -1355,7 +1355,7 @@
         }
       ],
       restriction_func: function(ship) {
-        return '';
+        return ship.effectiveStats().skill > 4;
       }
     }
   };
