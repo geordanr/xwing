@@ -946,7 +946,7 @@
       name: "Push the Limit",
       id: 18,
       slot: "Elite",
-      sources: ["A-Wing Expansion Pack"],
+      sources: ["A-Wing Expansion Pack", "Imperial Aces Expansion Pack"],
       points: 3,
       text: "Once per round, after you perform an action, you may perform 1 free action shown in your action bar.<br /><br />Then receive 1 stress token."
     },
@@ -1230,7 +1230,7 @@
       name: "Stealth Device",
       id: 1,
       points: 3,
-      sources: ["Slave I Expansion Pack"],
+      sources: ["Slave I Expansion Pack", "Imperial Aces Expansion Pack"],
       text: "Increase your agility value by 1.  If you are hit by an attack, discard this card.",
       modifier_func: function(stats) {
         return stats.agility += 1;
@@ -1240,7 +1240,7 @@
       name: "Shield Upgrade",
       id: 2,
       points: 4,
-      sources: ["Millennium Falcon Expansion Pack"],
+      sources: ["Millennium Falcon Expansion Pack", "Imperial Aces Expansion Pack"],
       text: "Increase your shield value by 1.",
       modifier_func: function(stats) {
         return stats.shields += 1;
