@@ -111,7 +111,8 @@
     .fancy-ship .fancy-upgrade-container .upgrade-container {
       position: relative;
       margin-bottom: -15px;
-      margin-right: -2.5px; }
+      margin-right: -2.5px;
+      clear: both; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
         position: relative;
         float: right;
