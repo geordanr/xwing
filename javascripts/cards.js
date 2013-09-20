@@ -1230,7 +1230,7 @@
       name: "Stealth Device",
       id: 1,
       points: 3,
-      sources: ["Slave I Expansion Pack", "Imperial Aces Expansion Pack"],
+      sources: ["Slave I Expansion Pack"],
       text: "Increase your agility value by 1.  If you are hit by an attack, discard this card.",
       modifier_func: function(stats) {
         return stats.agility += 1;
