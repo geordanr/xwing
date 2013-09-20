@@ -569,8 +569,8 @@
       slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"],
       text: "When attacking, 1 of your <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results cannot be canceled by defense dice."
     },
-    "Ibitsam": {
-      name: "Ibitsam",
+    "Ibtisam": {
+      name: "Ibtisam",
       id: 42,
       unique: true,
       ship: "B-Wing",
