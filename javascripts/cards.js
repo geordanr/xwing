@@ -1266,7 +1266,7 @@
       text: "After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> or <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result, the enemy ship suffers 1 damage.",
       restriction_func: function(ship) {
         var _ref;
-        return (_ref = ship.large) != null ? _ref : false;
+        return (_ref = ship.data.large) != null ? _ref : false;
       }
     },
     "Targeting Computer": {
