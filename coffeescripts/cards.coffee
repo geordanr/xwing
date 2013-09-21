@@ -669,8 +669,8 @@ exportObj.pilots =
             "Torpedo",
         ]
         text: """When attacking, 1 of your <img class="icon-crit" alt="Crit" src="images/transparent.png" /> results cannot be canceled by defense dice."""
-    "Ibitsam":
-        name: "Ibitsam"
+    "Ibtisam":
+        name: "Ibtisam"
         id: 42
         unique: true
         ship: "B-Wing"
@@ -883,7 +883,62 @@ exportObj.pilots =
             "Crew",
             "Crew",
         ]
-
+    "Unspoiled PS4 TIE Interceptor Ace":
+        name: "Unspoiled PS4 TIE Interceptor Ace"
+        id: 57
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 4
+        points: 99
+        slots: [ ]
+    "Royal Guard Pilot":
+        name: "Royal Guard Pilot"
+        id: 58
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 6
+        points: 22
+        slots: [
+            "Elite",
+        ]
+    "Unspoiled PS7 TIE Interceptor Ace":
+        name: "Unspoiled PS7 TIE Interceptor Ace"
+        id: 59
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 7
+        points: 99
+        slots: [ ]
+    "Unspoiled PS5? TIE Interceptor Ace":
+        name: "Unspoiled PS5? TIE Interceptor Ace"
+        id: 60
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 5
+        points: 99
+        slots: [ ]
+    "Kir Kanos":
+        name: "Kir Kanos"
+        id: 61
+        unique: true
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 6
+        points: 24
+        slots: [ ]
+        text: """When attacking at Range 2-3, you may spend 1 evade token to add 1 <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result to your roll."""
+    "Carnor Jax":
+        name: "Carnor Jax"
+        id: 62
+        unique: true
+        ship: "TIE Interceptor"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        skill: 8
+        points: 26
+        slots: [
+            "Elite",
+        ]
+        text: """Enemy ships at Range 1 cannot perform focus or evade actions and cannot spend focus or evade tokens."""
 
 exportObj.upgrades =
     "Ion Cannon Turret":
@@ -1031,7 +1086,7 @@ exportObj.upgrades =
         name: "Push the Limit"
         id: 18
         slot: "Elite"
-        sources: [ "A-Wing Expansion Pack", ]
+        sources: [ "A-Wing Expansion Pack", "Imperial Aces Expansion Pack", ]
         points: 3
         text: """Once per round, after you perform an action, you may perform 1 free action shown in your action bar.<br /><br />Then receive 1 stress token."""
     "Deadeye":
@@ -1103,6 +1158,8 @@ exportObj.upgrades =
         sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", ]
         points: 1
         text: """Increase your pilot skill value by 2."""
+        modifier_func: (stats) ->
+            stats.skill += 2
     "Proximity Mines":
         name: "Proximity Mines"
         id: 28
@@ -1266,6 +1323,13 @@ exportObj.upgrades =
         sources: [ "Lambda-Class Shuttle Expansion Pack", ]
         points: 3
         text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same bearing.<br /><br />You cannot rotate to a red maneuver if you have any stress tokens."""
+    "Opportunist":
+        name: "Opportunist"
+        id: 49
+        slot: "Elite"
+        sources: [ "Imperial Aces Expansion Pack", ]
+        points: 4
+        text: """When attacking, if the defender does not have any focus or evade tokens, you may receive 1 stress token to roll 1 additional attack die.<br /><br />You cannot use this ability if you have any stress tokens."""
 
 exportObj.modifications =
     "Stealth Device":
@@ -1274,18 +1338,24 @@ exportObj.modifications =
         points: 3
         sources: [ "Slave I Expansion Pack", ]
         text: """Increase your agility value by 1.  If you are hit by an attack, discard this card."""
+        modifier_func: (stats) ->
+            stats.agility += 1
     "Shield Upgrade":
         name: "Shield Upgrade"
         id: 2
         points: 4
-        sources: [ "Millennium Falcon Expansion Pack", ]
+        sources: [ "Millennium Falcon Expansion Pack", "Imperial Aces Expansion Pack", ]
         text: """Increase your shield value by 1."""
+        modifier_func: (stats) ->
+            stats.shields += 1
     "Engine Upgrade":
         name: "Engine Upgrade"
         id: 3
         points: 4
         sources: [ "Millennium Falcon Expansion Pack", ]
         text: """Your action bar gains the <img class="icon-boost" alt="Boost" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Boost' if 'Boost' not in stats.actions
     "Anti-Pursuit Lasers":
         name: "Anti-Pursuit Lasers"
         id: 4
@@ -1293,7 +1363,23 @@ exportObj.modifications =
         points: 2
         text: """After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> or <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result, the enemy ship suffers 1 damage."""
         restriction_func: (ship) ->
-            ship.large ? false
+            ship.data.large ? false
+    "Targeting Computer":
+        name: "Targeting Computer"
+        id: 5
+        sources: [ "Imperial Aces Expansion Pack", ]
+        points: 2
+        text: """Your action bar gains the <img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
+    "Hull Upgrade":
+        name: "Hull Upgrade"
+        id: 6
+        sources: [ "Imperial Aces Expansion Pack", ]
+        points: 3
+        text: """Increase your hull value by 1."""
+        modifier_func: (stats) ->
+            stats.hull += 1
 
 
 exportObj.titles =
@@ -1304,8 +1390,11 @@ exportObj.titles =
         unique: true
         points: 0
         ship: "Firespray-31"
-        slots: [
-            "Torpedo",
+        confersAddons: [
+            {
+                type: exportObj.Upgrade
+                slot: "Torpedo"
+            },
         ]
         text: """Your upgrade bar gains the <img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" /> upgrade icon."""
     "Millennium Falcon":
@@ -1317,6 +1406,8 @@ exportObj.titles =
         ship: "YT-1300"
         actions: "Evade"
         text: """Your action bar gains the <img class="icon-evade" alt="Evade" src="images/transparent.png" /> action icon."""
+        modifier_func: (stats) ->
+            stats.actions.push 'Evade' if 'Evade' not in stats.actions
     "Moldy Crow":
         name: "Moldy Crow"
         id: 3
@@ -1333,6 +1424,20 @@ exportObj.titles =
         points: 3
         ship: "Lambda-Class Shuttle"
         text: """When acquiring a target lock, you may lock onto any enemy ship in the play area."""
+    "Royal Guard TIE":
+        name: "Royal Guard TIE"
+        id: 5
+        sources: [ "Imperial Aces Expansion Pack", ]
+        points: 0
+        ship: "TIE Interceptor"
+        text: """You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
+        confersAddons: [
+            {
+                type: exportObj.Modification,
+            },
+        ]
+        restriction_func: (ship) ->
+            ship.effectiveStats().skill > 4
 
 exportObj.expansions = {}
 

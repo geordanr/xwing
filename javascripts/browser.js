@@ -289,3 +289,5 @@
   })();
 
 }).call(this);
+
+//@ sourceMappingURL=browser.map

@@ -35,6 +35,12 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+18 Sep 2013
+-----------
+* Add ships from _Imperial Aces_ unveil.
+* Update serialization to support new title functionality in _Imperial Aces_.
+* Display effective ship stats.
+
 13 Sep 2013
 -----------
 * Fancy printout; design inspired by TheKestrel off the FFG forums.
