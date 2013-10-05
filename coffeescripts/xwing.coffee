@@ -104,6 +104,12 @@ class exportObj.SquadBuilder
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
+    newSquadFromScratch: ->
+        @squad_name_input.val 'New Squadron'
+        @removeAllShips()
+        @addShip()
+        @resetCurrentSquad()
+
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 100
         DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2
@@ -141,14 +147,14 @@ class exportObj.SquadBuilder
                 </div>
             </div>
 
-            <div class="row-fluid show-authenticated" style="display: none;">
+            <div class="row-fluid style="display: none;">
                 <div class="span12">
-                    <button class="btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
-                    <button class="btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
-                    <button class="btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
-                    <button class="btn btn-primary backend-list-my-squads show-authenticated">Your Squads</button>
-                    <!-- <button class="btn btn-primary backend-list-all-squads show-authenticated">Everyone's Squads</button> -->
-                    <span class="backend-status"></span>
+                    <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
+                    <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
+                    <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
+                    <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>
+                    <button class="btn btn-danger clear-squad">New Squad</button>
+                    <span class="show-authenticated backend-status"></span>
                 </div>
             </div>
         '''
@@ -182,6 +188,14 @@ class exportObj.SquadBuilder
         """
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
+
+        @clear_squad_button = $ @status_container.find('.clear-squad')
+        @clear_squad_button.click (e) =>
+            if @current_squad.dirty and @backend?
+                @backend.warnUnsaved this, () =>
+                    @newSquadFromScratch()
+            else
+                @newSquadFromScratch()
 
         @squad_name_container = $ @status_container.find('div.squad-name-container')
         @squad_name_display = $ @container.find('.display-name')
@@ -490,6 +504,10 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
 
+    removeAllShips: ->
+        while @ships.length > 0
+            @removeShip @ships[0]
+        throw "Ships not emptied" if @ships.length > 0
 
     showTextListModal: ->
         # Display modal
@@ -504,9 +522,7 @@ class exportObj.SquadBuilder
     loadFromSerialized: (serialized) ->
         @suppress_automatic_new_ship = true
         # Clear all existing ships
-        while @ships.length > 0
-            @removeShip @ships[0]
-        throw "Ships not emptied" if @ships.length > 0
+        @removeAllShips()
 
         re = /^v(\d+)!(.*)/
         matches = re.exec serialized
