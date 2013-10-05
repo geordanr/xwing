@@ -35,6 +35,10 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+4 Oct 2013
+----------
+* Add ability to clone non-unique pilots and their non-unique addons.
+
 18 Sep 2013
 -----------
 * Add ships from _Imperial Aces_ unveil.

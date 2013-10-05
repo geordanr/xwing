@@ -864,6 +864,41 @@ class Ship
         @builder.ships.splice idx, 1
         cb()
 
+    copyFrom: (other) ->
+        throw "Cannot copy from self" if other is this
+        #console.log "Attempt to copy #{other?.pilot?.name}"
+        return unless other.pilot? and other.data? and not other.pilot.unique
+        #console.log "Setting pilot to ID=#{other.pilot.id}"
+        @setPilotById other.pilot.id
+
+        # set up non-conferred addons
+        other_conferred_addons = []
+        other_conferred_addons.concat other.title.conferred_addons if other.title? and other.title.conferredAddons.length > 0
+        other_conferred_addons.concat other.modifications[0].conferred_addons if other.modifications[0]?.data?
+        #console.log "Looking for conferred upgrades..."
+        for other_upgrade, i in other.upgrades
+            #console.log "Examining upgrade #{other_upgrade}"
+            if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique
+                #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
+                @upgrades[i].setById other_upgrade.data.id
+        #console.log "Checking other ship title #{other.title ? null}"
+        @title.setById other.title.data.id if other.title?.data? and not other.title.data.unique
+        #console.log "Checking other ship base modification #{other.modifications[0] ? null}"
+        @modifications[0].setById other.modifications[0].data.id if other.modifications[0]?.data and not other.modifications[0].data.unique
+
+        # set up conferred non-unique addons
+        #console.log "Attempt to copy conferred addons..."
+        if other.title? and other.title.conferredAddons.length > 0
+            #console.log "Other ship title #{other.title} conferrs addons"
+            for other_conferred_addon, i in other.title.conferredAddons
+                @title.conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data.unique
+        if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
+            #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
+            for other_conferred_addon, i in other.modifications[0].conferredAddons
+                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data.unique
+        @updateSelections()
+        @builder.container.trigger 'xwing:pointsUpdated'
+
     setPilotById: (id) ->
         @setPilot exportObj.pilotsById[parseInt id]
 
@@ -888,6 +923,7 @@ class Ship
                 if cls.indexOf('ship-') == 0
                     @row.removeClass cls
             @row.addClass "ship-#{@data.name.toLowerCase().replace(/[^a-z0-9]/gi, '')}0"
+            @copy_button.toggle not @pilot?.unique
 
     resetPilot: ->
         if @pilot?.unique?
@@ -958,11 +994,13 @@ class Ship
             <div class="span1 points-display-container">
                 <span></span>
             </div>
-            <div class="span7 addon-container" />
-            <div class="span1 remove-btn-container">
-                <button class="btn btn-danger"><span class="visible-desktop visible-tablet hidden-phone">&times;</span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
+            <div class="span6 addon-container" />
+            <div class="span2 button-container">
+                <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="icon-remove"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
+                <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="icon-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>
             </div>
         '''
+        @row.find('.button-container span').tooltip()
         @pilot_selector = $ @row.find('div.pilot-selector-container input[type=hidden]')
         @pilot_selector.select2
             width: '100%'
@@ -988,13 +1026,19 @@ class Ship
 
         @addon_container = $ @row.find('div.addon-container')
 
-        @remove_button = $ @row.find('div.remove-btn-container button')
+        @remove_button = $ @row.find('button.remove-pilot')
         @remove_button.click (e) =>
             e.preventDefault()
             @row.slideUp 'fast', () =>
                 @builder.removeShip this
                 @backend_status?.fadeOut 'slow'
         @remove_button.hide()
+
+        @copy_button = $ @row.find('button.copy-pilot')
+        @copy_button.click (e) =>
+            clone = @builder.ships[@builder.ships.length - 1]
+            clone.copyFrom this
+        @copy_button.hide()
 
     teardownUI: ->
         @row.text ''
