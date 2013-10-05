@@ -35,6 +35,10 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+4 Oct 2013
+----------
+* Add ability to clear current squad and start a new one.
+
 18 Sep 2013
 -----------
 * Add ships from _Imperial Aces_ unveil.
