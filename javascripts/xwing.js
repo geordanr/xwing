@@ -200,14 +200,32 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n        <button class="btn btn-primary view-as-text">View as Text</button>\n        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n            <span class="caret"></span>\n        </button>\n        <ul class="dropdown-menu">\n            <li><a class="randomize-options">Randomizer Options...</a></li>\n        </ul>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text">View as Text</button>\n            <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
+      this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
+      this.simple_container.hide();
+      this.simple_toggle_button = $(this.list_modal.find('.toggle-simple-view'));
+      this.simple_toggle_button.data('showingSimpleView', false);
+      this.simple_toggle_button.click(function(e) {
+        _this.simple_toggle_button.blur();
+        if (_this.simple_toggle_button.data('showingSimpleView')) {
+          _this.simple_toggle_button.data('showingSimpleView', false);
+          _this.simple_toggle_button.text('Simple View');
+          _this.fancy_container.show();
+          return _this.simple_container.hide();
+        } else {
+          _this.simple_toggle_button.data('showingSimpleView', true);
+          _this.simple_toggle_button.text('Fancy View');
+          _this.fancy_container.hide();
+          return _this.simple_container.show();
+        }
+      });
       this.clear_squad_button = $(this.status_container.find('.clear-squad'));
       this.clear_squad_button.click(function(e) {
         if (_this.current_squad.dirty && (_this.backend != null)) {
@@ -347,7 +365,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 338
+              lineno: 357
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -439,11 +457,15 @@
       this.fancy_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
       this.fancy_container.text('');
+      this.simple_container.html('<table></table>');
       _ref1 = this.ships;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         ship = _ref1[_j];
         if (ship.pilot != null) {
           this.fancy_container.append(ship.toHTML());
+        }
+        if (ship.pilot != null) {
+          this.simple_container.find('table').append(ship.toTableRow());
         }
       }
       return cb(this.total_points);
@@ -621,7 +643,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 606
+          lineno: 627
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -632,7 +654,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 607
+            lineno: 628
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -1266,7 +1288,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 939
+                  lineno: 960
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1312,7 +1334,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 952
+                lineno: 973
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1362,14 +1384,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 974
+            lineno: 995
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 976
+            lineno: 997
           }));
         }
         _ref1 = _this.modifications;
@@ -1377,7 +1399,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 978
+              lineno: 999
             }));
           }
         }
@@ -1577,6 +1599,45 @@
       return "<div class=\"fancy-ship\">" + html + "</div>";
     };
 
+    Ship.prototype.toTableRow = function() {
+      var modification, slotted_upgrades, table_html, upgrade, _i, _len, _ref;
+      table_html = $.trim("<tr class=\"simple-pilot\">\n    <td class=\"name\">" + this.pilot.name + " &mdash; " + this.data.name + "</td>\n    <td class=\"points\">" + this.pilot.points + "</td>\n</tr>");
+      slotted_upgrades = ((function() {
+        var _i, _len, _ref, _results;
+        _ref = this.upgrades;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          upgrade = _ref[_i];
+          if (upgrade.data != null) {
+            _results.push(upgrade);
+          }
+        }
+        return _results;
+      }).call(this)).concat((function() {
+        var _i, _len, _ref, _results;
+        _ref = this.modifications;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          modification = _ref[_i];
+          if (modification.data != null) {
+            _results.push(modification);
+          }
+        }
+        return _results;
+      }).call(this));
+      if (((_ref = this.title) != null ? _ref.data : void 0) != null) {
+        slotted_upgrades.push(this.title);
+      }
+      if (slotted_upgrades.length > 0) {
+        for (_i = 0, _len = slotted_upgrades.length; _i < _len; _i++) {
+          upgrade = slotted_upgrades[_i];
+          table_html += upgrade.toTableRow();
+        }
+      }
+      table_html += '<tr><td>&nbsp;</td><td></td></tr>';
+      return table_html;
+    };
+
     Ship.prototype.toSerialized = function() {
       var addon, conferredAddonsList, conferred_addons, i, upgrade, upgrades, _i, _len, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       conferred_addons = (_ref = (_ref1 = this.title) != null ? _ref1.conferredAddons : void 0) != null ? _ref : [];
@@ -1771,7 +1832,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1269
+                lineno: 1308
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1839,7 +1900,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1299
+                  lineno: 1338
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1859,7 +1920,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1302
+                    lineno: 1341
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1923,7 +1984,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1327
+            lineno: 1366
           }));
         }
         __iced_deferrals._fulfill();
@@ -1971,6 +2032,14 @@
     GenericAddon.prototype.toHTML = function() {
       if (this.data != null) {
         return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\">" + this.data.name + "</div>\n</div>");
+      } else {
+        return '';
+      }
+    };
+
+    GenericAddon.prototype.toTableRow = function() {
+      if (this.data != null) {
+        return $.trim("<tr class=\"simple-addon\">\n    <td class=\"name\">" + this.data.name + "</td>\n    <td class=\"points\">" + this.data.points + "</td>\n</tr>");
       } else {
         return '';
       }

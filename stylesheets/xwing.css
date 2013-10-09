@@ -264,3 +264,17 @@ select.card-selector {
 .fancy-list .info-data {
   position: relative;
   top: -5px; }
+
+.simple-list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em; }
+  .simple-list table {
+    width: 100%; }
+  .simple-list .name {
+    font-style: oblique; }
+  .simple-list .points {
+    text-align: right; }
+  .simple-list .simple-pilot .name {
+    font-weight: bold; }
+  .simple-list .simple-addon .name {
+    padding-left: 20px; }
