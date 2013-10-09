@@ -396,7 +396,7 @@
       content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\" />\n    <div class=\"span3 hidden-phone info-container\" />\n</div>"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
-      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
+      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
       this.print_list_button = $(this.container.find('button.print-list'));
       return this.container.find('[rel=tooltip]').tooltip();
@@ -643,7 +643,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 625
+          lineno: 627
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -654,7 +654,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 626
+            lineno: 628
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -854,6 +854,7 @@
       if (data !== this.tooltip_currently_displaying) {
         switch (type) {
           case 'Ship':
+            this.info_container.find('.info-sources').text(data.pilot.sources.sort().join(', '));
             effective_stats = data.effectiveStats();
             extra_actions = $.grep(effective_stats.actions, function(el, i) {
               return __indexOf.call(data.data.actions, el) < 0;
@@ -887,6 +888,7 @@
             this.info_container.find('tr.info-upgrades td.info-data').text(data.pilot.slots.join(', ') || 'None');
             break;
           case 'Pilot':
+            this.info_container.find('.info-sources').text(data.sources.sort().join(', '));
             this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name);
             this.info_container.find('p.info-text').html((_ref9 = data.text) != null ? _ref9 : '');
             ship = exportObj.ships[data.ship];
@@ -909,6 +911,7 @@
             this.info_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') || 'None');
             break;
           case 'Addon':
+            this.info_container.find('.info-sources').text(data.sources.sort().join(', '));
             this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name);
             this.info_container.find('p.info-text').html((_ref18 = data.text) != null ? _ref18 : '');
             this.info_container.find('tr.info-ship').hide();
@@ -1285,7 +1288,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 955
+                  lineno: 960
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1331,7 +1334,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 968
+                lineno: 973
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1381,14 +1384,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 990
+            lineno: 995
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 992
+            lineno: 997
           }));
         }
         _ref1 = _this.modifications;
@@ -1396,7 +1399,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 994
+              lineno: 999
             }));
           }
         }
@@ -1829,7 +1832,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1303
+                lineno: 1308
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1897,7 +1900,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1333
+                  lineno: 1338
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1917,7 +1920,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1336
+                    lineno: 1341
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1981,7 +1984,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1361
+            lineno: 1366
           }));
         }
         __iced_deferrals._fulfill();

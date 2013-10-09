@@ -402,6 +402,8 @@ class exportObj.SquadBuilder
         @info_container.append $.trim """
             <div class="well well-small info-well">
                 <span class="info-name"></span>
+                <br />
+                <span class="info-sources"></span>
                 <table>
                     <tbody>
                         <tr class="info-ship">
@@ -688,6 +690,7 @@ class exportObj.SquadBuilder
         if data != @tooltip_currently_displaying
             switch type
                 when 'Ship'
+                    @info_container.find('.info-sources').text data.pilot.sources.sort().join(', ')
                     effective_stats = data.effectiveStats()
                     extra_actions = $.grep effective_stats.actions, (el, i) ->
                         el not in data.data.actions
@@ -711,6 +714,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text(data.pilot.slots.join(', ') or 'None')
                 when 'Pilot'
+                    @info_container.find('.info-sources').text data.sources.sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     ship = exportObj.ships[data.ship]
@@ -732,6 +736,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') or 'None')
                 when 'Addon'
+                    @info_container.find('.info-sources').text data.sources.sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
