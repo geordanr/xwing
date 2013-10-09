@@ -38,6 +38,7 @@ CHANGELOG
 8 Oct 2013
 ----------
 * The simple version of View as Text returns!
+* Sources for each card are now visible in the main builder.
 
 4 Oct 2013
 ----------
