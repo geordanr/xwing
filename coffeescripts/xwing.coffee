@@ -134,17 +134,18 @@ class exportObj.SquadBuilder
                 <div class="span6 pull-right button-container">
                     <div class="btn-group pull-right">
 
-                    <button class="btn btn-primary view-as-text">View as Text</button>
-                    <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
-                    <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
+                        <button class="btn btn-primary view-as-text">View as Text</button>
+                        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
+                        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
-                    <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="randomize-options">Randomizer Options...</a></li>
-                    </ul>
+                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
+                        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="randomize-options">Randomizer Options...</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -181,14 +182,28 @@ class exportObj.SquadBuilder
             </div>
             <div class="modal-body">
                 <div class="fancy-list"></div>
+                <div class="simple-list"></div>
             </div>
             <div class="modal-footer hidden-print">
+                <label style="display: inline">
+                    <input type="checkbox" class="simple-view" />
+                    Simple View
+                </label>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
+        @simple_container = $ @list_modal.find('div.modal-body .simple-list')
+        @simple_checkbox = $ @list_modal.find('input.simple-view')
+        @simple_checkbox.change (e) =>
+            if @simple_checkbox.attr('checked')
+                @fancy_container.hide()
+                @simple_container.show()
+            else
+                @fancy_container.show()
+                @simple_container.hide()
 
         @clear_squad_button = $ @status_container.find('.clear-squad')
         @clear_squad_button.click (e) =>
@@ -474,8 +489,10 @@ class exportObj.SquadBuilder
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
         @fancy_container.text ''
+        @simple_container.html '<table></table>'
         for ship in @ships
             @fancy_container.append ship.toHTML() if ship.pilot?
+            @simple_container.find('table').append ship.toTableRow() if ship.pilot?
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -1135,6 +1152,24 @@ class Ship
 
         """<div class="fancy-ship">#{html}</div>"""
 
+    toTableRow: ->
+        table_html = $.trim """
+            <tr class="simple-pilot">
+                <td class="name">#{@pilot.name}</td>
+                <td class="points">#{@pilot.points}</td>
+            </tr>
+        """
+
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+            .concat (modification for modification in @modifications when modification.data?)
+        slotted_upgrades.push @title if @title?.data?
+        if slotted_upgrades.length > 0
+            for upgrade in slotted_upgrades
+                table_html += upgrade.toTableRow()
+
+        table_html += '<tr><td>&nbsp;</td><td></td></tr>'
+        table_html
+
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:TITLEADDONTYPE1.TITLEADDONID1,TITLEADDONTYPE2.TITLEADDONID2
 
@@ -1358,6 +1393,17 @@ class GenericAddon
                     </div>
                     <div class="upgrade-name">#{@data.name}</div>
                 </div>
+            """
+        else
+            ''
+
+    toTableRow: ->
+        if @data?
+            $.trim """
+                <tr class="simple-addon">
+                    <td class="name">#{@data.name}</td>
+                    <td class="points">#{@data.points}</td>
+                </tr>
             """
         else
             ''
