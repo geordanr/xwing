@@ -35,6 +35,10 @@ Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http:/
 CHANGELOG
 =========
 
+8 Oct 2013
+----------
+* The simple version of View as Text returns!
+
 4 Oct 2013
 ----------
 * Add ability to clear current squad and start a new one.

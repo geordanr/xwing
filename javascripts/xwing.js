@@ -205,18 +205,25 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label style=\"display: inline\">\n        <input type=\"checkbox\" class=\"simple-view\" />\n        Simple View\n    </label>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
-      this.simple_checkbox = $(this.list_modal.find('input.simple-view'));
-      this.simple_checkbox.change(function(e) {
-        if (_this.simple_checkbox.attr('checked')) {
-          _this.fancy_container.hide();
-          return _this.simple_container.show();
-        } else {
+      this.simple_container.hide();
+      this.simple_toggle_button = $(this.list_modal.find('.toggle-simple-view'));
+      this.simple_toggle_button.data('showingSimpleView', false);
+      this.simple_toggle_button.click(function(e) {
+        _this.simple_toggle_button.blur();
+        if (_this.simple_toggle_button.data('showingSimpleView')) {
+          _this.simple_toggle_button.data('showingSimpleView', false);
+          _this.simple_toggle_button.text('Simple View');
           _this.fancy_container.show();
           return _this.simple_container.hide();
+        } else {
+          _this.simple_toggle_button.data('showingSimpleView', true);
+          _this.simple_toggle_button.text('Fancy View');
+          _this.fancy_container.hide();
+          return _this.simple_container.show();
         }
       });
       this.clear_squad_button = $(this.status_container.find('.clear-squad'));
@@ -358,7 +365,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 353
+              lineno: 357
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -636,7 +643,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 621
+          lineno: 625
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -647,7 +654,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 622
+            lineno: 626
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -1278,7 +1285,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 951
+                  lineno: 955
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1324,7 +1331,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 964
+                lineno: 968
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1374,14 +1381,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 986
+            lineno: 990
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 988
+            lineno: 992
           }));
         }
         _ref1 = _this.modifications;
@@ -1389,7 +1396,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 990
+              lineno: 994
             }));
           }
         }
@@ -1591,7 +1598,7 @@
 
     Ship.prototype.toTableRow = function() {
       var modification, slotted_upgrades, table_html, upgrade, _i, _len, _ref;
-      table_html = $.trim("<tr class=\"simple-pilot\">\n    <td class=\"name\">" + this.pilot.name + "</td>\n    <td class=\"points\">" + this.pilot.points + "</td>\n</tr>");
+      table_html = $.trim("<tr class=\"simple-pilot\">\n    <td class=\"name\">" + this.pilot.name + " &mdash; " + this.data.name + "</td>\n    <td class=\"points\">" + this.pilot.points + "</td>\n</tr>");
       slotted_upgrades = ((function() {
         var _i, _len, _ref, _results;
         _ref = this.upgrades;
@@ -1822,7 +1829,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1299
+                lineno: 1303
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1890,7 +1897,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1329
+                  lineno: 1333
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1910,7 +1917,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1332
+                    lineno: 1336
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1974,7 +1981,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1357
+            lineno: 1361
           }));
         }
         __iced_deferrals._fulfill();

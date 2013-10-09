@@ -185,10 +185,7 @@ class exportObj.SquadBuilder
                 <div class="simple-list"></div>
             </div>
             <div class="modal-footer hidden-print">
-                <label style="display: inline">
-                    <input type="checkbox" class="simple-view" />
-                    Simple View
-                </label>
+                <button class="btn toggle-simple-view">Simple View</button>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
@@ -196,14 +193,21 @@ class exportObj.SquadBuilder
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
         @simple_container = $ @list_modal.find('div.modal-body .simple-list')
-        @simple_checkbox = $ @list_modal.find('input.simple-view')
-        @simple_checkbox.change (e) =>
-            if @simple_checkbox.attr('checked')
-                @fancy_container.hide()
-                @simple_container.show()
-            else
+        @simple_container.hide()
+        @simple_toggle_button = $ @list_modal.find('.toggle-simple-view')
+        @simple_toggle_button.data 'showingSimpleView', false
+        @simple_toggle_button.click (e) =>
+            @simple_toggle_button.blur()
+            if @simple_toggle_button.data('showingSimpleView')
+                @simple_toggle_button.data 'showingSimpleView', false
+                @simple_toggle_button.text 'Simple View'
                 @fancy_container.show()
                 @simple_container.hide()
+            else
+                @simple_toggle_button.data 'showingSimpleView', true
+                @simple_toggle_button.text 'Fancy View'
+                @fancy_container.hide()
+                @simple_container.show()
 
         @clear_squad_button = $ @status_container.find('.clear-squad')
         @clear_squad_button.click (e) =>
@@ -1155,7 +1159,7 @@ class Ship
     toTableRow: ->
         table_html = $.trim """
             <tr class="simple-pilot">
-                <td class="name">#{@pilot.name}</td>
+                <td class="name">#{@pilot.name} &mdash; #{@data.name}</td>
                 <td class="points">#{@pilot.points}</td>
             </tr>
         """
