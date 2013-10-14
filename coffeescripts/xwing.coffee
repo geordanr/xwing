@@ -168,7 +168,7 @@ class exportObj.SquadBuilder
         @list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <div class="fancy-header">
+                <div class="fancy-header hidden-phone">
                     <div class="squad-name"></div>
                     <div class="mask">
                         <div class="outer-circle">
@@ -178,14 +178,17 @@ class exportObj.SquadBuilder
                         </div>
                     </div>
                 </div>
-                <div class="fancy-under-header"></div>
+                <div class="fancy-under-header hidden-phone"></div>
+                <div class="hidden-tablet hidden-desktop">
+                    <h4><span class="squad-name"></span> (<span class="total-points"></span>)<h4>
+                </div>
             </div>
             <div class="modal-body">
-                <div class="fancy-list"></div>
+                <div class="fancy-list hidden-phone"></div>
                 <div class="simple-list"></div>
             </div>
             <div class="modal-footer hidden-print">
-                <button class="btn toggle-simple-view">Simple View</button>
+                <button class="btn toggle-simple-view hidden-phone">Simple View</button>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
@@ -193,7 +196,7 @@ class exportObj.SquadBuilder
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
         @simple_container = $ @list_modal.find('div.modal-body .simple-list')
-        @simple_container.hide()
+        @simple_container.hide() if $(window).width() >= 768
         @simple_toggle_button = $ @list_modal.find('.toggle-simple-view')
         @simple_toggle_button.data 'showingSimpleView', false
         @simple_toggle_button.click (e) =>
@@ -483,6 +486,9 @@ class exportObj.SquadBuilder
             for ship in @ships
                 @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
             window.print()
+
+        $(window).resize =>
+            @simple_toggle_button.click() if $(window).width() < 768 and not @simple_toggle_button.data('showingSimpleView')
 
     onPointsUpdated: (cb) =>
         @total_points = 0
