@@ -134,11 +134,11 @@ class exportObj.SquadBuilder
                 <div class="span6 pull-right button-container">
                     <div class="btn-group pull-right">
 
-                        <button class="btn btn-primary view-as-text">View as Text</button>
+                        <button class="btn btn-primary view-as-text"><span class="hidden-phone">View as </span>Text</button>
                         <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
                         <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
-                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>
+                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
