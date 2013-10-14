@@ -200,16 +200,18 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text">View as Text</button>\n            <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random Squad!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span4 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span2 points-display-container">Total Points: 0</div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone">View as </span>Text</button>\n            <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header\"></div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header hidden-phone\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header hidden-phone\"></div>\n    <div class=\"hidden-tablet hidden-desktop\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view hidden-phone\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
-      this.simple_container.hide();
+      if ($(window).width() >= 768) {
+        this.simple_container.hide();
+      }
       this.simple_toggle_button = $(this.list_modal.find('.toggle-simple-view'));
       this.simple_toggle_button.data('showingSimpleView', false);
       this.simple_toggle_button.click(function(e) {
@@ -365,7 +367,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 357
+              lineno: 360
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -427,7 +429,7 @@
         e.preventDefault();
         return _this.showTextListModal();
       });
-      return this.print_list_button.click(function(e) {
+      this.print_list_button.click(function(e) {
         var ship, _i, _len, _ref;
         e.preventDefault();
         _this.printable_container.find('.printable-header').html(_this.list_modal.find('.modal-header').html());
@@ -441,6 +443,11 @@
           }
         }
         return window.print();
+      });
+      return $(window).resize(function() {
+        if ($(window).width() < 768 && !_this.simple_toggle_button.data('showingSimpleView')) {
+          return _this.simple_toggle_button.click();
+        }
       });
     };
 
@@ -643,7 +650,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 627
+          lineno: 633
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -654,7 +661,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 628
+            lineno: 634
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -1288,7 +1295,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 960
+                  lineno: 966
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1334,7 +1341,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 973
+                lineno: 979
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1384,14 +1391,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 995
+            lineno: 1001
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 997
+            lineno: 1003
           }));
         }
         _ref1 = _this.modifications;
@@ -1399,7 +1406,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 999
+              lineno: 1005
             }));
           }
         }
@@ -1832,7 +1839,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1308
+                lineno: 1314
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1900,7 +1907,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1338
+                  lineno: 1344
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1920,7 +1927,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1341
+                    lineno: 1347
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1984,7 +1991,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1366
+            lineno: 1372
           }));
         }
         __iced_deferrals._fulfill();
