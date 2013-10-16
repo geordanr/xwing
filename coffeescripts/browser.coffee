@@ -23,6 +23,14 @@ byName = (a, b) ->
     else
         0
 
+byPoints = (a, b) ->
+    if a.data.points < b.data.points
+        -1
+    else if b.data.points < a.data.points
+        1
+    else
+        byName a, b
+
 String::capitalize = ->
     this.charAt(0).toUpperCase() + this.slice(1)
 
@@ -49,7 +57,8 @@ class exportObj.CardBrowser
                         Sort cards by: <select class="sort-by">
                             <option value="name">Name</option>
                             <option value="source">Source</option>
-                            <option value="type" selected="1">Type</option>
+                            <option value="type-by-points">Type (by Points)</option>
+                            <option value="type-by-name" selected="1">Type (by Name)</option>
                         </select>
                     </div>
                 </div>
@@ -143,9 +152,13 @@ class exportObj.CardBrowser
             for source in card.data.sources
                 @sources.push(source) if source not in @sources
 
-        @cards_by_type = {}
+        @cards_by_type_name = {}
         for type in @types.sort()
-            @cards_by_type[type] = ( card for card in @all_cards when card.type == type ).sort byName
+            @cards_by_type_name[type] = ( card for card in @all_cards when card.type == type ).sort byName
+
+        @cards_by_type_points = {}
+        for type in @types.sort()
+            @cards_by_type_points[type] = ( card for card in @all_cards when card.type == type ).sort byPoints
 
         @cards_by_source = {}
         for source in @sources
@@ -153,7 +166,7 @@ class exportObj.CardBrowser
 
 
     renderList: (sort_by='name') ->
-        # sort_by is one of `name`, `type`, `source`
+        # sort_by is one of `name`, `type-by-name`, `source`, `type-by-points`
         #
         # Renders multiselect to container
         # Selects previously selected card if there is one
@@ -164,13 +177,21 @@ class exportObj.CardBrowser
         @card_selector_container.append @card_selector
 
         switch sort_by
-            when 'type'
+            when 'type-by-name'
                 for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', type
                     @card_selector.append optgroup
 
-                    for card in @cards_by_type[type]
+                    for card in @cards_by_type_name[type]
+                        @addCardTo optgroup, card
+            when 'type-by-points'
+                for type in @types
+                    optgroup = $ document.createElement('OPTGROUP')
+                    optgroup.attr 'label', type
+                    @card_selector.append optgroup
+
+                    for card in @cards_by_type_points[type]
                         @addCardTo optgroup, card
             when 'source'
                 for source in @sources
