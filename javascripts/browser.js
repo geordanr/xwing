@@ -6,7 +6,7 @@
 
 
 (function() {
-  var TYPES, TYPE_TO_SINGULAR, byName, exportObj,
+  var TYPES, TYPE_TO_SINGULAR, byName, byPoints, exportObj,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 
@@ -34,6 +34,16 @@
     }
   };
 
+  byPoints = function(a, b) {
+    if (a.data.points < b.data.points) {
+      return -1;
+    } else if (b.data.points < a.data.points) {
+      return 1;
+    } else {
+      return byName(a, b);
+    }
+  };
+
   String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
@@ -49,7 +59,7 @@
     }
 
     CardBrowser.prototype.setupUI = function() {
-      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            Sort cards by: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type\" selected=\"1\">Type</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p>Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
+      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            Sort cards by: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type-by-points\">Type (by Points)</option>\n                <option value=\"type-by-name\" selected=\"1\">Type (by Name)</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p>Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
       this.card_selector_container = $(this.container.find('.xwing-card-browser .card-selector-container'));
       this.card_viewer_container = $(this.container.find('.xwing-card-browser .card-viewer-container'));
       this.card_viewer_container.hide();
@@ -68,7 +78,7 @@
     };
 
     CardBrowser.prototype.prepareData = function() {
-      var card, card_data, card_name, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _results;
+      var card, card_data, card_name, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
       this.all_cards = [];
       for (_i = 0, _len = TYPES.length; _i < _len; _i++) {
         type = TYPES[_i];
@@ -125,11 +135,11 @@
           }
         }
       }
-      this.cards_by_type = {};
+      this.cards_by_type_name = {};
       _ref4 = this.types.sort();
       for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
         type = _ref4[_l];
-        this.cards_by_type[type] = ((function() {
+        this.cards_by_type_name[type] = ((function() {
           var _len4, _m, _ref5, _results;
           _ref5 = this.all_cards;
           _results = [];
@@ -142,17 +152,34 @@
           return _results;
         }).call(this)).sort(byName);
       }
-      this.cards_by_source = {};
-      _ref5 = this.sources;
-      _results = [];
+      this.cards_by_type_points = {};
+      _ref5 = this.types.sort();
       for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
-        source = _ref5[_m];
-        _results.push(this.cards_by_source[source] = ((function() {
-          var _len5, _n, _ref6, _results1;
+        type = _ref5[_m];
+        this.cards_by_type_points[type] = ((function() {
+          var _len5, _n, _ref6, _results;
           _ref6 = this.all_cards;
-          _results1 = [];
+          _results = [];
           for (_n = 0, _len5 = _ref6.length; _n < _len5; _n++) {
             card = _ref6[_n];
+            if (card.type === type) {
+              _results.push(card);
+            }
+          }
+          return _results;
+        }).call(this)).sort(byPoints);
+      }
+      this.cards_by_source = {};
+      _ref6 = this.sources;
+      _results = [];
+      for (_n = 0, _len5 = _ref6.length; _n < _len5; _n++) {
+        source = _ref6[_n];
+        _results.push(this.cards_by_source[source] = ((function() {
+          var _len6, _o, _ref7, _results1;
+          _ref7 = this.all_cards;
+          _results1 = [];
+          for (_o = 0, _len6 = _ref7.length; _o < _len6; _o++) {
+            card = _ref7[_o];
             if (__indexOf.call(card.data.sources, source) >= 0) {
               _results1.push(card);
             }
@@ -164,7 +191,7 @@
     };
 
     CardBrowser.prototype.renderList = function(sort_by) {
-      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _ref, _ref1, _ref2, _ref3, _ref4,
+      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _o, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
         _this = this;
       if (sort_by == null) {
         sort_by = 'name';
@@ -177,38 +204,52 @@
       this.card_selector.attr('size', 25);
       this.card_selector_container.append(this.card_selector);
       switch (sort_by) {
-        case 'type':
+        case 'type-by-name':
           _ref = this.types;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             type = _ref[_i];
             optgroup = $(document.createElement('OPTGROUP'));
             optgroup.attr('label', type);
             this.card_selector.append(optgroup);
-            _ref1 = this.cards_by_type[type];
+            _ref1 = this.cards_by_type_name[type];
             for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
               card = _ref1[_j];
               this.addCardTo(optgroup, card);
             }
           }
           break;
-        case 'source':
-          _ref2 = this.sources;
+        case 'type-by-points':
+          _ref2 = this.types;
           for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-            source = _ref2[_k];
+            type = _ref2[_k];
             optgroup = $(document.createElement('OPTGROUP'));
-            optgroup.attr('label', source);
+            optgroup.attr('label', type);
             this.card_selector.append(optgroup);
-            _ref3 = this.cards_by_source[source];
+            _ref3 = this.cards_by_type_points[type];
             for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
               card = _ref3[_l];
               this.addCardTo(optgroup, card);
             }
           }
           break;
-        default:
-          _ref4 = this.all_cards;
+        case 'source':
+          _ref4 = this.sources;
           for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
-            card = _ref4[_m];
+            source = _ref4[_m];
+            optgroup = $(document.createElement('OPTGROUP'));
+            optgroup.attr('label', source);
+            this.card_selector.append(optgroup);
+            _ref5 = this.cards_by_source[source];
+            for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
+              card = _ref5[_n];
+              this.addCardTo(optgroup, card);
+            }
+          }
+          break;
+        default:
+          _ref6 = this.all_cards;
+          for (_o = 0, _len6 = _ref6.length; _o < _len6; _o++) {
+            card = _ref6[_o];
             this.addCardTo(this.card_selector, card);
           }
       }
