@@ -168,20 +168,39 @@ class exportObj.SquadBuilder
         @list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <div class="fancy-header hidden-phone">
-                    <div class="squad-name"></div>
-                    <div class="mask">
-                        <div class="outer-circle">
-                            <div class="inner-circle">
-                                <span class="total-points"></span>
+
+                <div class="hidden-phone hidden-print">
+                    <div class="fancy-header">
+                        <div class="squad-name"></div>
+                        <div class="mask">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <span class="total-points"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="fancy-under-header"></div>
                 </div>
-                <div class="fancy-under-header hidden-phone"></div>
-                <div class="hidden-tablet hidden-desktop">
+
+                <div class="visible-print">
+                    <div class="fancy-header">
+                        <div class="squad-name"></div>
+                        <div class="mask">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <span class="total-points"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fancy-under-header"></div>
+                </div>
+
+                <div class="visible-phone hidden-print">
                     <h4><span class="squad-name"></span> (<span class="total-points"></span>)<h4>
                 </div>
+
             </div>
             <div class="modal-body">
                 <div class="fancy-list hidden-phone"></div>
