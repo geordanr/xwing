@@ -205,7 +205,7 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <div class=\"fancy-header hidden-phone\">\n        <div class=\"squad-name\"></div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle\">\n                    <span class=\"total-points\"></span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"fancy-under-header hidden-phone\"></div>\n    <div class=\"hidden-tablet hidden-desktop\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view hidden-phone\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn toggle-simple-view hidden-phone\">Simple View</button>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
@@ -367,7 +367,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 360
+              lineno: 379
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -650,7 +650,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 633
+          lineno: 652
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -661,7 +661,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 634
+            lineno: 653
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -1295,7 +1295,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 966
+                  lineno: 985
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1341,7 +1341,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 979
+                lineno: 998
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1391,14 +1391,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 1001
+            lineno: 1020
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 1003
+            lineno: 1022
           }));
         }
         _ref1 = _this.modifications;
@@ -1406,7 +1406,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 1005
+              lineno: 1024
             }));
           }
         }
@@ -1839,7 +1839,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1314
+                lineno: 1333
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1907,7 +1907,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1344
+                  lineno: 1363
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1927,7 +1927,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1347
+                    lineno: 1366
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1991,7 +1991,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1372
+            lineno: 1391
           }));
         }
         __iced_deferrals._fulfill();
