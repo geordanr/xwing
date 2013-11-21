@@ -278,3 +278,6 @@ select.card-selector {
     font-weight: bold; }
   .simple-list .simple-addon .name {
     padding-left: 20px; }
+
+ul.nav li.dropdown ul.dropdown-menu li {
+  color: #333333; }

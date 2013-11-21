@@ -34,6 +34,11 @@
           %a#browserTab{'data-toggle' => "tab", :href => '#browserContent'} Card Browser
         %li
           %a#aboutTab{'data-toggle' => "tab", :href => '#aboutContent'} About
+        %li.dropdown
+          %a.dropdown-toggle{'data-toggle' => 'dropdown', :href => '#'}
+            %span.language-placeholder
+            %b.caret
+          %ul.dropdown-menu
         %li
           %a#auth-status{:href => '#'}
             %i.icon-spinner.icon-spin
@@ -83,11 +88,24 @@
     %script{:src => "bootstrap/js/bootstrap.min.js?#{Time.now.to_i}"}
     %script{:src => "select2-3.4.0/select2.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/xwing.min.js?#{Time.now.to_i}"}
-    %script{:src => "javascripts/cards.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/cards-en.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
+        for language in Object.keys(window.cardLoaders).sort()
+            li = $ document.createElement 'LI'
+            li.text language
+            do (language) ->
+              li.click (e) ->
+                  $(window).trigger 'xwing:languageChanged', language
+            $('ul.dropdown-menu').append li
+        $(window).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
+          $('.language-placeholder').text language
+          window.loadCards language
+          $(window).trigger 'xwing:updateText'
+
+        $(window).trigger 'xwing:languageChanged', 'English'
         $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
         $('#rebelTab').click (e) ->
           ga 'send', 'pageview',

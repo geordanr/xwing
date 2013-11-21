@@ -5,6 +5,9 @@
 ###
 exportObj = exports ? this
 
+exportObj.loadCards = (language) ->
+    exportObj.cardLoaders[language]()
+
 exportObj.sortHelper = (a, b) ->
     if a.points == b.points
         a_name = a.text.replace(/[^a-z0-9]/ig, '')
@@ -491,6 +494,12 @@ class exportObj.SquadBuilder
 
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
+        .on 'xwing:updateText', (e, cb=$.noop) =>
+            serialized = @serialize()
+            @loadFromSerialized serialized
+            for ship in @ships
+                ship.updateSelections()
+            cb()
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -575,13 +584,15 @@ class exportObj.SquadBuilder
         if matches?
             # versioned
             for serialized_ship in matches[2].split(';')
-                new_ship = @addShip()
-                new_ship.fromSerialized parseInt(matches[1]), serialized_ship
+                unless serialized_ship == ''
+                    new_ship = @addShip()
+                    new_ship.fromSerialized parseInt(matches[1]), serialized_ship
         else
             # v1 (unversioned)
             for serialized_ship in serialized.split(';')
-                new_ship = @addShip()
-                new_ship.fromSerialized 1, serialized_ship
+                unless serialized == ''
+                    new_ship = @addShip()
+                    new_ship.fromSerialized 1, serialized_ship
 
         @suppress_automatic_new_ship = false
         # Finally, the unassigned ship
