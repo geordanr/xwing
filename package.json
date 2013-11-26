@@ -1,0 +1,10 @@
+{
+    "name": "yasb",
+    "description": "Squad builder for Fantasy Flight Games' X-Wing Miniatures Game",
+    "version": "0.0.1",
+    "private": "true",
+    "dependencies": {
+        "iced-coffee-script": "1.6.x",
+        "uglify-js": "2.4.x"
+    }
+}
