@@ -1,47 +1,48 @@
+
 exportObj = exports ? this
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.English =
+exportObj.translations.CapsLock =
     action:
-        "Barrel Roll": "Barrel Roll"
-        "Boost": "Boost"
-        "Evade": "Evade"
-        "Focus": "Focus"
-        "Target Lock": "Target Lock"
+        "Barrel Roll": "bARREL rOLL"
+        "Boost": "bOOST"
+        "Evade": "eVADE"
+        "Focus": "fOCUS"
+        "Target Lock": "tARGET lOCK"
     slot:
-        "Astromech": "Astromech"
-        "Bomb": "Bomb"
-        "Cannon": "Cannon"
-        "Crew": "Crew"
-        "Elite": "Elite"
-        "Missile": "Missile"
-        "System": "System"
-        "Torpedo": "Torpedo"
-        "Turret": "Turret"
+        "Astromech": "aSTROMECH"
+        "Bomb": "bOMB"
+        "Cannon": "cANNON"
+        "Crew": "cREW"
+        "Elite": "eLITE"
+        "Missile": "mISSILE"
+        "System": "sYSTEM"
+        "Torpedo": "tORPEDO"
+        "Turret": "tURRET"
     sources: # needed?
-        "Core": "Core"
-        "A-Wing Expansion Pack": "A-Wing Expansion Pack"
-        "B-Wing Expansion Pack": "B-Wing Expansion Pack"
-        "X-Wing Expansion Pack": "X-Wing Expansion Pack"
-        "Y-Wing Expansion Pack": "Y-Wing Expansion Pack"
-        "Millennium Falcon Expansion Pack": "Millennium Falcon Expansion Pack"
-        "HWK-290 Expansion Pack": "HWK-290 Expansion Pack"
-        "TIE Fighter Expansion Pack": "TIE Fighter Expansion Pack"
-        "TIE Interceptor Expansion Pack": "TIE Interceptor Expansion Pack"
-        "TIE Bomber Expansion Pack": "TIE Bomber Expansion Pack"
-        "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack"
-        "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack"
+        "Core": "cORE"
+        "A-Wing Expansion Pack": "a-wING eXPANSION pACK"
+        "B-Wing Expansion Pack": "b-wING eXPANSION pACK"
+        "X-Wing Expansion Pack": "x-wING eXPANSION pACK"
+        "Y-Wing Expansion Pack": "y-wING eXPANSION pACK"
+        "Millennium Falcon Expansion Pack": "mILLENNIUM fALCON eXPANSION pACK"
+        "HWK-290 Expansion Pack": "hwk-290 eXPANSION pACK"
+        "TIE Fighter Expansion Pack": "tie fIGHTER eXPANSION pACK"
+        "TIE Interceptor Expansion Pack": "tie iNTERCEPTOR eXPANSION pACK"
+        "TIE Bomber Expansion Pack": "tie bOMBER eXPANSION pACK"
+        "TIE Advanced Expansion Pack": "tie aDVANCED eXPANSION pACK"
+        "Lambda-Class Shuttle Expansion Pack": "lAMBDA-cLASS sHUTTLE eXPANSION pACK"
     ui:
-        pilotSelectorPlaceholder: "Select a pilot"
+        pilotSelectorPlaceholder: "sELECT A PILOT"
         upgradePlaceholder: (translator, slot) ->
-            "No #{translator 'slot', slot} Upgrade"
-        modificationPlaceholder: "No Modification"
-        titlePlaceholder: "No Title"
+            "nO #{translator 'slot', slot} uPGRADE"
+        modificationPlaceholder: "nO mODIFICATION"
+        titlePlaceholder: "nO tITLE"
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.English = () ->
-    exportObj.cardLanguage = 'English'
+exportObj.cardLoaders.CapsLock = () ->
+    exportObj.cardLanguage = 'CapsLock'
 
     exportObj.ships =
         "X-Wing":
@@ -1486,6 +1487,7 @@ exportObj.cardLoaders.English = () ->
 
     exportObj.pilotsById = {}
     for pilot_name, pilot of exportObj.pilots
+        pilot.text = pilot.text.toUpperCase() if pilot.text?
         exportObj.pilotsById[pilot.id] = pilot
         for source in pilot.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1494,6 +1496,7 @@ exportObj.cardLoaders.English = () ->
 
     exportObj.upgradesById = {}
     for upgrade_name, upgrade of exportObj.upgrades
+        upgrade.text = upgrade.text.toUpperCase() if upgrade.text?
         exportObj.upgradesById[upgrade.id] = upgrade
         for source in upgrade.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1502,6 +1505,7 @@ exportObj.cardLoaders.English = () ->
 
     exportObj.modificationsById = {}
     for modification_name, modification of exportObj.modifications
+        modification.text = modification.text.toUpperCase() if modification.text?
         exportObj.modificationsById[modification.id] = modification
         for source in modification.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1510,7 +1514,8 @@ exportObj.cardLoaders.English = () ->
 
     exportObj.titlesById = {}
     for title_name, title of exportObj.titles
-        exportObj.titlesById[title.id] = title
+        title.text = title.text.toUpperCase()
+        exportObj.titlesById[title.id] = title if title.text?
         for source in title.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length

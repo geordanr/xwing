@@ -1,9 +1,9 @@
+
 /*
     X-Wing Card Browser
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
 */
-
 
 (function() {
   var TYPES, TYPE_TO_SINGULAR, byName, byPoints, exportObj,

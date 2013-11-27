@@ -81,6 +81,7 @@ class exportObj.SquadBuilder
 
         @backend = null
         @current_squad = {}
+        @language = 'English'
 
         @setupUI()
         @setupEventHandlers()
@@ -494,7 +495,8 @@ class exportObj.SquadBuilder
 
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
-        .on 'xwing:updateText', (e, cb=$.noop) =>
+        .on 'xwing:translationRequested', (e, language, cb=$.noop) =>
+            @language = language
             serialized = @serialize()
             @loadFromSerialized serialized
             for ship in @ships
@@ -722,6 +724,14 @@ class exportObj.SquadBuilder
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
+    translate: (category, what, args...) =>
+        translation = exportObj.translations[@language][category][what]
+        if translation instanceof Function
+            # pass this function in case we need to do further translation inside the function
+            translation @translate, args...
+        else
+            translation
+
     showTooltip: (type, data) ->
         if data != @tooltip_currently_displaying
             switch type
@@ -745,10 +755,10 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').html data.data.actions.concat( ("<strong>#{action}</strong>" for action in extra_actions)).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (@translate('action', a) for a in data.data.actions.concat( ("<strong>#{action}</strong>" for action in extra_actions))).join ', '
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text(data.pilot.slots.join(', ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((@translate('slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                 when 'Pilot'
                     @info_container.find('.info-sources').text data.sources.sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -767,10 +777,10 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
+                    @info_container.find('tr.info-actions td.info-data').text (@translate('action', action) for action in exportObj.ships[data.ship].actions).join(', ')
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((@translate('slot', slot) for slot in data.slots).join(', ') or 'None')
                 when 'Addon'
                     @info_container.find('.info-sources').text data.sources.sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1084,7 +1094,7 @@ class Ship
         @pilot_selector = $ @row.find('div.pilot-selector-container input[type=hidden]')
         @pilot_selector.select2
             width: '100%'
-            placeholder: 'Select a pilot'
+            placeholder: @builder.translate('ui', 'pilotSelectorPlaceholder')
             query: (query) =>
                 query.callback
                     more: false
@@ -1471,7 +1481,7 @@ class exportObj.Upgrade extends GenericAddon
     setupSelector: ->
         super
             width: '50%'
-            placeholder: "No #{@slot} Upgrade"
+            placeholder: @ship.builder.translate 'ui', 'upgradePlaceholder', @slot
             allowClear: true
             query: (query) =>
                 query.callback
@@ -1491,7 +1501,7 @@ class exportObj.Modification extends GenericAddon
     setupSelector: ->
         super
             width: '50%'
-            placeholder: "No Modification"
+            placeholder: @ship.builder.translate 'ui', 'modificationPlaceholder'
             allowClear: true
             query: (query) =>
                 query.callback
@@ -1511,7 +1521,7 @@ class exportObj.Title extends GenericAddon
     setupSelector: ->
         super
             width: '50%'
-            placeholder: "No Title"
+            placeholder: @ship.builder.translate 'ui', 'titlePlaceholder'
             allowClear: true
             query: (query) =>
                 query.callback

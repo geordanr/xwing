@@ -10,46 +10,46 @@
     exportObj.translations = {};
   }
 
-  exportObj.translations.English = {
+  exportObj.translations.CapsLock = {
     action: {
-      "Barrel Roll": "Barrel Roll",
-      "Boost": "Boost",
-      "Evade": "Evade",
-      "Focus": "Focus",
-      "Target Lock": "Target Lock"
+      "Barrel Roll": "bARREL rOLL",
+      "Boost": "bOOST",
+      "Evade": "eVADE",
+      "Focus": "fOCUS",
+      "Target Lock": "tARGET lOCK"
     },
     slot: {
-      "Astromech": "Astromech",
-      "Bomb": "Bomb",
-      "Cannon": "Cannon",
-      "Crew": "Crew",
-      "Elite": "Elite",
-      "Missile": "Missile",
-      "System": "System",
-      "Torpedo": "Torpedo",
-      "Turret": "Turret"
+      "Astromech": "aSTROMECH",
+      "Bomb": "bOMB",
+      "Cannon": "cANNON",
+      "Crew": "cREW",
+      "Elite": "eLITE",
+      "Missile": "mISSILE",
+      "System": "sYSTEM",
+      "Torpedo": "tORPEDO",
+      "Turret": "tURRET"
     },
     sources: {
-      "Core": "Core",
-      "A-Wing Expansion Pack": "A-Wing Expansion Pack",
-      "B-Wing Expansion Pack": "B-Wing Expansion Pack",
-      "X-Wing Expansion Pack": "X-Wing Expansion Pack",
-      "Y-Wing Expansion Pack": "Y-Wing Expansion Pack",
-      "Millennium Falcon Expansion Pack": "Millennium Falcon Expansion Pack",
-      "HWK-290 Expansion Pack": "HWK-290 Expansion Pack",
-      "TIE Fighter Expansion Pack": "TIE Fighter Expansion Pack",
-      "TIE Interceptor Expansion Pack": "TIE Interceptor Expansion Pack",
-      "TIE Bomber Expansion Pack": "TIE Bomber Expansion Pack",
-      "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack",
-      "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack"
+      "Core": "cORE",
+      "A-Wing Expansion Pack": "a-wING eXPANSION pACK",
+      "B-Wing Expansion Pack": "b-wING eXPANSION pACK",
+      "X-Wing Expansion Pack": "x-wING eXPANSION pACK",
+      "Y-Wing Expansion Pack": "y-wING eXPANSION pACK",
+      "Millennium Falcon Expansion Pack": "mILLENNIUM fALCON eXPANSION pACK",
+      "HWK-290 Expansion Pack": "hwk-290 eXPANSION pACK",
+      "TIE Fighter Expansion Pack": "tie fIGHTER eXPANSION pACK",
+      "TIE Interceptor Expansion Pack": "tie iNTERCEPTOR eXPANSION pACK",
+      "TIE Bomber Expansion Pack": "tie bOMBER eXPANSION pACK",
+      "TIE Advanced Expansion Pack": "tie aDVANCED eXPANSION pACK",
+      "Lambda-Class Shuttle Expansion Pack": "lAMBDA-cLASS sHUTTLE eXPANSION pACK"
     },
     ui: {
-      pilotSelectorPlaceholder: "Select a pilot",
+      pilotSelectorPlaceholder: "sELECT A PILOT",
       upgradePlaceholder: function(translator, slot) {
-        return "No " + (translator('slot', slot)) + " Upgrade";
+        return "nO " + (translator('slot', slot)) + " uPGRADE";
       },
-      modificationPlaceholder: "No Modification",
-      titlePlaceholder: "No Title"
+      modificationPlaceholder: "nO mODIFICATION",
+      titlePlaceholder: "nO tITLE"
     }
   };
 
@@ -57,9 +57,9 @@
     exportObj.cardLoaders = {};
   }
 
-  exportObj.cardLoaders.English = function() {
+  exportObj.cardLoaders.CapsLock = function() {
     var modification, modification_name, pilot, pilot_name, source, title, title_name, upgrade, upgrade_name, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
-    exportObj.cardLanguage = 'English';
+    exportObj.cardLanguage = 'CapsLock';
     exportObj.ships = {
       "X-Wing": {
         name: "X-Wing",
@@ -1414,6 +1414,9 @@
     _ref = exportObj.pilots;
     for (pilot_name in _ref) {
       pilot = _ref[pilot_name];
+      if (pilot.text != null) {
+        pilot.text = pilot.text.toUpperCase();
+      }
       exportObj.pilotsById[pilot.id] = pilot;
       _ref1 = pilot.sources;
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
@@ -1430,6 +1433,9 @@
     _ref2 = exportObj.upgrades;
     for (upgrade_name in _ref2) {
       upgrade = _ref2[upgrade_name];
+      if (upgrade.text != null) {
+        upgrade.text = upgrade.text.toUpperCase();
+      }
       exportObj.upgradesById[upgrade.id] = upgrade;
       _ref3 = upgrade.sources;
       for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
@@ -1446,6 +1452,9 @@
     _ref4 = exportObj.modifications;
     for (modification_name in _ref4) {
       modification = _ref4[modification_name];
+      if (modification.text != null) {
+        modification.text = modification.text.toUpperCase();
+      }
       exportObj.modificationsById[modification.id] = modification;
       _ref5 = modification.sources;
       for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
@@ -1462,7 +1471,10 @@
     _ref6 = exportObj.titles;
     for (title_name in _ref6) {
       title = _ref6[title_name];
-      exportObj.titlesById[title.id] = title;
+      title.text = title.text.toUpperCase();
+      if (title.text != null) {
+        exportObj.titlesById[title.id] = title;
+      }
       _ref7 = title.sources;
       for (_l = 0, _len3 = _ref7.length; _l < _len3; _l++) {
         source = _ref7[_l];
@@ -1488,4 +1500,4 @@
 
 }).call(this);
 
-//@ sourceMappingURL=cards-en.map
+//@ sourceMappingURL=cards-caps.map
