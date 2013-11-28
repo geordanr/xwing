@@ -92,21 +92,11 @@
     %script{:src => "javascripts/cards-caps.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/translate.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
-        for language in Object.keys(window.cardLoaders).sort()
-            li = $ document.createElement 'LI'
-            li.text language
-            do (language) ->
-              li.click (e) ->
-                  $(window).trigger 'xwing:languageChanged', language
-            $('ul.dropdown-menu').append li
-        $(window).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
-          $('.language-placeholder').text language
-          window.loadCards language
-          $(window).trigger 'xwing:translationRequested', language
+        window.setupTranslationSupport()
 
-        $(window).trigger 'xwing:languageChanged', 'English'
         $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
         $('#rebelTab').click (e) ->
           ga 'send', 'pageview',

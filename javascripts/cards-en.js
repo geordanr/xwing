@@ -45,11 +45,32 @@
     },
     ui: {
       pilotSelectorPlaceholder: "Select a pilot",
-      upgradePlaceholder: function(translator, slot) {
-        return "No " + (translator('slot', slot)) + " Upgrade";
+      upgradePlaceholder: function(translator, language, slot) {
+        return "No " + (translator(language, 'slot', slot)) + " Upgrade";
       },
       modificationPlaceholder: "No Modification",
-      titlePlaceholder: "No Title"
+      titlePlaceholder: "No Title",
+      upgradeHeader: function(translator, language, slot) {
+        return "" + (translator(language, 'slot', slot)) + " Upgrade";
+      }
+    },
+    byCSSSelector: {
+      '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by',
+      '.xwing-card-browser option[value="name"]': 'Name',
+      '.xwing-card-browser option[value="source"]': 'Source',
+      '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)',
+      '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)',
+      '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
+    },
+    singular: {
+      'pilots': 'Pilot',
+      'modifications': 'Modification',
+      'titles': 'Title'
+    },
+    types: {
+      'Pilot': 'Pilot',
+      'Modification': 'Modification',
+      'Title': 'Title'
     }
   };
 

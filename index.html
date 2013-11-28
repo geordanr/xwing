@@ -3,15 +3,15 @@
   <head>
     <title>(Yet Another) X-Wing Miniatures Squad Builder</title>
     <meta charset='utf-8'>
-    <link href='bootstrap/css/bootstrap.min.css?1385540820' rel='stylesheet'>
-    <link href='fontawesome/css/font-awesome.min.css?1385540820' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap.min.css?1385680227' rel='stylesheet'>
+    <link href='fontawesome/css/font-awesome.min.css?1385680227' rel='stylesheet'>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
-    <link href='bootstrap/css/bootstrap-responsive.css?1385540820' media='screen' rel='stylesheet'>
-    <link href='select2-3.4.0/select2.css?1385540820' rel='stylesheet'>
-    <link href='stylesheets/xwing.css?1385540820' rel='stylesheet'>
-    <link href='stylesheets/xwing-screen.css?1385540820' media='screen,handheld' rel='stylesheet'>
-    <link href='stylesheets/xwing-print.css?1385540820' media='print' rel='stylesheet'>
-    <link href='stylesheets/backgrounds.css?1385540820' media='screen,handheld' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap-responsive.css?1385680227' media='screen' rel='stylesheet'>
+    <link href='select2-3.4.0/select2.css?1385680227' rel='stylesheet'>
+    <link href='stylesheets/xwing.css?1385680227' rel='stylesheet'>
+    <link href='stylesheets/xwing-screen.css?1385680227' media='screen,handheld' rel='stylesheet'>
+    <link href='stylesheets/xwing-print.css?1385680227' media='print' rel='stylesheet'>
+    <link href='stylesheets/backgrounds.css?1385680227' media='screen,handheld' rel='stylesheet'>
   </head>
   <body>
     <script>
@@ -101,42 +101,19 @@
         <strong class='site-placeholder'></strong>
       </div>
     </div>
-    <script src='javascripts/jquery-1.8.3.min.js?1385540820'></script>
-    <script src='bootstrap/js/bootstrap.min.js?1385540820'></script>
-    <script src='select2-3.4.0/select2.min.js?1385540820'></script>
-    <script src='javascripts/xwing.min.js?1385540820'></script>
-    <script src='javascripts/cards-en.min.js?1385540820'></script>
-    <script src='javascripts/cards-caps.min.js?1385540820'></script>
-    <script src='javascripts/backend.min.js?1385540820'></script>
-    <script src='javascripts/browser.min.js?1385540820'></script>
+    <script src='javascripts/jquery-1.8.3.min.js?1385680227'></script>
+    <script src='bootstrap/js/bootstrap.min.js?1385680227'></script>
+    <script src='select2-3.4.0/select2.min.js?1385680227'></script>
+    <script src='javascripts/xwing.min.js?1385680227'></script>
+    <script src='javascripts/cards-en.min.js?1385680227'></script>
+    <script src='javascripts/cards-caps.min.js?1385680227'></script>
+    <script src='javascripts/backend.min.js?1385680227'></script>
+    <script src='javascripts/browser.min.js?1385680227'></script>
+    <script src='javascripts/translate.min.js?1385680227'></script>
     <script>
       (function() {
         $(document).ready(function() {
-          var language, li, _fn, _i, _len, _ref,
-            _this = this;
-      
-          _ref = Object.keys(window.cardLoaders).sort();
-          _fn = function(language) {
-            return li.click(function(e) {
-              return $(window).trigger('xwing:languageChanged', language);
-            });
-          };
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            language = _ref[_i];
-            li = $(document.createElement('LI'));
-            li.text(language);
-            _fn(language);
-            $('ul.dropdown-menu').append(li);
-          }
-          $(window).on('xwing:languageChanged', function(e, language, cb) {
-            if (cb == null) {
-              cb = $.noop;
-            }
-            $('.language-placeholder').text(language);
-            window.loadCards(language);
-            return $(window).trigger('xwing:translationRequested', language);
-          });
-          $(window).trigger('xwing:languageChanged', 'English');
+          window.setupTranslationSupport();
           $('.site-placeholder').text("http://" + window.location.host + window.location.pathname);
           $('#rebelTab').click(function(e) {
             return ga('send', 'pageview', {

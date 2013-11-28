@@ -56,10 +56,6 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.loadCards = function(language) {
-    return exportObj.cardLoaders[language]();
-  };
-
   exportObj.sortHelper = function(a, b) {
     var a_name, b_name;
     if (a.points === b.points) {
@@ -134,7 +130,6 @@
     function SquadBuilder(args) {
       this._makeRandomizerLoopFunc = __bind(this._makeRandomizerLoopFunc, this);
       this._randomizerLoopBody = __bind(this._randomizerLoopBody, this);
-      this.translate = __bind(this.translate, this);
       this.releaseUnique = __bind(this.releaseUnique, this);
       this.claimUnique = __bind(this.claimUnique, this);
       this.onSquadNameChanged = __bind(this.onSquadNameChanged, this);
@@ -373,7 +368,7 @@
                   return results = arguments[0];
                 };
               })(),
-              lineno: 383
+              lineno: 380
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -674,7 +669,7 @@
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 665
+          lineno: 662
         }));
         __iced_deferrals._fulfill();
       })(function() {
@@ -685,7 +680,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 666
+            lineno: 663
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -880,17 +875,6 @@
       })()).sort(exportObj.sortHelper);
     };
 
-    SquadBuilder.prototype.translate = function() {
-      var args, category, translation, what;
-      category = arguments[0], what = arguments[1], args = 3 <= arguments.length ? __slice.call(arguments, 2) : [];
-      translation = exportObj.translations[this.language][category][what];
-      if (translation instanceof Function) {
-        return translation.apply(null, [this.translate].concat(__slice.call(args)));
-      } else {
-        return translation;
-      }
-    };
-
     SquadBuilder.prototype.showTooltip = function(type, data) {
       var a, action, effective_stats, extra_actions, ship, slot, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (data !== this.tooltip_currently_displaying) {
@@ -930,7 +914,7 @@
               _results = [];
               for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
                 a = _ref9[_i];
-                _results.push(this.translate('action', a));
+                _results.push(exportObj.translate(this.language, 'action', a));
               }
               return _results;
             }).call(this)).join(', '));
@@ -942,7 +926,7 @@
               _results = [];
               for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
                 slot = _ref9[_i];
-                _results.push(this.translate('slot', slot));
+                _results.push(exportObj.translate(this.language, 'slot', slot));
               }
               return _results;
             }).call(this)).join(', ') || 'None');
@@ -971,7 +955,7 @@
               _results = [];
               for (_i = 0, _len = _ref18.length; _i < _len; _i++) {
                 action = _ref18[_i];
-                _results.push(this.translate('action', action));
+                _results.push(exportObj.translate(this.language, 'action', action));
               }
               return _results;
             }).call(this)).join(', '));
@@ -983,7 +967,7 @@
               _results = [];
               for (_i = 0, _len = _ref18.length; _i < _len; _i++) {
                 slot = _ref18[_i];
-                _results.push(this.translate('slot', slot));
+                _results.push(exportObj.translate(this.language, 'slot', slot));
               }
               return _results;
             }).call(this)).join(', ') || 'None');
@@ -1366,7 +1350,7 @@
               });
               _this.builder.container.trigger('xwing:claimUnique', [
                 new_pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1006
+                  lineno: 995
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1412,7 +1396,7 @@
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 1019
+                lineno: 1008
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1462,14 +1446,14 @@
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 1041
+            lineno: 1030
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 1043
+            lineno: 1032
           }));
         }
         _ref1 = _this.modifications;
@@ -1477,7 +1461,7 @@
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 1045
+              lineno: 1034
             }));
           }
         }
@@ -1550,7 +1534,7 @@
       this.pilot_selector = $(this.row.find('div.pilot-selector-container input[type=hidden]'));
       this.pilot_selector.select2({
         width: '100%',
-        placeholder: this.builder.translate('ui', 'pilotSelectorPlaceholder'),
+        placeholder: exportObj.translate(this.builder.language, 'ui', 'pilotSelectorPlaceholder'),
         query: function(query) {
           return query.callback({
             more: false,
@@ -1910,7 +1894,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1354
+                lineno: 1343
               })
             ]);
             __iced_deferrals._fulfill();
@@ -1978,7 +1962,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1384
+                  lineno: 1373
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1998,7 +1982,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1387
+                    lineno: 1376
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2062,7 +2046,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1412
+            lineno: 1401
           }));
         }
         __iced_deferrals._fulfill();
@@ -2149,7 +2133,7 @@
       var _this = this;
       return Upgrade.__super__.setupSelector.call(this, {
         width: '50%',
-        placeholder: this.ship.builder.translate('ui', 'upgradePlaceholder', this.slot),
+        placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'upgradePlaceholder', this.slot),
         allowClear: true,
         query: function(query) {
           return query.callback({
@@ -2180,7 +2164,7 @@
       var _this = this;
       return Modification.__super__.setupSelector.call(this, {
         width: '50%',
-        placeholder: this.ship.builder.translate('ui', 'modificationPlaceholder'),
+        placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'modificationPlaceholder'),
         allowClear: true,
         query: function(query) {
           return query.callback({
@@ -2211,7 +2195,7 @@
       var _this = this;
       return Title.__super__.setupSelector.call(this, {
         width: '50%',
-        placeholder: this.ship.builder.translate('ui', 'titlePlaceholder'),
+        placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'titlePlaceholder'),
         allowClear: true,
         query: function(query) {
           return query.callback({

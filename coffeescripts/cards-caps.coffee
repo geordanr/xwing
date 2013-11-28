@@ -35,10 +35,27 @@ exportObj.translations.CapsLock =
         "Lambda-Class Shuttle Expansion Pack": "lAMBDA-cLASS sHUTTLE eXPANSION pACK"
     ui:
         pilotSelectorPlaceholder: "sELECT A PILOT"
-        upgradePlaceholder: (translator, slot) ->
-            "nO #{translator 'slot', slot} uPGRADE"
+        upgradePlaceholder: (translator, language, slot) ->
+            "nO #{translator language, 'slot', slot} uPGRADE"
         modificationPlaceholder: "nO mODIFICATION"
         titlePlaceholder: "nO tITLE"
+        upgradeHeader: (translator, language, slot) ->
+            "#{translator language, 'slot', slot} uPGRADE"
+    byCSSSelector:
+        '.translate.sort-cards-by': 'SORT CARDS BY'
+        '.xwing-card-browser option[value="name"]': 'NAME'
+        '.xwing-card-browser option[value="source"]': 'SOURCE'
+        '.xwing-card-browser option[value="type-by-points"]': 'TYPE (BY POINTS)'
+        '.xwing-card-browser option[value="type-by-name"]': 'TYPE (BY NAME)'
+        '.xwing-card-browser .translate.select-a-card': 'sELECT A CARD FROM THE LIST AT THE LEFT.'
+    singular:
+        'pilots': 'pILOT'
+        'modifications': 'mODIFICATION'
+        'titles': 'tITLE'
+    types:
+        'Pilot': 'pILOT'
+        'Modification': 'mODIFICATION'
+        'Title': 'tITLE'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.CapsLock = () ->
@@ -219,8 +236,8 @@ exportObj.cardLoaders.CapsLock = () ->
                 "Astromech",
             ]
             text: """After spending a focus token, you may place that token on any other friendly ship at Range 1-2 (instead of discarding it)."""
-        "Red Squadron Pilot":
-            name: "Red Squadron Pilot"
+        "rED Squadron Pilot":
+            name: "rED Squadron Pilot"
             id: 2
             sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
@@ -230,8 +247,8 @@ exportObj.cardLoaders.CapsLock = () ->
                 "Torpedo",
                 "Astromech",
             ]
-        "Rookie Pilot":
-            name: "Rookie Pilot"
+        "rOOKIE Pilot":
+            name: "rOOKIE Pilot"
             id: 3
             sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
@@ -241,8 +258,8 @@ exportObj.cardLoaders.CapsLock = () ->
                 "Torpedo",
                 "Astromech",
             ]
-        "Biggs Darklighter":
-            name: "Biggs Darklighter"
+        "bIGGS Darklighter":
+            name: "bIGGS Darklighter"
             id: 4
             unique: true
             sources: [ "Core", ]
