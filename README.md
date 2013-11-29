@@ -27,6 +27,26 @@ When will this be done?
 -----------------------
 It's an ongoing process.
 
+Building
+========
+
+1. Install [Node.js](http://nodejs.org/) to get `npm`.
+2. Run `sudo npm install` to install the dependencies listed in `package.json`.
+3. Install [Ruby](https://www.ruby-lang.org/en/) to get `gem`.
+4. Install [Bundler](http//bundler.io): `sudo gem install bundler`
+5. Use Bundler to install the remaining dependencies listed in `Gemfile`: `sudo bundle install`
+
+Then run `cake build` and all the HTML, CoffeeScript, and CSS files will be created.
+
+Installing
+==========
+
+Someday I'll make this a cake target, but until then:
+
+Download and extract [Bootstrap](http://getbootstrap.com/2.3.2/), [FontAwesome](fortawesome.github.io/Font-Awesome/icons/), and [Select2](http://ivaynberg.github.io/select2/) into the top level.
+
+    cp -r *.html fontawesome bootstrap fonts images javascripts select2-* stylesheets coffeescripts $YOUR_WEB_ROOT
+
 Credits
 -------
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).

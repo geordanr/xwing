@@ -1,9 +1,9 @@
+
 /*
     X-Wing Squad Builder
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
 */
-
 
 (function() {
   var exportObj,
@@ -14,6 +14,7 @@
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.SquadBuilderBackend = (function() {
+
     /*
         Usage:
     
@@ -29,7 +30,6 @@
                 login_logout_button: '#login-logout'
                 auth_status: '#auth-status'
     */
-
     function SquadBuilderBackend(args) {
       this.nameCheck = __bind(this.nameCheck, this);
       this.maybeAuthenticationChanged = __bind(this.maybeAuthenticationChanged, this);

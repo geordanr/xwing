@@ -1,12 +1,12 @@
+
 /*
     X-Wing Card Browser
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
 */
 
-
 (function() {
-  var TYPES, TYPE_TO_SINGULAR, byName, byPoints, exportObj,
+  var TYPES, byName, byPoints, exportObj,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 
@@ -14,12 +14,6 @@
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   TYPES = ['pilots', 'upgrades', 'modifications', 'titles'];
-
-  TYPE_TO_SINGULAR = {
-    'pilots': 'Pilot',
-    'modifications': 'Modification',
-    'titles': 'Title'
-  };
 
   byName = function(a, b) {
     var a_name, b_name;
@@ -52,6 +46,7 @@
     function CardBrowser(args) {
       this.container = $(args.container);
       this.currently_selected = null;
+      this.language = 'English';
       this.prepareData();
       this.setupUI();
       this.setupHandlers();
@@ -59,7 +54,7 @@
     }
 
     CardBrowser.prototype.setupUI = function() {
-      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            Sort cards by: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type-by-points\">Type (by Points)</option>\n                <option value=\"type-by-name\" selected=\"1\">Type (by Name)</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p>Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
+      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            <span class=\"translate sort-cards-by\">Sort cards by</span>: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type-by-points\">Type (by Points)</option>\n                <option value=\"type-by-name\" selected=\"1\">Type (by Name)</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p class=\"translate select-a-card\">Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
       this.card_selector_container = $(this.container.find('.xwing-card-browser .card-selector-container'));
       this.card_viewer_container = $(this.container.find('.xwing-card-browser .card-viewer-container'));
       this.card_viewer_container.hide();
@@ -72,13 +67,21 @@
 
     CardBrowser.prototype.setupHandlers = function() {
       var _this = this;
-      return this.sort_selector.change(function(e) {
+      this.sort_selector.change(function(e) {
+        return _this.renderList(_this.sort_selector.val());
+      });
+      return $(window).on('xwing:translationRequested', function(e, language, cb) {
+        if (cb == null) {
+          cb = $.noop;
+        }
+        _this.language = language;
+        _this.prepareData();
         return _this.renderList(_this.sort_selector.val());
       });
     };
 
     CardBrowser.prototype.prepareData = function() {
-      var card, card_data, card_name, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
+      var card, card_data, card_name, sorted_types, source, type, upgrade_text, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _results;
       this.all_cards = [];
       for (_i = 0, _len = TYPES.length; _i < _len; _i++) {
         type = TYPES[_i];
@@ -90,13 +93,13 @@
             for (card_name in _ref) {
               card_data = _ref[card_name];
               _results.push({
-                name: card_name,
-                type: "" + card_data.slot + " Upgrade",
+                name: card_data.name,
+                type: exportObj.translate(this.language, 'ui', 'upgradeHeader', card_data.slot),
                 data: card_data
               });
             }
             return _results;
-          })());
+          }).call(this));
         } else {
           this.all_cards = this.all_cards.concat((function() {
             var _ref, _results;
@@ -105,46 +108,56 @@
             for (card_name in _ref) {
               card_data = _ref[card_name];
               _results.push({
-                name: card_name,
-                type: TYPE_TO_SINGULAR[type],
+                name: card_data.name,
+                type: exportObj.translate(this.language, 'singular', type),
                 data: card_data
               });
             }
             return _results;
-          })());
+          }).call(this));
         }
       }
-      this.types = ['Pilot', 'Modification', 'Title'];
+      this.types = (function() {
+        var _j, _len1, _ref, _results;
+        _ref = ['Pilot', 'Modification', 'Title'];
+        _results = [];
+        for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
+          type = _ref[_j];
+          _results.push(exportObj.translate(this.language, 'types', type));
+        }
+        return _results;
+      }).call(this);
       _ref = exportObj.upgrades;
       for (card_name in _ref) {
         card_data = _ref[card_name];
-        if (_ref1 = "" + card_data.slot + " Upgrade", __indexOf.call(this.types, _ref1) < 0) {
-          this.types.push("" + card_data.slot + " Upgrade");
+        upgrade_text = exportObj.translate(this.language, 'ui', 'upgradeHeader', card_data.slot);
+        if (__indexOf.call(this.types, upgrade_text) < 0) {
+          this.types.push(upgrade_text);
         }
       }
       this.all_cards.sort(byName);
       this.sources = [];
-      _ref2 = this.all_cards;
-      for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
-        card = _ref2[_j];
-        _ref3 = card.data.sources;
-        for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
-          source = _ref3[_k];
+      _ref1 = this.all_cards;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        card = _ref1[_j];
+        _ref2 = card.data.sources;
+        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+          source = _ref2[_k];
           if (__indexOf.call(this.sources, source) < 0) {
             this.sources.push(source);
           }
         }
       }
+      sorted_types = this.types.sort();
       this.cards_by_type_name = {};
-      _ref4 = this.types.sort();
-      for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
-        type = _ref4[_l];
+      for (_l = 0, _len3 = sorted_types.length; _l < _len3; _l++) {
+        type = sorted_types[_l];
         this.cards_by_type_name[type] = ((function() {
-          var _len4, _m, _ref5, _results;
-          _ref5 = this.all_cards;
+          var _len4, _m, _ref3, _results;
+          _ref3 = this.all_cards;
           _results = [];
-          for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
-            card = _ref5[_m];
+          for (_m = 0, _len4 = _ref3.length; _m < _len4; _m++) {
+            card = _ref3[_m];
             if (card.type === type) {
               _results.push(card);
             }
@@ -153,15 +166,14 @@
         }).call(this)).sort(byName);
       }
       this.cards_by_type_points = {};
-      _ref5 = this.types.sort();
-      for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
-        type = _ref5[_m];
+      for (_m = 0, _len4 = sorted_types.length; _m < _len4; _m++) {
+        type = sorted_types[_m];
         this.cards_by_type_points[type] = ((function() {
-          var _len5, _n, _ref6, _results;
-          _ref6 = this.all_cards;
+          var _len5, _n, _ref3, _results;
+          _ref3 = this.all_cards;
           _results = [];
-          for (_n = 0, _len5 = _ref6.length; _n < _len5; _n++) {
-            card = _ref6[_n];
+          for (_n = 0, _len5 = _ref3.length; _n < _len5; _n++) {
+            card = _ref3[_n];
             if (card.type === type) {
               _results.push(card);
             }
@@ -170,16 +182,16 @@
         }).call(this)).sort(byPoints);
       }
       this.cards_by_source = {};
-      _ref6 = this.sources;
+      _ref3 = this.sources;
       _results = [];
-      for (_n = 0, _len5 = _ref6.length; _n < _len5; _n++) {
-        source = _ref6[_n];
+      for (_n = 0, _len5 = _ref3.length; _n < _len5; _n++) {
+        source = _ref3[_n];
         _results.push(this.cards_by_source[source] = ((function() {
-          var _len6, _o, _ref7, _results1;
-          _ref7 = this.all_cards;
+          var _len6, _o, _ref4, _results1;
+          _ref4 = this.all_cards;
           _results1 = [];
-          for (_o = 0, _len6 = _ref7.length; _o < _len6; _o++) {
-            card = _ref7[_o];
+          for (_o = 0, _len6 = _ref4.length; _o < _len6; _o++) {
+            card = _ref4[_o];
             if (__indexOf.call(card.data.sources, source) >= 0) {
               _results1.push(card);
             }
@@ -259,7 +271,7 @@
     };
 
     CardBrowser.prototype.renderCard = function(card) {
-      var data, name, ship, type, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+      var action, data, name, ship, slot, type, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
       name = card.data('name');
       type = card.data('type');
       data = card.data('card');
@@ -281,10 +293,28 @@
           this.card_viewer_container.find('tr.info-hull').show();
           this.card_viewer_container.find('tr.info-shields td.info-data').text((_ref7 = (_ref8 = data.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : ship.shields);
           this.card_viewer_container.find('tr.info-shields').show();
-          this.card_viewer_container.find('tr.info-actions td.info-data').text(exportObj.ships[data.ship].actions.join(', '));
+          this.card_viewer_container.find('tr.info-actions td.info-data').text(((function() {
+            var _i, _len, _ref9, _results;
+            _ref9 = exportObj.ships[data.ship].actions;
+            _results = [];
+            for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
+              action = _ref9[_i];
+              _results.push(exportObj.translate(this.language, 'action', action));
+            }
+            return _results;
+          }).call(this)).join(', '));
           this.card_viewer_container.find('tr.info-actions').show();
           this.card_viewer_container.find('tr.info-upgrades').show();
-          this.card_viewer_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') || 'None');
+          this.card_viewer_container.find('tr.info-upgrades td.info-data').text(((function() {
+            var _i, _len, _ref9, _results;
+            _ref9 = data.slots;
+            _results = [];
+            for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
+              slot = _ref9[_i];
+              _results.push(exportObj.translate(this.language, 'slot', slot));
+            }
+            return _results;
+          }).call(this)).join(', ') || 'None');
           break;
         default:
           this.card_viewer_container.find('.info-type').text(type);
