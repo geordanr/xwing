@@ -3,7 +3,7 @@ exportObj = exports ? this
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.CapsLock =
+exportObj.translations.Deutsch =
     action:
         "Barrel Roll": "Fassrolle"
         "Boost": "Schub"
@@ -1087,8 +1087,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Elite"
             sources: [ "TIE Advanced Expansion Pack", ]
             points: 2
-            text: """<strong>Aktion:</strong> Wähle ein Schiff in Reichweite 1-2 mit einem geringeren Pilotenwert als du.
-Das gewählte Schiff darf sofort 1 freie Aktion durhführen."""
+            text: """<strong>Aktion:</strong> Wähle ein Schiff in Reichweite 1-2 mit einem geringeren Pilotenwert als du.<br /><br />Das gewählte Schiff darf sofort 1 freie Aktion durhführen."""
         "Flugkunst":
             name: "Flugkunst"
             id: 11
