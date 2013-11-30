@@ -1190,7 +1190,7 @@ exportObj.cardLoaders.Deutsch = () ->
             range: "2-3"
             text: """<strong>Attack:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Unmittelbar nach dem Angriffswurf musst du alle <img class="icon-crit" alt="Crit" src="images/transparent.png" /> in <img class="icon-hit" alt="Hit" src="images/transparent.png" /> ändern."""
         "Seismische Bomben":
-            name: "Seismic Charges"
+            name: "Seismische Bomben"
             id: 24
             slot: "Bomb"
             sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
@@ -1504,7 +1504,6 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.pilotsById = {}
     for pilot_name, pilot of exportObj.pilots
-        pilot.text = pilot.text.toUpperCase() if pilot.text?
         exportObj.pilotsById[pilot.id] = pilot
         for source in pilot.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1513,7 +1512,6 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.upgradesById = {}
     for upgrade_name, upgrade of exportObj.upgrades
-        upgrade.text = upgrade.text.toUpperCase() if upgrade.text?
         exportObj.upgradesById[upgrade.id] = upgrade
         for source in upgrade.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1522,7 +1520,6 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.modificationsById = {}
     for modification_name, modification of exportObj.modifications
-        modification.text = modification.text.toUpperCase() if modification.text?
         exportObj.modificationsById[modification.id] = modification
         for source in modification.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
@@ -1531,7 +1528,6 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.titlesById = {}
     for title_name, title of exportObj.titles
-        title.text = title.text.toUpperCase()
         exportObj.titlesById[title.id] = title if title.text?
         for source in title.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
