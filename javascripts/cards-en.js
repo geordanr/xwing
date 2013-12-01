@@ -43,7 +43,7 @@
       "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack",
       "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack",
       "Slave I Expansion Pack": "Slave I Expansion Pack",
-      "Imperial Aces Expansion Pack": "Imperial Aces Erweiterung"
+      "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack"
     },
     ui: {
       pilotSelectorPlaceholder: "Select a pilot",
