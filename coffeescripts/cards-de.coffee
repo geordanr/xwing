@@ -1,4 +1,3 @@
-
 exportObj = exports ? this
 
 exportObj.translations ?= {}
@@ -34,6 +33,7 @@ exportObj.translations.Deutsch =
         "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
         "Lambda-Class Shuttle Expansion Pack": "Lambda Class Shuttle Erweiterung"
         "Slave I Expansion Pack": "Slave I Expansion Erweiterung"
+        "Imperial Aces Expansion Pack": "Imperial Aces Erweiterung"
     ui:
         pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->
