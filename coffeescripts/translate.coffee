@@ -19,21 +19,24 @@ exportObj.translate = (language, category, what, args...) ->
         translation
 
 exportObj.setupTranslationSupport = ->
-    for language in Object.keys(exportObj.cardLoaders).sort()
-        li = $ document.createElement 'LI'
-        li.text language
-        do (language) ->
-            li.click (e) ->
-                $(exportObj).trigger 'xwing:languageChanged', language
-        $('ul.dropdown-menu').append li
-
     $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
-        $('.language-placeholder').text language
-        await $(exportObj).trigger 'xwing:beforeLanguageLoad', defer()
-        exportObj.loadCards language
-        for own selector, html of exportObj.translations[language].byCSSSelector
-            $(selector).html html
-        $(exportObj).trigger 'xwing:afterLanguageLoad', language
+        if language of exportObj.translations
+            $('.language-placeholder').text language
+            await $(exportObj).trigger 'xwing:beforeLanguageLoad', defer()
+            exportObj.loadCards language
+            for own selector, html of exportObj.translations[language].byCSSSelector
+                $(selector).html html
+            $(exportObj).trigger 'xwing:afterLanguageLoad', language
 
     exportObj.loadCards DFL_LANGUAGE
     $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
+
+exportObj.setupTranslationUI = (backend) ->
+    for language in Object.keys(exportObj.cardLoaders).sort()
+        li = $ document.createElement 'LI'
+        li.text language
+        do (language, backend) ->
+            li.click (e) ->
+                backend.set('language', language) if backend?
+                $(exportObj).trigger 'xwing:languageChanged', language
+        $('ul.dropdown-menu').append li

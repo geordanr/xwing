@@ -6,6 +6,12 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
+  if (exportObj.codeToLanguage == null) {
+    exportObj.codeToLanguage = {};
+  }
+
+  exportObj.codeToLanguage.de = 'Deutsch';
+
   if (exportObj.translations == null) {
     exportObj.translations = {};
   }

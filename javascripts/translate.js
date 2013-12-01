@@ -71,21 +71,7 @@
   };
 
   exportObj.setupTranslationSupport = function() {
-    var language, li, _fn, _i, _len, _ref,
-      _this = this;
-    _ref = Object.keys(exportObj.cardLoaders).sort();
-    _fn = function(language) {
-      return li.click(function(e) {
-        return $(exportObj).trigger('xwing:languageChanged', language);
-      });
-    };
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      language = _ref[_i];
-      li = $(document.createElement('LI'));
-      li.text(language);
-      _fn(language);
-      $('ul.dropdown-menu').append(li);
-    }
+    var _this = this;
     $(exportObj).on('xwing:languageChanged', function(e, language, cb) {
       var html, selector, ___iced_passed_deferral, __iced_deferrals, __iced_k;
       __iced_k = __iced_k_noop;
@@ -93,30 +79,56 @@
       if (cb == null) {
         cb = $.noop;
       }
-      $('.language-placeholder').text(language);
-      (function(__iced_k) {
-        __iced_deferrals = new iced.Deferrals(__iced_k, {
-          parent: ___iced_passed_deferral,
-          filename: "coffeescripts/translate.coffee"
+      if (language in exportObj.translations) {
+        $('.language-placeholder').text(language);
+        (function(__iced_k) {
+          __iced_deferrals = new iced.Deferrals(__iced_k, {
+            parent: ___iced_passed_deferral,
+            filename: "coffeescripts/translate.coffee"
+          });
+          $(exportObj).trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
+            lineno: 24
+          }));
+          __iced_deferrals._fulfill();
+        })(function() {
+          var _ref;
+          exportObj.loadCards(language);
+          _ref = exportObj.translations[language].byCSSSelector;
+          for (selector in _ref) {
+            if (!__hasProp.call(_ref, selector)) continue;
+            html = _ref[selector];
+            $(selector).html(html);
+          }
+          return __iced_k($(exportObj).trigger('xwing:afterLanguageLoad', language));
         });
-        $(exportObj).trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-          lineno: 31
-        }));
-        __iced_deferrals._fulfill();
-      })(function() {
-        var _ref1;
-        exportObj.loadCards(language);
-        _ref1 = exportObj.translations[language].byCSSSelector;
-        for (selector in _ref1) {
-          if (!__hasProp.call(_ref1, selector)) continue;
-          html = _ref1[selector];
-          $(selector).html(html);
-        }
-        return $(exportObj).trigger('xwing:afterLanguageLoad', language);
-      });
+      } else {
+        return __iced_k();
+      }
     });
     exportObj.loadCards(DFL_LANGUAGE);
     return $(exportObj).trigger('xwing:languageChanged', DFL_LANGUAGE);
+  };
+
+  exportObj.setupTranslationUI = function(backend) {
+    var language, li, _fn, _i, _len, _ref, _results;
+    _ref = Object.keys(exportObj.cardLoaders).sort();
+    _fn = function(language, backend) {
+      return li.click(function(e) {
+        if (backend != null) {
+          backend.set('language', language);
+        }
+        return $(exportObj).trigger('xwing:languageChanged', language);
+      });
+    };
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      language = _ref[_i];
+      li = $(document.createElement('LI'));
+      li.text(language);
+      _fn(language, backend);
+      _results.push($('ul.dropdown-menu').append(li));
+    }
+    return _results;
   };
 
 }).call(this);

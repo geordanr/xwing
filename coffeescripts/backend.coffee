@@ -507,3 +507,43 @@ class exportObj.SquadBuilderBackend
             else
                 console.log "Message received from unapproved origin #{ev.origin}"
                 window.last_ev = e
+
+    getSettings: (cb=$.noop) ->
+        $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
+            cb data.settings
+
+    set: (setting, value, cb=$.noop) ->
+        post_args =
+            "_method": "PUT"
+        post_args[setting] = value
+        $.post("#{@server}/settings", post_args).done (data, textStatus, jqXHR) =>
+            cb data.set
+
+    deleteSetting: (setting, cb=$.noop) ->
+        $.post("#{@server}/settings/#{setting}", {"_method": "DELETE"}).done (data, textStatus, jqXHR) =>
+            cb data.deleted
+
+    getHeaders: (cb=$.noop) ->
+        $.get("#{@server}/headers").done (data, textStatus, jqXHR) =>
+            cb data.headers
+
+    getLanguagePreference: (cb=$.noop) =>
+        # Check session, then headers
+        await @getSettings defer(settings)
+        if settings?.language?
+            cb settings.language
+        else
+            await @getHeaders defer(headers)
+            if headers?.HTTP_ACCEPT_LANGUAGE?
+                # Need to parse out language preferences
+                # I'm going to be lazy and only output the first one we encounter
+                for language_range in headers.HTTP_ACCEPT_LANGUAGE.split(',')
+                    [ language_tag, quality ] = language_range.split ';'
+                    if language_tag == '*'
+                        cb 'English'
+                    else
+                        language_code = language_tag.split('-')[0]
+                        cb(exportObj.codeToLanguage[language_code] ? 'English')
+                    break
+            else
+                cb 'English'

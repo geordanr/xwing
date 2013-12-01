@@ -142,6 +142,11 @@
         window.browser = new CardBrowser
             container: '#card-browser'
 
+        window.backend.getLanguagePreference (language) ->
+            $(window).trigger 'xwing:languageChanged', language
+
+        window.setupTranslationUI window.backend
+
 .font-hax
   %span{:style => "font-family: BankGothicHD"}
     &nbsp;
