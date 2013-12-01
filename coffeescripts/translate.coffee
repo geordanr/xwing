@@ -3,6 +3,8 @@
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
 ###
+DFL_LANGUAGE = 'English'
+
 exportObj = exports ? this
 
 exportObj.loadCards = (language) ->
@@ -27,9 +29,11 @@ exportObj.setupTranslationSupport = ->
 
     $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
         $('.language-placeholder').text language
+        await $(exportObj).trigger 'xwing:beforeLanguageLoad', defer()
         exportObj.loadCards language
         for own selector, html of exportObj.translations[language].byCSSSelector
             $(selector).html html
-        $(exportObj).trigger 'xwing:translationRequested', language
+        $(exportObj).trigger 'xwing:afterLanguageLoad', language
 
-    $(exportObj).trigger 'xwing:languageChanged', 'English'
+    exportObj.loadCards DFL_LANGUAGE
+    $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE

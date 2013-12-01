@@ -492,12 +492,19 @@ class exportObj.SquadBuilder
 
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
-        .on 'xwing:translationRequested', (e, language, cb=$.noop) =>
+        .on 'xwing:beforeLanguageLoad', (e, cb=$.noop) =>
+            @pretranslation_serialized = @serialize()
+            # Need to remove ships here because the cards will change when the
+            # new language is loaded, and we don't want to have problems with
+            # unclaiming uniques.
+            @removeAllShips()
+            cb()
+        .on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
             @language = language
-            serialized = @serialize()
-            @loadFromSerialized serialized
+            @loadFromSerialized @pretranslation_serialized
             for ship in @ships
                 ship.updateSelections()
+            @pretranslation_serialized = undefined
             cb()
 
         @view_list_button.click (e) =>
@@ -725,7 +732,7 @@ class exportObj.SquadBuilder
         if data != @tooltip_currently_displaying
             switch type
                 when 'Ship'
-                    @info_container.find('.info-sources').text data.pilot.sources.sort().join(', ')
+                    @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     effective_stats = data.effectiveStats()
                     extra_actions = $.grep effective_stats.actions, (el, i) ->
                         el not in data.data.actions
@@ -749,7 +756,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                 when 'Pilot'
-                    @info_container.find('.info-sources').text data.sources.sort().join(', ')
+                    @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     ship = exportObj.ships[data.ship]
@@ -771,7 +778,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                 when 'Addon'
-                    @info_container.find('.info-sources').text data.sources.sort().join(', ')
+                    @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()

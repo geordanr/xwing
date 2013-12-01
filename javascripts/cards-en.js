@@ -41,7 +41,8 @@
       "TIE Interceptor Expansion Pack": "TIE Interceptor Expansion Pack",
       "TIE Bomber Expansion Pack": "TIE Bomber Expansion Pack",
       "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack",
-      "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack"
+      "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack",
+      "Slave I Expansion Pack": "Slave I Expansion Pack"
     },
     ui: {
       pilotSelectorPlaceholder: "Select a pilot",

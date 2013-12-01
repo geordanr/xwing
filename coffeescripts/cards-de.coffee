@@ -33,6 +33,7 @@ exportObj.translations.Deutsch =
         "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung"
         "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
         "Lambda-Class Shuttle Expansion Pack": "Lambda Class Shuttle Erweiterung"
+        "Slave I Expansion Pack": "Slave I Expansion Erweiterung"
     ui:
         pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->

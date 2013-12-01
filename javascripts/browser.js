@@ -70,7 +70,7 @@
       this.sort_selector.change(function(e) {
         return _this.renderList(_this.sort_selector.val());
       });
-      return $(window).on('xwing:translationRequested', function(e, language, cb) {
+      return $(window).on('xwing:afterLanguageLoad', function(e, language, cb) {
         if (cb == null) {
           cb = $.noop;
         }
@@ -271,13 +271,22 @@
     };
 
     CardBrowser.prototype.renderCard = function(card) {
-      var action, data, name, ship, slot, type, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+      var action, data, name, ship, slot, source, type, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
       name = card.data('name');
       type = card.data('type');
       data = card.data('card');
       this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")");
       this.card_viewer_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
-      this.card_viewer_container.find('.info-sources').text(data.sources.sort().join(', '));
+      this.card_viewer_container.find('.info-sources').text(((function() {
+        var _i, _len, _ref1, _results;
+        _ref1 = data.sources;
+        _results = [];
+        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+          source = _ref1[_i];
+          _results.push(exportObj.translate(this.language, 'sources', source));
+        }
+        return _results;
+      }).call(this)).sort().join(', '));
       switch (type) {
         case 'Pilot':
           ship = exportObj.ships[data.ship];
