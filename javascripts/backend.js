@@ -1,19 +1,60 @@
+
 /*
     X-Wing Squad Builder
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
 */
 
-
 (function() {
   var exportObj,
+    __slice = [].slice,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+  window.iced = {
+    Deferrals: (function() {
+      function _Class(_arg) {
+        this.continuation = _arg;
+        this.count = 1;
+        this.ret = null;
+      }
 
+      _Class.prototype._fulfill = function() {
+        if (!--this.count) {
+          return this.continuation(this.ret);
+        }
+      };
+
+      _Class.prototype.defer = function(defer_params) {
+        var _this = this;
+        ++this.count;
+        return function() {
+          var inner_params, _ref;
+          inner_params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+          if (defer_params != null) {
+            if ((_ref = defer_params.assign_fn) != null) {
+              _ref.apply(null, inner_params);
+            }
+          }
+          return _this._fulfill();
+        };
+      };
+
+      return _Class;
+
+    })(),
+    findDeferral: function() {
+      return null;
+    },
+    trampoline: function(_fn) {
+      return _fn();
+    }
+  };
+  window.__iced_k = window.__iced_k_noop = function() {};
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.SquadBuilderBackend = (function() {
+
     /*
         Usage:
     
@@ -29,8 +70,8 @@
                 login_logout_button: '#login-logout'
                 auth_status: '#auth-status'
     */
-
     function SquadBuilderBackend(args) {
+      this.getLanguagePreference = __bind(this.getLanguagePreference, this);
       this.nameCheck = __bind(this.nameCheck, this);
       this.maybeAuthenticationChanged = __bind(this.maybeAuthenticationChanged, this);
       var builder, _i, _len, _ref,
@@ -482,6 +523,119 @@
         } else {
           console.log("Message received from unapproved origin " + ev.origin);
           return window.last_ev = e;
+        }
+      });
+    };
+
+    SquadBuilderBackend.prototype.getSettings = function(cb) {
+      var _this = this;
+      if (cb == null) {
+        cb = $.noop;
+      }
+      return $.get("" + this.server + "/settings").done(function(data, textStatus, jqXHR) {
+        return cb(data.settings);
+      });
+    };
+
+    SquadBuilderBackend.prototype.set = function(setting, value, cb) {
+      var post_args,
+        _this = this;
+      if (cb == null) {
+        cb = $.noop;
+      }
+      post_args = {
+        "_method": "PUT"
+      };
+      post_args[setting] = value;
+      return $.post("" + this.server + "/settings", post_args).done(function(data, textStatus, jqXHR) {
+        return cb(data.set);
+      });
+    };
+
+    SquadBuilderBackend.prototype.deleteSetting = function(setting, cb) {
+      var _this = this;
+      if (cb == null) {
+        cb = $.noop;
+      }
+      return $.post("" + this.server + "/settings/" + setting, {
+        "_method": "DELETE"
+      }).done(function(data, textStatus, jqXHR) {
+        return cb(data.deleted);
+      });
+    };
+
+    SquadBuilderBackend.prototype.getHeaders = function(cb) {
+      var _this = this;
+      if (cb == null) {
+        cb = $.noop;
+      }
+      return $.get("" + this.server + "/headers").done(function(data, textStatus, jqXHR) {
+        return cb(data.headers);
+      });
+    };
+
+    SquadBuilderBackend.prototype.getLanguagePreference = function(cb) {
+      var headers, language_code, language_range, language_tag, quality, settings, ___iced_passed_deferral, __iced_deferrals, __iced_k,
+        _this = this;
+      __iced_k = __iced_k_noop;
+      ___iced_passed_deferral = iced.findDeferral(arguments);
+      if (cb == null) {
+        cb = $.noop;
+      }
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          filename: "coffeescripts/backend.coffee",
+          funcname: "SquadBuilderBackend.getLanguagePreference"
+        });
+        _this.getSettings(__iced_deferrals.defer({
+          assign_fn: (function() {
+            return function() {
+              return settings = arguments[0];
+            };
+          })(),
+          lineno: 531
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        if ((typeof settings !== "undefined" && settings !== null ? settings.language : void 0) != null) {
+          return __iced_k(cb(settings.language));
+        } else {
+          (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral,
+              filename: "coffeescripts/backend.coffee",
+              funcname: "SquadBuilderBackend.getLanguagePreference"
+            });
+            _this.getHeaders(__iced_deferrals.defer({
+              assign_fn: (function() {
+                return function() {
+                  return headers = arguments[0];
+                };
+              })(),
+              lineno: 535
+            }));
+            __iced_deferrals._fulfill();
+          })(function() {
+            var _i, _len, _ref, _ref1, _ref2;
+            if ((typeof headers !== "undefined" && headers !== null ? headers.HTTP_ACCEPT_LANGUAGE : void 0) != null) {
+              _ref = headers.HTTP_ACCEPT_LANGUAGE.split(',');
+              for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                language_range = _ref[_i];
+                _ref1 = language_range.split(';'), language_tag = _ref1[0], quality = _ref1[1];
+                if (language_tag === '*') {
+                  cb('English');
+                } else {
+                  language_code = language_tag.split('-')[0];
+                  cb((_ref2 = exportObj.codeToLanguage[language_code]) != null ? _ref2 : 'English');
+                }
+                break;
+              }
+            } else {
+              cb('English');
+            }
+            return __iced_k();
+          });
         }
       });
     };
