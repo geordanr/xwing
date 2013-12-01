@@ -9,7 +9,7 @@ exportObj.translations.Deutsch =
     action:
         "Barrel Roll": "Fassrolle"
         "Boost": "Schub"
-        "Evade": "Auswechen"
+        "Evade": "Ausweichen"
         "Focus": "Fokussierung"
         "Target Lock": "Zielerfassung"
     slot:
@@ -35,7 +35,7 @@ exportObj.translations.Deutsch =
         "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung"
         "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
         "Lambda-Class Shuttle Expansion Pack": "Lambda Class Shuttle Erweiterung"
-        "Slave I Expansion Pack": "Slave I Expansion Erweiterung"
+        "Slave I Expansion Pack": "Slave I Erweiterung"
         "Imperial Aces Expansion Pack": "Imperial Aces Erweiterung"
     ui:
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -400,7 +400,7 @@ exportObj.cardLoaders.Deutsch = () ->
             skill: 6
             points: 16
             slots: [ ]
-            text: """Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhälst du 1 zusätzlichen Angriffswürfel."""
+            text: """Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhältst du 1 zusätzlichen Angriffswürfel."""
         '"Dark Curse"':
             name: '"Dark Curse"'
             id: 16
@@ -434,7 +434,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slots: [
                 "Elite",
             ]
-            text: """Wenn ein anderes freundliches Schoff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
+            text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
             name: "Maarek Stele"
             id: 19
@@ -447,7 +447,7 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Elite",
                 "Missile",
             ]
-            text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum austeilen und legst die restlichen ab."""
+            text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
         "Pilot der Tornado-Staffel":
             name: "Pilot der Tornado-Staffel"
             id: 20
@@ -540,7 +540,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slots: [
                 "Elite",
             ]
-            text: """Immer wenn du einen Stressmarker erhälst, darfst du deinem Schiff auch einen Fokusmarker geben."""
+            text: """Immer wenn du einen Stressmarker erhältst, darfst du deinem Schiff auch einen Fokusmarker geben."""
         "Tycho Celchu":
             name: "Tycho Celchu"
             id: 29
@@ -612,7 +612,7 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Crew",
                 "Crew",
             ]
-            text: """Wenn du eine offene Schadenskarte erhälst, wird sie sofort umgedreht (ohne dass ihr Kartentext in Kraft tritt)."""
+            text: """Wenn du eine offene Schadenskarte erhältst, wird sie sofort umgedreht (ohne dass ihr Kartentext in Kraft tritt)."""
             ship_override:
                 attack: 3
                 agility: 1
@@ -637,7 +637,7 @@ exportObj.cardLoaders.Deutsch = () ->
                 agility: 1
                 hull: 8
                 shields: 5
-            text: """Wähle nach dem Ausführen einesgrünen Manövers einanderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
+            text: """Wähle nach dem Ausführen eines grünen Manövers ein anderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
         "Han Solo":
             name: "Han Solo"
             id: 36
@@ -872,7 +872,7 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Missile",
                 "Bomb",
             ]
-            text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mint einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."""
+            text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."""
         "Major Rhymer":
             name: "Major Rhymer"
             id: 52
@@ -1076,7 +1076,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Elite"
             sources: [ "Core", "TIE Fighter Expansion Pack", ]
             points: 1
-            text: """Wenn du eine offene Schadenskarte mit dem Attribut <b>Pilot</b> erhälst, wird diese sofort abgelegt (ohne dass der Kartentext in Kraft tritt)."""
+            text: """Wenn du eine offene Schadenskarte mit dem Attribut <b>Pilot</b> erhältst, wird diese sofort abgelegt (ohne dass der Kartentext in Kraft tritt)."""
         "Schwarmtaktik":
             name: "Schwarmtaktik"
             id: 9
@@ -1123,7 +1123,7 @@ exportObj.cardLoaders.Deutsch = () ->
             points: 4
             attack: 3
             range: "1-2"
-            text: """<strong>Angriff (Zielerfassung):<strong> Gib deine Zielerfassungsmaker aus und lege diese Karte ab, um mit dieser Sekundärwaffe <strong>zwei Mal</strong> anzugreifen."""
+            text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmaker aus und lege diese Karte ab, um mit dieser Sekundärwaffe <strong>zwei Mal</strong> anzugreifen."""
         "Daredevil":
             name: "Daredevil"
             id: 15
@@ -1153,7 +1153,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Elite"
             sources: [ "A-Wing Expansion Pack", "Imperial Aces Expansion Pack", ]
             points: 3
-            text: """Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durhführen.<br /><br />Dann erhälst du 1 Stressmarker."""
+            text: """Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durhführen.<br /><br />Dann erhältst du 1 Stressmarker."""
         "Meisterschütze":
             name: "Meisterschütze"
             id: 19
@@ -1206,7 +1206,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Crew"
             sources: [ "Slave I Expansion Pack", ]
             points: 2
-            text: """Wenn du ein Ziel in Reichweite 3 angreifst, darfst du eines deiner <img class="icon-hit" alt="Hit" src="images/transparent.png" />  ind ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ändern."""
+            text: """Wenn du ein Ziel in Reichweite 3 angreifst, darfst du eines deiner <img class="icon-hit" alt="Hit" src="images/transparent.png" />  in ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ändern."""
         "Angriffsraketen":
             name: "Angriffsraketen"
             id: 26
@@ -1272,7 +1272,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Crew"
             sources: [ "Millennium Falcon Expansion Pack", ]
             points: 4
-            text: """Wenn du eine Schadenskarte erhälst, darfst du sie sofort ablegen und 1 Schild wiederaufladen.<br /><br />Danach wird diese Aufwertungskarte abgelegt."""
+            text: """Wenn du eine Schadenskarte erhältst, darfst du sie sofort ablegen und 1 Schild wiederaufladen.<br /><br />Danach wird diese Aufwertungskarte abgelegt."""
         "Verstärkte Protonen-Torpedos":
             name: "Verstärkte Protonen-Torpedos"
             id: 34
@@ -1320,7 +1320,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Crew"
             sources: [ "HWK-290 Expansion Pack", ]
             points: 2
-            text: """<strong>Aktion:</strong> Wähle 1 feindliches Schiff in Reichweite 1 und wirf 1 Angriffswürfel. Bei <img class="icon-hit" alt="Hit" src="images/transparent.png" /> oder <img class="icon-crit" alt="Crit" src="images/transparent.png" />, wähle 1 zufällige verdeckte Schadenskarte des Schiffs, deke sie auf und handle sie ab."""
+            text: """<strong>Aktion:</strong> Wähle 1 feindliches Schiff in Reichweite 1 und wirf 1 Angriffswürfel. Bei <img class="icon-hit" alt="Hit" src="images/transparent.png" /> oder <img class="icon-crit" alt="Crit" src="images/transparent.png" />, wähle 1 zufällige verdeckte Schadenskarte des Schiffs, decke sie auf und handle sie ab."""
         "Geheimagent":
             name: "Geheimagent"
             id: 40
@@ -1334,7 +1334,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Bomb"
             sources: [ "TIE Bomber Expansion Pack", ]
             points: 5
-            text: """ach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
         "Adrenalinschub":
             name: "Adrenalinschub"
             id: 42
@@ -1373,7 +1373,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Crew"
             sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
-            text: """Ein Mal pr Runde erhält das erste Schiff, das einen Angriff gegen dich ansagt, sofort 1 Stressmarker."""
+            text: """Ein Mal pro Runde erhält das erste Schiff, das einen Angriff gegen dich ansagt, sofort 1 Stressmarker."""
         "Fluglehrer":
             name: "Fluglehrer"
             id: 47
