@@ -8,10 +8,6 @@ exportObj = exports ? this
 # Assumes cards.js has been loaded
 
 TYPES = [ 'pilots', 'upgrades', 'modifications', 'titles' ]
-TYPE_TO_SINGULAR =
-    'pilots': 'Pilot'
-    'modifications': 'Modification'
-    'titles': 'Title'
 
 byName = (a, b) ->
     a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
@@ -41,6 +37,7 @@ class exportObj.CardBrowser
 
         # internals
         @currently_selected = null
+        @language = 'English'
 
         @prepareData()
 
@@ -54,7 +51,7 @@ class exportObj.CardBrowser
             <div class="container-fluid xwing-card-browser">
                 <div class="row-fluid">
                     <div class="span12">
-                        Sort cards by: <select class="sort-by">
+                        <span class="translate sort-cards-by">Sort cards by</span>: <select class="sort-by">
                             <option value="name">Name</option>
                             <option value="source">Source</option>
                             <option value="type-by-points">Type (by Points)</option>
@@ -68,7 +65,7 @@ class exportObj.CardBrowser
                     </div>
                     <div class="span8">
                         <div class="well card-viewer-placeholder info-well">
-                            <p>Select a card from the list at the left.</p>
+                            <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
                         <div class="well card-viewer-container info-well">
                             <span class="info-name"></span>
@@ -132,18 +129,24 @@ class exportObj.CardBrowser
         @sort_selector.change (e) =>
             @renderList @sort_selector.val()
 
+        $(window).on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
+            @language = language
+            @prepareData()
+            @renderList @sort_selector.val()
+
     prepareData: () ->
         @all_cards = []
 
         for type in TYPES
             if type == 'upgrades'
-                @all_cards = @all_cards.concat ( { name: card_name, type: "#{card_data.slot} Upgrade", data: card_data } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data } for card_name, card_data of exportObj[type] )
             else
-                @all_cards = @all_cards.concat ( { name: card_name, type: TYPE_TO_SINGULAR[type], data: card_data } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data } for card_name, card_data of exportObj[type] )
 
-        @types = [ 'Pilot', 'Modification', 'Title' ]
+        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Modification', 'Title' ])
         for card_name, card_data of exportObj.upgrades
-            @types.push "#{card_data.slot} Upgrade" if "#{card_data.slot} Upgrade" not in @types
+            upgrade_text = exportObj.translate @language, 'ui', 'upgradeHeader', card_data.slot
+            @types.push upgrade_text if upgrade_text not in @types
 
         @all_cards.sort byName
 
@@ -152,12 +155,14 @@ class exportObj.CardBrowser
             for source in card.data.sources
                 @sources.push(source) if source not in @sources
 
+        sorted_types = @types.sort()
+
         @cards_by_type_name = {}
-        for type in @types.sort()
+        for type in sorted_types
             @cards_by_type_name[type] = ( card for card in @all_cards when card.type == type ).sort byName
 
         @cards_by_type_points = {}
-        for type in @types.sort()
+        for type in sorted_types
             @cards_by_type_points[type] = ( card for card in @all_cards when card.type == type ).sort byPoints
 
         @cards_by_source = {}
@@ -216,7 +221,7 @@ class exportObj.CardBrowser
 
         @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
-        @card_viewer_container.find('.info-sources').text data.sources.sort().join(', ')
+        @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
         switch type
             when 'Pilot'
                 ship = exportObj.ships[data.ship]
@@ -232,10 +237,10 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-hull').show()
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
-                @card_viewer_container.find('tr.info-actions td.info-data').text exportObj.ships[data.ship].actions.join(', ')
+                @card_viewer_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
                 @card_viewer_container.find('tr.info-actions').show()
                 @card_viewer_container.find('tr.info-upgrades').show()
-                @card_viewer_container.find('tr.info-upgrades td.info-data').text(data.slots.join(', ') or 'None')
+                @card_viewer_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
             else
                 @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
