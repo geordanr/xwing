@@ -280,4 +280,9 @@ select.card-selector {
     padding-left: 20px; }
 
 ul.nav li.dropdown ul.dropdown-menu li {
-  color: #333333; }
+  color: #333333;
+  padding: 1px 5px;
+  cursor: pointer; }
+ul.nav li.dropdown ul.dropdown-menu li:hover {
+  color: white;
+  background-color: #333333; }
