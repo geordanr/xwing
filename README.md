@@ -51,9 +51,15 @@ Credits
 -------
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
 Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
+German translations courtesy @failgod-marcus.
 
 CHANGELOG
 =========
+
+30 Nov 2013
+-----------
+* Add support for translations.
+* Add German translations by @failgod-marcus.
 
 8 Oct 2013
 ----------
