@@ -49,8 +49,8 @@ exportObj.translations.Deutsch =
         '.translate.sort-cards-by': 'Sortiere Karten per'
         '.xwing-card-browser option[value="name"]': 'Name'
         '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'TYP (Punkte)'
-        '.xwing-card-browser option[value="type-by-name"]': 'TYP (Name)'
+        '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Typ (Name)'
         '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte aus der Liste links.'
     singular:
         'pilots': 'Pilot'
@@ -138,8 +138,8 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Barrel Roll",
                 "Evade",
             ]
-        "TIE Interceptor":
-            name: "TIE Interceptor"
+        "TIE Abfangjäger":
+            name: "TIE Abfangjäger"
             faction: "Galactic Empire"
             attack: 3
             agility: 3
@@ -1069,7 +1069,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Astromech"
             sources: [ "X-Wing Expansion Pack", ]
             points: 1
-            text: """During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."""
+            text: """Wähle während der Endphase 1 deiner offnen Schadenskarte mit dem Attribut <strong>Schiff</strong> und drehe sie um."""
         "Entschlossenheit":
             name: "Entschlossenheit"
             id: 8
