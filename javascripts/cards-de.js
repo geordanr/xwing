@@ -66,8 +66,8 @@
       '.translate.sort-cards-by': 'Sortiere Karten per',
       '.xwing-card-browser option[value="name"]': 'Name',
       '.xwing-card-browser option[value="source"]': 'Quelle',
-      '.xwing-card-browser option[value="type-by-points"]': 'TYP (Punkte)',
-      '.xwing-card-browser option[value="type-by-name"]': 'TYP (Name)',
+      '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)',
+      '.xwing-card-browser option[value="type-by-name"]': 'Typ (Name)',
       '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte aus der Liste links.'
     },
     singular: {
@@ -145,8 +145,8 @@
         shields: 2,
         actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"]
       },
-      "TIE Interceptor": {
-        name: "TIE Interceptor",
+      "TIE Abfangjäger": {
+        name: "TIE Abfangjäger",
         faction: "Galactic Empire",
         attack: 3,
         agility: 3,
@@ -441,7 +441,7 @@
       "Pilot der Alpha-Staffel": {
         name: "Pilot der Alpha-Staffel",
         id: 23,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 1,
         points: 18,
@@ -450,7 +450,7 @@
       "Pilot der Avenger-Staffel": {
         name: "Pilot der Avenger-Staffel",
         id: 24,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 3,
         points: 20,
@@ -459,7 +459,7 @@
       "Pilot der Saber-Staffel": {
         name: "Pilot der Saber-Staffel",
         id: 25,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 4,
         points: 21,
@@ -469,7 +469,7 @@
         name: "\"Fel's Wrath\"",
         id: 26,
         unique: true,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 5,
         points: 23,
@@ -480,7 +480,7 @@
         name: "Turr Phennir",
         id: 27,
         unique: true,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 7,
         points: 25,
@@ -491,7 +491,7 @@
         name: "Soontir Fel",
         id: 28,
         unique: true,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["TIE Interceptor Expansion Pack"],
         skill: 9,
         points: 27,
@@ -804,10 +804,10 @@
         points: 21,
         slots: ["System", "Cannon", "Crew", "Crew"]
       },
-      "Unspoiled PS4 TIE Interceptor Ace": {
-        name: "Unspoiled PS4 TIE Interceptor Ace",
+      "Unspoiled PS4 TIE Abfangjäger Ace": {
+        name: "Unspoiled PS4 TIE Abfangjäger Ace",
         id: 57,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 4,
         points: 99,
@@ -816,25 +816,25 @@
       "Royal Guard Pilot": {
         name: "Royal Guard Pilot",
         id: 58,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 6,
         points: 22,
         slots: ["Elite"]
       },
-      "Unspoiled PS7 TIE Interceptor Ace": {
-        name: "Unspoiled PS7 TIE Interceptor Ace",
+      "Unspoiled PS7 TIE Abfangjäger Ace": {
+        name: "Unspoiled PS7 TIE Abfangjäger Ace",
         id: 59,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 7,
         points: 99,
         slots: []
       },
-      "Unspoiled PS5? TIE Interceptor Ace": {
-        name: "Unspoiled PS5? TIE Interceptor Ace",
+      "Unspoiled PS5? TIE Abfangjäger Ace": {
+        name: "Unspoiled PS5? TIE Abfangjäger Ace",
         id: 60,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 5,
         points: 99,
@@ -844,7 +844,7 @@
         name: "Kir Kanos",
         id: 61,
         unique: true,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 6,
         points: 24,
@@ -855,7 +855,7 @@
         name: "Carnor Jax",
         id: 62,
         unique: true,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         sources: ["Imperial Aces Expansion Pack"],
         skill: 8,
         points: 26,
@@ -934,7 +934,7 @@
         slot: "Astromech",
         sources: ["X-Wing Expansion Pack"],
         points: 1,
-        text: "During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."
+        text: "Wähle während der Endphase 1 deiner offnen Schadenskarte mit dem Attribut <strong>Schiff</strong> und drehe sie um."
       },
       "Entschlossenheit": {
         name: "Entschlossenheit",
@@ -1426,7 +1426,7 @@
         id: 5,
         sources: ["Imperial Aces Expansion Pack"],
         points: 0,
-        ship: "TIE Interceptor",
+        ship: "TIE Abfangjäger",
         text: "You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is \"4\" or lower.",
         confersAddons: [
           {

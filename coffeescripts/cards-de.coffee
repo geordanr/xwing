@@ -484,7 +484,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Pilot der Alpha-Staffel":
             name: "Pilot der Alpha-Staffel"
             id: 23
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 1
             points: 18
@@ -492,7 +492,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Pilot der Avenger-Staffel":
             name: "Pilot der Avenger-Staffel"
             id: 24
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 3
             points: 20
@@ -500,7 +500,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Pilot der Saber-Staffel":
             name: "Pilot der Saber-Staffel"
             id: 25
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 4
             points: 21
@@ -511,7 +511,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "\"Fel's Wrath\""
             id: 26
             unique: true
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 5
             points: 23
@@ -521,7 +521,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Turr Phennir"
             id: 27
             unique: true
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 7
             points: 25
@@ -533,7 +533,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Soontir Fel"
             id: 28
             unique: true
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 9
             points: 27
@@ -948,10 +948,10 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Crew",
                 "Crew",
             ]
-        "Unspoiled PS4 TIE Interceptor Ace":
-            name: "Unspoiled PS4 TIE Interceptor Ace"
+        "Unspoiled PS4 TIE Abfangjäger Ace":
+            name: "Unspoiled PS4 TIE Abfangjäger Ace"
             id: 57
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 4
             points: 99
@@ -959,25 +959,25 @@ exportObj.cardLoaders.Deutsch = () ->
         "Royal Guard Pilot":
             name: "Royal Guard Pilot"
             id: 58
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 6
             points: 22
             slots: [
                 "Elite",
             ]
-        "Unspoiled PS7 TIE Interceptor Ace":
-            name: "Unspoiled PS7 TIE Interceptor Ace"
+        "Unspoiled PS7 TIE Abfangjäger Ace":
+            name: "Unspoiled PS7 TIE Abfangjäger Ace"
             id: 59
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 7
             points: 99
             slots: [ ]
-        "Unspoiled PS5? TIE Interceptor Ace":
-            name: "Unspoiled PS5? TIE Interceptor Ace"
+        "Unspoiled PS5? TIE Abfangjäger Ace":
+            name: "Unspoiled PS5? TIE Abfangjäger Ace"
             id: 60
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 5
             points: 99
@@ -986,7 +986,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Kir Kanos"
             id: 61
             unique: true
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 6
             points: 24
@@ -996,7 +996,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Carnor Jax"
             id: 62
             unique: true
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 8
             points: 26
@@ -1494,7 +1494,7 @@ exportObj.cardLoaders.Deutsch = () ->
             id: 5
             sources: [ "Imperial Aces Expansion Pack", ]
             points: 0
-            ship: "TIE Interceptor"
+            ship: "TIE Abfangjäger"
             text: """You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
             confersAddons: [
                 {
