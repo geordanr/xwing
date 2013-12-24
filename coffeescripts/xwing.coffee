@@ -206,9 +206,17 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <div class="fancy-list hidden-phone"></div>
                 <div class="simple-list"></div>
+                <div class="bbcode-list">
+                    Copy the BBCode below and paste it into your forum post.
+                    <textarea></textarea>
+                </div>
             </div>
             <div class="modal-footer hidden-print">
-                <button class="btn toggle-simple-view hidden-phone">Simple View</button>
+                <div class="btn-group list-display-mode">
+                    <button class="btn select-simple-view">Simple</button>
+                    <button class="btn select-fancy-view hidden-phone">Fancy</button>
+                    <button class="btn select-bbcode-view">BBCode</button>
+                </div>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
@@ -216,21 +224,50 @@ class exportObj.SquadBuilder
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
         @simple_container = $ @list_modal.find('div.modal-body .simple-list')
-        @simple_container.hide() if $(window).width() >= 768
-        @simple_toggle_button = $ @list_modal.find('.toggle-simple-view')
-        @simple_toggle_button.data 'showingSimpleView', false
-        @simple_toggle_button.click (e) =>
-            @simple_toggle_button.blur()
-            if @simple_toggle_button.data('showingSimpleView')
-                @simple_toggle_button.data 'showingSimpleView', false
-                @simple_toggle_button.text 'Simple View'
+        @bbcode_container = $ @list_modal.find('div.modal-body .bbcode-list')
+        @bbcode_textarea = $ @bbcode_container.find('textarea')
+        @bbcode_textarea.attr 'readonly', 'readonly'
+
+        @select_simple_view_button = $ @list_modal.find('.select-simple-view')
+        @select_simple_view_button.click (e) =>
+            @select_simple_view_button.blur()
+            unless @list_display_mode == 'simple'
+                @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+                @select_simple_view_button.addClass 'btn-inverse'
+                @list_display_mode = 'simple'
+                @simple_container.show()
+                @fancy_container.hide()
+                @bbcode_container.hide()
+
+        @select_fancy_view_button = $ @list_modal.find('.select-fancy-view')
+        @select_fancy_view_button.click (e) =>
+            @select_fancy_view_button.blur()
+            unless @list_display_mode == 'fancy'
+                @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+                @select_fancy_view_button.addClass 'btn-inverse'
+                @list_display_mode = 'fancy'
                 @fancy_container.show()
                 @simple_container.hide()
-            else
-                @simple_toggle_button.data 'showingSimpleView', true
-                @simple_toggle_button.text 'Fancy View'
+                @bbcode_container.hide()
+
+        @select_bbcode_view_button = $ @list_modal.find('.select-bbcode-view')
+        @select_bbcode_view_button.click (e) =>
+            @select_bbcode_view_button.blur()
+            unless @list_display_mode == 'bbcode'
+                @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+                @select_bbcode_view_button.addClass 'btn-inverse'
+                @list_display_mode = 'bbcode'
+                @bbcode_container.show()
+                @simple_container.hide()
                 @fancy_container.hide()
-                @simple_container.show()
+                @bbcode_textarea.select()
+                @bbcode_textarea.focus()
+
+        if $(window).width() >= 768
+            @simple_container.hide()
+            @select_fancy_view_button.click()
+        else
+            @select_simple_view_button.click()
 
         @clear_squad_button = $ @status_container.find('.clear-squad')
         @clear_squad_button.click (e) =>
@@ -536,9 +573,18 @@ class exportObj.SquadBuilder
         # and text list
         @fancy_container.text ''
         @simple_container.html '<table></table>'
+        bbcode_ships = []
         for ship in @ships
-            @fancy_container.append ship.toHTML() if ship.pilot?
-            @simple_container.find('table').append ship.toTableRow() if ship.pilot?
+            if ship.pilot?
+                @fancy_container.append ship.toHTML()
+                @simple_container.find('table').append ship.toTableRow()
+                bbcode_ships.push ship.toBBCode()
+        @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
+
+[b][i]Total: #{@total_points}[/i][/b]
+
+[url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
+"""
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -1221,6 +1267,22 @@ class Ship
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
 
+    toBBCode: ->
+        bbcode = """[b]#{@pilot.name} (#{@pilot.points})[/b]"""
+
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+            .concat (modification for modification in @modifications when modification.data?)
+        slotted_upgrades.push @title if @title?.data?
+        if slotted_upgrades.length > 0
+            bbcode +="\n"
+            bbcode_upgrades= []
+            for upgrade in slotted_upgrades
+                upgrade_bbcode = upgrade.toBBCode()
+                bbcode_upgrades.push upgrade_bbcode if upgrade_bbcode?
+            bbcode += bbcode_upgrades.join "\n"
+
+        bbcode
+
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:TITLEADDONTYPE1.TITLEADDONID1,TITLEADDONTYPE2.TITLEADDONID2
 
@@ -1458,6 +1520,12 @@ class GenericAddon
             """
         else
             ''
+
+    toBBCode: ->
+        if @data?
+            """[i]#{@data.name} (#{@data.points})[/i]"""
+        else
+            null
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
