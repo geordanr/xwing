@@ -148,4 +148,5 @@
 
 .bbcode-list textarea {
   width: 95%;
-  height: 200px; }
+  height: 200px;
+  cursor: text; }
