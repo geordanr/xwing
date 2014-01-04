@@ -948,14 +948,16 @@ exportObj.cardLoaders.English = () ->
                 "Crew",
                 "Crew",
             ]
-        "Unspoiled PS4 TIE Interceptor Ace":
-            name: "Unspoiled PS4 TIE Interceptor Ace"
+        "Lieutenant Lorrir":
+            name: "Lieutenant Lorrir"
             id: 57
+            unique: true
             ship: "TIE Interceptor"
             sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 4
-            points: 99
+            skill: 5
+            points: 23
             slots: [ ]
+            text: """When performing a barrel roll action, you may receive 1 stress token to use the (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> 1) or (<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" /> 1) template instead of the (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) template."""
         "Royal Guard Pilot":
             name: "Royal Guard Pilot"
             id: 58
@@ -966,14 +968,18 @@ exportObj.cardLoaders.English = () ->
             slots: [
                 "Elite",
             ]
-        "Unspoiled PS7 TIE Interceptor Ace":
-            name: "Unspoiled PS7 TIE Interceptor Ace"
+        "Tetran Cowall":
+            name: "Tetran Cowall"
             id: 59
+            unique: true
             ship: "TIE Interceptor"
             sources: [ "Imperial Aces Expansion Pack", ]
             skill: 7
-            points: 99
-            slots: [ ]
+            points: 24
+            slots: [
+                "Elite",
+            ]
+            text: """When you reveal a <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> maneuver, you may treat the speed of that maneuver as "1," "3," or "5"."""
         "Unspoiled PS5? TIE Interceptor Ace":
             name: "Unspoiled PS5? TIE Interceptor Ace"
             id: 60
