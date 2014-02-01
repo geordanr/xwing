@@ -54,7 +54,7 @@
     }
 
     CardBrowser.prototype.setupUI = function() {
-      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            <span class=\"translate sort-cards-by\">Sort cards by</span>: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type-by-points\">Type (by Points)</option>\n                <option value=\"type-by-name\" selected=\"1\">Type (by Name)</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p class=\"translate select-a-card\">Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
+      this.container.append($.trim("<div class=\"container-fluid xwing-card-browser\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            <span class=\"translate sort-cards-by\">Sort cards by</span>: <select class=\"sort-by\">\n                <option value=\"name\">Name</option>\n                <option value=\"source\">Source</option>\n                <option value=\"type-by-points\">Type (by Points)</option>\n                <option value=\"type-by-name\" selected=\"1\">Type (by Name)</option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row-fluid\">\n        <div class=\"span4 card-selector-container\">\n\n        </div>\n        <div class=\"span8\">\n            <div class=\"well card-viewer-placeholder info-well\">\n                <p class=\"translate select-a-card\">Select a card from the list at the left.</p>\n            </div>\n            <div class=\"well card-viewer-container info-well\">\n                <span class=\"info-name\"></span>\n                <br />\n                <span class=\"info-type\"></span>\n                <br />\n                <span class=\"info-sources\"></span>\n                <table>\n                    <tbody>\n                        <tr class=\"info-skill\">\n                            <td>Skill</td>\n                            <td class=\"info-data info-skill\"></td>\n                        </tr>\n                        <tr class=\"info-attack\">\n                            <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                            <td class=\"info-data info-attack\"></td>\n                        </tr>\n                        <tr class=\"info-energy\">\n                            <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"energy\" /></td>\n                            <td class=\"info-data info-energy\"></td>\n                        </tr>\n                        <tr class=\"info-range\">\n                            <td>Range</td>\n                            <td class=\"info-data info-range\"></td>\n                        </tr>\n                        <tr class=\"info-agility\">\n                            <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                            <td class=\"info-data info-agility\"></td>\n                        </tr>\n                        <tr class=\"info-hull\">\n                            <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                            <td class=\"info-data info-hull\"></td>\n                        </tr>\n                        <tr class=\"info-shields\">\n                            <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                            <td class=\"info-data info-shields\"></td>\n                        </tr>\n                        <tr class=\"info-actions\">\n                            <td>Actions</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                        <tr class=\"info-upgrades\">\n                            <td>Upgrades</td>\n                            <td class=\"info-data\"></td>\n                        </tr>\n                    </tbody>\n                </table>\n                <p class=\"info-text\" />\n            </div>\n        </div>\n    </div>\n</div>"));
       this.card_selector_container = $(this.container.find('.xwing-card-browser .card-selector-container'));
       this.card_viewer_container = $(this.container.find('.xwing-card-browser .card-viewer-container'));
       this.card_viewer_container.hide();
@@ -271,7 +271,7 @@
     };
 
     CardBrowser.prototype.renderCard = function(card) {
-      var action, data, name, ship, slot, source, type, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+      var action, data, name, ship, slot, source, type, _ref, _ref1, _ref10, _ref11, _ref12, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       name = card.data('name');
       type = card.data('type');
       data = card.data('card');
@@ -294,20 +294,22 @@
           this.card_viewer_container.find('tr.info-skill td.info-data').text(data.skill);
           this.card_viewer_container.find('tr.info-skill').show();
           this.card_viewer_container.find('tr.info-attack td.info-data').text((_ref1 = (_ref2 = data.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : ship.attack);
-          this.card_viewer_container.find('tr.info-attack').show();
+          this.card_viewer_container.find('tr.info-attack').toggle((((_ref3 = data.ship_override) != null ? _ref3.attack : void 0) != null) || (ship.attack != null));
+          this.card_viewer_container.find('tr.info-energy td.info-data').text((_ref4 = (_ref5 = data.ship_override) != null ? _ref5.energy : void 0) != null ? _ref4 : ship.energy);
+          this.card_viewer_container.find('tr.info-energy').toggle((((_ref6 = data.ship_override) != null ? _ref6.energy : void 0) != null) || (ship.energy != null));
           this.card_viewer_container.find('tr.info-range').hide();
-          this.card_viewer_container.find('tr.info-agility td.info-data').text((_ref3 = (_ref4 = data.ship_override) != null ? _ref4.agility : void 0) != null ? _ref3 : ship.agility);
+          this.card_viewer_container.find('tr.info-agility td.info-data').text((_ref7 = (_ref8 = data.ship_override) != null ? _ref8.agility : void 0) != null ? _ref7 : ship.agility);
           this.card_viewer_container.find('tr.info-agility').show();
-          this.card_viewer_container.find('tr.info-hull td.info-data').text((_ref5 = (_ref6 = data.ship_override) != null ? _ref6.hull : void 0) != null ? _ref5 : ship.hull);
+          this.card_viewer_container.find('tr.info-hull td.info-data').text((_ref9 = (_ref10 = data.ship_override) != null ? _ref10.hull : void 0) != null ? _ref9 : ship.hull);
           this.card_viewer_container.find('tr.info-hull').show();
-          this.card_viewer_container.find('tr.info-shields td.info-data').text((_ref7 = (_ref8 = data.ship_override) != null ? _ref8.shields : void 0) != null ? _ref7 : ship.shields);
+          this.card_viewer_container.find('tr.info-shields td.info-data').text((_ref11 = (_ref12 = data.ship_override) != null ? _ref12.shields : void 0) != null ? _ref11 : ship.shields);
           this.card_viewer_container.find('tr.info-shields').show();
           this.card_viewer_container.find('tr.info-actions td.info-data').text(((function() {
-            var _i, _len, _ref9, _results;
-            _ref9 = exportObj.ships[data.ship].actions;
+            var _i, _len, _ref13, _results;
+            _ref13 = exportObj.ships[data.ship].actions;
             _results = [];
-            for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
-              action = _ref9[_i];
+            for (_i = 0, _len = _ref13.length; _i < _len; _i++) {
+              action = _ref13[_i];
               _results.push(exportObj.translate(this.language, 'action', action));
             }
             return _results;
@@ -315,11 +317,11 @@
           this.card_viewer_container.find('tr.info-actions').show();
           this.card_viewer_container.find('tr.info-upgrades').show();
           this.card_viewer_container.find('tr.info-upgrades td.info-data').text(((function() {
-            var _i, _len, _ref9, _results;
-            _ref9 = data.slots;
+            var _i, _len, _ref13, _results;
+            _ref13 = data.slots;
             _results = [];
-            for (_i = 0, _len = _ref9.length; _i < _len; _i++) {
-              slot = _ref9[_i];
+            for (_i = 0, _len = _ref13.length; _i < _len; _i++) {
+              slot = _ref13[_i];
               _results.push(exportObj.translate(this.language, 'slot', slot));
             }
             return _results;
@@ -344,6 +346,7 @@
           } else {
             this.card_viewer_container.find('tr.info-range').hide();
           }
+          this.card_viewer_container.find('tr.info-energy').hide();
           this.card_viewer_container.find('tr.info-agility').hide();
           this.card_viewer_container.find('tr.info-hull').hide();
           this.card_viewer_container.find('tr.info-shields').hide();
