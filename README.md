@@ -56,6 +56,11 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+1 Feb 2014
+----------
+* Add ships revealed in Rebel Transport preview.
+* Add new icons from GeckoTH.
+
 30 Nov 2013
 -----------
 * Add support for translations.
