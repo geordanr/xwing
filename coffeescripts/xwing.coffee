@@ -1206,6 +1206,14 @@ class Ship
                     """<img class="icon-target-lock" src="images/transparent.png" />"""
                 when 'Boost'
                     """<img class="icon-boost" src="images/transparent.png" />"""
+                when 'Coordinate'
+                    """<img class="icon-coordinate" src="images/transparent.png" />"""
+                when 'Jam'
+                    """<img class="icon-jam" src="images/transparent.png" />"""
+                when 'Recover'
+                    """<img class="icon-recover" src="images/transparent.png" />"""
+                when 'Reinforce'
+                    """<img class="icon-reinforce" src="images/transparent.png" />"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -1230,7 +1238,7 @@ class Ship
             </div>
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
-                    <span class="info-data info-skill">#{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
+                    <span class="info-data info-skill">PS #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
                     #{energyHTML}
                     <img class="icon-agility" src="images/transparent.png" />

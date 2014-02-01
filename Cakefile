@@ -52,3 +52,6 @@ task 'build', 'build X-Wing from source', (cb) ->
     for haml in hamls
         console.log "Compiling #{haml} ..."
         haml_proc = spawn 'haml', [ haml, haml.replace(/\.haml$/, '.html') ]
+        do (haml) ->
+            haml_proc.stderr.on 'data', (data) ->
+                console.log "Error processing #{haml}:\n#{data}"
