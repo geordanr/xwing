@@ -83,6 +83,10 @@ class exportObj.CardBrowser
                                         <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
                                         <td class="info-data info-attack"></td>
                                     </tr>
+                                    <tr class="info-energy">
+                                        <td><img class="icon-energy" src="images/transparent.png" alt="energy" /></td>
+                                        <td class="info-data info-energy"></td>
+                                    </tr>
                                     <tr class="info-range">
                                         <td>Range</td>
                                         <td class="info-data info-range"></td>
@@ -229,7 +233,9 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-skill td.info-data').text data.skill
                 @card_viewer_container.find('tr.info-skill').show()
                 @card_viewer_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
-                @card_viewer_container.find('tr.info-attack').show()
+                @card_viewer_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+                @card_viewer_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
+                @card_viewer_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                 @card_viewer_container.find('tr.info-range').hide()
                 @card_viewer_container.find('tr.info-agility td.info-data').text(data.ship_override?.agility ? ship.agility)
                 @card_viewer_container.find('tr.info-agility').show()
@@ -256,6 +262,7 @@ class exportObj.CardBrowser
                     @card_viewer_container.find('tr.info-range').show()
                 else
                     @card_viewer_container.find('tr.info-range').hide()
+                @card_viewer_container.find('tr.info-energy').hide()
                 @card_viewer_container.find('tr.info-agility').hide()
                 @card_viewer_container.find('tr.info-hull').hide()
                 @card_viewer_container.find('tr.info-shields').hide()

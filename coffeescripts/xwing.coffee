@@ -478,6 +478,10 @@ class exportObj.SquadBuilder
                             <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
                             <td class="info-data info-attack"></td>
                         </tr>
+                        <tr class="info-energy">
+                            <td><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
+                            <td class="info-data info-energy"></td>
+                        </tr>
                         <tr class="info-range">
                             <td>Range</td>
                             <td class="info-data info-range"></td>
@@ -789,7 +793,9 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.pilot.skill, effective_stats, 'skill')
                     @info_container.find('tr.info-skill').show()
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
-                    @info_container.find('tr.info-attack').show()
+                    @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
+                    @info_container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.energy ? data.data.energy), effective_stats, 'energy')
+                    @info_container.find('tr.info-energy').toggle(data.pilot.ship_override?.energy? or data.data.energy?)
                     @info_container.find('tr.info-range').hide()
                     @info_container.find('tr.info-agility td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.agility ? data.data.agility), effective_stats, 'agility')
                     @info_container.find('tr.info-agility').show()
@@ -811,7 +817,9 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill td.info-data').text data.skill
                     @info_container.find('tr.info-skill').show()
                     @info_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
-                    @info_container.find('tr.info-attack').show()
+                    @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+                    @info_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
+                    @info_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     @info_container.find('tr.info-range').hide()
                     @info_container.find('tr.info-agility td.info-data').text(data.ship_override?.agility ? ship.agility)
                     @info_container.find('tr.info-agility').show()
@@ -839,6 +847,7 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-range').show()
                     else
                         @info_container.find('tr.info-range').hide()
+                    @info_container.find('tr.info-energy').hide()
                     @info_container.find('tr.info-agility').hide()
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
@@ -1200,6 +1209,16 @@ class Ship
                 else
                     """<span>&nbsp;#{action}<span>"""
 
+        attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
+            <img class="icon-attack" src="images/transparent.png" />
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
+        """ else ''
+
+        energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
+            <img class="icon-energy" src="images/transparent.png" />
+            <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
+        """ else ''
+
         html = $.trim """
             <div class="fancy-pilot-header">
                 <div class="pilot-header-text">#{@pilot.name} / #{@data.name}</div>
@@ -1212,8 +1231,8 @@ class Ship
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
                     <span class="info-data info-skill">#{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
-                    <img class="icon-attack" src="images/transparent.png" />
-                    <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
+                    #{attackHTML}
+                    #{energyHTML}
                     <img class="icon-agility" src="images/transparent.png" />
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
                     <img class="icon-hull" src="images/transparent.png" />
@@ -1359,6 +1378,7 @@ class Ship
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
+            energy: @pilot.ship_override?.energy ? @data.energy
             agility: @pilot.ship_override?.agility ? @data.agility
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields

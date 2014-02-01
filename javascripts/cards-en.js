@@ -22,7 +22,11 @@
       "Boost": "Boost",
       "Evade": "Evade",
       "Focus": "Focus",
-      "Target Lock": "Target Lock"
+      "Target Lock": "Target Lock",
+      "Recover": "Recover",
+      "Reinforce": "Reinforce",
+      "Jam": "Jam",
+      "Coordinate": "Coordinate"
     },
     slot: {
       "Astromech": "Astromech",
@@ -33,7 +37,8 @@
       "Missile": "Missile",
       "System": "System",
       "Torpedo": "Torpedo",
-      "Turret": "Turret"
+      "Turret": "Turret",
+      "Energy": "Energy"
     },
     sources: {
       "Core": "Core",
@@ -49,7 +54,8 @@
       "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack",
       "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack",
       "Slave I Expansion Pack": "Slave I Expansion Pack",
-      "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack"
+      "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack",
+      "Rebel Transport Expansion Pack": "Rebel Transport Expansion Pack"
     },
     ui: {
       pilotSelectorPlaceholder: "Select a pilot",
@@ -200,6 +206,16 @@
         hull: 6,
         shields: 0,
         actions: ["Focus", "Target Lock", "Barrel Roll"]
+      },
+      "GR-75 Medium Transport": {
+        name: "GR-75 Medium Transport",
+        faction: "Rebel Alliance",
+        energy: 4,
+        agility: 0,
+        hull: 8,
+        shields: 4,
+        actions: ["Recover", "Reinforce", "Coordinate", "Jam"],
+        huge: true
       }
     };
     exportObj.pilots = {
@@ -865,6 +881,15 @@
         points: 26,
         slots: ["Elite"],
         text: "Enemy ships at Range 1 cannot perform focus or evade actions and cannot spend focus or evade tokens."
+      },
+      "GR-75 Medium Transport": {
+        name: "GR-75 Medium Transport",
+        id: 63,
+        ship: "GR-75 Medium Transport",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 3,
+        points: 30,
+        slots: ["Crew", "Crew", "Energy", "Energy", "Energy"]
       }
     };
     exportObj.upgrades = {
@@ -1307,6 +1332,30 @@
         sources: ["Imperial Aces Expansion Pack"],
         points: 4,
         text: "When attacking, if the defender does not have any focus or evade tokens, you may receive 1 stress token to roll 1 additional attack die.<br /><br />You cannot use this ability if you have any stress tokens."
+      },
+      "Comms Booster": {
+        name: "Comms Booster",
+        id: 50,
+        slot: "Energy",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 4,
+        text: "<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."
+      },
+      "Slicer Tools": {
+        name: "Slicer Tools",
+        id: 51,
+        slot: "Energy",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 7,
+        text: "<strong>Action:</strong> Choose 1 or more ships at Range 1-3 that have a stress token.  For each ship chosen, you may spend 1 energy to cause that ship to suffer 1 damage."
+      },
+      "Shield Projector": {
+        name: "Shield Projector",
+        id: 52,
+        slot: "Energy",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 4,
+        text: "When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."
       }
     };
     exportObj.modifications = {
