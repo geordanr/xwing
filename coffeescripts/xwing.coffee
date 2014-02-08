@@ -1214,6 +1214,8 @@ class Ship
                     """<img class="icon-recover" src="images/transparent.png" />"""
                 when 'Reinforce'
                     """<img class="icon-reinforce" src="images/transparent.png" />"""
+                when 'Cloak'
+                    """<img class="icon-cloak" src="images/transparent.png" />"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
