@@ -118,7 +118,7 @@ ul.squad-list {
 .modal {
   color: black; }
 
-.icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-attack, img.icon-energy, img.icon-agility, img.icon-hull, img.icon-shields, img.icon-boost, img.icon-crew, img.icon-cannon, img.icon-energy-slot, img.icon-coordinate, img.icon-jam, img.icon-recover, img.icon-reinforce {
+.icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-cloak, img.icon-attack, img.icon-energy, img.icon-agility, img.icon-hull, img.icon-shields, img.icon-boost, img.icon-crew, img.icon-cannon, img.icon-energy-slot, img.icon-coordinate, img.icon-jam, img.icon-recover, img.icon-reinforce {
   background-image: url("../images/xwing-icons.png");
   background-repeat: no-repeat; }
 
@@ -219,6 +219,11 @@ img.icon-astromech {
   height: 33px;
   background-position: -163px -31px;
   margin-top: -10px; }
+
+img.icon-cloak {
+  width: 26px;
+  height: 25px;
+  background-position: -186px -68px; }
 
 img.icon-attack {
   width: 32px;

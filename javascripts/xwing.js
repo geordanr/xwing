@@ -1691,6 +1691,8 @@
               return "<img class=\"icon-recover\" src=\"images/transparent.png\" />";
             case 'Reinforce':
               return "<img class=\"icon-reinforce\" src=\"images/transparent.png\" />";
+            case 'Cloak':
+              return "<img class=\"icon-cloak\" src=\"images/transparent.png\" />";
             default:
               return "<span>&nbsp;" + action + "<span>";
           }
@@ -2017,7 +2019,7 @@
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 1440
+                lineno: 1442
               })
             ]);
             __iced_deferrals._fulfill();
@@ -2085,7 +2087,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1470
+                  lineno: 1472
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2105,7 +2107,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 1473
+                    lineno: 1475
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2169,7 +2171,7 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 1498
+            lineno: 1500
           }));
         }
         __iced_deferrals._fulfill();
