@@ -1114,7 +1114,7 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 4
-            points: 99
+            points: 19
             slots: [
                 "Missile",
             ]
@@ -1125,7 +1125,7 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 6
-            points: 99
+            points: 19
             slots: [
                 "Missile",
             ]
@@ -1136,7 +1136,7 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 8
-            points: 99
+            points: 19
             slots: [
                 "Missile",
             ]
