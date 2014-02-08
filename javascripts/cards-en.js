@@ -947,7 +947,7 @@
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 4,
-        points: 99,
+        points: 19,
         slots: ["Missile"]
       },
       "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)": {
@@ -957,7 +957,7 @@
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 6,
-        points: 99,
+        points: 19,
         slots: ["Missile"]
       },
       "Unspoiled PS8 Z-95 Headhunter Pilot": {
@@ -967,7 +967,7 @@
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 8,
-        points: 99,
+        points: 19,
         slots: ["Missile"]
       },
       "Delta Squadron Pilot": {
