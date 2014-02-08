@@ -160,6 +160,7 @@ class exportObj.CardBrowser
                 @sources.push(source) if source not in @sources
 
         sorted_types = @types.sort()
+        sorted_sources = @sources.sort()
 
         @cards_by_type_name = {}
         for type in sorted_types
@@ -170,7 +171,7 @@ class exportObj.CardBrowser
             @cards_by_type_points[type] = ( card for card in @all_cards when card.type == type ).sort byPoints
 
         @cards_by_source = {}
-        for source in @sources
+        for source in sorted_sources
             @cards_by_source[source] = ( card for card in @all_cards when source in card.data.sources ).sort byName
 
 

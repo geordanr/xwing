@@ -56,6 +56,11 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+7 Feb 2014
+----------
+* Add cards revealed in Wave 4 preview.
+* Sources are now properly sorted in the Card Browser.
+
 1 Feb 2014
 ----------
 * Add ships revealed in Rebel Transport preview.
