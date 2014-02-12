@@ -12,11 +12,14 @@ exportObj.loadCards = (language) ->
 
 exportObj.translate = (language, category, what, args...) ->
     translation = exportObj.translations[language][category][what]
-    if translation instanceof Function
-        # pass this function in case we need to do further translation inside the function
-        translation exportObj.translate, language, args...
+    if translation?
+        if translation instanceof Function
+            # pass this function in case we need to do further translation inside the function
+            translation exportObj.translate, language, args...
+        else
+            translation
     else
-        translation
+        what
 
 exportObj.setupTranslationSupport = ->
     $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>

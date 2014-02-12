@@ -1157,7 +1157,7 @@ exportObj.cardLoaders.English = () ->
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
             skill: 3
-            points: 30
+            points: 99
             slots: [
                 "Cannon",
                 "Missile",
@@ -1186,8 +1186,8 @@ exportObj.cardLoaders.English = () ->
                 "Cannon",
                 "Missile",
             ]
-        "Unspoiled PS1 E-Wing Pilot":
-            name: "Unspoiled PS1 E-Wing Pilot"
+        "Knave Squadron Pilot":
+            name: "Knave Squadron Pilot"
             id: 72
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
@@ -1198,8 +1198,8 @@ exportObj.cardLoaders.English = () ->
                 "Torpedo",
                 "Astromech",
             ]
-        "Unspoiled PS3 E-Wing Pilot":
-            name: "Unspoiled PS3 E-Wing Pilot"
+        "Bloodmoon Squadron Pilot":
+            name: "Bloodmoon Squadron Pilot"
             id: 73
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
