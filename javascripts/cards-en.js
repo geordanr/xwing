@@ -2,8 +2,6 @@
   var exportObj,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-
-
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   if (exportObj.codeToLanguage == null) {
@@ -985,7 +983,7 @@
         ship: "TIE Defender",
         sources: ["TIE Defender Expansion Pack"],
         skill: 3,
-        points: 30,
+        points: 99,
         slots: ["Cannon", "Missile"]
       },
       "Unspoiled PS6 TIE Defender Pilot": {
@@ -1008,8 +1006,8 @@
         points: 99,
         slots: ["Cannon", "Missile"]
       },
-      "Unspoiled PS1 E-Wing Pilot": {
-        name: "Unspoiled PS1 E-Wing Pilot",
+      "Knave Squadron Pilot": {
+        name: "Knave Squadron Pilot",
         id: 72,
         ship: "E-Wing",
         sources: ["E-Wing Expansion Pack"],
@@ -1017,8 +1015,8 @@
         points: 27,
         slots: ["System", "Torpedo", "Astromech"]
       },
-      "Unspoiled PS3 E-Wing Pilot": {
-        name: "Unspoiled PS3 E-Wing Pilot",
+      "Bloodmoon Squadron Pilot": {
+        name: "Bloodmoon Squadron Pilot",
         id: 73,
         ship: "E-Wing",
         sources: ["E-Wing Expansion Pack"],

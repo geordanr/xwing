@@ -3,13 +3,11 @@
     X-Wing Card Browser
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
-*/
+ */
 
 (function() {
   var TYPES, byName, byPoints, exportObj,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
-
-
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -66,18 +64,21 @@
     };
 
     CardBrowser.prototype.setupHandlers = function() {
-      var _this = this;
-      this.sort_selector.change(function(e) {
-        return _this.renderList(_this.sort_selector.val());
-      });
-      return $(window).on('xwing:afterLanguageLoad', function(e, language, cb) {
-        if (cb == null) {
-          cb = $.noop;
-        }
-        _this.language = language;
-        _this.prepareData();
-        return _this.renderList(_this.sort_selector.val());
-      });
+      this.sort_selector.change((function(_this) {
+        return function(e) {
+          return _this.renderList(_this.sort_selector.val());
+        };
+      })(this));
+      return $(window).on('xwing:afterLanguageLoad', (function(_this) {
+        return function(e, language, cb) {
+          if (cb == null) {
+            cb = $.noop;
+          }
+          _this.language = language;
+          _this.prepareData();
+          return _this.renderList(_this.sort_selector.val());
+        };
+      })(this));
     };
 
     CardBrowser.prototype.prepareData = function() {
@@ -203,8 +204,7 @@
     };
 
     CardBrowser.prototype.renderList = function(sort_by) {
-      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _o, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
-        _this = this;
+      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _o, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
       if (sort_by == null) {
         sort_by = 'name';
       }
@@ -265,9 +265,11 @@
             this.addCardTo(this.card_selector, card);
           }
       }
-      return this.card_selector.change(function(e) {
-        return _this.renderCard($(_this.card_selector.find(':selected')));
-      });
+      return this.card_selector.change((function(_this) {
+        return function(e) {
+          return _this.renderCard($(_this.card_selector.find(':selected')));
+        };
+      })(this));
     };
 
     CardBrowser.prototype.renderCard = function(card) {
