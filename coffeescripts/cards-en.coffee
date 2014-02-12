@@ -16,6 +16,7 @@ exportObj.translations.English =
         "Reinforce": "Reinforce"
         "Jam": "Jam"
         "Coordinate": "Coordinate"
+        "Cloak": "Cloak"
     slot:
         "Astromech": "Astromech"
         "Bomb": "Bomb"
@@ -43,6 +44,10 @@ exportObj.translations.English =
         "Slave I Expansion Pack": "Slave I Expansion Pack"
         "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack"
         "Rebel Transport Expansion Pack": "Rebel Transport Expansion Pack"
+        "Z-95 Headhunter Expansion Pack": "Z-95 Headhunter Expansion Pack"
+        "TIE Defender Expansion Pack": "TIE Defender Expansion Pack"
+        "E-Wing Expansion Pack": "E-Wing Expansion Pack"
+        "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack"
     ui:
         pilotSelectorPlaceholder: "Select a pilot"
         upgradePlaceholder: (translator, language, slot) ->
@@ -231,6 +236,55 @@ exportObj.cardLoaders.English = () ->
                 "Jam",
             ]
             huge: true
+        "Z-95 Headhunter":
+            name: "Z-95 Headhunter"
+            faction: "Rebel Alliance"
+            attack: 2
+            agility: 2
+            hull: 2
+            shields: 2
+            actions: [
+                "Focus",
+                "Target Lock",
+            ]
+        "TIE Defender":
+            name: "TIE Defender"
+            faction: "Galactic Empire"
+            attack: 3
+            agility: 3
+            hull: 3
+            shields: 3
+            actions: [
+                "Focus",
+                "Target Lock",
+                "Barrel Roll",
+            ]
+        "E-Wing":
+            name: "E-Wing"
+            faction: "Rebel Alliance"
+            attack: 3
+            agility: 3
+            hull: 2
+            shields: 3
+            actions: [
+                "Focus",
+                "Target Lock",
+                "Barrel Roll",
+                "Evade",
+            ]
+        "TIE Phantom":
+            name: "TIE Phantom"
+            faction: "Galactic Empire"
+            attack: 4
+            agility: 2
+            hull: 2
+            shields: 2
+            actions: [
+                "Focus",
+                "Barrel Roll",
+                "Evade",
+                "Cloak",
+            ]
 
     exportObj.pilots =
         "Wedge Antilles":
@@ -1044,6 +1098,193 @@ exportObj.cardLoaders.English = () ->
                 "Energy",
                 "Energy",
             ]
+        "Bandit Squadron Pilot":
+            name: "Bandit Squadron Pilot"
+            id: 64
+            ship: "Z-95 Headhunter"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            skill: 2
+            points: 12
+            slots: [
+                "Missile",
+            ]
+        "Unspoiled PS4 Z-95 Headhunter Pilot":
+            name: "Unspoiled PS4 Z-95 Headhunter Pilot"
+            id: 65
+            ship: "Z-95 Headhunter"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            skill: 4
+            points: 19
+            slots: [
+                "Missile",
+            ]
+        "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)":
+            name: "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)"
+            id: 66
+            unique: true
+            ship: "Z-95 Headhunter"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            skill: 6
+            points: 19
+            slots: [
+                "Missile",
+            ]
+        "Unspoiled PS8 Z-95 Headhunter Pilot":
+            name: "Unspoiled PS8 Z-95 Headhunter Pilot"
+            id: 67
+            unique: true
+            ship: "Z-95 Headhunter"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            skill: 8
+            points: 19
+            slots: [
+                "Missile",
+            ]
+        "Delta Squadron Pilot":
+            name: "Delta Squadron Pilot"
+            id: 68
+            ship: "TIE Defender"
+            sources: [ "TIE Defender Expansion Pack", ]
+            skill: 1
+            points: 30
+            slots: [
+                "Cannon",
+                "Missile",
+            ]
+        "Onyx Squadron Pilot":
+            name: "Onyx Squadron Pilot"
+            id: 69
+            ship: "TIE Defender"
+            sources: [ "TIE Defender Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Cannon",
+                "Missile",
+            ]
+        "Unspoiled PS6 TIE Defender Pilot":
+            name: "Unspoiled PS6 TIE Defender Pilot"
+            id: 70
+            unique: true
+            ship: "TIE Defender"
+            sources: [ "TIE Defender Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Cannon",
+                "Missile",
+            ]
+        "Unspoiled PS8 TIE Defender Pilot":
+            name: "Unspoiled PS8 TIE Defender Pilot"
+            id: 71
+            unique: true
+            ship: "TIE Defender"
+            sources: [ "TIE Defender Expansion Pack", ]
+            skill: 8
+            points: 99
+            slots: [
+                "Cannon",
+                "Missile",
+            ]
+        "Knave Squadron Pilot":
+            name: "Knave Squadron Pilot"
+            id: 72
+            ship: "E-Wing"
+            sources: [ "E-Wing Expansion Pack", ]
+            skill: 1
+            points: 27
+            slots: [
+                "System",
+                "Torpedo",
+                "Astromech",
+            ]
+        "Bloodmoon Squadron Pilot":
+            name: "Bloodmoon Squadron Pilot"
+            id: 73
+            ship: "E-Wing"
+            sources: [ "E-Wing Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "System",
+                "Torpedo",
+                "Astromech",
+            ]
+        "Etahn A'baht":
+            name: "Etahn A'baht"
+            id: 74
+            unique: true
+            ship: "E-Wing"
+            sources: [ "E-Wing Expansion Pack", ]
+            skill: 5
+            points: 32
+            slots: [
+                "Elite",
+                "System",
+                "Torpedo",
+                "Astromech",
+            ]
+            text: """When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
+        "Unspoiled PS8 E-Wing Pilot":
+            name: "Unspoiled PS8 E-Wing Pilot"
+            id: 75
+            unique: true
+            ship: "E-Wing"
+            sources: [ "E-Wing Expansion Pack", ]
+            skill: 8
+            points: 99
+            slots: [
+                "Elite",
+                "System",
+                "Torpedo",
+                "Astromech",
+            ]
+        "Sigma Squadron Pilot":
+            name: "Sigma Squadron Pilot"
+            id: 76
+            ship: "TIE Phantom"
+            sources: [ "TIE Phantom Expansion Pack", ]
+            skill: 3
+            points: 25
+            slots: [
+                "System",
+                "Crew",
+            ]
+        "Unspoiled PS5 TIE Phantom Pilot":
+            name: "Unspoiled PS5 TIE Phantom Pilot"
+            id: 77
+            ship: "TIE Phantom"
+            sources: [ "TIE Phantom Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "System",
+                "Crew",
+            ]
+        "Unspoiled PS6 TIE Phantom Pilot":
+            name: "Unspoiled PS6 TIE Phantom Pilot"
+            id: 78
+            unique: true
+            ship: "TIE Phantom"
+            sources: [ "TIE Phantom Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "System",
+                "Crew",
+            ]
+        "Unspoiled PS7 TIE Phantom Pilot":
+            name: "Unspoiled PS7 TIE Phantom Pilot"
+            id: 79
+            unique: true
+            ship: "TIE Phantom"
+            sources: [ "TIE Phantom Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+                "System",
+                "Crew",
+            ]
 
     exportObj.upgrades =
         "Ion Cannon Turret":
@@ -1219,7 +1460,7 @@ exportObj.cardLoaders.English = () ->
             name: "Ion Cannon"
             id: 22
             slot: "Cannon"
-            sources: [ "Slave I Expansion Pack", "B-Wing Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "B-Wing Expansion Pack", "TIE Defender Expansion Pack" ]
             points: 3
             attack: 3
             range: "1-3"
@@ -1251,7 +1492,7 @@ exportObj.cardLoaders.English = () ->
             name: "Assault Missiles"
             id: 26
             slot: "Missile"
-            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
+            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "Z-95 Headhunter Expansion Pack" ]
             points: 5
             attack: 4
             range: "2-3"
@@ -1335,7 +1576,7 @@ exportObj.cardLoaders.English = () ->
             name: "Fire-Control System"
             id: 36
             slot: "System"
-            sources: [ "B-Wing Expansion Pack", ]
+            sources: [ "B-Wing Expansion Pack", "TIE Phantom Expansion Pack" ]
             points: 2
             text: """After you perform an attack, you may acquire a target lock on the defender."""
         "Blaster Turret":
@@ -1351,7 +1592,7 @@ exportObj.cardLoaders.English = () ->
             name: "Recon Specialist"
             id: 38
             slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", ]
+            sources: [ "HWK-290 Expansion Pack", "TIE Phantom Expansion Pack" ]
             points: 3
             text: """When you perform a focus action, assign 1 additional focus token to your ship."""
         "Saboteur":
@@ -1386,7 +1627,7 @@ exportObj.cardLoaders.English = () ->
             name: "Advanced Sensors"
             id: 43
             slot: "System"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
+            sources: [ "Lambda-Class Shuttle Expansion Pack", "E-Wing Expansion Pack" ]
             points: 3
             text: """Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your "Perform Action" step during this round."""
         "Sensor Jammer":
@@ -1456,6 +1697,74 @@ exportObj.cardLoaders.English = () ->
             sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
             text: """When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."""
+        "Ion Pulse Missiles":
+            name: "Ion Pulse Missiles"
+            id: 53
+            slot: "Missile"
+            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
+            points: 3
+            attack: 3
+            range: """2-3"""
+            text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.<br /><br />If this attack hits, the defender suffers 1 damage and receives 2 ion tokens.  Then cancel <strong>all<strong> dice results."""
+        "Wingman":
+            name: "Wingman"
+            id: 54
+            slot: "Elite"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
+        "Decoy":
+            name: "Decoy"
+            id: 55
+            slot: "Elite"
+            sources: [ "Z-95 Headhunter Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
+        "Outmaneuver":
+            name: "Outmaneuver"
+            id: 56
+            slot: "Elite"
+            sources: [ "TIE Defender Expansion Pack", "E-Wing Expansion Pack" ]
+            points: 99
+            text: """This card has not yet been released."""
+        "Predator":
+            name: "Predator"
+            id: 57
+            slot: "Elite"
+            sources: [ "TIE Defender Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
+        "Flechette Torpedoes":
+            name: "Flechette Torpedoes"
+            id: 58
+            slot: "Torpedo"
+            sources: [ "E-Wing Expansion Pack", ]
+            points: 2
+            attack: 3
+            range: """2-3"""
+            text: """This card has not yet been released."""
+        "R7 Astromech":
+            name: "R7 Astromech"
+            id: 59
+            slot: "Astromech"
+            sources: [ "E-Wing Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
+        "R7-T1":
+            name: "R7-T1"
+            id: 60
+            unique: true
+            slot: "Astromech"
+            sources: [ "E-Wing Expansion Pack", ]
+            points: 3
+            text: """<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
+        "Tactician":
+            name: "Tactician"
+            id: 61
+            slot: "Crew"
+            sources: [ "TIE Phantom Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
 
     exportObj.modifications =
         "Stealth Device":
@@ -1506,6 +1815,26 @@ exportObj.cardLoaders.English = () ->
             text: """Increase your hull value by 1."""
             modifier_func: (stats) ->
                 stats.hull += 1
+        "Munitions Failsafe":
+            name: "Munitions Failsafe"
+            id: 7
+            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
+            points: 99
+            text: """This card has not yet been released."""
+        "Stygium Particle Accelerator":
+            name: "Stygium Particle Accelerator"
+            id: 8
+            sources: [ "TIE Phantom Expansion Pack", ]
+            points: 2
+            text: """This card has not yet been released."""
+        "Advanced Cloaking Device":
+            name: "Advanced Cloaking Device"
+            id: 9
+            sources: [ "TIE Phantom Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been released."""
+            restriction_func: (ship) ->
+                ship.data.name == "TIE Phantom"
 
 
     exportObj.titles =

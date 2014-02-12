@@ -3,13 +3,11 @@
     X-Wing Card Browser
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
-*/
+ */
 
 (function() {
   var TYPES, byName, byPoints, exportObj,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
-
-
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -66,22 +64,25 @@
     };
 
     CardBrowser.prototype.setupHandlers = function() {
-      var _this = this;
-      this.sort_selector.change(function(e) {
-        return _this.renderList(_this.sort_selector.val());
-      });
-      return $(window).on('xwing:afterLanguageLoad', function(e, language, cb) {
-        if (cb == null) {
-          cb = $.noop;
-        }
-        _this.language = language;
-        _this.prepareData();
-        return _this.renderList(_this.sort_selector.val());
-      });
+      this.sort_selector.change((function(_this) {
+        return function(e) {
+          return _this.renderList(_this.sort_selector.val());
+        };
+      })(this));
+      return $(window).on('xwing:afterLanguageLoad', (function(_this) {
+        return function(e, language, cb) {
+          if (cb == null) {
+            cb = $.noop;
+          }
+          _this.language = language;
+          _this.prepareData();
+          return _this.renderList(_this.sort_selector.val());
+        };
+      })(this));
     };
 
     CardBrowser.prototype.prepareData = function() {
-      var card, card_data, card_name, sorted_types, source, type, upgrade_text, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _results;
+      var card, card_data, card_name, sorted_sources, sorted_types, source, type, upgrade_text, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _results;
       this.all_cards = [];
       for (_i = 0, _len = TYPES.length; _i < _len; _i++) {
         type = TYPES[_i];
@@ -149,6 +150,7 @@
         }
       }
       sorted_types = this.types.sort();
+      sorted_sources = this.sources.sort();
       this.cards_by_type_name = {};
       for (_l = 0, _len3 = sorted_types.length; _l < _len3; _l++) {
         type = sorted_types[_l];
@@ -182,16 +184,15 @@
         }).call(this)).sort(byPoints);
       }
       this.cards_by_source = {};
-      _ref3 = this.sources;
       _results = [];
-      for (_n = 0, _len5 = _ref3.length; _n < _len5; _n++) {
-        source = _ref3[_n];
+      for (_n = 0, _len5 = sorted_sources.length; _n < _len5; _n++) {
+        source = sorted_sources[_n];
         _results.push(this.cards_by_source[source] = ((function() {
-          var _len6, _o, _ref4, _results1;
-          _ref4 = this.all_cards;
+          var _len6, _o, _ref3, _results1;
+          _ref3 = this.all_cards;
           _results1 = [];
-          for (_o = 0, _len6 = _ref4.length; _o < _len6; _o++) {
-            card = _ref4[_o];
+          for (_o = 0, _len6 = _ref3.length; _o < _len6; _o++) {
+            card = _ref3[_o];
             if (__indexOf.call(card.data.sources, source) >= 0) {
               _results1.push(card);
             }
@@ -203,8 +204,7 @@
     };
 
     CardBrowser.prototype.renderList = function(sort_by) {
-      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _o, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6,
-        _this = this;
+      var card, optgroup, source, type, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _o, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
       if (sort_by == null) {
         sort_by = 'name';
       }
@@ -265,9 +265,11 @@
             this.addCardTo(this.card_selector, card);
           }
       }
-      return this.card_selector.change(function(e) {
-        return _this.renderCard($(_this.card_selector.find(':selected')));
-      });
+      return this.card_selector.change((function(_this) {
+        return function(e) {
+          return _this.renderCard($(_this.card_selector.find(':selected')));
+        };
+      })(this));
     };
 
     CardBrowser.prototype.renderCard = function(card) {
