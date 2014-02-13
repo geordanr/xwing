@@ -515,7 +515,7 @@
         name: "Saber Squadron Pilot",
         id: 25,
         ship: "TIE Interceptor",
-        sources: ["TIE Interceptor Expansion Pack"],
+        sources: ["TIE Interceptor Expansion Pack", "Imperial Aces Expansion Pack"],
         skill: 4,
         points: 21,
         slots: ["Elite"]
@@ -889,15 +889,6 @@
         points: 24,
         slots: ["Elite"],
         text: "When you reveal a <img class=\"icon-uturn\" alt=\"Koiogran Turn\" src=\"images/transparent.png\" /> maneuver, you may treat the speed of that maneuver as \"1,\" \"3,\" or \"5\"."
-      },
-      "Unspoiled PS5? TIE Interceptor Ace": {
-        name: "Unspoiled PS5? TIE Interceptor Ace",
-        id: 60,
-        ship: "TIE Interceptor",
-        sources: ["Imperial Aces Expansion Pack"],
-        skill: 5,
-        points: 99,
-        slots: []
       },
       "Kir Kanos": {
         name: "Kir Kanos",
