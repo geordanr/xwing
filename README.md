@@ -56,6 +56,10 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+17 Feb 2014
+-----------
+* Add desired/remaining points.
+
 7 Feb 2014
 ----------
 * Add cards revealed in Wave 4 preview.
