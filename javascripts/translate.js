@@ -3,7 +3,7 @@
     X-Wing Squad Builder
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
-*/
+ */
 
 (function() {
   var DFL_LANGUAGE, exportObj,
@@ -25,18 +25,19 @@
       };
 
       _Class.prototype.defer = function(defer_params) {
-        var _this = this;
         ++this.count;
-        return function() {
-          var inner_params, _ref;
-          inner_params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-          if (defer_params != null) {
-            if ((_ref = defer_params.assign_fn) != null) {
-              _ref.apply(null, inner_params);
+        return (function(_this) {
+          return function() {
+            var inner_params, _ref;
+            inner_params = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+            if (defer_params != null) {
+              if ((_ref = defer_params.assign_fn) != null) {
+                _ref.apply(null, inner_params);
+              }
             }
-          }
-          return _this._fulfill();
-        };
+            return _this._fulfill();
+          };
+        })(this);
       };
 
       return _Class;
@@ -63,48 +64,53 @@
     var args, category, language, translation, what;
     language = arguments[0], category = arguments[1], what = arguments[2], args = 4 <= arguments.length ? __slice.call(arguments, 3) : [];
     translation = exportObj.translations[language][category][what];
-    if (translation instanceof Function) {
-      return translation.apply(null, [exportObj.translate, language].concat(__slice.call(args)));
+    if (translation != null) {
+      if (translation instanceof Function) {
+        return translation.apply(null, [exportObj.translate, language].concat(__slice.call(args)));
+      } else {
+        return translation;
+      }
     } else {
-      return translation;
+      return what;
     }
   };
 
   exportObj.setupTranslationSupport = function() {
-    var _this = this;
-    $(exportObj).on('xwing:languageChanged', function(e, language, cb) {
-      var html, selector, ___iced_passed_deferral, __iced_deferrals, __iced_k;
-      __iced_k = __iced_k_noop;
-      ___iced_passed_deferral = iced.findDeferral(arguments);
-      if (cb == null) {
-        cb = $.noop;
-      }
-      if (language in exportObj.translations) {
-        $('.language-placeholder').text(language);
-        (function(__iced_k) {
-          __iced_deferrals = new iced.Deferrals(__iced_k, {
-            parent: ___iced_passed_deferral,
-            filename: "coffeescripts/translate.coffee"
+    $(exportObj).on('xwing:languageChanged', (function(_this) {
+      return function(e, language, cb) {
+        var html, selector, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+        __iced_k = __iced_k_noop;
+        ___iced_passed_deferral = iced.findDeferral(arguments);
+        if (cb == null) {
+          cb = $.noop;
+        }
+        if (language in exportObj.translations) {
+          $('.language-placeholder').text(language);
+          (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral,
+              filename: "coffeescripts/translate.coffee"
+            });
+            $(exportObj).trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
+              lineno: 27
+            }));
+            __iced_deferrals._fulfill();
+          })(function() {
+            var _ref;
+            exportObj.loadCards(language);
+            _ref = exportObj.translations[language].byCSSSelector;
+            for (selector in _ref) {
+              if (!__hasProp.call(_ref, selector)) continue;
+              html = _ref[selector];
+              $(selector).html(html);
+            }
+            return __iced_k($(exportObj).trigger('xwing:afterLanguageLoad', language));
           });
-          $(exportObj).trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-            lineno: 24
-          }));
-          __iced_deferrals._fulfill();
-        })(function() {
-          var _ref;
-          exportObj.loadCards(language);
-          _ref = exportObj.translations[language].byCSSSelector;
-          for (selector in _ref) {
-            if (!__hasProp.call(_ref, selector)) continue;
-            html = _ref[selector];
-            $(selector).html(html);
-          }
-          return __iced_k($(exportObj).trigger('xwing:afterLanguageLoad', language));
-        });
-      } else {
-        return __iced_k();
-      }
-    });
+        } else {
+          return __iced_k();
+        }
+      };
+    })(this));
     exportObj.loadCards(DFL_LANGUAGE);
     return $(exportObj).trigger('xwing:languageChanged', DFL_LANGUAGE);
   };
