@@ -1147,7 +1147,7 @@
       },
       "R2-D2": {
         name: "R2-D2",
-        aka: "R2-D2 (Crew)",
+        aka: ["R2-D2 (Crew)"],
         id: 3,
         unique: true,
         slot: "Astromech",
@@ -1661,7 +1661,7 @@
       },
       "R2-D2 (Crew)": {
         name: "R2-D2 (Crew)",
-        aka: "R2-D2",
+        aka: ["R2-D2"],
         id: 62,
         unique: true,
         slot: "Crew",

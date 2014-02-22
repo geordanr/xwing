@@ -324,3 +324,9 @@ ul.nav li.dropdown ul.dropdown-menu li {
 ul.nav li.dropdown ul.dropdown-menu li:hover {
   color: white;
   background-color: #333333; }
+
+input[type=number] {
+  width: 3em; }
+
+.red {
+  color: red; }
