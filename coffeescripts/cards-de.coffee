@@ -1361,7 +1361,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Du darfst alle Manöver mit Geschwindigkeit 1 und 2 wie grüne Manöver behandeln."""
         "R2-D2":
             name: "R2-D2"
-            aka: "R2-D2 (Crew)"
+            aka: [ "R2-D2 (Crew)", ]
             id: 3
             unique: true
             slot: "Astromech"
@@ -1815,7 +1815,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """This card has not yet been released."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Crew)"
-            aka: "R2-D2"
+            aka: [ "R2-D2", ]
             id: 62
             unique: true
             slot: "Crew"

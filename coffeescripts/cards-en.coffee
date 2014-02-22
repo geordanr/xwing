@@ -1361,7 +1361,7 @@ exportObj.cardLoaders.English = () ->
             text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
         "R2-D2":
             name: "R2-D2"
-            aka: "R2-D2 (Crew)"
+            aka: [ "R2-D2 (Crew)" ]
             id: 3
             unique: true
             slot: "Astromech"
@@ -1815,7 +1815,7 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been released."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Crew)"
-            aka: "R2-D2"
+            aka: [ "R2-D2" ]
             id: 62
             unique: true
             slot: "Crew"
