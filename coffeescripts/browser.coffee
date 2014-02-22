@@ -79,13 +79,13 @@ class exportObj.CardBrowser
                                         <td>Skill</td>
                                         <td class="info-data info-skill"></td>
                                     </tr>
-                                    <tr class="info-attack">
-                                        <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
-                                        <td class="info-data info-attack"></td>
-                                    </tr>
                                     <tr class="info-energy">
                                         <td><img class="icon-energy" src="images/transparent.png" alt="energy" /></td>
                                         <td class="info-data info-energy"></td>
+                                    </tr>
+                                    <tr class="info-attack">
+                                        <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                                        <td class="info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-range">
                                         <td>Range</td>
@@ -253,6 +253,11 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
                 @card_viewer_container.find('tr.info-ship').hide()
                 @card_viewer_container.find('tr.info-skill').hide()
+                if data.energy?
+                    @card_viewer_container.find('tr.info-energy td.info-data').text data.energy
+                    @card_viewer_container.find('tr.info-energy').show()
+                else
+                    @card_viewer_container.find('tr.info-energy').hide()
                 if data.attack?
                     @card_viewer_container.find('tr.info-attack td.info-data').text data.attack
                     @card_viewer_container.find('tr.info-attack').show()
@@ -263,7 +268,6 @@ class exportObj.CardBrowser
                     @card_viewer_container.find('tr.info-range').show()
                 else
                     @card_viewer_container.find('tr.info-range').hide()
-                @card_viewer_container.find('tr.info-energy').hide()
                 @card_viewer_container.find('tr.info-agility').hide()
                 @card_viewer_container.find('tr.info-hull').hide()
                 @card_viewer_container.find('tr.info-shields').hide()

@@ -37,7 +37,9 @@
       "System": "System",
       "Torpedo": "Torpedo",
       "Turret": "Turret",
-      "Energy": "Energy"
+      "Cargo": "Cargo",
+      "Hardpoint": "Hardpoint",
+      "Team": "Team"
     },
     sources: {
       "Core": "Core",
@@ -58,7 +60,8 @@
       "Z-95 Headhunter Expansion Pack": "Z-95 Headhunter Expansion Pack",
       "TIE Defender Expansion Pack": "TIE Defender Expansion Pack",
       "E-Wing Expansion Pack": "E-Wing Expansion Pack",
-      "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack"
+      "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack",
+      "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
     },
     ui: {
       pilotSelectorPlaceholder: "Select a pilot",
@@ -255,6 +258,26 @@
         hull: 2,
         shields: 2,
         actions: ["Focus", "Barrel Roll", "Evade", "Cloak"]
+      },
+      "CR90 Corvette (Fore)": {
+        name: "CR90 Corvette (Fore)",
+        faction: "Rebel Alliance",
+        attack: 4,
+        agility: 0,
+        hull: 8,
+        shields: 5,
+        actions: ["Coordinate", "Target Lock"],
+        huge: true
+      },
+      "CR90 Corvette (Aft)": {
+        name: "CR90 Corvette (Aft)",
+        faction: "Rebel Alliance",
+        energy: 5,
+        agility: 0,
+        hull: 8,
+        shields: 3,
+        actions: ["Reinforce", "Jam"],
+        huge: true
       }
     };
     exportObj.pilots = {
@@ -919,7 +942,7 @@
         sources: ["Rebel Transport Expansion Pack"],
         skill: 3,
         points: 30,
-        slots: ["Crew", "Crew", "Energy", "Energy", "Energy"]
+        slots: ["Crew", "Crew", "Cargo", "Cargo", "Cargo"]
       },
       "Bandit Squadron Pilot": {
         name: "Bandit Squadron Pilot",
@@ -1073,6 +1096,24 @@
         skill: 7,
         points: 99,
         slots: ["System", "Crew"]
+      },
+      "CR90 Corvette (Fore)": {
+        name: "CR90 Corvette (Fore)",
+        id: 80,
+        ship: "CR90 Corvette (Fore)",
+        sources: ["Tantive IV Expansion Pack"],
+        skill: 4,
+        points: 50,
+        slots: ["Crew", "Hardpoint", "Hardpoint", "Team", "Team", "Cargo"]
+      },
+      "CR90 Corvette (Aft)": {
+        name: "CR90 Corvette (Aft)",
+        id: 81,
+        ship: "CR90 Corvette (Aft)",
+        sources: ["Tantive IV Expansion Pack"],
+        skill: 4,
+        points: 40,
+        slots: ["Crew", "Hardpoint", "Team", "Cargo"]
       }
     };
     exportObj.upgrades = {
@@ -1106,6 +1147,7 @@
       },
       "R2-D2": {
         name: "R2-D2",
+        aka: "R2-D2 (Crew)",
         id: 3,
         unique: true,
         slot: "Astromech",
@@ -1519,7 +1561,7 @@
       "Comms Booster": {
         name: "Comms Booster",
         id: 50,
-        slot: "Energy",
+        slot: "Cargo",
         sources: ["Rebel Transport Expansion Pack"],
         points: 4,
         text: "<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."
@@ -1527,7 +1569,7 @@
       "Slicer Tools": {
         name: "Slicer Tools",
         id: 51,
-        slot: "Energy",
+        slot: "Cargo",
         sources: ["Rebel Transport Expansion Pack"],
         points: 7,
         text: "<strong>Action:</strong> Choose 1 or more ships at Range 1-3 that have a stress token.  For each ship chosen, you may spend 1 energy to cause that ship to suffer 1 damage."
@@ -1535,7 +1577,7 @@
       "Shield Projector": {
         name: "Shield Projector",
         id: 52,
-        slot: "Energy",
+        slot: "Cargo",
         sources: ["Rebel Transport Expansion Pack"],
         points: 4,
         text: "When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."
@@ -1616,6 +1658,77 @@
         sources: ["TIE Phantom Expansion Pack"],
         points: 99,
         text: "This card has not yet been released."
+      },
+      "R2-D2 (Crew)": {
+        name: "R2-D2 (Crew)",
+        aka: "R2-D2",
+        id: 62,
+        unique: true,
+        slot: "Crew",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 4,
+        faction: "Rebel Alliance",
+        text: "At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result, randomly flip 1 of your facedown Damage cards faceup and resolve it."
+      },
+      "C-3PO": {
+        name: "C-3PO",
+        unique: true,
+        id: 63,
+        slot: "Crew",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 3,
+        faction: "Rebel Alliance",
+        text: "Once per round, before you roll 1 or more defense dice, you may guess aloud a number of <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> results.  If you roll that many <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> results (before modifying dice), add 1 <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> result."
+      },
+      "Single Turbolasers": {
+        name: "Single Turbolasers",
+        id: 64,
+        slot: "Hardpoint",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 8,
+        energy: 2,
+        attack: 4,
+        range: "3-5",
+        text: "<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result."
+      },
+      "Quad Laser Cannons": {
+        name: "Quad Laser Cannons",
+        id: 65,
+        slot: "Hardpoint",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 6,
+        energy: 2,
+        attack: 3,
+        range: "1-2",
+        text: "<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."
+      },
+      "Tibanna Gas Supplies": {
+        name: "Tibanna Gas Supplies",
+        id: 66,
+        slot: "Cargo",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 4,
+        limited: true,
+        text: "<strong>Energy:</strong> You may discard this card to gain 3 energy."
+      },
+      "Ionization Reactor": {
+        name: "Ionization Reactor",
+        id: 67,
+        slot: "Cargo",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 4,
+        energy: 5,
+        limited: true,
+        text: "<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."
+      },
+      "Engine Booster": {
+        name: "Engine Booster",
+        id: 68,
+        slot: "Cargo",
+        sources: ["Tantive IV Expansion Pack"],
+        points: 3,
+        limited: true,
+        text: "Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (<img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> 1) maneuver.  You cannot use this ability if you would overlap another ship."
       }
     };
     exportObj.modifications = {
@@ -1773,6 +1886,15 @@
         restriction_func: function(ship) {
           return ship.effectiveStats().skill > 4;
         }
+      },
+      "Dodonna's Pride": {
+        name: "Dodonna's Pride",
+        id: 6,
+        unique: true,
+        sources: ["Tantive IV Expansion Pack"],
+        points: 4,
+        ship: "CR90 Corvette (Fore)",
+        text: "When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."
       }
     };
     exportObj.expansions = {};

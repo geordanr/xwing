@@ -459,7 +459,7 @@
       content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\" />\n    <div class=\"span3 hidden-phone info-container\" />\n</div>"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
-      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"Energy\" /></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
+      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"Energy\" /></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
       this.print_list_button = $(this.container.find('button.print-list'));
       return this.container.find('[rel=tooltip]').tooltip();
@@ -1103,6 +1103,12 @@
             this.info_container.find('p.info-text').html((_ref26 = data.text) != null ? _ref26 : '');
             this.info_container.find('tr.info-ship').hide();
             this.info_container.find('tr.info-skill').hide();
+            if (data.energy != null) {
+              this.info_container.find('tr.info-energy td.info-data').text(data.energy);
+              this.info_container.find('tr.info-energy').show();
+            } else {
+              this.info_container.find('tr.info-energy').hide();
+            }
             if (data.attack != null) {
               this.info_container.find('tr.info-attack td.info-data').text(data.attack);
               this.info_container.find('tr.info-attack').show();
@@ -1115,7 +1121,6 @@
             } else {
               this.info_container.find('tr.info-range').hide();
             }
-            this.info_container.find('tr.info-energy').hide();
             this.info_container.find('tr.info-agility').hide();
             this.info_container.find('tr.info-hull').hide();
             this.info_container.find('tr.info-shields').hide();
@@ -1478,7 +1483,7 @@
                 });
                 _this.builder.container.trigger('xwing:claimUnique', [
                   new_pilot, 'Pilot', __iced_deferrals.defer({
-                    lineno: 1057
+                    lineno: 1061
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1527,7 +1532,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1070
+                  lineno: 1074
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1580,14 +1585,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1092
+              lineno: 1096
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1094
+              lineno: 1098
             }));
           }
           _ref1 = _this.modifications;
@@ -1595,7 +1600,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1096
+                lineno: 1100
               }));
             }
           }
@@ -2099,7 +2104,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1442
+                  lineno: 1446
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2175,7 +2180,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1472
+                    lineno: 1476
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2197,7 +2202,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1475
+                      lineno: 1479
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2262,7 +2267,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1500
+              lineno: 1504
             }));
           }
           __iced_deferrals._fulfill();

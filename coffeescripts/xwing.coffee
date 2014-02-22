@@ -474,13 +474,13 @@ class exportObj.SquadBuilder
                             <td>Skill</td>
                             <td class="info-data info-skill"></td>
                         </tr>
-                        <tr class="info-attack">
-                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
                         <tr class="info-energy">
                             <td><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
                             <td class="info-data info-energy"></td>
+                        </tr>
+                        <tr class="info-attack">
+                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                            <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
                             <td>Range</td>
@@ -837,6 +837,11 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-skill').hide()
+                    if data.energy?
+                        @info_container.find('tr.info-energy td.info-data').text data.energy
+                        @info_container.find('tr.info-energy').show()
+                    else
+                        @info_container.find('tr.info-energy').hide()
                     if data.attack?
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
@@ -847,7 +852,6 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-range').show()
                     else
                         @info_container.find('tr.info-range').hide()
-                    @info_container.find('tr.info-energy').hide()
                     @info_container.find('tr.info-agility').hide()
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
