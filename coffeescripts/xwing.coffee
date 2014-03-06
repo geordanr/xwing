@@ -121,7 +121,7 @@ class exportObj.SquadBuilder
         @status_container.addClass 'container-fluid'
         @status_container.append $.trim '''
             <div class="row-fluid">
-                <div class="span4 squad-name-container">
+                <div class="span3 squad-name-container">
                     <div class="display-name">
                         <span class="squad-name"></span>
                         <i class="icon-pencil"></i>
@@ -131,7 +131,9 @@ class exportObj.SquadBuilder
                         <button class="btn save"><i class="icon-edit"></i></button>
                     </div>
                 </div>
-                <div class="span2 points-display-container">Total Points: 0</div>
+                <div class="span3 points-display-container">
+                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>
+                </div>
                 <div class="span6 pull-right button-container">
                     <div class="btn-group pull-right">
 
@@ -284,6 +286,12 @@ class exportObj.SquadBuilder
         @squad_name_save_button = $ @squad_name_container.find('button.save')
         @squad_name_input.closest('div').hide()
         @points_container = $ @status_container.find('div.points-display-container')
+        @total_points_span = $ @points_container.find('.total-points')
+        @desired_points_input = $ @points_container.find('.desired-points')
+        @desired_points_input.change (e) =>
+            @onPointsUpdated $.noop
+        @points_remaining_span = $ @points_container.find('.points-remaining')
+        @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -474,13 +482,13 @@ class exportObj.SquadBuilder
                             <td>Skill</td>
                             <td class="info-data info-skill"></td>
                         </tr>
-                        <tr class="info-attack">
-                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
-                            <td class="info-data info-attack"></td>
-                        </tr>
                         <tr class="info-energy">
                             <td><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
                             <td class="info-data info-energy"></td>
+                        </tr>
+                        <tr class="info-attack">
+                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                            <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
                             <td>Range</td>
@@ -570,7 +578,11 @@ class exportObj.SquadBuilder
         for ship, i in @ships
             ship.validate()
             @total_points += ship.getPoints()
-        @points_container.text "Total Points: #{@total_points}"
+        @total_points_span.text @total_points
+        points_left = parseInt(@desired_points_input.val()) - @total_points
+        @points_remaining_span.text points_left
+        @points_remaining_container.toggleClass 'red', (points_left < 0)
+
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
@@ -837,6 +849,11 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-skill').hide()
+                    if data.energy?
+                        @info_container.find('tr.info-energy td.info-data').text data.energy
+                        @info_container.find('tr.info-energy').show()
+                    else
+                        @info_container.find('tr.info-energy').hide()
                     if data.attack?
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
@@ -847,7 +864,6 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-range').show()
                     else
                         @info_container.find('tr.info-range').hide()
-                    @info_container.find('tr.info-energy').hide()
                     @info_container.find('tr.info-agility').hide()
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()

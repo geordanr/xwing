@@ -56,6 +56,16 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+21 Feb 2014
+-----------
+* Add cards from Tantive IV reveal.
+* Note: Limited is not supported, yet.  Fore and Aft parts of a ship are not linked, nor are required to both exist.
+* Currently R2-D2 can exist both as Crew and as an Astromech. This will be resolved later.
+
+17 Feb 2014
+-----------
+* Add desired/remaining points.
+
 7 Feb 2014
 ----------
 * Add cards revealed in Wave 4 preview.
