@@ -1114,6 +1114,50 @@
         skill: 4,
         points: 40,
         slots: ["Crew", "Hardpoint", "Team", "Cargo"]
+      },
+      "Wes Janson": {
+        name: "Wes Janson",
+        id: 82,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 8,
+        points: 29,
+        slots: ["Elite", "Torpedo", "Astromech"],
+        text: "After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."
+      },
+      "Jek Porkins": {
+        name: "Jek Porkins",
+        id: 83,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 7,
+        points: 26,
+        slots: ["Elite", "Torpedo", "Astromech"],
+        text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result, deal 1 facedown Damage card to this ship."
+      },
+      '"Hobbie" Kilvan': {
+        name: '"Hobbie" Kilvan',
+        id: 84,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 5,
+        points: 25,
+        slots: ["Torpedo", "Astromech"],
+        text: "When you acquire or spend a target lock, you may remove 1 stress token from your ship."
+      },
+      "Tarn Mison": {
+        name: "Tarn Mison",
+        id: 85,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 3,
+        points: 23,
+        slots: ["Torpedo", "Astromech"],
+        text: "When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."
       }
     };
     exportObj.upgrades = {
@@ -1628,11 +1672,11 @@
         name: "Flechette Torpedoes",
         id: 58,
         slot: "Torpedo",
-        sources: ["E-Wing Expansion Pack"],
+        sources: ["E-Wing Expansion Pack", "Rebel Transport Expansion Pack"],
         points: 2,
         attack: 3,
         range: "2-3",
-        text: "This card has not yet been released."
+        text: "<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is \"4\" or lower."
       },
       "R7 Astromech": {
         name: "R7 Astromech",
@@ -1729,6 +1773,40 @@
         points: 3,
         limited: true,
         text: "Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (<img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> 1) maneuver.  You cannot use this ability if you would overlap another ship."
+      },
+      "R3-A2": {
+        name: "R3-A2",
+        id: 69,
+        unique: true,
+        slot: "Astromech",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 2,
+        text: "When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."
+      },
+      "R2-D6": {
+        name: "R2-D6",
+        id: 70,
+        unique: true,
+        slot: "Astromech",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 1,
+        text: "Your upgrade bar gains the <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon or if your pilot skill value is \"2\" or lower.",
+        restriction_func: function(ship) {
+          var stats;
+          stats = ship.effectiveStats();
+          return (stats.skill > 2) && (__indexOf.call(stats.actions, 'Elite') < 0);
+        },
+        modifier_func: function(stats) {
+          if (__indexOf.call(stats.actions, 'Elite') < 0) {
+            return stats.actions.push('Elite');
+          }
+        },
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Elite"
+          }
+        ]
       }
     };
     exportObj.modifications = {
