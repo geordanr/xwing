@@ -1205,6 +1205,7 @@ exportObj.cardLoaders.English = () ->
             skill: 8
             points: 99
             slots: [
+                "Elite",
                 "Cannon",
                 "Missile",
             ]
@@ -1306,6 +1307,7 @@ exportObj.cardLoaders.English = () ->
             skill: 7
             points: 99
             slots: [
+                "Elite",
                 "System",
                 "Crew",
             ]

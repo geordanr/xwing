@@ -1021,7 +1021,7 @@
         sources: ["TIE Defender Expansion Pack"],
         skill: 8,
         points: 99,
-        slots: ["Cannon", "Missile"],
+        slots: ["Elite", "Cannon", "Missile"],
         text: "After you perform an ??? deals at least 1 ??? defender, you ??? token to ???"
       },
       "Knave Squadron Pilot": {
@@ -1100,7 +1100,7 @@
         sources: ["TIE Phantom Expansion Pack"],
         skill: 7,
         points: 99,
-        slots: ["System", "Crew"],
+        slots: ["Elite", "System", "Crew"],
         text: "After you perform ??? that hits ??? 1 focus ???"
       },
       "CR90 Corvette (Fore)": {
