@@ -1127,8 +1127,8 @@ exportObj.cardLoaders.English = () ->
             slots: [
                 "Missile",
             ]
-        "Unspoiled PS4 Z-95 Headhunter Pilot":
-            name: "Unspoiled PS4 Z-95 Headhunter Pilot"
+        "Tala Squadron Pilot":
+            name: "Tala Squadron Pilot"
             id: 65
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
@@ -1137,8 +1137,8 @@ exportObj.cardLoaders.English = () ->
             slots: [
                 "Missile",
             ]
-        "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)":
-            name: "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)"
+        "Lieutenant Blount":
+            name: "Lieutenant Blount"
             id: 66
             unique: true
             ship: "Z-95 Headhunter"
@@ -1148,8 +1148,9 @@ exportObj.cardLoaders.English = () ->
             slots: [
                 "Missile",
             ]
-        "Unspoiled PS8 Z-95 Headhunter Pilot":
-            name: "Unspoiled PS8 Z-95 Headhunter Pilot"
+            text: """When attacking ??? hit by your ??? does not ???"""
+        "Airen Cracken":
+            name: "Airen Cracken"
             id: 67
             unique: true
             ship: "Z-95 Headhunter"
@@ -1159,6 +1160,7 @@ exportObj.cardLoaders.English = () ->
             slots: [
                 "Missile",
             ]
+            text: """This card has not yet been released."""
         "Delta Squadron Pilot":
             name: "Delta Squadron Pilot"
             id: 68
@@ -1181,8 +1183,8 @@ exportObj.cardLoaders.English = () ->
                 "Cannon",
                 "Missile",
             ]
-        "Unspoiled PS6 TIE Defender Pilot":
-            name: "Unspoiled PS6 TIE Defender Pilot"
+        "Colonel Vessery":
+            name: "Colonel Vessery"
             id: 70
             unique: true
             ship: "TIE Defender"
@@ -1193,8 +1195,9 @@ exportObj.cardLoaders.English = () ->
                 "Cannon",
                 "Missile",
             ]
-        "Unspoiled PS8 TIE Defender Pilot":
-            name: "Unspoiled PS8 TIE Defender Pilot"
+            text: """This card has not yet been released."""
+        "Rexler Brath":
+            name: "Rexler Brath"
             id: 71
             unique: true
             ship: "TIE Defender"
@@ -1205,6 +1208,7 @@ exportObj.cardLoaders.English = () ->
                 "Cannon",
                 "Missile",
             ]
+            text: """After you perform an ??? deals at least 1 ??? defender, you ??? token to ???"""
         "Knave Squadron Pilot":
             name: "Knave Squadron Pilot"
             id: 72
@@ -1217,8 +1221,8 @@ exportObj.cardLoaders.English = () ->
                 "Torpedo",
                 "Astromech",
             ]
-        "Bloodmoon Squadron Pilot":
-            name: "Bloodmoon Squadron Pilot"
+        "Blackmoon Squadron Pilot":
+            name: "Blackmoon Squadron Pilot"
             id: 73
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
@@ -1244,8 +1248,8 @@ exportObj.cardLoaders.English = () ->
                 "Astromech",
             ]
             text: """When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
-        "Unspoiled PS8 E-Wing Pilot":
-            name: "Unspoiled PS8 E-Wing Pilot"
+        "Corran Horn":
+            name: "Corran Horn"
             id: 75
             unique: true
             ship: "E-Wing"
@@ -1258,6 +1262,7 @@ exportObj.cardLoaders.English = () ->
                 "Torpedo",
                 "Astromech",
             ]
+            text: """At the start of the ??? you may perform ??? cannot attack ???"""
         "Sigma Squadron Pilot":
             name: "Sigma Squadron Pilot"
             id: 76
@@ -1269,8 +1274,8 @@ exportObj.cardLoaders.English = () ->
                 "System",
                 "Crew",
             ]
-        "Unspoiled PS5 TIE Phantom Pilot":
-            name: "Unspoiled PS5 TIE Phantom Pilot"
+        "Shadow Squadron Pilot":
+            name: "Shadow Squadron Pilot"
             id: 77
             ship: "TIE Phantom"
             sources: [ "TIE Phantom Expansion Pack", ]
@@ -1292,8 +1297,8 @@ exportObj.cardLoaders.English = () ->
                 "System",
                 "Crew",
             ]
-        "Unspoiled PS7 TIE Phantom Pilot":
-            name: "Unspoiled PS7 TIE Phantom Pilot"
+        '"Whisper"':
+            name: '"Whisper"'
             id: 79
             unique: true
             ship: "TIE Phantom"
@@ -1304,6 +1309,7 @@ exportObj.cardLoaders.English = () ->
                 "System",
                 "Crew",
             ]
+            text: """After you perform ??? that hits ??? 1 focus ???"""
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
             id: 80
