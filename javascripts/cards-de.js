@@ -1792,14 +1792,24 @@
         points: 1,
         text: "Your upgrade bar gains the <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon or if your pilot skill value is \"2\" or lower.",
         restriction_func: function(ship) {
-          var stats;
-          stats = ship.effectiveStats();
-          return (stats.skill > 2) && (__indexOf.call(stats.actions, 'Elite') < 0);
-        },
-        modifier_func: function(stats) {
-          if (__indexOf.call(stats.actions, 'Elite') < 0) {
-            return stats.actions.push('Elite');
+          var conferred_addon, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+          if (ship.effectiveStats().skill <= 2 || __indexOf.call(ship.pilot.slots, 'Elite') >= 0) {
+            return false;
           }
+          _ref = ship.upgrades;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            upgrade = _ref[_i];
+            if ((upgrade != null) && ((_ref1 = upgrade.data) != null ? _ref1.name : void 0) !== 'R2-D6') {
+              _ref2 = upgrade.conferredAddons;
+              for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+                conferred_addon = _ref2[_j];
+                if (conferred_addon.slot === 'Elite') {
+                  return false;
+                }
+              }
+            }
+          }
+          return true;
         },
         confersAddons: [
           {

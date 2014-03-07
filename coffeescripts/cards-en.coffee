@@ -1948,19 +1948,13 @@ exportObj.cardLoaders.English = () ->
             points: 1
             text: """Your upgrade bar gains the <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon or if your pilot skill value is "2" or lower."""
             restriction_func: (ship) ->
-                if (ship.effectiveStats().skill <= 2 or 'Elite' in ship.pilot.slots)
-                    console.log "Invalid: skill is #{ship.effectiveStats().skill} and pilot natively has slots:"
-                    console.dir ship.pilot.slots
-                    return false
+                return false if (ship.effectiveStats().skill <= 2 or 'Elite' in ship.pilot.slots)
                 # Otherwise, if there's an Elite slot upgrade, it has to have
                 # been conferred, and it can't be conferred by another upgrade
                 for upgrade in ship.upgrades
                     if upgrade? and upgrade.data?.name != 'R2-D6'
                         for conferred_addon in upgrade.conferredAddons
-                            if conferred_addon.slot == 'Elite'
-                                console.log "Invalid: upgrade #{upgrade.data.name} confers Elite addon"
-                                console.dir upgrade
-                                return false
+                            return false if conferred_addon.slot == 'Elite'
                 true
             confersAddons: [
                 {

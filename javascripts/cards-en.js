@@ -1794,8 +1794,6 @@
         restriction_func: function(ship) {
           var conferred_addon, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
           if (ship.effectiveStats().skill <= 2 || __indexOf.call(ship.pilot.slots, 'Elite') >= 0) {
-            console.log("Invalid: skill is " + (ship.effectiveStats().skill) + " and pilot natively has slots:");
-            console.dir(ship.pilot.slots);
             return false;
           }
           _ref = ship.upgrades;
@@ -1806,8 +1804,6 @@
               for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
                 conferred_addon = _ref2[_j];
                 if (conferred_addon.slot === 'Elite') {
-                  console.log("Invalid: upgrade " + upgrade.data.name + " confers Elite addon");
-                  console.dir(upgrade);
                   return false;
                 }
               }
