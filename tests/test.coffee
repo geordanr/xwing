@@ -40,7 +40,7 @@ casper.test.begin "Basic functionality", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
     .then ->
@@ -58,7 +58,7 @@ casper.test.begin "Add/remove torpedo upgrade", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
@@ -81,7 +81,7 @@ casper.test.begin "Add/remove astromech upgrade", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
@@ -104,7 +104,7 @@ casper.test.begin "Add/remove modification", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
@@ -127,7 +127,7 @@ casper.test.begin "Multiple upgrades", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
@@ -138,6 +138,43 @@ casper.test.begin "Multiple upgrades", (test) ->
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 31
         test.assertSelectorHasText '#rebel-builder .total-points', 31
+
+    .run ->
+        test.done()
+
+casper.test.begin "Add/remove ships", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Gold Squadron Pilot')
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Blue Squadron Pilot')
+
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 61
+
+    .then ->
+        @click '#rebel-builder .ship:nth-of-type(2) .remove-pilot'
+        @waitForSelectorTextChange '#rebel-builder .total-points'
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 43
+
+    .then ->
+        @click '#rebel-builder .ship:nth-of-type(2) .remove-pilot'
+        @waitForSelectorTextChange '#rebel-builder .total-points'
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 21
+
+    .then ->
+        @click '#rebel-builder .ship:first-of-type .remove-pilot'
+        @waitForSelectorTextChange '#rebel-builder .total-points'
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 0
+
+    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 21
 
     .run ->
         test.done()
