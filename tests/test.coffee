@@ -14,6 +14,10 @@ selectNthMatch = (select2_selector, n, search_text) =>
         @sendKeys 'input.select2-input', search_text
         @mouseEvent 'mouseup', ".select2-match:nth-of-type(#{n})"
 
+deselect = (select2_selector) ->
+    casper.then ->
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-search-choice-close"
+
 casper.test.begin "Page comes up", (test) ->
     casper.start "index.html", ->
         @waitUntilVisible '.tab-content'
@@ -46,11 +50,94 @@ casper.test.begin "Basic functionality", (test) ->
         test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(2) .select2-choice', 'No Astromech Upgrade'
         test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(3) .select2-choice', 'No Modification'
         test.assertDoesntExist '.ship-xwing0 .addon-container .select2-container:nth-of-type(4)'
+    .run ->
+        test.done()
+
+casper.test.begin "Add/remove torpedo upgrade", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    .then ->
+        @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
     selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 25
         test.assertSelectorHasText '#rebel-builder .total-points', 25
+
+    deselect('.addon-container .select2-container:first-of-type')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
+        test.assertSelectorHasText '#rebel-builder .total-points', 21
+        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:first-of-type .select2-choice', 'No Torpedo Upgrade'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Add/remove astromech upgrade", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    .then ->
+        @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
+
+    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 23
+        test.assertSelectorHasText '#rebel-builder .total-points', 23
+
+    deselect('.addon-container .select2-container:nth-of-type(2)')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
+        test.assertSelectorHasText '#rebel-builder .total-points', 21
+        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(2) .select2-choice', 'No Astromech Upgrade'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Add/remove modification", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    .then ->
+        @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
+
+    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 25
+        test.assertSelectorHasText '#rebel-builder .total-points', 25
+
+    deselect('.addon-container .select2-container:nth-of-type(3)')
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
+        test.assertSelectorHasText '#rebel-builder .total-points', 21
+        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(3) .select2-choice', 'No Modification'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Multiple upgrades", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    selectFirstMatch('#rebel-builder .pilot-selector-container .select2-container:first-of-type', 'Rookie Pilot')
+    .then ->
+        @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
+
+    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
+    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
+    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
+
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 31
+        test.assertSelectorHasText '#rebel-builder .total-points', 31
 
     .run ->
         test.done()
