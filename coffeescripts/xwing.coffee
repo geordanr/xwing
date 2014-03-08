@@ -755,9 +755,9 @@ class exportObj.SquadBuilder
                 children: result_pilots_by_ship[ship].sort exportObj.sortHelper
         results
 
-    getAvailableUpgradesIncluding: (slot, include_upgrade, term='') ->
+    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction))
+        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
         # Re-add selected upgrade
         if include_upgrade? and include_upgrade.unique? and @matcher(include_upgrade.name, term)
             unclaimed_upgrades.push include_upgrade
@@ -908,7 +908,7 @@ class exportObj.SquadBuilder
                     addon = unused_addons[idx - 1]
                     switch addon.type
                         when 'Upgrade'
-                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
                             addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
                         when 'Title'
                             available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
@@ -1596,7 +1596,7 @@ class exportObj.Upgrade extends GenericAddon
             query: (query) =>
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, query.term)
+                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, query.term)
 
 class exportObj.Modification extends GenericAddon
     constructor: (args) ->

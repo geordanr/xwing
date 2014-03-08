@@ -854,7 +854,7 @@
       return results;
     };
 
-    SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, term) {
+    SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, term) {
       var unclaimed_upgrades, upgrade, upgrade_name;
       if (term == null) {
         term = '';
@@ -865,7 +865,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction)) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship))) {
             _results.push(upgrade);
           }
         }
@@ -1188,7 +1188,7 @@
               case 'Upgrade':
                 available_upgrades = (function() {
                   var _l, _len3, _ref3, _results;
-                  _ref3 = this.getAvailableUpgradesIncluding(addon.slot);
+                  _ref3 = this.getAvailableUpgradesIncluding(addon.slot, null, addon.ship);
                   _results = [];
                   for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
                     upgrade = _ref3[_l];
@@ -2382,7 +2382,7 @@
           return function(query) {
             return query.callback({
               more: false,
-              results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, query.term)
+              results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, query.term)
             });
           };
         })(this)

@@ -953,8 +953,8 @@
         points: 12,
         slots: ["Missile"]
       },
-      "Unspoiled PS4 Z-95 Headhunter Pilot": {
-        name: "Unspoiled PS4 Z-95 Headhunter Pilot",
+      "Tala Squadron Pilot": {
+        name: "Tala Squadron Pilot",
         id: 65,
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
@@ -962,25 +962,27 @@
         points: 19,
         slots: ["Missile"]
       },
-      "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)": {
-        name: "Unspoiled PS6 Z-95 Headhunter Pilot (Lieutenant ???)",
+      "Lieutenant Blount": {
+        name: "Lieutenant Blount",
         id: 66,
         unique: true,
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 6,
         points: 19,
-        slots: ["Missile"]
+        slots: ["Missile"],
+        text: "When attacking ??? hit by your ??? does not ???"
       },
-      "Unspoiled PS8 Z-95 Headhunter Pilot": {
-        name: "Unspoiled PS8 Z-95 Headhunter Pilot",
+      "Airen Cracken": {
+        name: "Airen Cracken",
         id: 67,
         unique: true,
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 8,
         points: 19,
-        slots: ["Missile"]
+        slots: ["Missile"],
+        text: "This card has not yet been released."
       },
       "Delta Squadron Pilot": {
         name: "Delta Squadron Pilot",
@@ -1000,25 +1002,27 @@
         points: 99,
         slots: ["Cannon", "Missile"]
       },
-      "Unspoiled PS6 TIE Defender Pilot": {
-        name: "Unspoiled PS6 TIE Defender Pilot",
+      "Colonel Vessery": {
+        name: "Colonel Vessery",
         id: 70,
         unique: true,
         ship: "TIE Defender",
         sources: ["TIE Defender Expansion Pack"],
         skill: 6,
         points: 99,
-        slots: ["Cannon", "Missile"]
+        slots: ["Cannon", "Missile"],
+        text: "This card has not yet been released."
       },
-      "Unspoiled PS8 TIE Defender Pilot": {
-        name: "Unspoiled PS8 TIE Defender Pilot",
+      "Rexler Brath": {
+        name: "Rexler Brath",
         id: 71,
         unique: true,
         ship: "TIE Defender",
         sources: ["TIE Defender Expansion Pack"],
         skill: 8,
         points: 99,
-        slots: ["Cannon", "Missile"]
+        slots: ["Elite", "Cannon", "Missile"],
+        text: "After you perform an ??? deals at least 1 ??? defender, you ??? token to ???"
       },
       "Knave Squadron Pilot": {
         name: "Knave Squadron Pilot",
@@ -1029,8 +1033,8 @@
         points: 27,
         slots: ["System", "Torpedo", "Astromech"]
       },
-      "Bloodmoon Squadron Pilot": {
-        name: "Bloodmoon Squadron Pilot",
+      "Blackmoon Squadron Pilot": {
+        name: "Blackmoon Squadron Pilot",
         id: 73,
         ship: "E-Wing",
         sources: ["E-Wing Expansion Pack"],
@@ -1049,15 +1053,16 @@
         slots: ["Elite", "System", "Torpedo", "Astromech"],
         text: "When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
       },
-      "Unspoiled PS8 E-Wing Pilot": {
-        name: "Unspoiled PS8 E-Wing Pilot",
+      "Corran Horn": {
+        name: "Corran Horn",
         id: 75,
         unique: true,
         ship: "E-Wing",
         sources: ["E-Wing Expansion Pack"],
         skill: 8,
         points: 99,
-        slots: ["Elite", "System", "Torpedo", "Astromech"]
+        slots: ["Elite", "System", "Torpedo", "Astromech"],
+        text: "At the start of the ??? you may perform ??? cannot attack ???"
       },
       "Sigma Squadron Pilot": {
         name: "Sigma Squadron Pilot",
@@ -1068,8 +1073,8 @@
         points: 25,
         slots: ["System", "Crew"]
       },
-      "Unspoiled PS5 TIE Phantom Pilot": {
-        name: "Unspoiled PS5 TIE Phantom Pilot",
+      "Shadow Squadron Pilot": {
+        name: "Shadow Squadron Pilot",
         id: 77,
         ship: "TIE Phantom",
         sources: ["TIE Phantom Expansion Pack"],
@@ -1087,15 +1092,16 @@
         points: 99,
         slots: ["System", "Crew"]
       },
-      "Unspoiled PS7 TIE Phantom Pilot": {
-        name: "Unspoiled PS7 TIE Phantom Pilot",
+      '"Whisper"': {
+        name: '"Whisper"',
         id: 79,
         unique: true,
         ship: "TIE Phantom",
         sources: ["TIE Phantom Expansion Pack"],
         skill: 7,
         points: 99,
-        slots: ["System", "Crew"]
+        slots: ["Elite", "System", "Crew"],
+        text: "After you perform ??? that hits ??? 1 focus ???"
       },
       "CR90 Corvette (Fore)": {
         name: "CR90 Corvette (Fore)",
@@ -1114,6 +1120,50 @@
         skill: 4,
         points: 40,
         slots: ["Crew", "Hardpoint", "Team", "Cargo"]
+      },
+      "Wes Janson": {
+        name: "Wes Janson",
+        id: 82,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 8,
+        points: 29,
+        slots: ["Elite", "Torpedo", "Astromech"],
+        text: "After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."
+      },
+      "Jek Porkins": {
+        name: "Jek Porkins",
+        id: 83,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 7,
+        points: 26,
+        slots: ["Elite", "Torpedo", "Astromech"],
+        text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result, deal 1 facedown Damage card to this ship."
+      },
+      '"Hobbie" Kilvan': {
+        name: '"Hobbie" Kilvan',
+        id: 84,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 5,
+        points: 25,
+        slots: ["Torpedo", "Astromech"],
+        text: "When you acquire or spend a target lock, you may remove 1 stress token from your ship."
+      },
+      "Tarn Mison": {
+        name: "Tarn Mison",
+        id: 85,
+        unique: true,
+        ship: "X-Wing",
+        sources: ["Rebel Transport Expansion Pack"],
+        skill: 3,
+        points: 23,
+        slots: ["Torpedo", "Astromech"],
+        text: "When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."
       }
     };
     exportObj.upgrades = {
@@ -1628,11 +1678,11 @@
         name: "Flechette Torpedoes",
         id: 58,
         slot: "Torpedo",
-        sources: ["E-Wing Expansion Pack"],
+        sources: ["E-Wing Expansion Pack", "Rebel Transport Expansion Pack"],
         points: 2,
         attack: 3,
         range: "2-3",
-        text: "This card has not yet been released."
+        text: "<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is \"4\" or lower."
       },
       "R7 Astromech": {
         name: "R7 Astromech",
@@ -1729,6 +1779,50 @@
         points: 3,
         limited: true,
         text: "Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (<img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> 1) maneuver.  You cannot use this ability if you would overlap another ship."
+      },
+      "R3-A2": {
+        name: "R3-A2",
+        id: 69,
+        unique: true,
+        slot: "Astromech",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 2,
+        text: "When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."
+      },
+      "R2-D6": {
+        name: "R2-D6",
+        id: 70,
+        unique: true,
+        slot: "Astromech",
+        sources: ["Rebel Transport Expansion Pack"],
+        points: 1,
+        text: "Your upgrade bar gains the <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon or if your pilot skill value is \"2\" or lower.",
+        restriction_func: function(ship) {
+          var conferred_addon, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+          if (ship.effectiveStats().skill <= 2 || __indexOf.call(ship.pilot.slots, 'Elite') >= 0) {
+            return false;
+          }
+          _ref = ship.upgrades;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            upgrade = _ref[_i];
+            if ((upgrade != null) && ((_ref1 = upgrade.data) != null ? _ref1.name : void 0) !== 'R2-D6') {
+              _ref2 = upgrade.conferredAddons;
+              for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+                conferred_addon = _ref2[_j];
+                if (conferred_addon.slot === 'Elite') {
+                  return false;
+                }
+              }
+            }
+          }
+          return true;
+        },
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Elite"
+          }
+        ]
       }
     };
     exportObj.modifications = {
