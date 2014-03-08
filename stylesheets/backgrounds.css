@@ -62,3 +62,18 @@
   background-image: url("../images/lambda_shuttle.png");
   background-repeat: no-repeat;
   background-position: -5px -65px; }
+
+.ship-cr90corvettefore0 {
+  background-image: url("../images/cr90_corvette_fore.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px; }
+
+.ship-cr90corvetteaft0 {
+  background-image: url("../images/cr90_corvette_aft.png");
+  background-repeat: no-repeat;
+  background-position: 0px -12px; }
+
+.ship-gr75mediumtransport0 {
+  background-image: url("../images/gr_75_medium_transport.png");
+  background-repeat: no-repeat;
+  background-position: 0px -30px; }
