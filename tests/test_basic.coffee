@@ -36,6 +36,20 @@ casper.test.begin "Basic functionality", (test) ->
     .run ->
         test.done()
 
+casper.test.begin "Basic empire functionality", (test) ->
+    common.waitForStartup('#rebel-builder')
+    common.openEmpireBuilder()
+
+    common.addShip('#empire-builder', 'Academy Pilot')
+    common.assertShipHasPoints(test, '#empire-builder', 1, 12)
+    common.assertTotalPoints(test, '#empire-builder', 12)
+    .then ->
+        test.assertSelectorHasText "#empire-builder #{common.selectorForUpgradeIndex 1, 1} .select2-choice", 'No Modification'
+        test.assertDoesntExist "#empire-builder #{common.selectorForUpgradeIndex 1, 2}"
+
+    .run ->
+        test.done()
+
 casper.test.begin "Add/remove torpedo upgrade", (test) ->
     common.waitForStartup('#rebel-builder')
 

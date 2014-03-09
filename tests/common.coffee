@@ -79,6 +79,14 @@ exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
 exports.removeUpgrade = (builder_selector, ship_idx, upgrade_idx) ->
     exports.deselect("#{builder_selector} .ship:nth-of-type(#{ship_idx}) .addon-container .select2-container:nth-of-type(#{upgrade_idx})")
 
+exports.openRebelBuilder = ->
+    casper.then ->
+        @click '#rebelTab'
+
+exports.openEmpireBuilder = ->
+    casper.then ->
+        @click '#empireTab'
+
 # Selectors
 
 exports.selectorForShipIndex = (ship_idx) ->
