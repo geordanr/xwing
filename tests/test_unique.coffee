@@ -81,3 +81,57 @@ casper.test.begin "Unnamed pilot and upgrade non-uniqueness", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Uniqueness across pilot and crew", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'X-Wing'
+            pilot: 'Luke Skywalker'
+            upgrades: [
+                null
+                null
+                null
+            ]
+        }
+        {
+            ship: 'YT-1300'
+            pilot: 'Chewbacca'
+            upgrades: [
+                null
+                null
+                null
+                null
+                null
+                null
+            ]
+        }
+        {
+            ship: 'YT-1300'
+            pilot: 'Lando Calrissian'
+            upgrades: [
+                null
+                null
+                null
+                null
+                null
+                null
+            ]
+        }
+    ])
+
+    # Can't put Luke or Chewie on Chewie's ship
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(3)", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(4)", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(3)", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(4)", 'Chewbacca')
+
+    # Can't put Luke or Chewie on Lando's ship
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(3)", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(4)", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(3)", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(4)", 'Chewbacca')
+
+    .run ->
+        test.done()
