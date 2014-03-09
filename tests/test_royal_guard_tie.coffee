@@ -4,7 +4,7 @@ common = require './common'
 common.setup()
 
 
-casper.test.begin "Build from rebel list specification", (test) ->
+casper.test.begin "Royal Guard TIE title", (test) ->
     common.waitForStartup('#rebel-builder')
     common.openEmpireBuilder()
 
