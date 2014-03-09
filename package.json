@@ -4,8 +4,14 @@
     "version": "0.0.1",
     "private": "true",
     "dependencies": {
+        "casperjs": "*",
         "coffee-script": "1.7.x",
         "iced-coffee-script": "1.7.x",
+        "phantomjs": "*",
         "uglify-js": "2.4.x"
+    },
+    "scripts": {
+        "noisy-test": "casperjs --verbose --log-level=debug test tests/test*.coffee",
+        "test": "casperjs test tests/test*.coffee"
     }
 }
