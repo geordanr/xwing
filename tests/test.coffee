@@ -1,22 +1,8 @@
-_dfl_onWaitTimeout = casper.options.onWaitTimeout
-casper.options.onWaitTimeout = ->
-    casper.capture "casperjs.png"
-    _dfl_onWaitTimeout()
+require = patchRequire global.require
+common = require './common'
 
-selectFirstMatch = (select2_selector, search_text) =>
-    selectNthMatch select2_selector, 1, search_text
+common.setup()
 
-selectNthMatch = (select2_selector, n, search_text) =>
-    casper.then ->
-        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
-        @waitUntilVisible 'input.select2-input'
-    .then ->
-        @sendKeys 'input.select2-input', search_text
-        @mouseEvent 'mouseup', ".select2-match:nth-of-type(#{n})"
-
-deselect = (select2_selector) ->
-    casper.then ->
-        @mouseEvent 'mousedown', "#{select2_selector} .select2-search-choice-close"
 
 casper.test.begin "Page comes up", (test) ->
     casper.start "index.html", ->
@@ -40,7 +26,7 @@ casper.test.begin "Basic functionality", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
     .then ->
@@ -58,16 +44,16 @@ casper.test.begin "Add/remove torpedo upgrade", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 25
         test.assertSelectorHasText '#rebel-builder .total-points', 25
 
-    deselect('.addon-container .select2-container:first-of-type')
+    common.deselect('.addon-container .select2-container:first-of-type')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
         test.assertSelectorHasText '#rebel-builder .total-points', 21
@@ -81,16 +67,16 @@ casper.test.begin "Add/remove astromech upgrade", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 23
         test.assertSelectorHasText '#rebel-builder .total-points', 23
 
-    deselect('.addon-container .select2-container:nth-of-type(2)')
+    common.deselect('.addon-container .select2-container:nth-of-type(2)')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
         test.assertSelectorHasText '#rebel-builder .total-points', 21
@@ -104,16 +90,16 @@ casper.test.begin "Add/remove modification", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 25
         test.assertSelectorHasText '#rebel-builder .total-points', 25
 
-    deselect('.addon-container .select2-container:nth-of-type(3)')
+    common.deselect('.addon-container .select2-container:nth-of-type(3)')
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 21
         test.assertSelectorHasText '#rebel-builder .total-points', 21
@@ -127,13 +113,13 @@ casper.test.begin "Multiple upgrades", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         @waitUntilVisible '#rebel-builder .ship-xwing0 .points-display-container'
 
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
-    selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:first-of-type', 'Proton Torpedoes')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(2)', 'R5-K6')
+    common.selectFirstMatch('.ship-xwing0 .addon-container .select2-container:nth-of-type(3)', 'Engine Upgrade')
 
     .then ->
         test.assertSelectorHasText '#rebel-builder .ship-xwing0 .points-display-container', 31
@@ -147,9 +133,9 @@ casper.test.begin "Add/remove ships", (test) ->
         # Wait for pilot selector to become visible
         @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Gold Squadron Pilot')
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Blue Squadron Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Gold Squadron Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Blue Squadron Pilot')
 
     .then ->
         test.assertSelectorHasText '#rebel-builder .total-points', 61
@@ -172,9 +158,40 @@ casper.test.begin "Add/remove ships", (test) ->
     .then ->
         test.assertSelectorHasText '#rebel-builder .total-points', 0
 
-    selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
+    common.selectFirstMatch('#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container', 'Rookie Pilot')
     .then ->
         test.assertSelectorHasText '#rebel-builder .total-points', 21
+
+    .run ->
+        test.done()
+
+casper.test.begin "Build from list specification", (test) ->
+    casper.start "index.html", ->
+        # Wait for pilot selector to become visible
+        @waitUntilVisible '#rebel-builder .pilot-selector-container .select2-container .select2-choice:first-child'
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'X-Wing'
+            pilot: 'Rookie Pilot'
+            upgrades: [
+                null
+                'R2 Astromech'
+                null
+            ]
+        }
+        {
+            ship: 'A-Wing'
+            pilot: 'Prototype Pilot'
+            upgrades: [
+                'Concussion Missiles'
+                null
+            ]
+        }
+    ])
+
+    .then ->
+        test.assertSelectorHasText '#rebel-builder .total-points', 43
 
     .run ->
         test.done()
