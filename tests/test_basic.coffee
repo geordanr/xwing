@@ -28,10 +28,11 @@ casper.test.begin "Basic functionality", (test) ->
     common.assertShipHasPoints(test, '#rebel-builder', 1, 21)
     common.assertTotalPoints(test, '#rebel-builder', 21)
     .then ->
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:first-of-type .select2-choice', 'No Torpedo Upgrade'
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(2) .select2-choice', 'No Astromech Upgrade'
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(3) .select2-choice', 'No Modification'
-        test.assertDoesntExist '.ship-xwing0 .addon-container .select2-container:nth-of-type(4)'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 1} .select2-choice", 'No Torpedo Upgrade'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 2} .select2-choice", 'No Astromech Upgrade'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 3} .select2-choice", 'No Modification'
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 4}"
+
     .run ->
         test.done()
 
@@ -47,7 +48,7 @@ casper.test.begin "Add/remove torpedo upgrade", (test) ->
     common.assertShipHasPoints(test, '#rebel-builder', 1, 21)
     common.assertTotalPoints(test, '#rebel-builder', 21)
     .then ->
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:first-of-type .select2-choice', 'No Torpedo Upgrade'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 1} .select2-choice", 'No Torpedo Upgrade'
 
     .run ->
         test.done()
@@ -64,7 +65,7 @@ casper.test.begin "Add/remove astromech upgrade", (test) ->
     common.assertShipHasPoints(test, '#rebel-builder', 1, 21)
     common.assertTotalPoints(test, '#rebel-builder', 21)
     .then ->
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(2) .select2-choice', 'No Astromech Upgrade'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 2} .select2-choice", 'No Astromech Upgrade'
 
     .run ->
         test.done()
@@ -81,7 +82,7 @@ casper.test.begin "Add/remove modification", (test) ->
     common.assertShipHasPoints(test, '#rebel-builder', 1, 21)
     common.assertTotalPoints(test, '#rebel-builder', 21)
     .then ->
-        test.assertSelectorHasText '.ship-xwing0 .addon-container .select2-container:nth-of-type(3) .select2-choice', 'No Modification'
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 3} .select2-choice", 'No Modification'
 
     .run ->
         test.done()

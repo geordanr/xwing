@@ -66,7 +66,7 @@ exports.waitForStartup = (builder_selector) ->
         @waitUntilVisible "#{builder_selector} .pilot-selector-container .select2-container .select2-choice:first-child"
 
 exports.addShip = (builder_selector, pilot) ->
-    exports.selectFirstMatch("#{builder_selector} .ship:last-of-type .pilot-selector-container .select2-container", pilot)
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .pilot-selector-container .select2-container", pilot)
 
 exports.removeShip = (builder_selector, ship_idx) ->
     casper.then ->
@@ -78,3 +78,13 @@ exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
 
 exports.removeUpgrade = (builder_selector, ship_idx, upgrade_idx) ->
     exports.deselect("#{builder_selector} .ship:nth-of-type(#{ship_idx}) .addon-container .select2-container:nth-of-type(#{upgrade_idx})")
+
+# Selectors
+
+exports.selectorForShipIndex = (ship_idx) ->
+    ".ship:nth-of-type(#{ship_idx})"
+
+exports.selectorForLastShip = ".ship:last-of-type"
+
+exports.selectorForUpgradeIndex = (ship_idx, upgrade_idx) ->
+    "#{exports.selectorForShipIndex ship_idx} .addon-container .select2-container:nth-of-type(#{upgrade_idx})"

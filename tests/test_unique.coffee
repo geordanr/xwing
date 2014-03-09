@@ -19,7 +19,7 @@ casper.test.begin "Named pilot uniqueness", (test) ->
         }
     ])
 
-    common.assertNoMatch(test, "#rebel-builder .ship:last-of-type .pilot-selector-container .select2-container", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} .pilot-selector-container .select2-container", 'Luke Skywalker')
 
     .run ->
         test.done()
@@ -122,16 +122,16 @@ casper.test.begin "Uniqueness across pilot and crew", (test) ->
     ])
 
     # Can't put Luke or Chewie on Chewie's ship
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(3)", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(4)", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(3)", 'Chewbacca')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(2) .addon-container .select2-container:nth-of-type(4)", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", 'Chewbacca')
 
     # Can't put Luke or Chewie on Lando's ship
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(3)", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(4)", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(3)", 'Chewbacca')
-    common.assertNoMatch(test, "#rebel-builder .ship:nth-of-type(3) .addon-container .select2-container:nth-of-type(4)", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 3, 3}", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 3, 4}", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 3, 3}", 'Chewbacca')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 3, 4}", 'Chewbacca')
 
     .run ->
         test.done()
