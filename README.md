@@ -1,6 +1,8 @@
 (Yet Another) X-Wing Miniatures Squad Builder
 =============================================
 
+[![Build Status](https://travis-ci.org/geordanr/xwing.png)](https://travis-ci.org/geordanr/xwing)
+
 What?
 -----
 This is a squad builder for Fantasy Flight Games' X-Wing Miniatures
