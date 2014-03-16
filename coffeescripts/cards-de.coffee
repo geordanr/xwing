@@ -1058,7 +1058,7 @@ exportObj.cardLoaders.Deutsch = () ->
             skill: 5
             points: 23
             slots: [ ]
-            text: """When performing a barrel roll action, you may receive 1 stress token to use the (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> 1) or (<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" /> 1) template instead of the (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) template."""
+            text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> 1) oder (<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" /> 1) Manöverschablone anstatt der (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) Manöverschablone zu benutzen."""
         "Royal Guard Pilot":
             name: "Royal Guard Pilot"
             id: 58
@@ -1080,7 +1080,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slots: [
                 "Elite",
             ]
-            text: """When you reveal a <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> maneuver, you may treat the speed of that maneuver as "1," "3," or "5"."""
+            text: """Immer wenn du ein <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> Manöver aufdeckst, kannst du das Manöver mit einer Geschwindigkeit von "1," "3," oder "5" ausführen."""
         "Kir Kanos":
             name: "Kir Kanos"
             id: 61
@@ -1090,7 +1090,7 @@ exportObj.cardLoaders.Deutsch = () ->
             skill: 6
             points: 24
             slots: [ ]
-            text: """When attacking at Range 2-3, you may spend 1 evade token to add 1 <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result to your roll."""
+            text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du einen Ausweichmarker ausgeben, um 1 <img class="icon-hit" alt="Hit" src="images/transparent.png" /> zu deinem Wurf hinzuzufügen."""
         "Carnor Jax":
             name: "Carnor Jax"
             id: 62
@@ -1102,7 +1102,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slots: [
                 "Elite",
             ]
-            text: """Enemy ships at Range 1 cannot perform focus or evade actions and cannot spend focus or evade tokens."""
+            text: """Feindliche Schiffe in Reichweite 1 können weder Fokussierung und Ausweichen Aktionen durchführen noch Ausweichmarker und Fokusmarker ausgeben."""
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
             id: 63
@@ -1786,7 +1786,7 @@ exportObj.cardLoaders.Deutsch = () ->
             slot: "Elite"
             sources: [ "Imperial Aces Expansion Pack", ]
             points: 4
-            text: """When attacking, if the defender does not have any focus or evade tokens, you may receive 1 stress token to roll 1 additional attack die.<br /><br />You cannot use this ability if you have any stress tokens."""
+            text: """Wenn du angreifst und der Verteidiger keine Fokusmarker oder Ausweichmarker hat, kannst du einen Stressmarker nehmen, um einen zusätzlichen Angriffswürfel zu erhalten.<br /><br />Du kannst diese Fähigkeit nicht nutzen, wenn du einen Stressmarker hast."""
         "Comms Booster":
             name: "Comms Booster"
             id: 50
@@ -2005,20 +2005,20 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, das zur Überschneidung mit deinem Schiff führt, wirf 1 Angriffswürfel. Bei <img class="icon-hit" alt="Hit" src="images/transparent.png" /> oder <img class="icon-crit" alt="Crit" src="images/transparent.png" /> nimmt das feindliche Schiff 1 Schaden."""
             restriction_func: (ship) ->
                 ship.data.large ? false
-        "Targeting Computer":
-            name: "Targeting Computer"
+        "Zielerfassungssystem":
+            name: "Zielerfassungssystem"
             id: 5
             sources: [ "Imperial Aces Expansion Pack", ]
             points: 2
-            text: """Your action bar gains the <img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" /> action icon."""
+            text: """Deine Aufwertungsleiste erhält das <img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />-Symbol."""
             modifier_func: (stats) ->
                 stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
-        "Hull Upgrade":
-            name: "Hull Upgrade"
+        "Verbesserte Hülle":
+            name: "Verbesserte Hülle"
             id: 6
             sources: [ "Imperial Aces Expansion Pack", ]
             points: 3
-            text: """Increase your hull value by 1."""
+            text: """Erhöhe deinen Hüllenwert um 1."""
             modifier_func: (stats) ->
                 stats.hull += 1
         "Munitions Failsafe":
@@ -2085,13 +2085,13 @@ exportObj.cardLoaders.Deutsch = () ->
             points: 3
             ship: "Lambda-Class Shuttle"
             text: """Wenn du eine Zielerfassung durchführst, darfst du ein beliebiges feindliches Schiff auf der Spielfläche als Ziel erfassen."""
-        "Royal Guard TIE":
-            name: "Royal Guard TIE"
+        "TIE der Roten Garde":
+            name: "TIE der Roten Garde"
             id: 5
             sources: [ "Imperial Aces Expansion Pack", ]
             points: 0
             ship: "TIE Abfangjäger"
-            text: """You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
+            text: """Du kannst bis zu 2 verschiedene Modifikationen verwenden (statt einer).<br /><br />Du kannst diese Karte nicht verwenden, wenn der Pilotenwert "4" oder kleiner ist."""
             confersAddons: [
                 {
                     type: exportObj.Modification,
