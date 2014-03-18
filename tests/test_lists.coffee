@@ -1,4 +1,3 @@
-require = patchRequire global.require
 common = require './common'
 
 common.setup()

@@ -1,3 +1,6 @@
+require = patchRequire global.require
+selectXPath = require('casper').selectXPath
+
 exports.setup = ->
     _dfl_onWaitTimeout = casper.options.onWaitTimeout
     casper.options.onWaitTimeout = ->
@@ -64,6 +67,8 @@ exports.waitForStartup = (builder_selector) ->
     casper.start "index.html", ->
         # Wait for pilot selector to become visible
         @waitUntilVisible "#{builder_selector} .pilot-selector-container .select2-container .select2-choice:first-child"
+    .then ->
+        exports.selectLanguage('English')
 
 exports.addShip = (builder_selector, pilot) ->
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .pilot-selector-container .select2-container", pilot)
@@ -86,6 +91,14 @@ exports.openRebelBuilder = ->
 exports.openEmpireBuilder = ->
     casper.then ->
         @click '#empireTab'
+
+exports.selectLanguage = (language) ->
+    casper.then ->
+        @click('.language-picker a')
+    .waitUntilVisible '.dropdown-menu', ->
+        @click(selectXPath("""//li[contains(@class, 'language-picker')]//li[contains(., '#{language}')]"""))
+    .waitFor ->
+        @fetchText('.language-placeholder') == language
 
 # Selectors
 
