@@ -137,14 +137,58 @@ casper.test.begin "Chardaan Refit", (test) ->
             upgrades: [
             ]
         }
+        {
+            ship: 'Z-95'
+            pilot: 'Bandit Squadron Pilot'
+            upgrades: [
+            ]
+        }
     ])
 
     # A-Wing only
     common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 2}", 'Chardaan Refit')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 3, 1}", 'Chardaan Refit')
     common.addUpgrade('#rebel-builder', 1, 1, 'Chardaan Refit')
 
     # Negative points
-    common.assertTotalPoints(test, '#rebel-builder', 59)
+    common.assertTotalPoints(test, '#rebel-builder', 71)
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    # Empire ships shouldn't have it
+    common.openEmpireBuilder()
+
+    common.createList('#empire-builder', [
+        {
+            ship: 'TIE Bomber'
+            pilot: 'Gamma Squadron Pilot'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'Firespray-31'
+            pilot: 'Bounty Hunter'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'TIE Advanced'
+            pilot: 'Tempest Squadron Pilot'
+            upgrades: [
+            ]
+        }
+    ])
+
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Chardaan Refit')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}", 'Chardaan Refit')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 2, 4}", 'Chardaan Refit')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 3, 1}", 'Chardaan Refit')
+
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
 
     .run ->
         test.done()
