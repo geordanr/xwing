@@ -58,6 +58,11 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+18 Mar 2014
+-----------
+* Add cards from Rebel Aces reveal.
+* German translations for Imperial Aces provided by @failgod-marcus.
+
 21 Feb 2014
 -----------
 * Add cards from Tantive IV reveal.

@@ -192,3 +192,43 @@ casper.test.begin "Chardaan Refit", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "B-Wing/E", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'B-Wing'
+            pilot: 'Blue Squadron Pilot'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'X-Wing'
+            pilot: 'Red Squadron Pilot'
+            upgrades: [
+            ]
+        }
+    ])
+
+    # B-Wing only
+    .then ->
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 5} .select2-choice", 'No Title', "Blue Squadron Pilot has title field"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", "X-Wings have no titles (yet)"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad doesn't have crew by default"
+
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E')
+    common.addUpgrade('#rebel-builder', 1, 7, 'Gunner')
+    #common.assertTotalPoints(test, '#rebel-builder', 50) # don't know how many points
+
+    # Removing the title removes the crew slow
+    common.removeUpgrade('#rebel-builder', 1, 5)
+    .then ->
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad no longer has a crew slot"
+    common.assertTotalPoints(test, '#rebel-builder', 45)
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    .run ->
+        test.done()

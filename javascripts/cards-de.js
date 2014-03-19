@@ -2094,6 +2094,20 @@
             slot: "Elite"
           }
         ]
+      },
+      "B-Wing/E": {
+        name: "B-Wing/E",
+        id: 8,
+        sources: ["Rebel Aces Expansion Pack"],
+        points: 99,
+        text: "Your upgrade bar gains the <img class=\"icon-crew\" alt=\"Crew\" src=\"images/transparent.png\" /> upgrade icon.",
+        ship: "B-Wing",
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Crew"
+          }
+        ]
       }
     };
     exportObj.expansions = {};
