@@ -51,6 +51,7 @@ exportObj.translations.Deutsch =
         "E-Wing Expansion Pack": "E-Wing Expansion Pack"
         "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack"
         "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
+        "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
     ui:
         pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->
@@ -671,7 +672,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Grün-Staffel"
             id: 31
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
+            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 3
             points: 19
             slots: [
@@ -682,7 +683,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Testpilot"
             id: 32
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
+            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 1
             points: 17
             slots: [
@@ -855,7 +856,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Dagger-Staffel"
             id: 43
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
+            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 4
             points: 24
             slots: [
@@ -868,7 +869,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Blauen Staffel"
             id: 44
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
+            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 2
             points: 22
             slots: [
@@ -1312,7 +1313,6 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Crew",
             ]
             text: """After you perform ??? that hits ??? 1 focus ???"""
-
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
             id: 80
@@ -1395,6 +1395,62 @@ exportObj.cardLoaders.Deutsch = () ->
                 "Astromech",
             ]
             text: """When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."""
+        "Jake Farrell":
+            name: "Jake Farrell"
+            id: 86
+            unique: true
+            ship: "A-Wing"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            skill: 7
+            points: 24
+            slots: [
+                "Elite",
+                "Missile",
+            ]
+            text: """After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."""
+        "Unspoiled PS5 A-Wing Pilot":
+            name: "Unspoiled PS5 A-Wing Pilot"
+            id: 87
+            unique: true
+            ship: "A-Wing"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Missile",
+            ]
+            text: """This card has not yet been revealed."""
+        "Keyan Farlander":
+            name: "Keyan Farlander"
+            id: 88
+            unique: true
+            ship: "B-Wing"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            skill: 7
+            points: 29
+            slots: [
+                "Elite",
+                "System",
+                "Cannon",
+                "Torpedo",
+                "Torpedo",
+            ]
+            text: """When attacking, you may remove 1 stress token to change all of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" />results."""
+        "Unspoiled PS5 B-Wing Pilot":
+            name: "Unspoiled PS5 B-Wing Pilot"
+            id: 89
+            unique: true
+            ship: "A-Wing"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "System",
+                "Cannon",
+                "Torpedo",
+                "Torpedo",
+            ]
+            text: """This card has not yet been revealed."""
 
     exportObj.upgrades =
         "Ionengeschütz":
@@ -1971,6 +2027,46 @@ exportObj.cardLoaders.Deutsch = () ->
                     slot: "Elite"
                 },
             ]
+        "Enhanced Scopes":
+            name: "Enhanced Scopes"
+            id: 71
+            slot: "System"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 1
+            text: """During the Activation phase, treat your pilot skill value as "0"."""
+        "Chardaan Refit":
+            name: "Chardaan Refit"
+            id: 72
+            slot: "Missile"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: -2
+            text: """This card has a negative squad point cost."""
+            ship: "A-Wing"
+        "Prototype Rockets?":
+            name: "Prototype Rockets?"
+            id: 73
+            slot: "Missile"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been revealed."""
+        "Kyle Katarn":
+            name: "Kyle Katarn"
+            id: 74
+            unique: true
+            slot: "Crew"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 99
+            text: """After you receive a stress token from your ship, you may assign a focus token to ???"""
+            faction: "Rebel Alliance"
+        "Jan Ors":
+            name: "Jan Ors"
+            id: 75
+            unique: true
+            slot: "Crew"
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 99
+            text: """This card has not yet been revealed."""
+            faction: "Rebel Alliance"
 
     exportObj.modifications =
         "Tarnvorrichtung":
@@ -2039,8 +2135,7 @@ exportObj.cardLoaders.Deutsch = () ->
             sources: [ "TIE Phantom Expansion Pack", ]
             points: 99
             text: """This card has not yet been released."""
-            restriction_func: (ship) ->
-                ship.data.name == "TIE Phantom"
+            ship: "TIE Phantom"
 
 
     exportObj.titles =
@@ -2107,6 +2202,21 @@ exportObj.cardLoaders.Deutsch = () ->
             points: 4
             ship: "CR90 Corvette (Fore)"
             text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+        "Prototype Veteran":
+            name: "Prototype Veteran"
+            id: 7
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 0
+            ship: "A-Wing"
+            text: """Your upgrade bar gains 1 <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon.<br /><br />You cannot equip 2 of the same <img class="icon-elite" alt="Elite" src="images/transparent.png" /> Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
+            restriction_func: (ship) ->
+                ship.effectiveStats().skill > 1
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Elite"
+                },
+            ]
 
     exportObj.expansions = {}
 

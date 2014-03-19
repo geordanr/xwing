@@ -757,15 +757,23 @@ class exportObj.SquadBuilder
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
+        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
+
+        # Special case #2 :(
+        current_upgrade_forcibly_removed = false
+        if ship?.title?.data?.name == 'Prototype Veteran'
+            for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
+                unclaimed_upgrades.removeItem equipped_upgrade
+                current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
+
         # Re-add selected upgrade
-        if include_upgrade? and include_upgrade.unique? and @matcher(include_upgrade.name, term)
+        if include_upgrade? and ((include_upgrade.unique? and @matcher(include_upgrade.name, term)) or current_upgrade_forcibly_removed)
             unclaimed_upgrades.push include_upgrade
         ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up

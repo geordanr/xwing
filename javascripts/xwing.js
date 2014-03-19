@@ -855,7 +855,7 @@
     };
 
     SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, term) {
-      var unclaimed_upgrades, upgrade, upgrade_name;
+      var current_upgrade_forcibly_removed, equipped_upgrade, unclaimed_upgrades, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
       if (term == null) {
         term = '';
       }
@@ -865,20 +865,42 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship))) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship))) {
             _results.push(upgrade);
           }
         }
         return _results;
       }).call(this);
-      if ((include_upgrade != null) && (include_upgrade.unique != null) && this.matcher(include_upgrade.name, term)) {
+      current_upgrade_forcibly_removed = false;
+      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.name : void 0 : void 0 : void 0) === 'Prototype Veteran') {
+        _ref2 = (function() {
+          var _j, _len, _ref2, _results;
+          _ref2 = ship.upgrades;
+          _results = [];
+          for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
+            upgrade = _ref2[_j];
+            if ((upgrade != null ? upgrade.data : void 0) != null) {
+              _results.push(upgrade.data);
+            }
+          }
+          return _results;
+        })();
+        for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+          equipped_upgrade = _ref2[_i];
+          unclaimed_upgrades.removeItem(equipped_upgrade);
+          if (equipped_upgrade === include_upgrade) {
+            current_upgrade_forcibly_removed = true;
+          }
+        }
+      }
+      if ((include_upgrade != null) && (((include_upgrade.unique != null) && this.matcher(include_upgrade.name, term)) || current_upgrade_forcibly_removed)) {
         unclaimed_upgrades.push(include_upgrade);
       }
       return ((function() {
-        var _i, _len, _results;
+        var _j, _len1, _results;
         _results = [];
-        for (_i = 0, _len = unclaimed_upgrades.length; _i < _len; _i++) {
-          upgrade = unclaimed_upgrades[_i];
+        for (_j = 0, _len1 = unclaimed_upgrades.length; _j < _len1; _j++) {
+          upgrade = unclaimed_upgrades[_j];
           _results.push({
             id: upgrade.id,
             text: "" + upgrade.name + " (" + upgrade.points + ")",
@@ -900,7 +922,7 @@
         _results = [];
         for (modification_name in _ref) {
           modification = _ref[modification_name];
-          if (this.matcher(modification_name, term) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
+          if (this.matcher(modification_name, term) && ((modification.ship == null) || modification.ship === ship.data.name) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
             _results.push(modification);
           }
         }
@@ -1495,7 +1517,7 @@
                 });
                 _this.builder.container.trigger('xwing:claimUnique', [
                   new_pilot, 'Pilot', __iced_deferrals.defer({
-                    lineno: 1073
+                    lineno: 1081
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -1544,7 +1566,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1086
+                  lineno: 1094
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1597,14 +1619,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1108
+              lineno: 1116
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1110
+              lineno: 1118
             }));
           }
           _ref1 = _this.modifications;
@@ -1612,7 +1634,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1112
+                lineno: 1120
               }));
             }
           }
@@ -2116,7 +2138,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1458
+                  lineno: 1466
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2192,7 +2214,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1488
+                    lineno: 1496
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2214,7 +2236,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1491
+                      lineno: 1499
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2279,7 +2301,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1516
+              lineno: 1524
             }));
           }
           __iced_deferrals._fulfill();

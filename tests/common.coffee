@@ -61,7 +61,7 @@ exports.assertTotalPoints = (test, builder_selector, points) ->
 # So the first ship has a ship_idx of 1.
 exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
     casper.then ->
-        test.assertSelectorHasText "#{builder_selector} .ship:nth-of-type(#{ship_idx}) .points-display-container", points, "Ship in slot #{ship_idx} is worth #{points} points"
+        test.assertSelectorHasText "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .points-display-container", points, "Ship in slot #{ship_idx} is worth #{points} points"
 
 exports.waitForStartup = (builder_selector) ->
     casper.start "index.html", ->
@@ -75,14 +75,14 @@ exports.addShip = (builder_selector, pilot) ->
 
 exports.removeShip = (builder_selector, ship_idx) ->
     casper.then ->
-        @click "#{builder_selector} .ship:nth-of-type(#{ship_idx}) .remove-pilot"
+        @click "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .remove-pilot"
         @waitForSelectorTextChange "#{builder_selector} .total-points"
 
 exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
-    exports.selectFirstMatch("#{builder_selector} .ship:nth-of-type(#{ship_idx}) .addon-container .select2-container:nth-of-type(#{upgrade_idx})", upgrade)
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}", upgrade)
 
 exports.removeUpgrade = (builder_selector, ship_idx, upgrade_idx) ->
-    exports.deselect("#{builder_selector} .ship:nth-of-type(#{ship_idx}) .addon-container .select2-container:nth-of-type(#{upgrade_idx})")
+    exports.deselect("#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}")
 
 exports.openRebelBuilder = ->
     casper.then ->
