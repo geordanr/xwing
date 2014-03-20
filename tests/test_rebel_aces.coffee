@@ -66,7 +66,7 @@ casper.test.begin "Kyle and Jan crew uniqueness", (test) ->
     .run ->
         test.done()
 
-casper.test.begin "Prototype Veteran", (test) ->
+casper.test.begin "A-Wing Test Pilot", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.createList('#rebel-builder', [
@@ -98,8 +98,8 @@ casper.test.begin "Prototype Veteran", (test) ->
         test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
 
     # Equippable on PS1+ only (no Prototype)
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'Prototype Veteran')
-    common.addUpgrade('#rebel-builder', 2, 3, 'Prototype Veteran')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'A-Wing Test Pilot')
+    common.addUpgrade('#rebel-builder', 2, 3, 'A-Wing Test Pilot')
     common.assertTotalPoints(test, '#rebel-builder', 59)
 
     # Can add two different elites

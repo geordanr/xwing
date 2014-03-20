@@ -872,7 +872,7 @@
         return _results;
       }).call(this);
       current_upgrade_forcibly_removed = false;
-      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.name : void 0 : void 0 : void 0) === 'Prototype Veteran') {
+      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.name : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
         _ref2 = (function() {
           var _j, _len, _ref2, _results;
           _ref2 = ship.upgrades;
@@ -1432,7 +1432,7 @@
     };
 
     Ship.prototype.copyFrom = function(other) {
-      var i, other_conferred_addon, other_conferred_addons, other_upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      var i, other_conferred_addon, other_conferred_addons, other_upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
       if (other === this) {
         throw "Cannot copy from self";
       }
@@ -1442,10 +1442,10 @@
       this.setPilotById(other.pilot.id);
       other_conferred_addons = [];
       if ((other.title != null) && other.title.conferredAddons.length > 0) {
-        other_conferred_addons.concat(other.title.conferred_addons);
+        other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons);
       }
       if (((_ref = other.modifications[0]) != null ? _ref.data : void 0) != null) {
-        other_conferred_addons.concat(other.modifications[0].conferred_addons);
+        other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons);
       }
       _ref1 = other.upgrades;
       for (i = _i = 0, _len = _ref1.length; _i < _len; i = ++_i) {
@@ -1464,16 +1464,16 @@
         _ref4 = other.title.conferredAddons;
         for (i = _j = 0, _len1 = _ref4.length; _j < _len1; i = ++_j) {
           other_conferred_addon = _ref4[i];
-          if (!other_conferred_addon.data.unique) {
+          if (!((_ref5 = other_conferred_addon.data) != null ? _ref5.unique : void 0)) {
             this.title.conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }
       }
       if ((other.modifications[0] != null) && other.modifications[0].conferredAddons.length > 0) {
-        _ref5 = other.modifications[0].conferredAddons;
-        for (i = _k = 0, _len2 = _ref5.length; _k < _len2; i = ++_k) {
-          other_conferred_addon = _ref5[i];
-          if (!other_conferred_addon.data.unique) {
+        _ref6 = other.modifications[0].conferredAddons;
+        for (i = _k = 0, _len2 = _ref6.length; _k < _len2; i = ++_k) {
+          other_conferred_addon = _ref6[i];
+          if (!((_ref7 = other_conferred_addon.data) != null ? _ref7.unique : void 0)) {
             this.modifications[0].conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }

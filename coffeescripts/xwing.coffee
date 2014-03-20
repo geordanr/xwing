@@ -761,7 +761,7 @@ class exportObj.SquadBuilder
 
         # Special case #2 :(
         current_upgrade_forcibly_removed = false
-        if ship?.title?.data?.name == 'Prototype Veteran'
+        if ship?.title?.data?.name == 'A-Wing Test Pilot'
             for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
                 unclaimed_upgrades.removeItem equipped_upgrade
                 current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
@@ -1036,8 +1036,8 @@ class Ship
 
         # set up non-conferred addons
         other_conferred_addons = []
-        other_conferred_addons.concat other.title.conferred_addons if other.title? and other.title.conferredAddons.length > 0
-        other_conferred_addons.concat other.modifications[0].conferred_addons if other.modifications[0]?.data?
+        other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons) if other.title? and other.title.conferredAddons.length > 0
+        other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
         #console.log "Looking for conferred upgrades..."
         for other_upgrade, i in other.upgrades
             #console.log "Examining upgrade #{other_upgrade}"
@@ -1054,11 +1054,11 @@ class Ship
         if other.title? and other.title.conferredAddons.length > 0
             #console.log "Other ship title #{other.title} conferrs addons"
             for other_conferred_addon, i in other.title.conferredAddons
-                @title.conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data.unique
+                @title.conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
         if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
-                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data.unique
+                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
         @builder.current_squad.dirty = true

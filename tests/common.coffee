@@ -75,8 +75,13 @@ exports.addShip = (builder_selector, pilot) ->
 
 exports.removeShip = (builder_selector, ship_idx) ->
     casper.then ->
-        @click "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .remove-pilot"
+        @click "#{builder_selector} #{exports.selectorForRemoveShip(ship_idx)}"
         @waitForSelectorTextChange "#{builder_selector} .total-points"
+
+exports.cloneShip = (builder_selector, ship_idx) ->
+    casper.then ->
+        @click "#{builder_selector} #{exports.selectorForCloneShip(ship_idx)}"
+        #@waitForSelectorTextChange "#{builder_selector} .total-points"
 
 exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}", upgrade)
@@ -109,3 +114,9 @@ exports.selectorForLastShip = ".ship:last-of-type"
 
 exports.selectorForUpgradeIndex = (ship_idx, upgrade_idx) ->
     "#{exports.selectorForShipIndex ship_idx} .addon-container .select2-container:nth-of-type(#{upgrade_idx})"
+
+exports.selectorForRemoveShip = (ship_idx) ->
+    "#{exports.selectorForShipIndex(ship_idx)} .remove-pilot"
+
+exports.selectorForCloneShip = (ship_idx) ->
+    "#{exports.selectorForShipIndex(ship_idx)} .copy-pilot"
