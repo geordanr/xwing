@@ -1440,7 +1440,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Unspoiled PS5 B-Wing Pilot"
             id: 89
             unique: true
-            ship: "A-Wing"
+            ship: "B-Wing"
             sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
             points: 99
@@ -2042,8 +2042,8 @@ exportObj.cardLoaders.Deutsch = () ->
             points: -2
             text: """This card has a negative squad point cost."""
             ship: "A-Wing"
-        "Prototype Rockets?":
-            name: "Prototype Rockets?"
+        "Proton Rockets":
+            name: "Proton Rockets"
             id: 73
             slot: "Missile"
             sources: [ "Rebel Aces Expansion Pack", ]
@@ -2202,8 +2202,8 @@ exportObj.cardLoaders.Deutsch = () ->
             points: 4
             ship: "CR90 Corvette (Fore)"
             text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
-        "Prototype Veteran":
-            name: "Prototype Veteran"
+        "A-Wing Test Pilot":
+            name: "A-Wing Test Pilot"
             id: 7
             sources: [ "Rebel Aces Expansion Pack", ]
             points: 0
