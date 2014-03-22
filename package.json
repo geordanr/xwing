@@ -11,6 +11,7 @@
         "uglify-js": "2.4.x"
     },
     "scripts": {
+        "before_script": "cake build",
         "noisy-test": "casperjs --verbose --log-level=debug test tests/test*.coffee",
         "test": "casperjs test tests/test*.coffee"
     }
