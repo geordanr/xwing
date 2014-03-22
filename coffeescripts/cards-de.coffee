@@ -44,7 +44,7 @@ exportObj.translations.Deutsch =
         "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
         "Lambda-Class Shuttle Expansion Pack": "Lambda Class Shuttle Erweiterung"
         "Slave I Expansion Pack": "Slave I Erweiterung"
-        "Imperial Aces Expansion Pack": "Imperial Aces Erweiterung"
+        "Imperial Aces Expansion Pack": "Fliegerasse des Imperiums Erweiterung"
         "Rebel Transport Expansion Pack": "Rebel Transport Expansion Pack"
         "Z-95 Headhunter Expansion Pack": "Z-95 Headhunter Expansion Pack"
         "TIE Defender Expansion Pack": "TIE Defender Expansion Pack"
