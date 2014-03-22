@@ -14,8 +14,7 @@ casper.test.begin "Page comes up", (test) ->
             test.assertSelectorHasText nav_sel, tab_text
 
         test.assertSelectorHasText '.squad-name-container .squad-name', 'Unnamed Squadron'
-
-        test.assertSelectorHasText '.pilot-selector-container', 'Select a pilot'
+        test.assertSelectorHasText '.ship-selector-container', 'Select a ship'
 
     .run ->
         test.done()
@@ -23,7 +22,7 @@ casper.test.begin "Page comes up", (test) ->
 casper.test.begin "Basic functionality", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.assertShipHasPoints(test, '#rebel-builder', 1, 21)
     common.assertTotalPoints(test, '#rebel-builder', 21)
     .then ->
@@ -39,7 +38,7 @@ casper.test.begin "Basic empire functionality", (test) ->
     common.waitForStartup('#rebel-builder')
     common.openEmpireBuilder()
 
-    common.addShip('#empire-builder', 'Academy Pilot')
+    common.addShip('#empire-builder', 'TIE Fighter', 'Academy Pilot')
     common.assertShipHasPoints(test, '#empire-builder', 1, 12)
     common.assertTotalPoints(test, '#empire-builder', 12)
     .then ->
@@ -52,7 +51,7 @@ casper.test.begin "Basic empire functionality", (test) ->
 casper.test.begin "Add/remove torpedo upgrade", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.addUpgrade('#rebel-builder', 1, 1, 'Proton Torpedoes')
     common.assertShipHasPoints(test, '#rebel-builder', 1, 25)
     common.assertTotalPoints(test, '#rebel-builder', 25)
@@ -69,7 +68,7 @@ casper.test.begin "Add/remove torpedo upgrade", (test) ->
 casper.test.begin "Add/remove astromech upgrade", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.addUpgrade('#rebel-builder', 1, 2, 'R5-K6')
     common.assertShipHasPoints(test, '#rebel-builder', 1, 23)
     common.assertTotalPoints(test, '#rebel-builder', 23)
@@ -86,7 +85,7 @@ casper.test.begin "Add/remove astromech upgrade", (test) ->
 casper.test.begin "Add/remove modification", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.addUpgrade('#rebel-builder', 1, 3, 'Engine Upgrade')
     common.assertShipHasPoints(test, '#rebel-builder', 1, 25)
     common.assertTotalPoints(test, '#rebel-builder', 25)
@@ -103,7 +102,7 @@ casper.test.begin "Add/remove modification", (test) ->
 casper.test.begin "Multiple upgrades", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.addUpgrade('#rebel-builder', 1, 1, 'Proton Torpedoes')
     common.addUpgrade('#rebel-builder', 1, 2, 'R5-K6')
     common.addUpgrade('#rebel-builder', 1, 3, 'Engine Upgrade')
@@ -116,9 +115,9 @@ casper.test.begin "Multiple upgrades", (test) ->
 casper.test.begin "Add/remove ships", (test) ->
     common.waitForStartup('#rebel-builder')
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
-    common.addShip('#rebel-builder', 'Gold Squadron Pilot')
-    common.addShip('#rebel-builder', 'Blue Squadron Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'Y-Wing', 'Gold Squadron Pilot')
+    common.addShip('#rebel-builder', 'B-Wing', 'Blue Squadron Pilot')
 
     common.assertTotalPoints(test, '#rebel-builder', 61)
 
@@ -131,7 +130,7 @@ casper.test.begin "Add/remove ships", (test) ->
     common.removeShip('#rebel-builder', 1)
     common.assertTotalPoints(test, '#rebel-builder', 0)
 
-    common.addShip('#rebel-builder', 'Rookie Pilot')
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
     common.assertTotalPoints(test, '#rebel-builder', 21)
 
     .run ->

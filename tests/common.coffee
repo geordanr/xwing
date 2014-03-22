@@ -48,7 +48,7 @@ exports.createList = (builder_selector, list) =>
     # ]
     casper.then ->
         for ship, ship_idx in list
-            exports.addShip builder_selector, ship.pilot
+            exports.addShip builder_selector, ship.ship, ship.pilot
             for upgrade, upgrade_idx in ship.upgrades
                 if upgrade?
                     exports.addUpgrade builder_selector, ship_idx + 1, upgrade_idx + 1, upgrade
@@ -66,11 +66,12 @@ exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
 exports.waitForStartup = (builder_selector) ->
     casper.start "index.html", ->
         # Wait for pilot selector to become visible
-        @waitUntilVisible "#{builder_selector} .pilot-selector-container .select2-container .select2-choice:first-child"
+        @waitUntilVisible "#{builder_selector} .ship-selector-container .select2-container .select2-choice:first-child"
     .then ->
         exports.selectLanguage('English')
 
-exports.addShip = (builder_selector, pilot) ->
+exports.addShip = (builder_selector, ship, pilot) ->
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .ship-selector-container .select2-container", ship)
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .pilot-selector-container .select2-container", pilot)
 
 exports.removeShip = (builder_selector, ship_idx) ->

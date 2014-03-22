@@ -65,6 +65,7 @@
       "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
     },
     ui: {
+      shipSelectorPlaceholder: "Select a ship",
       pilotSelectorPlaceholder: "Select a pilot",
       upgradePlaceholder: function(translator, language, slot) {
         return "No " + (translator(language, 'slot', slot)) + " Upgrade";
