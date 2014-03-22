@@ -4,4 +4,5 @@ node_js:
 notifications:
     email: false
 before_script:
+    - bundle install
     - cake build
