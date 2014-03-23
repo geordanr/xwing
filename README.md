@@ -58,6 +58,10 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+23 Mar 2014
+-----------
+* Add ship selector dropdown.  Pilot selector now only shows pilots for selected ship.
+
 18 Mar 2014
 -----------
 * Add cards from Rebel Aces reveal.
