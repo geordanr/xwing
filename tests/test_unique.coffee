@@ -18,7 +18,7 @@ casper.test.begin "Named pilot uniqueness", (test) ->
         }
     ])
 
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} .pilot-selector-container .select2-container", 'Luke Skywalker')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForPilotDropdown}", 'Luke Skywalker')
 
     .run ->
         test.done()

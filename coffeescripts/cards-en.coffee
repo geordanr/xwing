@@ -53,6 +53,7 @@ exportObj.translations.English =
         "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
         "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
     ui:
+        shipSelectorPlaceholder: "Select a ship"
         pilotSelectorPlaceholder: "Select a pilot"
         upgradePlaceholder: (translator, language, slot) ->
             "No #{translator language, 'slot', slot} Upgrade"

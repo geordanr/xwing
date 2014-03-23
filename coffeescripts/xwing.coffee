@@ -555,6 +555,15 @@ class exportObj.SquadBuilder
                 ship.updateSelections()
             @pretranslation_serialized = undefined
             cb()
+        .on 'xwing:shipUpdated', (e, cb=$.noop) =>
+            all_allocated = true
+            for ship in @ships
+                ship.updateSelections()
+                if ship.ship_selector.val() == ''
+                    all_allocated = false
+            #console.log "all_allocated is #{all_allocated}, suppress_automatic_new_ship is #{@suppress_automatic_new_ship}"
+            #console.log "should we add ship: #{all_allocated and not @suppress_automatic_new_ship}"
+            @addShip() if all_allocated and not @suppress_automatic_new_ship
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -737,9 +746,18 @@ class exportObj.SquadBuilder
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
 
-    getAvailablePilotsIncluding: (include_pilot, term='') ->
+    getAvailableShipsMatching: (term='') ->
+        ships = []
+        for ship_name, ship_data of exportObj.ships
+            if ship_data.faction == @faction and @matcher(ship_data.name, term)
+                ships.push
+                    id: ship_data.name
+                    text: ship_data.name
+        ships.sort exportObj.sortHelper
+
+    getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when exportObj.ships[pilot.ship].faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when exportObj.ships[pilot.ship].faction == @faction and (not ship? or pilot.ship == ship) and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             unclaimed_faction_pilots.push include_pilot
@@ -904,7 +922,7 @@ class exportObj.SquadBuilder
                 if idx == 0
                     # Add random ship
                     #console.log "Add ship"
-                    available_pilots = @getAvailablePilotsIncluding()
+                    available_pilots = @getAvailablePilotsForShipIncluding()
                     ship_group = available_pilots[$.randomInt available_pilots.length]
                     pilot = ship_group.children[$.randomInt ship_group.children.length]
                     if exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
@@ -1064,6 +1082,25 @@ class Ship
         @builder.current_squad.dirty = true
         @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
+    setShipType: (ship_type) ->
+        @pilot_selector.data('select2').container.show()
+        if ship_type != @pilot?.ship
+            # Ship changed; release pilot
+            @setPilot null
+
+        # Clear ship background class
+        for cls in @row.attr('class').split(/\s+/)
+            if cls.indexOf('ship-') == 0
+                @row.removeClass cls
+
+        # Show delete button
+        @remove_button.fadeIn 'fast'
+
+        # Ship background
+        @row.addClass "ship-#{ship_type.toLowerCase().replace(/[^a-z0-9]/gi, '')}0"
+
+        @builder.container.trigger 'xwing:shipUpdated'
+
     setPilotById: (id) ->
         @setPilot exportObj.pilotsById[parseInt id]
 
@@ -1072,23 +1109,19 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
-            unless @pilot?
-                @builder.addShip() unless @builder.suppress_automatic_new_ship
-                @remove_button.fadeIn 'fast'
             @resetPilot()
             @resetAddons()
-            @data = exportObj.ships[new_pilot?.ship]
-            if new_pilot?.unique?
-                await @builder.container.trigger 'xwing:claimUnique', [ new_pilot, 'Pilot', defer() ]
-            @pilot = new_pilot
-            @setupAddons() if @pilot?
+            if new_pilot?
+                @data = exportObj.ships[new_pilot?.ship]
+                if new_pilot?.unique?
+                    await @builder.container.trigger 'xwing:claimUnique', [ new_pilot, 'Pilot', defer() ]
+                @pilot = new_pilot
+                @setupAddons() if @pilot?
+                @copy_button.toggle not @pilot?.unique
+                @setShipType @pilot.ship
+            else
+                @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
-            # Optional background
-            for cls in @row.attr('class').split ' '
-                if cls.indexOf('ship-') == 0
-                    @row.removeClass cls
-            @row.addClass "ship-#{@data.name.toLowerCase().replace(/[^a-z0-9]/gi, '')}0"
-            @copy_button.toggle not @pilot?.unique
 
     resetPilot: ->
         if @pilot?.unique?
@@ -1130,15 +1163,22 @@ class Ship
             points += upgrade.getPoints()
         for modification in @modifications
             points += (modification?.getPoints() ? 0)
-        @points_container.text points
-        @points_container.show() if @pilot?
+        @points_container.find('span').text points
+        if points > 0
+            @points_container.fadeTo 'fast', 1
+        else
+            @points_container.fadeTo 0, 0
         points
 
     updateSelections: ->
         if @pilot?
+            @ship_selector.select2 'data',
+                id: @pilot.ship
+                text: @pilot.ship
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{@pilot.name} (#{@pilot.points})"
+            @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 upgrade.updateSelection()
             @title.updateSelection() if @title?
@@ -1146,6 +1186,7 @@ class Ship
                 modification.updateSelection() if modification?
         else
             @pilot_selector.select2 'data', null
+            @pilot_selector.data('select2').container.toggle(@ship_selector.val() != '')
 
     setupUI: ->
         @row = $ document.createElement 'DIV'
@@ -1153,8 +1194,10 @@ class Ship
         @container.append @row
 
         @row.append $.trim '''
-            <div class="span3 pilot-selector-container">
-                <input type="hidden" />
+            <div class="span3">
+                <input class="ship-selector-container" type="hidden" />
+                <br />
+                <input type="hidden" class="pilot-selector-container" />
             </div>
             <div class="span1 points-display-container">
                 <span></span>
@@ -1166,14 +1209,30 @@ class Ship
             </div>
         '''
         @row.find('.button-container span').tooltip()
-        @pilot_selector = $ @row.find('div.pilot-selector-container input[type=hidden]')
+
+        @ship_selector = $ @row.find('input.ship-selector-container')
+        @pilot_selector = $ @row.find('input.pilot-selector-container')
+
+        @ship_selector.select2
+            width: '100%'
+            placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
+            query: (query) =>
+                query.callback
+                    more: false
+                    results: @builder.getAvailableShipsMatching(query.term)
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @ship_selector.on 'change', (e) =>
+            @setShipType @ship_selector.val()
+        # assign ship row an id for testing purposes
+        @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
+
         @pilot_selector.select2
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
                 query.callback
                     more: false
-                    results: @builder.getAvailablePilotsIncluding(@pilot, query.term)
+                    results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), @pilot, query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
@@ -1186,8 +1245,10 @@ class Ship
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
 
-        @points_container = $ @row.find('.points-display-container span')
-        @points_container.hide()
+        @pilot_selector.data('select2').container.hide()
+
+        @points_container = $ @row.find('.points-display-container')
+        @points_container.fadeTo 0, 0
 
         @addon_container = $ @row.find('div.addon-container')
 

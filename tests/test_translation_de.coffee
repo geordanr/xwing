@@ -11,7 +11,7 @@ casper.test.begin "German translations", (test) ->
 
     common.createList('#empire-builder', [
         {
-            ship: 'TIE Interceptor'
+            ship: 'TIE Abfangjäger'
             pilot: "Pilot der Alpha-Staffel"
             upgrades: [
                 null
