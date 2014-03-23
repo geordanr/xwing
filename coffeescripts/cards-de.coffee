@@ -1685,7 +1685,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Waffen-Techniker"
             id: 29
             slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
+            sources: [ "Millennium Falcon Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
             text: """Du darfst 2 verschiedene Schiffe gleichzeitig in Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Wenn du die Aktion Zielerfassung durchführst darfst du zwei verschiedene Schiffe als Ziele erfassen."""
         "Das Feuer auf mich ziehen":

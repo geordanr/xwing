@@ -1474,7 +1474,7 @@
         name: "Weapons Engineer",
         id: 29,
         slot: "Crew",
-        sources: ["Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
+        sources: ["Millennium Falcon Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
         points: 3,
         text: "You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."
       },
