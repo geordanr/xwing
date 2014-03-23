@@ -5,8 +5,6 @@ common.setup()
 
 casper.test.begin "View as text", (test) ->
     common.waitForStartup('#rebel-builder')
-    .then  ->
-        @viewport(1280, 1024)
 
     common.createList('#rebel-builder', [
         {

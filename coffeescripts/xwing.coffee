@@ -746,10 +746,10 @@ class exportObj.SquadBuilder
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
 
-    getAvailableShips: ->
+    getAvailableShipsMatching: (term='') ->
         ships = []
         for ship_name, ship_data of exportObj.ships
-            if ship_data.faction == @faction
+            if ship_data.faction == @faction and @matcher(ship_data.name, term)
                 ships.push
                     id: ship_data.name
                     text: ship_data.name
@@ -1219,10 +1219,12 @@ class Ship
             query: (query) =>
                 query.callback
                     more: false
-                    results: @builder.getAvailableShips()
+                    results: @builder.getAvailableShipsMatching(query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
+        # assign ship row an id for testing purposes
+        @row.attr 'id', "row-#{@ship_selector.data('select2').container.attr('id')}"
 
         @pilot_selector.select2
             width: '100%'
