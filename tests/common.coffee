@@ -9,13 +9,15 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
+        casper.die()
 
 
 exports.selectFirstMatch = (select2_selector, search_text) =>
     exports.selectNthMatch select2_selector, 1, search_text
 
 exports.selectNthMatch = (select2_selector, n, search_text) =>
-    casper.then ->
+    casper.waitUntilVisible("#{select2_selector}")
+    .then ->
         @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
         @waitUntilVisible 'input.select2-input'
     .then ->
@@ -66,13 +68,13 @@ exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
 exports.waitForStartup = (builder_selector) ->
     casper.start "index.html", ->
         # Wait for pilot selector to become visible
-        @waitUntilVisible "#{builder_selector} .ship-selector-container .select2-container .select2-choice:first-child"
+        @waitUntilVisible "#{builder_selector} #{exports.selectorForShipDropdown} .select2-choice:first-child"
     .then ->
         exports.selectLanguage('English')
 
 exports.addShip = (builder_selector, ship, pilot) ->
-    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .ship-selector-container .select2-container", ship)
-    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} .pilot-selector-container .select2-container", pilot)
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} #{exports.selectorForShipDropdown}", ship)
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForSecontToLastShip} #{exports.selectorForPilotDropdown}", pilot)
 
 exports.removeShip = (builder_selector, ship_idx) ->
     casper.then ->
@@ -113,6 +115,8 @@ exports.selectorForShipIndex = (ship_idx) ->
 
 exports.selectorForLastShip = ".ship:last-of-type"
 
+exports.selectorForSecontToLastShip = ".ship:nth-last-of-type(2)"
+
 exports.selectorForUpgradeIndex = (ship_idx, upgrade_idx) ->
     "#{exports.selectorForShipIndex ship_idx} .addon-container .select2-container:nth-of-type(#{upgrade_idx})"
 
@@ -121,3 +125,7 @@ exports.selectorForRemoveShip = (ship_idx) ->
 
 exports.selectorForCloneShip = (ship_idx) ->
     "#{exports.selectorForShipIndex(ship_idx)} .copy-pilot"
+
+exports.selectorForShipDropdown = '.ship-selector-container'
+
+exports.selectorForPilotDropdown = '.pilot-selector-container'

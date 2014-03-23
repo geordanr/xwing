@@ -14,7 +14,7 @@ casper.test.begin "Page comes up", (test) ->
             test.assertSelectorHasText nav_sel, tab_text
 
         test.assertSelectorHasText '.squad-name-container .squad-name', 'Unnamed Squadron'
-        test.assertSelectorHasText '.ship-selector-container', 'Select a ship'
+        test.assertSelectorHasText common.selectorForShipDropdown, 'Select a ship'
 
     .run ->
         test.done()

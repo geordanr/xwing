@@ -22,8 +22,8 @@ casper.test.begin "Kyle and Jan crew uniqueness", (test) ->
     ])
 
     # Can't add Kyle or Jan in their own ships
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} .pilot-selector-container .select2-container", 'Kyle Katarn')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} .pilot-selector-container .select2-container", 'Jan Ors')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForPilotDropdown}", 'Kyle Katarn')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForPilotDropdown}", 'Jan Ors')
 
     common.removeShip('#rebel-builder', 1)
 
