@@ -9,7 +9,7 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        casper.die()
+        #casper.die()
 
 
 exports.selectFirstMatch = (select2_selector, search_text) =>
