@@ -53,3 +53,24 @@ casper.test.begin "Changing ship unassigns pilot", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Ships without pilots don't appear in View As Text", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setShipType('#rebel-builder', 1, 'Y-Wing')
+    common.addShip('#rebel-builder', 'YT-1300', 'Outer Rim Smuggler')
+
+    .then ->
+        @click('#rebel-builder .view-as-text')
+        @waitUntilVisible('#rebel-builder .modal')
+    .then ->
+        @click('#rebel-builder .modal .select-fancy-view')
+    .then ->
+        @waitUntilVisible('#rebel-builder .modal .fancy-list')
+    .then ->
+        test.assertSelectorDoesntHaveText('#rebel-builder .modal .fancy-list', "Y-Wing")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', 'YT-1300')
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', 'Outer Rim Smuggler')
+ 
+    .run ->
+        test.done()
