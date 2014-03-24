@@ -961,7 +961,7 @@
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 4,
-        points: 19,
+        points: 13,
         slots: ["Missile"]
       },
       "Lieutenant Blount": {
@@ -971,9 +971,9 @@
         ship: "Z-95 Headhunter",
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 6,
-        points: 19,
+        points: 17,
         slots: ["Missile"],
-        text: "When attacking ??? hit by your ??? does not ???"
+        text: "When attacking, the defender is hit by your attack, even if he does not suffer any damage."
       },
       "Airen Cracken": {
         name: "Airen Cracken",
@@ -984,7 +984,7 @@
         skill: 8,
         points: 19,
         slots: ["Missile"],
-        text: "This card has not yet been released."
+        text: "After you perform an attack, you may choose another friendly ship at Range 1.  That ship may perform 1 free action."
       },
       "Delta Squadron Pilot": {
         name: "Delta Squadron Pilot",
@@ -1693,8 +1693,8 @@
         id: 54,
         slot: "Elite",
         sources: ["Z-95 Headhunter Expansion Pack"],
-        points: 99,
-        text: "This card has not yet been released."
+        points: 2,
+        text: "At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."
       },
       "Decoy": {
         name: "Decoy",
@@ -1986,8 +1986,8 @@
         name: "Munitions Failsafe",
         id: 7,
         sources: ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack"],
-        points: 99,
-        text: "This card has not yet been released."
+        points: 1,
+        text: "When attacking with a secondary weapon that instructs you to discard it to perform the attack, do not discard it unless the attack hits."
       },
       "Stygium Particle Accelerator": {
         name: "Stygium Particle Accelerator",
