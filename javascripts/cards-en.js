@@ -972,7 +972,7 @@
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 6,
         points: 17,
-        slots: ["Missile"],
+        slots: ["Elite", "Missile"],
         text: "When attacking, the defender is hit by your attack, even if he does not suffer any damage."
       },
       "Airen Cracken": {
@@ -983,7 +983,7 @@
         sources: ["Z-95 Headhunter Expansion Pack"],
         skill: 8,
         points: 19,
-        slots: ["Missile"],
+        slots: ["Elite", "Missile"],
         text: "After you perform an attack, you may choose another friendly ship at Range 1.  That ship may perform 1 free action."
       },
       "Delta Squadron Pilot": {
