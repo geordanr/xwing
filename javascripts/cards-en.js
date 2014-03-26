@@ -1101,9 +1101,9 @@
         ship: "TIE Phantom",
         sources: ["TIE Phantom Expansion Pack"],
         skill: 7,
-        points: 99,
+        points: 32,
         slots: ["Elite", "System", "Crew"],
-        text: "After you perform ??? that hits ??? 1 focus ???"
+        text: "After you perform an attack that hits, you may assign 1 focus to your ship."
       },
       "CR90 Corvette (Fore)": {
         name: "CR90 Corvette (Fore)",
@@ -2001,7 +2001,7 @@
         id: 9,
         sources: ["TIE Phantom Expansion Pack"],
         points: 99,
-        text: "This card has not yet been released.",
+        text: "After you perform an attack, you may perform a free cloak action.",
         ship: "TIE Phantom"
       }
     };
