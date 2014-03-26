@@ -2131,7 +2131,7 @@ exportObj.cardLoaders.Deutsch = () ->
             id: 8
             sources: [ "TIE Phantom Expansion Pack", ]
             points: 2
-            text: """This card has not yet been released."""
+            text: """When you either decloak or perform a cloak action, you may perform a free evade action."""
         "Advanced Cloaking Device":
             name: "Advanced Cloaking Device"
             id: 9
