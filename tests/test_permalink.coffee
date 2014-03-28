@@ -64,3 +64,25 @@ casper.test.begin "Permalink", (test) ->
 
     .run ->
         test.done()
+
+
+casper.test.begin "Weird Rebel permalink v2", (test) ->
+    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v2!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    .then ->
+        common.assertTotalPoints(test, '#rebel-builder', 99)
+
+    .run ->
+        test.done()
+
+
+casper.test.begin "Weird Empire permalink v2", (test) ->
+    common.waitForStartup('#empire-builder', 'index.html?f=Galactic%20Empire&d=v2!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
+    .then ->
+        @waitUntilVisible '#empire-builder .total-points'
+    .then ->
+        common.assertTotalPoints(test, '#empire-builder', 99)
+
+    .run ->
+        test.done()

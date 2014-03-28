@@ -68,8 +68,8 @@ exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
     casper.then ->
         test.assertSelectorHasText "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .points-display-container", points, "Ship in slot #{ship_idx} is worth #{points} points"
 
-exports.waitForStartup = (builder_selector) ->
-    casper.start "index.html", ->
+exports.waitForStartup = (builder_selector, url="index.html") ->
+    casper.start url, ->
         @viewport(1280, 1024)
     .then ->
         # Wait for pilot selector to become visible
