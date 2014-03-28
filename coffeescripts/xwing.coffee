@@ -692,15 +692,20 @@ class exportObj.SquadBuilder
                         @uniques_in_use['Upgrade'].push crew
                     else
                         throw "Unique #{type} '#{unique.name}' already claimed as crew"
-            else if type == 'Upgrade' and unique.slot == 'Crew'
-                # Check pilots
-                pilot = exportObj.pilots[unique.name]
-                if pilot? and pilot?.unique?
-                    if @uniqueIndex(pilot, 'Pilot') < 0
-                        # Not a pilot either; claim it in use as well
-                        @uniques_in_use['Pilot'].push pilot
-                    else
-                        throw "Unique #{type} '#{unique.name}' already claimed as pilot"
+            else if type == 'Upgrade'
+                if unique.slot == 'Crew'
+                    # Check pilots
+                    pilot = exportObj.pilots[unique.name]
+                    if pilot? and pilot?.unique?
+                        if @uniqueIndex(pilot, 'Pilot') < 0
+                            # Not a pilot either; claim it in use as well
+                            @uniques_in_use['Pilot'].push pilot
+                        else
+                            throw "Unique #{type} '#{unique.name}' already claimed as pilot"
+                # Multiple upgrades have the same name but different slots
+                for upgrade_alias in unique.aka ? []
+                    #console.log "Also claiming #{upgrade_alias} in use"
+                    @uniques_in_use['Upgrade'].push exportObj.upgrades[upgrade_alias]
             @uniques_in_use[type].push unique
         else
             throw "Unique #{type} '#{unique.name}' already claimed"
@@ -718,13 +723,19 @@ class exportObj.SquadBuilder
                     if idx < 0
                         throw "Unique crew accompanying #{unique.name} was not also claimed!"
                     @uniques_in_use['Upgrade'].splice idx, 1
-            else if type == 'Upgrade' and unique.slot == 'Crew'
-                pilot = exportObj.pilots[unique.name]
-                if pilot? and pilot?.unique?
-                    idx = @uniqueIndex pilot, 'Pilot'
-                    if idx < 0
-                        throw "Unique pilot accompanying #{unique.name} was not also claimed!"
-                    @uniques_in_use['Pilot'].splice idx, 1
+            else if type == 'Upgrade'
+                if unique.slot == 'Crew'
+                    pilot = exportObj.pilots[unique.name]
+                    if pilot? and pilot?.unique?
+                        idx = @uniqueIndex pilot, 'Pilot'
+                        if idx < 0
+                            throw "Unique pilot accompanying #{unique.name} was not also claimed!"
+                        @uniques_in_use['Pilot'].splice idx, 1
+                # Release any aliases
+                for upgrade_alias in unique.aka ? []
+                    #console.log "Also releasing #{upgrade_alias}"
+                    alias_idx = @uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade')
+                    @uniques_in_use['Upgrade'].splice alias_idx, 1
         else
             throw "Unique #{type} '#{unique.name}' not in use"
         cb()
@@ -1493,14 +1504,17 @@ class Ship
             valid = true
             for upgrade in @upgrades
                 if upgrade?.data?.restriction_func? and not upgrade?.data?.restriction_func this
+                    #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
                     break
             if @title?.data?.restriction_func? and not @title?.data?.restriction_func this
+                #console.log "Invalid title: #{@title?.data?.name}"
                 @title.setById null
                 continue
             for modification in @modifications
                 if modification?.data?.restriction_func? and not modification.data.restriction_func this
+                    #console.log "Invalid modification: #{modification?.data?.name}"
                     modification.setById null
                     valid = false
                     break

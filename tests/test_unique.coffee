@@ -134,3 +134,49 @@ casper.test.begin "Uniqueness across pilot and crew", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "R2-D2 Astromech is mutex with R2-D2 Crew", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'X-Wing'
+            pilot: 'Luke Skywalker'
+            upgrades: [
+                null
+                null
+                null
+                null
+            ]
+        }
+        {
+            ship: 'YT-1300'
+            pilot: 'Chewbacca'
+            upgrades: [
+                null
+                null
+                null
+                null
+                null
+                null
+            ]
+        }
+    ])
+
+    common.addUpgrade('#rebel-builder', 1, 3, 'R2-D2')
+
+    # Can't put R2-D2 on Chewie's ship
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", 'R2-D2 (Crew)')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", 'R2-D2 (Crew)')
+
+    common.removeUpgrade('#rebel-builder', 1, 3)
+    common.addUpgrade('#rebel-builder', 2, 3, 'R2-D2 (Crew)')
+
+    # Can't put R2-D2 on Luke's ship
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'R2-D2')
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    .run ->
+        test.done()

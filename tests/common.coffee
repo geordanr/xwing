@@ -11,6 +11,9 @@ exports.setup = ->
         casper.capture 'casperjs.png'
         #casper.die()
 
+    casper.on 'remote.message', (message) ->
+        casper.log("Console log: #{message}", "debug")
+
 
 exports.selectFirstMatch = (select2_selector, search_text) =>
     exports.selectNthMatch select2_selector, 1, search_text
