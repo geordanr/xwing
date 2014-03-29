@@ -63,7 +63,8 @@ body {
     overflow: hidden;
     margin-bottom: 10px;
     page-break-inside: avoid;
-    position: relative; }
+    position: relative;
+    min-height: 3in; }
     #printable .fancy-ship .fancy-pilot-header {
       border: 0.375in solid lightgrey;
       color: black;
