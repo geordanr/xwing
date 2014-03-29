@@ -74,3 +74,93 @@ casper.test.begin "Ships without pilots don't appear in View As Text", (test) ->
  
     .run ->
         test.done()
+
+casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.addShip('#rebel-builder', 'X-Wing', 'Rookie Pilot')
+    common.addUpgrade('#rebel-builder', 1, 1, 'Proton Torpedoes')
+    common.addUpgrade('#rebel-builder', 1, 2, 'R2 Astromech')
+    common.addUpgrade('#rebel-builder', 1, 3, 'Engine Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 30)
+
+    # Changing pilot but no change in slots
+    common.setPilot('#rebel-builder', 1, 'Red Squadron Pilot')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Proton Torpedoes')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'R2 Astromech')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'Engine Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 32)
+
+    # Changing pilot adds elite slot
+    common.setPilot('#rebel-builder', 1, 'Luke Skywalker')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 1, 1)
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'Proton Torpedoes')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'R2 Astromech')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Engine Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 37)
+
+    # Assign elite then change to another w/ elite
+    common.addUpgrade('#rebel-builder', 1, 1, 'Marksmanship')
+    common.setPilot('#rebel-builder', 1, 'Wedge Antilles')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Marksmanship')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'Proton Torpedoes')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'R2 Astromech')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Engine Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 38)
+
+    # Change back to pilot without elite
+    common.setPilot('#rebel-builder', 1, 'Red Squadron Pilot')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Proton Torpedoes')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'R2 Astromech')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'Engine Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 32)
+
+    # R2-D6 grants elite slot, but is ineligible on rookie pilots
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'R2-D6')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Push the Limit')
+    common.assertTotalPoints(test, '#rebel-builder', 35)
+    # Switching to rookie should drop extra elite
+    common.setPilot('#rebel-builder', 1, 'Rookie Squadron Pilot')
+    common.assertTotalPoints(test, '#rebel-builder', 32)
+    casper.then ->
+        test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 4}", "Elite slot was rescinded")
+
+    # A-Wing Test Pilot grants elite slot, but is ineligible on prototype pilots
+    common.setShipType('#rebel-builder', 1, 'A-Wing')
+    common.setPilot('#rebel-builder', 1, 'Green Squadron Pilot')
+    common.addUpgrade('#rebel-builder', 1, 1, 'Deadeye')
+    common.addUpgrade('#rebel-builder', 1, 2, 'Chardaan Refit')
+    common.addUpgrade('#rebel-builder', 1, 3, 'A-Wing Test Pilot')
+    common.addUpgrade('#rebel-builder', 1, 4, 'Shield Upgrade')
+    common.addUpgrade('#rebel-builder', 1, 5, 'Expert Handling')
+    common.assertTotalPoints(test, '#rebel-builder', 24)
+    # Switching to prototype should drop extra elite
+    common.setPilot('#rebel-builder', 1, 'Prototype Pilot')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Chardaan Refit')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 1, 2)
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'Shield Upgrade')
+    common.assertTotalPoints(test, '#rebel-builder', 19)
+    casper.then ->
+        test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 5}", "Elite slot was rescinded")
+
+    common.removeShip('#rebel-builder', 1)
+
+    common.openEmpireBuilder()
+
+    # Royal Guard TIE grants extra mod, but is ineligible on Alpha squad
+    common.setShipType('#empire-builder', 1, 'TIE Interceptor')
+    common.setPilot('#empire-builder', 1, 'Royal Guard Pilot')
+    common.addUpgrade('#empire-builder', 1, 1, 'Adrenaline Rush')
+    common.addUpgrade('#empire-builder', 1, 2, 'Royal Guard TIE')
+    common.addUpgrade('#empire-builder', 1, 3, 'Targeting Computer')
+    common.addUpgrade('#empire-builder', 1, 4, 'Shield Upgrade')
+    common.assertTotalPoints(test, '#empire-builder', 29)
+    # Switching to Alpha should drop extra mod
+    common.setPilot('#empire-builder', 1, 'Rookie Squadron Pilot')
+    common.assertNoUpgradeInSlot(test, '#empire-builder', 1, 1)
+    common.assertTotalPoints(test, '#empire-builder', 20)
+    casper.then ->
+        test.assertDoesntExist("#empire-builder #{common.selectorForUpgradeIndex 1, 3}", "Second modification was rescinded")
+
+    .run ->
+        test.done()
