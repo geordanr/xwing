@@ -168,3 +168,19 @@ body {
     color: black;
     width: 8.5in;
     text-align: right; }
+  #printable .simple-table {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25em;
+    color: black;
+    width: 95%;
+    font-size: 1.5em; }
+    #printable .simple-table tr {
+      height: 1.25em; }
+    #printable .simple-table .name {
+      font-style: oblique; }
+    #printable .simple-table .points {
+      text-align: right; }
+    #printable .simple-table .simple-pilot .name {
+      font-weight: bold; }
+    #printable .simple-table .simple-addon .name {
+      padding-left: 20px; }
