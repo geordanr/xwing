@@ -59,12 +59,13 @@ body {
     border-right-color: transparent;
     position: relative;
     left: 0.5in; }
+  #printable .tall {
+    min-height: 3in; }
   #printable .fancy-ship {
     overflow: hidden;
     margin-bottom: 10px;
     page-break-inside: avoid;
-    position: relative;
-    min-height: 3in; }
+    position: relative; }
     #printable .fancy-ship .fancy-pilot-header {
       border: 0.375in solid lightgrey;
       color: black;
@@ -167,7 +168,8 @@ body {
     bottom: 0;
     color: black;
     width: 8.5in;
-    text-align: right; }
+    text-align: right;
+    display: none; }
   #printable .simple-table {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.25em;
