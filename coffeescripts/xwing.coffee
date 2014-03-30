@@ -460,7 +460,7 @@ class exportObj.SquadBuilder
         content_container.append $.trim """
             <div class="row-fluid">
                 <div class="span9 ship-container" />
-                <div class="span3 hidden-phone info-container" />
+                <div class="span3 info-container" />
             </div>
         """
 
