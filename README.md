@@ -58,6 +58,10 @@ German translations courtesy @failgod-marcus.
 CHANGELOG
 =========
 
+29 Mar 2014
+-----------
+* Selecting Fancy or Simple now affects what kind of printout you get.
+
 23 Mar 2014
 -----------
 * Add ship selector dropdown.  Pilot selector now only shows pilots for selected ship.

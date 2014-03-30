@@ -137,8 +137,8 @@ class exportObj.SquadBuilder
                 <div class="span6 pull-right button-container">
                     <div class="btn-group pull-right">
 
-                        <button class="btn btn-primary view-as-text"><span class="hidden-phone">View as </span>Text</button>
-                        <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>
+                        <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>
+                        <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->
                         <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>
@@ -214,6 +214,7 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer hidden-print">
+                <label class="vertical-space-checkbox"><input type="checkbox" class="toggle-vertical-space" /> Add space for damage/upgrade cards when printing</label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
@@ -229,6 +230,8 @@ class exportObj.SquadBuilder
         @bbcode_container = $ @list_modal.find('div.modal-body .bbcode-list')
         @bbcode_textarea = $ @bbcode_container.find('textarea')
         @bbcode_textarea.attr 'readonly', 'readonly'
+        @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
+        @toggle_vertical_space_checkbox = $ @list_modal.find('.toggle-vertical-space')
 
         @select_simple_view_button = $ @list_modal.find('.select-simple-view')
         @select_simple_view_button.click (e) =>
@@ -240,6 +243,7 @@ class exportObj.SquadBuilder
                 @simple_container.show()
                 @fancy_container.hide()
                 @bbcode_container.hide()
+                @toggle_vertical_space_container.hide()
 
         @select_fancy_view_button = $ @list_modal.find('.select-fancy-view')
         @select_fancy_view_button.click (e) =>
@@ -251,6 +255,7 @@ class exportObj.SquadBuilder
                 @fancy_container.show()
                 @simple_container.hide()
                 @bbcode_container.hide()
+                @toggle_vertical_space_container.show()
 
         @select_bbcode_view_button = $ @list_modal.find('.select-bbcode-view')
         @select_bbcode_view_button.click (e) =>
@@ -264,6 +269,7 @@ class exportObj.SquadBuilder
                 @fancy_container.hide()
                 @bbcode_textarea.select()
                 @bbcode_textarea.focus()
+                @toggle_vertical_space_container.show()
 
         if $(window).width() >= 768
             @simple_container.hide()
@@ -573,14 +579,18 @@ class exportObj.SquadBuilder
             e.preventDefault()
             # Copy text list to printable
             @printable_container.find('.printable-header').html @list_modal.find('.modal-header').html()
-            @printable_container.find('.printable-body').html @list_modal.find('.modal-body').html()
-            @printable_container.find('.printable-body').text ''
-            for ship in @ships
-                @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
+            switch @list_display_mode
+                when 'simple'
+                    @printable_container.find('.printable-body').html @simple_container.html()
+                else
+                    @printable_container.find('.printable-body').text ''
+                    for ship in @ships
+                        @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
+                    @printable_container.find('.fancy-ship').toggleClass 'tall', @toggle_vertical_space_checkbox.prop('checked')
             window.print()
 
         $(window).resize =>
-            @simple_toggle_button.click() if $(window).width() < 768 and not @simple_toggle_button.data('showingSimpleView')
+            @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
     onPointsUpdated: (cb) =>
         @total_points = 0
@@ -597,7 +607,7 @@ class exportObj.SquadBuilder
         @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
         # and text list
         @fancy_container.text ''
-        @simple_container.html '<table></table>'
+        @simple_container.html '<table class="simple-table"></table>'
         bbcode_ships = []
         for ship in @ships
             if ship.pilot?
