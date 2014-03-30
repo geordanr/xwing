@@ -201,7 +201,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span3 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>\n    </div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone">View as </span>Text</button>\n            <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span3 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>\n    </div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
@@ -563,22 +563,28 @@
           var ship, _i, _len, _ref;
           e.preventDefault();
           _this.printable_container.find('.printable-header').html(_this.list_modal.find('.modal-header').html());
-          _this.printable_container.find('.printable-body').html(_this.list_modal.find('.modal-body').html());
-          _this.printable_container.find('.printable-body').text('');
-          _ref = _this.ships;
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            ship = _ref[_i];
-            if (ship.pilot != null) {
-              _this.printable_container.find('.printable-body').append(ship.toHTML());
-            }
+          switch (_this.list_display_mode) {
+            case 'simple':
+              _this.printable_container.find('.printable-body').html(_this.simple_container.html());
+              break;
+            default:
+              _this.printable_container.find('.printable-body').html(_this.list_modal.find('.modal-body').html());
+              _this.printable_container.find('.printable-body').text('');
+              _ref = _this.ships;
+              for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                ship = _ref[_i];
+                if (ship.pilot != null) {
+                  _this.printable_container.find('.printable-body').append(ship.toHTML());
+                }
+              }
           }
           return window.print();
         };
       })(this));
       return $(window).resize((function(_this) {
         return function() {
-          if ($(window).width() < 768 && !_this.simple_toggle_button.data('showingSimpleView')) {
-            return _this.simple_toggle_button.click();
+          if ($(window).width() < 768 && _this.list_display_mode !== 'simple') {
+            return _this.select_simple_view_button.click();
           }
         };
       })(this));
@@ -600,7 +606,7 @@
       this.fancy_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
       this.fancy_container.text('');
-      this.simple_container.html('<table></table>');
+      this.simple_container.html('<table class="simple-table"></table>');
       bbcode_ships = [];
       _ref1 = this.ships;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
@@ -806,7 +812,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 751
+            lineno: 755
           }));
           __iced_deferrals._fulfill();
         });
@@ -819,7 +825,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 752
+              lineno: 756
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1584,7 +1590,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1127
+                        lineno: 1131
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1631,7 +1637,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1138
+                  lineno: 1142
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1684,14 +1690,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1160
+              lineno: 1164
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1162
+              lineno: 1166
             }));
           }
           _ref1 = _this.modifications;
@@ -1699,7 +1705,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1164
+                lineno: 1168
               }));
             }
           }
@@ -2232,7 +2238,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1541
+                  lineno: 1545
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2308,7 +2314,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1571
+                    lineno: 1575
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2330,7 +2336,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1574
+                      lineno: 1578
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2395,7 +2401,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1599
+              lineno: 1603
             }));
           }
           __iced_deferrals._fulfill();
