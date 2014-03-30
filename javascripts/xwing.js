@@ -206,13 +206,15 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        Copy the BBCode below and paste it into your forum post.\n        <textarea></textarea>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        Copy the BBCode below and paste it into your forum post.\n        <textarea></textarea>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\"><input type=\"checkbox\" class=\"toggle-vertical-space\" /> Add space for damage/upgrade cards when printing</label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
       this.bbcode_container = $(this.list_modal.find('div.modal-body .bbcode-list'));
       this.bbcode_textarea = $(this.bbcode_container.find('textarea'));
       this.bbcode_textarea.attr('readonly', 'readonly');
+      this.toggle_vertical_space_container = $(this.list_modal.find('.vertical-space-checkbox'));
+      this.toggle_vertical_space_checkbox = $(this.list_modal.find('.toggle-vertical-space'));
       this.select_simple_view_button = $(this.list_modal.find('.select-simple-view'));
       this.select_simple_view_button.click((function(_this) {
         return function(e) {
@@ -223,7 +225,8 @@
             _this.list_display_mode = 'simple';
             _this.simple_container.show();
             _this.fancy_container.hide();
-            return _this.bbcode_container.hide();
+            _this.bbcode_container.hide();
+            return _this.toggle_vertical_space_container.hide();
           }
         };
       })(this));
@@ -237,7 +240,8 @@
             _this.list_display_mode = 'fancy';
             _this.fancy_container.show();
             _this.simple_container.hide();
-            return _this.bbcode_container.hide();
+            _this.bbcode_container.hide();
+            return _this.toggle_vertical_space_container.show();
           }
         };
       })(this));
@@ -253,7 +257,8 @@
             _this.simple_container.hide();
             _this.fancy_container.hide();
             _this.bbcode_textarea.select();
-            return _this.bbcode_textarea.focus();
+            _this.bbcode_textarea.focus();
+            return _this.toggle_vertical_space_container.show();
           }
         };
       })(this));
@@ -432,7 +437,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 425
+                lineno: 431
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -568,7 +573,6 @@
               _this.printable_container.find('.printable-body').html(_this.simple_container.html());
               break;
             default:
-              _this.printable_container.find('.printable-body').html(_this.list_modal.find('.modal-body').html());
               _this.printable_container.find('.printable-body').text('');
               _ref = _this.ships;
               for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -577,6 +581,7 @@
                   _this.printable_container.find('.printable-body').append(ship.toHTML());
                 }
               }
+              _this.printable_container.find('.fancy-ship').toggleClass('tall', _this.toggle_vertical_space_checkbox.prop('checked'));
           }
           return window.print();
         };
@@ -812,7 +817,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 755
+            lineno: 761
           }));
           __iced_deferrals._fulfill();
         });
@@ -825,7 +830,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 756
+              lineno: 762
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1590,7 +1595,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1131
+                        lineno: 1137
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1637,7 +1642,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1142
+                  lineno: 1148
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1690,14 +1695,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1164
+              lineno: 1170
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1166
+              lineno: 1172
             }));
           }
           _ref1 = _this.modifications;
@@ -1705,7 +1710,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1168
+                lineno: 1174
               }));
             }
           }
@@ -2238,7 +2243,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1545
+                  lineno: 1551
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2314,7 +2319,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1575
+                    lineno: 1581
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2336,7 +2341,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1578
+                      lineno: 1584
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2401,7 +2406,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1603
+              lineno: 1609
             }));
           }
           __iced_deferrals._fulfill();
