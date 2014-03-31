@@ -1314,10 +1314,26 @@ class Ship
 
     # Converts the maneuver table for this ship into an HTML table.
     getManeuverTableHTML: ->
-        outTable = "<table><tbody>"
+        # first define the 3 arrowhead colors - these are global to all svg elements, so no need to redefine them each time an arrow is drawn
+        # however, there's no way to fill with the line color, so need one marker for each color
+        outTable = """<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">"""
+        outTable += """<defs>"""
+        outTable += """<marker id='redarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
+        outTable += """<path d='M0,0 V4 L4,2 Z' fill='red' />"""
+        outTable += """</marker>"""
+        outTable += """<marker id='greenarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
+        outTable += """<path d='M0,0 V4 L4,2 Z' fill='green' />"""
+        outTable += """</marker>"""
+        outTable += """<marker id='whitearrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
+        outTable += """<path d='M0,0 V4 L4,2 Z' fill='white' />"""
+        outTable += """</marker>"""
+        outTable += """</defs>"""
+        outTable += """</svg>"""
+        outTable += "<table><tbody>"
         for speed in [@maneuvers.length - 1 .. 0]
             outTable += "<tr><td>" + (speed + 1) + "</td>"
             for turn in [0 .. @maneuvers[speed].length]
+                outTable += """<td>"""
                 if @maneuvers[speed][turn] > 0
                     iconName = switch turn
                         when 0 then "turnleft"
@@ -1326,9 +1342,14 @@ class Ship
                         when 3 then "bankright"
                         when 4 then "turnright"
                         when 5 then "uturn"
-                else
-                    iconName = "none"
-                outTable += "<td><img class=\"icon-" + iconName + "\" src=\"images/transparent.png\"></img></td>"
+                    color = switch @maneuvers[speed][turn]
+                        when 1 then "white"
+                        when 2 then "green"
+                        when 3 then "red"
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">"""
+                    outTable += """<path marker-end='url(#""" + color + """arrowhead)' stroke-width='15' fill='none' stroke='""" + color + """' d='M150,180 S150,120 80,60' />"""
+                    outTable += """</svg>"""
+                outTable += """</td>"""
             outTable += "</tr>"
         outTable += "</tbody></table>"
         outTable
