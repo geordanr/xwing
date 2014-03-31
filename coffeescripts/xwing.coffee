@@ -871,7 +871,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').text('NYI')
+                    @info_container.find('tr.info-maneuvers td.info-data').html(data.getManeuverTableHTML())
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -897,7 +897,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').text('NYI')
+                    @info_container.find('tr.info-maneuvers td.info-data').html(data.getManeuverTableHTML())
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1063,6 +1063,11 @@ class Ship
         @modifications = []
         @title = null
 
+        # maneuver array is 2d, speed major, turn minor, elmenets are green/white/red/none
+        @maneuvers = for speed in [0 .. 4]
+          for turn in [0 .. 5]
+            1 # this is temporary - will make it all white maneuvers
+
         @setupUI()
 
     destroy: (cb) ->
@@ -1107,6 +1112,7 @@ class Ship
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
                 @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
         @builder.current_squad.dirty = true
@@ -1305,6 +1311,17 @@ class Ship
             "Pilot #{@pilot.name} flying #{@data.name}"
         else
             "Ship without pilot"
+
+    # Converts the maneuver table for this ship into an HTML table.
+    getManeuverTableHTML: ->
+        outTable = "<table>"
+        for speed in [@maneuvers.length - 1 .. 0]
+          outTable += "<tr><td>" + (speed + 1) + "</td>"
+          for turn in @maneuvers[speed]
+            outTable += "<td>" + turn + "</td>"
+          outTable += "</tr>"
+        outTable += "</table>"
+        outTable
 
     toHTML: ->
         effective_stats = @effectiveStats()
