@@ -106,7 +106,7 @@ casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'Proton Torpedoes')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'R2 Astromech')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Engine Upgrade')
-    common.assertTotalPoints(test, '#rebel-builder', 38)
+    common.assertTotalPoints(test, '#rebel-builder', 41)
 
     # Change back to pilot without elite
     common.setPilot('#rebel-builder', 1, 'Red Squadron Pilot')
@@ -116,12 +116,12 @@ casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
     common.assertTotalPoints(test, '#rebel-builder', 32)
 
     # R2-D6 grants elite slot, but is ineligible on rookie pilots
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'R2-D6')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Push the Limit')
+    common.addUpgrade('#rebel-builder', 1, 2, 'R2-D6')
+    common.addUpgrade('#rebel-builder', 1, 4, 'Push the Limit')
     common.assertTotalPoints(test, '#rebel-builder', 35)
-    # Switching to rookie should drop extra elite
-    common.setPilot('#rebel-builder', 1, 'Rookie Squadron Pilot')
-    common.assertTotalPoints(test, '#rebel-builder', 32)
+    # Switching to rookie should drop extra elite and R2-D6
+    common.setPilot('#rebel-builder', 1, 'Rookie Pilot')
+    common.assertTotalPoints(test, '#rebel-builder', 29)
     casper.then ->
         test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 4}", "Elite slot was rescinded")
 
@@ -156,7 +156,7 @@ casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
     common.addUpgrade('#empire-builder', 1, 4, 'Shield Upgrade')
     common.assertTotalPoints(test, '#empire-builder', 29)
     # Switching to Alpha should drop extra mod
-    common.setPilot('#empire-builder', 1, 'Rookie Squadron Pilot')
+    common.setPilot('#empire-builder', 1, 'Alpha Squadron Pilot')
     common.assertNoUpgradeInSlot(test, '#empire-builder', 1, 1)
     common.assertTotalPoints(test, '#empire-builder', 20)
     casper.then ->

@@ -1130,6 +1130,20 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
+            ship_changed = @pilot? and new_pilot?.ship == @pilot.ship
+            old_upgrades = {}
+            old_title = null
+            old_modifications = []
+            if ship_changed
+                # track addons and try to reassign them
+                for upgrade in @upgrades
+                    if upgrade?.data?
+                        old_upgrades[upgrade.slot] ?= []
+                        old_upgrades[upgrade.slot].push upgrade
+                old_title = @title if @title?
+                for modification in @modifications
+                    if modification?.data?
+                        old_modifications.push modification
             @resetPilot()
             @resetAddons()
             if new_pilot?
@@ -1140,6 +1154,18 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.toggle not @pilot?.unique
                 @setShipType @pilot.ship
+                if ship_changed
+                    # Hopefully this order is correct
+                    if old_title?.data?
+                        @title.setById old_title.data.id
+                    for modification in @modifications
+                        old_modification = old_modifications.shift()
+                        if old_modification?
+                            modification.setById old_modification.data.id
+                    for upgrade in @upgrades
+                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                        if old_upgrade?
+                            upgrade.setById old_upgrade.data.id
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
