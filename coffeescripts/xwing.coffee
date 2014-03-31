@@ -1063,10 +1063,10 @@ class Ship
         @modifications = []
         @title = null
 
-        # maneuver array is 2d, speed major, turn minor, elmenets are green/white/red/none
+        # maneuver array is 2d, speed major, turn minor, elements are 0 = none, 1 = green, 2 = white, 3 = red
         @maneuvers = for speed in [0 .. 4]
-          for turn in [0 .. 5]
-            1 # this is temporary - will make it all white maneuvers
+            for turn in [0 .. 5]
+                Math.floor(Math.random() * 4)
 
         @setupUI()
 
@@ -1316,10 +1316,20 @@ class Ship
     getManeuverTableHTML: ->
         outTable = "<table><tbody>"
         for speed in [@maneuvers.length - 1 .. 0]
-          outTable += """<tr><td>""" + (speed + 1) + "</td>"
-          for turn in @maneuvers[speed]
-            outTable += "<td>" + turn + "</td>"
-          outTable += "</tr>"
+            outTable += "<tr><td>" + (speed + 1) + "</td>"
+            for turn in [0 .. @maneuvers[speed].length]
+                if @maneuvers[speed][turn] > 0
+                    iconName = switch turn
+                        when 0 then "turnleft"
+                        when 1 then "bankleft"
+                        when 2 then "straight"
+                        when 3 then "bankright"
+                        when 4 then "turnright"
+                        when 5 then "uturn"
+                else
+                    iconName = "none"
+                outTable += "<td><img class=\"icon-" + iconName + "\" src=\"images/transparent.png\"></img></td>"
+            outTable += "</tr>"
         outTable += "</tbody></table>"
         outTable
 
