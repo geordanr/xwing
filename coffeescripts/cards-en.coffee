@@ -110,6 +110,12 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            maneuvers: [
+              [ 0, 1, 2, 1, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 3, 1, 1, 1, 3, 0],
+              [ 0, 0, 3, 0, 0, 3]
+            ]
         "A-Wing":
             name: "A-Wing"
             faction: "Rebel Alliance"
@@ -122,6 +128,13 @@ exportObj.cardLoaders.English = () ->
                 "Target Lock",
                 "Boost",
                 "Evade",
+            ]
+            maneuvers: [
+              [ 1, 0, 0, 0, 1, 0],
+              [ 2, 2, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 2, 0, 0, 0],
+              [ 0, 0, 2, 0, 0, 3]
             ]
         "YT-1300":
             name: "YT-1300"
@@ -147,6 +160,13 @@ exportObj.cardLoaders.English = () ->
                 "Barrel Roll",
                 "Evade",
             ]
+            maneuvers: [
+              [ 1, 0, 0, 0, 1, 0],
+              [ 1, 2, 2, 2, 1, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 1, 0, 0, 3],
+              [ 0, 0, 1, 0, 0, 0]
+            ]
         "TIE Advanced":
             name: "TIE Advanced"
             faction: "Galactic Empire"
@@ -159,6 +179,13 @@ exportObj.cardLoaders.English = () ->
                 "Target Lock",
                 "Barrel Roll",
                 "Evade",
+            ]
+            maneuvers: [
+              [ 0, 2, 0, 2, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 0, 1, 0, 0, 3],
+              [ 0, 0, 1, 0, 0, 0]
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
