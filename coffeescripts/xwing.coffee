@@ -1316,7 +1316,7 @@ class Ship
     getManeuverTableHTML: ->
         outTable = "<table>"
         for speed in [@maneuvers.length - 1 .. 0]
-          outTable += "<tr><td>" + (speed + 1) + "</td>"
+          outTable += """<tr><td class="maneuver-speed">""" + (speed + 1) + "</td>"
           for turn in @maneuvers[speed]
             outTable += "<td>" + turn + "</td>"
           outTable += "</tr>"
