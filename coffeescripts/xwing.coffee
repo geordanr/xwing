@@ -841,6 +841,111 @@ class exportObj.SquadBuilder
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
+    # Converts a maneuver table for into an HTML table.
+    getManeuverTableHTML: (maneuvers) ->
+
+        if not maneuvers?
+          return "Missing maneuver info."
+
+        # first define the 3 arrowhead colors - these are global to all svg elements, so no need to redefine them each time an arrow is drawn
+        # however, there's no way to fill with the line color, so need one marker for each color
+        outTable = ""
+        outTable += $.trim '''
+          <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id='redarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
+                <path d='M0,0 V4 L4,2 Z' fill='red' />
+              </marker>
+              <marker id='greenarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
+                <path d='M0,0 V4 L4,2 Z' fill='green' />
+              </marker>
+              <marker id='whitearrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
+                <path d='M0,0 V4 L4,2 Z' fill='white' />
+              </marker>
+            </defs>
+          </svg>
+          <table><tbody>
+        '''
+
+        viewWidth = 200
+        viewHeight = 200
+
+        for speed in [maneuvers.length - 1 .. 0]
+
+            outTable += "<tr><td>#{(speed + 1)}</td>"
+            for turn in [0 ... maneuvers[speed].length]
+
+                outTable += "<td>"
+                if maneuvers[speed][turn] > 0
+
+                    # default values are for a straight line
+                    startx = 100
+                    starty = 180
+                    smoothx = 100
+                    smoothy = 100
+                    endx = 100
+                    endy = 80
+                    turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
+                    extraPoint = "" # extra inflection point for cubic bezier
+
+
+                    switch turn
+                        when 0
+                            # turn left
+                            startx = 160
+                            smoothx = 160
+                            smoothy = 70
+                            endx = 80
+                            endy = 70
+                            turnType = "L"
+                        when 1
+                            # bank left
+                            startx = 150
+                            smoothx = 150
+                            smoothy = 120
+                            endx = 80
+                            endy = 60
+                        # when 2 # straight - this is the default value, don't need to do anything
+                        when 3
+                            # bank right
+                            startx = 50
+                            smoothx = 50
+                            smoothy = 120
+                            endx = 120
+                            endy = 60
+                        when 4
+                            # turn right
+                            startx = 40
+                            smoothx = 40
+                            smoothy = 70
+                            endx = 120
+                            endy = 70
+                            turnType = "L"
+                        when 5
+                            # k-turn/u-turn
+                            startx = 150
+                            smoothx = 150
+                            smoothy = -10
+                            endx = 60
+                            endy = 120
+                            turnType = "C"
+                            extraPoint = "60,-10 "
+
+                    color = switch maneuvers[speed][turn]
+                        when 1 then "white"
+                        when 2 then "green"
+                        when 3 then "red"
+
+                    outTable += $.trim """
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">
+                        <path marker-end='url(##{color}arrowhead)' stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                      </svg>
+                    """
+                outTable += "</td>"
+            outTable += "</tr>"
+        outTable += "</tbody></table>"
+        outTable
+
     showTooltip: (type, data) ->
         if data != @tooltip_currently_displaying
             switch type
@@ -871,7 +976,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(data.getManeuverTableHTML())
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -897,7 +1002,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(ship.getManeuverTableHTML())
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1050,6 +1155,7 @@ class exportObj.SquadBuilder
                 card_obj[ship.modification.data.name] = null if ship.modification?.data?
         return Object.keys(card_obj).sort()
 
+
 class Ship
     constructor: (args) ->
         # args
@@ -1062,11 +1168,6 @@ class Ship
         @upgrades = []
         @modifications = []
         @title = null
-
-        # maneuver array is 2d, speed major, turn minor, elements are 0 = none, 1 = green, 2 = white, 3 = red
-        @maneuvers = for speed in [0 .. 4]
-            for turn in [0 .. 5]
-                Math.floor(Math.random() * 4)
 
         @setupUI()
 
@@ -1311,101 +1412,6 @@ class Ship
             "Pilot #{@pilot.name} flying #{@data.name}"
         else
             "Ship without pilot"
-
-    # Converts the maneuver table for this ship into an HTML table.
-    getManeuverTableHTML: ->
-        # first define the 3 arrowhead colors - these are global to all svg elements, so no need to redefine them each time an arrow is drawn
-        # however, there's no way to fill with the line color, so need one marker for each color
-        outTable = """<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">"""
-        outTable += """<defs>"""
-        outTable += """<marker id='redarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
-        outTable += """<path d='M0,0 V4 L4,2 Z' fill='red' />"""
-        outTable += """</marker>"""
-        outTable += """<marker id='greenarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
-        outTable += """<path d='M0,0 V4 L4,2 Z' fill='green' />"""
-        outTable += """</marker>"""
-        outTable += """<marker id='whitearrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>"""
-        outTable += """<path d='M0,0 V4 L4,2 Z' fill='white' />"""
-        outTable += """</marker>"""
-        outTable += """</defs>"""
-        outTable += """</svg>"""
-        outTable += "<table><tbody>"
-
-        viewWidth = 200
-        viewHeight = 200
-
-        for speed in [@maneuvers.length - 1 .. 0]
-
-            outTable += "<tr><td>" + (speed + 1) + "</td>"
-            for turn in [0 ... @maneuvers[speed].length]
-
-                outTable += """<td>"""
-                if @maneuvers[speed][turn] > 0
-
-                    # default values are for a straight line
-                    startx = 100
-                    starty = 180
-                    smoothx = 100
-                    smoothy = 100
-                    endx = 100
-                    endy = 80
-                    turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
-                    extraPoint = "" # extra inflection point for cubic bezier
-
-
-                    switch turn
-                        when 0
-                            # turn left
-                            startx = 160
-                            smoothx = 160
-                            smoothy = 70
-                            endx = 80
-                            endy = 70
-                            turnType = "L"
-                        when 1
-                            # bank left
-                            startx = 150
-                            smoothx = 150
-                            smoothy = 120
-                            endx = 80
-                            endy = 60
-                        # when 2 then # straight - this is the default value, don't need to do anything
-                        when 3
-                            # bank right
-                            startx = 50
-                            smoothx = 50
-                            smoothy = 120
-                            endx = 120
-                            endy = 60
-                        when 4
-                            # turn right
-                            startx = 40
-                            smoothx = 40
-                            smoothy = 70
-                            endx = 120
-                            endy = 70
-                            turnType = "L"
-                        when 5
-                            # k-turn/u-turn
-                            startx = 150
-                            smoothx = 150
-                            smoothy = -10
-                            endx = 60
-                            endy = 120
-                            turnType = "C"
-                            extraPoint = "60,-10 "
-
-                    color = switch @maneuvers[speed][turn]
-                        when 1 then "white"
-                        when 2 then "green"
-                        when 3 then "red"
-                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">"""
-                    outTable += """<path marker-end='url(##{color}arrowhead)' stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />"""
-                    outTable += """</svg>"""
-                outTable += """</td>"""
-            outTable += "</tr>"
-        outTable += "</tbody></table>"
-        outTable
 
     toHTML: ->
         effective_stats = @effectiveStats()
