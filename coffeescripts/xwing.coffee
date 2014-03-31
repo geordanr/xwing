@@ -1330,24 +1330,77 @@ class Ship
         outTable += """</defs>"""
         outTable += """</svg>"""
         outTable += "<table><tbody>"
+
+        viewWidth = 200
+        viewHeight = 200
+
         for speed in [@maneuvers.length - 1 .. 0]
+
             outTable += "<tr><td>" + (speed + 1) + "</td>"
-            for turn in [0 .. @maneuvers[speed].length]
+            for turn in [0 ... @maneuvers[speed].length]
+
                 outTable += """<td>"""
                 if @maneuvers[speed][turn] > 0
-                    iconName = switch turn
-                        when 0 then "turnleft"
-                        when 1 then "bankleft"
-                        when 2 then "straight"
-                        when 3 then "bankright"
-                        when 4 then "turnright"
-                        when 5 then "uturn"
+
+                    # default values are for a straight line
+                    startx = 100
+                    starty = 180
+                    smoothx = 100
+                    smoothy = 100
+                    endx = 100
+                    endy = 80
+                    turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
+                    extraPoint = "" # extra inflection point for cubic bezier
+
+
+                    switch turn
+                        when 0
+                            # turn left
+                            startx = 160
+                            smoothx = 160
+                            smoothy = 70
+                            endx = 80
+                            endy = 70
+                            turnType = "L"
+                        when 1
+                            # bank left
+                            startx = 150
+                            smoothx = 150
+                            smoothy = 120
+                            endx = 80
+                            endy = 60
+                        # when 2 then # straight - this is the default value, don't need to do anything
+                        when 3
+                            # bank right
+                            startx = 50
+                            smoothx = 50
+                            smoothy = 120
+                            endx = 120
+                            endy = 60
+                        when 4
+                            # turn right
+                            startx = 40
+                            smoothx = 40
+                            smoothy = 70
+                            endx = 120
+                            endy = 70
+                            turnType = "L"
+                        when 5
+                            # k-turn/u-turn
+                            startx = 150
+                            smoothx = 150
+                            smoothy = -10
+                            endx = 60
+                            endy = 120
+                            turnType = "C"
+                            extraPoint = "60,-10 "
+
                     color = switch @maneuvers[speed][turn]
                         when 1 then "white"
                         when 2 then "green"
                         when 3 then "red"
-                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">"""
-                    outTable += """<path marker-end='url(#""" + color + """arrowhead)' stroke-width='15' fill='none' stroke='""" + color + """' d='M150,180 S150,120 80,60' />"""
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">"""
+                    outTable += """<path marker-end='url(##{color}arrowhead)' stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />"""
                     outTable += """</svg>"""
                 outTable += """</td>"""
             outTable += "</tr>"
