@@ -520,6 +520,10 @@ class exportObj.SquadBuilder
                             <td>Upgrades</td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-maneuvers">
+                            <td>Maneuvers</td>
+                            <td class="info-data"></td>
+                        </tr>
                     </tbody>
                 </table>
                 <p class="info-text" />
@@ -866,6 +870,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').text('NYI')
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -890,6 +896,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').text('NYI')
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -916,6 +924,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
                     @info_container.find('tr.info-upgrades').hide()
+                    @info_container.find('tr.info-maneuvers').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
 
