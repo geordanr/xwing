@@ -147,6 +147,12 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            maneuvers: [
+              [ 1, 2, 2, 2, 1, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 1, 1, 1, 0, 3],
+              [ 0, 0, 1, 0, 0, 3],
+            ]
             large: true
         "TIE Fighter":
             name: "TIE Fighter"
@@ -200,6 +206,13 @@ exportObj.cardLoaders.English = () ->
                 "Boost",
                 "Evade",
             ]
+            maneuvers: [
+              [ 1, 0, 0, 0, 0, 0],
+              [ 2, 2, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 2, 0, 0, 0],
+              [ 0, 0, 1, 0, 0, 3]
+            ]
         "Firespray-31":
             name: "Firespray-31"
             faction: "Galactic Empire"
@@ -211,6 +224,12 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
                 "Evade",
+            ]
+            maneuvers: [
+              [ 0, 2, 2, 2, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 1, 1, 1, 3],
+              [ 0, 0, 1, 0, 0, 3],
             ]
             large: true
         "HWK-290":
@@ -224,6 +243,12 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            maneuvers: [
+              [ 0, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1],
+              [ 0, 3, 1, 3, 0],
+              [ 0, 0, 3, 0, 0],
+            ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
             faction: "Galactic Empire"
@@ -235,6 +260,13 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            # need to implement 0 speed
+            #maneuvers: [
+            #  [ 0, 0, 3, 0, 0],
+            #  [ 0, 2, 2, 2, 0],
+            #  [ 3, 1, 2, 1, 3],
+            #  [ 0, 3, 1, 3, 0],
+            #]
             large: true
         "B-Wing":
             name: "B-Wing"
@@ -248,6 +280,12 @@ exportObj.cardLoaders.English = () ->
                 "Target Lock",
                 "Barrel Roll",
             ]
+            maneuvers: [
+              [ 3, 2, 2, 2, 3, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 3, 1, 3, 0, 0],
+              [ 0, 0, 3, 0, 0, 0],
+            ]
         "TIE Bomber":
             name: "TIE Bomber"
             faction: "Galactic Empire"
@@ -259,6 +297,13 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
                 "Barrel Roll",
+            ]
+            maneuvers: [
+              [ 0, 1, 2, 1, 0, 0],
+              [ 3, 1, 2, 1, 3, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 0, 1, 0, 0, 0],
+              [ 0, 0, 0, 0, 0, 3],
             ]
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
@@ -284,6 +329,12 @@ exportObj.cardLoaders.English = () ->
             actions: [
                 "Focus",
                 "Target Lock",
+            ]
+            maneuvers: [
+              [ 0, 1, 2, 1, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 1, 1, 1, 0],
+              [ 0, 0, 3, 0, 0, 3],
             ]
         "TIE Defender":
             name: "TIE Defender"
