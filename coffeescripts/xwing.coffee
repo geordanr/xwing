@@ -1015,7 +1015,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(data.data.maneuvers))
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(effective_stats.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1654,6 +1654,12 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             actions: @data.actions.slice 0
+
+        # need a deep copy of maneuvers array
+        stats.maneuvers = []
+        for s in [0 ... @data.maneuvers.length]
+          stats.maneuvers[s] = @data.maneuvers[s].slice 0
+
         for upgrade in @upgrades
             upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
         @title.data.modifier_func(stats) if @title?.data?.modifier_func?
