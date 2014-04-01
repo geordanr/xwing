@@ -109,6 +109,11 @@ exports.setShipType = (builder_selector, ship_idx, ship_type) ->
         @log("=== setShipType('#{builder_selector}', #{ship_idx}, '#{ship_type}')", "debug")
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForShipDropdown}", ship_type)
 
+exports.setPilot = (builder_selector, ship_idx, pilot) ->
+    casper.then ->
+        @log("=== setPilot('#{builder_selector}', #{ship_idx}, '#{pilot}')", "debug")
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForPilotDropdown}", pilot)
+
 exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}", upgrade)
 
@@ -130,6 +135,32 @@ exports.selectLanguage = (language) ->
         @click(selectXPath("""//li[contains(@class, 'language-picker')]//li[contains(., '#{language}')]"""))
     .waitFor ->
         @fetchText('.language-placeholder') == language
+
+exports.assertSelect2HasText = (test, selector, text) ->
+    casper.then ->
+        actual_text = @evaluate (sel) ->
+            $(sel).data('select2').data().text
+        , selector
+        test.assert((actual_text ? "").indexOf(text) != -1, "Found #{actual_text}")
+
+exports.assertSelect2IsEmpty = (test, selector) ->
+    casper.then ->
+        actual_text = @evaluate (sel) ->
+            $(sel).data('select2').data().text
+        , selector
+        test.assert(actual_text == null, "Selector is empty")
+
+exports.assertShipTypeIs = (test, builder_selector, ship_idx, ship) ->
+    exports.assertSelect2HasText(test, "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForShipDropdown}", ship)
+
+exports.assertPilotIs = (test, builder_selector, ship_idx, pilot) ->
+    exports.assertSelect2HasText(test, "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForPilotDropdown}", pilot)
+
+exports.assertUpgradeInSlot = (test, builder_selector, ship_idx, upgrade_idx, upgrade) ->
+    exports.assertSelect2HasText(test, "#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}", upgrade)
+
+exports.assertNoUpgradeInSlot = (test, builder_selector, ship_idx, upgrade_idx) ->
+    exports.assertSelect2IsEmpty(test, "#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}")
 
 # Selectors
 
