@@ -842,7 +842,7 @@ class exportObj.SquadBuilder
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
-    getManeuverTableHTML: (maneuvers) ->
+    getManeuverTableHTML: (maneuvers, baseManeuvers) ->
 
         if not maneuvers?
           return "Missing maneuver info."
@@ -975,9 +975,13 @@ class exportObj.SquadBuilder
                                 arrowEndx = 60
                                 arrowEndy = 180
 
+                        outlineColor = "black"
+                        if maneuvers[speed][turn] != baseManeuvers[speed][turn]
+                          outlineColor = "gold" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
+
                         outTable += $.trim """
-                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform} stroke-width='5' stroke='black' />
-                          <path stroke-width='25' fill='none' stroke='black' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform} stroke-width='5' stroke='#{outlineColor}' />
+                          <path stroke-width='25' fill='none' stroke='#{outlineColor}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
                           <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
                         """
                     outTable += "</svg>"
@@ -1016,7 +1020,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(effective_stats.maneuvers))
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1042,7 +1046,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                     @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers))
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
