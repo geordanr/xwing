@@ -330,3 +330,8 @@ input[type=number] {
 
 .red {
   color: red; }
+
+.squad-notes {
+  height: 8em;
+  width: 100%;
+  font-family: EurostileStandard; }
