@@ -847,25 +847,7 @@ class exportObj.SquadBuilder
         if not maneuvers?
           return "Missing maneuver info."
 
-        # first define the 3 arrowhead colors - these are global to all svg elements, so no need to redefine them each time an arrow is drawn
-        # however, there's no way to fill with the line color, so need one marker for each color
-        outTable = ""
-        outTable += $.trim '''
-          <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id='redarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
-                <path d='M0,0 V4 L4,2 Z' fill='red' />
-              </marker>
-              <marker id='greenarrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
-                <path d='M0,0 V4 L4,2 Z' fill='green' />
-              </marker>
-              <marker id='whitearrowhead' orient='auto' markerWidth='4' markerHeight='4' refX='0.1' refY='2'>
-                <path d='M0,0 V4 L4,2 Z' fill='white' />
-              </marker>
-            </defs>
-          </svg>
-          <table><tbody>
-        '''
+        outTable = "<table><tbody>"
 
         viewWidth = 200
         viewHeight = 200
@@ -896,6 +878,12 @@ class exportObj.SquadBuilder
                     turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
                     extraPoint = "" # extra inflection point for cubic bezier
 
+                    arrowStartx = 70
+                    arrowStarty = 80
+                    arrowMove = "H130"
+                    arrowEndx = 100
+                    arrowEndy = 30
+                    transform = ""
 
                     switch turn
                         when 0
@@ -906,6 +894,13 @@ class exportObj.SquadBuilder
                             endx = 80
                             endy = 70
                             turnType = "L"
+
+                            arrowStartx = 80
+                            arrowStarty = 100
+                            arrowMove = "V40"
+                            arrowEndx = 30
+                            arrowEndy = 70
+
                         when 1
                             # bank left
                             startx = 150
@@ -913,7 +908,16 @@ class exportObj.SquadBuilder
                             smoothy = 120
                             endx = 80
                             endy = 60
+
+                            arrowStartx = 80
+                            arrowStarty = 100
+                            arrowMove = "V40"
+                            arrowEndx = 30
+                            arrowEndy = 70
+                            transform = "transform='translate(-5 -15) rotate(45 70 90)' "
+
                         # when 2 # straight - this is the default value, don't need to do anything
+
                         when 3
                             # bank right
                             startx = 50
@@ -921,6 +925,14 @@ class exportObj.SquadBuilder
                             smoothy = 120
                             endx = 120
                             endy = 60
+
+                            arrowStartx = 120
+                            arrowStarty = 100
+                            arrowMove = "V40"
+                            arrowEndx = 170
+                            arrowEndy = 70
+                            transform = "transform='translate(5 -15) rotate(-45 130 90)' "
+
                         when 4
                             # turn right
                             startx = 40
@@ -929,6 +941,13 @@ class exportObj.SquadBuilder
                             endx = 120
                             endy = 70
                             turnType = "L"
+
+                            arrowStartx = 120
+                            arrowStarty = 100
+                            arrowMove = "V40"
+                            arrowEndx = 170
+                            arrowEndy = 70
+
                         when 5
                             # k-turn/u-turn
                             startx = 150
@@ -939,6 +958,13 @@ class exportObj.SquadBuilder
                             turnType = "C"
                             extraPoint = "60,-10 "
 
+                            arrowStartx = 30
+                            arrowStarty = 120
+                            arrowMove = "H90"
+                            arrowEndx = 60
+                            arrowEndy = 180
+
+
                     color = switch maneuvers[speed][turn]
                         when 1 then "white"
                         when 2 then "green"
@@ -946,7 +972,8 @@ class exportObj.SquadBuilder
 
                     outTable += $.trim """
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">
-                        <path marker-end='url(##{color}arrowhead)' stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                        <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform}/>
+                        <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
                       </svg>
                     """
                 outTable += "</td>"
