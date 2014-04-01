@@ -214,7 +214,7 @@ exportObj.cardLoaders.English = () ->
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0],
-              [ 1, 0, 0, 0, 0, 0],
+              [ 1, 0, 0, 0, 1, 0],
               [ 2, 2, 2, 2, 2, 0],
               [ 1, 1, 2, 1, 1, 3],
               [ 0, 0, 2, 0, 0, 0],
@@ -1178,6 +1178,9 @@ exportObj.cardLoaders.English = () ->
                 "Elite",
             ]
             text: """When you reveal a <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> maneuver, you may treat the speed of that maneuver as "1," "3," or "5"."""
+            modifier_func: (stats) ->
+                # add speed 1 k-turn to table (Interceptor already has 3/5)
+                stats.maneuvers[1][5] = 3
         "Kir Kanos":
             name: "Kir Kanos"
             id: 61

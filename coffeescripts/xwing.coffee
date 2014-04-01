@@ -1670,6 +1670,7 @@ class Ship
         @title.data.modifier_func(stats) if @title?.data?.modifier_func?
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
+        @pilot.modifier_func(stats) if @pilot?.modifier_func?
         stats
 
     validate: ->
