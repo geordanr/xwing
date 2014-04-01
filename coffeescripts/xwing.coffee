@@ -868,114 +868,118 @@ class exportObj.SquadBuilder
                 outTable += "<td>"
                 if maneuvers[speed][turn] > 0
 
-                    # default values are for a straight line
-                    startx = 100
-                    starty = 180
-                    smoothx = 100
-                    smoothy = 100
-                    endx = 100
-                    endy = 80
-                    turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
-                    extraPoint = "" # extra inflection point for cubic bezier
-
-                    arrowStartx = 70
-                    arrowStarty = 80
-                    arrowMove = "H130"
-                    arrowEndx = 100
-                    arrowEndy = 30
-                    transform = ""
-
-                    switch turn
-                        when 0
-                            # turn left
-                            startx = 160
-                            smoothx = 160
-                            smoothy = 70
-                            endx = 80
-                            endy = 70
-                            turnType = "L"
-
-                            arrowStartx = 80
-                            arrowStarty = 100
-                            arrowMove = "V40"
-                            arrowEndx = 30
-                            arrowEndy = 70
-
-                        when 1
-                            # bank left
-                            startx = 150
-                            smoothx = 150
-                            smoothy = 120
-                            endx = 80
-                            endy = 60
-
-                            arrowStartx = 80
-                            arrowStarty = 100
-                            arrowMove = "V40"
-                            arrowEndx = 30
-                            arrowEndy = 70
-                            transform = "transform='translate(-5 -15) rotate(45 70 90)' "
-
-                        # when 2 # straight - this is the default value, don't need to do anything
-
-                        when 3
-                            # bank right
-                            startx = 50
-                            smoothx = 50
-                            smoothy = 120
-                            endx = 120
-                            endy = 60
-
-                            arrowStartx = 120
-                            arrowStarty = 100
-                            arrowMove = "V40"
-                            arrowEndx = 170
-                            arrowEndy = 70
-                            transform = "transform='translate(5 -15) rotate(-45 130 90)' "
-
-                        when 4
-                            # turn right
-                            startx = 40
-                            smoothx = 40
-                            smoothy = 70
-                            endx = 120
-                            endy = 70
-                            turnType = "L"
-
-                            arrowStartx = 120
-                            arrowStarty = 100
-                            arrowMove = "V40"
-                            arrowEndx = 170
-                            arrowEndy = 70
-
-                        when 5
-                            # k-turn/u-turn
-                            startx = 150
-                            smoothx = 150
-                            smoothy = -10
-                            endx = 60
-                            endy = 120
-                            turnType = "C"
-                            extraPoint = "60,-10 "
-
-                            arrowStartx = 30
-                            arrowStarty = 120
-                            arrowMove = "H90"
-                            arrowEndx = 60
-                            arrowEndy = 180
-
-
                     color = switch maneuvers[speed][turn]
                         when 1 then "white"
                         when 2 then "green"
                         when 3 then "red"
 
-                    outTable += $.trim """
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">
-                        <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform}/>
-                        <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
-                      </svg>
-                    """
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">"""
+
+                    if speed == 0
+                        outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
+                    else
+
+                        # default values are for a straight line
+                        startx = 100
+                        starty = 180
+                        smoothx = 100
+                        smoothy = 100
+                        endx = 100
+                        endy = 80
+                        turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
+                        extraPoint = "" # extra inflection point for cubic bezier
+
+                        arrowStartx = 70
+                        arrowStarty = 80
+                        arrowMove = "H130"
+                        arrowEndx = 100
+                        arrowEndy = 30
+                        transform = ""
+
+                        switch turn
+                            when 0
+                                # turn left
+                                startx = 160
+                                smoothx = 160
+                                smoothy = 70
+                                endx = 80
+                                endy = 70
+                                turnType = "L"
+
+                                arrowStartx = 80
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 30
+                                arrowEndy = 70
+
+                            when 1
+                                # bank left
+                                startx = 150
+                                smoothx = 150
+                                smoothy = 120
+                                endx = 80
+                                endy = 60
+
+                                arrowStartx = 80
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 30
+                                arrowEndy = 70
+                                transform = "transform='translate(-5 -15) rotate(45 70 90)' "
+
+                            # when 2 # straight - this is the default value, don't need to do anything
+
+                            when 3
+                                # bank right
+                                startx = 50
+                                smoothx = 50
+                                smoothy = 120
+                                endx = 120
+                                endy = 60
+
+                                arrowStartx = 120
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 170
+                                arrowEndy = 70
+                                transform = "transform='translate(5 -15) rotate(-45 130 90)' "
+
+                            when 4
+                                # turn right
+                                startx = 40
+                                smoothx = 40
+                                smoothy = 70
+                                endx = 120
+                                endy = 70
+                                turnType = "L"
+
+                                arrowStartx = 120
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 170
+                                arrowEndy = 70
+
+                            when 5
+                                # k-turn/u-turn
+                                startx = 150
+                                smoothx = 150
+                                smoothy = -10
+                                endx = 60
+                                endy = 120
+                                turnType = "C"
+                                extraPoint = "60,-10 "
+
+                                arrowStartx = 30
+                                arrowStarty = 120
+                                arrowMove = "H90"
+                                arrowEndx = 60
+                                arrowEndy = 180
+
+                        outTable += $.trim """
+                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform}/>
+                          <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                        """
+                    outTable += "</svg>"
                 outTable += "</td>"
             outTable += "</tr>"
         outTable += "</tbody></table>"
