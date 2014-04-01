@@ -872,7 +872,15 @@ class exportObj.SquadBuilder
 
         for speed in [maneuvers.length - 1 .. 0]
 
-            outTable += "<tr><td>#{(speed + 1)}</td>"
+            haveManeuver = false
+            for v in maneuvers[speed]
+              if v > 0
+                haveManeuver = true
+                break
+
+            continue if not haveManeuver
+
+            outTable += "<tr><td>#{speed}</td>"
             for turn in [0 ... maneuvers[speed].length]
 
                 outTable += "<td>"
