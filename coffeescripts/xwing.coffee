@@ -976,7 +976,8 @@ class exportObj.SquadBuilder
                                 arrowEndy = 180
 
                         outTable += $.trim """
-                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform}/>
+                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform} stroke-width='5' stroke='black' />
+                          <path stroke-width='25' fill='none' stroke='black' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
                           <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
                         """
                     outTable += "</svg>"
