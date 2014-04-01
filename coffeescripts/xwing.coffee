@@ -520,6 +520,10 @@ class exportObj.SquadBuilder
                             <td>Upgrades</td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-maneuvers">
+                            <td>Maneuvers</td>
+                            <td class="info-data"></td>
+                        </tr>
                     </tbody>
                 </table>
                 <p class="info-text" />
@@ -837,6 +841,150 @@ class exportObj.SquadBuilder
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
+    # Converts a maneuver table for into an HTML table.
+    getManeuverTableHTML: (maneuvers) ->
+
+        if not maneuvers?
+          return "Missing maneuver info."
+
+        outTable = "<table><tbody>"
+
+        viewWidth = 200
+        viewHeight = 200
+
+        for speed in [maneuvers.length - 1 .. 0]
+
+            haveManeuver = false
+            for v in maneuvers[speed]
+              if v > 0
+                haveManeuver = true
+                break
+
+            continue if not haveManeuver
+
+            outTable += "<tr><td>#{speed}</td>"
+            for turn in [0 ... maneuvers[speed].length]
+
+                outTable += "<td>"
+                if maneuvers[speed][turn] > 0
+
+                    color = switch maneuvers[speed][turn]
+                        when 1 then "white"
+                        when 2 then "green"
+                        when 3 then "red"
+
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">"""
+
+                    if speed == 0
+                        outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
+                    else
+
+                        # default values are for a straight line
+                        startx = 100
+                        starty = 180
+                        smoothx = 100
+                        smoothy = 100
+                        endx = 100
+                        endy = 80
+                        turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
+                        extraPoint = "" # extra inflection point for cubic bezier
+
+                        arrowStartx = 70
+                        arrowStarty = 80
+                        arrowMove = "H130"
+                        arrowEndx = 100
+                        arrowEndy = 30
+                        transform = ""
+
+                        switch turn
+                            when 0
+                                # turn left
+                                startx = 160
+                                smoothx = 160
+                                smoothy = 70
+                                endx = 80
+                                endy = 70
+                                turnType = "L"
+
+                                arrowStartx = 80
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 30
+                                arrowEndy = 70
+
+                            when 1
+                                # bank left
+                                startx = 150
+                                smoothx = 150
+                                smoothy = 120
+                                endx = 80
+                                endy = 60
+
+                                arrowStartx = 80
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 30
+                                arrowEndy = 70
+                                transform = "transform='translate(-5 -15) rotate(45 70 90)' "
+
+                            # when 2 # straight - this is the default value, don't need to do anything
+
+                            when 3
+                                # bank right
+                                startx = 50
+                                smoothx = 50
+                                smoothy = 120
+                                endx = 120
+                                endy = 60
+
+                                arrowStartx = 120
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 170
+                                arrowEndy = 70
+                                transform = "transform='translate(5 -15) rotate(-45 130 90)' "
+
+                            when 4
+                                # turn right
+                                startx = 40
+                                smoothx = 40
+                                smoothy = 70
+                                endx = 120
+                                endy = 70
+                                turnType = "L"
+
+                                arrowStartx = 120
+                                arrowStarty = 100
+                                arrowMove = "V40"
+                                arrowEndx = 170
+                                arrowEndy = 70
+
+                            when 5
+                                # k-turn/u-turn
+                                startx = 150
+                                smoothx = 150
+                                smoothy = -10
+                                endx = 60
+                                endy = 120
+                                turnType = "C"
+                                extraPoint = "60,-10 "
+
+                                arrowStartx = 30
+                                arrowStarty = 120
+                                arrowMove = "H90"
+                                arrowEndx = 60
+                                arrowEndy = 180
+
+                        outTable += $.trim """
+                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform}/>
+                          <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                        """
+                    outTable += "</svg>"
+                outTable += "</td>"
+            outTable += "</tr>"
+        outTable += "</tbody></table>"
+        outTable
+
     showTooltip: (type, data) ->
         if data != @tooltip_currently_displaying
             switch type
@@ -866,6 +1014,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -890,6 +1040,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -916,6 +1068,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
                     @info_container.find('tr.info-upgrades').hide()
+                    @info_container.find('tr.info-maneuvers').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
 
@@ -1041,6 +1194,7 @@ class exportObj.SquadBuilder
                 card_obj[ship.modification.data.name] = null if ship.modification?.data?
         return Object.keys(card_obj).sort()
 
+
 class Ship
     constructor: (args) ->
         # args
@@ -1098,6 +1252,7 @@ class Ship
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
                 @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
         @builder.current_squad.dirty = true
