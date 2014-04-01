@@ -911,7 +911,7 @@ class exportObj.SquadBuilder
 
                             when 5
                                 # k-turn/u-turn
-                                linePath = "M50,180 C50,-10 140,-10 140,120"
+                                linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120"
                                 trianglePath = "M170,120 H110 L140,180 Z"
 
                         outTable += $.trim """
