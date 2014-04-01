@@ -961,18 +961,18 @@ class exportObj.SquadBuilder
 
                             when 5
                                 # k-turn/u-turn
-                                startx = 150
-                                smoothx = 150
+                                startx = 50
+                                smoothx = 50
                                 smoothy = -10
-                                endx = 60
+                                endx = 140
                                 endy = 120
                                 turnType = "C"
-                                extraPoint = "60,-10 "
+                                extraPoint = "140,-10 "
 
-                                arrowStartx = 30
+                                arrowStartx = 170
                                 arrowStarty = 120
-                                arrowMove = "H90"
-                                arrowEndx = 60
+                                arrowMove = "H110"
+                                arrowEndx = 140
                                 arrowEndy = 180
 
                         outlineColor = "black"
