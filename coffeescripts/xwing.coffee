@@ -849,9 +849,6 @@ class exportObj.SquadBuilder
 
         outTable = "<table><tbody>"
 
-        viewWidth = 200
-        viewHeight = 200
-
         for speed in [maneuvers.length - 1 .. 0]
 
             haveManeuver = false
@@ -873,117 +870,56 @@ class exportObj.SquadBuilder
                         when 2 then "green"
                         when 3 then "red"
 
-                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{viewWidth} #{viewHeight}">"""
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">"""
 
                     if speed == 0
                         outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
                     else
 
-                        # default values are for a straight line
-                        startx = 100
-                        starty = 180
-                        smoothx = 100
-                        smoothy = 100
-                        endx = 100
-                        endy = 80
-                        turnType = "S" # S = smooth, L = line, C = cubic bezier (for k-turn)
-                        extraPoint = "" # extra inflection point for cubic bezier
-
-                        arrowStartx = 70
-                        arrowStarty = 80
-                        arrowMove = "H130"
-                        arrowEndx = 100
-                        arrowEndy = 30
-                        transform = ""
-
-                        switch turn
-                            when 0
-                                # turn left
-                                startx = 160
-                                smoothx = 160
-                                smoothy = 70
-                                endx = 80
-                                endy = 70
-                                turnType = "L"
-
-                                arrowStartx = 80
-                                arrowStarty = 100
-                                arrowMove = "V40"
-                                arrowEndx = 30
-                                arrowEndy = 70
-
-                            when 1
-                                # bank left
-                                startx = 150
-                                smoothx = 150
-                                smoothy = 120
-                                endx = 80
-                                endy = 60
-
-                                arrowStartx = 80
-                                arrowStarty = 100
-                                arrowMove = "V40"
-                                arrowEndx = 30
-                                arrowEndy = 70
-                                transform = "transform='translate(-5 -15) rotate(45 70 90)' "
-
-                            # when 2 # straight - this is the default value, don't need to do anything
-
-                            when 3
-                                # bank right
-                                startx = 50
-                                smoothx = 50
-                                smoothy = 120
-                                endx = 120
-                                endy = 60
-
-                                arrowStartx = 120
-                                arrowStarty = 100
-                                arrowMove = "V40"
-                                arrowEndx = 170
-                                arrowEndy = 70
-                                transform = "transform='translate(5 -15) rotate(-45 130 90)' "
-
-                            when 4
-                                # turn right
-                                startx = 40
-                                smoothx = 40
-                                smoothy = 70
-                                endx = 120
-                                endy = 70
-                                turnType = "L"
-
-                                arrowStartx = 120
-                                arrowStarty = 100
-                                arrowMove = "V40"
-                                arrowEndx = 170
-                                arrowEndy = 70
-
-                            when 5
-                                # k-turn/u-turn
-                                startx = 50
-                                smoothx = 50
-                                smoothy = -10
-                                endx = 140
-                                endy = 120
-                                turnType = "C"
-                                extraPoint = "140,-10 "
-
-                                arrowStartx = 170
-                                arrowStarty = 120
-                                arrowMove = "H110"
-                                arrowEndx = 140
-                                arrowEndy = 180
-
                         outlineColor = "black"
                         if maneuvers[speed][turn] != baseManeuvers[speed][turn]
                           outlineColor = "gold" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
 
+                        transform = ""
+                        switch turn
+                            when 0
+                                # turn left
+                                linePath = "M160,180 L160,70 80,70"
+                                trianglePath = "M80,100 V40 L30,70 Z"
+
+                            when 1
+                                # bank left
+                                linePath = "M150,180 S150,120 80,60"
+                                trianglePath = "M80,100 V40 L30,70 Z"
+                                transform = "transform='translate(-5 -15) rotate(45 70 90)' "
+
+                            when 2
+                                # straight
+                                linePath = "M100,180 L100,100 100,80"
+                                trianglePath = "M70,80 H130 L100,30 Z"
+
+                            when 3
+                                # bank right
+                                linePath = "M50,180 S50,120 120,60"
+                                trianglePath = "M120,100 V40 L170,70 Z"
+                                transform = "transform='translate(5 -15) rotate(-45 130 90)' "
+
+                            when 4
+                                # turn right
+                                linePath = "M40,180 L40,70 120,70"
+                                trianglePath = "M120,100 V40 L170,70 Z"
+
+                            when 5
+                                # k-turn/u-turn
+                                linePath = "M50,180 C50,-10 140,-10 140,120"
+                                trianglePath = "M170,120 H110 L140,180 Z"
+
                         outTable += $.trim """
-                          <path d='M#{arrowStartx},#{arrowStarty} #{arrowMove} L#{arrowEndx},#{arrowEndy} Z' fill='#{color}' #{transform} stroke-width='5' stroke='#{outlineColor}' />
-                          <path stroke-width='25' fill='none' stroke='#{outlineColor}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
-                          <path stroke-width='15' fill='none' stroke='#{color}' d='M#{startx},#{starty} #{turnType}#{smoothx},#{smoothy} #{extraPoint}#{endx},#{endy}' />
+                          <path d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
+                          <path stroke-width='25' fill='none' stroke='#{outlineColor}' d='#{linePath}' />
+                          <path stroke-width='15' fill='none' stroke='#{color}' d='#{linePath}' />
                         """
+
                     outTable += "</svg>"
                 outTable += "</td>"
             outTable += "</tr>"
