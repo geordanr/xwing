@@ -1646,7 +1646,7 @@ exportObj.cardLoaders.English = () ->
             slot: "Elite"
             sources: [ "TIE Advanced Expansion Pack", ]
             points: 2
-            text: """<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship my immediately perform 1 free action."""
+            text: """<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship may immediately perform 1 free action."""
         "Expert Handling":
             name: "Expert Handling"
             id: 11
