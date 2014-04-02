@@ -1156,11 +1156,8 @@ class exportObj.SquadBuilder
                 card_obj[ship.modification.data.name] = null if ship.modification?.data?
         return Object.keys(card_obj).sort()
 
-<<<<<<< HEAD
-=======
     getNotes: ->
         @notes.val()
->>>>>>> upstream/master
 
 class Ship
     constructor: (args) ->
