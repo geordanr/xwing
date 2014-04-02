@@ -99,6 +99,7 @@ class exportObj.SquadBuilder
                 points: @total_points
                 description: ''
                 cards: []
+                notes: ''
             faction: @faction
         if @total_points > 0
             @current_squad.name = 'Unsaved Squadron'
@@ -111,6 +112,7 @@ class exportObj.SquadBuilder
         @removeAllShips()
         @addShip()
         @resetCurrentSquad()
+        @notes.val ''
 
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 100
@@ -419,11 +421,12 @@ class exportObj.SquadBuilder
         @backend_save_list_button = $ @container.find('button.save-list')
         @backend_save_list_button.click (e) =>
             e.preventDefault()
-            if @backend? and not $(e.target).hasClass('disabled')
+            if @backend? and not @backend_save_list_button.hasClass('disabled')
                 additional_data =
                     points: @total_points
                     description: @describeSquad()
                     cards: @listCards()
+                    notes: @notes.val().substr(0, 1024)
                 @backend_status.html $.trim """
                     <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
                 """
@@ -451,12 +454,12 @@ class exportObj.SquadBuilder
         @backend_save_list_as_button.addClass 'disabled'
         @backend_save_list_as_button.click (e) =>
             e.preventDefault()
-            if @backend? and not $(e.target).hasClass('disabled')
+            if @backend? and not @backend_save_list_as_button.hasClass('disabled')
                 @backend.showSaveAsModal this
         @backend_delete_list_button = $ @container.find('button.delete-list')
         @backend_delete_list_button.click (e) =>
             e.preventDefault()
-            if @backend? and not $(e.target).hasClass('disabled')
+            if @backend? and not @backend_delete_list_button.hasClass('disabled')
 
                 @backend.showDeleteModal this
 
@@ -465,13 +468,22 @@ class exportObj.SquadBuilder
         @container.append content_container
         content_container.append $.trim """
             <div class="row-fluid">
-                <div class="span9 ship-container" />
+                <div class="span9 ship-container">
+                            <label class="notes-container show-authenticated">
+                                Squad Notes:
+                                <br />
+                                <textarea class="squad-notes"></textarea>
+                            </label>
+                </div>
                 <div class="span3 info-container" />
             </div>
+
         """
 
         @ship_container = $ content_container.find('div.ship-container')
         @info_container = $ content_container.find('div.info-container')
+        @notes_container = $ content_container.find('.notes-container')
+        @notes = $ @notes_container.find('textarea.squad-notes')
 
         @info_container.append $.trim """
             <div class="well well-small info-well">
@@ -596,6 +608,14 @@ class exportObj.SquadBuilder
         $(window).resize =>
             @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
+        @notes.change @onNotesUpdated
+        @notes.on 'keyup', @onNotesUpdated
+
+    onNotesUpdated: =>
+        if @total_points > 0
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+
     onPointsUpdated: (cb) =>
         @total_points = 0
         for ship, i in @ships
@@ -632,6 +652,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val @current_squad.name
         @squad_name_placeholder.text @current_squad.name
         @loadFromSerialized squad.serialized
+        @notes.val(squad.additional_data.notes ? '')
         @backend_status.fadeOut 'slow'
         @current_squad.dirty = false
         @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -1135,6 +1156,11 @@ class exportObj.SquadBuilder
                 card_obj[ship.modification.data.name] = null if ship.modification?.data?
         return Object.keys(card_obj).sort()
 
+<<<<<<< HEAD
+=======
+    getNotes: ->
+        @notes.val()
+>>>>>>> upstream/master
 
 class Ship
     constructor: (args) ->
@@ -1334,7 +1360,7 @@ class Ship
     setupUI: ->
         @row = $ document.createElement 'DIV'
         @row.addClass 'row-fluid ship'
-        @container.append @row
+        @row.insertBefore @builder.notes_container
 
         @row.append $.trim '''
             <div class="span3">

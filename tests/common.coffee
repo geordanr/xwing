@@ -9,7 +9,7 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        #casper.die()
+        casper.die()
 
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
@@ -81,7 +81,7 @@ exports.addShip = (builder_selector, ship, pilot) ->
     casper.then ->
         @log("=== addShip('#{builder_selector}', '#{ship}', '#{pilot}')", "debug")
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} #{exports.selectorForShipDropdown}", ship)
-    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForSecontToLastShip} #{exports.selectorForPilotDropdown}", pilot)
+    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForSecondToLastShip} #{exports.selectorForPilotDropdown}", pilot)
 
 exports.removeShip = (builder_selector, ship_idx) ->
     row_id = null
@@ -169,7 +169,7 @@ exports.selectorForShipIndex = (ship_idx) ->
 
 exports.selectorForLastShip = ".ship:last-of-type"
 
-exports.selectorForSecontToLastShip = ".ship:nth-last-of-type(2)"
+exports.selectorForSecondToLastShip = ".ship:nth-last-of-type(2)"
 
 exports.selectorForUpgradeIndex = (ship_idx, upgrade_idx) ->
     "#{exports.selectorForShipIndex ship_idx} .addon-container .select2-container:nth-of-type(#{upgrade_idx})"

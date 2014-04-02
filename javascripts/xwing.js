@@ -137,6 +137,7 @@
       this.onSquadDirtinessChanged = __bind(this.onSquadDirtinessChanged, this);
       this.onSquadLoadRequested = __bind(this.onSquadLoadRequested, this);
       this.onPointsUpdated = __bind(this.onPointsUpdated, this);
+      this.onNotesUpdated = __bind(this.onNotesUpdated, this);
       this.container = $(args.container);
       this.faction = $.trim(args.faction);
       this.printable_container = $(args.printable_container);
@@ -175,7 +176,8 @@
         additional_data: {
           points: this.total_points,
           description: '',
-          cards: []
+          cards: [],
+          notes: ''
         },
         faction: this.faction
       };
@@ -191,7 +193,8 @@
       this.squad_name_input.val('New Squadron');
       this.removeAllShips();
       this.addShip();
-      return this.resetCurrentSquad();
+      this.resetCurrentSquad();
+      return this.notes.val('');
     };
 
     SquadBuilder.prototype.setupUI = function() {
@@ -417,11 +420,12 @@
           __iced_k = __iced_k_noop;
           ___iced_passed_deferral = iced.findDeferral(arguments);
           e.preventDefault();
-          if ((_this.backend != null) && !$(e.target).hasClass('disabled')) {
+          if ((_this.backend != null) && !_this.backend_save_list_button.hasClass('disabled')) {
             additional_data = {
               points: _this.total_points,
               description: _this.describeSquad(),
-              cards: _this.listCards()
+              cards: _this.listCards(),
+              notes: _this.notes.val().substr(0, 1024)
             };
             _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
             _this.backend_status.show();
@@ -437,7 +441,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 431
+                lineno: 434
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -453,7 +457,7 @@
       this.backend_save_list_as_button.click((function(_this) {
         return function(e) {
           e.preventDefault();
-          if ((_this.backend != null) && !$(e.target).hasClass('disabled')) {
+          if ((_this.backend != null) && !_this.backend_save_list_as_button.hasClass('disabled')) {
             return _this.backend.showSaveAsModal(_this);
           }
         };
@@ -462,7 +466,7 @@
       this.backend_delete_list_button.click((function(_this) {
         return function(e) {
           e.preventDefault();
-          if ((_this.backend != null) && !$(e.target).hasClass('disabled')) {
+          if ((_this.backend != null) && !_this.backend_delete_list_button.hasClass('disabled')) {
             return _this.backend.showDeleteModal(_this);
           }
         };
@@ -470,9 +474,11 @@
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
-      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\" />\n    <div class=\"span3 info-container\" />\n</div>"));
+      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>\n"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
+      this.notes_container = $(content_container.find('.notes-container'));
+      this.notes = $(this.notes_container.find('textarea.squad-notes'));
       this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"Energy\" /></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
       this.print_list_button = $(this.container.find('button.print-list'));
@@ -586,13 +592,22 @@
           return window.print();
         };
       })(this));
-      return $(window).resize((function(_this) {
+      $(window).resize((function(_this) {
         return function() {
           if ($(window).width() < 768 && _this.list_display_mode !== 'simple') {
             return _this.select_simple_view_button.click();
           }
         };
       })(this));
+      this.notes.change(this.onNotesUpdated);
+      return this.notes.on('keyup', this.onNotesUpdated);
+    };
+
+    SquadBuilder.prototype.onNotesUpdated = function() {
+      if (this.total_points > 0) {
+        this.current_squad.dirty = true;
+        return this.container.trigger('xwing-backend:squadDirtinessChanged');
+      }
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
@@ -627,11 +642,13 @@
     };
 
     SquadBuilder.prototype.onSquadLoadRequested = function(squad) {
+      var _ref;
       this.current_squad = squad;
       this.backend_delete_list_button.removeClass('disabled');
       this.squad_name_input.val(this.current_squad.name);
       this.squad_name_placeholder.text(this.current_squad.name);
       this.loadFromSerialized(squad.serialized);
+      this.notes.val((_ref = squad.additional_data.notes) != null ? _ref : '');
       this.backend_status.fadeOut('slow');
       this.current_squad.dirty = false;
       return this.container.trigger('xwing-backend:squadDirtinessChanged');
@@ -817,7 +834,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 761
+            lineno: 782
           }));
           __iced_deferrals._fulfill();
         });
@@ -830,7 +847,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 762
+              lineno: 783
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1466,6 +1483,10 @@
       return Object.keys(card_obj).sort();
     };
 
+    SquadBuilder.prototype.getNotes = function() {
+      return this.notes.val();
+    };
+
     return SquadBuilder;
 
   })();
@@ -1621,7 +1642,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1151
+                        lineno: 1175
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1690,7 +1711,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1174
+                  lineno: 1198
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1743,14 +1764,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1196
+              lineno: 1220
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1198
+              lineno: 1222
             }));
           }
           _ref1 = _this.modifications;
@@ -1758,7 +1779,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1200
+                lineno: 1224
               }));
             }
           }
@@ -1835,7 +1856,7 @@
     Ship.prototype.setupUI = function() {
       this.row = $(document.createElement('DIV'));
       this.row.addClass('row-fluid ship');
-      this.container.append(this.row);
+      this.row.insertBefore(this.builder.notes_container);
       this.row.append($.trim('<div class="span3">\n    <input class="ship-selector-container" type="hidden" />\n    <br />\n    <input type="hidden" class="pilot-selector-container" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span2 button-container">\n    <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="icon-remove"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>\n    <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="icon-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>\n</div>'));
       this.row.find('.button-container span').tooltip();
       this.ship_selector = $(this.row.find('input.ship-selector-container'));
@@ -2291,7 +2312,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1577
+                  lineno: 1601
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2367,7 +2388,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1607
+                    lineno: 1631
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2389,7 +2410,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1610
+                      lineno: 1634
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2454,7 +2475,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1635
+              lineno: 1659
             }));
           }
           __iced_deferrals._fulfill();

@@ -436,7 +436,8 @@
             additional_data = {
               points: builder.total_points,
               description: builder.describeSquad(),
-              cards: builder.listCards()
+              cards: builder.listCards(),
+              notes: builder.getNotes()
             };
             builder.backend_save_list_as_button.addClass('disabled');
             builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
@@ -630,7 +631,7 @@
                 return settings = arguments[0];
               };
             })(),
-            lineno: 531
+            lineno: 532
           }));
           __iced_deferrals._fulfill();
         });
@@ -651,7 +652,7 @@
                     return headers = arguments[0];
                   };
                 })(),
-                lineno: 535
+                lineno: 536
               }));
               __iced_deferrals._fulfill();
             })(function() {
