@@ -474,12 +474,12 @@
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
-      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 hidden-phone info-container\" />\n</div>\n"));
+      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>\n"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
       this.notes_container = $(content_container.find('.notes-container'));
       this.notes = $(this.notes_container.find('textarea.squad-notes'));
-      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"Energy\" /></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
+      this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td>Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td>Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td><img class=\"icon-energy\" src=\"images/transparent.png\" alt=\"Energy\" /></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td><img class=\"icon-attack\" src=\"images/transparent.png\" alt=\"Attack\" /></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td>Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td><img class=\"icon-agility\" src=\"images/transparent.png\" alt=\"Agility\" /></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td><img class=\"icon-hull\" src=\"images/transparent.png\" alt=\"Hull\" /></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td><img class=\"icon-shields\" src=\"images/transparent.png\" alt=\"Shields\" /></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td>Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td>Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-maneuvers\">\n                <td>Maneuvers</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n</div>"));
       this.info_container.hide();
       this.print_list_button = $(this.container.find('button.print-list'));
       return this.container.find('[rel=tooltip]').tooltip();
@@ -834,7 +834,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 782
+            lineno: 786
           }));
           __iced_deferrals._fulfill();
         });
@@ -847,7 +847,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 783
+              lineno: 787
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1084,6 +1084,87 @@
       })()).sort(exportObj.sortHelper);
     };
 
+    SquadBuilder.prototype.getManeuverTableHTML = function(maneuvers, baseManeuvers) {
+      var color, haveManeuver, linePath, outTable, outlineColor, speed, transform, trianglePath, turn, v, _i, _j, _k, _len, _ref, _ref1, _ref2;
+      if ((maneuvers == null) || maneuvers.length === 0) {
+        return "Missing maneuver info.";
+      }
+      outTable = "<table><tbody>";
+      for (speed = _i = _ref = maneuvers.length - 1; _ref <= 0 ? _i <= 0 : _i >= 0; speed = _ref <= 0 ? ++_i : --_i) {
+        haveManeuver = false;
+        _ref1 = maneuvers[speed];
+        for (_j = 0, _len = _ref1.length; _j < _len; _j++) {
+          v = _ref1[_j];
+          if (v > 0) {
+            haveManeuver = true;
+            break;
+          }
+        }
+        if (!haveManeuver) {
+          continue;
+        }
+        outTable += "<tr><td>" + speed + "</td>";
+        for (turn = _k = 0, _ref2 = maneuvers[speed].length; 0 <= _ref2 ? _k < _ref2 : _k > _ref2; turn = 0 <= _ref2 ? ++_k : --_k) {
+          outTable += "<td>";
+          if (maneuvers[speed][turn] > 0) {
+            color = (function() {
+              switch (maneuvers[speed][turn]) {
+                case 1:
+                  return "white";
+                case 2:
+                  return "green";
+                case 3:
+                  return "red";
+              }
+            })();
+            outTable += "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"30px\" height=\"30px\" viewBox=\"0 0 200 200\">";
+            if (speed === 0) {
+              outTable += "<rect x=\"50\" y=\"50\" width=\"100\" height=\"100\" style=\"fill:" + color + "\" />";
+            } else {
+              outlineColor = "black";
+              if (maneuvers[speed][turn] !== baseManeuvers[speed][turn]) {
+                outlineColor = "gold";
+              }
+              transform = "";
+              switch (turn) {
+                case 0:
+                  linePath = "M160,180 L160,70 80,70";
+                  trianglePath = "M80,100 V40 L30,70 Z";
+                  break;
+                case 1:
+                  linePath = "M150,180 S150,120 80,60";
+                  trianglePath = "M80,100 V40 L30,70 Z";
+                  transform = "transform='translate(-5 -15) rotate(45 70 90)' ";
+                  break;
+                case 2:
+                  linePath = "M100,180 L100,100 100,80";
+                  trianglePath = "M70,80 H130 L100,30 Z";
+                  break;
+                case 3:
+                  linePath = "M50,180 S50,120 120,60";
+                  trianglePath = "M120,100 V40 L170,70 Z";
+                  transform = "transform='translate(5 -15) rotate(-45 130 90)' ";
+                  break;
+                case 4:
+                  linePath = "M40,180 L40,70 120,70";
+                  trianglePath = "M120,100 V40 L170,70 Z";
+                  break;
+                case 5:
+                  linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120";
+                  trianglePath = "M170,120 H110 L140,180 Z";
+              }
+              outTable += $.trim("<path d='" + trianglePath + "' fill='" + color + "' stroke-width='5' stroke='" + outlineColor + "' " + transform + "/>\n<path stroke-width='25' fill='none' stroke='" + outlineColor + "' d='" + linePath + "' />\n<path stroke-width='15' fill='none' stroke='" + color + "' d='" + linePath + "' />");
+            }
+            outTable += "</svg>";
+          }
+          outTable += "</td>";
+        }
+        outTable += "</tr>";
+      }
+      outTable += "</tbody></table>";
+      return outTable;
+    };
+
     SquadBuilder.prototype.showTooltip = function(type, data) {
       var a, action, effective_stats, extra_actions, ship, slot, source, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (data !== this.tooltip_currently_displaying) {
@@ -1150,6 +1231,8 @@
               }
               return _results;
             }).call(this)).join(', ') || 'None');
+            this.info_container.find('tr.info-maneuvers').show();
+            this.info_container.find('tr.info-maneuvers td.info-data').html(this.getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers));
             break;
           case 'Pilot':
             this.info_container.find('.info-sources').text(((function() {
@@ -1202,6 +1285,8 @@
               }
               return _results;
             }).call(this)).join(', ') || 'None');
+            this.info_container.find('tr.info-maneuvers').show();
+            this.info_container.find('tr.info-maneuvers td.info-data').html(this.getManeuverTableHTML(ship.maneuvers, ship.maneuvers));
             break;
           case 'Addon':
             this.info_container.find('.info-sources').text(((function() {
@@ -1241,6 +1326,7 @@
             this.info_container.find('tr.info-shields').hide();
             this.info_container.find('tr.info-actions').hide();
             this.info_container.find('tr.info-upgrades').hide();
+            this.info_container.find('tr.info-maneuvers').hide();
         }
         this.info_container.show();
         return this.tooltip_currently_displaying = data;
@@ -1642,7 +1728,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1175
+                        lineno: 1269
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1711,7 +1797,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1198
+                  lineno: 1292
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1764,14 +1850,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1220
+              lineno: 1314
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1222
+              lineno: 1316
             }));
           }
           _ref1 = _this.modifications;
@@ -1779,7 +1865,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1224
+                lineno: 1318
               }));
             }
           }
@@ -2215,7 +2301,7 @@
     };
 
     Ship.prototype.effectiveStats = function() {
-      var modification, stats, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       stats = {
         skill: this.pilot.skill,
         attack: (_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null ? _ref : this.data.attack,
@@ -2225,22 +2311,29 @@
         shields: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : this.data.shields,
         actions: this.data.actions.slice(0)
       };
-      _ref10 = this.upgrades;
-      for (_i = 0, _len = _ref10.length; _i < _len; _i++) {
-        upgrade = _ref10[_i];
-        if ((upgrade != null ? (_ref11 = upgrade.data) != null ? _ref11.modifier_func : void 0 : void 0) != null) {
+      stats.maneuvers = [];
+      for (s = _i = 0, _ref10 = ((_ref11 = this.data.maneuvers) != null ? _ref11 : []).length; 0 <= _ref10 ? _i < _ref10 : _i > _ref10; s = 0 <= _ref10 ? ++_i : --_i) {
+        stats.maneuvers[s] = this.data.maneuvers[s].slice(0);
+      }
+      _ref12 = this.upgrades;
+      for (_j = 0, _len = _ref12.length; _j < _len; _j++) {
+        upgrade = _ref12[_j];
+        if ((upgrade != null ? (_ref13 = upgrade.data) != null ? _ref13.modifier_func : void 0 : void 0) != null) {
           upgrade.data.modifier_func(stats);
         }
       }
-      if (((_ref12 = this.title) != null ? (_ref13 = _ref12.data) != null ? _ref13.modifier_func : void 0 : void 0) != null) {
+      if (((_ref14 = this.title) != null ? (_ref15 = _ref14.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
         this.title.data.modifier_func(stats);
       }
-      _ref14 = this.modifications;
-      for (_j = 0, _len1 = _ref14.length; _j < _len1; _j++) {
-        modification = _ref14[_j];
-        if ((modification != null ? (_ref15 = modification.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
+      _ref16 = this.modifications;
+      for (_k = 0, _len1 = _ref16.length; _k < _len1; _k++) {
+        modification = _ref16[_k];
+        if ((modification != null ? (_ref17 = modification.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
           modification.data.modifier_func(stats);
         }
+      }
+      if (((_ref18 = this.pilot) != null ? _ref18.modifier_func : void 0) != null) {
+        this.pilot.modifier_func(stats);
       }
       return stats;
     };
@@ -2312,7 +2405,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1601
+                  lineno: 1702
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2388,7 +2481,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1631
+                    lineno: 1732
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2410,7 +2503,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1634
+                      lineno: 1735
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2475,7 +2568,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1659
+              lineno: 1760
             }));
           }
           __iced_deferrals._fulfill();

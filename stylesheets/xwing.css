@@ -51,7 +51,7 @@ strong em, em strong {
 .ship {
   border: medium solid black; }
 
-.card-stat, .info-data.info-skill, .info-data.info-attack, .info-data.info-energy, .info-data.info-agility, .info-data.info-hull, .info-data.info-shields {
+.card-stat, .info-data.info-skill, .info-data.info-attack, .info-data.info-energy, .info-data.info-agility, .info-data.info-hull, .info-data.info-shields, .info-maneuvers table > tbody > tr > td:first-child {
   font-family: kimberley;
   font-size: 1.5em; }
 
@@ -73,6 +73,20 @@ strong em, em strong {
 .info-data.info-shields {
   color: #7ed3e5;
   padding: 2px; }
+
+.info-maneuvers table > tbody > tr > td {
+  border: 2px solid #d6c9d2; }
+
+.info-maneuvers table > tbody > tr > td:first-child {
+  color: white;
+  text-align: center;
+  padding: 3px;
+  background-color: #888888;
+  background-image: linear-gradient(rgba(45, 45, 45, 0.2) 50%, transparent 50%, transparent);
+  background-size: 5px 5px; }
+
+.info-maneuvers table > tbody > tr > td ~ td {
+  background-color: #a29199; }
 
 .info-name {
   font-family: BankGothicHD;
