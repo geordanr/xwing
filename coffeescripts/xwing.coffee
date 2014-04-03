@@ -475,7 +475,7 @@ class exportObj.SquadBuilder
                                 <textarea class="squad-notes"></textarea>
                             </label>
                 </div>
-                <div class="span3 hidden-phone info-container" />
+                <div class="span3 info-container" />
             </div>
 
         """
@@ -530,6 +530,10 @@ class exportObj.SquadBuilder
                         </tr>
                         <tr class="info-upgrades">
                             <td>Upgrades</td>
+                            <td class="info-data"></td>
+                        </tr>
+                        <tr class="info-maneuvers">
+                            <td>Maneuvers</td>
                             <td class="info-data"></td>
                         </tr>
                     </tbody>
@@ -858,6 +862,91 @@ class exportObj.SquadBuilder
             unclaimed_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
 
+    # Converts a maneuver table for into an HTML table.
+    getManeuverTableHTML: (maneuvers, baseManeuvers) ->
+
+        if not maneuvers?
+          return "Missing maneuver info."
+
+        outTable = "<table><tbody>"
+
+        for speed in [maneuvers.length - 1 .. 0]
+
+            haveManeuver = false
+            for v in maneuvers[speed]
+              if v > 0
+                haveManeuver = true
+                break
+
+            continue if not haveManeuver
+
+            outTable += "<tr><td>#{speed}</td>"
+            for turn in [0 ... maneuvers[speed].length]
+
+                outTable += "<td>"
+                if maneuvers[speed][turn] > 0
+
+                    color = switch maneuvers[speed][turn]
+                        when 1 then "white"
+                        when 2 then "green"
+                        when 3 then "red"
+
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
+
+                    if speed == 0
+                        outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
+                    else
+
+                        outlineColor = "black"
+                        if maneuvers[speed][turn] != baseManeuvers[speed][turn]
+                          outlineColor = "gold" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
+
+                        transform = ""
+                        switch turn
+                            when 0
+                                # turn left
+                                linePath = "M160,180 L160,70 80,70"
+                                trianglePath = "M80,100 V40 L30,70 Z"
+
+                            when 1
+                                # bank left
+                                linePath = "M150,180 S150,120 80,60"
+                                trianglePath = "M80,100 V40 L30,70 Z"
+                                transform = "transform='translate(-5 -15) rotate(45 70 90)' "
+
+                            when 2
+                                # straight
+                                linePath = "M100,180 L100,100 100,80"
+                                trianglePath = "M70,80 H130 L100,30 Z"
+
+                            when 3
+                                # bank right
+                                linePath = "M50,180 S50,120 120,60"
+                                trianglePath = "M120,100 V40 L170,70 Z"
+                                transform = "transform='translate(5 -15) rotate(-45 130 90)' "
+
+                            when 4
+                                # turn right
+                                linePath = "M40,180 L40,70 120,70"
+                                trianglePath = "M120,100 V40 L170,70 Z"
+
+                            when 5
+                                # k-turn/u-turn
+                                linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120"
+                                trianglePath = "M170,120 H110 L140,180 Z"
+
+                        outTable += $.trim """
+                          <path d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
+                          <path stroke-width='25' fill='none' stroke='#{outlineColor}' d='#{linePath}' />
+                          <path stroke-width='15' fill='none' stroke='#{color}' d='#{linePath}' />
+                        """
+
+                    outTable += "</svg>"
+                outTable += "</td>"
+            outTable += "</tr>"
+        outTable += "</tbody></table>"
+        outTable
+
     showTooltip: (type, data) ->
         if data != @tooltip_currently_displaying
             switch type
@@ -887,6 +976,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -911,6 +1002,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-maneuvers').show()
+                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -937,6 +1030,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
                     @info_container.find('tr.info-upgrades').hide()
+                    @info_container.find('tr.info-maneuvers').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
 
@@ -1122,6 +1216,7 @@ class Ship
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
                 @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
         @builder.current_squad.dirty = true
@@ -1549,11 +1644,18 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             actions: @data.actions.slice 0
+
+        # need a deep copy of maneuvers array
+        stats.maneuvers = []
+        for s in [0 ... @data.maneuvers.length]
+          stats.maneuvers[s] = @data.maneuvers[s].slice 0
+
         for upgrade in @upgrades
             upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
         @title.data.modifier_func(stats) if @title?.data?.modifier_func?
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
+        @pilot.modifier_func(stats) if @pilot?.modifier_func?
         stats
 
     validate: ->

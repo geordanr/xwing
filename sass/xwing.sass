@@ -82,6 +82,21 @@ strong em, em strong
   color: #7ED3E5
   padding: 2px
 
+.info-maneuvers table > tbody > tr > td
+  border: 2px solid #d6c9d2
+
+.info-maneuvers table > tbody > tr > td:first-child
+  @extend .card-stat
+  color: white
+  text-align: center
+  padding: 3px
+  background-color: #888888
+  background-image: linear-gradient(rgba(45, 45, 45, .2) 50%, transparent 50%, transparent)
+  background-size: 5px 5px
+
+.info-maneuvers table > tbody > tr > td ~ td
+  background-color: #a29199
+
 .info-name
   font-family: BankGothicHD
   font-size: 1.5em

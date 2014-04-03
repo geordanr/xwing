@@ -93,6 +93,13 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 2, 2, 2, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 1, 1, 1, 0],
+              [ 0, 0, 1, 0, 0, 3]
+            ]
         "Y-Wing":
             name: "Y-Wing"
             faction: "Rebel Alliance"
@@ -103,6 +110,13 @@ exportObj.cardLoaders.English = () ->
             actions: [
                 "Focus",
                 "Target Lock",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 1, 2, 1, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 3, 1, 1, 1, 3, 0],
+              [ 0, 0, 3, 0, 0, 3]
             ]
         "A-Wing":
             name: "A-Wing"
@@ -117,6 +131,14 @@ exportObj.cardLoaders.English = () ->
                 "Boost",
                 "Evade",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 1, 0, 0, 0, 1, 0],
+              [ 2, 2, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 2, 0, 0, 0],
+              [ 0, 0, 2, 0, 0, 3]
+            ]
         "YT-1300":
             name: "YT-1300"
             faction: "Rebel Alliance"
@@ -127,6 +149,13 @@ exportObj.cardLoaders.English = () ->
             actions: [
                 "Focus",
                 "Target Lock",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 1, 2, 2, 2, 1, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 1, 1, 1, 0, 3],
+              [ 0, 0, 1, 0, 0, 3],
             ]
             large: true
         "TIE Fighter":
@@ -141,6 +170,14 @@ exportObj.cardLoaders.English = () ->
                 "Barrel Roll",
                 "Evade",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 1, 0, 0, 0, 1, 0],
+              [ 1, 2, 2, 2, 1, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 1, 0, 0, 3],
+              [ 0, 0, 1, 0, 0, 0]
+            ]
         "TIE Advanced":
             name: "TIE Advanced"
             faction: "Galactic Empire"
@@ -153,6 +190,14 @@ exportObj.cardLoaders.English = () ->
                 "Target Lock",
                 "Barrel Roll",
                 "Evade",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 2, 0, 2, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 0, 1, 0, 0, 3],
+              [ 0, 0, 1, 0, 0, 0]
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
@@ -167,6 +212,14 @@ exportObj.cardLoaders.English = () ->
                 "Boost",
                 "Evade",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 1, 0, 0, 0, 1, 0],
+              [ 2, 2, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 0, 2, 0, 0, 0],
+              [ 0, 0, 1, 0, 0, 3]
+            ]
         "Firespray-31":
             name: "Firespray-31"
             faction: "Galactic Empire"
@@ -178,6 +231,13 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
                 "Evade",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 2, 2, 2, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 1, 1, 1, 3],
+              [ 0, 0, 1, 0, 0, 3],
             ]
             large: true
         "HWK-290":
@@ -191,6 +251,13 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0],
+              [ 0, 2, 2, 2, 0],
+              [ 1, 1, 2, 1, 1],
+              [ 0, 3, 1, 3, 0],
+              [ 0, 0, 3, 0, 0],
+            ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
             faction: "Galactic Empire"
@@ -201,6 +268,12 @@ exportObj.cardLoaders.English = () ->
             actions: [
                 "Focus",
                 "Target Lock",
+            ]
+            maneuvers: [
+              [ 0, 0, 3, 0, 0],
+              [ 0, 2, 2, 2, 0],
+              [ 3, 1, 2, 1, 3],
+              [ 0, 3, 1, 3, 0],
             ]
             large: true
         "B-Wing":
@@ -215,6 +288,13 @@ exportObj.cardLoaders.English = () ->
                 "Target Lock",
                 "Barrel Roll",
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 3, 2, 2, 2, 3, 0],
+              [ 1, 1, 2, 1, 1, 3],
+              [ 0, 3, 1, 3, 0, 0],
+              [ 0, 0, 3, 0, 0, 0],
+            ]
         "TIE Bomber":
             name: "TIE Bomber"
             faction: "Galactic Empire"
@@ -226,6 +306,14 @@ exportObj.cardLoaders.English = () ->
                 "Focus",
                 "Target Lock",
                 "Barrel Roll",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 1, 2, 1, 0, 0],
+              [ 3, 1, 2, 1, 3, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 0, 0, 1, 0, 0, 0],
+              [ 0, 0, 0, 0, 0, 3],
             ]
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
@@ -251,6 +339,13 @@ exportObj.cardLoaders.English = () ->
             actions: [
                 "Focus",
                 "Target Lock",
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0],
+              [ 0, 1, 2, 1, 0, 0],
+              [ 1, 1, 2, 1, 1, 0],
+              [ 1, 1, 1, 1, 1, 0],
+              [ 0, 0, 3, 0, 0, 3],
             ]
         "TIE Defender":
             name: "TIE Defender"
@@ -1083,6 +1178,9 @@ exportObj.cardLoaders.English = () ->
                 "Elite",
             ]
             text: """When you reveal a <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> maneuver, you may treat the speed of that maneuver as "1," "3," or "5"."""
+            modifier_func: (stats) ->
+                # add speed 1 k-turn to table (Interceptor already has 3/5)
+                stats.maneuvers[1][5] = 3
         "Kir Kanos":
             name: "Kir Kanos"
             id: 61
@@ -1481,6 +1579,12 @@ exportObj.cardLoaders.English = () ->
             sources: [ "Y-Wing Expansion Pack", ]
             points: 1
             text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
+            modifier_func: (stats) ->
+                for turn in [0 ... stats.maneuvers[1].length]
+                    if stats.maneuvers[1][turn] > 0
+                        stats.maneuvers[1][turn] = 2
+                    if stats.maneuvers[2][turn] > 0
+                        stats.maneuvers[2][turn] = 2
         "R2-D2":
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
@@ -1542,7 +1646,7 @@ exportObj.cardLoaders.English = () ->
             slot: "Elite"
             sources: [ "TIE Advanced Expansion Pack", ]
             points: 2
-            text: """<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship my immediately perform 1 free action."""
+            text: """<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship may immediately perform 1 free action."""
         "Expert Handling":
             name: "Expert Handling"
             id: 11
@@ -1715,6 +1819,10 @@ exportObj.cardLoaders.English = () ->
             sources: [ "Millennium Falcon Expansion Pack", ]
             points: 1
             text: """You may treat all <img class="icon-straight" alt="Straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
+            modifier_func: (stats) ->
+                for s in stats.maneuvers
+                    if s[2] > 0 # is there a straight (2) maneuver at this speed?
+                        s[2] = 2 # set it to green (2)
         "Chewbacca":
             name: "Chewbacca"
             id: 33
