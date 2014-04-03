@@ -864,8 +864,7 @@ class exportObj.SquadBuilder
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
-
-        if not maneuvers?
+        if not maneuvers? or maneuvers.length == 0
           return "Missing maneuver info."
 
         outTable = "<table><tbody>"
@@ -1647,7 +1646,7 @@ class Ship
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
-        for s in [0 ... @data.maneuvers.length]
+        for s in [0 ... (@data.maneuvers ? []).length]
           stats.maneuvers[s] = @data.maneuvers[s].slice 0
 
         for upgrade in @upgrades

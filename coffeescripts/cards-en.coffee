@@ -1580,11 +1580,12 @@ exportObj.cardLoaders.English = () ->
             points: 1
             text: """You may treat all 1- and 2-speed maneuvers as green maneuvers."""
             modifier_func: (stats) ->
-                for turn in [0 ... stats.maneuvers[1].length]
-                    if stats.maneuvers[1][turn] > 0
-                        stats.maneuvers[1][turn] = 2
-                    if stats.maneuvers[2][turn] > 0
-                        stats.maneuvers[2][turn] = 2
+                if stats.maneuvers? and stats.maneuvers.length > 0
+                    for turn in [0 ... stats.maneuvers[1].length]
+                        if stats.maneuvers[1][turn] > 0
+                            stats.maneuvers[1][turn] = 2
+                        if stats.maneuvers[2][turn] > 0
+                            stats.maneuvers[2][turn] = 2
         "R2-D2":
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
@@ -1820,7 +1821,7 @@ exportObj.cardLoaders.English = () ->
             points: 1
             text: """You may treat all <img class="icon-straight" alt="Straight" src="images/transparent.png" /> maneuvers as green maneuvers."""
             modifier_func: (stats) ->
-                for s in stats.maneuvers
+                for s in (stats.maneuvers ? [])
                     if s[2] > 0 # is there a straight (2) maneuver at this speed?
                         s[2] = 2 # set it to green (2)
         "Chewbacca":
