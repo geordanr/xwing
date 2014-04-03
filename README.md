@@ -11,7 +11,7 @@ It can theoretically be dropped into any existing site, but since
 it uses a lot of styling from [Twitter
 Bootstrap](http://twitter.github.com/bootstrap/) it may require
 some CSS trickery if you're using some other incompatible framework
-(e.g. [Foundation](foundation.zurb.com)).
+(e.g. [Foundation](http://foundation.zurb.com)).
 
 Can I save squads or share them on `$SOCIAL_NETWORK`?
 -----------------------------------------------------
@@ -54,9 +54,14 @@ Credits
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
 Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
 German translations courtesy @failgod-marcus.
+Maneuver dials by @hpanderson.
 
 CHANGELOG
 =========
+
+2 Apr 2014
+----------
+* Maneuver dials are now displayed and are updated by upgrades!  Thanks to @hpanderson for the contribution.
 
 29 Mar 2014
 -----------
