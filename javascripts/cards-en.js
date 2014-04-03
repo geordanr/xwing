@@ -111,7 +111,8 @@
         agility: 2,
         hull: 3,
         shields: 2,
-        actions: ["Focus", "Target Lock"]
+        actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [1, 1, 2, 1, 1, 0], [1, 1, 1, 1, 1, 0], [0, 0, 1, 0, 0, 3]]
       },
       "Y-Wing": {
         name: "Y-Wing",
@@ -120,7 +121,8 @@
         agility: 1,
         hull: 5,
         shields: 3,
-        actions: ["Focus", "Target Lock"]
+        actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0], [1, 1, 2, 1, 1, 0], [3, 1, 1, 1, 3, 0], [0, 0, 3, 0, 0, 3]]
       },
       "A-Wing": {
         name: "A-Wing",
@@ -129,7 +131,8 @@
         agility: 3,
         hull: 2,
         shields: 2,
-        actions: ["Focus", "Target Lock", "Boost", "Evade"]
+        actions: ["Focus", "Target Lock", "Boost", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0], [2, 2, 2, 2, 2, 0], [1, 1, 2, 1, 1, 3], [0, 0, 2, 0, 0, 0], [0, 0, 2, 0, 0, 3]]
       },
       "YT-1300": {
         name: "YT-1300",
@@ -139,6 +142,7 @@
         hull: 6,
         shields: 4,
         actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0], [1, 1, 2, 1, 1, 0], [0, 1, 1, 1, 0, 3], [0, 0, 1, 0, 0, 3]],
         large: true
       },
       "TIE Fighter": {
@@ -148,7 +152,8 @@
         agility: 3,
         hull: 3,
         shields: 0,
-        actions: ["Focus", "Barrel Roll", "Evade"]
+        actions: ["Focus", "Barrel Roll", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0], [1, 2, 2, 2, 1, 0], [1, 1, 2, 1, 1, 3], [0, 0, 1, 0, 0, 3], [0, 0, 1, 0, 0, 0]]
       },
       "TIE Advanced": {
         name: "TIE Advanced",
@@ -157,7 +162,8 @@
         agility: 3,
         hull: 3,
         shields: 2,
-        actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"]
+        actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 0, 2, 0, 0], [1, 1, 2, 1, 1, 0], [1, 1, 2, 1, 1, 0], [0, 0, 1, 0, 0, 3], [0, 0, 1, 0, 0, 0]]
       },
       "TIE Interceptor": {
         name: "TIE Interceptor",
@@ -166,7 +172,8 @@
         agility: 3,
         hull: 3,
         shields: 0,
-        actions: ["Focus", "Barrel Roll", "Boost", "Evade"]
+        actions: ["Focus", "Barrel Roll", "Boost", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0], [2, 2, 2, 2, 2, 0], [1, 1, 2, 1, 1, 3], [0, 0, 2, 0, 0, 0], [0, 0, 1, 0, 0, 3]]
       },
       "Firespray-31": {
         name: "Firespray-31",
@@ -176,6 +183,7 @@
         hull: 6,
         shields: 4,
         actions: ["Focus", "Target Lock", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [1, 1, 2, 1, 1, 0], [1, 1, 1, 1, 1, 3], [0, 0, 1, 0, 0, 3]],
         large: true
       },
       "HWK-290": {
@@ -185,7 +193,8 @@
         agility: 2,
         hull: 4,
         shields: 1,
-        actions: ["Focus", "Target Lock"]
+        actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 0, 0, 0], [0, 2, 2, 2, 0], [1, 1, 2, 1, 1], [0, 3, 1, 3, 0], [0, 0, 3, 0, 0]]
       },
       "Lambda-Class Shuttle": {
         name: "Lambda-Class Shuttle",
@@ -195,6 +204,7 @@
         hull: 5,
         shields: 5,
         actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 3, 0, 0], [0, 2, 2, 2, 0], [3, 1, 2, 1, 3], [0, 3, 1, 3, 0]],
         large: true
       },
       "B-Wing": {
@@ -204,7 +214,8 @@
         agility: 1,
         hull: 3,
         shields: 5,
-        actions: ["Focus", "Target Lock", "Barrel Roll"]
+        actions: ["Focus", "Target Lock", "Barrel Roll"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [3, 2, 2, 2, 3, 0], [1, 1, 2, 1, 1, 3], [0, 3, 1, 3, 0, 0], [0, 0, 3, 0, 0, 0]]
       },
       "TIE Bomber": {
         name: "TIE Bomber",
@@ -213,7 +224,8 @@
         agility: 2,
         hull: 6,
         shields: 0,
-        actions: ["Focus", "Target Lock", "Barrel Roll"]
+        actions: ["Focus", "Target Lock", "Barrel Roll"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0], [3, 1, 2, 1, 3, 0], [1, 1, 2, 1, 1, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 3]]
       },
       "GR-75 Medium Transport": {
         name: "GR-75 Medium Transport",
@@ -232,7 +244,8 @@
         agility: 2,
         hull: 2,
         shields: 2,
-        actions: ["Focus", "Target Lock"]
+        actions: ["Focus", "Target Lock"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0], [1, 1, 2, 1, 1, 0], [1, 1, 1, 1, 1, 0], [0, 0, 3, 0, 0, 3]]
       },
       "TIE Defender": {
         name: "TIE Defender",
@@ -913,7 +926,10 @@
         skill: 7,
         points: 24,
         slots: ["Elite"],
-        text: "When you reveal a <img class=\"icon-uturn\" alt=\"Koiogran Turn\" src=\"images/transparent.png\" /> maneuver, you may treat the speed of that maneuver as \"1,\" \"3,\" or \"5\"."
+        text: "When you reveal a <img class=\"icon-uturn\" alt=\"Koiogran Turn\" src=\"images/transparent.png\" /> maneuver, you may treat the speed of that maneuver as \"1,\" \"3,\" or \"5\".",
+        modifier_func: function(stats) {
+          return stats.maneuvers[1][5] = 3;
+        }
       },
       "Kir Kanos": {
         name: "Kir Kanos",
@@ -1239,7 +1255,24 @@
         slot: "Astromech",
         sources: ["Y-Wing Expansion Pack"],
         points: 1,
-        text: "You may treat all 1- and 2-speed maneuvers as green maneuvers."
+        text: "You may treat all 1- and 2-speed maneuvers as green maneuvers.",
+        modifier_func: function(stats) {
+          var turn, _i, _ref, _results;
+          if ((stats.maneuvers != null) && stats.maneuvers.length > 0) {
+            _results = [];
+            for (turn = _i = 0, _ref = stats.maneuvers[1].length; 0 <= _ref ? _i < _ref : _i > _ref; turn = 0 <= _ref ? ++_i : --_i) {
+              if (stats.maneuvers[1][turn] > 0) {
+                stats.maneuvers[1][turn] = 2;
+              }
+              if (stats.maneuvers[2][turn] > 0) {
+                _results.push(stats.maneuvers[2][turn] = 2);
+              } else {
+                _results.push(void 0);
+              }
+            }
+            return _results;
+          }
+        }
       },
       "R2-D2": {
         name: "R2-D2",
@@ -1309,7 +1342,7 @@
         slot: "Elite",
         sources: ["TIE Advanced Expansion Pack"],
         points: 2,
-        text: "<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship my immediately perform 1 free action."
+        text: "<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship may immediately perform 1 free action."
       },
       "Expert Handling": {
         name: "Expert Handling",
@@ -1504,7 +1537,21 @@
         slot: "Crew",
         sources: ["Millennium Falcon Expansion Pack"],
         points: 1,
-        text: "You may treat all <img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> maneuvers as green maneuvers."
+        text: "You may treat all <img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> maneuvers as green maneuvers.",
+        modifier_func: function(stats) {
+          var s, _i, _len, _ref, _ref1, _results;
+          _ref1 = (_ref = stats.maneuvers) != null ? _ref : [];
+          _results = [];
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            s = _ref1[_i];
+            if (s[2] > 0) {
+              _results.push(s[2] = 2);
+            } else {
+              _results.push(void 0);
+            }
+          }
+          return _results;
+        }
       },
       "Chewbacca": {
         name: "Chewbacca",
