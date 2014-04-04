@@ -532,13 +532,10 @@ class exportObj.SquadBuilder
                             <td>Upgrades</td>
                             <td class="info-data"></td>
                         </tr>
-                        <tr class="info-maneuvers">
-                            <td>Maneuvers</td>
-                            <td class="info-data"></td>
-                        </tr>
                     </tbody>
                 </table>
                 <p class="info-text" />
+                <p class="info-maneuvers" />
             </div>
         """
         @info_container.hide()
@@ -867,7 +864,7 @@ class exportObj.SquadBuilder
         if not maneuvers? or maneuvers.length == 0
           return "Missing maneuver info."
 
-        outTable = """<table style="table-layout:fixed;width:100%"><tbody>"""
+        outTable = "<table><tbody>"
 
         for speed in [maneuvers.length - 1 .. 0]
 
@@ -890,7 +887,7 @@ class exportObj.SquadBuilder
                         when 2 then "green"
                         when 3 then "red"
 
-                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">"""
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
 
                     if speed == 0
                         outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
@@ -975,8 +972,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
-                    @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
+                    @info_container.find('p.info-maneuvers').show()
+                    @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
@@ -1001,8 +998,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
-                    @info_container.find('tr.info-maneuvers').show()
-                    @info_container.find('tr.info-maneuvers td.info-data').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
+                    @info_container.find('p.info-maneuvers').show()
+                    @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}"""
