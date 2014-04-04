@@ -1656,10 +1656,21 @@
     };
 
     Ship.prototype.setShipType = function(ship_type) {
-      var cls, _i, _len, _ref, _ref1;
+      var cls, result, _i, _len, _ref, _ref1;
       this.pilot_selector.data('select2').container.show();
       if (ship_type !== ((_ref = this.pilot) != null ? _ref.ship : void 0)) {
-        this.setPilot(null);
+        this.setPilot(((function() {
+          var _i, _len, _ref1, _results;
+          _ref1 = this.builder.getAvailablePilotsForShipIncluding(ship_type)[0].children;
+          _results = [];
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            result = _ref1[_i];
+            if (!exportObj.pilotsById[result.id].unique) {
+              _results.push(exportObj.pilotsById[result.id]);
+            }
+          }
+          return _results;
+        }).call(this))[0]);
       }
       _ref1 = this.row.attr('class').split(/\s+/);
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
