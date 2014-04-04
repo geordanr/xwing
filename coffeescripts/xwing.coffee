@@ -867,7 +867,7 @@ class exportObj.SquadBuilder
         if not maneuvers? or maneuvers.length == 0
           return "Missing maneuver info."
 
-        outTable = "<table><tbody>"
+        outTable = """<table style="table-layout:fixed;width:100%"><tbody>"""
 
         for speed in [maneuvers.length - 1 .. 0]
 
@@ -890,7 +890,7 @@ class exportObj.SquadBuilder
                         when 2 then "green"
                         when 3 then "red"
 
-                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
+                    outTable += """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">"""
 
                     if speed == 0
                         outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
