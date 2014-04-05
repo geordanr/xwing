@@ -1221,8 +1221,8 @@ class Ship
     setShipType: (ship_type) ->
         @pilot_selector.data('select2').container.show()
         if ship_type != @pilot?.ship
-            # Ship changed; release pilot
-            @setPilot null
+            # Ship changed; select first non-unique
+            @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type)[0].children when not exportObj.pilotsById[result.id].unique)[0]
 
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)

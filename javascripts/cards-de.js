@@ -2156,6 +2156,24 @@
             slot: "Crew"
           }
         ]
+      },
+      "Tantive IV": {
+        name: "Tantive IV",
+        id: 9,
+        unique: true,
+        sources: ["Tantive IV Expansion Pack"],
+        points: 4,
+        text: "Your fore section upgrade bar gains 1 additional <img class=\"icon-crew\" alt=\"Crew\" src=\"images/transparent.png\" /> and 1 additional <img class=\"icon-team\" alt=\"Team\" src=\"images/transparent.png\" /> upgrade icon.",
+        ship: "CR90 Corvette (Fore)",
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Crew"
+          }, {
+            type: exportObj.Upgrade,
+            slot: "Team"
+          }
+        ]
       }
     };
     exportObj.expansions = {};
