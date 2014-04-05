@@ -1026,7 +1026,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
                     @info_container.find('tr.info-upgrades').hide()
-                    @info_container.find('tr.info-maneuvers').hide()
+                    @info_container.find('p.info-maneuvers').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
 
