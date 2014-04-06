@@ -82,6 +82,9 @@
 
                     A backend is available if the ability to save squadrons is needed; it can be [forked on GitHub here](http://github.com/geordanr/xwing-backend).
 
+    .footer
+      .msie8-hax
+
     #printable.visible-print
       .printable-header
       .printable-body
@@ -151,6 +154,14 @@
             $(window).trigger 'xwing:languageChanged', language
 
         window.setupTranslationUI window.backend
+
+        if (window.location.href.indexOf('https:') != 0) and ((navigator.userAgent.indexOf('MSIE 8') > -1) or (navigator.userAgent.indexOf('MSIE 9') > -1))
+            $('.msie8-hax').html '''
+                Trouble logging in? Try clicking <a href="#">here</a> first.
+            '''
+            $('.msie8-hax a').click (e) ->
+                e.preventDefault()
+                window.location.href = window.location.href.replace(/^http:/, 'https:')
 
 .font-hax
   %span{:style => "font-family: BankGothicHD"}

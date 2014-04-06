@@ -3,15 +3,15 @@
   <head>
     <title>(Yet Another) X-Wing Miniatures Squad Builder</title>
     <meta charset='utf-8'>
-    <link href='bootstrap/css/bootstrap.min.css?1396742232' rel='stylesheet'>
-    <link href='fontawesome/css/font-awesome.min.css?1396742232' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap.min.css?1396743694' rel='stylesheet'>
+    <link href='fontawesome/css/font-awesome.min.css?1396743694' rel='stylesheet'>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
-    <link href='bootstrap/css/bootstrap-responsive.css?1396742232' media='screen' rel='stylesheet'>
-    <link href='select2-3.4.0/select2.css?1396742232' rel='stylesheet'>
-    <link href='stylesheets/xwing.css?1396742232' rel='stylesheet'>
-    <link href='stylesheets/xwing-screen.css?1396742232' media='screen,handheld' rel='stylesheet'>
-    <link href='stylesheets/xwing-print.css?1396742232' media='print' rel='stylesheet'>
-    <link href='stylesheets/backgrounds.css?1396742232' media='screen,handheld' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap-responsive.css?1396743694' media='screen' rel='stylesheet'>
+    <link href='select2-3.4.0/select2.css?1396743694' rel='stylesheet'>
+    <link href='stylesheets/xwing.css?1396743694' rel='stylesheet'>
+    <link href='stylesheets/xwing-screen.css?1396743694' media='screen,handheld' rel='stylesheet'>
+    <link href='stylesheets/xwing-print.css?1396743694' media='print' rel='stylesheet'>
+    <link href='stylesheets/backgrounds.css?1396743694' media='screen,handheld' rel='stylesheet'>
   </head>
   <body>
     <script>
@@ -100,6 +100,9 @@
         </div>
       </div>
     </div>
+    <div class='footer'>
+      <div class='msie8-hax'></div>
+    </div>
     <div class='visible-print' id='printable'>
       <div class='printable-header'></div>
       <div class='printable-body'></div>
@@ -108,16 +111,16 @@
         <strong class='site-placeholder'></strong>
       </div>
     </div>
-    <script src='javascripts/jquery-1.8.3.min.js?1396742232'></script>
-    <script src='javascripts/jquery.xdomainrequest.min.js?1396742232'></script>
-    <script src='bootstrap/js/bootstrap.min.js?1396742232'></script>
-    <script src='select2-3.4.0/select2.min.js?1396742232'></script>
-    <script src='javascripts/xwing.min.js?1396742232'></script>
-    <script src='javascripts/cards-en.min.js?1396742232'></script>
-    <script src='javascripts/cards-de.min.js?1396742232'></script>
-    <script src='javascripts/backend.min.js?1396742232'></script>
-    <script src='javascripts/browser.min.js?1396742232'></script>
-    <script src='javascripts/translate.min.js?1396742232'></script>
+    <script src='javascripts/jquery-1.8.3.min.js?1396743694'></script>
+    <script src='javascripts/jquery.xdomainrequest.min.js?1396743694'></script>
+    <script src='bootstrap/js/bootstrap.min.js?1396743694'></script>
+    <script src='select2-3.4.0/select2.min.js?1396743694'></script>
+    <script src='javascripts/xwing.min.js?1396743694'></script>
+    <script src='javascripts/cards-en.min.js?1396743694'></script>
+    <script src='javascripts/cards-de.min.js?1396743694'></script>
+    <script src='javascripts/backend.min.js?1396743694'></script>
+    <script src='javascripts/browser.min.js?1396743694'></script>
+    <script src='javascripts/translate.min.js?1396743694'></script>
     <script>
       (function() {
         $(document).ready(function() {
@@ -179,7 +182,14 @@
           window.backend.getLanguagePreference(function(language) {
             return $(window).trigger('xwing:languageChanged', language);
           });
-          return window.setupTranslationUI(window.backend);
+          window.setupTranslationUI(window.backend);
+          if ((window.location.href.indexOf('https:') !== 0) && ((navigator.userAgent.indexOf('MSIE 8') > -1) || (navigator.userAgent.indexOf('MSIE 9') > -1))) {
+            $('.msie8-hax').html('Trouble logging in? Try clicking <a href="#">here</a> first.');
+            return $('.msie8-hax a').click(function(e) {
+              e.preventDefault();
+              return window.location.href = window.location.href.replace(/^http:/, 'https:');
+            });
+          }
         });
       
       }).call(this);
