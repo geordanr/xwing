@@ -81,2319 +81,579 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->
     exportObj.cardLanguage = 'Deutsch'
 
-    exportObj.ships =
-        "X-Wing":
-            name: "X-Wing"
-            faction: "Rebel Alliance"
-            attack: 3
-            agility: 2
-            hull: 3
-            shields: 2
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 2, 2, 2, 0, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 1, 1, 1, 1, 1, 0],
-              [ 0, 0, 1, 0, 0, 3]
-            ]
-        "Y-Wing":
-            name: "Y-Wing"
-            faction: "Rebel Alliance"
-            attack: 2
-            agility: 1
-            hull: 5
-            shields: 3
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 1, 2, 1, 0, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 3, 1, 1, 1, 3, 0],
-              [ 0, 0, 3, 0, 0, 3]
-            ]
-        "A-Wing":
-            name: "A-Wing"
-            faction: "Rebel Alliance"
-            attack: 2
-            agility: 3
-            hull: 2
-            shields: 2
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Boost",
-                "Evade",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 1, 0, 0, 0, 1, 0],
-              [ 2, 2, 2, 2, 2, 0],
-              [ 1, 1, 2, 1, 1, 3],
-              [ 0, 0, 2, 0, 0, 0],
-              [ 0, 0, 2, 0, 0, 3]
-            ]
-        "YT-1300":
-            name: "YT-1300"
-            faction: "Rebel Alliance"
-            attack: 2
-            agility: 1
-            hull: 6
-            shields: 4
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 1, 2, 2, 2, 1, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 0, 1, 1, 1, 0, 3],
-              [ 0, 0, 1, 0, 0, 3],
-            ]
-            large: true
-        "TIE Fighter":
-            name: "TIE Fighter"
-            faction: "Galactic Empire"
-            attack: 2
-            agility: 3
-            hull: 3
-            shields: 0
-            actions: [
-                "Focus",
-                "Barrel Roll",
-                "Evade",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 1, 0, 0, 0, 1, 0],
-              [ 1, 2, 2, 2, 1, 0],
-              [ 1, 1, 2, 1, 1, 3],
-              [ 0, 0, 1, 0, 0, 3],
-              [ 0, 0, 1, 0, 0, 0]
-            ]
-        "TIE Advanced":
-            name: "TIE Advanced"
-            faction: "Galactic Empire"
-            attack: 2
-            agility: 3
-            hull: 3
-            shields: 2
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Barrel Roll",
-                "Evade",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 2, 0, 2, 0, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 0, 0, 1, 0, 0, 3],
-              [ 0, 0, 1, 0, 0, 0]
-            ]
-        "TIE Abfangjäger":
-            name: "TIE Abfangjäger"
-            faction: "Galactic Empire"
-            attack: 3
-            agility: 3
-            hull: 3
-            shields: 0
-            actions: [
-                "Focus",
-                "Barrel Roll",
-                "Boost",
-                "Evade",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 1, 0, 0, 0, 1, 0],
-              [ 2, 2, 2, 2, 2, 0],
-              [ 1, 1, 2, 1, 1, 3],
-              [ 0, 0, 2, 0, 0, 0],
-              [ 0, 0, 1, 0, 0, 3]
-            ]
-        "Firespray-31":
-            name: "Firespray-31"
-            faction: "Galactic Empire"
-            attack: 3
-            agility: 2
-            hull: 6
-            shields: 4
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Evade",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 2, 2, 2, 0, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 1, 1, 1, 1, 1, 3],
-              [ 0, 0, 1, 0, 0, 3],
-            ]
-            large: true
-        "HWK-290":
-            name: "HWK-290"
-            faction: "Rebel Alliance"
-            attack: 1
-            agility: 2
-            hull: 4
-            shields: 1
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0],
-              [ 0, 2, 2, 2, 0],
-              [ 1, 1, 2, 1, 1],
-              [ 0, 3, 1, 3, 0],
-              [ 0, 0, 3, 0, 0],
-            ]
-        "Lambda-Class Shuttle":
-            name: "Lambda-Class Shuttle"
-            faction: "Galactic Empire"
-            attack: 3
-            agility: 1
-            hull: 5
-            shields: 5
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 3, 0, 0],
-              [ 0, 2, 2, 2, 0],
-              [ 3, 1, 2, 1, 3],
-              [ 0, 3, 1, 3, 0],
-            ]
-            large: true
-        "B-Wing":
-            name: "B-Wing"
-            faction: "Rebel Alliance"
-            attack: 3
-            agility: 1
-            hull: 3
-            shields: 5
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Barrel Roll",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 3, 2, 2, 2, 3, 0],
-              [ 1, 1, 2, 1, 1, 3],
-              [ 0, 3, 1, 3, 0, 0],
-              [ 0, 0, 3, 0, 0, 0],
-            ]
-        "TIE Bomber":
-            name: "TIE Bomber"
-            faction: "Galactic Empire"
-            attack: 2
-            agility: 2
-            hull: 6
-            shields: 0
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Barrel Roll",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 1, 2, 1, 0, 0],
-              [ 3, 1, 2, 1, 3, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 0, 0, 1, 0, 0, 0],
-              [ 0, 0, 0, 0, 0, 3],
-            ]
-        "GR-75 Medium Transport":
-            name: "GR-75 Medium Transport"
-            faction: "Rebel Alliance"
-            energy: 4
-            agility: 0
-            hull: 8
-            shields: 4
-            actions: [
-                "Recover",
-                "Reinforce",
-                "Coordinate",
-                "Jam",
-            ]
-            huge: true
-        "Z-95 Headhunter":
-            name: "Z-95 Headhunter"
-            faction: "Rebel Alliance"
-            attack: 2
-            agility: 2
-            hull: 2
-            shields: 2
-            actions: [
-                "Focus",
-                "Target Lock",
-            ]
-            maneuvers: [
-              [ 0, 0, 0, 0, 0, 0],
-              [ 0, 1, 2, 1, 0, 0],
-              [ 1, 1, 2, 1, 1, 0],
-              [ 1, 1, 1, 1, 1, 0],
-              [ 0, 0, 3, 0, 0, 3],
-            ]
-        "TIE Defender":
-            name: "TIE Defender"
-            faction: "Galactic Empire"
-            attack: 3
-            agility: 3
-            hull: 3
-            shields: 3
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Barrel Roll",
-            ]
-        "E-Wing":
-            name: "E-Wing"
-            faction: "Rebel Alliance"
-            attack: 3
-            agility: 3
-            hull: 2
-            shields: 3
-            actions: [
-                "Focus",
-                "Target Lock",
-                "Barrel Roll",
-                "Evade",
-            ]
-        "TIE Phantom":
-            name: "TIE Phantom"
-            faction: "Galactic Empire"
-            attack: 4
-            agility: 2
-            hull: 2
-            shields: 2
-            actions: [
-                "Focus",
-                "Barrel Roll",
-                "Evade",
-                "Cloak",
-            ]
-        "CR90 Corvette (Fore)":
-            name: "CR90 Corvette (Fore)"
-            faction: "Rebel Alliance"
-            attack: 4
-            agility: 0
-            hull: 8
-            shields: 5
-            actions: [
-                "Coordinate",
-                "Target Lock",
-            ]
-            huge: true
-        "CR90 Corvette (Aft)":
-            name: "CR90 Corvette (Aft)"
-            faction: "Rebel Alliance"
-            energy: 5
-            agility: 0
-            hull: 8
-            shields: 3
-            actions: [
-                "Reinforce",
-                "Jam",
-            ]
-            huge: true
+    # Assumes cards-common has been loaded
+    basic_cards = window.basicCardData()
 
-    exportObj.pilots =
+    exportObj.ships = basic_cards.ships
+
+    # Move TIE Interceptor to TIE Abfangjäger
+    exportObj.ships['TIE Abfangjäger'] = exportObj.ships['TIE Interceptor']
+    exportObj.ships['TIE Abfangjäger'].name = 'TIE Abfangjäger'
+    delete exportObj.ships['TIE Interceptor']
+
+    pilot_translations =
         "Wedge Antilles":
-            name: "Wedge Antilles"
-            id: 0
-            sources: [ "X-Wing Expansion Pack", ]
-            unique: true
-            ship: "X-Wing"
-            skill: 9
-            points: 29
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Astromech",
-            ],
             text: """Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."""
         "Garven Dreis":
-            name: "Garven Dreis"
-            id: 1
-            sources: [ "X-Wing Expansion Pack", ]
-            unique: true
-            ship: "X-Wing"
-            skill: 6
-            points: 26
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
             text: """Wenn du einen Fokusmarker ausgibst, darfst du ihn auf ein anderes freundliches Schiff in Reichweite 1-2 legen (anstatt ihn abzulegen)."""
-        "Pilot der Rot-Staffel":
+        "Red Squadron Pilot":
             name: "Pilot der Rot-Staffel"
-            id: 2
-            sources: [ "Core", "X-Wing Expansion Pack", ]
-            ship: "X-Wing"
-            skill: 4
-            points: 23
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
-        "Anfängerpilot":
+        "Rookie Pilot":
             name: "Anfängerpilot"
-            id: 3
-            sources: [ "Core", "X-Wing Expansion Pack", ]
-            ship: "X-Wing"
-            skill: 2
-            points: 21
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
         "Biggs Darklighter":
-            name: "Biggs Darklighter"
-            id: 4
-            unique: true
-            sources: [ "Core", ]
-            ship: "X-Wing"
-            skill: 5
-            points: 25
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
             text: """Andere freundliche Schiffe in Reichweite 1 dürfen nur dann angegriffen werden, wenn der Angreifer dich nicht zum Ziel bestimmen kann."""
         "Luke Skywalker":
-            name: "Luke Skywalker"
-            id: 5
-            unique: true
-            sources: [ "Core", ]
-            ship: "X-Wing"
-            skill: 8
-            points: 28
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """Wenn du verteidigst, kannst du 1 deiner <img class="icon-focus" alt="Focus" src="images/transparent.png" /> in ein <img class="icon-evade" alt="Evade" src="images/transparent.png" /> ändern."""
-        "Pilot der Grau-Staffel":
+        "Gray Squadron Pilot":
             name: "Pilot der Grau-Staffel"
-            id: 6
-            ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
-            skill: 4
-            points: 20
-            slots: [
-                "Turret",
-                "Torpedo",
-                "Torpedo",
-                "Astromech",
-            ]
         '"Dutch" Vander':
-            name: '"Dutch" Vander'
-            id: 7
-            unique: true
-            ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
-            skill: 6
-            points: 23
-            slots: [
-                "Turret",
-                "Torpedo",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """Wähle ein anderes freundliches Schiff in Reichweite 1-2, nachdem du eine Zielerfassung durchgeführt hast. Das gewählte Schiff darf sofort ebenfalls eine Zielerfassung durchführen."""
         "Horton Salm":
-            name: "Horton Salm"
-            id: 8
-            unique: true
-            ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
-            skill: 8
-            points: 25
-            slots: [
-                "Turret",
-                "Torpedo",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du beliebig viele Leerseiten neu würfeln."""
-        "Pilot der Gold-Staffel":
+        "Gold Squadron Pilot":
             name: "Pilot der Gold-Staffel"
-            id: 9
-            ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
-            skill: 2
-            points: 18
-            slots: [
-                "Turret",
-                "Torpedo",
-                "Torpedo",
-                "Astromech",
-            ]
-        "Pilot der Akademie":
+        "Academy Pilot":
             name: "Pilot der Akademie"
-            id: 10
-            ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
-            skill: 1
-            points: 12
-            slots: []
-        "Pilot der Obsidian-Staffel":
+        "Obsidian Squadron Pilot":
             name: "Pilot der Obsidian-Staffel"
-            id: 11
-            ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
-            skill: 3
-            points: 13
-            slots: []
-        "Pilot der Schwarz-Staffel":
+        "Black Squadron Pilot":
             name: "Pilot der Schwarz-Staffel"
-            id: 12
-            ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
-            skill: 4
-            points: 14
-            slots: [
-                "Elite",
-            ]
-        '"Geflügelter Gundark"':
+        '"Winged Gundark"':
             name: '"Geflügelter Gundark"'
-            id: 13
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
-            skill: 5
-            points: 15
-            slots: [ ]
             text: """Wenn du ein Ziel in Reichweite 1 angreifst, darfst du eines deiner <img class="icon-hit" alt="Hit" src="images/transparent.png" /> in ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ändern."""
-        '"Nachtbestie"':
+        '"Night Beast"':
             name: '"Nachtbestie"'
-            id: 14
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "Core", ]
-            skill: 5
-            points: 15
-            slots: [ ]
             text: """Nachdem du ein grünes Manöver ausgeführt hast, darfst du als freie Aktion eine Fokussierung durchführen."""
         '"Backstabber"':
-            name: '"Backstabber"'
-            id: 15
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
-            skill: 6
-            points: 16
-            slots: [ ]
             text: """Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhältst du 1 zusätzlichen Angriffswürfel."""
         '"Dark Curse"':
-            name: '"Dark Curse"'
-            id: 16
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "Core", ]
-            skill: 6
-            points: 16
-            slots: [ ]
             text: """Wenn du verteidigst, können angreifende Schiffe keine Fokusmarker ausgeben oder Angriffswürfel neu würfeln."""
         '"Mauler Mithel"':
-            name: '"Mauler Mithel"'
-            id: 17
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "Core", ]
-            skill: 7
-            points: 17
-            slots: [
-                "Elite",
-            ]
             text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du ein Ziel in Reichweite 1 angreifst."""
-        '"Kreischläufer"':
+        '"Howlrunner"':
             name: '"Kreischläufer"'
-            id: 18
-            unique: true
-            ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
-            skill: 8
-            points: 18
-            slots: [
-                "Elite",
-            ]
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
-            name: "Maarek Stele"
-            id: 19
-            unique: true
-            ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
-            skill: 7
-            points: 27
-            slots: [
-                "Elite",
-                "Missile",
-            ]
             text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
-        "Pilot der Tornado-Staffel":
+        "Tempest Squadron Pilot":
             name: "Pilot der Tornado-Staffel"
-            id: 20
-            ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
-            skill: 2
-            points: 21
-            slots: [
-                "Missile",
-            ]
-        "Pilot der Storm-Staffel":
+        "Storm Squadron Pilot":
             name: "Pilot der Storm-Staffel"
-            id: 21
-            ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
-            skill: 4
-            points: 23
-            slots: [
-                "Missile",
-            ]
         "Darth Vader":
-            name: "Darth Vader"
-            id: 22
-            unique: true
-            ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
-            skill: 9
-            points: 29
-            slots: [
-                "Elite",
-                "Missile",
-            ]
             text: """Im Schritt "Aktionen durchführen" darfst du 2 Aktionen durchführen."""
-        "Pilot der Alpha-Staffel":
+        "Alpha Squadron Pilot":
             name: "Pilot der Alpha-Staffel"
-            id: 23
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            skill: 1
-            points: 18
-            slots: [ ]
-        "Pilot der Avenger-Staffel":
+        "Avenger Squadron Pilot":
             name: "Pilot der Avenger-Staffel"
-            id: 24
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            skill: 3
-            points: 20
-            slots: [ ]
-        "Pilot der Saber-Staffel":
+        "Saber Squadron Pilot":
             name: "Pilot der Saber-Staffel"
-            id: 25
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", "Imperial Aces Expansion Pack", ]
-            skill: 4
-            points: 21
-            slots: [
-                "Elite",
-            ]
         "\"Fel's Wrath\"":
-            name: "\"Fel's Wrath\""
-            id: 26
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            skill: 5
-            points: 23
-            slots: [ ]
             text: """Wenn die Summe deiner Schadenskarten deinen Hüllenwert erreicht oder übersteigt, wirst du nicht sofort zerstört, sondern erst am Ende der Kampfphase."""
         "Turr Phennir":
-            name: "Turr Phennir"
-            id: 27
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            skill: 7
-            points: 25
-            slots: [
-                "Elite",
-            ]
             text: """Nachdem du angegriffen hast, darfst du eine freie Aktion Schub oder Fassrolle durchführen."""
         "Soontir Fel":
-            name: "Soontir Fel"
-            id: 28
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            skill: 9
-            points: 27
-            slots: [
-                "Elite",
-            ]
             text: """Immer wenn du einen Stressmarker erhältst, darfst du deinem Schiff auch einen Fokusmarker geben."""
         "Tycho Celchu":
-            name: "Tycho Celchu"
-            id: 29
-            unique: true
-            ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
-            skill: 8
-            points: 26
-            slots: [
-                "Elite",
-                "Missile",
-            ]
             text: """Du darfst auch dann Aktionen durchführen, wenn du Stressmarker hast."""
         "Arvel Crynyd":
-            name: "Arvel Crynyd"
-            id: 30
-            unique: true
-            ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
-            skill: 6
-            points: 23
-            slots: [
-                "Missile",
-            ]
             text: """Wenn du angreifst, darfst du auch auf feindliche Schiffe zielen, deren Basen du berührst (vorausgesetzt sie sind innerhalb deines Feuerwinkels)."""
-        "Pilot der Grün-Staffel":
+        "Green Squadron Pilot":
             name: "Pilot der Grün-Staffel"
-            id: 31
-            ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
-            skill: 3
-            points: 19
-            slots: [
-                "Elite",
-                "Missile",
-            ]
-        "Testpilot":
+        "Prototype Pilot":
             name: "Testpilot"
-            id: 32
-            ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
-            skill: 1
-            points: 17
-            slots: [
-                "Missile",
-            ]
-        "Schmuggler aus dem Outer Rim":
+        "Outer Rim Smuggler":
             name: "Schmuggler aus dem Outer Rim"
-            id: 33
-            ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            skill: 1
-            points: 27
-            slots: [
-                "Crew",
-                "Crew",
-            ]
         "Chewbacca":
-            name: "Chewbacca"
-            id: 34
-            unique: true
-            ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            skill: 5
-            points: 42
-            slots: [
-                "Elite",
-                "Missile",
-                "Crew",
-                "Crew",
-            ]
             text: """Wenn du eine offene Schadenskarte erhältst, wird sie sofort umgedreht (ohne dass ihr Kartentext in Kraft tritt)."""
-            ship_override:
-                attack: 3
-                agility: 1
-                hull: 8
-                shields: 5
         "Lando Calrissian":
-            name: "Lando Calrissian"
-            id: 35
-            unique: true
-            ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            skill: 7
-            points: 44
-            slots: [
-                "Elite",
-                "Missile",
-                "Crew",
-                "Crew",
-            ]
-            ship_override:
-                attack: 3
-                agility: 1
-                hull: 8
-                shields: 5
             text: """Wähle nach dem Ausführen eines grünen Manövers ein anderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
         "Han Solo":
-            name: "Han Solo"
-            id: 36
-            unique: true
-            ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            skill: 9
-            points: 46
-            slots: [
-                "Elite",
-                "Missile",
-                "Crew",
-                "Crew",
-            ]
-            ship_override:
-                attack: 3
-                agility: 1
-                hull: 8
-                shields: 5
             text: """Wenn du angreifst, darfst du all deine Würfel neu würfeln. Tust du dies, musst du so viele Würfel wie möglich neu würfeln."""
         "Kath Scarlet":
-            name: "Kath Scarlet"
-            id: 37
-            unique: true
-            ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
-            skill: 7
-            points: 38
-            slots: [
-                "Elite",
-                "Cannon",
-                "Bomb",
-                "Crew",
-                "Missile",
-            ]
             text: """Wenn du angreifst und der Verteidiger mindestens 1 <img class="icon-crit" alt="Crit" src="images/transparent.png" /> negiert, erhält er 1 Stressmarker."""
         "Boba Fett":
-            name: "Boba Fett"
-            id: 38
-            unique: true
-            ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
-            skill: 8
-            points: 39
-            slots: [
-                "Elite",
-                "Cannon",
-                "Bomb",
-                "Crew",
-                "Missile",
-            ]
             text: """Immer wenn du ein Eindrehmanöver (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> oder <img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />) aufdeckst, kannst du das Eindrehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."""
         "Krassis Trelix":
-            name: "Krassis Trelix"
-            id: 39
-            unique: true
-            ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
-            skill: 5
-            points: 36
-            slots: [
-                "Cannon",
-                "Bomb",
-                "Crew",
-                "Missile",
-            ]
             text: """Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."""
-        "Kopfgeldjäger":
+        "Bounty Hunter":
             name: "Kopfgeldjäger"
-            id: 40
-            ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
-            skill: 3
-            points: 33
-            slots: [
-                "Cannon",
-                "Bomb",
-                "Crew",
-                "Missile",
-            ]
         "Ten Numb":
-            name: "Ten Numb"
-            id: 41
-            unique: true
-            ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
-            skill: 8
-            points: 31
-            slots: [
-                "Elite",
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
             text: """Wenn du angreifst, kann 1 deiner <img class="icon-crit" alt="Crit" src="images/transparent.png" /> von Verteidigungswürfeln nicht negiert werden."""
         "Ibtisam":
-            name: "Ibtisam"
-            id: 42
-            unique: true
-            ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
-            skill: 6
-            points: 28
-            slots: [
-                "Elite",
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
             text: """Beim Angreifen oder Verteidigen darfst du 1 deiner Würfel neu würfeln, sofern du mindestens 1 Stressmarker hast."""
-        "Pilot der Dagger-Staffel":
+        "Dagger Squadron Pilot":
             name: "Pilot der Dagger-Staffel"
-            id: 43
-            ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
-            skill: 4
-            points: 24
-            slots: [
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
-        "Pilot der Blauen Staffel":
+        "Blue Squadron Pilot":
             name: "Pilot der Blauen Staffel"
-            id: 44
-            ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
-            skill: 2
-            points: 22
-            slots: [
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
-        "Rebellenagent":
+        "Rebel Operative":
             name: "Rebellenagent"
-            id: 45
-            ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
-            skill: 2
-            points: 16
-            slots: [
-                "Turret",
-                "Crew",
-            ]
         "Roark Garnet":
-            name: "Roark Garnet"
-            id: 46
-            unique: true
-            ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
-            skill: 4
-            points: 19
-            slots: [
-                "Turret",
-                "Crew",
-            ]
             text: '''Wähle zu Beginn der Kampfphase 1 anderes freundliches Schiff in Reichweite 1-3. Bis zum Ende der Phase wird dieses Schiff behandelt, als hätte es einen Pilotenwert von 12.'''
         "Kyle Katarn":
-            name: "Kyle Katarn"
-            id: 47
-            unique: true
-            ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
-            skill: 6
-            points: 21
-            slots: [
-                "Elite",
-                "Turret",
-                "Crew",
-            ]
             text: """Zu Beginn der Kampfphase darfst du einem anderen freundlichen Schiff in Reichweite 1-3 einen deiner Fokusmarker geben."""
         "Jan Ors":
-            name: "Jan Ors"
-            id: 48
-            unique: true
-            ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
-            skill: 8
-            points: 25
-            slots: [
-                "Elite",
-                "Turret",
-                "Crew",
-            ]
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1-3 angreift und du keine Stressmarker hast, darfst du 1 Stressmarker nehmen, damit dieses Schiff 1 zusätzlichen Angriffswürfel erhält."""
-        "Pilot der Scimitar-Staffel":
+        "Scimitar Squadron Pilot":
             name: "Pilot der Scimitar-Staffel"
-            id: 49
-            ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            skill: 2
-            points: 16
-            slots: [
-                "Torpedo",
-                "Torpedo",
-                "Missile",
-                "Missile",
-                "Bomb",
-            ]
-        "Pilot der Gamma-Staffel":
+        "Gamma Squadron Pilot":
             name: "Pilot der Gamma-Staffel"
-            id: 50
-            ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            skill: 4
-            points: 18
-            slots: [
-                "Torpedo",
-                "Torpedo",
-                "Missile",
-                "Missile",
-                "Bomb",
-            ]
         "Captain Jonus":
-            name: "Captain Jonus"
-            id: 51
-            unique: true
-            ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            skill: 6
-            points: 22
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Torpedo",
-                "Missile",
-                "Missile",
-                "Bomb",
-            ]
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."""
         "Major Rhymer":
-            name: "Major Rhymer"
-            id: 52
-            unique: true
-            ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            skill: 7
-            points: 26
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Torpedo",
-                "Missile",
-                "Missile",
-                "Bomb",
-            ]
             text: """Beim Angreifen mit einer Sekundärwaffe darfst du die Reichweite der Waffe um 1 erhöhen oder verringern, bis zu einer Reichweite von 1-3."""
         "Captain Kagi":
-            name: "Captain Kagi"
-            id: 53
-            unique: true
-            ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            skill: 8
-            points: 27
-            slots: [
-                "System",
-                "Cannon",
-                "Crew",
-                "Crew",
-            ]
             text: """Wenn ein feindliches Schiff eine Zielerfassung durchführt, muss es wenn möglich dich als Ziel erfassen."""
         "Colonel Jendon":
-            name: "Colonel Jendon"
-            id: 54
-            unique: true
-            ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            skill: 6
-            points: 26
-            slots: [
-                "System",
-                "Cannon",
-                "Crew",
-                "Crew",
-            ]
             text: """Zu Beginn der Kampfphase darfst du 1 deiner blauen Zielerfassungsmarker auf ein freundliches Schiff in Reichweite 1 legen, das noch keinen blauen Zielerfassungsmarker hat."""
         "Captain Yorr":
-            name: "Captain Yorr"
-            id: 55
-            unique: true
-            ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            skill: 4
-            points: 24
-            slots: [
-                "System",
-                "Cannon",
-                "Crew",
-                "Crew",
-            ]
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1-2 einen Stressmarker erhalten würde und du 2 oder weniger Stressmarker hast, darfst du statt ihm diesen Marker nehmen."""
-        "Pilot der Omikron-Gruppe":
+        "Omicron Group Pilot":
             name: "Pilot der Omikron-Gruppe"
-            id: 56
-            ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            skill: 2
-            points: 21
-            slots: [
-                "System",
-                "Cannon",
-                "Crew",
-                "Crew",
-            ]
         "Lieutenant Lorrir":
-            name: "Lieutenant Lorrir"
-            id: 57
-            unique: true
-            ship: "TIE Abfangjäger"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 5
-            points: 23
-            slots: [ ]
             text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> 1) oder (<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" /> 1) Manöverschablone anstatt der (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) Manöverschablone zu benutzen."""
         "Royal Guard Pilot":
+            ship: "TIE Abfangjäger"
             name: "Royal Guard Pilot"
-            id: 58
-            ship: "TIE Abfangjäger"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 6
-            points: 22
-            slots: [
-                "Elite",
-            ]
         "Tetran Cowall":
-            name: "Tetran Cowall"
-            id: 59
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 7
-            points: 24
-            slots: [
-                "Elite",
-            ]
             text: """Immer wenn du ein <img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" /> Manöver aufdeckst, kannst du das Manöver mit einer Geschwindigkeit von "1," "3," oder "5" ausführen."""
-            modifier_func: (stats) ->
-                # add speed 1 k-turn to table (Interceptor already has 3/5)
-                stats.maneuvers[1][5] = 3
         "Kir Kanos":
-            name: "Kir Kanos"
-            id: 61
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 6
-            points: 24
-            slots: [ ]
             text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du einen Ausweichmarker ausgeben, um 1 <img class="icon-hit" alt="Hit" src="images/transparent.png" /> zu deinem Wurf hinzuzufügen."""
         "Carnor Jax":
-            name: "Carnor Jax"
-            id: 62
-            unique: true
             ship: "TIE Abfangjäger"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            skill: 8
-            points: 26
-            slots: [
-                "Elite",
-            ]
             text: """Feindliche Schiffe in Reichweite 1 können weder Fokussierung und Ausweichen Aktionen durchführen noch Ausweichmarker und Fokusmarker ausgeben."""
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
-            id: 63
-            ship: "GR-75 Medium Transport"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            skill: 3
-            points: 30
-            slots: [
-                "Crew",
-                "Crew",
-                "Cargo",
-                "Cargo",
-                "Cargo",
-            ]
         "Bandit Squadron Pilot":
             name: "Bandit Squadron Pilot"
-            id: 64
-            ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            skill: 2
-            points: 12
-            slots: [
-                "Missile",
-            ]
         "Tala Squadron Pilot":
             name: "Tala Squadron Pilot"
-            id: 65
-            ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            skill: 4
-            points: 13
-            slots: [
-                "Missile",
-            ]
         "Lieutenant Blount":
-            name: "Lieutenant Blount"
-            id: 66
-            unique: true
-            ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            skill: 6
-            points: 17
-            slots: [
-                "Elite",
-                "Missile",
-            ]
+            name: "Leutnant Blount"
             text: """When attacking, the defender is hit by your attack, even if he does not suffer any damage."""
         "Airen Cracken":
             name: "Airen Cracken"
-            id: 67
-            unique: true
-            ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            skill: 8
-            points: 19
-            slots: [
-                "Elite",
-                "Missile",
-            ]
             text: """After you perform an attack, you may choose another friendly ship at Range 1.  That ship may perform 1 free action."""
         "Delta Squadron Pilot":
             name: "Delta Squadron Pilot"
-            id: 68
-            ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
-            skill: 1
-            points: 30
-            slots: [
-                "Cannon",
-                "Missile",
-            ]
         "Onyx Squadron Pilot":
             name: "Onyx Squadron Pilot"
-            id: 69
-            ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
-            skill: 3
-            points: 99
-            slots: [
-                "Cannon",
-                "Missile",
-            ]
         "Colonel Vessery":
-            name: "Colonel Vessery"
-            id: 70
-            unique: true
-            ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
-            skill: 6
-            points: 99
-            slots: [
-                "Cannon",
-                "Missile",
-            ]
             text: """This card has not yet been released."""
         "Rexler Brath":
-            name: "Rexler Brath"
-            id: 71
-            unique: true
-            ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
-            skill: 8
-            points: 99
-            slots: [
-                "Elite",
-                "Cannon",
-                "Missile",
-            ]
             text: """After you perform an ??? deals at least 1 ??? defender, you ??? token to ???"""
         "Knave Squadron Pilot":
             name: "Knave Squadron Pilot"
-            id: 72
-            ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
-            skill: 1
-            points: 27
-            slots: [
-                "System",
-                "Torpedo",
-                "Astromech",
-            ]
         "Blackmoon Squadron Pilot":
             name: "Blackmoon Squadron Pilot"
-            id: 73
-            ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
-            skill: 3
-            points: 99
-            slots: [
-                "System",
-                "Torpedo",
-                "Astromech",
-            ]
         "Etahn A'baht":
-            name: "Etahn A'baht"
-            id: 74
-            unique: true
-            ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
-            skill: 5
-            points: 32
-            slots: [
-                "Elite",
-                "System",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its <img class="icon-hit" alt="Hit" src="images/transparent.png" /> results to a <img class="icon-crit" alt="Crit" src="images/transparent.png" /> result."""
         "Corran Horn":
-            name: "Corran Horn"
-            id: 75
-            unique: true
-            ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
-            skill: 8
-            points: 99
-            slots: [
-                "Elite",
-                "System",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """At the start of the ??? you may perform ??? cannot attack ???"""
         "Sigma Squadron Pilot":
             name: "Sigma Squadron Pilot"
-            id: 76
-            ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
-            skill: 3
-            points: 25
-            slots: [
-                "System",
-                "Crew",
-            ]
         "Shadow Squadron Pilot":
             name: "Shadow Squadron Pilot"
-            id: 77
-            ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
-            skill: 5
-            points: 99
-            slots: [
-                "System",
-                "Crew",
-            ]
         "Unspoiled PS6 TIE Phantom Pilot":
             name: "Unspoiled PS6 TIE Phantom Pilot"
-            id: 78
-            unique: true
-            ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
-            skill: 6
-            points: 99
-            slots: [
-                "System",
-                "Crew",
-            ]
         '"Whisper"':
             name: '"Whisper"'
-            id: 79
-            unique: true
-            ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
-            skill: 7
-            points: 32
-            slots: [
-                "Elite",
-                "System",
-                "Crew",
-            ]
             text: """After you perform an attack that hits, you may assign 1 focus to your ship."""
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
-            id: 80
-            ship: "CR90 Corvette (Fore)"
-            sources: [ "Tantive IV Expansion Pack", ]
-            skill: 4
-            points: 50
-            slots: [
-                "Crew",
-                "Hardpoint",
-                "Hardpoint",
-                "Team",
-                "Team",
-                "Cargo",
-            ]
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
-            id: 81
-            ship: "CR90 Corvette (Aft)"
-            sources: [ "Tantive IV Expansion Pack", ]
-            skill: 4
-            points: 40
-            slots: [
-                "Crew",
-                "Hardpoint",
-                "Team",
-                "Cargo",
-            ]
         "Wes Janson":
-            name: "Wes Janson"
-            id: 82
-            unique: true
-            ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            skill: 8
-            points: 29
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."""
         "Jek Porkins":
-            name: "Jek Porkins"
-            id: 83
-            unique: true
-            ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            skill: 7
-            points: 26
-            slots: [
-                "Elite",
-                "Torpedo",
-                "Astromech",
-            ]
             text: """When you receive a stress token, you may remove it and roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result, deal 1 facedown Damage card to this ship."""
         '"Hobbie" Kilvan':
-            name: '"Hobbie" Kilvan'
-            id: 84
-            unique: true
-            ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            skill: 5
-            points: 25
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
             text: """When you acquire or spend a target lock, you may remove 1 stress token from your ship."""
         "Tarn Mison":
-            name: "Tarn Mison"
-            id: 85
-            unique: true
-            ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            skill: 3
-            points: 23
-            slots: [
-                "Torpedo",
-                "Astromech",
-            ]
             text: """When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."""
         "Jake Farrell":
-            name: "Jake Farrell"
-            id: 86
-            unique: true
-            ship: "A-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            skill: 7
-            points: 24
-            slots: [
-                "Elite",
-                "Missile",
-            ]
             text: """After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."""
         "Unspoiled PS5 A-Wing Pilot":
             name: "Unspoiled PS5 A-Wing Pilot"
-            id: 87
-            unique: true
-            ship: "A-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            skill: 5
-            points: 99
-            slots: [
-                "Missile",
-            ]
             text: """This card has not yet been revealed."""
         "Keyan Farlander":
-            name: "Keyan Farlander"
-            id: 88
-            unique: true
-            ship: "B-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            skill: 7
-            points: 29
-            slots: [
-                "Elite",
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
             text: """When attacking, you may remove 1 stress token to change all of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to <img class="icon-hit" alt="Hit" src="images/transparent.png" />results."""
         "Unspoiled PS5 B-Wing Pilot":
             name: "Unspoiled PS5 B-Wing Pilot"
-            id: 89
-            unique: true
-            ship: "B-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            skill: 5
-            points: 99
-            slots: [
-                "System",
-                "Cannon",
-                "Torpedo",
-                "Torpedo",
-            ]
             text: """This card has not yet been revealed."""
 
-    exportObj.upgrades =
-        "Ionengeschütz":
+    upgrade_translations =
+        "Ion Cannon Turret":
             name: "Ionengeschütz"
-            id: 0
-            slot: "Turret"
-            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", ]
-            points: 5
-            attack: 3
-            range: "1-2"
             text: """<strong>Angriff:</strong> Greife 1 Schiff an (es muss nicht in deinem Feuerwinkel sein).<br /><br />Wenn der Angriff trifft, nimmt das verteidigende Schiff 1 Schaden und erhält 1 Ionenmarker. Dann werden alle übrigen Würfelergebnisse negiert."""
-        "Protonen-Torpedos":
+        "Proton Torpedoes":
             name: "Protonen-Torpedos"
-            id: 1
-            slot: "Torpedo"
-            sources: [ "Core", "X-Wing Expansion Pack", "Y-Wing Expansion Pack", "B-Wing Expansion Pack", ]
-            points: 4
-            attack: 4
-            range: "2-3"
             text: """<strong>Angriff (Zielerfassung):</strong>Gib eine Zielerfassung aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst eines deiner <img class="icon-focus" alt="Focus" src="images/transparent.png" /> in ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ändern."""
-        "R2 Astromechdroide":
+        "R2 Astromech":
             name: "R2 Astromechdroide"
-            id: 2
-            slot: "Astromech"
-            sources: [ "Y-Wing Expansion Pack", ]
-            points: 1
             text: """Du darfst alle Manöver mit Geschwindigkeit 1 und 2 wie grüne Manöver behandeln."""
-            modifier_func: (stats) ->
-                if stats.maneuvers? and stats.maneuvers.length > 0
-                    for turn in [0 ... stats.maneuvers[1].length]
-                        if stats.maneuvers[1][turn] > 0
-                            stats.maneuvers[1][turn] = 2
-                        if stats.maneuvers[2][turn] > 0
-                            stats.maneuvers[2][turn] = 2
         "R2-D2":
-            name: "R2-D2"
-            aka: [ "R2-D2 (Crew)", ]
-            id: 3
-            unique: true
-            slot: "Astromech"
-            sources: [ "Core", ]
-            points: 4
             text: """Nachdem du ein grünes Manöver ausgeführt hast, darfst du 1 Schild wiederaufladen (bis maximal zum Schildwert)."""
         "R2-F2":
-            name: "R2-F2"
-            id: 4
-            unique: true
-            slot: "Astromech"
-            sources: [ "Core", ]
-            points: 3
             text: """<strong>Aktion:</strong> Erhöhe deinen Wendigkeitswert bis zum Ende der Spielrunde um 1."""
         "R5-D8":
-            name: "R5-D8"
-            id: 5
-            unique: true
-            slot: "Astromech"
-            sources: [ "Y-Wing Expansion Pack", ]
-            points: 3
             text: """<strong>Aktion:</strong> Wirf 1 Verteidigungswürfel.<br /><br />Lege bei <img class="icon-evade" alt="Evade" src="images/transparent.png" /> oder <img class="icon-focus" alt="Focus" src="images/transparent.png" /> 1 deiner verdeckten Schadenskarten ab."""
         "R5-K6":
-            name: "R5-K6"
-            id: 6
-            unique: true
-            slot: "Astromech"
-            sources: [ "X-Wing Expansion Pack", ]
-            points: 2
             text: """Wirf 1 Verteidigungswürfel nachdem du deine Zielerfassungsmarker ausgegeben hast.<br /><br />Bei <img class="icon-evade" alt="Evade" src="images/transparent.png" /> nimmst du dasselbe Schiff sofort wieder in die Zielerfassung. Für diesen Angriff kannst du die Zielerfassungsmarker nicht erneut ausgeben."""
-        "R5 Astromechdroide":
+        "R5 Astromech":
             name: "R5 Astromechdroide"
-            id: 7
-            slot: "Astromech"
-            sources: [ "X-Wing Expansion Pack", ]
-            points: 1
             text: """Wähle während der Endphase 1 deiner offnen Schadenskarte mit dem Attribut <strong>Schiff</strong> und drehe sie um."""
-        "Entschlossenheit":
+        "Determination":
             name: "Entschlossenheit"
-            id: 8
-            slot: "Elite"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
-            points: 1
             text: """Wenn du eine offene Schadenskarte mit dem Attribut <b>Pilot</b> erhältst, wird diese sofort abgelegt (ohne dass der Kartentext in Kraft tritt)."""
-        "Schwarmtaktik":
+        "Swarm Tactics":
             name: "Schwarmtaktik"
-            id: 9
-            slot: "Elite"
-            sources: [ "TIE Fighter Expansion Pack", "TIE Advanced Expansion Pack", ]
-            points: 2
             text: """Wähle zu Beginn der Kampfphase 1 freundliches Schiff in Reichweite 1.<br /><br />Bis zum Ende dieser Phase wird das gewählte Schiff so behandelt, als hätte es denselben Pilotenwert wie du."""
-        "Staffelführer":
+        "Squad Leader":
             name: "Staffelführer"
-            id: 10
-            unique: true
-            slot: "Elite"
-            sources: [ "TIE Advanced Expansion Pack", ]
-            points: 2
             text: """<strong>Aktion:</strong> Wähle ein Schiff in Reichweite 1-2 mit einem geringeren Pilotenwert als du.<br /><br />Das gewählte Schiff darf sofort 1 freie Aktion durhführen."""
-        "Flugkunst":
+        "Expert Handling":
             name: "Flugkunst"
-            id: 11
-            slot: "Elite"
-            sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack", ]
-            points: 2
             text: """<strong>Aktion:</strong> Führe eine Fassrolle durch. Wenn du kein <img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />-Symbol hast, erhälst du 1 Stressmarker.<br /><br />Dann darfst du 1 feindlichen Zielerfassungsmarker von deinem Schiff entfernen."""
-        "Treffsicherheit":
+        "Marksmanship":
             name: "Treffsicherheit"
-            id: 12
-            slot: "Elite"
-            sources: [ "Core", "X-Wing Expansion Pack", ]
-            points: 3
             text: """<strong>Aktion:</strong> Wenn du in dieser Runde angreifst, darfst du eines deiner <img class="icon-focus" alt="Focus" src="images/transparent.png" /> in ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> und alle anderen <img class="icon-focus" alt="Focus" src="images/transparent.png" /> in <img class="icon-hit" alt="Hit" src="images/transparent.png" /> ändern."""
-        "Erschütterungsraketen":
+        "Concussion Missiles":
             name: "Erschütterungsraketen"
-            id: 13
-            slot: "Missile"
-            sources: [ "TIE Advanced Expansion Pack", "A-Wing Expansion Pack", "Millennium Falcon Expansion Pack", ]
-            points: 4
-            attack: 4
-            range: "2-3"
             text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmarker aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst eine deiner Leerseiten in ein <img class="icon-hit" alt="Hit" src="images/transparent.png" /> ändern."""
-        "Cluster-Raketen":
+        "Cluster Missiles":
             name: "Cluster-Raketen"
-            id: 14
-            slot: "Missile"
-            sources: [ "TIE Advanced Expansion Pack", "A-Wing Expansion Pack", ]
-            points: 4
-            attack: 3
-            range: "1-2"
             text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmaker aus und lege diese Karte ab, um mit dieser Sekundärwaffe <strong>zwei Mal</strong> anzugreifen."""
         "Daredevil":
-            name: "Daredevil"
-            id: 15
-            slot: "Elite"
-            sources: [ "TIE Interceptor Expansion Pack", ]
-            points: 3
             text: """<strong>Aktion:</strong> Führe ein rotes (<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" /> 1) oder (<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" /> 1) Manöver aus.<br /><br />Wenn du kein <img class="icon-boost" alt="Boost" src="images/transparent.png" />-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (<img class="icon-hit" alt="Hit" src="images/transparent.png" />) und kritischen Schaden (<img class="icon-crit" alt="Crit" src="images/transparent.png" />)."""
-        "Schwer zu Treffen":
+        "Elusiveness":
             name: "Schwer zu Treffen"
-            id: 16
-            slot: "Elite"
-            sources: [ "TIE Interceptor Expansion Pack", "Millennium Falcon Expansion Pack", ]
-            points: 2
             text: """Wenn du verteidigst, darfst du 1 Stressmarker nehmen, um 1 Angriffswürfel zu wählen. Diesen muss der Angreifer neu würfeln.<br /><br />Du kannst diese Fähigkeit nicht einsetzen, solange du 1 oder mehrere Stressmarker hast."""
-        "Lenkraketen":
+        "Homing Missiles":
             name: "Lenkraketen"
-            id: 17
-            slot: "Missile"
-            sources: [ "A-Wing Expansion Pack", "Slave I Expansion Pack", ]
-            attack: 4
-            range: "2-3"
-            points: 5
             text: """<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Bei diesem Angriff kann der Verteidiger keine Ausweichmarker ausgeben."""
-        "Bis an die Grenzen":
+        "Push the Limit":
             name: "Bis an die Grenzen"
-            id: 18
-            slot: "Elite"
-            sources: [ "A-Wing Expansion Pack", "Imperial Aces Expansion Pack", ]
-            points: 3
             text: """Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durhführen.<br /><br />Dann erhältst du 1 Stressmarker."""
-        "Meisterschütze":
+        "Deadeye":
             name: "Meisterschütze"
-            id: 19
-            slot: "Elite"
-            sources: [ "A-Wing Expansion Pack", ]
-            points: 1
             text: """Du darfst die Bedingung "Angriff (Zielerfassung):" in "Angriff (Fokussierung):" ändern.<br /><br />Wenn ein Angriff das Ausgeben von Zielerfassungsmarkern erfordert, darfst du stattdessen auch einen Fokusmarker ausgeben."""
-        "Aggressiv":
+        "Expose":
             name: "Aggressiv"
-            id: 20
-            slot: "Elite"
-            sources: [ "Slave I Expansion Pack", ]
-            points: 4
             text: """<strong>Aktion:</strong> Bis zum Ende der Runde steigt dein Primärwaffenwert um 1, dafür sinkt dein Wendigkeitswert um 1."""
-        "Bordschütze":
+        "Gunner":
             name: "Bordschütze"
-            id: 21
-            slot: "Crew"
-            sources: [ "Slave I Expansion Pack", ]
-            points: 5
             text: """Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Danach kannst du in dieser Runde nicht noch einmal angreifen."""
-        "Ionenkanonen":
+        "Ion Cannon":
             name: "Ionenkanonen"
-            id: 22
-            slot: "Cannon"
-            sources: [ "Slave I Expansion Pack", "B-Wing Expansion Pack", "TIE Defender Expansion Pack" ]
-            points: 3
-            attack: 3
-            range: "1-3"
             text: """<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Wenn du triffst, nimmt das verteidigende Schiff 1 Schaden und erhält 1 Ionenmarker. Dann werden <b>alle</b> übrigen Würfelergebnisse negiert."""
-        "Schwere Laserkanone":
+        "Heavy Laser Cannon":
             name: "Schwere Laserkanone"
-            id: 23
-            slot: "Cannon"
-            sources: [ "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
-            points: 7
-            attack: 4
-            range: "2-3"
             text: """<strong>Attack:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Unmittelbar nach dem Angriffswurf musst du alle <img class="icon-crit" alt="Crit" src="images/transparent.png" /> in <img class="icon-hit" alt="Hit" src="images/transparent.png" /> ändern."""
-        "Seismische Bomben":
+        "Seismic Charges":
             name: "Seismische Bomben"
-            id: 24
-            slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
-            points: 2
             text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Seismischen Bomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
-        "Angeheuerter Kopilot":
+        "Mercenary Copilot":
             name: "Angeheuerter Kopilot"
-            id: 25
-            slot: "Crew"
-            sources: [ "Slave I Expansion Pack", ]
-            points: 2
             text: """Wenn du ein Ziel in Reichweite 3 angreifst, darfst du eines deiner <img class="icon-hit" alt="Hit" src="images/transparent.png" />  in ein <img class="icon-crit" alt="Crit" src="images/transparent.png" /> ändern."""
-        "Angriffsraketen":
+        "Assault Missiles":
             name: "Angriffsraketen"
-            id: 26
-            slot: "Missile"
-            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "Z-95 Headhunter Expansion Pack" ]
-            points: 5
-            attack: 4
-            range: "2-3"
             text: """Angriff (Zielerfassung): Gib deine Zielerfassungsmarker aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Wenn du triffst, nimmt jedes andere Schiff in Reichweite 1 des verteidigenden Schiffs 1 Schaden."""
-        "Veteraneninstinkte":
+        "Veteran Instincts":
             name: "Veteraneninstinkte"
-            id: 27
-            slot: "Elite"
-            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", ]
-            points: 1
             text: """Dein Pilotenwert steigt um 2."""
-            modifier_func: (stats) ->
-                stats.skill += 2
-        "Annährungsminen":
+        "Proximity Mines":
             name: "Annährungsminen"
-            id: 28
-            slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", ]
-            points: 3
             text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, wenn sich beim Ausführen eines Manövers die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
-        "Waffen-Techniker":
+        "Weapons Engineer":
             name: "Waffen-Techniker"
-            id: 29
-            slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
-            points: 3
             text: """Du darfst 2 verschiedene Schiffe gleichzeitig in Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Wenn du die Aktion Zielerfassung durchführst darfst du zwei verschiedene Schiffe als Ziele erfassen."""
-        "Das Feuer auf mich ziehen":
+        "Draw Their Fire":
             name: "Das Feuer auf mich ziehen"
-            id: 30
-            slot: "Elite"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            points: 1
             text: """Wenn ein freundliches Schiff in Reichweite 1 durch einen Angriff getroffen wird, darfst du anstelle dieses Schiffs den Schaden für 1 nicht-negiertes <img class="icon-crit" alt="Crit" src="images/transparent.png" /> auf dich nehmen."""
         "Luke Skywalker":
-            name: "Luke Skywalker"
-            id: 31
-            unique: true
-            faction: "Rebel Alliance"
-            slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            points: 7
             text: """Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Du darfst ein <img class="icon-focus" alt="Focus" src="images/transparent.png" /> in ein <img class="icon-hit" alt="Hit" src="images/transparent.png" /> ändern. Danach kannst du in dieser Runde nicht noch einmal angreifen."""
         "Nien Nunb":
-            name: "Nien Nunb"
-            id: 32
-            unique: true
-            faction: "Rebel Alliance"
-            slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            points: 1
             text: """Du darfst alle <img class="icon-straight" alt="Straight" src="images/transparent.png" />-Manöver wie grüne Manöver behandeln."""
-            modifier_func: (stats) ->
-                for s in (stats.maneuvers ? [])
-                    if s[2] > 0 # is there a straight (2) maneuver at this speed?
-                        s[2] = 2 # set it to green (2)
         "Chewbacca":
-            name: "Chewbacca"
-            id: 33
-            unique: true
-            faction: "Rebel Alliance"
-            slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            points: 4
             text: """Wenn du eine Schadenskarte erhältst, darfst du sie sofort ablegen und 1 Schild wiederaufladen.<br /><br />Danach wird diese Aufwertungskarte abgelegt."""
-        "Verstärkte Protonen-Torpedos":
+        "Advanced Proton Torpedoes":
             name: "Verstärkte Protonen-Torpedos"
-            id: 34
-            slot: "Torpedo"
-            attack: 5
-            range: "1"
-            sources: [ "B-Wing Expansion Pack", "TIE Bomber Expansion Pack", ]
-            points: 6
             text: """<strong>Angriff (Zielerfassung):</strong> Gib eine Zielerfassung aus und lege diese Karte ab um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst bis zu 3 deiner Leerseiten in <img class="icon-focus" alt="Focus" src="images/transparent.png" /> ändern."""
-        "Repertierblaster":
+        "Autoblaster":
             name: "Repertierblaster"
-            id: 35
-            slot: "Cannon"
-            attack: 3
-            range: "1"
-            sources: [ "B-Wing Expansion Pack", ]
-            points: 5
             text: """<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Deine <img class="icon-hit" alt="Hit" src="images/transparent.png" /> können von Verteidigungswürfeln nicht negiert werden.<br /><br />Der Verteidiger darf <img class="icon-crit" alt="Crit" src="images/transparent.png" /> negieren, bevor alle <img class="icon-hit" alt="Hit" src="images/transparent.png" /> negiert wurden."""
-        "Feuerkontrollsystem":
+        "Fire-Control System":
             name: "Feuerkontrollsystem"
-            id: 36
-            slot: "System"
-            sources: [ "B-Wing Expansion Pack", "TIE Phantom Expansion Pack" ]
-            points: 2
             text: """Nachdem du angegriffen hast, darfst du eine Zielerfassung auf den Verteidiger durchführen."""
-        "Blastergeschütz":
+        "Blaster Turret":
             name: "Blastergeschütz"
-            id: 37
-            slot: "Turret"
-            sources: [ "HWK-290 Expansion Pack", ]
-            points: 4
-            attack: 3
-            range: "1-2"
             text: """<strong>Angriff (Fokussierung):</strong> Gib 1 Fokusmarker aus, um 1 Schiff mit dieser Sekundärwaffe anzugreifen (es muss nicht in deinem Feuerwinkel sein)."""
-        "Aufklärungs-Experte":
+        "Recon Specialist":
             name: "Aufklärungs-Experte"
-            id: 38
-            slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", "TIE Phantom Expansion Pack" ]
-            points: 3
             text: """Wenn du die Aktion Fokussieren durchführst, lege 1 zusätzlichen Fokusmarker neben dein Schiff."""
         "Saboteur":
-            name: "Saboteur"
-            id: 39
-            slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", ]
-            points: 2
             text: """<strong>Aktion:</strong> Wähle 1 feindliches Schiff in Reichweite 1 und wirf 1 Angriffswürfel. Bei <img class="icon-hit" alt="Hit" src="images/transparent.png" /> oder <img class="icon-crit" alt="Crit" src="images/transparent.png" />, wähle 1 zufällige verdeckte Schadenskarte des Schiffs, decke sie auf und handle sie ab."""
-        "Geheimagent":
+        "Intelligence Agent":
             name: "Geheimagent"
-            id: 40
-            slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
-            points: 1
             text: """Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Du darfst dir das ausgewählte Manöver dieses Schiffs ansehen."""
-        "Protonenbomben":
+        "Proton Bomb":
             name: "Protonenbomben"
-            id: 41
-            slot: "Bomb"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            points: 5
             text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
-        "Adrenalinschub":
+        "Adrenaline Rush":
             name: "Adrenalinschub"
-            id: 42
-            slot: "Elite"
-            sources: [ "TIE Bomber Expansion Pack", ]
-            points: 1
             text: """Wenn du ein rotes Manöver aufdeckst, darfst du diese Karte ablegen, um das Manöver bis zum Ende der Aktivierungsphase wie ein weißes Manöver zu behandeln."""
-        "Verbesserte Sensoren":
+        "Advanced Sensors":
             name: "Verbesserte Sensoren"
-            id: 43
-            slot: "System"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", "E-Wing Expansion Pack" ]
-            points: 3
             text: """Unmittelbar vor dem Aufdecken deines Manövers darfst du 1 freie Aktion durchführen.<br /><br />Wenn du diese Fähigkeit nutzt, musst du den Schritt "Aktion durchführen" in dieser Runde überspringen."""
-        "Störsender":
+        "Sensor Jammer":
             name: "Störsender"
-            id: 44
-            slot: "System"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 4
             text: """Beim Verteidigen darfst du eines der <img class="icon-hit" alt="Hit" src="images/transparent.png" /> des Angreifers in ein <img class="icon-focus" alt="Focus" src="images/transparent.png" /> ändern.<br /><br />Der Angreifer darf den veränderten Würfel nicht neu würfeln."""
         "Darth Vader":
-            name: "Darth Vader"
-            id: 45
-            unique: true
-            faction: "Galactic Empire"
-            slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 3
             text: """Nachdem du ein feindliches Schiff angegriffen hast, darfst du 2 Schaden nehmen, damit dieses Schiff 1 kritischen Schaden nimmt."""
-        "Gefangener Rebell":
+        "Rebel Captive":
             name: "Gefangener Rebell"
-            id: 46
-            unique: true
-            faction: "Galactic Empire"
-            slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 3
             text: """Ein Mal pro Runde erhält das erste Schiff, das einen Angriff gegen dich ansagt, sofort 1 Stressmarker."""
-        "Fluglehrer":
+        "Flight Instructor":
             name: "Fluglehrer"
-            id: 47
-            slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 4
             text: """Beim Verteidigen darfst du 1 deiner <img class="icon-focus" alt="Focus" src="images/transparent.png" /> neu würfeln. Hat der Angreifer einen Pilotenwert von 2 oder weniger, darfst du stattdessen 1 deiner Leerseiten neu würfeln."""
         "Navigator":
             name: "Navigator"
-            id: 48
-            slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 3
             text: """Nach dem Aufdecken deines Manöverrads darfst du das Rad auf ein anderes Manöver mit gleicher Flugrichtung drehen.<br /><br />Wenn du bereits Stressmarker hast, darfst du es nicht auf ein rotes Manöver drehen."""
         "Opportunist":
             name: "Opportunist"
-            id: 49
-            slot: "Elite"
-            sources: [ "Imperial Aces Expansion Pack", ]
-            points: 4
             text: """Wenn du angreifst und der Verteidiger keine Fokusmarker oder Ausweichmarker hat, kannst du einen Stressmarker nehmen, um einen zusätzlichen Angriffswürfel zu erhalten.<br /><br />Du kannst diese Fähigkeit nicht nutzen, wenn du einen Stressmarker hast."""
         "Comms Booster":
             name: "Comms Booster"
-            id: 50
-            slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            points: 4
             text: """<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."""
         "Slicer Tools":
             name: "Slicer Tools"
-            id: 51
-            slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            points: 7
             text: """<strong>Action:</strong> Choose 1 or more ships at Range 1-3 that have a stress token.  For each ship chosen, you may spend 1 energy to cause that ship to suffer 1 damage."""
         "Shield Projector":
             name: "Shield Projector"
-            id: 52
-            slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            points: 4
             text: """When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."""
         "Ion Pulse Missiles":
             name: "Ion Pulse Missiles"
-            id: 53
-            slot: "Missile"
-            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
-            points: 3
-            attack: 3
-            range: """2-3"""
             text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.<br /><br />If this attack hits, the defender suffers 1 damage and receives 2 ion tokens.  Then cancel <strong>all<strong> dice results."""
         "Wingman":
             name: "Wingman"
-            id: 54
-            slot: "Elite"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            points: 2
             text: """At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."""
         "Decoy":
             name: "Decoy"
-            id: 55
-            slot: "Elite"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
-            points: 99
             text: """This card has not yet been released."""
         "Outmaneuver":
             name: "Outmaneuver"
-            id: 56
-            slot: "Elite"
-            sources: [ "TIE Defender Expansion Pack", "E-Wing Expansion Pack" ]
-            points: 99
             text: """This card has not yet been released."""
         "Predator":
             name: "Predator"
-            id: 57
-            slot: "Elite"
-            sources: [ "TIE Defender Expansion Pack", ]
-            points: 99
             text: """This card has not yet been released."""
         "Flechette Torpedoes":
             name: "Flechette Torpedoes"
-            id: 58
-            slot: "Torpedo"
-            sources: [ "E-Wing Expansion Pack", "Rebel Transport Expansion Pack" ]
-            points: 2
-            attack: 3
-            range: """2-3"""
             text: """<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is "4" or lower."""
         "R7 Astromech":
             name: "R7 Astromech"
-            id: 59
-            slot: "Astromech"
-            sources: [ "E-Wing Expansion Pack", ]
-            points: 99
             text: """This card has not yet been released."""
         "R7-T1":
             name: "R7-T1"
-            id: 60
-            unique: true
-            slot: "Astromech"
-            sources: [ "E-Wing Expansion Pack", ]
-            points: 3
             text: """<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
         "Tactician":
             name: "Tactician"
-            id: 61
-            slot: "Crew"
-            sources: [ "TIE Phantom Expansion Pack", ]
-            points: 99
             text: """This card has not yet been released."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Crew)"
-            aka: [ "R2-D2", ]
-            id: 62
-            unique: true
-            slot: "Crew"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 4
-            faction: "Rebel Alliance"
             text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
         "C-3PO":
             name: "C-3PO"
-            id: 63
-            unique: true
-            slot: "Crew"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 3
-            faction: "Rebel Alliance"
             text: """Once per round, before you roll 1 or more defense dice, you may guess aloud a number of <img class="icon-evade" alt="Evade" src="images/transparent.png" /> results.  If you roll that many <img class="icon-evade" alt="Evade" src="images/transparent.png" /> results (before modifying dice), add 1 <img class="icon-evade" alt="Evade" src="images/transparent.png" /> result."""
         "Single Turbolasers":
             name: "Single Turbolasers"
-            id: 64
-            slot: "Hardpoint"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 8
-            energy: 2
-            attack: 4
-            range: "3-5"
             text: """<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your <img class="icon-focus" alt="Focus" src="images/transparent.png" /> results to a <img class="icon-hit" alt="Hit" src="images/transparent.png" /> result."""
         "Quad Laser Cannons":
             name: "Quad Laser Cannons"
-            id: 65
-            slot: "Hardpoint"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 6
-            energy: 2
-            attack: 3
-            range: "1-2"
             text: """<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."""
         "Tibanna Gas Supplies":
             name: "Tibanna Gas Supplies"
-            id: 66
-            slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 4
-            limited: true
             text: """<strong>Energy:</strong> You may discard this card to gain 3 energy."""
         "Ionization Reactor":
             name: "Ionization Reactor"
-            id: 67
-            slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 4
-            energy: 5
-            limited: true
             text: """<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."""
         "Engine Booster":
             name: "Engine Booster"
-            id: 68
-            slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 3
-            limited: true
             text: """Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) maneuver.  You cannot use this ability if you would overlap another ship."""
         "R3-A2":
             name: "R3-A2"
-            id: 69
-            unique: true
-            slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            points: 2
             text: """When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."""
         "R2-D6":
             name: "R2-D6"
-            id: 70
-            unique: true
-            slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
-            points: 1
             text: """Your upgrade bar gains the <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon or if your pilot skill value is "2" or lower."""
-            restriction_func: (ship) ->
-                return false if (ship.effectiveStats().skill <= 2 or 'Elite' in ship.pilot.slots)
-                # Otherwise, if there's an Elite slot upgrade, it has to have
-                # been conferred, and it can't be conferred by another upgrade
-                for upgrade in ship.upgrades
-                    if upgrade? and upgrade.data?.name != 'R2-D6'
-                        for conferred_addon in upgrade.conferredAddons
-                            return false if conferred_addon.slot == 'Elite'
-                true
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Elite"
-                },
-            ]
         "Enhanced Scopes":
             name: "Enhanced Scopes"
-            id: 71
-            slot: "System"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 1
             text: """During the Activation phase, treat your pilot skill value as "0"."""
         "Chardaan Refit":
             name: "Chardaan Refit"
-            id: 72
-            slot: "Missile"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: -2
             text: """This card has a negative squad point cost."""
-            ship: "A-Wing"
         "Proton Rockets":
             name: "Proton Rockets"
-            id: 73
-            slot: "Missile"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
             text: """This card has not yet been revealed."""
         "Kyle Katarn":
-            name: "Kyle Katarn"
-            id: 74
-            unique: true
-            slot: "Crew"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
             text: """After you receive a stress token from your ship, you may assign a focus token to ???"""
-            faction: "Rebel Alliance"
         "Jan Ors":
-            name: "Jan Ors"
-            id: 75
-            unique: true
-            slot: "Crew"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
             text: """This card has not yet been revealed."""
-            faction: "Rebel Alliance"
 
-    exportObj.modifications =
-        "Tarnvorrichtung":
+    modification_translations =
+        "Stealth Device":
             name: "Tarnvorrichtung"
-            id: 1
-            points: 3
-            sources: [ "Slave I Expansion Pack", ]
             text: """Dein Wendigkeitswert steigt um 1. Lege diese Karte ab, wenn du von einem Angriff getroffen wirst."""
-            modifier_func: (stats) ->
-                stats.agility += 1
-        "Verbesserte Schilde":
+        "Shield Upgrade":
             name: "Verbesserte Schilde"
-            id: 2
-            points: 4
-            sources: [ "Millennium Falcon Expansion Pack", "Imperial Aces Expansion Pack", ]
             text: """Dein Schildwert steigt um 1."""
-            modifier_func: (stats) ->
-                stats.shields += 1
-        "Verbessertes Triebwerk":
+        "Engine Upgrade":
             name: "Verbessertes Triebwerk"
-            id: 3
-            points: 4
-            sources: [ "Millennium Falcon Expansion Pack", ]
             text: """Füge deiner Aktionsleiste ein <img class="icon-boost" alt="Boost" src="images/transparent.png" />-Symbol hinzu."""
-            modifier_func: (stats) ->
-                stats.actions.push 'Boost' if 'Boost' not in stats.actions
-        "Kurzstreckenlaser":
+        "Anti-Pursuit Lasers":
             name: "Kurzstreckenlaser"
-            id: 4
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            points: 2
             text: """Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, das zur Überschneidung mit deinem Schiff führt, wirf 1 Angriffswürfel. Bei <img class="icon-hit" alt="Hit" src="images/transparent.png" /> oder <img class="icon-crit" alt="Crit" src="images/transparent.png" /> nimmt das feindliche Schiff 1 Schaden."""
-            restriction_func: (ship) ->
-                ship.data.large ? false
-        "Zielerfassungssystem":
+        "Targeting Computer":
             name: "Zielerfassungssystem"
-            id: 5
-            sources: [ "Imperial Aces Expansion Pack", ]
-            points: 2
             text: """Deine Aufwertungsleiste erhält das <img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />-Symbol."""
-            modifier_func: (stats) ->
-                stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
-        "Verbesserte Hülle":
+        "Hull Upgrade":
             name: "Verbesserte Hülle"
-            id: 6
-            sources: [ "Imperial Aces Expansion Pack", ]
-            points: 3
             text: """Erhöhe deinen Hüllenwert um 1."""
-            modifier_func: (stats) ->
-                stats.hull += 1
         "Munitions Failsafe":
             name: "Munitions Failsafe"
-            id: 7
-            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
-            points: 1
             text: """When attacking with a secondary weapon that instructs you to discard it to perform the attack, do not discard it unless the attack hits."""
         "Stygium Particle Accelerator":
             name: "Stygium Particle Accelerator"
-            id: 8
-            sources: [ "TIE Phantom Expansion Pack", ]
-            points: 2
             text: """When you either decloak or perform a cloak action, you may perform a free evade action."""
         "Advanced Cloaking Device":
             name: "Advanced Cloaking Device"
-            id: 9
-            sources: [ "TIE Phantom Expansion Pack", ]
-            points: 99
             text: """After you perform an attack, you may perform a free cloak action."""
-            ship: "TIE Phantom"
 
 
-    exportObj.titles =
-        "Sklave I":
+    title_translations =
+        "Slave I":
             name: "Sklave I"
-            id: 1
-            sources: [ "Slave I Expansion Pack", ]
-            unique: true
-            points: 0
-            ship: "Firespray-31"
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Torpedo"
-                },
-            ]
             text: """Füge deiner Aktionsleiste ein <img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />-Symbol hinzu."""
-        "Millennium Falke":
+        "Millennium Falcon":
             name: "Millennium Falke"
-            id: 2
-            sources: [ "Millennium Falcon Expansion Pack", ]
-            unique: true
-            points: 1
-            ship: "YT-1300"
-            actions: "Evade"
             text: """Füge deiner Aktionsleiste ein <img class="icon-evade" alt="Evade" src="images/transparent.png" />-Symbol hinzu."""
-            modifier_func: (stats) ->
-                stats.actions.push 'Evade' if 'Evade' not in stats.actions
         "Moldy Crow":
-            name: "Moldy Crow"
-            id: 3
-            sources: [ "HWK-290 Expansion Pack", ]
-            unique: true
-            points: 3
-            ship: "HWK-290"
             text: """In der Endphase werden von diesem Schiff keine unbenutzen Fokusmarker entfernt."""
         "ST-321":
-            name: "ST-321"
-            id: 4
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
-            unique: true
-            points: 3
-            ship: "Lambda-Class Shuttle"
             text: """Wenn du eine Zielerfassung durchführst, darfst du ein beliebiges feindliches Schiff auf der Spielfläche als Ziel erfassen."""
-        "TIE der Roten Garde":
+        "Royal Guard TIE":
             name: "TIE der Roten Garde"
-            id: 5
-            sources: [ "Imperial Aces Expansion Pack", ]
-            points: 0
             ship: "TIE Abfangjäger"
             text: """Du kannst bis zu 2 verschiedene Modifikationen verwenden (statt einer).<br /><br />Du kannst diese Karte nicht verwenden, wenn der Pilotenwert "4" oder kleiner ist."""
-            confersAddons: [
-                {
-                    type: exportObj.Modification,
-                },
-            ]
-            restriction_func: (ship) ->
-                ship.effectiveStats().skill > 4
         "Dodonna's Pride":
             name: "Dodonna's Pride"
-            id: 6
-            unique: true
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 4
-            ship: "CR90 Corvette (Fore)"
             text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
         "A-Wing Test Pilot":
             name: "A-Wing Test Pilot"
-            id: 7
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 0
-            ship: "A-Wing"
             text: """Your upgrade bar gains 1 <img class="icon-elite" alt="Elite" src="images/transparent.png" /> upgrade icon.<br /><br />You cannot equip 2 of the same <img class="icon-elite" alt="Elite" src="images/transparent.png" /> Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
-            restriction_func: (ship) ->
-                ship.effectiveStats().skill > 1
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Elite"
-                },
-            ]
         "B-Wing/E":
-            name: "B-Wing/E"
-            id: 8
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
             text: """Your upgrade bar gains the <img class="icon-crew" alt="Crew" src="images/transparent.png" /> upgrade icon."""
-            ship: "B-Wing"
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Crew"
-                },
-            ]
         "Tantive IV":
-            name: "Tantive IV"
-            id: 9
-            unique: true
-            sources: [ "Tantive IV Expansion Pack", ]
-            points: 4
             text: """Your fore section upgrade bar gains 1 additional <img class="icon-crew" alt="Crew" src="images/transparent.png" /> and 1 additional <img class="icon-team" alt="Team" src="images/transparent.png" /> upgrade icon."""
-            ship: "CR90 Corvette (Fore)"
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Crew"
-                },
-                {
-                    type: exportObj.Upgrade
-                    slot: "Team"
-                },
-            ]
+
+
+    exportObj.pilots = {}
+    # Assuming a given pilot is unique by name...
+    for pilot_data in basic_cards.pilotsById
+        exportObj.pilots[pilot_data.name] = pilot_data
+    # pilot_name is the English version here as it's the common index into
+    # basic card info
+    for pilot_name, translations of pilot_translations
+        for field, translation of translations
+            try
+                exportObj.pilots[pilot_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for pilot #{pilot_name}"
+                throw e
+
+    exportObj.upgrades = {}
+    for upgrade_data in basic_cards.upgradesById
+        exportObj.upgrades[upgrade_data.name] = upgrade_data
+    for upgrade_name, translations of upgrade_translations
+        for field, translation of translations
+            try
+                exportObj.upgrades[upgrade_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for upgrade #{upgrade_name}"
+                throw e
+
+    exportObj.modifications = {}
+    for modification_data in basic_cards.modificationsById
+        exportObj.modifications[modification_data.name] = modification_data
+    for modification_name, translations of modification_translations
+        for field, translation of translations
+            try
+                exportObj.modifications[modification_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for modification #{modification_name}"
+                throw e
+
+    exportObj.titles = {}
+    for title_data in basic_cards.titlesById
+        exportObj.titles[title_data.name] = title_data
+    for title_name, translations of title_translations
+        for field, translation of translations
+            try
+                exportObj.titles[title_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for title #{title_name}"
+                throw e
+
 
     exportObj.expansions = {}
 
     exportObj.pilotsById = {}
+    exportObj.pilotsByLocalizedName = {}
     for pilot_name, pilot of exportObj.pilots
         exportObj.pilotsById[pilot.id] = pilot
+        exportObj.pilotsByLocalizedName[pilot.name] = pilot
         for source in pilot.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
-        throw "At least one pilot shares an ID with another"
+        throw new Error("At least one pilot shares an ID with another")
+
 
     exportObj.upgradesById = {}
+    exportObj.upgradesByLocalizedName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         exportObj.upgradesById[upgrade.id] = upgrade
+        exportObj.upgradesByLocalizedName[upgrade.name] = upgrade
         for source in upgrade.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
-        throw "At least one upgrade shares an ID with another"
+        throw new Error("At least one upgrade shares an ID with another")
 
     exportObj.modificationsById = {}
+    exportObj.modificationsByLocalizedName = {}
     for modification_name, modification of exportObj.modifications
         exportObj.modificationsById[modification.id] = modification
+        exportObj.modificationsByLocalizedName[modification.name] = modification
         for source in modification.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
-        throw "At least one modification shares an ID with another"
+        throw new Error("At least one modification shares an ID with another")
 
     exportObj.titlesById = {}
+    exportObj.titlesByLocalizedName = {}
     for title_name, title of exportObj.titles
-        exportObj.titlesById[title.id] = title if title.text?
+        exportObj.titlesById[title.id] = title
+        exportObj.titlesByLocalizedName[title.name] = title
         for source in title.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
-        throw "At least one title shares an ID with another"
+        throw new Error("At least one title shares an ID with another")
 
     exportObj.titlesByShip = {}
     for title_name, title of exportObj.titles

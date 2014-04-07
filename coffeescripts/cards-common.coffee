@@ -1,7 +1,9 @@
 # This must be loaded before any of the card language modules!
 exportObj = exports ? this
 
-exportObj.basicCardData =
+# Returns an independent copy of the data which can be modified by translation
+# modules.
+exportObj.basicCardData = ->
     ships:
         "X-Wing":
             name: "X-Wing"
@@ -1514,7 +1516,7 @@ exportObj.basicCardData =
         }
     ]
 
-    upgrades: [
+    upgradesById: [
         {
             name: "Ion Cannon Turret"
             id: 0
@@ -2163,7 +2165,7 @@ exportObj.basicCardData =
         }
     ]
 
-    modifications: [
+    modificationsById: [
         {
             name: "Stealth Device"
             id: 1
@@ -2233,7 +2235,7 @@ exportObj.basicCardData =
         }
     ]
 
-    titles: [
+    titlesById: [
         {
             name: "Slave I"
             id: 1

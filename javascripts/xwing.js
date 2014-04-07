@@ -742,7 +742,7 @@
       var crew, pilot, upgrade_alias, _i, _len, _ref, _ref1;
       if (this.uniqueIndex(unique, type) < 0) {
         if (type === 'Pilot') {
-          crew = exportObj.upgrades[unique.name];
+          crew = exportObj.upgradesByLocalizedName[unique.name];
           if ((crew != null) && ((crew != null ? crew.unique : void 0) != null)) {
             if (this.uniqueIndex(crew, 'Upgrade') < 0) {
               this.uniques_in_use['Upgrade'].push(crew);
@@ -752,7 +752,7 @@
           }
         } else if (type === 'Upgrade') {
           if (unique.slot === 'Crew') {
-            pilot = exportObj.pilots[unique.name];
+            pilot = exportObj.pilotsByLocalizedName[unique.name];
             if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
               if (this.uniqueIndex(pilot, 'Pilot') < 0) {
                 this.uniques_in_use['Pilot'].push(pilot);
@@ -764,7 +764,7 @@
           _ref1 = (_ref = unique.aka) != null ? _ref : [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             upgrade_alias = _ref1[_i];
-            this.uniques_in_use['Upgrade'].push(exportObj.upgrades[upgrade_alias]);
+            this.uniques_in_use['Upgrade'].push(exportObj.upgradesByLocalizedName[upgrade_alias]);
           }
         }
         this.uniques_in_use[type].push(unique);
@@ -780,7 +780,7 @@
       if (idx >= 0) {
         this.uniques_in_use[type].splice(idx, 1);
         if (type === 'Pilot') {
-          crew = exportObj.upgrades[unique.name];
+          crew = exportObj.upgradesByLocalizedName[unique.name];
           if ((crew != null) && ((crew != null ? crew.unique : void 0) != null)) {
             idx = this.uniqueIndex(crew, 'Upgrade');
             if (idx < 0) {
@@ -790,7 +790,7 @@
           }
         } else if (type === 'Upgrade') {
           if (unique.slot === 'Crew') {
-            pilot = exportObj.pilots[unique.name];
+            pilot = exportObj.pilotsByLocalizedName[unique.name];
             if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
               idx = this.uniqueIndex(pilot, 'Pilot');
               if (idx < 0) {
@@ -802,7 +802,7 @@
           _ref1 = (_ref = unique.aka) != null ? _ref : [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             upgrade_alias = _ref1[_i];
-            alias_idx = this.uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade');
+            alias_idx = this.uniqueIndex(exportObj.upgradesByLocalizedName[upgrade_alias], 'Upgrade');
             this.uniques_in_use['Upgrade'].splice(alias_idx, 1);
           }
         }
@@ -888,11 +888,11 @@
       }
       unclaimed_faction_pilots = (function() {
         var _ref, _results;
-        _ref = exportObj.pilots;
+        _ref = exportObj.pilotsByLocalizedName;
         _results = [];
         for (pilot_name in _ref) {
           pilot = _ref[pilot_name];
-          if (exportObj.ships[pilot.ship].faction === this.faction && ((ship == null) || pilot.ship === ship) && this.matcher(pilot_name, term) && ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0)) {
+          if (((ship == null) || pilot.ship === ship) && exportObj.ships[pilot.ship].faction === this.faction && this.matcher(pilot_name, term) && ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0)) {
             _results.push(pilot);
           }
         }
@@ -942,7 +942,7 @@
       }
       unclaimed_upgrades = (function() {
         var _ref, _results;
-        _ref = exportObj.upgrades;
+        _ref = exportObj.upgradesByLocalizedName;
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
@@ -999,7 +999,7 @@
       }
       unclaimed_modifications = (function() {
         var _ref, _results;
-        _ref = exportObj.modifications;
+        _ref = exportObj.modificationsByLocalizedName;
         _results = [];
         for (modification_name in _ref) {
           modification = _ref[modification_name];
@@ -1056,7 +1056,7 @@
       }
       unclaimed_titles = (function() {
         var _ref, _results;
-        _ref = exportObj.titles;
+        _ref = exportObj.titlesByLocalizedName;
         _results = [];
         for (title_name in _ref) {
           title = _ref[title_name];
@@ -1689,7 +1689,7 @@
     };
 
     Ship.prototype.setPilotByName = function(name) {
-      return this.setPilot(exportObj.pilots[$.trim(name)]);
+      return this.setPilot(exportObj.pilotsByLocalizedName[$.trim(name)]);
     };
 
     Ship.prototype.setPilot = function(new_pilot) {
@@ -2668,7 +2668,7 @@
       this.slot = args.slot;
       this.type = 'Upgrade';
       this.dataById = exportObj.upgradesById;
-      this.dataByName = exportObj.upgrades;
+      this.dataByName = exportObj.upgradesByLocalizedName;
       this.serialization_code = 'U';
       this.setupSelector();
     }
@@ -2700,7 +2700,7 @@
       Modification.__super__.constructor.call(this, args);
       this.type = 'Modification';
       this.dataById = exportObj.modificationsById;
-      this.dataByName = exportObj.modifications;
+      this.dataByName = exportObj.modificationsByLocalizedName;
       this.serialization_code = 'M';
       this.setupSelector();
     }
@@ -2732,7 +2732,7 @@
       Title.__super__.constructor.call(this, args);
       this.type = 'Title';
       this.dataById = exportObj.titlesById;
-      this.dataByName = exportObj.titles;
+      this.dataByName = exportObj.titlesByLocalizedName;
       this.serialization_code = 'T';
       this.setupSelector();
     }
