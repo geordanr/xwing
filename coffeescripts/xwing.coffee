@@ -717,7 +717,7 @@ class exportObj.SquadBuilder
             # Special case: pilots may be crew and vice versa
             if type == 'Pilot'
                 # Check crew
-                crew = exportObj.upgrades[unique.name]
+                crew = exportObj.upgradesByLocalizedName[unique.name]
                 if crew? and crew?.unique?
                     if @uniqueIndex(crew, 'Upgrade') < 0
                         # Not in crew either; claim it in use as well
@@ -727,7 +727,7 @@ class exportObj.SquadBuilder
             else if type == 'Upgrade'
                 if unique.slot == 'Crew'
                     # Check pilots
-                    pilot = exportObj.pilots[unique.name]
+                    pilot = exportObj.pilotsByLocalizedName[unique.name]
                     if pilot? and pilot?.unique?
                         if @uniqueIndex(pilot, 'Pilot') < 0
                             # Not a pilot either; claim it in use as well
@@ -737,7 +737,7 @@ class exportObj.SquadBuilder
                 # Multiple upgrades have the same name but different slots
                 for upgrade_alias in unique.aka ? []
                     #console.log "Also claiming #{upgrade_alias} in use"
-                    @uniques_in_use['Upgrade'].push exportObj.upgrades[upgrade_alias]
+                    @uniques_in_use['Upgrade'].push exportObj.upgradesByLocalizedName[upgrade_alias]
             @uniques_in_use[type].push unique
         else
             throw "Unique #{type} '#{unique.name}' already claimed"
@@ -749,7 +749,7 @@ class exportObj.SquadBuilder
             @uniques_in_use[type].splice idx, 1
             # Special case: releasing pilot needs to release equivalent crew (and vice versa)
             if type == 'Pilot'
-                crew = exportObj.upgrades[unique.name]
+                crew = exportObj.upgradesByLocalizedName[unique.name]
                 if crew? and crew?.unique?
                     idx = @uniqueIndex crew, 'Upgrade'
                     if idx < 0
@@ -757,7 +757,7 @@ class exportObj.SquadBuilder
                     @uniques_in_use['Upgrade'].splice idx, 1
             else if type == 'Upgrade'
                 if unique.slot == 'Crew'
-                    pilot = exportObj.pilots[unique.name]
+                    pilot = exportObj.pilotsByLocalizedName[unique.name]
                     if pilot? and pilot?.unique?
                         idx = @uniqueIndex pilot, 'Pilot'
                         if idx < 0
@@ -766,7 +766,7 @@ class exportObj.SquadBuilder
                 # Release any aliases
                 for upgrade_alias in unique.aka ? []
                     #console.log "Also releasing #{upgrade_alias}"
-                    alias_idx = @uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade')
+                    alias_idx = @uniqueIndex(exportObj.upgradesByLocalizedName[upgrade_alias], 'Upgrade')
                     @uniques_in_use['Upgrade'].splice alias_idx, 1
         else
             throw "Unique #{type} '#{unique.name}' not in use"
@@ -800,7 +800,7 @@ class exportObj.SquadBuilder
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when exportObj.ships[pilot.ship].faction == @faction and (not ship? or pilot.ship == ship) and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and exportObj.ships[pilot.ship].faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             unclaimed_faction_pilots.push include_pilot
@@ -818,7 +818,7 @@ class exportObj.SquadBuilder
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
+        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
 
         # Special case #2 :(
         current_upgrade_forcibly_removed = false
@@ -834,7 +834,7 @@ class exportObj.SquadBuilder
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modifications when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        unclaimed_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up
@@ -853,7 +853,7 @@ class exportObj.SquadBuilder
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
         # Titles are no longer unique!
-        unclaimed_titles = (title for title_name, title of exportObj.titles when title.ship == ship.data.name and @matcher(title_name, term) and (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        unclaimed_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term) and (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)
             unclaimed_titles.push include_title
@@ -1241,7 +1241,7 @@ class Ship
         @setPilot exportObj.pilotsById[parseInt id]
 
     setPilotByName: (name) ->
-        @setPilot exportObj.pilots[$.trim name]
+        @setPilot exportObj.pilotsByLocalizedName[$.trim name]
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
@@ -1824,7 +1824,7 @@ class exportObj.Upgrade extends GenericAddon
         @slot = args.slot
         @type = 'Upgrade'
         @dataById = exportObj.upgradesById
-        @dataByName = exportObj.upgrades
+        @dataByName = exportObj.upgradesByLocalizedName
         @serialization_code = 'U'
 
         @setupSelector()
@@ -1844,7 +1844,7 @@ class exportObj.Modification extends GenericAddon
         super args
         @type = 'Modification'
         @dataById = exportObj.modificationsById
-        @dataByName = exportObj.modifications
+        @dataByName = exportObj.modificationsByLocalizedName
         @serialization_code = 'M'
 
         @setupSelector()
@@ -1864,7 +1864,7 @@ class exportObj.Title extends GenericAddon
         super args
         @type = 'Title'
         @dataById = exportObj.titlesById
-        @dataByName = exportObj.titles
+        @dataByName = exportObj.titlesByLocalizedName
         @serialization_code = 'T'
 
         @setupSelector()
