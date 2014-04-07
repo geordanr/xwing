@@ -128,6 +128,10 @@ exports.openEmpireBuilder = ->
     casper.then ->
         @click '#empireTab'
 
+exports.openCardBrowser = ->
+    casper.then ->
+        @click '#browserTab'
+
 exports.selectLanguage = (language) ->
     casper.then ->
         @click('.language-picker a')
@@ -161,6 +165,15 @@ exports.assertUpgradeInSlot = (test, builder_selector, ship_idx, upgrade_idx, up
 
 exports.assertNoUpgradeInSlot = (test, builder_selector, ship_idx, upgrade_idx) ->
     exports.assertSelect2IsEmpty(test, "#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}")
+
+exports.selectInCardBrowser = (text) ->
+    casper.thenEvaluate (t) ->
+        $('.card-selector').val(t).change()
+    , text
+
+exports.assertInCardBrowserDisplay = (test, text) ->
+    casper.then ->
+        test.assertSelectorHasText '.card-viewer-container', text, "Text '#{text}' in card browser info display"
 
 # Selectors
 
