@@ -216,6 +216,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Omicron Group Pilot":
             name: "Pilot der Omikron-Gruppe"
         "Lieutenant Lorrir":
+            ship: "TIE Abfangjäger"
             text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" /> 1) oder (<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" /> 1) Manöverschablone anstatt der (<img class="icon-straight" alt="Straight" src="images/transparent.png" /> 1) Manöverschablone zu benutzen."""
         "Royal Guard Pilot":
             ship: "TIE Abfangjäger"
