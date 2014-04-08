@@ -395,9 +395,15 @@
       "Intelligence Agent": {
         text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."
       },
-      "Proton Bomb": "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.",
-      "Adrenaline Rush": "When you reveal a red maneuver, you may discard this card to treat that maneuver as a white maneuver until the end of the Activation phase.",
-      "Advanced Sensors": "Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your \"Perform Action\" step during this round.",
+      "Proton Bomb": {
+        text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase."
+      },
+      "Adrenaline Rush": {
+        text: "When you reveal a red maneuver, you may discard this card to treat that maneuver as a white maneuver until the end of the Activation phase."
+      },
+      "Advanced Sensors": {
+        text: "Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your \"Perform Action\" step during this round."
+      },
       "Sensor Jammer": {
         text: "When defending, you may change 1 of the attacker's <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results into a <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> result.<br /><br />The attacker cannot reroll the die with the changed result."
       },
