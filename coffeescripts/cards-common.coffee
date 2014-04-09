@@ -282,6 +282,14 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
             ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0]
+              [ 3, 1, 0, 1, 3, 0]
+              [ 3, 1, 2, 1, 3, 0]
+              [ 1, 1, 2, 1, 1, 0]
+              [ 0, 0, 2, 0, 0, 1]
+              [ 0, 0, 2, 0, 0, 0]
+            ]
         "E-Wing":
             name: "E-Wing"
             faction: "Rebel Alliance"
@@ -1247,8 +1255,9 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
             skill: 6
-            points: 99
+            points: 35
             slots: [
+                "Elite"
                 "Cannon"
                 "Missile"
             ]
@@ -1260,7 +1269,7 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
             skill: 8
-            points: 99
+            points: 37
             slots: [
                 "Elite"
                 "Cannon"
@@ -1988,14 +1997,14 @@ exportObj.basicCardData = ->
             id: 56
             slot: "Elite"
             sources: [ "TIE Defender Expansion Pack", "E-Wing Expansion Pack" ]
-            points: 99
+            points: 3
         }
         {
             name: "Predator"
             id: 57
             slot: "Elite"
             sources: [ "TIE Defender Expansion Pack", ]
-            points: 99
+            points: 3
         }
         {
             name: "Flechette Torpedoes"

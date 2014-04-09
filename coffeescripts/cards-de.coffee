@@ -247,9 +247,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Onyx Squadron Pilot":
             name: "Onyx Squadron Pilot"
         "Colonel Vessery":
-            text: """This card has not yet been released."""
+            text: """When attacking, immediately after you roll attack dice, you may acquire a target lock on the defender if it already has a red target lock token."""
         "Rexler Brath":
-            text: """After you perform an ??? deals at least 1 ??? defender, you ??? token to ???"""
+            text: """After you perform an attack that deals at least 1 Damage card to the defender, you may spend a focus token to flip those cards faceup."""
         "Knave Squadron Pilot":
             name: "Knave Squadron Pilot"
         "Blackmoon Squadron Pilot":
@@ -451,10 +451,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """This card has not yet been released."""
         "Outmaneuver":
             name: "Outmaneuver"
-            text: """This card has not yet been released."""
+            text: """When attacking a ship inside your firing arc, if you are not inside that ship's firing arc, reduce its agility value by 1 (to a minimum of 0)."""
         "Predator":
             name: "Predator"
-            text: """This card has not yet been released."""
+            text: """When attacking, you may reroll 1 attack die.  If the defender's pilot skill value is "2" or lower, you may instead reroll up to 2 attack dice."""
         "Flechette Torpedoes":
             name: "Flechette Torpedoes"
             text: """<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is "4" or lower."""
