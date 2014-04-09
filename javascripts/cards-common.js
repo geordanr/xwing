@@ -157,7 +157,8 @@
           agility: 3,
           hull: 3,
           shields: 3,
-          actions: ["Focus", "Target Lock", "Barrel Roll"]
+          actions: ["Focus", "Target Lock", "Barrel Roll"],
+          maneuvers: [[0, 0, 0, 0, 0, 0], [3, 1, 0, 1, 3, 0], [3, 1, 2, 1, 3, 0], [1, 1, 2, 1, 1, 0], [0, 0, 2, 0, 0, 1], [0, 0, 2, 0, 0, 0]]
         },
         "E-Wing": {
           name: "E-Wing",
@@ -820,8 +821,8 @@
           ship: "TIE Defender",
           sources: ["TIE Defender Expansion Pack"],
           skill: 6,
-          points: 99,
-          slots: ["Cannon", "Missile"]
+          points: 35,
+          slots: ["Elite", "Cannon", "Missile"]
         }, {
           name: "Rexler Brath",
           id: 71,
@@ -829,7 +830,7 @@
           ship: "TIE Defender",
           sources: ["TIE Defender Expansion Pack"],
           skill: 8,
-          points: 99,
+          points: 37,
           slots: ["Elite", "Cannon", "Missile"]
         }, {
           name: "Knave Squadron Pilot",
@@ -1405,13 +1406,13 @@
           id: 56,
           slot: "Elite",
           sources: ["TIE Defender Expansion Pack", "E-Wing Expansion Pack"],
-          points: 99
+          points: 3
         }, {
           name: "Predator",
           id: 57,
           slot: "Elite",
           sources: ["TIE Defender Expansion Pack"],
-          points: 99
+          points: 3
         }, {
           name: "Flechette Torpedoes",
           id: 58,
