@@ -1756,6 +1756,169 @@
     };
   };
 
+  exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
+    var e, field, modification, modification_data, modification_name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _len7, _m, _n, _o, _p, _ref, _ref1, _ref10, _ref11, _ref12, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    exportObj.pilots = {};
+    _ref = basic_cards.pilotsById;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      pilot_data = _ref[_i];
+      exportObj.pilots[pilot_data.name] = pilot_data;
+    }
+    for (pilot_name in pilot_translations) {
+      translations = pilot_translations[pilot_name];
+      for (field in translations) {
+        translation = translations[field];
+        try {
+          exportObj.pilots[pilot_name][field] = translation;
+        } catch (_error) {
+          e = _error;
+          console.error("Cannot find translation for attribute " + field + " for pilot " + pilot_name);
+          throw e;
+        }
+      }
+    }
+    exportObj.upgrades = {};
+    _ref1 = basic_cards.upgradesById;
+    for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+      upgrade_data = _ref1[_j];
+      exportObj.upgrades[upgrade_data.name] = upgrade_data;
+    }
+    for (upgrade_name in upgrade_translations) {
+      translations = upgrade_translations[upgrade_name];
+      for (field in translations) {
+        translation = translations[field];
+        try {
+          exportObj.upgrades[upgrade_name][field] = translation;
+        } catch (_error) {
+          e = _error;
+          console.error("Cannot find translation for attribute " + field + " for upgrade " + upgrade_name);
+          throw e;
+        }
+      }
+    }
+    exportObj.modifications = {};
+    _ref2 = basic_cards.modificationsById;
+    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+      modification_data = _ref2[_k];
+      exportObj.modifications[modification_data.name] = modification_data;
+    }
+    for (modification_name in modification_translations) {
+      translations = modification_translations[modification_name];
+      for (field in translations) {
+        translation = translations[field];
+        try {
+          exportObj.modifications[modification_name][field] = translation;
+        } catch (_error) {
+          e = _error;
+          console.error("Cannot find translation for attribute " + field + " for modification " + modification_name);
+          throw e;
+        }
+      }
+    }
+    exportObj.titles = {};
+    _ref3 = basic_cards.titlesById;
+    for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+      title_data = _ref3[_l];
+      exportObj.titles[title_data.name] = title_data;
+    }
+    for (title_name in title_translations) {
+      translations = title_translations[title_name];
+      for (field in translations) {
+        translation = translations[field];
+        try {
+          exportObj.titles[title_name][field] = translation;
+        } catch (_error) {
+          e = _error;
+          console.error("Cannot find translation for attribute " + field + " for title " + title_name);
+          throw e;
+        }
+      }
+    }
+    exportObj.expansions = {};
+    exportObj.pilotsById = {};
+    exportObj.pilotsByLocalizedName = {};
+    _ref4 = exportObj.pilots;
+    for (pilot_name in _ref4) {
+      pilot = _ref4[pilot_name];
+      exportObj.pilotsById[pilot.id] = pilot;
+      exportObj.pilotsByLocalizedName[pilot.name] = pilot;
+      _ref5 = pilot.sources;
+      for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
+        source = _ref5[_m];
+        if (!(source in exportObj.expansions)) {
+          exportObj.expansions[source] = 1;
+        }
+      }
+    }
+    if (Object.keys(exportObj.pilotsById).length !== Object.keys(exportObj.pilots).length) {
+      throw new Error("At least one pilot shares an ID with another");
+    }
+    exportObj.upgradesById = {};
+    exportObj.upgradesByLocalizedName = {};
+    _ref6 = exportObj.upgrades;
+    for (upgrade_name in _ref6) {
+      upgrade = _ref6[upgrade_name];
+      exportObj.upgradesById[upgrade.id] = upgrade;
+      exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
+      _ref7 = upgrade.sources;
+      for (_n = 0, _len5 = _ref7.length; _n < _len5; _n++) {
+        source = _ref7[_n];
+        if (!(source in exportObj.expansions)) {
+          exportObj.expansions[source] = 1;
+        }
+      }
+    }
+    if (Object.keys(exportObj.upgradesById).length !== Object.keys(exportObj.upgrades).length) {
+      throw new Error("At least one upgrade shares an ID with another");
+    }
+    exportObj.modificationsById = {};
+    exportObj.modificationsByLocalizedName = {};
+    _ref8 = exportObj.modifications;
+    for (modification_name in _ref8) {
+      modification = _ref8[modification_name];
+      exportObj.modificationsById[modification.id] = modification;
+      exportObj.modificationsByLocalizedName[modification.name] = modification;
+      _ref9 = modification.sources;
+      for (_o = 0, _len6 = _ref9.length; _o < _len6; _o++) {
+        source = _ref9[_o];
+        if (!(source in exportObj.expansions)) {
+          exportObj.expansions[source] = 1;
+        }
+      }
+    }
+    if (Object.keys(exportObj.modificationsById).length !== Object.keys(exportObj.modifications).length) {
+      throw new Error("At least one modification shares an ID with another");
+    }
+    exportObj.titlesById = {};
+    exportObj.titlesByLocalizedName = {};
+    _ref10 = exportObj.titles;
+    for (title_name in _ref10) {
+      title = _ref10[title_name];
+      exportObj.titlesById[title.id] = title;
+      exportObj.titlesByLocalizedName[title.name] = title;
+      _ref11 = title.sources;
+      for (_p = 0, _len7 = _ref11.length; _p < _len7; _p++) {
+        source = _ref11[_p];
+        if (!(source in exportObj.expansions)) {
+          exportObj.expansions[source] = 1;
+        }
+      }
+    }
+    if (Object.keys(exportObj.titlesById).length !== Object.keys(exportObj.titles).length) {
+      throw new Error("At least one title shares an ID with another");
+    }
+    exportObj.titlesByShip = {};
+    _ref12 = exportObj.titles;
+    for (title_name in _ref12) {
+      title = _ref12[title_name];
+      if (!(title.ship in exportObj.titlesByShip)) {
+        exportObj.titlesByShip[title.ship] = [];
+      }
+      exportObj.titlesByShip[title.ship].push(title);
+    }
+    return exportObj.expansions = Object.keys(exportObj.expansions).sort();
+  };
+
 }).call(this);
 
 //@ sourceMappingURL=cards-common.map
