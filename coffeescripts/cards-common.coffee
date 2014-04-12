@@ -2410,6 +2410,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.pilotsById = {}
     exportObj.pilotsByLocalizedName = {}
     for pilot_name, pilot of exportObj.pilots
+        exportObj.fixIcons pilot
         exportObj.pilotsById[pilot.id] = pilot
         exportObj.pilotsByLocalizedName[pilot.name] = pilot
         for source in pilot.sources
@@ -2421,6 +2422,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.upgradesById = {}
     exportObj.upgradesByLocalizedName = {}
     for upgrade_name, upgrade of exportObj.upgrades
+        exportObj.fixIcons upgrade
         exportObj.upgradesById[upgrade.id] = upgrade
         exportObj.upgradesByLocalizedName[upgrade.name] = upgrade
         for source in upgrade.sources
@@ -2431,6 +2433,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.modificationsById = {}
     exportObj.modificationsByLocalizedName = {}
     for modification_name, modification of exportObj.modifications
+        exportObj.fixIcons modification
         exportObj.modificationsById[modification.id] = modification
         exportObj.modificationsByLocalizedName[modification.name] = modification
         for source in modification.sources
@@ -2441,6 +2444,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.titlesById = {}
     exportObj.titlesByLocalizedName = {}
     for title_name, title of exportObj.titles
+        exportObj.fixIcons title
         exportObj.titlesById[title.id] = title
         exportObj.titlesByLocalizedName[title.name] = title
         for source in title.sources
@@ -2455,3 +2459,25 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         exportObj.titlesByShip[title.ship].push title
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
+
+exportObj.fixIcons = (data) ->
+    if data.text?
+        data.text = data.text
+            .replace('%BANKLEFT%', '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />')
+            .replace('%BANKRIGHT%', '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />')
+            .replace('%BARRELROLL%', '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />')
+            .replace('%BOOST%', '<img class="icon-boost" alt="Boost" src="images/transparent.png" />')
+            .replace('%CRIT%', '<img class="icon-crit" alt="Crit" src="images/transparent.png" />')
+            .replace('%CREW%', '<img class="icon-crew" alt="Crew" src="images/transparent.png" />')
+            .replace('%ELITE%', '<img class="icon-elite" alt="Elite" src="images/transparent.png" />')
+            .replace('%EVADE%', '<img class="icon-evade" alt="Evade" src="images/transparent.png" />')
+            .replace('%FOCUS%', '<img class="icon-focus" alt="Focus" src="images/transparent.png" />')
+            .replace('%HIT%', '<img class="icon-hit" alt="Hit" src="images/transparent.png" />')
+            .replace('%KTURN%', '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+            .replace('%STRAIGHT%', '<img class="icon-straight" alt="Straight" src="images/transparent.png" />')
+            .replace('%TARGETLOCK%', '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />')
+            .replace('%TEAM%', '<img class="icon-team" alt="Team" src="images/transparent.png" />')
+            .replace('%TORPEDO%', '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />')
+            .replace('%TURNLEFT%', '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />')
+            .replace('%TURNRIGHT%', '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />')
+            .replace('%UTURN%', '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
