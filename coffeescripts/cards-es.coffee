@@ -1,17 +1,17 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.de = 'Deutsch'
+exportObj.codeToLanguage.en = 'Español'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.Deutsch =
+exportObj.translations['Español'] =
     action:
-        "Barrel Roll": "Fassrolle"
-        "Boost": "Schub"
-        "Evade": "Ausweichen"
-        "Focus": "Fokussierung"
-        "Target Lock": "Zielerfassung"
+        "Barrel Roll": "Barrel Roll"
+        "Boost": "Boost"
+        "Evade": "Evade"
+        "Focus": "Focus"
+        "Target Lock": "Target Lock"
         "Recover": "Recover"
         "Reinforce": "Reinforce"
         "Jam": "Jam"
@@ -19,32 +19,32 @@ exportObj.translations.Deutsch =
         "Cloak": "Cloak"
     slot:
         "Astromech": "Astromech"
-        "Bomb": "Bombe"
-        "Cannon": "Kanone"
+        "Bomb": "Bomb"
+        "Cannon": "Cannon"
         "Crew": "Crew"
         "Elite": "Elite"
-        "Missile": "Rakete"
+        "Missile": "Missile"
         "System": "System"
         "Torpedo": "Torpedo"
-        "Turret": "Geschützturm"
+        "Turret": "Turret"
         "Cargo": "Cargo"
         "Hardpoint": "Hardpoint"
         "Team": "Team"
     sources: # needed?
-        "Core": "Grundspiel"
-        "A-Wing Expansion Pack": "A-Wing Erweiterung"
-        "B-Wing Expansion Pack": "B-Wing Erweiterung"
-        "X-Wing Expansion Pack": "X-Wing Erweiterung"
-        "Y-Wing Expansion Pack": "Y-Wing Erweiterung"
-        "Millennium Falcon Expansion Pack": "Millenium Falke Erweiterung"
-        "HWK-290 Expansion Pack": "HWK-290 Erweiterung"
-        "TIE Fighter Expansion Pack": "TIE-Fighter Erweiterung"
-        "TIE Interceptor Expansion Pack": "TIE-Abfangjäger Erweiterung"
-        "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung"
-        "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
-        "Lambda-Class Shuttle Expansion Pack": "Lambda Class Shuttle Erweiterung"
-        "Slave I Expansion Pack": "Slave I Erweiterung"
-        "Imperial Aces Expansion Pack": "Fliegerasse des Imperiums Erweiterung"
+        "Core": "Core"
+        "A-Wing Expansion Pack": "A-Wing Expansion Pack"
+        "B-Wing Expansion Pack": "B-Wing Expansion Pack"
+        "X-Wing Expansion Pack": "X-Wing Expansion Pack"
+        "Y-Wing Expansion Pack": "Y-Wing Expansion Pack"
+        "Millennium Falcon Expansion Pack": "Millennium Falcon Expansion Pack"
+        "HWK-290 Expansion Pack": "HWK-290 Expansion Pack"
+        "TIE Fighter Expansion Pack": "TIE Fighter Expansion Pack"
+        "TIE Interceptor Expansion Pack": "TIE Interceptor Expansion Pack"
+        "TIE Bomber Expansion Pack": "TIE Bomber Expansion Pack"
+        "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack"
+        "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack"
+        "Slave I Expansion Pack": "Slave I Expansion Pack"
+        "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack"
         "Rebel Transport Expansion Pack": "Rebel Transport Expansion Pack"
         "Z-95 Headhunter Expansion Pack": "Z-95 Headhunter Expansion Pack"
         "TIE Defender Expansion Pack": "TIE Defender Expansion Pack"
@@ -53,55 +53,71 @@ exportObj.translations.Deutsch =
         "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
         "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
     ui:
-        shipSelectorPlaceholder: "Wähle eines Schiffes"
-        pilotSelectorPlaceholder: "Wähle einen Piloten"
+        shipSelectorPlaceholder: "Select a ship"
+        pilotSelectorPlaceholder: "Select a pilot"
         upgradePlaceholder: (translator, language, slot) ->
-            "kein #{translator language, 'slot', slot} Upgrade"
-        modificationPlaceholder: "keine Modifikation"
-        titlePlaceholder: "kein Titel"
+            "No #{translator language, 'slot', slot} Upgrade"
+        modificationPlaceholder: "No Modification"
+        titlePlaceholder: "No Title"
         upgradeHeader: (translator, language, slot) ->
             "#{translator language, 'slot', slot} Upgrade"
     byCSSSelector:
-        '.translate.sort-cards-by': 'Sortiere Karten per'
+        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
         '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Quelle'
-        '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Typ (Name)'
-        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte aus der Liste links.'
+        '.xwing-card-browser option[value="source"]': 'Source'
+        '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
+        '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
     singular:
         'pilots': 'Pilot'
-        'modifications': 'Modifikation'
-        'titles': 'Titel'
+        'modifications': 'Modification'
+        'titles': 'Title'
     types:
         'Pilot': 'Pilot'
-        'Modification': 'Modifikation'
-        'Title': 'Titel'
+        'Modification': 'Modification'
+        'Title': 'Title'
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.Deutsch = () ->
-    exportObj.cardLanguage = 'Deutsch'
+exportObj.cardLoaders['Español'] = () ->
+    exportObj.cardLanguage = 'Español'
 
     # Assumes cards-common has been loaded
     basic_cards = window.basicCardData()
 
     exportObj.ships = basic_cards.ships
 
-    # Move TIE Interceptor to TIE Abfangjäger
-    exportObj.renameShip 'TIE Interceptor', 'TIE Abfangjäger'
+    # ship translations
+    exportObj.renameShip 'Lambda-Class Shuttle', 'Lanzadera clase Lambda'
+    exportObj.renameShip 'TIE Advanced', 'TIE Avanzado'
+    exportObj.renameShip 'TIE Bomber', 'Bombardero TIE'
+    exportObj.renameShip 'TIE Fighter', 'Caza TIE'
+    exportObj.renameShip 'TIE Interceptor', 'Interceptor TIE'
+    exportObj.renameShip 'TIE Phantom', 'TIE Fantasma'
+    exportObj.renameShip 'A-Wing', 'Ala-A'
+    exportObj.renameShip 'B-Wing', 'Ala-B'
+    exportObj.renameShip 'E-Wing', 'Ala-E'
+    exportObj.renameShip 'X-Wing', 'Ala-X'
+    exportObj.renameShip 'Y-Wing', 'Ala-Y'
 
     pilot_translations =
         "Wedge Antilles":
-            text: """Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."""
+            text: """Cuando ataques, la agilidad del piloto se reduce en 1 (hasta un mínimo de 0)."""
+            ship: "Ala-X"
         "Garven Dreis":
-            text: """Wenn du einen Fokusmarker ausgibst, darfst du ihn auf ein anderes freundliches Schiff in Reichweite 1-2 legen (anstatt ihn abzulegen)."""
+            text: """Después de gastar una ficha de concentración, en vez de descartarla puedes asignar esa ficha a cualquier otra nave aliada que tengas a rango 1-2."""
+            ship: "Ala-X"
         "Red Squadron Pilot":
-            name: "Pilot der Rot-Staffel"
+            name: "Piloto del escuadrón rojo"
+            ship: "Ala-X"
         "Rookie Pilot":
-            name: "Anfängerpilot"
+            name: "Piloto Novato"
+            ship: "Ala-X"
         "Biggs Darklighter":
-            text: """Andere freundliche Schiffe in Reichweite 1 dürfen nur dann angegriffen werden, wenn der Angreifer dich nicht zum Ziel bestimmen kann."""
+            text: """Las demás naves aliadas que tengas a alcance 1 no pueden ser seleccionadas como objetivo de un ataque si en vez de eso el atacante pudiese seleccionarte a tí como objetivo."""
+            ship: "Ala-X"
         "Luke Skywalker":
             text: """Wenn du verteidigst, kannst du 1 deiner %FOCUS% in ein %EVADE% ändern."""
+            ship: "Ala-X"
         "Gray Squadron Pilot":
             name: "Pilot der Grau-Staffel"
         '"Dutch" Vander':
@@ -111,60 +127,81 @@ exportObj.cardLoaders.Deutsch = () ->
         "Gold Squadron Pilot":
             name: "Pilot der Gold-Staffel"
         "Academy Pilot":
-            name: "Pilot der Akademie"
+            name: "Piloto de la academia"
+            ship: "Caza TIE"
         "Obsidian Squadron Pilot":
-            name: "Pilot der Obsidian-Staffel"
+            name: "Piloto del escuadrón Obsidiana"
+            ship: "Caza TIE"
         "Black Squadron Pilot":
-            name: "Pilot der Schwarz-Staffel"
+            name: "Piloto del escuadrón Negro"
+            ship: "Caza TIE"
         '"Winged Gundark"':
-            name: '"Geflügelter Gundark"'
-            text: """Wenn du ein Ziel in Reichweite 1 angreifst, darfst du eines deiner %HIT% in ein %CRIT% ändern."""
+            name: '"Gundark Alado"'
+            text: """Cuando ataques a alcance 1 puedes cambiar uno de tus resultados %HIT% por uno %CRIT%"""
+            ship: "Caza TIE"
         '"Night Beast"':
-            name: '"Nachtbestie"'
-            text: """Nachdem du ein grünes Manöver ausgeführt hast, darfst du als freie Aktion eine Fokussierung durchführen."""
+            name: '"Bestia Nocturna"'
+            text: """Después de que ejecutes una acción verde puedes realizar una acción libre de concentración"""
+            ship: "Caza TIE"
         '"Backstabber"':
-            text: """Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhältst du 1 zusätzlichen Angriffswürfel."""
+            name: '"Asesino Furtivo"'
+            text: """Cuando ataques desde fuera del arco de fuego el defensor, lanza 1 dado de atauque adicional."""
+            ship: "Caza TIE"
         '"Dark Curse"':
-            text: """Wenn du verteidigst, können angreifende Schiffe keine Fokusmarker ausgeben oder Angriffswürfel neu würfeln."""
+            name: '"Maldición Oscura"'
+            text: """Cuando te defiendas en combate, las naves que te ataquen no podrán gastar fichas de concentración ni volver a lanzar dados de ataque."""
+            ship: "Caza TIE"
         '"Mauler Mithel"':
-            text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du ein Ziel in Reichweite 1 angreifst."""
+            name: '"Mutilador Mithel"'
+            text: """Si atacas a alcance 1, lanza 1 dado de ataque adicional."""
+            ship: "Caza TIE"
         '"Howlrunner"':
-            name: '"Kreischläufer"'
-            text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
-        "Maarek Stele":
-            text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
+            name: '"Aullador Veloz"'
+            text: """Cuando otra nave aliada que tengas a alcance 1 ataque con su armamento principal, podrá volver a lanzar 1 dado de ataque."""
+            ship: "Caza TIE"
         "Tempest Squadron Pilot":
-            name: "Pilot der Tornado-Staffel"
+            name: "Piloto del escuadrón Tempestad"
+            ship: "TIE Avanzado"
         "Storm Squadron Pilot":
-            name: "Pilot der Storm-Staffel"
+            name: "Piloto del escuadrón Tormenta"
+            ship: "TIE Avanzado"
+        "Maarek Stele":
+            text: """Cuando tu ataque inflija una carta de daño boca arriba al defensor, en vez de eso roba 3 cartas de daño, elige 1 de ellas a tu ellección y descarta las otras."""
+            ship: "TIE Avanzado"
         "Darth Vader":
-            text: """Im Schritt "Aktionen durchführen" darfst du 2 Aktionen durchführen."""
+            text: """Puedes llevar a cabo dos acciones durante el paso de acción."""
+            ship: "TIE Avanzado"
         "Alpha Squadron Pilot":
-            name: "Pilot der Alpha-Staffel"
-            ship: "TIE Abfangjäger"
+            name: "Piloto del escuadrón Alfa"
+            ship: "Interceptor TIE"
         "Avenger Squadron Pilot":
-            name: "Pilot der Avenger-Staffel"
-            ship: "TIE Abfangjäger"
+            name: "Piloto del escuadrón Vengador"
+            ship: "Interceptor TIE"
         "Saber Squadron Pilot":
-            name: "Pilot der Saber-Staffel"
-            ship: "TIE Abfangjäger"
+            name: "Piloto del escuadrón Sable"
+            ship: "Interceptor TIE"
         "\"Fel's Wrath\"":
-            ship: "TIE Abfangjäger"
-            text: """Wenn die Summe deiner Schadenskarten deinen Hüllenwert erreicht oder übersteigt, wirst du nicht sofort zerstört, sondern erst am Ende der Kampfphase."""
+            name: '"Ira de Fel"'
+            ship: "Interceptor TIE"
+            text: """Cuando tengas asignadas tantas cartas de Daño como tu Casco o más, no serás destruido hasta el final de la fase de Combate."""
         "Turr Phennir":
-            ship: "TIE Abfangjäger"
-            text: """Nachdem du angegriffen hast, darfst du eine freie Aktion Schub oder Fassrolle durchführen."""
+            ship: "Interceptor TIE"
+            text: """Después de que efectúes un ataque, puedes llevar a cabo una acción gratuita de impulso o tonel volado."""
         "Soontir Fel":
-            ship: "TIE Abfangjäger"
-            text: """Immer wenn du einen Stressmarker erhältst, darfst du deinem Schiff auch einen Fokusmarker geben."""
+            ship: "Interceptor TIE"
+            text: """Cuando recibas una ficha de Tensión, puedes asignar 1 ficha de Concentración a tu nave."""
         "Tycho Celchu":
-            text: """Du darfst auch dann Aktionen durchführen, wenn du Stressmarker hast."""
+            text: """Puedes realizar acciones incluso cuando tengas fichas de tensión."""
+            ship: "Ala-A"
         "Arvel Crynyd":
-            text: """Wenn du angreifst, darfst du auch auf feindliche Schiffe zielen, deren Basen du berührst (vorausgesetzt sie sind innerhalb deines Feuerwinkels)."""
+            text: """Puedes designar como objetivo de tu ataque a una nave enemiga que esté dentro de tu arco de ataque y en contacto contigo."""
+            ship: "Ala-A"
         "Green Squadron Pilot":
-            name: "Pilot der Grün-Staffel"
+            name: "Piloto del escuadrón verde"
+            ship: "Ala-A"
         "Prototype Pilot":
-            name: "Testpilot"
+            name: "Piloto de pruebas"
+            ship: "Ala-A"
         "Outer Rim Smuggler":
             name: "Schmuggler aus dem Outer Rim"
         "Chewbacca":
@@ -173,61 +210,79 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Wähle nach dem Ausführen eines grünen Manövers ein anderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
         "Han Solo":
             text: """Wenn du angreifst, darfst du all deine Würfel neu würfeln. Tust du dies, musst du so viele Würfel wie möglich neu würfeln."""
-        "Kath Scarlet":
-            text: """Wenn du angreifst und der Verteidiger mindestens 1 %CRIT% negiert, erhält er 1 Stressmarker."""
-        "Boba Fett":
-            text: """Immer wenn du ein Eindrehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, kannst du das Eindrehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."""
-        "Krassis Trelix":
-            text: """Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."""
         "Bounty Hunter":
-            name: "Kopfgeldjäger"
+            name: "Cazarrecompensas"
+        "Kath Scarlet":
+            text: """Cuando ataques, el defensor recibe una ficha de tensión si anula al menos un resultado %CRIT%."""
+        "Boba Fett":
+            text: """Cuando realices una maniobra de inclinación (%BANKLEFT% o %BANKRIGHT%) puedes girar tu selector de maniobras para escoger la otra maniobra e inclinación de la misma velocidad."""
+        "Krassis Trelix":
+            text: """Cuando ataques con un armamento secundario puedes volver a lanzar 1 dado de ataque."""
         "Ten Numb":
-            text: """Wenn du angreifst, kann 1 deiner %CRIT% von Verteidigungswürfeln nicht negiert werden."""
+            text: """Cuando ataques, uno de tus resultados %CRIT% no puede ser anulado por los dados de defensa."""
+            ship: "Ala-B"
         "Ibtisam":
-            text: """Beim Angreifen oder Verteidigen darfst du 1 deiner Würfel neu würfeln, sofern du mindestens 1 Stressmarker hast."""
+            text: """Cuando ataques o te defiendas, si tienes al menos una ficha de Tensión puedes volver a lanzar uno de tus dados."""
+            ship: "Ala-B"
         "Dagger Squadron Pilot":
-            name: "Pilot der Dagger-Staffel"
+            name: "Piloto del escuadrón daga"
+            ship: "Ala-B"
         "Blue Squadron Pilot":
-            name: "Pilot der Blauen Staffel"
+            name: "Piloto del escuadrón azul"
+            ship: "Ala-B"
         "Rebel Operative":
-            name: "Rebellenagent"
+            name: "Operador Rebelde"
         "Roark Garnet":
-            text: '''Wähle zu Beginn der Kampfphase 1 anderes freundliches Schiff in Reichweite 1-3. Bis zum Ende der Phase wird dieses Schiff behandelt, als hätte es einen Pilotenwert von 12.'''
+            text: '''Al comienzo de la fase de combate, elige a otra nave aliada que tengas a alcance 1-3. Hasta el final de la fase, se considera que el piloto de esta nave tiene habilidad 12.'''
         "Kyle Katarn":
-            text: """Zu Beginn der Kampfphase darfst du einem anderen freundlichen Schiff in Reichweite 1-3 einen deiner Fokusmarker geben."""
+            text: """Al comienzo de la fase de combate, puedes asignar una de tus fichas de Concentración a otra nave aliada que tengas a alcance 1-3."""
         "Jan Ors":
-            text: """Wenn ein anderes freundliches Schiff in Reichweite 1-3 angreift und du keine Stressmarker hast, darfst du 1 Stressmarker nehmen, damit dieses Schiff 1 zusätzlichen Angriffswürfel erhält."""
+            text: """Cuando otra nave aliada que tengas a alcance 1-3 efectúe un ataque, si no tienes fichas de Tensión puedes recibir una ficha de Tensión para que esa nave lance un dado de ataque adicional."""
         "Scimitar Squadron Pilot":
-            name: "Pilot der Scimitar-Staffel"
+            name: "Piloto del escuadrón Cimitarra"
+            ship: "Bombardero TIE"
         "Gamma Squadron Pilot":
-            name: "Pilot der Gamma-Staffel"
+            name: "Piloto del escuadrón Gamma"
+            ship: "Bombardero TIE"
         "Captain Jonus":
-            text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."""
+            name: "Capitán Jonus"
+            ship: "Bombardero TIE"
+            text: """Cuando otra nave aliada que tengas a alcance 1 ataque con un sistema de armamento secundario, puede volver a lanzar un máximo de 2 dados de ataque."""
         "Major Rhymer":
-            text: """Beim Angreifen mit einer Sekundärwaffe darfst du die Reichweite der Waffe um 1 erhöhen oder verringern, bis zu einer Reichweite von 1-3."""
-        "Captain Kagi":
-            text: """Wenn ein feindliches Schiff eine Zielerfassung durchführt, muss es wenn möglich dich als Ziel erfassen."""
-        "Colonel Jendon":
-            text: """Zu Beginn der Kampfphase darfst du 1 deiner blauen Zielerfassungsmarker auf ein freundliches Schiff in Reichweite 1 legen, das noch keinen blauen Zielerfassungsmarker hat."""
-        "Captain Yorr":
-            text: """Wenn ein anderes freundliches Schiff in Reichweite 1-2 einen Stressmarker erhalten würde und du 2 oder weniger Stressmarker hast, darfst du statt ihm diesen Marker nehmen."""
+            name: "Comandante Rhymer"
+            ship: "Bombardero TIE"
+            text: """Cuando ataques con un sistema de armamento secundario, puedes incrementar o disminuir el alcance del arma en 1 hasta un límite de alcance comprendido entre 1 y 3."""
         "Omicron Group Pilot":
-            name: "Pilot der Omikron-Gruppe"
+            name: "Piloto del grupo omicrón"
+            ship: "Lanzadera clase Lambda"
+        "Captain Kagi":
+            name: "Capitán Kagi"
+            text: """Cuando una nave enemiga fije un blanco, deberá fijar tu nave como blanco si es posible."""
+            ship: "Lanzadera clase Lambda"
+        "Colonel Jendon":
+            name: "Coronel Jendon"
+            text: """Al comienzo de la fase de combate, puedes asignar una de tus fichas azules de Blanco Fijado a una nave aliada que tengas a rango 1 si no tiene ya una ficha azul de Blanco Fijado."""
+            ship: "Lanzadera clase Lambda"
+        "Captain Yorr":
+            name: "Capitán Yorr"
+            text: """Cuando otra nave aliada que tengas a alcance 1-2 vaya a recibir una ficha de Tensión, si tienes 2 fichas de Tensión o menos puedes recibir esa ficha en su lugar."""
+            ship: "Lanzadera clase Lambda"
         "Lieutenant Lorrir":
-            ship: "TIE Abfangjäger"
+            ship: "Interceptor TIE"
             text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (%BANKLEFT% 1) oder (%BANKRIGHT% 1) Manöverschablone anstatt der (%STRAIGHT% 1) Manöverschablone zu benutzen."""
         "Royal Guard Pilot":
-            ship: "TIE Abfangjäger"
+            name: "Piloto de la guardia Real"
+            ship: "Interceptor TIE"
             name: "Royal Guard Pilot"
         "Tetran Cowall":
-            ship: "TIE Abfangjäger"
-            text: """Immer wenn du ein %UTURN% Manöver aufdeckst, kannst du das Manöver mit einer Geschwindigkeit von "1," "3," oder "5" ausführen."""
+            ship: "Interceptor TIE"
+            text: """Cuando reveles una maniobra %UTURN%, puedes tratar la velocidad de esa maniobra como "1", "3" o "5"."""
         "Kir Kanos":
-            ship: "TIE Abfangjäger"
-            text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du einen Ausweichmarker ausgeben, um 1 %HIT% zu deinem Wurf hinzuzufügen."""
+            ship: "Interceptor TIE"
+            text: """Cuando ataques a una nave a alcance 2-3, puedes gastar un token de evadir para añadir 1 resultado %HIT% a tu tirada."""
         "Carnor Jax":
-            ship: "TIE Abfangjäger"
-            text: """Feindliche Schiffe in Reichweite 1 können weder Fokussierung und Ausweichen Aktionen durchführen noch Ausweichmarker und Fokusmarker ausgeben."""
+            ship: "Interceptor TIE"
+            text: """Las naves enemigas a alcance 1 de esta nave no pueden realizar acciones de concentración o evadir, ni pueden gastar fichas de concentración ni evadir."""
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
         "Bandit Squadron Pilot":
@@ -241,13 +296,14 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Airen Cracken"
             text: """After you perform an attack, you may choose another friendly ship at Range 1.  That ship may perform 1 free action."""
         "Delta Squadron Pilot":
-            name: "Delta Squadron Pilot"
+            name: "Piloto del escuadrón Delta"
         "Onyx Squadron Pilot":
-            name: "Onyx Squadron Pilot"
+            name: "Piloto del escuadrón Onyx"
         "Colonel Vessery":
-            text: """When attacking, immediately after you roll attack dice, you may acquire a target lock on the defender if it already has a red target lock token."""
+            name: "Coronel Vessery"
+            text: """Cuando ataques, inmediatamente después de que hayas lanzado los dados, puedes fijar blanco en el defensor si esa nave tiene ya una ficha roja de blanco fijado."""
         "Rexler Brath":
-            text: """After you perform an attack that deals at least 1 Damage card to the defender, you may spend a focus token to flip those cards faceup."""
+            text: """Después de que realices un ataque que haga al menos 1 carta de daño al defensor, tu puedes gastar una ficha de concentración para voltear esa carta boca arriba."""
         "Knave Squadron Pilot":
             name: "Knave Squadron Pilot"
         "Blackmoon Squadron Pilot":
@@ -257,36 +313,48 @@ exportObj.cardLoaders.Deutsch = () ->
         "Corran Horn":
             text: """At the start of the ??? you may perform ??? cannot attack ???"""
         "Sigma Squadron Pilot":
-            name: "Sigma Squadron Pilot"
+            name: "Piloto del escuadrón Sigma"
+            ship: "TIE Fantasma"
         "Shadow Squadron Pilot":
-            name: "Shadow Squadron Pilot"
+            name: "Piloto del escuadrón Sombra"
+            ship: "TIE Fantasma"
         "Unspoiled PS6 TIE Phantom Pilot":
-            name: "Unspoiled PS6 TIE Phantom Pilot"
+            name: "Piloto de habilidad 6 no publicado"
+            ship: "TIE Fantasma"
         '"Whisper"':
-            name: '"Whisper"'
-            text: """After you perform an attack that hits, you may assign 1 focus to your ship."""
+            name: '"Susurro"'
+            text: """Después de que efectúes un ataque que de en el blanco, puedes asignar una ficha de focus a tu nave."""
+            ship: "TIE Fantasma"
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
         "Wes Janson":
-            text: """After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."""
+            text: """Después de que realices un ataque, puedes remover una ficha de Concentración, Evadir o una ficha de fijar blanco azúl del defensor."""
+            ship: "Ala-X"
         "Jek Porkins":
-            text: """When you receive a stress token, you may remove it and roll 1 attack die.  On a %HIT% result, deal 1 facedown Damage card to this ship."""
+            text: """Cuando recibas una ficha de Tensión, puedes removerla y lanzar un dado de ataque. Si el resultado es de %HIT%, asigna una carta de daño boca abajo a tu nave."""
+            ship: "Ala-X"
         '"Hobbie" Kilvan':
-            text: """When you acquire or spend a target lock, you may remove 1 stress token from your ship."""
+            text: """Cuando adquieras o gastes una ficha de fijar blanco, puedes remover una ficha de Tensión de tu nave."""
+            ship: "Ala-X"
         "Tarn Mison":
-            text: """When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."""
+            text: """Cuando una nave te declare como el objetivo de tu ataque, puedes fijar blanco en esa nave."""
+            ship: "Ala-X"
         "Jake Farrell":
-            text: """After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."""
+            text: """Después de que realices una acción de Concentración o te asignen una ficha de Concentración, puedes realizar una acción de impulso o de tonel volado."""
+            ship: "Ala-A"
         "Unspoiled PS5 A-Wing Pilot":
             name: "Unspoiled PS5 A-Wing Pilot"
             text: """This card has not yet been revealed."""
+            ship: "Ala-A"
         "Keyan Farlander":
-            text: """When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."""
+            text: """Cuando ataques, puedes remover de tu nave una ficha de tensión para cambiar todos tus resultados %FOCUS% por %HIT%."""
+            ship: "Ala-B"
         "Unspoiled PS5 B-Wing Pilot":
             name: "Unspoiled PS5 B-Wing Pilot"
             text: """This card has not yet been revealed."""
+            ship: "Ala-B"
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -378,7 +446,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Das Feuer auf mich ziehen"
             text: """Wenn ein freundliches Schiff in Reichweite 1 durch einen Angriff getroffen wird, darfst du anstelle dieses Schiffs den Schaden für 1 nicht-negiertes %CRIT% auf dich nehmen."""
         "Luke Skywalker":
-            text: """Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Du darfst ein %FOCUS% in ein %HIT% ändern. Danach kannst du in dieser Runde nicht noch einmal angreifen."""
+            text: """Cuando defiendes en combate puedes cambiar uno de tus resultados %FOCUS% por %EVADE%."""
         "Nien Nunb":
             text: """Du darfst alle %STRAIGHT%-Manöver wie grüne Manöver behandeln."""
         "Chewbacca":
@@ -549,7 +617,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Wenn du eine Zielerfassung durchführst, darfst du ein beliebiges feindliches Schiff auf der Spielfläche als Ziel erfassen."""
         "Royal Guard TIE":
             name: "TIE der Roten Garde"
-            ship: "TIE Abfangjäger"
+            ship: "Interceptor TIE"
             text: """Du kannst bis zu 2 verschiedene Modifikationen verwenden (statt einer).<br /><br />Du kannst diese Karte nicht verwenden, wenn der Pilotenwert "4" oder kleiner ist."""
         "Dodonna's Pride":
             name: "Dodonna's Pride"

@@ -2463,21 +2463,26 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 exportObj.fixIcons = (data) ->
     if data.text?
         data.text = data.text
-            .replace('%BANKLEFT%', '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />')
-            .replace('%BANKRIGHT%', '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />')
-            .replace('%BARRELROLL%', '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />')
-            .replace('%BOOST%', '<img class="icon-boost" alt="Boost" src="images/transparent.png" />')
-            .replace('%CRIT%', '<img class="icon-crit" alt="Crit" src="images/transparent.png" />')
-            .replace('%CREW%', '<img class="icon-crew" alt="Crew" src="images/transparent.png" />')
-            .replace('%ELITE%', '<img class="icon-elite" alt="Elite" src="images/transparent.png" />')
-            .replace('%EVADE%', '<img class="icon-evade" alt="Evade" src="images/transparent.png" />')
-            .replace('%FOCUS%', '<img class="icon-focus" alt="Focus" src="images/transparent.png" />')
-            .replace('%HIT%', '<img class="icon-hit" alt="Hit" src="images/transparent.png" />')
-            .replace('%KTURN%', '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
-            .replace('%STRAIGHT%', '<img class="icon-straight" alt="Straight" src="images/transparent.png" />')
-            .replace('%TARGETLOCK%', '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />')
-            .replace('%TEAM%', '<img class="icon-team" alt="Team" src="images/transparent.png" />')
-            .replace('%TORPEDO%', '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />')
-            .replace('%TURNLEFT%', '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />')
-            .replace('%TURNRIGHT%', '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />')
-            .replace('%UTURN%', '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+            .replace(/%BANKLEFT%/g, '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />')
+            .replace(/%BANKRIGHT%/g, '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />')
+            .replace(/%BARRELROLL%/g, '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />')
+            .replace(/%BOOST%/g, '<img class="icon-boost" alt="Boost" src="images/transparent.png" />')
+            .replace(/%CRIT%/g, '<img class="icon-crit" alt="Crit" src="images/transparent.png" />')
+            .replace(/%CREW%/g, '<img class="icon-crew" alt="Crew" src="images/transparent.png" />')
+            .replace(/%ELITE%/g, '<img class="icon-elite" alt="Elite" src="images/transparent.png" />')
+            .replace(/%EVADE%/g, '<img class="icon-evade" alt="Evade" src="images/transparent.png" />')
+            .replace(/%FOCUS%/g, '<img class="icon-focus" alt="Focus" src="images/transparent.png" />')
+            .replace(/%HIT%/g, '<img class="icon-hit" alt="Hit" src="images/transparent.png" />')
+            .replace(/%KTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+            .replace(/%STRAIGHT%/g, '<img class="icon-straight" alt="Straight" src="images/transparent.png" />')
+            .replace(/%TARGETLOCK%/g, '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />')
+            .replace(/%TEAM%/g, '<img class="icon-team" alt="Team" src="images/transparent.png" />')
+            .replace(/%TORPEDO%/g, '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />')
+            .replace(/%TURNLEFT%/g, '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />')
+            .replace(/%TURNRIGHT%/g, '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />')
+            .replace(/%UTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+
+exportObj.renameShip = (english_name, new_name) ->
+    exportObj.ships[new_name] = exportObj.ships[english_name]
+    exportObj.ships[new_name].name = new_name
+    delete exportObj.ships[english_name]
