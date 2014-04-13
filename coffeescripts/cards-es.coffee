@@ -98,6 +98,9 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'E-Wing', 'Ala-E'
     exportObj.renameShip 'X-Wing', 'Ala-X'
     exportObj.renameShip 'Y-Wing', 'Ala-Y'
+    exportObj.renameShip 'CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)'
+    exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
+    exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
 
     pilot_translations =
         "Wedge Antilles":
@@ -116,16 +119,20 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Las demás naves aliadas que tengas a alcance 1 no pueden ser seleccionadas como objetivo de un ataque si en vez de eso el atacante pudiese seleccionarte a tí como objetivo."""
             ship: "Ala-X"
         "Luke Skywalker":
-            text: """Wenn du verteidigst, kannst du 1 deiner %FOCUS% in ein %EVADE% ändern."""
+            text: """Cuando defiendes en combate puedes cambiar uno de tus resultados %FOCUS% por %EVADE%."""
             ship: "Ala-X"
         "Gray Squadron Pilot":
-            name: "Pilot der Grau-Staffel"
+            name: "Piloto del escuadrón gris"
+            ship: "Ala-Y"
         '"Dutch" Vander':
-            text: """Wähle ein anderes freundliches Schiff in Reichweite 1-2, nachdem du eine Zielerfassung durchgeführt hast. Das gewählte Schiff darf sofort ebenfalls eine Zielerfassung durchführen."""
+            text: """Después de que fijes un blanco, elige otra nave aliada que tengas a alcance 1-2. La nave elegida podrá fijar un blanco inmediatamente."""
+            ship: "Ala-Y"
         "Horton Salm":
-            text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du beliebig viele Leerseiten neu würfeln."""
+            text: """Cuando ataques a alcance 2-3, puedes volver a lanzar cualesquier dados en los que hayas sacado caras vacías."""
+            ship: "Ala-Y"
         "Gold Squadron Pilot":
-            name: "Pilot der Gold-Staffel"
+            name: "Piloto del escuadrón oro"
+            ship: "Ala-Y"
         "Academy Pilot":
             name: "Piloto de la academia"
             ship: "Caza TIE"
@@ -203,13 +210,13 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto de pruebas"
             ship: "Ala-A"
         "Outer Rim Smuggler":
-            name: "Schmuggler aus dem Outer Rim"
+            name: "Contrabandista del Borde Exterior"
         "Chewbacca":
-            text: """Wenn du eine offene Schadenskarte erhältst, wird sie sofort umgedreht (ohne dass ihr Kartentext in Kraft tritt)."""
+            text: """Cuando recibas una carta de daño boca arriba, ponla boca abajo inmediatamente sin resolver su efecto."""
         "Lando Calrissian":
-            text: """Wähle nach dem Ausführen eines grünen Manövers ein anderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
+            text: """Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave podrá realizar una acción gratuita de las indicadas en su barra de acciones."""
         "Han Solo":
-            text: """Wenn du angreifst, darfst du all deine Würfel neu würfeln. Tust du dies, musst du so viele Würfel wie möglich neu würfeln."""
+            text: """Cuando ataques, puedes volver a lanzar todos tus dados. Si decides hacerlo debes lanzar tantos como sea posible."""
         "Bounty Hunter":
             name: "Cazarrecompensas"
         "Kath Scarlet":
@@ -269,11 +276,10 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Lanzadera clase Lambda"
         "Lieutenant Lorrir":
             ship: "Interceptor TIE"
-            text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (%BANKLEFT% 1) oder (%BANKRIGHT% 1) Manöverschablone anstatt der (%STRAIGHT% 1) Manöverschablone zu benutzen."""
+            text: """Cuando realices una acción de tonel volado, puedes recibir un token de stress para usar la plantilla (%BANKLEFT% 1) o (%BANKRIGHT% 1) en lugar de la plantilla (%STRAIGHT% 1)."""
         "Royal Guard Pilot":
             name: "Piloto de la guardia Real"
             ship: "Interceptor TIE"
-            name: "Royal Guard Pilot"
         "Tetran Cowall":
             ship: "Interceptor TIE"
             text: """Cuando reveles una maniobra %UTURN%, puedes tratar la velocidad de esa maniobra como "1", "3" o "5"."""
@@ -284,17 +290,18 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Interceptor TIE"
             text: """Las naves enemigas a alcance 1 de esta nave no pueden realizar acciones de concentración o evadir, ni pueden gastar fichas de concentración ni evadir."""
         "GR-75 Medium Transport":
-            name: "GR-75 Medium Transport"
+            name: "Transporte mediano GR-75"
+            ship: "Transporte mediano GR-75"
         "Bandit Squadron Pilot":
-            name: "Bandit Squadron Pilot"
+            name: "Piloto del escuadrón bandido"
         "Tala Squadron Pilot":
-            name: "Tala Squadron Pilot"
+            name: "Piloto del escuadrón Tala"
         "Lieutenant Blount":
-            name: "Leutnant Blount"
-            text: """When attacking, the defender is hit by your attack, even if he does not suffer any damage."""
+            name: "Lugarteniente Blount"
+            text: """Cuando ataques, el defensor es impactado por tu ataque incluso si no sufre ningún daño."""
         "Airen Cracken":
             name: "Airen Cracken"
-            text: """After you perform an attack, you may choose another friendly ship at Range 1.  That ship may perform 1 free action."""
+            text: """Después de que realices un ataque, puedes escoger una nave aliada a alcance 1. Dicha nave puede realizar 1 acción gratuita."""
         "Delta Squadron Pilot":
             name: "Piloto del escuadrón Delta"
         "Onyx Squadron Pilot":
@@ -305,13 +312,17 @@ exportObj.cardLoaders['Español'] = () ->
         "Rexler Brath":
             text: """Después de que realices un ataque que haga al menos 1 carta de daño al defensor, tu puedes gastar una ficha de concentración para voltear esa carta boca arriba."""
         "Knave Squadron Pilot":
-            name: "Knave Squadron Pilot"
+            name: "Piloto del escuadrón Bribón"
+            ship: "Ala-E"
         "Blackmoon Squadron Pilot":
-            name: "Blackmoon Squadron Pilot"
+            name: "Piloto del escuadrón de la luna negra"
+            ship: "Ala-E"
         "Etahn A'baht":
-            text: """When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its %HIT% results to a %CRIT% result."""
+            text: """Cuando un enemigo dentro de tu arco de fuego a alcance 1-3 se esté defendiendo, el atacante puede cambiar uno de sus resultados %HIT% por un %CRIT%."""
+            ship: "Ala-E"
         "Corran Horn":
-            text: """At the start of the ??? you may perform ??? cannot attack ???"""
+            text: """Al comienzo de ??? puedes realizar ??? no puedes atacar ???"""
+            ship: "Ala-E"
         "Sigma Squadron Pilot":
             name: "Piloto del escuadrón Sigma"
             ship: "TIE Fantasma"
@@ -326,9 +337,11 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Después de que efectúes un ataque que de en el blanco, puedes asignar una ficha de focus a tu nave."""
             ship: "TIE Fantasma"
         "CR90 Corvette (Fore)":
-            name: "CR90 Corvette (Fore)"
+            name: "Corbeta CR90 (Proa)"
+            ship: "Corbeta CR90 (Proa)"
         "CR90 Corvette (Aft)":
-            name: "CR90 Corvette (Aft)"
+            name: "Corbeta CR90 (Popa)"
+            ship: "Corbeta CR90 (Popa)"
         "Wes Janson":
             text: """Después de que realices un ataque, puedes remover una ficha de Concentración, Evadir o una ficha de fijar blanco azúl del defensor."""
             ship: "Ala-X"
@@ -358,145 +371,147 @@ exportObj.cardLoaders['Español'] = () ->
 
     upgrade_translations =
         "Ion Cannon Turret":
-            name: "Ionengeschütz"
-            text: """<strong>Angriff:</strong> Greife 1 Schiff an (es muss nicht in deinem Feuerwinkel sein).<br /><br />Wenn der Angriff trifft, nimmt das verteidigende Schiff 1 Schaden und erhält 1 Ionenmarker. Dann werden alle übrigen Würfelergebnisse negiert."""
+            name: "Ion Cannon Turret"
+            text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).<br /><br />If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
         "Proton Torpedoes":
-            name: "Protonen-Torpedos"
-            text: """<strong>Angriff (Zielerfassung):</strong>Gib eine Zielerfassung aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst eines deiner %FOCUS% in ein %CRIT% ändern."""
+            name: "Torpedos de protones"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Puedes cambiar uno de tus resultados %FOCUS% por un resultado %CRIT%."""
         "R2 Astromech":
-            name: "R2 Astromechdroide"
-            text: """Du darfst alle Manöver mit Geschwindigkeit 1 und 2 wie grüne Manöver behandeln."""
+            name: "Droide Astromecánico R2"
+            text: """Puedes ejecutar todas las maniobras de velocidad 1 y 2 como maniobras verdes."""
         "R2-D2":
-            text: """Nachdem du ein grünes Manöver ausgeführt hast, darfst du 1 Schild wiederaufladen (bis maximal zum Schildwert)."""
+            text: """Después de que realices una maniobra verde puedes recuperar una ficha de Escudos (pero no puedes tener más fichas que tu valor en Escudos)."""
         "R2-F2":
-            text: """<strong>Aktion:</strong> Erhöhe deinen Wendigkeitswert bis zum Ende der Spielrunde um 1."""
+            text: """<strong>Acción:</strong> Tu valor de agilidad aumenta en 1 hasta el final de esta ronda de juego."""
         "R5-D8":
-            text: """<strong>Aktion:</strong> Wirf 1 Verteidigungswürfel.<br /><br />Lege bei %EVADE% oder %FOCUS% 1 deiner verdeckten Schadenskarten ab."""
+            text: """<strong>Acción:</strong> Lanza un dado de defensa.<br /><br />Si sacas %EVADE% o %FOCUS% descarta 1 carta de Daño que tengas boca abajo."""
         "R5-K6":
-            text: """Wirf 1 Verteidigungswürfel nachdem du deine Zielerfassungsmarker ausgegeben hast.<br /><br />Bei %EVADE% nimmst du dasselbe Schiff sofort wieder in die Zielerfassung. Für diesen Angriff kannst du die Zielerfassungsmarker nicht erneut ausgeben."""
+            text: """Después de gastar tu ficha de blanco fijado, lanza 1 dado de defensa.<br /><br />Si sacas un resultado %EVADE% puedes volver a fijar la misma nave como blanco inmediatamente. No puedes gastar esta nueva ficha de blanco fijado durante este ataque."""
         "R5 Astromech":
-            name: "R5 Astromechdroide"
-            text: """Wähle während der Endphase 1 deiner offnen Schadenskarte mit dem Attribut <strong>Schiff</strong> und drehe sie um."""
+            name: "Droide Astromecánico R5"
+            text: """Durante la fase Final, puedes elegir una de las cartas de Daño con el atributo <strong>Nave</strong> que tengas boca arriba. darle la vuelta y dejarla boca abajo."""
         "Determination":
-            name: "Entschlossenheit"
-            text: """Wenn du eine offene Schadenskarte mit dem Attribut <b>Pilot</b> erhältst, wird diese sofort abgelegt (ohne dass der Kartentext in Kraft tritt)."""
+            name: "Determinación"
+            text: """Cuando se te asigne una carta de daño boca arriba que tenga el atributo <strong>piloto</strong>, descártala inmediatamente sin resolver su efecto."""
         "Swarm Tactics":
-            name: "Schwarmtaktik"
-            text: """Wähle zu Beginn der Kampfphase 1 freundliches Schiff in Reichweite 1.<br /><br />Bis zum Ende dieser Phase wird das gewählte Schiff so behandelt, als hätte es denselben Pilotenwert wie du."""
+            name: "Swarm Tactics"
+            text: """At the start of the Combat phase, choose 1 friendly ship at Range 1.<br /><br />Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."""
         "Squad Leader":
-            name: "Staffelführer"
-            text: """<strong>Aktion:</strong> Wähle ein Schiff in Reichweite 1-2 mit einem geringeren Pilotenwert als du.<br /><br />Das gewählte Schiff darf sofort 1 freie Aktion durhführen."""
+            name: "Jefe de Escuadrón"
+            text: """<strong>Acción:</strong> Elije una nave a alcance 1-2 que tenga una Habilidad de piloto más baja que la tuya.<br /><br />La nave elegida puede realizar inmediatamente una acción gratuita."""
         "Expert Handling":
-            name: "Flugkunst"
-            text: """<strong>Aktion:</strong> Führe eine Fassrolle durch. Wenn du kein %BARRELROLL%-Symbol hast, erhälst du 1 Stressmarker.<br /><br />Dann darfst du 1 feindlichen Zielerfassungsmarker von deinem Schiff entfernen."""
+            name: "Pericia"
+            text: """<strong>Acción:</strong> Ejecuta un tonel volado. Si no tienes el icono de acción %BARRELROLL%, recibes una ficha de Tensión.<br /><br />Después puedes descartar una ficha de Blanco Fijado enemiga que esté asignada a tu nave."""
         "Marksmanship":
-            name: "Treffsicherheit"
-            text: """<strong>Aktion:</strong> Wenn du in dieser Runde angreifst, darfst du eines deiner %FOCUS% in ein %CRIT% und alle anderen %FOCUS% in %HIT% ändern."""
+            name: "Puntería"
+            text: """<strong>Acción:</strong> Cuando ataques en esta ronda puedes cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT% y tus demás resultados %FOCUS% por %HIT%."""
         "Concussion Missiles":
-            name: "Erschütterungsraketen"
-            text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmarker aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst eine deiner Leerseiten in ein %HIT% ändern."""
+            name: "Misiles de Impacto"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Puedes cambiar un resultado de cara vacía por un resultado %HIT%."""
         "Cluster Missiles":
-            name: "Cluster-Raketen"
-            text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmaker aus und lege diese Karte ab, um mit dieser Sekundärwaffe <strong>zwei Mal</strong> anzugreifen."""
+            name: "Misiles de Racimo"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque <strong>dos veces</strong>."""
         "Daredevil":
-            text: """<strong>Aktion:</strong> Führe ein rotes (%TURNLEFT% 1) oder (%TURNRIGHT% 1) Manöver aus.<br /><br />Wenn du kein %BOOST%-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%)."""
+            name: "Temerario"
+            text: """<strong>Acción:</strong> Ejecuta una maniobra blanca (%TURNLEFT% 1) o (%TURNRIGHT% 1) y recibe 1 ficha de Tensión.<br /><br />Después, si no tienes el ícono %BOOST%, lanza 2 dados de ataque y sufre todos los daños normales (%HIT%) y críticos (%CRIT%) obtenidos."""
         "Elusiveness":
-            name: "Schwer zu Treffen"
-            text: """Wenn du verteidigst, darfst du 1 Stressmarker nehmen, um 1 Angriffswürfel zu wählen. Diesen muss der Angreifer neu würfeln.<br /><br />Du kannst diese Fähigkeit nicht einsetzen, solange du 1 oder mehrere Stressmarker hast."""
+            name: "Elusiveness"
+            text: """When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.<br /><br />If you have at least 1 stress token, you cannot use this ability."""
         "Homing Missiles":
-            name: "Lenkraketen"
-            text: """<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Bei diesem Angriff kann der Verteidiger keine Ausweichmarker ausgeben."""
+            name: "Misiles Rastreadores"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />El defensor no puede gastar fichas de evasión durante este ataque."""
         "Push the Limit":
-            name: "Bis an die Grenzen"
-            text: """Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durhführen.<br /><br />Dann erhältst du 1 Stressmarker."""
+            name: "Máximo Esfuerzo"
+            text: """Una vez por ronda, después de que realices una acción podras realizar una acción gratuita de entre las que figuren en tu barra de acciones.<br /><br />Después recibes una ficha de Tensión."""
         "Deadeye":
-            name: "Meisterschütze"
-            text: """Du darfst die Bedingung "Angriff (Zielerfassung):" in "Angriff (Fokussierung):" ändern.<br /><br />Wenn ein Angriff das Ausgeben von Zielerfassungsmarkern erfordert, darfst du stattdessen auch einen Fokusmarker ausgeben."""
+            name: "Certero"
+            text: """Puedes tratar la expresión "Ataque (blanco fijado)" como "Ataque (concentración)".<br /><br />Cuando un ataque te indique que debes gastar una ficha de Blanco Fijado puedes gastar una ficha de Concentración en su lugar."""
         "Expose":
-            name: "Aggressiv"
-            text: """<strong>Aktion:</strong> Bis zum Ende der Runde steigt dein Primärwaffenwert um 1, dafür sinkt dein Wendigkeitswert um 1."""
+            name: "Expuesto"
+            text: """<strong>Acción:</strong> Hasta el final de la ronda, el valor de tu armamento principal se incrementa en 1 y tu Agilidad se reduce en 1."""
         "Gunner":
-            name: "Bordschütze"
-            text: """Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Danach kannst du in dieser Runde nicht noch einmal angreifen."""
+            name: "Artillero"
+            text: """Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal.  No podrás realizar ningún otro ataque esta ronda."""
         "Ion Cannon":
-            name: "Ionenkanonen"
-            text: """<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Wenn du triffst, nimmt das verteidigende Schiff 1 Schaden und erhält 1 Ionenmarker. Dann werden <b>alle</b> übrigen Würfelergebnisse negiert."""
+            name: "Cañón de Iones"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave.<br /><br />Si este ataque impacta el objetivo, el defensor sufre un daño y recibe una ficha de iones. Después se anulan <b>todos</b> los resultados de los dados."""
         "Heavy Laser Cannon":
-            name: "Schwere Laserkanone"
-            text: """<strong>Attack:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Unmittelbar nach dem Angriffswurf musst du alle %CRIT% in %HIT% ändern."""
+            name: "Cañón Laser Pesado"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave.<br /><br />Inmediatamente después de lanzar los dados de ataque, debes cambiar todos tus resultados %CRIT% por resultados %HIT%."""
         "Seismic Charges":
-            name: "Seismische Bomben"
-            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Seismischen Bomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            name: "Cargas Sísmicas"
+            text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de cargas sísmicas.<br /><br />Esta ficha se <strong>detona</strong> al final de la fase de Activación."""
         "Mercenary Copilot":
-            name: "Angeheuerter Kopilot"
-            text: """Wenn du ein Ziel in Reichweite 3 angreifst, darfst du eines deiner %HIT%  in ein %CRIT% ändern."""
+            name: "Copiloto Mercenario"
+            text: """Cuando ataques a alcance 3, puedes cambiar 1 de tus resultados %HIT% por un resultado %CRIT%."""
         "Assault Missiles":
-            name: "Angriffsraketen"
-            text: """Angriff (Zielerfassung): Gib deine Zielerfassungsmarker aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Wenn du triffst, nimmt jedes andere Schiff in Reichweite 1 des verteidigenden Schiffs 1 Schaden."""
+            name: "Misiles de Asalto"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Si este ataque impacta el objetivo, toda otra nave que haya a alcance 1 del defensor sufre 1 daño."""
         "Veteran Instincts":
-            name: "Veteraneninstinkte"
-            text: """Dein Pilotenwert steigt um 2."""
+            name: "Instinto de Veterano"
+            text: """La habilidad de tu piloto se incrementa en 2."""
         "Proximity Mines":
-            name: "Annährungsminen"
-            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, wenn sich beim Ausführen eines Manövers die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
+            name: "Minas de Proximidad"
+            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Mina de Proximidad.<br /><br />Cuando una nave ejecute una maniobra, si su peana o la plantilla de maniobras se solapa con esta ficha, ésta se <strong>detona</strong>."""
         "Weapons Engineer":
-            name: "Waffen-Techniker"
-            text: """Du darfst 2 verschiedene Schiffe gleichzeitig in Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Wenn du die Aktion Zielerfassung durchführst darfst du zwei verschiedene Schiffe als Ziele erfassen."""
+            name: "Ingeniero de Armamento"
+            text: """Puedes tener 2 Blancos fijados a la vez (pero sólo 1 para cada nave enemiga).<br /><br />Cuando fijes un blanco, puedes fijar un blanco en dos naves distintas."""
         "Draw Their Fire":
-            name: "Das Feuer auf mich ziehen"
-            text: """Wenn ein freundliches Schiff in Reichweite 1 durch einen Angriff getroffen wird, darfst du anstelle dieses Schiffs den Schaden für 1 nicht-negiertes %CRIT% auf dich nehmen."""
+            name: "Atraer su fuego"
+            text: """Cuando una nave aliada que tengas a alcance 1 sea alcanzada por un ataque, puedes sufrir uno de sus resultados %CRIT% no anulados por sus dados de defensa."""
         "Luke Skywalker":
-            text: """Cuando defiendes en combate puedes cambiar uno de tus resultados %FOCUS% por %EVADE%."""
+            text: """Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal. Puedes cambiar un resultado [Focus] por un resultado [Hit]. No podrás realizar ningún otro ataque esta ronda."""
         "Nien Nunb":
-            text: """Du darfst alle %STRAIGHT%-Manöver wie grüne Manöver behandeln."""
+            text: """Todas las maniobras %STRAIGHT% se consideran verdes para tí."""
         "Chewbacca":
-            text: """Wenn du eine Schadenskarte erhältst, darfst du sie sofort ablegen und 1 Schild wiederaufladen.<br /><br />Danach wird diese Aufwertungskarte abgelegt."""
+            text: """Cuando recibas 1 carta de Daño, puedes descartarla y recuperar 1 ficha de Escudos.<br /><br />Luego descarta esta carta de mejora."""
         "Advanced Proton Torpedoes":
-            name: "Verstärkte Protonen-Torpedos"
-            text: """<strong>Angriff (Zielerfassung):</strong> Gib eine Zielerfassung aus und lege diese Karte ab um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst bis zu 3 deiner Leerseiten in %FOCUS% ändern."""
+            name: "Torpedos de protones avanzados"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque. Puedes cambiar hasta tres resultados de caras vacías por resultados %FOCUS%."""
         "Autoblaster":
-            name: "Repertierblaster"
-            text: """<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Deine %HIT% können von Verteidigungswürfeln nicht negiert werden.<br /><br />Der Verteidiger darf %CRIT% negieren, bevor alle %HIT% negiert wurden."""
+            name: "Cañón Blaster Automático"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave.<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""
         "Fire-Control System":
-            name: "Feuerkontrollsystem"
-            text: """Nachdem du angegriffen hast, darfst du eine Zielerfassung auf den Verteidiger durchführen."""
+            name: "Sistema de Control de Disparo"
+            text: """Después de que efectúes un ataque, puedes fijar al defensor como blanco."""
         "Blaster Turret":
-            name: "Blastergeschütz"
-            text: """<strong>Angriff (Fokussierung):</strong> Gib 1 Fokusmarker aus, um 1 Schiff mit dieser Sekundärwaffe anzugreifen (es muss nicht in deinem Feuerwinkel sein)."""
+            name: "Blaster Turret"
+            text: """<strong>Attack (focus):</strong> Spend 1 focus token to perform this attack against 1 ship (even a ship outside your firing arc)."""
         "Recon Specialist":
-            name: "Aufklärungs-Experte"
-            text: """Wenn du die Aktion Fokussieren durchführst, lege 1 zusätzlichen Fokusmarker neben dein Schiff."""
+            name: "Especialista en Reconocimiento"
+            text: """Cuando realices una acción de Concentración, asigna 1 ficha de Concentración adicional a tu nave."""
         "Saboteur":
-            text: """<strong>Aktion:</strong> Wähle 1 feindliches Schiff in Reichweite 1 und wirf 1 Angriffswürfel. Bei %HIT% oder %CRIT%, wähle 1 zufällige verdeckte Schadenskarte des Schiffs, decke sie auf und handle sie ab."""
+            name: "Saboteador"
+            text: """<strong>Acción:</strong> Elige 1 nave enemiga que tengas a alcance 1 y lanza q dado de ataque. Si sacas %HIT% o %CRIT%, elige al azar una carta de daño que esa nave tenga asignada boca abajo, dale la vuelta y resuélvela."""
         "Intelligence Agent":
-            name: "Geheimagent"
-            text: """Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Du darfst dir das ausgewählte Manöver dieses Schiffs ansehen."""
+            name: "Agente del Servicio de Inteligencia"
+            text: """Al comienzo de la fase de Activación, elige una nave enemiga que tengas a alcance 1-2. Puedes mirar el selector de maniobras de dicha nave."""
         "Proton Bomb":
-            name: "Protonenbomben"
-            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            name: "Bombas de Protones"
+            text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bombas de Protones.<br /><br />Esta ficha se <strong>detona</strong> al final de la fase de Activación."""
         "Adrenaline Rush":
-            name: "Adrenalinschub"
-            text: """Wenn du ein rotes Manöver aufdeckst, darfst du diese Karte ablegen, um das Manöver bis zum Ende der Aktivierungsphase wie ein weißes Manöver zu behandeln."""
+            name: "Descarga de Adrenalina"
+            text: """Cuando reveles una maniobra roja, puedes descartar esta carta para tratarla como blanca hasta el final de la fase de Activación."""
         "Advanced Sensors":
-            name: "Verbesserte Sensoren"
-            text: """Unmittelbar vor dem Aufdecken deines Manövers darfst du 1 freie Aktion durchführen.<br /><br />Wenn du diese Fähigkeit nutzt, musst du den Schritt "Aktion durchführen" in dieser Runde überspringen."""
+            name: "Sensores Avanzados"
+            text: """Inmediatamente antes de que reveles tu maniobra, puedes realizar 1 acción gratuita.<br /><br />Si utilizas esta capacidad, debes omitir tu paso de "Realizar una acción" durante esta ronda."""
         "Sensor Jammer":
-            name: "Störsender"
-            text: """Beim Verteidigen darfst du eines der %HIT% des Angreifers in ein %FOCUS% ändern.<br /><br />Der Angreifer darf den veränderten Würfel nicht neu würfeln."""
+            name: "Emisor de Interferencias"
+            text: """Cuando te defiendas, puedes cambiar 1 de los resultados %HIT% por uno %FOCUS%.<br /><br />El atacante no puede volver a lanzar el dado cuyo resultado hayas cambiado."""
         "Darth Vader":
-            text: """Nachdem du ein feindliches Schiff angegriffen hast, darfst du 2 Schaden nehmen, damit dieses Schiff 1 kritischen Schaden nimmt."""
+            text: """Después de que ataques una nave enemiga, puedes sufrir 2 de daño para que esa nave reciba 1 de daño crítico."""
         "Rebel Captive":
-            name: "Gefangener Rebell"
-            text: """Ein Mal pro Runde erhält das erste Schiff, das einen Angriff gegen dich ansagt, sofort 1 Stressmarker."""
+            name: "Prisionero Rebelde"
+            text: """Una vez por ronda, la primera nave que te declare como objetivo de un ataque recibe inmediatamente una ficha de Tensión."""
         "Flight Instructor":
-            name: "Fluglehrer"
-            text: """Beim Verteidigen darfst du 1 deiner %FOCUS% neu würfeln. Hat der Angreifer einen Pilotenwert von 2 oder weniger, darfst du stattdessen 1 deiner Leerseiten neu würfeln."""
+            name: "Instructor de Vuelo"
+            text: """Al defender, puedes volver a lanzar uno de tus resultados %FOCUS%. Si la habilidad del piloto atacante es 2 o menos, puedes volver a lanzar un dado con resultado de cara blanca en su lugar."""
         "Navigator":
-            name: "Navigator"
-            text: """Nach dem Aufdecken deines Manöverrads darfst du das Rad auf ein anderes Manöver mit gleicher Flugrichtung drehen.<br /><br />Wenn du bereits Stressmarker hast, darfst du es nicht auf ein rotes Manöver drehen."""
+            name: "Oficial de Navegación"
+            text: """Cuando reveles una maniobra, puedes rotar el selector para escoger otra maniobra que tenga la misma dirección.<br /><br />Si tienes alguna ficha de Tensión, no puedes rotar el selector para escoger una maniobra roja."""
         "Opportunist":
-            name: "Opportunist"
-            text: """Wenn du angreifst und der Verteidiger keine Fokusmarker oder Ausweichmarker hat, kannst du einen Stressmarker nehmen, um einen zusätzlichen Angriffswürfel zu erhalten.<br /><br />Du kannst diese Fähigkeit nicht nutzen, wenn du einen Stressmarker hast."""
+            name: "Oportunista"
+            text: """Cuando ataques, si el defensor no tiene fichas de concentración o evadir, puedes recibir una ficha de Tensión para lanzar un dado adicional.<br /><br />No puedes utilizar esta habilidad si ya tienes una ficha de Tensión."""
         "Comms Booster":
             name: "Comms Booster"
             text: """<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."""
@@ -507,29 +522,29 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Shield Projector"
             text: """When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."""
         "Ion Pulse Missiles":
-            name: "Ion Pulse Missiles"
-            text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.<br /><br />If this attack hits, the defender suffers 1 damage and receives 2 ion tokens.  Then cancel <strong>all<strong> dice results."""
+            name: "Misiles de Pulso Iónico"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Si este ataque impacta el objetivo, el defensor sufre un daño y recibe dos fichas de iones. Después se anulan <strong>todos</strong> los resultados de los dados."""
         "Wingman":
-            name: "Wingman"
-            text: """At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."""
+            name: "Compañero de Ala"
+            text: """Al comienzo de la fase de combate, quita una ficha de tensión de una nave aliada que tengas a alcance 1."""
         "Decoy":
-            name: "Decoy"
-            text: """This card has not yet been released."""
+            name: "Señuelo"
+            text: """Esta carta no ha sido publicada."""
         "Outmaneuver":
-            name: "Outmaneuver"
-            text: """When attacking a ship inside your firing arc, if you are not inside that ship's firing arc, reduce its agility value by 1 (to a minimum of 0)."""
+            name: "Mejores maniobras"
+            text: """Cuando ataques a una nave dentro de tu arco de fuego, si tu nave no se encuentra dentro del arco de fuego de dicha nave, reduce su valor de Agilidad en 1 (para un mínimo de 0)."""
         "Predator":
-            name: "Predator"
-            text: """When attacking, you may reroll 1 attack die.  If the defender's pilot skill value is "2" or lower, you may instead reroll up to 2 attack dice."""
+            name: "Depredador"
+            text: """Cuando ataques, puedes volver a lanzar un dado de ataque. Si la Habilidad del defensor es "2" o menor, puedes volver a lanzar dos dados."""
         "Flechette Torpedoes":
-            name: "Flechette Torpedoes"
-            text: """<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is "4" or lower."""
+            name: "Torpedos tipo Flechilla"
+            text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Después de efectuar este ataque, el defensor recibe una ficha de estrés si su valor de blindaje es "4" o menos."""
         "R7 Astromech":
-            name: "R7 Astromech"
-            text: """This card has not yet been released."""
+            name: "Droide Astromecánico R7"
+            text: """Esta carta no ha sido publicada."""
         "R7-T1":
             name: "R7-T1"
-            text: """<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
+            text: """<strong>Acción:</strong> Escoge una nave enemiga a alcance 1-2. Si estás dentro del arco de disparo de esa nave puedes fijar blanco en ella. Después realiza una acción de impulso gratuita."""
         "Tactician":
             name: "Tactician"
             text: """This card has not yet been released."""
@@ -556,78 +571,85 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (%STRAIGHT% 1) maneuver.  You cannot use this ability if you would overlap another ship."""
         "R3-A2":
             name: "R3-A2"
-            text: """When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."""
+            text: """Cuando declares a un enemigo como objetivo de tu ataque, si el defensor está dentro de tu arco de fuego, puedes recibir una ficha de Tensión para hacer que el defensor reciba una ficha de Tensión."""
         "R2-D6":
             name: "R2-D6"
             text: """Your upgrade bar gains the %ELITE% upgrade icon.<br /><br />You cannot equip this upgrade if you already have a %ELITE% upgrade icon or if your pilot skill value is "2" or lower."""
         "Enhanced Scopes":
-            name: "Enhanced Scopes"
-            text: """During the Activation phase, treat your pilot skill value as "0"."""
+            name: "Miras Mejoradas"
+            text: """Durante la fase de Activación, trata tu habilidad de piloto como "0"."""
         "Chardaan Refit":
             name: "Chardaan Refit"
             text: """This card has a negative squad point cost."""
         "Proton Rockets":
-            name: "Proton Rockets"
-            text: """This card has not yet been revealed."""
+            name: "Rockets de Protones"
+            text: """Esta carta no ha sido publicada."""
         "Kyle Katarn":
             text: """After you receive a stress token from your ship, you may assign a focus token to ???"""
         "Jan Ors":
-            text: """This card has not yet been revealed."""
+            text: """Esta carta no ha sido publicada."""
 
     modification_translations =
         "Stealth Device":
-            name: "Tarnvorrichtung"
-            text: """Dein Wendigkeitswert steigt um 1. Lege diese Karte ab, wenn du von einem Angriff getroffen wirst."""
+            name: "Dispositivo de Sigilo"
+            text: """Tu Agilidad se incrementa en 1. Descarta esta carta si eres alcanzado por un ataque."""
         "Shield Upgrade":
-            name: "Verbesserte Schilde"
-            text: """Dein Schildwert steigt um 1."""
+            name: "Escudos Mejorados"
+            text: """Tu valor de Escudos se incrementa en 1."""
         "Engine Upgrade":
-            name: "Verbessertes Triebwerk"
-            text: """Füge deiner Aktionsleiste ein %BOOST%-Symbol hinzu."""
+            name: "Motor Mejorado"
+            text: """Tu barra de acciones gana el ícono %BOOST%."""
         "Anti-Pursuit Lasers":
-            name: "Kurzstreckenlaser"
-            text: """Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, das zur Überschneidung mit deinem Schiff führt, wirf 1 Angriffswürfel. Bei %HIT% oder %CRIT% nimmt das feindliche Schiff 1 Schaden."""
+            name: "Cañones Láser Antipersecución"
+            text: """Después de que una nave enemiga ejecute una maniobra que le cause solapar su peana con la tuya, lanza un dado de ataque. Si el resultado es %HIT% o %CRIT%, el enemigo sufre 1 de daño."""
         "Targeting Computer":
-            name: "Zielerfassungssystem"
-            text: """Deine Aufwertungsleiste erhält das %TARGETLOCK%-Symbol."""
+            name: "Computadora de Selección de Blancos"
+            text: """Tu barra de acciones gana el ícono %TARGETLOCK%."""
         "Hull Upgrade":
-            name: "Verbesserte Hülle"
-            text: """Erhöhe deinen Hüllenwert um 1."""
+            name: "Blindaje mejorado"
+            text: """Incrementa tu valor de blindaje en 1."""
         "Munitions Failsafe":
-            name: "Munitions Failsafe"
-            text: """When attacking with a secondary weapon that instructs you to discard it to perform the attack, do not discard it unless the attack hits."""
+            name: "Sistema de Munición a Prueba de Fallas"
+            text: """Cuando ataques on un arma secundaria que te instruye que la descartes para realizar un ataque, no la descartes a menos de que el defensor sea alcanzado por tu ataque."""
         "Stygium Particle Accelerator":
-            name: "Stygium Particle Accelerator"
-            text: """When you either decloak or perform a cloak action, you may perform a free evade action."""
+            name: "Acelerador de Partículas de Stygium"
+            text: """Cuando realices una acción de Encubrimiento, o te Descubras, puedes realizar una acción de Evadir gratuita."""
         "Advanced Cloaking Device":
             name: "Advanced Cloaking Device"
             text: """After you perform an attack, you may perform a free cloak action."""
+            ship: "TIE Fantasma"
 
 
     title_translations =
         "Slave I":
-            name: "Sklave I"
-            text: """Füge deiner Aktionsleiste ein %TORPEDO%-Symbol hinzu."""
+            name: "Esclavo 1"
+            text: """Tu barra de mejoras gana el ícono %TORPEDO%."""
         "Millennium Falcon":
-            name: "Millennium Falke"
-            text: """Füge deiner Aktionsleiste ein %EVADE%-Symbol hinzu."""
+            name: "Halcón Milenario"
+            text: """Tu barra de acciones gana el ícono %EVADE%."""
         "Moldy Crow":
-            text: """In der Endphase werden von diesem Schiff keine unbenutzen Fokusmarker entfernt."""
+            name: "Cuervo Oxidado"
+            text: """Durante la fase final, no retires las fichas de Concentración que no hayas usado."""
         "ST-321":
-            text: """Wenn du eine Zielerfassung durchführst, darfst du ein beliebiges feindliches Schiff auf der Spielfläche als Ziel erfassen."""
+            text: """Cuando fijes un blanco, puedes hacerlo con cualquier nave enemiga de la zona de juego."""
+            ship: "Lanzadera clase Lambda"
         "Royal Guard TIE":
-            name: "TIE der Roten Garde"
+            name: "TIE de la Guardia Real"
             ship: "Interceptor TIE"
-            text: """Du kannst bis zu 2 verschiedene Modifikationen verwenden (statt einer).<br /><br />Du kannst diese Karte nicht verwenden, wenn der Pilotenwert "4" oder kleiner ist."""
+            text: """Puedes equipar a tu nave con 2 mejoras de Modificación diferentes (en vez de una).<br /><br />No puedes tener este título si tu habilidad de piloto es "4" o menos."""
         "Dodonna's Pride":
             name: "Dodonna's Pride"
             text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+            ship: "Corbeta CR90 (Proa)"
         "A-Wing Test Pilot":
-            name: "A-Wing Test Pilot"
-            text: """Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
+            name: "Piloto de Pruebas de Ala-A"
+            text: """Tu barra de mejoras gana el ícono %ELITE%.<br /><br />No puedes equipar dos %ELITE% iguales. No puedes tener este título si tu habilidad de piloto es "1" o menor."""
+            ship: "Ala-A"
         "B-Wing/E":
-            text: """Your upgrade bar gains the %CREW% upgrade icon."""
+            text: """Tu barra de mejoras gana el ícono %CREW%."""
+            ship: "Ala-B"
         "Tantive IV":
             text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+            ship: "Corbeta CR90 (Proa)"
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

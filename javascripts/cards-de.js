@@ -104,9 +104,7 @@
     exportObj.cardLanguage = 'Deutsch';
     basic_cards = window.basicCardData();
     exportObj.ships = basic_cards.ships;
-    exportObj.ships['TIE Abfangjäger'] = exportObj.ships['TIE Interceptor'];
-    exportObj.ships['TIE Abfangjäger'].name = 'TIE Abfangjäger';
-    delete exportObj.ships['TIE Interceptor'];
+    exportObj.renameShip('TIE Interceptor', 'TIE Abfangjäger');
     pilot_translations = {
       "Wedge Antilles": {
         text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."

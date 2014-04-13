@@ -1929,6 +1929,12 @@
     }
   };
 
+  exportObj.renameShip = function(english_name, new_name) {
+    exportObj.ships[new_name] = exportObj.ships[english_name];
+    exportObj.ships[new_name].name = new_name;
+    return delete exportObj.ships[english_name];
+  };
+
 }).call(this);
 
 //@ sourceMappingURL=cards-common.map
