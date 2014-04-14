@@ -7,7 +7,7 @@
     exportObj.codeToLanguage = {};
   }
 
-  exportObj.codeToLanguage.en = 'Español';
+  exportObj.codeToLanguage.es = 'Español';
 
   if (exportObj.translations == null) {
     exportObj.translations = {};
