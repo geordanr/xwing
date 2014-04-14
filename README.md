@@ -55,9 +55,14 @@ Credits
 Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
 German translations courtesy @failgod-marcus.
 Maneuver dials by @hpanderson.
+Spanish translations courtesy [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums.
 
 CHANGELOG
 =========
+
+13 Apr 2014
+-----------
+* Spanish translations provided by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums.
 
 2 Apr 2014
 ----------
@@ -148,6 +153,6 @@ CHANGELOG
 -----------
 * Overhaul backend to be much less crappy.
 * Add full support for Wave 2 ships (from what I can tell from what's been spoiled on [BoardGameGeek](http://boardgamegeek.com/).
-* Switch from [Foundation](foundation.zurb.com) to [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
-* Switch from [Chosen](harvesthq.github.com/chosen/) to [Select2](http://ivaynberg.github.com/select2/).
+* Switch from [Foundation](http://foundation.zurb.com) to [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
+* Switch from [Chosen](http://harvesthq.github.com/chosen/) to [Select2](http://ivaynberg.github.com/select2/).
 * Now has a printer-friendly mode.
