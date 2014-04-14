@@ -2355,3 +2355,134 @@ exportObj.basicCardData = ->
             ]
         }
     ]
+
+exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) ->
+    exportObj.pilots = {}
+    # Assuming a given pilot is unique by name...
+    for pilot_data in basic_cards.pilotsById
+        exportObj.pilots[pilot_data.name] = pilot_data
+    # pilot_name is the English version here as it's the common index into
+    # basic card info
+    for pilot_name, translations of pilot_translations
+        for field, translation of translations
+            try
+                exportObj.pilots[pilot_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for pilot #{pilot_name}"
+                throw e
+
+    exportObj.upgrades = {}
+    for upgrade_data in basic_cards.upgradesById
+        exportObj.upgrades[upgrade_data.name] = upgrade_data
+    for upgrade_name, translations of upgrade_translations
+        for field, translation of translations
+            try
+                exportObj.upgrades[upgrade_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for upgrade #{upgrade_name}"
+                throw e
+
+    exportObj.modifications = {}
+    for modification_data in basic_cards.modificationsById
+        exportObj.modifications[modification_data.name] = modification_data
+    for modification_name, translations of modification_translations
+        for field, translation of translations
+            try
+                exportObj.modifications[modification_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for modification #{modification_name}"
+                throw e
+
+    exportObj.titles = {}
+    for title_data in basic_cards.titlesById
+        exportObj.titles[title_data.name] = title_data
+    for title_name, translations of title_translations
+        for field, translation of translations
+            try
+                exportObj.titles[title_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for title #{title_name}"
+                throw e
+
+
+    exportObj.expansions = {}
+
+    exportObj.pilotsById = {}
+    exportObj.pilotsByLocalizedName = {}
+    for pilot_name, pilot of exportObj.pilots
+        exportObj.fixIcons pilot
+        exportObj.pilotsById[pilot.id] = pilot
+        exportObj.pilotsByLocalizedName[pilot.name] = pilot
+        for source in pilot.sources
+            exportObj.expansions[source] = 1 if source not of exportObj.expansions
+    if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
+        throw new Error("At least one pilot shares an ID with another")
+
+
+    exportObj.upgradesById = {}
+    exportObj.upgradesByLocalizedName = {}
+    for upgrade_name, upgrade of exportObj.upgrades
+        exportObj.fixIcons upgrade
+        exportObj.upgradesById[upgrade.id] = upgrade
+        exportObj.upgradesByLocalizedName[upgrade.name] = upgrade
+        for source in upgrade.sources
+            exportObj.expansions[source] = 1 if source not of exportObj.expansions
+    if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
+        throw new Error("At least one upgrade shares an ID with another")
+
+    exportObj.modificationsById = {}
+    exportObj.modificationsByLocalizedName = {}
+    for modification_name, modification of exportObj.modifications
+        exportObj.fixIcons modification
+        exportObj.modificationsById[modification.id] = modification
+        exportObj.modificationsByLocalizedName[modification.name] = modification
+        for source in modification.sources
+            exportObj.expansions[source] = 1 if source not of exportObj.expansions
+    if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
+        throw new Error("At least one modification shares an ID with another")
+
+    exportObj.titlesById = {}
+    exportObj.titlesByLocalizedName = {}
+    for title_name, title of exportObj.titles
+        exportObj.fixIcons title
+        exportObj.titlesById[title.id] = title
+        exportObj.titlesByLocalizedName[title.name] = title
+        for source in title.sources
+            exportObj.expansions[source] = 1 if source not of exportObj.expansions
+    if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
+        throw new Error("At least one title shares an ID with another")
+
+    exportObj.titlesByShip = {}
+    for title_name, title of exportObj.titles
+        if title.ship not of exportObj.titlesByShip
+            exportObj.titlesByShip[title.ship] = []
+        exportObj.titlesByShip[title.ship].push title
+
+    exportObj.expansions = Object.keys(exportObj.expansions).sort()
+
+exportObj.fixIcons = (data) ->
+    if data.text?
+        data.text = data.text
+            .replace(/%BANKLEFT%/g, '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />')
+            .replace(/%BANKRIGHT%/g, '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />')
+            .replace(/%BARRELROLL%/g, '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />')
+            .replace(/%BOOST%/g, '<img class="icon-boost" alt="Boost" src="images/transparent.png" />')
+            .replace(/%CRIT%/g, '<img class="icon-crit" alt="Crit" src="images/transparent.png" />')
+            .replace(/%CREW%/g, '<img class="icon-crew" alt="Crew" src="images/transparent.png" />')
+            .replace(/%ELITE%/g, '<img class="icon-elite" alt="Elite" src="images/transparent.png" />')
+            .replace(/%EVADE%/g, '<img class="icon-evade" alt="Evade" src="images/transparent.png" />')
+            .replace(/%FOCUS%/g, '<img class="icon-focus" alt="Focus" src="images/transparent.png" />')
+            .replace(/%HIT%/g, '<img class="icon-hit" alt="Hit" src="images/transparent.png" />')
+            .replace(/%KTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+            .replace(/%STRAIGHT%/g, '<img class="icon-straight" alt="Straight" src="images/transparent.png" />')
+            .replace(/%TARGETLOCK%/g, '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />')
+            .replace(/%TEAM%/g, '<img class="icon-team" alt="Team" src="images/transparent.png" />')
+            .replace(/%TORPEDO%/g, '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />')
+            .replace(/%TURNLEFT%/g, '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />')
+            .replace(/%TURNRIGHT%/g, '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />')
+            .replace(/%UTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+
+exportObj.renameShip = (english_name, new_name) ->
+    exportObj.ships[new_name] = exportObj.ships[english_name]
+    exportObj.ships[new_name].name = new_name
+    delete exportObj.ships[english_name]

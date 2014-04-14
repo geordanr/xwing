@@ -100,7 +100,7 @@
   }
 
   exportObj.cardLoaders.English = function() {
-    var basic_cards, e, field, modification, modification_data, modification_name, modification_translations, pilot, pilot_data, pilot_name, pilot_translations, source, title, title_data, title_name, title_translations, translation, translations, upgrade, upgrade_data, upgrade_name, upgrade_translations, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _len7, _m, _n, _o, _p, _ref, _ref1, _ref10, _ref11, _ref12, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'English';
     basic_cards = window.basicCardData();
     exportObj.ships = basic_cards.ships;
@@ -115,7 +115,7 @@
         text: "Other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."
       },
       "Luke Skywalker": {
-        text: "When defending, you may change 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to a <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> result."
+        text: "When defending, you may change 1 of your %FOCUS% results to a %EVADE% result."
       },
       '"Dutch" Vander': {
         text: "After acquiring a target lock, choose another friendly ship at Range 1-2.  The chosen ship may immediately acquire a target lock."
@@ -124,7 +124,7 @@
         text: "When attacking at Range 2-3, you may reroll any of your blank results."
       },
       '"Winged Gundark"': {
-        text: "When attacking at Range 1, you may change 1 of your <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
+        text: "When attacking at Range 1, you may change 1 of your %HIT% results to a %CRIT% result."
       },
       '"Night Beast"': {
         text: "After executing a green maneuver, you may perform a free focus action."
@@ -172,16 +172,16 @@
         text: "When attacking, you may reroll all of your dice.  If you choose to do so, you must reroll as many of your dice as possible."
       },
       "Kath Scarlet": {
-        text: "When attacking, the defender receives 1 stress token if he cancels at least 1 <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
+        text: "When attacking, the defender receives 1 stress token if he cancels at least 1 %CRIT% result."
       },
       "Boba Fett": {
-        text: "When you reveal a bank maneuver (<img class=\"icon-bankleft\" alt=\"Bank Left\" src=\"images/transparent.png\" /> or <img class=\"icon-bankright\" alt=\"Bank Right\" src=\"images/transparent.png\" />), you may rotate your dial to the other bank maneuver of the same speed."
+        text: "When you reveal a bank maneuver (%BANKLEFT% or %BANKRIGHT%), you may rotate your dial to the other bank maneuver of the same speed."
       },
       "Krassis Trelix": {
         text: "When attacking with a secondary weapon, you may reroll 1 attack die."
       },
       "Ten Numb": {
-        text: "When attacking, 1 of your <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results cannot be canceled by defense dice."
+        text: "When attacking, 1 of your %CRIT% results cannot be canceled by defense dice."
       },
       "Ibtisam": {
         text: "When attacking or defending, if you have at least 1 stress token, you may reroll 1 of your dice."
@@ -211,13 +211,13 @@
         text: "When another friendly ship at Range 1-2 would receive a stress token, if you have 2 or fewer stress tokens, you may receive that token instead."
       },
       "Lieutenant Lorrir": {
-        text: "When performing a barrel roll action, you may receive 1 stress token to use the (<img class=\"icon-bankleft\" alt=\"Bank Left\" src=\"images/transparent.png\" /> 1) or (<img class=\"icon-bankright\" alt=\"Bank Right\" src=\"images/transparent.png\" /> 1) template instead of the (<img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> 1) template."
+        text: "When performing a barrel roll action, you may receive 1 stress token to use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template."
       },
       "Tetran Cowall": {
-        text: "When you reveal a <img class=\"icon-uturn\" alt=\"Koiogran Turn\" src=\"images/transparent.png\" /> maneuver, you may treat the speed of that maneuver as \"1,\" \"3,\" or \"5\"."
+        text: "When you reveal a %UTURN% maneuver, you may treat the speed of that maneuver as \"1,\" \"3,\" or \"5\"."
       },
       "Kir Kanos": {
-        text: "When attacking at Range 2-3, you may spend 1 evade token to add 1 <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result to your roll."
+        text: "When attacking at Range 2-3, you may spend 1 evade token to add 1 %HIT% result to your roll."
       },
       "Carnor Jax": {
         text: "Enemy ships at Range 1 cannot perform focus or evade actions and cannot spend focus or evade tokens."
@@ -235,7 +235,7 @@
         text: "After you perform an attack that deals at least 1 Damage card to the defender, you may spend a focus token to flip those cards faceup."
       },
       "Etahn A'baht": {
-        text: "When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
+        text: "When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its %HIT% results to a %CRIT% result."
       },
       "Corran Horn": {
         text: "At the start of the ??? you may perform ??? cannot attack ???"
@@ -250,7 +250,7 @@
         text: "After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."
       },
       "Jek Porkins": {
-        text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result, deal 1 facedown Damage card to this ship."
+        text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a %HIT% result, deal 1 facedown Damage card to this ship."
       },
       '"Hobbie" Kilvan': {
         text: "When you acquire or spend a target lock, you may remove 1 stress token from your ship."
@@ -265,7 +265,7 @@
         text: "This card has not yet been revealed."
       },
       "Keyan Farlander": {
-        text: "When attacking, you may remove 1 stress token to change all of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" />results."
+        text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
       },
       "Unspoiled PS5 B-Wing Pilot": {
         text: "This card has not yet been revealed."
@@ -276,7 +276,7 @@
         text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).<br /><br />If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
       },
       "Proton Torpedoes": {
-        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
+        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "R2 Astromech": {
         text: "You may treat all 1- and 2-speed maneuvers as green maneuvers."
@@ -288,10 +288,10 @@
         text: "<strong>Action:</strong> Increase your agility value by 1 until the end of this game round."
       },
       "R5-D8": {
-        text: "<strong>Action:</strong> Roll 1 defense die.<br /><br />On a <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> or <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> result, discard 1 of your facedown Damage cards."
+        text: "<strong>Action:</strong> Roll 1 defense die.<br /><br />On a %EVADE% or %FOCUS% result, discard 1 of your facedown Damage cards."
       },
       "R5-K6": {
-        text: "After spending your target lock, roll 1 defense die.<br /><br />On a <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."
+        text: "After spending your target lock, roll 1 defense die.<br /><br />On a %EVADE% result, immediately acquire a target lock on that same ship.  You cannot spend this target lock during this attack."
       },
       "R5 Astromech": {
         text: "During the End phase, you may choose 1 of your faceup Damage cards with the Ship trait and flip it facedown."
@@ -306,19 +306,19 @@
         text: "<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship may immediately perform 1 free action."
       },
       "Expert Handling": {
-        text: "<strong>Action:</strong> Perform a free barrel roll action.  If you do not have the <img class=\"icon-barrel-roll\" alt=\"Barrel Roll\" src=\"images/transparent.png\" /> action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."
+        text: "<strong>Action:</strong> Perform a free barrel roll action.  If you do not have the %BARRELROLL% action icon, receive 1 stress token.<br /><br />You may then remove 1 enemy target lock from your ship."
       },
       "Marksmanship": {
-        text: "<strong>Action:</strong> When attacking this round, you may change 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result and all of your other <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results."
+        text: "<strong>Action:</strong> When attacking this round, you may change 1 of your %FOCUS% results to a %CRIT% result and all of your other %FOCUS% results to %HIT% results."
       },
       "Concussion Missiles": {
-        text: "<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result."
+        text: "<strong>Attack (target lock):</strong>  Spend your target lock and discard this card to perform this attack.<br /><br />You may change 1 of your blank results to a %HIT% result."
       },
       "Cluster Missiles": {
         text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack twice."
       },
       "Daredevil": {
-        text: "<strong>Action:</strong> Execute a white (<img class=\"icon-turnleft\" alt=\"Turn Left\" src=\"images/transparent.png\" /> 1) or (<img class=\"icon-turnright\" alt=\"Turn Right\" src=\"images/transparent.png\" /> 1) maneuver.  Then, receive 1 stress token.<br /><br />Then, if you do not have the <img class=\"icon-boost\" alt=\"Boost\" src=\"images/transparent.png\" /> action icon, roll 2 attack dice.  Suffer any damage (<img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" />) and any critical damage (<img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" />) rolled."
+        text: "<strong>Action:</strong> Execute a white (%TURNLEFT% 1) or (%TURNRIGHT% 1) maneuver.  Then, receive 1 stress token.<br /><br />Then, if you do not have the %BOOST% action icon, roll 2 attack dice.  Suffer any damage (%HIT%) and any critical damage (%CRIT%) rolled."
       },
       "Elusiveness": {
         text: "When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.<br /><br />If you have at least 1 stress token, you cannot use this ability."
@@ -342,13 +342,13 @@
         text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
       },
       "Heavy Laser Cannon": {
-        text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results to <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results."
+        text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your %CRIT% results to %HIT% results."
       },
       "Seismic Charges": {
         text: "When you reveal your maneuver dial, you may discard this card to drop 1 seismic charge token.<br /><br />This token detonates at the end of the Activation phase."
       },
       "Mercenary Copilot": {
-        text: "When attacking at Range 3, you may change 1 of your <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results to a <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result."
+        text: "When attacking at Range 3, you may change 1 of your %HIT% results to a %CRIT% result."
       },
       "Assault Missiles": {
         text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, each other ship at Range 1 of the defender suffers 1 damage."
@@ -363,22 +363,22 @@
         text: "You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."
       },
       "Draw Their Fire": {
-        text: "When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results instead of the target ship."
+        text: "When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled %CRIT% results instead of the target ship."
       },
       "Luke Skywalker": {
-        text: "After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> result to a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result.  You cannot perform another attack this round."
+        text: "After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."
       },
       "Nien Nunb": {
-        text: "You may treat all <img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> maneuvers as green maneuvers."
+        text: "You may treat all %STRAIGHT% maneuvers as green maneuvers."
       },
       "Chewbacca": {
         text: "When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."
       },
       "Advanced Proton Torpedoes": {
-        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results."
+        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to %FOCUS% results."
       },
       "Autoblaster": {
-        text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Your <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results cannot be canceled by defense dice.<br /><br />The defender may cancel <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> results before <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results."
+        text: "<strong>Attack:</strong> Attack 1 ship.<br /><br />Your %HIT% results cannot be canceled by defense dice.<br /><br />The defender may cancel %CRIT% results before %HIT% results."
       },
       "Fire-Control System": {
         text: "After you perform an attack, you may acquire a target lock on the defender."
@@ -390,7 +390,7 @@
         text: "When you perform a focus action, assign 1 additional focus token to your ship."
       },
       "Saboteur": {
-        text: "<strong>Action:</strong> Choose 1 enemy ship at Range 1 and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> or <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result, choose 1 random facedown Damage card assigned to that ship, flip it faceup, and resolve it."
+        text: "<strong>Action:</strong> Choose 1 enemy ship at Range 1 and roll 1 attack die.  On a %HIT% or %CRIT% result, choose 1 random facedown Damage card assigned to that ship, flip it faceup, and resolve it."
       },
       "Intelligence Agent": {
         text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."
@@ -405,7 +405,7 @@
         text: "Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your \"Perform Action\" step during this round."
       },
       "Sensor Jammer": {
-        text: "When defending, you may change 1 of the attacker's <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> results into a <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> result.<br /><br />The attacker cannot reroll the die with the changed result."
+        text: "When defending, you may change 1 of the attacker's %HIT% results into a %FOCUS% result.<br /><br />The attacker cannot reroll the die with the changed result."
       },
       "Darth Vader": {
         text: "After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."
@@ -414,7 +414,7 @@
         text: "Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."
       },
       "Flight Instructor": {
-        text: "When defending, you may reroll 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results.  If the attacker's pilot skill value is \"2\" or lower, you may reroll 1 of your blank results instead."
+        text: "When defending, you may reroll 1 of your %FOCUS% results.  If the attacker's pilot skill value is \"2\" or lower, you may reroll 1 of your blank results instead."
       },
       "Navigator": {
         text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same bearing.<br /><br />You cannot rotate to a red maneuver if you have any stress tokens."
@@ -459,13 +459,13 @@
         text: "This card has not yet been released."
       },
       "R2-D2 (Crew)": {
-        text: "At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result, randomly flip 1 of your facedown Damage cards faceup and resolve it."
+        text: "At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."
       },
       "C-3PO": {
-        text: "Once per round, before you roll 1 or more defense dice, you may guess aloud a number of <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> results.  If you roll that many <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> results (before modifying dice), add 1 <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> result."
+        text: "Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."
       },
       "Single Turbolasers": {
-        text: "<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your <img class=\"icon-focus\" alt=\"Focus\" src=\"images/transparent.png\" /> results to a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> result."
+        text: "<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your %FOCUS% results to a %HIT% result."
       },
       "Quad Laser Cannons": {
         text: "<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."
@@ -477,13 +477,13 @@
         text: "<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."
       },
       "Engine Booster": {
-        text: "Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (<img class=\"icon-straight\" alt=\"Straight\" src=\"images/transparent.png\" /> 1) maneuver.  You cannot use this ability if you would overlap another ship."
+        text: "Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (%STRAIGHT% 1) maneuver.  You cannot use this ability if you would overlap another ship."
       },
       "R3-A2": {
         text: "When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."
       },
       "R2-D6": {
-        text: "Your upgrade bar gains the <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon.<br /><br />You cannot equip this upgrade if you already have a <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon or if your pilot skill value is \"2\" or lower."
+        text: "Your upgrade bar gains the %ELITE% upgrade icon.<br /><br />You cannot equip this upgrade if you already have a %ELITE% upgrade icon or if your pilot skill value is \"2\" or lower."
       },
       "Enhanced Scopes": {
         text: "During the Activation phase, treat your pilot skill value as \"0\"."
@@ -509,13 +509,13 @@
         text: "Increase your shield value by 1."
       },
       "Engine Upgrade": {
-        text: "Your action bar gains the <img class=\"icon-boost\" alt=\"Boost\" src=\"images/transparent.png\" /> action icon."
+        text: "Your action bar gains the %BOOST% action icon."
       },
       "Anti-Pursuit Lasers": {
-        text: "After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a <img class=\"icon-hit\" alt=\"Hit\" src=\"images/transparent.png\" /> or <img class=\"icon-crit\" alt=\"Crit\" src=\"images/transparent.png\" /> result, the enemy ship suffers 1 damage."
+        text: "After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship suffers 1 damage."
       },
       "Targeting Computer": {
-        text: "Your action bar gains the <img class=\"icon-target-lock\" alt=\"Target Lock\" src=\"images/transparent.png\" /> action icon."
+        text: "Your action bar gains the %TARGETLOCK% action icon."
       },
       "Hull Upgrade": {
         text: "Increase your hull value by 1."
@@ -532,10 +532,10 @@
     };
     title_translations = {
       "Slave I": {
-        text: "Your upgrade bar gains the <img class=\"icon-torpedo\" alt=\"Torpedo\" src=\"images/transparent.png\" /> upgrade icon."
+        text: "Your upgrade bar gains the %TORPEDO% upgrade icon."
       },
       "Millennium Falcon": {
-        text: "Your action bar gains the <img class=\"icon-evade\" alt=\"Evade\" src=\"images/transparent.png\" /> action icon."
+        text: "Your action bar gains the %EVADE% action icon."
       },
       "Moldy Crow": {
         text: "During the End phase, do not remove unused focus tokens from your ship."
@@ -550,174 +550,16 @@
         text: "When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."
       },
       "A-Wing Test Pilot": {
-        text: "Your upgrade bar gains 1 <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> upgrade icon.<br /><br />You cannot equip 2 of the same <img class=\"icon-elite\" alt=\"Elite\" src=\"images/transparent.png\" /> Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
+        text: "Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
       },
       "B-Wing/E": {
-        text: "Your upgrade bar gains the <img class=\"icon-crew\" alt=\"Crew\" src=\"images/transparent.png\" /> upgrade icon."
+        text: "Your upgrade bar gains the %CREW% upgrade icon."
       },
       "Tantive IV": {
-        text: "Your fore section upgrade bar gains 1 additional <img class=\"icon-crew\" alt=\"Crew\" src=\"images/transparent.png\" /> and 1 additional <img class=\"icon-team\" alt=\"Team\" src=\"images/transparent.png\" /> upgrade icon."
+        text: "Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."
       }
     };
-    exportObj.pilots = {};
-    _ref = basic_cards.pilotsById;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      pilot_data = _ref[_i];
-      exportObj.pilots[pilot_data.name] = pilot_data;
-    }
-    for (pilot_name in pilot_translations) {
-      translations = pilot_translations[pilot_name];
-      for (field in translations) {
-        translation = translations[field];
-        try {
-          exportObj.pilots[pilot_name][field] = translation;
-        } catch (_error) {
-          e = _error;
-          console.error("Cannot find translation for attribute " + field + " for pilot " + pilot_name);
-          throw e;
-        }
-      }
-    }
-    exportObj.upgrades = {};
-    _ref1 = basic_cards.upgradesById;
-    for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-      upgrade_data = _ref1[_j];
-      exportObj.upgrades[upgrade_data.name] = upgrade_data;
-    }
-    for (upgrade_name in upgrade_translations) {
-      translations = upgrade_translations[upgrade_name];
-      for (field in translations) {
-        translation = translations[field];
-        try {
-          exportObj.upgrades[upgrade_name][field] = translation;
-        } catch (_error) {
-          e = _error;
-          console.error("Cannot find translation for attribute " + field + " for upgrade " + upgrade_name);
-          throw e;
-        }
-      }
-    }
-    exportObj.modifications = {};
-    _ref2 = basic_cards.modificationsById;
-    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-      modification_data = _ref2[_k];
-      exportObj.modifications[modification_data.name] = modification_data;
-    }
-    for (modification_name in modification_translations) {
-      translations = modification_translations[modification_name];
-      for (field in translations) {
-        translation = translations[field];
-        try {
-          exportObj.modifications[modification_name][field] = translation;
-        } catch (_error) {
-          e = _error;
-          console.error("Cannot find translation for attribute " + field + " for modification " + modification_name);
-          throw e;
-        }
-      }
-    }
-    exportObj.titles = {};
-    _ref3 = basic_cards.titlesById;
-    for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
-      title_data = _ref3[_l];
-      exportObj.titles[title_data.name] = title_data;
-    }
-    for (title_name in title_translations) {
-      translations = title_translations[title_name];
-      for (field in translations) {
-        translation = translations[field];
-        try {
-          exportObj.titles[title_name][field] = translation;
-        } catch (_error) {
-          e = _error;
-          console.error("Cannot find translation for attribute " + field + " for title " + title_name);
-          throw e;
-        }
-      }
-    }
-    exportObj.expansions = {};
-    exportObj.pilotsById = {};
-    exportObj.pilotsByLocalizedName = {};
-    _ref4 = exportObj.pilots;
-    for (pilot_name in _ref4) {
-      pilot = _ref4[pilot_name];
-      exportObj.pilotsById[pilot.id] = pilot;
-      exportObj.pilotsByLocalizedName[pilot.name] = pilot;
-      _ref5 = pilot.sources;
-      for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
-        source = _ref5[_m];
-        if (!(source in exportObj.expansions)) {
-          exportObj.expansions[source] = 1;
-        }
-      }
-    }
-    if (Object.keys(exportObj.pilotsById).length !== Object.keys(exportObj.pilots).length) {
-      throw new Error("At least one pilot shares an ID with another");
-    }
-    exportObj.upgradesById = {};
-    exportObj.upgradesByLocalizedName = {};
-    _ref6 = exportObj.upgrades;
-    for (upgrade_name in _ref6) {
-      upgrade = _ref6[upgrade_name];
-      exportObj.upgradesById[upgrade.id] = upgrade;
-      exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
-      _ref7 = upgrade.sources;
-      for (_n = 0, _len5 = _ref7.length; _n < _len5; _n++) {
-        source = _ref7[_n];
-        if (!(source in exportObj.expansions)) {
-          exportObj.expansions[source] = 1;
-        }
-      }
-    }
-    if (Object.keys(exportObj.upgradesById).length !== Object.keys(exportObj.upgrades).length) {
-      throw new Error("At least one upgrade shares an ID with another");
-    }
-    exportObj.modificationsById = {};
-    exportObj.modificationsByLocalizedName = {};
-    _ref8 = exportObj.modifications;
-    for (modification_name in _ref8) {
-      modification = _ref8[modification_name];
-      exportObj.modificationsById[modification.id] = modification;
-      exportObj.modificationsByLocalizedName[modification.name] = modification;
-      _ref9 = modification.sources;
-      for (_o = 0, _len6 = _ref9.length; _o < _len6; _o++) {
-        source = _ref9[_o];
-        if (!(source in exportObj.expansions)) {
-          exportObj.expansions[source] = 1;
-        }
-      }
-    }
-    if (Object.keys(exportObj.modificationsById).length !== Object.keys(exportObj.modifications).length) {
-      throw new Error("At least one modification shares an ID with another");
-    }
-    exportObj.titlesById = {};
-    exportObj.titlesByLocalizedName = {};
-    _ref10 = exportObj.titles;
-    for (title_name in _ref10) {
-      title = _ref10[title_name];
-      exportObj.titlesById[title.id] = title;
-      exportObj.titlesByLocalizedName[title.name] = title;
-      _ref11 = title.sources;
-      for (_p = 0, _len7 = _ref11.length; _p < _len7; _p++) {
-        source = _ref11[_p];
-        if (!(source in exportObj.expansions)) {
-          exportObj.expansions[source] = 1;
-        }
-      }
-    }
-    if (Object.keys(exportObj.titlesById).length !== Object.keys(exportObj.titles).length) {
-      throw new Error("At least one title shares an ID with another");
-    }
-    exportObj.titlesByShip = {};
-    _ref12 = exportObj.titles;
-    for (title_name in _ref12) {
-      title = _ref12[title_name];
-      if (!(title.ship in exportObj.titlesByShip)) {
-        exportObj.titlesByShip[title.ship] = [];
-      }
-      exportObj.titlesByShip[title.ship].push(title);
-    }
-    return exportObj.expansions = Object.keys(exportObj.expansions).sort();
+    return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
   };
 
 }).call(this);
