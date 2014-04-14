@@ -460,7 +460,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Atraer su fuego"
             text: """Cuando una nave aliada que tengas a alcance 1 sea alcanzada por un ataque, puedes sufrir uno de sus resultados %CRIT% no anulados por sus dados de defensa."""
         "Luke Skywalker":
-            text: """Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal. Puedes cambiar un resultado [Focus] por un resultado [Hit]. No podrás realizar ningún otro ataque esta ronda."""
+            text: """Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal. Puedes cambiar un resultado %FOCUS% por un resultado %HIT%. No podrás realizar ningún otro ataque esta ronda."""
         "Nien Nunb":
             text: """Todas las maniobras %STRAIGHT% se consideran verdes para tí."""
         "Chewbacca":
