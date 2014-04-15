@@ -300,7 +300,7 @@
         text: "When you are dealt a faceup Damage card with the Pilot trait, discard it immediately without resolving its effect."
       },
       "Swarm Tactics": {
-        text: "At the start of the Combat phase, choose 1 friendly ship at Range 1.<br /><br />Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."
+        text: "At the start of the Combat phase, you may choose 1 friendly ship at Range 1.<br /><br />Until the end of this phase, treat the chosen ship as if its pilot skill were equal to your pilot skill."
       },
       "Squad Leader": {
         text: "<strong>Action:</strong> Choose 1 ship at Range 1-2 that has a lower pilot skill than you.<br /><br />The chosen ship may immediately perform 1 free action."
@@ -357,7 +357,7 @@
         text: "Increase your pilot skill value by 2."
       },
       "Proximity Mines": {
-        text: "<strong>Action:</strong> Discard this card to drop 1 proximity mine token.<br /><br />When a ship executes a maneuver, if its base or maneuver template overlaps this token, this token detonates."
+        text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 proximity mine token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>."
       },
       "Weapons Engineer": {
         text: "You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."

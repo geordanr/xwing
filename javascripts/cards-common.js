@@ -138,6 +138,7 @@
           hull: 8,
           shields: 4,
           actions: ["Recover", "Reinforce", "Coordinate", "Jam"],
+          large: true,
           huge: true
         },
         "Z-95 Headhunter": {
@@ -186,6 +187,7 @@
           hull: 8,
           shields: 5,
           actions: ["Coordinate", "Target Lock"],
+          large: true,
           huge: true
         },
         "CR90 Corvette (Aft)": {
@@ -196,6 +198,7 @@
           hull: 8,
           shields: 3,
           actions: ["Reinforce", "Jam"],
+          large: true,
           huge: true
         }
       },
