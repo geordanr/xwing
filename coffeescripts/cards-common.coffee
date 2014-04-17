@@ -251,6 +251,7 @@ exportObj.basicCardData = ->
                 "Coordinate"
                 "Jam"
             ]
+            large: true
             huge: true
         "Z-95 Headhunter":
             name: "Z-95 Headhunter"
@@ -327,6 +328,7 @@ exportObj.basicCardData = ->
                 "Coordinate"
                 "Target Lock"
             ]
+            large: true
             huge: true
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
@@ -339,6 +341,7 @@ exportObj.basicCardData = ->
                 "Reinforce"
                 "Jam"
             ]
+            large: true
             huge: true
 
     # name field is for convenience only
