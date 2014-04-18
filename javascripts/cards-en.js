@@ -102,7 +102,7 @@
   exportObj.cardLoaders.English = function() {
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'English';
-    basic_cards = window.basicCardData();
+    basic_cards = exportObj.basicCardData();
     exportObj.ships = basic_cards.ships;
     pilot_translations = {
       "Wedge Antilles": {
