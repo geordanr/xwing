@@ -82,7 +82,7 @@ exportObj.cardLoaders.English = () ->
     exportObj.cardLanguage = 'English'
 
     # Assumes cards-common has been loaded
-    basic_cards = window.basicCardData()
+    basic_cards = exportObj.basicCardData()
 
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships

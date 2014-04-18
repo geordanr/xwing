@@ -102,7 +102,7 @@
   exportObj.cardLoaders.Deutsch = function() {
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Deutsch';
-    basic_cards = window.basicCardData();
+    basic_cards = exportObj.basicCardData();
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('TIE Interceptor', 'TIE Abfangjäger');
     pilot_translations = {
