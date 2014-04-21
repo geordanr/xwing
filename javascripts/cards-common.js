@@ -4,6 +4,20 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
+  exportObj.unreleasedExpansions = ["Rebel Transport Expansion Pack", "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack", "E-Wing Expansion Pack", "TIE Phantom Expansion Pack", "Tantive IV Expansion Pack", "Rebel Aces Expansion Pack"];
+
+  exportObj.isReleased = function(data) {
+    var source, _i, _len, _ref;
+    _ref = data.sources;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      source = _ref[_i];
+      if (__indexOf.call(exportObj.unreleasedExpansions, source) < 0) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   exportObj.basicCardData = function() {
     return {
       ships: {

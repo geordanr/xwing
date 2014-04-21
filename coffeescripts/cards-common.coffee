@@ -1,6 +1,21 @@
 # This must be loaded before any of the card language modules!
 exportObj = exports ? this
 
+exportObj.unreleasedExpansions = [
+    "Rebel Transport Expansion Pack"
+    "Z-95 Headhunter Expansion Pack"
+    "TIE Defender Expansion Pack"
+    "E-Wing Expansion Pack"
+    "TIE Phantom Expansion Pack"
+    "Tantive IV Expansion Pack"
+    "Rebel Aces Expansion Pack"
+]
+
+exportObj.isReleased = (data) ->
+    for source in data.sources
+        return true if source not in exportObj.unreleasedExpansions
+    false
+
 # Returns an independent copy of the data which can be modified by translation
 # modules.
 exportObj.basicCardData = ->

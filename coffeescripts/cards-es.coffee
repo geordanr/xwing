@@ -61,6 +61,7 @@ exportObj.translations['Español'] =
         titlePlaceholder: "No Title"
         upgradeHeader: (translator, language, slot) ->
             "#{translator language, 'slot', slot} Upgrade"
+        unreleased: "inédito"
     byCSSSelector:
         '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
         '.xwing-card-browser option[value="name"]': 'Name'
