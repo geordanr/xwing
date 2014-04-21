@@ -277,7 +277,7 @@
       name = card.data('name');
       type = card.data('type');
       data = card.data('card');
-      this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")");
+      this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")" + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
       this.card_viewer_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
       this.card_viewer_container.find('.info-sources').text(((function() {
         var _i, _len, _ref1, _results;

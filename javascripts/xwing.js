@@ -204,7 +204,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span3 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>\n    </div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span3 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>\n        <span class="unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n    </div>\n    <div class="span6 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random<span class="hidden-phone"> Squad!</span></button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
@@ -299,6 +299,7 @@
       })(this));
       this.points_remaining_span = $(this.points_container.find('.points-remaining'));
       this.points_remaining_container = $(this.points_container.find('.points-remaining-container'));
+      this.unreleased_content_used_container = $(this.points_container.find('.unreleased-content-used'));
       this.permalink = $(this.status_container.find('div.button-container a.permalink'));
       this.view_list_button = $(this.status_container.find('div.button-container button.view-as-text'));
       this.randomize_button = $(this.status_container.find('div.button-container button.randomize'));
@@ -441,7 +442,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 434
+                lineno: 436
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -611,18 +612,26 @@
     };
 
     SquadBuilder.prototype.onPointsUpdated = function(cb) {
-      var bbcode_ships, i, points_left, ship, _i, _j, _len, _len1, _ref, _ref1;
+      var bbcode_ships, i, points_left, ship, ship_uses_unreleased_content, unreleased_content_used, _i, _j, _len, _len1, _ref, _ref1;
       this.total_points = 0;
+      unreleased_content_used = false;
       _ref = this.ships;
       for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
         ship = _ref[i];
         ship.validate();
         this.total_points += ship.getPoints();
+        ship_uses_unreleased_content = ship.checkUnreleasedContent();
+        console.log("ship " + i + " uses unreleased content:" + ship_uses_unreleased_content);
+        if (ship_uses_unreleased_content) {
+          unreleased_content_used = ship_uses_unreleased_content;
+        }
       }
       this.total_points_span.text(this.total_points);
       points_left = parseInt(this.desired_points_input.val()) - this.total_points;
       this.points_remaining_span.text(points_left);
       this.points_remaining_container.toggleClass('red', points_left < 0);
+      console.log("toggle hidden class " + (!unreleased_content_used));
+      this.unreleased_content_used_container.toggleClass('hidden', !unreleased_content_used);
       this.fancy_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
       this.fancy_container.text('');
@@ -677,7 +686,7 @@
         this.removeShip(this.ships[0]);
       }
       if (this.ships.length > 0) {
-        throw "Ships not emptied";
+        throw new Error("Ships not emptied");
       }
     };
 
@@ -733,7 +742,7 @@
 
     SquadBuilder.prototype.uniqueIndex = function(unique, type) {
       if (!(type in this.uniques_in_use)) {
-        throw "Invalid unique type '" + type + "'";
+        throw new Error("Invalid unique type '" + type + "'");
       }
       return this.uniques_in_use[type].indexOf(unique);
     };
@@ -747,7 +756,7 @@
             if (this.uniqueIndex(crew, 'Upgrade') < 0) {
               this.uniques_in_use['Upgrade'].push(crew);
             } else {
-              throw "Unique " + type + " '" + unique.name + "' already claimed as crew";
+              throw new Error("Unique " + type + " '" + unique.name + "' already claimed as crew");
             }
           }
         } else if (type === 'Upgrade') {
@@ -757,7 +766,7 @@
               if (this.uniqueIndex(pilot, 'Pilot') < 0) {
                 this.uniques_in_use['Pilot'].push(pilot);
               } else {
-                throw "Unique " + type + " '" + unique.name + "' already claimed as pilot";
+                throw new Error("Unique " + type + " '" + unique.name + "' already claimed as pilot");
               }
             }
           }
@@ -769,7 +778,7 @@
         }
         this.uniques_in_use[type].push(unique);
       } else {
-        throw "Unique " + type + " '" + unique.name + "' already claimed";
+        throw new Error("Unique " + type + " '" + unique.name + "' already claimed");
       }
       return cb();
     };
@@ -784,7 +793,7 @@
           if ((crew != null) && ((crew != null ? crew.unique : void 0) != null)) {
             idx = this.uniqueIndex(crew, 'Upgrade');
             if (idx < 0) {
-              throw "Unique crew accompanying " + unique.name + " was not also claimed!";
+              throw new Error("Unique crew accompanying " + unique.name + " was not also claimed!");
             }
             this.uniques_in_use['Upgrade'].splice(idx, 1);
           }
@@ -794,7 +803,7 @@
             if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
               idx = this.uniqueIndex(pilot, 'Pilot');
               if (idx < 0) {
-                throw "Unique pilot accompanying " + unique.name + " was not also claimed!";
+                throw new Error("Unique pilot accompanying " + unique.name + " was not also claimed!");
               }
               this.uniques_in_use['Pilot'].splice(idx, 1);
             }
@@ -807,7 +816,7 @@
           }
         }
       } else {
-        throw "Unique " + type + " '" + unique.name + "' not in use";
+        throw new Error("Unique " + type + " '" + unique.name + "' not in use");
       }
       return cb();
     };
@@ -834,7 +843,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 783
+            lineno: 791
           }));
           __iced_deferrals._fulfill();
         });
@@ -847,7 +856,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 784
+              lineno: 792
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1184,7 +1193,7 @@
             extra_actions = $.grep(effective_stats.actions, function(el, i) {
               return __indexOf.call(data.data.actions, el) < 0;
             });
-            this.info_container.find('.info-name').html("" + (data.pilot.unique ? "&middot;&nbsp;" : "") + data.pilot.name);
+            this.info_container.find('.info-name').html("" + (data.pilot.unique ? "&middot;&nbsp;" : "") + data.pilot.name + (exportObj.isReleased(data.pilot) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref = data.pilot.text) != null ? _ref : '');
             this.info_container.find('tr.info-ship td.info-data').text(data.pilot.ship);
             this.info_container.find('tr.info-ship').show();
@@ -1245,7 +1254,7 @@
               }
               return _results;
             }).call(this)).sort().join(', '));
-            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name);
+            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref13 = data.text) != null ? _ref13 : '');
             ship = exportObj.ships[data.ship];
             this.info_container.find('tr.info-ship td.info-data').text(data.ship);
@@ -1299,7 +1308,7 @@
               }
               return _results;
             }).call(this)).sort().join(', '));
-            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name);
+            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref26 = data.text) != null ? _ref26 : '');
             this.info_container.find('tr.info-ship').hide();
             this.info_container.find('tr.info-skill').hide();
@@ -1426,7 +1435,7 @@
                 }
                 break;
               default:
-                throw "Invalid addon type " + addon.type;
+                throw new Error("Invalid addon type " + addon.type);
             }
           }
         } else {
@@ -1456,7 +1465,7 @@
             } else if (thing_to_remove instanceof GenericAddon) {
               thing_to_remove.setData(null);
             } else {
-              throw "Unknown thing to remove " + thing_to_remove;
+              throw new Error("Unknown thing to remove " + thing_to_remove);
             }
           }
         }
@@ -1501,12 +1510,11 @@
         this.removeShip(this.ships[0]);
       }
       if (this.ships.length > 0) {
-        throw "Ships not emptied";
+        throw new Error("Ships not emptied");
       }
       data = {
         iterations: 0,
         max_points: max_points,
-        allowed_sources: allowed_sources,
         max_iterations: max_iterations,
         keep_running: true,
         allowed_sources: allowed_sources != null ? allowed_sources : exportObj.expansions
@@ -1596,7 +1604,7 @@
       this.teardownUI();
       idx = this.builder.ships.indexOf(this);
       if (idx < 0) {
-        throw "Ship not registered with builder";
+        throw new Error("Ship not registered with builder");
       }
       this.builder.ships.splice(idx, 1);
       return cb();
@@ -1605,7 +1613,7 @@
     Ship.prototype.copyFrom = function(other) {
       var i, other_conferred_addon, other_conferred_addons, other_upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
       if (other === this) {
-        throw "Cannot copy from self";
+        throw new Error("Cannot copy from self");
       }
       if (!((other.pilot != null) && (other.data != null) && !other.pilot.unique)) {
         return;
@@ -1739,7 +1747,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1266
+                        lineno: 1273
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1808,7 +1816,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1289
+                  lineno: 1296
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1861,14 +1869,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1311
+              lineno: 1318
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1313
+              lineno: 1320
             }));
           }
           _ref1 = _this.modifications;
@@ -1876,7 +1884,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1315
+                lineno: 1322
               }));
             }
           }
@@ -2303,7 +2311,7 @@
               if (conferred_addon instanceof addon_cls) {
                 conferred_addon.setById(addon_id);
               } else {
-                throw "Expected addon class " + addon_cls.constructor.name + " for conferred addon at index " + i + " but " + conferred_addon.constructor.name + " is there";
+                throw new Error("Expected addon class " + addon_cls.constructor.name + " for conferred addon at index " + i + " but " + conferred_addon.constructor.name + " is there");
               }
             }
           }
@@ -2383,6 +2391,31 @@
       return this.updateSelections();
     };
 
+    Ship.prototype.checkUnreleasedContent = function() {
+      var modification, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+      if ((this.pilot != null) && !exportObj.isReleased(this.pilot)) {
+        return true;
+      }
+      if ((((_ref = this.title) != null ? _ref.data : void 0) != null) && !exportObj.isReleased(this.title.data)) {
+        return true;
+      }
+      _ref1 = this.modifications;
+      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+        modification = _ref1[_i];
+        if (((modification != null ? modification.data : void 0) != null) && !exportObj.isReleased(modification.data)) {
+          return true;
+        }
+      }
+      _ref2 = this.upgrades;
+      for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+        upgrade = _ref2[_j];
+        if (((upgrade != null ? upgrade.data : void 0) != null) && !exportObj.isReleased(upgrade.data)) {
+          return true;
+        }
+      }
+      return false;
+    };
+
     return Ship;
 
   })();
@@ -2416,7 +2449,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1699
+                  lineno: 1727
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2492,7 +2525,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1729
+                    lineno: 1757
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2514,7 +2547,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1732
+                      lineno: 1760
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2555,7 +2588,7 @@
           } else if (addon instanceof exportObj.Modification) {
             this.ship.modifications.push(addon);
           } else {
-            throw "Unexpected addon type for addon " + addon;
+            throw new Error("Unexpected addon type for addon " + addon);
           }
           _results.push(this.conferredAddons.push(addon));
         }
@@ -2579,7 +2612,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1757
+              lineno: 1785
             }));
           }
           __iced_deferrals._fulfill();
@@ -2595,7 +2628,7 @@
             } else if (addon instanceof exportObj.Modification) {
               _this.ship.modifications.removeItem(addon);
             } else {
-              throw "Unexpected addon type for addon " + addon;
+              throw new Error("Unexpected addon type for addon " + addon);
             }
           }
           return _this.conferredAddons = [];

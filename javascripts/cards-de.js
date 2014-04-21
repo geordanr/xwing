@@ -73,7 +73,8 @@
       titlePlaceholder: "kein Titel",
       upgradeHeader: function(translator, language, slot) {
         return "" + (translator(language, 'slot', slot)) + " Upgrade";
-      }
+      },
+      unreleased: "unveröffentlichte"
     },
     byCSSSelector: {
       '.translate.sort-cards-by': 'Sortiere Karten per',
