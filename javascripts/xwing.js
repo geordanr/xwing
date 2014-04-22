@@ -889,7 +889,7 @@
     };
 
     SquadBuilder.prototype.getAvailablePilotsForShipIncluding = function(ship, include_pilot, term) {
-      var pilot, pilot_name, result_pilot, result_pilots_by_ship, results, unclaimed_faction_pilots, _i, _j, _len, _len1, _ref, _ref1;
+      var pilot, pilot_name, unclaimed_faction_pilots;
       if (term == null) {
         term = '';
       }
@@ -908,12 +908,11 @@
       if ((include_pilot != null) && (include_pilot.unique != null) && this.matcher(include_pilot.name, term)) {
         unclaimed_faction_pilots.push(include_pilot);
       }
-      result_pilots_by_ship = {};
-      _ref = (function() {
-        var _j, _len, _results;
+      return ((function() {
+        var _i, _len, _results;
         _results = [];
-        for (_j = 0, _len = unclaimed_faction_pilots.length; _j < _len; _j++) {
-          pilot = unclaimed_faction_pilots[_j];
+        for (_i = 0, _len = unclaimed_faction_pilots.length; _i < _len; _i++) {
+          pilot = unclaimed_faction_pilots[_i];
           _results.push({
             id: pilot.id,
             text: "" + pilot.name + " (" + pilot.points + ")",
@@ -922,24 +921,7 @@
           });
         }
         return _results;
-      })();
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        result_pilot = _ref[_i];
-        if (!(result_pilot.ship in result_pilots_by_ship)) {
-          result_pilots_by_ship[result_pilot.ship] = [];
-        }
-        result_pilots_by_ship[result_pilot.ship].push(result_pilot);
-      }
-      results = [];
-      _ref1 = Object.keys(result_pilots_by_ship).sort();
-      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-        ship = _ref1[_j];
-        results.push({
-          text: ship,
-          children: result_pilots_by_ship[ship].sort(exportObj.sortHelper)
-        });
-      }
-      return results;
+      })()).sort(exportObj.sortHelper);
     };
 
     SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, term) {
@@ -1341,7 +1323,7 @@
     };
 
     SquadBuilder.prototype._randomizerLoopBody = function(data) {
-      var addon, available_modifications, available_pilots, available_titles, available_upgrades, idx, modification, new_ship, pilot, removable_things, ship, ship_group, thing_to_remove, title, unused_addons, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+      var addon, available_modifications, available_pilots, available_ships, available_titles, available_upgrades, idx, modification, new_ship, pilot, removable_things, ship, ship_type, thing_to_remove, title, unused_addons, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
       if (data.keep_running && data.iterations < data.max_iterations) {
         data.iterations++;
         if (this.total_points === data.max_points) {
@@ -1371,9 +1353,10 @@
           }
           idx = $.randomInt(1 + unused_addons.length);
           if (idx === 0) {
-            available_pilots = this.getAvailablePilotsForShipIncluding();
-            ship_group = available_pilots[$.randomInt(available_pilots.length)];
-            pilot = ship_group.children[$.randomInt(ship_group.children.length)];
+            available_ships = this.getAvailableShipsMatching();
+            ship_type = available_ships[$.randomInt(available_ships.length)].text;
+            available_pilots = this.getAvailablePilotsForShipIncluding(ship_type);
+            pilot = available_pilots[$.randomInt(available_pilots.length)];
             if (exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)) {
               new_ship = this.addShip();
               new_ship.setPilotById(pilot.id);
@@ -1667,7 +1650,7 @@
       if (ship_type !== ((_ref = this.pilot) != null ? _ref.ship : void 0)) {
         this.setPilot(((function() {
           var _i, _len, _ref1, _results;
-          _ref1 = this.builder.getAvailablePilotsForShipIncluding(ship_type)[0].children;
+          _ref1 = this.builder.getAvailablePilotsForShipIncluding(ship_type);
           _results = [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             result = _ref1[_i];
@@ -1745,7 +1728,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1271
+                        lineno: 1262
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1814,7 +1797,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1294
+                  lineno: 1285
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1867,14 +1850,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1316
+              lineno: 1307
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1318
+              lineno: 1309
             }));
           }
           _ref1 = _this.modifications;
@@ -1882,7 +1865,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1320
+                lineno: 1311
               }));
             }
           }
@@ -2447,7 +2430,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1725
+                  lineno: 1716
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2523,7 +2506,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1755
+                    lineno: 1746
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2545,7 +2528,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1758
+                      lineno: 1749
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2610,7 +2593,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1783
+              lineno: 1774
             }));
           }
           __iced_deferrals._fulfill();
