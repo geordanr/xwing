@@ -75,6 +75,7 @@ class exportObj.SquadBuilder
             sources: null
             points: 100
         @total_points = 0
+        @isEpic = false
 
         @backend = null
         @current_squad = {}
@@ -134,8 +135,17 @@ class exportObj.SquadBuilder
                     </div>
                 </div>
                 <div class="span3 points-display-container">
-                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100"> <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>
-                    <span class="unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
+                    Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
+                    <select class="game-type-selector">
+                        <option value="standard">Standard</option>
+                        <option value="epic">Epic</option>
+                        <option value="team-epic">Team Epic</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <span class="points-remaining-container">(<span class="points-remaining"></span> left)</span>
+                    <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
+                    <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
+                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
                 </div>
                 <div class="span6 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -296,12 +306,18 @@ class exportObj.SquadBuilder
         @squad_name_input.closest('div').hide()
         @points_container = $ @status_container.find('div.points-display-container')
         @total_points_span = $ @points_container.find('.total-points')
+        @game_type_selector = $ @status_container.find('.game-type-selector')
+        @game_type_selector.change (e) =>
+            @onGameTypeChanged @game_type_selector.val()
         @desired_points_input = $ @points_container.find('.desired-points')
         @desired_points_input.change (e) =>
-            @onPointsUpdated $.noop
+            @game_type_selector.val 'custom'
+            @onGameTypeChanged 'custom'
         @points_remaining_span = $ @points_container.find('.points-remaining')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
+        @epic_content_used_container = $ @points_container.find('.epic-content-used')
+        @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -615,19 +631,53 @@ class exportObj.SquadBuilder
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
-    onPointsUpdated: (cb) =>
+    onGameTypeChanged: (gametype, cb=$.noop) =>
+        switch gametype
+            when 'standard'
+                @isEpic = false
+                @desired_points_input.val 100
+            when 'epic'
+                @isEpic = true
+                @desired_points_input.val 300
+            when 'team-epic'
+                @isEpic = true
+                @desired_points_input.val 200
+            when 'custom'
+                @isEpic = false
+        @onPointsUpdated cb
+
+    onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
         unreleased_content_used = false
+        epic_content_used = false
         for ship, i in @ships
             ship.validate()
             @total_points += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
+            ship_uses_epic_content = ship.checkEpicContent()
+            epic_content_used = ship_uses_epic_content if ship_uses_epic_content
         @total_points_span.text @total_points
         points_left = parseInt(@desired_points_input.val()) - @total_points
         @points_remaining_span.text points_left
         @points_remaining_container.toggleClass 'red', (points_left < 0)
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
+        @epic_content_used_container.toggleClass 'hidden', (@isEpic or not epic_content_used)
+
+        # Warn if equipping illegal upgrades in Epic play
+        @illegal_epic_upgrades_container.toggleClass 'hidden', true
+        if @isEpic
+            illegal_for_epic = false
+            for ship, i in @ships
+                if ship?.data?.huge?
+                    for upgrade in ship.upgrades
+                        if upgrade?.data?.epic_restriction_func?
+                            unless upgrade.data.epic_restriction_func ship.data
+                                illegal_for_epic = true
+                                break
+                        break if illegal_for_epic
+                break if illegal_for_epic
+            @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
@@ -1692,6 +1742,23 @@ class Ship
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
                 #console.log "#{upgrade.data.name} is unreleased"
+                return true
+
+        false
+
+    checkEpicContent: ->
+        if @pilot? and @pilot.epic?
+            return true
+
+        if @title?.data?.epic?
+            return true
+
+        for modification in @modifications
+            if modification?.data?.epic?
+                return true
+
+        for upgrade in @upgrades
+            if upgrade?.data?.epic?
                 return true
 
         false

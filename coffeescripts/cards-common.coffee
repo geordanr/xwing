@@ -1735,6 +1735,8 @@ exportObj.basicCardData = ->
             slot: "Crew"
             sources: [ "Slave I Expansion Pack", ]
             points: 5
+            epic_restriction_func: (ship) ->
+                not (ship.huge ? false)
         }
         {
             name: "Ion Cannon"
@@ -1824,6 +1826,8 @@ exportObj.basicCardData = ->
             slot: "Crew"
             sources: [ "Millennium Falcon Expansion Pack", ]
             points: 7
+            epic_restriction_func: (ship) ->
+                not (ship.huge ? false)
         }
         {
             name: "Nien Nunb"
@@ -1961,6 +1965,8 @@ exportObj.basicCardData = ->
             slot: "Crew"
             sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
+            epic_restriction_func: (ship) ->
+                not (ship.huge ? false)
         }
         {
             name: "Opportunist"

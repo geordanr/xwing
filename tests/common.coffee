@@ -14,7 +14,7 @@ exports.setup = ->
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
 
-
+# These fat arrows are necessary, despite what Coffeelint says
 exports.selectFirstMatch = (select2_selector, search_text) =>
     exports.selectNthMatch select2_selector, 1, search_text
 
@@ -175,6 +175,14 @@ exports.assertInCardBrowserDisplay = (test, text) ->
     casper.then ->
         test.assertSelectorHasText '.card-viewer-container', text, "Text '#{text}' in card browser info display"
 
+exports.setGameType = (builder_selector, gametype) ->
+    casper.then ->
+        @log("=== Setting game type to #{gametype}", "debug")
+    casper.thenEvaluate (sel, gtsel, gt) ->
+        $("#{sel} #{gtsel}").val(gt)
+        $("#{sel} #{gtsel}").change()
+    , builder_selector, exports.selectorForGameTypeDropdown, gametype
+
 # Selectors
 
 exports.selectorForShipIndex = (ship_idx) ->
@@ -196,3 +204,8 @@ exports.selectorForCloneShip = (ship_idx) ->
 exports.selectorForShipDropdown = '.select2-container.ship-selector-container'
 
 exports.selectorForPilotDropdown = '.select2-container.pilot-selector-container'
+
+exports.selectorForGameTypeDropdown = '.game-type-selector'
+
+exports.selectorForEpicWarning = '.epic-content-used'
+exports.selectorForIllegalEpicWarning = '.illegal-epic-upgrades'
