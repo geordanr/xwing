@@ -354,6 +354,8 @@ exportObj.cardLoaders.English = () ->
             text: """After you receive a stress token from your ship, you may assign a focus token to ???"""
         "Jan Ors":
             text: """This card has not yet been revealed."""
+        "Toryn Farr":
+            text: """<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
 
     modification_translations =
         "Stealth Device":
@@ -394,5 +396,7 @@ exportObj.cardLoaders.English = () ->
             text: """Your upgrade bar gains the %CREW% upgrade icon."""
         "Tantive IV":
             text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+        "Bright Hope":
+            text: """A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
