@@ -769,6 +769,9 @@
       },
       "Jan Ors": {
         text: "Esta carta no ha sido publicada."
+      },
+      "Toryn Farr": {
+        text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
       }
     };
     modification_translations = {
@@ -849,6 +852,10 @@
       "Tantive IV": {
         text: "Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon.",
         ship: "Corbeta CR90 (Proa)"
+      },
+      "Bright Hope": {
+        text: "A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1).",
+        ship: 'Transporte mediano GR-75'
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
