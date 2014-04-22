@@ -9,7 +9,7 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        casper.die()
+        #casper.die()
 
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
@@ -193,6 +193,6 @@ exports.selectorForRemoveShip = (ship_idx) ->
 exports.selectorForCloneShip = (ship_idx) ->
     "#{exports.selectorForShipIndex(ship_idx)} .copy-pilot"
 
-exports.selectorForShipDropdown = '.ship-selector-container'
+exports.selectorForShipDropdown = '.select2-container.ship-selector-container'
 
-exports.selectorForPilotDropdown = '.pilot-selector-container'
+exports.selectorForPilotDropdown = '.select2-container.pilot-selector-container'

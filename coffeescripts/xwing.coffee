@@ -810,17 +810,7 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             unclaimed_faction_pilots.push include_pilot
-        result_pilots_by_ship = {}
-        for result_pilot in ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots)
-            if result_pilot.ship not of result_pilots_by_ship
-                result_pilots_by_ship[result_pilot.ship] = []
-            result_pilots_by_ship[result_pilot.ship].push result_pilot
-        results = []
-        for ship in Object.keys(result_pilots_by_ship).sort()
-            results.push
-                text: ship
-                children: result_pilots_by_ship[ship].sort exportObj.sortHelper
-        results
+        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, term='') ->
         # Returns data formatted for Select2
@@ -1060,9 +1050,10 @@ class exportObj.SquadBuilder
                 if idx == 0
                     # Add random ship
                     #console.log "Add ship"
-                    available_pilots = @getAvailablePilotsForShipIncluding()
-                    ship_group = available_pilots[$.randomInt available_pilots.length]
-                    pilot = ship_group.children[$.randomInt ship_group.children.length]
+                    available_ships = @getAvailableShipsMatching()
+                    ship_type = available_ships[$.randomInt available_ships.length].text
+                    available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
+                    pilot = available_pilots[$.randomInt available_pilots.length]
                     if exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
                         new_ship = @addShip()
                         new_ship.setPilotById pilot.id
@@ -1227,7 +1218,7 @@ class Ship
         @pilot_selector.data('select2').container.show()
         if ship_type != @pilot?.ship
             # Ship changed; select first non-unique
-            @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type)[0].children when not exportObj.pilotsById[result.id].unique)[0]
+            @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
 
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)
