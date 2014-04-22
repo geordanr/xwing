@@ -74,7 +74,8 @@
       upgradeHeader: function(translator, language, slot) {
         return "" + (translator(language, 'slot', slot)) + " Upgrade";
       },
-      unreleased: "unveröffentlichte"
+      unreleased: "unveröffentlichte",
+      epic: "epic"
     },
     byCSSSelector: {
       '.translate.sort-cards-by': 'Sortiere Karten per',
