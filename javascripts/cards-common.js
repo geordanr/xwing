@@ -1175,7 +1175,11 @@
           id: 21,
           slot: "Crew",
           sources: ["Slave I Expansion Pack"],
-          points: 5
+          points: 5,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Ion Cannon",
           id: 22,
@@ -1246,7 +1250,11 @@
           faction: "Rebel Alliance",
           slot: "Crew",
           sources: ["Millennium Falcon Expansion Pack"],
-          points: 7
+          points: 7,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Nien Nunb",
           id: 32,
@@ -1376,7 +1384,11 @@
           id: 48,
           slot: "Crew",
           sources: ["Lambda-Class Shuttle Expansion Pack"],
-          points: 3
+          points: 3,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Opportunist",
           id: 49,

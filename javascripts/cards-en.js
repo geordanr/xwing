@@ -74,7 +74,8 @@
       upgradeHeader: function(translator, language, slot) {
         return "" + (translator(language, 'slot', slot)) + " Upgrade";
       },
-      unreleased: "unreleased"
+      unreleased: "unreleased",
+      epic: "epic"
     },
     byCSSSelector: {
       '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by',
