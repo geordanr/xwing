@@ -68,6 +68,10 @@ exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
     casper.then ->
         test.assertSelectorHasText "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .points-display-container", points, "Ship in slot #{ship_idx} is worth #{points} points"
 
+exports.assertPointsRemaining = (test, builder_selector, remaining) ->
+    casper.then ->
+        test.assertSelectorHasText "#{builder_selector} #{exports.selectorForPointsRemaining}", remaining, "List has #{remaining} points available"
+
 exports.waitForStartup = (builder_selector, url="index.html") ->
     casper.start url, ->
         @viewport(1280, 1024)
@@ -183,6 +187,10 @@ exports.setGameType = (builder_selector, gametype) ->
         $("#{sel} #{gtsel}").change()
     , builder_selector, exports.selectorForGameTypeDropdown, gametype
 
+exports.assertGameTypeIs = (test, builder_selector, gametype) ->
+    casper.then ->
+        test.assertFieldCSS("#{builder_selector} #{exports.selectorForGameTypeDropdown}", gametype)
+
 # Selectors
 
 exports.selectorForShipIndex = (ship_idx) ->
@@ -209,3 +217,5 @@ exports.selectorForGameTypeDropdown = '.game-type-selector'
 
 exports.selectorForEpicWarning = '.epic-content-used'
 exports.selectorForIllegalEpicWarning = '.illegal-epic-upgrades'
+
+exports.selectorForPointsRemaining = '.points-remaining-container .points-remaining'

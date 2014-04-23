@@ -736,8 +736,17 @@ class exportObj.SquadBuilder
     serialize: ->
         #( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
-        serialization_version = 2
-        """v#{serialization_version}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
+        serialization_version = 3
+        game_type_abbrev = switch @game_type_selector.val()
+            when 'standard'
+                's'
+            when 'epic'
+                'e'
+            when 'team-epic'
+                't'
+            when 'custom'
+                "c=#{$.trim @desired_points_input.val()}"
+        """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
 
     loadFromSerialized: (serialized) ->
         @suppress_automatic_new_ship = true
@@ -748,10 +757,34 @@ class exportObj.SquadBuilder
         matches = re.exec serialized
         if matches?
             # versioned
-            for serialized_ship in matches[2].split(';')
-                unless serialized_ship == ''
-                    new_ship = @addShip()
-                    new_ship.fromSerialized parseInt(matches[1]), serialized_ship
+            version = parseInt matches[1]
+            switch version
+                when 3
+                    # parse out game type
+                    [ game_type_abbrev, serialized_ships ] = matches[2].split('!')
+                    switch game_type_abbrev
+                        when 's'
+                            @game_type_selector.val 'standard'
+                            @game_type_selector.change()
+                        when 'e'
+                            @game_type_selector.val 'epic'
+                            @game_type_selector.change()
+                        when 't'
+                            @game_type_selector.val 'team-epic'
+                            @game_type_selector.change()
+                        else
+                            @game_type_selector.val 'custom'
+                            @desired_points_input.val parseInt(game_type_abbrev.split('=')[1])
+                            @desired_points_input.change()
+                    for serialized_ship in serialized_ships.split(';')
+                        unless serialized_ship == ''
+                            new_ship = @addShip()
+                            new_ship.fromSerialized version, serialized_ship
+                when 2
+                    for serialized_ship in matches[2].split(';')
+                        unless serialized_ship == ''
+                            new_ship = @addShip()
+                            new_ship.fromSerialized version, serialized_ship
         else
             # v1 (unversioned)
             for serialized_ship in serialized.split(';')
@@ -1649,7 +1682,7 @@ class Ship
                 modification_id = parseInt modification_id
                 @modifications[0].setById modification_id if modification_id >= 0
 
-            when 2
+            when 2, 3
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:TITLEADDONTYPE1.TITLEADDONID1,TITLEADDONTYPE2.TITLEADDONID2
                 [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)

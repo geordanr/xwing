@@ -60,6 +60,10 @@ Spanish translations courtesy [evil_wins Solo](http://boardgamegeek.com/user/seb
 CHANGELOG
 =========
 
+23 Apr 2014
+-----------
+* Add support for Epic play rules.  Squads saved in previous versions will not remember their game mode; re-saving them should fix it.
+
 13 Apr 2014
 -----------
 * Spanish translations provided by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums.
