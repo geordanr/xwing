@@ -763,9 +763,21 @@
     };
 
     SquadBuilder.prototype.serialize = function() {
-      var serialization_version, ship;
-      serialization_version = 2;
-      return "v" + serialization_version + "!" + (((function() {
+      var game_type_abbrev, serialization_version, ship;
+      serialization_version = 3;
+      game_type_abbrev = (function() {
+        switch (this.game_type_selector.val()) {
+          case 'standard':
+            return 's';
+          case 'epic':
+            return 'e';
+          case 'team-epic':
+            return 't';
+          case 'custom':
+            return "c=" + ($.trim(this.desired_points_input.val()));
+        }
+      }).call(this);
+      return "v" + serialization_version + "!" + game_type_abbrev + "!" + (((function() {
         var _i, _len, _ref, _results;
         _ref = this.ships;
         _results = [];
@@ -780,24 +792,57 @@
     };
 
     SquadBuilder.prototype.loadFromSerialized = function(serialized) {
-      var matches, new_ship, re, serialized_ship, _i, _j, _len, _len1, _ref, _ref1;
+      var game_type_abbrev, matches, new_ship, re, serialized_ship, serialized_ships, version, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3;
       this.suppress_automatic_new_ship = true;
       this.removeAllShips();
       re = /^v(\d+)!(.*)/;
       matches = re.exec(serialized);
       if (matches != null) {
-        _ref = matches[2].split(';');
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          serialized_ship = _ref[_i];
-          if (serialized_ship !== '') {
-            new_ship = this.addShip();
-            new_ship.fromSerialized(parseInt(matches[1]), serialized_ship);
-          }
+        version = parseInt(matches[1]);
+        switch (version) {
+          case 3:
+            _ref = matches[2].split('!'), game_type_abbrev = _ref[0], serialized_ships = _ref[1];
+            switch (game_type_abbrev) {
+              case 's':
+                this.game_type_selector.val('standard');
+                this.game_type_selector.change();
+                break;
+              case 'e':
+                this.game_type_selector.val('epic');
+                this.game_type_selector.change();
+                break;
+              case 't':
+                this.game_type_selector.val('team-epic');
+                this.game_type_selector.change();
+                break;
+              default:
+                this.game_type_selector.val('custom');
+                this.desired_points_input.val(parseInt(game_type_abbrev.split('=')[1]));
+                this.desired_points_input.change();
+            }
+            _ref1 = serialized_ships.split(';');
+            for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+              serialized_ship = _ref1[_i];
+              if (serialized_ship !== '') {
+                new_ship = this.addShip();
+                new_ship.fromSerialized(version, serialized_ship);
+              }
+            }
+            break;
+          case 2:
+            _ref2 = matches[2].split(';');
+            for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+              serialized_ship = _ref2[_j];
+              if (serialized_ship !== '') {
+                new_ship = this.addShip();
+                new_ship.fromSerialized(version, serialized_ship);
+              }
+            }
         }
       } else {
-        _ref1 = serialized.split(';');
-        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-          serialized_ship = _ref1[_j];
+        _ref3 = serialized.split(';');
+        for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+          serialized_ship = _ref3[_k];
           if (serialized !== '') {
             new_ship = this.addShip();
             new_ship.fromSerialized(1, serialized_ship);
@@ -911,7 +956,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 839
+            lineno: 872
           }));
           __iced_deferrals._fulfill();
         });
@@ -924,7 +969,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 840
+              lineno: 873
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1798,7 +1843,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1312
+                        lineno: 1345
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1867,7 +1912,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1335
+                  lineno: 1368
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1920,14 +1965,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1357
+              lineno: 1390
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1359
+              lineno: 1392
             }));
           }
           _ref1 = _this.modifications;
@@ -1935,7 +1980,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1361
+                lineno: 1394
               }));
             }
           }
@@ -2333,6 +2378,7 @@
           }
           break;
         case 2:
+        case 3:
           _ref3 = serialized.split(':'), pilot_id = _ref3[0], upgrade_ids = _ref3[1], title_id = _ref3[2], modification_id = _ref3[3], conferredaddon_pairs = _ref3[4];
           this.setPilotById(parseInt(pilot_id));
           _ref4 = upgrade_ids.split(',');
@@ -2525,7 +2571,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1783
+                  lineno: 1816
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2601,7 +2647,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1813
+                    lineno: 1846
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2623,7 +2669,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1816
+                      lineno: 1849
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2688,7 +2734,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1841
+              lineno: 1874
             }));
           }
           __iced_deferrals._fulfill();
