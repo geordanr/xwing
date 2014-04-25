@@ -19,12 +19,19 @@ casper.test.begin "Kyle and Jan crew uniqueness", (test) ->
                 null
             ]
         }
+        {
+            ship: 'HWK-290'
+            pilot: 'Rebel Operative'
+            upgrades: [
+            ]
+        }
     ])
 
     # Can't add Kyle or Jan in their own ships
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForPilotDropdown}", 'Kyle Katarn')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForPilotDropdown}", 'Jan Ors')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Kyle Katarn')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Jan Ors')
 
+    common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
 
     common.createList('#rebel-builder', [

@@ -355,6 +355,9 @@ input[type=number] {
   width: 100%;
   font-family: EurostileStandard; }
 
-.unreleased-content-used {
+.content-warning {
   color: white;
   font-size: 0.75em; }
+
+.game-type-selector {
+  width: 8em; }

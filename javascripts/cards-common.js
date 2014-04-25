@@ -776,6 +776,7 @@
         }, {
           name: "GR-75 Medium Transport",
           id: 63,
+          epic: true,
           ship: "GR-75 Medium Transport",
           sources: ["Rebel Transport Expansion Pack"],
           skill: 3,
@@ -920,6 +921,7 @@
         }, {
           name: "CR90 Corvette (Fore)",
           id: 80,
+          epic: true,
           ship: "CR90 Corvette (Fore)",
           sources: ["Tantive IV Expansion Pack"],
           skill: 4,
@@ -928,6 +930,7 @@
         }, {
           name: "CR90 Corvette (Aft)",
           id: 81,
+          epic: true,
           ship: "CR90 Corvette (Aft)",
           sources: ["Tantive IV Expansion Pack"],
           skill: 4,
@@ -1172,7 +1175,11 @@
           id: 21,
           slot: "Crew",
           sources: ["Slave I Expansion Pack"],
-          points: 5
+          points: 5,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Ion Cannon",
           id: 22,
@@ -1243,7 +1250,11 @@
           faction: "Rebel Alliance",
           slot: "Crew",
           sources: ["Millennium Falcon Expansion Pack"],
-          points: 7
+          points: 7,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Nien Nunb",
           id: 32,
@@ -1373,7 +1384,11 @@
           id: 48,
           slot: "Crew",
           sources: ["Lambda-Class Shuttle Expansion Pack"],
-          points: 3
+          points: 3,
+          epic_restriction_func: function(ship) {
+            var _ref;
+            return !((_ref = ship.huge) != null ? _ref : false);
+          }
         }, {
           name: "Opportunist",
           id: 49,
@@ -1589,6 +1604,18 @@
           sources: ["Rebel Aces Expansion Pack"],
           points: 99,
           faction: "Rebel Alliance"
+        }, {
+          name: "Toryn Farr",
+          id: 76,
+          unique: true,
+          slot: "Crew",
+          sources: ["Rebel Transport Expansion Pack"],
+          points: 6,
+          faction: "Rebel Alliance",
+          restriction_func: function(ship) {
+            var _ref;
+            return (_ref = ship.data.huge) != null ? _ref : false;
+          }
         }
       ],
       modificationsById: [
@@ -1768,6 +1795,17 @@
               slot: "Team"
             }
           ]
+        }, {
+          name: "Bright Hope",
+          id: 10,
+          energy: "+2",
+          unique: true,
+          sources: ["Rebel Transport Expansion Pack"],
+          points: 5,
+          ship: "GR-75 Medium Transport",
+          modifier_func: function(stats) {
+            return stats.energy += 2;
+          }
         }
       ]
     };
@@ -1896,6 +1934,19 @@
     for (modification_name in _ref8) {
       modification = _ref8[modification_name];
       exportObj.fixIcons(modification);
+      if (modification.huge != null) {
+        if (modification.restriction_func == null) {
+          modification.restriction_func = function(ship) {
+            var _ref9;
+            return (_ref9 = ship.data.huge) != null ? _ref9 : false;
+          };
+        }
+      } else {
+        modification.restriction_func = function(ship) {
+          var _ref9;
+          return !((_ref9 = ship.data.huge) != null ? _ref9 : false);
+        };
+      }
       exportObj.modificationsById[modification.id] = modification;
       exportObj.modificationsByLocalizedName[modification.name] = modification;
       _ref9 = modification.sources;

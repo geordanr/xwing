@@ -9,12 +9,12 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        casper.die()
+        #casper.die()
 
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
 
-
+# These fat arrows are necessary, despite what Coffeelint says
 exports.selectFirstMatch = (select2_selector, search_text) =>
     exports.selectNthMatch select2_selector, 1, search_text
 
@@ -67,6 +67,10 @@ exports.assertTotalPoints = (test, builder_selector, points) ->
 exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
     casper.then ->
         test.assertSelectorHasText "#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} .points-display-container", points, "Ship in slot #{ship_idx} is worth #{points} points"
+
+exports.assertPointsRemaining = (test, builder_selector, remaining) ->
+    casper.then ->
+        test.assertSelectorHasText "#{builder_selector} #{exports.selectorForPointsRemaining}", remaining, "List has #{remaining} points available"
 
 exports.waitForStartup = (builder_selector, url="index.html") ->
     casper.start url, ->
@@ -175,6 +179,18 @@ exports.assertInCardBrowserDisplay = (test, text) ->
     casper.then ->
         test.assertSelectorHasText '.card-viewer-container', text, "Text '#{text}' in card browser info display"
 
+exports.setGameType = (builder_selector, gametype) ->
+    casper.then ->
+        @log("=== Setting game type to #{gametype}", "debug")
+    casper.thenEvaluate (sel, gtsel, gt) ->
+        $("#{sel} #{gtsel}").val(gt)
+        $("#{sel} #{gtsel}").change()
+    , builder_selector, exports.selectorForGameTypeDropdown, gametype
+
+exports.assertGameTypeIs = (test, builder_selector, gametype) ->
+    casper.then ->
+        test.assertFieldCSS("#{builder_selector} #{exports.selectorForGameTypeDropdown}", gametype)
+
 # Selectors
 
 exports.selectorForShipIndex = (ship_idx) ->
@@ -193,6 +209,13 @@ exports.selectorForRemoveShip = (ship_idx) ->
 exports.selectorForCloneShip = (ship_idx) ->
     "#{exports.selectorForShipIndex(ship_idx)} .copy-pilot"
 
-exports.selectorForShipDropdown = '.ship-selector-container'
+exports.selectorForShipDropdown = '.select2-container.ship-selector-container'
 
-exports.selectorForPilotDropdown = '.pilot-selector-container'
+exports.selectorForPilotDropdown = '.select2-container.pilot-selector-container'
+
+exports.selectorForGameTypeDropdown = '.game-type-selector'
+
+exports.selectorForEpicWarning = '.epic-content-used'
+exports.selectorForIllegalEpicWarning = '.illegal-epic-upgrades'
+
+exports.selectorForPointsRemaining = '.points-remaining-container .points-remaining'
