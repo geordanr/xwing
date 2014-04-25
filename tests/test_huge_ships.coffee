@@ -39,8 +39,25 @@ casper.test.begin "Huge-only crew", (test) ->
     common.removeShip("#rebel-builder", 1)
     common.removeShip("#rebel-builder", 1)
 
-    # TODO: Add test for a huge-only modification when it comes out
+    .run ->
+        test.done()
 
+casper.test.begin "Huge-only modification", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    common.addShip('#rebel-builder', 'YT-1300', 'Chewbacca')
+    common.addShip('#rebel-builder', 'A-Wing', 'Prototype Pilot')
+
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 6)}", 'Combat Retrofit')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'Combat Retrofit')
+
+    common.addUpgrade("#rebel-builder", 1, 7, "Combat Retrofit")
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 7, 'Combat Retrofit')
+
+    common.removeShip("#rebel-builder", 1)
+    common.removeShip("#rebel-builder", 1)
+    common.removeShip("#rebel-builder", 1)
 
     .run ->
         test.done()
