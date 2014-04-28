@@ -347,7 +347,7 @@
         text: "When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its %HIT% results to a %CRIT% result."
       },
       "Corran Horn": {
-        text: "At the start of the ??? you may perform ??? cannot attack ???"
+        text: "At the start of the End phase, you may perform one attack.  You cannot attack during the next round."
       },
       "Sigma Squadron Pilot": {
         name: "Sigma Squadron Pilot"
@@ -624,7 +624,7 @@
       },
       "R7 Astromech": {
         name: "R7 Astromech",
-        text: "This card has not yet been released."
+        text: "Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."
       },
       "R7-T1": {
         name: "R7-T1",

@@ -413,7 +413,7 @@
         ship: "Ala-E"
       },
       "Corran Horn": {
-        text: "Al comienzo de ??? puedes realizar ??? no puedes atacar ???",
+        text: "At the start of the End phase, you may perform one attack.  You cannot attack during the next round.",
         ship: "Ala-E"
       },
       "Sigma Squadron Pilot": {
@@ -707,7 +707,7 @@
       },
       "R7 Astromech": {
         name: "Droide Astromecánico R7",
-        text: "Esta carta no ha sido publicada."
+        text: "Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."
       },
       "R7-T1": {
         name: "R7-T1",
