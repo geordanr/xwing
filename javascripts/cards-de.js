@@ -347,7 +347,7 @@
         text: "When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its %HIT% results to a %CRIT% result."
       },
       "Corran Horn": {
-        text: "At the start of the ??? you may perform ??? cannot attack ???"
+        text: "At the start of the End phase, you may perform one attack.  You cannot attack during the next round."
       },
       "Sigma Squadron Pilot": {
         name: "Sigma Squadron Pilot"
@@ -624,7 +624,7 @@
       },
       "R7 Astromech": {
         name: "R7 Astromech",
-        text: "This card has not yet been released."
+        text: "Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."
       },
       "R7-T1": {
         name: "R7-T1",
@@ -690,6 +690,33 @@
       },
       "Toryn Farr": {
         text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
+      },
+      "R4-D6": {
+        text: "When you are hit by an attack and there are at least 3 uncanceled %HIT% results, you may choose to cancel those results until there are 2 remaining.  For each result canceled this way, receive 1 stress token."
+      },
+      "R5-P9": {
+        text: "At the end of the Combat phase, you may spend 1 of your focus tokens to recover 1 shield (up to your shield value)."
+      },
+      "WED-15 Repair Droid": {
+        text: "<strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."
+      },
+      "Carlist Rieekan": {
+        text: "At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as \"12\" until the end of the phase."
+      },
+      "Jan Dodonna": {
+        text: "When another friendly ship at Range 1 is attacking, it my change 1 of its %HIT% results to a %CRIT%."
+      },
+      "Expanded Cargo Hold": {
+        text: "Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."
+      },
+      "Backup Shield Generator": {
+        text: "At the end of each round, you may spend 1 energy to recover 1 shield (up to your shield value)."
+      },
+      "EM Emitter": {
+        text: "When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."
+      },
+      "Frequency Jammer": {
+        text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
       }
     };
     modification_translations = {
@@ -728,6 +755,9 @@
       "Advanced Cloaking Device": {
         name: "Advanced Cloaking Device",
         text: "After you perform an attack, you may perform a free cloak action."
+      },
+      "Combat Retrofit": {
+        text: "Increase your hull value by 2 and your shield value by 1."
       }
     };
     title_translations = {
@@ -766,6 +796,12 @@
       },
       "Bright Hope": {
         text: "A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."
+      },
+      "Quantum Storm": {
+        text: "At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."
+      },
+      "Dutyfree": {
+        text: "When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
