@@ -15,26 +15,26 @@
 
   exportObj.translations['Español'] = {
     action: {
-      "Barrel Roll": "Barrel Roll",
-      "Boost": "Boost",
-      "Evade": "Evade",
-      "Focus": "Focus",
-      "Target Lock": "Target Lock",
-      "Recover": "Recover",
-      "Reinforce": "Reinforce",
+      "Barrel Roll": "Tonel Volado",
+      "Boost": "Impulso",
+      "Evade": "Evadir",
+      "Focus": "Concentración",
+      "Target Lock": "Blanco Fijado",
+      "Recover": "Recuperar",
+      "Reinforce": "Reforzar",
       "Jam": "Jam",
-      "Coordinate": "Coordinate",
-      "Cloak": "Cloak"
+      "Coordinate": "Coordinar",
+      "Cloak": "Encubrir"
     },
     slot: {
       "Astromech": "Astromech",
       "Bomb": "Bomb",
-      "Cannon": "Cannon",
-      "Crew": "Crew",
-      "Elite": "Elite",
-      "Missile": "Missile",
-      "System": "System",
-      "Torpedo": "Torpedo",
+      "Cannon": "Cañón",
+      "Crew": "Tripulación",
+      "Elite": "Élite",
+      "Missile": "Misiles",
+      "System": "Sistemas",
+      "Torpedo": "Torpedos",
       "Turret": "Turret",
       "Cargo": "Cargo",
       "Hardpoint": "Hardpoint",
@@ -64,15 +64,29 @@
       "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
     },
     ui: {
-      shipSelectorPlaceholder: "Select a ship",
-      pilotSelectorPlaceholder: "Select a pilot",
+      shipSelectorPlaceholder: "Selecciona una nave",
+      pilotSelectorPlaceholder: "Selecciona un piloto",
       upgradePlaceholder: function(translator, language, slot) {
-        return "No " + (translator(language, 'slot', slot)) + " Upgrade";
+        switch (slot) {
+          case 'Elite':
+            return "Sin Talento de Élite";
+          case 'Astromech':
+            return "Sin Droide Astromecánico";
+          default:
+            return "Sin Mejora de " + (translator(language, 'slot', slot));
+        }
       },
-      modificationPlaceholder: "No Modification",
-      titlePlaceholder: "No Title",
+      modificationPlaceholder: "Sin Modificación",
+      titlePlaceholder: "Sin Título",
       upgradeHeader: function(translator, language, slot) {
-        return "" + (translator(language, 'slot', slot)) + " Upgrade";
+        switch (slot) {
+          case 'Elite':
+            return "Talento de Élite";
+          case 'Astromech':
+            return "Droide Astromecánico";
+          default:
+            return "Mejora de " + (translator(language, 'slot', slot));
+        }
       },
       unreleased: "inédito",
       epic: "epic"
@@ -86,14 +100,14 @@
       '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
     },
     singular: {
-      'pilots': 'Pilot',
-      'modifications': 'Modification',
-      'titles': 'Title'
+      'pilots': 'Piloto',
+      'modifications': 'Modificación',
+      'titles': 'Título'
     },
     types: {
-      'Pilot': 'Pilot',
-      'Modification': 'Modification',
-      'Title': 'Title'
+      'Pilot': 'Piloto',
+      'Modification': 'Modificación',
+      'Title': 'Título'
     }
   };
 
@@ -478,8 +492,8 @@
     };
     upgrade_translations = {
       "Ion Cannon Turret": {
-        name: "Ion Cannon Turret",
-        text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).<br /><br />If this attack hits the target ship, the ship suffers 1 damage and receives 1 ion token.  Then cancel all dice results."
+        name: "Torreta de cañones de Iones",
+        text: "<strong>Ataque:</strong> Ataca 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Si este ataque impacta en la nave enemiga, ésta sufre 1 punto de daño y recibe 1 ficha de Iones. Después se anulan todos los resultados de los dados."
       },
       "Proton Torpedoes": {
         name: "Torpedos de protones",
@@ -510,8 +524,8 @@
         text: "Cuando se te asigne una carta de daño boca arriba que tenga el atributo <strong>piloto</strong>, descártala inmediatamente sin resolver su efecto."
       },
       "Swarm Tactics": {
-        name: "Swarm Tactics",
-        text: "At the start of the Combat phase, choose 1 friendly ship at Range 1.<br /><br />Until the end of this phase, treat the chosen ship as it its pilot skill were equal to your pilot skill."
+        name: "Táctica de Enjambre",
+        text: "Al principio de la fase de Combate, elige 1 nave aliada que tengas a alcance 1.<br /><br />Hasta el final de esta fase se considera que el valor de Habilidad de la nave elejida es igual al tuyo."
       },
       "Squad Leader": {
         name: "Jefe de Escuadrón",
@@ -538,8 +552,8 @@
         text: "<strong>Acción:</strong> Ejecuta una maniobra blanca (%TURNLEFT% 1) o (%TURNRIGHT% 1) y recibe 1 ficha de Tensión.<br /><br />Después, si no tienes el ícono %BOOST%, lanza 2 dados de ataque y sufre todos los daños normales (%HIT%) y críticos (%CRIT%) obtenidos."
       },
       "Elusiveness": {
-        name: "Elusiveness",
-        text: "When defending, you may receive 1 stress token to choose 1 attack die.  The attacker must reroll that die.<br /><br />If you have at least 1 stress token, you cannot use this ability."
+        name: "Escurridizo",
+        text: "Cuando te defiendas en combate, puedes recibir 1 ficha de Tensión para elegir un dado de ataque. El atacante deberá volver a lanzar ese dado.<br /><br />No puedes usar esta habilidad si ya tienes una ficha de Tensión."
       },
       "Homing Missiles": {
         name: "Misiles Rastreadores",
@@ -619,8 +633,8 @@
         text: "Después de que efectúes un ataque, puedes fijar al defensor como blanco."
       },
       "Blaster Turret": {
-        name: "Blaster Turret",
-        text: "<strong>Attack (focus):</strong> Spend 1 focus token to perform this attack against 1 ship (even a ship outside your firing arc)."
+        name: "Torreta Bláster",
+        text: "<strong>Ataque (Concentración):</strong> Gasta 1 ficha de Concentración para efectuar este ataque contra una nave (aunque esté fuera de tu arco de fuego)."
       },
       "Recon Specialist": {
         name: "Especialista en Reconocimiento",
@@ -758,8 +772,8 @@
         text: "Durante la fase de Activación, trata tu habilidad de piloto como \"0\"."
       },
       "Chardaan Refit": {
-        name: "Chardaan Refit",
-        text: "This card has a negative squad point cost."
+        name: "Reajuste Chardaan",
+        text: "Esta carta tiene un valor negativo en puntos de escuadrón."
       },
       "Proton Rockets": {
         name: "Rockets de Protones",
