@@ -865,7 +865,7 @@
           ship: "E-Wing",
           sources: ["E-Wing Expansion Pack"],
           skill: 3,
-          points: 99,
+          points: 29,
           slots: ["System", "Torpedo", "Astromech"]
         }, {
           name: "Etahn A'baht",
@@ -883,7 +883,7 @@
           ship: "E-Wing",
           sources: ["E-Wing Expansion Pack"],
           skill: 8,
-          points: 99,
+          points: 35,
           slots: ["Elite", "System", "Torpedo", "Astromech"]
         }, {
           name: "Sigma Squadron Pilot",
@@ -1459,7 +1459,7 @@
           id: 59,
           slot: "Astromech",
           sources: ["E-Wing Expansion Pack"],
-          points: 99
+          points: 2
         }, {
           name: "R7-T1",
           id: 60,

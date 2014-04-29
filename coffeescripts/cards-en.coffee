@@ -180,7 +180,7 @@ exportObj.cardLoaders.English = () ->
         "Etahn A'baht":
             text: """When an enemy ship inside your firing arc at Range 1-3 is defending, the attacker may change 1 of its %HIT% results to a %CRIT% result."""
         "Corran Horn":
-            text: """At the start of the ??? you may perform ??? cannot attack ???"""
+            text: """At the start of the End phase, you may perform one attack.  You cannot attack during the next round."""
         "Unspoiled PS6 TIE Phantom Pilot":
             text: """This card has not yet been released."""
         '"Whisper"':
@@ -322,7 +322,7 @@ exportObj.cardLoaders.English = () ->
         "Flechette Torpedoes":
             text: """<strong>Attack (target lock):</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is "4" or lower."""
         "R7 Astromech":
-            text: """This card has not yet been released."""
+            text: """Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."""
         "R7-T1":
             text: """<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
         "Tactician":

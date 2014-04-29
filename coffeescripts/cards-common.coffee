@@ -1320,7 +1320,7 @@ exportObj.basicCardData = ->
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
             skill: 3
-            points: 99
+            points: 29
             slots: [
                 "System"
                 "Torpedo"
@@ -1349,7 +1349,7 @@ exportObj.basicCardData = ->
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
             skill: 8
-            points: 99
+            points: 35
             slots: [
                 "Elite"
                 "System"
@@ -2053,7 +2053,7 @@ exportObj.basicCardData = ->
             id: 59
             slot: "Astromech"
             sources: [ "E-Wing Expansion Pack", ]
-            points: 99
+            points: 2
         }
         {
             name: "R7-T1"

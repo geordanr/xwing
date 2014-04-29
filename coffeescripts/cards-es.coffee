@@ -323,7 +323,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando un enemigo dentro de tu arco de fuego a alcance 1-3 se esté defendiendo, el atacante puede cambiar uno de sus resultados %HIT% por un %CRIT%."""
             ship: "Ala-E"
         "Corran Horn":
-            text: """Al comienzo de ??? puedes realizar ??? no puedes atacar ???"""
+            text: """At the start of the End phase, you may perform one attack.  You cannot attack during the next round."""
             ship: "Ala-E"
         "Sigma Squadron Pilot":
             name: "Piloto del escuadrón Sigma"
@@ -543,7 +543,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Después de efectuar este ataque, el defensor recibe una ficha de estrés si su valor de blindaje es "4" o menos."""
         "R7 Astromech":
             name: "Droide Astromecánico R7"
-            text: """Esta carta no ha sido publicada."""
+            text: """Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."""
         "R7-T1":
             name: "R7-T1"
             text: """<strong>Acción:</strong> Escoge una nave enemiga a alcance 1-2. Si estás dentro del arco de disparo de esa nave puedes fijar blanco en ella. Después realiza una acción de impulso gratuita."""
