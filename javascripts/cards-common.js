@@ -152,7 +152,6 @@
           hull: 8,
           shields: 4,
           actions: ["Recover", "Reinforce", "Coordinate", "Jam"],
-          large: true,
           huge: true,
           maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
         },
@@ -202,7 +201,6 @@
           hull: 8,
           shields: 5,
           actions: ["Coordinate", "Target Lock"],
-          large: true,
           huge: true
         },
         "CR90 Corvette (Aft)": {
@@ -213,7 +211,6 @@
           hull: 8,
           shields: 3,
           actions: ["Reinforce", "Jam"],
-          large: true,
           huge: true
         }
       },
@@ -2048,7 +2045,7 @@
             return (_ref9 = ship.data.huge) != null ? _ref9 : false;
           };
         }
-      } else {
+      } else if (modification.restriction_func == null) {
         modification.restriction_func = function(ship) {
           var _ref9;
           return !((_ref9 = ship.data.huge) != null ? _ref9 : false);

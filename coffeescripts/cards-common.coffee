@@ -265,7 +265,6 @@ exportObj.basicCardData = ->
                 "Coordinate"
                 "Jam"
             ]
-            large: true
             huge: true
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
@@ -349,7 +348,6 @@ exportObj.basicCardData = ->
                 "Coordinate"
                 "Target Lock"
             ]
-            large: true
             huge: true
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
@@ -362,7 +360,6 @@ exportObj.basicCardData = ->
                 "Reinforce"
                 "Jam"
             ]
-            large: true
             huge: true
 
     # name field is for convenience only
@@ -2604,7 +2601,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             unless modification.restriction_func?
                 modification.restriction_func = (ship) ->
                     ship.data.huge ? false
-        else
+        else unless modification.restriction_func?
             modification.restriction_func = (ship) ->
                 not (ship.data.huge ? false)
         exportObj.modificationsById[modification.id] = modification
