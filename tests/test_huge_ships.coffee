@@ -18,7 +18,7 @@ casper.test.begin "Huge ships can not mount modifications unless allowed", (test
     common.removeShip("#rebel-builder", 1)
     common.removeShip("#rebel-builder", 1)
 
-    # TODO: Add test for a huge-only modification when it comes out
+    # TODO: Add test for a generic huge-only modification when it comes out
 
 
     .run ->
@@ -30,11 +30,12 @@ casper.test.begin "Huge-only crew", (test) ->
     common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
     common.addShip('#rebel-builder', 'YT-1300', 'Chewbacca')
 
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 3)}", 'Toryn Farr')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 4)}", 'Toryn Farr')
+    for crew in [ 'Toryn Farr', 'WED-15 Repair Droid', 'Carlist Rieekan', 'Jan Dodonna' ]
+        common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 3)}", crew)
+        common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 4)}", crew)
 
-    common.addUpgrade("#rebel-builder", 1, 1, "Toryn Farr")
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Toryn Farr')
+        common.addUpgrade("#rebel-builder", 1, 1, crew)
+        common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, crew)
 
     common.removeShip("#rebel-builder", 1)
     common.removeShip("#rebel-builder", 1)
@@ -42,7 +43,7 @@ casper.test.begin "Huge-only crew", (test) ->
     .run ->
         test.done()
 
-casper.test.begin "Huge-only modification", (test) ->
+casper.test.begin "GR-75 specific modification", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
