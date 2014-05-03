@@ -146,6 +146,8 @@ class exportObj.SquadBuilder
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
                     <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
                     <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
+                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>
+                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -318,6 +320,8 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @epic_content_used_container = $ @points_container.find('.epic-content-used')
         @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
+        @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
+        @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -664,20 +668,32 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
         @epic_content_used_container.toggleClass 'hidden', (@isEpic or not epic_content_used)
 
-        # Warn if equipping illegal upgrades in Epic play
+        # Check against Epic restrictions if applicable
         @illegal_epic_upgrades_container.toggleClass 'hidden', true
+        @too_many_small_ships_container.toggleClass 'hidden', true
+        @too_many_large_ships_container.toggleClass 'hidden', true
         if @isEpic
+            shipCountsByType = {}
             illegal_for_epic = false
             for ship, i in @ships
-                if ship?.data?.huge?
-                    for upgrade in ship.upgrades
-                        if upgrade?.data?.epic_restriction_func?
-                            unless upgrade.data.epic_restriction_func ship.data
-                                illegal_for_epic = true
-                                break
-                        break if illegal_for_epic
-                break if illegal_for_epic
+                if ship?.data?
+                    shipCountsByType[ship.data.name] ?= 0
+                    shipCountsByType[ship.data.name] += 1
+                    if ship.data.huge?
+                        for upgrade in ship.upgrades
+                            if upgrade?.data?.epic_restriction_func?
+                                unless upgrade.data.epic_restriction_func ship.data
+                                    illegal_for_epic = true
+                                    break
+                            break if illegal_for_epic
             @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
+            console.dir shipCountsByType
+            for ship_name, count of shipCountsByType
+                ship_data = exportObj.ships[ship_name]
+                if ship_data.large? and count > 6
+                    @too_many_large_ships_container.toggleClass 'hidden', false
+                else if not ship.huge? and count > 12
+                    @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it

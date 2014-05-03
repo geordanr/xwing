@@ -357,7 +357,6 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         "Toryn Farr":
             text: """<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
-        # TODO Check card formatting
         "R4-D6":
             text: """When you are hit by an attack and there are at least 3 uncanceled %HIT% results, you may choose to cancel those results until there are 2 remaining.  For each result canceled this way, receive 1 stress token."""
         "R5-P9":

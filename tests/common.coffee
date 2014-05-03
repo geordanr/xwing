@@ -219,3 +219,6 @@ exports.selectorForEpicWarning = '.epic-content-used'
 exports.selectorForIllegalEpicWarning = '.illegal-epic-upgrades'
 
 exports.selectorForPointsRemaining = '.points-remaining-container .points-remaining'
+
+exports.selectorForTooManySmallShipsWarning = '.illegal-epic-too-many-small-ships'
+exports.selectorForTooManyLargeShipsWarning = '.illegal-epic-too-many-large-ships'
