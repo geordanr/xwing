@@ -62,6 +62,10 @@ exports.assertTotalPoints = (test, builder_selector, points) ->
     casper.then ->
         test.assertSelectorHasText "#{builder_selector} .total-points", parseInt(points), "#{builder_selector} reports #{points} points used"
 
+exports.assertTotalEpicPoints = (test, builder_selector, epic_points) ->
+    casper.then ->
+        test.assertSelectorHasText "#{builder_selector} #{exports.selectorForEpicPointsUsed}", parseInt(epic_points), "#{builder_selector} reports #{epic_points} Epic Points used"
+
 # Indices passed as arguments are 1-based, to match the CSS indexing.
 # So the first ship has a ship_idx of 1.
 exports.assertShipHasPoints = (test, builder_selector, ship_idx, points) ->
@@ -222,3 +226,5 @@ exports.selectorForPointsRemaining = '.points-remaining-container .points-remain
 
 exports.selectorForTooManySmallShipsWarning = '.illegal-epic-too-many-small-ships'
 exports.selectorForTooManyLargeShipsWarning = '.illegal-epic-too-many-large-ships'
+
+exports.selectorForEpicPointsUsed = '.total-epic-points'

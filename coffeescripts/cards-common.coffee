@@ -266,6 +266,7 @@ exportObj.basicCardData = ->
                 "Jam"
             ]
             huge: true
+            epic_points: 2
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 0, 0 ]
@@ -349,6 +350,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             huge: true
+            epic_points: 1.5
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
             faction: "Rebel Alliance"
@@ -361,6 +363,7 @@ exportObj.basicCardData = ->
                 "Jam"
             ]
             huge: true
+            epic_points: 1.5
 
     # name field is for convenience only
     pilotsById: [

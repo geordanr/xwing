@@ -101,3 +101,54 @@ casper.test.begin "No more than 6 large ships of the same type", (test) ->
 
     casper.run ->
         test.done()
+
+
+casper.test.begin "Epic points are displayed only in Epic modes", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        test.assertNotVisible("#rebel-builder #{common.selectorForEpicPointsUsed}")
+    common.setGameType('#rebel-builder', 'epic')
+    casper.then ->
+        test.assertVisible("#rebel-builder #{common.selectorForEpicPointsUsed}")
+    common.setGameType('#rebel-builder', 'team-epic')
+    casper.then ->
+        test.assertVisible("#rebel-builder #{common.selectorForEpicPointsUsed}")
+    common.setGameType('#rebel-builder', 'custom')
+    casper.then ->
+        test.assertNotVisible("#rebel-builder #{common.selectorForEpicPointsUsed}")
+    common.setGameType('#rebel-builder', 'standard')
+    casper.then ->
+        test.assertNotVisible("#rebel-builder #{common.selectorForEpicPointsUsed}")
+
+
+    casper.run ->
+        test.done()
+
+
+casper.test.begin "Epic points are displayed properly", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'epic')
+    common.assertTotalEpicPoints(test, '#rebel-builder', 0)
+
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    common.assertTotalEpicPoints(test, '#rebel-builder', 2)
+
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    common.assertTotalEpicPoints(test, '#rebel-builder', 4)
+
+    common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
+    common.addShip('#rebel-builder', 'CR90 Corvette (Aft)', 'CR90 Corvette (Aft)')
+    common.assertTotalEpicPoints(test, '#rebel-builder', 7)
+
+    common.removeShip('#rebel-builder', 1)
+    common.assertTotalEpicPoints(test, '#rebel-builder', 5)
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.assertTotalEpicPoints(test, '#rebel-builder', 0)
+
+    casper.run ->
+        test.done()
