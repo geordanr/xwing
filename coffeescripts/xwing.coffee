@@ -143,9 +143,12 @@ class exportObj.SquadBuilder
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
+                    <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / 5 Epic Points</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
                     <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
                     <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
+                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>
+                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -318,6 +321,10 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @epic_content_used_container = $ @points_container.find('.epic-content-used')
         @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
+        @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
+        @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
+        @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
+        @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -648,11 +655,13 @@ class exportObj.SquadBuilder
 
     onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
+        @total_epic_points = 0
         unreleased_content_used = false
         epic_content_used = false
         for ship, i in @ships
             ship.validate()
             @total_points += ship.getPoints()
+            @total_epic_points += ship.getEpicPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
             ship_uses_epic_content = ship.checkEpicContent()
@@ -664,20 +673,36 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
         @epic_content_used_container.toggleClass 'hidden', (@isEpic or not epic_content_used)
 
-        # Warn if equipping illegal upgrades in Epic play
+        # Check against Epic restrictions if applicable
         @illegal_epic_upgrades_container.toggleClass 'hidden', true
+        @too_many_small_ships_container.toggleClass 'hidden', true
+        @too_many_large_ships_container.toggleClass 'hidden', true
+        @total_epic_points_container.toggleClass 'hidden', true
         if @isEpic
+            @total_epic_points_container.toggleClass 'hidden', false
+            @total_epic_points_span.text @total_epic_points
+            @total_epic_points_span.toggleClass 'red', (@total_epic_points > 5)
+            shipCountsByType = {}
             illegal_for_epic = false
             for ship, i in @ships
-                if ship?.data?.huge?
-                    for upgrade in ship.upgrades
-                        if upgrade?.data?.epic_restriction_func?
-                            unless upgrade.data.epic_restriction_func ship.data
-                                illegal_for_epic = true
-                                break
-                        break if illegal_for_epic
-                break if illegal_for_epic
+                if ship?.data?
+                    shipCountsByType[ship.data.name] ?= 0
+                    shipCountsByType[ship.data.name] += 1
+                    if ship.data.huge?
+                        for upgrade in ship.upgrades
+                            if upgrade?.data?.epic_restriction_func?
+                                unless upgrade.data.epic_restriction_func ship.data
+                                    illegal_for_epic = true
+                                    break
+                            break if illegal_for_epic
             @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
+            console.dir shipCountsByType
+            for ship_name, count of shipCountsByType
+                ship_data = exportObj.ships[ship_name]
+                if ship_data.large? and count > 6
+                    @too_many_large_ships_container.toggleClass 'hidden', false
+                else if not ship.huge? and count > 12
+                    @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
@@ -1410,6 +1435,9 @@ class Ship
         else
             @points_container.fadeTo 0, 0
         points
+
+    getEpicPoints: ->
+        @data?.epic_points ? 0
 
     updateSelections: ->
         if @pilot?

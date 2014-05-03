@@ -153,6 +153,7 @@
           shields: 4,
           actions: ["Recover", "Reinforce", "Coordinate", "Jam"],
           huge: true,
+          epic_points: 2,
           maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
         },
         "Z-95 Headhunter": {
@@ -201,7 +202,8 @@
           hull: 8,
           shields: 5,
           actions: ["Coordinate", "Target Lock"],
-          huge: true
+          huge: true,
+          epic_points: 1.5
         },
         "CR90 Corvette (Aft)": {
           name: "CR90 Corvette (Aft)",
@@ -211,7 +213,8 @@
           hull: 8,
           shields: 3,
           actions: ["Reinforce", "Jam"],
-          huge: true
+          huge: true,
+          epic_points: 1.5
         }
       },
       pilotsById: [
