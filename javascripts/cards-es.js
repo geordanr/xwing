@@ -438,8 +438,8 @@
         name: "Piloto del escuadrón Sombra",
         ship: "TIE Fantasma"
       },
-      "Unspoiled PS6 TIE Phantom Pilot": {
-        name: "Piloto de habilidad 6 no publicado",
+      '"Echo"': {
+        text: "When you decloak, you must use the (%BANKLEFT% 2) or (%BANKRIGHT% 2) template instead of the (%STRAIGHT% 2) template.",
         ship: "TIE Fantasma"
       },
       '"Whisper"': {

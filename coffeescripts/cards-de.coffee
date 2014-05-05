@@ -262,8 +262,9 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Sigma Squadron Pilot"
         "Shadow Squadron Pilot":
             name: "Shadow Squadron Pilot"
-        "Unspoiled PS6 TIE Phantom Pilot":
-            name: "Unspoiled PS6 TIE Phantom Pilot"
+        '"Echo"':
+            name: '"Echo"'
+            text: """When you decloak, you must use the (%BANKLEFT% 2) or (%BANKRIGHT% 2) template instead of the (%STRAIGHT% 2) template."""
         '"Whisper"':
             name: '"Whisper"'
             text: """After you perform an attack that hits, you may assign 1 focus to your ship."""
