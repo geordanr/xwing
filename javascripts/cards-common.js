@@ -192,7 +192,8 @@
           agility: 2,
           hull: 2,
           shields: 2,
-          actions: ["Focus", "Barrel Roll", "Evade", "Cloak"]
+          actions: ["Focus", "Barrel Roll", "Evade", "Cloak"],
+          maneuvers: [[0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0], [1, 2, 2, 2, 1, 0], [1, 1, 2, 1, 1, 3], [0, 0, 1, 0, 0, 3]]
         },
         "CR90 Corvette (Fore)": {
           name: "CR90 Corvette (Fore)",
@@ -899,17 +900,17 @@
           ship: "TIE Phantom",
           sources: ["TIE Phantom Expansion Pack"],
           skill: 5,
-          points: 99,
+          points: 27,
           slots: ["System", "Crew"]
         }, {
-          name: "Unspoiled PS6 TIE Phantom Pilot",
+          name: '"Echo"',
           id: 78,
           unique: true,
           ship: "TIE Phantom",
           sources: ["TIE Phantom Expansion Pack"],
           skill: 6,
-          points: 99,
-          slots: ["System", "Crew"]
+          points: 30,
+          slots: ["Elite", "System", "Crew"]
         }, {
           name: '"Whisper"',
           id: 79,
@@ -1763,7 +1764,7 @@
           name: "Advanced Cloaking Device",
           id: 9,
           sources: ["TIE Phantom Expansion Pack"],
-          points: 99,
+          points: 4,
           ship: "TIE Phantom"
         }, {
           name: "Combat Retrofit",

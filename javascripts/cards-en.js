@@ -242,8 +242,8 @@
       "Corran Horn": {
         text: "At the start of the End phase, you may perform one attack.  You cannot attack during the next round."
       },
-      "Unspoiled PS6 TIE Phantom Pilot": {
-        text: "This card has not yet been released."
+      '"Echo"': {
+        text: "When you decloak, you must use the (%BANKLEFT% 2) or (%BANKRIGHT% 2) template instead of the (%STRAIGHT% 2) template."
       },
       '"Whisper"': {
         text: "After you perform an attack that hits, you may assign 1 focus to your ship."
