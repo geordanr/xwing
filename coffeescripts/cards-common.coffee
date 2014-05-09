@@ -1477,7 +1477,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Hobbie" Kilvan'
+            name: '"Hobbie" Klivian'
             id: 84
             unique: true
             ship: "X-Wing"

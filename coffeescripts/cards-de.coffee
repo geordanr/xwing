@@ -276,7 +276,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """After you perform an attack, you may remove 1 focus, evade, or blue target lock token from the defender."""
         "Jek Porkins":
             text: """When you receive a stress token, you may remove it and roll 1 attack die.  On a %HIT% result, deal 1 facedown Damage card to this ship."""
-        '"Hobbie" Kilvan':
+        '"Hobbie" Klivian':
             text: """When you acquire or spend a target lock, you may remove 1 stress token from your ship."""
         "Tarn Mison":
             text: """When an enemy ship declares you as the target of an attack, you may acquire a target lock on that ship."""

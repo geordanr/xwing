@@ -254,7 +254,7 @@
       "Jek Porkins": {
         text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a %HIT% result, deal 1 facedown Damage card to this ship."
       },
-      '"Hobbie" Kilvan': {
+      '"Hobbie" Klivian': {
         text: "When you acquire or spend a target lock, you may remove 1 stress token from your ship."
       },
       "Tarn Mison": {

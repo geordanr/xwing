@@ -362,7 +362,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Jek Porkins":
             text: """Cuando recibas una ficha de Tensión, puedes removerla y lanzar un dado de ataque. Si el resultado es de %HIT%, asigna una carta de daño boca abajo a tu nave."""
             ship: "Ala-X"
-        '"Hobbie" Kilvan':
+        '"Hobbie" Klivian':
             text: """Cuando adquieras o gastes una ficha de fijar blanco, puedes remover una ficha de Tensión de tu nave."""
             ship: "Ala-X"
         "Tarn Mison":
