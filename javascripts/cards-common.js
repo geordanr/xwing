@@ -957,7 +957,7 @@
           points: 26,
           slots: ["Elite", "Torpedo", "Astromech"]
         }, {
-          name: '"Hobbie" Kilvan',
+          name: '"Hobbie" Klivian',
           id: 84,
           unique: true,
           ship: "X-Wing",
