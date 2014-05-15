@@ -609,7 +609,7 @@
       },
       "Decoy": {
         name: "Decoy",
-        text: "This card has not yet been released."
+        text: "At the start of the Combat phase, you may choose 1 friendly ship at Range 1-2.  Exchange your pilot skill with that ship's pilot skill until the end of the phase."
       },
       "Outmaneuver": {
         name: "Outmaneuver",
@@ -633,7 +633,7 @@
       },
       "Tactician": {
         name: "Tactician",
-        text: "This card has not yet been released."
+        text: "After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."
       },
       "R2-D2 (Crew)": {
         name: "R2-D2 (Crew)",
@@ -717,7 +717,7 @@
         text: "When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."
       },
       "Frequency Jammer": {
-        text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
+        text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
       }
     };
     modification_translations = {

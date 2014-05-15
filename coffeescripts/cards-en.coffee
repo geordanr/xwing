@@ -314,7 +314,7 @@ exportObj.cardLoaders.English = () ->
         "Wingman":
             text: """At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."""
         "Decoy":
-            text: """This card has not yet been released."""
+            text: """At the start of the Combat phase, you may choose 1 friendly ship at Range 1-2.  Exchange your pilot skill with that ship's pilot skill until the end of the phase."""
         "Outmaneuver":
             text: """When attacking a ship inside your firing arc, if you are not inside that ship's firing arc, reduce its agility value by 1 (to a minimum of 0)."""
         "Predator":
@@ -326,7 +326,7 @@ exportObj.cardLoaders.English = () ->
         "R7-T1":
             text: """<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
         "Tactician":
-            text: """This card has not yet been released."""
+            text: """After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."""
         "R2-D2 (Crew)":
             text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
         "C-3PO":
@@ -374,7 +374,7 @@ exportObj.cardLoaders.English = () ->
         "EM Emitter":
             text: """When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."""
         "Frequency Jammer":
-            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
+            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
 
     modification_translations =
         "Stealth Device":

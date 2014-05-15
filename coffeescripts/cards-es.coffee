@@ -543,7 +543,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase de combate, quita una ficha de tensión de una nave aliada que tengas a alcance 1."""
         "Decoy":
             name: "Señuelo"
-            text: """Esta carta no ha sido publicada."""
+            text: """At the start of the Combat phase, you may choose 1 friendly ship at Range 1-2.  Exchange your pilot skill with that ship's pilot skill until the end of the phase."""
         "Outmaneuver":
             name: "Mejores maniobras"
             text: """Cuando ataques a una nave dentro de tu arco de fuego, si tu nave no se encuentra dentro del arco de fuego de dicha nave, reduce su valor de Agilidad en 1 (para un mínimo de 0)."""
@@ -561,7 +561,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Acción:</strong> Escoge una nave enemiga a alcance 1-2. Si estás dentro del arco de disparo de esa nave puedes fijar blanco en ella. Después realiza una acción de impulso gratuita."""
         "Tactician":
             name: "Tactician"
-            text: """This card has not yet been released."""
+            text: """After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Crew)"
             text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
@@ -623,7 +623,7 @@ exportObj.cardLoaders['Español'] = () ->
         "EM Emitter":
             text: """When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."""
         "Frequency Jammer":
-            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
+            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
 
     modification_translations =
         "Stealth Device":
