@@ -183,7 +183,8 @@
           agility: 3,
           hull: 2,
           shields: 3,
-          actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"]
+          actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
+          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0], [1, 2, 2, 2, 1, 0], [1, 1, 2, 1, 1, 3], [0, 0, 1, 0, 0, 3], [0, 0, 1, 0, 0, 0]]
         },
         "TIE Phantom": {
           name: "TIE Phantom",
@@ -1434,7 +1435,7 @@
           id: 55,
           slot: "Elite",
           sources: ["Z-95 Headhunter Expansion Pack"],
-          points: 99
+          points: 2
         }, {
           name: "Outmaneuver",
           id: 56,
@@ -1473,7 +1474,7 @@
           id: 61,
           slot: "Crew",
           sources: ["TIE Phantom Expansion Pack"],
-          points: 99
+          points: 2
         }, {
           name: "R2-D2 (Crew)",
           aka: ["R2-D2"],
@@ -1528,7 +1529,7 @@
           name: "Engine Booster",
           id: 68,
           slot: "Cargo",
-          sources: ["Tantive IV Expansion Pack"],
+          sources: ["Tantive IV Expansion Pack", "Rebel Transport Expansion Pack"],
           points: 3,
           limited: true
         }, {
