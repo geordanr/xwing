@@ -2311,6 +2311,66 @@ exportObj.basicCardData = ->
             sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
         }
+        {
+            name: "Han Solo"
+            id: 86
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 2
+        }
+        {
+            name: "Leia Organa"
+            id: 87
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Targeting Coordinator"
+            id: 88
+            slot: "Crew"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Raymus Antilles"
+            id: 89
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 6
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: "Gunnery Team"
+            id: 90
+            slot: "Team"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Sensor Team"
+            id: 91
+            slot: "Team"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Engineering Team"
+            id: 92
+            slot: "Team"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
     ]
 
     modificationsById: [
@@ -2534,6 +2594,14 @@ exportObj.basicCardData = ->
             sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
             ship: "GR-75 Medium Transport"
+        }
+        {
+            name: "Jaina's Light"
+            id: 13
+            unique: true
+            sources: [ "Rebel Transport Expansion Pack", ]
+            points: 2
+            ship: "CR90 Corvette (Fore)"
         }
     ]
 

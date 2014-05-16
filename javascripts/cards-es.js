@@ -815,6 +815,24 @@
       },
       "Frequency Jammer": {
         text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
+      },
+      "Han Solo": {
+        text: "When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."
+      },
+      "Leia Organa": {
+        text: "At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."
+      },
+      "Raymus Antilles": {
+        text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."
+      },
+      "Gunnery Team": {
+        text: "Once per round, when attacking with a secondary weapon, you may spend 1 energy to change 1 of your blank results to a %HIT% result."
+      },
+      "Sensor Team": {
+        text: "When acquiring a target lock, you may lock onto an enemy ship at Range 1-5 instead of 1-3."
+      },
+      "Engineering Team": {
+        text: "During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the \"Gain Energy\" step."
       }
     };
     modification_translations = {
@@ -911,6 +929,9 @@
       "Dutyfree": {
         text: "When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2).",
         ship: 'Transporte mediano GR-75'
+      },
+      "Jaina's Light": {
+        text: "When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
