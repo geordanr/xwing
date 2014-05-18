@@ -1916,7 +1916,8 @@
           });
         })(this)((function(_this) {
           return function() {
-            return __iced_k(_this.builder.container.trigger('xwing:pointsUpdated'));
+            _this.builder.container.trigger('xwing:pointsUpdated');
+            return __iced_k(_this.builder.container.trigger('xwing-backend:squadDirtinessChanged'));
           };
         })(this));
       } else {
@@ -1940,7 +1941,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1395
+                  lineno: 1396
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1993,14 +1994,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1417
+              lineno: 1418
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1419
+              lineno: 1420
             }));
           }
           _ref1 = _this.modifications;
@@ -2008,7 +2009,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1421
+                lineno: 1422
               }));
             }
           }
@@ -2604,7 +2605,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1846
+                  lineno: 1847
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2680,7 +2681,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1876
+                    lineno: 1877
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2702,7 +2703,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1879
+                      lineno: 1880
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2767,7 +2768,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1904
+              lineno: 1905
             }));
           }
           __iced_deferrals._fulfill();
