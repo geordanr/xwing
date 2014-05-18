@@ -2129,7 +2129,7 @@ exportObj.basicCardData = ->
             name: "Tibanna Gas Supplies"
             id: 66
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
+            sources: [ "Tantive IV Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 4
             limited: true
         }
