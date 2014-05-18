@@ -1390,6 +1390,7 @@ class Ship
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
+            @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
     resetPilot: ->
         if @pilot?.unique?
