@@ -76,6 +76,7 @@ class exportObj.SquadBuilder
             points: 100
         @total_points = 0
         @isEpic = false
+        @maxEpicPointsAllowed = 0
 
         @backend = null
         @current_squad = {}
@@ -645,9 +646,11 @@ class exportObj.SquadBuilder
                 @desired_points_input.val 100
             when 'epic'
                 @isEpic = true
+                @maxEpicPointsAllowed = 5
                 @desired_points_input.val 300
             when 'team-epic'
                 @isEpic = true
+                @maxEpicPointsAllowed = 3
                 @desired_points_input.val 200
             when 'custom'
                 @isEpic = false
@@ -681,7 +684,7 @@ class exportObj.SquadBuilder
         if @isEpic
             @total_epic_points_container.toggleClass 'hidden', false
             @total_epic_points_span.text @total_epic_points
-            @total_epic_points_span.toggleClass 'red', (@total_epic_points > 5)
+            @total_epic_points_span.toggleClass 'red', (@total_epic_points > @maxEpicPointsAllowed)
             shipCountsByType = {}
             illegal_for_epic = false
             for ship, i in @ships
@@ -696,7 +699,6 @@ class exportObj.SquadBuilder
                                     break
                             break if illegal_for_epic
             @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
-            console.dir shipCountsByType
             for ship_name, count of shipCountsByType
                 ship_data = exportObj.ships[ship_name]
                 if ship_data.large? and count > 6

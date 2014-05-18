@@ -152,3 +152,41 @@ casper.test.begin "Epic points are displayed properly", (test) ->
 
     casper.run ->
         test.done()
+
+casper.test.begin "Max Epic points is 5", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'epic')
+
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    .then ->
+        test.assertNotVisible '#rebel-builder .total-epic-points.red'
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    .then ->
+        test.assertVisible '#rebel-builder .total-epic-points.red'
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    casper.run ->
+        test.done()
+
+casper.test.begin "Max Team Epic points is 3", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'team-epic')
+
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    .then ->
+        test.assertNotVisible '#rebel-builder .total-epic-points.red'
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
+    .then ->
+        test.assertVisible '#rebel-builder .total-epic-points.red'
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    casper.run ->
+        test.done()
