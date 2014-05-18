@@ -157,6 +157,8 @@ casper.test.begin "Max Epic points is 5", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.setGameType('#rebel-builder', 'epic')
+    .then ->
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForMaxEpicPoints}", 5
 
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
@@ -177,6 +179,8 @@ casper.test.begin "Max Team Epic points is 3", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.setGameType('#rebel-builder', 'team-epic')
+    .then ->
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForMaxEpicPoints}", 3
 
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     .then ->

@@ -144,7 +144,7 @@ class exportObj.SquadBuilder
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
-                    <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / 5 Epic Points</span>
+                    <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
                     <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
                     <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
@@ -326,6 +326,7 @@ class exportObj.SquadBuilder
         @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
         @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
         @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
+        @max_epic_points_span = $ @points_container.find('.max-epic-points')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -654,6 +655,7 @@ class exportObj.SquadBuilder
                 @desired_points_input.val 200
             when 'custom'
                 @isEpic = false
+        @max_epic_points_span.text @maxEpicPointsAllowed
         @onPointsUpdated cb
 
     onPointsUpdated: (cb=$.noop) =>

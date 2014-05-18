@@ -228,3 +228,4 @@ exports.selectorForTooManySmallShipsWarning = '.illegal-epic-too-many-small-ship
 exports.selectorForTooManyLargeShipsWarning = '.illegal-epic-too-many-large-ships'
 
 exports.selectorForEpicPointsUsed = '.total-epic-points'
+exports.selectorForMaxEpicPoints = '.max-epic-points'
