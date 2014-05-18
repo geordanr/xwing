@@ -103,6 +103,7 @@
           text: 'Twitter'
         }
       };
+      this.squad_display_mode = 'all';
       this.setupHandlers();
       this.setupUI();
       this.authenticate((function(_this) {
@@ -206,6 +207,7 @@
       list_ul.hide();
       loading_pane = $(this.squad_list_modal.find('p.squad-list-loading'));
       loading_pane.show();
+      this.show_all_squads_button.click();
       this.squad_list_modal.modal('show');
       url = all ? "" + this.server + "/all" : "" + this.server + "/squads/list";
       return $.get(url, (function(_this) {
@@ -407,8 +409,58 @@
       this.squad_list_modal = $(document.createElement('DIV'));
       this.squad_list_modal.addClass('modal hide fade hidden-print squad-list');
       $(document.body).append(this.squad_list_modal);
-      this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3></h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"icon-spinner icon-spin icon-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3></h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"icon-spinner icon-spin icon-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <div class=\"btn-group squad-display-mode\">\n        <button class=\"btn btn-inverse show-all-squads\">All</button>\n        <button class=\"btn show-standard-squads\">Standard</button>\n        <button class=\"btn show-epic-squads\">Epic</button>\n        <button class=\"btn show-team-epic-squads\">Team Epic</button>\n    </div>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.squad_list_modal.find('ul.squad-list').hide();
+      this.show_all_squads_button = $(this.squad_list_modal.find('.show-all-squads'));
+      this.show_all_squads_button.click((function(_this) {
+        return function(e) {
+          if (_this.squad_display_mode !== 'all') {
+            _this.squad_display_mode = 'all';
+            _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
+            _this.show_all_squads_button.addClass('btn-inverse');
+            return _this.squad_list_modal.find('.squad-list li').show();
+          }
+        };
+      })(this));
+      this.show_standard_squads_button = $(this.squad_list_modal.find('.show-standard-squads'));
+      this.show_standard_squads_button.click((function(_this) {
+        return function(e) {
+          if (_this.squad_display_mode !== 'standard') {
+            _this.squad_display_mode = 'standard';
+            _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
+            _this.show_standard_squads_button.addClass('btn-inverse');
+            return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
+              return $(elem).toggle(($(elem).data().squad.serialized.indexOf('v3!e') === -1) && ($(elem).data().squad.serialized.indexOf('v3!t') === -1));
+            });
+          }
+        };
+      })(this));
+      this.show_epic_squads_button = $(this.squad_list_modal.find('.show-epic-squads'));
+      this.show_epic_squads_button.click((function(_this) {
+        return function(e) {
+          if (_this.squad_display_mode !== 'epic') {
+            _this.squad_display_mode = 'epic';
+            _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
+            _this.show_epic_squads_button.addClass('btn-inverse');
+            return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
+              return $(elem).toggle($(elem).data().squad.serialized.indexOf('v3!e') !== -1);
+            });
+          }
+        };
+      })(this));
+      this.show_team_epic_squads_button = $(this.squad_list_modal.find('.show-team-epic-squads'));
+      this.show_team_epic_squads_button.click((function(_this) {
+        return function(e) {
+          if (_this.squad_display_mode !== 'team-epic') {
+            _this.squad_display_mode = 'team-epic';
+            _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
+            _this.show_team_epic_squads_button.addClass('btn-inverse');
+            return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
+              return $(elem).toggle($(elem).data().squad.serialized.indexOf('v3!t') !== -1);
+            });
+          }
+        };
+      })(this));
       this.save_as_modal = $(document.createElement('DIV'));
       this.save_as_modal.addClass('modal hide fade hidden-print');
       $(document.body).append(this.save_as_modal);
@@ -631,7 +683,7 @@
                 return settings = arguments[0];
               };
             })(),
-            lineno: 532
+            lineno: 576
           }));
           __iced_deferrals._fulfill();
         });
@@ -652,7 +704,7 @@
                     return headers = arguments[0];
                   };
                 })(),
-                lineno: 536
+                lineno: 580
               }));
               __iced_deferrals._fulfill();
             })(function() {
