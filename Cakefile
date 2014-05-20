@@ -15,6 +15,7 @@ String.prototype.endswith = (suffix) ->
 
 hamls = [
     'index.haml'
+    'privacy.haml'
 ]
 
 task 'build', 'build X-Wing from source', (cb) ->
