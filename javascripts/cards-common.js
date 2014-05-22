@@ -205,7 +205,8 @@
           shields: 5,
           actions: ["Coordinate", "Target Lock"],
           huge: true,
-          epic_points: 1.5
+          epic_points: 1.5,
+          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
         },
         "CR90 Corvette (Aft)": {
           name: "CR90 Corvette (Aft)",
@@ -216,7 +217,8 @@
           shields: 3,
           actions: ["Reinforce", "Jam"],
           huge: true,
-          epic_points: 1.5
+          epic_points: 1.5,
+          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
         }
       },
       pilotsById: [
