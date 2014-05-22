@@ -366,6 +366,13 @@ exportObj.basicCardData = ->
             ]
             huge: true
             epic_points: 1.5
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 0, 1, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+            ]
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
             faction: "Rebel Alliance"
@@ -379,6 +386,13 @@ exportObj.basicCardData = ->
             ]
             huge: true
             epic_points: 1.5
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 0, 1, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+            ]
 
     # name field is for convenience only
     pilotsById: [
