@@ -6,7 +6,6 @@ exportObj.unreleasedExpansions = [
     "TIE Defender Expansion Pack"
     "E-Wing Expansion Pack"
     "TIE Phantom Expansion Pack"
-    "Tantive IV Expansion Pack"
     "Rebel Aces Expansion Pack"
 ]
 

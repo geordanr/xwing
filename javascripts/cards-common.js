@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack", "E-Wing Expansion Pack", "TIE Phantom Expansion Pack", "Tantive IV Expansion Pack", "Rebel Aces Expansion Pack"];
+  exportObj.unreleasedExpansions = ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack", "E-Wing Expansion Pack", "TIE Phantom Expansion Pack", "Rebel Aces Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;
