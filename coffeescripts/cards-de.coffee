@@ -131,7 +131,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Mauler Mithel"':
             text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du ein Ziel in Reichweite 1 angreifst."""
         '"Howlrunner"':
-            name: '·"Kreischläufer"'
+            name: '"Kreischläufer"'
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
             text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
@@ -516,23 +516,23 @@ exportObj.cardLoaders.Deutsch = () ->
         "R5-P9":
             text: """Am Ende der Kampfphase kannst du 1 deiner Fokusmarker ausgeben, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert)."""
         "WED-15 Repair Droid":
-			name: "WED-15 Reparaturdroide"
+            name: "WED-15 Reparaturdroide"
             text: """<strong>Aktion:</strong> gib 1 Energie aus, um 1 deiner verdeckten Schadenskarten abzulegen oder gib 3 Energie aus, um 1 deiner offenen Schadenskarten abzulegen."""
         "Carlist Rieekan":
             text: """zu Beginn der Aktivierungsphase kannst du diese Karte ablegen, damit bis zum Ende der Phase der Pilotenwert aller freundlichen Schiffe 12 beträgt."""
         "Jan Dodonna":
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 angreift, darf es 1 seiner gewürfelten %HIT% in ein %CRIT% ändern."""
         "Expanded Cargo Hold":
-			name: "Erweiterter Ladebereich"
+            name: "Erweiterter Ladebereich"
             text: """Ein Mal pro Runde darfst du, wenn du eine offene Schadenskarte erhältst, frei wählen, ob du sie vom Schadensstapel Bug oder Heck ziehen willst."""
         "Backup Shield Generator":
-			name: "Sekundärer Schildgenerator"
+            name: "Sekundärer Schildgenerator"
             text: """Am Ende jeder Runde kannst du 1 Energie ausgeben, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert)."""
         "EM Emitter":
-			name: "EM-Emitter"
+            name: "EM-Emitter"
             text: """Wenn du bei einem Angriff die Schussbahn versperrst, bekommst der Verteidiger 3 zusätzliche Verteidigungswürfel (anstatt 1)."""
         "Frequency Jammer":
-			name: "Störsender"
+            name: "Störsender"
             text: """Wenn du die Aktion Störsignal durchführst, wähle 1 feindliches Schiff ohne Stressmarker in Reichweite 1 des vom Störsignal betroffenen Schiffs. Das gewählte Schiff erhält 1 Stressmarker."""
         "Han Solo":
             text: """When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
@@ -576,7 +576,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Advanced Cloaking Device"
             text: """After you perform an attack, you may perform a free cloak action."""
         "Combat Retrofit":
-			name: "Umrüstung für den Kampfeinsatz"
+            name: "Umrüstung für den Kampfeinsatz"
             text: """Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."""
 
 
