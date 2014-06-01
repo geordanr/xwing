@@ -835,7 +835,7 @@
           ship: "TIE Defender",
           sources: ["TIE Defender Expansion Pack"],
           skill: 3,
-          points: 99,
+          points: 32,
           slots: ["Cannon", "Missile"]
         }, {
           name: "Colonel Vessery",
