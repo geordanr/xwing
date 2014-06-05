@@ -598,6 +598,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Nachdem du angegriffen hast, darfst du dich als freie Aktion tarnen."""
         "Combat Retrofit":
             name: "Umrüstung für den Kampfeinsatz"
+            ship: "Medium-Transporter GR-75"
             text: """Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."""
 
 

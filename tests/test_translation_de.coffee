@@ -40,6 +40,19 @@ casper.test.begin "German translations: Rebel", (test) ->
                 "Verbessertes Triebwerk"
             ]
         }
+        {
+            ship: 'Medium-Transporter GR-75'
+            pilot: 'Medium-Transporter GR-75'
+            upgrades: [
+                'WED-15 Reparaturdroide'
+                'Jan Dodonna'
+                'Nachbrenner'
+                'Schildprojektor'
+                'Störsender'
+                'Quantum Storm'
+                'Umrüstung für den Kampfeinsatz'
+            ]
+        }
 
     ])
 
@@ -48,7 +61,7 @@ casper.test.begin "German translations: Rebel", (test) ->
     common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'R2-D2 (Crew)')
     common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'R2-D2 (Crew)')
 
-    common.assertTotalPoints(test, '#rebel-builder', 122)
+    common.assertTotalPoints(test, '#rebel-builder', 185)
 
     common.selectLanguage('English')
 
@@ -74,8 +87,19 @@ casper.test.begin "German translations: Rebel", (test) ->
     common.assertUpgradeInSlot(test, '#rebel-builder', 3, 5, 'Millennium Falcon')
     common.assertUpgradeInSlot(test, '#rebel-builder', 3, 6, 'Engine Upgrade')
 
-    common.assertTotalPoints(test, '#rebel-builder', 122)
+    common.assertShipTypeIs(test, '#rebel-builder', 4, 'GR-75 Medium Transport')
+    common.assertPilotIs(test, '#rebel-builder', 4, 'GR-75 Medium Transport')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 1, 'WED-15 Repair Droid')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 2, 'Jan Dodonna')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 3, 'Engine Booster')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 4, 'Shield Projector')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 5, 'Frequency Jammer')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 6, 'Quantum Storm')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 7, 'Combat Retrofit')
 
+    common.assertTotalPoints(test, '#rebel-builder', 185)
+
+    common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
@@ -92,7 +116,7 @@ casper.test.begin "German translations: Imperial", (test) ->
 
     common.createList('#empire-builder', [
         {
-            ship: 'TIE Abfangjäger'
+            ship: 'TIE-Abfangjäger'
             pilot: "Pilot der Alpha-Staffel"
             upgrades: [
                 null
@@ -107,7 +131,7 @@ casper.test.begin "German translations: Imperial", (test) ->
             ]
         }
         {
-            ship: 'TIE Abfangjäger'
+            ship: 'TIE-Abfangjäger'
             pilot: "Soontir Fel"
             upgrades: [
                 null
