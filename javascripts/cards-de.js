@@ -739,7 +739,7 @@
         text: "Wenn du bei einem Angriff die Schussbahn versperrst, bekommst der Verteidiger 3 zusätzliche Verteidigungswürfel (anstatt 1)."
       },
       "Frequency Jammer": {
-        name: "Störsender",
+        name: "Störsender (Fracht)",
         text: "Wenn du die Aktion Störsignal durchführst, wähle 1 feindliches Schiff ohne Stressmarker in Reichweite 1 des vom Störsignal betroffenen Schiffs. Das gewählte Schiff erhält 1 Stressmarker."
       },
       "Han Solo": {

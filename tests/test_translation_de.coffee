@@ -46,7 +46,7 @@ casper.test.begin "German translations: Rebel", (test) ->
             upgrades: [
                 'WED-15 Reparaturdroide'
                 'Jan Dodonna'
-                'Nachbrenner'
+                'Störsender (Fracht)'
                 'Schildprojektor'
                 'Erweiterter Ladebereich'
                 'Quantum Storm'
@@ -61,7 +61,7 @@ casper.test.begin "German translations: Rebel", (test) ->
     common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'R2-D2 (Crew)')
     common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'R2-D2 (Crew)')
 
-    common.assertTotalPoints(test, '#rebel-builder', 182)
+    common.assertTotalPoints(test, '#rebel-builder', 183)
 
     common.selectLanguage('English')
 
@@ -91,13 +91,13 @@ casper.test.begin "German translations: Rebel", (test) ->
     common.assertPilotIs(test, '#rebel-builder', 4, 'GR-75 Medium Transport')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 1, 'WED-15 Repair Droid')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 2, 'Jan Dodonna')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 3, 'Engine Booster')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 3, 'Frequency Jammer')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 4, 'Shield Projector')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 5, 'Expanded Cargo Hold')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 6, 'Quantum Storm')
     common.assertUpgradeInSlot(test, '#rebel-builder', 4, 7, 'Combat Retrofit')
 
-    common.assertTotalPoints(test, '#rebel-builder', 182)
+    common.assertTotalPoints(test, '#rebel-builder', 183)
 
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
