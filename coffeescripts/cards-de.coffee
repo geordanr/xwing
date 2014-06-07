@@ -546,6 +546,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Expanded Cargo Hold":
             name: "Erweiterter Ladebereich"
             text: """Ein Mal pro Runde darfst du, wenn du eine offene Schadenskarte erhältst, frei wählen, ob du sie vom Schadensstapel Bug oder Heck ziehen willst."""
+            ship: "Medium-Transporter GR-75"
         "Backup Shield Generator":
             name: "Sekundärer Schildgenerator"
             text: """Am Ende jeder Runde kannst du 1 Energie ausgeben, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert)."""
