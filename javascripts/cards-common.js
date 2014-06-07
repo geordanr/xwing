@@ -1599,7 +1599,7 @@
           unique: true,
           slot: "Crew",
           sources: ["Rebel Aces Expansion Pack"],
-          points: 99,
+          points: 3,
           faction: "Rebel Alliance"
         }, {
           name: "Jan Ors",
@@ -1607,7 +1607,7 @@
           unique: true,
           slot: "Crew",
           sources: ["Rebel Aces Expansion Pack"],
-          points: 99,
+          points: 2,
           faction: "Rebel Alliance"
         }, {
           name: "Toryn Farr",
@@ -1835,6 +1835,18 @@
             stats.hull += 2;
             return stats.shields += 1;
           }
+        }, {
+          name: "B-Wing/E2",
+          id: 11,
+          sources: ["Rebel Aces Expansion Pack"],
+          points: 1,
+          ship: "B-Wing",
+          confersAddons: [
+            {
+              type: exportObj.Upgrade,
+              slot: "Crew"
+            }
+          ]
         }
       ],
       titlesById: [
@@ -1912,18 +1924,6 @@
             {
               type: exportObj.Upgrade,
               slot: "Elite"
-            }
-          ]
-        }, {
-          name: "B-Wing/E",
-          id: 8,
-          sources: ["Rebel Aces Expansion Pack"],
-          points: 99,
-          ship: "B-Wing",
-          confersAddons: [
-            {
-              type: exportObj.Upgrade,
-              slot: "Crew"
             }
           ]
         }, {
