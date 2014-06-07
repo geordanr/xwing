@@ -528,7 +528,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Kyle Katarn":
             text: """After you remove a stress token from your ship, you may assign a focus token to your ship."""
         "Jan Ors":
-            text: """Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token you, you may assign it an evade token instead."""
+            text: """Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."""
         "Toryn Farr":
             text: """<strong>Aktion:</strong> gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt.."""
         # TODO Check card formatting
