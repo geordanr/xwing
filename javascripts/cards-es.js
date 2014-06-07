@@ -783,7 +783,7 @@
         text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
       },
       "Jan Ors": {
-        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token you, you may assign it an evade token instead."
+        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."
       },
       "Toryn Farr": {
         text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
