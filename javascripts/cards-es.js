@@ -780,10 +780,10 @@
         text: "Esta carta no ha sido publicada."
       },
       "Kyle Katarn": {
-        text: "After you receive a stress token from your ship, you may assign a focus token to ???"
+        text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
       },
       "Jan Ors": {
-        text: "Esta carta no ha sido publicada."
+        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token you, you may assign it an evade token instead."
       },
       "Toryn Farr": {
         text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
@@ -876,6 +876,10 @@
       "Combat Retrofit": {
         text: "Increase your hull value by 2 and your shield value by 1.",
         ship: 'Transporte mediano GR-75'
+      },
+      "B-Wing/E2": {
+        text: "Your upgrade bar gains the %CREW% upgrade icon.",
+        ship: "Ala-B"
       }
     };
     title_translations = {
@@ -909,10 +913,6 @@
         name: "Piloto de Pruebas de Ala-A",
         text: "Tu barra de mejoras gana el ícono %ELITE%.<br /><br />No puedes equipar dos %ELITE% iguales. No puedes tener este título si tu habilidad de piloto es \"1\" o menor.",
         ship: "Ala-A"
-      },
-      "B-Wing/E": {
-        text: "Tu barra de mejoras gana el ícono %CREW%.",
-        ship: "Ala-B"
       },
       "Tantive IV": {
         text: "Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon.",

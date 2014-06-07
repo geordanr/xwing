@@ -2222,7 +2222,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
+            points: 3
             faction: "Rebel Alliance"
         }
         {
@@ -2231,7 +2231,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
+            points: 2
             faction: "Rebel Alliance"
         }
         {
@@ -2465,6 +2465,19 @@ exportObj.basicCardData = ->
                 stats.hull += 2
                 stats.shields += 1
         }
+        {
+            name: "B-Wing/E2"
+            id: 11
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 1
+            ship: "B-Wing"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+            ]
+        }
     ]
 
     titlesById: [
@@ -2546,19 +2559,21 @@ exportObj.basicCardData = ->
                 }
             ]
         }
-        {
-            name: "B-Wing/E"
-            id: 8
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
-            ship: "B-Wing"
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Crew"
-                }
-            ]
-        }
+        ## Apparently this is a modification, NOT a title
+        ## Leaving this here to occupy the ID in case someone used it
+        # {
+        #     name: "B-Wing/E"
+        #     id: 8
+        #     sources: [ "Rebel Aces Expansion Pack", ]
+        #     points: 99
+        #     ship: "B-Wing"
+        #     confersAddons: [
+        #         {
+        #             type: exportObj.Upgrade
+        #             slot: "Crew"
+        #         }
+        #     ]
+        # }
         {
             name: "Tantive IV"
             id: 9

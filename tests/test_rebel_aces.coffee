@@ -200,7 +200,7 @@ casper.test.begin "Chardaan Refit", (test) ->
     .run ->
         test.done()
 
-casper.test.begin "B-Wing/E", (test) ->
+casper.test.begin "B-Wing/E2", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.createList('#rebel-builder', [
@@ -219,19 +219,19 @@ casper.test.begin "B-Wing/E", (test) ->
     ])
 
     # B-Wing only
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", "B-Wing/E2")
+
     .then ->
-        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 5} .select2-choice", 'No Title', "Blue Squadron Pilot has title field"
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", "X-Wings have no titles (yet)"
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad doesn't have crew by default"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "Blue Squad doesn't have crew by default"
 
-    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E')
-    common.addUpgrade('#rebel-builder', 1, 7, 'Gunner')
-    #common.assertTotalPoints(test, '#rebel-builder', 50) # don't know how many points
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
+    common.assertTotalPoints(test, '#rebel-builder', 51)
 
-    # Removing the title removes the crew slow
+    # Removing the modification removes the crew slot
     common.removeUpgrade('#rebel-builder', 1, 5)
     .then ->
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad no longer has a crew slot"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "Blue Squad no longer has a crew slot"
     common.assertTotalPoints(test, '#rebel-builder', 45)
 
     common.removeShip('#rebel-builder', 1)

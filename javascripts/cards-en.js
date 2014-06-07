@@ -497,10 +497,10 @@
         text: "This card has not yet been revealed."
       },
       "Kyle Katarn": {
-        text: "After you receive a stress token from your ship, you may assign a focus token to ???"
+        text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
       },
       "Jan Ors": {
-        text: "This card has not yet been revealed."
+        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token you, you may assign it an evade token instead."
       },
       "Toryn Farr": {
         text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
@@ -584,6 +584,9 @@
       },
       "Combat Retrofit": {
         text: "Increase your hull value by 2 and your shield value by 1."
+      },
+      "B-Wing/E2": {
+        text: "Your upgrade bar gains the %CREW% upgrade icon."
       }
     };
     title_translations = {
@@ -607,9 +610,6 @@
       },
       "A-Wing Test Pilot": {
         text: "Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
-      },
-      "B-Wing/E": {
-        text: "Your upgrade bar gains the %CREW% upgrade icon."
       },
       "Tantive IV": {
         text: "Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."
