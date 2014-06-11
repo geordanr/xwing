@@ -1337,7 +1337,7 @@
             this.info_container.find('tr.info-shields').show();
             this.info_container.find('tr.info-actions td.info-data').html(((function() {
               var _i, _len, _ref13, _results;
-              _ref13 = data.data.actions.concat((function() {
+              _ref13 = effective_stats.actions.concat((function() {
                 var _j, _len, _results1;
                 _results1 = [];
                 for (_j = 0, _len = extra_actions.length; _j < _len; _j++) {
@@ -1398,11 +1398,11 @@
             this.info_container.find('tr.info-shields td.info-data').text((_ref24 = (_ref25 = data.ship_override) != null ? _ref25.shields : void 0) != null ? _ref24 : ship.shields);
             this.info_container.find('tr.info-shields').show();
             this.info_container.find('tr.info-actions td.info-data').text(((function() {
-              var _i, _len, _ref26, _results;
-              _ref26 = exportObj.ships[data.ship].actions;
+              var _i, _len, _ref26, _ref27, _ref28, _results;
+              _ref28 = (_ref26 = (_ref27 = data.ship_override) != null ? _ref27.actions : void 0) != null ? _ref26 : exportObj.ships[data.ship].actions;
               _results = [];
-              for (_i = 0, _len = _ref26.length; _i < _len; _i++) {
-                action = _ref26[_i];
+              for (_i = 0, _len = _ref28.length; _i < _len; _i++) {
+                action = _ref28[_i];
                 _results.push(exportObj.translate(this.language, 'action', action));
               }
               return _results;
@@ -2453,7 +2453,7 @@
     };
 
     Ship.prototype.effectiveStats = function() {
-      var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       stats = {
         skill: this.pilot.skill,
         attack: (_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null ? _ref : this.data.attack,
@@ -2461,30 +2461,30 @@
         agility: (_ref4 = (_ref5 = this.pilot.ship_override) != null ? _ref5.agility : void 0) != null ? _ref4 : this.data.agility,
         hull: (_ref6 = (_ref7 = this.pilot.ship_override) != null ? _ref7.hull : void 0) != null ? _ref6 : this.data.hull,
         shields: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : this.data.shields,
-        actions: this.data.actions.slice(0)
+        actions: ((_ref10 = (_ref11 = this.pilot.ship_override) != null ? _ref11.actions : void 0) != null ? _ref10 : this.data.actions).slice(0)
       };
       stats.maneuvers = [];
-      for (s = _i = 0, _ref10 = ((_ref11 = this.data.maneuvers) != null ? _ref11 : []).length; 0 <= _ref10 ? _i < _ref10 : _i > _ref10; s = 0 <= _ref10 ? ++_i : --_i) {
+      for (s = _i = 0, _ref12 = ((_ref13 = this.data.maneuvers) != null ? _ref13 : []).length; 0 <= _ref12 ? _i < _ref12 : _i > _ref12; s = 0 <= _ref12 ? ++_i : --_i) {
         stats.maneuvers[s] = this.data.maneuvers[s].slice(0);
       }
-      _ref12 = this.upgrades;
-      for (_j = 0, _len = _ref12.length; _j < _len; _j++) {
-        upgrade = _ref12[_j];
-        if ((upgrade != null ? (_ref13 = upgrade.data) != null ? _ref13.modifier_func : void 0 : void 0) != null) {
+      _ref14 = this.upgrades;
+      for (_j = 0, _len = _ref14.length; _j < _len; _j++) {
+        upgrade = _ref14[_j];
+        if ((upgrade != null ? (_ref15 = upgrade.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
           upgrade.data.modifier_func(stats);
         }
       }
-      if (((_ref14 = this.title) != null ? (_ref15 = _ref14.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
+      if (((_ref16 = this.title) != null ? (_ref17 = _ref16.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
         this.title.data.modifier_func(stats);
       }
-      _ref16 = this.modifications;
-      for (_k = 0, _len1 = _ref16.length; _k < _len1; _k++) {
-        modification = _ref16[_k];
-        if ((modification != null ? (_ref17 = modification.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
+      _ref18 = this.modifications;
+      for (_k = 0, _len1 = _ref18.length; _k < _len1; _k++) {
+        modification = _ref18[_k];
+        if ((modification != null ? (_ref19 = modification.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
           modification.data.modifier_func(stats);
         }
       }
-      if (((_ref18 = this.pilot) != null ? _ref18.modifier_func : void 0) != null) {
+      if (((_ref20 = this.pilot) != null ? _ref20.modifier_func : void 0) != null) {
         this.pilot.modifier_func(stats);
       }
       return stats;
