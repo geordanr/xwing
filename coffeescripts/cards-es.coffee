@@ -353,6 +353,7 @@ exportObj.cardLoaders['Español'] = () ->
         "CR90 Corvette (Fore)":
             name: "Corbeta CR90 (Proa)"
             ship: "Corbeta CR90 (Proa)"
+            text: """When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."""
         "CR90 Corvette (Aft)":
             name: "Corbeta CR90 (Popa)"
             ship: "Corbeta CR90 (Popa)"
@@ -382,12 +383,13 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Unspoiled PS5 B-Wing Pilot"
             text: """This card has not yet been revealed."""
             ship: "Ala-B"
-        "CR90 Corvette (Fore)":
-            ship: "Corbeta CR90 (Proa)"
-            text: """When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."""
         "CR90 Corvette (Crippled Aft)":
+            name: "CR90 Corvette (Crippled Aft)"
             ship: "Corbeta CR90 (Popa)"
             text: """You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."""
+        "CR90 Corvette (Crippled Fore)":
+            name: "CR90 Corvette (Crippled Fore)"
+            ship: "Corbeta CR90 (Proa)"
 
     upgrade_translations =
         "Ion Cannon Turret":

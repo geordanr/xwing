@@ -381,7 +381,8 @@
         text: "Nachdem du mit einem Angriff getroffen hast, darfst du deinem Schiff 1 Fokusmarker geben."
       },
       "CR90 Corvette (Fore)": {
-        name: "CR90 Corvette (Fore)"
+        name: "CR90 Corvette (Fore)",
+        text: "When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."
       },
       "CR90 Corvette (Aft)": {
         name: "CR90 Corvette (Aft)"
@@ -412,11 +413,12 @@
         name: "Unspoiled PS5 B-Wing Pilot",
         text: "This card has not yet been revealed."
       },
-      "CR90 Corvette (Fore)": {
-        text: "When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."
-      },
       "CR90 Corvette (Crippled Aft)": {
+        name: "CR90 Corvette (Crippled Aft)",
         text: "You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."
+      },
+      "CR90 Corvette (Crippled Fore)": {
+        name: "CR90 Corvette (Crippled Fore)"
       }
     };
     upgrade_translations = {
