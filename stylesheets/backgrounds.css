@@ -1,24 +1,24 @@
-.ship-xwing0 {
+.ship-xwing0, .ship-alax0 {
   background-image: url("../images/xwing1.jpg");
   background-repeat: no-repeat;
   background-position: 0px -40px; }
 
-.ship-xwing1 {
+.ship-xwing1, .ship-alax1 {
   background-image: url("../images/xwing0.png");
   background-repeat: no-repeat;
   background-position: 200px -65px; }
 
-.ship-ywing0 {
+.ship-ywing0, .ship-alay0 {
   background-image: url("../images/ywing1.png");
   background-repeat: no-repeat;
   background-position: 0px -20px; }
 
-.ship-awing0 {
+.ship-awing0, .ship-alaa0 {
   background-image: url("../images/awing0.png");
   background-repeat: no-repeat;
   background-position: 147px -60px; }
 
-.ship-tiefighter0 {
+.ship-tiefighter0, .ship-cazatie0 {
   background-image: url("../images/tiefighter0.png");
   background-repeat: no-repeat;
   background-position: 35px -80px; }
@@ -28,12 +28,12 @@
   background-repeat: no-repeat;
   background-position: 350px -60px; }
 
-.ship-tieadvanced0 {
+.ship-tieadvanced0, .ship-tieavanzado0 {
   background-image: url("../images/tieadvanced0.png");
   background-repeat: no-repeat;
   background-position: 120px -50px; }
 
-.ship-tieinterceptor0 {
+.ship-tieinterceptor0, .ship-tieabfangjger0, .ship-interceptortie0 {
   background-image: url("../images/tieinterceptor0.png");
   background-repeat: no-repeat;
   background-position: 194px -70px; }
@@ -48,32 +48,32 @@
   background-repeat: no-repeat;
   background-position: 0px -80px; }
 
-.ship-bwing0 {
+.ship-bwing0, .ship-alab0 {
   background-image: url("../images/bwing.png");
   background-repeat: no-repeat;
   background-position: 10px -31px; }
 
-.ship-tiebomber0 {
+.ship-tiebomber0, .ship-bombarderotie0 {
   background-image: url("../images/tie_bomber.png");
   background-repeat: no-repeat;
   background-position: -32px -27px; }
 
-.ship-lambdaclassshuttle0 {
+.ship-lambdaclassshuttle0, .ship-raumfhrederlambdaklasse0, .ship-lanzaderaclaselambda0 {
   background-image: url("../images/lambda_shuttle.png");
   background-repeat: no-repeat;
   background-position: -5px -65px; }
 
-.ship-cr90corvettefore0 {
+.ship-cr90corvettefore0, .ship-corbetacr90proa0 {
   background-image: url("../images/cr90_corvette_fore.png");
   background-repeat: no-repeat;
   background-position: -90px 0px; }
 
-.ship-cr90corvetteaft0 {
+.ship-cr90corvetteaft0, .ship-corbetacr90popa0 {
   background-image: url("../images/cr90_corvette_aft.png");
   background-repeat: no-repeat;
   background-position: 77px -12px; }
 
-.ship-gr75mediumtransport0 {
+.ship-gr75mediumtransport0, .ship-mediumtransportergr750, .ship-transportemedianogr750 {
   background-image: url("../images/gr_75_medium_transport.png");
   background-repeat: no-repeat;
   background-position: 0px -30px; }
