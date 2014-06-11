@@ -381,7 +381,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Reinforce"
-                "Jam"
+                "Recover"
             ]
             huge: true
             epic_points: 1.5
@@ -1578,6 +1578,46 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Torpedo"
             ]
+        }
+        {
+            name: "CR90 Corvette (Crippled Fore)"
+            id: 90
+            ship: "CR90 Corvette (Fore)"
+            sources: [ "Tantive IV Expansion Pack", ]
+            skill: 4
+            points: 0
+            epic: true
+            slots: [
+                "Crew"
+            ]
+            ship_override:
+                attack: 2
+                agility: 0
+                hull: 0
+                shields: 0
+                actions: []
+        }
+        {
+            name: "CR90 Corvette (Crippled Aft)"
+            id: 91
+            ship: "CR90 Corvette (Aft)"
+            sources: [ "Tantive IV Expansion Pack", ]
+            skill: 4
+            points: 0
+            epic: true
+            slots: [
+                "Cargo"
+            ]
+            ship_override:
+                energy: 1
+                agility: 0
+                hull: 0
+                shields: 0
+                actions: []
+            modifier_func: (stats) ->
+                stats.maneuvers[2][1] = 0
+                stats.maneuvers[2][3] = 0
+                stats.maneuvers[4][2] = 0
         }
     ]
 

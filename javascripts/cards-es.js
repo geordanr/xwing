@@ -488,6 +488,14 @@
         name: "Unspoiled PS5 B-Wing Pilot",
         text: "This card has not yet been revealed.",
         ship: "Ala-B"
+      },
+      "CR90 Corvette (Fore)": {
+        ship: "Corbeta CR90 (Proa)",
+        text: "When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."
+      },
+      "CR90 Corvette (Crippled Aft)": {
+        ship: "Corbeta CR90 (Popa)",
+        text: "You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."
       }
     };
     upgrade_translations = {
@@ -801,7 +809,7 @@
         text: "At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as \"12\" until the end of the phase."
       },
       "Jan Dodonna": {
-        text: "When another friendly ship at Range 1 is attacking, it my change 1 of its %HIT% results to a %CRIT%."
+        text: "When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."
       },
       "Expanded Cargo Hold": {
         text: "Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck.",
