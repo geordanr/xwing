@@ -2575,6 +2575,7 @@ exportObj.basicCardData = ->
             ]
             restriction_func: (ship) ->
                 ship.effectiveStats().skill > 4
+            special_case: 'Royal Guard TIE'
         }
         {
             name: "Dodonna's Pride"
@@ -2598,6 +2599,7 @@ exportObj.basicCardData = ->
                     slot: "Elite"
                 }
             ]
+            special_case: "A-Wing Test Pilot"
         }
         ## Apparently this is a modification, NOT a title
         ## Leaving this here to occupy the ID in case someone used it

@@ -930,7 +930,7 @@ class exportObj.SquadBuilder
 
         # Special case #2 :(
         current_upgrade_forcibly_removed = false
-        if ship?.title?.data?.name == 'A-Wing Test Pilot'
+        if ship?.title?.data?.special_case == 'A-Wing Test Pilot'
             for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
                 unclaimed_upgrades.removeItem equipped_upgrade
                 current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
@@ -948,7 +948,7 @@ class exportObj.SquadBuilder
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
         current_mod_forcibly_removed = false
-        if ship?.title?.data?.name == 'Royal Guard TIE'
+        if ship?.title?.data?.special_case == 'Royal Guard TIE'
             for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
                 unclaimed_modifications.removeItem equipped_modification
                 current_mod_forcibly_removed = true if equipped_modification == include_modification

@@ -1087,7 +1087,7 @@
         return _results;
       }).call(this);
       current_upgrade_forcibly_removed = false;
-      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.name : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
+      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
         _ref2 = (function() {
           var _j, _len, _ref2, _results;
           _ref2 = ship.upgrades;
@@ -1144,7 +1144,7 @@
         return _results;
       }).call(this);
       current_mod_forcibly_removed = false;
-      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.name : void 0 : void 0 : void 0) === 'Royal Guard TIE') {
+      if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'Royal Guard TIE') {
         _ref2 = (function() {
           var _j, _len, _ref2, _results;
           _ref2 = ship.modifications;

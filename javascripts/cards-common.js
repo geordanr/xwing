@@ -1940,7 +1940,8 @@
           ],
           restriction_func: function(ship) {
             return ship.effectiveStats().skill > 4;
-          }
+          },
+          special_case: 'Royal Guard TIE'
         }, {
           name: "Dodonna's Pride",
           id: 6,
@@ -1962,7 +1963,8 @@
               type: exportObj.Upgrade,
               slot: "Elite"
             }
-          ]
+          ],
+          special_case: "A-Wing Test Pilot"
         }, {
           name: "Tantive IV",
           id: 9,
