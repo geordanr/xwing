@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack", "E-Wing Expansion Pack", "TIE Phantom Expansion Pack", "Rebel Aces Expansion Pack"];
+  exportObj.unreleasedExpansions = ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack", "E-Wing Expansion Pack", "TIE Phantom Expansion Pack", "Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack", "VT-49 Decimator Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;
@@ -219,6 +219,26 @@
           huge: true,
           epic_points: 1.5,
           maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
+        },
+        "YT-2400": {
+          name: "YT-2400",
+          faction: "Rebel Alliance",
+          attack: 2,
+          agility: 2,
+          hull: 5,
+          shields: 5,
+          actions: ["Focus", "Target Lock", "Barrel Roll"],
+          large: true
+        },
+        "VT-49 Decimator": {
+          name: "VT-49 Decimator",
+          faction: "Galactic Empire",
+          attack: 3,
+          agility: 0,
+          hull: 12,
+          shields: 4,
+          actions: ["Focus", "Target Lock"],
+          large: true
         }
       },
       pilotsById: [
@@ -1050,6 +1070,76 @@
             stats.maneuvers[2][3] = 0;
             return stats.maneuvers[4][2] = 0;
           }
+        }, {
+          name: "Wild Spa???",
+          id: 92,
+          ship: "YT-2400",
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          skill: 2,
+          points: 99,
+          slots: ["Cannon", "Missile", "Crew"]
+        }, {
+          name: "Unspoiled PS3 YT-2400 Pilot",
+          id: 93,
+          ship: "YT-2400",
+          unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          skill: 3,
+          points: 99,
+          slots: ["Cannon", "Missile", "Crew"]
+        }, {
+          name: "Unspoiled PS5 YT-2400 Pilot",
+          id: 94,
+          ship: "YT-2400",
+          unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          skill: 5,
+          points: 99,
+          slots: ["Elite", "Cannon", "Missile", "Crew"]
+        }, {
+          name: "Dash Rendar",
+          id: 95,
+          ship: "YT-2400",
+          unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          skill: 7,
+          points: 36,
+          slots: ["Elite", "Cannon", "Missile", "Crew"]
+        }, {
+          name: "Patrol ???",
+          id: 96,
+          ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          skill: 3,
+          points: 99,
+          slots: ["Torpedo", "Crew", "Crew", "Crew", "Bomb"]
+        }, {
+          name: "Lieutenant ???",
+          id: 97,
+          ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          skill: 4,
+          points: 99,
+          unique: true,
+          slots: ["Elite", "Torpedo", "Crew", "Crew", "Crew", "Bomb"]
+        }, {
+          name: "Commander ???",
+          id: 98,
+          ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          skill: 6,
+          points: 99,
+          unique: true,
+          slots: ["Elite", "Torpedo", "Crew", "Crew", "Crew", "Bomb"]
+        }, {
+          name: "Rear Admiral Chiraneau",
+          id: 99,
+          ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          skill: 8,
+          points: 46,
+          unique: true,
+          slots: ["Elite", "Torpedo", "Crew", "Crew", "Crew", "Bomb"]
         }
       ],
       upgradesById: [
@@ -1234,7 +1324,7 @@
           name: "Heavy Laser Cannon",
           id: 23,
           slot: "Cannon",
-          sources: ["Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
+          sources: ["Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 7,
           attack: 4,
           range: "2-3"
@@ -1248,7 +1338,7 @@
           name: "Mercenary Copilot",
           id: 25,
           slot: "Crew",
-          sources: ["Slave I Expansion Pack"],
+          sources: ["Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 2
         }, {
           name: "Assault Missiles",
@@ -1628,7 +1718,7 @@
           name: "Proton Rockets",
           id: 73,
           slot: "Missile",
-          sources: ["Rebel Aces Expansion Pack"],
+          sources: ["Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 99
         }, {
           name: "Kyle Katarn",
@@ -1789,6 +1879,29 @@
           limited: true,
           sources: ["Tantive IV Expansion Pack"],
           points: 4
+        }, {
+          name: "Lando Calrissian",
+          id: 93,
+          slot: "Crew",
+          unique: true,
+          faction: "Rebel Alliance",
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          points: 3
+        }, {
+          name: "Mara Jade",
+          id: 94,
+          slot: "Crew",
+          unique: true,
+          faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          points: 3
+        }, {
+          name: "Fleet Officer",
+          id: 95,
+          slot: "Crew",
+          faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"],
+          points: 3
         }
       ],
       modificationsById: [
@@ -2018,6 +2131,13 @@
           sources: ["Rebel Transport Expansion Pack"],
           points: 2,
           ship: "CR90 Corvette (Fore)"
+        }, {
+          name: "Outrider",
+          id: 14,
+          unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          points: 5,
+          ship: "YT-2400"
         }
       ]
     };
@@ -2205,7 +2325,7 @@
 
   exportObj.fixIcons = function(data) {
     if (data.text != null) {
-      return data.text = data.text.replace(/%BANKLEFT%/g, '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />').replace(/%BANKRIGHT%/g, '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />').replace(/%BARRELROLL%/g, '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />').replace(/%BOOST%/g, '<img class="icon-boost" alt="Boost" src="images/transparent.png" />').replace(/%CRIT%/g, '<img class="icon-crit" alt="Crit" src="images/transparent.png" />').replace(/%CREW%/g, '<img class="icon-crew" alt="Crew" src="images/transparent.png" />').replace(/%ELITE%/g, '<img class="icon-elite" alt="Elite" src="images/transparent.png" />').replace(/%EVADE%/g, '<img class="icon-evade" alt="Evade" src="images/transparent.png" />').replace(/%FOCUS%/g, '<img class="icon-focus" alt="Focus" src="images/transparent.png" />').replace(/%HIT%/g, '<img class="icon-hit" alt="Hit" src="images/transparent.png" />').replace(/%KTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />').replace(/%STRAIGHT%/g, '<img class="icon-straight" alt="Straight" src="images/transparent.png" />').replace(/%TARGETLOCK%/g, '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />').replace(/%TEAM%/g, '<img class="icon-team" alt="Team" src="images/transparent.png" />').replace(/%TORPEDO%/g, '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />').replace(/%TURNLEFT%/g, '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />').replace(/%TURNRIGHT%/g, '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />').replace(/%UTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />');
+      return data.text = data.text.replace(/%BANKLEFT%/g, '<img class="icon-bankleft" alt="Bank Left" src="images/transparent.png" />').replace(/%BANKRIGHT%/g, '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />').replace(/%BARRELROLL%/g, '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />').replace(/%BOOST%/g, '<img class="icon-boost" alt="Boost" src="images/transparent.png" />').replace(/%CANNON%/g, '<img class="icon-cannon" alt="Cannon" src="images/transparent.png" />').replace(/%CRIT%/g, '<img class="icon-crit" alt="Crit" src="images/transparent.png" />').replace(/%CREW%/g, '<img class="icon-crew" alt="Crew" src="images/transparent.png" />').replace(/%ELITE%/g, '<img class="icon-elite" alt="Elite" src="images/transparent.png" />').replace(/%EVADE%/g, '<img class="icon-evade" alt="Evade" src="images/transparent.png" />').replace(/%FOCUS%/g, '<img class="icon-focus" alt="Focus" src="images/transparent.png" />').replace(/%HIT%/g, '<img class="icon-hit" alt="Hit" src="images/transparent.png" />').replace(/%KTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />').replace(/%STRAIGHT%/g, '<img class="icon-straight" alt="Straight" src="images/transparent.png" />').replace(/%TARGETLOCK%/g, '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />').replace(/%TEAM%/g, '<img class="icon-team" alt="Team" src="images/transparent.png" />').replace(/%TORPEDO%/g, '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />').replace(/%TURNLEFT%/g, '<img class="icon-turnleft" alt="Turn Left" src="images/transparent.png" />').replace(/%TURNRIGHT%/g, '<img class="icon-turnright" alt="Turn Right" src="images/transparent.png" />').replace(/%UTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />');
     }
   };
 

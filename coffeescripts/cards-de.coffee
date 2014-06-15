@@ -52,6 +52,8 @@ exportObj.translations.Deutsch =
         "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung"
         "Tantive IV Expansion Pack": "Tantive IV Erweiterung"
         "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung"
+        "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack"
+        "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -317,6 +319,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."""
         "CR90 Corvette (Crippled Fore)":
             name: "CR90 Corvette (Crippled Fore)"
+        "Dash Rendar":
+            text: """You may ignore obstacles during the Activation phase and when performing actions."""
+        "Rear Admiral Chiraneau":
+            text: """When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -574,6 +580,12 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """When acquiring a target lock, you may lock onto an enemy ship at Range 1-5 instead of 1-3."""
         "Engineering Team":
             text: """During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the "Gain Energy" step."""
+        "Lando Calrissian":
+            text: """<strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."""
+        "Mara Jade":
+            text: """At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
+        "Fleet Officer":
+            text: """<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
 
     modification_translations =
         "Stealth Device":
@@ -646,5 +658,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Bei der Aktion Störsignal kannst du ein feindliches Schiff in Reichweite 1-3 (statt 1-2) wählen."""
         "Jaina's Light":
             text: """When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
+        "Outrider":
+            text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
