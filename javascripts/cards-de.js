@@ -304,7 +304,7 @@
       },
       "Royal Guard Pilot": {
         ship: "TIE-Abfangjäger",
-        name: "Royal Guard Pilot"
+        name: "Pilot der Roten Garde"
       },
       "Tetran Cowall": {
         ship: "TIE-Abfangjäger",
@@ -376,7 +376,7 @@
       },
       '"Echo"': {
         name: '"Echo"',
-        text: "Wenn du dich enttarnst, muss du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."
+        text: "Wenn du dich enttarnst, musst du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."
       },
       '"Whisper"': {
         name: '"Geflüster"',
@@ -783,7 +783,7 @@
         text: "At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."
       },
       "Fleet Officer": {
-        text: "<strong>Action:</strong> Choose up to 2 friendly ships withing Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
+        text: "<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
       }
     };
     modification_translations = {
