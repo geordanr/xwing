@@ -74,7 +74,7 @@ casper.test.begin "Royal Guard TIE title unique mods (German)", (test) ->
     common.createList('#empire-builder', [
         {
             ship: 'TIE-Abfangjäger'
-            pilot: 'Royal Guard Pilot'
+            pilot: 'Pilot der Roten Garde'
             upgrades: [
                 null
                 'TIE der Roten Garde'
