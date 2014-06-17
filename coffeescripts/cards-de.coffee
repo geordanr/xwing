@@ -234,7 +234,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Wenn du die Aktion Fassrolle ausführst, kannst du 1 Stressmarker erhalten, um die (%BANKLEFT% 1) oder (%BANKRIGHT% 1) Manöverschablone anstatt der (%STRAIGHT% 1) Manöverschablone zu benutzen."""
         "Royal Guard Pilot":
             ship: "TIE-Abfangjäger"
-            name: "Royal Guard Pilot"
+            name: "Pilot der Roten Garde"
         "Tetran Cowall":
             ship: "TIE-Abfangjäger"
             text: """Immer wenn du ein %UTURN% Manöver aufdeckst, kannst du das Manöver mit einer Geschwindigkeit von "1," "3," oder "5" ausführen."""
@@ -287,7 +287,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Schatten-Staffel"
         '"Echo"':
             name: '"Echo"'
-            text: """Wenn du dich enttarnst, muss du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."""
+            text: """Wenn du dich enttarnst, musst du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."""
         '"Whisper"':
             name: '"Geflüster"'
             text: """Nachdem du mit einem Angriff getroffen hast, darfst du deinem Schiff 1 Fokusmarker geben."""
