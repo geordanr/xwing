@@ -395,7 +395,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Dash Rendar":
             text: """Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."""
         "Rear Admiral Chiraneau":
-            text: """CUando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."""
+            text: """Cuando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -634,17 +634,17 @@ exportObj.cardLoaders['Español'] = () ->
         "Jan Dodonna":
             name: "Jan Dodonna"
             text: """Cuando otra nave aliada que tengas a alcance 1 efectúe un ataque, podrá cambiar 1 de sus resultados de %HIT% por 1 resultado de %CRIT%."""
-        "Expanded Cargo Hold"
-            name: "Bodega de Carga Ampliada":
+        "Expanded Cargo Hold":
+            name: "Bodega de Carga Ampliada"
             text: """Una vez por ronda, cuando tengas a recibir una carta de Daño boca arriba, puedes robar esa carta del mazo de Daño de proa o del mazo de Daño de popa."""
             ship: 'Transporte mediano GR-75'
-        "Backup Shield Generator"
-            name: "Generador de Escudos Auxiliar":
+        "Backup Shield Generator":
+            name: "Generador de Escudos Auxiliar"
             text: """Al final de cada ronda, puedes gastar 1 de energía para recuperar 1 de escudos (hasta el maximo igual a tu puntuación de escudos)."""
         "EM Emitter":
             name: "Emisor de señal Electromagnética"
             text: """Cuando obstruyas un ataque, el defensor tira 3 dados de defensa adicionales en vez de 1."""
-        "Frequency Jammer"
+        "Frequency Jammer":
             name: "Inhibidor de Frecuencias"
             text: """Cuando lleves a cabo una acción de intereferencia, elige 1 nave enemiga que no tenga fichas de Tensión y se encuentr a alcance 1 de la nave interferida. La nave elegida recibe una ficha de tension."""
         "Han Solo":
