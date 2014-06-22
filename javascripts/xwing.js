@@ -1300,7 +1300,7 @@
     };
 
     SquadBuilder.prototype.showTooltip = function(type, data) {
-      var a, action, effective_stats, extra_actions, ship, slot, source, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var a, action, effective_stats, ship, slot, source, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (data !== this.tooltip_currently_displaying) {
         switch (type) {
           case 'Ship':
@@ -1315,9 +1315,6 @@
               return _results;
             }).call(this)).sort().join(', '));
             effective_stats = data.effectiveStats();
-            extra_actions = $.grep(effective_stats.actions, function(el, i) {
-              return __indexOf.call(data.data.actions, el) < 0;
-            });
             this.info_container.find('.info-name').html("" + (data.pilot.unique ? "&middot;&nbsp;" : "") + data.pilot.name + (data.pilot.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data.pilot) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref = data.pilot.text) != null ? _ref : '');
             this.info_container.find('tr.info-ship td.info-data').text(data.pilot.ship);
@@ -1337,11 +1334,12 @@
             this.info_container.find('tr.info-shields').show();
             this.info_container.find('tr.info-actions td.info-data').html(((function() {
               var _i, _len, _ref13, _results;
-              _ref13 = effective_stats.actions.concat((function() {
-                var _j, _len, _results1;
+              _ref13 = effective_stats.base_actions.concat((function() {
+                var _j, _len, _ref13, _results1;
+                _ref13 = effective_stats.extra_actions;
                 _results1 = [];
-                for (_j = 0, _len = extra_actions.length; _j < _len; _j++) {
-                  action = extra_actions[_j];
+                for (_j = 0, _len = _ref13.length; _j < _len; _j++) {
+                  action = _ref13[_j];
                   _results1.push("<strong>" + (exportObj.translate(this.language, 'action', action)) + "</strong>");
                 }
                 return _results1;
@@ -1873,7 +1871,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1374
+                        lineno: 1372
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1943,7 +1941,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1398
+                  lineno: 1396
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1996,14 +1994,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1420
+              lineno: 1418
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1422
+              lineno: 1420
             }));
           }
           _ref1 = _this.modifications;
@@ -2011,7 +2009,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1424
+                lineno: 1422
               }));
             }
           }
@@ -2453,40 +2451,54 @@
     };
 
     Ship.prototype.effectiveStats = function() {
-      var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var action, base_actions, modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      base_actions = ((_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.actions : void 0) != null ? _ref : this.data.actions).slice(0);
       stats = {
         skill: this.pilot.skill,
-        attack: (_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null ? _ref : this.data.attack,
-        energy: (_ref2 = (_ref3 = this.pilot.ship_override) != null ? _ref3.energy : void 0) != null ? _ref2 : this.data.energy,
-        agility: (_ref4 = (_ref5 = this.pilot.ship_override) != null ? _ref5.agility : void 0) != null ? _ref4 : this.data.agility,
-        hull: (_ref6 = (_ref7 = this.pilot.ship_override) != null ? _ref7.hull : void 0) != null ? _ref6 : this.data.hull,
-        shields: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : this.data.shields,
-        actions: ((_ref10 = (_ref11 = this.pilot.ship_override) != null ? _ref11.actions : void 0) != null ? _ref10 : this.data.actions).slice(0)
+        attack: (_ref2 = (_ref3 = this.pilot.ship_override) != null ? _ref3.attack : void 0) != null ? _ref2 : this.data.attack,
+        energy: (_ref4 = (_ref5 = this.pilot.ship_override) != null ? _ref5.energy : void 0) != null ? _ref4 : this.data.energy,
+        agility: (_ref6 = (_ref7 = this.pilot.ship_override) != null ? _ref7.agility : void 0) != null ? _ref6 : this.data.agility,
+        hull: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.hull : void 0) != null ? _ref8 : this.data.hull,
+        shields: (_ref10 = (_ref11 = this.pilot.ship_override) != null ? _ref11.shields : void 0) != null ? _ref10 : this.data.shields,
+        actions: ((_ref12 = (_ref13 = this.pilot.ship_override) != null ? _ref13.actions : void 0) != null ? _ref12 : this.data.actions).slice(0),
+        base_actions: base_actions
       };
       stats.maneuvers = [];
-      for (s = _i = 0, _ref12 = ((_ref13 = this.data.maneuvers) != null ? _ref13 : []).length; 0 <= _ref12 ? _i < _ref12 : _i > _ref12; s = 0 <= _ref12 ? ++_i : --_i) {
+      for (s = _i = 0, _ref14 = ((_ref15 = this.data.maneuvers) != null ? _ref15 : []).length; 0 <= _ref14 ? _i < _ref14 : _i > _ref14; s = 0 <= _ref14 ? ++_i : --_i) {
         stats.maneuvers[s] = this.data.maneuvers[s].slice(0);
       }
-      _ref14 = this.upgrades;
-      for (_j = 0, _len = _ref14.length; _j < _len; _j++) {
-        upgrade = _ref14[_j];
-        if ((upgrade != null ? (_ref15 = upgrade.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
+      _ref16 = this.upgrades;
+      for (_j = 0, _len = _ref16.length; _j < _len; _j++) {
+        upgrade = _ref16[_j];
+        if ((upgrade != null ? (_ref17 = upgrade.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
           upgrade.data.modifier_func(stats);
         }
       }
-      if (((_ref16 = this.title) != null ? (_ref17 = _ref16.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
+      if (((_ref18 = this.title) != null ? (_ref19 = _ref18.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
         this.title.data.modifier_func(stats);
       }
-      _ref18 = this.modifications;
-      for (_k = 0, _len1 = _ref18.length; _k < _len1; _k++) {
-        modification = _ref18[_k];
-        if ((modification != null ? (_ref19 = modification.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
+      _ref20 = this.modifications;
+      for (_k = 0, _len1 = _ref20.length; _k < _len1; _k++) {
+        modification = _ref20[_k];
+        if ((modification != null ? (_ref21 = modification.data) != null ? _ref21.modifier_func : void 0 : void 0) != null) {
           modification.data.modifier_func(stats);
         }
       }
-      if (((_ref20 = this.pilot) != null ? _ref20.modifier_func : void 0) != null) {
+      if (((_ref22 = this.pilot) != null ? _ref22.modifier_func : void 0) != null) {
         this.pilot.modifier_func(stats);
       }
+      stats.extra_actions = (function() {
+        var _l, _len2, _ref23, _results;
+        _ref23 = stats.actions;
+        _results = [];
+        for (_l = 0, _len2 = _ref23.length; _l < _len2; _l++) {
+          action = _ref23[_l];
+          if (__indexOf.call(base_actions, action) < 0) {
+            _results.push(action);
+          }
+        }
+        return _results;
+      })();
       return stats;
     };
 
@@ -2607,7 +2619,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1849
+                  lineno: 1852
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2683,7 +2695,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1879
+                    lineno: 1882
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2705,7 +2717,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1882
+                      lineno: 1885
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2770,7 +2782,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1907
+              lineno: 1910
             }));
           }
           __iced_deferrals._fulfill();
