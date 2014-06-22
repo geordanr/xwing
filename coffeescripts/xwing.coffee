@@ -1057,8 +1057,6 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     effective_stats = data.effectiveStats()
-                    extra_actions = $.grep effective_stats.actions, (el, i) ->
-                        el not in data.data.actions
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1076,7 +1074,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.base_actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in effective_stats.extra_actions))).join ', '
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
@@ -1744,6 +1742,8 @@ class Ship
         @updateSelections()
 
     effectiveStats: ->
+        base_actions = (@pilot.ship_override?.actions ? @data.actions).slice 0
+
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
@@ -1752,6 +1752,7 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
+            base_actions: base_actions
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -1764,6 +1765,8 @@ class Ship
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
+
+        stats.extra_actions = (action for action in stats.actions when action not in base_actions)
         stats
 
     validate: ->
