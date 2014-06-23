@@ -374,9 +374,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Jake Farrell":
             text: """Después de que realices una acción de concentración o te asignen una ficha de concentración, puedes realizar una acción gratuita de impulso o tonel volado."""
             ship: "Ala-A"
-        "Unspoiled PS5 A-Wing Pilot":
-            name: "Unspoiled PS5 A-Wing Pilot"
-            text: """This card has not yet been revealed."""
+        "Gemmer Sojan":
+            name: "Gemmer Sojan"
+            text: """While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."""
             ship: "Ala-A"
         "Keyan Farlander":
             text: """Cuando ataques, puedes retirar una ficha de tensión  para cambiar todos tus resultados %FOCUS% por %HIT%."""
@@ -611,7 +611,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"
-            text: """Esta carta no ha sido publicada."""
+            text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
         "Kyle Katarn":
             text: """Despues de retires una ficha de Tensión de tu nave, puedes asiganar 1 ficha de %FOCUS% a tu nave."""
         "Jan Ors":

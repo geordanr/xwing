@@ -265,8 +265,8 @@
       "Jake Farrell": {
         text: "After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."
       },
-      "Unspoiled PS5 A-Wing Pilot": {
-        text: "This card has not yet been revealed."
+      "Gemmer Sojan": {
+        text: "While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."
       },
       "Keyan Farlander": {
         text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
@@ -508,7 +508,7 @@
         text: "This card has a negative squad point cost."
       },
       "Proton Rockets": {
-        text: "This card has not yet been revealed."
+        text: "<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."
       },
       "Kyle Katarn": {
         text: "After you remove a stress token from your ship, you may assign a focus token to your ship."

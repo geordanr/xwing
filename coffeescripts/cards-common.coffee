@@ -1564,13 +1564,13 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 A-Wing Pilot"
+            name: "Gemmer Sojan"
             id: 87
             unique: true
             ship: "A-Wing"
             sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
-            points: 99
+            points: 22
             slots: [
                 "Missile"
             ]
@@ -2404,7 +2404,9 @@ exportObj.basicCardData = ->
             id: 73
             slot: "Missile"
             sources: [ "Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
-            points: 99
+            points: 3
+            attack: 2
+            range: "1"
         }
         {
             name: "Kyle Katarn"
