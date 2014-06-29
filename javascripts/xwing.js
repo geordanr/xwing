@@ -659,6 +659,7 @@
       if (cb == null) {
         cb = $.noop;
       }
+      console.log("onPointsUpdated");
       this.total_points = 0;
       this.total_epic_points = 0;
       unreleased_content_used = false;
@@ -732,6 +733,7 @@
       }
       this.fancy_total_points_container.text(this.total_points);
       this.permalink.attr('href', "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())));
+      console.log(this.permalink.attr('href'));
       this.fancy_container.text('');
       this.simple_container.html('<table class="simple-table"></table>');
       bbcode_ships = [];
@@ -986,7 +988,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 901
+            lineno: 903
           }));
           __iced_deferrals._fulfill();
         });
@@ -999,7 +1001,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 902
+              lineno: 904
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1767,7 +1769,7 @@
         _ref4 = other.title.conferredAddons;
         for (i = _j = 0, _len1 = _ref4.length; _j < _len1; i = ++_j) {
           other_conferred_addon = _ref4[i];
-          if (!((_ref5 = other_conferred_addon.data) != null ? _ref5.unique : void 0)) {
+          if ((other_conferred_addon.data != null) && !((_ref5 = other_conferred_addon.data) != null ? _ref5.unique : void 0)) {
             this.title.conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }
@@ -1776,7 +1778,7 @@
         _ref6 = other.modifications[0].conferredAddons;
         for (i = _k = 0, _len2 = _ref6.length; _k < _len2; i = ++_k) {
           other_conferred_addon = _ref6[i];
-          if (!((_ref7 = other_conferred_addon.data) != null ? _ref7.unique : void 0)) {
+          if ((other_conferred_addon.data != null) && !((_ref7 = other_conferred_addon.data) != null ? _ref7.unique : void 0)) {
             this.modifications[0].conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }
@@ -1871,7 +1873,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1372
+                        lineno: 1374
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1941,7 +1943,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1396
+                  lineno: 1398
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1994,14 +1996,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1418
+              lineno: 1420
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1420
+              lineno: 1422
             }));
           }
           _ref1 = _this.modifications;
@@ -2009,7 +2011,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1422
+                lineno: 1424
               }));
             }
           }
@@ -2619,7 +2621,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1852
+                  lineno: 1854
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2695,7 +2697,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1882
+                    lineno: 1884
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2717,7 +2719,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1885
+                      lineno: 1887
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2727,8 +2729,8 @@
               }
             })(function() {
               _this.data = new_data;
-              _this.ship.builder.container.trigger('xwing:pointsUpdated');
-              return __iced_k(_this.conferAddons());
+              _this.conferAddons();
+              return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
             });
           };
         })(this));
@@ -2782,7 +2784,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1910
+              lineno: 1912
             }));
           }
           __iced_deferrals._fulfill();

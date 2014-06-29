@@ -66,6 +66,47 @@ casper.test.begin "Permalink", (test) ->
         test.done()
 
 
+casper.test.begin "Unused conferred addons permalink correctly", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'A-Wing'
+            pilot: 'Green Squadron Pilot'
+            upgrades: [
+                null
+                null
+                'A-Wing Test Pilot'
+            ]
+        }
+    ])
+
+    .then ->
+        @click '#rebel-builder .permalink'
+        @waitForUrl(/d=/)
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    .then ->
+        test.assertUrlMatch /f=/, 'Faction specified in permalink'
+        test.assertUrlMatch /d=/, 'Serialization in permalink'
+    common.assertTotalPoints(test, '#rebel-builder', 19)
+    common.assertShipTypeIs(test, '#rebel-builder', 1, 'A-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 1, 'Green Squadron Pilot')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'A-Wing Test Pilot')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 1, 5)
+
+    common.removeShip('#rebel-builder', 1)
+
+    .run ->
+        test.done()
+
+
+
+
+
+
+
+
 casper.test.begin "Weird Rebel permalink v2", (test) ->
     common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v2!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
     .then ->

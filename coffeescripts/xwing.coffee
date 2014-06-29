@@ -1313,11 +1313,11 @@ class Ship
         if other.title? and other.title.conferredAddons.length > 0
             #console.log "Other ship title #{other.title} conferrs addons"
             for other_conferred_addon, i in other.title.conferredAddons
-                @title.conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+                @title.conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
         if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
-                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
 
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
@@ -1885,8 +1885,8 @@ class GenericAddon
             if new_data?.unique?
                 await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
             @data = new_data
-            @ship.builder.container.trigger 'xwing:pointsUpdated'
             @conferAddons()
+            @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
         if @data?.confersAddons? and @data.confersAddons.length > 0
