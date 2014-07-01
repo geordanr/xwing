@@ -61,7 +61,9 @@
       "E-Wing Expansion Pack": "E-Wing Expansion Pack",
       "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack",
       "Tantive IV Expansion Pack": "Tantive IV Expansion Pack",
-      "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
+      "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack",
+      "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack",
+      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
     },
     ui: {
       shipSelectorPlaceholder: "Select a ship",
@@ -242,8 +244,8 @@
       "Corran Horn": {
         text: "At the start of the End phase, you may perform one attack.  You cannot attack during the next round."
       },
-      "Unspoiled PS6 TIE Phantom Pilot": {
-        text: "This card has not yet been released."
+      '"Echo"': {
+        text: "When you decloak, you must use the (%BANKLEFT% 2) or (%BANKRIGHT% 2) template instead of the (%STRAIGHT% 2) template."
       },
       '"Whisper"': {
         text: "After you perform an attack that hits, you may assign 1 focus to your ship."
@@ -254,7 +256,7 @@
       "Jek Porkins": {
         text: "When you receive a stress token, you may remove it and roll 1 attack die.  On a %HIT% result, deal 1 facedown Damage card to this ship."
       },
-      '"Hobbie" Kilvan': {
+      '"Hobbie" Klivian': {
         text: "When you acquire or spend a target lock, you may remove 1 stress token from your ship."
       },
       "Tarn Mison": {
@@ -263,14 +265,26 @@
       "Jake Farrell": {
         text: "After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."
       },
-      "Unspoiled PS5 A-Wing Pilot": {
-        text: "This card has not yet been revealed."
+      "Gemmer Sojan": {
+        text: "While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."
       },
       "Keyan Farlander": {
         text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
       },
       "Unspoiled PS5 B-Wing Pilot": {
         text: "This card has not yet been revealed."
+      },
+      "CR90 Corvette (Fore)": {
+        text: "When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."
+      },
+      "CR90 Corvette (Crippled Aft)": {
+        text: "You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."
+      },
+      "Dash Rendar": {
+        text: "You may ignore obstacles during the Activation phase and when performing actions."
+      },
+      "Rear Admiral Chiraneau": {
+        text: "When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."
       }
     };
     upgrade_translations = {
@@ -440,7 +454,7 @@
         text: "At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."
       },
       "Decoy": {
-        text: "This card has not yet been released."
+        text: "At the start of the Combat phase, you may choose 1 friendly ship at Range 1-2.  Exchange your pilot skill with that ship's pilot skill until the end of the phase."
       },
       "Outmaneuver": {
         text: "When attacking a ship inside your firing arc, if you are not inside that ship's firing arc, reduce its agility value by 1 (to a minimum of 0)."
@@ -458,7 +472,7 @@
         text: "<strong>Action:</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."
       },
       "Tactician": {
-        text: "This card has not yet been released."
+        text: "After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."
       },
       "R2-D2 (Crew)": {
         text: "At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."
@@ -494,13 +508,13 @@
         text: "This card has a negative squad point cost."
       },
       "Proton Rockets": {
-        text: "This card has not yet been revealed."
+        text: "<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."
       },
       "Kyle Katarn": {
-        text: "After you receive a stress token from your ship, you may assign a focus token to ???"
+        text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
       },
       "Jan Ors": {
-        text: "This card has not yet been revealed."
+        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."
       },
       "Toryn Farr": {
         text: "<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."
@@ -518,7 +532,7 @@
         text: "At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as \"12\" until the end of the phase."
       },
       "Jan Dodonna": {
-        text: "When another friendly ship at Range 1 is attacking, it my change 1 of its %HIT% results to a %CRIT%."
+        text: "When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."
       },
       "Expanded Cargo Hold": {
         text: "Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."
@@ -530,7 +544,37 @@
         text: "When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."
       },
       "Frequency Jammer": {
-        text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
+        text: "When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."
+      },
+      "Han Solo": {
+        text: "When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."
+      },
+      "Leia Organa": {
+        text: "At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."
+      },
+      "Targeting Coordinator": {
+        text: "<strong>Energy:</strong> You may spend 1 energy to choose 1 friendly ship at Range 1-2.  Acquire a target lock, then assign the blue target lock token to the chosen ship."
+      },
+      "Raymus Antilles": {
+        text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."
+      },
+      "Gunnery Team": {
+        text: "Once per round, when attacking with a secondary weapon, you may spend 1 energy to change 1 of your blank results to a %HIT% result."
+      },
+      "Sensor Team": {
+        text: "When acquiring a target lock, you may lock onto an enemy ship at Range 1-5 instead of 1-3."
+      },
+      "Engineering Team": {
+        text: "During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the \"Gain Energy\" step."
+      },
+      "Lando Calrissian": {
+        text: "<strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."
+      },
+      "Mara Jade": {
+        text: "At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."
+      },
+      "Fleet Officer": {
+        text: "<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
       }
     };
     modification_translations = {
@@ -563,6 +607,9 @@
       },
       "Combat Retrofit": {
         text: "Increase your hull value by 2 and your shield value by 1."
+      },
+      "B-Wing/E2": {
+        text: "Your upgrade bar gains the %CREW% upgrade icon."
       }
     };
     title_translations = {
@@ -587,9 +634,6 @@
       "A-Wing Test Pilot": {
         text: "Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
       },
-      "B-Wing/E": {
-        text: "Your upgrade bar gains the %CREW% upgrade icon."
-      },
       "Tantive IV": {
         text: "Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."
       },
@@ -601,6 +645,12 @@
       },
       "Dutyfree": {
         text: "When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."
+      },
+      "Jaina's Light": {
+        text: "When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."
+      },
+      "Outrider": {
+        text: "While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);

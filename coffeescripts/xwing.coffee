@@ -76,6 +76,7 @@ class exportObj.SquadBuilder
             points: 100
         @total_points = 0
         @isEpic = false
+        @maxEpicPointsAllowed = 0
 
         @backend = null
         @current_squad = {}
@@ -143,9 +144,12 @@ class exportObj.SquadBuilder
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
+                    <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
                     <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
                     <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
+                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>
+                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
@@ -318,6 +322,11 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
         @epic_content_used_container = $ @points_container.find('.epic-content-used')
         @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
+        @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
+        @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
+        @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
+        @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
+        @max_epic_points_span = $ @points_container.find('.max-epic-points')
         @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
@@ -638,21 +647,26 @@ class exportObj.SquadBuilder
                 @desired_points_input.val 100
             when 'epic'
                 @isEpic = true
+                @maxEpicPointsAllowed = 5
                 @desired_points_input.val 300
             when 'team-epic'
                 @isEpic = true
+                @maxEpicPointsAllowed = 3
                 @desired_points_input.val 200
             when 'custom'
                 @isEpic = false
+        @max_epic_points_span.text @maxEpicPointsAllowed
         @onPointsUpdated cb
 
     onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
+        @total_epic_points = 0
         unreleased_content_used = false
         epic_content_used = false
         for ship, i in @ships
             ship.validate()
             @total_points += ship.getPoints()
+            @total_epic_points += ship.getEpicPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
             ship_uses_epic_content = ship.checkEpicContent()
@@ -664,20 +678,35 @@ class exportObj.SquadBuilder
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
         @epic_content_used_container.toggleClass 'hidden', (@isEpic or not epic_content_used)
 
-        # Warn if equipping illegal upgrades in Epic play
+        # Check against Epic restrictions if applicable
         @illegal_epic_upgrades_container.toggleClass 'hidden', true
+        @too_many_small_ships_container.toggleClass 'hidden', true
+        @too_many_large_ships_container.toggleClass 'hidden', true
+        @total_epic_points_container.toggleClass 'hidden', true
         if @isEpic
+            @total_epic_points_container.toggleClass 'hidden', false
+            @total_epic_points_span.text @total_epic_points
+            @total_epic_points_span.toggleClass 'red', (@total_epic_points > @maxEpicPointsAllowed)
+            shipCountsByType = {}
             illegal_for_epic = false
             for ship, i in @ships
-                if ship?.data?.huge?
-                    for upgrade in ship.upgrades
-                        if upgrade?.data?.epic_restriction_func?
-                            unless upgrade.data.epic_restriction_func ship.data
-                                illegal_for_epic = true
-                                break
-                        break if illegal_for_epic
-                break if illegal_for_epic
+                if ship?.data?
+                    shipCountsByType[ship.data.name] ?= 0
+                    shipCountsByType[ship.data.name] += 1
+                    if ship.data.huge?
+                        for upgrade in ship.upgrades
+                            if upgrade?.data?.epic_restriction_func?
+                                unless upgrade.data.epic_restriction_func ship.data
+                                    illegal_for_epic = true
+                                    break
+                            break if illegal_for_epic
             @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
+            for ship_name, count of shipCountsByType
+                ship_data = exportObj.ships[ship_name]
+                if ship_data.large? and count > 6
+                    @too_many_large_ships_container.toggleClass 'hidden', false
+                else if not ship.huge? and count > 12
+                    @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
@@ -901,7 +930,7 @@ class exportObj.SquadBuilder
 
         # Special case #2 :(
         current_upgrade_forcibly_removed = false
-        if ship?.title?.data?.name == 'A-Wing Test Pilot'
+        if ship?.title?.data?.special_case == 'A-Wing Test Pilot'
             for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
                 unclaimed_upgrades.removeItem equipped_upgrade
                 current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
@@ -919,7 +948,7 @@ class exportObj.SquadBuilder
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
         current_mod_forcibly_removed = false
-        if ship?.title?.data?.name == 'Royal Guard TIE'
+        if ship?.title?.data?.special_case == 'Royal Guard TIE'
             for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
                 unclaimed_modifications.removeItem equipped_modification
                 current_mod_forcibly_removed = true if equipped_modification == include_modification
@@ -1028,8 +1057,6 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     effective_stats = data.effectiveStats()
-                    extra_actions = $.grep effective_stats.actions, (el, i) ->
-                        el not in data.data.actions
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1047,7 +1074,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.base_actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in effective_stats.extra_actions))).join ', '
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
@@ -1073,7 +1100,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
+                    @info_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
@@ -1286,11 +1313,11 @@ class Ship
         if other.title? and other.title.conferredAddons.length > 0
             #console.log "Other ship title #{other.title} conferrs addons"
             for other_conferred_addon, i in other.title.conferredAddons
-                @title.conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+                @title.conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
         if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
             #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
             for other_conferred_addon, i in other.modifications[0].conferredAddons
-                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id unless other_conferred_addon.data?.unique
+                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
 
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
@@ -1363,6 +1390,7 @@ class Ship
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
+            @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
 
     resetPilot: ->
         if @pilot?.unique?
@@ -1410,6 +1438,9 @@ class Ship
         else
             @points_container.fadeTo 0, 0
         points
+
+    getEpicPoints: ->
+        @data?.epic_points ? 0
 
     updateSelections: ->
         if @pilot?
@@ -1711,6 +1742,8 @@ class Ship
         @updateSelections()
 
     effectiveStats: ->
+        base_actions = (@pilot.ship_override?.actions ? @data.actions).slice 0
+
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
@@ -1718,7 +1751,8 @@ class Ship
             agility: @pilot.ship_override?.agility ? @data.agility
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
-            actions: @data.actions.slice 0
+            actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
+            base_actions: base_actions
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -1731,6 +1765,8 @@ class Ship
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
+
+        stats.extra_actions = (action for action in stats.actions when action not in base_actions)
         stats
 
     validate: ->
@@ -1849,8 +1885,8 @@ class GenericAddon
             if new_data?.unique?
                 await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
             @data = new_data
-            @ship.builder.container.trigger 'xwing:pointsUpdated'
             @conferAddons()
+            @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
         if @data?.confersAddons? and @data.confersAddons.length > 0

@@ -76,7 +76,7 @@ casper.test.begin "Copy A-Wing with Test Pilot", (test) ->
     .run ->
         test.done()
 
-casper.test.begin "Copy B-Wing with B-Wing/E", (test) ->
+casper.test.begin "Copy B-Wing with B-Wing/E2", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.createList('#rebel-builder', [
@@ -88,20 +88,20 @@ casper.test.begin "Copy B-Wing with B-Wing/E", (test) ->
                 null
                 'Proton Torpedoes'
                 null
-                'B-Wing/E'
+                'B-Wing/E2'
                 null
             ]
         }
     ])
 
-    common.addUpgrade('#rebel-builder', 1, 7, 'Gunner')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
     common.cloneShip('#rebel-builder', 1)
-    common.assertTotalPoints(test, '#rebel-builder', 132 * 2) # FIXME B-Wing/E cost unknown
+    common.assertTotalPoints(test, '#rebel-builder', 34 * 2)
 
     common.removeShip('#rebel-builder', 1)
-    common.addUpgrade('#rebel-builder', 1, 7, 'Nien Nunb')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Nien Nunb')
     common.cloneShip('#rebel-builder', 1)
-    common.assertTotalPoints(test, '#rebel-builder', 255) # FIXME B-Wing/E cost unknown
+    common.assertTotalPoints(test, '#rebel-builder', 59)
 
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)

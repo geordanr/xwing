@@ -92,16 +92,15 @@ casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
     casper.then ->
         test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 5}", "Elite slot was rescinded")
 
-    # B-Wing/E grants crew slot
+    # B-Wing/E2 grants crew slot
     common.setShipType('#rebel-builder', 1, 'B-Wing')
     common.setPilot('#rebel-builder', 1, 'Blue Squadron Pilot')
     common.addUpgrade('#rebel-builder', 1, 1, 'Advanced Sensors')
     common.addUpgrade('#rebel-builder', 1, 2, 'Heavy Laser Cannon')
     common.addUpgrade('#rebel-builder', 1, 3, 'Proton Torpedoes')
     common.addUpgrade('#rebel-builder', 1, 4, 'Advanced Proton Torpedoes')
-    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E')
-    common.addUpgrade('#rebel-builder', 1, 6, 'Munitions Failsafe')
-    common.addUpgrade('#rebel-builder', 1, 7, 'Gunner')
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
     # Switching to Ten Numb should keep everything (except for new empty elite slot)
     common.setPilot('#rebel-builder', 1, 'Ten Numb')
     common.assertNoUpgradeInSlot(test, '#rebel-builder', 1, 1)
@@ -109,18 +108,16 @@ casper.test.begin "Changing ship keeps as many upgrades as possible", (test) ->
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'Heavy Laser Cannon')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Proton Torpedoes')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 5, 'Advanced Proton Torpedoes')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 6, 'B-Wing/E')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 7, 'Munitions Failsafe')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 8, 'Gunner')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 6, 'B-Wing/E2')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 7, 'Gunner')
     # Switching down to Dagger squad should keep everything but elite
     common.setPilot('#rebel-builder', 1, 'Dagger Squadron Pilot')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, 'Advanced Sensors')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 2, 'Heavy Laser Cannon')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 3, 'Proton Torpedoes')
     common.assertUpgradeInSlot(test, '#rebel-builder', 1, 4, 'Advanced Proton Torpedoes')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 5, 'B-Wing/E')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 6, 'Munitions Failsafe')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 7, 'Gunner')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 1, 6, 'Gunner')
 
     common.removeShip('#rebel-builder', 1)
 

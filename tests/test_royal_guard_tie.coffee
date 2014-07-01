@@ -64,3 +64,53 @@ casper.test.begin "Royal Guard TIE title", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Royal Guard TIE title unique mods (German)", (test) ->
+    common.waitForStartup('#rebel-builder')
+    common.openEmpireBuilder()
+
+    common.selectLanguage('Deutsch')
+
+    common.createList('#empire-builder', [
+        {
+            ship: 'TIE-Abfangjäger'
+            pilot: 'Pilot der Roten Garde'
+            upgrades: [
+                null
+                'TIE der Roten Garde'
+                'Tarnvorrichtung'
+            ]
+        }
+    ])
+
+    common.assertNoMatch(test, common.selectorForUpgradeIndex(1, 4), 'Tarnvorrichtung')
+
+    common.selectLanguage('English')
+
+    .run ->
+        test.done()
+
+casper.test.begin "Royal Guard TIE title unique mods (Spanish)", (test) ->
+    common.waitForStartup('#rebel-builder')
+    common.openEmpireBuilder()
+
+    common.selectLanguage('Español')
+
+    common.createList('#empire-builder', [
+        {
+            ship: 'Interceptor TIE'
+            pilot: 'Piloto de la guardia Real'
+            upgrades: [
+                null
+                'TIE de la Guardia Real'
+                'Dispositivo de Sigilo'
+            ]
+        }
+    ])
+
+    common.assertNoMatch(test, common.selectorForUpgradeIndex(1, 4), 'Dispositivo de Sigilo')
+
+    common.selectLanguage('English')
+
+    .run ->
+        test.done()

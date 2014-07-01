@@ -14,22 +14,22 @@ exportObj.translations['Español'] =
         "Target Lock": "Blanco Fijado"
         "Recover": "Recuperar"
         "Reinforce": "Reforzar"
-        "Jam": "Jam"
+        "Jam": "Interferir"
         "Coordinate": "Coordinar"
         "Cloak": "Encubrir"
     slot:
         "Astromech": "Astromech"
-        "Bomb": "Bomb"
+        "Bomb": "Bomba"
         "Cannon": "Cañón"
         "Crew": "Tripulación"
         "Elite": "Élite"
         "Missile": "Misiles"
         "System": "Sistemas"
         "Torpedo": "Torpedos"
-        "Turret": "Turret"
+        "Turret": "Torreta"
         "Cargo": "Cargo"
         "Hardpoint": "Hardpoint"
-        "Team": "Team"
+        "Team": "Equipo"
     sources: # needed?
         "Core": "Core"
         "A-Wing Expansion Pack": "A-Wing Expansion Pack"
@@ -52,6 +52,8 @@ exportObj.translations['Español'] =
         "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack"
         "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
         "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
+        "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack"
+        "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -335,7 +337,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando un enemigo dentro de tu arco de fuego a alcance 1-3 se esté defendiendo, el atacante puede cambiar uno de sus resultados %HIT% por un %CRIT%."""
             ship: "Ala-E"
         "Corran Horn":
-            text: """At the start of the End phase, you may perform one attack.  You cannot attack during the next round."""
+            text: """Puedes efectuar 1 ataque al comienzo de la fase Final, pero si lo haces no podrás atacar en la ronda siguiente."""
             ship: "Ala-E"
         "Sigma Squadron Pilot":
             name: "Piloto del escuadrón Sigma"
@@ -343,45 +345,57 @@ exportObj.cardLoaders['Español'] = () ->
         "Shadow Squadron Pilot":
             name: "Piloto del escuadrón Sombra"
             ship: "TIE Fantasma"
-        "Unspoiled PS6 TIE Phantom Pilot":
-            name: "Piloto de habilidad 6 no publicado"
+        '"Echo"':
+            text: """Cuando desactives tu camuflaje, debes usar la plantilla (%BANKLEFT% 2) o la de (%BANKRIGHT% 2) en lugar de la de (%STRAIGHT% 2)."""
             ship: "TIE Fantasma"
         '"Whisper"':
             name: '"Susurro"'
-            text: """Después de que efectúes un ataque que de en el blanco, puedes asignar una ficha de focus a tu nave."""
+            text: """Después de que efectúes un ataque que impacte, puedes asignar una ficha de %FOCUS% a tu nave."""
             ship: "TIE Fantasma"
         "CR90 Corvette (Fore)":
             name: "Corbeta CR90 (Proa)"
             ship: "Corbeta CR90 (Proa)"
+            text: """Cuando ataques con tu armamento principal, puedes gastar 1 de energía para tirar 1 dado de ataque adicional."""
         "CR90 Corvette (Aft)":
             name: "Corbeta CR90 (Popa)"
             ship: "Corbeta CR90 (Popa)"
         "Wes Janson":
-            text: """Después de que realices un ataque, puedes remover una ficha de Concentración, Evadir o una ficha de fijar blanco azúl del defensor."""
+            text: """Después de que realices un ataque, puedes eliminar 1 ficha de %FOCUS%, %EVADE% o blanco fijado (azul) del defensor."""
             ship: "Ala-X"
         "Jek Porkins":
-            text: """Cuando recibas una ficha de Tensión, puedes removerla y lanzar un dado de ataque. Si el resultado es de %HIT%, asigna una carta de daño boca abajo a tu nave."""
+            text: """Cuando recibas una ficha de Tensión, puedes descartarla y tirar un dado de ataque. Si sacas %HIT%, esta nave recibe una carta de daño boca abajo."""
             ship: "Ala-X"
-        '"Hobbie" Kilvan':
-            text: """Cuando adquieras o gastes una ficha de fijar blanco, puedes remover una ficha de Tensión de tu nave."""
+        '"Hobbie" Klivian':
+            text: """Cuando fijes un blanco o gastes una ficha de blanco fijado, puedes quitar 1 ficha de tensión de tu nave."""
             ship: "Ala-X"
         "Tarn Mison":
-            text: """Cuando una nave te declare como el objetivo de tu ataque, puedes fijar blanco en esa nave."""
+            text: """Cuando una nave enemiga te declare como objetivo de un ataque, puedes fijar esa nave como blanco."""
             ship: "Ala-X"
         "Jake Farrell":
-            text: """Después de que realices una acción de Concentración o te asignen una ficha de Concentración, puedes realizar una acción de impulso o de tonel volado."""
+            text: """Después de que realices una acción de concentración o te asignen una ficha de concentración, puedes realizar una acción gratuita de impulso o tonel volado."""
             ship: "Ala-A"
-        "Unspoiled PS5 A-Wing Pilot":
-            name: "Unspoiled PS5 A-Wing Pilot"
-            text: """This card has not yet been revealed."""
+        "Gemmer Sojan":
+            name: "Gemmer Sojan"
+            text: """While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."""
             ship: "Ala-A"
         "Keyan Farlander":
-            text: """Cuando ataques, puedes remover de tu nave una ficha de tensión para cambiar todos tus resultados %FOCUS% por %HIT%."""
+            text: """Cuando ataques, puedes retirar una ficha de tensión  para cambiar todos tus resultados %FOCUS% por %HIT%."""
             ship: "Ala-B"
         "Unspoiled PS5 B-Wing Pilot":
             name: "Unspoiled PS5 B-Wing Pilot"
             text: """This card has not yet been revealed."""
             ship: "Ala-B"
+        "CR90 Corvette (Crippled Aft)":
+            name: "CR90 Corvette (Crippled Aft)"
+            ship: "Corbeta CR90 (Popa)"
+            text: """No puedes seleccionar ni ejecutar maniobras (%STRAIGHT% 4), (%BANKLEFT% 2), o (%BANKRIGHT% 2)."""
+        "CR90 Corvette (Crippled Fore)":
+            name: "CR90 Corvette (Crippled Fore)"
+            ship: "Corbeta CR90 (Proa)"
+        "Dash Rendar":
+            text: """Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."""
+        "Rear Admiral Chiraneau":
+            text: """Cuando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -527,14 +541,14 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Oportunista"
             text: """Cuando ataques, si el defensor no tiene fichas de concentración o evadir, puedes recibir una ficha de Tensión para lanzar un dado adicional.<br /><br />No puedes utilizar esta habilidad si ya tienes una ficha de Tensión."""
         "Comms Booster":
-            name: "Comms Booster"
-            text: """<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."""
+            name: "Amplificador de Comunicaciones"
+            text: """<strong>Energía:</strong> Gasta 1 de energía para descartar todas las fichas de tensión de una nave aliada que tengas a alcance at Range 1-3. Luego asigna 1 ficha de concentración a esa nave."""
         "Slicer Tools":
-            name: "Slicer Tools"
-            text: """<strong>Action:</strong> Choose 1 or more ships at Range 1-3 that have a stress token.  For each ship chosen, you may spend 1 energy to cause that ship to suffer 1 damage."""
+            name: "Sistemas de Guerra Electrónica"
+            text: """<strong>Acción:</strong> Elige 1 o mas naves enemigas a alcance 1-3 y que tengan fichas de tensión.  Por cada nave elegida,puedes gastar 1 de energía para que esa nave sufra 1 daño."""
         "Shield Projector":
-            name: "Shield Projector"
-            text: """When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."""
+            name: "Proyector de Escudos"
+            text: """Cuando una nave enemiga pase a ser la nave activa durante la fase de combate, pueds gastar 3 de energía para obligar a esa nave a atacarte (si puede) hasta el final de la fase."""
         "Ion Pulse Missiles":
             name: "Misiles de Pulso Iónico"
             text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Si este ataque impacta el objetivo, el defensor sufre un daño y recibe dos fichas de iones. Después se anulan <strong>todos</strong> los resultados de los dados."""
@@ -543,7 +557,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase de combate, quita una ficha de tensión de una nave aliada que tengas a alcance 1."""
         "Decoy":
             name: "Señuelo"
-            text: """Esta carta no ha sido publicada."""
+            text: """Al comienzo de la fase de Combate, puedes eleir 1 nave aliada que tengas a alcance 1-2. Intercambia tu Habilidad de piloto por la Habilidad de piloto de esa nave hasta el final de la fase."""
         "Outmaneuver":
             name: "Mejores maniobras"
             text: """Cuando ataques a una nave dentro de tu arco de fuego, si tu nave no se encuentra dentro del arco de fuego de dicha nave, reduce su valor de Agilidad en 1 (para un mínimo de 0)."""
@@ -555,40 +569,40 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Después de efectuar este ataque, el defensor recibe una ficha de estrés si su valor de blindaje es "4" o menos."""
         "R7 Astromech":
             name: "Droide Astromecánico R7"
-            text: """Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."""
+            text: """Una vez por ronda cuando te defiendas, si tienes al atacante fijado como blanco, puedes gastar una ficha de Blanco fijado para elegir algunos o todos sus dados de ataque. El atacante debe volver a tirar los dados que hayas elegido."""
         "R7-T1":
             name: "R7-T1"
             text: """<strong>Acción:</strong> Escoge una nave enemiga a alcance 1-2. Si estás dentro del arco de disparo de esa nave puedes fijar blanco en ella. Después realiza una acción de impulso gratuita."""
         "Tactician":
-            name: "Tactician"
-            text: """This card has not yet been released."""
+            name: "Estratega"
+            text: """Después de que efectúes un ataquecontra una nave que esté situada dentro de tu arco e fuego a alcance 2, esa nave recibe una dicha de tensión."""
         "R2-D2 (Crew)":
-            name: "R2-D2 (Crew)"
-            text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
+            name: "R2-D2 (Tripulante)"
+            text: """Al final de la fase final, si no tienes escudos, puedes recuperar 1 de escudos y tirar 1 dado de ataque. Si sacas %HIT%, pon boca arriba una de las cartas de daño que tengas boca abajo (elegida al azar) y resuélvela.."""
         "C-3PO":
             name: "C-3PO"
-            text: """Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."""
+            text: """Una vez por ronda, antes de que tires 1 o mas dados de defensa, puedes decir en voz alta cuántos resultados %EVADE% vas a sacar. Si aciertas (antes de modificar los dados), añade 1 %EVADE% al resultado."""
         "Single Turbolasers":
-            name: "Single Turbolasers"
-            text: """<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your %FOCUS% results to a %HIT% result."""
+            name: "Batería de Turboláseres"
+            text: """<strong>Ataque (Energía):</strong> Gasta 2 de energía de esta carta para efectuar este ataque. La agilidad del defensor se duplica contra este ataque. Puedes cambiar 1 de tus resultados de  %FOCUS% por 1 resultado de %HIT%."""
         "Quad Laser Cannons":
-            name: "Quad Laser Cannons"
-            text: """<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."""
+            name: "Cañones Láser Cuádruples"
+            text: """<strong>Ataque (Energía):</strong> Gasta 1 de energía de esta carta para efectuar este ataque. Si no impacta, puedes gastar inmediatamente 1 de Energía de esta carta para repetir el ataque.."""
         "Tibanna Gas Supplies":
-            name: "Tibanna Gas Supplies"
-            text: """<strong>Energy:</strong> You may discard this card to gain 3 energy."""
+            name: "Suministro de Gas Tibanna"
+            text: """<strong>Energía:</strong> Puedes descartar esta carta para obtener 3 de energía."""
         "Ionization Reactor":
-            name: "Ionization Reactor"
-            text: """<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."""
+            name: "Reactor de Ionización"
+            text: """<strong>Energía:</strong> Gasta 5 de energía de esta carta para descártala para para que todas las demás naves situadas a alcance 1 sufran 1 de daño y reciban 1 ficha de iones.."""
         "Engine Booster":
-            name: "Engine Booster"
-            text: """Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (%STRAIGHT% 1) maneuver.  You cannot use this ability if you would overlap another ship."""
+            name: "Motor Sobrepotenciado"
+            text: """Immediatamente antes de revelar tu dial de maniobras, puedes gastar 1 de energía para ejecutar 1 maniobra blanca de (%STRAIGHT% 1). No puedes usar esta capacidad si al hacerlo te solapas con otra nave.."""
         "R3-A2":
             name: "R3-A2"
             text: """Cuando declares a un enemigo como objetivo de tu ataque, si el defensor está dentro de tu arco de fuego, puedes recibir una ficha de Tensión para hacer que el defensor reciba una ficha de Tensión."""
         "R2-D6":
             name: "R2-D6"
-            text: """Your upgrade bar gains the %ELITE% upgrade icon.<br /><br />You cannot equip this upgrade if you already have a %ELITE% upgrade icon or if your pilot skill value is "2" or lower."""
+            text: """TU barra de mejoras gana el icono de mejora %ELITE%.<br /><br />No puedes equiparte esta mejora si ya tienes un icono de mejora %ELITE% o si la Habilidad de de tu piloto es de 2 o menos.."""
         "Enhanced Scopes":
             name: "Miras Mejoradas"
             text: """Durante la fase de Activación, trata tu habilidad de piloto como "0"."""
@@ -596,34 +610,70 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Reajuste Chardaan"
             text: """Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
-            name: "Rockets de Protones"
-            text: """Esta carta no ha sido publicada."""
+            name: "Cohetes de Protones"
+            text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
         "Kyle Katarn":
-            text: """After you receive a stress token from your ship, you may assign a focus token to ???"""
+            text: """Despues de retires una ficha de Tensión de tu nave, puedes asiganar 1 ficha de %FOCUS% a tu nave."""
         "Jan Ors":
-            text: """Esta carta no ha sido publicada."""
+            text: """Una vez por ronda, cuando una nave aliada a alcance 1-3 efectúe una accion de Concentración o se le asigne una ficha de Concentración, tu puedes asignarle una ficha de Evasión en su lugar."""
         "Toryn Farr":
-            text: """<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
+            text: """<strong>Acción:</strong> Gasta cualquier cantidad de energía para elegir ese mismo número de naves enemigas que tengas a alcance 1-2. Descarta todas las fichas de Concentración, Evasión y Blanco fijado (azules) de las naves elegidas."""
         # TODO Check card formatting
         "R4-D6":
-            text: """When you are hit by an attack and there are at least 3 uncanceled %HIT% results, you may choose to cancel those results until there are 2 remaining.  For each result canceled this way, receive 1 stress token."""
+            name: "R4-D6"
+            text: """Cuando seas alcanzado por un ataque y haya al menos 3 resultados %HIT% sin anular, puedes anular todos los que quieras hasta que solo queden 2.  Recibes una ficha de Tensión por cada resultado que anules de este modo ."""
         "R5-P9":
-            text: """At the end of the Combat phase, you may spend 1 of your focus tokens to recover 1 shield (up to your shield value)."""
+            name: "R5-P9"
+            text: """Al final de la fase de Combate, puedes gastar 1 de tus fichas de Concentración para recuperar 1 ficha de escudos (hasta un máximo igual a tu puntuación de escudos)."""
         "WED-15 Repair Droid":
-            text: """<strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
+            name: "Droide de Reparaciones WED-15"
+            text: """<strong>Acción:</strong> Gasta 1 de energia para descartar 1 carta de Daño que tengas boca abajo, o bien gasta 3 de energía para descartar 1 carta de Daño que tengas boca arriba."""
         "Carlist Rieekan":
-            text: """At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as "12" until the end of the phase."""
+            name: "Carlist Rieekan"
+            text: """Al pincipio de la fase de Activación, puedes descartar esta carta pra que la Habilidad de todas tus naves se considere 12 hasta el final de la fase."""
         "Jan Dodonna":
-            text: """When another friendly ship at Range 1 is attacking, it my change 1 of its %HIT% results to a %CRIT%."""
+            name: "Jan Dodonna"
+            text: """Cuando otra nave aliada que tengas a alcance 1 efectúe un ataque, podrá cambiar 1 de sus resultados de %HIT% por 1 resultado de %CRIT%."""
         "Expanded Cargo Hold":
-            text: """Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
+            name: "Bodega de Carga Ampliada"
+            text: """Una vez por ronda, cuando tengas a recibir una carta de Daño boca arriba, puedes robar esa carta del mazo de Daño de proa o del mazo de Daño de popa."""
             ship: 'Transporte mediano GR-75'
         "Backup Shield Generator":
-            text: """At the end of each round, you may spend 1 energy to recover 1 shield (up to your shield value)."""
+            name: "Generador de Escudos Auxiliar"
+            text: """Al final de cada ronda, puedes gastar 1 de energía para recuperar 1 de escudos (hasta el maximo igual a tu puntuación de escudos)."""
         "EM Emitter":
-            text: """When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."""
+            name: "Emisor de señal Electromagnética"
+            text: """Cuando obstruyas un ataque, el defensor tira 3 dados de defensa adicionales en vez de 1."""
         "Frequency Jammer":
-            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is not at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
+            name: "Inhibidor de Frecuencias"
+            text: """Cuando lleves a cabo una acción de intereferencia, elige 1 nave enemiga que no tenga fichas de Tensión y se encuentr a alcance 1 de la nave interferida. La nave elegida recibe una ficha de tension."""
+        "Han Solo":
+            name: "Han Solo"
+            text: """Cuando ataques, si tienes la defensor fijado como blanco, puedes gastar esa ficha de Blanco fijado para cambiar todos tus resultados de %FOCUS% por resultados de %HIT%."""
+        "Leia Organa":
+            name: "Leia Organa"
+            text: """Al comienzo de la fase de Activación, puedes descartar esta carta para que todas las naves aliadas que muestren una maniobra roja seleccionada la traten como si fuera una maniobra blanca hasta el final de la fase."""
+        "Raymus Antilles":
+            name: "Raymus Antilles"
+            text: """Al comiuenzo de la fase de Activación, elige una nave enemiga que tengas a alcance 1-3. Puedes mirar su selector de maniobras. Si ha seleccionado una maniobra blanca, adjudica 1 ficha de Tensión a esa nave.."""
+        "Gunnery Team":
+            name: "Dotación de Artillería"
+            text: """Una vez por ronda, cuando ataques con un armamento secudario, puedes gastar 1 de Energía para cambiar 1 cara de dado vacía por 1 resultado de %HIT%."""
+        "Sensor Team":
+            name: "Equipo de Control de Sensores"
+            text: """Cuando fijes un blanco, puedes fijar como blanco una nave enemiga a alcance 1-5 (en lugar de 1-3)."""
+        "Engineering Team":
+            name: "Equipo de Ingeniería"
+            text: """Durante la fase de activación, si enseñas una maniobra %STRAIGHT%, recibes 1 de Energía adicional durante el paso de "Obtener Energía"."""
+        "Lando Calrissian":
+            name: "Lando Calrissian"
+            text: """<strong>Acción:</strong> TIra 2 dados ded defensa.  Por cada resultado de %FOCUS%, asigna 1 dicha de Concentración a tu nave. Por cada resultado de %EVADE%, asigna 1 ficha de Evasión a tu nave."""
+        "Mara Jade":
+            name: "Mara Jade"
+            text: """Al final de la fase de Combate, cada nave enemiga a alcance 1 que no tenga fichas de Tensión recive 1 ficha de Tensión."""
+        "Fleet Officer":
+            name: "Oficial de Flota"
+            text: """<strong>Acción:</strong> Elige hasta 2 naves aliadas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Después recibes una ficha de Tensión."""
 
     modification_translations =
         "Stealth Device":
@@ -651,12 +701,16 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Acelerador de Partículas de Stygium"
             text: """Cuando realices una acción de Encubrimiento, o te Descubras, puedes realizar una acción de Evadir gratuita."""
         "Advanced Cloaking Device":
-            name: "Advanced Cloaking Device"
-            text: """After you perform an attack, you may perform a free cloak action."""
+            name: "Dispositivo de Camuflaje Avanzado"
+            text: """Despues de que efectúes un ataque, puedes realizar una acción gratuita de camuflaje."""
             ship: "TIE Fantasma"
         "Combat Retrofit":
-            text: """Increase your hull value by 2 and your shield value by 1."""
+            name: "Equipamiento de Combate"
+            text: """Tu valor de casco se incrementa en 2 y tu valor de escudos se incrementa en 1."""
             ship: 'Transporte mediano GR-75'
+        "B-Wing/E2":
+            text: """Tu barra de mejoras gana %CREW%."""
+            ship: "Ala-B"
 
     title_translations =
         "Slave I":
@@ -676,27 +730,34 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Interceptor TIE"
             text: """Puedes equipar a tu nave con 2 mejoras de Modificación diferentes (en vez de una).<br /><br />No puedes tener este título si tu habilidad de piloto es "4" o menos."""
         "Dodonna's Pride":
-            name: "Dodonna's Pride"
-            text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+            name: "Orgullo de Donna"
+            text: """Cuando efectúes una accion de Coordinación, puedes elegir 2 naves en vez de 1. Cada una de estas naves pueden realizar 1 accion gratuita."""
             ship: "Corbeta CR90 (Proa)"
         "A-Wing Test Pilot":
             name: "Piloto de Pruebas de Ala-A"
             text: """Tu barra de mejoras gana el ícono %ELITE%.<br /><br />No puedes equipar dos %ELITE% iguales. No puedes tener este título si tu habilidad de piloto es "1" o menor."""
             ship: "Ala-A"
-        "B-Wing/E":
-            text: """Tu barra de mejoras gana el ícono %CREW%."""
-            ship: "Ala-B"
         "Tantive IV":
-            text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+            name: "Tantive IV"
+            text: """La barra de mejoras de tu sección de proa gana 1 icono adicional de %CREW% y 1 icono adicional de %TEAM%."""
             ship: "Corbeta CR90 (Proa)"
         "Bright Hope":
-            text: """A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
+            name: "Esperanza Brillante"
+            text: """Una ficha de Refuerzo asignada a tu seccion de proa añade 2 resultados de %EVADE% en vez de 1."""
             ship: 'Transporte mediano GR-75'
         "Quantum Storm":
-            text: """At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."""
+            name: "TOrmenta Cuántica"
+            text: """Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
             ship: 'Transporte mediano GR-75'
         "Dutyfree":
-            text: """When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."""
+            name: "Libre de Impuestos"
+            text: """Cuando realices una acción de Interferencia, puedes elegir una nave enemiga situada a alcance 1-3 en lugar de 1-2."""
             ship: 'Transporte mediano GR-75'
+        "Jaina's Light":
+            name: "Luz de Jaina"
+            text: """Cuando te defiendas, una vez por ataque. Si recibes una carta de Daño boca arriba, puedes descartarla y robar otra carta de Daño boca arriba."""
+        "Outrider":
+            name: "Jinete del Espacio"
+            text: """Mientras tu nave tenga una mejora de %CANNON% equipada, <strong>no podrá</strong> realizar atques con el armamento principal attacks pero podrá realizar ataques con su mejora de armamento secundario %CANNON% contra naves enemigas fuera de su arco de fuego principal."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

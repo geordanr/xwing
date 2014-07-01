@@ -128,6 +128,124 @@ casper.test.begin "A-Wing Test Pilot", (test) ->
     .run ->
         test.done()
 
+casper.test.begin "A-Wing Test Pilot (German)", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.selectLanguage('Deutsch')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'A-Wing'
+            pilot: 'Testpilot'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'A-Wing'
+            pilot: 'Pilot der Grün-Staffel'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'X-Wing'
+            pilot: 'Pilot der Rot-Staffel'
+            upgrades: [
+            ]
+        }
+    ])
+
+    .then ->
+        # A-Wing only
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 2} .select2-choice", 'kein Titel', "Prototype Pilot has title field"
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 2, 3} .select2-choice", 'kein Titel', "Green Squadron Pilot has title field"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 3, 4}", "X-Wings have no titles (yet)"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
+
+    # Equippable on PS1+ only (no Prototype)
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'A-Wing Test Pilot')
+    common.addUpgrade('#rebel-builder', 2, 3, 'A-Wing Test Pilot')
+    common.assertTotalPoints(test, '#rebel-builder', 59)
+
+    # Can add two different elites
+    common.addUpgrade('#rebel-builder', 2, 1, 'Adrenalinschub')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Adrenalinschub')
+    common.addUpgrade('#rebel-builder', 2, 5, 'Meisterschütze')
+    common.assertTotalPoints(test, '#rebel-builder', 61)
+
+    # Removing the title removes the elite slot
+    common.removeUpgrade('#rebel-builder', 2, 3)
+    .then ->
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad no longer has two elite slots"
+    common.assertTotalPoints(test, '#rebel-builder', 60)
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    common.selectLanguage('English')
+
+    .run ->
+        test.done()
+
+casper.test.begin "A-Wing Test Pilot (Spanish)", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.selectLanguage('Español')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'Ala-A'
+            pilot: 'Piloto de pruebas'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'Ala-A'
+            pilot: 'Piloto del escuadrón verde'
+            upgrades: [
+            ]
+        }
+        {
+            ship: 'Ala-X'
+            pilot: 'Piloto del escuadrón rojo'
+            upgrades: [
+            ]
+        }
+    ])
+
+    .then ->
+        # A-Wing only
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 2} .select2-choice", 'Sin Título', "Prototype Pilot has title field"
+        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 2, 3} .select2-choice", 'Sin Título', "Green Squadron Pilot has title field"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 3, 4}", "X-Wings have no titles (yet)"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
+
+    # Equippable on PS1+ only (no Prototype)
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'Piloto de Pruebas de Ala-A')
+    common.addUpgrade('#rebel-builder', 2, 3, 'Piloto de Pruebas de Ala-A')
+    common.assertTotalPoints(test, '#rebel-builder', 59)
+
+    # Can add two different elites
+    common.addUpgrade('#rebel-builder', 2, 1, 'Descarga de Adrenalina')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Descarga de Adrenalina')
+    common.addUpgrade('#rebel-builder', 2, 5, 'Certero')
+    common.assertTotalPoints(test, '#rebel-builder', 61)
+
+    # Removing the title removes the elite slot
+    common.removeUpgrade('#rebel-builder', 2, 3)
+    .then ->
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad no longer has two elite slots"
+    common.assertTotalPoints(test, '#rebel-builder', 60)
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    common.selectLanguage('English')
+
+    .run ->
+        test.done()
+
 casper.test.begin "Chardaan Refit", (test) ->
     common.waitForStartup('#rebel-builder')
 
@@ -200,7 +318,7 @@ casper.test.begin "Chardaan Refit", (test) ->
     .run ->
         test.done()
 
-casper.test.begin "B-Wing/E", (test) ->
+casper.test.begin "B-Wing/E2", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.createList('#rebel-builder', [
@@ -219,19 +337,19 @@ casper.test.begin "B-Wing/E", (test) ->
     ])
 
     # B-Wing only
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", "B-Wing/E2")
+
     .then ->
-        test.assertSelectorHasText "#rebel-builder #{common.selectorForUpgradeIndex 1, 5} .select2-choice", 'No Title', "Blue Squadron Pilot has title field"
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 4}", "X-Wings have no titles (yet)"
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad doesn't have crew by default"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "Blue Squad doesn't have crew by default"
 
-    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E')
-    common.addUpgrade('#rebel-builder', 1, 7, 'Gunner')
-    #common.assertTotalPoints(test, '#rebel-builder', 50) # don't know how many points
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
+    common.assertTotalPoints(test, '#rebel-builder', 51)
 
-    # Removing the title removes the crew slow
+    # Removing the modification removes the crew slot
     common.removeUpgrade('#rebel-builder', 1, 5)
     .then ->
-        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "Blue Squad no longer has a crew slot"
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "Blue Squad no longer has a crew slot"
     common.assertTotalPoints(test, '#rebel-builder', 45)
 
     common.removeShip('#rebel-builder', 1)

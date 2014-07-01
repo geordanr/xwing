@@ -3,10 +3,11 @@ common = require './common'
 common.setup()
 
 
-casper.test.begin "Named pilot uniqueness", (test) ->
+casper.test.begin "Tantive IV title grants crew and team", (test) ->
     common.waitForStartup('#rebel-builder')
 
     common.setShipType('#rebel-builder', 1, 'CR90 Corvette (Fore)')
+    common.setPilot('#rebel-builder', 1, 'CR90 Corvette (Fore)')
     casper.then ->
         test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 9}", "No extra crew slot by default")
         test.assertDoesntExist("#rebel-builder #{common.selectorForUpgradeIndex 1, 10}", "No extra team slot by default")

@@ -2,12 +2,9 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "Z-95 Headhunter Expansion Pack"
-    "TIE Defender Expansion Pack"
-    "E-Wing Expansion Pack"
-    "TIE Phantom Expansion Pack"
-    "Tantive IV Expansion Pack"
     "Rebel Aces Expansion Pack"
+    "YT-2400 Freighter Expansion Pack"
+    "VT-49 Decimator Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -266,6 +263,7 @@ exportObj.basicCardData = ->
                 "Jam"
             ]
             huge: true
+            epic_points: 2
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 0, 0 ]
@@ -324,6 +322,14 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Evade"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0 ]
+                [ 1, 1, 2, 1, 1, 3 ]
+                [ 0, 0, 1, 0, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "TIE Phantom":
             name: "TIE Phantom"
             faction: "Galactic Empire"
@@ -337,6 +343,13 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Cloak"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 1, 0, 0, 0, 1, 0]
+                [ 1, 2, 2, 2, 1, 0]
+                [ 1, 1, 2, 1, 1, 3]
+                [ 0, 0, 1, 0, 0, 3]
+            ]
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
             faction: "Rebel Alliance"
@@ -349,6 +362,14 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             huge: true
+            epic_points: 1.5
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 0, 1, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+            ]
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
             faction: "Rebel Alliance"
@@ -358,9 +379,42 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Reinforce"
-                "Jam"
+                "Recover"
             ]
             huge: true
+            epic_points: 1.5
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 0, 1, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 0]
+            ]
+        "YT-2400":
+            name: "YT-2400"
+            faction: "Rebel Alliance"
+            attack: 2
+            agility: 2
+            hull: 5
+            shields: 5
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+            ]
+            large: true
+        "VT-49 Decimator":
+            name: "VT-49 Decimator"
+            faction: "Galactic Empire"
+            attack: 3
+            agility: 0
+            hull: 12
+            shields: 4
+            actions: [
+                "Focus"
+                "Target Lock"
+            ]
+            large: true
 
     # name field is for convenience only
     pilotsById: [
@@ -1264,7 +1318,7 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
             skill: 3
-            points: 99
+            points: 32
             slots: [
                 "Cannon"
                 "Missile"
@@ -1372,21 +1426,22 @@ exportObj.basicCardData = ->
             ship: "TIE Phantom"
             sources: [ "TIE Phantom Expansion Pack", ]
             skill: 5
-            points: 99
+            points: 27
             slots: [
                 "System"
                 "Crew"
             ]
         }
         {
-            name: "Unspoiled PS6 TIE Phantom Pilot"
+            name: '"Echo"'
             id: 78
             unique: true
             ship: "TIE Phantom"
             sources: [ "TIE Phantom Expansion Pack", ]
             skill: 6
-            points: 99
+            points: 30
             slots: [
+                "Elite"
                 "System"
                 "Crew"
             ]
@@ -1466,7 +1521,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Hobbie" Kilvan'
+            name: '"Hobbie" Klivian'
             id: 84
             unique: true
             ship: "X-Wing"
@@ -1505,13 +1560,13 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 A-Wing Pilot"
+            name: "Gemmer Sojan"
             id: 87
             unique: true
             ship: "A-Wing"
             sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
-            points: 99
+            points: 22
             slots: [
                 "Missile"
             ]
@@ -1545,6 +1600,169 @@ exportObj.basicCardData = ->
                 "Cannon"
                 "Torpedo"
                 "Torpedo"
+            ]
+        }
+        {
+            name: "CR90 Corvette (Crippled Fore)"
+            id: 90
+            ship: "CR90 Corvette (Fore)"
+            sources: [ "Tantive IV Expansion Pack", ]
+            skill: 4
+            points: 0
+            epic: true
+            slots: [
+                "Crew"
+            ]
+            ship_override:
+                attack: 2
+                agility: 0
+                hull: 0
+                shields: 0
+                actions: []
+        }
+        {
+            name: "CR90 Corvette (Crippled Aft)"
+            id: 91
+            ship: "CR90 Corvette (Aft)"
+            sources: [ "Tantive IV Expansion Pack", ]
+            skill: 4
+            points: 0
+            epic: true
+            slots: [
+                "Cargo"
+            ]
+            ship_override:
+                energy: 1
+                agility: 0
+                hull: 0
+                shields: 0
+                actions: []
+            modifier_func: (stats) ->
+                stats.maneuvers[2][1] = 0
+                stats.maneuvers[2][3] = 0
+                stats.maneuvers[4][2] = 0
+        }
+        {
+            name: "Wild Spa???"
+            id: 92
+            ship: "YT-2400"
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            skill: 2
+            points: 99
+            slots: [
+                "Cannon"
+                "Missile"
+                "Crew"
+            ]
+        }
+        {
+            name: "Unspoiled PS3 YT-2400 Pilot"
+            id: 93
+            ship: "YT-2400"
+            unique: true
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Cannon"
+                "Missile"
+                "Crew"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 YT-2400 Pilot"
+            id: 94
+            ship: "YT-2400"
+            unique: true
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Elite"
+                "Cannon"
+                "Missile"
+                "Crew"
+            ]
+        }
+        {
+            name: "Dash Rendar"
+            id: 95
+            ship: "YT-2400"
+            unique: true
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            skill: 7
+            points: 36
+            slots: [
+                "Elite"
+                "Cannon"
+                "Missile"
+                "Crew"
+            ]
+        }
+        {
+            name: "Patrol ???"
+            id: 96
+            ship: "VT-49 Decimator"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Torpedo"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Bomb"
+            ]
+        }
+        {
+            name: "Lieutenant ???"
+            id: 97
+            ship: "VT-49 Decimator"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            skill: 4
+            points: 99
+            unique: true
+            slots: [
+                "Elite"
+                "Torpedo"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Bomb"
+            ]
+        }
+        {
+            name: "Commander ???"
+            id: 98
+            ship: "VT-49 Decimator"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            skill: 6
+            points: 99
+            unique: true
+            slots: [
+                "Elite"
+                "Torpedo"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Bomb"
+            ]
+        }
+        {
+            name: "Rear Admiral Chiraneau"
+            id: 99
+            ship: "VT-49 Decimator"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            skill: 8
+            points: 46
+            unique: true
+            slots: [
+                "Elite"
+                "Torpedo"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Bomb"
             ]
         }
     ]
@@ -1758,7 +1976,7 @@ exportObj.basicCardData = ->
             name: "Heavy Laser Cannon"
             id: 23
             slot: "Cannon"
-            sources: [ "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 7
             attack: 4
             range: "2-3"
@@ -1774,7 +1992,7 @@ exportObj.basicCardData = ->
             name: "Mercenary Copilot"
             id: 25
             slot: "Crew"
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 2
         }
         {
@@ -2020,7 +2238,7 @@ exportObj.basicCardData = ->
             id: 55
             slot: "Elite"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
-            points: 99
+            points: 2
         }
         {
             name: "Outmaneuver"
@@ -2065,7 +2283,7 @@ exportObj.basicCardData = ->
             id: 61
             slot: "Crew"
             sources: [ "TIE Phantom Expansion Pack", ]
-            points: 99
+            points: 2
         }
         {
             name: "R2-D2 (Crew)"
@@ -2110,7 +2328,7 @@ exportObj.basicCardData = ->
             name: "Tibanna Gas Supplies"
             id: 66
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
+            sources: [ "Tantive IV Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 4
             limited: true
         }
@@ -2127,7 +2345,7 @@ exportObj.basicCardData = ->
             name: "Engine Booster"
             id: 68
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
+            sources: [ "Tantive IV Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 3
             limited: true
         }
@@ -2181,8 +2399,10 @@ exportObj.basicCardData = ->
             name: "Proton Rockets"
             id: 73
             slot: "Missile"
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
+            sources: [ "Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
+            points: 3
+            attack: 2
+            range: "1"
         }
         {
             name: "Kyle Katarn"
@@ -2190,7 +2410,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
+            points: 3
             faction: "Rebel Alliance"
         }
         {
@@ -2199,7 +2419,7 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
+            points: 2
             faction: "Rebel Alliance"
         }
         {
@@ -2292,6 +2512,92 @@ exportObj.basicCardData = ->
             sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
         }
+        {
+            name: "Han Solo"
+            id: 86
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 2
+        }
+        {
+            name: "Leia Organa"
+            id: 87
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Targeting Coordinator"
+            id: 88
+            slot: "Crew"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Raymus Antilles"
+            id: 89
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 6
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: "Gunnery Team"
+            id: 90
+            slot: "Team"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Sensor Team"
+            id: 91
+            slot: "Team"
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Engineering Team"
+            id: 92
+            slot: "Team"
+            limited: true
+            sources: [ "Tantive IV Expansion Pack", ]
+            points: 4
+        }
+        {
+            name: "Lando Calrissian"
+            id: 93
+            slot: "Crew"
+            unique: true
+            faction: "Rebel Alliance"
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            points: 3
+        }
+        {
+            name: "Mara Jade"
+            id: 94
+            slot: "Crew"
+            unique: true
+            faction: "Galactic Empire"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            points: 3
+        }
+        {
+            name: "Fleet Officer"
+            id: 95
+            slot: "Crew"
+            faction: "Galactic Empire"
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            points: 3
+        }
     ]
 
     modificationsById: [
@@ -2359,7 +2665,7 @@ exportObj.basicCardData = ->
             name: "Advanced Cloaking Device"
             id: 9
             sources: [ "TIE Phantom Expansion Pack", ]
-            points: 99
+            points: 4
             ship: "TIE Phantom"
         }
         {
@@ -2372,6 +2678,19 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.hull += 2
                 stats.shields += 1
+        }
+        {
+            name: "B-Wing/E2"
+            id: 11
+            sources: [ "Rebel Aces Expansion Pack", ]
+            points: 1
+            ship: "B-Wing"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+            ]
         }
     ]
 
@@ -2430,6 +2749,7 @@ exportObj.basicCardData = ->
             ]
             restriction_func: (ship) ->
                 ship.effectiveStats().skill > 4
+            special_case: 'Royal Guard TIE'
         }
         {
             name: "Dodonna's Pride"
@@ -2453,20 +2773,23 @@ exportObj.basicCardData = ->
                     slot: "Elite"
                 }
             ]
+            special_case: "A-Wing Test Pilot"
         }
-        {
-            name: "B-Wing/E"
-            id: 8
-            sources: [ "Rebel Aces Expansion Pack", ]
-            points: 99
-            ship: "B-Wing"
-            confersAddons: [
-                {
-                    type: exportObj.Upgrade
-                    slot: "Crew"
-                }
-            ]
-        }
+        ## Apparently this is a modification, NOT a title
+        ## Leaving this here to occupy the ID in case someone used it
+        # {
+        #     name: "B-Wing/E"
+        #     id: 8
+        #     sources: [ "Rebel Aces Expansion Pack", ]
+        #     points: 99
+        #     ship: "B-Wing"
+        #     confersAddons: [
+        #         {
+        #             type: exportObj.Upgrade
+        #             slot: "Crew"
+        #         }
+        #     ]
+        # }
         {
             name: "Tantive IV"
             id: 9
@@ -2515,6 +2838,22 @@ exportObj.basicCardData = ->
             sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
             ship: "GR-75 Medium Transport"
+        }
+        {
+            name: "Jaina's Light"
+            id: 13
+            unique: true
+            sources: [ "Rebel Transport Expansion Pack", ]
+            points: 2
+            ship: "CR90 Corvette (Fore)"
+        }
+        {
+            name: "Outrider"
+            id: 14
+            unique: true
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            points: 5
+            ship: "YT-2400"
         }
     ]
 
@@ -2637,6 +2976,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%BANKRIGHT%/g, '<img class="icon-bankright" alt="Bank Right" src="images/transparent.png" />')
             .replace(/%BARRELROLL%/g, '<img class="icon-barrel-roll" alt="Barrel Roll" src="images/transparent.png" />')
             .replace(/%BOOST%/g, '<img class="icon-boost" alt="Boost" src="images/transparent.png" />')
+            .replace(/%CANNON%/g, '<img class="icon-cannon" alt="Cannon" src="images/transparent.png" />')
             .replace(/%CRIT%/g, '<img class="icon-crit" alt="Crit" src="images/transparent.png" />')
             .replace(/%CREW%/g, '<img class="icon-crew" alt="Crew" src="images/transparent.png" />')
             .replace(/%ELITE%/g, '<img class="icon-elite" alt="Elite" src="images/transparent.png" />')
