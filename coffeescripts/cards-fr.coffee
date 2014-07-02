@@ -339,13 +339,13 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand un vaisseau ennemi située dans votre arc de tir et à portée 1-3 se défend, l'attaquant peut changer 1 des ses résultats %HIT% en résultat %CRIT%."""
         "Corran Horn":
             text: """Au début de la phase de dénouement, vous pouvez effectuer une attauqe. Vous ne pouvez pas attaquer au tour suivant."""
-        # As Rebelles, traduit de l'anglais
+        # As Rebelles
         "Jake Farrell":
-            text: """Après avoir effectué une action de concentration ou avoir été assigné un marqueur de concentration, vous pouvez effectuer une action gratuite d'accélération ou de tonneau."""
-        "Gemmer Sojan":
+            text: """Après avoir effectué une action de concentration ou reçu un marqueur de concentration, vous pouvez effectuer une action gratuite d'accélération ou de tonneau."""
+        "Gemmer Sojan": # Traduction non officielle
             text: """Tant que vous êtes à portée 1 d'au moins 1 vaisseau ennemi, augmentez votre valeur d'agilité de 1."""
         "Keyan Farlander":
-            text: """Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour échanger tous vos résultats %FOCUS% contre des résultats %HIT%."""
+            text: """Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %HIT%."""
         "Unspoiled PS5 B-Wing Pilot":
             name: "Pilote de B-Wing de VP5 non dévoilé"
             text: """Cette carte n'a pas encore été dévoilée."""
@@ -476,6 +476,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Ion Pulse Missiles":
             name: "Missiles à pulsations ioniques"
             text: """<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaque touche, le défenseur subit 1 dégât et reçoit 2 marqueurs ioniques. Ensuite, annulez le résultat de <strong>tous<strong> les dés."""
+        "Chardaan Refit":
+            name: "Radoub à Chardaan"
+            text: """Cette carte a un coût en points d'escadron négatif."""
         # Bombes
         "Seismic Charges":
             name: "Charges sismiques"
@@ -487,6 +490,10 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Bombes à protons"
             text: """Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.<br /><br />Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."""
         # Canons
+        # Senseurs
+        "Enhanced Scopes":
+            name: "Radars améliorés"
+            text: """Durant la phase d'activation, considérez que votre valeur de pilotage est égale à "0"."""
         "Gunner":
             text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You cannot perform another attack this round."""
         "Ion Cannon":
@@ -553,10 +560,6 @@ exportObj.cardLoaders['Français'] = () ->
             text: """When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."""
         "R2-D6":
             text: """Your upgrade bar gains the %ELITE% upgrade icon.<br /><br />You cannot equip this upgrade if you already have a %ELITE% upgrade icon or if your pilot skill value is "2" or lower."""
-        "Enhanced Scopes":
-            text: """During the Activation phase, treat your pilot skill value as "0"."""
-        "Chardaan Refit":
-            text: """This card has a negative squad point cost."""
         "Proton Rockets":
             text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
         "Kyle Katarn":
@@ -636,7 +639,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Préparé pour le combat"
             text: """Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."""
         "B-Wing/E2":
-            text: """Votre barre d'amélirations gagne l'icône d'amélioration %CREW%."""
+            text: """Votre barre d'améliorations gagne l'icône d'amélioration %CREW%."""
 
     title_translations =
         "Slave I":
@@ -653,7 +656,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Dodonna's Pride":
             text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
         "A-Wing Test Pilot":
-            text: """Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
+            name: "Pilote d'essai sur A-Wing"
+            text: """Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des "1" ou moins."""
         "Tantive IV":
             text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
         "Bright Hope":
