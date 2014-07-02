@@ -678,7 +678,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Accélérateur de particules de Stygium"
             text: """Quand vous vous désoccultez ou effectuez une action d'occultation, vous pouvez effectuer une action d'évasion gratuite."""
         "Advanced Cloaking Device":
-            name: "Système d'occulation avancé"
+            name: "Système d'occultation avancé"
             text: """Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
         "Combat Retrofit":
             name: "Préparé pour le combat"
