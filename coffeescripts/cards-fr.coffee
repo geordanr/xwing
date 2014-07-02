@@ -27,9 +27,9 @@ exportObj.translations['Français'] =
         "System": "Système"
         "Torpedo": "Torpille"
         "Turret": "Tourelle"
-        "Cargo": "Cargo"
-        "Hardpoint": "Hardpoint"
-        "Team": "Team"
+        "Cargo": "Soute"
+        "Hardpoint": "Point d'Attache"
+        "Team": "Équipe"
     sources: # needed?
         "Core": "Boite de base"
         "A-Wing Expansion Pack": "Paquet d'extension A-Wing"
