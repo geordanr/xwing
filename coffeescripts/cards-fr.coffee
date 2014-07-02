@@ -169,9 +169,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Les vaisseaux ennemis situés à portée 1 ne peuvent pas effectuer d'actions de concentration ou d'évasion, et ne peuvent pas dépenser de marqueur de concentration ou d'évasion."""
         "Soontir Fel":
             ship: "Intercepteur TIE"
-            text: """When you receive a stress token, you may assign 1 focus token to your ship."""
-        "Lieutenant Blount":
-            text: """When attacking, the defender is hit by your attack, even if he does not suffer any damage."""
+            text: """Quand vous recevez un marqueur de stress, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."""
         # TIE Fantôme
         "Sigma Squadron Pilot":
             ship: "TIE Fantôme"
@@ -338,7 +336,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Etahn A'baht":
             text: """Quand un vaisseau ennemi située dans votre arc de tir et à portée 1-3 se défend, l'attaquant peut changer 1 des ses résultats %HIT% en résultat %CRIT%."""
         "Corran Horn":
-            text: """Au début de la phase de dénouement, vous pouvez effectuer une attauqe. Vous ne pouvez pas attaquer au tour suivant."""
+            text: """Au début de la phase de dénouement, vous pouvez effectuer une attaque. Vous ne pouvez pas attaquer au tour suivant."""
         # As Rebelles
         "Jake Farrell":
             text: """Après avoir effectué une action de concentration ou reçu un marqueur de concentration, vous pouvez effectuer une action gratuite d'accélération ou de tonneau."""
@@ -391,7 +389,8 @@ exportObj.cardLoaders['Français'] = () ->
             name: "As de l'espace"
             text: """<strong>Action :</strong> effectuez une <strong>action gratuite</strong> de tonneau. Si vous n'avez pas l'icône d'action %BARRELROLL%, recevez 1 marqueur de stress.<br /><br />Ensuite, vous pouvez retirer 1 acquisition de cible ennemie de votre vaisseau."""
         "Marksmanship":
-            text: """<strong>Action :</strong> When attacking this round, you may change 1 of your %FOCUS% results to a %CRIT% result and all of your other %FOCUS% results to %HIT% results."""
+            name: "Adresse au tir"
+            text: """<strong>Action :</strong> en attaquant ce tour-ci, vous pouvez échanger 1 de vos résultats %FOCUS% contre 1 résultat %CRIT%, et tous vos autres résultats %FOCUS% contre des résultats %HIT%."""
         "Daredevil":
             name: "Casse-cou"
             text: """<strong>Action :</strong> exécuter une manœuvre blanche (%TURNLEFT% 1) ou (%TURNRIGHT% 1).  Puis, recevez un marqueur de stress.<br /><br />Ensuite, si vous n'avez pas l'icône d'action %BOOST%, lancez 2 dés d'attaque et subissez les dégâts (%HIT%) et les dégâts critiques (%CRIT%) obtenus."""
@@ -408,13 +407,17 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Prise de risque"
             text: """<strong>Action :</strong> jusqu'à la fin du tour, augmentez votre valeur d'arme principale de 1 et réduisez votre valeur d'agilité de 1."""
         "Wingman":
-            text: """At the start of the Combat phase, remove 1 stress token from another friendly ship at Range 1."""
+            name: "Ailier"
+            text: """Au début de la phase de combat, retirez 1 marqueur de stress d'un autre vaisseau allié situé à portée 1."""
         "Decoy":
-            text: """At the start of the Combat phase, you may choose 1 friendly ship at Range 1-2.  Exchange your pilot skill with that ship's pilot skill until the end of the phase."""
+            name: "Leurre"
+            text: """Au début de la phase de combat, vous pouvez choisir 1 vaisseau allié situé à portée 1-2. Échangez votre valeur de pilotage avec celle de ce vaisseau jusqu'à la fin de la phase."""
         "Outmaneuver":
-            text: """When attacking a ship inside your firing arc, if you are not inside that ship's firing arc, reduce its agility value by 1 (to a minimum of 0)."""
+            name: "Manœuvre improbable"
+            text: """Quand vous attaquez un vaisseau situé dans votre arc de tir, si vous n'êtes pas dans l'arc de tir de ce vaisseau, réduisez sa valeur d'agilité de 1 (jusqu'à un minimum de 0)."""
         "Predator":
-            text: """When attacking, you may reroll 1 attack die.  If the defender's pilot skill value is "2" or lower, you may instead reroll up to 2 attack dice."""
+            name: "Prédateur"
+            text: """Quand vous attaquez, vous pouvez relancer 1 dé d'attaque. Si la valeur de pilote du défenseur est de "2" ou moins, vous pouvez relancer jusqu'à 2 dés d'attaque à la place."""
         "Draw Their Fire":
             name: "Je les attire !"
             text: """Quand un vaisseau allié situé à portée 1 est touché par une attaque, vous pouvez subir 1 des résultats %CRIT% non annulés à la place de l'appareil visé."""
@@ -424,6 +427,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Veteran Instincts":
             name: "Instinct de vétéran"
             text: """Augmentez votre valeur de pilotage de 2."""
+        "Opportunist":
+            name: "Opportuniste"
+            text: """Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stresss pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."""
         # Astromechs
         "R2 Astromech":
             name: "Astromech R2"
@@ -441,9 +447,17 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Pendant la phase de dénouement, choisissez une de vos cartes dégâts face visible assortie du trait <strong>Vaisseau</strong>, et retournez-la face cachée."""
         "R7 Astromech":
             name: "Astromech R7"
-            text: """Once per round when defending, if you have a target lock on the attacker, you may spend the target lock to choose any or all attack dice.  The attacker must reroll the chosen dice."""
+            text: """Une fois par tour, quand vous défendez, si vous avez vérouillé l'attaquant, vous pouvez dépenser l'acquisition de cible pour choisir tout ou partie des dés d'attaque. L'attaquant doit relancer les dés choisis."""
         "R7-T1":
-            text: """<strong>Action :</strong> Choose an enemy ship at Range 1-2.  If you are inside that ship's firing arc, you may acquire a target lock on that ship.  Then, you may perform a free boost action."""
+            text: """<strong>Action :</strong> choisissez un vaisseau ennemi situé à portée 1-2. Si vous êtes dans son arc de tir, vous pouvez le verrouiller. Ensuite, vous pouvez effectuer une action d'accélération gratuite."""
+        "R4-D6":
+            text: """Quand vous êtes touché par une attaque ayant généré au moins 3 résultats %HIT% non annulés, vous pouvez annuler les résultats que vous souhaitez jusqu'à ce qu'il n'en reste que 2. Pour chaque résultat annulé de la sorte, recevez 1 marqueur de stess."""
+        "R5-P9":
+            text: """À la fin de la phase de combat, vous pouvez dépenser 1 de vos marqueurs de concentration pour récupérer 1 bouclier (jusqu'à concurrence de votre valeur de boucliers)."""
+        "R3-A2":
+            text: """Quand vous déclarez la cible de votre attaque, si le défenseur est dans votre arc de tir, vous pouvez recevoir 1 marqueur de stress pour que le défenseur en reçoive 1 aussi."""
+        "R2-D6":
+            text: """Votre bandeau d'amélioration gagne l'icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper cette amélioration si vous avez déjà une icône d'amélioration %ELITE% ou si votre valeur de pilotage est de "2" ou moins."""
         # Torpilles
         "Proton Torpedoes":
             name: "Torpilles à protons"
@@ -452,7 +466,8 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Torpilles à protons avancées"
             text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger jusqu'à 3 de vos résultats vierge contre autant de résultats %FOCUS%."""
         "Flechette Torpedoes":
-            text: """<strong>Attaque (acquisition de cible) :</strong> Discard this card and spend your target lock to perform this attack.<br /><br />After you perform this attack, the defender receives 1 stress token if its hull value is "4" or lower."""
+            name: "Torpilles fléchettes"
+            text: """<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte et dépensez votre acquisition de cible pour effectuer cette attaque.<br /><br />Après que vous avez effectué cette attaque, le défenseur reçoit 1 marqueur de stress si sa valeur de coque est de "4" ou moins."""
         # Tourelles
         "Ion Cannon Turret":
             name: "Tourelles à canons ioniques"
@@ -479,6 +494,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Chardaan Refit":
             name: "Radoub à Chardaan"
             text: """Cette carte a un coût en points d'escadron négatif."""
+        "Proton Rockets": # Traduction non officielle
+            name: "Roquettes à proton"
+            text: """<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez lancer un nombre de dés supplémentaires égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés supplémentaires."""
         # Bombes
         "Seismic Charges":
             name: "Charges sismiques"
@@ -490,122 +508,149 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Bombes à protons"
             text: """Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.<br /><br />Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."""
         # Canons
-        # Senseurs
+        "Ion Cannon":
+            name: "Canon ionique"
+            text: """<strong>Attaque :</strong> Attaque : attaquez 1 vaisseau.<br /><br />Si cette attaque touche, le défenseur subit 1 dégât et reçoit 1 marqueur ionique. Ensuite annulez le résultat de tous les dés."""
+        "Heavy Laser Cannon":
+            name: "Canon laser lourd"
+            text: """<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Juste après avoir lancé vos dés d'attaque, vous devez changer tous vos résultats %CRIT% en résultats %HIT%."""
+        "Autoblaster":
+            text: """<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
+        # Systèmes
         "Enhanced Scopes":
             name: "Radars améliorés"
             text: """Durant la phase d'activation, considérez que votre valeur de pilotage est égale à "0"."""
-        "Gunner":
-            text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You cannot perform another attack this round."""
-        "Ion Cannon":
-            text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />If this attack hits, the defender suffers 1 damage and receives 1 ion token.  Then cancel all dice results."""
-        "Heavy Laser Cannon":
-            text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Immediately after rolling your attack dice, you must change all of your %CRIT% results to %HIT% results."""
-        "Mercenary Copilot":
-            text: """When attacking at Range 3, you may change 1 of your %HIT% results to a %CRIT% result."""
-        "Weapons Engineer":
-            text: """You may maintain 2 target locks (only 1 per enemy ship).<br /><br />When you acquire a target lock, you may lock onto 2 different ships."""
-        "Luke Skywalker":
-            text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."""
-        "Nien Nunb":
-            text: """You may treat all %STRAIGHT% maneuvers as green maneuvers."""
-        "Chewbacca":
-            text: """When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."""
-        "Autoblaster":
-            text: """<strong>Attack:</strong> Attack 1 ship.<br /><br />Your %HIT% results cannot be canceled by defense dice.<br /><br />The defender may cancel %CRIT% results before %HIT% results."""
         "Fire-Control System":
-            text: """After you perform an attack, you may acquire a target lock on the defender."""
-        "Recon Specialist":
-            text: """When you perform a focus action, assign 1 additional focus token to your ship."""
-        "Saboteur":
-            text: """<strong>Action :</strong> Choose 1 enemy ship at Range 1 and roll 1 attack die.  On a %HIT% or %CRIT% result, choose 1 random facedown Damage card assigned to that ship, flip it faceup, and resolve it."""
-        "Intelligence Agent":
-            text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."""
+            name: "Système de commande de tir"
+            text: """Après avoir effectué une attaque, vous pouvez verrouiller le défenseur."""
         "Advanced Sensors":
-            text: """Immediately before you reveal your maneuver, you may perform 1 free action.<br /><br />If you use this ability, you must skip your "Perform Action" step during this round."""
+            name: "Senseurs avancés"
+            text: """Juste avant de révéler votre manoeuvre, vous pouvez effectuer 1 action gratuite.<br /><br />Si vous utilisez cette capacité, vous devez passer l'étape "Effectuer une action" ce tour-ci."""
         "Sensor Jammer":
-            text: """When defending, you may change 1 of the attacker's %HIT% results into a %FOCUS% result.<br /><br />The attacker cannot reroll the die with the changed result."""
+            name: "Brouilleur de senseurs"
+            text: """Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."""
+        # Équipages
+        "Gunner":
+            name: "Cannonier"
+            text: """Après avoir effectué une attaque qui ne touche pas, vous pouvez effectuer immédiatement une attaque d'arme principale. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."""
+        "Mercenary Copilot":
+            name: "Copilote mercenaire"
+            text: """Quand vous attaquez à portée 3, vous pouvez échanger 1 de vos résultats %HIT% contre 1 résultat %CRIT%."""
+        "Weapons Engineer":
+            name: "Ingénieur en armement"
+            text: """Vous pouvez verrouiller 2 cibles (1 seule acquisition de cible par vaisseau ennemi).<br /><br />Quand vous verrouillez une cible, vous pouvez verrouiller 2 vaisseaux différents."""
+        "Luke Skywalker":
+            text: """Quand vous effectuez une attaque qui ne touche pas, effectuez aussitôt une attaque d'arme principale. Vous pouvez échanger un résultat %FOCUS% contre 1 résultat %HIT%. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."""
+        "Nien Nunb":
+            text: """Vous pouvez traiter toute les manœuvres %STRAIGHT% comme des manœuvres vertes."""
+        "Chewbacca":
+            text: """Quand vous recevez une carte de dégâts, vous pouvez la défaussez sur-le-champs et récupérer 1 bouclier. Ensuite, défaussez cette carte d'amélioration."""
+        "Recon Specialist":
+            name: "Officier en reconnaissance"
+            text: """Quand vous effectuez une action de concentration, assignez 1 marqueur de concentration supplémentaire à votre vaisseau."""
+        "Saboteur":
+            text: """<strong>Action :</strong> choisissez 1 vaisseau ennemi situé à portée 1 et lancez 1 dé d'attaque. Sur un résultat %HIT% ou %CRIT%, choisissez au hasard une carte de dégâts face cachée assignée à ce vaisseau, retrounez-la et résolvez-la."""
+        "Intelligence Agent":
+            name: "Agent de renseignements"
+            text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-2. Vous pouvez regarder la manoeuvre choisie pour ce vaisseau."""
         "Darth Vader":
-            text: """After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."""
+            name: "Dark Vador"
+            text: """Après avoir effectué une attaque contre un vaisseau ennemi, vous pouvez subir 2 dégâts pour infliger 1 dégât critique à cet appareil."""
         "Rebel Captive":
-            text: """Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."""
+            name: "Prisonnier rebelle"
+            text: """Une fois par tour, le premier vaisseau qui vous déclare comme la cible d'une attaque reçoit aussitôt 1 marqueur de stress."""
         "Flight Instructor":
-            text: """When defending, you may reroll 1 of your %FOCUS% results.  If the attacker's pilot skill value is "2" or lower, you may reroll 1 of your blank results instead."""
+            name: "Pilote instructeur"
+            text: """Quand vous défendez, vous pouvez relancer 1 de vos résultats %FOCUS%. Si la valeur de pilotage de l'attaquant est de 2 ou moins, vous pouvez relancer 1 de vos résultats vierges à la place."""
         "Navigator":
-            text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same bearing.<br /><br />You cannot rotate to a red maneuver if you have any stress tokens."""
-        "Opportunist":
-            text: """When attacking, if the defender does not have any focus or evade tokens, you may receive 1 stress token to roll 1 additional attack die.<br /><br />You cannot use this ability if you have any stress tokens."""
-        "Comms Booster":
-            text: """<strong>Energy:</strong> Spend 1 energy to remove all stress tokens from a friendly ship at Range 1-3.  Then assign 1 focus token to that ship."""
-        "Slicer Tools":
-            text: """<strong>Action :</strong> Choose 1 or more ships at Range 1-3 that have a stress token.  For each ship chosen, you may spend 1 energy to cause that ship to suffer 1 damage."""
-        "Shield Projector":
-            text: """When an enemy ship is declaring either a small or large ship as the target of its attack, you may spend 3 energy to force that ship to target you if possible."""
-        "Tactician":
-            text: """After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."""
-        "R2-D2 (Crew)":
-            text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
-        "C-3PO":
-            text: """Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."""
-        "Single Turbolasers":
-            text: """<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your %FOCUS% results to a %HIT% result."""
-        "Quad Laser Cannons":
-            text: """<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."""
-        "Tibanna Gas Supplies":
-            text: """<strong>Energy:</strong> You may discard this card to gain 3 energy."""
-        "Ionization Reactor":
-            text: """<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."""
-        "Engine Booster":
-            text: """Immediately before you reveal your maneuver dial, you may spend 1 energy to execute a white (%STRAIGHT% 1) maneuver.  You cannot use this ability if you would overlap another ship."""
-        "R3-A2":
-            text: """When you declare the target of your attack, if the defender is inside your firing arc, you may receive 1 stress token to cause the defender to receive 1 stress token."""
-        "R2-D6":
-            text: """Your upgrade bar gains the %ELITE% upgrade icon.<br /><br />You cannot equip this upgrade if you already have a %ELITE% upgrade icon or if your pilot skill value is "2" or lower."""
-        "Proton Rockets":
-            text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
-        "Kyle Katarn":
-            text: """After you remove a stress token from your ship, you may assign a focus token to your ship."""
-        "Jan Ors":
-            text: """Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."""
-        "Toryn Farr":
-            text: """<strong>Action :</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
-        "R4-D6":
-            text: """When you are hit by an attack and there are at least 3 uncanceled %HIT% results, you may choose to cancel those results until there are 2 remaining.  For each result canceled this way, receive 1 stress token."""
-        "R5-P9":
-            text: """At the end of the Combat phase, you may spend 1 of your focus tokens to recover 1 shield (up to your shield value)."""
-        "WED-15 Repair Droid":
-            text: """<strong>Action :</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
-        "Carlist Rieekan":
-            text: """At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as "12" until the end of the phase."""
-        "Jan Dodonna":
-            text: """When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."""
-        "Expanded Cargo Hold":
-            text: """Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
-        "Backup Shield Generator":
-            text: """At the end of each round, you may spend 1 energy to recover 1 shield (up to your shield value)."""
-        "EM Emitter":
-            text: """When you obstruct an attack, the defender rolls 3 additional defense dice (instead of 1)."""
-        "Frequency Jammer":
-            text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
-        "Han Solo":
-            text: """When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
-        "Leia Organa":
-            text: """At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."""
-        "Targeting Coordinator":
-            text: """<strong>Energy:</strong> You may spend 1 energy to choose 1 friendly ship at Range 1-2.  Acquire a target lock, then assign the blue target lock token to the chosen ship."""
-        "Raymus Antilles":
-            text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."""
-        "Gunnery Team":
-            text: """Once per round, when attacking with a secondary weapon, you may spend 1 energy to change 1 of your blank results to a %HIT% result."""
-        "Sensor Team":
-            text: """When acquiring a target lock, you may lock onto an enemy ship at Range 1-5 instead of 1-3."""
-        "Engineering Team":
-            text: """During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the "Gain Energy" step."""
-        "Lando Calrissian":
-            text: """<strong>Action :</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."""
-        "Mara Jade":
-            text: """At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
+            name: "Navigateur"
+            text: """Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.<br /><br />Vous ne pouvez pas touner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."""
+        "Lando Calrissian": # Traduction non officielle
+            text: """<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
+        "Mara Jade": # Traduction non officielle
+            text: """À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."""
         "Fleet Officer":
-            text: """<strong>Action :</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+            name: ""
+      #      text: """<strong>Action :</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+        "Han Solo":
+            text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HITM."""
+        "Leia Organa":
+            text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."""
+        "WED-15 Repair Droid":
+            name: "Droïde de réparation WED-15"
+            text: """<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de déga^ts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."""
+        "Carlist Rieekan":
+            text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à "12", jusqu'à la fin de la phase."""
+        "Jan Dodonna":
+            text: """Quand un autre vaisseau allié situé à portée 1 attaque, il peut échanger 1 de ses résultats %HIT% contre un résultat %CRIT%."""
+        "Tactician":
+            name: "Tacticien"
+            text: "Après que vous avez effectué une attaque contre un vaisseau situé dans votre arc de tir à portée 2, ce vaisseau reçoit 1 marqueur de stress."
+        "R2-D2 (Crew)":
+            name: "R2-D2"
+            text: """À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."""
+        "C-3PO":
+            name: "Z-6PO"
+            text: """Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."""
+        "Kyle Katarn": # Traduction non officielle
+            text: """Après avoir enlevé un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à celui-ci."""
+        "Jan Ors": # Traduction non officielle
+            text: """Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou doit recevoir un marqueur de concentration, vous pouvez assigner un marqueur évasion à la place."""
+        "Toryn Farr":
+            text: """<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."""
+        "Targeting Coordinator":
+            name: "Coordinateur de visée"
+            text: """<strong>Énergie :</strong> vous pouvez dépenser 1 énergie pour choisir un vaisseau allié situé à portée 1-2. Verrouillez une cible, puis assignez le marqueur d'acquisition de cible bleu au vaisseau choisi."""
+        "Raymus Antilles":
+            text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."""
+        # Soute
+        "Frequency Jammer":
+            name: "Brouilleurs de fréquence"
+            text: """Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."""
+        "Expanded Cargo Hold":
+            name: "Compartiments supplémentaires"
+            text: """Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."""
+        "Comms Booster":
+            name: "Amplificateur Comm"
+            text: """<strong>Énergie :</strong> dépensez 1 énergie pour retirer tous les marqueurs de stress d'un vaisseau allié situé à portée 1-3. Ensuite, assignez 1 marqueur de concentration à ce vaisseau."""
+        "Slicer Tools":
+            name: "Outils de slicer"
+            text: """<strong>Action :</strong> choisissez 1 ou plusieurs vaisseaux ennemis situés à portée 1-3 ayant un marqueur de stress. Pour chaque vaisseau choisi, vous pouvez dépenser 1 énergie pour forcer ce vaisseau à subir 1 dégât."""
+        "Shield Projector":
+            name: "Projecteur de boucliers"
+            text: """Quand un vaisseau ennemi devient le vaisseau actif durant la phase de combat, vous pouvez dépenser 3 énergie pour l'obliger à vous attaquer, si possible, jusqu'à la fin de la phase."""
+        "Tibanna Gas Supplies":
+            name: "Réserves de gaz Tibanna"
+            text: """<strong>Énergie :</strong> vous pouvez défausser cette carte pour gagner 3 énergie."""
+        "Ionization Reactor":
+            name: "Réacteur à ionisation"
+            text: """<strong>Énergie :</strong> dépensez 5 énergie de cette carte et défaussez-la pour que chaque autre vaisseau situé à portée 1 subisse 1 dégât et reçoive un marqueur ionique."""
+        "Engine Booster":
+            name: "Booster"
+            text: """Juste avant de dévoiler votre cadran de manœuvres, vous pouvez dépenser 1 énergie pour exécuter une manœuvre (%STRAIGHT%) blanche. Vous ne pouvez pas utiliser cette capacité si elle vous fait chevaucher un autre vaisseau."""
+        "Backup Shield Generator":
+            name: "Générateur de boucliers auxiliaire"
+            text: """À la fin de chaque tour, vous pouvez dépenser 1 énergie pour récupérer 1 bouclier (jusqu'à concurrence de votre valeur de boucliers)."""
+        "EM Emitter":
+            name: "Émetteur EM"
+            text: """Quand vous gênez une attaque, le défenseur lance 3 dés de défense supplémentaires (au lieu de 1)."""
+        # Point d'Attache
+        "Single Turbolasers":
+            name: "Turbolaser"
+            text: """<strong>Attaque (énergie) :</strong> dépensez 2 énergie de cette carte pour effectuer cette attaque. Le défenseur double sa valeur d'agilité contre cette attaque. Vous pouvez changer 1 de vos résultats %FOCUS% en résultat %HIT%."""
+        "Quad Laser Cannons":
+            name: "Canons quadrilaser"
+            text: """<strong>Attaque (énergie) :</strong> dépensez 1 énergie de cette carte pour effectuer cette attaque. Si cette attaque ne touche pas, vous pouvez aussitôt dépenser 1 énergie de cette carte pour effectuer à nouveau cette attaque."""
+        # Équipe
+        "Gunnery Team":
+            name: "Équipe d'artilleurs"
+            text: """Une fois par tour, quand vous attaquez avec une arme secondaire, vous pouvez dépenser 1 énergie pour change 1 de vos résultats vierges en résultat %HIT%."""
+        "Sensor Team":
+            name: "Équipe des senseurs"
+            text: """Quand vous verrouillez une cible, vous pouvez verrouiller un vaisseau ennemi à portée 1-5 (au lieu de portée 1-3)."""
+        "Engineering Team":
+            name: "Équipe de mécaniciens"
+            text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
 
     modification_translations =
         "Stealth Device":
@@ -643,32 +688,33 @@ exportObj.cardLoaders['Français'] = () ->
 
     title_translations =
         "Slave I":
-            text: """Your upgrade bar gains the %TORPEDO% upgrade icon."""
+            text: """Votre bandeau d'amélioration gagne l'icône %TORPEDO%."""
         "Millennium Falcon":
             name: "Faucon Millenium"
             text: """Votre barre d'actions gagne l'icône d'action %EVADE%."""
         "Moldy Crow":
-            text: """During the End phase, do not remove unused focus tokens from your ship."""
+            text: """Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."""
         "ST-321":
-            text: """When acquiring a target lock, you may lock onto any enemy ship in the play area."""
+            text: """Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."""
         "Royal Guard TIE":
-            text: """You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
+            name: "TIE de la Garde royale"
+            text: """Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de "4" ou moins."""
         "Dodonna's Pride":
-            text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+            text: """Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."""
         "A-Wing Test Pilot":
             name: "Pilote d'essai sur A-Wing"
             text: """Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des "1" ou moins."""
         "Tantive IV":
-            text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+            text: """Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."""
         "Bright Hope":
-            text: """A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
+            text: """Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."""
         "Quantum Storm":
-            text: """At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."""
+            text: """Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."""
         "Dutyfree":
-            text: """When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."""
+            text: """Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."""
         "Jaina's Light":
-            text: """When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
-        "Outrider":
-            text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
+            text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
+        "Outrider": # Traduction non officielle
+            text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
