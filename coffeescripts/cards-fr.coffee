@@ -569,9 +569,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
         "Mara Jade": # Traduction non officielle
             text: """À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."""
-        "Fleet Officer":
-            name: ""
-      #      text: """<strong>Action :</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+        "Fleet Officer": # Traduction non officielle
+            name: "Officier de la flotte"
+            text: """<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."""
         "Han Solo":
             text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HITM."""
         "Leia Organa":
@@ -679,7 +679,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous vous désoccultez ou effectuez une action d'occultation, vous pouvez effectuer une action d'évasion gratuite."""
         "Advanced Cloaking Device":
             name: "Système d'occulation avancé"
-            text: """Après avoir effectué une attaque, vous pouvez effectuer une action de d'occultation gratuite."""
+            text: """Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
         "Combat Retrofit":
             name: "Préparé pour le combat"
             text: """Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."""
