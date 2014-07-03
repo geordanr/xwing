@@ -66,13 +66,42 @@ exportObj.translations['Français'] =
         unreleased: "non disponible"
         epic: "épique"
     byCSSSelector:
+        # Card browser
         '.xwing-card-browser .translate.sort-cards-by': 'Trier les cartes par'
         '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
         '.xwing-card-browser option[value="type-by-points"]': 'Type (par Points)'
         '.xwing-card-browser option[value="type-by-name"]': 'Type (par Nom)'
-        '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la guache.'
+        '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la gauche.'
         '.xwing-card-browser .info-range td': 'Portée'
+        # Info well
+        '.info-well .info-ship td': 'Vaisseau'
+        '.info-well .info-skill td': 'Valeur de pilotage'
+        '.info-well .info-actions td': 'Actions'
+        '.info-well .info-upgrades td': 'Améliorations'
+        '.info-well .info-range td': 'Portée'
+        # Squadron edit buttons
+        '.clear-squad' : 'Nouvel escadron'
+        '.save-list' : 'Enregistrer'
+        '.save-list-as' : 'Enregistrer sous…'
+        '.delete-list' : 'Supprimer'
+        '.backend-list-my-squads' : 'Charger un escadron'
+        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte'
+        '.randomize' : 'Aléatoire'
+        '.randomize-options' : 'Options…'
+        # Print/View modal
+        '.bbcode-list' : 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>'
+        '.vertical-space-checkbox' : """<input type="checkbox" class="toggle-vertical-space" /> Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression"""
+        '.print-list' : '<i class="icon-print"></i>&nbsp;Imprimer'
+        # Randomizer options
+        '.modal-header h3': "Options du générateur aléatoire d'escadron"
+        '.do-randomize' : 'Générer'
+        # Top tab bar
+        '#empireTab' : 'Empire Galactique'
+        '#rebelTab' : 'Alliance Rebelle'
+        '#browserTab' : 'Navigateur de cartes'
+        '#aboutTab' : 'À propos'
+
     singular:
         'pilots': 'Pilote'
         'modifications': 'Modification'

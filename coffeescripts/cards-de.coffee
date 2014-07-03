@@ -72,6 +72,34 @@ exportObj.translations.Deutsch =
         '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)'
         '.xwing-card-browser option[value="type-by-name"]': 'Typ (Name)'
         '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte aus der Liste.'
+        '.xwing-card-browser .info-range td': 'Range'
+        # Info well
+        '.info-well .info-ship td': 'Ship'
+        '.info-well .info-skill td': 'Skill'
+        '.info-well .info-actions td': 'Actions'
+        '.info-well .info-upgrades td': 'Upgrades'
+        '.info-well .info-range td': 'Range'
+        # Squadron edit buttons
+        '.clear-squad' : 'New squad'
+        '.save-list' : 'Save'
+        '.save-list-as' : 'Save as…'
+        '.delete-list' : 'Delete'
+        '.backend-list-my-squads' : 'Load squad'
+        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text'
+        '.randomize' : 'Random!'
+        '.randomize-options' : 'Randomizer options…'
+        # Print/View modal
+        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea>'
+        '.vertical-space-checkbox' : """<input type="checkbox" class="toggle-vertical-space" /> Add space for damage/upgrade cards when printingn"""
+        '.print-list' : '<i class="icon-print"></i>&nbsp;Print'
+        # Randomizer options
+        '.modal-header h3': "Random Squad Builder Options"
+        '.do-randomize' : 'Randomize!'
+        # Top tab bar
+        '#empireTab' : 'Galactic Empire'
+        '#rebelTab' : 'Rebel Alliance'
+        '#browserTab' : 'Card Browser'
+        '#aboutTab' : 'About'
     singular:
         'pilots': 'Piloten'
         'modifications': 'Modifikationen'
