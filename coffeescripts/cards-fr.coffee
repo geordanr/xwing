@@ -72,6 +72,7 @@ exportObj.translations['Français'] =
         '.xwing-card-browser option[value="type-by-points"]': 'Type (par Points)'
         '.xwing-card-browser option[value="type-by-name"]': 'Type (par Nom)'
         '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la guache.'
+        '.xwing-card-browser .info-range td': 'Portée'
     singular:
         'pilots': 'Pilote'
         'modifications': 'Modification'
