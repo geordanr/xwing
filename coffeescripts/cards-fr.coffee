@@ -94,7 +94,6 @@ exportObj.translations['Français'] =
         '.vertical-space-checkbox' : """<input type="checkbox" class="toggle-vertical-space" /> Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Imprimer'
         # Randomizer options
-        '.modal-header h3': "Options du générateur aléatoire d'escadron"
         '.do-randomize' : 'Générer'
         # Top tab bar
         '#empireTab' : 'Empire Galactique'
@@ -638,6 +637,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Brouilleurs de fréquence"
             text: """Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."""
         "Expanded Cargo Hold":
+            ship: "Transport moyen GR-75"
             name: "Compartiments supplémentaires"
             text: """Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."""
         "Comms Booster":
@@ -683,12 +683,16 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
 
     modification_translations =
-        "Stealth Device":
-            name: "Système d'occultation"
-            text: """Augmentez votre valeur d'agilité de 1. Si une attaque vous touche, défaussez cette carte."""
         "Shield Upgrade":
             name: "Boucliers améliorés"
             text: """Augmentez votre valeur de boucliers de 1."""
+        "Advanced Cloaking Device":
+            name: "Système d'occultation avancé"
+            text: """Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
+            ship: "TIE Fantôme"
+        "Stealth Device":
+            name: "Système d'occultation"
+            text: """Augmentez votre valeur d'agilité de 1. Si une attaque vous touche, défaussez cette carte."""
         "Engine Upgrade":
             name : "Moteurs améliorés"
             text: """Votre barre d'actions gagne l'icône d'action %BOOST%."""
@@ -707,12 +711,10 @@ exportObj.cardLoaders['Français'] = () ->
         "Stygium Particle Accelerator":
             name: "Accélérateur de particules de Stygium"
             text: """Quand vous vous désoccultez ou effectuez une action d'occultation, vous pouvez effectuer une action d'évasion gratuite."""
-        "Advanced Cloaking Device":
-            name: "Système d'occultation avancé"
-            text: """Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
         "Combat Retrofit":
             name: "Préparé pour le combat"
             text: """Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."""
+            ship: "Transport moyen GR-75"
         "B-Wing/E2":
             text: """Votre barre d'améliorations gagne l'icône d'amélioration %CREW%."""
 
@@ -725,24 +727,32 @@ exportObj.cardLoaders['Français'] = () ->
         "Moldy Crow":
             text: """Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."""
         "ST-321":
+            ship: "Navette de classe Lambda"
             text: """Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."""
         "Royal Guard TIE":
+            ship: "Intercepteur TIE"
             name: "TIE de la Garde royale"
             text: """Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de "4" ou moins."""
         "Dodonna's Pride":
+            ship: "Corvette CR90 (proue)"
             text: """Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."""
         "A-Wing Test Pilot":
             name: "Pilote d'essai sur A-Wing"
             text: """Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des "1" ou moins."""
         "Tantive IV":
+            ship: "Corvette CR90 (proue)"
             text: """Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."""
         "Bright Hope":
+            ship: "Transport moyen GR-75"
             text: """Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."""
         "Quantum Storm":
+            ship: "Transport moyen GR-75"
             text: """Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."""
         "Dutyfree":
+            ship: "Transport moyen GR-75"
             text: """Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."""
         "Jaina's Light":
+            ship: "Corvette CR90 (proue)"
             text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
         "Outrider": # Traduction non officielle
             text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""

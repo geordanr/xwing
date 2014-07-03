@@ -79,7 +79,7 @@ exportObj.translations.English =
         '.info-well .info-upgrades td': 'Upgrades'
         '.info-well .info-range td': 'Range'
         # Squadron edit buttons
-        '.clear-squad' : 'New squad'
+        '.clear-squad' : 'New Squad'
         '.save-list' : 'Save'
         '.save-list-as' : 'Save as…'
         '.delete-list' : 'Delete'
@@ -92,7 +92,6 @@ exportObj.translations.English =
         '.vertical-space-checkbox' : """<input type="checkbox" class="toggle-vertical-space" /> Add space for damage/upgrade cards when printingn"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Print'
         # Randomizer options
-        '.modal-header h3': "Random Squad Builder Options"
         '.do-randomize' : 'Randomize!'
         # Top tab bar
         '#empireTab' : 'Galactic Empire'
