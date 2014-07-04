@@ -520,43 +520,43 @@ class exportObj.SquadBuilder
                 <table>
                     <tbody>
                         <tr class="info-ship">
-                            <td>Ship</td>
+                            <td class="info-header">Ship</td>
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-skill">
-                            <td>Skill</td>
+                            <td class="info-header">Skill</td>
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-energy">
-                            <td><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
+                            <td class="info-header"><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
                             <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-attack">
-                            <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                            <td class="info-header"><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
-                            <td>Range</td>
+                            <td class="info-header">Range</td>
                             <td class="info-data info-range"></td>
                         </tr>
                         <tr class="info-agility">
-                            <td><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
+                            <td class="info-header"><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
                             <td class="info-data info-agility"></td>
                         </tr>
                         <tr class="info-hull">
-                            <td><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
+                            <td class="info-header"><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
                             <td class="info-data info-hull"></td>
                         </tr>
                         <tr class="info-shields">
-                            <td><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
+                            <td class="info-header"><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
                             <td class="info-data info-shields"></td>
                         </tr>
                         <tr class="info-actions">
-                            <td>Actions</td>
+                            <td class="info-header">Actions</td>
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-upgrades">
-                            <td>Upgrades</td>
+                            <td class="info-header">Upgrades</td>
                             <td class="info-data"></td>
                         </tr>
                     </tbody>

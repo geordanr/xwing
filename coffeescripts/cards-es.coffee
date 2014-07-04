@@ -85,11 +85,11 @@ exportObj.translations['Español'] =
         '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
         '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
         # Info well
-        '.info-well .info-ship td': 'Nave'
-        '.info-well .info-skill td': 'Habilidad'
-        '.info-well .info-actions td': 'Acciones'
-        '.info-well .info-upgrades td': 'Mejoras'
-        '.info-well .info-range td': 'Alcance'
+        '.info-well .info-ship td.info-header': 'Nave'
+        '.info-well .info-skill td.info-header': 'Habilidad'
+        '.info-well .info-actions td.info-header': 'Acciones'
+        '.info-well .info-upgrades td.info-header': 'Mejoras'
+        '.info-well .info-range td.info-header': 'Alcance'
         # Squadron edit buttons
         '.clear-squad' : 'Nuevo Escuadron'
         '.save-list' : 'Grabar'

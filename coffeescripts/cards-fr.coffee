@@ -75,11 +75,11 @@ exportObj.translations['Français'] =
         '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la gauche.'
         '.xwing-card-browser .info-range td': 'Portée'
         # Info well
-        '.info-well .info-ship td': 'Vaisseau'
-        '.info-well .info-skill td': 'Valeur de pilotage'
-        '.info-well .info-actions td': 'Actions'
-        '.info-well .info-upgrades td': 'Améliorations'
-        '.info-well .info-range td': 'Portée'
+        '.info-well .info-ship td.info-header': 'Vaisseau'
+        '.info-well .info-skill td.info-header': 'Valeur de pilotage'
+        '.info-well .info-actions td.info-header': 'Actions'
+        '.info-well .info-upgrades td.info-header': 'Améliorations'
+        '.info-well .info-range td.info-header': 'Portée'
         # Squadron edit buttons
         '.clear-squad' : 'Nouvel escadron'
         '.save-list' : 'Enregistrer'

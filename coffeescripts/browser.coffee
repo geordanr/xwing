@@ -76,39 +76,39 @@ class exportObj.CardBrowser
                             <table>
                                 <tbody>
                                     <tr class="info-skill">
-                                        <td>Skill</td>
+                                        <td class="info-header">Skill</td>
                                         <td class="info-data info-skill"></td>
                                     </tr>
                                     <tr class="info-energy">
-                                        <td><img class="icon-energy" src="images/transparent.png" alt="energy" /></td>
+                                        <td class="info-header"><img class="icon-energy" src="images/transparent.png" alt="energy" /></td>
                                         <td class="info-data info-energy"></td>
                                     </tr>
                                     <tr class="info-attack">
-                                        <td><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                                        <td class="info-header"><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
                                         <td class="info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-range">
-                                        <td>Range</td>
+                                        <td class="info-header">Range</td>
                                         <td class="info-data info-range"></td>
                                     </tr>
                                     <tr class="info-agility">
-                                        <td><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
+                                        <td class="info-header"><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
                                         <td class="info-data info-agility"></td>
                                     </tr>
                                     <tr class="info-hull">
-                                        <td><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
+                                        <td class="info-header"><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
                                         <td class="info-data info-hull"></td>
                                     </tr>
                                     <tr class="info-shields">
-                                        <td><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
+                                        <td class="info-header"><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
                                         <td class="info-data info-shields"></td>
                                     </tr>
                                     <tr class="info-actions">
-                                        <td>Actions</td>
+                                        <td class="info-header">Actions</td>
                                         <td class="info-data"></td>
                                     </tr>
                                     <tr class="info-upgrades">
-                                        <td>Upgrades</td>
+                                        <td class="info-header">Upgrades</td>
                                         <td class="info-data"></td>
                                     </tr>
                                 </tbody>
@@ -143,9 +143,9 @@ class exportObj.CardBrowser
 
         for type in TYPES
             if type == 'upgrades'
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
             else
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
         @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Modification', 'Title' ])
         for card_name, card_data of exportObj.upgrades
@@ -223,11 +223,16 @@ class exportObj.CardBrowser
         name = card.data 'name'
         type = card.data 'type'
         data = card.data 'card'
+        orig_type = card.data 'orig_type'
+
+        console.log type
+        console.log orig_type
+        console.dir data
 
         @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
-        switch type
+        switch orig_type
             when 'Pilot'
                 ship = exportObj.ships[data.ship]
                 @card_viewer_container.find('.info-type').text "#{data.ship} Pilot (#{ship.faction})"
@@ -283,4 +288,5 @@ class exportObj.CardBrowser
         option.data 'name', card.name
         option.data 'type', card.type
         option.data 'card', card.data
+        option.data 'orig_type', card.orig_type
         $(container).append option
