@@ -85,7 +85,29 @@
       '.xwing-card-browser option[value="source"]': 'Source',
       '.xwing-card-browser option[value="type-by-points"]': 'Type (par Points)',
       '.xwing-card-browser option[value="type-by-name"]': 'Type (par Nom)',
-      '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la guache.'
+      '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte depuis la liste sur la gauche.',
+      '.xwing-card-browser .info-range td': 'Portée',
+      '.info-well .info-ship td': 'Vaisseau',
+      '.info-well .info-skill td': 'Valeur de pilotage',
+      '.info-well .info-actions td': 'Actions',
+      '.info-well .info-upgrades td': 'Améliorations',
+      '.info-well .info-range td': 'Portée',
+      '.clear-squad': 'Nouvel escadron',
+      '.save-list': 'Enregistrer',
+      '.save-list-as': 'Enregistrer sous…',
+      '.delete-list': 'Supprimer',
+      '.backend-list-my-squads': 'Charger un escadron',
+      '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte',
+      '.randomize': 'Aléatoire',
+      '.randomize-options': 'Options…',
+      '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>',
+      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression",
+      '.print-list': '<i class="icon-print"></i>&nbsp;Imprimer',
+      '.do-randomize': 'Générer',
+      '#empireTab': 'Empire Galactique',
+      '#rebelTab': 'Alliance Rebelle',
+      '#browserTab': 'Navigateur de cartes',
+      '#aboutTab': 'À propos'
     },
     singular: {
       'pilots': 'Pilote',
@@ -715,7 +737,8 @@
         text: "À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."
       },
       "Fleet Officer": {
-        name: ""
+        name: "Officier de la flotte",
+        text: "<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."
       },
       "Han Solo": {
         text: "Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HITM."
@@ -766,6 +789,7 @@
         text: "Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."
       },
       "Expanded Cargo Hold": {
+        ship: "Transport moyen GR-75",
         name: "Compartiments supplémentaires",
         text: "Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."
       },
@@ -823,13 +847,18 @@
       }
     };
     modification_translations = {
-      "Stealth Device": {
-        name: "Système d'occultation",
-        text: "Augmentez votre valeur d'agilité de 1. Si une attaque vous touche, défaussez cette carte."
-      },
       "Shield Upgrade": {
         name: "Boucliers améliorés",
         text: "Augmentez votre valeur de boucliers de 1."
+      },
+      "Advanced Cloaking Device": {
+        name: "Système d'occultation avancé",
+        text: "Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite.",
+        ship: "TIE Fantôme"
+      },
+      "Stealth Device": {
+        name: "Système d'occultation",
+        text: "Augmentez votre valeur d'agilité de 1. Si une attaque vous touche, défaussez cette carte."
       },
       "Engine Upgrade": {
         name: "Moteurs améliorés",
@@ -855,13 +884,10 @@
         name: "Accélérateur de particules de Stygium",
         text: "Quand vous vous désoccultez ou effectuez une action d'occultation, vous pouvez effectuer une action d'évasion gratuite."
       },
-      "Advanced Cloaking Device": {
-        name: "Système d'occulation avancé",
-        text: "Après avoir effectué une attaque, vous pouvez effectuer une action de d'occultation gratuite."
-      },
       "Combat Retrofit": {
         name: "Préparé pour le combat",
-        text: "Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."
+        text: "Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1.",
+        ship: "Transport moyen GR-75"
       },
       "B-Wing/E2": {
         text: "Votre barre d'améliorations gagne l'icône d'amélioration %CREW%."
@@ -879,13 +905,16 @@
         text: "Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."
       },
       "ST-321": {
+        ship: "Navette de classe Lambda",
         text: "Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."
       },
       "Royal Guard TIE": {
+        ship: "Intercepteur TIE",
         name: "TIE de la Garde royale",
         text: "Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de \"4\" ou moins."
       },
       "Dodonna's Pride": {
+        ship: "Corvette CR90 (proue)",
         text: "Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."
       },
       "A-Wing Test Pilot": {
@@ -893,18 +922,23 @@
         text: "Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des \"1\" ou moins."
       },
       "Tantive IV": {
+        ship: "Corvette CR90 (proue)",
         text: "Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."
       },
       "Bright Hope": {
+        ship: "Transport moyen GR-75",
         text: "Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."
       },
       "Quantum Storm": {
+        ship: "Transport moyen GR-75",
         text: "Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."
       },
       "Dutyfree": {
+        ship: "Transport moyen GR-75",
         text: "Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."
       },
       "Jaina's Light": {
+        ship: "Corvette CR90 (proue)",
         text: "Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."
       },
       "Outrider": {
