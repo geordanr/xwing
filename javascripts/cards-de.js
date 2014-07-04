@@ -101,7 +101,7 @@
       '.randomize': 'Random!',
       '.randomize-options': 'Randomizer options…',
       '.bbcode-list': 'Copy the BBCode below and paste it into your forum post.<textarea></textarea>',
-      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Add space for damage/upgrade cards when printingn",
+      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Add space for damage/upgrade cards when printing",
       '.print-list': '<i class="icon-print"></i>&nbsp;Print',
       '.do-randomize': 'Randomize!',
       '#empireTab': 'Galactic Empire',

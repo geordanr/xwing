@@ -626,7 +626,7 @@ class exportObj.SquadBuilder
                     @printable_container.find('.printable-body').text ''
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
-                    @printable_container.find('.fancy-ship').toggleClass 'tall', @toggle_vertical_space_checkbox.prop('checked')
+                    @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
             window.print()
 
         $(window).resize =>

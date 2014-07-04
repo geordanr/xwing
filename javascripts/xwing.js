@@ -605,7 +605,7 @@
                   _this.printable_container.find('.printable-body').append(ship.toHTML());
                 }
               }
-              _this.printable_container.find('.fancy-ship').toggleClass('tall', _this.toggle_vertical_space_checkbox.prop('checked'));
+              _this.printable_container.find('.fancy-ship').toggleClass('tall', _this.list_modal.find('.toggle-vertical-space').prop('checked'));
           }
           return window.print();
         };
