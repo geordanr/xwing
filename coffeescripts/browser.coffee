@@ -225,10 +225,6 @@ class exportObj.CardBrowser
         data = card.data 'card'
         orig_type = card.data 'orig_type'
 
-        console.log type
-        console.log orig_type
-        console.dir data
-
         @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
