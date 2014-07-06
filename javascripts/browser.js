@@ -280,9 +280,6 @@
       type = card.data('type');
       data = card.data('card');
       orig_type = card.data('orig_type');
-      console.log(type);
-      console.log(orig_type);
-      console.dir(data);
       this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")" + (data.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
       this.card_viewer_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
       this.card_viewer_container.find('.info-sources').text(((function() {
