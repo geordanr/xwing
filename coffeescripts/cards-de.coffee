@@ -127,6 +127,10 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'Lambda-Class Shuttle', 'Raumfähre der Lambda-Klasse'
     # Move GR-75 Medium Transport to Medium-Transporter GR-75
     exportObj.renameShip 'GR-75 Medium Transport', 'Medium-Transporter GR-75'
+    # Move CR90 Corvette (Fore) to CR90-Korvette (Bug)
+    exportObj.renameShip 'CR90 Corvette (Fore)', 'CR90-Korvette (Bug)'
+    # Move CR90 Corvette (Aft) to CR90-Korvette (Heck)
+    exportObj.renameShip 'CR90 Corvette (Aft)', 'CR90-Korvette (Heck)'
 
     pilot_translations =
         "Wedge Antilles":
@@ -319,10 +323,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: '"Geflüster"'
             text: """Nachdem du mit einem Angriff getroffen hast, darfst du deinem Schiff 1 Fokusmarker geben."""
         "CR90 Corvette (Fore)":
-            name: "CR90 Corvette (Fore)"
-            text: """When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."""
+            name: "CR90-Korvette (Bug)"
+            text: """Wenn du mit deinen Primärwaffen angreifst, kannst du 1 Energie ausgeben, um 1 zusätzlichen Angriffswürfel zu bekommen"""
         "CR90 Corvette (Aft)":
-            name: "CR90 Corvette (Aft)"
+            name: "CR90-Korvette (Heck)"
         "Wes Janson":
             text: """Nachdem du einen Angriff durchgeführt hast, darfst du 1 Fokus-, Ausweich- oder blauen Zielerfassungsmarker vom Verteidiger entfernen."""
         "Jek Porkins":
@@ -342,10 +346,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Unspoiled PS5 B-Wing Pilot"
             text: """This card has not yet been revealed."""
         "CR90 Corvette (Crippled Aft)":
-            name: "CR90 Corvette (Crippled Aft)"
-            text: """You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."""
+            name: "CR90-Korvette (Heck-Lahmgelegt)"
+            text: """Folgende Manöver darfst du weder wählen noch ausführen: (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) ."""
         "CR90 Corvette (Crippled Fore)":
-            name: "CR90 Corvette (Crippled Fore)"
+            name: "CR90-Korvette (Bug-Lahmgelegt)"
         "Dash Rendar":
             text: """You may ignore obstacles during the Activation phase and when performing actions."""
         "Rear Admiral Chiraneau":
@@ -493,7 +497,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Opportunist"
             text: """Wenn du angreifst und der Verteidiger keine Fokusmarker oder Ausweichmarker hat, kannst du einen Stressmarker nehmen, um einen zusätzlichen Angriffswürfel zu erhalten.<br /><br />Du kannst diese Fähigkeit nicht nutzen, wenn du einen Stressmarker hast."""
         "Comms Booster":
-            name: "Comms Booster"
+            name: "Kommunikationsverstärker"
             text: """<strong>Energie:</strong> Gib 1 Energie aus, um sämtliche Stressmarker von einem freundlichen Schiff in Reichweite 1-3 zu entfernen. Dann erhält jenes Schiff 1 Fokusmarker."""
         "Slicer Tools":
             name: "Hackersoftware"
@@ -530,22 +534,22 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Nachdem du ein Schiff in Reichweite 2 und innerhalb deines Feuerwinkels angegriffen hast, erhält es 1 Stressmarker."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Crew)"
-            text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
+            text: """Wenn du am Ende der Endphase keine Schilde hast, darfst du 1 Schild wieder aufladen und 1 Angriffswürfel werfen. Bei %HIT% musst du 1 deiner verdeckten Schadenskarten (zufällig gewählt) umdrehen und abhandeln."""
         "C-3PO":
             name: "C-3PO"
-            text: """Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."""
+            text: """Einmal pro Runde darfst du, bevor du 1 oder mehrere Verteidigungswürfel wirfst, laut raten, wie viele %EVADE% du würfeln wirst. Wenn du richtig geraten hast (bevor die Ergebnisse modifiziert werden), wird 1 %EVADE% hinzugefügt."""
         "Single Turbolasers":
-            name: "Single Turbolasers"
-            text: """<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your %FOCUS% results to a %HIT% result."""
+            name: "Einzelne Turbolasers"
+            text: """<strong>Angriff (Energie):</strong> gib 2 Energie von dieser Karte aus, um mit dieser Sekundärwaffe anzugreifen. Der Verteidiger verwendet zum Verteidigen seinen doppelten Wendigkeitswert. Du darfst 1 deiner %FOCUS% in ein %HIT% ändern."""
         "Quad Laser Cannons":
-            name: "Quad Laser Cannons"
-            text: """<strong>Attack (Energy):</strong> Spend 1 energy from this card to perform this attack.  If this attack does not hit, you may immediately spend 1 energy from this card to perform this attack again."""
+            name: "Vierlings-Laserkanone"
+            text: """<strong>Angriff (Energie):</strong> Gib 1 Energie von dieser Karte aus, um mit dieser Sekundärwaffe anzugreifen. Wenn der Angriff verfehlt, kannst du sofort 1 Energie von dieser Karte ausgeben, um den Angriff zu wiederholen."""
         "Tibanna Gas Supplies":
             name: "Tibanna-Gas-Vorräte"
             text: """<strong>Energie:</strong> Du kannst diese Karte ablegen, um 3 Energie zu erzeugen."""
         "Ionization Reactor":
-            name: "Ionization Reactor"
-            text: """<strong>Energy:</strong> Spend 5 energy from this card and discard this card to cause each other ship at Range 1 to suffer 1 damage and receive 1 ion token."""
+            name: "Ionenreaktor"
+            text: """<strong>Energie:</strong> Gib 5 Energie von dieser Karte aus und lege sie ab, damit jedes andere Schiff in Reichweite 1 einen Schaden nimmt und einen Ionenmarker bekommt."""
         "Engine Booster":
             name: "Nachbrenner"
             text: """Unmittelbar bevor du dein Manöverrad aufdeckst, kannst du 1 Energie ausgeben, um ein weißes (%STRAIGHT% 1)-Manöver auszuführen. Wenn es dadurch zur Überschneidung mit einem anderen Schiff käme, darfst du diese Fähigkeit nicht nutzen."""
@@ -596,23 +600,30 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Störsender (Fracht)"
             text: """Wenn du die Aktion Störsignal durchführst, wähle 1 feindliches Schiff ohne Stressmarker in Reichweite 1 des vom Störsignal betroffenen Schiffs. Das gewählte Schiff erhält 1 Stressmarker."""
         "Han Solo":
-            text: """When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
+            text: """Wenn du angreifst und den Verteidiger in Zielerfassung hast, kannst du diese Zielerfassung ausgeben, um all deine gewürfelten %FOCUS% in %HIT% zu ändern."""
         "Leia Organa":
-            text: """At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."""
+            text: """Zu Beginn der Aktivierungsphase kannst du diese Karte ablegen, damit alle freundlichen Schiffe, die ein rotes Manöver aufdecken, dieses bis zum Ende der Phase wie ein weißes Manöver behandeln dürfen."""
         "Raymus Antilles":
-            text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."""
+            text: """Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-3. Du kannst dir das gewählte Manöver dieses Schiffes ansehen. Wenn es weiß ist, bekommt dieses Schiff 1 Stressmarker."""
         "Gunnery Team":
-            text: """Once per round, when attacking with a secondary weapon, you may spend 1 energy to change 1 of your blank results to a %HIT% result."""
+            name: "Bordschützenteam"
+            text: """Einmal pro runde kannst du beim Angreifen mit einer Sekundärwaffe 1 Energie ausgeben, um 1 gewürfelte Leerseite in ein %HIT% zu ändern."""
         "Sensor Team":
-            text: """When acquiring a target lock, you may lock onto an enemy ship at Range 1-5 instead of 1-3."""
+            name: "Sensortechnikerteam"
+            text: """Du kannst feindliche Schiffe in Reichweite 1-5 in die Zielerfassung nehmen (anstatt in Reichweite 1-3)."""
         "Engineering Team":
-            text: """During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the "Gain Energy" step."""
+            name: "Ingenieurteam"
+            text: """Wenn du in der Aktivierungsphase ein %STRAIGHT% Manöver aufdeckst, bekommst du im Schritt "Energie gewinnen" 1 zusätzlichen Energiemarker."""
         "Lando Calrissian":
             text: """<strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."""
         "Mara Jade":
             text: """At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
         "Fleet Officer":
             text: """<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+        "Targeting Coordinator":
+            name: "Zielkoordinator"
+            text: """<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."""
+
 
     modification_translations =
         "Stealth Device":
@@ -667,13 +678,15 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Abfangjäger"
             text: """Du kannst bis zu 2 verschiedene Modifikationen verwenden (statt einer).<br /><br />Du kannst diese Karte nicht verwenden, wenn der Pilotenwert "4" oder kleiner ist."""
         "Dodonna's Pride":
-            name: "Dodonna's Pride"
-            text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+            name: "Dodonnas Stolz"
+            ship: "CR90-Korvette (Bug)"
+            text: """Wenn du die Aktion Koordination durchführst, kannst du 2 freundliche Schiffe wählen (anstatt 1). Jedes dieser Schiffe darf 1 freie Aktion durchführen."""
         "A-Wing Test Pilot":
             name: "A-Wing Test Pilot"
             text: """Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
         "Tantive IV":
-            text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+            ship: "CR90-Korvette (Bug)"
+            text: """Die Aufwertungsleiste deiner Bugsektion erhält 1 zusätzliches %CREW% und 1 zusätzliches %TEAM% ."""
         "Bright Hope":
             ship: "Medium-Transporter GR-75"
             text: """Wenn neben deiner Bugsektion ein Verstärkungsmarker liegt, fügt er 2 %EVADE% hinzu (anstatt 1)."""
@@ -684,7 +697,9 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Medium-Transporter GR-75"
             text: """Bei der Aktion Störsignal kannst du ein feindliches Schiff in Reichweite 1-3 (statt 1-2) wählen."""
         "Jaina's Light":
-            text: """When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
+            name: "Jainas Licht"
+            ship: "CR90-Korvette (Bug)"
+            text: """Wenn du verteidigst, darfst du einmal pro Angriff eine soeben erhaltene, offene Schadenskarte ablegen und dafür eine neue offene Schadenskarte ziehen."""
         "Outrider":
             text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
 
