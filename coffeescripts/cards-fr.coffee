@@ -58,7 +58,7 @@ exportObj.translations['Français'] =
         shipSelectorPlaceholder: "Choisissez un vaisseau"
         pilotSelectorPlaceholder: "Choisissez un pilote"
         upgradePlaceholder: (translator, language, slot) ->
-            "Amélioration #{translator language, 'slot', slot}"
+            "#{translator language, 'slot', slot}"
         modificationPlaceholder: "Modification"
         titlePlaceholder: "Titre"
         upgradeHeader: (translator, language, slot) ->
@@ -154,10 +154,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Après avoir exécuté une manœuvre verte, vous pouvez effectuer une action de concentration gratuite."""
         '"Backstabber"':
             ship: "Chasseur TIE"
-            text: """Quand vous attque en dehors de l'arc de tir du défenseur, lancez 1 dé d'attaque supplémentaire."""
+            text: """Quand vous attaquez en dehors de l'arc de tir du défenseur, lancez 1 dé d'attaque supplémentaire."""
         '"Dark Curse"':
             ship: "Chasseur TIE"
-            text: """Quand vous défendez, les vaisseaux qui vous attquent ne peuvent ni utiliser de marquers de concentration, ni relancer les dés d'attaque."""
+            text: """Quand vous défendez, les vaisseaux qui vous attaquent ne peuvent ni utiliser de marqueurs de concentration, ni relancer les dés d'attaque."""
         '"Mauler Mithel"':
             ship: "Chasseur TIE"
             text: """Quand vous attaquez à portée 1, lancez 1 dé d'attaque supplémentaire."""
@@ -186,10 +186,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous effectuez une action de tonneau, vous pouvez recevoir 1 marqueur de stress pour utiliser le gabarit (%BANKLEFT% 1) ou (%BANKRIGHT% 1) à la place du gabarit (%STRAIGHT% 1)."""
         "Kir Kanos":
             ship: "Intercepteur TIE"
-            text: """Quand vous attaquez à portée 2-3, vous pouvez dépenser 1 marqueur d'évasion pour ajouter 1 résultat %HIT% result à votre jet."""
+            text: """Quand vous attaquez à portée 2-3, vous pouvez dépenser 1 marqueur d'évasion pour ajouter 1 résultat %HIT% à votre jet."""
         "Tetran Cowall":
             ship: "Intercepteur TIE"
-            text: """Quand vous révélez une manœuvre %UTURN% maneuver, vous pouvez considérer la vitesse de celle-ci comme "1", "3" ou "5"."""
+            text: """Quand vous révélez une manœuvre %UTURN%, vous pouvez considérer la vitesse de celle-ci comme "1", "3" ou "5"."""
         "Turr Phennir":
             ship: "Intercepteur TIE"
             text: """Après avoir effectué une attaque, vous pouvez effectuer une action gratuite d'accélération ou de tonneau."""
@@ -221,10 +221,10 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Pilote l'escadron Delta"
         "Colonel Vessery":
             ship: "Défenseur TIE"
-            text: """Quand vous attaquez, juste après avoir lancé les dés d'attaque, vous pouvez vérouiller le défenseur s'il a déjà un marqueur d'acquisition de cible rouge."""
+            text: """Quand vous attaquez, juste après avoir lancé les dés d'attaque, vous pouvez verrouiller le défenseur s'il a déjà un marqueur d'acquisition de cible rouge."""
         "Rexler Brath":
             ship: "Défenseur TIE"
-            text: """Après avoir effectué une attque qui inflige au moins 1 carte de dégâts au défenseur, vous pouvez dépenser 1 marqueur de concentration pour retourner ces cartes face visible."""
+            text: """Après avoir effectué une attaque qui inflige au moins 1 carte de dégâts au défenseur, vous pouvez dépenser 1 marqueur de concentration pour retourner ces cartes face visible."""
         # Bombardier TIE
         "Scimitar Squadron Pilot":
             ship: "Bombardier TIE"
@@ -276,8 +276,11 @@ exportObj.cardLoaders['Français'] = () ->
         # Décimateur VT-49
         "Rear Admiral Chiraneau":
             ship: "Décimateur VT-49"
-            name: "Vice-Amiral Chiraneau"
+            name: "Contre Amiral Chiraneau"
             text: """Quand vous attaquez à portée 1-2, vous pouvez échanger 1 de vos résultats %FOCUS% contre un résultat %CRIT%."""
+        "Patrol ???":
+            ship: "Décimateur VT-49"
+            name: "Chef de Patrouille"
         # X-Wing
         "Red Squadron Pilot":
             name: "Pilote de l'escadron Rouge"
@@ -398,8 +401,8 @@ exportObj.cardLoaders['Français'] = () ->
         # YT-2400, traduit de l'anglais
         "Dash Rendar":
             text: """Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."""
-        "Unspoiled PS3 YT-2400 Pilot":
-            name: "Pilote de YT-2400 de VP3 non dévoilé"
+        "Eaden Vrill":
+            name: "Eaden Vrill"
         "Unspoiled PS5 YT-2400 Pilot":
             name: "Pilote de YT-2400 de VP5 non dévoilé"
 
@@ -458,7 +461,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Augmentez votre valeur de pilotage de 2."""
         "Opportunist":
             name: "Opportuniste"
-            text: """Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stresss pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."""
+            text: """Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."""
         # Astromechs
         "R2 Astromech":
             name: "Astromech R2"
@@ -476,7 +479,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Pendant la phase de dénouement, choisissez une de vos cartes dégâts face visible assortie du trait <strong>Vaisseau</strong>, et retournez-la face cachée."""
         "R7 Astromech":
             name: "Astromech R7"
-            text: """Une fois par tour, quand vous défendez, si vous avez vérouillé l'attaquant, vous pouvez dépenser l'acquisition de cible pour choisir tout ou partie des dés d'attaque. L'attaquant doit relancer les dés choisis."""
+            text: """Une fois par tour, quand vous défendez, si vous avez verrouillé l'attaquant, vous pouvez dépenser l'acquisition de cible pour choisir tout ou partie des dés d'attaque. L'attaquant doit relancer les dés choisis."""
         "R7-T1":
             text: """<strong>Action :</strong> choisissez un vaisseau ennemi situé à portée 1-2. Si vous êtes dans son arc de tir, vous pouvez le verrouiller. Ensuite, vous pouvez effectuer une action d'accélération gratuite."""
         "R4-D6":
@@ -490,7 +493,7 @@ exportObj.cardLoaders['Français'] = () ->
         # Torpilles
         "Proton Torpedoes":
             name: "Torpilles à protons"
-            text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger 1 de vos résultats %FOCUS% contre 1 resultat %CRIT%."""
+            text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger 1 de vos résultats %FOCUS% contre 1 résultat %CRIT%."""
         "Advanced Proton Torpedoes":
             name: "Torpilles à protons avancées"
             text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger jusqu'à 3 de vos résultats vierge contre autant de résultats %FOCUS%."""
@@ -593,7 +596,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous défendez, vous pouvez relancer 1 de vos résultats %FOCUS%. Si la valeur de pilotage de l'attaquant est de 2 ou moins, vous pouvez relancer 1 de vos résultats vierges à la place."""
         "Navigator":
             name: "Navigateur"
-            text: """Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.<br /><br />Vous ne pouvez pas touner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."""
+            text: """Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.<br /><br />Vous ne pouvez pas tourner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."""
         "Lando Calrissian": # Traduction non officielle
             text: """<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
         "Mara Jade": # Traduction non officielle
@@ -607,7 +610,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."""
         "WED-15 Repair Droid":
             name: "Droïde de réparation WED-15"
-            text: """<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de déga^ts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."""
+            text: """<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de dégâts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."""
         "Carlist Rieekan":
             text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à "12", jusqu'à la fin de la phase."""
         "Jan Dodonna":
@@ -755,6 +758,6 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Corvette CR90 (proue)"
             text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
         "Outrider": # Traduction non officielle
-            text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
+            text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
