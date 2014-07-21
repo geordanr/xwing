@@ -401,7 +401,7 @@ exportObj.cardLoaders['Français'] = () ->
         # YT-2400, traduit de l'anglais
         "Dash Rendar":
             text: """Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."""
-        "Unspoiled PS3 YT-2400 Pilot":
+        "Eaden Vrill":
             name: "Eaden Vrill"
         "Unspoiled PS5 YT-2400 Pilot":
             name: "Pilote de YT-2400 de VP5 non dévoilé"

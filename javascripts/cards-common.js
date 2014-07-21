@@ -1071,7 +1071,7 @@
             return stats.maneuvers[4][2] = 0;
           }
         }, {
-          name: "Wild Spa???",
+          name: "Wild Space ???",
           id: 92,
           ship: "YT-2400",
           sources: ["YT-2400 Freighter Expansion Pack"],
@@ -1079,7 +1079,7 @@
           points: 99,
           slots: ["Cannon", "Missile", "Crew"]
         }, {
-          name: "Unspoiled PS3 YT-2400 Pilot",
+          name: "Eaden Vrill",
           id: 93,
           ship: "YT-2400",
           unique: true,
