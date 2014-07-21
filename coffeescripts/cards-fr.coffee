@@ -276,8 +276,11 @@ exportObj.cardLoaders['Français'] = () ->
         # Décimateur VT-49
         "Rear Admiral Chiraneau":
             ship: "Décimateur VT-49"
-            name: "Vice-Amiral Chiraneau"
+            name: "Contre Amiral Chiraneau"
             text: """Quand vous attaquez à portée 1-2, vous pouvez échanger 1 de vos résultats %FOCUS% contre un résultat %CRIT%."""
+        "Patrol ???":
+            ship: "Décimateur VT-49"
+            name: "Chef de Patrouille"
         # X-Wing
         "Red Squadron Pilot":
             name: "Pilote de l'escadron Rouge"
@@ -399,7 +402,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Dash Rendar":
             text: """Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."""
         "Unspoiled PS3 YT-2400 Pilot":
-            name: "Pilote de YT-2400 de VP3 non dévoilé"
+            name: "Eaden Vrill"
         "Unspoiled PS5 YT-2400 Pilot":
             name: "Pilote de YT-2400 de VP5 non dévoilé"
 
