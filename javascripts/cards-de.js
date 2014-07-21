@@ -110,8 +110,8 @@
       '#aboutTab': 'Über'
     },
     singular: {
-      'pilots': 'Piloten',
-      'modifications': 'Modifikationen',
+      'pilots': 'Pilot',
+      'modifications': 'Modifikation',
       'titles': 'Titel'
     },
     types: {
