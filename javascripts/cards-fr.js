@@ -69,7 +69,7 @@
       shipSelectorPlaceholder: "Choisissez un vaisseau",
       pilotSelectorPlaceholder: "Choisissez un pilote",
       upgradePlaceholder: function(translator, language, slot) {
-        return "Amélioration " + (translator(language, 'slot', slot));
+        return "" + (translator(language, 'slot', slot));
       },
       modificationPlaceholder: "Modification",
       titlePlaceholder: "Titre",
