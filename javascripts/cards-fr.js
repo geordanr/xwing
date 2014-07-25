@@ -451,9 +451,8 @@
       "Keyan Farlander": {
         text: "Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %HIT%."
       },
-      "Unspoiled PS5 B-Wing Pilot": {
-        name: "Pilote de B-Wing de VP5 non dévoilé",
-        text: "Cette carte n'a pas encore été dévoilée."
+      "Nera Dantels": {
+        text: "You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."
       },
       "GR-75 Medium Transport": {
         name: "Transport moyen GR-75",

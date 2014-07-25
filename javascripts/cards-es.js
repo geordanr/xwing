@@ -508,9 +508,8 @@
         text: "Cuando ataques, puedes retirar una ficha de tensión  para cambiar todos tus resultados %FOCUS% por %HIT%.",
         ship: "Ala-B"
       },
-      "Unspoiled PS5 B-Wing Pilot": {
-        name: "Unspoiled PS5 B-Wing Pilot",
-        text: "This card has not yet been revealed.",
+      "Nera Dantels": {
+        text: "You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc.",
         ship: "Ala-B"
       },
       "CR90 Corvette (Crippled Aft)": {

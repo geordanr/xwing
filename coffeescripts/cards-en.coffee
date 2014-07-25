@@ -227,8 +227,8 @@ exportObj.cardLoaders.English = () ->
             text: """While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."""
         "Keyan Farlander":
             text: """When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."""
-        "Unspoiled PS5 B-Wing Pilot":
-            text: """This card has not yet been revealed."""
+        "Nera Dantels":
+            text: """You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
         "CR90 Corvette (Fore)":
             text: """When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."""
         "CR90 Corvette (Crippled Aft)":

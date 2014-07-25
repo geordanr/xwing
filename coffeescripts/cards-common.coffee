@@ -1588,14 +1588,15 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 B-Wing Pilot"
+            name: "Nera Dantels"
             id: 89
             unique: true
             ship: "B-Wing"
             sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
-            points: 99
+            points: 26
             slots: [
+                "Elite"
                 "System"
                 "Cannon"
                 "Torpedo"

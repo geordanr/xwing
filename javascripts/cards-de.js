@@ -437,9 +437,8 @@
       "Keyan Farlander": {
         text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
       },
-      "Unspoiled PS5 B-Wing Pilot": {
-        name: "Unspoiled PS5 B-Wing Pilot",
-        text: "This card has not yet been revealed."
+      "Nera Dantels": {
+        text: "You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."
       },
       "CR90 Corvette (Crippled Aft)": {
         name: "CR90-Korvette (Heck-Lahmgelegt)",
