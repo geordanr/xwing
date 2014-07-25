@@ -1025,14 +1025,14 @@
           points: 29,
           slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
         }, {
-          name: "Unspoiled PS5 B-Wing Pilot",
+          name: "Nera Dantels",
           id: 89,
           unique: true,
           ship: "B-Wing",
           sources: ["Rebel Aces Expansion Pack"],
           skill: 5,
-          points: 99,
-          slots: ["System", "Cannon", "Torpedo", "Torpedo"]
+          points: 26,
+          slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
         }, {
           name: "CR90 Corvette (Crippled Fore)",
           id: 90,
