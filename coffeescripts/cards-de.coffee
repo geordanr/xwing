@@ -345,7 +345,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Keyan Farlander":
             text: """When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."""
         "Nera Dantels":
-            text: """You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
+            text: """You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
         "CR90 Corvette (Crippled Aft)":
             name: "CR90-Korvette (Heck-Lahmgelegt)"
             ship: "CR90-Korvette (Heck)"

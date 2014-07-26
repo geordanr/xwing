@@ -509,7 +509,7 @@
         ship: "Ala-B"
       },
       "Nera Dantels": {
-        text: "You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc.",
+        text: "You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc.",
         ship: "Ala-B"
       },
       "CR90 Corvette (Crippled Aft)": {
