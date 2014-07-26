@@ -376,8 +376,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Tant que vous êtes à portée 1 d'au moins 1 vaisseau ennemi, augmentez votre valeur d'agilité de 1."""
         "Keyan Farlander":
             text: """Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %HIT%."""
-        "Nera Dantels":
-            text: """You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
+        "Nera Dantels": # Traduction non officielle
+            text: """Vous pouvez effectuer des attaques d'arme secondaire %TORPEDO% contre des vaisseaux ennemis en dehors de votre arc de tir."""
         # Transport Rebelle
         "GR-75 Medium Transport":
             name: "Transport moyen GR-75"
