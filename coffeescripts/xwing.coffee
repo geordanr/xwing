@@ -1670,23 +1670,24 @@ class Ship
         bbcode
 
     toSerialized: ->
-        # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:TITLEADDONTYPE1.TITLEADDONID1,TITLEADDONTYPE2.TITLEADDONID2
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
 
         # Skip conferred upgrades
         conferred_addons = @title?.conferredAddons ? []
+        for modification in @modifications
+            conferred_addons = conferred_addons.concat(modification?.conferredAddons ? [])
         upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
 
-        conferredAddonsList = []
-        if @title?.conferredAddons and @title.conferredAddons.length > 0
-            for addon in @title.conferredAddons
-                conferredAddonsList.push addon.toSerialized()
+        serialized_conferred_addons = []
+        for addon in conferred_addons
+            serialized_conferred_addons.push addon.toSerialized()
 
         [
             @pilot.id,
             upgrades,
             @title?.data?.id ? -1,
             @modifications[0]?.data?.id ? -1,
-            conferredAddonsList.join(','),
+            serialized_conferred_addons.join(','),
         ].join ':'
 
 
@@ -1714,7 +1715,7 @@ class Ship
                 @modifications[0].setById modification_id if modification_id >= 0
 
             when 2, 3
-                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:TITLEADDONTYPE1.TITLEADDONID1,TITLEADDONTYPE2.TITLEADDONID2
+                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
                 [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
@@ -1728,8 +1729,12 @@ class Ship
                 modification_id = parseInt modification_id
                 @modifications[0].setById modification_id if modification_id >= 0
 
+                # We confer title addons before modification addons, to pick an arbitrary ordering.
+                conferredaddon_pairs = conferredaddon_pairs.split ','
+
                 if @title? and @title.conferredAddons.length > 0
-                    for conferredaddon_pair, i in conferredaddon_pairs.split ','
+                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @title.conferredAddons.length
+                    for conferredaddon_pair, i in title_conferred_addon_pairs
                         [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
                         addon_id = parseInt addon_id
                         addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
@@ -1738,6 +1743,19 @@ class Ship
                             conferred_addon.setById addon_id
                         else
                             throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+
+                for modification in @modifications
+                    if modification?.data? and modification.conferredAddons.length > 0
+                        modification_conferred_addon_pairs = conferredaddon_pairs.splice 0, modification.conferredAddons.length
+                        for conferredaddon_pair, i in modification_conferred_addon_pairs
+                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
+                            addon_id = parseInt addon_id
+                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                            conferred_addon = modification.conferredAddons[i]
+                            if conferred_addon instanceof addon_cls
+                                conferred_addon.setById addon_id
+                            else
+                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
 
         @updateSelections()
 

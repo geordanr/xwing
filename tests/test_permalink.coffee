@@ -171,3 +171,24 @@ casper.test.begin "Custom permalink v3", (test) ->
     .run ->
         test.done()
 
+casper.test.begin "B-Wing/E2 permalink v3", (test) ->
+    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!89:19,43,23,34,34:-1:11:U.38;88:18,43,-1,34,34:-1:-1:')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 100)
+    common.assertPointsRemaining(test, '#rebel-builder', 0)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+
+    .run ->
+        test.done()
+
+casper.test.begin "B-Wing/E2 permalink v3 minimal", (test) ->
+    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!44:-1,-1,-1,-1:-1:11:U.40')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 24)
+    common.assertPointsRemaining(test, '#rebel-builder', 76)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+
+    .run ->
+        test.done()
