@@ -452,7 +452,7 @@
         text: "Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %HIT%."
       },
       "Nera Dantels": {
-        text: "You can perform a %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."
+        text: "Vous pouvez effectuer des attaques d'arme secondaire %TORPEDO% contre des vaisseaux ennemis en dehors de votre arc de tir."
       },
       "GR-75 Medium Transport": {
         name: "Transport moyen GR-75",
