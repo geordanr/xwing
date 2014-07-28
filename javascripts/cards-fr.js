@@ -446,13 +446,13 @@
         text: "Après avoir effectué une action de concentration ou reçu un marqueur de concentration, vous pouvez effectuer une action gratuite d'accélération ou de tonneau."
       },
       "Gemmer Sojan": {
-        text: "Tant que vous êtes à portée 1 d'au moins 1 vaisseau ennemi, augmentez votre valeur d'agilité de 1."
+        text: "Tant que vous êtes à portée 1 d'au moins 1 vaisseau ennemi, augmentez de 1 votre valeur d'agilité."
       },
       "Keyan Farlander": {
         text: "Quand vous attaquez, vous pouvez retirer 1 marqueur de stress pour changer tous vos résultats %FOCUS% en résultats %HIT%."
       },
       "Nera Dantels": {
-        text: "Vous pouvez effectuer des attaques d'arme secondaire %TORPEDO% contre des vaisseaux ennemis en dehors de votre arc de tir."
+        text: "Vous pouvez effectuer des attaques d'arme secondaire %TORPEDO% contre des vaisseaux ennemis situés en dehors de votre arc de tir."
       },
       "GR-75 Medium Transport": {
         name: "Transport moyen GR-75",
@@ -644,7 +644,7 @@
       },
       "Proton Rockets": {
         name: "Roquettes à proton",
-        text: "<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez lancer un nombre de dés supplémentaires égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés supplémentaires."
+        text: "<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez lancer un nombre de dés d'attaque additionnels égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés additionnels."
       },
       "Seismic Charges": {
         name: "Charges sismiques",
@@ -772,10 +772,10 @@
         text: "Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."
       },
       "Kyle Katarn": {
-        text: "Après avoir enlevé un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à celui-ci."
+        text: "Après avoir retiré un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à votre vaisseau."
       },
       "Jan Ors": {
-        text: "Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou doit recevoir un marqueur de concentration, vous pouvez assigner un marqueur évasion à la place."
+        text: "Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou reçoit un marqueur de concentration, vous pouvez assigner un marqueur d'évasion à la place."
       },
       "Toryn Farr": {
         text: "<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."
@@ -893,7 +893,7 @@
         ship: "Transport moyen GR-75"
       },
       "B-Wing/E2": {
-        text: "Votre barre d'améliorations gagne l'icône d'amélioration %CREW%."
+        text: "Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
       }
     };
     title_translations = {
