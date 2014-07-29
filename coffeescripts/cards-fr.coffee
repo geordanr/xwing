@@ -618,7 +618,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Tacticien"
             text: "Après que vous avez effectué une attaque contre un vaisseau situé dans votre arc de tir à portée 2, ce vaisseau reçoit 1 marqueur de stress."
         "R2-D2 (Crew)":
-            name: "R2-D2"
+            name: "R2-D2 (Équipage)"
             text: """À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."""
         "C-3PO":
             name: "Z-6PO"
