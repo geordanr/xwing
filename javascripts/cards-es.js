@@ -898,6 +898,9 @@
       "Fleet Officer": {
         name: "Oficial de Flota",
         text: "<strong>Acción:</strong> Elige hasta 2 naves aliadas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Después recibes una ficha de Tensión."
+      },
+      "Stay On Target": {
+        text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
       }
     };
     modification_translations = {

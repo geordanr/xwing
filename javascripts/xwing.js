@@ -916,7 +916,7 @@
           _ref1 = (_ref = unique.aka) != null ? _ref : [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             upgrade_alias = _ref1[_i];
-            this.uniques_in_use['Upgrade'].push(exportObj.upgradesByLocalizedName[upgrade_alias]);
+            this.uniques_in_use['Upgrade'].push(exportObj.upgrades[upgrade_alias]);
           }
         }
         this.uniques_in_use[type].push(unique);
@@ -954,7 +954,7 @@
           _ref1 = (_ref = unique.aka) != null ? _ref : [];
           for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
             upgrade_alias = _ref1[_i];
-            alias_idx = this.uniqueIndex(exportObj.upgradesByLocalizedName[upgrade_alias], 'Upgrade');
+            alias_idx = this.uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade');
             this.uniques_in_use['Upgrade'].splice(alias_idx, 1);
           }
         }

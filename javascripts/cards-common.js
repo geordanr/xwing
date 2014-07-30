@@ -1904,6 +1904,12 @@
           faction: "Galactic Empire",
           sources: ["VT-49 Decimator Expansion Pack"],
           points: 3
+        }, {
+          name: "Stay On Target",
+          id: 96,
+          slot: "Elite",
+          points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"]
         }
       ],
       modificationsById: [
