@@ -559,6 +559,9 @@
         name: "Opportuniste",
         text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
       },
+      "Stay On Target": {
+        text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
+      },
       "R2 Astromech": {
         name: "Astromech R2",
         text: "Considérez toutes les manœuvres à vitesse 1 ou 2 comme des manœuvres vertes."
@@ -764,7 +767,7 @@
         text: "Après que vous avez effectué une attaque contre un vaisseau situé dans votre arc de tir à portée 2, ce vaisseau reçoit 1 marqueur de stress."
       },
       "R2-D2 (Crew)": {
-        name: "R2-D2",
+        name: "R2-D2 (Équipage)",
         text: "À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."
       },
       "C-3PO": {
