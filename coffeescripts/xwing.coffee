@@ -855,7 +855,7 @@ class exportObj.SquadBuilder
                 # Multiple upgrades have the same name but different slots
                 for upgrade_alias in unique.aka ? []
                     #console.log "Also claiming #{upgrade_alias} in use"
-                    @uniques_in_use['Upgrade'].push exportObj.upgradesByLocalizedName[upgrade_alias]
+                    @uniques_in_use['Upgrade'].push exportObj.upgrades[upgrade_alias]
             @uniques_in_use[type].push unique
         else
             throw new Error("Unique #{type} '#{unique.name}' already claimed")
@@ -884,7 +884,7 @@ class exportObj.SquadBuilder
                 # Release any aliases
                 for upgrade_alias in unique.aka ? []
                     #console.log "Also releasing #{upgrade_alias}"
-                    alias_idx = @uniqueIndex(exportObj.upgradesByLocalizedName[upgrade_alias], 'Upgrade')
+                    alias_idx = @uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade')
                     @uniques_in_use['Upgrade'].splice alias_idx, 1
         else
             throw new Error("Unique #{type} '#{unique.name}' not in use")
