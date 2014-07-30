@@ -431,6 +431,8 @@ exportObj.cardLoaders.English = () ->
             text: """At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
         "Fleet Officer":
             text: """<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+        "Stay On Target":
+            text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."""
 
     modification_translations =
         "Stealth Device":
