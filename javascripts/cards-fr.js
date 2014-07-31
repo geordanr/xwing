@@ -76,7 +76,7 @@
       upgradeHeader: function(translator, language, slot) {
         return "Amélioration " + (translator(language, 'slot', slot));
       },
-      unreleased: "non disponible",
+      unreleased: "inédit",
       epic: "épique"
     },
     byCSSSelector: {
@@ -560,7 +560,8 @@
         text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
       },
       "Stay On Target": {
-        text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
+        name: "Restez en ligne",
+        text: "Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.<br /><br />Considérez cette dernière comme une manœeuvre rouge."
       },
       "R2 Astromech": {
         name: "Astromech R2",
