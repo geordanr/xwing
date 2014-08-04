@@ -686,6 +686,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Engineering Team":
             name: "Équipe de mécaniciens"
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
+        "Dash Rendar":
+            text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
 
     modification_translations =
         "Shield Upgrade":

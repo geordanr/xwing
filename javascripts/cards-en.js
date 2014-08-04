@@ -599,6 +599,9 @@
       },
       "Stay On Target": {
         text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
+      },
+      "Dash Rendar": {
+        text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
       }
     };
     modification_translations = {

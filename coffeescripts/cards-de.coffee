@@ -628,6 +628,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."""
         "Stay On Target":
             text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."""
+        "Dash Rendar":
+            text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
 
 
     modification_translations =

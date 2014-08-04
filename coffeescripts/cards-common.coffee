@@ -2606,6 +2606,15 @@ exportObj.basicCardData = ->
             points: 2
             sources: [ "YT-2400 Freighter Expansion Pack", ]
         }
+        {
+            name: "Dash Rendar"
+            id: 97
+            unique: true
+            slot: "Crew"
+            points: 2
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            faction: "Rebel Alliance"
+        }
     ]
 
     modificationsById: [
