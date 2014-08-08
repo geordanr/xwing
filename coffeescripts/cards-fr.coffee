@@ -274,6 +274,8 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Navette de classe Lambda"
             name:"Pilote du groupe Omicron"
         # Décimateur VT-49
+        "Captain Oicunn":
+            text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
         "Rear Admiral Chiraneau":
             ship: "Décimateur VT-49"
             name: "Contre Amiral Chiraneau"
@@ -763,5 +765,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
         "Outrider": # Traduction non officielle
             text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
+        "Dauntless":
+            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

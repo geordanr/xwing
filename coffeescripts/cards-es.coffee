@@ -421,6 +421,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."""
         "Rear Admiral Chiraneau":
             text: """Cuando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."""
+        "Captain Oicunn":
+            text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -788,5 +790,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Outrider":
             name: "Jinete del Espacio"
             text: """Mientras tu nave tenga una mejora de %CANNON% equipada, <strong>no podrá</strong> realizar atques con el armamento principal attacks pero podrá realizar ataques con su mejora de armamento secundario %CANNON% contra naves enemigas fuera de su arco de fuego principal."""
+        "Dauntless":
+            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

@@ -1716,7 +1716,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Lieutenant ???"
+            name: "Captain Oicunn"
             id: 97
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
@@ -2871,6 +2871,14 @@ exportObj.basicCardData = ->
             sources: [ "YT-2400 Freighter Expansion Pack", ]
             points: 5
             ship: "YT-2400"
+        }
+        {
+            name: "Dauntless"
+            id: 15
+            unique: true
+            sources: [ "VT-49 Decimator Expansion Pack", ]
+            points: 2
+            ship: "VT-49 Decimator"
         }
     ]
 

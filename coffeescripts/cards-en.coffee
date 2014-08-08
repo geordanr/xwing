@@ -237,6 +237,8 @@ exportObj.cardLoaders.English = () ->
             text: """You may ignore obstacles during the Activation phase and when performing actions."""
         "Rear Admiral Chiraneau":
             text: """When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."""
+        "Captain Oicunn":
+            text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -487,5 +489,7 @@ exportObj.cardLoaders.English = () ->
             text: """When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
         "Outrider":
             text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
+        "Dauntless":
+            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
