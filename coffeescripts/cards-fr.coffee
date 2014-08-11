@@ -274,8 +274,9 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Navette de classe Lambda"
             name:"Pilote du groupe Omicron"
         # Décimateur VT-49
-        "Captain Oicunn":
-            text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
+        "Captain Oicunn":  # Traduction non officielle
+            ship: "Décimateur VT-49"
+            text: """Après avoir exécuté une manœuvre, chaque vaisseau ennemi que vous touchez subit 1 dégât."""
         "Rear Admiral Chiraneau":
             ship: "Décimateur VT-49"
             name: "Contre Amiral Chiraneau"
@@ -689,7 +690,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Équipe de mécaniciens"
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
         "Dash Rendar":
-            text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
+            text: """Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.<br /><br />Vos attaques ne peuvent pas être gênées."""
 
     modification_translations =
         "Shield Upgrade":
@@ -765,7 +766,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
         "Outrider": # Traduction non officielle
             text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
-        "Dauntless":
-            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
+        "Dauntless": # Traduction non officielle
+            ship: "Décimateur VT-49"
+            text: """Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
