@@ -524,6 +524,12 @@
       "Dash Rendar": {
         text: "Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."
       },
+      '"Leebo"': {
+        text: "When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."
+      },
+      "Eaden Vrill": {
+        text: "When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."
+      },
       "Rear Admiral Chiraneau": {
         text: "Cuando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."
       },
@@ -902,11 +908,17 @@
         name: "Oficial de Flota",
         text: "<strong>Acción:</strong> Elige hasta 2 naves aliadas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Después recibes una ficha de Tensión."
       },
+      "Lone Wolf": {
+        text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."
+      },
       "Stay On Target": {
         text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
       },
       "Dash Rendar": {
         text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
+      },
+      '"Leebo"': {
+        text: "<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."
       }
     };
     modification_translations = {
@@ -955,6 +967,12 @@
       "B-Wing/E2": {
         text: "Tu barra de mejoras gana %CREW%.",
         ship: "Ala-B"
+      },
+      "Countermeasures": {
+        text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
+      },
+      "Experimental Interface": {
+        text: "Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the \"<strong>Action:</strong>\" header.  Then receive 1 stress token."
       }
     };
     title_translations = {
