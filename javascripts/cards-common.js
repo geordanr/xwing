@@ -1085,16 +1085,16 @@
           unique: true,
           sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 3,
-          points: 99,
+          points: 32,
           slots: ["Cannon", "Missile", "Crew"]
         }, {
-          name: "Unspoiled PS5 YT-2400 Pilot",
+          name: '"Leebo"',
           id: 94,
           ship: "YT-2400",
           unique: true,
           sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 5,
-          points: 99,
+          points: 34,
           slots: ["Elite", "Cannon", "Missile", "Crew"]
         }, {
           name: "Dash Rendar",
@@ -1918,6 +1918,21 @@
           points: 2,
           sources: ["YT-2400 Freighter Expansion Pack"],
           faction: "Rebel Alliance"
+        }, {
+          name: "Lone Wolf",
+          id: 98,
+          unique: true,
+          slot: "Elite",
+          points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"]
+        }, {
+          name: '"Leebo"',
+          id: 99,
+          unique: true,
+          slot: "Crew",
+          points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          faction: "Rebel Alliance"
         }
       ],
       modificationsById: [
@@ -2013,6 +2028,21 @@
               slot: "Crew"
             }
           ]
+        }, {
+          name: "Countermeasures",
+          id: 12,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          points: 3,
+          restriction_func: function(ship) {
+            var _ref;
+            return (_ref = ship.data.large) != null ? _ref : false;
+          }
+        }, {
+          name: "Experimental Interface",
+          id: 13,
+          sources: ["YT-2400 Freighter Expansion Pack"],
+          unique: true,
+          points: 3
         }
       ],
       titlesById: [

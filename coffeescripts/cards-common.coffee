@@ -1663,7 +1663,7 @@ exportObj.basicCardData = ->
             unique: true
             sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 3
-            points: 99
+            points: 32
             slots: [
                 "Cannon"
                 "Missile"
@@ -1671,13 +1671,13 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 YT-2400 Pilot"
+            name: '"Leebo"'
             id: 94
             ship: "YT-2400"
             unique: true
             sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 5
-            points: 99
+            points: 34
             slots: [
                 "Elite"
                 "Cannon"
@@ -2615,6 +2615,23 @@ exportObj.basicCardData = ->
             sources: [ "YT-2400 Freighter Expansion Pack", ]
             faction: "Rebel Alliance"
         }
+        {
+            name: "Lone Wolf"
+            id: 98
+            unique: true
+            slot: "Elite"
+            points: 2
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+        }
+        {
+            name: '"Leebo"'
+            id: 99
+            unique: true
+            slot: "Crew"
+            points: 2
+            sources: [ "YT-2400 Freighter Expansion Pack", ]
+            faction: "Rebel Alliance"
+        }
     ]
 
     modificationsById: [
@@ -2708,6 +2725,21 @@ exportObj.basicCardData = ->
                     slot: "Crew"
                 }
             ]
+        }
+        {
+            name: "Countermeasures"
+            id: 12
+            sources: [ "YT-2400 Freighter Expansion Pack" ]
+            points: 3
+            restriction_func: (ship) ->
+                ship.data.large ? false
+        }
+        {
+            name: "Experimental Interface"
+            id: 13
+            sources: [ "YT-2400 Freighter Expansion Pack" ]
+            unique: true
+            points: 3
         }
     ]
 

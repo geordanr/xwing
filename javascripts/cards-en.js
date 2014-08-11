@@ -304,6 +304,12 @@
       "Dash Rendar": {
         text: "You may ignore obstacles during the Activation phase and when performing actions."
       },
+      '"Leebo"': {
+        text: "When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."
+      },
+      "Eaden Vrill": {
+        text: "When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."
+      },
       "Rear Admiral Chiraneau": {
         text: "When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."
       },
@@ -600,11 +606,17 @@
       "Fleet Officer": {
         text: "<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
       },
+      "Lone Wolf": {
+        text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."
+      },
       "Stay On Target": {
         text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
       },
       "Dash Rendar": {
         text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
+      },
+      '"Leebo"': {
+        text: "<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."
       }
     };
     modification_translations = {
@@ -640,6 +652,12 @@
       },
       "B-Wing/E2": {
         text: "Your upgrade bar gains the %CREW% upgrade icon."
+      },
+      "Countermeasures": {
+        text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
+      },
+      "Experimental Interface": {
+        text: "Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the \"<strong>Action:</strong>\" header.  Then receive 1 stress token."
       }
     };
     title_translations = {
