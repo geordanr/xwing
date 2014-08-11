@@ -610,7 +610,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Officier de la flotte"
             text: """<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."""
         "Han Solo":
-            text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HITM."""
+            text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."""
         "Leia Organa":
             text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."""
         "WED-15 Repair Droid":
@@ -689,7 +689,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Engineering Team":
             name: "Équipe de mécaniciens"
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
-        "Dash Rendar":
+        "Dash Rendar": # Traduction non officielle
             text: """Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.<br /><br />Vos attaques ne peuvent pas être gênées."""
 
     modification_translations =
