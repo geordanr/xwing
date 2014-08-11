@@ -482,11 +482,11 @@
       "Dash Rendar": {
         text: "Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."
       },
-      "Eaden Vrill": {
-        name: "Eaden Vrill"
+      '"Leebo"': {
+        text: "When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."
       },
-      "Unspoiled PS5 YT-2400 Pilot": {
-        name: "Pilote de YT-2400 de VP5 non dévoilé"
+      "Eaden Vrill": {
+        text: "When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."
       }
     };
     upgrade_translations = {
@@ -561,6 +561,9 @@
       "Opportunist": {
         name: "Opportuniste",
         text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
+      },
+      "Lone Wolf": {
+        text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."
       },
       "Stay On Target": {
         name: "Restez en ligne",
@@ -857,6 +860,9 @@
       },
       "Dash Rendar": {
         text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
+      },
+      '"Leebo"': {
+        text: "<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."
       }
     };
     modification_translations = {
@@ -904,6 +910,12 @@
       },
       "B-Wing/E2": {
         text: "Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
+      },
+      "Countermeasures": {
+        text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
+      },
+      "Experimental Interface": {
+        text: "Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the \"<strong>Action:</strong>\" header.  Then receive 1 stress token."
       }
     };
     title_translations = {
