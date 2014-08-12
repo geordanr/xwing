@@ -316,7 +316,8 @@
         name: "Pilote du groupe Omicron"
       },
       "Captain Oicunn": {
-        text: "After executing a maneuver, each enemy ship you are touching suffers 1 damage."
+        ship: "Décimateur VT-49",
+        text: "Après avoir exécuté une manœuvre, chaque vaisseau ennemi que vous touchez subit 1 dégât."
       },
       "Rear Admiral Chiraneau": {
         ship: "Décimateur VT-49",
@@ -326,6 +327,10 @@
       "Patrol ???": {
         ship: "Décimateur VT-49",
         name: "Chef de Patrouille"
+      },
+      "Commander ???": {
+        ship: "Décimateur VT-49",
+        name: "Commandant ??"
       },
       "Red Squadron Pilot": {
         name: "Pilote de l'escadron Rouge"
@@ -483,10 +488,10 @@
         text: "Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."
       },
       '"Leebo"': {
-        text: "When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."
+        text: "Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle, choisissez la carte que vous voulez résoudre, et défaussez l'autre."
       },
       "Eaden Vrill": {
-        text: "When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."
+        text: "Quand vous effectuez une attaque d'arme principale contre un vaisseau stressé, lancez 1 dé d'attaque supplémentaire."
       }
     };
     upgrade_translations = {
@@ -563,7 +568,7 @@
         text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
       },
       "Lone Wolf": {
-        text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."
+        text: "Quand vous attaquez ou défendez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."
       },
       "Stay On Target": {
         name: "Restez en ligne",
@@ -754,7 +759,7 @@
         text: "<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."
       },
       "Han Solo": {
-        text: "Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HITM."
+        text: "Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."
       },
       "Leia Organa": {
         text: "Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."
@@ -796,6 +801,12 @@
       },
       "Raymus Antilles": {
         text: "Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."
+      },
+      '"Leebo"': {
+        text: "<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."
+      },
+      "Dash Rendar": {
+        text: "Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.<br /><br />Vos attaques ne peuvent pas être gênées."
       },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
@@ -857,12 +868,6 @@
       "Engineering Team": {
         name: "Équipe de mécaniciens",
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
-      },
-      "Dash Rendar": {
-        text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
-      },
-      '"Leebo"': {
-        text: "<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."
       }
     };
     modification_translations = {
@@ -912,10 +917,12 @@
         text: "Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
       },
       "Countermeasures": {
-        text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
+        name: "Contremesures",
+        text: "Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."
       },
       "Experimental Interface": {
-        text: "Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the \"<strong>Action:</strong>\" header.  Then receive 1 stress token."
+        name: "Interface expérimentale",
+        text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête \"<strong>Action :</strong>\". Puis recevez 1 marqueur de stress."
       }
     };
     title_translations = {
@@ -970,7 +977,8 @@
         text: "Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."
       },
       "Dauntless": {
-        text: "After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."
+        ship: "Décimateur VT-49",
+        text: "Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
