@@ -328,9 +328,9 @@
         ship: "Décimateur VT-49",
         name: "Chef de Patrouille"
       },
-      "Commander ???": {
+      "Commander Kenkirk": {
         ship: "Décimateur VT-49",
-        name: "Commandant ??"
+        text: "If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."
       },
       "Red Squadron Pilot": {
         name: "Pilote de l'escadron Rouge"
@@ -868,6 +868,18 @@
       "Engineering Team": {
         name: "Équipe de mécaniciens",
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
+      },
+      "Ruthlessness": {
+        text: "After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."
+      },
+      "Intimidation": {
+        text: "While you are touching an enemy ship, reduce that ship's agility value by 1."
+      },
+      "Ysanne Isard": {
+        text: "At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."
+      },
+      "Moff Jerjerrod": {
+        text: "When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
       }
     };
     modification_translations = {
@@ -923,6 +935,9 @@
       "Experimental Interface": {
         name: "Interface expérimentale",
         text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête \"<strong>Action :</strong>\". Puis recevez 1 marqueur de stress."
+      },
+      "Tactical Jammer": {
+        text: "Your ship can obstruct enemy attacks."
       }
     };
     title_translations = {

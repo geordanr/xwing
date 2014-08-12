@@ -241,6 +241,8 @@ exportObj.cardLoaders.English = () ->
             text: """When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."""
         "Rear Admiral Chiraneau":
             text: """When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."""
+        "Commander Kenkirk":
+            text: """If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."""
         "Captain Oicunn":
             text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
 
@@ -445,6 +447,14 @@ exportObj.cardLoaders.English = () ->
             text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
         '"Leebo"':
             text: """<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."""
+        "Ruthlessness":
+            text: """After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."""
+        "Intimidation":
+            text: """While you are touching an enemy ship, reduce that ship's agility value by 1."""
+        "Ysanne Isard":
+            text: """At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."""
+        "Moff Jerjerrod":
+            text: """When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
 
     modification_translations =
         "Stealth Device":
@@ -473,6 +483,8 @@ exportObj.cardLoaders.English = () ->
             text: """At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."""
         "Experimental Interface":
             text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
+        "Tactical Jammer":
+            text: """Your ship can obstruct enemy attacks."""
 
     title_translations =
         "Slave I":

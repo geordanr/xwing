@@ -415,6 +415,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             large: true
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 1, 2, 2, 2, 1, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 0, 1, 0, 0, 0]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -1733,12 +1740,12 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Commander ???"
+            name: "Commander Kenkirk"
             id: 98
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 6
-            points: 99
+            points: 44
             unique: true
             slots: [
                 "Elite"
@@ -2632,6 +2639,39 @@ exportObj.basicCardData = ->
             sources: [ "YT-2400 Freighter Expansion Pack", ]
             faction: "Rebel Alliance"
         }
+        {
+            name: "Ruthlessness"
+            id: 100
+            slot: "Elite"
+            points: 3
+            faction: "Galactic Empire"
+            sources: [ "VT-49 Decimator Expansion Pack" ]
+        }
+        {
+            name: "Intimidation"
+            id: 101
+            slot: "Elite"
+            points: 2
+            sources: [ "VT-49 Decimator Expansion Pack" ]
+        }
+        {
+            name: "Ysanne Isard"
+            id: 102
+            unique: true
+            slot: "Crew"
+            points: 4
+            faction: "Galactic Empire"
+            sources: [ "VT-49 Decimator Expansion Pack" ]
+        }
+        {
+            name: "Moff Jerjerrod"
+            id: 103
+            unique: true
+            slot: "Crew"
+            points: 2
+            faction: "Galactic Empire"
+            sources: [ "VT-49 Decimator Expansion Pack" ]
+        }
     ]
 
     modificationsById: [
@@ -2740,6 +2780,14 @@ exportObj.basicCardData = ->
             sources: [ "YT-2400 Freighter Expansion Pack" ]
             unique: true
             points: 3
+        }
+        {
+            name: "Tactical Jammer"
+            id: 14
+            sources: [ "VT-49 Decimator Expansion Pack" ]
+            points: 1
+            restriction_func: (ship) ->
+                ship.data.large ? false
         }
     ]
 
