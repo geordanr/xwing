@@ -1963,6 +1963,14 @@
           points: 2,
           faction: "Galactic Empire",
           sources: ["VT-49 Decimator Expansion Pack"]
+        }, {
+          name: "Ion Torpedoes",
+          id: 104,
+          slot: "Torpedo",
+          points: 5,
+          attack: 4,
+          range: "2-3",
+          sources: ["VT-49 Decimator Expansion Pack"]
         }
       ],
       modificationsById: [
