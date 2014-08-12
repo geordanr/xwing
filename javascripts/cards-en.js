@@ -632,6 +632,9 @@
       },
       "Moff Jerjerrod": {
         text: "When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
+      },
+      "Ion Torpedoes": {
+        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."
       }
     };
     modification_translations = {
