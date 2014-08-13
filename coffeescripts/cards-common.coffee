@@ -1728,7 +1728,7 @@ exportObj.basicCardData = ->
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 4
-            points: 99
+            points: 42
             unique: true
             slots: [
                 "Elite"
