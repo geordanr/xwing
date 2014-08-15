@@ -324,7 +324,7 @@
         name: "Contre Amiral Chiraneau",
         text: "Quand vous attaquez à portée 1-2, vous pouvez échanger 1 de vos résultats %FOCUS% contre un résultat %CRIT%."
       },
-      "Patrol ???": {
+      "Patrol Leader": {
         ship: "Décimateur VT-49",
         name: "Chef de Patrouille"
       },
@@ -492,6 +492,9 @@
       },
       "Eaden Vrill": {
         text: "Quand vous effectuez une attaque d'arme principale contre un vaisseau stressé, lancez 1 dé d'attaque supplémentaire."
+      },
+      "Wild Space Fringer": {
+        name: "Wild Space Fringer"
       }
     };
     upgrade_translations = {
