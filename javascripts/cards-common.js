@@ -1073,12 +1073,12 @@
             return stats.maneuvers[4][2] = 0;
           }
         }, {
-          name: "Wild Space ???",
+          name: "Wild Space Fringer",
           id: 92,
           ship: "YT-2400",
           sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 2,
-          points: 99,
+          points: 30,
           slots: ["Cannon", "Missile", "Crew"]
         }, {
           name: "Eaden Vrill",
@@ -1108,12 +1108,12 @@
           points: 36,
           slots: ["Elite", "Cannon", "Missile", "Crew"]
         }, {
-          name: "Patrol ???",
+          name: "Patrol Leader",
           id: 96,
           ship: "VT-49 Decimator",
           sources: ["VT-49 Decimator Expansion Pack"],
           skill: 3,
-          points: 99,
+          points: 40,
           slots: ["Torpedo", "Crew", "Crew", "Crew", "Bomb"]
         }, {
           name: "Captain Oicunn",
