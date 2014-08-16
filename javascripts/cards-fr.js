@@ -317,6 +317,7 @@
       },
       "Captain Oicunn": {
         ship: "Décimateur VT-49",
+        name: "Capitaine Oicunn",
         text: "Après avoir exécuté une manœuvre, chaque vaisseau ennemi que vous touchez subit 1 dégât."
       },
       "Rear Admiral Chiraneau": {
@@ -330,7 +331,8 @@
       },
       "Commander Kenkirk": {
         ship: "Décimateur VT-49",
-        text: "If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."
+        name: "Commandant Kenkirk",
+        text: "Si vous n'avez plus de boucliers et au moins 1 carte dégâts assignée à votre vaisseau, augmentez votre valeur d'agilité de 1."
       },
       "Red Squadron Pilot": {
         name: "Pilote de l'escadron Rouge"
@@ -628,6 +630,10 @@
         name: "Torpilles fléchettes",
         text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte et dépensez votre acquisition de cible pour effectuer cette attaque.<br /><br />Après que vous avez effectué cette attaque, le défenseur reçoit 1 marqueur de stress si sa valeur de coque est de \"4\" ou moins."
       },
+      "Ion Torpedoes": {
+        name: "Torpilles ioniques",
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."
+      },
       "Ion Cannon Turret": {
         name: "Tourelles à canons ioniques",
         text: "<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).<br /><br />Si cette attaque touche la cible, cette dernière subit 1 dégât et reçoit 1 marqueur ionique. Ensuite, annulez tous les résultats des dés."
@@ -811,6 +817,12 @@
       "Dash Rendar": {
         text: "Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.<br /><br />Vos attaques ne peuvent pas être gênées."
       },
+      "Ysanne Isard": {
+        text: "Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
+      },
+      "Moff Jerjerrod": {
+        text: "Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."
+      },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
         text: "Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."
@@ -873,19 +885,10 @@
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
       },
       "Ruthlessness": {
-        text: "After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."
+        text: "Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."
       },
       "Intimidation": {
-        text: "While you are touching an enemy ship, reduce that ship's agility value by 1."
-      },
-      "Ysanne Isard": {
-        text: "At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."
-      },
-      "Moff Jerjerrod": {
-        text: "When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
-      },
-      "Ion Torpedoes": {
-        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."
+        text: "Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."
       }
     };
     modification_translations = {
@@ -943,7 +946,8 @@
         text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête \"<strong>Action :</strong>\". Puis recevez 1 marqueur de stress."
       },
       "Tactical Jammer": {
-        text: "Your ship can obstruct enemy attacks."
+        name: "Brouilleur tactique",
+        text: "Votre vaisseau peut gêner les attaques ennemies."
       }
     };
     title_translations = {
