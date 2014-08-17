@@ -7,6 +7,7 @@ exportObj.unreleasedExpansions = [
     "VT-49 Decimator Expansion Pack"
     "StarViper Expansion Pack"
     "M3-A Interceptor Expansion Pack"
+    "IG-2000 Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -457,6 +458,20 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Evade"
             ]
+        "Aggressor":
+            name: "Aggressor"
+            factions: [ "Scum and Villainy" ]
+            attack: 3
+            agility: 3
+            hull: 4
+            shields: 4
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+                "Evade"
+            ]
+            large: true
 
     # name field is for convenience only
     pilotsById: [
@@ -2008,6 +2023,78 @@ exportObj.basicCardData = ->
             points: 99
             slots: [ ]
         }
+        {
+            name: "IG-88A"
+            faction: "Scum and Villainy"
+            id: 108
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88B"
+            faction: "Scum and Villainy"
+            id: 109
+            unique: true
+            sources: [ "IG-2000 Expansion Pack", ]
+            ship: "Aggressor"
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88C"
+            faction: "Scum and Villainy"
+            id: 110
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88D"
+            faction: "Scum and Villainy"
+            id: 111
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 36
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
     ]
 
     upgradesById: [
@@ -2228,7 +2315,7 @@ exportObj.basicCardData = ->
             name: "Seismic Charges"
             id: 24
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 2
         }
         {
@@ -2265,7 +2352,7 @@ exportObj.basicCardData = ->
             name: "Proximity Mines"
             id: 28
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 3
         }
         {
@@ -2330,7 +2417,7 @@ exportObj.basicCardData = ->
             slot: "Cannon"
             attack: 3
             range: "1"
-            sources: [ "B-Wing Expansion Pack", ]
+            sources: [ "B-Wing Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 5
         }
         {
@@ -2937,14 +3024,14 @@ exportObj.basicCardData = ->
             id: 107
             slot: "System"
             points: 3
-            sources: [ "StarViper Expansion Pack", ]
+            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
         }
         {
             name: "Inertial Dampeners"
             id: 108
             slot: "Illicit"
             points: 1
-            sources: [ "StarViper Expansion Pack", ]
+            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
         }
         {
             name: "Flechette Cannon"
@@ -2958,7 +3045,28 @@ exportObj.basicCardData = ->
             id: 110
             slot: "Cannon"
             points: 99
-            sources: [ "M3-A Interceptor Expansion Pack", ]
+            sources: [ "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack" ]
+        }
+        {
+            name: "Dead???"
+            id: 111
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: "Fee???"
+            id: 112
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: '"Hot ??? Blaster"'
+            id: 113
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
         }
     ]
 
@@ -3323,6 +3431,13 @@ exportObj.basicCardData = ->
                     slot: "Missile"
                 }
             ]
+        }
+        {
+            name: 'IG-2000'
+            id: 20
+            sources: [ "IG-2000 Expansion Pack", ]
+            points: 0
+            ship: "Aggressor"
         }
     ]
 

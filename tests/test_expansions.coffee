@@ -9,6 +9,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Core"
         "E-Wing Expansion Pack"
         "HWK-290 Expansion Pack"
+        "IG-2000 Expansion Pack"
         "Imperial Aces Expansion Pack"
         "Lambda-Class Shuttle Expansion Pack"
         "M3-A Interceptor Expansion Pack"

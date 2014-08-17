@@ -251,6 +251,14 @@ exportObj.cardLoaders.English = () ->
             text: """When another friendly ship at Range 1 is defending, it may reroll 1 defense die."""
         "Laeti???":
             text: """This card has not yet been revealed."""
+        "IG-88A":
+            text: """This card has not yet been revealed."""
+        "IG-88B":
+            text: """This card has not yet been revealed."""
+        "IG-88C":
+            text: """This card has not yet been revealed."""
+        "IG-88D":
+            text: """You may execute the (%SLOOPLEFT% 3) or (%SLOOPRIGHT% 3) maneuver using the corresponding (%TURNLEFT% 3) or (%TURNRIGHT% 3) template."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -475,6 +483,12 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         '"Mang??? Cannon"':
             text: """This card has not yet been revealed."""
+        "Dead???":
+            text: """This card has not yet been revealed."""
+        "Fee???":
+            text: """This card has not yet been revealed."""
+        '"Hot ??? Blaster"':
+            text: """This card has not yet been revealed."""
 
     modification_translations =
         "Stealth Device":
@@ -545,5 +559,7 @@ exportObj.cardLoaders.English = () ->
             text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
         '"Heavy Scyk" Interceptor (Missile)':
             text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        "IG-2000":
+            text: """You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
