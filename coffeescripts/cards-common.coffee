@@ -2324,7 +2324,7 @@ exportObj.basicCardData = ->
             name: "Ion Cannon Turret"
             id: 0
             slot: "Turret"
-            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", "M3-A Interceptor Expansion Pack" ]
+            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", ]
             points: 5
             attack: 3
             range: "1-2"
@@ -2519,6 +2519,7 @@ exportObj.basicCardData = ->
                 "Slave I Expansion Pack"
                 "B-Wing Expansion Pack"
                 "TIE Defender Expansion Pack"
+                "M3-A Interceptor Expansion Pack"
             ]
             points: 3
             attack: 3
