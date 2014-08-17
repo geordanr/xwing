@@ -15,6 +15,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
         "Slave I Expansion Pack"
+        "StarViper Expansion Pack"
         "TIE Advanced Expansion Pack"
         "TIE Bomber Expansion Pack"
         "TIE Defender Expansion Pack"

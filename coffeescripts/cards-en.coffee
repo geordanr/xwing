@@ -245,6 +245,8 @@ exportObj.cardLoaders.English = () ->
             text: """If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."""
         "Captain Oicunn":
             text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
+        "Prince Xizor":
+            text: """When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -457,6 +459,14 @@ exportObj.cardLoaders.English = () ->
             text: """When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
         "Ion Torpedoes":
             text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."""
+        "Bodyguard":
+            text: """At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."""
+        "Calc???":
+            text: """This card has not yet been revealed."""
+        "Accuracy Corrector":
+            text: """When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.<br /><br />Your dice cannot be modified again during this attack."""
+        "Inertial Dampeners":
+            text: """When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."""
 
     modification_translations =
         "Stealth Device":
@@ -487,6 +497,8 @@ exportObj.cardLoaders.English = () ->
             text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
         "Tactical Jammer":
             text: """Your ship can obstruct enemy attacks."""
+        "Autoth???":
+            text: """This card has not yet been revealed."""
 
     title_translations =
         "Slave I":
@@ -517,5 +529,7 @@ exportObj.cardLoaders.English = () ->
             text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
         "Dauntless":
             text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
+        "Virago":
+            text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
