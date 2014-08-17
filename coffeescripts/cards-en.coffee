@@ -249,7 +249,7 @@ exportObj.cardLoaders.English = () ->
             text: """When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."""
         "Serissu":
             text: """When another friendly ship at Range 1 is defending, it may reroll 1 defense die."""
-        "Laeti???":
+        "Laetin A'shera":
             text: """This card has not yet been revealed."""
         "IG-88A":
             text: """This card has not yet been revealed."""
