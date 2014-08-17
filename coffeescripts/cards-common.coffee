@@ -8,6 +8,7 @@ exportObj.unreleasedExpansions = [
     "StarViper Expansion Pack"
     "M3-A Interceptor Expansion Pack"
     "IG-2000 Expansion Pack"
+    "Most Wanted Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -2095,6 +2096,227 @@ exportObj.basicCardData = ->
                 "Illicit"
             ]
         }
+        {
+            name: "Unspoiled PS7 Scum Z-95 Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 112
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 17
+            slots: [
+                "Elite"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Z-95 Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 113
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS3 Scum Z-95 Pilot"
+            faction: "Scum and Villainy"
+            id: 114
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS1 Scum Z-95 Pilot"
+            faction: "Scum and Villainy"
+            id: 115
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 1
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Boba Fett (Scum)"
+            faction: "Scum and Villainy"
+            id: 116
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 8
+            points: 39
+            unique: true
+            slots: [
+                "Elite"
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Kath Scarlet (Scum)"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 117
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS6 Scum Firespray Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 118
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Firespray Pilot"
+            faction: "Scum and Villainy"
+            id: 119
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS7 Scum Y-Wing Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 120
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Y-Wing Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 121
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS4 Scum Y-Wing Pilot"
+            faction: "Scum and Villainy"
+            id: 122
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 4
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS2 Scum Y-Wing Pilot"
+            faction: "Scum and Villainy"
+            id: 123
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 2
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS7 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 124
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 125
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS3 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 126
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS1 Scum HWK Pilot"
+            faction: "Scum and Villainy"
+            id: 127
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 1
+            points: 99
+            slots: [
+            ]
+        }
+
     ]
 
     upgradesById: [
@@ -3067,6 +3289,15 @@ exportObj.basicCardData = ->
             slot: "Illicit"
             points: 99
             sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: "Greedo"
+            id: 114
+            unique: true
+            slot: "Crew"
+            faction: "Scum and Villainy"
+            points: 1
+            sources: [ "Most Wanted Expansion Pack", ]
         }
     ]
 

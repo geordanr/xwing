@@ -259,6 +259,26 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         "IG-88D":
             text: """You may execute the (%SLOOPLEFT% 3) or (%SLOOPRIGHT% 3) maneuver using the corresponding (%TURNLEFT% 3) or (%TURNRIGHT% 3) template."""
+        "Boba Fett (Scum)":
+            text: """When attacking or defending, you may reroll 1 of your dice for each enemy ship at Range 1."""
+        "Kath Scarlet (Scum)":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS6 Scum Firespray Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum Y-Wing Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS5 Scum Y-Wing Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS5 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS3 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum Z-95 Pilot":
+            text: """When attacking, if there are no friendly ships at Range 1-2, roll 1 additional attack die."""
+        "Unspoiled PS5 Scum Z-95 Pilot":
+            text: """This card has not yet been revealed."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -489,6 +509,8 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         '"Hot ??? Blaster"':
             text: """This card has not yet been revealed."""
+        "Greedo":
+            text: """The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."""
 
     modification_translations =
         "Stealth Device":

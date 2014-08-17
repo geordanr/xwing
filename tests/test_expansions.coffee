@@ -14,6 +14,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Lambda-Class Shuttle Expansion Pack"
         "M3-A Interceptor Expansion Pack"
         "Millennium Falcon Expansion Pack"
+        "Most Wanted Expansion Pack"
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
         "Slave I Expansion Pack"
