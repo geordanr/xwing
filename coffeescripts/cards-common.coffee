@@ -6,6 +6,7 @@ exportObj.unreleasedExpansions = [
     "YT-2400 Freighter Expansion Pack"
     "VT-49 Decimator Expansion Pack"
     "StarViper Expansion Pack"
+    "M3-A Interceptor Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -442,6 +443,19 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
                 "Boost"
+            ]
+        "M3-A Interceptor":
+            name: "M3-A Interceptor"
+            factions: [ "Scum and Villainy" ]
+            attack: 2
+            agility: 3
+            hull: 2
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+                "Evade"
             ]
 
     # name field is for convenience only
@@ -1949,6 +1963,51 @@ exportObj.basicCardData = ->
                 "Torpedo"
             ]
         }
+        {
+            name: "Serissu"
+            faction: "Scum and Villainy"
+            id: 104
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 8
+            points: 20
+            unique: true
+            slots: [
+                "Elite"
+            ]
+        }
+        {
+            name: "Laeti???"
+            faction: "Scum and Villainy"
+            id: 105
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 6
+            points: 99
+            unique: true
+            slots: [ ]
+        }
+        {
+            name: "Tansarii ???"
+            faction: "Scum and Villainy"
+            id: 106
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Cartel ???"
+            faction: "Scum and Villainy"
+            id: 107
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 2
+            points: 99
+            slots: [ ]
+        }
     ]
 
     upgradesById: [
@@ -1956,7 +2015,7 @@ exportObj.basicCardData = ->
             name: "Ion Cannon Turret"
             id: 0
             slot: "Turret"
-            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", ]
+            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", "M3-A Interceptor Expansion Pack" ]
             points: 5
             attack: 3
             range: "1-2"
@@ -2887,6 +2946,20 @@ exportObj.basicCardData = ->
             points: 1
             sources: [ "StarViper Expansion Pack", ]
         }
+        {
+            name: "Flechette Cannon"
+            id: 109
+            slot: "Cannon"
+            points: 99
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+        }
+        {
+            name: '"Mang??? Cannon"'
+            id: 110
+            slot: "Cannon"
+            points: 99
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+        }
     ]
 
     modificationsById: [
@@ -2899,7 +2972,7 @@ exportObj.basicCardData = ->
             name: "Stealth Device"
             id: 1
             points: 3
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "M3-A Interceptor Expansion Pack" ]
             modifier_func: (stats) ->
                 stats.agility += 1
         }
@@ -3209,6 +3282,45 @@ exportObj.basicCardData = ->
                 {
                     type: exportObj.Upgrade
                     slot: "Illicit"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Cannon)'
+            id: 17
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Torpedo)'
+            id: 18
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Missile)'
+            id: 19
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missile"
                 }
             ]
         }

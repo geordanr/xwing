@@ -247,6 +247,10 @@ exportObj.cardLoaders.English = () ->
             text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
         "Prince Xizor":
             text: """When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."""
+        "Serissu":
+            text: """When another friendly ship at Range 1 is defending, it may reroll 1 defense die."""
+        "Laeti???":
+            text: """This card has not yet been revealed."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -467,6 +471,10 @@ exportObj.cardLoaders.English = () ->
             text: """When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.<br /><br />Your dice cannot be modified again during this attack."""
         "Inertial Dampeners":
             text: """When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."""
+        "Flechette Cannon":
+            text: """This card has not yet been revealed."""
+        '"Mang??? Cannon"':
+            text: """This card has not yet been revealed."""
 
     modification_translations =
         "Stealth Device":
@@ -531,5 +539,11 @@ exportObj.cardLoaders.English = () ->
             text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
         "Virago":
             text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
+        '"Heavy Scyk" Interceptor (Cannon)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        '"Heavy Scyk" Interceptor (Torpedo)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        '"Heavy Scyk" Interceptor (Missile)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
