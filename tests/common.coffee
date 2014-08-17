@@ -136,6 +136,10 @@ exports.openEmpireBuilder = ->
     casper.then ->
         @click '#empireTab'
 
+exports.openScumBuilder = ->
+    casper.then ->
+        @click '#scumTab'
+
 exports.openCardBrowser = ->
     casper.then ->
         @click '#browserTab'
