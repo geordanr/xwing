@@ -5,6 +5,10 @@ exportObj.unreleasedExpansions = [
     "Rebel Aces Expansion Pack"
     "YT-2400 Freighter Expansion Pack"
     "VT-49 Decimator Expansion Pack"
+    "StarViper Expansion Pack"
+    "M3-A Interceptor Expansion Pack"
+    "IG-2000 Expansion Pack"
+    "Most Wanted Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -18,7 +22,7 @@ exportObj.basicCardData = ->
     ships:
         "X-Wing":
             name: "X-Wing"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 2
             hull: 3
@@ -36,7 +40,7 @@ exportObj.basicCardData = ->
             ]
         "Y-Wing":
             name: "Y-Wing"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", "Scum and Villainy", ]
             attack: 2
             agility: 1
             hull: 5
@@ -54,7 +58,7 @@ exportObj.basicCardData = ->
             ]
         "A-Wing":
             name: "A-Wing"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 2
             agility: 3
             hull: 2
@@ -75,7 +79,7 @@ exportObj.basicCardData = ->
             ]
         "YT-1300":
             name: "YT-1300"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 2
             agility: 1
             hull: 6
@@ -94,7 +98,7 @@ exportObj.basicCardData = ->
             large: true
         "TIE Fighter":
             name: "TIE Fighter"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 2
             agility: 3
             hull: 3
@@ -114,7 +118,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced":
             name: "TIE Advanced"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 2
             agility: 3
             hull: 3
@@ -135,7 +139,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 3
             agility: 3
             hull: 3
@@ -156,7 +160,7 @@ exportObj.basicCardData = ->
             ]
         "Firespray-31":
             name: "Firespray-31"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", "Scum and Villainy", ]
             attack: 3
             agility: 2
             hull: 6
@@ -176,7 +180,7 @@ exportObj.basicCardData = ->
             large: true
         "HWK-290":
             name: "HWK-290"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", "Scum and Villainy", ]
             attack: 1
             agility: 2
             hull: 4
@@ -194,7 +198,7 @@ exportObj.basicCardData = ->
             ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 3
             agility: 1
             hull: 5
@@ -212,7 +216,7 @@ exportObj.basicCardData = ->
             large: true
         "B-Wing":
             name: "B-Wing"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 1
             hull: 3
@@ -231,7 +235,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Bomber":
             name: "TIE Bomber"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 2
             agility: 2
             hull: 6
@@ -251,7 +255,7 @@ exportObj.basicCardData = ->
             ]
         "GR-75 Medium Transport":
             name: "GR-75 Medium Transport"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             energy: 4
             agility: 0
             hull: 8
@@ -273,7 +277,7 @@ exportObj.basicCardData = ->
             ]
         "Z-95 Headhunter":
             name: "Z-95 Headhunter"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", "Scum and Villainy", ]
             attack: 2
             agility: 2
             hull: 2
@@ -291,7 +295,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Defender":
             name: "TIE Defender"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 3
             agility: 3
             hull: 3
@@ -311,7 +315,7 @@ exportObj.basicCardData = ->
             ]
         "E-Wing":
             name: "E-Wing"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 3
             hull: 2
@@ -332,7 +336,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Phantom":
             name: "TIE Phantom"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 4
             agility: 2
             hull: 2
@@ -352,7 +356,7 @@ exportObj.basicCardData = ->
             ]
         "CR90 Corvette (Fore)":
             name: "CR90 Corvette (Fore)"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 4
             agility: 0
             hull: 8
@@ -372,7 +376,7 @@ exportObj.basicCardData = ->
             ]
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             energy: 5
             agility: 0
             hull: 8
@@ -392,7 +396,7 @@ exportObj.basicCardData = ->
             ]
         "YT-2400":
             name: "YT-2400"
-            faction: "Rebel Alliance"
+            factions: [ "Rebel Alliance", ]
             attack: 2
             agility: 2
             hull: 5
@@ -412,7 +416,7 @@ exportObj.basicCardData = ->
             ]
         "VT-49 Decimator":
             name: "VT-49 Decimator"
-            faction: "Galactic Empire"
+            factions: [ "Galactic Empire", ]
             attack: 3
             agility: 0
             hull: 12
@@ -429,11 +433,52 @@ exportObj.basicCardData = ->
                 [ 1, 1, 2, 1, 1, 0]
                 [ 0, 0, 1, 0, 0, 0]
             ]
+        "StarViper":
+            name: "StarViper"
+            factions: ["Scum and Villainy"]
+            attack: 3
+            agility: 3
+            hull: 4
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+                "Boost"
+            ]
+        "M3-A Interceptor":
+            name: "M3-A Interceptor"
+            factions: [ "Scum and Villainy" ]
+            attack: 2
+            agility: 3
+            hull: 2
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+                "Evade"
+            ]
+        "Aggressor":
+            name: "Aggressor"
+            factions: [ "Scum and Villainy" ]
+            attack: 3
+            agility: 3
+            hull: 4
+            shields: 4
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+                "Evade"
+            ]
+            large: true
 
     # name field is for convenience only
     pilotsById: [
         {
             name: "Wedge Antilles"
+            faction: "Rebel Alliance"
             id: 0
             sources: [ "X-Wing Expansion Pack", ]
             unique: true
@@ -448,6 +493,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Garven Dreis"
+            faction: "Rebel Alliance"
             id: 1
             sources: [ "X-Wing Expansion Pack", ]
             unique: true
@@ -461,6 +507,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Red Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 2
             sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
@@ -473,6 +520,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Rookie Pilot"
+            faction: "Rebel Alliance"
             id: 3
             sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
@@ -485,6 +533,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Biggs Darklighter"
+            faction: "Rebel Alliance"
             id: 4
             unique: true
             sources: [ "Core", ]
@@ -498,6 +547,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Luke Skywalker"
+            faction: "Rebel Alliance"
             id: 5
             unique: true
             sources: [ "Core", ]
@@ -512,6 +562,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gray Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 6
             ship: "Y-Wing"
             sources: [ "Y-Wing Expansion Pack", ]
@@ -526,6 +577,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dutch" Vander'
+            faction: "Rebel Alliance"
             id: 7
             unique: true
             ship: "Y-Wing"
@@ -541,6 +593,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Horton Salm"
+            faction: "Rebel Alliance"
             id: 8
             unique: true
             ship: "Y-Wing"
@@ -556,6 +609,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gold Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 9
             ship: "Y-Wing"
             sources: [ "Y-Wing Expansion Pack", ]
@@ -570,6 +624,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Academy Pilot"
+            faction: "Galactic Empire"
             id: 10
             ship: "TIE Fighter"
             sources: [ "Core", "TIE Fighter Expansion Pack", ]
@@ -579,6 +634,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Obsidian Squadron Pilot"
+            faction: "Galactic Empire"
             id: 11
             ship: "TIE Fighter"
             sources: [ "Core", "TIE Fighter Expansion Pack", ]
@@ -588,6 +644,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Black Squadron Pilot"
+            faction: "Galactic Empire"
             id: 12
             ship: "TIE Fighter"
             sources: [ "Core", "TIE Fighter Expansion Pack", ]
@@ -599,6 +656,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Winged Gundark"'
+            faction: "Galactic Empire"
             id: 13
             unique: true
             ship: "TIE Fighter"
@@ -609,6 +667,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Night Beast"'
+            faction: "Galactic Empire"
             id: 14
             unique: true
             ship: "TIE Fighter"
@@ -619,6 +678,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Backstabber"'
+            faction: "Galactic Empire"
             id: 15
             unique: true
             ship: "TIE Fighter"
@@ -629,6 +689,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Dark Curse"'
+            faction: "Galactic Empire"
             id: 16
             unique: true
             ship: "TIE Fighter"
@@ -639,6 +700,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Mauler Mithel"'
+            faction: "Galactic Empire"
             id: 17
             unique: true
             ship: "TIE Fighter"
@@ -651,6 +713,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Howlrunner"'
+            faction: "Galactic Empire"
             id: 18
             unique: true
             ship: "TIE Fighter"
@@ -663,6 +726,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Maarek Stele"
+            faction: "Galactic Empire"
             id: 19
             unique: true
             ship: "TIE Advanced"
@@ -676,6 +740,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tempest Squadron Pilot"
+            faction: "Galactic Empire"
             id: 20
             ship: "TIE Advanced"
             sources: [ "TIE Advanced Expansion Pack", ]
@@ -687,6 +752,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Storm Squadron Pilot"
+            faction: "Galactic Empire"
             id: 21
             ship: "TIE Advanced"
             sources: [ "TIE Advanced Expansion Pack", ]
@@ -698,6 +764,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Darth Vader"
+            faction: "Galactic Empire"
             id: 22
             unique: true
             ship: "TIE Advanced"
@@ -711,6 +778,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Alpha Squadron Pilot"
+            faction: "Galactic Empire"
             id: 23
             ship: "TIE Interceptor"
             sources: [ "TIE Interceptor Expansion Pack", ]
@@ -720,6 +788,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Avenger Squadron Pilot"
+            faction: "Galactic Empire"
             id: 24
             ship: "TIE Interceptor"
             sources: [ "TIE Interceptor Expansion Pack", ]
@@ -729,6 +798,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Saber Squadron Pilot"
+            faction: "Galactic Empire"
             id: 25
             ship: "TIE Interceptor"
             sources: [
@@ -743,6 +813,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "\"Fel's Wrath\""
+            faction: "Galactic Empire"
             id: 26
             unique: true
             ship: "TIE Interceptor"
@@ -753,6 +824,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Turr Phennir"
+            faction: "Galactic Empire"
             id: 27
             unique: true
             ship: "TIE Interceptor"
@@ -765,6 +837,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Soontir Fel"
+            faction: "Galactic Empire"
             id: 28
             unique: true
             ship: "TIE Interceptor"
@@ -777,6 +850,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tycho Celchu"
+            faction: "Rebel Alliance"
             id: 29
             unique: true
             ship: "A-Wing"
@@ -790,6 +864,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Arvel Crynyd"
+            faction: "Rebel Alliance"
             id: 30
             unique: true
             ship: "A-Wing"
@@ -802,6 +877,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Green Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 31
             ship: "A-Wing"
             sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
@@ -814,6 +890,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Prototype Pilot"
+            faction: "Rebel Alliance"
             id: 32
             ship: "A-Wing"
             sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
@@ -825,6 +902,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Outer Rim Smuggler"
+            faction: "Rebel Alliance"
             id: 33
             ship: "YT-1300"
             sources: [ "Millennium Falcon Expansion Pack", ]
@@ -837,6 +915,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Chewbacca"
+            faction: "Rebel Alliance"
             id: 34
             unique: true
             ship: "YT-1300"
@@ -857,6 +936,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lando Calrissian"
+            faction: "Rebel Alliance"
             id: 35
             unique: true
             ship: "YT-1300"
@@ -877,6 +957,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Han Solo"
+            faction: "Rebel Alliance"
             id: 36
             unique: true
             ship: "YT-1300"
@@ -897,6 +978,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kath Scarlet"
+            faction: "Galactic Empire"
             id: 37
             unique: true
             ship: "Firespray-31"
@@ -913,6 +995,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett"
+            faction: "Galactic Empire"
             id: 38
             unique: true
             ship: "Firespray-31"
@@ -929,6 +1012,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Krassis Trelix"
+            faction: "Galactic Empire"
             id: 39
             unique: true
             ship: "Firespray-31"
@@ -944,6 +1028,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bounty Hunter"
+            faction: "Galactic Empire"
             id: 40
             ship: "Firespray-31"
             sources: [ "Slave I Expansion Pack", ]
@@ -958,6 +1043,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ten Numb"
+            faction: "Rebel Alliance"
             id: 41
             unique: true
             ship: "B-Wing"
@@ -974,6 +1060,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ibtisam"
+            faction: "Rebel Alliance"
             id: 42
             unique: true
             ship: "B-Wing"
@@ -990,6 +1077,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dagger Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 43
             ship: "B-Wing"
             sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
@@ -1004,6 +1092,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Blue Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 44
             ship: "B-Wing"
             sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
@@ -1018,6 +1107,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Rebel Operative"
+            faction: "Rebel Alliance"
             id: 45
             ship: "HWK-290"
             sources: [ "HWK-290 Expansion Pack", ]
@@ -1030,6 +1120,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Roark Garnet"
+            faction: "Rebel Alliance"
             id: 46
             unique: true
             ship: "HWK-290"
@@ -1043,6 +1134,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kyle Katarn"
+            faction: "Rebel Alliance"
             id: 47
             unique: true
             ship: "HWK-290"
@@ -1057,6 +1149,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jan Ors"
+            faction: "Rebel Alliance"
             id: 48
             unique: true
             ship: "HWK-290"
@@ -1071,6 +1164,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Scimitar Squadron Pilot"
+            faction: "Galactic Empire"
             id: 49
             ship: "TIE Bomber"
             sources: [ "TIE Bomber Expansion Pack", ]
@@ -1086,6 +1180,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gamma Squadron Pilot"
+            faction: "Galactic Empire"
             id: 50
             ship: "TIE Bomber"
             sources: [ "TIE Bomber Expansion Pack", ]
@@ -1101,6 +1196,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Jonus"
+            faction: "Galactic Empire"
             id: 51
             unique: true
             ship: "TIE Bomber"
@@ -1118,6 +1214,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Major Rhymer"
+            faction: "Galactic Empire"
             id: 52
             unique: true
             ship: "TIE Bomber"
@@ -1135,6 +1232,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Kagi"
+            faction: "Galactic Empire"
             id: 53
             unique: true
             ship: "Lambda-Class Shuttle"
@@ -1150,6 +1248,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Colonel Jendon"
+            faction: "Galactic Empire"
             id: 54
             unique: true
             ship: "Lambda-Class Shuttle"
@@ -1165,6 +1264,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Yorr"
+            faction: "Galactic Empire"
             id: 55
             unique: true
             ship: "Lambda-Class Shuttle"
@@ -1180,6 +1280,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Omicron Group Pilot"
+            faction: "Galactic Empire"
             id: 56
             ship: "Lambda-Class Shuttle"
             sources: [ "Lambda-Class Shuttle Expansion Pack", ]
@@ -1194,6 +1295,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lieutenant Lorrir"
+            faction: "Galactic Empire"
             id: 57
             unique: true
             ship: "TIE Interceptor"
@@ -1204,6 +1306,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Royal Guard Pilot"
+            faction: "Galactic Empire"
             id: 58
             ship: "TIE Interceptor"
             sources: [ "Imperial Aces Expansion Pack", ]
@@ -1215,6 +1318,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tetran Cowall"
+            faction: "Galactic Empire"
             id: 59
             unique: true
             ship: "TIE Interceptor"
@@ -1229,7 +1333,13 @@ exportObj.basicCardData = ->
                 stats.maneuvers[1][5] = 3
         }
         {
+            name: "I messed up this pilot, sorry"
+            id: 60
+            skip: true
+        }
+        {
             name: "Kir Kanos"
+            faction: "Galactic Empire"
             id: 61
             unique: true
             ship: "TIE Interceptor"
@@ -1240,6 +1350,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Carnor Jax"
+            faction: "Galactic Empire"
             id: 62
             unique: true
             ship: "TIE Interceptor"
@@ -1252,6 +1363,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "GR-75 Medium Transport"
+            faction: "Rebel Alliance"
             id: 63
             epic: true
             ship: "GR-75 Medium Transport"
@@ -1268,6 +1380,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Bandit Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 64
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
@@ -1279,6 +1392,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tala Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 65
             ship: "Z-95 Headhunter"
             sources: [ "Z-95 Headhunter Expansion Pack", ]
@@ -1290,6 +1404,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lieutenant Blount"
+            faction: "Rebel Alliance"
             id: 66
             unique: true
             ship: "Z-95 Headhunter"
@@ -1303,6 +1418,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Airen Cracken"
+            faction: "Rebel Alliance"
             id: 67
             unique: true
             ship: "Z-95 Headhunter"
@@ -1316,6 +1432,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Delta Squadron Pilot"
+            faction: "Galactic Empire"
             id: 68
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
@@ -1328,6 +1445,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Onyx Squadron Pilot"
+            faction: "Galactic Empire"
             id: 69
             ship: "TIE Defender"
             sources: [ "TIE Defender Expansion Pack", ]
@@ -1340,6 +1458,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Colonel Vessery"
+            faction: "Galactic Empire"
             id: 70
             unique: true
             ship: "TIE Defender"
@@ -1354,6 +1473,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Rexler Brath"
+            faction: "Galactic Empire"
             id: 71
             unique: true
             ship: "TIE Defender"
@@ -1368,6 +1488,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Knave Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 72
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
@@ -1381,6 +1502,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Blackmoon Squadron Pilot"
+            faction: "Rebel Alliance"
             id: 73
             ship: "E-Wing"
             sources: [ "E-Wing Expansion Pack", ]
@@ -1394,6 +1516,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Etahn A'baht"
+            faction: "Rebel Alliance"
             id: 74
             unique: true
             ship: "E-Wing"
@@ -1409,6 +1532,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Corran Horn"
+            faction: "Rebel Alliance"
             id: 75
             unique: true
             ship: "E-Wing"
@@ -1424,6 +1548,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Sigma Squadron Pilot"
+            faction: "Galactic Empire"
             id: 76
             ship: "TIE Phantom"
             sources: [ "TIE Phantom Expansion Pack", ]
@@ -1436,6 +1561,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Shadow Squadron Pilot"
+            faction: "Galactic Empire"
             id: 77
             ship: "TIE Phantom"
             sources: [ "TIE Phantom Expansion Pack", ]
@@ -1448,6 +1574,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Echo"'
+            faction: "Galactic Empire"
             id: 78
             unique: true
             ship: "TIE Phantom"
@@ -1462,6 +1589,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Whisper"'
+            faction: "Galactic Empire"
             id: 79
             unique: true
             ship: "TIE Phantom"
@@ -1476,6 +1604,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Fore)"
+            faction: "Rebel Alliance"
             id: 80
             epic: true
             ship: "CR90 Corvette (Fore)"
@@ -1493,6 +1622,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Aft)"
+            faction: "Rebel Alliance"
             id: 81
             epic: true
             ship: "CR90 Corvette (Aft)"
@@ -1508,6 +1638,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wes Janson"
+            faction: "Rebel Alliance"
             id: 82
             unique: true
             ship: "X-Wing"
@@ -1522,6 +1653,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jek Porkins"
+            faction: "Rebel Alliance"
             id: 83
             unique: true
             ship: "X-Wing"
@@ -1536,6 +1668,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Hobbie" Klivian'
+            faction: "Rebel Alliance"
             id: 84
             unique: true
             ship: "X-Wing"
@@ -1549,6 +1682,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Tarn Mison"
+            faction: "Rebel Alliance"
             id: 85
             unique: true
             ship: "X-Wing"
@@ -1562,6 +1696,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Jake Farrell"
+            faction: "Rebel Alliance"
             id: 86
             unique: true
             ship: "A-Wing"
@@ -1575,6 +1710,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Gemmer Sojan"
+            faction: "Rebel Alliance"
             id: 87
             unique: true
             ship: "A-Wing"
@@ -1587,6 +1723,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Keyan Farlander"
+            faction: "Rebel Alliance"
             id: 88
             unique: true
             ship: "B-Wing"
@@ -1603,6 +1740,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Nera Dantels"
+            faction: "Rebel Alliance"
             id: 89
             unique: true
             ship: "B-Wing"
@@ -1619,6 +1757,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Fore)"
+            faction: "Rebel Alliance"
             id: 90
             ship: "CR90 Corvette (Fore)"
             sources: [ "Tantive IV Expansion Pack", ]
@@ -1637,6 +1776,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Aft)"
+            faction: "Rebel Alliance"
             id: 91
             ship: "CR90 Corvette (Aft)"
             sources: [ "Tantive IV Expansion Pack", ]
@@ -1659,6 +1799,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Wild Space Fringer"
+            faction: "Rebel Alliance"
             id: 92
             ship: "YT-2400"
             sources: [ "YT-2400 Freighter Expansion Pack", ]
@@ -1672,6 +1813,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Eaden Vrill"
+            faction: "Rebel Alliance"
             id: 93
             ship: "YT-2400"
             unique: true
@@ -1686,6 +1828,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Leebo"'
+            faction: "Rebel Alliance"
             id: 94
             ship: "YT-2400"
             unique: true
@@ -1701,6 +1844,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Dash Rendar"
+            faction: "Rebel Alliance"
             id: 95
             ship: "YT-2400"
             unique: true
@@ -1716,6 +1860,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Patrol Leader"
+            faction: "Galactic Empire"
             id: 96
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
@@ -1731,6 +1876,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Captain Oicunn"
+            faction: "Galactic Empire"
             id: 97
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
@@ -1748,6 +1894,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Commander Kenkirk"
+            faction: "Galactic Empire"
             id: 98
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
@@ -1765,6 +1912,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Rear Admiral Chiraneau"
+            faction: "Galactic Empire"
             id: 99
             ship: "VT-49 Decimator"
             sources: [ "VT-49 Decimator Expansion Pack", ]
@@ -1780,6 +1928,395 @@ exportObj.basicCardData = ->
                 "Bomb"
             ]
         }
+        {
+            name: "Prince Xizor"
+            faction: "Scum and Villainy"
+            id: 100
+            unique: true
+            ship: "StarViper"
+            sources: [ "StarViper Expansion Pack", ]
+            skill: 7
+            points: 31
+            slots: [
+                "Elite"
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 StarViper Pilot"
+            faction: "Scum and Villainy"
+            id: 101
+            unique: true
+            ship: "StarViper"
+            sources: [ "StarViper Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Black ???"
+            faction: "Scum and Villainy"
+            id: 102
+            ship: "StarViper"
+            sources: [ "StarViper Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Black Sun ???"
+            faction: "Scum and Villainy"
+            id: 103
+            ship: "StarViper"
+            sources: [ "StarViper Expansion Pack", ]
+            skill: 1
+            points: 99
+            slots: [
+                "Torpedo"
+            ]
+        }
+        {
+            name: "Serissu"
+            faction: "Scum and Villainy"
+            id: 104
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 8
+            points: 20
+            unique: true
+            slots: [
+                "Elite"
+            ]
+        }
+        {
+            name: "Laetin A'shera"
+            faction: "Scum and Villainy"
+            id: 105
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 6
+            points: 99
+            unique: true
+            slots: [ ]
+        }
+        {
+            name: "Tansarii ???"
+            faction: "Scum and Villainy"
+            id: 106
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Cartel ???"
+            faction: "Scum and Villainy"
+            id: 107
+            ship: "M3-A Interceptor"
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            skill: 2
+            points: 99
+            slots: [ ]
+        }
+        {
+            name: "IG-88A"
+            faction: "Scum and Villainy"
+            id: 108
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88B"
+            faction: "Scum and Villainy"
+            id: 109
+            unique: true
+            sources: [ "IG-2000 Expansion Pack", ]
+            ship: "Aggressor"
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88C"
+            faction: "Scum and Villainy"
+            id: 110
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "IG-88D"
+            faction: "Scum and Villainy"
+            id: 111
+            unique: true
+            ship: "Aggressor"
+            sources: [ "IG-2000 Expansion Pack", ]
+            skill: 6
+            points: 36
+            slots: [
+                "Elite"
+                "System"
+                "Cannon"
+                "Cannon"
+                "Bomb"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS7 Scum Z-95 Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 112
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 17
+            slots: [
+                "Elite"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Z-95 Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 113
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS3 Scum Z-95 Pilot"
+            faction: "Scum and Villainy"
+            id: 114
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS1 Scum Z-95 Pilot"
+            faction: "Scum and Villainy"
+            id: 115
+            ship: "Z-95 Headhunter"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 1
+            points: 99
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Boba Fett (Scum)"
+            faction: "Scum and Villainy"
+            id: 116
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 8
+            points: 39
+            unique: true
+            slots: [
+                "Elite"
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Kath Scarlet (Scum)"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 117
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS6 Scum Firespray Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 118
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 6
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Firespray Pilot"
+            faction: "Scum and Villainy"
+            id: 119
+            ship: "Firespray-31"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Cannon"
+                "Bomb"
+                "Crew"
+                "Missile"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS7 Scum Y-Wing Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 120
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum Y-Wing Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 121
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS4 Scum Y-Wing Pilot"
+            faction: "Scum and Villainy"
+            id: 122
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 4
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS2 Scum Y-Wing Pilot"
+            faction: "Scum and Villainy"
+            id: 123
+            ship: "Y-Wing"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 2
+            points: 99
+            slots: [
+                "Salvaged Astromech"
+            ]
+        }
+        {
+            name: "Unspoiled PS7 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 124
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 7
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS5 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 125
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 5
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS3 Scum HWK Pilot"
+            unique: true
+            faction: "Scum and Villainy"
+            id: 126
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 3
+            points: 99
+            slots: [
+            ]
+        }
+        {
+            name: "Unspoiled PS1 Scum HWK Pilot"
+            faction: "Scum and Villainy"
+            id: 127
+            ship: "HWK-290"
+            sources: [ "Most Wanted Expansion Pack", ]
+            skill: 1
+            points: 99
+            slots: [
+            ]
+        }
+
     ]
 
     upgradesById: [
@@ -1982,6 +2519,7 @@ exportObj.basicCardData = ->
                 "Slave I Expansion Pack"
                 "B-Wing Expansion Pack"
                 "TIE Defender Expansion Pack"
+                "M3-A Interceptor Expansion Pack"
             ]
             points: 3
             attack: 3
@@ -2000,7 +2538,7 @@ exportObj.basicCardData = ->
             name: "Seismic Charges"
             id: 24
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 2
         }
         {
@@ -2037,7 +2575,7 @@ exportObj.basicCardData = ->
             name: "Proximity Mines"
             id: 28
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 3
         }
         {
@@ -2102,7 +2640,7 @@ exportObj.basicCardData = ->
             slot: "Cannon"
             attack: 3
             range: "1"
-            sources: [ "B-Wing Expansion Pack", ]
+            sources: [ "B-Wing Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 5
         }
         {
@@ -2686,16 +3224,95 @@ exportObj.basicCardData = ->
             points: 5
             attack: 4
             range: "2-3"
-            sources: [ "VT-49 Decimator Expansion Pack" ]
+            sources: [ "VT-49 Decimator Expansion Pack", "StarViper Expansion Pack" ]
+        }
+        {
+            name: "Bodyguard"
+            id: 105
+            unique: true
+            slot: "Elite"
+            points: 2
+            faction: "Scum and Villainy"
+            sources: [ "StarViper Expansion Pack", ]
+        }
+        {
+            name: "Calc???"
+            id: 106
+            slot: "Elite"
+            points: 99
+            sources: [ "StarViper Expansion Pack", ]
+        }
+        {
+            name: "Accuracy Corrector"
+            id: 107
+            slot: "System"
+            points: 3
+            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
+        }
+        {
+            name: "Inertial Dampeners"
+            id: 108
+            slot: "Illicit"
+            points: 1
+            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
+        }
+        {
+            name: "Flechette Cannon"
+            id: 109
+            slot: "Cannon"
+            points: 99
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+        }
+        {
+            name: '"Mang??? Cannon"'
+            id: 110
+            slot: "Cannon"
+            points: 99
+            sources: [ "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack" ]
+        }
+        {
+            name: "Dead???"
+            id: 111
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: "Fee???"
+            id: 112
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: '"Hot ??? Blaster"'
+            id: 113
+            slot: "Illicit"
+            points: 99
+            sources: [ "IG-2000 Expansion Pack", ]
+        }
+        {
+            name: "Greedo"
+            id: 114
+            unique: true
+            slot: "Crew"
+            faction: "Scum and Villainy"
+            points: 1
+            sources: [ "Most Wanted Expansion Pack", ]
         }
     ]
 
     modificationsById: [
         {
+            name: "Zero modification"
+            id: 0
+            skip: true
+        }
+        {
             name: "Stealth Device"
             id: 1
             points: 3
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "M3-A Interceptor Expansion Pack" ]
             modifier_func: (stats) ->
                 stats.agility += 1
         }
@@ -2734,7 +3351,7 @@ exportObj.basicCardData = ->
         {
             name: "Hull Upgrade"
             id: 6
-            sources: [ "Imperial Aces Expansion Pack", ]
+            sources: [ "Imperial Aces Expansion Pack", "StarViper Expansion Pack" ]
             points: 3
             modifier_func: (stats) ->
                 stats.hull += 1
@@ -2805,9 +3422,20 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.large ? false
         }
+        {
+            name: "Autoth???"
+            id: 15
+            points: 99
+            sources: [ "StarViper Expansion Pack", ]
+        }
     ]
 
     titlesById: [
+        {
+            name: "Zero Title"
+            id: 0
+            skip: true
+        }
         {
             name: "Slave I"
             id: 1
@@ -2888,21 +3516,22 @@ exportObj.basicCardData = ->
             ]
             special_case: "A-Wing Test Pilot"
         }
-        ## Apparently this is a modification, NOT a title
-        ## Leaving this here to occupy the ID in case someone used it
-        # {
-        #     name: "B-Wing/E"
-        #     id: 8
-        #     sources: [ "Rebel Aces Expansion Pack", ]
-        #     points: 99
-        #     ship: "B-Wing"
-        #     confersAddons: [
-        #         {
-        #             type: exportObj.Upgrade
-        #             slot: "Crew"
-        #         }
-        #     ]
-        # }
+        # Apparently this is a modification, NOT a title
+        # Leaving this here to occupy the ID in case someone used it
+         {
+             name: "B-Wing/E"
+             id: 8
+             skip: true
+             sources: [ "Rebel Aces Expansion Pack", ]
+             points: 99
+             ship: "B-Wing"
+             confersAddons: [
+                 {
+                     type: exportObj.Upgrade
+                     slot: "Crew"
+                 }
+             ]
+         }
         {
             name: "Tantive IV"
             id: 9
@@ -2976,13 +3605,94 @@ exportObj.basicCardData = ->
             points: 2
             ship: "VT-49 Decimator"
         }
+        {
+            name: "Virago"
+            id: 16
+            unique: true
+            sources: [ "StarViper Expansion Pack", ]
+            points: 1
+            ship: "StarViper"
+            restriction_func: (ship) ->
+                ship.pilot.skill > 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "System"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Illicit"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Cannon)'
+            id: 17
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Torpedo)'
+            id: 18
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+            ]
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Missile)'
+            id: 19
+            sources: [ "M3-A Interceptor Expansion Pack", ]
+            points: 2
+            ship: "M3-A Interceptor"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missile"
+                }
+            ]
+        }
+        {
+            name: 'IG-2000'
+            id: 20
+            sources: [ "IG-2000 Expansion Pack", ]
+            points: 0
+            ship: "Aggressor"
+        }
     ]
 
 exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) ->
+    # assert that each ID is the index into BLAHById (should keep this, in general)
+    for pilot_data, i in basic_cards.pilotsById
+        if pilot_data.id != i
+            throw new Error("ID mismatch: pilot at index #{i} has ID #{pilot_data.id}")
+    for upgrade_data, i in basic_cards.upgradesById
+        if upgrade_data.id != i
+            throw new Error("ID mismatch: upgrade at index #{i} has ID #{upgrade_data.id}")
+    for title_data, i in basic_cards.titlesById
+        if title_data.id != i
+            throw new Error("ID mismatch: title at index #{i} has ID #{title_data.id}")
+    for modification_data, i in basic_cards.modificationsById
+        if modification_data.id != i
+            throw new Error("ID mismatch: modification at index #{i} has ID #{modification_data.id}")
+
     exportObj.pilots = {}
     # Assuming a given pilot is unique by name...
     for pilot_data in basic_cards.pilotsById
-        exportObj.pilots[pilot_data.name] = pilot_data
+        unless pilot_data.skip?
+            exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
     for pilot_name, translations of pilot_translations
@@ -2995,7 +3705,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     exportObj.upgrades = {}
     for upgrade_data in basic_cards.upgradesById
-        exportObj.upgrades[upgrade_data.name] = upgrade_data
+        unless upgrade_data.skip?
+            exportObj.upgrades[upgrade_data.name] = upgrade_data
     for upgrade_name, translations of upgrade_translations
         for field, translation of translations
             try
@@ -3006,7 +3717,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     exportObj.modifications = {}
     for modification_data in basic_cards.modificationsById
-        exportObj.modifications[modification_data.name] = modification_data
+        unless modification_data.skip?
+            exportObj.modifications[modification_data.name] = modification_data
     for modification_name, translations of modification_translations
         for field, translation of translations
             try
@@ -3017,7 +3729,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     exportObj.titles = {}
     for title_data in basic_cards.titlesById
-        exportObj.titles[title_data.name] = title_data
+        unless title_data.skip?
+            exportObj.titles[title_data.name] = title_data
     for title_name, translations of title_translations
         for field, translation of translations
             try
@@ -3105,7 +3818,9 @@ exportObj.fixIcons = (data) ->
             .replace(/%FOCUS%/g, '<img class="icon-focus" alt="Focus" src="images/transparent.png" />')
             .replace(/%HIT%/g, '<img class="icon-hit" alt="Hit" src="images/transparent.png" />')
             .replace(/%KTURN%/g, '<img class="icon-uturn" alt="Koiogran Turn" src="images/transparent.png" />')
+            .replace(/%MISSILE%/g, '<img class="icon-missile" alt="Missile" src="images/transparent.png" />')
             .replace(/%STRAIGHT%/g, '<img class="icon-straight" alt="Straight" src="images/transparent.png" />')
+            .replace(/%STOP%/g, '&#9632;')
             .replace(/%TARGETLOCK%/g, '<img class="icon-target-lock" alt="Target Lock" src="images/transparent.png" />')
             .replace(/%TEAM%/g, '<img class="icon-team" alt="Team" src="images/transparent.png" />')
             .replace(/%TORPEDO%/g, '<img class="icon-torpedo" alt="Torpedo" src="images/transparent.png" />')

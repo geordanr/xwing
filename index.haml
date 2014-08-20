@@ -31,6 +31,8 @@
         %li
           %a#empireTab{'data-toggle' => "tab", :href => '#empireContent'} Galactic Empire
         %li
+          %a#scumTab{'data-toggle' => "tab", :href => '#scumContent'} Scum and Villainy
+        %li
           %a#browserTab{'data-toggle' => "tab", :href => '#browserContent'} Card Browser
         %li
           %a#aboutTab{'data-toggle' => "tab", :href => '#aboutContent'} About
@@ -59,6 +61,8 @@
           #rebel-builder
         .tab-pane#empireContent
           #empire-builder
+        .tab-pane#scumContent
+          #scum-builder
         .tab-pane#browserContent
           #card-browser
         .tab-pane#aboutContent
@@ -124,6 +128,10 @@
           ga 'send', 'pageview',
             page: '/empire'
             title: 'Galactic Empire'
+        $('#scumTab').click (e) ->
+          ga 'send', 'pageview',
+            page: '/scum'
+            title: 'Scum and Villainy'
         $('#browserTab').click (e) ->
           ga 'send', 'pageview',
             page: '/browser'
@@ -132,25 +140,42 @@
           ga 'send', 'pageview',
             page: '/about'
             title: 'About'
+
         window.rebel_sb = new window.SquadBuilder
             faction: 'Rebel Alliance'
             container: '#rebel-builder'
             printable_container: '#printable'
+        window.registerBuilderForTranslation window.rebel_sb
+
         window.empire_sb = new window.SquadBuilder
             faction: 'Galactic Empire'
             container: '#empire-builder'
             printable_container: '#printable'
+        window.registerBuilderForTranslation window.empire_sb
+
+        window.scum_sb = new window.SquadBuilder
+            faction: 'Scum and Villainy'
+            container: '#scum-builder'
+            printable_container: '#printable'
+        window.registerBuilderForTranslation window.scum_sb
+
         switch $.getParameterByName 'f'
           when 'Rebel Alliance'
               $('#rebelTab').click()
           when 'Galactic Empire'
               $('#empireTab').click()
+          when 'Scum and Villainy'
+              $('#scumTab').click()
           else
               $('#rebelTab').click()
 
         window.backend = new SquadBuilderBackend
             server: 'https://yasb-backend.herokuapp.com'
-            builders: [ window.rebel_sb, window.empire_sb ]
+            builders: [
+              window.rebel_sb
+              window.empire_sb
+              window.scum_sb
+            ]
             login_logout_button: '#login-logout'
             auth_status: '#auth-status'
 

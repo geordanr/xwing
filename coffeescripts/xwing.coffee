@@ -158,6 +158,7 @@ class exportObj.SquadBuilder
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->
                         <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
+                        <!--
                         <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
@@ -165,6 +166,8 @@ class exportObj.SquadBuilder
                         <ul class="dropdown-menu">
                             <li><a class="randomize-options">Randomizer Options...</a></li>
                         </ul>
+                        -->
+
                     </div>
                 </div>
             </div>
@@ -584,9 +587,6 @@ class exportObj.SquadBuilder
             @onSquadDirtinessChanged()
         .on 'xwing-backend:squadNameChanged', (e) =>
             @onSquadNameChanged()
-
-        $(window).on 'xwing-backend:authenticationChanged', (e) =>
-            @resetCurrentSquad()
         .on 'xwing:beforeLanguageLoad', (e, cb=$.noop) =>
             @pretranslation_serialized = @serialize()
             # Need to remove ships here because the cards will change when the
@@ -601,6 +601,7 @@ class exportObj.SquadBuilder
                 ship.updateSelections()
             @pretranslation_serialized = undefined
             cb()
+        # Recently moved this here.  Did this ever work?
         .on 'xwing:shipUpdated', (e, cb=$.noop) =>
             all_allocated = true
             for ship in @ships
@@ -610,6 +611,9 @@ class exportObj.SquadBuilder
             #console.log "all_allocated is #{all_allocated}, suppress_automatic_new_ship is #{@suppress_automatic_new_ship}"
             #console.log "should we add ship: #{all_allocated and not @suppress_automatic_new_ship}"
             @addShip() if all_allocated and not @suppress_automatic_new_ship
+
+        $(window).on 'xwing-backend:authenticationChanged', (e) =>
+            @resetCurrentSquad()
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -696,7 +700,7 @@ class exportObj.SquadBuilder
                     if ship.data.huge?
                         for upgrade in ship.upgrades
                             if upgrade?.data?.epic_restriction_func?
-                                unless upgrade.data.epic_restriction_func ship.data
+                                unless upgrade.data.epic_restriction_func(ship.data, upgrade)
                                     illegal_for_epic = true
                                     break
                             break if illegal_for_epic
@@ -910,7 +914,7 @@ class exportObj.SquadBuilder
     getAvailableShipsMatching: (term='') ->
         ships = []
         for ship_name, ship_data of exportObj.ships
-            if ship_data.faction == @faction and @matcher(ship_data.name, term)
+            if @faction in ship_data.factions and @matcher(ship_data.name, term)
                 ships.push
                     id: ship_data.name
                     text: ship_data.name
@@ -918,15 +922,15 @@ class exportObj.SquadBuilder
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and exportObj.ships[pilot.ship].faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             unclaimed_faction_pilots.push include_pilot
         ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
 
-    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, term='') ->
+    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='') ->
         # Returns data formatted for Select2
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func ship))
+        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)))
 
         # Special case #2 :(
         current_upgrade_forcibly_removed = false
@@ -1038,6 +1042,16 @@ class exportObj.SquadBuilder
                                 # k-turn/u-turn
                                 linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120"
                                 trianglePath = "M170,120 H110 L140,180 Z"
+                            when 6
+                                # segnor's loop left
+                                linePath = "M150,180 S150,120 80,60"
+                                trianglePath = "M80,100 V40 L30,70 Z"
+                                transform = "transform='translate(0 50)'"
+                            when 7
+                                # segnor's loop right
+                                linePath = "M50,180 S50,120 120,60"
+                                trianglePath = "M120,100 V40 L170,70 Z"
+                                transform = "transform='translate(0 50)'"
 
                         outTable += $.trim """
                           <path d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
@@ -1057,6 +1071,8 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     effective_stats = data.effectiveStats()
+                    extra_actions = $.grep effective_stats.actions, (el, i) ->
+                        el not in data.data.actions
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1074,7 +1090,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.base_actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in effective_stats.extra_actions))).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
@@ -1760,8 +1776,6 @@ class Ship
         @updateSelections()
 
     effectiveStats: ->
-        base_actions = (@pilot.ship_override?.actions ? @data.actions).slice 0
-
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
@@ -1770,7 +1784,6 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
-            base_actions: base_actions
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -1783,28 +1796,31 @@ class Ship
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
-
-        stats.extra_actions = (action for action in stats.actions when action not in base_actions)
         stats
 
     validate: ->
-        # Remove addons that violate their restriction functions (if any) one by one
+        # Remove addons that violate their validation functions (if any) one by one
         # until everything checks out
-        max_checks = 32 # that's a lot of addons
+        # If there is no explicit validation_func, use restriction_func
+        max_checks = 128 # that's a lot of addons (Epic?)
         for i in [0..max_checks]
             valid = true
             for upgrade in @upgrades
-                if upgrade?.data?.restriction_func? and not upgrade?.data?.restriction_func this
+                func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
+                if func? and not func(this, upgrade)
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
                     break
-            if @title?.data?.restriction_func? and not @title?.data?.restriction_func this
+
+            func = @title?.data?.validation_func ? @title?.data?.restriction_func ? undefined
+            if func? and not func this
                 #console.log "Invalid title: #{@title?.data?.name}"
                 @title.setById null
                 continue
             for modification in @modifications
-                if modification?.data?.restriction_func? and not modification.data.restriction_func this
+                func = modification?.data?.validation_func ? modification?.data?.restriction_func ? undefined
+                if func? and not func(this, modification)
                     #console.log "Invalid modification: #{modification?.data?.name}"
                     modification.setById null
                     valid = false
@@ -2008,7 +2024,7 @@ class exportObj.Upgrade extends GenericAddon
             query: (query) =>
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, query.term)
+                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term)
 
 class exportObj.Modification extends GenericAddon
     constructor: (args) ->

@@ -5,6 +5,8 @@
 ###
 DFL_LANGUAGE = 'English'
 
+builders = []
+
 exportObj = exports ? this
 
 exportObj.loadCards = (language) ->
@@ -22,14 +24,17 @@ exportObj.translate = (language, category, what, args...) ->
         what
 
 exportObj.setupTranslationSupport = ->
-    $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
-        if language of exportObj.translations
-            $('.language-placeholder').text language
-            await $(exportObj).trigger 'xwing:beforeLanguageLoad', defer()
-            exportObj.loadCards language
-            for own selector, html of exportObj.translations[language].byCSSSelector
-                $(selector).html html
-            $(exportObj).trigger 'xwing:afterLanguageLoad', language
+    do (builders) ->
+        $(exportObj).on 'xwing:languageChanged', (e, language, cb=$.noop) =>
+            if language of exportObj.translations
+                $('.language-placeholder').text language
+                for builder in builders
+                    await builder.container.trigger 'xwing:beforeLanguageLoad', defer()
+                exportObj.loadCards language
+                for own selector, html of exportObj.translations[language].byCSSSelector
+                    $(selector).html html
+                for builder in builders
+                    builder.container.trigger 'xwing:afterLanguageLoad', language
 
     exportObj.loadCards DFL_LANGUAGE
     $(exportObj).trigger 'xwing:languageChanged', DFL_LANGUAGE
@@ -43,3 +48,6 @@ exportObj.setupTranslationUI = (backend) ->
                 backend.set('language', language) if backend?
                 $(exportObj).trigger 'xwing:languageChanged', language
         $('ul.dropdown-menu').append li
+
+exportObj.registerBuilderForTranslation = (builder) ->
+    builders.push(builder) if builder not in builders

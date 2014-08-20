@@ -245,6 +245,40 @@ exportObj.cardLoaders.English = () ->
             text: """If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."""
         "Captain Oicunn":
             text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
+        "Prince Xizor":
+            text: """When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."""
+        "Serissu":
+            text: """When another friendly ship at Range 1 is defending, it may reroll 1 defense die."""
+        "Laetin A'shera":
+            text: """This card has not yet been revealed."""
+        "IG-88A":
+            text: """This card has not yet been revealed."""
+        "IG-88B":
+            text: """This card has not yet been revealed."""
+        "IG-88C":
+            text: """This card has not yet been revealed."""
+        "IG-88D":
+            text: """You may execute the (%SLOOPLEFT% 3) or (%SLOOPRIGHT% 3) maneuver using the corresponding (%TURNLEFT% 3) or (%TURNRIGHT% 3) template."""
+        "Boba Fett (Scum)":
+            text: """When attacking or defending, you may reroll 1 of your dice for each enemy ship at Range 1."""
+        "Kath Scarlet (Scum)":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS6 Scum Firespray Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum Y-Wing Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS5 Scum Y-Wing Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS5 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS3 Scum HWK Pilot":
+            text: """This card has not yet been revealed."""
+        "Unspoiled PS7 Scum Z-95 Pilot":
+            text: """When attacking, if there are no friendly ships at Range 1-2, roll 1 additional attack die."""
+        "Unspoiled PS5 Scum Z-95 Pilot":
+            text: """This card has not yet been revealed."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -457,6 +491,26 @@ exportObj.cardLoaders.English = () ->
             text: """When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
         "Ion Torpedoes":
             text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."""
+        "Bodyguard":
+            text: """At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."""
+        "Calc???":
+            text: """This card has not yet been revealed."""
+        "Accuracy Corrector":
+            text: """When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.<br /><br />Your dice cannot be modified again during this attack."""
+        "Inertial Dampeners":
+            text: """When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."""
+        "Flechette Cannon":
+            text: """This card has not yet been revealed."""
+        '"Mang??? Cannon"':
+            text: """This card has not yet been revealed."""
+        "Dead???":
+            text: """This card has not yet been revealed."""
+        "Fee???":
+            text: """This card has not yet been revealed."""
+        '"Hot ??? Blaster"':
+            text: """This card has not yet been revealed."""
+        "Greedo":
+            text: """The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."""
 
     modification_translations =
         "Stealth Device":
@@ -487,6 +541,8 @@ exportObj.cardLoaders.English = () ->
             text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
         "Tactical Jammer":
             text: """Your ship can obstruct enemy attacks."""
+        "Autoth???":
+            text: """This card has not yet been revealed."""
 
     title_translations =
         "Slave I":
@@ -517,5 +573,15 @@ exportObj.cardLoaders.English = () ->
             text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
         "Dauntless":
             text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
+        "Virago":
+            text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
+        '"Heavy Scyk" Interceptor (Cannon)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        '"Heavy Scyk" Interceptor (Torpedo)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        '"Heavy Scyk" Interceptor (Missile)':
+            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+        "IG-2000":
+            text: """You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
