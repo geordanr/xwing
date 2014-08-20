@@ -1322,7 +1322,7 @@
           unique: true,
           slots: ["Elite"]
         }, {
-          name: "Laeti???",
+          name: "Laetin A'shera",
           faction: "Scum and Villainy",
           id: 105,
           ship: "M3-A Interceptor",

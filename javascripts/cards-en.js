@@ -325,7 +325,7 @@
       "Serissu": {
         text: "When another friendly ship at Range 1 is defending, it may reroll 1 defense die."
       },
-      "Laeti???": {
+      "Laetin A'shera": {
         text: "This card has not yet been revealed."
       },
       "IG-88A": {
