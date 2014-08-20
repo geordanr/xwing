@@ -207,7 +207,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
@@ -459,7 +459,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 461
+                lineno: 464
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -531,11 +531,6 @@
         return function(e) {
           return _this.onSquadNameChanged();
         };
-      })(this));
-      $(window).on('xwing-backend:authenticationChanged', (function(_this) {
-        return function(e) {
-          return _this.resetCurrentSquad();
-        };
       })(this)).on('xwing:beforeLanguageLoad', (function(_this) {
         return function(e, cb) {
           if (cb == null) {
@@ -579,6 +574,11 @@
           if (all_allocated && !_this.suppress_automatic_new_ship) {
             return _this.addShip();
           }
+        };
+      })(this));
+      $(window).on('xwing-backend:authenticationChanged', (function(_this) {
+        return function(e) {
+          return _this.resetCurrentSquad();
         };
       })(this));
       this.view_list_button.click((function(_this) {
@@ -707,7 +707,7 @@
               for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
                 upgrade = _ref2[_k];
                 if ((upgrade != null ? (_ref3 = upgrade.data) != null ? _ref3.epic_restriction_func : void 0 : void 0) != null) {
-                  if (!upgrade.data.epic_restriction_func(ship.data)) {
+                  if (!upgrade.data.epic_restriction_func(ship.data, upgrade)) {
                     illegal_for_epic = true;
                     break;
                   }
@@ -986,7 +986,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 901
+            lineno: 905
           }));
           __iced_deferrals._fulfill();
         });
@@ -999,7 +999,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 902
+              lineno: 906
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1015,7 +1015,7 @@
     };
 
     SquadBuilder.prototype.getAvailableShipsMatching = function(term) {
-      var ship_data, ship_name, ships, _ref;
+      var ship_data, ship_name, ships, _ref, _ref1;
       if (term == null) {
         term = '';
       }
@@ -1023,7 +1023,7 @@
       _ref = exportObj.ships;
       for (ship_name in _ref) {
         ship_data = _ref[ship_name];
-        if (ship_data.faction === this.faction && this.matcher(ship_data.name, term)) {
+        if ((_ref1 = this.faction, __indexOf.call(ship_data.factions, _ref1) >= 0) && this.matcher(ship_data.name, term)) {
           ships.push({
             id: ship_data.name,
             text: ship_data.name
@@ -1044,7 +1044,7 @@
         _results = [];
         for (pilot_name in _ref) {
           pilot = _ref[pilot_name];
-          if (((ship == null) || pilot.ship === ship) && exportObj.ships[pilot.ship].faction === this.faction && this.matcher(pilot_name, term) && ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0)) {
+          if (((ship == null) || pilot.ship === ship) && pilot.faction === this.faction && this.matcher(pilot_name, term) && ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0)) {
             _results.push(pilot);
           }
         }
@@ -1069,7 +1069,7 @@
       })()).sort(exportObj.sortHelper);
     };
 
-    SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, term) {
+    SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term) {
       var current_upgrade_forcibly_removed, equipped_upgrade, unclaimed_upgrades, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
       if (term == null) {
         term = '';
@@ -1080,7 +1080,7 @@
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship))) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj))) {
             _results.push(upgrade);
           }
         }
@@ -1286,6 +1286,16 @@
                 case 5:
                   linePath = "M50,180 L50,100 C50,10 140,10 140,100 L140,120";
                   trianglePath = "M170,120 H110 L140,180 Z";
+                  break;
+                case 6:
+                  linePath = "M150,180 S150,120 80,60";
+                  trianglePath = "M80,100 V40 L30,70 Z";
+                  transform = "transform='translate(0 50)'";
+                  break;
+                case 7:
+                  linePath = "M50,180 S50,120 120,60";
+                  trianglePath = "M120,100 V40 L170,70 Z";
+                  transform = "transform='translate(0 50)'";
               }
               outTable += $.trim("<path d='" + trianglePath + "' fill='" + color + "' stroke-width='5' stroke='" + outlineColor + "' " + transform + "/>\n<path stroke-width='25' fill='none' stroke='" + outlineColor + "' d='" + linePath + "' />\n<path stroke-width='15' fill='none' stroke='" + color + "' d='" + linePath + "' />");
             }
@@ -1300,7 +1310,7 @@
     };
 
     SquadBuilder.prototype.showTooltip = function(type, data) {
-      var a, action, effective_stats, ship, slot, source, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var a, action, effective_stats, extra_actions, ship, slot, source, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       if (data !== this.tooltip_currently_displaying) {
         switch (type) {
           case 'Ship':
@@ -1315,6 +1325,9 @@
               return _results;
             }).call(this)).sort().join(', '));
             effective_stats = data.effectiveStats();
+            extra_actions = $.grep(effective_stats.actions, function(el, i) {
+              return __indexOf.call(data.data.actions, el) < 0;
+            });
             this.info_container.find('.info-name').html("" + (data.pilot.unique ? "&middot;&nbsp;" : "") + data.pilot.name + (data.pilot.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data.pilot) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref = data.pilot.text) != null ? _ref : '');
             this.info_container.find('tr.info-ship td.info-data').text(data.pilot.ship);
@@ -1334,12 +1347,11 @@
             this.info_container.find('tr.info-shields').show();
             this.info_container.find('tr.info-actions td.info-data').html(((function() {
               var _i, _len, _ref13, _results;
-              _ref13 = effective_stats.base_actions.concat((function() {
-                var _j, _len, _ref13, _results1;
-                _ref13 = effective_stats.extra_actions;
+              _ref13 = effective_stats.actions.concat((function() {
+                var _j, _len, _results1;
                 _results1 = [];
-                for (_j = 0, _len = _ref13.length; _j < _len; _j++) {
-                  action = _ref13[_j];
+                for (_j = 0, _len = extra_actions.length; _j < _len; _j++) {
+                  action = extra_actions[_j];
                   _results1.push("<strong>" + (exportObj.translate(this.language, 'action', action)) + "</strong>");
                 }
                 return _results1;
@@ -1871,7 +1883,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1372
+                        lineno: 1388
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1941,7 +1953,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1396
+                  lineno: 1412
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -1994,14 +2006,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1418
+              lineno: 1434
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1420
+              lineno: 1436
             }));
           }
           _ref1 = _this.modifications;
@@ -2009,7 +2021,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1422
+                lineno: 1438
               }));
             }
           }
@@ -2473,79 +2485,68 @@
     };
 
     Ship.prototype.effectiveStats = function() {
-      var action, base_actions, modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
-      base_actions = ((_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.actions : void 0) != null ? _ref : this.data.actions).slice(0);
+      var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       stats = {
         skill: this.pilot.skill,
-        attack: (_ref2 = (_ref3 = this.pilot.ship_override) != null ? _ref3.attack : void 0) != null ? _ref2 : this.data.attack,
-        energy: (_ref4 = (_ref5 = this.pilot.ship_override) != null ? _ref5.energy : void 0) != null ? _ref4 : this.data.energy,
-        agility: (_ref6 = (_ref7 = this.pilot.ship_override) != null ? _ref7.agility : void 0) != null ? _ref6 : this.data.agility,
-        hull: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.hull : void 0) != null ? _ref8 : this.data.hull,
-        shields: (_ref10 = (_ref11 = this.pilot.ship_override) != null ? _ref11.shields : void 0) != null ? _ref10 : this.data.shields,
-        actions: ((_ref12 = (_ref13 = this.pilot.ship_override) != null ? _ref13.actions : void 0) != null ? _ref12 : this.data.actions).slice(0),
-        base_actions: base_actions
+        attack: (_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null ? _ref : this.data.attack,
+        energy: (_ref2 = (_ref3 = this.pilot.ship_override) != null ? _ref3.energy : void 0) != null ? _ref2 : this.data.energy,
+        agility: (_ref4 = (_ref5 = this.pilot.ship_override) != null ? _ref5.agility : void 0) != null ? _ref4 : this.data.agility,
+        hull: (_ref6 = (_ref7 = this.pilot.ship_override) != null ? _ref7.hull : void 0) != null ? _ref6 : this.data.hull,
+        shields: (_ref8 = (_ref9 = this.pilot.ship_override) != null ? _ref9.shields : void 0) != null ? _ref8 : this.data.shields,
+        actions: ((_ref10 = (_ref11 = this.pilot.ship_override) != null ? _ref11.actions : void 0) != null ? _ref10 : this.data.actions).slice(0)
       };
       stats.maneuvers = [];
-      for (s = _i = 0, _ref14 = ((_ref15 = this.data.maneuvers) != null ? _ref15 : []).length; 0 <= _ref14 ? _i < _ref14 : _i > _ref14; s = 0 <= _ref14 ? ++_i : --_i) {
+      for (s = _i = 0, _ref12 = ((_ref13 = this.data.maneuvers) != null ? _ref13 : []).length; 0 <= _ref12 ? _i < _ref12 : _i > _ref12; s = 0 <= _ref12 ? ++_i : --_i) {
         stats.maneuvers[s] = this.data.maneuvers[s].slice(0);
       }
-      _ref16 = this.upgrades;
-      for (_j = 0, _len = _ref16.length; _j < _len; _j++) {
-        upgrade = _ref16[_j];
-        if ((upgrade != null ? (_ref17 = upgrade.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
+      _ref14 = this.upgrades;
+      for (_j = 0, _len = _ref14.length; _j < _len; _j++) {
+        upgrade = _ref14[_j];
+        if ((upgrade != null ? (_ref15 = upgrade.data) != null ? _ref15.modifier_func : void 0 : void 0) != null) {
           upgrade.data.modifier_func(stats);
         }
       }
-      if (((_ref18 = this.title) != null ? (_ref19 = _ref18.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
+      if (((_ref16 = this.title) != null ? (_ref17 = _ref16.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
         this.title.data.modifier_func(stats);
       }
-      _ref20 = this.modifications;
-      for (_k = 0, _len1 = _ref20.length; _k < _len1; _k++) {
-        modification = _ref20[_k];
-        if ((modification != null ? (_ref21 = modification.data) != null ? _ref21.modifier_func : void 0 : void 0) != null) {
+      _ref18 = this.modifications;
+      for (_k = 0, _len1 = _ref18.length; _k < _len1; _k++) {
+        modification = _ref18[_k];
+        if ((modification != null ? (_ref19 = modification.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
           modification.data.modifier_func(stats);
         }
       }
-      if (((_ref22 = this.pilot) != null ? _ref22.modifier_func : void 0) != null) {
+      if (((_ref20 = this.pilot) != null ? _ref20.modifier_func : void 0) != null) {
         this.pilot.modifier_func(stats);
       }
-      stats.extra_actions = (function() {
-        var _l, _len2, _ref23, _results;
-        _ref23 = stats.actions;
-        _results = [];
-        for (_l = 0, _len2 = _ref23.length; _l < _len2; _l++) {
-          action = _ref23[_l];
-          if (__indexOf.call(base_actions, action) < 0) {
-            _results.push(action);
-          }
-        }
-        return _results;
-      })();
       return stats;
     };
 
     Ship.prototype.validate = function() {
-      var i, max_checks, modification, upgrade, valid, _i, _j, _k, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
-      max_checks = 32;
+      var func, i, max_checks, modification, upgrade, valid, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      max_checks = 128;
       for (i = _i = 0; 0 <= max_checks ? _i <= max_checks : _i >= max_checks; i = 0 <= max_checks ? ++_i : --_i) {
         valid = true;
         _ref = this.upgrades;
         for (_j = 0, _len = _ref.length; _j < _len; _j++) {
           upgrade = _ref[_j];
-          if (((upgrade != null ? (_ref1 = upgrade.data) != null ? _ref1.restriction_func : void 0 : void 0) != null) && !(upgrade != null ? (_ref2 = upgrade.data) != null ? _ref2.restriction_func(this) : void 0 : void 0)) {
+          func = (_ref1 = (_ref2 = upgrade != null ? (_ref3 = upgrade.data) != null ? _ref3.validation_func : void 0 : void 0) != null ? _ref2 : upgrade != null ? (_ref4 = upgrade.data) != null ? _ref4.restriction_func : void 0 : void 0) != null ? _ref1 : void 0;
+          if ((func != null) && !func(this, upgrade)) {
             upgrade.setById(null);
             valid = false;
             break;
           }
         }
-        if ((((_ref3 = this.title) != null ? (_ref4 = _ref3.data) != null ? _ref4.restriction_func : void 0 : void 0) != null) && !((_ref5 = this.title) != null ? (_ref6 = _ref5.data) != null ? _ref6.restriction_func(this) : void 0 : void 0)) {
+        func = (_ref5 = (_ref6 = (_ref7 = this.title) != null ? (_ref8 = _ref7.data) != null ? _ref8.validation_func : void 0 : void 0) != null ? _ref6 : (_ref9 = this.title) != null ? (_ref10 = _ref9.data) != null ? _ref10.restriction_func : void 0 : void 0) != null ? _ref5 : void 0;
+        if ((func != null) && !func(this)) {
           this.title.setById(null);
           continue;
         }
-        _ref7 = this.modifications;
-        for (_k = 0, _len1 = _ref7.length; _k < _len1; _k++) {
-          modification = _ref7[_k];
-          if (((modification != null ? (_ref8 = modification.data) != null ? _ref8.restriction_func : void 0 : void 0) != null) && !modification.data.restriction_func(this)) {
+        _ref11 = this.modifications;
+        for (_k = 0, _len1 = _ref11.length; _k < _len1; _k++) {
+          modification = _ref11[_k];
+          func = (_ref12 = (_ref13 = modification != null ? (_ref14 = modification.data) != null ? _ref14.validation_func : void 0 : void 0) != null ? _ref13 : modification != null ? (_ref15 = modification.data) != null ? _ref15.restriction_func : void 0 : void 0) != null ? _ref12 : void 0;
+          if ((func != null) && !func(this, modification)) {
             modification.setById(null);
             valid = false;
             break;
@@ -2641,7 +2642,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1870
+                  lineno: 1886
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2717,7 +2718,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1900
+                    lineno: 1916
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2739,7 +2740,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1903
+                      lineno: 1919
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2804,7 +2805,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1928
+              lineno: 1944
             }));
           }
           __iced_deferrals._fulfill();
@@ -2907,7 +2908,7 @@
           return function(query) {
             return query.callback({
               more: false,
-              results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, query.term)
+              results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, _this, query.term)
             });
           };
         })(this)
