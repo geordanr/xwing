@@ -30,6 +30,8 @@ exportObj.translations['Español'] =
         "Cargo": "Cargo"
         "Hardpoint": "Hardpoint"
         "Team": "Equipo"
+        "Illicit": "Illicit"
+        "Salvaged Astromech": "Salvaged Astromech"
     sources: # needed?
         "Core": "Core"
         "A-Wing Expansion Pack": "A-Wing Expansion Pack"
@@ -54,6 +56,10 @@ exportObj.translations['Español'] =
         "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
         "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack"
         "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
+        "StarViper Expansion Pack": "StarViper Expansion Pack"
+        "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
+        "IG-2000 Expansion Pack": "IG-2000 Expansion Pack"
+        "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -108,6 +114,7 @@ exportObj.translations['Español'] =
         # Top tab bar
         '#empireTab' : 'Imperio Galactico'
         '#rebelTab' : 'Alianza Rebelde'
+        '#scumTab' : 'Scum and Villainy'
         '#browserTab' : 'Explorador de Cartas'
         '#aboutTab' : 'Acerca de'
     singular:
@@ -143,6 +150,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)'
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
+    exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor'
 
     pilot_translations =
         "Wedge Antilles":
