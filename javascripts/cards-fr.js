@@ -38,7 +38,9 @@
       "Turret": "Tourelle",
       "Cargo": "Soute",
       "Hardpoint": "Point d'Attache",
-      "Team": "Équipe"
+      "Team": "Équipe",
+      "Illicit": "Illégal",
+      "Salvaged Astromech": "Astromech Récupéré"
     },
     sources: {
       "Core": "Boite de base",
@@ -63,7 +65,11 @@
       "Tantive IV Expansion Pack": "Paquet d'extension Tantive IV",
       "Rebel Aces Expansion Pack": "Paquet d'extension As Rebelles",
       "YT-2400 Freighter Expansion Pack": "Paquet d'extension Cargo YT-2400",
-      "VT-49 Decimator Expansion Pack": "Paquet d'extension Décimateur VT-49"
+      "VT-49 Decimator Expansion Pack": "Paquet d'extension Décimateur VT-49",
+      "StarViper Expansion Pack": "Paquet d'extension StarViper",
+      "M3-A Interceptor Expansion Pack": "Paquet d'extension Intercepteur M3-A",
+      "IG-2000 Expansion Pack": "Paquet d'extension IG-2000",
+      "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics"
     },
     ui: {
       shipSelectorPlaceholder: "Choisissez un vaisseau",
@@ -106,6 +112,7 @@
       '.do-randomize': 'Générer',
       '#empireTab': 'Empire Galactique',
       '#rebelTab': 'Alliance Rebelle',
+      '#scumTab': 'Racailles & Scélérats',
       '#browserTab': 'Navigateur de cartes',
       '#aboutTab': 'À propos'
     },
@@ -141,6 +148,7 @@
     exportObj.renameShip('CR90 Corvette (Aft)', 'Corvette CR90 (poupe)');
     exportObj.renameShip('CR90 Corvette (Fore)', 'Corvette CR90 (proue)');
     exportObj.renameShip('GR-75 Medium Transport', 'Transport moyen GR-75');
+    exportObj.renameShip('M3-A Interceptor', 'Intercepteur M3-A');
     pilot_translations = {
       "Academy Pilot": {
         ship: "Chasseur TIE",
@@ -401,10 +409,10 @@
         text: "Quand vous attaquez, vous pouvez relancer tous vos dés. Si vous décidez de le faire, vous devez relancer autant de vos dés que possible."
       },
       "Dagger Squadron Pilot": {
-        name: "Pilote de l'escadron Bleu"
+        name: "Pilote de l'escadron Dague"
       },
       "Blue Squadron Pilot": {
-        name: "Pilote de l'escadron Dague"
+        name: "Pilote de l'escadron Bleu"
       },
       "Ten Numb": {
         text: "Quand vous attaquez ,1 de vos résultats %CRIT% ne peut pas être annulé par les dés de défense."
@@ -497,6 +505,61 @@
       },
       "Wild Space Fringer": {
         name: "Wild Space Fringer"
+      },
+      "Prince Xizor": {
+        text: "Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."
+      },
+      "Serissu": {
+        ship: "Intercepteur M3-A",
+        text: "Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."
+      },
+      "Laetin A'shera": {
+        ship: "Intercepteur M3-A",
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "IG-88A": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "IG-88B": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "IG-88C": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "IG-88D": {
+        text: "Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."
+      },
+      "Boba Fett (Scum)": {
+        text: "Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."
+      },
+      "Kath Scarlet (Scum)": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS6 Scum Firespray Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS7 Scum Y-Wing Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS5 Scum Y-Wing Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS7 Scum HWK Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS5 Scum HWK Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS3 Scum HWK Pilot": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Unspoiled PS7 Scum Z-95 Pilot": {
+        ship: "Chasseur de têtes Z-95",
+        text: "Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."
+      },
+      "Unspoiled PS5 Scum Z-95 Pilot": {
+        ship: "Chasseur de têtes Z-95",
+        text: "Cette carte n'a pas encore été révélée."
       }
     };
     upgrade_translations = {
@@ -578,6 +641,9 @@
       "Stay On Target": {
         name: "Restez en ligne",
         text: "Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.<br /><br />Considérez cette dernière comme une manœeuvre rouge."
+      },
+      "Calc???": {
+        text: "Cette carte n'a pas encore été révélée."
       },
       "R2 Astromech": {
         name: "Astromech R2",
@@ -693,6 +759,12 @@
       "Autoblaster": {
         text: "<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
       },
+      "Flechette Cannon": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      '"Mang??? Cannon"': {
+        text: "Cette carte n'a pas encore été révélée."
+      },
       "Enhanced Scopes": {
         name: "Radars améliorés",
         text: "Durant la phase d'activation, considérez que votre valeur de pilotage est égale à \"0\"."
@@ -708,6 +780,9 @@
       "Sensor Jammer": {
         name: "Brouilleur de senseurs",
         text: "Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."
+      },
+      "Accuracy Corrector": {
+        text: "Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.<br /><br />Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."
       },
       "Gunner": {
         name: "Cannonier",
@@ -823,6 +898,9 @@
       "Moff Jerjerrod": {
         text: "Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."
       },
+      "Greedo": {
+        text: "Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
+      },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
         text: "Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."
@@ -889,6 +967,18 @@
       },
       "Intimidation": {
         text: "Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."
+      },
+      "Inertial Dampeners": {
+        text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
+      },
+      "Dead???": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      "Fee???": {
+        text: "Cette carte n'a pas encore été révélée."
+      },
+      '"Hot ??? Blaster"': {
+        text: "Cette carte n'a pas encore été révélée."
       }
     };
     modification_translations = {
@@ -1004,6 +1094,24 @@
       "Dauntless": {
         ship: "Décimateur VT-49",
         text: "Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."
+      },
+      "Virago": {
+        text: "Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is \"3\" or lower."
+      },
+      '"Heavy Scyk" Interceptor (Cannon)': {
+        name: 'Intercepteur "Scyk Lourd" (Cannon)',
+        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+      },
+      '"Heavy Scyk" Interceptor (Torpedo)': {
+        name: 'Intercepteur "Scyk Lourd" (Torpille)',
+        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+      },
+      '"Heavy Scyk" Interceptor (Missile)': {
+        name: 'Intercepteur "Scyk Lourd" (Missile)',
+        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+      },
+      "IG-2000": {
+        text: "Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);

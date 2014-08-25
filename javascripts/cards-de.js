@@ -38,7 +38,9 @@
       "Turret": "Geschützturm",
       "Cargo": "Fracht",
       "Hardpoint": "Hardpoint",
-      "Team": "Team"
+      "Team": "Team",
+      "Illicit": "Illicit",
+      "Salvaged Astromech": "Salvaged Astromech"
     },
     sources: {
       "Core": "Grundspiel",
@@ -63,7 +65,11 @@
       "Tantive IV Expansion Pack": "Tantive IV Erweiterung",
       "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung",
       "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack",
-      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
+      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack",
+      "StarViper Expansion Pack": "StarViper Expansion Pack",
+      "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
+      "IG-2000 Expansion Pack": "IG-2000 Expansion Pack",
+      "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
     },
     ui: {
       shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -106,6 +112,7 @@
       '.do-randomize': 'Zufall!',
       '#empireTab': 'Galaktisches Imperium',
       '#rebelTab': 'Rebellen Allianz',
+      '#scumTab': 'Scum and Villainy',
       '#browserTab': 'Karten Browser',
       '#aboutTab': 'Über'
     },
@@ -137,6 +144,7 @@
     exportObj.renameShip('GR-75 Medium Transport', 'Medium-Transporter GR-75');
     exportObj.renameShip('CR90 Corvette (Fore)', 'CR90-Korvette (Bug)');
     exportObj.renameShip('CR90 Corvette (Aft)', 'CR90-Korvette (Heck)');
+    exportObj.renameShip('M3-A Interceptor', 'M3-A Interceptor');
     pilot_translations = {
       "Wedge Antilles": {
         text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."

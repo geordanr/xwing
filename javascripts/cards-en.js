@@ -38,7 +38,9 @@
       "Turret": "Turret",
       "Cargo": "Cargo",
       "Hardpoint": "Hardpoint",
-      "Team": "Team"
+      "Team": "Team",
+      "Illicit": "Illicit",
+      "Salvaged Astromech": "Salvaged Astromech"
     },
     sources: {
       "Core": "Core",
@@ -63,7 +65,11 @@
       "Tantive IV Expansion Pack": "Tantive IV Expansion Pack",
       "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack",
       "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack",
-      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
+      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack",
+      "StarViper Expansion Pack": "StarViper Expansion Pack",
+      "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
+      "IG-2000 Expansion Pack": "IG-2000 Expansion Pack",
+      "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
     },
     ui: {
       shipSelectorPlaceholder: "Select a ship",
@@ -105,6 +111,7 @@
       '.do-randomize': 'Randomize!',
       '#empireTab': 'Galactic Empire',
       '#rebelTab': 'Rebel Alliance',
+      '#scumTab': 'Scum and Villainy',
       '#browserTab': 'Card Browser',
       '#aboutTab': 'About'
     },
