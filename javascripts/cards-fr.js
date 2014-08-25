@@ -409,10 +409,10 @@
         text: "Quand vous attaquez, vous pouvez relancer tous vos dés. Si vous décidez de le faire, vous devez relancer autant de vos dés que possible."
       },
       "Dagger Squadron Pilot": {
-        name: "Pilote de l'escadron Bleu"
+        name: "Pilote de l'escadron Dague"
       },
       "Blue Squadron Pilot": {
-        name: "Pilote de l'escadron Dague"
+        name: "Pilote de l'escadron Bleu"
       },
       "Ten Numb": {
         text: "Quand vous attaquez ,1 de vos résultats %CRIT% ne peut pas être annulé par les dés de défense."

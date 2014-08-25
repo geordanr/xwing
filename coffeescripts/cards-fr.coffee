@@ -350,9 +350,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous attaquez, vous pouvez relancer tous vos dés. Si vous décidez de le faire, vous devez relancer autant de vos dés que possible."""
         # B-Wing
         "Dagger Squadron Pilot":
-            name: "Pilote de l'escadron Bleu"
-        "Blue Squadron Pilot":
             name: "Pilote de l'escadron Dague"
+        "Blue Squadron Pilot":
+            name: "Pilote de l'escadron Bleu"
         "Ten Numb":
             text: """Quand vous attaquez ,1 de vos résultats %CRIT% ne peut pas être annulé par les dés de défense."""
         "Ibtisam":
@@ -426,7 +426,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Wild Space Fringer":
             name: "Wild Space Fringer"
             
-        # Scum and Villainy    
+        # Scum and Villainy
         # Starviper, traduit de l'anglais
         "Prince Xizor":
             text: """Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."""
