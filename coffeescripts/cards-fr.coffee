@@ -30,6 +30,8 @@ exportObj.translations['Français'] =
         "Cargo": "Soute"
         "Hardpoint": "Point d'Attache"
         "Team": "Équipe"
+        "Illicit": "Illégal"
+        "Salvaged Astromech": "Astromech Récupéré"
     sources: # needed?
         "Core": "Boite de base"
         "A-Wing Expansion Pack": "Paquet d'extension A-Wing"
@@ -54,6 +56,10 @@ exportObj.translations['Français'] =
         "Rebel Aces Expansion Pack": "Paquet d'extension As Rebelles"
         "YT-2400 Freighter Expansion Pack": "Paquet d'extension Cargo YT-2400"
         "VT-49 Decimator Expansion Pack": "Paquet d'extension Décimateur VT-49"
+        "StarViper Expansion Pack": "Paquet d'extension StarViper"
+        "M3-A Interceptor Expansion Pack": "Paquet d'extension Intercepteur M3-A"
+        "IG-2000 Expansion Pack": "Paquet d'extension IG-2000"
+        "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics"
     ui:
         shipSelectorPlaceholder: "Choisissez un vaisseau"
         pilotSelectorPlaceholder: "Choisissez un pilote"
@@ -98,6 +104,7 @@ exportObj.translations['Français'] =
         # Top tab bar
         '#empireTab' : 'Empire Galactique'
         '#rebelTab' : 'Alliance Rebelle'
+        '#scumTab' : 'Racailles & Scélérats'
         '#browserTab' : 'Navigateur de cartes'
         '#aboutTab' : 'À propos'
 
@@ -132,10 +139,12 @@ exportObj.cardLoaders['Français'] = () ->
     exportObj.renameShip 'CR90 Corvette (Aft)', 'Corvette CR90 (poupe)'
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corvette CR90 (proue)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transport moyen GR-75'
+    exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A'
     
 
     # Names don't need updating, but text needs to be set
     pilot_translations =
+        # Empire
         # Chasseur TIE
         "Academy Pilot":
             ship: "Chasseur TIE"
@@ -289,6 +298,8 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Décimateur VT-49"
             name: "Commandant Kenkirk"
             text: """Si vous n'avez plus de boucliers et au moins 1 carte dégâts assignée à votre vaisseau, augmentez votre valeur d'agilité de 1."""
+            
+        # Rebels
         # X-Wing
         "Red Squadron Pilot":
             name: "Pilote de l'escadron Rouge"
@@ -414,6 +425,53 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous effectuez une attaque d'arme principale contre un vaisseau stressé, lancez 1 dé d'attaque supplémentaire."""
         "Wild Space Fringer":
             name: "Wild Space Fringer"
+            
+        # Scum and Villainy    
+        # Starviper, traduit de l'anglais
+        "Prince Xizor":
+            text: """Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."""
+        # Intercepteur M3-A, traduit de l'anglais
+        "Serissu":
+            ship: "Intercepteur M3-A"
+            text: """Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."""
+        "Laetin A'shera":
+            ship: "Intercepteur M3-A"
+            text: """Cette carte n'a pas encore été révélée."""
+        # Agressor, traduit de l'anglais
+        "IG-88A":
+            text: """Cette carte n'a pas encore été révélée."""
+        "IG-88B":
+            text: """Cette carte n'a pas encore été révélée."""
+        "IG-88C":
+            text: """Cette carte n'a pas encore été révélée."""
+        "IG-88D":
+            text: """Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."""
+        # Firespray
+        "Boba Fett (Scum)":
+            text: """Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."""
+        "Kath Scarlet (Scum)":
+            text: """Cette carte n'a pas encore été révélée."""
+        "Unspoiled PS6 Scum Firespray Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        # Y-Wing
+        "Unspoiled PS7 Scum Y-Wing Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        "Unspoiled PS5 Scum Y-Wing Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        # HWK
+        "Unspoiled PS7 Scum HWK Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        "Unspoiled PS5 Scum HWK Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        "Unspoiled PS3 Scum HWK Pilot":
+            text: """Cette carte n'a pas encore été révélée."""
+        # Z-95
+        "Unspoiled PS7 Scum Z-95 Pilot":
+            ship: "Chasseur de têtes Z-95"
+            text: """Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
+        "Unspoiled PS5 Scum Z-95 Pilot":
+            ship: "Chasseur de têtes Z-95"
+            text: """Cette carte n'a pas encore été révélée."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -476,6 +534,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Stay On Target": # Traduction non officielle
             name: "Restez en ligne"
             text: """Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.<br /><br />Considérez cette dernière comme une manœeuvre rouge."""
+        "Calc???": # Traduction non officielle
+            text: """Cette carte n'a pas encore été révélée."""
         # Astromechs
         "R2 Astromech":
             name: "Astromech R2"
@@ -565,6 +625,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Juste après avoir lancé vos dés d'attaque, vous devez changer tous vos résultats %CRIT% en résultats %HIT%."""
         "Autoblaster":
             text: """<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
+        "Flechette Cannon":
+            text: """Cette carte n'a pas encore été révélée."""
+        '"Mang??? Cannon"':
+            text: """Cette carte n'a pas encore été révélée."""
         # Systèmes
         "Enhanced Scopes":
             name: "Radars améliorés"
@@ -578,6 +642,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Sensor Jammer":
             name: "Brouilleur de senseurs"
             text: """Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."""
+        "Accuracy Corrector": # Traduction non officielle
+            text: """Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.<br /><br />Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."""
         # Équipages
         "Gunner":
             name: "Cannonier"
@@ -660,6 +726,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."""
         "Moff Jerjerrod": # Traduction non officielle
             text: """Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
+        "Greedo": # Traduction non officielle
+            text: """Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
         # Soute
         "Frequency Jammer":
             name: "Brouilleurs de fréquence"
@@ -713,6 +781,16 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."""
         "Intimidation": # Traduction non officielle
             text: """Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."""
+            
+        # Illégal
+        "Inertial Dampeners": # Traduction non officielle
+            text: """Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."""
+        "Dead???":
+            text: """Cette carte n'a pas encore été révélée."""
+        "Fee???":
+            text: """Cette carte n'a pas encore été révélée."""
+        '"Hot ??? Blaster"':
+            text: """Cette carte n'a pas encore été révélée."""
 
     modification_translations =
         "Shield Upgrade":
@@ -800,5 +878,18 @@ exportObj.cardLoaders['Français'] = () ->
         "Dauntless": # Traduction non officielle
             ship: "Décimateur VT-49"
             text: """Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."""
+        "Virago":
+            text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
+        '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
+            name: 'Intercepteur "Scyk Lourd" (Cannon)'
+            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
+            name: 'Intercepteur "Scyk Lourd" (Torpille)'
+            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
+            name: 'Intercepteur "Scyk Lourd" (Missile)'
+            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        "IG-2000":
+            text: """Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

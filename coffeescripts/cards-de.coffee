@@ -30,6 +30,8 @@ exportObj.translations.Deutsch =
         "Cargo": "Fracht"
         "Hardpoint": "Hardpoint"
         "Team": "Team"
+        "Illicit": "Illicit"
+        "Salvaged Astromech": "Salvaged Astromech"
     sources: # needed?
         "Core": "Grundspiel"
         "A-Wing Expansion Pack": "A-Wing Erweiterung"
@@ -54,6 +56,10 @@ exportObj.translations.Deutsch =
         "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung"
         "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack"
         "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
+        "StarViper Expansion Pack": "StarViper Expansion Pack"
+        "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
+        "IG-2000 Expansion Pack": "IG-2000 Expansion Pack"
+        "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -97,6 +103,7 @@ exportObj.translations.Deutsch =
         # Top tab bar
         '#empireTab' : 'Galaktisches Imperium'
         '#rebelTab' : 'Rebellen Allianz'
+        '#scumTab' : 'Scum and Villainy'
         '#browserTab' : 'Karten Browser'
         '#aboutTab' : 'Über'
     singular:
@@ -131,6 +138,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'CR90 Corvette (Fore)', 'CR90-Korvette (Bug)'
     # Move CR90 Corvette (Aft) to CR90-Korvette (Heck)
     exportObj.renameShip 'CR90 Corvette (Aft)', 'CR90-Korvette (Heck)'
+    exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor'
 
     pilot_translations =
         "Wedge Antilles":
