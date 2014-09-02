@@ -1746,7 +1746,10 @@ class Ship
                 @modifications[0].setById modification_id if modification_id >= 0
 
                 # We confer title addons before modification addons, to pick an arbitrary ordering.
-                conferredaddon_pairs = conferredaddon_pairs.split ','
+                if conferredaddon_pairs?
+                    conferredaddon_pairs = conferredaddon_pairs.split ','
+                else
+                    conferredaddon_pairs = []
 
                 if @title? and @title.conferredAddons.length > 0
                     title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @title.conferredAddons.length

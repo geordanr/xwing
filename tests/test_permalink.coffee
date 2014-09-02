@@ -192,3 +192,26 @@ casper.test.begin "B-Wing/E2 permalink v3 minimal", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Weird Rebel standard permalink v3 missing trailing colon", (test) ->
+    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    .run ->
+        test.done()
+
+
+casper.test.begin "Weird Empire standard permalink v3 missing trailing colon", (test) ->
+    common.waitForStartup('#empire-builder', 'index.html?f=Galactic%20Empire&d=v3!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1')
+    .then ->
+        @waitUntilVisible '#empire-builder .total-points'
+    common.assertTotalPoints(test, '#empire-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    .run ->
+        test.done()
