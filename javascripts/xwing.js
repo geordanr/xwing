@@ -2445,7 +2445,11 @@
           if (modification_id >= 0) {
             this.modifications[0].setById(modification_id);
           }
-          conferredaddon_pairs = conferredaddon_pairs.split(',');
+          if (conferredaddon_pairs != null) {
+            conferredaddon_pairs = conferredaddon_pairs.split(',');
+          } else {
+            conferredaddon_pairs = [];
+          }
           if ((this.title != null) && this.title.conferredAddons.length > 0) {
             title_conferred_addon_pairs = conferredaddon_pairs.splice(0, this.title.conferredAddons.length);
             for (i = _l = 0, _len3 = title_conferred_addon_pairs.length; _l < _len3; i = ++_l) {
@@ -2642,7 +2646,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1886
+                  lineno: 1889
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2718,7 +2722,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1916
+                    lineno: 1919
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2740,7 +2744,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1919
+                      lineno: 1922
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2805,7 +2809,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1944
+              lineno: 1947
             }));
           }
           __iced_deferrals._fulfill();
