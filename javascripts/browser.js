@@ -295,7 +295,7 @@
       switch (orig_type) {
         case 'Pilot':
           ship = exportObj.ships[data.ship];
-          this.card_viewer_container.find('.info-type').text("" + data.ship + " Pilot (" + ship.faction + ")");
+          this.card_viewer_container.find('.info-type').text("" + data.ship + " Pilot (" + data.faction + ")");
           this.card_viewer_container.find('tr.info-skill td.info-data').text(data.skill);
           this.card_viewer_container.find('tr.info-skill').show();
           this.card_viewer_container.find('tr.info-attack td.info-data').text((_ref1 = (_ref2 = data.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : ship.attack);

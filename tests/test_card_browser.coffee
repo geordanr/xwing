@@ -26,6 +26,7 @@ casper.test.begin "Card Browser", (test) ->
 
     common.selectInCardBrowser('Horton Salm (25)')
     common.assertInCardBrowserDisplay(test, 'When attacking at Range 2-3, you may reroll any of your blank results.')
+    common.assertInCardBrowserDisplay(test, 'Y-Wing Pilot (Rebel Alliance)')
 
     .run ->
         test.done()

@@ -231,7 +231,7 @@ class exportObj.CardBrowser
         switch orig_type
             when 'Pilot'
                 ship = exportObj.ships[data.ship]
-                @card_viewer_container.find('.info-type').text "#{data.ship} Pilot (#{ship.faction})"
+                @card_viewer_container.find('.info-type').text "#{data.ship} Pilot (#{data.faction})"
                 @card_viewer_container.find('tr.info-skill td.info-data').text data.skill
                 @card_viewer_container.find('tr.info-skill').show()
                 @card_viewer_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
