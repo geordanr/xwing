@@ -71,6 +71,7 @@ exportObj.translations.English =
             "#{translator language, 'slot', slot} Upgrade"
         unreleased: "unreleased"
         epic: "epic"
+        limited: "limited"
     byCSSSelector:
         '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
         '.xwing-card-browser option[value="name"]': 'Name'
