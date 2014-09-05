@@ -83,7 +83,8 @@
         return "" + (translator(language, 'slot', slot)) + " Upgrade";
       },
       unreleased: "unreleased",
-      epic: "epic"
+      epic: "epic",
+      limited: "limited"
     },
     byCSSSelector: {
       '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by',

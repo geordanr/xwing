@@ -1070,17 +1070,29 @@
     };
 
     SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term) {
-      var current_upgrade_forcibly_removed, equipped_upgrade, unclaimed_upgrades, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
+      var current_upgrade_forcibly_removed, equipped_upgrade, limited_upgrades_in_use, unclaimed_upgrades, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
       if (term == null) {
         term = '';
       }
+      limited_upgrades_in_use = (function() {
+        var _i, _len, _ref, _ref1, _results;
+        _ref = ship.upgrades;
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          upgrade = _ref[_i];
+          if ((upgrade != null ? (_ref1 = upgrade.data) != null ? _ref1.limited : void 0 : void 0) != null) {
+            _results.push(upgrade.data);
+          }
+        }
+        return _results;
+      })();
       unclaimed_upgrades = (function() {
         var _ref, _results;
         _ref = exportObj.upgradesByLocalizedName;
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj))) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj)) && __indexOf.call(limited_upgrades_in_use, upgrade) < 0) {
             _results.push(upgrade);
           }
         }
@@ -1108,7 +1120,7 @@
           }
         }
       }
-      if ((include_upgrade != null) && (((include_upgrade.unique != null) && this.matcher(include_upgrade.name, term)) || current_upgrade_forcibly_removed)) {
+      if ((include_upgrade != null) && ((((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term)) || current_upgrade_forcibly_removed)) {
         unclaimed_upgrades.push(include_upgrade);
       }
       return ((function() {
@@ -1443,7 +1455,7 @@
               }
               return _results;
             }).call(this)).sort().join(', '));
-            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name + (data.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
+            this.info_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + data.name + (data.limited != null ? " (" + (exportObj.translate(this.language, 'ui', 'limited')) + ")" : "") + (data.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
             this.info_container.find('p.info-text').html((_ref26 = data.text) != null ? _ref26 : '');
             this.info_container.find('tr.info-ship').hide();
             this.info_container.find('tr.info-skill').hide();
@@ -1883,7 +1895,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1388
+                        lineno: 1390
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1953,7 +1965,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1412
+                  lineno: 1414
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2006,14 +2018,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1434
+              lineno: 1436
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1436
+              lineno: 1438
             }));
           }
           _ref1 = _this.modifications;
@@ -2021,7 +2033,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1438
+                lineno: 1440
               }));
             }
           }
@@ -2646,7 +2658,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1889
+                  lineno: 1891
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2722,7 +2734,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1919
+                    lineno: 1921
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2744,7 +2756,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1922
+                      lineno: 1924
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2809,7 +2821,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1947
+              lineno: 1949
             }));
           }
           __iced_deferrals._fulfill();

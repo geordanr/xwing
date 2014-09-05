@@ -280,7 +280,7 @@
       type = card.data('type');
       data = card.data('card');
       orig_type = card.data('orig_type');
-      this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")" + (data.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
+      this.card_viewer_container.find('.info-name').html("" + (data.unique ? "&middot;&nbsp;" : "") + name + " (" + data.points + ")" + (data.limited != null ? " (" + (exportObj.translate(this.language, 'ui', 'limited')) + ")" : "") + (data.epic != null ? " (" + (exportObj.translate(this.language, 'ui', 'epic')) + ")" : "") + (exportObj.isReleased(data) ? "" : " (" + (exportObj.translate(this.language, 'ui', 'unreleased')) + ")"));
       this.card_viewer_container.find('p.info-text').html((_ref = data.text) != null ? _ref : '');
       this.card_viewer_container.find('.info-sources').text(((function() {
         var _i, _len, _ref1, _results;
@@ -295,7 +295,7 @@
       switch (orig_type) {
         case 'Pilot':
           ship = exportObj.ships[data.ship];
-          this.card_viewer_container.find('.info-type').text("" + data.ship + " Pilot (" + ship.faction + ")");
+          this.card_viewer_container.find('.info-type').text("" + data.ship + " Pilot (" + data.faction + ")");
           this.card_viewer_container.find('tr.info-skill td.info-data').text(data.skill);
           this.card_viewer_container.find('tr.info-skill').show();
           this.card_viewer_container.find('tr.info-attack td.info-data').text((_ref1 = (_ref2 = data.ship_override) != null ? _ref2.attack : void 0) != null ? _ref1 : ship.attack);
