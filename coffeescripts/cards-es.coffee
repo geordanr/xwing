@@ -410,13 +410,13 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Ala-A"
         "Gemmer Sojan":
             name: "Gemmer Sojan"
-            text: """While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."""
+            text: """Mientras permanezcas a alcance 1 de al menos 1 nave enemiga, incrementa tu valor de agilidad en 1."""
             ship: "Ala-A"
         "Keyan Farlander":
             text: """Cuando ataques, puedes retirar una ficha de tensión  para cambiar todos tus resultados %FOCUS% por %HIT%."""
             ship: "Ala-B"
         "Nera Dantels":
-            text: """You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
+            text: """Puedes ralizar un ataque con armamento secundario %TORPEDO% contra enemigos fuera de tu arco de fuego."""
             ship: "Ala-B"
         "CR90 Corvette (Crippled Aft)":
             name: "CR90 Corvette (Crippled Aft)"
@@ -428,15 +428,15 @@ exportObj.cardLoaders['Español'] = () ->
         "Dash Rendar":
             text: """Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."""
         '"Leebo"':
-            text: """When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."""
+            text: """Cuando recibas una carta de daño boca arriba, puedes robar 1 carta de daño adicional, elige 1 de ellas y resuelvela, descarta la otra."""
         "Eaden Vrill":
-            text: """When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."""
+            text: """Cuando realices un ataque con tu armamento principal contra una nave con al menos un marcador de Tensión, puedes tirar 1 dado de ataque adicional."""
         "Rear Admiral Chiraneau":
             text: """Cuando ataques a distancia 1-2, puedes cambiar 1 de tus resultados de %FOCUS% a %CRIT%."""
         "Commander Kenkirk":
-            text: """If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."""
+            text: """Si no tienes escudos y al menos una carta de daño asignada a tu nave, incrementa tu valor de agilidad en 1."""
         "Captain Oicunn":
-            text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
+            text: """Después de ejecutar un maniobra, cada nave enemiga que estés tocando sufre 1 daño."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -652,7 +652,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"
-            text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
+            text: """<strong>Ataque (Concentración):</strong> Descarta esta carta para realizar este ataque.<br /><br />Puedes tirar dados de ataque adicionales igual a tu valor de agilidad, hasta un máximo de 3 dados de ataque adicionales."""
         "Kyle Katarn":
             text: """Despues de retires una ficha de Tensión de tu nave, puedes asiganar 1 ficha de %FOCUS% a tu nave."""
         "Jan Ors":
@@ -708,7 +708,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Durante la fase de activación, si enseñas una maniobra %STRAIGHT%, recibes 1 de Energía adicional durante el paso de "Obtener Energía"."""
         "Lando Calrissian":
             name: "Lando Calrissian"
-            text: """<strong>Acción:</strong> TIra 2 dados ded defensa.  Por cada resultado de %FOCUS%, asigna 1 dicha de Concentración a tu nave. Por cada resultado de %EVADE%, asigna 1 ficha de Evasión a tu nave."""
+            text: """<strong>Acción:</strong> TIra 2 dados ded defensa. Por cada resultado de %FOCUS%, asigna 1 dicha de Concentración a tu nave. Por cada resultado de %EVADE%, asigna 1 ficha de Evasión a tu nave."""
         "Mara Jade":
             name: "Mara Jade"
             text: """Al final de la fase de Combate, cada nave enemiga a alcance 1 que no tenga fichas de Tensión recive 1 ficha de Tensión."""
@@ -716,23 +716,23 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Oficial de Flota"
             text: """<strong>Acción:</strong> Elige hasta 2 naves aliadas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Después recibes una ficha de Tensión."""
         "Lone Wolf":
-            text: """When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."""
+            text: """Cuando ataques o defiendas, si no hay ninguna nave aliada a alcance 1-2, pues retirar 1 de tus resultados de cara vacía."""
         "Stay On Target":
-            text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."""
+            text: """Cuando reveles tu dial de maniobra, puedes cambiarlo y seleccionar una maniobra diferente con la misma velocidad.<br /><br />Trata la nueva maniobra seleccionada como si fuera roja."""
         "Dash Rendar":
-            text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
+            text: """Puedes realizar ataques mientras te solapas con un obstáculo.<br /><br />Tus ataques no pueden ser obstruidos."""
         '"Leebo"':
-            text: """<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."""
+            text: """<strong>Acción:</strong> Realiza una acción gratuita de Impulso. Recibe 1 marcador de iones."""
         "Ruthlessness":
-            text: """After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."""
+            text: """Después de que realices un ataque que impacte, tu <strong>debes</strong> elegir 1 nave a alcance 1 del defensor (a parte de ti).  Esa nave sufre 1 daño."""
         "Intimidation":
-            text: """While you are touching an enemy ship, reduce that ship's agility value by 1."""
+            text: """Mientras estes en contacto con una nave enemiga, reduce su agilidad en 1."""
         "Ysanne Isard":
-            text: """At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."""
+            text: """Al comienzo de la fase de combate, si no tienes escudos y al menos tienes 1 carta dedaño asignada a tu nave, puedes realizar una acción gratuita de Evadir."""
         "Moff Jerjerrod":
-            text: """When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
+            text: """Cuando se te asigna un carta de daño boca arribar, puedes descartar esta mejora u otra de %CREW% para poner boca abajo esa carta de daño (sin resolver su efecto)."""
         "Ion Torpedoes":
-            text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."""
+            text: """<strong>Ataque (Blanco Fijado):</strong> Retira el blanco fijado y descarta esta carta para realizar este ataque.<br /><br />Si el ataque impacta, el defensor y cada nave a alcance 1 de él recibe 1 marcador de iones."""
 
     modification_translations =
         "Stealth Device":
@@ -755,7 +755,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Incrementa tu valor de blindaje en 1."""
         "Munitions Failsafe":
             name: "Sistema de Munición a Prueba de Fallas"
-            text: """Cuando ataques on un arma secundaria que te instruye que la descartes para realizar un ataque, no la descartes a menos de que el defensor sea alcanzado por tu ataque."""
+            text: """Cuando un ataque con armamento secundario que requiera descartarlo para efectuar el ataque, no se descarta a menos que el ataque impacte al objetivo."""
         "Stygium Particle Accelerator":
             name: "Acelerador de Partículas de Stygium"
             text: """Cuando realices una acción de Encubrimiento, o te Descubras, puedes realizar una acción de Evadir gratuita."""
@@ -771,11 +771,11 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Tu barra de mejoras gana %CREW%."""
             ship: "Ala-B"
         "Countermeasures":
-            text: """At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."""
+            text: """Al comienzo de la fase de combate, puedes descartar esta carta para incrementar tu valor de agilidad en 1 hasta el final de la fase.  Retira un marcador de blanco fijado de tu nave."""
         "Experimental Interface":
-            text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
+            text: """Una vez por ronda, trás realizar una acción, puedes hacer una acción gratuita de alguna de tus mejoras equipadas que tenga el texto "<strong>Acción:</strong>".  Recibe una ficha de tension."""
         "Tactical Jammer":
-            text: """Your ship can obstruct enemy attacks."""
+            text: """Tu nave obstruye ataques enemigos."""
 
     title_translations =
         "Slave I":
@@ -811,7 +811,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Una ficha de Refuerzo asignada a tu seccion de proa añade 2 resultados de %EVADE% en vez de 1."""
             ship: 'Transporte mediano GR-75'
         "Quantum Storm":
-            name: "TOrmenta Cuántica"
+            name: "Tormenta Cuántica"
             text: """Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
             ship: 'Transporte mediano GR-75'
         "Dutyfree":
@@ -825,6 +825,6 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Jinete del Espacio"
             text: """Mientras tu nave tenga una mejora de %CANNON% equipada, <strong>no podrá</strong> realizar atques con el armamento principal attacks pero podrá realizar ataques con su mejora de armamento secundario %CANNON% contra naves enemigas fuera de su arco de fuego principal."""
         "Dauntless":
-            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
+            text: """Después de ejecutar una maniobra que te haga solapar con otra nave, puedes realizar 1 acción gratuita. Recibe 1 ficha de tensión."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
