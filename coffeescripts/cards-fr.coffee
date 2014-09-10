@@ -643,6 +643,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Brouilleur de senseurs"
             text: """Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."""
         "Accuracy Corrector": # Traduction non officielle
+            name: "Correcteur de Précision"
             text: """Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.<br /><br />Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."""
         # Équipages
         "Gunner":
@@ -784,6 +785,7 @@ exportObj.cardLoaders['Français'] = () ->
             
         # Illégal
         "Inertial Dampeners": # Traduction non officielle
+            name: "Amortisseurs Inertiels"
             text: """Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."""
         "Dead???":
             text: """Cette carte n'a pas encore été révélée."""
