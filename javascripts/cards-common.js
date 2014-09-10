@@ -1710,11 +1710,7 @@
           id: 21,
           slot: "Crew",
           sources: ["Slave I Expansion Pack"],
-          points: 5,
-          epic_restriction_func: function(ship) {
-            var _ref;
-            return !((_ref = ship.huge) != null ? _ref : false);
-          }
+          points: 5
         }, {
           name: "Ion Cannon",
           id: 22,
@@ -1785,11 +1781,7 @@
           faction: "Rebel Alliance",
           slot: "Crew",
           sources: ["Millennium Falcon Expansion Pack"],
-          points: 7,
-          epic_restriction_func: function(ship) {
-            var _ref;
-            return !((_ref = ship.huge) != null ? _ref : false);
-          }
+          points: 7
         }, {
           name: "Nien Nunb",
           id: 32,
