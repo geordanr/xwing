@@ -68,10 +68,10 @@ casper.test.begin "Warn when using illegal upgrades for Huge ships in Epic play"
         test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'epic')
     casper.then ->
-        test.assertVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
+        test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'team-epic')
     casper.then ->
-        test.assertVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
+        test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'standard')
     casper.then ->
         test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
@@ -81,10 +81,10 @@ casper.test.begin "Warn when using illegal upgrades for Huge ships in Epic play"
         test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'epic')
     casper.then ->
-        test.assertVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
+        test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'team-epic')
     casper.then ->
-        test.assertVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
+        test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'standard')
     casper.then ->
         test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
