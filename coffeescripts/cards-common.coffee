@@ -2680,7 +2680,7 @@ exportObj.basicCardData = ->
             name: "Proton Bomb"
             id: 41
             slot: "Bomb"
-            sources: [ "TIE Bomber Expansion Pack", ]
+            sources: [ "TIE Bomber Expansion Pack", "VT-49 Decimator Expansion Pack" ]
             points: 5
         }
         {
