@@ -2506,7 +2506,7 @@ exportObj.basicCardData = ->
             name: "Gunner"
             id: 21
             slot: "Crew"
-            sources: [ "Slave I Expansion Pack", ]
+            sources: [ "Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 5
         }
         {
