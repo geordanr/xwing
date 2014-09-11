@@ -1709,7 +1709,7 @@
           name: "Gunner",
           id: 21,
           slot: "Crew",
-          sources: ["Slave I Expansion Pack"],
+          sources: ["Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 5
         }, {
           name: "Ion Cannon",
@@ -1864,7 +1864,7 @@
           name: "Proton Bomb",
           id: 41,
           slot: "Bomb",
-          sources: ["TIE Bomber Expansion Pack"],
+          sources: ["TIE Bomber Expansion Pack", "VT-49 Decimator Expansion Pack"],
           points: 5
         }, {
           name: "Adrenaline Rush",
