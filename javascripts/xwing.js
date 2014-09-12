@@ -1359,7 +1359,7 @@
             this.info_container.find('tr.info-shields').show();
             this.info_container.find('tr.info-actions td.info-data').html(((function() {
               var _i, _len, _ref13, _results;
-              _ref13 = effective_stats.actions.concat((function() {
+              _ref13 = data.data.actions.concat((function() {
                 var _j, _len, _results1;
                 _results1 = [];
                 for (_j = 0, _len = extra_actions.length; _j < _len; _j++) {
