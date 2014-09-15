@@ -2217,39 +2217,40 @@
     };
 
     Ship.prototype.toHTML = function() {
-      var action, action_bar, attackHTML, effective_stats, energyHTML, html, modification, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+      var action, action_bar, action_icons, attackHTML, effective_stats, energyHTML, html, modification, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       effective_stats = this.effectiveStats();
-      action_bar = "";
+      action_icons = [];
       _ref = effective_stats.actions;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         action = _ref[_i];
-        action_bar += (function() {
+        action_icons.push((function() {
           switch (action) {
             case 'Focus':
-              return "<img class=\"icon-focus\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-focus\"></i>";
             case 'Evade':
-              return "<img class=\"icon-evade\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-evade\"></i>";
             case 'Barrel Roll':
-              return "<img class=\"icon-barrel-roll\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-barrelroll\"></i>";
             case 'Target Lock':
-              return "<img class=\"icon-target-lock\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-targetlock\"></i>";
             case 'Boost':
-              return "<img class=\"icon-boost\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-boost\"></i>";
             case 'Coordinate':
-              return "<img class=\"icon-coordinate\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-coordinate\"></i>";
             case 'Jam':
-              return "<img class=\"icon-jam\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-jam\"></i>";
             case 'Recover':
-              return "<img class=\"icon-recover\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-recover\"></i>";
             case 'Reinforce':
-              return "<img class=\"icon-reinforce\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-reinforce\"></i>";
             case 'Cloak':
-              return "<img class=\"icon-cloak\" src=\"images/transparent.png\" />";
+              return "<i class=\"xwing-font xwing-font-cloak\"></i>";
             default:
               return "<span>&nbsp;" + action + "<span>";
           }
-        })();
+        })());
       }
+      action_bar = action_icons.join(' ');
       attackHTML = (((_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null) || (this.data.attack != null) ? $.trim("<img class=\"icon-attack\" src=\"images/transparent.png\" />\n<span class=\"info-data info-attack\">" + (statAndEffectiveStat((_ref2 = (_ref3 = this.pilot.ship_override) != null ? _ref3.attack : void 0) != null ? _ref2 : this.data.attack, effective_stats, 'attack')) + "</span>") : '';
       energyHTML = (((_ref4 = this.pilot.ship_override) != null ? _ref4.energy : void 0) != null) || (this.data.energy != null) ? $.trim("<img class=\"icon-energy\" src=\"images/transparent.png\" />\n<span class=\"info-data info-energy\">" + (statAndEffectiveStat((_ref5 = (_ref6 = this.pilot.ship_override) != null ? _ref6.energy : void 0) != null ? _ref5 : this.data.energy, effective_stats, 'energy')) + "</span>") : '';
       html = $.trim("<div class=\"fancy-pilot-header\">\n    <div class=\"pilot-header-text\">" + this.pilot.name + " / " + this.data.name + "</div>\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle pilot-points\">" + this.pilot.points + "</div>\n        </div>\n    </div>\n</div>\n<div class=\"fancy-pilot-stats\">\n    <div class=\"pilot-stats-content\">\n        <span class=\"info-data info-skill\">PS " + (statAndEffectiveStat(this.pilot.skill, effective_stats, 'skill')) + "</span>\n        " + attackHTML + "\n        " + energyHTML + "\n        <img class=\"icon-agility\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-agility\">" + (statAndEffectiveStat((_ref7 = (_ref8 = this.pilot.ship_override) != null ? _ref8.agility : void 0) != null ? _ref7 : this.data.agility, effective_stats, 'agility')) + "</span>\n        <img class=\"icon-hull\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-hull\">" + (statAndEffectiveStat((_ref9 = (_ref10 = this.pilot.ship_override) != null ? _ref10.hull : void 0) != null ? _ref9 : this.data.hull, effective_stats, 'hull')) + "</span>\n        <img class=\"icon-shields\" src=\"images/transparent.png\" />\n        <span class=\"info-data info-shields\">" + (statAndEffectiveStat((_ref11 = (_ref12 = this.pilot.ship_override) != null ? _ref12.shields : void 0) != null ? _ref11 : this.data.shields, effective_stats, 'shields')) + "</span>\n        &nbsp;\n        " + action_bar + "\n    </div>\n</div>");
@@ -2658,7 +2659,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1891
+                  lineno: 1892
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2734,7 +2735,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1921
+                    lineno: 1922
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2756,7 +2757,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1924
+                      lineno: 1925
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2821,7 +2822,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1949
+              lineno: 1950
             }));
           }
           __iced_deferrals._fulfill();
@@ -2870,8 +2871,10 @@
     };
 
     GenericAddon.prototype.toHTML = function() {
+      var upgrade_slot_font, _ref;
       if (this.data != null) {
-        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\">" + this.data.name + "</div>\n</div>");
+        upgrade_slot_font = ((_ref = this.data.slot) != null ? _ref : '').toLowerCase().replace(/[^0-9a-z]/gi, '');
+        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\"><i class=\"xwing-font xwing-font-" + upgrade_slot_font + "\"></i> " + this.data.name + "</div>\n</div>");
       } else {
         return '';
       }

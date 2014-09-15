@@ -1568,31 +1568,32 @@ class Ship
 
     toHTML: ->
         effective_stats = @effectiveStats()
-        action_bar = ""
+        action_icons = []
         for action in effective_stats.actions
-            action_bar += switch action
+            action_icons.push switch action
                 when 'Focus'
-                    """<img class="icon-focus" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-focus"></i>"""
                 when 'Evade'
-                    """<img class="icon-evade" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-evade"></i>"""
                 when 'Barrel Roll'
-                    """<img class="icon-barrel-roll" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-barrelroll"></i>"""
                 when 'Target Lock'
-                    """<img class="icon-target-lock" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-targetlock"></i>"""
                 when 'Boost'
-                    """<img class="icon-boost" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-boost"></i>"""
                 when 'Coordinate'
-                    """<img class="icon-coordinate" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-coordinate"></i>"""
                 when 'Jam'
-                    """<img class="icon-jam" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-jam"></i>"""
                 when 'Recover'
-                    """<img class="icon-recover" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-recover"></i>"""
                 when 'Reinforce'
-                    """<img class="icon-reinforce" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-reinforce"></i>"""
                 when 'Cloak'
-                    """<img class="icon-cloak" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-cloak"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
+        action_bar = action_icons.join ' '
 
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
             <img class="icon-attack" src="images/transparent.png" />
@@ -1976,6 +1977,7 @@ class GenericAddon
 
     toHTML: ->
         if @data?
+            upgrade_slot_font = (@data.slot ? '').toLowerCase().replace(/[^0-9a-z]/gi, '')
             $.trim """
                 <div class="upgrade-container">
                     <div class="mask">
@@ -1983,7 +1985,7 @@ class GenericAddon
                             <div class="inner-circle upgrade-points">#{@data.points}</div>
                         </div>
                     </div>
-                    <div class="upgrade-name">#{@data.name}</div>
+                    <div class="upgrade-name"><i class="xwing-font xwing-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
                 </div>
             """
         else
