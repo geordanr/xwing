@@ -119,6 +119,9 @@ body {
       #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content {
         position: relative;
         margin-top: -0.375in; }
+        #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-font {
+          vertical-align: 0.3em;
+          color: black; }
     #printable .fancy-ship .fancy-pilot-text {
       margin-left: 0.75in;
       padding: 5px;
