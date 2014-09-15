@@ -3832,6 +3832,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%TORPEDO%/g, '<i class="xwing-font xwing-font-torpedo"></i>')
             .replace(/%TURNLEFT%/g, '<i class="xwing-font xwing-font-turnleft"></i>')
             .replace(/%TURNRIGHT%/g, '<i class="xwing-font xwing-font-turnright"></i>')
+            .replace(/%TURRET%/g, '<i class="xwing-font xwing-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>')
 
 exportObj.renameShip = (english_name, new_name) ->
