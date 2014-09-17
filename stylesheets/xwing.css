@@ -371,8 +371,14 @@ i.xwing-font {
   font-style: normal;
   font-size: 1.5em; }
 
+i.xwing-font-sloopleft:before {
+  content: "\0031"; }
+
 i.xwing-font-kturn:before {
   content: "\0032"; }
+
+i.xwing-font-sloopright:before {
+  content: "\0033"; }
 
 i.xwing-font-turnleft:before {
   content: "\0034"; }
@@ -401,7 +407,7 @@ i.xwing-font-bomb:before {
 i.xwing-font-cannon:before {
   content: "\0043"; }
 
-i.xwing-font-team:before {
+i.xwing-font-elite:before {
   content: "\0045"; }
 
 i.xwing-font-cargo:before {
@@ -409,6 +415,9 @@ i.xwing-font-cargo:before {
 
 i.xwing-font-hardpoint:before {
   content: "\0048"; }
+
+i.xwing-font-illicit:before {
+  content: "\0049"; }
 
 i.xwing-font-missile:before {
   content: "\004d"; }
@@ -419,11 +428,14 @@ i.xwing-font-torpedo:before {
 i.xwing-font-system:before {
   content: "\0053"; }
 
-i.xwing-font-elite:before {
+i.xwing-font-team:before {
   content: "\0054"; }
 
 i.xwing-font-turret:before {
   content: "\0055"; }
+
+i.xwing-font-salvagedastromech:before {
+  content: "\0056"; }
 
 i.xwing-font-crew:before {
   content: "\0057"; }
