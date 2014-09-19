@@ -716,22 +716,27 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Oficial de Flota"
             text: """<strong>Acción:</strong> Elige hasta 2 naves aliadas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Después recibes una ficha de Tensión."""
         "Lone Wolf":
+            name: "Lobo solitario"
             text: """Cuando ataques o defiendas, si no hay ninguna nave aliada a alcance 1-2, pues retirar 1 de tus resultados de cara vacía."""
         "Stay On Target":
+            name: "Seguir el Objetivo"
             text: """Cuando reveles tu dial de maniobra, puedes cambiarlo y seleccionar una maniobra diferente con la misma velocidad.<br /><br />Trata la nueva maniobra seleccionada como si fuera roja."""
         "Dash Rendar":
             text: """Puedes realizar ataques mientras te solapas con un obstáculo.<br /><br />Tus ataques no pueden ser obstruidos."""
         '"Leebo"':
             text: """<strong>Acción:</strong> Realiza una acción gratuita de Impulso. Recibe 1 marcador de iones."""
         "Ruthlessness":
+            name: "Crueldad"
             text: """Después de que realices un ataque que impacte, tu <strong>debes</strong> elegir 1 nave a alcance 1 del defensor (a parte de ti).  Esa nave sufre 1 daño."""
         "Intimidation":
+            name: "Intimidación"
             text: """Mientras estes en contacto con una nave enemiga, reduce su agilidad en 1."""
         "Ysanne Isard":
             text: """Al comienzo de la fase de combate, si no tienes escudos y al menos tienes 1 carta dedaño asignada a tu nave, puedes realizar una acción gratuita de Evadir."""
         "Moff Jerjerrod":
             text: """Cuando se te asigna un carta de daño boca arribar, puedes descartar esta mejora u otra de %CREW% para poner boca abajo esa carta de daño (sin resolver su efecto)."""
         "Ion Torpedoes":
+            name: "Torpedos de Iones"
             text: """<strong>Ataque (Blanco Fijado):</strong> Retira el blanco fijado y descarta esta carta para realizar este ataque.<br /><br />Si el ataque impacta, el defensor y cada nave a alcance 1 de él recibe 1 marcador de iones."""
 
     modification_translations =
