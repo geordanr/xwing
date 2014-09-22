@@ -311,7 +311,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Wenn du angreifst und der Verteidiger bereits einen roten Zielerfassungsmarker hat, darfst du ihn unmittelbar nach dem Angriffswurf in die Zielerfassung nehmen."""
         "Rexler Brath":
             ship: "TIE-Jagdbomber"
-            text: """Nachdem du angegriffen und damit dem Verteidiger mindestens 1 Schadenskarte zugeteilt hast, kannst du einen Fokusmarker ausgeben, um die soeben zugeteilte Schadenskarte aufzudecken."""
+            text: """Nachdem du angegriffen und damit dem Verteidiger mindestens 1 Schadenskarte zugeteilt hast, kannst du einen Fokusmarker ausgeben, um die soeben zugeteilten Schadenskarten aufzudecken."""
         "Knave Squadron Pilot":
             name: "Pilot der Schurken-Staffel"
         "Blackmoon Squadron Pilot":
