@@ -3687,6 +3687,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     # Assuming a given pilot is unique by name...
     for pilot_data in basic_cards.pilotsById
         unless pilot_data.skip?
+            pilot_data.sources = []
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
@@ -3701,6 +3702,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.upgrades = {}
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
+            upgrade_data.sources = []
             exportObj.upgrades[upgrade_data.name] = upgrade_data
     for upgrade_name, translations of upgrade_translations
         for field, translation of translations
@@ -3713,6 +3715,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.modifications = {}
     for modification_data in basic_cards.modificationsById
         unless modification_data.skip?
+            modification_data.sources = []
             exportObj.modifications[modification_data.name] = modification_data
     for modification_name, translations of modification_translations
         for field, translation of translations
@@ -3725,6 +3728,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.titles = {}
     for title_data in basic_cards.titlesById
         unless title_data.skip?
+            title_data.sources = []
             exportObj.titles[title_data.name] = title_data
     for title_name, translations of title_translations
         for field, translation of translations
@@ -3734,6 +3738,32 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
                 throw e
 
+    # Set sources from manifest
+    for expansion, cards of exportObj.manifestByExpansion
+        for card in cards
+            try
+                switch card.type
+                    when 'pilot'
+                        exportObj.pilots[card.name].sources.push expansion
+                    when 'upgrade'
+                        exportObj.upgrades[card.name].sources.push expansion
+                    when 'modification'
+                        exportObj.modifications[card.name].sources.push expansion
+                    when 'title'
+                        exportObj.titles[card.name].sources.push expansion
+                    else
+                        throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
+            catch e
+                console.error "Error adding card #{card.name} (#{card.type}) from #{expansion}"
+
+    for name, card of exportObj.pilots
+        card.sources = card.sources.sort()
+    for name, card of exportObj.upgrades
+        card.sources = card.sources.sort()
+    for name, card of exportObj.modifications
+        card.sources = card.sources.sort()
+    for name, card of exportObj.titles
+        card.sources = card.sources.sort()
 
     exportObj.expansions = {}
 
