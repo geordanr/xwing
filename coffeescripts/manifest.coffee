@@ -1496,7 +1496,11 @@ class exportObj.Collection
                     ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
     use: (type, name) ->
-        card = @shelf[type][name].pop()
+        try
+            card = @shelf[type][name].pop()
+        catch e
+            return false unless card?
+
         if card?
             ((@table[type] ?= {})[name] ?= []).push card
             true
@@ -1504,7 +1508,11 @@ class exportObj.Collection
             false
 
     release: (type, name) ->
-        card = @table[type][name].pop()
+        try
+            card = @table[type][name].pop()
+        catch e
+            return false unless card?
+
         if card?
             ((@shelf[type] ?= {})[name] ?= []).push card
             true
