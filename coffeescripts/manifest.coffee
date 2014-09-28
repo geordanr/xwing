@@ -1472,3 +1472,41 @@ exportObj.manifestByExpansion =
             count: 3
         }
     ]
+
+class exportObj.Collection
+    # collection = new exportObj.Collection
+    #   expansions:
+    #     "Core": 2
+    #     "TIE Fighter Expansion Pack": 4
+    #     "B-Wing Expansion Pack": 2
+    #
+    # collection.use "pilot", "Red Squadron Pilot"
+    # collection.use "upgrade", "R2-D2"
+    # collection.use "upgrade", "Ion Pulse Missiles" # returns false
+    #
+    # collection.release "pilot", "Red Squadron Pilot"
+    # collection.release "pilot", "Sigma Squadron Pilot" # returns false
+
+    constructor: (args) ->
+        @shelf = {}
+        @table = {}
+        for expansion, count of args.expansions
+            for card in exportObj.manifestByExpansion[expansion]
+                for _ in [1..card.count]
+                    ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+
+    use: (type, name) ->
+        card = @shelf[type][name].pop()
+        if card?
+            ((@table[type] ?= {})[name] ?= []).push card
+            true
+        else
+            false
+
+    release: (type, name) ->
+        card = @table[type][name].pop()
+        if card?
+            ((@shelf[type] ?= {})[name] ?= []).push card
+            true
+        else
+            false
