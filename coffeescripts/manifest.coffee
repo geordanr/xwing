@@ -1493,6 +1493,12 @@ class exportObj.Collection
 
     constructor: (args) ->
         @expansions = args.expansions
+        # To save collection (optional)
+        @backend = args.backend
+
+        @reset()
+
+    reset: ->
         @shelf = {}
         @table = {}
         for expansion, count of @expansions
@@ -1500,8 +1506,6 @@ class exportObj.Collection
                 for _ in [1..card.count]
                     ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
-        # To save collection (optional)
-        @backend = args.backend
 
     use: (type, name) ->
         try
