@@ -649,6 +649,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Durante la fase de Activación, trata tu habilidad de piloto como "0"."""
         "Chardaan Refit":
             name: "Reajuste Chardaan"
+            ship: "Ala-A"
             text: """Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"

@@ -831,6 +831,7 @@
       },
       "Chardaan Refit": {
         name: "Reajuste Chardaan",
+        ship: "Ala-A",
         text: "Esta carta tiene un valor negativo en puntos de escuadrón."
       },
       "Proton Rockets": {
