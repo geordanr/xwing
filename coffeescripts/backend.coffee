@@ -592,3 +592,7 @@ class exportObj.SquadBuilderBackend
                     break
             else
                 cb 'English'
+
+    saveCollection: (collection) ->
+
+    loadCollection: ->

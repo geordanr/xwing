@@ -2789,7 +2789,7 @@
   };
 
   exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-    var e, field, i, modification, modification_data, modification_name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t;
+    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
     _ref = basic_cards.pilotsById;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       pilot_data = _ref[i];
@@ -2823,6 +2823,7 @@
     for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
       pilot_data = _ref4[_m];
       if (pilot_data.skip == null) {
+        pilot_data.sources = [];
         exportObj.pilots[pilot_data.name] = pilot_data;
       }
     }
@@ -2844,6 +2845,7 @@
     for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
       upgrade_data = _ref5[_n];
       if (upgrade_data.skip == null) {
+        upgrade_data.sources = [];
         exportObj.upgrades[upgrade_data.name] = upgrade_data;
       }
     }
@@ -2865,6 +2867,7 @@
     for (_o = 0, _len6 = _ref6.length; _o < _len6; _o++) {
       modification_data = _ref6[_o];
       if (modification_data.skip == null) {
+        modification_data.sources = [];
         exportObj.modifications[modification_data.name] = modification_data;
       }
     }
@@ -2886,6 +2889,7 @@
     for (_p = 0, _len7 = _ref7.length; _p < _len7; _p++) {
       title_data = _ref7[_p];
       if (title_data.skip == null) {
+        title_data.sources = [];
         exportObj.titles[title_data.name] = title_data;
       }
     }
@@ -2902,18 +2906,66 @@
         }
       }
     }
+    _ref8 = exportObj.manifestByExpansion;
+    for (expansion in _ref8) {
+      cards = _ref8[expansion];
+      for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
+        card = cards[_q];
+        try {
+          switch (card.type) {
+            case 'pilot':
+              exportObj.pilots[card.name].sources.push(expansion);
+              break;
+            case 'upgrade':
+              exportObj.upgrades[card.name].sources.push(expansion);
+              break;
+            case 'modification':
+              exportObj.modifications[card.name].sources.push(expansion);
+              break;
+            case 'title':
+              exportObj.titles[card.name].sources.push(expansion);
+              break;
+            default:
+              throw new Error("Unexpected card type " + card.type + " for card " + card.name + " of " + expansion);
+          }
+        } catch (_error) {
+          e = _error;
+          console.error("Error adding card " + card.name + " (" + card.type + ") from " + expansion);
+        }
+      }
+    }
+    _ref9 = exportObj.pilots;
+    for (name in _ref9) {
+      card = _ref9[name];
+      card.sources = card.sources.sort();
+    }
+    _ref10 = exportObj.upgrades;
+    for (name in _ref10) {
+      card = _ref10[name];
+      card.sources = card.sources.sort();
+    }
+    _ref11 = exportObj.modifications;
+    for (name in _ref11) {
+      card = _ref11[name];
+      card.sources = card.sources.sort();
+    }
+    _ref12 = exportObj.titles;
+    for (name in _ref12) {
+      card = _ref12[name];
+      card.sources = card.sources.sort();
+    }
     exportObj.expansions = {};
     exportObj.pilotsById = {};
     exportObj.pilotsByLocalizedName = {};
-    _ref8 = exportObj.pilots;
-    for (pilot_name in _ref8) {
-      pilot = _ref8[pilot_name];
+    _ref13 = exportObj.pilots;
+    for (pilot_name in _ref13) {
+      pilot = _ref13[pilot_name];
       exportObj.fixIcons(pilot);
       exportObj.pilotsById[pilot.id] = pilot;
       exportObj.pilotsByLocalizedName[pilot.name] = pilot;
-      _ref9 = pilot.sources;
-      for (_q = 0, _len8 = _ref9.length; _q < _len8; _q++) {
-        source = _ref9[_q];
+      _ref14 = pilot.sources;
+      for (_r = 0, _len9 = _ref14.length; _r < _len9; _r++) {
+        source = _ref14[_r];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2924,15 +2976,15 @@
     }
     exportObj.upgradesById = {};
     exportObj.upgradesByLocalizedName = {};
-    _ref10 = exportObj.upgrades;
-    for (upgrade_name in _ref10) {
-      upgrade = _ref10[upgrade_name];
+    _ref15 = exportObj.upgrades;
+    for (upgrade_name in _ref15) {
+      upgrade = _ref15[upgrade_name];
       exportObj.fixIcons(upgrade);
       exportObj.upgradesById[upgrade.id] = upgrade;
       exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
-      _ref11 = upgrade.sources;
-      for (_r = 0, _len9 = _ref11.length; _r < _len9; _r++) {
-        source = _ref11[_r];
+      _ref16 = upgrade.sources;
+      for (_s = 0, _len10 = _ref16.length; _s < _len10; _s++) {
+        source = _ref16[_s];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2943,28 +2995,28 @@
     }
     exportObj.modificationsById = {};
     exportObj.modificationsByLocalizedName = {};
-    _ref12 = exportObj.modifications;
-    for (modification_name in _ref12) {
-      modification = _ref12[modification_name];
+    _ref17 = exportObj.modifications;
+    for (modification_name in _ref17) {
+      modification = _ref17[modification_name];
       exportObj.fixIcons(modification);
       if (modification.huge != null) {
         if (modification.restriction_func == null) {
           modification.restriction_func = function(ship) {
-            var _ref13;
-            return (_ref13 = ship.data.huge) != null ? _ref13 : false;
+            var _ref18;
+            return (_ref18 = ship.data.huge) != null ? _ref18 : false;
           };
         }
       } else if (modification.restriction_func == null) {
         modification.restriction_func = function(ship) {
-          var _ref13;
-          return !((_ref13 = ship.data.huge) != null ? _ref13 : false);
+          var _ref18;
+          return !((_ref18 = ship.data.huge) != null ? _ref18 : false);
         };
       }
       exportObj.modificationsById[modification.id] = modification;
       exportObj.modificationsByLocalizedName[modification.name] = modification;
-      _ref13 = modification.sources;
-      for (_s = 0, _len10 = _ref13.length; _s < _len10; _s++) {
-        source = _ref13[_s];
+      _ref18 = modification.sources;
+      for (_t = 0, _len11 = _ref18.length; _t < _len11; _t++) {
+        source = _ref18[_t];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2975,15 +3027,15 @@
     }
     exportObj.titlesById = {};
     exportObj.titlesByLocalizedName = {};
-    _ref14 = exportObj.titles;
-    for (title_name in _ref14) {
-      title = _ref14[title_name];
+    _ref19 = exportObj.titles;
+    for (title_name in _ref19) {
+      title = _ref19[title_name];
       exportObj.fixIcons(title);
       exportObj.titlesById[title.id] = title;
       exportObj.titlesByLocalizedName[title.name] = title;
-      _ref15 = title.sources;
-      for (_t = 0, _len11 = _ref15.length; _t < _len11; _t++) {
-        source = _ref15[_t];
+      _ref20 = title.sources;
+      for (_u = 0, _len12 = _ref20.length; _u < _len12; _u++) {
+        source = _ref20[_u];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2993,9 +3045,9 @@
       throw new Error("At least one title shares an ID with another");
     }
     exportObj.titlesByShip = {};
-    _ref16 = exportObj.titles;
-    for (title_name in _ref16) {
-      title = _ref16[title_name];
+    _ref21 = exportObj.titles;
+    for (title_name in _ref21) {
+      title = _ref21[title_name];
       if (!(title.ship in exportObj.titlesByShip)) {
         exportObj.titlesByShip[title.ship] = [];
       }

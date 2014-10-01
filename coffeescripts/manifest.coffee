@@ -1480,6 +1480,10 @@ class exportObj.Collection
     #     "TIE Fighter Expansion Pack": 4
     #     "B-Wing Expansion Pack": 2
     #
+    # # or
+    #
+    # collection = exportObj.Collection.load(backend)
+    #
     # collection.use "pilot", "Red Squadron Pilot"
     # collection.use "upgrade", "R2-D2"
     # collection.use "upgrade", "Ion Pulse Missiles" # returns false
@@ -1488,12 +1492,16 @@ class exportObj.Collection
     # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
+        @expansions = args.expansions
         @shelf = {}
         @table = {}
-        for expansion, count of args.expansions
-            for card in exportObj.manifestByExpansion[expansion]
+        for expansion, count of @expansions
+            for card in (exportObj.manifestByExpansion[expansion] ? [])
                 for _ in [1..card.count]
                     ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+
+        # To save collection (optional)
+        @backend = args.backend
 
     use: (type, name) ->
         try
@@ -1518,3 +1526,9 @@ class exportObj.Collection
             true
         else
             false
+
+    save: ->
+        @backend.saveCollection(this) if @backend?
+
+    @load: (backend) ->
+        backend.loadCollection()

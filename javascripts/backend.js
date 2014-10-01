@@ -732,6 +732,10 @@
       })(this));
     };
 
+    SquadBuilderBackend.prototype.saveCollection = function(collection) {};
+
+    SquadBuilderBackend.prototype.loadCollection = function() {};
+
     return SquadBuilderBackend;
 
   })();
