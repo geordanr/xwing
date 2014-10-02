@@ -190,7 +190,7 @@ class exportObj.SquadBuilderBackend
 
     maybeAuthenticationChanged: (old_auth_state, cb) =>
         if old_auth_state != @authenticated
-            $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
+            $(window).trigger 'xwing-backend:authenticationChanged', [ @authenticated, this ]
         @oauth_window = null
         @auth_status.hide()
         cb @authenticated
@@ -552,6 +552,10 @@ class exportObj.SquadBuilderBackend
             else
                 console.log "Message received from unapproved origin #{ev.origin}"
                 window.last_ev = e
+        .on 'xwing-collection:changed', (e, collection) =>
+            @saveCollection collection, (res) ->
+                if res
+                    $(window).trigger 'xwing-collection:saved', collection
 
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
@@ -593,6 +597,15 @@ class exportObj.SquadBuilderBackend
             else
                 cb 'English'
 
-    saveCollection: (collection) ->
+    saveCollection: (collection, cb=$.noop) ->
+        post_args =
+            expansions: collection.expansions
+        $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
+            cb data.success
 
     loadCollection: ->
+        # Backend provides an empty collection if none exists yet for the user.
+        $.get("#{@server}/collection").done (data, textStatus, jqXHR) ->
+            collection = data.collection
+            new exportObj.Collection
+                expansions: collection.expansions

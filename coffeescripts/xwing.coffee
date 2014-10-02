@@ -82,6 +82,8 @@ class exportObj.SquadBuilder
         @current_squad = {}
         @language = 'English'
 
+        @collection = null
+
         @setupUI()
         @setupEventHandlers()
 
@@ -150,12 +152,14 @@ class exportObj.SquadBuilder
                     <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
                     <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>
                     <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>
+                    <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You cannot field this list with your collection!</span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
 
                         <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->
+                        <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
                         <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <!--
@@ -327,6 +331,7 @@ class exportObj.SquadBuilder
         @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
         @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
         @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
+        @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
         @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
         @max_epic_points_span = $ @points_container.find('.max-epic-points')
@@ -336,6 +341,12 @@ class exportObj.SquadBuilder
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
         @backend_status = $ @status_container.find('.backend-status')
         @backend_status.hide()
+
+        @collection_button = $ @status_container.find('div.button-container a.collection')
+        @collection_button.click (e) =>
+            e.preventDefault()
+            unless @collection_button.prop('disabled')
+                @collection.modal.modal 'show'
 
         @squad_name_input.keypress (e) =>
             if e.which == 13
@@ -615,6 +626,16 @@ class exportObj.SquadBuilder
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
 
+        .on 'xwing-collection:created', (e, collection) =>
+            # console.log "#{@faction}: collection was created"
+            @collection = collection
+            @checkCollection()
+            @collection_button.removeClass 'hidden'
+        .on 'xwing-collection:changed', (e, collection) =>
+            @checkCollection()
+        .on 'xwing-collection:destroyed', (e, collection) =>
+            @collection_button.addClass 'hidden'
+
         @view_list_button.click (e) =>
             e.preventDefault()
             @showTextListModal()
@@ -730,6 +751,7 @@ class exportObj.SquadBuilder
 
 [url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
 """
+        @checkCollection()
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -1278,6 +1300,29 @@ class exportObj.SquadBuilder
 
     getNotes: ->
         @notes.val()
+
+    isSquadPossibleWithCollection: ->
+        # If the collection is uninitialized or empty, don't actually check it.
+        if Object.keys(@collection?.expansions ? {}).length == 0
+            # console.log "collection not ready or is empty"
+            return true
+        @collection.reset()
+        for ship in @ships
+            if ship.pilot?
+                return false unless @collection.use('pilot', ship.pilot.english_name)
+                for upgrade in ship.upgrades
+                    if upgrade.data?
+                        return false unless @collection.use('upgrade', upgrade.data.english_name)
+                for modification in ship.modifications
+                    if modification.data?
+                        return false unless @collection.use('modification', modification.data.english_name)
+                if ship.title?.data?
+                    return false unless @collection.use('title', title.data.english_name)
+        # console.log "all ships available in collection"
+        true
+
+    checkCollection: ->
+        @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
 
 class Ship
     constructor: (args) ->

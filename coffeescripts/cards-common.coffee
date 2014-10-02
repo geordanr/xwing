@@ -15,6 +15,9 @@ exportObj.isReleased = (data) ->
         return true if source not in exportObj.unreleasedExpansions
     false
 
+String::canonicalize = ->
+    this.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+
 # Returns an independent copy of the data which can be modified by translation
 # modules.
 exportObj.basicCardData = ->
@@ -2152,6 +2155,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Scum)"
+            canonical_name: 'boba-fett'
             faction: "Scum and Villainy"
             id: 116
             ship: "Firespray-31"
@@ -2170,6 +2174,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kath Scarlet (Scum)"
+            canonical_name: 'kath-scarlet'
             unique: true
             faction: "Scum and Villainy"
             id: 117
@@ -2359,6 +2364,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
+            canonical_name: 'r2-d2'
             id: 3
             unique: true
             slot: "Astromech"
@@ -3688,6 +3694,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for pilot_data in basic_cards.pilotsById
         unless pilot_data.skip?
             pilot_data.sources = []
+            pilot_data.english_name = pilot_data.name
+            pilot_data.canonical_name = pilot_data.english_name.canonicalize() unless pilot_data.canonical_name?
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
@@ -3703,6 +3711,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
             upgrade_data.sources = []
+            upgrade_data.english_name = upgrade_data.name
+            upgrade_data.canonical_name = upgrade_data.english_name.canonicalize() unless upgrade_data.canonical_name?
             exportObj.upgrades[upgrade_data.name] = upgrade_data
     for upgrade_name, translations of upgrade_translations
         for field, translation of translations
@@ -3716,6 +3726,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for modification_data in basic_cards.modificationsById
         unless modification_data.skip?
             modification_data.sources = []
+            modification_data.english_name = modification_data.name
+            modification_data.canonical_name = modification_data.english_name.canonicalize() unless modification_data.canonical_name?
             exportObj.modifications[modification_data.name] = modification_data
     for modification_name, translations of modification_translations
         for field, translation of translations
@@ -3729,6 +3741,8 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for title_data in basic_cards.titlesById
         unless title_data.skip?
             title_data.sources = []
+            title_data.english_name = title_data.name
+            title_data.canonical_name = title_data.english_name.canonicalize() unless title_data.canonical_name?
             exportObj.titles[title_data.name] = title_data
     for title_name, translations of title_translations
         for field, translation of translations

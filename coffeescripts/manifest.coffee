@@ -1498,13 +1498,21 @@ class exportObj.Collection
 
         @reset()
 
+        @setupUI()
+        @setupHandlers()
+
     reset: ->
         @shelf = {}
         @table = {}
         for expansion, count of @expansions
-            for card in (exportObj.manifestByExpansion[expansion] ? [])
-                for _ in [1..card.count]
-                    ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+            try
+                count = parseInt count
+            catch
+                count = 0
+            for _ in [1..count]
+                for card in (exportObj.manifestByExpansion[expansion] ? [])
+                    for _ in [1..card.count]
+                        ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
 
     use: (type, name) ->
@@ -1531,8 +1539,68 @@ class exportObj.Collection
         else
             false
 
-    save: ->
-        @backend.saveCollection(this) if @backend?
+    save: (cb=$.noop) ->
+        @backend.saveCollection(this, cb) if @backend?
 
-    @load: (backend) ->
-        backend.loadCollection()
+    @load: (backend, cb) ->
+        backend.loadCollection cb
+
+    setupUI: ->
+        @modal = $ document.createElement 'DIV'
+        @modal.addClass 'modal hide fade collection-modal hidden-print'
+        $(document).append @modal
+        @modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2>Expansions You Own</h2>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid collection-content">
+                </div>
+            </div>
+            <div class="modal-footer hidden-print">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+
+        modal_body = $ @modal.find('.collection-content')
+        for expansion in exportObj.expansions
+            count = parseInt(@expansions[expansion] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row">
+                    <div class="span12">
+                        <label>
+                            #{expansion}
+                            <input type="number" size="3" value="#{count}" />
+                        </label>
+                    </div>
+                </div>
+            """
+            $(row).find('input').data 'expansion', expansion
+            modal_body.append row
+
+    destroyUI: ->
+        $(exportObj).trigger 'xwing-collection:destroyed', this
+        @modal.modal 'hide'
+        @modal.remove()
+
+    setupHandlers: ->
+        $(exportObj).trigger 'xwing-collection:created', this
+
+        $(exportObj).on 'xwing-backend:authenticationChanged', (e, authenticated, backend) =>
+            @destroyUI()
+            if authenticated
+                # console.log "authenticated, loading from backend"
+                exportObj.Collection.load backend
+            else
+                # console.log "deauthed, creating empty collection"
+                new exportObj.Collection
+                    expansions: {}
+
+        $ @modal.find('input').change (e) =>
+            target = $(e.target)
+            val = target.val()
+            target.val(0) if val < 0 or isNaN(parseInt(val))
+            @expansions[target.data 'expansion'] = parseInt(target.val())
+
+            $(exportObj).trigger 'xwing-collection:changed', this
