@@ -1689,7 +1689,7 @@ class exportObj.Collection
         @modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h2>Expansions You Own</h2>
+                <h3>Expansions You Own</h3>
             </div>
             <div class="modal-body">
                 <div class="container-fluid collection-content">

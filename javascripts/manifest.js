@@ -1430,7 +1430,7 @@
       this.modal = $(document.createElement('DIV'));
       this.modal.addClass('modal hide fade collection-modal hidden-print');
       $(document).append(this.modal);
-      this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h2>Expansions You Own</h2>\n</div>\n<div class=\"modal-body\">\n    <div class=\"container-fluid collection-content\">\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Expansions You Own</h3>\n</div>\n<div class=\"modal-body\">\n    <div class=\"container-fluid collection-content\">\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.modal_status = $(this.modal.find('.collection-status'));
       modal_body = $(this.modal.find('.collection-content'));
       _ref = exportObj.expansions;
