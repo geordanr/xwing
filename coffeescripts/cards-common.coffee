@@ -3393,6 +3393,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         unless pilot_data.skip?
             pilot_data.sources = []
             pilot_data.english_name = pilot_data.name
+            pilot_data.english_ship = pilot_data.ship
             pilot_data.canonical_name = pilot_data.english_name.canonicalize() unless pilot_data.canonical_name?
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
@@ -3463,6 +3464,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                         exportObj.modifications[card.name].sources.push expansion
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
+                    when 'ship'
+                        # Not used for sourcing
+                        ''
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e

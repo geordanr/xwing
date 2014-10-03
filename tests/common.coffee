@@ -9,7 +9,7 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        #casper.die()
+        # casper.die()
 
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
@@ -233,3 +233,5 @@ exports.selectorForTooManyLargeShipsWarning = '.illegal-epic-too-many-large-ship
 
 exports.selectorForEpicPointsUsed = '.total-epic-points'
 exports.selectorForMaxEpicPoints = '.max-epic-points'
+
+exports.selectorForCollectionInvalid = '.collection-invalid'

@@ -3,6 +3,16 @@ exportObj = exports ? this
 exportObj.manifestByExpansion =
     'Core': [
         {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
             name: 'Luke Skywalker'
             type: 'pilot'
             count: 1
@@ -80,6 +90,11 @@ exportObj.manifestByExpansion =
     ]
     'X-Wing Expansion Pack': [
         {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Wedge Antilles'
             type: 'pilot'
             count: 1
@@ -127,6 +142,11 @@ exportObj.manifestByExpansion =
     ]
     'Y-Wing Expansion Pack': [
         {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Horton Salm'
             type: 'pilot'
             count: 1
@@ -169,6 +189,11 @@ exportObj.manifestByExpansion =
     ]
     'TIE Fighter Expansion Pack': [
         {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: '"Howlrunner"'
             type: 'pilot'
             count: 1
@@ -210,6 +235,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'TIE Advanced Expansion Pack': [
+        {
+            name: 'TIE Advanced'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Darth Vader'
             type: 'pilot'
@@ -258,6 +288,11 @@ exportObj.manifestByExpansion =
     ]
     'A-Wing Expansion Pack': [
         {
+            name: 'A-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Tycho Celchu'
             type: 'pilot'
             count: 1
@@ -304,6 +339,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'Millennium Falcon Expansion Pack': [
+        {
+            name: 'Millennium Falcon'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Han Solo'
             type: 'pilot'
@@ -387,6 +427,11 @@ exportObj.manifestByExpansion =
     ]
     'TIE Interceptor Expansion Pack': [
         {
+            name: 'TIE Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Soontir Fel'
             type: 'pilot'
             count: 1
@@ -428,6 +473,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'Slave I Expansion Pack': [
+        {
+            name: 'Firespray-31'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Boba Fett'
             type: 'pilot'
@@ -511,6 +561,11 @@ exportObj.manifestByExpansion =
     ]
     'B-Wing Expansion Pack': [
         {
+            name: 'B-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Ten Numb'
             type: 'pilot'
             count: 1
@@ -557,6 +612,11 @@ exportObj.manifestByExpansion =
         }
     ]
     "HWK-290 Expansion Pack": [
+        {
+            name: 'HWK-290'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Jan Ors'
             type: 'pilot'
@@ -610,6 +670,11 @@ exportObj.manifestByExpansion =
     ]
     "TIE Bomber Expansion Pack": [
         {
+            name: 'TIE Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Major Rhymer'
             type: 'pilot'
             count: 1
@@ -656,6 +721,11 @@ exportObj.manifestByExpansion =
         }
     ]
     "Lambda-Class Shuttle Expansion Pack": [
+        {
+            name: 'Lambda-Class Shuttle'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Captain Kagi'
             type: 'pilot'
@@ -734,6 +804,11 @@ exportObj.manifestByExpansion =
     ]
     "Z-95 Headhunter Expansion Pack": [
         {
+            name: 'Z-95 Headhunter'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Airen Cracken'
             type: 'pilot'
             count: 1
@@ -780,6 +855,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'E-Wing Expansion Pack': [
+        {
+            name: 'E-Wing'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Corran Horn'
             type: 'pilot'
@@ -828,6 +908,11 @@ exportObj.manifestByExpansion =
     ]
     'TIE Defender Expansion Pack': [
         {
+            name: 'TIE Defender'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Rexler Brath'
             type: 'pilot'
             count: 1
@@ -875,6 +960,11 @@ exportObj.manifestByExpansion =
     ]
     'TIE Phantom Expansion Pack': [
         {
+            name: 'TIE Phantom'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: '"Whisper"'
             type: 'pilot'
             count: 1
@@ -921,6 +1011,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'YT-2400 Freighter Expansion Pack': [
+        {
+            name: 'YT-2400'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Dash Rendar'
             type: 'pilot'
@@ -1004,6 +1099,11 @@ exportObj.manifestByExpansion =
     ]
     "VT-49 Decimator Expansion Pack": [
         {
+            name: 'VT-49 Decimator'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Captain Oicunn'
             type: 'pilot'
             count: 1
@@ -1071,6 +1171,11 @@ exportObj.manifestByExpansion =
     ]
     'Imperial Aces Expansion Pack': [
         {
+            name: 'TIE Interceptor'
+            type: 'ship'
+            count: 2
+        }
+        {
             name: 'Carnor Jax'
             type: 'pilot'
             count: 1
@@ -1132,6 +1237,16 @@ exportObj.manifestByExpansion =
         }
     ]
     'Rebel Aces Expansion Pack': [
+        {
+            name: 'A-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'B-Wing'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Jake Farrell'
             type: 'pilot'
@@ -1209,6 +1324,16 @@ exportObj.manifestByExpansion =
         }
     ]
     'Rebel Transport Expansion Pack': [
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'GR-75 Medium Transport'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'GR-75 Medium Transport'
             type: 'pilot'
@@ -1356,6 +1481,16 @@ exportObj.manifestByExpansion =
         }
     ]
     'Tantive IV Expansion Pack': [
+        {
+            name: 'CR90 Corvette (Fore)'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'CR90 Corvette (Aft)'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'CR90 Corvette (Fore)'
             type: 'pilot'
@@ -1509,9 +1644,9 @@ class exportObj.Collection
                 count = parseInt count
             catch
                 count = 0
-            for _ in [1..count]
+            for _ in [0...count]
                 for card in (exportObj.manifestByExpansion[expansion] ? [])
-                    for _ in [1..card.count]
+                    for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
 
@@ -1608,6 +1743,7 @@ class exportObj.Collection
 
             target.closest('div').css 'background-color', @countToBackgroundColor(val)
 
+            # console.log "Input changed, triggering collection change"
             $(exportObj).trigger 'xwing-collection:changed', this
 
     countToBackgroundColor: (count) ->

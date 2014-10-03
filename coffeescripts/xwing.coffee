@@ -629,9 +629,11 @@ class exportObj.SquadBuilder
         .on 'xwing-collection:created', (e, collection) =>
             # console.log "#{@faction}: collection was created"
             @collection = collection
+            # console.log "#{@faction}: Collection created, checking squad"
             @checkCollection()
             @collection_button.removeClass 'hidden'
         .on 'xwing-collection:changed', (e, collection) =>
+            # console.log "#{@faction}: Collection changed, checking squad"
             @checkCollection()
         .on 'xwing-collection:destroyed', (e, collection) =>
             @collection_button.addClass 'hidden'
@@ -751,6 +753,7 @@ class exportObj.SquadBuilder
 
 [url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
 """
+        # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
         cb @total_points
 
@@ -1302,6 +1305,7 @@ class exportObj.SquadBuilder
         @notes.val()
 
     isSquadPossibleWithCollection: ->
+        # console.log "#{@faction}: isSquadPossibleWithCollection()"
         # If the collection is uninitialized or empty, don't actually check it.
         if Object.keys(@collection?.expansions ? {}).length == 0
             # console.log "collection not ready or is empty"
@@ -1309,7 +1313,12 @@ class exportObj.SquadBuilder
         @collection.reset()
         for ship in @ships
             if ship.pilot?
-                return false unless @collection.use('pilot', ship.pilot.english_name)
+                # Try to get both the physical model and the pilot card.
+                ship_is_available = @collection.use('ship', ship.pilot.english_ship)
+                pilot_is_available = @collection.use('pilot', ship.pilot.english_name)
+                # console.log "#{@faction}: Ship #{ship.pilot.english_ship} available: #{ship_is_available}"
+                # console.log "#{@faction}: Pilot #{ship.pilot.english_name} available: #{pilot_is_available}"
+                return false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
                         return false unless @collection.use('upgrade', upgrade.data.english_name)
@@ -1318,10 +1327,11 @@ class exportObj.SquadBuilder
                         return false unless @collection.use('modification', modification.data.english_name)
                 if ship.title?.data?
                     return false unless @collection.use('title', title.data.english_name)
-        # console.log "all ships available in collection"
+        # console.log "#{@faction}: all ships available in collection"
         true
 
     checkCollection: ->
+        # console.log "#{@faction}: Checking validity of squad against collection..."
         @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
 
 class Ship
@@ -1854,7 +1864,7 @@ class Ship
         # until everything checks out
         # If there is no explicit validation_func, use restriction_func
         max_checks = 128 # that's a lot of addons (Epic?)
-        for i in [0..max_checks]
+        for i in [0...max_checks]
             valid = true
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
