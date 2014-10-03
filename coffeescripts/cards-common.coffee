@@ -482,7 +482,6 @@ exportObj.basicCardData = ->
             name: "Wedge Antilles"
             faction: "Rebel Alliance"
             id: 0
-            sources: [ "X-Wing Expansion Pack", ]
             unique: true
             ship: "X-Wing"
             skill: 9
@@ -497,7 +496,6 @@ exportObj.basicCardData = ->
             name: "Garven Dreis"
             faction: "Rebel Alliance"
             id: 1
-            sources: [ "X-Wing Expansion Pack", ]
             unique: true
             ship: "X-Wing"
             skill: 6
@@ -511,7 +509,6 @@ exportObj.basicCardData = ->
             name: "Red Squadron Pilot"
             faction: "Rebel Alliance"
             id: 2
-            sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
             skill: 4
             points: 23
@@ -524,7 +521,6 @@ exportObj.basicCardData = ->
             name: "Rookie Pilot"
             faction: "Rebel Alliance"
             id: 3
-            sources: [ "Core", "X-Wing Expansion Pack", ]
             ship: "X-Wing"
             skill: 2
             points: 21
@@ -538,7 +534,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 4
             unique: true
-            sources: [ "Core", ]
             ship: "X-Wing"
             skill: 5
             points: 25
@@ -552,7 +547,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 5
             unique: true
-            sources: [ "Core", ]
             ship: "X-Wing"
             skill: 8
             points: 28
@@ -567,7 +561,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 6
             ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
             skill: 4
             points: 20
             slots: [
@@ -583,7 +576,6 @@ exportObj.basicCardData = ->
             id: 7
             unique: true
             ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
             skill: 6
             points: 23
             slots: [
@@ -599,7 +591,6 @@ exportObj.basicCardData = ->
             id: 8
             unique: true
             ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
             skill: 8
             points: 25
             slots: [
@@ -614,7 +605,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 9
             ship: "Y-Wing"
-            sources: [ "Y-Wing Expansion Pack", ]
             skill: 2
             points: 18
             slots: [
@@ -629,7 +619,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 10
             ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
             skill: 1
             points: 12
             slots: []
@@ -639,7 +628,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 11
             ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
             skill: 3
             points: 13
             slots: []
@@ -649,7 +637,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 12
             ship: "TIE Fighter"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
             skill: 4
             points: 14
             slots: [
@@ -662,7 +649,6 @@ exportObj.basicCardData = ->
             id: 13
             unique: true
             ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
             skill: 5
             points: 15
             slots: [ ]
@@ -673,7 +659,6 @@ exportObj.basicCardData = ->
             id: 14
             unique: true
             ship: "TIE Fighter"
-            sources: [ "Core", ]
             skill: 5
             points: 15
             slots: [ ]
@@ -684,7 +669,6 @@ exportObj.basicCardData = ->
             id: 15
             unique: true
             ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
             skill: 6
             points: 16
             slots: [ ]
@@ -695,7 +679,6 @@ exportObj.basicCardData = ->
             id: 16
             unique: true
             ship: "TIE Fighter"
-            sources: [ "Core", ]
             skill: 6
             points: 16
             slots: [ ]
@@ -706,7 +689,6 @@ exportObj.basicCardData = ->
             id: 17
             unique: true
             ship: "TIE Fighter"
-            sources: [ "Core", ]
             skill: 7
             points: 17
             slots: [
@@ -719,7 +701,6 @@ exportObj.basicCardData = ->
             id: 18
             unique: true
             ship: "TIE Fighter"
-            sources: [ "TIE Fighter Expansion Pack", ]
             skill: 8
             points: 18
             slots: [
@@ -732,7 +713,6 @@ exportObj.basicCardData = ->
             id: 19
             unique: true
             ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
             skill: 7
             points: 27
             slots: [
@@ -745,7 +725,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 20
             ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
             skill: 2
             points: 21
             slots: [
@@ -757,7 +736,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 21
             ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
             skill: 4
             points: 23
             slots: [
@@ -770,7 +748,6 @@ exportObj.basicCardData = ->
             id: 22
             unique: true
             ship: "TIE Advanced"
-            sources: [ "TIE Advanced Expansion Pack", ]
             skill: 9
             points: 29
             slots: [
@@ -783,7 +760,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 23
             ship: "TIE Interceptor"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 1
             points: 18
             slots: [ ]
@@ -793,7 +769,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 24
             ship: "TIE Interceptor"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 3
             points: 20
             slots: [ ]
@@ -803,10 +778,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 25
             ship: "TIE Interceptor"
-            sources: [
-                "TIE Interceptor Expansion Pack"
-                "Imperial Aces Expansion Pack"
-            ]
             skill: 4
             points: 21
             slots: [
@@ -819,7 +790,6 @@ exportObj.basicCardData = ->
             id: 26
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 5
             points: 23
             slots: [ ]
@@ -830,7 +800,6 @@ exportObj.basicCardData = ->
             id: 27
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 7
             points: 25
             slots: [
@@ -843,7 +812,6 @@ exportObj.basicCardData = ->
             id: 28
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             skill: 9
             points: 27
             slots: [
@@ -856,7 +824,6 @@ exportObj.basicCardData = ->
             id: 29
             unique: true
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
             skill: 8
             points: 26
             slots: [
@@ -870,7 +837,6 @@ exportObj.basicCardData = ->
             id: 30
             unique: true
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", ]
             skill: 6
             points: 23
             slots: [
@@ -882,7 +848,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 31
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 3
             points: 19
             slots: [
@@ -895,7 +860,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 32
             ship: "A-Wing"
-            sources: [ "A-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 1
             points: 17
             slots: [
@@ -907,7 +871,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 33
             ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             skill: 1
             points: 27
             slots: [
@@ -921,7 +884,6 @@ exportObj.basicCardData = ->
             id: 34
             unique: true
             ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             skill: 5
             points: 42
             slots: [
@@ -942,7 +904,6 @@ exportObj.basicCardData = ->
             id: 35
             unique: true
             ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             skill: 7
             points: 44
             slots: [
@@ -963,7 +924,6 @@ exportObj.basicCardData = ->
             id: 36
             unique: true
             ship: "YT-1300"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             skill: 9
             points: 46
             slots: [
@@ -984,7 +944,6 @@ exportObj.basicCardData = ->
             id: 37
             unique: true
             ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
             skill: 7
             points: 38
             slots: [
@@ -1001,7 +960,6 @@ exportObj.basicCardData = ->
             id: 38
             unique: true
             ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
             skill: 8
             points: 39
             slots: [
@@ -1018,7 +976,6 @@ exportObj.basicCardData = ->
             id: 39
             unique: true
             ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
             skill: 5
             points: 36
             slots: [
@@ -1033,7 +990,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 40
             ship: "Firespray-31"
-            sources: [ "Slave I Expansion Pack", ]
             skill: 3
             points: 33
             slots: [
@@ -1049,7 +1005,6 @@ exportObj.basicCardData = ->
             id: 41
             unique: true
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
             skill: 8
             points: 31
             slots: [
@@ -1066,7 +1021,6 @@ exportObj.basicCardData = ->
             id: 42
             unique: true
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", ]
             skill: 6
             points: 28
             slots: [
@@ -1082,7 +1036,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 43
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 4
             points: 24
             slots: [
@@ -1097,7 +1050,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 44
             ship: "B-Wing"
-            sources: [ "B-Wing Expansion Pack", "Rebel Aces Expansion Pack" ]
             skill: 2
             points: 22
             slots: [
@@ -1112,7 +1064,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 45
             ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
             skill: 2
             points: 16
             slots: [
@@ -1126,7 +1077,6 @@ exportObj.basicCardData = ->
             id: 46
             unique: true
             ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
             skill: 4
             points: 19
             slots: [
@@ -1140,7 +1090,6 @@ exportObj.basicCardData = ->
             id: 47
             unique: true
             ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
             skill: 6
             points: 21
             slots: [
@@ -1155,7 +1104,6 @@ exportObj.basicCardData = ->
             id: 48
             unique: true
             ship: "HWK-290"
-            sources: [ "HWK-290 Expansion Pack", ]
             skill: 8
             points: 25
             slots: [
@@ -1169,7 +1117,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 49
             ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
             skill: 2
             points: 16
             slots: [
@@ -1185,7 +1132,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 50
             ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
             skill: 4
             points: 18
             slots: [
@@ -1202,7 +1148,6 @@ exportObj.basicCardData = ->
             id: 51
             unique: true
             ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
             skill: 6
             points: 22
             slots: [
@@ -1220,7 +1165,6 @@ exportObj.basicCardData = ->
             id: 52
             unique: true
             ship: "TIE Bomber"
-            sources: [ "TIE Bomber Expansion Pack", ]
             skill: 7
             points: 26
             slots: [
@@ -1238,7 +1182,6 @@ exportObj.basicCardData = ->
             id: 53
             unique: true
             ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             skill: 8
             points: 27
             slots: [
@@ -1254,7 +1197,6 @@ exportObj.basicCardData = ->
             id: 54
             unique: true
             ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             skill: 6
             points: 26
             slots: [
@@ -1270,7 +1212,6 @@ exportObj.basicCardData = ->
             id: 55
             unique: true
             ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             skill: 4
             points: 24
             slots: [
@@ -1285,7 +1226,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 56
             ship: "Lambda-Class Shuttle"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             skill: 2
             points: 21
             slots: [
@@ -1301,7 +1241,6 @@ exportObj.basicCardData = ->
             id: 57
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "Imperial Aces Expansion Pack", ]
             skill: 5
             points: 23
             slots: [ ]
@@ -1311,7 +1250,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 58
             ship: "TIE Interceptor"
-            sources: [ "Imperial Aces Expansion Pack", ]
             skill: 6
             points: 22
             slots: [
@@ -1324,7 +1262,6 @@ exportObj.basicCardData = ->
             id: 59
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "Imperial Aces Expansion Pack", ]
             skill: 7
             points: 24
             slots: [
@@ -1345,7 +1282,6 @@ exportObj.basicCardData = ->
             id: 61
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "Imperial Aces Expansion Pack", ]
             skill: 6
             points: 24
             slots: [ ]
@@ -1356,7 +1292,6 @@ exportObj.basicCardData = ->
             id: 62
             unique: true
             ship: "TIE Interceptor"
-            sources: [ "Imperial Aces Expansion Pack", ]
             skill: 8
             points: 26
             slots: [
@@ -1369,7 +1304,6 @@ exportObj.basicCardData = ->
             id: 63
             epic: true
             ship: "GR-75 Medium Transport"
-            sources: [ "Rebel Transport Expansion Pack", ]
             skill: 3
             points: 30
             slots: [
@@ -1385,7 +1319,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 64
             ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 2
             points: 12
             slots: [
@@ -1397,7 +1330,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 65
             ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 4
             points: 13
             slots: [
@@ -1410,7 +1342,6 @@ exportObj.basicCardData = ->
             id: 66
             unique: true
             ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 6
             points: 17
             slots: [
@@ -1424,7 +1355,6 @@ exportObj.basicCardData = ->
             id: 67
             unique: true
             ship: "Z-95 Headhunter"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             skill: 8
             points: 19
             slots: [
@@ -1437,7 +1367,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 68
             ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
             skill: 1
             points: 30
             slots: [
@@ -1450,7 +1379,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 69
             ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
             skill: 3
             points: 32
             slots: [
@@ -1464,7 +1392,6 @@ exportObj.basicCardData = ->
             id: 70
             unique: true
             ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
             skill: 6
             points: 35
             slots: [
@@ -1479,7 +1406,6 @@ exportObj.basicCardData = ->
             id: 71
             unique: true
             ship: "TIE Defender"
-            sources: [ "TIE Defender Expansion Pack", ]
             skill: 8
             points: 37
             slots: [
@@ -1493,7 +1419,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 72
             ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
             skill: 1
             points: 27
             slots: [
@@ -1507,7 +1432,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 73
             ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
             skill: 3
             points: 29
             slots: [
@@ -1522,7 +1446,6 @@ exportObj.basicCardData = ->
             id: 74
             unique: true
             ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
             skill: 5
             points: 32
             slots: [
@@ -1538,7 +1461,6 @@ exportObj.basicCardData = ->
             id: 75
             unique: true
             ship: "E-Wing"
-            sources: [ "E-Wing Expansion Pack", ]
             skill: 8
             points: 35
             slots: [
@@ -1553,7 +1475,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 76
             ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
             skill: 3
             points: 25
             slots: [
@@ -1566,7 +1487,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 77
             ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
             skill: 5
             points: 27
             slots: [
@@ -1580,7 +1500,6 @@ exportObj.basicCardData = ->
             id: 78
             unique: true
             ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
             skill: 6
             points: 30
             slots: [
@@ -1595,7 +1514,6 @@ exportObj.basicCardData = ->
             id: 79
             unique: true
             ship: "TIE Phantom"
-            sources: [ "TIE Phantom Expansion Pack", ]
             skill: 7
             points: 32
             slots: [
@@ -1610,7 +1528,6 @@ exportObj.basicCardData = ->
             id: 80
             epic: true
             ship: "CR90 Corvette (Fore)"
-            sources: [ "Tantive IV Expansion Pack", ]
             skill: 4
             points: 50
             slots: [
@@ -1628,7 +1545,6 @@ exportObj.basicCardData = ->
             id: 81
             epic: true
             ship: "CR90 Corvette (Aft)"
-            sources: [ "Tantive IV Expansion Pack", ]
             skill: 4
             points: 40
             slots: [
@@ -1644,7 +1560,6 @@ exportObj.basicCardData = ->
             id: 82
             unique: true
             ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
             skill: 8
             points: 29
             slots: [
@@ -1659,7 +1574,6 @@ exportObj.basicCardData = ->
             id: 83
             unique: true
             ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
             skill: 7
             points: 26
             slots: [
@@ -1674,7 +1588,6 @@ exportObj.basicCardData = ->
             id: 84
             unique: true
             ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
             skill: 5
             points: 25
             slots: [
@@ -1688,7 +1601,6 @@ exportObj.basicCardData = ->
             id: 85
             unique: true
             ship: "X-Wing"
-            sources: [ "Rebel Transport Expansion Pack", ]
             skill: 3
             points: 23
             slots: [
@@ -1702,7 +1614,6 @@ exportObj.basicCardData = ->
             id: 86
             unique: true
             ship: "A-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
             skill: 7
             points: 24
             slots: [
@@ -1716,7 +1627,6 @@ exportObj.basicCardData = ->
             id: 87
             unique: true
             ship: "A-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
             points: 22
             slots: [
@@ -1729,7 +1639,6 @@ exportObj.basicCardData = ->
             id: 88
             unique: true
             ship: "B-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
             skill: 7
             points: 29
             slots: [
@@ -1746,7 +1655,6 @@ exportObj.basicCardData = ->
             id: 89
             unique: true
             ship: "B-Wing"
-            sources: [ "Rebel Aces Expansion Pack", ]
             skill: 5
             points: 26
             slots: [
@@ -1762,7 +1670,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 90
             ship: "CR90 Corvette (Fore)"
-            sources: [ "Tantive IV Expansion Pack", ]
             skill: 4
             points: 0
             epic: true
@@ -1781,7 +1688,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 91
             ship: "CR90 Corvette (Aft)"
-            sources: [ "Tantive IV Expansion Pack", ]
             skill: 4
             points: 0
             epic: true
@@ -1804,7 +1710,6 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             id: 92
             ship: "YT-2400"
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 2
             points: 30
             slots: [
@@ -1819,7 +1724,6 @@ exportObj.basicCardData = ->
             id: 93
             ship: "YT-2400"
             unique: true
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 3
             points: 32
             slots: [
@@ -1834,7 +1738,6 @@ exportObj.basicCardData = ->
             id: 94
             ship: "YT-2400"
             unique: true
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 5
             points: 34
             slots: [
@@ -1850,7 +1753,6 @@ exportObj.basicCardData = ->
             id: 95
             ship: "YT-2400"
             unique: true
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             skill: 7
             points: 36
             slots: [
@@ -1865,7 +1767,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 96
             ship: "VT-49 Decimator"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 3
             points: 40
             slots: [
@@ -1881,7 +1782,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 97
             ship: "VT-49 Decimator"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 4
             points: 42
             unique: true
@@ -1899,7 +1799,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 98
             ship: "VT-49 Decimator"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 6
             points: 44
             unique: true
@@ -1917,7 +1816,6 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             id: 99
             ship: "VT-49 Decimator"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             skill: 8
             points: 46
             unique: true
@@ -1936,7 +1834,6 @@ exportObj.basicCardData = ->
             id: 100
             unique: true
             ship: "StarViper"
-            sources: [ "StarViper Expansion Pack", ]
             skill: 7
             points: 31
             slots: [
@@ -1950,7 +1847,6 @@ exportObj.basicCardData = ->
             id: 101
             unique: true
             ship: "StarViper"
-            sources: [ "StarViper Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -1962,7 +1858,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 102
             ship: "StarViper"
-            sources: [ "StarViper Expansion Pack", ]
             skill: 3
             points: 99
             slots: [
@@ -1974,7 +1869,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 103
             ship: "StarViper"
-            sources: [ "StarViper Expansion Pack", ]
             skill: 1
             points: 99
             slots: [
@@ -1986,7 +1880,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 104
             ship: "M3-A Interceptor"
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             skill: 8
             points: 20
             unique: true
@@ -1999,7 +1892,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 105
             ship: "M3-A Interceptor"
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             skill: 6
             points: 99
             unique: true
@@ -2010,7 +1902,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 106
             ship: "M3-A Interceptor"
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -2021,7 +1912,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 107
             ship: "M3-A Interceptor"
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             skill: 2
             points: 99
             slots: [ ]
@@ -2032,7 +1922,6 @@ exportObj.basicCardData = ->
             id: 108
             unique: true
             ship: "Aggressor"
-            sources: [ "IG-2000 Expansion Pack", ]
             skill: 6
             points: 99
             slots: [
@@ -2049,7 +1938,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 109
             unique: true
-            sources: [ "IG-2000 Expansion Pack", ]
             ship: "Aggressor"
             skill: 6
             points: 99
@@ -2068,7 +1956,6 @@ exportObj.basicCardData = ->
             id: 110
             unique: true
             ship: "Aggressor"
-            sources: [ "IG-2000 Expansion Pack", ]
             skill: 6
             points: 99
             slots: [
@@ -2086,7 +1973,6 @@ exportObj.basicCardData = ->
             id: 111
             unique: true
             ship: "Aggressor"
-            sources: [ "IG-2000 Expansion Pack", ]
             skill: 6
             points: 36
             slots: [
@@ -2104,7 +1990,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 112
             ship: "Z-95 Headhunter"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 7
             points: 17
             slots: [
@@ -2119,7 +2004,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 113
             ship: "Z-95 Headhunter"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -2132,7 +2016,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 114
             ship: "Z-95 Headhunter"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 3
             points: 99
             slots: [
@@ -2145,7 +2028,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 115
             ship: "Z-95 Headhunter"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 1
             points: 99
             slots: [
@@ -2159,7 +2041,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 116
             ship: "Firespray-31"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 8
             points: 39
             unique: true
@@ -2179,7 +2060,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 117
             ship: "Firespray-31"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 7
             points: 99
             slots: [
@@ -2196,7 +2076,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 118
             ship: "Firespray-31"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 6
             points: 99
             slots: [
@@ -2212,7 +2091,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 119
             ship: "Firespray-31"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -2229,7 +2107,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 120
             ship: "Y-Wing"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 7
             points: 99
             slots: [
@@ -2242,7 +2119,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 121
             ship: "Y-Wing"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -2254,7 +2130,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 122
             ship: "Y-Wing"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 4
             points: 99
             slots: [
@@ -2266,7 +2141,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 123
             ship: "Y-Wing"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 2
             points: 99
             slots: [
@@ -2279,7 +2153,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 124
             ship: "HWK-290"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 7
             points: 99
             slots: [
@@ -2291,7 +2164,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 125
             ship: "HWK-290"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 5
             points: 99
             slots: [
@@ -2303,7 +2175,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 126
             ship: "HWK-290"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 3
             points: 99
             slots: [
@@ -2314,7 +2185,6 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             id: 127
             ship: "HWK-290"
-            sources: [ "Most Wanted Expansion Pack", ]
             skill: 1
             points: 99
             slots: [
@@ -2328,7 +2198,6 @@ exportObj.basicCardData = ->
             name: "Ion Cannon Turret"
             id: 0
             slot: "Turret"
-            sources: [ "Y-Wing Expansion Pack", "HWK-290 Expansion Pack", ]
             points: 5
             attack: 3
             range: "1-2"
@@ -2337,12 +2206,6 @@ exportObj.basicCardData = ->
             name: "Proton Torpedoes"
             id: 1
             slot: "Torpedo"
-            sources: [
-                "Core"
-                "X-Wing Expansion Pack"
-                "Y-Wing Expansion Pack"
-                "B-Wing Expansion Pack"
-            ]
             points: 4
             attack: 4
             range: "2-3"
@@ -2351,7 +2214,6 @@ exportObj.basicCardData = ->
             name: "R2 Astromech"
             id: 2
             slot: "Astromech"
-            sources: [ "Y-Wing Expansion Pack", ]
             points: 1
             modifier_func: (stats) ->
                 if stats.maneuvers? and stats.maneuvers.length > 0
@@ -2368,7 +2230,6 @@ exportObj.basicCardData = ->
             id: 3
             unique: true
             slot: "Astromech"
-            sources: [ "Core", ]
             points: 4
         }
         {
@@ -2376,7 +2237,6 @@ exportObj.basicCardData = ->
             id: 4
             unique: true
             slot: "Astromech"
-            sources: [ "Core", ]
             points: 3
         }
         {
@@ -2384,7 +2244,6 @@ exportObj.basicCardData = ->
             id: 5
             unique: true
             slot: "Astromech"
-            sources: [ "Y-Wing Expansion Pack", ]
             points: 3
         }
         {
@@ -2392,31 +2251,24 @@ exportObj.basicCardData = ->
             id: 6
             unique: true
             slot: "Astromech"
-            sources: [ "X-Wing Expansion Pack", ]
             points: 2
         }
         {
             name: "R5 Astromech"
             id: 7
             slot: "Astromech"
-            sources: [ "X-Wing Expansion Pack", ]
             points: 1
         }
         {
             name: "Determination"
             id: 8
             slot: "Elite"
-            sources: [ "Core", "TIE Fighter Expansion Pack", ]
             points: 1
         }
         {
             name: "Swarm Tactics"
             id: 9
             slot: "Elite"
-            sources: [
-                "TIE Fighter Expansion Pack"
-                "TIE Advanced Expansion Pack"
-            ]
             points: 2
         }
         {
@@ -2424,32 +2276,24 @@ exportObj.basicCardData = ->
             id: 10
             unique: true
             slot: "Elite"
-            sources: [ "TIE Advanced Expansion Pack", ]
             points: 2
         }
         {
             name: "Expert Handling"
             id: 11
             slot: "Elite"
-            sources: [ "X-Wing Expansion Pack", "TIE Advanced Expansion Pack", ]
             points: 2
         }
         {
             name: "Marksmanship"
             id: 12
             slot: "Elite"
-            sources: [ "Core", "X-Wing Expansion Pack", ]
             points: 3
         }
         {
             name: "Concussion Missiles"
             id: 13
             slot: "Missile"
-            sources: [
-                "TIE Advanced Expansion Pack"
-                "A-Wing Expansion Pack"
-                "Millennium Falcon Expansion Pack"
-            ]
             points: 4
             attack: 4
             range: "2-3"
@@ -2458,7 +2302,6 @@ exportObj.basicCardData = ->
             name: "Cluster Missiles"
             id: 14
             slot: "Missile"
-            sources: [ "TIE Advanced Expansion Pack", "A-Wing Expansion Pack", ]
             points: 4
             attack: 3
             range: "1-2"
@@ -2467,21 +2310,18 @@ exportObj.basicCardData = ->
             name: "Daredevil"
             id: 15
             slot: "Elite"
-            sources: [ "TIE Interceptor Expansion Pack", ]
             points: 3
         }
         {
             name: "Elusiveness"
             id: 16
             slot: "Elite"
-            sources: [ "TIE Interceptor Expansion Pack", "Millennium Falcon Expansion Pack", ]
             points: 2
         }
         {
             name: "Homing Missiles"
             id: 17
             slot: "Missile"
-            sources: [ "A-Wing Expansion Pack", "Slave I Expansion Pack", ]
             attack: 4
             range: "2-3"
             points: 5
@@ -2490,40 +2330,30 @@ exportObj.basicCardData = ->
             name: "Push the Limit"
             id: 18
             slot: "Elite"
-            sources: [ "A-Wing Expansion Pack", "Imperial Aces Expansion Pack", ]
             points: 3
         }
         {
             name: "Deadeye"
             id: 19
             slot: "Elite"
-            sources: [ "A-Wing Expansion Pack", ]
             points: 1
         }
         {
             name: "Expose"
             id: 20
             slot: "Elite"
-            sources: [ "Slave I Expansion Pack", ]
             points: 4
         }
         {
             name: "Gunner"
             id: 21
             slot: "Crew"
-            sources: [ "Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 5
         }
         {
             name: "Ion Cannon"
             id: 22
             slot: "Cannon"
-            sources: [
-                "Slave I Expansion Pack"
-                "B-Wing Expansion Pack"
-                "TIE Defender Expansion Pack"
-                "M3-A Interceptor Expansion Pack"
-            ]
             points: 3
             attack: 3
             range: "1-3"
@@ -2532,7 +2362,6 @@ exportObj.basicCardData = ->
             name: "Heavy Laser Cannon"
             id: 23
             slot: "Cannon"
-            sources: [ "Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 7
             attack: 4
             range: "2-3"
@@ -2541,26 +2370,18 @@ exportObj.basicCardData = ->
             name: "Seismic Charges"
             id: 24
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 2
         }
         {
             name: "Mercenary Copilot"
             id: 25
             slot: "Crew"
-            sources: [ "Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 2
         }
         {
             name: "Assault Missiles"
             id: 26
             slot: "Missile"
-            sources: [
-                "Millennium Falcon Expansion Pack"
-                "Slave I Expansion Pack"
-                "TIE Bomber Expansion Pack"
-                "Z-95 Headhunter Expansion Pack"
-            ]
             points: 5
             attack: 4
             range: "2-3"
@@ -2569,7 +2390,6 @@ exportObj.basicCardData = ->
             name: "Veteran Instincts"
             id: 27
             slot: "Elite"
-            sources: [ "Millennium Falcon Expansion Pack", "Slave I Expansion Pack", ]
             points: 1
             modifier_func: (stats) ->
                 stats.skill += 2
@@ -2578,21 +2398,18 @@ exportObj.basicCardData = ->
             name: "Proximity Mines"
             id: 28
             slot: "Bomb"
-            sources: [ "Slave I Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 3
         }
         {
             name: "Weapons Engineer"
             id: 29
             slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
         }
         {
             name: "Draw Their Fire"
             id: 30
             slot: "Elite"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             points: 1
         }
         {
@@ -2601,7 +2418,6 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             points: 7
         }
         {
@@ -2610,7 +2426,6 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             points: 1
             modifier_func: (stats) ->
                 for s in (stats.maneuvers ? [])
@@ -2623,7 +2438,6 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             slot: "Crew"
-            sources: [ "Millennium Falcon Expansion Pack", ]
             points: 4
         }
         {
@@ -2632,7 +2446,6 @@ exportObj.basicCardData = ->
             slot: "Torpedo"
             attack: 5
             range: "1"
-            sources: [ "B-Wing Expansion Pack", "TIE Bomber Expansion Pack", ]
             points: 6
         }
         {
@@ -2641,21 +2454,18 @@ exportObj.basicCardData = ->
             slot: "Cannon"
             attack: 3
             range: "1"
-            sources: [ "B-Wing Expansion Pack", "IG-2000 Expansion Pack" ]
             points: 5
         }
         {
             name: "Fire-Control System"
             id: 36
             slot: "System"
-            sources: [ "B-Wing Expansion Pack", "TIE Phantom Expansion Pack" ]
             points: 2
         }
         {
             name: "Blaster Turret"
             id: 37
             slot: "Turret"
-            sources: [ "HWK-290 Expansion Pack", ]
             points: 4
             attack: 3
             range: "1-2"
@@ -2664,49 +2474,42 @@ exportObj.basicCardData = ->
             name: "Recon Specialist"
             id: 38
             slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", "TIE Phantom Expansion Pack" ]
             points: 3
         }
         {
             name: "Saboteur"
             id: 39
             slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", ]
             points: 2
         }
         {
             name: "Intelligence Agent"
             id: 40
             slot: "Crew"
-            sources: [ "HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack", ]
             points: 1
         }
         {
             name: "Proton Bomb"
             id: 41
             slot: "Bomb"
-            sources: [ "TIE Bomber Expansion Pack", "VT-49 Decimator Expansion Pack" ]
             points: 5
         }
         {
             name: "Adrenaline Rush"
             id: 42
             slot: "Elite"
-            sources: [ "TIE Bomber Expansion Pack", ]
             points: 1
         }
         {
             name: "Advanced Sensors"
             id: 43
             slot: "System"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", "E-Wing Expansion Pack" ]
             points: 3
         }
         {
             name: "Sensor Jammer"
             id: 44
             slot: "System"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 4
         }
         {
@@ -2715,7 +2518,6 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
         }
         {
@@ -2724,21 +2526,18 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Empire"
             slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
         }
         {
             name: "Flight Instructor"
             id: 47
             slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 4
         }
         {
             name: "Navigator"
             id: 48
             slot: "Crew"
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 3
             epic_restriction_func: (ship) ->
                 not (ship.huge ? false)
@@ -2747,35 +2546,30 @@ exportObj.basicCardData = ->
             name: "Opportunist"
             id: 49
             slot: "Elite"
-            sources: [ "Imperial Aces Expansion Pack", ]
             points: 4
         }
         {
             name: "Comms Booster"
             id: 50
             slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
         }
         {
             name: "Slicer Tools"
             id: 51
             slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 7
         }
         {
             name: "Shield Projector"
             id: 52
             slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
         }
         {
             name: "Ion Pulse Missiles"
             id: 53
             slot: "Missile"
-            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
             points: 3
             attack: 3
             range: """2-3"""
@@ -2784,35 +2578,30 @@ exportObj.basicCardData = ->
             name: "Wingman"
             id: 54
             slot: "Elite"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             points: 2
         }
         {
             name: "Decoy"
             id: 55
             slot: "Elite"
-            sources: [ "Z-95 Headhunter Expansion Pack", ]
             points: 2
         }
         {
             name: "Outmaneuver"
             id: 56
             slot: "Elite"
-            sources: [ "TIE Defender Expansion Pack", "E-Wing Expansion Pack" ]
             points: 3
         }
         {
             name: "Predator"
             id: 57
             slot: "Elite"
-            sources: [ "TIE Defender Expansion Pack", ]
             points: 3
         }
         {
             name: "Flechette Torpedoes"
             id: 58
             slot: "Torpedo"
-            sources: [ "E-Wing Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 2
             attack: 3
             range: """2-3"""
@@ -2821,7 +2610,6 @@ exportObj.basicCardData = ->
             name: "R7 Astromech"
             id: 59
             slot: "Astromech"
-            sources: [ "E-Wing Expansion Pack", ]
             points: 2
         }
         {
@@ -2829,14 +2617,12 @@ exportObj.basicCardData = ->
             id: 60
             unique: true
             slot: "Astromech"
-            sources: [ "E-Wing Expansion Pack", ]
             points: 3
         }
         {
             name: "Tactician"
             id: 61
             slot: "Crew"
-            sources: [ "TIE Phantom Expansion Pack", ]
             points: 2
         }
         {
@@ -2845,7 +2631,6 @@ exportObj.basicCardData = ->
             id: 62
             unique: true
             slot: "Crew"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
             faction: "Rebel Alliance"
         }
@@ -2854,7 +2639,6 @@ exportObj.basicCardData = ->
             unique: true
             id: 63
             slot: "Crew"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 3
             faction: "Rebel Alliance"
         }
@@ -2862,7 +2646,6 @@ exportObj.basicCardData = ->
             name: "Single Turbolasers"
             id: 64
             slot: "Hardpoint"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 8
             energy: 2
             attack: 4
@@ -2872,7 +2655,6 @@ exportObj.basicCardData = ->
             name: "Quad Laser Cannons"
             id: 65
             slot: "Hardpoint"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 6
             energy: 2
             attack: 3
@@ -2882,7 +2664,6 @@ exportObj.basicCardData = ->
             name: "Tibanna Gas Supplies"
             id: 66
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 4
             limited: true
         }
@@ -2890,7 +2671,6 @@ exportObj.basicCardData = ->
             name: "Ionization Reactor"
             id: 67
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
             energy: 5
             limited: true
@@ -2899,7 +2679,6 @@ exportObj.basicCardData = ->
             name: "Engine Booster"
             id: 68
             slot: "Cargo"
-            sources: [ "Tantive IV Expansion Pack", "Rebel Transport Expansion Pack" ]
             points: 3
             limited: true
         }
@@ -2908,7 +2687,6 @@ exportObj.basicCardData = ->
             id: 69
             unique: true
             slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
         }
         {
@@ -2916,7 +2694,6 @@ exportObj.basicCardData = ->
             id: 70
             unique: true
             slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 1
             restriction_func: (ship) ->
                 return false if (ship.effectiveStats().skill <= 2 or 'Elite' in ship.pilot.slots)
@@ -2938,14 +2715,12 @@ exportObj.basicCardData = ->
             name: "Enhanced Scopes"
             id: 71
             slot: "System"
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: 1
         }
         {
             name: "Chardaan Refit"
             id: 72
             slot: "Missile"
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: -2
             ship: "A-Wing"
         }
@@ -2953,7 +2728,6 @@ exportObj.basicCardData = ->
             name: "Proton Rockets"
             id: 73
             slot: "Missile"
-            sources: [ "Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack" ]
             points: 3
             attack: 2
             range: "1"
@@ -2963,7 +2737,6 @@ exportObj.basicCardData = ->
             id: 74
             unique: true
             slot: "Crew"
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: 3
             faction: "Rebel Alliance"
         }
@@ -2972,7 +2745,6 @@ exportObj.basicCardData = ->
             id: 75
             unique: true
             slot: "Crew"
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: 2
             faction: "Rebel Alliance"
         }
@@ -2981,7 +2753,6 @@ exportObj.basicCardData = ->
             id: 76
             unique: true
             slot: "Crew"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 6
             faction: "Rebel Alliance"
             restriction_func: (ship) ->
@@ -2992,7 +2763,6 @@ exportObj.basicCardData = ->
             id: 77
             unique: true
             slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 1
         }
         {
@@ -3000,14 +2770,12 @@ exportObj.basicCardData = ->
             id: 78
             unique: true
             slot: "Astromech"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 3
         }
         {
             name: "WED-15 Repair Droid"
             id: 79
             slot: "Crew"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
             restriction_func: (ship) ->
                 ship.data.huge ? false
@@ -3017,7 +2785,6 @@ exportObj.basicCardData = ->
             id: 80
             unique: true
             slot: "Crew"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 3
             faction: "Rebel Alliance"
             restriction_func: (ship) ->
@@ -3028,7 +2795,6 @@ exportObj.basicCardData = ->
             id: 81
             unique: true
             slot: "Crew"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 6
             faction: "Rebel Alliance"
             restriction_func: (ship) ->
@@ -3038,7 +2804,6 @@ exportObj.basicCardData = ->
             name: "Expanded Cargo Hold"
             id: 82
             slot: "Cargo"
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 1
             ship: "GR-75 Medium Transport"
         }
@@ -3047,7 +2812,6 @@ exportObj.basicCardData = ->
             id: 83
             slot: "Cargo"
             limited: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 3
         }
         {
@@ -3055,7 +2819,6 @@ exportObj.basicCardData = ->
             id: 84
             slot: "Cargo"
             limited: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 3
         }
         {
@@ -3063,7 +2826,6 @@ exportObj.basicCardData = ->
             id: 85
             slot: "Cargo"
             limited: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
         }
         {
@@ -3072,7 +2834,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: "Rebel Alliance"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 2
         }
         {
@@ -3081,7 +2842,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: "Rebel Alliance"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
         }
         {
@@ -3089,7 +2849,6 @@ exportObj.basicCardData = ->
             id: 88
             slot: "Crew"
             limited: true
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
         }
         {
@@ -3098,7 +2857,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: "Rebel Alliance"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 6
             restriction_func: (ship) ->
                 ship.data.huge ? false
@@ -3108,14 +2866,12 @@ exportObj.basicCardData = ->
             id: 90
             slot: "Team"
             limited: true
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
         }
         {
             name: "Sensor Team"
             id: 91
             slot: "Team"
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
         }
         {
@@ -3123,7 +2879,6 @@ exportObj.basicCardData = ->
             id: 92
             slot: "Team"
             limited: true
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
         }
         {
@@ -3132,7 +2887,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: "Rebel Alliance"
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             points: 3
         }
         {
@@ -3141,7 +2895,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             unique: true
             faction: "Galactic Empire"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             points: 3
         }
         {
@@ -3149,7 +2902,6 @@ exportObj.basicCardData = ->
             id: 95
             slot: "Crew"
             faction: "Galactic Empire"
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             points: 3
         }
         {
@@ -3157,7 +2909,6 @@ exportObj.basicCardData = ->
             id: 96
             slot: "Elite"
             points: 2
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
         }
         {
             name: "Dash Rendar"
@@ -3165,7 +2916,6 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             points: 2
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             faction: "Rebel Alliance"
         }
         {
@@ -3174,7 +2924,6 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Elite"
             points: 2
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
         }
         {
             name: '"Leebo"'
@@ -3182,7 +2931,6 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Crew"
             points: 2
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             faction: "Rebel Alliance"
         }
         {
@@ -3191,14 +2939,12 @@ exportObj.basicCardData = ->
             slot: "Elite"
             points: 3
             faction: "Galactic Empire"
-            sources: [ "VT-49 Decimator Expansion Pack" ]
         }
         {
             name: "Intimidation"
             id: 101
             slot: "Elite"
             points: 2
-            sources: [ "VT-49 Decimator Expansion Pack" ]
         }
         {
             name: "Ysanne Isard"
@@ -3207,7 +2953,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 4
             faction: "Galactic Empire"
-            sources: [ "VT-49 Decimator Expansion Pack" ]
         }
         {
             name: "Moff Jerjerrod"
@@ -3216,7 +2961,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 2
             faction: "Galactic Empire"
-            sources: [ "VT-49 Decimator Expansion Pack" ]
         }
         {
             name: "Ion Torpedoes"
@@ -3225,7 +2969,6 @@ exportObj.basicCardData = ->
             points: 5
             attack: 4
             range: "2-3"
-            sources: [ "VT-49 Decimator Expansion Pack", "StarViper Expansion Pack" ]
         }
         {
             name: "Bodyguard"
@@ -3234,63 +2977,54 @@ exportObj.basicCardData = ->
             slot: "Elite"
             points: 2
             faction: "Scum and Villainy"
-            sources: [ "StarViper Expansion Pack", ]
         }
         {
             name: "Calc???"
             id: 106
             slot: "Elite"
             points: 99
-            sources: [ "StarViper Expansion Pack", ]
         }
         {
             name: "Accuracy Corrector"
             id: 107
             slot: "System"
             points: 3
-            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
         }
         {
             name: "Inertial Dampeners"
             id: 108
             slot: "Illicit"
             points: 1
-            sources: [ "StarViper Expansion Pack", "IG-2000 Expansion Pack" ]
         }
         {
             name: "Flechette Cannon"
             id: 109
             slot: "Cannon"
             points: 99
-            sources: [ "M3-A Interceptor Expansion Pack", ]
         }
         {
             name: '"Mang??? Cannon"'
             id: 110
             slot: "Cannon"
             points: 99
-            sources: [ "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack" ]
         }
         {
             name: "Dead???"
             id: 111
             slot: "Illicit"
             points: 99
-            sources: [ "IG-2000 Expansion Pack", ]
         }
         {
             name: "Fee???"
             id: 112
             slot: "Illicit"
             points: 99
-            sources: [ "IG-2000 Expansion Pack", ]
         }
         {
             name: '"Hot ??? Blaster"'
             id: 113
             slot: "Illicit"
             points: 99
-            sources: [ "IG-2000 Expansion Pack", ]
         }
         {
             name: "Greedo"
@@ -3299,7 +3033,6 @@ exportObj.basicCardData = ->
             slot: "Crew"
             faction: "Scum and Villainy"
             points: 1
-            sources: [ "Most Wanted Expansion Pack", ]
         }
     ]
 
@@ -3313,7 +3046,6 @@ exportObj.basicCardData = ->
             name: "Stealth Device"
             id: 1
             points: 3
-            sources: [ "Slave I Expansion Pack", "M3-A Interceptor Expansion Pack" ]
             modifier_func: (stats) ->
                 stats.agility += 1
         }
@@ -3321,7 +3053,6 @@ exportObj.basicCardData = ->
             name: "Shield Upgrade"
             id: 2
             points: 4
-            sources: [ "Millennium Falcon Expansion Pack", "Imperial Aces Expansion Pack", ]
             modifier_func: (stats) ->
                 stats.shields += 1
         }
@@ -3329,14 +3060,12 @@ exportObj.basicCardData = ->
             name: "Engine Upgrade"
             id: 3
             points: 4
-            sources: [ "Millennium Falcon Expansion Pack", ]
             modifier_func: (stats) ->
                 stats.actions.push 'Boost' if 'Boost' not in stats.actions
         }
         {
             name: "Anti-Pursuit Lasers"
             id: 4
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             points: 2
             restriction_func: (ship) ->
                 ship.data.large ? false
@@ -3344,7 +3073,6 @@ exportObj.basicCardData = ->
         {
             name: "Targeting Computer"
             id: 5
-            sources: [ "Imperial Aces Expansion Pack", ]
             points: 2
             modifier_func: (stats) ->
                 stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
@@ -3352,7 +3080,6 @@ exportObj.basicCardData = ->
         {
             name: "Hull Upgrade"
             id: 6
-            sources: [ "Imperial Aces Expansion Pack", "StarViper Expansion Pack" ]
             points: 3
             modifier_func: (stats) ->
                 stats.hull += 1
@@ -3360,26 +3087,22 @@ exportObj.basicCardData = ->
         {
             name: "Munitions Failsafe"
             id: 7
-            sources: [ "Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack" ]
             points: 1
         }
         {
             name: "Stygium Particle Accelerator"
             id: 8
-            sources: [ "TIE Phantom Expansion Pack", ]
             points: 2
         }
         {
             name: "Advanced Cloaking Device"
             id: 9
-            sources: [ "TIE Phantom Expansion Pack", ]
             points: 4
             ship: "TIE Phantom"
         }
         {
             name: "Combat Retrofit"
             id: 10
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 10
             ship: "GR-75 Medium Transport"
             huge: true
@@ -3390,7 +3113,6 @@ exportObj.basicCardData = ->
         {
             name: "B-Wing/E2"
             id: 11
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: 1
             ship: "B-Wing"
             confersAddons: [
@@ -3403,7 +3125,6 @@ exportObj.basicCardData = ->
         {
             name: "Countermeasures"
             id: 12
-            sources: [ "YT-2400 Freighter Expansion Pack" ]
             points: 3
             restriction_func: (ship) ->
                 ship.data.large ? false
@@ -3411,14 +3132,12 @@ exportObj.basicCardData = ->
         {
             name: "Experimental Interface"
             id: 13
-            sources: [ "YT-2400 Freighter Expansion Pack" ]
             unique: true
             points: 3
         }
         {
             name: "Tactical Jammer"
             id: 14
-            sources: [ "VT-49 Decimator Expansion Pack" ]
             points: 1
             restriction_func: (ship) ->
                 ship.data.large ? false
@@ -3427,7 +3146,6 @@ exportObj.basicCardData = ->
             name: "Autoth???"
             id: 15
             points: 99
-            sources: [ "StarViper Expansion Pack", ]
         }
     ]
 
@@ -3440,7 +3158,6 @@ exportObj.basicCardData = ->
         {
             name: "Slave I"
             id: 1
-            sources: [ "Slave I Expansion Pack", ]
             unique: true
             points: 0
             ship: "Firespray-31"
@@ -3454,7 +3171,6 @@ exportObj.basicCardData = ->
         {
             name: "Millennium Falcon"
             id: 2
-            sources: [ "Millennium Falcon Expansion Pack", ]
             unique: true
             points: 1
             ship: "YT-1300"
@@ -3465,7 +3181,6 @@ exportObj.basicCardData = ->
         {
             name: "Moldy Crow"
             id: 3
-            sources: [ "HWK-290 Expansion Pack", ]
             unique: true
             points: 3
             ship: "HWK-290"
@@ -3473,7 +3188,6 @@ exportObj.basicCardData = ->
         {
             name: "ST-321"
             id: 4
-            sources: [ "Lambda-Class Shuttle Expansion Pack", ]
             unique: true
             points: 3
             ship: "Lambda-Class Shuttle"
@@ -3481,7 +3195,6 @@ exportObj.basicCardData = ->
         {
             name: "Royal Guard TIE"
             id: 5
-            sources: [ "Imperial Aces Expansion Pack", ]
             points: 0
             ship: "TIE Interceptor"
             confersAddons: [
@@ -3497,14 +3210,12 @@ exportObj.basicCardData = ->
             name: "Dodonna's Pride"
             id: 6
             unique: true
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
             ship: "CR90 Corvette (Fore)"
         }
         {
             name: "A-Wing Test Pilot"
             id: 7
-            sources: [ "Rebel Aces Expansion Pack", ]
             points: 0
             ship: "A-Wing"
             restriction_func: (ship) ->
@@ -3523,7 +3234,6 @@ exportObj.basicCardData = ->
              name: "B-Wing/E"
              id: 8
              skip: true
-             sources: [ "Rebel Aces Expansion Pack", ]
              points: 99
              ship: "B-Wing"
              confersAddons: [
@@ -3537,7 +3247,6 @@ exportObj.basicCardData = ->
             name: "Tantive IV"
             id: 9
             unique: true
-            sources: [ "Tantive IV Expansion Pack", ]
             points: 4
             ship: "CR90 Corvette (Fore)"
             confersAddons: [
@@ -3556,7 +3265,6 @@ exportObj.basicCardData = ->
             id: 10
             energy: "+2"
             unique: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 5
             ship: "GR-75 Medium Transport"
             modifier_func: (stats) ->
@@ -3567,7 +3275,6 @@ exportObj.basicCardData = ->
             id: 11
             energy: "+1"
             unique: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 4
             ship: "GR-75 Medium Transport"
             modifier_func: (stats) ->
@@ -3578,7 +3285,6 @@ exportObj.basicCardData = ->
             id: 12
             energy: "+0"
             unique: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
             ship: "GR-75 Medium Transport"
         }
@@ -3586,7 +3292,6 @@ exportObj.basicCardData = ->
             name: "Jaina's Light"
             id: 13
             unique: true
-            sources: [ "Rebel Transport Expansion Pack", ]
             points: 2
             ship: "CR90 Corvette (Fore)"
         }
@@ -3594,7 +3299,6 @@ exportObj.basicCardData = ->
             name: "Outrider"
             id: 14
             unique: true
-            sources: [ "YT-2400 Freighter Expansion Pack", ]
             points: 5
             ship: "YT-2400"
         }
@@ -3602,7 +3306,6 @@ exportObj.basicCardData = ->
             name: "Dauntless"
             id: 15
             unique: true
-            sources: [ "VT-49 Decimator Expansion Pack", ]
             points: 2
             ship: "VT-49 Decimator"
         }
@@ -3610,7 +3313,6 @@ exportObj.basicCardData = ->
             name: "Virago"
             id: 16
             unique: true
-            sources: [ "StarViper Expansion Pack", ]
             points: 1
             ship: "StarViper"
             restriction_func: (ship) ->
@@ -3629,7 +3331,6 @@ exportObj.basicCardData = ->
         {
             name: '"Heavy Scyk" Interceptor (Cannon)'
             id: 17
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             points: 2
             ship: "M3-A Interceptor"
             confersAddons: [
@@ -3642,7 +3343,6 @@ exportObj.basicCardData = ->
         {
             name: '"Heavy Scyk" Interceptor (Torpedo)'
             id: 18
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             points: 2
             ship: "M3-A Interceptor"
             confersAddons: [
@@ -3655,7 +3355,6 @@ exportObj.basicCardData = ->
         {
             name: '"Heavy Scyk" Interceptor (Missile)'
             id: 19
-            sources: [ "M3-A Interceptor Expansion Pack", ]
             points: 2
             ship: "M3-A Interceptor"
             confersAddons: [
@@ -3668,7 +3367,6 @@ exportObj.basicCardData = ->
         {
             name: 'IG-2000'
             id: 20
-            sources: [ "IG-2000 Expansion Pack", ]
             points: 0
             ship: "Aggressor"
         }

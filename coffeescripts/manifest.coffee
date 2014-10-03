@@ -655,7 +655,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-    "Lambda-Class Shuttle": [
+    "Lambda-Class Shuttle Expansion Pack": [
         {
             name: 'Captain Kagi'
             type: 'pilot'
@@ -920,7 +920,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-    'YT-2400 Light Freighter Expansion Pack': [
+    'YT-2400 Freighter Expansion Pack': [
         {
             name: 'Dash Rendar'
             type: 'pilot'
@@ -1002,7 +1002,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-    "VT-49 Decimator": [
+    "VT-49 Decimator Expansion Pack": [
         {
             name: 'Captain Oicunn'
             type: 'pilot'
