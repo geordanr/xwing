@@ -630,6 +630,7 @@ class exportObj.SquadBuilder
             # console.log "#{@faction}: collection was created"
             @collection = collection
             # console.log "#{@faction}: Collection created, checking squad"
+            @collection.onLanguageChange null, @language
             @checkCollection()
             @collection_button.removeClass 'hidden'
         .on 'xwing-collection:changed', (e, collection) =>
@@ -1330,8 +1331,8 @@ class exportObj.SquadBuilder
                         # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
                         return false unless modification_is_available
                 if ship.title?.data?
-                    title_is_available = @collection.use('title', title.data.english_name)
-                    # console.log "#{@faction}: Title #{title.data.english_name} available: #{title_is_available}"
+                    title_is_available = @collection.use('title', ship.title.data.english_name)
+                    # console.log "#{@faction}: Title #{ship.title.data.english_name} available: #{title_is_available}"
                     return false unless title_is_available
         # console.log "#{@faction}: all ships available in collection"
         true

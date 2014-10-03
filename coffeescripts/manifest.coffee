@@ -1636,6 +1636,8 @@ class exportObj.Collection
         @setupUI()
         @setupHandlers()
 
+        @language = 'English'
+
     reset: ->
         @shelf = {}
         @table = {}
@@ -1709,7 +1711,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input type="number" size="3" value="#{count}" />
-                            #{expansion}
+                            <span class="expansion-name">#{expansion}</span>
                         </label>
                     </div>
                 </div>
@@ -1717,6 +1719,7 @@ class exportObj.Collection
             input = $ $(row).find('input')
             input.data 'expansion', expansion
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.expansion-name').data 'english_name', expansion
             modal_body.append row
 
     destroyUI: ->
@@ -1734,6 +1737,7 @@ class exportObj.Collection
             @modal_status.text 'Collection saved'
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 5000
+        .on 'xwing:languageChanged', @onLanguageChange
 
         $ @modal.find('input').change (e) =>
             target = $(e.target)
@@ -1756,3 +1760,13 @@ class exportObj.Collection
                 "rgb(#{i}, 255, #{i})"
             else
                 'red'
+
+    onLanguageChange:
+        (e, language) =>
+            if language != @language
+                # console.log "language changed to #{language}"
+                do (language) =>
+                    @modal.find('.expansion-name').each ->
+                        # console.log "translating #{$(this).text()} (#{$(this).data('english_name')}) to #{language}"
+                        $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
+                @language = language
