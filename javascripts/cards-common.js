@@ -2555,6 +2555,7 @@
       if (pilot_data.skip == null) {
         pilot_data.sources = [];
         pilot_data.english_name = pilot_data.name;
+        pilot_data.english_ship = pilot_data.ship;
         if (pilot_data.canonical_name == null) {
           pilot_data.canonical_name = pilot_data.english_name.canonicalize();
         }
@@ -2670,6 +2671,9 @@
               break;
             case 'title':
               exportObj.titles[card.name].sources.push(expansion);
+              break;
+            case 'ship':
+              '';
               break;
             default:
               throw new Error("Unexpected card type " + card.type + " for card " + card.name + " of " + expansion);
