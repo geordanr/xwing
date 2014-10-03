@@ -161,6 +161,7 @@
       this.backend = null;
       this.current_squad = {};
       this.language = 'English';
+      this.collection = null;
       this.setupUI();
       this.setupEventHandlers();
       this.resetCurrentSquad();
@@ -207,7 +208,7 @@
       DEFAULT_RANDOMIZER_ITERATIONS = 1000;
       this.status_container = $(document.createElement('DIV'));
       this.status_container.addClass('container-fluid');
-      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+      this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>\n        <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You cannot field this list with your collection!</span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
       this.container.append(this.status_container);
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
@@ -314,6 +315,7 @@
       this.illegal_epic_upgrades_container = $(this.points_container.find('.illegal-epic-upgrades'));
       this.too_many_small_ships_container = $(this.points_container.find('.illegal-epic-too-many-small-ships'));
       this.too_many_large_ships_container = $(this.points_container.find('.illegal-epic-too-many-large-ships'));
+      this.collection_invalid_container = $(this.points_container.find('.collection-invalid'));
       this.total_epic_points_container = $(this.points_container.find('.total-epic-points-container'));
       this.total_epic_points_span = $(this.total_epic_points_container.find('.total-epic-points'));
       this.max_epic_points_span = $(this.points_container.find('.max-epic-points'));
@@ -323,6 +325,15 @@
       this.customize_randomizer = $(this.status_container.find('div.button-container a.randomize-options'));
       this.backend_status = $(this.status_container.find('.backend-status'));
       this.backend_status.hide();
+      this.collection_button = $(this.status_container.find('div.button-container a.collection'));
+      this.collection_button.click((function(_this) {
+        return function(e) {
+          e.preventDefault();
+          if (!_this.collection_button.prop('disabled')) {
+            return _this.collection.modal.modal('show');
+          }
+        };
+      })(this));
       this.squad_name_input.keypress((function(_this) {
         return function(e) {
           if (e.which === 13) {
@@ -459,7 +470,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 464
+                lineno: 475
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -579,6 +590,21 @@
       $(window).on('xwing-backend:authenticationChanged', (function(_this) {
         return function(e) {
           return _this.resetCurrentSquad();
+        };
+      })(this)).on('xwing-collection:created', (function(_this) {
+        return function(e, collection) {
+          _this.collection = collection;
+          _this.collection.onLanguageChange(null, _this.language);
+          _this.checkCollection();
+          return _this.collection_button.removeClass('hidden');
+        };
+      })(this)).on('xwing-collection:changed', (function(_this) {
+        return function(e, collection) {
+          return _this.checkCollection();
+        };
+      })(this)).on('xwing-collection:destroyed', (function(_this) {
+        return function(e, collection) {
+          return _this.collection_button.addClass('hidden');
         };
       })(this));
       this.view_list_button.click((function(_this) {
@@ -745,6 +771,7 @@
         }
       }
       this.bbcode_container.find('textarea').val($.trim("" + (bbcode_ships.join("\n\n")) + "\n\n[b][i]Total: " + this.total_points + "[/i][/b]\n\n[url=" + (this.permalink.attr('href')) + "]View in Yet Another Squad Builder[/url]"));
+      this.checkCollection();
       return cb(this.total_points);
     };
 
@@ -986,7 +1013,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 905
+            lineno: 931
           }));
           __iced_deferrals._fulfill();
         });
@@ -999,7 +1026,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 906
+              lineno: 932
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1729,6 +1756,56 @@
       return this.notes.val();
     };
 
+    SquadBuilder.prototype.isSquadPossibleWithCollection = function() {
+      var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      if (Object.keys((_ref = (_ref1 = this.collection) != null ? _ref1.expansions : void 0) != null ? _ref : {}).length === 0) {
+        return true;
+      }
+      this.collection.reset();
+      _ref2 = this.ships;
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        ship = _ref2[_i];
+        if (ship.pilot != null) {
+          ship_is_available = this.collection.use('ship', ship.pilot.english_ship);
+          pilot_is_available = this.collection.use('pilot', ship.pilot.english_name);
+          if (!(ship_is_available && pilot_is_available)) {
+            return false;
+          }
+          _ref3 = ship.upgrades;
+          for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+            upgrade = _ref3[_j];
+            if (upgrade.data != null) {
+              upgrade_is_available = this.collection.use('upgrade', upgrade.data.english_name);
+              if (!upgrade_is_available) {
+                return false;
+              }
+            }
+          }
+          _ref4 = ship.modifications;
+          for (_k = 0, _len2 = _ref4.length; _k < _len2; _k++) {
+            modification = _ref4[_k];
+            if (modification.data != null) {
+              modification_is_available = this.collection.use('modification', modification.data.english_name);
+              if (!modification_is_available) {
+                return false;
+              }
+            }
+          }
+          if (((_ref5 = ship.title) != null ? _ref5.data : void 0) != null) {
+            title_is_available = this.collection.use('title', ship.title.data.english_name);
+            if (!title_is_available) {
+              return false;
+            }
+          }
+        }
+      }
+      return true;
+    };
+
+    SquadBuilder.prototype.checkCollection = function() {
+      return this.collection_invalid_container.toggleClass('hidden', this.isSquadPossibleWithCollection());
+    };
+
     return SquadBuilder;
 
   })();
@@ -1895,7 +1972,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1390
+                        lineno: 1452
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -1965,7 +2042,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1414
+                  lineno: 1476
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2018,14 +2095,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1436
+              lineno: 1498
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1438
+              lineno: 1500
             }));
           }
           _ref1 = _this.modifications;
@@ -2033,7 +2110,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1440
+                lineno: 1502
               }));
             }
           }
@@ -2542,7 +2619,7 @@
     Ship.prototype.validate = function() {
       var func, i, max_checks, modification, upgrade, valid, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
       max_checks = 128;
-      for (i = _i = 0; 0 <= max_checks ? _i <= max_checks : _i >= max_checks; i = 0 <= max_checks ? ++_i : --_i) {
+      for (i = _i = 0; 0 <= max_checks ? _i < max_checks : _i > max_checks; i = 0 <= max_checks ? ++_i : --_i) {
         valid = true;
         _ref = this.upgrades;
         for (_j = 0, _len = _ref.length; _j < _len; _j++) {
@@ -2659,7 +2736,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1892
+                  lineno: 1954
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2735,7 +2812,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1922
+                    lineno: 1984
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2757,7 +2834,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1925
+                      lineno: 1987
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2822,7 +2899,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 1950
+              lineno: 2012
             }));
           }
           __iced_deferrals._fulfill();
