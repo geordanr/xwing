@@ -1,11 +1,20 @@
 (function() {
-  var exportObj;
+  var exportObj,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
   exportObj.manifestByExpansion = {
     'Core': [
       {
+        name: 'X-Wing',
+        type: 'ship',
+        count: 1
+      }, {
+        name: 'TIE Fighter',
+        type: 'ship',
+        count: 2
+      }, {
         name: 'Luke Skywalker',
         type: 'pilot',
         count: 1
@@ -69,6 +78,10 @@
     ],
     'X-Wing Expansion Pack': [
       {
+        name: 'X-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Wedge Antilles',
         type: 'pilot',
         count: 1
@@ -108,6 +121,10 @@
     ],
     'Y-Wing Expansion Pack': [
       {
+        name: 'Y-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Horton Salm',
         type: 'pilot',
         count: 1
@@ -143,6 +160,10 @@
     ],
     'TIE Fighter Expansion Pack': [
       {
+        name: 'TIE Fighter',
+        type: 'ship',
+        count: 1
+      }, {
         name: '"Howlrunner"',
         type: 'pilot',
         count: 1
@@ -178,6 +199,10 @@
     ],
     'TIE Advanced Expansion Pack': [
       {
+        name: 'TIE Advanced',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Darth Vader',
         type: 'pilot',
         count: 1
@@ -217,6 +242,10 @@
     ],
     'A-Wing Expansion Pack': [
       {
+        name: 'A-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Tycho Celchu',
         type: 'pilot',
         count: 1
@@ -256,6 +285,10 @@
     ],
     'Millennium Falcon Expansion Pack': [
       {
+        name: 'YT-1300',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Han Solo',
         type: 'pilot',
         count: 1
@@ -323,6 +356,10 @@
     ],
     'TIE Interceptor Expansion Pack': [
       {
+        name: 'TIE Interceptor',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Soontir Fel',
         type: 'pilot',
         count: 1
@@ -358,6 +395,10 @@
     ],
     'Slave I Expansion Pack': [
       {
+        name: 'Firespray-31',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Boba Fett',
         type: 'pilot',
         count: 1
@@ -425,6 +466,10 @@
     ],
     'B-Wing Expansion Pack': [
       {
+        name: 'B-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Ten Numb',
         type: 'pilot',
         count: 1
@@ -464,6 +509,10 @@
     ],
     "HWK-290 Expansion Pack": [
       {
+        name: 'HWK-290',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Jan Ors',
         type: 'pilot',
         count: 1
@@ -507,6 +556,10 @@
     ],
     "TIE Bomber Expansion Pack": [
       {
+        name: 'TIE Bomber',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Major Rhymer',
         type: 'pilot',
         count: 1
@@ -546,6 +599,10 @@
     ],
     "Lambda-Class Shuttle Expansion Pack": [
       {
+        name: 'Lambda-Class Shuttle',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Captain Kagi',
         type: 'pilot',
         count: 1
@@ -609,6 +666,10 @@
     ],
     "Z-95 Headhunter Expansion Pack": [
       {
+        name: 'Z-95 Headhunter',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Airen Cracken',
         type: 'pilot',
         count: 1
@@ -648,6 +709,10 @@
     ],
     'E-Wing Expansion Pack': [
       {
+        name: 'E-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Corran Horn',
         type: 'pilot',
         count: 1
@@ -687,6 +752,10 @@
     ],
     'TIE Defender Expansion Pack': [
       {
+        name: 'TIE Defender',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Rexler Brath',
         type: 'pilot',
         count: 1
@@ -726,6 +795,10 @@
     ],
     'TIE Phantom Expansion Pack': [
       {
+        name: 'TIE Phantom',
+        type: 'ship',
+        count: 1
+      }, {
         name: '"Whisper"',
         type: 'pilot',
         count: 1
@@ -765,6 +838,10 @@
     ],
     'YT-2400 Freighter Expansion Pack': [
       {
+        name: 'YT-2400',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Dash Rendar',
         type: 'pilot',
         count: 1
@@ -832,6 +909,10 @@
     ],
     "VT-49 Decimator Expansion Pack": [
       {
+        name: 'VT-49 Decimator',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Captain Oicunn',
         type: 'pilot',
         count: 1
@@ -887,6 +968,10 @@
     ],
     'Imperial Aces Expansion Pack': [
       {
+        name: 'TIE Interceptor',
+        type: 'ship',
+        count: 2
+      }, {
         name: 'Carnor Jax',
         type: 'pilot',
         count: 1
@@ -938,6 +1023,14 @@
     ],
     'Rebel Aces Expansion Pack': [
       {
+        name: 'A-Wing',
+        type: 'ship',
+        count: 1
+      }, {
+        name: 'B-Wing',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'Jake Farrell',
         type: 'pilot',
         count: 1
@@ -1001,6 +1094,14 @@
     ],
     'Rebel Transport Expansion Pack': [
       {
+        name: 'X-Wing',
+        type: 'ship',
+        count: 1
+      }, {
+        name: 'GR-75 Medium Transport',
+        type: 'ship',
+        count: 1
+      }, {
         name: 'GR-75 Medium Transport',
         type: 'pilot',
         count: 1
@@ -1121,6 +1222,14 @@
     'Tantive IV Expansion Pack': [
       {
         name: 'CR90 Corvette (Fore)',
+        type: 'ship',
+        count: 1
+      }, {
+        name: 'CR90 Corvette (Aft)',
+        type: 'ship',
+        count: 1
+      }, {
+        name: 'CR90 Corvette (Fore)',
         type: 'pilot',
         count: 1
       }, {
@@ -1217,11 +1326,13 @@
 
   exportObj.Collection = (function() {
     function Collection(args) {
+      this.onLanguageChange = __bind(this.onLanguageChange, this);
       this.expansions = args.expansions;
       this.backend = args.backend;
       this.reset();
       this.setupUI();
       this.setupHandlers();
+      this.language = 'English';
     }
 
     Collection.prototype.reset = function() {
@@ -1240,7 +1351,7 @@
         _results.push((function() {
           var _i, _results1;
           _results1 = [];
-          for (_ = _i = 1; 1 <= count ? _i <= count : _i >= count; _ = 1 <= count ? ++_i : --_i) {
+          for (_ = _i = 0; 0 <= count ? _i < count : _i > count; _ = 0 <= count ? ++_i : --_i) {
             _results1.push((function() {
               var _j, _len, _ref1, _ref2, _results2;
               _ref2 = (_ref1 = exportObj.manifestByExpansion[expansion]) != null ? _ref1 : [];
@@ -1250,7 +1361,7 @@
                 _results2.push((function() {
                   var _base, _base1, _k, _name, _name1, _ref3, _results3;
                   _results3 = [];
-                  for (_ = _k = 1, _ref3 = card.count; 1 <= _ref3 ? _k <= _ref3 : _k >= _ref3; _ = 1 <= _ref3 ? ++_k : --_k) {
+                  for (_ = _k = 0, _ref3 = card.count; 0 <= _ref3 ? _k < _ref3 : _k > _ref3; _ = 0 <= _ref3 ? ++_k : --_k) {
                     _results3.push(((_base = ((_base1 = this.shelf)[_name1 = card.type] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = card.name] != null ? _base[_name] : _base[_name] = []).push(expansion));
                   }
                   return _results3;
@@ -1327,10 +1438,11 @@
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         expansion = _ref[_i];
         count = parseInt((_ref1 = this.expansions[expansion]) != null ? _ref1 : 0);
-        row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input type=\"number\" size=\"3\" value=\"" + count + "\" />\n            " + expansion + "\n        </label>\n    </div>\n</div>"));
+        row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"expansion-name\">" + expansion + "</span>\n        </label>\n    </div>\n</div>"));
         input = $($(row).find('input'));
         input.data('expansion', expansion);
         input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+        $(row).find('.expansion-name').data('english_name', expansion);
         _results.push(modal_body.append(row));
       }
       return _results;
@@ -1357,7 +1469,7 @@
             return _this.modal_status.fadeOut(5000);
           });
         };
-      })(this));
+      })(this)).on('xwing:languageChanged', this.onLanguageChange);
       return $(this.modal.find('input').change((function(_this) {
         return function(e) {
           var target, val;
@@ -1384,6 +1496,19 @@
           return "rgb(" + i + ", 255, " + i + ")";
         default:
           return 'red';
+      }
+    };
+
+    Collection.prototype.onLanguageChange = function(e, language) {
+      if (language !== this.language) {
+        (function(_this) {
+          return (function(language) {
+            return _this.modal.find('.expansion-name').each(function() {
+              return $(this).text(exportObj.translate(language, 'sources', $(this).data('english_name')));
+            });
+          });
+        })(this)(language);
+        return this.language = language;
       }
     };
 
