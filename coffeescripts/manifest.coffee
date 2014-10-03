@@ -1570,7 +1570,7 @@ class exportObj.Collection
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
             row = $.parseHTML $.trim """
-                <div class="row">
+                <div class="row-fluid">
                     <div class="span12">
                         <label>
                             <input type="number" size="3" value="#{count}" />
