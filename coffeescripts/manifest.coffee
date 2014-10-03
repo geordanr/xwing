@@ -1559,9 +1559,12 @@ class exportObj.Collection
                 </div>
             </div>
             <div class="modal-footer hidden-print">
+                <span class="collection-status"></span>
+                &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
+        @modal_status = $ @modal.find('.collection-status')
 
         modal_body = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
@@ -1570,13 +1573,15 @@ class exportObj.Collection
                 <div class="row">
                     <div class="span12">
                         <label>
-                            #{expansion}
                             <input type="number" size="3" value="#{count}" />
+                            #{expansion}
                         </label>
                     </div>
                 </div>
             """
-            $(row).find('input').data 'expansion', expansion
+            input = $ $(row).find('input')
+            input.data 'expansion', expansion
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             modal_body.append row
 
     destroyUI: ->
@@ -1590,6 +1595,10 @@ class exportObj.Collection
         $(exportObj).on 'xwing-backend:authenticationChanged', (e, authenticated, backend) =>
             # console.log "deauthed, destroying collection UI"
             @destroyUI() unless authenticated
+        .on 'xwing-collection:saved', (e, collection) =>
+            @modal_status.text 'Collection saved'
+            @modal_status.fadeIn 100, =>
+                @modal_status.fadeOut 5000
 
         $ @modal.find('input').change (e) =>
             target = $(e.target)
@@ -1597,4 +1606,17 @@ class exportObj.Collection
             target.val(0) if val < 0 or isNaN(parseInt(val))
             @expansions[target.data 'expansion'] = parseInt(target.val())
 
+            target.closest('div').css 'background-color', @countToBackgroundColor(val)
+
             $(exportObj).trigger 'xwing-collection:changed', this
+
+    countToBackgroundColor: (count) ->
+        count = parseInt(count)
+        switch
+            when count == 0
+                'none'
+            when count < 12
+                i = parseInt(200 * Math.pow(0.9, count - 1))
+                "rgb(#{i}, 255, #{i})"
+            else
+                'red'

@@ -52,6 +52,8 @@ class exportObj.SquadBuilderBackend
 
         @squad_display_mode = 'all'
 
+        @collection_save_timer = null
+
         @setupHandlers()
         @setupUI()
 
@@ -555,9 +557,12 @@ class exportObj.SquadBuilderBackend
                 console.log "Message received from unapproved origin #{ev.origin}"
                 window.last_ev = e
         .on 'xwing-collection:changed', (e, collection) =>
-            @saveCollection collection, (res) ->
-                if res
-                    $(window).trigger 'xwing-collection:saved', collection
+            clearTimeout(@collection_save_timer) if @collection_save_timer?
+            @collection_save_timer = setTimeout =>
+                @saveCollection collection, (res) ->
+                    if res
+                        $(window).trigger 'xwing-collection:saved', collection
+            , 1000
 
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
