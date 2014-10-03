@@ -1321,12 +1321,18 @@ class exportObj.SquadBuilder
                 return false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
-                        return false unless @collection.use('upgrade', upgrade.data.english_name)
+                        upgrade_is_available = @collection.use('upgrade', upgrade.data.english_name)
+                        # console.log "#{@faction}: Upgrade #{upgrade.data.english_name} available: #{upgrade_is_available}"
+                        return false unless upgrade_is_available
                 for modification in ship.modifications
                     if modification.data?
-                        return false unless @collection.use('modification', modification.data.english_name)
+                        modification_is_available = @collection.use('modification', modification.data.english_name)
+                        # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
+                        return false unless modification_is_available
                 if ship.title?.data?
-                    return false unless @collection.use('title', title.data.english_name)
+                    title_is_available = @collection.use('title', title.data.english_name)
+                    # console.log "#{@faction}: Title #{title.data.english_name} available: #{title_is_available}"
+                    return false unless title_is_available
         # console.log "#{@faction}: all ships available in collection"
         true
 

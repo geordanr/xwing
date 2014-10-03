@@ -340,7 +340,7 @@ exportObj.manifestByExpansion =
     ]
     'Millennium Falcon Expansion Pack': [
         {
-            name: 'Millennium Falcon'
+            name: 'YT-1300'
             type: 'ship'
             count: 1
         }
