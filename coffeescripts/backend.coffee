@@ -52,6 +52,8 @@ class exportObj.SquadBuilderBackend
 
         @squad_display_mode = 'all'
 
+        @collection_save_timer = null
+
         @setupHandlers()
         @setupUI()
 
@@ -190,7 +192,7 @@ class exportObj.SquadBuilderBackend
 
     maybeAuthenticationChanged: (old_auth_state, cb) =>
         if old_auth_state != @authenticated
-            $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
+            $(window).trigger 'xwing-backend:authenticationChanged', [ @authenticated, this ]
         @oauth_window = null
         @auth_status.hide()
         cb @authenticated
@@ -527,8 +529,10 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.modal 'hide'
 
     setupHandlers: () ->
-        $(window).on 'xwing-backend:authenticationChanged', () =>
+        $(window).on 'xwing-backend:authenticationChanged', (authenticated, backend) =>
             @updateAuthenticationVisibility()
+            if authenticated
+                @loadCollection()
 
         @login_logout_button.click (e) =>
             e.preventDefault()
@@ -552,6 +556,13 @@ class exportObj.SquadBuilderBackend
             else
                 console.log "Message received from unapproved origin #{ev.origin}"
                 window.last_ev = e
+        .on 'xwing-collection:changed', (e, collection) =>
+            clearTimeout(@collection_save_timer) if @collection_save_timer?
+            @collection_save_timer = setTimeout =>
+                @saveCollection collection, (res) ->
+                    if res
+                        $(window).trigger 'xwing-collection:saved', collection
+            , 1000
 
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
@@ -592,3 +603,16 @@ class exportObj.SquadBuilderBackend
                     break
             else
                 cb 'English'
+
+    saveCollection: (collection, cb=$.noop) ->
+        post_args =
+            expansions: collection.expansions
+        $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
+            cb data.success
+
+    loadCollection: ->
+        # Backend provides an empty collection if none exists yet for the user.
+        $.get("#{@server}/collection").done (data, textStatus, jqXHR) ->
+            collection = data.collection
+            new exportObj.Collection
+                expansions: collection.expansions
