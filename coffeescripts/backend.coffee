@@ -527,8 +527,10 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.modal 'hide'
 
     setupHandlers: () ->
-        $(window).on 'xwing-backend:authenticationChanged', () =>
+        $(window).on 'xwing-backend:authenticationChanged', (authenticated, backend) =>
             @updateAuthenticationVisibility()
+            if authenticated
+                @loadCollection()
 
         @login_logout_button.click (e) =>
             e.preventDefault()

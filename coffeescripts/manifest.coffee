@@ -1580,22 +1580,16 @@ class exportObj.Collection
             modal_body.append row
 
     destroyUI: ->
-        $(exportObj).trigger 'xwing-collection:destroyed', this
         @modal.modal 'hide'
         @modal.remove()
+        $(exportObj).trigger 'xwing-collection:destroyed', this
 
     setupHandlers: ->
         $(exportObj).trigger 'xwing-collection:created', this
 
         $(exportObj).on 'xwing-backend:authenticationChanged', (e, authenticated, backend) =>
-            @destroyUI()
-            if authenticated
-                # console.log "authenticated, loading from backend"
-                exportObj.Collection.load backend
-            else
-                # console.log "deauthed, creating empty collection"
-                new exportObj.Collection
-                    expansions: {}
+            # console.log "deauthed, destroying collection UI"
+            @destroyUI() unless authenticated
 
         $ @modal.find('input').change (e) =>
             target = $(e.target)
