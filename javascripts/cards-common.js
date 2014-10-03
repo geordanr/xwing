@@ -18,10 +18,6 @@
     return false;
   };
 
-  String.prototype.canonicalize = function() {
-    return this.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-  };
-
   exportObj.basicCardData = function() {
     return {
       ships: {
@@ -280,6 +276,7 @@
           name: "Wedge Antilles",
           faction: "Rebel Alliance",
           id: 0,
+          sources: ["X-Wing Expansion Pack"],
           unique: true,
           ship: "X-Wing",
           skill: 9,
@@ -289,6 +286,7 @@
           name: "Garven Dreis",
           faction: "Rebel Alliance",
           id: 1,
+          sources: ["X-Wing Expansion Pack"],
           unique: true,
           ship: "X-Wing",
           skill: 6,
@@ -298,6 +296,7 @@
           name: "Red Squadron Pilot",
           faction: "Rebel Alliance",
           id: 2,
+          sources: ["Core", "X-Wing Expansion Pack"],
           ship: "X-Wing",
           skill: 4,
           points: 23,
@@ -306,6 +305,7 @@
           name: "Rookie Pilot",
           faction: "Rebel Alliance",
           id: 3,
+          sources: ["Core", "X-Wing Expansion Pack"],
           ship: "X-Wing",
           skill: 2,
           points: 21,
@@ -315,6 +315,7 @@
           faction: "Rebel Alliance",
           id: 4,
           unique: true,
+          sources: ["Core"],
           ship: "X-Wing",
           skill: 5,
           points: 25,
@@ -324,6 +325,7 @@
           faction: "Rebel Alliance",
           id: 5,
           unique: true,
+          sources: ["Core"],
           ship: "X-Wing",
           skill: 8,
           points: 28,
@@ -333,6 +335,7 @@
           faction: "Rebel Alliance",
           id: 6,
           ship: "Y-Wing",
+          sources: ["Y-Wing Expansion Pack"],
           skill: 4,
           points: 20,
           slots: ["Turret", "Torpedo", "Torpedo", "Astromech"]
@@ -342,6 +345,7 @@
           id: 7,
           unique: true,
           ship: "Y-Wing",
+          sources: ["Y-Wing Expansion Pack"],
           skill: 6,
           points: 23,
           slots: ["Turret", "Torpedo", "Torpedo", "Astromech"]
@@ -351,6 +355,7 @@
           id: 8,
           unique: true,
           ship: "Y-Wing",
+          sources: ["Y-Wing Expansion Pack"],
           skill: 8,
           points: 25,
           slots: ["Turret", "Torpedo", "Torpedo", "Astromech"]
@@ -359,6 +364,7 @@
           faction: "Rebel Alliance",
           id: 9,
           ship: "Y-Wing",
+          sources: ["Y-Wing Expansion Pack"],
           skill: 2,
           points: 18,
           slots: ["Turret", "Torpedo", "Torpedo", "Astromech"]
@@ -367,6 +373,7 @@
           faction: "Galactic Empire",
           id: 10,
           ship: "TIE Fighter",
+          sources: ["Core", "TIE Fighter Expansion Pack"],
           skill: 1,
           points: 12,
           slots: []
@@ -375,6 +382,7 @@
           faction: "Galactic Empire",
           id: 11,
           ship: "TIE Fighter",
+          sources: ["Core", "TIE Fighter Expansion Pack"],
           skill: 3,
           points: 13,
           slots: []
@@ -383,6 +391,7 @@
           faction: "Galactic Empire",
           id: 12,
           ship: "TIE Fighter",
+          sources: ["Core", "TIE Fighter Expansion Pack"],
           skill: 4,
           points: 14,
           slots: ["Elite"]
@@ -392,6 +401,7 @@
           id: 13,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["TIE Fighter Expansion Pack"],
           skill: 5,
           points: 15,
           slots: []
@@ -401,6 +411,7 @@
           id: 14,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["Core"],
           skill: 5,
           points: 15,
           slots: []
@@ -410,6 +421,7 @@
           id: 15,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["TIE Fighter Expansion Pack"],
           skill: 6,
           points: 16,
           slots: []
@@ -419,6 +431,7 @@
           id: 16,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["Core"],
           skill: 6,
           points: 16,
           slots: []
@@ -428,6 +441,7 @@
           id: 17,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["Core"],
           skill: 7,
           points: 17,
           slots: ["Elite"]
@@ -437,6 +451,7 @@
           id: 18,
           unique: true,
           ship: "TIE Fighter",
+          sources: ["TIE Fighter Expansion Pack"],
           skill: 8,
           points: 18,
           slots: ["Elite"]
@@ -446,6 +461,7 @@
           id: 19,
           unique: true,
           ship: "TIE Advanced",
+          sources: ["TIE Advanced Expansion Pack"],
           skill: 7,
           points: 27,
           slots: ["Elite", "Missile"]
@@ -454,6 +470,7 @@
           faction: "Galactic Empire",
           id: 20,
           ship: "TIE Advanced",
+          sources: ["TIE Advanced Expansion Pack"],
           skill: 2,
           points: 21,
           slots: ["Missile"]
@@ -462,6 +479,7 @@
           faction: "Galactic Empire",
           id: 21,
           ship: "TIE Advanced",
+          sources: ["TIE Advanced Expansion Pack"],
           skill: 4,
           points: 23,
           slots: ["Missile"]
@@ -471,6 +489,7 @@
           id: 22,
           unique: true,
           ship: "TIE Advanced",
+          sources: ["TIE Advanced Expansion Pack"],
           skill: 9,
           points: 29,
           slots: ["Elite", "Missile"]
@@ -479,6 +498,7 @@
           faction: "Galactic Empire",
           id: 23,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack"],
           skill: 1,
           points: 18,
           slots: []
@@ -487,6 +507,7 @@
           faction: "Galactic Empire",
           id: 24,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack"],
           skill: 3,
           points: 20,
           slots: []
@@ -495,6 +516,7 @@
           faction: "Galactic Empire",
           id: 25,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack", "Imperial Aces Expansion Pack"],
           skill: 4,
           points: 21,
           slots: ["Elite"]
@@ -504,6 +526,7 @@
           id: 26,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack"],
           skill: 5,
           points: 23,
           slots: []
@@ -513,6 +536,7 @@
           id: 27,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack"],
           skill: 7,
           points: 25,
           slots: ["Elite"]
@@ -522,6 +546,7 @@
           id: 28,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["TIE Interceptor Expansion Pack"],
           skill: 9,
           points: 27,
           slots: ["Elite"]
@@ -531,6 +556,7 @@
           id: 29,
           unique: true,
           ship: "A-Wing",
+          sources: ["A-Wing Expansion Pack"],
           skill: 8,
           points: 26,
           slots: ["Elite", "Missile"]
@@ -540,6 +566,7 @@
           id: 30,
           unique: true,
           ship: "A-Wing",
+          sources: ["A-Wing Expansion Pack"],
           skill: 6,
           points: 23,
           slots: ["Missile"]
@@ -548,6 +575,7 @@
           faction: "Rebel Alliance",
           id: 31,
           ship: "A-Wing",
+          sources: ["A-Wing Expansion Pack", "Rebel Aces Expansion Pack"],
           skill: 3,
           points: 19,
           slots: ["Elite", "Missile"]
@@ -556,6 +584,7 @@
           faction: "Rebel Alliance",
           id: 32,
           ship: "A-Wing",
+          sources: ["A-Wing Expansion Pack", "Rebel Aces Expansion Pack"],
           skill: 1,
           points: 17,
           slots: ["Missile"]
@@ -564,6 +593,7 @@
           faction: "Rebel Alliance",
           id: 33,
           ship: "YT-1300",
+          sources: ["Millennium Falcon Expansion Pack"],
           skill: 1,
           points: 27,
           slots: ["Crew", "Crew"]
@@ -573,6 +603,7 @@
           id: 34,
           unique: true,
           ship: "YT-1300",
+          sources: ["Millennium Falcon Expansion Pack"],
           skill: 5,
           points: 42,
           slots: ["Elite", "Missile", "Crew", "Crew"],
@@ -588,6 +619,7 @@
           id: 35,
           unique: true,
           ship: "YT-1300",
+          sources: ["Millennium Falcon Expansion Pack"],
           skill: 7,
           points: 44,
           slots: ["Elite", "Missile", "Crew", "Crew"],
@@ -603,6 +635,7 @@
           id: 36,
           unique: true,
           ship: "YT-1300",
+          sources: ["Millennium Falcon Expansion Pack"],
           skill: 9,
           points: 46,
           slots: ["Elite", "Missile", "Crew", "Crew"],
@@ -618,6 +651,7 @@
           id: 37,
           unique: true,
           ship: "Firespray-31",
+          sources: ["Slave I Expansion Pack"],
           skill: 7,
           points: 38,
           slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile"]
@@ -627,6 +661,7 @@
           id: 38,
           unique: true,
           ship: "Firespray-31",
+          sources: ["Slave I Expansion Pack"],
           skill: 8,
           points: 39,
           slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile"]
@@ -636,6 +671,7 @@
           id: 39,
           unique: true,
           ship: "Firespray-31",
+          sources: ["Slave I Expansion Pack"],
           skill: 5,
           points: 36,
           slots: ["Cannon", "Bomb", "Crew", "Missile"]
@@ -644,6 +680,7 @@
           faction: "Galactic Empire",
           id: 40,
           ship: "Firespray-31",
+          sources: ["Slave I Expansion Pack"],
           skill: 3,
           points: 33,
           slots: ["Cannon", "Bomb", "Crew", "Missile"]
@@ -653,6 +690,7 @@
           id: 41,
           unique: true,
           ship: "B-Wing",
+          sources: ["B-Wing Expansion Pack"],
           skill: 8,
           points: 31,
           slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
@@ -662,6 +700,7 @@
           id: 42,
           unique: true,
           ship: "B-Wing",
+          sources: ["B-Wing Expansion Pack"],
           skill: 6,
           points: 28,
           slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
@@ -670,6 +709,7 @@
           faction: "Rebel Alliance",
           id: 43,
           ship: "B-Wing",
+          sources: ["B-Wing Expansion Pack", "Rebel Aces Expansion Pack"],
           skill: 4,
           points: 24,
           slots: ["System", "Cannon", "Torpedo", "Torpedo"]
@@ -678,6 +718,7 @@
           faction: "Rebel Alliance",
           id: 44,
           ship: "B-Wing",
+          sources: ["B-Wing Expansion Pack", "Rebel Aces Expansion Pack"],
           skill: 2,
           points: 22,
           slots: ["System", "Cannon", "Torpedo", "Torpedo"]
@@ -686,6 +727,7 @@
           faction: "Rebel Alliance",
           id: 45,
           ship: "HWK-290",
+          sources: ["HWK-290 Expansion Pack"],
           skill: 2,
           points: 16,
           slots: ["Turret", "Crew"]
@@ -695,6 +737,7 @@
           id: 46,
           unique: true,
           ship: "HWK-290",
+          sources: ["HWK-290 Expansion Pack"],
           skill: 4,
           points: 19,
           slots: ["Turret", "Crew"]
@@ -704,6 +747,7 @@
           id: 47,
           unique: true,
           ship: "HWK-290",
+          sources: ["HWK-290 Expansion Pack"],
           skill: 6,
           points: 21,
           slots: ["Elite", "Turret", "Crew"]
@@ -713,6 +757,7 @@
           id: 48,
           unique: true,
           ship: "HWK-290",
+          sources: ["HWK-290 Expansion Pack"],
           skill: 8,
           points: 25,
           slots: ["Elite", "Turret", "Crew"]
@@ -721,6 +766,7 @@
           faction: "Galactic Empire",
           id: 49,
           ship: "TIE Bomber",
+          sources: ["TIE Bomber Expansion Pack"],
           skill: 2,
           points: 16,
           slots: ["Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
@@ -729,6 +775,7 @@
           faction: "Galactic Empire",
           id: 50,
           ship: "TIE Bomber",
+          sources: ["TIE Bomber Expansion Pack"],
           skill: 4,
           points: 18,
           slots: ["Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
@@ -738,6 +785,7 @@
           id: 51,
           unique: true,
           ship: "TIE Bomber",
+          sources: ["TIE Bomber Expansion Pack"],
           skill: 6,
           points: 22,
           slots: ["Elite", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
@@ -747,6 +795,7 @@
           id: 52,
           unique: true,
           ship: "TIE Bomber",
+          sources: ["TIE Bomber Expansion Pack"],
           skill: 7,
           points: 26,
           slots: ["Elite", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb"]
@@ -756,6 +805,7 @@
           id: 53,
           unique: true,
           ship: "Lambda-Class Shuttle",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           skill: 8,
           points: 27,
           slots: ["System", "Cannon", "Crew", "Crew"]
@@ -765,6 +815,7 @@
           id: 54,
           unique: true,
           ship: "Lambda-Class Shuttle",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           skill: 6,
           points: 26,
           slots: ["System", "Cannon", "Crew", "Crew"]
@@ -774,6 +825,7 @@
           id: 55,
           unique: true,
           ship: "Lambda-Class Shuttle",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           skill: 4,
           points: 24,
           slots: ["System", "Cannon", "Crew", "Crew"]
@@ -782,6 +834,7 @@
           faction: "Galactic Empire",
           id: 56,
           ship: "Lambda-Class Shuttle",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           skill: 2,
           points: 21,
           slots: ["System", "Cannon", "Crew", "Crew"]
@@ -791,6 +844,7 @@
           id: 57,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["Imperial Aces Expansion Pack"],
           skill: 5,
           points: 23,
           slots: []
@@ -799,6 +853,7 @@
           faction: "Galactic Empire",
           id: 58,
           ship: "TIE Interceptor",
+          sources: ["Imperial Aces Expansion Pack"],
           skill: 6,
           points: 22,
           slots: ["Elite"]
@@ -808,6 +863,7 @@
           id: 59,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["Imperial Aces Expansion Pack"],
           skill: 7,
           points: 24,
           slots: ["Elite"],
@@ -824,6 +880,7 @@
           id: 61,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["Imperial Aces Expansion Pack"],
           skill: 6,
           points: 24,
           slots: []
@@ -833,6 +890,7 @@
           id: 62,
           unique: true,
           ship: "TIE Interceptor",
+          sources: ["Imperial Aces Expansion Pack"],
           skill: 8,
           points: 26,
           slots: ["Elite"]
@@ -842,6 +900,7 @@
           id: 63,
           epic: true,
           ship: "GR-75 Medium Transport",
+          sources: ["Rebel Transport Expansion Pack"],
           skill: 3,
           points: 30,
           slots: ["Crew", "Crew", "Cargo", "Cargo", "Cargo"]
@@ -850,6 +909,7 @@
           faction: "Rebel Alliance",
           id: 64,
           ship: "Z-95 Headhunter",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           skill: 2,
           points: 12,
           slots: ["Missile"]
@@ -858,6 +918,7 @@
           faction: "Rebel Alliance",
           id: 65,
           ship: "Z-95 Headhunter",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           skill: 4,
           points: 13,
           slots: ["Missile"]
@@ -867,6 +928,7 @@
           id: 66,
           unique: true,
           ship: "Z-95 Headhunter",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           skill: 6,
           points: 17,
           slots: ["Elite", "Missile"]
@@ -876,6 +938,7 @@
           id: 67,
           unique: true,
           ship: "Z-95 Headhunter",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           skill: 8,
           points: 19,
           slots: ["Elite", "Missile"]
@@ -884,6 +947,7 @@
           faction: "Galactic Empire",
           id: 68,
           ship: "TIE Defender",
+          sources: ["TIE Defender Expansion Pack"],
           skill: 1,
           points: 30,
           slots: ["Cannon", "Missile"]
@@ -892,6 +956,7 @@
           faction: "Galactic Empire",
           id: 69,
           ship: "TIE Defender",
+          sources: ["TIE Defender Expansion Pack"],
           skill: 3,
           points: 32,
           slots: ["Cannon", "Missile"]
@@ -901,6 +966,7 @@
           id: 70,
           unique: true,
           ship: "TIE Defender",
+          sources: ["TIE Defender Expansion Pack"],
           skill: 6,
           points: 35,
           slots: ["Elite", "Cannon", "Missile"]
@@ -910,6 +976,7 @@
           id: 71,
           unique: true,
           ship: "TIE Defender",
+          sources: ["TIE Defender Expansion Pack"],
           skill: 8,
           points: 37,
           slots: ["Elite", "Cannon", "Missile"]
@@ -918,6 +985,7 @@
           faction: "Rebel Alliance",
           id: 72,
           ship: "E-Wing",
+          sources: ["E-Wing Expansion Pack"],
           skill: 1,
           points: 27,
           slots: ["System", "Torpedo", "Astromech"]
@@ -926,6 +994,7 @@
           faction: "Rebel Alliance",
           id: 73,
           ship: "E-Wing",
+          sources: ["E-Wing Expansion Pack"],
           skill: 3,
           points: 29,
           slots: ["System", "Torpedo", "Astromech"]
@@ -935,6 +1004,7 @@
           id: 74,
           unique: true,
           ship: "E-Wing",
+          sources: ["E-Wing Expansion Pack"],
           skill: 5,
           points: 32,
           slots: ["Elite", "System", "Torpedo", "Astromech"]
@@ -944,6 +1014,7 @@
           id: 75,
           unique: true,
           ship: "E-Wing",
+          sources: ["E-Wing Expansion Pack"],
           skill: 8,
           points: 35,
           slots: ["Elite", "System", "Torpedo", "Astromech"]
@@ -952,6 +1023,7 @@
           faction: "Galactic Empire",
           id: 76,
           ship: "TIE Phantom",
+          sources: ["TIE Phantom Expansion Pack"],
           skill: 3,
           points: 25,
           slots: ["System", "Crew"]
@@ -960,6 +1032,7 @@
           faction: "Galactic Empire",
           id: 77,
           ship: "TIE Phantom",
+          sources: ["TIE Phantom Expansion Pack"],
           skill: 5,
           points: 27,
           slots: ["System", "Crew"]
@@ -969,6 +1042,7 @@
           id: 78,
           unique: true,
           ship: "TIE Phantom",
+          sources: ["TIE Phantom Expansion Pack"],
           skill: 6,
           points: 30,
           slots: ["Elite", "System", "Crew"]
@@ -978,6 +1052,7 @@
           id: 79,
           unique: true,
           ship: "TIE Phantom",
+          sources: ["TIE Phantom Expansion Pack"],
           skill: 7,
           points: 32,
           slots: ["Elite", "System", "Crew"]
@@ -987,6 +1062,7 @@
           id: 80,
           epic: true,
           ship: "CR90 Corvette (Fore)",
+          sources: ["Tantive IV Expansion Pack"],
           skill: 4,
           points: 50,
           slots: ["Crew", "Hardpoint", "Hardpoint", "Team", "Team", "Cargo"]
@@ -996,6 +1072,7 @@
           id: 81,
           epic: true,
           ship: "CR90 Corvette (Aft)",
+          sources: ["Tantive IV Expansion Pack"],
           skill: 4,
           points: 40,
           slots: ["Crew", "Hardpoint", "Team", "Cargo"]
@@ -1005,6 +1082,7 @@
           id: 82,
           unique: true,
           ship: "X-Wing",
+          sources: ["Rebel Transport Expansion Pack"],
           skill: 8,
           points: 29,
           slots: ["Elite", "Torpedo", "Astromech"]
@@ -1014,6 +1092,7 @@
           id: 83,
           unique: true,
           ship: "X-Wing",
+          sources: ["Rebel Transport Expansion Pack"],
           skill: 7,
           points: 26,
           slots: ["Elite", "Torpedo", "Astromech"]
@@ -1023,6 +1102,7 @@
           id: 84,
           unique: true,
           ship: "X-Wing",
+          sources: ["Rebel Transport Expansion Pack"],
           skill: 5,
           points: 25,
           slots: ["Torpedo", "Astromech"]
@@ -1032,6 +1112,7 @@
           id: 85,
           unique: true,
           ship: "X-Wing",
+          sources: ["Rebel Transport Expansion Pack"],
           skill: 3,
           points: 23,
           slots: ["Torpedo", "Astromech"]
@@ -1041,6 +1122,7 @@
           id: 86,
           unique: true,
           ship: "A-Wing",
+          sources: ["Rebel Aces Expansion Pack"],
           skill: 7,
           points: 24,
           slots: ["Elite", "Missile"]
@@ -1050,6 +1132,7 @@
           id: 87,
           unique: true,
           ship: "A-Wing",
+          sources: ["Rebel Aces Expansion Pack"],
           skill: 5,
           points: 22,
           slots: ["Missile"]
@@ -1059,6 +1142,7 @@
           id: 88,
           unique: true,
           ship: "B-Wing",
+          sources: ["Rebel Aces Expansion Pack"],
           skill: 7,
           points: 29,
           slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
@@ -1068,6 +1152,7 @@
           id: 89,
           unique: true,
           ship: "B-Wing",
+          sources: ["Rebel Aces Expansion Pack"],
           skill: 5,
           points: 26,
           slots: ["Elite", "System", "Cannon", "Torpedo", "Torpedo"]
@@ -1076,6 +1161,7 @@
           faction: "Rebel Alliance",
           id: 90,
           ship: "CR90 Corvette (Fore)",
+          sources: ["Tantive IV Expansion Pack"],
           skill: 4,
           points: 0,
           epic: true,
@@ -1092,6 +1178,7 @@
           faction: "Rebel Alliance",
           id: 91,
           ship: "CR90 Corvette (Aft)",
+          sources: ["Tantive IV Expansion Pack"],
           skill: 4,
           points: 0,
           epic: true,
@@ -1113,6 +1200,7 @@
           faction: "Rebel Alliance",
           id: 92,
           ship: "YT-2400",
+          sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 2,
           points: 30,
           slots: ["Cannon", "Missile", "Crew"]
@@ -1122,6 +1210,7 @@
           id: 93,
           ship: "YT-2400",
           unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 3,
           points: 32,
           slots: ["Cannon", "Missile", "Crew"]
@@ -1131,6 +1220,7 @@
           id: 94,
           ship: "YT-2400",
           unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 5,
           points: 34,
           slots: ["Elite", "Cannon", "Missile", "Crew"]
@@ -1140,6 +1230,7 @@
           id: 95,
           ship: "YT-2400",
           unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           skill: 7,
           points: 36,
           slots: ["Elite", "Cannon", "Missile", "Crew"]
@@ -1148,6 +1239,7 @@
           faction: "Galactic Empire",
           id: 96,
           ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
           skill: 3,
           points: 40,
           slots: ["Torpedo", "Crew", "Crew", "Crew", "Bomb"]
@@ -1156,6 +1248,7 @@
           faction: "Galactic Empire",
           id: 97,
           ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
           skill: 4,
           points: 42,
           unique: true,
@@ -1165,6 +1258,7 @@
           faction: "Galactic Empire",
           id: 98,
           ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
           skill: 6,
           points: 44,
           unique: true,
@@ -1174,6 +1268,7 @@
           faction: "Galactic Empire",
           id: 99,
           ship: "VT-49 Decimator",
+          sources: ["VT-49 Decimator Expansion Pack"],
           skill: 8,
           points: 46,
           unique: true,
@@ -1184,6 +1279,7 @@
           id: 100,
           unique: true,
           ship: "StarViper",
+          sources: ["StarViper Expansion Pack"],
           skill: 7,
           points: 31,
           slots: ["Elite", "Torpedo"]
@@ -1193,6 +1289,7 @@
           id: 101,
           unique: true,
           ship: "StarViper",
+          sources: ["StarViper Expansion Pack"],
           skill: 5,
           points: 99,
           slots: ["Torpedo"]
@@ -1201,6 +1298,7 @@
           faction: "Scum and Villainy",
           id: 102,
           ship: "StarViper",
+          sources: ["StarViper Expansion Pack"],
           skill: 3,
           points: 99,
           slots: ["Torpedo"]
@@ -1209,6 +1307,7 @@
           faction: "Scum and Villainy",
           id: 103,
           ship: "StarViper",
+          sources: ["StarViper Expansion Pack"],
           skill: 1,
           points: 99,
           slots: ["Torpedo"]
@@ -1217,6 +1316,7 @@
           faction: "Scum and Villainy",
           id: 104,
           ship: "M3-A Interceptor",
+          sources: ["M3-A Interceptor Expansion Pack"],
           skill: 8,
           points: 20,
           unique: true,
@@ -1226,6 +1326,7 @@
           faction: "Scum and Villainy",
           id: 105,
           ship: "M3-A Interceptor",
+          sources: ["M3-A Interceptor Expansion Pack"],
           skill: 6,
           points: 99,
           unique: true,
@@ -1235,6 +1336,7 @@
           faction: "Scum and Villainy",
           id: 106,
           ship: "M3-A Interceptor",
+          sources: ["M3-A Interceptor Expansion Pack"],
           skill: 5,
           points: 99,
           slots: []
@@ -1243,6 +1345,7 @@
           faction: "Scum and Villainy",
           id: 107,
           ship: "M3-A Interceptor",
+          sources: ["M3-A Interceptor Expansion Pack"],
           skill: 2,
           points: 99,
           slots: []
@@ -1252,6 +1355,7 @@
           id: 108,
           unique: true,
           ship: "Aggressor",
+          sources: ["IG-2000 Expansion Pack"],
           skill: 6,
           points: 99,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
@@ -1260,6 +1364,7 @@
           faction: "Scum and Villainy",
           id: 109,
           unique: true,
+          sources: ["IG-2000 Expansion Pack"],
           ship: "Aggressor",
           skill: 6,
           points: 99,
@@ -1270,6 +1375,7 @@
           id: 110,
           unique: true,
           ship: "Aggressor",
+          sources: ["IG-2000 Expansion Pack"],
           skill: 6,
           points: 99,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
@@ -1279,6 +1385,7 @@
           id: 111,
           unique: true,
           ship: "Aggressor",
+          sources: ["IG-2000 Expansion Pack"],
           skill: 6,
           points: 36,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
@@ -1288,6 +1395,7 @@
           faction: "Scum and Villainy",
           id: 112,
           ship: "Z-95 Headhunter",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 7,
           points: 17,
           slots: ["Elite", "Missile", "Illicit"]
@@ -1297,6 +1405,7 @@
           faction: "Scum and Villainy",
           id: 113,
           ship: "Z-95 Headhunter",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 5,
           points: 99,
           slots: ["Missile", "Illicit"]
@@ -1305,6 +1414,7 @@
           faction: "Scum and Villainy",
           id: 114,
           ship: "Z-95 Headhunter",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 3,
           points: 99,
           slots: ["Missile", "Illicit"]
@@ -1313,26 +1423,27 @@
           faction: "Scum and Villainy",
           id: 115,
           ship: "Z-95 Headhunter",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 1,
           points: 99,
           slots: ["Missile", "Illicit"]
         }, {
           name: "Boba Fett (Scum)",
-          canonical_name: 'boba-fett',
           faction: "Scum and Villainy",
           id: 116,
           ship: "Firespray-31",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 8,
           points: 39,
           unique: true,
           slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
           name: "Kath Scarlet (Scum)",
-          canonical_name: 'kath-scarlet',
           unique: true,
           faction: "Scum and Villainy",
           id: 117,
           ship: "Firespray-31",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 7,
           points: 99,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
@@ -1342,6 +1453,7 @@
           faction: "Scum and Villainy",
           id: 118,
           ship: "Firespray-31",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 6,
           points: 99,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
@@ -1350,6 +1462,7 @@
           faction: "Scum and Villainy",
           id: 119,
           ship: "Firespray-31",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 5,
           points: 99,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
@@ -1359,6 +1472,7 @@
           faction: "Scum and Villainy",
           id: 120,
           ship: "Y-Wing",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 7,
           points: 99,
           slots: ["Salvaged Astromech"]
@@ -1368,6 +1482,7 @@
           faction: "Scum and Villainy",
           id: 121,
           ship: "Y-Wing",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 5,
           points: 99,
           slots: ["Salvaged Astromech"]
@@ -1376,6 +1491,7 @@
           faction: "Scum and Villainy",
           id: 122,
           ship: "Y-Wing",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 4,
           points: 99,
           slots: ["Salvaged Astromech"]
@@ -1384,6 +1500,7 @@
           faction: "Scum and Villainy",
           id: 123,
           ship: "Y-Wing",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 2,
           points: 99,
           slots: ["Salvaged Astromech"]
@@ -1393,6 +1510,7 @@
           faction: "Scum and Villainy",
           id: 124,
           ship: "HWK-290",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 7,
           points: 99,
           slots: []
@@ -1402,6 +1520,7 @@
           faction: "Scum and Villainy",
           id: 125,
           ship: "HWK-290",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 5,
           points: 99,
           slots: []
@@ -1411,6 +1530,7 @@
           faction: "Scum and Villainy",
           id: 126,
           ship: "HWK-290",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 3,
           points: 99,
           slots: []
@@ -1419,6 +1539,7 @@
           faction: "Scum and Villainy",
           id: 127,
           ship: "HWK-290",
+          sources: ["Most Wanted Expansion Pack"],
           skill: 1,
           points: 99,
           slots: []
@@ -1429,6 +1550,7 @@
           name: "Ion Cannon Turret",
           id: 0,
           slot: "Turret",
+          sources: ["Y-Wing Expansion Pack", "HWK-290 Expansion Pack"],
           points: 5,
           attack: 3,
           range: "1-2"
@@ -1436,6 +1558,7 @@
           name: "Proton Torpedoes",
           id: 1,
           slot: "Torpedo",
+          sources: ["Core", "X-Wing Expansion Pack", "Y-Wing Expansion Pack", "B-Wing Expansion Pack"],
           points: 4,
           attack: 4,
           range: "2-3"
@@ -1443,6 +1566,7 @@
           name: "R2 Astromech",
           id: 2,
           slot: "Astromech",
+          sources: ["Y-Wing Expansion Pack"],
           points: 1,
           modifier_func: function(stats) {
             var turn, _i, _ref, _results;
@@ -1464,64 +1588,74 @@
         }, {
           name: "R2-D2",
           aka: ["R2-D2 (Crew)"],
-          canonical_name: 'r2-d2',
           id: 3,
           unique: true,
           slot: "Astromech",
+          sources: ["Core"],
           points: 4
         }, {
           name: "R2-F2",
           id: 4,
           unique: true,
           slot: "Astromech",
+          sources: ["Core"],
           points: 3
         }, {
           name: "R5-D8",
           id: 5,
           unique: true,
           slot: "Astromech",
+          sources: ["Y-Wing Expansion Pack"],
           points: 3
         }, {
           name: "R5-K6",
           id: 6,
           unique: true,
           slot: "Astromech",
+          sources: ["X-Wing Expansion Pack"],
           points: 2
         }, {
           name: "R5 Astromech",
           id: 7,
           slot: "Astromech",
+          sources: ["X-Wing Expansion Pack"],
           points: 1
         }, {
           name: "Determination",
           id: 8,
           slot: "Elite",
+          sources: ["Core", "TIE Fighter Expansion Pack"],
           points: 1
         }, {
           name: "Swarm Tactics",
           id: 9,
           slot: "Elite",
+          sources: ["TIE Fighter Expansion Pack", "TIE Advanced Expansion Pack"],
           points: 2
         }, {
           name: "Squad Leader",
           id: 10,
           unique: true,
           slot: "Elite",
+          sources: ["TIE Advanced Expansion Pack"],
           points: 2
         }, {
           name: "Expert Handling",
           id: 11,
           slot: "Elite",
+          sources: ["X-Wing Expansion Pack", "TIE Advanced Expansion Pack"],
           points: 2
         }, {
           name: "Marksmanship",
           id: 12,
           slot: "Elite",
+          sources: ["Core", "X-Wing Expansion Pack"],
           points: 3
         }, {
           name: "Concussion Missiles",
           id: 13,
           slot: "Missile",
+          sources: ["TIE Advanced Expansion Pack", "A-Wing Expansion Pack", "Millennium Falcon Expansion Pack"],
           points: 4,
           attack: 4,
           range: "2-3"
@@ -1529,6 +1663,7 @@
           name: "Cluster Missiles",
           id: 14,
           slot: "Missile",
+          sources: ["TIE Advanced Expansion Pack", "A-Wing Expansion Pack"],
           points: 4,
           attack: 3,
           range: "1-2"
@@ -1536,16 +1671,19 @@
           name: "Daredevil",
           id: 15,
           slot: "Elite",
+          sources: ["TIE Interceptor Expansion Pack"],
           points: 3
         }, {
           name: "Elusiveness",
           id: 16,
           slot: "Elite",
+          sources: ["TIE Interceptor Expansion Pack", "Millennium Falcon Expansion Pack"],
           points: 2
         }, {
           name: "Homing Missiles",
           id: 17,
           slot: "Missile",
+          sources: ["A-Wing Expansion Pack", "Slave I Expansion Pack"],
           attack: 4,
           range: "2-3",
           points: 5
@@ -1553,26 +1691,31 @@
           name: "Push the Limit",
           id: 18,
           slot: "Elite",
+          sources: ["A-Wing Expansion Pack", "Imperial Aces Expansion Pack"],
           points: 3
         }, {
           name: "Deadeye",
           id: 19,
           slot: "Elite",
+          sources: ["A-Wing Expansion Pack"],
           points: 1
         }, {
           name: "Expose",
           id: 20,
           slot: "Elite",
+          sources: ["Slave I Expansion Pack"],
           points: 4
         }, {
           name: "Gunner",
           id: 21,
           slot: "Crew",
+          sources: ["Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 5
         }, {
           name: "Ion Cannon",
           id: 22,
           slot: "Cannon",
+          sources: ["Slave I Expansion Pack", "B-Wing Expansion Pack", "TIE Defender Expansion Pack", "M3-A Interceptor Expansion Pack"],
           points: 3,
           attack: 3,
           range: "1-3"
@@ -1580,6 +1723,7 @@
           name: "Heavy Laser Cannon",
           id: 23,
           slot: "Cannon",
+          sources: ["Slave I Expansion Pack", "Lambda-Class Shuttle Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 7,
           attack: 4,
           range: "2-3"
@@ -1587,16 +1731,19 @@
           name: "Seismic Charges",
           id: 24,
           slot: "Bomb",
+          sources: ["Slave I Expansion Pack", "TIE Bomber Expansion Pack", "IG-2000 Expansion Pack"],
           points: 2
         }, {
           name: "Mercenary Copilot",
           id: 25,
           slot: "Crew",
+          sources: ["Slave I Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 2
         }, {
           name: "Assault Missiles",
           id: 26,
           slot: "Missile",
+          sources: ["Millennium Falcon Expansion Pack", "Slave I Expansion Pack", "TIE Bomber Expansion Pack", "Z-95 Headhunter Expansion Pack"],
           points: 5,
           attack: 4,
           range: "2-3"
@@ -1604,6 +1751,7 @@
           name: "Veteran Instincts",
           id: 27,
           slot: "Elite",
+          sources: ["Millennium Falcon Expansion Pack", "Slave I Expansion Pack"],
           points: 1,
           modifier_func: function(stats) {
             return stats.skill += 2;
@@ -1612,16 +1760,19 @@
           name: "Proximity Mines",
           id: 28,
           slot: "Bomb",
+          sources: ["Slave I Expansion Pack", "IG-2000 Expansion Pack"],
           points: 3
         }, {
           name: "Weapons Engineer",
           id: 29,
           slot: "Crew",
+          sources: ["Millennium Falcon Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
           points: 3
         }, {
           name: "Draw Their Fire",
           id: 30,
           slot: "Elite",
+          sources: ["Millennium Falcon Expansion Pack"],
           points: 1
         }, {
           name: "Luke Skywalker",
@@ -1629,6 +1780,7 @@
           unique: true,
           faction: "Rebel Alliance",
           slot: "Crew",
+          sources: ["Millennium Falcon Expansion Pack"],
           points: 7
         }, {
           name: "Nien Nunb",
@@ -1636,6 +1788,7 @@
           unique: true,
           faction: "Rebel Alliance",
           slot: "Crew",
+          sources: ["Millennium Falcon Expansion Pack"],
           points: 1,
           modifier_func: function(stats) {
             var s, _i, _len, _ref, _ref1, _results;
@@ -1657,6 +1810,7 @@
           unique: true,
           faction: "Rebel Alliance",
           slot: "Crew",
+          sources: ["Millennium Falcon Expansion Pack"],
           points: 4
         }, {
           name: "Advanced Proton Torpedoes",
@@ -1664,6 +1818,7 @@
           slot: "Torpedo",
           attack: 5,
           range: "1",
+          sources: ["B-Wing Expansion Pack", "TIE Bomber Expansion Pack"],
           points: 6
         }, {
           name: "Autoblaster",
@@ -1671,16 +1826,19 @@
           slot: "Cannon",
           attack: 3,
           range: "1",
+          sources: ["B-Wing Expansion Pack", "IG-2000 Expansion Pack"],
           points: 5
         }, {
           name: "Fire-Control System",
           id: 36,
           slot: "System",
+          sources: ["B-Wing Expansion Pack", "TIE Phantom Expansion Pack"],
           points: 2
         }, {
           name: "Blaster Turret",
           id: 37,
           slot: "Turret",
+          sources: ["HWK-290 Expansion Pack"],
           points: 4,
           attack: 3,
           range: "1-2"
@@ -1688,36 +1846,43 @@
           name: "Recon Specialist",
           id: 38,
           slot: "Crew",
+          sources: ["HWK-290 Expansion Pack", "TIE Phantom Expansion Pack"],
           points: 3
         }, {
           name: "Saboteur",
           id: 39,
           slot: "Crew",
+          sources: ["HWK-290 Expansion Pack"],
           points: 2
         }, {
           name: "Intelligence Agent",
           id: 40,
           slot: "Crew",
+          sources: ["HWK-290 Expansion Pack", "Lambda-Class Shuttle Expansion Pack"],
           points: 1
         }, {
           name: "Proton Bomb",
           id: 41,
           slot: "Bomb",
+          sources: ["TIE Bomber Expansion Pack", "VT-49 Decimator Expansion Pack"],
           points: 5
         }, {
           name: "Adrenaline Rush",
           id: 42,
           slot: "Elite",
+          sources: ["TIE Bomber Expansion Pack"],
           points: 1
         }, {
           name: "Advanced Sensors",
           id: 43,
           slot: "System",
+          sources: ["Lambda-Class Shuttle Expansion Pack", "E-Wing Expansion Pack"],
           points: 3
         }, {
           name: "Sensor Jammer",
           id: 44,
           slot: "System",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 4
         }, {
           name: "Darth Vader",
@@ -1725,6 +1890,7 @@
           unique: true,
           faction: "Galactic Empire",
           slot: "Crew",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 3
         }, {
           name: "Rebel Captive",
@@ -1732,16 +1898,19 @@
           unique: true,
           faction: "Galactic Empire",
           slot: "Crew",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 3
         }, {
           name: "Flight Instructor",
           id: 47,
           slot: "Crew",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 4
         }, {
           name: "Navigator",
           id: 48,
           slot: "Crew",
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 3,
           epic_restriction_func: function(ship) {
             var _ref;
@@ -1751,26 +1920,31 @@
           name: "Opportunist",
           id: 49,
           slot: "Elite",
+          sources: ["Imperial Aces Expansion Pack"],
           points: 4
         }, {
           name: "Comms Booster",
           id: 50,
           slot: "Cargo",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 4
         }, {
           name: "Slicer Tools",
           id: 51,
           slot: "Cargo",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 7
         }, {
           name: "Shield Projector",
           id: 52,
           slot: "Cargo",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 4
         }, {
           name: "Ion Pulse Missiles",
           id: 53,
           slot: "Missile",
+          sources: ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack"],
           points: 3,
           attack: 3,
           range: "2-3"
@@ -1778,26 +1952,31 @@
           name: "Wingman",
           id: 54,
           slot: "Elite",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           points: 2
         }, {
           name: "Decoy",
           id: 55,
           slot: "Elite",
+          sources: ["Z-95 Headhunter Expansion Pack"],
           points: 2
         }, {
           name: "Outmaneuver",
           id: 56,
           slot: "Elite",
+          sources: ["TIE Defender Expansion Pack", "E-Wing Expansion Pack"],
           points: 3
         }, {
           name: "Predator",
           id: 57,
           slot: "Elite",
+          sources: ["TIE Defender Expansion Pack"],
           points: 3
         }, {
           name: "Flechette Torpedoes",
           id: 58,
           slot: "Torpedo",
+          sources: ["E-Wing Expansion Pack", "Rebel Transport Expansion Pack"],
           points: 2,
           attack: 3,
           range: "2-3"
@@ -1805,17 +1984,20 @@
           name: "R7 Astromech",
           id: 59,
           slot: "Astromech",
+          sources: ["E-Wing Expansion Pack"],
           points: 2
         }, {
           name: "R7-T1",
           id: 60,
           unique: true,
           slot: "Astromech",
+          sources: ["E-Wing Expansion Pack"],
           points: 3
         }, {
           name: "Tactician",
           id: 61,
           slot: "Crew",
+          sources: ["TIE Phantom Expansion Pack"],
           points: 2
         }, {
           name: "R2-D2 (Crew)",
@@ -1823,6 +2005,7 @@
           id: 62,
           unique: true,
           slot: "Crew",
+          sources: ["Tantive IV Expansion Pack"],
           points: 4,
           faction: "Rebel Alliance"
         }, {
@@ -1830,12 +2013,14 @@
           unique: true,
           id: 63,
           slot: "Crew",
+          sources: ["Tantive IV Expansion Pack"],
           points: 3,
           faction: "Rebel Alliance"
         }, {
           name: "Single Turbolasers",
           id: 64,
           slot: "Hardpoint",
+          sources: ["Tantive IV Expansion Pack"],
           points: 8,
           energy: 2,
           attack: 4,
@@ -1844,6 +2029,7 @@
           name: "Quad Laser Cannons",
           id: 65,
           slot: "Hardpoint",
+          sources: ["Tantive IV Expansion Pack"],
           points: 6,
           energy: 2,
           attack: 3,
@@ -1852,12 +2038,14 @@
           name: "Tibanna Gas Supplies",
           id: 66,
           slot: "Cargo",
+          sources: ["Tantive IV Expansion Pack", "Rebel Transport Expansion Pack"],
           points: 4,
           limited: true
         }, {
           name: "Ionization Reactor",
           id: 67,
           slot: "Cargo",
+          sources: ["Tantive IV Expansion Pack"],
           points: 4,
           energy: 5,
           limited: true
@@ -1865,6 +2053,7 @@
           name: "Engine Booster",
           id: 68,
           slot: "Cargo",
+          sources: ["Tantive IV Expansion Pack", "Rebel Transport Expansion Pack"],
           points: 3,
           limited: true
         }, {
@@ -1872,12 +2061,14 @@
           id: 69,
           unique: true,
           slot: "Astromech",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 2
         }, {
           name: "R2-D6",
           id: 70,
           unique: true,
           slot: "Astromech",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 1,
           restriction_func: function(ship) {
             var conferred_addon, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
@@ -1909,17 +2100,20 @@
           name: "Enhanced Scopes",
           id: 71,
           slot: "System",
+          sources: ["Rebel Aces Expansion Pack"],
           points: 1
         }, {
           name: "Chardaan Refit",
           id: 72,
           slot: "Missile",
+          sources: ["Rebel Aces Expansion Pack"],
           points: -2,
           ship: "A-Wing"
         }, {
           name: "Proton Rockets",
           id: 73,
           slot: "Missile",
+          sources: ["Rebel Aces Expansion Pack", "YT-2400 Freighter Expansion Pack"],
           points: 3,
           attack: 2,
           range: "1"
@@ -1928,6 +2122,7 @@
           id: 74,
           unique: true,
           slot: "Crew",
+          sources: ["Rebel Aces Expansion Pack"],
           points: 3,
           faction: "Rebel Alliance"
         }, {
@@ -1935,6 +2130,7 @@
           id: 75,
           unique: true,
           slot: "Crew",
+          sources: ["Rebel Aces Expansion Pack"],
           points: 2,
           faction: "Rebel Alliance"
         }, {
@@ -1942,6 +2138,7 @@
           id: 76,
           unique: true,
           slot: "Crew",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 6,
           faction: "Rebel Alliance",
           restriction_func: function(ship) {
@@ -1953,17 +2150,20 @@
           id: 77,
           unique: true,
           slot: "Astromech",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 1
         }, {
           name: "R5-P9",
           id: 78,
           unique: true,
           slot: "Astromech",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 3
         }, {
           name: "WED-15 Repair Droid",
           id: 79,
           slot: "Crew",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 2,
           restriction_func: function(ship) {
             var _ref;
@@ -1974,6 +2174,7 @@
           id: 80,
           unique: true,
           slot: "Crew",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 3,
           faction: "Rebel Alliance",
           restriction_func: function(ship) {
@@ -1985,6 +2186,7 @@
           id: 81,
           unique: true,
           slot: "Crew",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 6,
           faction: "Rebel Alliance",
           restriction_func: function(ship) {
@@ -1995,6 +2197,7 @@
           name: "Expanded Cargo Hold",
           id: 82,
           slot: "Cargo",
+          sources: ["Rebel Transport Expansion Pack"],
           points: 1,
           ship: "GR-75 Medium Transport"
         }, {
@@ -2002,18 +2205,21 @@
           id: 83,
           slot: "Cargo",
           limited: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 3
         }, {
           name: "EM Emitter",
           id: 84,
           slot: "Cargo",
           limited: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 3
         }, {
           name: "Frequency Jammer",
           id: 85,
           slot: "Cargo",
           limited: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 4
         }, {
           name: "Han Solo",
@@ -2021,6 +2227,7 @@
           slot: "Crew",
           unique: true,
           faction: "Rebel Alliance",
+          sources: ["Tantive IV Expansion Pack"],
           points: 2
         }, {
           name: "Leia Organa",
@@ -2028,12 +2235,14 @@
           slot: "Crew",
           unique: true,
           faction: "Rebel Alliance",
+          sources: ["Tantive IV Expansion Pack"],
           points: 4
         }, {
           name: "Targeting Coordinator",
           id: 88,
           slot: "Crew",
           limited: true,
+          sources: ["Tantive IV Expansion Pack"],
           points: 4
         }, {
           name: "Raymus Antilles",
@@ -2041,6 +2250,7 @@
           slot: "Crew",
           unique: true,
           faction: "Rebel Alliance",
+          sources: ["Tantive IV Expansion Pack"],
           points: 6,
           restriction_func: function(ship) {
             var _ref;
@@ -2051,17 +2261,20 @@
           id: 90,
           slot: "Team",
           limited: true,
+          sources: ["Tantive IV Expansion Pack"],
           points: 4
         }, {
           name: "Sensor Team",
           id: 91,
           slot: "Team",
+          sources: ["Tantive IV Expansion Pack"],
           points: 4
         }, {
           name: "Engineering Team",
           id: 92,
           slot: "Team",
           limited: true,
+          sources: ["Tantive IV Expansion Pack"],
           points: 4
         }, {
           name: "Lando Calrissian",
@@ -2069,6 +2282,7 @@
           slot: "Crew",
           unique: true,
           faction: "Rebel Alliance",
+          sources: ["YT-2400 Freighter Expansion Pack"],
           points: 3
         }, {
           name: "Mara Jade",
@@ -2076,124 +2290,145 @@
           slot: "Crew",
           unique: true,
           faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"],
           points: 3
         }, {
           name: "Fleet Officer",
           id: 95,
           slot: "Crew",
           faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"],
           points: 3
         }, {
           name: "Stay On Target",
           id: 96,
           slot: "Elite",
-          points: 2
+          points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"]
         }, {
           name: "Dash Rendar",
           id: 97,
           unique: true,
           slot: "Crew",
           points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           faction: "Rebel Alliance"
         }, {
           name: "Lone Wolf",
           id: 98,
           unique: true,
           slot: "Elite",
-          points: 2
+          points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"]
         }, {
           name: '"Leebo"',
           id: 99,
           unique: true,
           slot: "Crew",
           points: 2,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           faction: "Rebel Alliance"
         }, {
           name: "Ruthlessness",
           id: 100,
           slot: "Elite",
           points: 3,
-          faction: "Galactic Empire"
+          faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"]
         }, {
           name: "Intimidation",
           id: 101,
           slot: "Elite",
-          points: 2
+          points: 2,
+          sources: ["VT-49 Decimator Expansion Pack"]
         }, {
           name: "Ysanne Isard",
           id: 102,
           unique: true,
           slot: "Crew",
           points: 4,
-          faction: "Galactic Empire"
+          faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"]
         }, {
           name: "Moff Jerjerrod",
           id: 103,
           unique: true,
           slot: "Crew",
           points: 2,
-          faction: "Galactic Empire"
+          faction: "Galactic Empire",
+          sources: ["VT-49 Decimator Expansion Pack"]
         }, {
           name: "Ion Torpedoes",
           id: 104,
           slot: "Torpedo",
           points: 5,
           attack: 4,
-          range: "2-3"
+          range: "2-3",
+          sources: ["VT-49 Decimator Expansion Pack", "StarViper Expansion Pack"]
         }, {
           name: "Bodyguard",
           id: 105,
           unique: true,
           slot: "Elite",
           points: 2,
-          faction: "Scum and Villainy"
+          faction: "Scum and Villainy",
+          sources: ["StarViper Expansion Pack"]
         }, {
           name: "Calc???",
           id: 106,
           slot: "Elite",
-          points: 99
+          points: 99,
+          sources: ["StarViper Expansion Pack"]
         }, {
           name: "Accuracy Corrector",
           id: 107,
           slot: "System",
-          points: 3
+          points: 3,
+          sources: ["StarViper Expansion Pack", "IG-2000 Expansion Pack"]
         }, {
           name: "Inertial Dampeners",
           id: 108,
           slot: "Illicit",
-          points: 1
+          points: 1,
+          sources: ["StarViper Expansion Pack", "IG-2000 Expansion Pack"]
         }, {
           name: "Flechette Cannon",
           id: 109,
           slot: "Cannon",
-          points: 99
+          points: 99,
+          sources: ["M3-A Interceptor Expansion Pack"]
         }, {
           name: '"Mang??? Cannon"',
           id: 110,
           slot: "Cannon",
-          points: 99
+          points: 99,
+          sources: ["M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack"]
         }, {
           name: "Dead???",
           id: 111,
           slot: "Illicit",
-          points: 99
+          points: 99,
+          sources: ["IG-2000 Expansion Pack"]
         }, {
           name: "Fee???",
           id: 112,
           slot: "Illicit",
-          points: 99
+          points: 99,
+          sources: ["IG-2000 Expansion Pack"]
         }, {
           name: '"Hot ??? Blaster"',
           id: 113,
           slot: "Illicit",
-          points: 99
+          points: 99,
+          sources: ["IG-2000 Expansion Pack"]
         }, {
           name: "Greedo",
           id: 114,
           unique: true,
           slot: "Crew",
           faction: "Scum and Villainy",
-          points: 1
+          points: 1,
+          sources: ["Most Wanted Expansion Pack"]
         }
       ],
       modificationsById: [
@@ -2205,6 +2440,7 @@
           name: "Stealth Device",
           id: 1,
           points: 3,
+          sources: ["Slave I Expansion Pack", "M3-A Interceptor Expansion Pack"],
           modifier_func: function(stats) {
             return stats.agility += 1;
           }
@@ -2212,6 +2448,7 @@
           name: "Shield Upgrade",
           id: 2,
           points: 4,
+          sources: ["Millennium Falcon Expansion Pack", "Imperial Aces Expansion Pack"],
           modifier_func: function(stats) {
             return stats.shields += 1;
           }
@@ -2219,6 +2456,7 @@
           name: "Engine Upgrade",
           id: 3,
           points: 4,
+          sources: ["Millennium Falcon Expansion Pack"],
           modifier_func: function(stats) {
             if (__indexOf.call(stats.actions, 'Boost') < 0) {
               return stats.actions.push('Boost');
@@ -2227,6 +2465,7 @@
         }, {
           name: "Anti-Pursuit Lasers",
           id: 4,
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           points: 2,
           restriction_func: function(ship) {
             var _ref;
@@ -2235,6 +2474,7 @@
         }, {
           name: "Targeting Computer",
           id: 5,
+          sources: ["Imperial Aces Expansion Pack"],
           points: 2,
           modifier_func: function(stats) {
             if (__indexOf.call(stats.actions, 'Target Lock') < 0) {
@@ -2244,6 +2484,7 @@
         }, {
           name: "Hull Upgrade",
           id: 6,
+          sources: ["Imperial Aces Expansion Pack", "StarViper Expansion Pack"],
           points: 3,
           modifier_func: function(stats) {
             return stats.hull += 1;
@@ -2251,19 +2492,23 @@
         }, {
           name: "Munitions Failsafe",
           id: 7,
+          sources: ["Z-95 Headhunter Expansion Pack", "TIE Defender Expansion Pack"],
           points: 1
         }, {
           name: "Stygium Particle Accelerator",
           id: 8,
+          sources: ["TIE Phantom Expansion Pack"],
           points: 2
         }, {
           name: "Advanced Cloaking Device",
           id: 9,
+          sources: ["TIE Phantom Expansion Pack"],
           points: 4,
           ship: "TIE Phantom"
         }, {
           name: "Combat Retrofit",
           id: 10,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 10,
           ship: "GR-75 Medium Transport",
           huge: true,
@@ -2274,6 +2519,7 @@
         }, {
           name: "B-Wing/E2",
           id: 11,
+          sources: ["Rebel Aces Expansion Pack"],
           points: 1,
           ship: "B-Wing",
           confersAddons: [
@@ -2285,6 +2531,7 @@
         }, {
           name: "Countermeasures",
           id: 12,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           points: 3,
           restriction_func: function(ship) {
             var _ref;
@@ -2293,11 +2540,13 @@
         }, {
           name: "Experimental Interface",
           id: 13,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           unique: true,
           points: 3
         }, {
           name: "Tactical Jammer",
           id: 14,
+          sources: ["VT-49 Decimator Expansion Pack"],
           points: 1,
           restriction_func: function(ship) {
             var _ref;
@@ -2306,7 +2555,8 @@
         }, {
           name: "Autoth???",
           id: 15,
-          points: 99
+          points: 99,
+          sources: ["StarViper Expansion Pack"]
         }
       ],
       titlesById: [
@@ -2317,6 +2567,7 @@
         }, {
           name: "Slave I",
           id: 1,
+          sources: ["Slave I Expansion Pack"],
           unique: true,
           points: 0,
           ship: "Firespray-31",
@@ -2329,6 +2580,7 @@
         }, {
           name: "Millennium Falcon",
           id: 2,
+          sources: ["Millennium Falcon Expansion Pack"],
           unique: true,
           points: 1,
           ship: "YT-1300",
@@ -2341,18 +2593,21 @@
         }, {
           name: "Moldy Crow",
           id: 3,
+          sources: ["HWK-290 Expansion Pack"],
           unique: true,
           points: 3,
           ship: "HWK-290"
         }, {
           name: "ST-321",
           id: 4,
+          sources: ["Lambda-Class Shuttle Expansion Pack"],
           unique: true,
           points: 3,
           ship: "Lambda-Class Shuttle"
         }, {
           name: "Royal Guard TIE",
           id: 5,
+          sources: ["Imperial Aces Expansion Pack"],
           points: 0,
           ship: "TIE Interceptor",
           confersAddons: [
@@ -2368,11 +2623,13 @@
           name: "Dodonna's Pride",
           id: 6,
           unique: true,
+          sources: ["Tantive IV Expansion Pack"],
           points: 4,
           ship: "CR90 Corvette (Fore)"
         }, {
           name: "A-Wing Test Pilot",
           id: 7,
+          sources: ["Rebel Aces Expansion Pack"],
           points: 0,
           ship: "A-Wing",
           restriction_func: function(ship) {
@@ -2389,6 +2646,7 @@
           name: "B-Wing/E",
           id: 8,
           skip: true,
+          sources: ["Rebel Aces Expansion Pack"],
           points: 99,
           ship: "B-Wing",
           confersAddons: [
@@ -2401,6 +2659,7 @@
           name: "Tantive IV",
           id: 9,
           unique: true,
+          sources: ["Tantive IV Expansion Pack"],
           points: 4,
           ship: "CR90 Corvette (Fore)",
           confersAddons: [
@@ -2417,6 +2676,7 @@
           id: 10,
           energy: "+2",
           unique: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 5,
           ship: "GR-75 Medium Transport",
           modifier_func: function(stats) {
@@ -2427,6 +2687,7 @@
           id: 11,
           energy: "+1",
           unique: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 4,
           ship: "GR-75 Medium Transport",
           modifier_func: function(stats) {
@@ -2437,30 +2698,35 @@
           id: 12,
           energy: "+0",
           unique: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 2,
           ship: "GR-75 Medium Transport"
         }, {
           name: "Jaina's Light",
           id: 13,
           unique: true,
+          sources: ["Rebel Transport Expansion Pack"],
           points: 2,
           ship: "CR90 Corvette (Fore)"
         }, {
           name: "Outrider",
           id: 14,
           unique: true,
+          sources: ["YT-2400 Freighter Expansion Pack"],
           points: 5,
           ship: "YT-2400"
         }, {
           name: "Dauntless",
           id: 15,
           unique: true,
+          sources: ["VT-49 Decimator Expansion Pack"],
           points: 2,
           ship: "VT-49 Decimator"
         }, {
           name: "Virago",
           id: 16,
           unique: true,
+          sources: ["StarViper Expansion Pack"],
           points: 1,
           ship: "StarViper",
           restriction_func: function(ship) {
@@ -2478,6 +2744,7 @@
         }, {
           name: '"Heavy Scyk" Interceptor (Cannon)',
           id: 17,
+          sources: ["M3-A Interceptor Expansion Pack"],
           points: 2,
           ship: "M3-A Interceptor",
           confersAddons: [
@@ -2489,6 +2756,7 @@
         }, {
           name: '"Heavy Scyk" Interceptor (Torpedo)',
           id: 18,
+          sources: ["M3-A Interceptor Expansion Pack"],
           points: 2,
           ship: "M3-A Interceptor",
           confersAddons: [
@@ -2500,6 +2768,7 @@
         }, {
           name: '"Heavy Scyk" Interceptor (Missile)',
           id: 19,
+          sources: ["M3-A Interceptor Expansion Pack"],
           points: 2,
           ship: "M3-A Interceptor",
           confersAddons: [
@@ -2511,6 +2780,7 @@
         }, {
           name: 'IG-2000',
           id: 20,
+          sources: ["IG-2000 Expansion Pack"],
           points: 0,
           ship: "Aggressor"
         }
@@ -2519,7 +2789,7 @@
   };
 
   exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+    var e, field, i, modification, modification_data, modification_name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t;
     _ref = basic_cards.pilotsById;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       pilot_data = _ref[i];
@@ -2553,11 +2823,6 @@
     for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
       pilot_data = _ref4[_m];
       if (pilot_data.skip == null) {
-        pilot_data.sources = [];
-        pilot_data.english_name = pilot_data.name;
-        if (pilot_data.canonical_name == null) {
-          pilot_data.canonical_name = pilot_data.english_name.canonicalize();
-        }
         exportObj.pilots[pilot_data.name] = pilot_data;
       }
     }
@@ -2579,11 +2844,6 @@
     for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
       upgrade_data = _ref5[_n];
       if (upgrade_data.skip == null) {
-        upgrade_data.sources = [];
-        upgrade_data.english_name = upgrade_data.name;
-        if (upgrade_data.canonical_name == null) {
-          upgrade_data.canonical_name = upgrade_data.english_name.canonicalize();
-        }
         exportObj.upgrades[upgrade_data.name] = upgrade_data;
       }
     }
@@ -2605,11 +2865,6 @@
     for (_o = 0, _len6 = _ref6.length; _o < _len6; _o++) {
       modification_data = _ref6[_o];
       if (modification_data.skip == null) {
-        modification_data.sources = [];
-        modification_data.english_name = modification_data.name;
-        if (modification_data.canonical_name == null) {
-          modification_data.canonical_name = modification_data.english_name.canonicalize();
-        }
         exportObj.modifications[modification_data.name] = modification_data;
       }
     }
@@ -2631,11 +2886,6 @@
     for (_p = 0, _len7 = _ref7.length; _p < _len7; _p++) {
       title_data = _ref7[_p];
       if (title_data.skip == null) {
-        title_data.sources = [];
-        title_data.english_name = title_data.name;
-        if (title_data.canonical_name == null) {
-          title_data.canonical_name = title_data.english_name.canonicalize();
-        }
         exportObj.titles[title_data.name] = title_data;
       }
     }
@@ -2652,66 +2902,18 @@
         }
       }
     }
-    _ref8 = exportObj.manifestByExpansion;
-    for (expansion in _ref8) {
-      cards = _ref8[expansion];
-      for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
-        card = cards[_q];
-        try {
-          switch (card.type) {
-            case 'pilot':
-              exportObj.pilots[card.name].sources.push(expansion);
-              break;
-            case 'upgrade':
-              exportObj.upgrades[card.name].sources.push(expansion);
-              break;
-            case 'modification':
-              exportObj.modifications[card.name].sources.push(expansion);
-              break;
-            case 'title':
-              exportObj.titles[card.name].sources.push(expansion);
-              break;
-            default:
-              throw new Error("Unexpected card type " + card.type + " for card " + card.name + " of " + expansion);
-          }
-        } catch (_error) {
-          e = _error;
-          console.error("Error adding card " + card.name + " (" + card.type + ") from " + expansion);
-        }
-      }
-    }
-    _ref9 = exportObj.pilots;
-    for (name in _ref9) {
-      card = _ref9[name];
-      card.sources = card.sources.sort();
-    }
-    _ref10 = exportObj.upgrades;
-    for (name in _ref10) {
-      card = _ref10[name];
-      card.sources = card.sources.sort();
-    }
-    _ref11 = exportObj.modifications;
-    for (name in _ref11) {
-      card = _ref11[name];
-      card.sources = card.sources.sort();
-    }
-    _ref12 = exportObj.titles;
-    for (name in _ref12) {
-      card = _ref12[name];
-      card.sources = card.sources.sort();
-    }
     exportObj.expansions = {};
     exportObj.pilotsById = {};
     exportObj.pilotsByLocalizedName = {};
-    _ref13 = exportObj.pilots;
-    for (pilot_name in _ref13) {
-      pilot = _ref13[pilot_name];
+    _ref8 = exportObj.pilots;
+    for (pilot_name in _ref8) {
+      pilot = _ref8[pilot_name];
       exportObj.fixIcons(pilot);
       exportObj.pilotsById[pilot.id] = pilot;
       exportObj.pilotsByLocalizedName[pilot.name] = pilot;
-      _ref14 = pilot.sources;
-      for (_r = 0, _len9 = _ref14.length; _r < _len9; _r++) {
-        source = _ref14[_r];
+      _ref9 = pilot.sources;
+      for (_q = 0, _len8 = _ref9.length; _q < _len8; _q++) {
+        source = _ref9[_q];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2722,15 +2924,15 @@
     }
     exportObj.upgradesById = {};
     exportObj.upgradesByLocalizedName = {};
-    _ref15 = exportObj.upgrades;
-    for (upgrade_name in _ref15) {
-      upgrade = _ref15[upgrade_name];
+    _ref10 = exportObj.upgrades;
+    for (upgrade_name in _ref10) {
+      upgrade = _ref10[upgrade_name];
       exportObj.fixIcons(upgrade);
       exportObj.upgradesById[upgrade.id] = upgrade;
       exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
-      _ref16 = upgrade.sources;
-      for (_s = 0, _len10 = _ref16.length; _s < _len10; _s++) {
-        source = _ref16[_s];
+      _ref11 = upgrade.sources;
+      for (_r = 0, _len9 = _ref11.length; _r < _len9; _r++) {
+        source = _ref11[_r];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2741,28 +2943,28 @@
     }
     exportObj.modificationsById = {};
     exportObj.modificationsByLocalizedName = {};
-    _ref17 = exportObj.modifications;
-    for (modification_name in _ref17) {
-      modification = _ref17[modification_name];
+    _ref12 = exportObj.modifications;
+    for (modification_name in _ref12) {
+      modification = _ref12[modification_name];
       exportObj.fixIcons(modification);
       if (modification.huge != null) {
         if (modification.restriction_func == null) {
           modification.restriction_func = function(ship) {
-            var _ref18;
-            return (_ref18 = ship.data.huge) != null ? _ref18 : false;
+            var _ref13;
+            return (_ref13 = ship.data.huge) != null ? _ref13 : false;
           };
         }
       } else if (modification.restriction_func == null) {
         modification.restriction_func = function(ship) {
-          var _ref18;
-          return !((_ref18 = ship.data.huge) != null ? _ref18 : false);
+          var _ref13;
+          return !((_ref13 = ship.data.huge) != null ? _ref13 : false);
         };
       }
       exportObj.modificationsById[modification.id] = modification;
       exportObj.modificationsByLocalizedName[modification.name] = modification;
-      _ref18 = modification.sources;
-      for (_t = 0, _len11 = _ref18.length; _t < _len11; _t++) {
-        source = _ref18[_t];
+      _ref13 = modification.sources;
+      for (_s = 0, _len10 = _ref13.length; _s < _len10; _s++) {
+        source = _ref13[_s];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2773,15 +2975,15 @@
     }
     exportObj.titlesById = {};
     exportObj.titlesByLocalizedName = {};
-    _ref19 = exportObj.titles;
-    for (title_name in _ref19) {
-      title = _ref19[title_name];
+    _ref14 = exportObj.titles;
+    for (title_name in _ref14) {
+      title = _ref14[title_name];
       exportObj.fixIcons(title);
       exportObj.titlesById[title.id] = title;
       exportObj.titlesByLocalizedName[title.name] = title;
-      _ref20 = title.sources;
-      for (_u = 0, _len12 = _ref20.length; _u < _len12; _u++) {
-        source = _ref20[_u];
+      _ref15 = title.sources;
+      for (_t = 0, _len11 = _ref15.length; _t < _len11; _t++) {
+        source = _ref15[_t];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2791,9 +2993,9 @@
       throw new Error("At least one title shares an ID with another");
     }
     exportObj.titlesByShip = {};
-    _ref21 = exportObj.titles;
-    for (title_name in _ref21) {
-      title = _ref21[title_name];
+    _ref16 = exportObj.titles;
+    for (title_name in _ref16) {
+      title = _ref16[title_name];
       if (!(title.ship in exportObj.titlesByShip)) {
         exportObj.titlesByShip[title.ship] = [];
       }
