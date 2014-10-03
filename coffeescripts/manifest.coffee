@@ -1614,7 +1614,7 @@ class exportObj.Collection
         count = parseInt(count)
         switch
             when count == 0
-                'none'
+                ''
             when count < 12
                 i = parseInt(200 * Math.pow(0.9, count - 1))
                 "rgb(#{i}, 255, #{i})"
