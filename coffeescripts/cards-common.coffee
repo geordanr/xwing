@@ -3491,6 +3491,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
                 throw e
 
+    for ship_name, ship_data of basic_cards.ships
+        ship_data.english_name = ship_name
+
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
         for card in cards

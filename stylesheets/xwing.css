@@ -372,6 +372,9 @@ input[type=number] {
 .collection-status {
   color: green; }
 
+.select2-result-not-in-collection {
+  text-decoration: line-through; }
+
 /* X-Wing icons */
 i.xwing-font {
   font-family: XWing;

@@ -944,6 +944,7 @@ class exportObj.SquadBuilder
                 ships.push
                     id: ship_data.name
                     text: ship_data.name
+                    english_name: ship_data.english_name
         ships.sort exportObj.sortHelper
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
@@ -952,7 +953,7 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             unclaimed_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
+        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name } for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='') ->
         # Returns data formatted for Select2
@@ -970,7 +971,7 @@ class exportObj.SquadBuilder
         # Re-add selected upgrade
         if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)) or current_upgrade_forcibly_removed)
             unclaimed_upgrades.push include_upgrade
-        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
+        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
@@ -988,7 +989,7 @@ class exportObj.SquadBuilder
         # Re-add selected modification
         if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)) or current_mod_forcibly_removed)
             unclaimed_modifications.push include_modification
-        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points } for modification in unclaimed_modifications).sort exportObj.sortHelper
+        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name } for modification in unclaimed_modifications).sort exportObj.sortHelper
 
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
@@ -997,7 +998,7 @@ class exportObj.SquadBuilder
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)
             unclaimed_titles.push include_title
-        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
+        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name } for title in unclaimed_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1312,6 +1313,7 @@ class exportObj.SquadBuilder
             # console.log "collection not ready or is empty"
             return true
         @collection.reset()
+        validity = true
         for ship in @ships
             if ship.pilot?
                 # Try to get both the physical model and the pilot card.
@@ -1319,27 +1321,27 @@ class exportObj.SquadBuilder
                 pilot_is_available = @collection.use('pilot', ship.pilot.english_name)
                 # console.log "#{@faction}: Ship #{ship.pilot.english_ship} available: #{ship_is_available}"
                 # console.log "#{@faction}: Pilot #{ship.pilot.english_name} available: #{pilot_is_available}"
-                return false unless ship_is_available and pilot_is_available
+                validity = false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
                         upgrade_is_available = @collection.use('upgrade', upgrade.data.english_name)
                         # console.log "#{@faction}: Upgrade #{upgrade.data.english_name} available: #{upgrade_is_available}"
-                        return false unless upgrade_is_available
+                        validity = false unless upgrade_is_available
                 for modification in ship.modifications
                     if modification.data?
                         modification_is_available = @collection.use('modification', modification.data.english_name)
                         # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
-                        return false unless modification_is_available
+                        validity = false unless modification_is_available
                 if ship.title?.data?
                     title_is_available = @collection.use('title', ship.title.data.english_name)
                     # console.log "#{@faction}: Title #{ship.title.data.english_name} available: #{title_is_available}"
-                    return false unless title_is_available
-        # console.log "#{@faction}: all ships available in collection"
-        true
+                    validity = false unless title_is_available
+        validity
 
     checkCollection: ->
         # console.log "#{@faction}: Checking validity of squad against collection..."
-        @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
+        if @collection?
+            @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
 
 class Ship
     constructor: (args) ->
@@ -1569,10 +1571,26 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
             query: (query) =>
+                @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailableShipsMatching(query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+            formatResultCssClass: (obj) =>
+                if @builder.collection?
+                    not_in_collection = false
+                    if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
+                        # Currently selected ship; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@builder.collection.checkShelf('ship', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                            not_in_collection = true
+                    else
+                        # Not currently selected; check shelf only
+                        not_in_collection = not @builder.collection.checkShelf('ship', obj.english_name)
+                    if not_in_collection then 'select2-result-not-in-collection' else ''
+                else
+                    ''
+
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
         # assign ship row an id for testing purposes
@@ -1582,10 +1600,26 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
+                @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), @pilot, query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+            formatResultCssClass: (obj) =>
+                if @builder.collection?
+                    not_in_collection = false
+                    if obj.id == @pilot?.id
+                        # Currently selected pilot; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@builder.collection.checkShelf('pilot', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                            not_in_collection = true
+                    else
+                        # Not currently selected; check shelf only
+                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.english_name)
+                    if not_in_collection then 'select2-result-not-in-collection' else ''
+                else
+                    ''
+
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
@@ -1961,6 +1995,22 @@ class GenericAddon
         @selector.attr 'type', 'hidden'
         @container.append @selector
         args.minimumResultsForSearch = -1 if $.isMobile()
+        args.formatResultCssClass = (obj) =>
+                if @ship.builder.collection?
+                    not_in_collection = false
+                    if obj.id == @data?.id
+                        # Currently selected card; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
+                            not_in_collection = true
+                    else
+                        # Not currently selected; check shelf only
+                        not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
+                    if not_in_collection then 'select2-result-not-in-collection' else ''
+                else
+                    ''
+
+
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
@@ -2091,6 +2141,7 @@ class exportObj.Upgrade extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term)
@@ -2111,6 +2162,7 @@ class exportObj.Modification extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder'
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term)
@@ -2131,6 +2183,7 @@ class exportObj.Title extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'titlePlaceholder'
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)

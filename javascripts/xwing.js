@@ -1053,7 +1053,8 @@
         if ((_ref1 = this.faction, __indexOf.call(ship_data.factions, _ref1) >= 0) && this.matcher(ship_data.name, term)) {
           ships.push({
             id: ship_data.name,
-            text: ship_data.name
+            text: ship_data.name,
+            english_name: ship_data.english_name
           });
         }
       }
@@ -1089,7 +1090,8 @@
             id: pilot.id,
             text: "" + pilot.name + " (" + pilot.points + ")",
             points: pilot.points,
-            ship: pilot.ship
+            ship: pilot.ship,
+            english_name: pilot.english_name
           });
         }
         return _results;
@@ -1158,7 +1160,8 @@
           _results.push({
             id: upgrade.id,
             text: "" + upgrade.name + " (" + upgrade.points + ")",
-            points: upgrade.points
+            points: upgrade.points,
+            english_name: upgrade.english_name
           });
         }
         return _results;
@@ -1215,7 +1218,8 @@
           _results.push({
             id: modification.id,
             text: "" + modification.name + " (" + modification.points + ")",
-            points: modification.points
+            points: modification.points,
+            english_name: modification.english_name
           });
         }
         return _results;
@@ -1250,7 +1254,8 @@
           _results.push({
             id: title.id,
             text: "" + title.name + " (" + title.points + ")",
-            points: title.points
+            points: title.points,
+            english_name: title.english_name
           });
         }
         return _results;
@@ -1757,11 +1762,12 @@
     };
 
     SquadBuilder.prototype.isSquadPossibleWithCollection = function() {
-      var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, validity, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
       if (Object.keys((_ref = (_ref1 = this.collection) != null ? _ref1.expansions : void 0) != null ? _ref : {}).length === 0) {
         return true;
       }
       this.collection.reset();
+      validity = true;
       _ref2 = this.ships;
       for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
         ship = _ref2[_i];
@@ -1769,7 +1775,7 @@
           ship_is_available = this.collection.use('ship', ship.pilot.english_ship);
           pilot_is_available = this.collection.use('pilot', ship.pilot.english_name);
           if (!(ship_is_available && pilot_is_available)) {
-            return false;
+            validity = false;
           }
           _ref3 = ship.upgrades;
           for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
@@ -1777,7 +1783,7 @@
             if (upgrade.data != null) {
               upgrade_is_available = this.collection.use('upgrade', upgrade.data.english_name);
               if (!upgrade_is_available) {
-                return false;
+                validity = false;
               }
             }
           }
@@ -1787,23 +1793,25 @@
             if (modification.data != null) {
               modification_is_available = this.collection.use('modification', modification.data.english_name);
               if (!modification_is_available) {
-                return false;
+                validity = false;
               }
             }
           }
           if (((_ref5 = ship.title) != null ? _ref5.data : void 0) != null) {
             title_is_available = this.collection.use('title', ship.title.data.english_name);
             if (!title_is_available) {
-              return false;
+              validity = false;
             }
           }
         }
       }
-      return true;
+      return validity;
     };
 
     SquadBuilder.prototype.checkCollection = function() {
-      return this.collection_invalid_container.toggleClass('hidden', this.isSquadPossibleWithCollection());
+      if (this.collection != null) {
+        return this.collection_invalid_container.toggleClass('hidden', this.isSquadPossibleWithCollection());
+      }
     };
 
     return SquadBuilder;
@@ -1972,7 +1980,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1452
+                        lineno: 1454
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2042,7 +2050,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1476
+                  lineno: 1478
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2095,14 +2103,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1498
+              lineno: 1500
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1500
+              lineno: 1502
             }));
           }
           _ref1 = _this.modifications;
@@ -2110,7 +2118,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1502
+                lineno: 1504
               }));
             }
           }
@@ -2202,13 +2210,36 @@
         placeholder: exportObj.translate(this.builder.language, 'ui', 'shipSelectorPlaceholder'),
         query: (function(_this) {
           return function(query) {
+            _this.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.builder.getAvailableShipsMatching(query.term)
             });
           };
         })(this),
-        minimumResultsForSearch: $.isMobile() ? -1 : 0
+        minimumResultsForSearch: $.isMobile() ? -1 : 0,
+        formatResultCssClass: (function(_this) {
+          return function(obj) {
+            var not_in_collection;
+            if (_this.builder.collection != null) {
+              not_in_collection = false;
+              if ((_this.pilot != null) && obj.id === exportObj.ships[_this.pilot.ship].id) {
+                if (!(_this.builder.collection.checkShelf('ship', obj.english_name) || _this.builder.collection.checkTable('pilot', obj.english_name))) {
+                  not_in_collection = true;
+                }
+              } else {
+                not_in_collection = !_this.builder.collection.checkShelf('ship', obj.english_name);
+              }
+              if (not_in_collection) {
+                return 'select2-result-not-in-collection';
+              } else {
+                return '';
+              }
+            } else {
+              return '';
+            }
+          };
+        })(this)
       });
       this.ship_selector.on('change', (function(_this) {
         return function(e) {
@@ -2221,13 +2252,36 @@
         placeholder: exportObj.translate(this.builder.language, 'ui', 'pilotSelectorPlaceholder'),
         query: (function(_this) {
           return function(query) {
+            _this.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.builder.getAvailablePilotsForShipIncluding(_this.ship_selector.val(), _this.pilot, query.term)
             });
           };
         })(this),
-        minimumResultsForSearch: $.isMobile() ? -1 : 0
+        minimumResultsForSearch: $.isMobile() ? -1 : 0,
+        formatResultCssClass: (function(_this) {
+          return function(obj) {
+            var not_in_collection, _ref;
+            if (_this.builder.collection != null) {
+              not_in_collection = false;
+              if (obj.id === ((_ref = _this.pilot) != null ? _ref.id : void 0)) {
+                if (!(_this.builder.collection.checkShelf('pilot', obj.english_name) || _this.builder.collection.checkTable('pilot', obj.english_name))) {
+                  not_in_collection = true;
+                }
+              } else {
+                not_in_collection = !_this.builder.collection.checkShelf('pilot', obj.english_name);
+              }
+              if (not_in_collection) {
+                return 'select2-result-not-in-collection';
+              } else {
+                return '';
+              }
+            } else {
+              return '';
+            }
+          };
+        })(this)
       });
       this.pilot_selector.on('change', (function(_this) {
         return function(e) {
@@ -2736,7 +2790,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1954
+                  lineno: 1988
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2760,6 +2814,28 @@
       if ($.isMobile()) {
         args.minimumResultsForSearch = -1;
       }
+      args.formatResultCssClass = (function(_this) {
+        return function(obj) {
+          var not_in_collection, _ref;
+          if (_this.ship.builder.collection != null) {
+            not_in_collection = false;
+            if (obj.id === ((_ref = _this.data) != null ? _ref.id : void 0)) {
+              if (!(_this.ship.builder.collection.checkShelf(_this.type.toLowerCase(), obj.english_name) || _this.ship.builder.collection.checkTable(_this.type.toLowerCase(), obj.english_name))) {
+                not_in_collection = true;
+              }
+            } else {
+              not_in_collection = !_this.ship.builder.collection.checkShelf(_this.type.toLowerCase(), obj.english_name);
+            }
+            if (not_in_collection) {
+              return 'select2-result-not-in-collection';
+            } else {
+              return '';
+            }
+          } else {
+            return '';
+          }
+        };
+      })(this);
       this.selector.select2(args);
       this.selector.on('change', (function(_this) {
         return function(e) {
@@ -2812,7 +2888,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1984
+                    lineno: 2034
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2834,7 +2910,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1987
+                      lineno: 2037
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2899,7 +2975,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2012
+              lineno: 2062
             }));
           }
           __iced_deferrals._fulfill();
@@ -3002,6 +3078,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, _this, query.term)
@@ -3034,6 +3111,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, _this.ship, query.term)
@@ -3066,6 +3144,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableTitlesIncluding(_this.ship, _this.data, query.term)
