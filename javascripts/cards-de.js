@@ -436,17 +436,17 @@
         text: "Wenn ein feindliches Schiff einen Angriff gegen dich ansagt, kannst du dieses Schiff in die Zielerfassung nehmen."
       },
       "Jake Farrell": {
-        text: "After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."
+        text: "Nachdem du die Aktion Fokussierung durchgeführt oder einen Fokusmarker erhalten hast, darfst du als freie Aktion einen Schub oder eine Fassrolle durchführen."
       },
       "Gemmer Sojan": {
         name: "Gemmer Sojan",
-        text: "While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."
+        text: "Solange du in Reichweite 1 zu mindestens einem feindlichen Schiff bist, steigt dein Wendigkeitswert um 1."
       },
       "Keyan Farlander": {
-        text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
+        text: "Beim Angreifen darfst du 1 Stressmarker entfernen, um alle deine %FOCUS% in %HIT% zu ändern."
       },
       "Nera Dantels": {
-        text: "You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."
+        text: "Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."
       },
       "CR90 Corvette (Crippled Aft)": {
         name: "CR90-Korvette (Heck-Lahmgelegt)",
@@ -753,28 +753,28 @@
         text: "Deine Aufwertungsleiste bekommt ein %ELITE%-Symbol.<br /><br />Du kannst diese Aufwertung nicht ausrüsten, wenn du bereits ein %ELITE%-Symbol hast oder dein Pilotenwert 2 oder weniger beträgt."
       },
       "Enhanced Scopes": {
-        name: "Enhanced Scopes",
-        text: "During the Activation phase, treat your pilot skill value as \"0\"."
+        name: "Verbessertes Radar",
+        text: "Behandle in der Aktivierungsphase deinen Pilotenwert als \"0\"."
       },
       "Chardaan Refit": {
-        name: "Chardaan Refit",
-        text: "This card has a negative squad point cost."
+        name: "Chardaan-Nachrüstung",
+        text: "Diese Karte hat negative Kommandopunktekosten."
       },
       "Proton Rockets": {
-        name: "Proton Rockets",
-        text: "<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."
+        name: "Protonenraketen",
+        text: "<strong>Angriff (Fokussierung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst so viele zusätzliche Angriffswürfel werfen, wie du Wendigkeit hast (maximal 3 zusätzliche Würfel)."
       },
       "Kyle Katarn": {
-        text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
+        text: "Nachdem du einen Stressmarker von deinem Schiff entfernt hast, darfst du deinem Schiff einen Fokusmarker geben."
       },
       "Jan Ors": {
-        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."
+        text: "Ein Mal pro runde darfst du einem freundlichem Schiff in Reichweite 1-3, das gerade die Aktion Fokussierung durchführt oder einen Fokusmarker erhalten würde, stattdessen einen Ausweichmarker geben."
       },
       "Toryn Farr": {
-        text: "<strong>Aktion:</strong> gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt.."
+        text: "<strong>Aktion:</strong> Gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt."
       },
       "R4-D6": {
-        text: "Wenn du von einem Angriff getroffen wirst und es mindest 3 nicht negierte %HIT% gibt, darfst du so viele %HIT% wählen und negieren, bis es nur noch 2 sind. Für jedes auf diese Weise negierte %HIT% bekommst du 1 Stressmarker."
+        text: "Wenn du von einem Angriff getroffen wirst und es mindestens 3 nicht negierte %HIT% gibt, darfst du so viele %HIT% wählen und negieren, bis es nur noch 2 sind. Für jedes auf diese Weise negierte %HIT% bekommst du 1 Stressmarker."
       },
       "R5-P9": {
         text: "Am Ende der Kampfphase kannst du 1 deiner Fokusmarker ausgeben, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert)."
@@ -911,7 +911,7 @@
         text: "Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."
       },
       "B-Wing/E2": {
-        text: "Your upgrade bar gains the %CREW% upgrade icon."
+        text: "Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."
       },
       "Countermeasures": {
         text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
@@ -950,8 +950,8 @@
         text: "Wenn du die Aktion Koordination durchführst, kannst du 2 freundliche Schiffe wählen (anstatt 1). Jedes dieser Schiffe darf 1 freie Aktion durchführen."
       },
       "A-Wing Test Pilot": {
-        name: "A-Wing Test Pilot",
-        text: "Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
+        name: "Erfahrener Testpilot",
+        text: "Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert \"1\" oder niedriger ist."
       },
       "Tantive IV": {
         ship: "CR90-Korvette (Bug)",

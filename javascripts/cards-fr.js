@@ -553,7 +553,7 @@
       "Unspoiled PS3 Scum HWK Pilot": {
         text: "Cette carte n'a pas encore été révélée."
       },
-      "Unspoiled PS7 Scum Z-95 Pilot": {
+      "N'Dru Suhlak": {
         ship: "Chasseur de têtes Z-95",
         text: "Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."
       },
@@ -970,15 +970,6 @@
       },
       "Inertial Dampeners": {
         text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
-      },
-      "Dead???": {
-        text: "Cette carte n'a pas encore été révélée."
-      },
-      "Fee???": {
-        text: "Cette carte n'a pas encore été révélée."
-      },
-      '"Hot ??? Blaster"': {
-        text: "Cette carte n'a pas encore été révélée."
       }
     };
     modification_translations = {
