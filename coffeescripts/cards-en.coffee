@@ -352,11 +352,11 @@ exportObj.cardLoaders.English = () ->
         "Draw Their Fire":
             text: """When a friendly ship at Range 1 is hit by an attack, you may suffer 1 of the uncanceled %CRIT% results instead of the target ship."""
         "Luke Skywalker":
-            text: """After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."""
+            text: """%REBELONLY%<br /><br />After you perform an attack that does not hit, you may immediately perform a primary weapon attack.  You may change 1 %FOCUS% result to a %HIT% result.  You cannot perform another attack this round."""
         "Nien Nunb":
-            text: """You may treat all %STRAIGHT% maneuvers as green maneuvers."""
+            text: """%REBELONLY%<br /><br />You may treat all %STRAIGHT% maneuvers as green maneuvers."""
         "Chewbacca":
-            text: """When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."""
+            text: """%REBELONLY%<br /><br />When you are dealt a Damage card, you may immediately discard that card and recover 1 shield.<br /><br />Then, discard this Upgrade card."""
         "Advanced Proton Torpedoes":
             text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />You may change up to 3 of your blank results to %FOCUS% results."""
         "Autoblaster":
@@ -380,9 +380,9 @@ exportObj.cardLoaders.English = () ->
         "Sensor Jammer":
             text: """When defending, you may change 1 of the attacker's %HIT% results into a %FOCUS% result.<br /><br />The attacker cannot reroll the die with the changed result."""
         "Darth Vader":
-            text: """After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."""
+            text: """%IMPERIALONLY%<br /><br />After you perform an attack against an enemy ship, you may suffer 2 damage to cause that ship to suffer 1 critical damage."""
         "Rebel Captive":
-            text: """Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."""
+            text: """%IMPERIALONLY%<br /><br />Once per round, the first ship that declares you as the target of an attack immediately receives 1 stress token."""
         "Flight Instructor":
             text: """When defending, you may reroll 1 of your %FOCUS% results.  If the attacker's pilot skill value is "2" or lower, you may reroll 1 of your blank results instead."""
         "Navigator":
@@ -414,9 +414,9 @@ exportObj.cardLoaders.English = () ->
         "Tactician":
             text: """After you perform an attack against a ship inside your firing arc at Range 2, that ship receives 1 stress token."""
         "R2-D2 (Crew)":
-            text: """At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
+            text: """%REBELONLY%<br /><br />At the end of the End phase, if you have no shields, you may recover 1 shield and roll 1 attack die.  On a %HIT% result, randomly flip 1 of your facedown Damage cards faceup and resolve it."""
         "C-3PO":
-            text: """Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."""
+            text: """%REBELONLY%<br /><br />Once per round, before you roll 1 or more defense dice, you may guess aloud a number of %EVADE% results.  If you roll that many %EVADE% results (before modifying dice), add 1 %EVADE% result."""
         "Single Turbolasers":
             text: """<strong>Attack (Energy):</strong> Spend 2 energy from this card to perform this attack.  The defender doubles his agility value against this attack.  You may change 1 of your %FOCUS% results to a %HIT% result."""
         "Quad Laser Cannons":
@@ -438,21 +438,21 @@ exportObj.cardLoaders.English = () ->
         "Proton Rockets":
             text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
         "Kyle Katarn":
-            text: """After you remove a stress token from your ship, you may assign a focus token to your ship."""
+            text: """%REBELONLY%<br /><br />After you remove a stress token from your ship, you may assign a focus token to your ship."""
         "Jan Ors":
-            text: """Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."""
+            text: """%REBELONLY%<br /><br />Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."""
         "Toryn Farr":
-            text: """<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
+            text: """%HUGESHIPONLY% %REBELONLY%<br /><br /><strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
         "R4-D6":
             text: """When you are hit by an attack and there are at least 3 uncanceled %HIT% results, you may choose to cancel those results until there are 2 remaining.  For each result canceled this way, receive 1 stress token."""
         "R5-P9":
             text: """At the end of the Combat phase, you may spend 1 of your focus tokens to recover 1 shield (up to your shield value)."""
         "WED-15 Repair Droid":
-            text: """<strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
+            text: """%HUGESHIPONLY%<strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
         "Carlist Rieekan":
-            text: """At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as "12" until the end of the phase."""
+            text: """%HUGESHIPONLY% %REBELONLY%<br /><br />At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as "12" until the end of the phase."""
         "Jan Dodonna":
-            text: """When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."""
+            text: """%HUGESHIPONLY% %REBELONLY%<br /><br />When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."""
         "Expanded Cargo Hold":
             text: """Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
         "Backup Shield Generator":
@@ -462,13 +462,13 @@ exportObj.cardLoaders.English = () ->
         "Frequency Jammer":
             text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
         "Han Solo":
-            text: """When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
+            text: """%REBELONLY%<br /><br />When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
         "Leia Organa":
-            text: """At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."""
+            text: """%REBELONLY%<br /><br />At the start of the Activation phase, you may discard this card to allow all friendly ships that reveal a red maneuver to treat that maneuver as a white maneuver until the end of the phase."""
         "Targeting Coordinator":
             text: """<strong>Energy:</strong> You may spend 1 energy to choose 1 friendly ship at Range 1-2.  Acquire a target lock, then assign the blue target lock token to the chosen ship."""
         "Raymus Antilles":
-            text: """At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."""
+            text: """%HUGESHIPONLY% %REBELONLY%<br /><br />At the start of the Activation phase, choose 1 enemy ship at Range 1-3.  You may look at that ship's chosen maneuver.  If the maneuver is white, assign that ship 1 stress token."""
         "Gunnery Team":
             text: """Once per round, when attacking with a secondary weapon, you may spend 1 energy to change 1 of your blank results to a %HIT% result."""
         "Sensor Team":
@@ -476,31 +476,31 @@ exportObj.cardLoaders.English = () ->
         "Engineering Team":
             text: """During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the "Gain Energy" step."""
         "Lando Calrissian":
-            text: """<strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."""
+            text: """%REBELONLY%<br /><br /><strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."""
         "Mara Jade":
-            text: """At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
+            text: """%IMPERIALONLY%<br /><br />At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."""
         "Fleet Officer":
-            text: """<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
+            text: """%IMPERIALONLY%<br /><br /><strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."""
         "Lone Wolf":
             text: """When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."""
         "Stay On Target":
             text: """When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."""
         "Dash Rendar":
-            text: """You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
+            text: """%REBELONLY%<br /><br />You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."""
         '"Leebo"':
-            text: """<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."""
+            text: """%REBELONLY%<br /><br /><strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."""
         "Ruthlessness":
-            text: """After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."""
+            text: """%IMPERIALONLY%<br /><br />After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."""
         "Intimidation":
             text: """While you are touching an enemy ship, reduce that ship's agility value by 1."""
         "Ysanne Isard":
-            text: """At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."""
+            text: """%IMPERIALONLY%<br /><br /G>At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."""
         "Moff Jerjerrod":
-            text: """When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
+            text: """%IMPERIALONLY%<br /><br /G>When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."""
         "Ion Torpedoes":
             text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."""
         "Bodyguard":
-            text: """At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."""
+            text: """%SCUMONLY%<br /><br />At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."""
         "Calc???":
             text: """This card has not yet been revealed."""
         "Accuracy Corrector":
@@ -518,7 +518,7 @@ exportObj.cardLoaders.English = () ->
         '"Hot Shot" Blaster':
             text: """<strong>Attack:</strong> Discard this card to attack 1 ship (even a ship outside your firing arc)."""
         "Greedo":
-            text: """The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."""
+            text: """%SCUMONLY%<br /><br />The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."""
         "Salvaged Astromech":
             text: """When you are dealt a Damage card with the <strong>Ship</strong> trait, you may immediately discard that card (before resolving its effect).<br /><br />Then, discard this Upgrade card."""
         "Bomb Loadout":
@@ -536,7 +536,7 @@ exportObj.cardLoaders.English = () ->
         "Engine Upgrade":
             text: """Your action bar gains the %BOOST% action icon."""
         "Anti-Pursuit Lasers":
-            text: """After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship suffers 1 damage."""
+            text: """%LARGESHIPONLY%<br /><br />After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship suffers 1 damage."""
         "Targeting Computer":
             text: """Your action bar gains the %TARGETLOCK% action icon."""
         "Hull Upgrade":
@@ -552,11 +552,11 @@ exportObj.cardLoaders.English = () ->
         "B-Wing/E2":
             text: """Your upgrade bar gains the %CREW% upgrade icon."""
         "Countermeasures":
-            text: """At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."""
+            text: """%LARGESHIPONLY%<br /><br />At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."""
         "Experimental Interface":
             text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
         "Tactical Jammer":
-            text: """Your ship can obstruct enemy attacks."""
+            text: """%LARGESHIPONLY%<br /><br />Your ship can obstruct enemy attacks."""
         "Autoth???":
             text: """This card has not yet been revealed."""
 

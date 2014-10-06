@@ -3626,6 +3626,11 @@ exportObj.fixIcons = (data) ->
             .replace(/%TURNRIGHT%/g, '<i class="xwing-font xwing-font-turnright"></i>')
             .replace(/%TURRET%/g, '<i class="xwing-font xwing-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>')
+            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship Only.</span>')
+            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship Only.</span>')
+            .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel Only.</span>')
+            .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial Only.</span>')
+            .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum Only.</span>')
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]

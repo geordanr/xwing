@@ -949,56 +949,67 @@ class exportObj.SquadBuilder
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term))
+
+        eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
-            unclaimed_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name } for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
+            eligible_faction_pilots.push include_pilot
+        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='') ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction))
+        
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
 
         # Special case #2 :(
-        current_upgrade_forcibly_removed = false
+        # current_upgrade_forcibly_removed = false
         if ship?.title?.data?.special_case == 'A-Wing Test Pilot'
             for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
-                unclaimed_upgrades.removeItem equipped_upgrade
-                current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
+                eligible_upgrades.removeItem equipped_upgrade
+                # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
 
-        # Re-add selected upgrade
-        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)) or current_upgrade_forcibly_removed)
-            unclaimed_upgrades.push include_upgrade
-        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
+        # Re-enable selected upgrade
+        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
+            # available_upgrades.push include_upgrade
+            eligible_upgrades.push include_upgrade
+        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
+        
+        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
-        current_mod_forcibly_removed = false
+        # current_mod_forcibly_removed = false
         if ship?.title?.data?.special_case == 'Royal Guard TIE'
             for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
-                unclaimed_modifications.removeItem equipped_modification
-                current_mod_forcibly_removed = true if equipped_modification == include_modification
+                eligible_modifications.removeItem equipped_modification
+                # current_mod_forcibly_removed = true if equipped_modification == include_modification
 
         # Re-add selected modification
-        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)) or current_mod_forcibly_removed)
-            unclaimed_modifications.push include_modification
-        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name } for modification in unclaimed_modifications).sort exportObj.sortHelper
+        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
+            eligible_modifications.push include_modification
+        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
 
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
         # Titles are no longer unique!
-        unclaimed_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term) and (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term))
+
+        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)
-            unclaimed_titles.push include_title
-        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name } for title in unclaimed_titles).sort exportObj.sortHelper
+            eligible_titles.push include_title
+        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1626,7 +1637,7 @@ class Ship
             @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
-            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
@@ -1996,19 +2007,19 @@ class GenericAddon
         @container.append @selector
         args.minimumResultsForSearch = -1 if $.isMobile()
         args.formatResultCssClass = (obj) =>
-                if @ship.builder.collection?
-                    not_in_collection = false
-                    if obj.id == @data?.id
-                        # Currently selected card; mark as not in collection if it's neither
-                        # on the shelf nor on the table
-                        unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
-                            not_in_collection = true
-                    else
-                        # Not currently selected; check shelf only
-                        not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
-                    if not_in_collection then 'select2-result-not-in-collection' else ''
+            if @ship.builder.collection?
+                not_in_collection = false
+                if obj.id == @data?.id
+                    # Currently selected card; mark as not in collection if it's neither
+                    # on the shelf nor on the table
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
+                        not_in_collection = true
                 else
-                    ''
+                    # Not currently selected; check shelf only
+                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
+                if not_in_collection then 'select2-result-not-in-collection' else ''
+            else
+                ''
 
 
         @selector.select2 args
@@ -2018,7 +2029,7 @@ class GenericAddon
             @ship.builder.container.trigger 'xwing-backend:squadDirtinessChanged'
             @ship.builder.backend_status.fadeOut 'slow'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
-            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
             @ship.builder.showTooltip 'Addon', @data if @data?

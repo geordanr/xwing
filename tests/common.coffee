@@ -36,6 +36,24 @@ exports.assertNoMatch = (test, select2_selector, search_text) =>
         test.assertExists '.select2-no-results', "No match found for #{search_text}"
         @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
 
+exports.assertMatchIsDisabled = (test, select2_selector, search_text) =>
+    casper.then ->
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+        @waitUntilVisible 'input.select2-input'
+    .then ->
+        @sendKeys 'input.select2-input', search_text
+        test.assertSelectorHasText '.select2-disabled', search_text, "#{search_text} is not disabled"
+        @mouseEvent 'mousedown', ".select2-drop-mask"
+
+exports.assertMatchIsNotInCollection = (test, select2_selector, search_text) =>
+    casper.then ->
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+        @waitUntilVisible 'input.select2-input'
+    .then ->
+        @sendKeys 'input.select2-input', search_text
+        test.assertSelectorHasText '.select2-result-not-in-collection', search_text, "#{search_text} is not marked as not in collection"
+        @mouseEvent 'mousedown', ".select2-drop-mask"
+
 exports.deselect = (select2_selector) ->
     casper.then ->
         @mouseEvent 'mousedown', "#{select2_selector} .select2-search-choice-close"

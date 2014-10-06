@@ -1505,7 +1505,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 // that way any unselectable headers above it will also be scrolled
                 // into view
 
-                results.scrollTop(0);
+                // results.scrollTop(0);
                 return;
             }
 
