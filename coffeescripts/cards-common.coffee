@@ -1985,7 +1985,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS7 Scum Z-95 Pilot"
+            name: "N'Dru Suhlak"
             unique: true
             faction: "Scum and Villainy"
             id: 112
@@ -2024,12 +2024,12 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS1 Scum Z-95 Pilot"
+            name: "Binayre Pirate"
             faction: "Scum and Villainy"
             id: 115
             ship: "Z-95 Headhunter"
             skill: 1
-            points: 99
+            points: 12
             slots: [
                 "Missile"
                 "Illicit"
@@ -3009,22 +3009,24 @@ exportObj.basicCardData = ->
             points: 99
         }
         {
-            name: "Dead???"
+            name: "Dead Man's Switch"
             id: 111
             slot: "Illicit"
-            points: 99
+            points: 2
         }
         {
-            name: "Fee???"
+            name: "Feedback Array"
             id: 112
             slot: "Illicit"
-            points: 99
+            points: 2
         }
         {
-            name: '"Hot ??? Blaster"'
+            name: '"Hot Shot" Blaster'
             id: 113
             slot: "Illicit"
-            points: 99
+            points: 3
+            attack: 3
+            range: "1-2"
         }
         {
             name: "Greedo"
@@ -3033,6 +3035,44 @@ exportObj.basicCardData = ->
             slot: "Crew"
             faction: "Scum and Villainy"
             points: 1
+        }
+        {
+            name: "Salvaged Astromech"
+            id: 115
+            slot: "Salvaged Astromech"
+            points: 2
+        }
+        {
+            name: "Bomb Loadout"
+            id: 116
+            limited: true
+            slot: "Torpedo"
+            points: 0
+            ship: "Y-Wing"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Bomb"
+                }
+            ]
+        }
+        {
+            name: '"Genius"'
+            id: 117
+            unique: true
+            slot: "Salvaged Astromech"
+            points: 0
+        }
+        {
+            name: "Unhinged Astromech"
+            id: 118
+            slot: "Salvaged Astromech"
+            points: 1
+            modifier_func: (stats) ->
+                if stats.maneuvers? and stats.maneuvers.length > 3
+                    for turn in [0 ... stats.maneuvers[3].length]
+                        if stats.maneuvers[3][turn] > 0
+                            stats.maneuvers[3][turn] = 2
         }
     ]
 

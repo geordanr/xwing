@@ -283,8 +283,8 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         "Unspoiled PS3 Scum HWK Pilot":
             text: """This card has not yet been revealed."""
-        "Unspoiled PS7 Scum Z-95 Pilot":
-            text: """When attacking, if there are no friendly ships at Range 1-2, roll 1 additional attack die."""
+        "N'Dru Suhlak":
+            text: """When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."""
         "Unspoiled PS5 Scum Z-95 Pilot":
             text: """This card has not yet been revealed."""
 
@@ -511,14 +511,22 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         '"Mang??? Cannon"':
             text: """This card has not yet been revealed."""
-        "Dead???":
-            text: """This card has not yet been revealed."""
-        "Fee???":
-            text: """This card has not yet been revealed."""
-        '"Hot ??? Blaster"':
-            text: """This card has not yet been revealed."""
+        "Dead Man's Switch":
+            text: """When you are destroyed, each ship at Range 1 suffers 1 damage."""
+        "Feedback Array":
+            text: """During the Combat phase, instead of performing any attacks, you may receive 1 ion token and suffer 1 damage to choose 1 enemy ship at Range 1.  That ship suffers 1 damage."""
+        '"Hot Shot" Blaster':
+            text: """<strong>Attack:</strong> Discard this card to attack 1 ship (even a ship outside your firing arc)."""
         "Greedo":
             text: """The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."""
+        "Salvaged Astromech":
+            text: """When you are dealt a Damage card with the <strong>Ship</strong> trait, you may immediately discard that card (before resolving its effect).<br /><br />Then, discard this Upgrade card."""
+        "Bomb Loadout":
+            text: """Your upgrade bar gains the %BOMB% icon."""
+        '"Genius"':
+            text: """If you are equipped with a bomb that can be dropped before you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
+        "Unhinged Astromech":
+            text: """You may treat all 3-speed maneuvers as green maneuvers."""
 
     modification_translations =
         "Stealth Device":

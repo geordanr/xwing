@@ -1283,7 +1283,7 @@
           points: 36,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
         }, {
-          name: "Unspoiled PS7 Scum Z-95 Pilot",
+          name: "N'Dru Suhlak",
           unique: true,
           faction: "Scum and Villainy",
           id: 112,
@@ -1309,12 +1309,12 @@
           points: 99,
           slots: ["Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS1 Scum Z-95 Pilot",
+          name: "Binayre Pirate",
           faction: "Scum and Villainy",
           id: 115,
           ship: "Z-95 Headhunter",
           skill: 1,
-          points: 99,
+          points: 12,
           slots: ["Missile", "Illicit"]
         }, {
           name: "Boba Fett (Scum)",
@@ -2173,20 +2173,22 @@
           slot: "Cannon",
           points: 99
         }, {
-          name: "Dead???",
+          name: "Dead Man's Switch",
           id: 111,
           slot: "Illicit",
-          points: 99
+          points: 2
         }, {
-          name: "Fee???",
+          name: "Feedback Array",
           id: 112,
           slot: "Illicit",
-          points: 99
+          points: 2
         }, {
-          name: '"Hot ??? Blaster"',
+          name: '"Hot Shot" Blaster',
           id: 113,
           slot: "Illicit",
-          points: 99
+          points: 3,
+          attack: 3,
+          range: "1-2"
         }, {
           name: "Greedo",
           id: 114,
@@ -2194,6 +2196,49 @@
           slot: "Crew",
           faction: "Scum and Villainy",
           points: 1
+        }, {
+          name: "Salvaged Astromech",
+          id: 115,
+          slot: "Salvaged Astromech",
+          points: 2
+        }, {
+          name: "Bomb Loadout",
+          id: 116,
+          limited: true,
+          slot: "Torpedo",
+          points: 0,
+          ship: "Y-Wing",
+          confersAddons: [
+            {
+              type: exportObj.Upgrade,
+              slot: "Bomb"
+            }
+          ]
+        }, {
+          name: '"Genius"',
+          id: 117,
+          unique: true,
+          slot: "Salvaged Astromech",
+          points: 0
+        }, {
+          name: "Unhinged Astromech",
+          id: 118,
+          slot: "Salvaged Astromech",
+          points: 1,
+          modifier_func: function(stats) {
+            var turn, _i, _ref, _results;
+            if ((stats.maneuvers != null) && stats.maneuvers.length > 3) {
+              _results = [];
+              for (turn = _i = 0, _ref = stats.maneuvers[3].length; 0 <= _ref ? _i < _ref : _i > _ref; turn = 0 <= _ref ? ++_i : --_i) {
+                if (stats.maneuvers[3][turn] > 0) {
+                  _results.push(stats.maneuvers[3][turn] = 2);
+                } else {
+                  _results.push(void 0);
+                }
+              }
+              return _results;
+            }
+          }
         }
       ],
       modificationsById: [
