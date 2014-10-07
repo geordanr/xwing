@@ -1496,21 +1496,21 @@ exportObj.manifestByExpansion =
             type: 'pilot'
             count: 1
         }
-        {
-            name: 'CR90 Corvette (Crippled Fore)'
-            type: 'pilot'
-            count: 1
-        }
+        # {
+        #     name: 'CR90 Corvette (Crippled Fore)'
+        #     type: 'pilot'
+        #     count: 1
+        # }
         {
             name: 'CR90 Corvette (Aft)'
             type: 'pilot'
             count: 1
         }
-        {
-            name: 'CR90 Corvette (Crippled Aft)'
-            type: 'pilot'
-            count: 1
-        }
+        # {
+        #     name: 'CR90 Corvette (Crippled Aft)'
+        #     type: 'pilot'
+        #     count: 1
+        # }
         {
             name: "Jaina's Light"
             type: 'title'
@@ -1651,6 +1651,11 @@ class exportObj.Collection
                     for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
+    checkShelf: (type, name) ->
+        (((@shelf[type] ? {})[name] ? []).length ? 0) != 0
+
+    checkTable: (type, name) ->
+        (((@table[type] ? {})[name] ? []).length ? 0) != 0
 
     use: (type, name) ->
         try

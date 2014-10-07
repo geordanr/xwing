@@ -1667,6 +1667,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Fore)"
+            skip: true
             faction: "Rebel Alliance"
             id: 90
             ship: "CR90 Corvette (Fore)"
@@ -1685,6 +1686,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Aft)"
+            skip: true
             faction: "Rebel Alliance"
             id: 91
             ship: "CR90 Corvette (Aft)"
@@ -3491,6 +3493,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
                 throw e
 
+    for ship_name, ship_data of basic_cards.ships
+        ship_data.english_name = ship_name
+
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
         for card in cards
@@ -3623,6 +3628,11 @@ exportObj.fixIcons = (data) ->
             .replace(/%TURNRIGHT%/g, '<i class="xwing-font xwing-font-turnright"></i>')
             .replace(/%TURRET%/g, '<i class="xwing-font xwing-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>')
+            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship Only.</span>')
+            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship Only.</span>')
+            .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel Only.</span>')
+            .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial Only.</span>')
+            .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum Only.</span>')
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]

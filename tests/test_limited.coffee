@@ -18,8 +18,8 @@ casper.test.begin "Limited keyword", (test) ->
         }
     ])
 
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 4}", 'Backup Shield Generator')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 5}", 'Backup Shield Generator')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 4}", 'Backup Shield Generator')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 5}", 'Backup Shield Generator')
 
     .run ->
         test.done()

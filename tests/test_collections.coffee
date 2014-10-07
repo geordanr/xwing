@@ -214,3 +214,39 @@ casper.test.begin "Reducing expansions to zero", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "No collection cross-builder interaction", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "Core": 1
+                    "B-Wing Expansion Pack": 2
+                    "TIE Interceptor Expansion Pack": 1
+
+    common.addShip('#rebel-builder', 'B-Wing', 'Blue Squadron Pilot')
+    .then ->
+        test.assertNotVisible("#rebel-builder #{common.selectorForCollectionInvalid}")
+
+    common.openEmpireBuilder()
+    common.addShip('#empire-builder', 'TIE Interceptor', 'Alpha Squadron Pilot')
+    .then ->
+        test.assertNotVisible("#empire-builder #{common.selectorForCollectionInvalid}")
+
+    common.openRebelBuilder()
+    .then ->
+        test.assertNotVisible("#rebel-builder #{common.selectorForCollectionInvalid}")
+
+    common.addShip('#rebel-builder', 'A-Wing', 'Green Squadron Pilot')
+    .then ->
+        test.assertVisible("#rebel-builder #{common.selectorForCollectionInvalid}")
+
+    common.openEmpireBuilder()
+    common.addShip('#empire-builder', 'TIE Advanced', 'Storm Squadron Pilot')
+    .then ->
+        test.assertVisible("#empire-builder #{common.selectorForCollectionInvalid}")
+
+    .run ->
+        test.done()

@@ -10,7 +10,7 @@ casper.test.begin "Page comes up", (test) ->
     .then ->
         nav_sel = 'ul.nav.nav-pills'
         test.assertVisible nav_sel
-        for tab_text in [ "Rebel Alliance", "Galactic Empire", "Card Browser", "About" ]
+        for tab_text in [ "Rebel Alliance", "Galactic Empire", "Scum and Villainy", "Card Browser", "About" ]
             test.assertSelectorHasText nav_sel, tab_text
 
         test.assertSelectorHasText '.squad-name-container .squad-name', 'Unnamed Squadron'

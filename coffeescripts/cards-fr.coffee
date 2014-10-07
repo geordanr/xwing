@@ -402,17 +402,17 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Transport moyen GR-75"
             ship: "Transport moyen GR-75"
         # CR90
-        "CR90 Corvette (Crippled Fore)":
-            ship: "Corvette CR90 (proue)"
-            name: "Corvette CR90 (proue abîmée)"
+        # "CR90 Corvette (Crippled Fore)":
+        #     ship: "Corvette CR90 (proue)"
+        #     name: "Corvette CR90 (proue abîmée)"
         "CR90 Corvette (Fore)":
             ship: "Corvette CR90 (proue)"
             name: "Corvette CR90 (proue)"
             text: """Quand vous attaquez avec votre arme principale, vous pouvez dépenser 1 énergie pour lancer 1 dé d'attaque supplémentaire."""
-        "CR90 Corvette (Crippled Aft)":
-            ship: "Corvette CR90 (poupe)"
-            name: "Corvette CR90 (poupe abîmée)"
-            text: """Vous ne pouvez pas choisir ou exécuter de manœuvre (%STRAIGHT% 4), (%BANKLEFT% 2), et (%BANKRIGHT% 2)."""
+        # "CR90 Corvette (Crippled Aft)":
+        #     ship: "Corvette CR90 (poupe)"
+        #     name: "Corvette CR90 (poupe abîmée)"
+        #     text: """Vous ne pouvez pas choisir ou exécuter de manœuvre (%STRAIGHT% 4), (%BANKLEFT% 2), et (%BANKRIGHT% 2)."""
         "CR90 Corvette (Aft)":
             ship: "Corvette CR90 (poupe)"
             name: "Corvette CR90 (poupe)"
