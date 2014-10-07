@@ -10,9 +10,9 @@ casper.test.begin "Huge ships can not mount modifications unless allowed", (test
     common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
     common.addShip('#rebel-builder', 'CR90 Corvette (Aft)', 'CR90 Corvette (Aft)')
 
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(1, 7)}", 'Shield Upgrade')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 8)}", 'Shield Upgrade')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 5)}", 'Shield Upgrade')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(1, 7)}", 'Shield Upgrade')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 8)}", 'Shield Upgrade')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 5)}", 'Shield Upgrade')
 
     common.removeShip("#rebel-builder", 1)
     common.removeShip("#rebel-builder", 1)
@@ -31,8 +31,8 @@ casper.test.begin "Huge-only crew", (test) ->
     common.addShip('#rebel-builder', 'YT-1300', 'Chewbacca')
 
     for crew in [ 'Toryn Farr', 'WED-15 Repair Droid', 'Carlist Rieekan', 'Jan Dodonna' ]
-        common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 3)}", crew)
-        common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 4)}", crew)
+        common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 3)}", crew)
+        common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 4)}", crew)
 
         common.addUpgrade("#rebel-builder", 1, 1, crew)
         common.assertUpgradeInSlot(test, '#rebel-builder', 1, 1, crew)

@@ -45,16 +45,16 @@ casper.test.begin "Royal Guard TIE title", (test) ->
     ])
 
     # low skill interceptors can't have this
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(1, 1), 'Royal Guard TIE')
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(2, 1), 'Royal Guard TIE')
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(3, 2), 'Royal Guard TIE')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(1, 1), 'Royal Guard TIE')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(2, 1), 'Royal Guard TIE')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(3, 2), 'Royal Guard TIE')
 
     # saber squad can equip only if they have veteran instincts
     common.selectFirstMatch(common.selectorForUpgradeIndex(3, 1), 'Veteran Instincts')
     common.selectFirstMatch(common.selectorForUpgradeIndex(3, 2), 'Royal Guard TIE')
     common.selectFirstMatch(common.selectorForUpgradeIndex(3, 3), 'Hull Upgrade')
     # while we're here, enforce modification uniqueness from title
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(3, 4), 'Hull Upgrade')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(3, 4), 'Hull Upgrade')
     common.selectFirstMatch(common.selectorForUpgradeIndex(3, 4), 'Shield Upgrade')
 
     # royal guard can equip, period
@@ -83,7 +83,7 @@ casper.test.begin "Royal Guard TIE title unique mods (German)", (test) ->
         }
     ])
 
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(1, 4), 'Tarnvorrichtung')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(1, 4), 'Tarnvorrichtung')
 
     common.selectLanguage('English')
 
@@ -108,7 +108,7 @@ casper.test.begin "Royal Guard TIE title unique mods (Spanish)", (test) ->
         }
     ])
 
-    common.assertNoMatch(test, common.selectorForUpgradeIndex(1, 4), 'Dispositivo de Sigilo')
+    common.assertMatchIsDisabled(test, common.selectorForUpgradeIndex(1, 4), 'Dispositivo de Sigilo')
 
     common.selectLanguage('English')
 

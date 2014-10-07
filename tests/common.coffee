@@ -14,6 +14,14 @@ exports.setup = ->
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
 
+    casper.on 'resource.error', (resourceError) ->
+        casper.log "Failed to load #{resourceError.url} (#{resourceError.errorCode} #{resourceError.errorString})", 'debug'
+
+    casper.on 'page.error', (msg, trace) ->
+        casper.log "Javascript error: #{msg}", "warning"
+        for obj in trace
+            casper.log "\t#{obj.file}:#{obj.line}, function #{obj.function}"
+
 # These fat arrows are necessary, despite what Coffeelint says
 exports.selectFirstMatch = (select2_selector, search_text) =>
     exports.selectNthMatch select2_selector, 1, search_text
