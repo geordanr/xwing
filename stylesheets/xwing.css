@@ -372,8 +372,15 @@ input[type=number] {
 .collection-status {
   color: green; }
 
-.select2-result-not-in-collection {
-  text-decoration: line-through; }
+.select2-results .select2-result-not-in-collection {
+  color: #aa0000; }
+.select2-results .select2-disabled {
+  color: gray;
+  background-color: lightgrey; }
+
+.card-restriction {
+  font-style: italic;
+  font-variant: small-caps; }
 
 /* X-Wing icons */
 i.xwing-font {
