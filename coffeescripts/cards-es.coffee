@@ -650,7 +650,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Chardaan Refit":
             name: "Reajuste Chardaan"
             ship: "Ala-A"
-            text: """Esta carta tiene un valor negativo en puntos de escuadrón."""
+            text: """text: """<span class="card-restriction">Solo Ala-A.</span><br /><br />This card has a negative squad point cost."""Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"
             text: """<strong>Ataque (Concentración):</strong> Descarta esta carta para realizar este ataque.<br /><br />Puedes tirar dados de ataque adicionales igual a tu valor de agilidad, hasta un máximo de 3 dados de ataque adicionales."""
@@ -678,7 +678,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando otra nave aliada que tengas a alcance 1 efectúe un ataque, podrá cambiar 1 de sus resultados de %HIT% por 1 resultado de %CRIT%."""
         "Expanded Cargo Hold":
             name: "Bodega de Carga Ampliada"
-            text: """Una vez por ronda, cuando tengas a recibir una carta de Daño boca arriba, puedes robar esa carta del mazo de Daño de proa o del mazo de Daño de popa."""
+            text: """<span class="card-restriction">Solo GR-75</span><br /><br />Una vez por ronda, cuando tengas a recibir una carta de Daño boca arriba, puedes robar esa carta del mazo de Daño de proa o del mazo de Daño de popa."""
             ship: 'Transporte mediano GR-75'
         "Backup Shield Generator":
             name: "Generador de Escudos Auxiliar"
@@ -764,17 +764,17 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando un ataque con armamento secundario que requiera descartarlo para efectuar el ataque, no se descarta a menos que el ataque impacte al objetivo."""
         "Stygium Particle Accelerator":
             name: "Acelerador de Partículas de Stygium"
-            text: """Cuando realices una acción de Encubrimiento, o te Descubras, puedes realizar una acción de Evadir gratuita."""
+            text: """<span class="card-restriction">Soo TIE Fantasma.</span><br /><br />Cuando realices una acción de Encubrimiento, o te Descubras, puedes realizar una acción de Evadir gratuita."""
         "Advanced Cloaking Device":
             name: "Dispositivo de Camuflaje Avanzado"
             text: """Despues de que efectúes un ataque, puedes realizar una acción gratuita de camuflaje."""
             ship: "TIE Fantasma"
         "Combat Retrofit":
             name: "Equipamiento de Combate"
-            text: """Tu valor de casco se incrementa en 2 y tu valor de escudos se incrementa en 1."""
+            text: """<span class="card-restriction">Solo GR-75.</span><br /><br />Tu valor de casco se incrementa en 2 y tu valor de escudos se incrementa en 1."""
             ship: 'Transporte mediano GR-75'
         "B-Wing/E2":
-            text: """Tu barra de mejoras gana %CREW%."""
+            text: """<span class="card-restriction">Solo ala-B.</span><br /><br />Tu barra de mejoras gana %CREW%."""
             ship: "Ala-B"
         "Countermeasures":
             text: """Al comienzo de la fase de combate, puedes descartar esta carta para incrementar tu valor de agilidad en 1 hasta el final de la fase.  Retira un marcador de blanco fijado de tu nave."""
@@ -786,51 +786,51 @@ exportObj.cardLoaders['Español'] = () ->
     title_translations =
         "Slave I":
             name: "Esclavo 1"
-            text: """Tu barra de mejoras gana el ícono %TORPEDO%."""
+            text: """<span class="card-restriction">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana el ícono %TORPEDO%."""
         "Millennium Falcon":
             name: "Halcón Milenario"
-            text: """Tu barra de acciones gana el ícono %EVADE%."""
+            text: """<span class="card-restriction">Solo YT-1300.</span><br /><br />Tu barra de acciones gana el ícono %EVADE%."""
         "Moldy Crow":
             name: "Cuervo Oxidado"
-            text: """Durante la fase final, no retires las fichas de Concentración que no hayas usado."""
+            text: """<span class="card-restriction">Solo HWK-290.</span><br /><br />Durante la fase final, no retires las fichas de Concentración que no hayas usado."""
         "ST-321":
-            text: """Cuando fijes un blanco, puedes hacerlo con cualquier nave enemiga de la zona de juego."""
+            text: """<span class="card-restriction">Solo <em>Lambda</em>-class Shuttle.</span><br /><br />Cuando fijes un blanco, puedes hacerlo con cualquier nave enemiga de la zona de juego."""
             ship: "Lanzadera clase Lambda"
         "Royal Guard TIE":
             name: "TIE de la Guardia Real"
             ship: "Interceptor TIE"
-            text: """Puedes equipar a tu nave con 2 mejoras de Modificación diferentes (en vez de una).<br /><br />No puedes tener este título si tu habilidad de piloto es "4" o menos."""
+            text: """<span class="card-restriction">Solo TIE Interceptor.</span><br /><br />Puedes equipar a tu nave con 2 mejoras de Modificación diferentes (en vez de una).<br /><br />No puedes tener este título si tu habilidad de piloto es "4" o menos."""
         "Dodonna's Pride":
             name: "Orgullo de Donna"
-            text: """Cuando efectúes una accion de Coordinación, puedes elegir 2 naves en vez de 1. Cada una de estas naves pueden realizar 1 accion gratuita."""
+            text: """<span class="card-restriction">Solo sección delantera de CR90.</span><br /><br />Cuando efectúes una accion de Coordinación, puedes elegir 2 naves en vez de 1. Cada una de estas naves pueden realizar 1 accion gratuita."""
             ship: "Corbeta CR90 (Proa)"
         "A-Wing Test Pilot":
             name: "Piloto de Pruebas de Ala-A"
-            text: """Tu barra de mejoras gana el ícono %ELITE%.<br /><br />No puedes equipar dos %ELITE% iguales. No puedes tener este título si tu habilidad de piloto es "1" o menor."""
+            text: """<span class="card-restriction">Solo ala-A.</span><br /><br />Tu barra de mejoras gana el ícono %ELITE%.<br /><br />No puedes equipar dos %ELITE% iguales. No puedes tener este título si tu habilidad de piloto es "1" o menor."""
             ship: "Ala-A"
         "Tantive IV":
             name: "Tantive IV"
-            text: """La barra de mejoras de tu sección de proa gana 1 icono adicional de %CREW% y 1 icono adicional de %TEAM%."""
+            text: """<span class="card-restriction">Solo sección delantera de CR90.</span><br /><br />La barra de mejoras de tu sección de proa gana 1 icono adicional de %CREW% y 1 icono adicional de %TEAM%."""
             ship: "Corbeta CR90 (Proa)"
         "Bright Hope":
             name: "Esperanza Brillante"
-            text: """Una ficha de Refuerzo asignada a tu seccion de proa añade 2 resultados de %EVADE% en vez de 1."""
+            text: """<span class="card-restriction">Solo GR-75.</span><br /><br />Una ficha de Refuerzo asignada a tu seccion de proa añade 2 resultados de %EVADE% en vez de 1."""
             ship: 'Transporte mediano GR-75'
         "Quantum Storm":
             name: "Tormenta Cuántica"
-            text: """Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
+            text: """<span class="card-restriction">SOlo GR-75.</span><br /><br />Una acción de refuerzo asignada a la sección delantera añade 2 resultados de %EVADE% (en lugar de 1).""Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
             ship: 'Transporte mediano GR-75'
         "Dutyfree":
             name: "Libre de Impuestos"
-            text: """Cuando realices una acción de Interferencia, puedes elegir una nave enemiga situada a alcance 1-3 en lugar de 1-2."""
+            text: """<span class="card-restriction">Solo GR-75./span><br /><br />Una acción de refuerzo asignada a la sección delanteraañade 2 resultados de %EVADE% (en lugar de 1).""Cuando realices una acción de Interferencia, puedes elegir una nave enemiga situada a alcance 1-3 en lugar de 1-2."""
             ship: 'Transporte mediano GR-75'
         "Jaina's Light":
             name: "Luz de Jaina"
-            text: """Cuando te defiendas, una vez por ataque. Si recibes una carta de Daño boca arriba, puedes descartarla y robar otra carta de Daño boca arriba."""
+            text: """<span class="card-restriction">Solo sección delantera de CR90.</span><br /><br />Cuando te defiendas, una vez por ataque. Si recibes una carta de Daño boca arriba, puedes descartarla y robar otra carta de Daño boca arriba."""
         "Outrider":
             name: "Jinete del Espacio"
-            text: """Mientras tu nave tenga una mejora de %CANNON% equipada, <strong>no podrá</strong> realizar atques con el armamento principal attacks pero podrá realizar ataques con su mejora de armamento secundario %CANNON% contra naves enemigas fuera de su arco de fuego principal."""
+            text: """<span class="card-restriction">Solo YT-2400.</span><br /><br />Mientras tu nave tenga una mejora de %CANNON% equipada, <strong>no podrá</strong> realizar atques con el armamento principal attacks pero podrá realizar ataques con su mejora de armamento secundario %CANNON% contra naves enemigas fuera de su arco de fuego principal."""
         "Dauntless":
-            text: """Después de ejecutar una maniobra que te haga solapar con otra nave, puedes realizar 1 acción gratuita. Recibe 1 ficha de tensión."""
+            text: """<span class="card-restriction">Solo Decimator VT-49.</span><br /><br />Después de ejecutar una maniobra que te haga solapar con otra nave, puedes realizar 1 acción gratuita. Recibe 1 ficha de tensión."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
