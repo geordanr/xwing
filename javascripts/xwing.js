@@ -1053,7 +1053,8 @@
         if ((_ref1 = this.faction, __indexOf.call(ship_data.factions, _ref1) >= 0) && this.matcher(ship_data.name, term)) {
           ships.push({
             id: ship_data.name,
-            text: ship_data.name
+            text: ship_data.name,
+            english_name: ship_data.english_name
           });
         }
       }
@@ -1061,35 +1062,48 @@
     };
 
     SquadBuilder.prototype.getAvailablePilotsForShipIncluding = function(ship, include_pilot, term) {
-      var pilot, pilot_name, unclaimed_faction_pilots;
+      var available_faction_pilots, eligible_faction_pilots, pilot, pilot_name;
       if (term == null) {
         term = '';
       }
-      unclaimed_faction_pilots = (function() {
+      available_faction_pilots = (function() {
         var _ref, _results;
         _ref = exportObj.pilotsByLocalizedName;
         _results = [];
         for (pilot_name in _ref) {
           pilot = _ref[pilot_name];
-          if (((ship == null) || pilot.ship === ship) && pilot.faction === this.faction && this.matcher(pilot_name, term) && ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0)) {
+          if (((ship == null) || pilot.ship === ship) && pilot.faction === this.faction && this.matcher(pilot_name, term)) {
+            _results.push(pilot);
+          }
+        }
+        return _results;
+      }).call(this);
+      eligible_faction_pilots = (function() {
+        var _results;
+        _results = [];
+        for (pilot_name in available_faction_pilots) {
+          pilot = available_faction_pilots[pilot_name];
+          if ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0) {
             _results.push(pilot);
           }
         }
         return _results;
       }).call(this);
       if ((include_pilot != null) && (include_pilot.unique != null) && this.matcher(include_pilot.name, term)) {
-        unclaimed_faction_pilots.push(include_pilot);
+        eligible_faction_pilots.push(include_pilot);
       }
       return ((function() {
         var _i, _len, _results;
         _results = [];
-        for (_i = 0, _len = unclaimed_faction_pilots.length; _i < _len; _i++) {
-          pilot = unclaimed_faction_pilots[_i];
+        for (_i = 0, _len = available_faction_pilots.length; _i < _len; _i++) {
+          pilot = available_faction_pilots[_i];
           _results.push({
             id: pilot.id,
             text: "" + pilot.name + " (" + pilot.points + ")",
             points: pilot.points,
-            ship: pilot.ship
+            ship: pilot.ship,
+            english_name: pilot.english_name,
+            disabled: __indexOf.call(eligible_faction_pilots, pilot) < 0
           });
         }
         return _results;
@@ -1097,7 +1111,7 @@
     };
 
     SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term) {
-      var current_upgrade_forcibly_removed, equipped_upgrade, limited_upgrades_in_use, unclaimed_upgrades, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
+      var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
       if (term == null) {
         term = '';
       }
@@ -1113,19 +1127,29 @@
         }
         return _results;
       })();
-      unclaimed_upgrades = (function() {
+      available_upgrades = (function() {
         var _ref, _results;
         _ref = exportObj.upgradesByLocalizedName;
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && ((upgrade.faction == null) || upgrade.faction === this.faction) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj)) && __indexOf.call(limited_upgrades_in_use, upgrade) < 0) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || upgrade.faction === this.faction)) {
             _results.push(upgrade);
           }
         }
         return _results;
       }).call(this);
-      current_upgrade_forcibly_removed = false;
+      eligible_upgrades = (function() {
+        var _results;
+        _results = [];
+        for (upgrade_name in available_upgrades) {
+          upgrade = available_upgrades[upgrade_name];
+          if (((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj)) && __indexOf.call(limited_upgrades_in_use, upgrade) < 0) {
+            _results.push(upgrade);
+          }
+        }
+        return _results;
+      }).call(this);
       if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
         _ref2 = (function() {
           var _j, _len, _ref2, _results;
@@ -1141,24 +1165,23 @@
         })();
         for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
           equipped_upgrade = _ref2[_i];
-          unclaimed_upgrades.removeItem(equipped_upgrade);
-          if (equipped_upgrade === include_upgrade) {
-            current_upgrade_forcibly_removed = true;
-          }
+          eligible_upgrades.removeItem(equipped_upgrade);
         }
       }
-      if ((include_upgrade != null) && ((((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term)) || current_upgrade_forcibly_removed)) {
-        unclaimed_upgrades.push(include_upgrade);
+      if ((include_upgrade != null) && (((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term))) {
+        eligible_upgrades.push(include_upgrade);
       }
       return ((function() {
         var _j, _len1, _results;
         _results = [];
-        for (_j = 0, _len1 = unclaimed_upgrades.length; _j < _len1; _j++) {
-          upgrade = unclaimed_upgrades[_j];
+        for (_j = 0, _len1 = available_upgrades.length; _j < _len1; _j++) {
+          upgrade = available_upgrades[_j];
           _results.push({
             id: upgrade.id,
             text: "" + upgrade.name + " (" + upgrade.points + ")",
-            points: upgrade.points
+            points: upgrade.points,
+            english_name: upgrade.english_name,
+            disabled: __indexOf.call(eligible_upgrades, upgrade) < 0
           });
         }
         return _results;
@@ -1166,23 +1189,33 @@
     };
 
     SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term) {
-      var current_mod_forcibly_removed, equipped_modification, modification, modification_name, unclaimed_modifications, _i, _len, _ref, _ref1, _ref2;
+      var available_modifications, eligible_modifications, equipped_modification, modification, modification_name, _i, _len, _ref, _ref1, _ref2;
       if (term == null) {
         term = '';
       }
-      unclaimed_modifications = (function() {
+      available_modifications = (function() {
         var _ref, _results;
         _ref = exportObj.modificationsByLocalizedName;
         _results = [];
         for (modification_name in _ref) {
           modification = _ref[modification_name];
-          if (this.matcher(modification_name, term) && ((modification.ship == null) || modification.ship === ship.data.name) && ((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
+          if (this.matcher(modification_name, term) && ((modification.ship == null) || modification.ship === ship.data.name)) {
             _results.push(modification);
           }
         }
         return _results;
       }).call(this);
-      current_mod_forcibly_removed = false;
+      eligible_modifications = (function() {
+        var _results;
+        _results = [];
+        for (modification_name in available_modifications) {
+          modification = available_modifications[modification_name];
+          if (((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
+            _results.push(modification);
+          }
+        }
+        return _results;
+      }).call(this);
       if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'Royal Guard TIE') {
         _ref2 = (function() {
           var _j, _len, _ref2, _results;
@@ -1198,24 +1231,23 @@
         })();
         for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
           equipped_modification = _ref2[_i];
-          unclaimed_modifications.removeItem(equipped_modification);
-          if (equipped_modification === include_modification) {
-            current_mod_forcibly_removed = true;
-          }
+          eligible_modifications.removeItem(equipped_modification);
         }
       }
-      if ((include_modification != null) && (((include_modification.unique != null) && this.matcher(include_modification.name, term)) || current_mod_forcibly_removed)) {
-        unclaimed_modifications.push(include_modification);
+      if ((include_modification != null) && ((include_modification.unique != null) && this.matcher(include_modification.name, term))) {
+        eligible_modifications.push(include_modification);
       }
       return ((function() {
         var _j, _len1, _results;
         _results = [];
-        for (_j = 0, _len1 = unclaimed_modifications.length; _j < _len1; _j++) {
-          modification = unclaimed_modifications[_j];
+        for (_j = 0, _len1 = available_modifications.length; _j < _len1; _j++) {
+          modification = available_modifications[_j];
           _results.push({
             id: modification.id,
             text: "" + modification.name + " (" + modification.points + ")",
-            points: modification.points
+            points: modification.points,
+            english_name: modification.english_name,
+            disabled: __indexOf.call(eligible_modifications, modification) < 0
           });
         }
         return _results;
@@ -1223,34 +1255,47 @@
     };
 
     SquadBuilder.prototype.getAvailableTitlesIncluding = function(ship, include_title, term) {
-      var title, title_name, unclaimed_titles;
+      var available_titles, eligible_titles, title, title_name;
       if (term == null) {
         term = '';
       }
-      unclaimed_titles = (function() {
+      available_titles = (function() {
         var _ref, _results;
         _ref = exportObj.titlesByLocalizedName;
         _results = [];
         for (title_name in _ref) {
           title = _ref[title_name];
-          if (title.ship === ship.data.name && this.matcher(title_name, term) && ((title.unique == null) || __indexOf.call(this.uniques_in_use['Title'], title) < 0) && ((title.faction == null) || title.faction === this.faction) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
+          if (title.ship === ship.data.name && this.matcher(title_name, term)) {
+            _results.push(title);
+          }
+        }
+        return _results;
+      }).call(this);
+      eligible_titles = (function() {
+        var _results;
+        _results = [];
+        for (title_name in available_titles) {
+          title = available_titles[title_name];
+          if (((title.unique == null) || __indexOf.call(this.uniques_in_use['Title'], title) < 0) && ((title.faction == null) || title.faction === this.faction) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
             _results.push(title);
           }
         }
         return _results;
       }).call(this);
       if ((include_title != null) && (include_title.unique != null) && this.matcher(include_title.name, term)) {
-        unclaimed_titles.push(include_title);
+        eligible_titles.push(include_title);
       }
       return ((function() {
         var _i, _len, _results;
         _results = [];
-        for (_i = 0, _len = unclaimed_titles.length; _i < _len; _i++) {
-          title = unclaimed_titles[_i];
+        for (_i = 0, _len = available_titles.length; _i < _len; _i++) {
+          title = available_titles[_i];
           _results.push({
             id: title.id,
             text: "" + title.name + " (" + title.points + ")",
-            points: title.points
+            points: title.points,
+            english_name: title.english_name,
+            disabled: __indexOf.call(eligible_titles, title) < 0
           });
         }
         return _results;
@@ -1757,11 +1802,12 @@
     };
 
     SquadBuilder.prototype.isSquadPossibleWithCollection = function() {
-      var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, validity, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
       if (Object.keys((_ref = (_ref1 = this.collection) != null ? _ref1.expansions : void 0) != null ? _ref : {}).length === 0) {
         return true;
       }
       this.collection.reset();
+      validity = true;
       _ref2 = this.ships;
       for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
         ship = _ref2[_i];
@@ -1769,7 +1815,7 @@
           ship_is_available = this.collection.use('ship', ship.pilot.english_ship);
           pilot_is_available = this.collection.use('pilot', ship.pilot.english_name);
           if (!(ship_is_available && pilot_is_available)) {
-            return false;
+            validity = false;
           }
           _ref3 = ship.upgrades;
           for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
@@ -1777,7 +1823,7 @@
             if (upgrade.data != null) {
               upgrade_is_available = this.collection.use('upgrade', upgrade.data.english_name);
               if (!upgrade_is_available) {
-                return false;
+                validity = false;
               }
             }
           }
@@ -1787,23 +1833,25 @@
             if (modification.data != null) {
               modification_is_available = this.collection.use('modification', modification.data.english_name);
               if (!modification_is_available) {
-                return false;
+                validity = false;
               }
             }
           }
           if (((_ref5 = ship.title) != null ? _ref5.data : void 0) != null) {
             title_is_available = this.collection.use('title', ship.title.data.english_name);
             if (!title_is_available) {
-              return false;
+              validity = false;
             }
           }
         }
       }
-      return true;
+      return validity;
     };
 
     SquadBuilder.prototype.checkCollection = function() {
-      return this.collection_invalid_container.toggleClass('hidden', this.isSquadPossibleWithCollection());
+      if (this.collection != null) {
+        return this.collection_invalid_container.toggleClass('hidden', this.isSquadPossibleWithCollection());
+      }
     };
 
     return SquadBuilder;
@@ -1972,7 +2020,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1452
+                        lineno: 1465
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2042,7 +2090,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1476
+                  lineno: 1489
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2095,14 +2143,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1498
+              lineno: 1511
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1500
+              lineno: 1513
             }));
           }
           _ref1 = _this.modifications;
@@ -2110,7 +2158,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1502
+                lineno: 1515
               }));
             }
           }
@@ -2202,13 +2250,36 @@
         placeholder: exportObj.translate(this.builder.language, 'ui', 'shipSelectorPlaceholder'),
         query: (function(_this) {
           return function(query) {
+            _this.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.builder.getAvailableShipsMatching(query.term)
             });
           };
         })(this),
-        minimumResultsForSearch: $.isMobile() ? -1 : 0
+        minimumResultsForSearch: $.isMobile() ? -1 : 0,
+        formatResultCssClass: (function(_this) {
+          return function(obj) {
+            var not_in_collection;
+            if (_this.builder.collection != null) {
+              not_in_collection = false;
+              if ((_this.pilot != null) && obj.id === exportObj.ships[_this.pilot.ship].id) {
+                if (!(_this.builder.collection.checkShelf('ship', obj.english_name) || _this.builder.collection.checkTable('pilot', obj.english_name))) {
+                  not_in_collection = true;
+                }
+              } else {
+                not_in_collection = !_this.builder.collection.checkShelf('ship', obj.english_name);
+              }
+              if (not_in_collection) {
+                return 'select2-result-not-in-collection';
+              } else {
+                return '';
+              }
+            } else {
+              return '';
+            }
+          };
+        })(this)
       });
       this.ship_selector.on('change', (function(_this) {
         return function(e) {
@@ -2221,13 +2292,36 @@
         placeholder: exportObj.translate(this.builder.language, 'ui', 'pilotSelectorPlaceholder'),
         query: (function(_this) {
           return function(query) {
+            _this.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.builder.getAvailablePilotsForShipIncluding(_this.ship_selector.val(), _this.pilot, query.term)
             });
           };
         })(this),
-        minimumResultsForSearch: $.isMobile() ? -1 : 0
+        minimumResultsForSearch: $.isMobile() ? -1 : 0,
+        formatResultCssClass: (function(_this) {
+          return function(obj) {
+            var not_in_collection, _ref;
+            if (_this.builder.collection != null) {
+              not_in_collection = false;
+              if (obj.id === ((_ref = _this.pilot) != null ? _ref.id : void 0)) {
+                if (!(_this.builder.collection.checkShelf('pilot', obj.english_name) || _this.builder.collection.checkTable('pilot', obj.english_name))) {
+                  not_in_collection = true;
+                }
+              } else {
+                not_in_collection = !_this.builder.collection.checkShelf('pilot', obj.english_name);
+              }
+              if (not_in_collection) {
+                return 'select2-result-not-in-collection';
+              } else {
+                return '';
+              }
+            } else {
+              return '';
+            }
+          };
+        })(this)
       });
       this.pilot_selector.on('change', (function(_this) {
         return function(e) {
@@ -2240,7 +2334,7 @@
       this.pilot_selector.data('select2').results.on('mousemove-filtered', (function(_this) {
         return function(e) {
           var select2_data;
-          select2_data = $(e.target).closest('.select2-result-selectable').data('select2-data');
+          select2_data = $(e.target).closest('.select2-result').data('select2-data');
           if ((select2_data != null ? select2_data.id : void 0) != null) {
             return _this.builder.showTooltip('Pilot', exportObj.pilotsById[select2_data.id]);
           }
@@ -2736,7 +2830,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1954
+                  lineno: 1999
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2760,6 +2854,28 @@
       if ($.isMobile()) {
         args.minimumResultsForSearch = -1;
       }
+      args.formatResultCssClass = (function(_this) {
+        return function(obj) {
+          var not_in_collection, _ref;
+          if (_this.ship.builder.collection != null) {
+            not_in_collection = false;
+            if (obj.id === ((_ref = _this.data) != null ? _ref.id : void 0)) {
+              if (!(_this.ship.builder.collection.checkShelf(_this.type.toLowerCase(), obj.english_name) || _this.ship.builder.collection.checkTable(_this.type.toLowerCase(), obj.english_name))) {
+                not_in_collection = true;
+              }
+            } else {
+              not_in_collection = !_this.ship.builder.collection.checkShelf(_this.type.toLowerCase(), obj.english_name);
+            }
+            if (not_in_collection) {
+              return 'select2-result-not-in-collection';
+            } else {
+              return '';
+            }
+          } else {
+            return '';
+          }
+        };
+      })(this);
       this.selector.select2(args);
       this.selector.on('change', (function(_this) {
         return function(e) {
@@ -2772,7 +2888,7 @@
       this.selector.data('select2').results.on('mousemove-filtered', (function(_this) {
         return function(e) {
           var select2_data;
-          select2_data = $(e.target).closest('.select2-result-selectable').data('select2-data');
+          select2_data = $(e.target).closest('.select2-result').data('select2-data');
           if ((select2_data != null ? select2_data.id : void 0) != null) {
             return _this.ship.builder.showTooltip('Addon', _this.dataById[select2_data.id]);
           }
@@ -2812,7 +2928,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 1984
+                    lineno: 2045
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2834,7 +2950,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 1987
+                      lineno: 2048
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -2899,7 +3015,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2012
+              lineno: 2073
             }));
           }
           __iced_deferrals._fulfill();
@@ -3002,6 +3118,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, _this, query.term)
@@ -3034,6 +3151,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, _this.ship, query.term)
@@ -3066,6 +3184,7 @@
         allowClear: true,
         query: (function(_this) {
           return function(query) {
+            _this.ship.builder.checkCollection();
             return query.callback({
               more: false,
               results: _this.ship.builder.getAvailableTitlesIncluding(_this.ship, _this.data, query.term)

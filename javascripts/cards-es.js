@@ -520,15 +520,6 @@
         text: "Puedes ralizar un ataque con armamento secundario %TORPEDO% contra enemigos fuera de tu arco de fuego.",
         ship: "Ala-B"
       },
-      "CR90 Corvette (Crippled Aft)": {
-        name: "CR90 Corvette (Crippled Aft)",
-        ship: "Corbeta CR90 (Popa)",
-        text: "No puedes seleccionar ni ejecutar maniobras (%STRAIGHT% 4), (%BANKLEFT% 2), o (%BANKRIGHT% 2)."
-      },
-      "CR90 Corvette (Crippled Fore)": {
-        name: "CR90 Corvette (Crippled Fore)",
-        ship: "Corbeta CR90 (Proa)"
-      },
       "Dash Rendar": {
         text: "Puedes ignorar obstáculos durante la fase de activación y cuando ejecutes acciones."
       },

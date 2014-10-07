@@ -1233,15 +1233,7 @@
         type: 'pilot',
         count: 1
       }, {
-        name: 'CR90 Corvette (Crippled Fore)',
-        type: 'pilot',
-        count: 1
-      }, {
         name: 'CR90 Corvette (Aft)',
-        type: 'pilot',
-        count: 1
-      }, {
-        name: 'CR90 Corvette (Crippled Aft)',
         type: 'pilot',
         count: 1
       }, {
@@ -1374,6 +1366,16 @@
         }).call(this));
       }
       return _results;
+    };
+
+    Collection.prototype.checkShelf = function(type, name) {
+      var _ref, _ref1, _ref2;
+      return ((_ref = ((_ref1 = ((_ref2 = this.shelf[type]) != null ? _ref2 : {})[name]) != null ? _ref1 : []).length) != null ? _ref : 0) !== 0;
+    };
+
+    Collection.prototype.checkTable = function(type, name) {
+      var _ref, _ref1, _ref2;
+      return ((_ref = ((_ref1 = ((_ref2 = this.table[type]) != null ? _ref2 : {})[name]) != null ? _ref1 : []).length) != null ? _ref : 0) !== 0;
     };
 
     Collection.prototype.use = function(type, name) {
