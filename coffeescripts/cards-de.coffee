@@ -354,13 +354,13 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Beim Angreifen darfst du 1 Stressmarker entfernen, um alle deine %FOCUS% in %HIT% zu ändern."""
         "Nera Dantels":
             text: """Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."""
-        "CR90 Corvette (Crippled Aft)":
-            name: "CR90-Korvette (Heck-Lahmgelegt)"
-            ship: "CR90-Korvette (Heck)"
-            text: """Folgende Manöver darfst du weder wählen noch ausführen: (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) ."""
-        "CR90 Corvette (Crippled Fore)":
-            name: "CR90-Korvette (Bug-Lahmgelegt)"
-            ship: "CR90-Korvette (Bug)"
+        # "CR90 Corvette (Crippled Aft)":
+        #     name: "CR90-Korvette (Heck-Lahmgelegt)"
+        #     ship: "CR90-Korvette (Heck)"
+        #     text: """Folgende Manöver darfst du weder wählen noch ausführen: (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) ."""
+        # "CR90 Corvette (Crippled Fore)":
+        #     name: "CR90-Korvette (Bug-Lahmgelegt)"
+        #     ship: "CR90-Korvette (Bug)"
         "Dash Rendar":
             text: """You may ignore obstacles during the Activation phase and when performing actions."""
         '"Leebo"':

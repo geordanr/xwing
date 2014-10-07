@@ -1496,21 +1496,21 @@ exportObj.manifestByExpansion =
             type: 'pilot'
             count: 1
         }
-        {
-            name: 'CR90 Corvette (Crippled Fore)'
-            type: 'pilot'
-            count: 1
-        }
+        # {
+        #     name: 'CR90 Corvette (Crippled Fore)'
+        #     type: 'pilot'
+        #     count: 1
+        # }
         {
             name: 'CR90 Corvette (Aft)'
             type: 'pilot'
             count: 1
         }
-        {
-            name: 'CR90 Corvette (Crippled Aft)'
-            type: 'pilot'
-            count: 1
-        }
+        # {
+        #     name: 'CR90 Corvette (Crippled Aft)'
+        #     type: 'pilot'
+        #     count: 1
+        # }
         {
             name: "Jaina's Light"
             type: 'title'

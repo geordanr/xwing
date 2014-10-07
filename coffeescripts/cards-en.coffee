@@ -239,8 +239,8 @@ exportObj.cardLoaders.English = () ->
             text: """You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."""
         "CR90 Corvette (Fore)":
             text: """When attacking with your primary weapon, you may spend 1 energy to roll 1 additional attack die."""
-        "CR90 Corvette (Crippled Aft)":
-            text: """You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."""
+        # "CR90 Corvette (Crippled Aft)":
+        #     text: """You cannot choose or execute (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) maneuvers."""
         "Dash Rendar":
             text: """You may ignore obstacles during the Activation phase and when performing actions."""
         '"Leebo"':
@@ -434,7 +434,7 @@ exportObj.cardLoaders.English = () ->
         "Enhanced Scopes":
             text: """During the Activation phase, treat your pilot skill value as "0"."""
         "Chardaan Refit":
-            text: """This card has a negative squad point cost."""
+            text: """<span class="card-restriction">A-Wing only.</span><br /><br />This card has a negative squad point cost."""
         "Proton Rockets":
             text: """<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."""
         "Kyle Katarn":
@@ -448,13 +448,13 @@ exportObj.cardLoaders.English = () ->
         "R5-P9":
             text: """At the end of the Combat phase, you may spend 1 of your focus tokens to recover 1 shield (up to your shield value)."""
         "WED-15 Repair Droid":
-            text: """%HUGESHIPONLY%<strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
+            text: """%HUGESHIPONLY%<br /><br /><strong>Action:</strong> Spend 1 energy to discard 1 of your facedown Damage cards, or spend 3 energy to discard 1 of your faceup Damage cards."""
         "Carlist Rieekan":
             text: """%HUGESHIPONLY% %REBELONLY%<br /><br />At the start of the Activation phase, you may discard this card to treat each friendly ship's pilot skill value as "12" until the end of the phase."""
         "Jan Dodonna":
             text: """%HUGESHIPONLY% %REBELONLY%<br /><br />When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."""
         "Expanded Cargo Hold":
-            text: """Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
+            text: """<span class="card-restriction">GR-75 only.</span><br /><br />Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
         "Backup Shield Generator":
             text: """At the end of each round, you may spend 1 energy to recover 1 shield (up to your shield value)."""
         "EM Emitter":
@@ -522,7 +522,7 @@ exportObj.cardLoaders.English = () ->
         "Salvaged Astromech":
             text: """When you are dealt a Damage card with the <strong>Ship</strong> trait, you may immediately discard that card (before resolving its effect).<br /><br />Then, discard this Upgrade card."""
         "Bomb Loadout":
-            text: """Your upgrade bar gains the %BOMB% icon."""
+            text: """<span class="card-restriction">Y-Wing only.</span><br /><br />Your upgrade bar gains the %BOMB% icon."""
         '"Genius"':
             text: """If you are equipped with a bomb that can be dropped before you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
         "Unhinged Astromech":
@@ -546,11 +546,11 @@ exportObj.cardLoaders.English = () ->
         "Stygium Particle Accelerator":
             text: """When you either decloak or perform a cloak action, you may perform a free evade action."""
         "Advanced Cloaking Device":
-            text: """After you perform an attack, you may perform a free cloak action."""
+            text: """<span class="card-restriction">TIE Phantom only.</span><br /><br />After you perform an attack, you may perform a free cloak action."""
         "Combat Retrofit":
-            text: """Increase your hull value by 2 and your shield value by 1."""
+            text: """<span class="card-restriction">GR-75 only.</span><br /><br />Increase your hull value by 2 and your shield value by 1."""
         "B-Wing/E2":
-            text: """Your upgrade bar gains the %CREW% upgrade icon."""
+            text: """<span class="card-restriction">B-Wing only.</span><br /><br />Your upgrade bar gains the %CREW% upgrade icon."""
         "Countermeasures":
             text: """%LARGESHIPONLY%<br /><br />At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."""
         "Experimental Interface":
@@ -562,42 +562,42 @@ exportObj.cardLoaders.English = () ->
 
     title_translations =
         "Slave I":
-            text: """Your upgrade bar gains the %TORPEDO% upgrade icon."""
+            text: """<span class="card-restriction">Firespray-31 only.</span><br /><br />Your upgrade bar gains the %TORPEDO% upgrade icon."""
         "Millennium Falcon":
-            text: """Your action bar gains the %EVADE% action icon."""
+            text: """<span class="card-restriction">YT-1300 only.</span><br /><br />Your action bar gains the %EVADE% action icon."""
         "Moldy Crow":
-            text: """During the End phase, do not remove unused focus tokens from your ship."""
+            text: """<span class="card-restriction">HWK-290 only.</span><br /><br />During the End phase, do not remove unused focus tokens from your ship."""
         "ST-321":
-            text: """When acquiring a target lock, you may lock onto any enemy ship in the play area."""
+            text: """<span class="card-restriction"><em>Lambda</em>-class Shuttle only.</span><br /><br />When acquiring a target lock, you may lock onto any enemy ship in the play area."""
         "Royal Guard TIE":
-            text: """You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
+            text: """<span class="card-restriction">TIE Interceptor only.</span><br /><br />You may equip up to 2 different Modification upgrades (instead of 1).<br /><br />You cannot equip this card if your pilot skill value is "4" or lower."""
         "Dodonna's Pride":
-            text: """When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
+            text: """<span class="card-restriction">CR90 fore section only.</span><br /><br />When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
         "A-Wing Test Pilot":
-            text: """Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
+            text: """<span class="card-restriction">A-Wing only.</span><br /><br />Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is "1" or lower."""
         "Tantive IV":
-            text: """Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
+            text: """<span class="card-restriction">CR90 fore section only.</span><br /><br />Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
         "Bright Hope":
-            text: """A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
+            text: """<span class="card-restriction">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
         "Quantum Storm":
-            text: """At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."""
+            text: """<span class="card-restriction">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1).""At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."""
         "Dutyfree":
-            text: """When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."""
+            text: """<span class="card-restriction">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1).""When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."""
         "Jaina's Light":
-            text: """When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
+            text: """<span class="card-restriction">CR90 fore section only.</span><br /><br />When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
         "Outrider":
-            text: """While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
+            text: """<span class="card-restriction">YT-2400 only.</span><br /><br />While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."""
         "Dauntless":
-            text: """After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
+            text: """<span class="card-restriction">VT-49 Decimator only.</span><br /><br />After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."""
         "Virago":
-            text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
+            text: """<span class="card-restriction">StarViper only.</span><br /><br />Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
         '"Heavy Scyk" Interceptor (Cannon)':
-            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+            text: """<span class="card-restriction">M3-A Interceptor only.</span><br /><br />Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
         '"Heavy Scyk" Interceptor (Torpedo)':
-            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+            text: """<span class="card-restriction">M3-A Interceptor only.</span><br /><br />Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
         '"Heavy Scyk" Interceptor (Missile)':
-            text: """Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
+            text: """<span class="card-restriction">M3-A Interceptor only.</span><br /><br />Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
         "IG-2000":
-            text: """You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
+            text: """<span class="card-restriction">Aggressor only.</span><br /><br />You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

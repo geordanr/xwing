@@ -1667,6 +1667,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Fore)"
+            skip: true
             faction: "Rebel Alliance"
             id: 90
             ship: "CR90 Corvette (Fore)"
@@ -1685,6 +1686,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "CR90 Corvette (Crippled Aft)"
+            skip: true
             faction: "Rebel Alliance"
             id: 91
             ship: "CR90 Corvette (Aft)"
