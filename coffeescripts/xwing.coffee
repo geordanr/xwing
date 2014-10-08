@@ -519,7 +519,22 @@ class exportObj.SquadBuilder
                 <div class="span3 info-container" />
             </div>
 
+            <div class="row-fluid">
+                <div class="span9">
+                    <button class="btn btn-primary to-xws">Export to XWS (beta)</button>
+                </div>
+            </div>
         """
+
+        @to_xws_button = content_container.find('button.to-xws')
+        @to_xws_button.click (e) =>
+            e.preventDefault()
+            textarea = $ @xws_modal.find('.xws-content')
+            textarea.attr 'readonly'
+            textarea.val JSON.stringify(@toXWS())
+            @xws_modal.modal 'show'
+            textarea.select()
+            textarea.focus()
 
         @ship_container = $ content_container.find('div.ship-container')
         @info_container = $ content_container.find('div.info-container')
@@ -582,6 +597,25 @@ class exportObj.SquadBuilder
         @info_container.hide()
 
         @print_list_button = $ @container.find('button.print-list')
+
+        @xws_modal = $ document.createElement 'DIV'
+        @xws_modal.addClass 'modal hide fade xws-modal hidden-print'
+        @container.append @xws_modal
+        @xws_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>XWS Export</h3>
+            </div>
+            <div class="modal-body">
+                Copy and paste this into an XWS-compliant application to transfer your list.
+                <div class="container-fluid">
+                    <textarea class="xws-content"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer hidden-print">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
 
         @container.find('[rel=tooltip]').tooltip()
 
