@@ -382,7 +382,7 @@ class exportObj.SquadBuilder
 
         @randomizer_options_modal = $ document.createElement('DIV')
         @randomizer_options_modal.addClass 'modal hide fade'
-        $(document).append @randomizer_options_modal
+        $('body').append @randomizer_options_modal
         @randomizer_options_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

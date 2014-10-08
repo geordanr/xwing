@@ -1690,7 +1690,7 @@ class exportObj.Collection
     setupUI: ->
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
-        $(document).append @modal
+        $('body').append @modal
         @modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
