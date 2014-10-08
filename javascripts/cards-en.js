@@ -811,10 +811,10 @@
         text: "<span class=\"card-restriction\">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."
       },
       "Quantum Storm": {
-        text: "<span class=\"card-restriction\">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1).\"\"At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."
+        text: "<span class=\"card-restriction\">GR-75 only.</span><br /><br />At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."
       },
       "Dutyfree": {
-        text: "<span class=\"card-restriction\">GR-75 only.</span><br /><br />A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1).\"\"When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."
+        text: "<span class=\"card-restriction\">GR-75 only.</span><br /><br />When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."
       },
       "Jaina's Light": {
         text: "<span class=\"card-restriction\">CR90 fore section only.</span><br /><br />When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."
