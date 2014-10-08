@@ -3557,6 +3557,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
         throw new Error("At least one upgrade shares an ID with another")
 
+    exportObj.upgradesBySlotCanonicalName = {}
+    for upgrade_name, upgrade of exportObj.upgrades
+        (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
+
     exportObj.modificationsById = {}
     exportObj.modificationsByLocalizedName = {}
     for modification_name, modification of exportObj.modifications
@@ -3576,6 +3580,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
         throw new Error("At least one modification shares an ID with another")
 
+    exportObj.modificationsByCanonicalName = {}
+    for modification_name, modification of exportObj.modifications
+        (exportObj.modificationsByCanonicalName ?= {})[modification.canonical_name] = modification
+
     exportObj.titlesById = {}
     exportObj.titlesByLocalizedName = {}
     for title_name, title of exportObj.titles
@@ -3592,6 +3600,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         if title.ship not of exportObj.titlesByShip
             exportObj.titlesByShip[title.ship] = []
         exportObj.titlesByShip[title.ship].push title
+
+    exportObj.titlesByCanonicalName = {}
+    for title_name, title of exportObj.titles
+        (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 

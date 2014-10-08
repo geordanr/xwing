@@ -44,6 +44,9 @@ Array::removeItem = (item) ->
     @splice(idx, 1) unless idx == -1
     this
 
+String::capitalize = ->
+    @charAt(0).toUpperCase() + @slice(1)
+
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -653,7 +656,7 @@ class exportObj.SquadBuilder
         @load_xws_button.click (e) =>
             e.preventDefault()
             import_status = $ @xws_import_modal.find('.xws-import-status')
-            import_status.text = 'Loading...'
+            import_status.text 'Loading...'
             do (import_status) =>
                 @loadFromXWS @xws_import_modal.find('.xws-content').val(), (res) =>
                     if res.success
@@ -1497,6 +1500,38 @@ class exportObj.SquadBuilder
                 for pilot in xws.pilots
                     new_ship = @addShip()
                     new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                    # Turn all the upgrades into a flat list so we can keep trying to add them
+                    addons = []
+                    for upgrade_type, upgrade_canonical of pilot.upgrades ? {}
+                        addons.push switch upgrade_canonical
+                            when 'modification'
+                                exportObj.modificationsByCanonicalName[upgrade_canonical]
+                            when 'title'
+                                exportObj.titlesByCanonicalName[upgrade_canonical]
+                            else
+                                slot = switch upgrade_type
+                                    when 'astromechdroid'
+                                        'Astromech'
+                                    when 'elitepilottalent'
+                                        'Elite'
+                                    else
+                                        upgrade_type.capitalize()
+                                exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+
+                    for _ in [0...1000]
+                        # Try to add an addon.  If it's not eligible, requeue it and
+                        # try it again later, as another addon might allow it.
+                        addon = addons.shift()
+
+                        # TODO
+
+                        # Can't add it, requeue
+                        addons.push addon
+
+                    if addons.length > 0
+                        success = false
+                        error = "Could not add all upgrades"
+                        break
 
                 @suppress_automatic_new_ship = false
                 # Finally, the unassigned ship
