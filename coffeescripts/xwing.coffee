@@ -1354,6 +1354,34 @@ class exportObj.SquadBuilder
         if @collection?
             @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
 
+    toXWS: ->
+        # Often you will want JSON.stringify(builder.toXWS())
+        xws =
+            description: @getNotes()
+            faction: switch @faction
+                when 'Rebel Alliance'
+                    'rebels'
+                when 'Galactic Empire'
+                    'empire'
+                when 'Scum and Villainy'
+                    'scum'
+                else
+                    throw new Error("Unrecognized faction #{@faction}")
+            name: @current_squad.name
+            pilots: []
+            points: @total_points
+            vendor:
+                builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                builder_link: window.location.href.split('?')[0]
+                link: @permalink.attr 'href'
+            version: '0.1.0'
+
+        for ship in @ships
+            if ship.pilot?
+                xws.pilots.push ship.toXWS()
+
+        xws
+
 class Ship
     constructor: (args) ->
         # args
@@ -1979,6 +2007,26 @@ class Ship
 
         false
 
+    toXWS: ->
+        xws =
+            name: @pilot.canonical_name
+            points: @getPoints()
+            ship: @data.canonical_name
+            upgrades: {}
+
+        for upgrade in @upgrades
+            if upgrade?.data?
+                upgrade.toXWS xws.upgrades
+
+        for modification in @modifications
+            if modification?.data?
+                modification.toXWS xws.upgrades
+
+        if @title?.data?
+            @title.toXWS xws.upgrades
+
+        xws
+
 class GenericAddon
     constructor: (args) ->
         # args
@@ -2133,6 +2181,20 @@ class GenericAddon
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
+
+    toXWS: (upgrade_dict) ->
+        upgrade_type = switch @type
+            when 'Upgrade'
+                switch @slot
+                    when 'Astromech'
+                        'astromechdroid'
+                    when 'Elite'
+                        'elitepilottalent'
+                    else
+                        @slot.canonicalize()
+            else
+                @type.canonicalize()
+        (upgrade_dict[upgrade_type] ?= []).push @data.canonical_name
 
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->

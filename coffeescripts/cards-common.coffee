@@ -16,7 +16,9 @@ exportObj.isReleased = (data) ->
     false
 
 String::canonicalize = ->
-    this.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+    this.toLowerCase()
+        .replace(/[^a-z0-9]/g, '')
+        .replace(/\s+/g, '-')
 
 # Returns an independent copy of the data which can be modified by translation
 # modules.
@@ -2039,7 +2041,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Scum)"
-            canonical_name: 'boba-fett'
+            canonical_name: 'bobafett'
             faction: "Scum and Villainy"
             id: 116
             ship: "Firespray-31"
@@ -2057,7 +2059,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kath Scarlet (Scum)"
-            canonical_name: 'kath-scarlet'
+            canonical_name: 'kathscarlet'
             unique: true
             faction: "Scum and Villainy"
             id: 117
@@ -2228,7 +2230,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
-            canonical_name: 'r2-d2'
+            canonical_name: 'r2d2'
             id: 3
             unique: true
             slot: "Astromech"
@@ -3495,6 +3497,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name = ship_name
+        ship_data.canonical_name = ship_data.english_name.canonicalize()
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
