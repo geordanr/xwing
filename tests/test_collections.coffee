@@ -78,6 +78,9 @@ casper.test.begin "Collections API: modification", (test) ->
         test.assert @evaluate ->
             window.collection.use "modification", "Engine Upgrade"
 
+        test.assert @evaluate ->
+            window.collection.use "modification", "Engine Upgrade"
+
         test.assertFalsy @evaluate ->
             window.collection.use "modification", "Engine Upgrade"
 
