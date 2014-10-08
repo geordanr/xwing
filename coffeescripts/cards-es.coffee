@@ -684,7 +684,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Chardaan Refit":
             name: "Reajuste Chardaan"
             ship: "Ala-A"
-            text: """text: """<span class="card-restriction">Solo Ala-A.</span><br /><br />This card has a negative squad point cost."""Esta carta tiene un valor negativo en puntos de escuadrón."""
+            text: """<span class="card-restriction">Solo Ala-A.</span><br /><br />Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"
             text: """<strong>Ataque (Concentración):</strong> Descarta esta carta para realizar este ataque.<br /><br />Puedes tirar dados de ataque adicionales igual a tu valor de agilidad, hasta un máximo de 3 dados de ataque adicionales."""
@@ -882,7 +882,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: 'Transporte mediano GR-75'
         "Quantum Storm":
             name: "Tormenta Cuántica"
-            text: """<span class="card-restriction">SOlo GR-75.</span><br /><br />Una acción de refuerzo asignada a la sección delantera añade 2 resultados de %EVADE% (en lugar de 1).""Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
+            text: """<span class="card-restriction">Solo GR-75.</span><br /><br />Una acción de refuerzo asignada a la sección delantera añade 2 resultados de %EVADE% (en lugar de 1).""Al principio de la fase Final, si tienes 1 ficha de Energía o menos, ganas 1 ficha de Energía."""
             ship: 'Transporte mediano GR-75'
         "Dutyfree":
             name: "Libre de Impuestos"
