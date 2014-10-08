@@ -3542,6 +3542,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
         throw new Error("At least one pilot shares an ID with another")
 
+    exportObj.pilotsByFactionCanonicalName = {}
+    for pilot_name, pilot of exportObj.pilots
+        (exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] = pilot
 
     exportObj.upgradesById = {}
     exportObj.upgradesByLocalizedName = {}
