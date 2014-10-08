@@ -343,11 +343,11 @@
       }, {
         name: 'Shield Upgrade',
         type: 'modification',
-        count: 1
+        count: 2
       }, {
         name: 'Engine Upgrade',
         type: 'modification',
-        count: 1
+        count: 2
       }, {
         name: 'Millennium Falcon',
         type: 'title',
