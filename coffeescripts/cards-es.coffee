@@ -650,7 +650,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Chardaan Refit":
             name: "Reajuste Chardaan"
             ship: "Ala-A"
-            text: """text: """<span class="card-restriction">Solo Ala-A.</span><br /><br />This card has a negative squad point cost."""Esta carta tiene un valor negativo en puntos de escuadrón."""
+            text: """text: <span class="card-restriction">Solo Ala-A.</span><br /><br />This card has a negative squad point cost. Esta carta tiene un valor negativo en puntos de escuadrón."""
         "Proton Rockets":
             name: "Cohetes de Protones"
             text: """<strong>Ataque (Concentración):</strong> Descarta esta carta para realizar este ataque.<br /><br />Puedes tirar dados de ataque adicionales igual a tu valor de agilidad, hasta un máximo de 3 dados de ataque adicionales."""
