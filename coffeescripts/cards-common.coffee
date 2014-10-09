@@ -3264,6 +3264,16 @@ exportObj.basicCardData = ->
             ship: "A-Wing"
             restriction_func: (ship) ->
                 ship.effectiveStats().skill > 1
+            validation_func: (ship, upgrade_obj) ->
+                # Still need to respect the restriction
+                return false unless ship.effectiveStats().skill > 1
+                # No two Elites are on fir^W^W^Wcan be the same
+                elites = (upgrade.data.canonical_name for upgrade in ship.upgrades when upgrade.slot == 'Elite' and upgrade.data?)
+                while elites.length > 0
+                    elite = elites.pop()
+                    if elite in elites
+                        return false
+                true
             confersAddons: [
                 {
                     type: exportObj.Upgrade

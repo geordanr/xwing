@@ -1499,7 +1499,11 @@ class exportObj.SquadBuilder
 
                 for pilot in xws.pilots
                     new_ship = @addShip()
-                    new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                    try
+                        new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                    catch err
+                        console.error err.message
+                        continue
                     # Turn all the upgrades into a flat list so we can keep trying to add them
                     addons = []
                     for upgrade_type, upgrade_canonicals of pilot.upgrades ? {}
@@ -1517,6 +1521,8 @@ class exportObj.SquadBuilder
                                             'Astromech'
                                         when 'elitepilottalent'
                                             'Elite'
+                                        when 'systemupgrade'
+                                            'System'
                                         else
                                             upgrade_type.capitalize()
                                     exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
