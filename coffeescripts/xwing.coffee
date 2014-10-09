@@ -1490,7 +1490,7 @@ class exportObj.SquadBuilder
                         throw new Error("Attempted to load XWS for #{xws.faction} but builder is #{@faction}")
 
                 if xws.name?
-                    @squad_name_input.val xws.name
+                    @current_squad.name = xws.name
                 if xws.description?
                     @notes.val xws.description
 
@@ -1502,36 +1502,78 @@ class exportObj.SquadBuilder
                     new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
                     # Turn all the upgrades into a flat list so we can keep trying to add them
                     addons = []
-                    for upgrade_type, upgrade_canonical of pilot.upgrades ? {}
-                        addons.push switch upgrade_canonical
-                            when 'modification'
-                                exportObj.modificationsByCanonicalName[upgrade_canonical]
-                            when 'title'
-                                exportObj.titlesByCanonicalName[upgrade_canonical]
-                            else
-                                slot = switch upgrade_type
-                                    when 'astromechdroid'
-                                        'Astromech'
-                                    when 'elitepilottalent'
-                                        'Elite'
-                                    else
-                                        upgrade_type.capitalize()
-                                exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
-
-                    for _ in [0...1000]
-                        # Try to add an addon.  If it's not eligible, requeue it and
-                        # try it again later, as another addon might allow it.
-                        addon = addons.shift()
-
-                        # TODO
-
-                        # Can't add it, requeue
-                        addons.push addon
+                    for upgrade_type, upgrade_canonicals of pilot.upgrades ? {}
+                        for upgrade_canonical in upgrade_canonicals
+                            # console.log upgrade_type, upgrade_canonical
+                            slot = null
+                            addon = switch upgrade_type
+                                when 'modification'
+                                    exportObj.modificationsByCanonicalName[upgrade_canonical]
+                                when 'title'
+                                    exportObj.titlesByCanonicalName[upgrade_canonical]
+                                else
+                                    slot = switch upgrade_type
+                                        when 'astromechdroid'
+                                            'Astromech'
+                                        when 'elitepilottalent'
+                                            'Elite'
+                                        else
+                                            upgrade_type.capitalize()
+                                    exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                            if addon?
+                                # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
+                                addons.push
+                                    type: upgrade_type
+                                    data: addon
+                                    slot: slot
 
                     if addons.length > 0
-                        success = false
-                        error = "Could not add all upgrades"
-                        break
+                        for _ in [0...1000]
+                            # Try to add an addon.  If it's not eligible, requeue it and
+                            # try it again later, as another addon might allow it.
+                            addon = addons.shift()
+                            # console.log "Adding #{addon.data.name} to #{new_ship}..."
+
+                            addon_added = false
+                            switch addon.type
+                                when 'modification'
+                                    for modification in new_ship.modifications
+                                        continue if modification.data?
+                                        modification.setData addon.data
+                                        addon_added = true
+                                        break
+                                when 'title'
+                                    unless new_ship.title.data?
+                                        new_ship.title.setData addon.data
+                                        addon_added = true
+                                else
+                                    # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
+                                    for upgrade, i in new_ship.upgrades
+                                        continue if upgrade.slot != addon.slot or upgrade.data?
+                                        upgrade.setData addon.data
+                                        addon_added = true
+                                        break
+
+                            if addon_added
+                                # console.log "Successfully added #{addon.data.name} to #{new_ship}"
+                                if addons.length == 0
+                                    # console.log "Done with addons for #{new_ship}"
+                                    break
+                            else
+                                # Can't add it, requeue unless there are no other addons to add
+                                # in which case this isn't valid
+                                if addons.length == 0
+                                    success = false
+                                    error = "Could not add #{addon.data.name} to #{new_ship}"
+                                    break
+                                else
+                                    # console.log "Could not add #{addon.data.name} to #{new_ship}, trying later"
+                                    addons.push addon
+
+                        if addons.length > 0
+                            success = false
+                            error = "Could not add all upgrades"
+                            break
 
                 @suppress_automatic_new_ship = false
                 # Finally, the unassigned ship
@@ -1546,6 +1588,8 @@ class exportObj.SquadBuilder
             @current_squad.dirty = true
             @container.trigger 'xwing-backend:squadNameChanged'
             @container.trigger 'xwing-backend:squadDirtinessChanged'
+
+        # console.log "success: #{success}, error: #{error}"
 
         cb
             success: success
