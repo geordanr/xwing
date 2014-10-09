@@ -50,7 +50,7 @@ exports.assertMatchIsDisabled = (test, select2_selector, search_text) =>
         @waitUntilVisible 'input.select2-input'
     .then ->
         @sendKeys 'input.select2-input', search_text
-        test.assertSelectorHasText '.select2-disabled', search_text, "#{search_text} is not disabled"
+        test.assertSelectorHasText '.select2-disabled', search_text, "#{search_text} is disabled"
         @mouseEvent 'mousedown', ".select2-drop-mask"
 
 exports.assertMatchIsNotInCollection = (test, select2_selector, search_text) =>
@@ -59,7 +59,7 @@ exports.assertMatchIsNotInCollection = (test, select2_selector, search_text) =>
         @waitUntilVisible 'input.select2-input'
     .then ->
         @sendKeys 'input.select2-input', search_text
-        test.assertSelectorHasText '.select2-result-not-in-collection', search_text, "#{search_text} is not marked as not in collection"
+        test.assertSelectorHasText '.select2-result-not-in-collection', search_text, "#{search_text} is marked as not in collection"
         @mouseEvent 'mousedown', ".select2-drop-mask"
 
 exports.deselect = (select2_selector) ->

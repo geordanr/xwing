@@ -118,6 +118,7 @@
     %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/translate.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/xws.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
         window.setupTranslationSupport()
@@ -145,18 +146,21 @@
             title: 'About'
 
         window.rebel_sb = new window.SquadBuilder
+            tab: '#rebelTab'
             faction: 'Rebel Alliance'
             container: '#rebel-builder'
             printable_container: '#printable'
         window.registerBuilderForTranslation window.rebel_sb
 
         window.empire_sb = new window.SquadBuilder
+            tab: '#empireTab'
             faction: 'Galactic Empire'
             container: '#empire-builder'
             printable_container: '#printable'
         window.registerBuilderForTranslation window.empire_sb
 
         window.scum_sb = new window.SquadBuilder
+            tab: '#scumTab'
             faction: 'Scum and Villainy'
             container: '#scum-builder'
             printable_container: '#printable'
@@ -190,6 +194,9 @@
 
         window.setupTranslationUI window.backend
 
+        window.xws = new XWSManager
+            container: '#xws'
+
         if (window.location.href.indexOf('https:') != 0) and ((navigator.userAgent.indexOf('MSIE 8') > -1) or (navigator.userAgent.indexOf('MSIE 9') > -1))
             $('.msie8-hax').html '''
                 Trouble logging in? Try clicking <a href="#">here</a> first.
@@ -197,6 +204,8 @@
             $('.msie8-hax a').click (e) ->
                 e.preventDefault()
                 window.location.href = window.location.href.replace(/^http:/, 'https:')
+
+#xws
 
 .font-hax
   %span{:style => "font-family: BankGothicHD"}

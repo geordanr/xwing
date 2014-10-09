@@ -60,6 +60,7 @@ class exportObj.SquadBuilder
         @container = $ args.container
         @faction = $.trim args.faction
         @printable_container = $ args.printable_container
+        @tab = $ args.tab
 
         # internal state
         @ships = []
@@ -521,34 +522,7 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="span3 info-container" />
             </div>
-
-            <div class="row-fluid">
-                <div class="span9">
-                    <button class="btn btn-primary from-xws">Import from XWS (beta)</button>
-                    <button class="btn btn-primary to-xws">Export to XWS (beta)</button>
-                    <button class="btn btn-primary xws-qr">XWS QR Code (beta)</button>
-                </div>
-            </div>
         """
-
-        @from_xws_button = content_container.find('button.from-xws')
-        @from_xws_button.click (e) =>
-            e.preventDefault()
-            if @current_squad.dirty and @backend?
-                @backend.warnUnsaved this, =>
-                    @xws_import_modal.modal 'show'
-            else
-                @xws_import_modal.modal 'show'
-
-        @to_xws_button = content_container.find('button.to-xws')
-        @to_xws_button.click (e) =>
-            e.preventDefault()
-            textarea = $ @xws_export_modal.find('.xws-content')
-            textarea.attr 'readonly'
-            textarea.val JSON.stringify(@toXWS())
-            @xws_export_modal.modal 'show'
-            textarea.select()
-            textarea.focus()
 
         @ship_container = $ content_container.find('div.ship-container')
         @info_container = $ content_container.find('div.info-container')
@@ -612,58 +586,6 @@ class exportObj.SquadBuilder
 
         @print_list_button = $ @container.find('button.print-list')
 
-        @xws_export_modal = $ document.createElement 'DIV'
-        @xws_export_modal.addClass 'modal hide fade xws-modal hidden-print'
-        @container.append @xws_export_modal
-        @xws_export_modal.append $.trim """
-            <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>XWS Export</h3>
-            </div>
-            <div class="modal-body">
-                Copy and paste this into an XWS-compliant application to transfer your list.
-                <div class="container-fluid">
-                    <textarea class="xws-content"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer hidden-print">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        """
-
-        @xws_import_modal = $ document.createElement 'DIV'
-        @xws_import_modal.addClass 'modal hide fade xws-modal hidden-print'
-        @container.append @xws_import_modal
-        @xws_import_modal.append $.trim """
-            <div class="modal-header">
-                <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>XWS Import</h3>
-            </div>
-            <div class="modal-body">
-                Paste XWS here to load a list exported from another application.
-                <div class="container-fluid">
-                    <textarea class="xws-content" placeholder="Paste XWS here..."></textarea>
-                </div>
-            </div>
-            <div class="modal-footer hidden-print">
-                <span class="xws-import-status"></span>&nbsp;
-                <button class="btn btn-primary import-xws">Import It!</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        """
-
-        @load_xws_button = $ @xws_import_modal.find('button.import-xws')
-        @load_xws_button.click (e) =>
-            e.preventDefault()
-            import_status = $ @xws_import_modal.find('.xws-import-status')
-            import_status.text 'Loading...'
-            do (import_status) =>
-                @loadFromXWS @xws_import_modal.find('.xws-content').val(), (res) =>
-                    if res.success
-                        @xws_import_modal.modal 'hide'
-                    else
-                        import_status.text res.error
-
         @container.find('[rel=tooltip]').tooltip()
 
     setupEventHandlers: ->
@@ -719,6 +641,12 @@ class exportObj.SquadBuilder
             @checkCollection()
         .on 'xwing-collection:destroyed', (e, collection) =>
             @collection_button.addClass 'hidden'
+        .on 'xwing:pingActiveBuilder', (e, cb) =>
+            cb(this) if @container.is(':visible')
+        .on 'xwing:activateBuilder', (e, faction, cb) =>
+            if faction == @faction
+                @tab.tab('show')
+                cb this
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -1439,15 +1367,7 @@ class exportObj.SquadBuilder
         # Often you will want JSON.stringify(builder.toXWS())
         xws =
             description: @getNotes()
-            faction: switch @faction
-                when 'Rebel Alliance'
-                    'rebels'
-                when 'Galactic Empire'
-                    'empire'
-                when 'Scum and Villainy'
-                    'scum'
-                else
-                    throw new Error("Unrecognized faction #{@faction}")
+            faction: exportObj.toXWSFaction[@faction]
             name: @current_squad.name
             pilots: []
             points: @total_points
@@ -1464,27 +1384,13 @@ class exportObj.SquadBuilder
         xws
 
     loadFromXWS: (xws, cb) ->
-        try
-            xws = JSON.parse xws
-        catch e
-            cb
-                success: false
-                error: "Invalid JSON"
-            return
-
         success = null
         error = null
 
         # TODO - actual semver parsing
         switch xws.version
             when '0.1.0'
-                xws_faction = switch xws.faction
-                    when 'rebels'
-                        'Rebel Alliance'
-                    when 'empire'
-                        'Galactic Empire'
-                    when 'scum'
-                        'Scum and Villainy'
+                xws_faction = exportObj.fromXWSFaction[xws.faction]
 
                 if @faction != xws_faction
                         throw new Error("Attempted to load XWS for #{xws.faction} but builder is #{@faction}")
