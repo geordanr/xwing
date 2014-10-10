@@ -121,6 +121,10 @@
     return this;
   };
 
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  };
+
   SQUAD_DISPLAY_NAME_MAX_LENGTH = 24;
 
   statAndEffectiveStat = function(base_stat, effective_stats, key) {
@@ -142,6 +146,7 @@
       this.container = $(args.container);
       this.faction = $.trim(args.faction);
       this.printable_container = $(args.printable_container);
+      this.tab = $(args.tab);
       this.ships = [];
       this.uniques_in_use = {
         Pilot: [],
@@ -381,7 +386,7 @@
       })(this));
       this.randomizer_options_modal = $(document.createElement('DIV'));
       this.randomizer_options_modal.addClass('modal hide fade');
-      $(document).append(this.randomizer_options_modal);
+      $('body').append(this.randomizer_options_modal);
       this.randomizer_options_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>Random Squad Builder Options</h3>\n</div>\n<div class=\"modal-body\">\n    <form>\n        <label>\n            Desired Points\n            <input type=\"number\" class=\"randomizer-points\" value=\"" + DEFAULT_RANDOMIZER_POINTS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_POINTS + "\" />\n        </label>\n        <label>\n            Sets and Expansions (default all)\n            <select class=\"randomizer-sources\" multiple=\"1\" data-placeholder=\"Use all sets and expansions\">\n            </select>\n        </label>\n        <label>\n            Maximum Seconds to Spend Randomizing\n            <input type=\"number\" class=\"randomizer-timeout\" value=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" placeholder=\"" + DEFAULT_RANDOMIZER_TIMEOUT_SEC + "\" />\n        </label>\n        <label>\n            Maximum Randomization Iterations\n            <input type=\"number\" class=\"randomizer-iterations\" value=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" placeholder=\"" + DEFAULT_RANDOMIZER_ITERATIONS + "\" />\n        </label>\n    </form>\n</div>\n<div class=\"modal-footer\">\n    <button class=\"btn btn-primary do-randomize\" aria-hidden=\"true\">Randomize!</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.randomizer_source_selector = $(this.randomizer_options_modal.find('select.randomizer-sources'));
       _ref = exportObj.expansions;
@@ -470,7 +475,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 475
+                lineno: 479
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -503,7 +508,7 @@
       content_container = $(document.createElement('DIV'));
       content_container.addClass('container-fluid');
       this.container.append(content_container);
-      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>\n"));
+      content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>"));
       this.ship_container = $(content_container.find('div.ship-container'));
       this.info_container = $(content_container.find('div.info-container'));
       this.notes_container = $(content_container.find('.notes-container'));
@@ -605,6 +610,19 @@
       })(this)).on('xwing-collection:destroyed', (function(_this) {
         return function(e, collection) {
           return _this.collection_button.addClass('hidden');
+        };
+      })(this)).on('xwing:pingActiveBuilder', (function(_this) {
+        return function(e, cb) {
+          if (_this.container.is(':visible')) {
+            return cb(_this);
+          }
+        };
+      })(this)).on('xwing:activateBuilder', (function(_this) {
+        return function(e, faction, cb) {
+          if (faction === _this.faction) {
+            _this.tab.tab('show');
+            return cb(_this);
+          }
         };
       })(this));
       this.view_list_button.click((function(_this) {
@@ -1013,7 +1031,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 931
+            lineno: 940
           }));
           __iced_deferrals._fulfill();
         });
@@ -1026,7 +1044,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 932
+              lineno: 941
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -1854,6 +1872,163 @@
       }
     };
 
+    SquadBuilder.prototype.toXWS = function() {
+      var ship, xws, _i, _len, _ref;
+      xws = {
+        description: this.getNotes(),
+        faction: exportObj.toXWSFaction[this.faction],
+        name: this.current_squad.name,
+        pilots: [],
+        points: this.total_points,
+        vendor: {
+          builder: '(Yet Another) X-Wing Miniatures Squad Builder',
+          builder_link: window.location.href.split('?')[0],
+          link: this.permalink.attr('href')
+        },
+        version: '0.1.0'
+      };
+      _ref = this.ships;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        ship = _ref[_i];
+        if (ship.pilot != null) {
+          xws.pilots.push(ship.toXWS());
+        }
+      }
+      return xws;
+    };
+
+    SquadBuilder.prototype.loadFromXWS = function(xws, cb) {
+      var addon, addon_added, addons, err, error, i, modification, new_ship, pilot, slot, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      success = null;
+      error = null;
+      switch (xws.version) {
+        case '0.1.0':
+          xws_faction = exportObj.fromXWSFaction[xws.faction];
+          if (this.faction !== xws_faction) {
+            throw new Error("Attempted to load XWS for " + xws.faction + " but builder is " + this.faction);
+          }
+          if (xws.name != null) {
+            this.current_squad.name = xws.name;
+          }
+          if (xws.description != null) {
+            this.notes.val(xws.description);
+          }
+          this.suppress_automatic_new_ship = true;
+          this.removeAllShips();
+          _ref = xws.pilots;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            pilot = _ref[_i];
+            new_ship = this.addShip();
+            try {
+              new_ship.setPilot(exportObj.pilotsByFactionCanonicalName[this.faction][pilot.name]);
+            } catch (_error) {
+              err = _error;
+              console.error(err.message);
+              continue;
+            }
+            addons = [];
+            _ref2 = (_ref1 = pilot.upgrades) != null ? _ref1 : {};
+            for (upgrade_type in _ref2) {
+              upgrade_canonicals = _ref2[upgrade_type];
+              for (_j = 0, _len1 = upgrade_canonicals.length; _j < _len1; _j++) {
+                upgrade_canonical = upgrade_canonicals[_j];
+                slot = null;
+                yasb_upgrade_type = (_ref3 = exportObj.fromXWSUpgrade[upgrade_type]) != null ? _ref3 : upgrade_type.capitalize();
+                addon = (function() {
+                  switch (yasb_upgrade_type) {
+                    case 'Modification':
+                      return exportObj.modificationsByCanonicalName[upgrade_canonical];
+                    case 'Title':
+                      return exportObj.titlesByCanonicalName[upgrade_canonical];
+                    default:
+                      slot = yasb_upgrade_type;
+                      return exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical];
+                  }
+                })();
+                if (addon != null) {
+                  addons.push({
+                    type: yasb_upgrade_type,
+                    data: addon,
+                    slot: slot
+                  });
+                }
+              }
+            }
+            if (addons.length > 0) {
+              for (_ = _k = 0; _k < 1000; _ = ++_k) {
+                addon = addons.shift();
+                addon_added = false;
+                switch (addon.type) {
+                  case 'Modification':
+                    _ref4 = new_ship.modifications;
+                    for (_l = 0, _len2 = _ref4.length; _l < _len2; _l++) {
+                      modification = _ref4[_l];
+                      if (modification.data != null) {
+                        continue;
+                      }
+                      modification.setData(addon.data);
+                      addon_added = true;
+                      break;
+                    }
+                    break;
+                  case 'Title':
+                    if (new_ship.title.data == null) {
+                      new_ship.title.setData(addon.data);
+                      addon_added = true;
+                    }
+                    break;
+                  default:
+                    _ref5 = new_ship.upgrades;
+                    for (i = _m = 0, _len3 = _ref5.length; _m < _len3; i = ++_m) {
+                      upgrade = _ref5[i];
+                      if (upgrade.slot !== addon.slot || (upgrade.data != null)) {
+                        continue;
+                      }
+                      upgrade.setData(addon.data);
+                      addon_added = true;
+                      break;
+                    }
+                }
+                if (addon_added) {
+                  if (addons.length === 0) {
+                    break;
+                  }
+                } else {
+                  if (addons.length === 0) {
+                    success = false;
+                    error = "Could not add " + addon.data.name + " to " + new_ship;
+                    break;
+                  } else {
+                    addons.push(addon);
+                  }
+                }
+              }
+              if (addons.length > 0) {
+                success = false;
+                error = "Could not add all upgrades";
+                break;
+              }
+            }
+          }
+          this.suppress_automatic_new_ship = false;
+          this.addShip();
+          success = true;
+          break;
+        default:
+          success = false;
+          error = "Invalid or unsupported XWS version";
+      }
+      if (success) {
+        this.current_squad.dirty = true;
+        this.container.trigger('xwing-backend:squadNameChanged');
+        this.container.trigger('xwing-backend:squadDirtinessChanged');
+      }
+      return cb({
+        success: success,
+        error: error
+      });
+    };
+
     return SquadBuilder;
 
   })();
@@ -2020,7 +2195,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1465
+                        lineno: 1611
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2090,7 +2265,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1489
+                  lineno: 1635
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2143,14 +2318,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1511
+              lineno: 1657
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1513
+              lineno: 1659
             }));
           }
           _ref1 = _this.modifications;
@@ -2158,7 +2333,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1515
+                lineno: 1661
               }));
             }
           }
@@ -2797,6 +2972,34 @@
       return false;
     };
 
+    Ship.prototype.toXWS = function() {
+      var modification, upgrade, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+      xws = {
+        name: this.pilot.canonical_name,
+        points: this.getPoints(),
+        ship: this.data.canonical_name,
+        upgrades: {}
+      };
+      _ref = this.upgrades;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        upgrade = _ref[_i];
+        if ((upgrade != null ? upgrade.data : void 0) != null) {
+          upgrade.toXWS(xws.upgrades);
+        }
+      }
+      _ref1 = this.modifications;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        modification = _ref1[_j];
+        if ((modification != null ? modification.data : void 0) != null) {
+          modification.toXWS(xws.upgrades);
+        }
+      }
+      if (((_ref2 = this.title) != null ? _ref2.data : void 0) != null) {
+        this.title.toXWS(xws.upgrades);
+      }
+      return xws;
+    };
+
     return Ship;
 
   })();
@@ -2830,7 +3033,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 1999
+                  lineno: 2165
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2928,7 +3131,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 2045
+                    lineno: 2211
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -2950,7 +3153,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2048
+                      lineno: 2214
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3015,7 +3218,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2073
+              lineno: 2239
             }));
           }
           __iced_deferrals._fulfill();
@@ -3092,6 +3295,20 @@
     GenericAddon.prototype.toSerialized = function() {
       var _ref, _ref1;
       return "" + this.serialization_code + "." + ((_ref = (_ref1 = this.data) != null ? _ref1.id : void 0) != null ? _ref : -1);
+    };
+
+    GenericAddon.prototype.toXWS = function(upgrade_dict) {
+      var upgrade_type;
+      upgrade_type = (function() {
+        var _ref, _ref1;
+        switch (this.type) {
+          case 'Upgrade':
+            return (_ref = exportObj.toXWSUpgrade[this.slot]) != null ? _ref : this.slot.canonicalize();
+          default:
+            return (_ref1 = exportObj.toXWSUpgrade[this.type]) != null ? _ref1 : this.type.canonicalize();
+        }
+      }).call(this);
+      return (upgrade_dict[upgrade_type] != null ? upgrade_dict[upgrade_type] : upgrade_dict[upgrade_type] = []).push(this.data.canonical_name);
     };
 
     return GenericAddon;

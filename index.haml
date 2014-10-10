@@ -108,6 +108,7 @@
     %script{:src => "bootstrap/js/bootstrap.min.js?#{Time.now.to_i}"}
     %script{:src => "select2-3.4.0/select2.min.js?#{Time.now.to_i}"}
     %script{:src => "bower_components/jquery-qrcode/jquery.qrcode.min.js?#{Time.now.to_i}"}
+    %script{:src => "bower_components/pako/dist/pako.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/xwing.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-common.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-en.min.js?#{Time.now.to_i}"}
@@ -168,13 +169,13 @@
 
         switch $.getParameterByName 'f'
           when 'Rebel Alliance'
-              $('#rebelTab').click()
+              $('#rebelTab').tab 'show'
           when 'Galactic Empire'
-              $('#empireTab').click()
+              $('#empireTab').tab 'show'
           when 'Scum and Villainy'
-              $('#scumTab').click()
+              $('#scumTab').tab 'show'
           else
-              $('#rebelTab').click()
+              $('#rebelTab').tab 'show'
 
         window.backend = new SquadBuilderBackend
             server: 'https://yasb-backend.herokuapp.com'

@@ -1416,26 +1416,19 @@ class exportObj.SquadBuilder
                         for upgrade_canonical in upgrade_canonicals
                             # console.log upgrade_type, upgrade_canonical
                             slot = null
-                            addon = switch upgrade_type
-                                when 'modification'
+                            yasb_upgrade_type = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
+                            addon = switch yasb_upgrade_type
+                                when 'Modification'
                                     exportObj.modificationsByCanonicalName[upgrade_canonical]
-                                when 'title'
+                                when 'Title'
                                     exportObj.titlesByCanonicalName[upgrade_canonical]
                                 else
-                                    slot = switch upgrade_type
-                                        when 'astromechdroid'
-                                            'Astromech'
-                                        when 'elitepilottalent'
-                                            'Elite'
-                                        when 'systemupgrade'
-                                            'System'
-                                        else
-                                            upgrade_type.capitalize()
+                                    slot = yasb_upgrade_type
                                     exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
                             if addon?
                                 # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
                                 addons.push
-                                    type: upgrade_type
+                                    type: yasb_upgrade_type
                                     data: addon
                                     slot: slot
 
@@ -1448,13 +1441,13 @@ class exportObj.SquadBuilder
 
                             addon_added = false
                             switch addon.type
-                                when 'modification'
+                                when 'Modification'
                                     for modification in new_ship.modifications
                                         continue if modification.data?
                                         modification.setData addon.data
                                         addon_added = true
                                         break
-                                when 'title'
+                                when 'Title'
                                     unless new_ship.title.data?
                                         new_ship.title.setData addon.data
                                         addon_added = true
@@ -2310,15 +2303,9 @@ class GenericAddon
     toXWS: (upgrade_dict) ->
         upgrade_type = switch @type
             when 'Upgrade'
-                switch @slot
-                    when 'Astromech'
-                        'astromechdroid'
-                    when 'Elite'
-                        'elitepilottalent'
-                    else
-                        @slot.canonicalize()
+                exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
             else
-                @type.canonicalize()
+                exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
         (upgrade_dict[upgrade_type] ?= []).push @data.canonical_name
 
 class exportObj.Upgrade extends GenericAddon
