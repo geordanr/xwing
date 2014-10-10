@@ -684,10 +684,10 @@
         text: "While you are touching an enemy ship, reduce that ship's agility value by 1."
       },
       "Ysanne Isard": {
-        text: "%IMPERIALONLY%<br /><br /G>At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."
+        text: "%IMPERIALONLY%%LINEBREAK%At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."
       },
       "Moff Jerjerrod": {
-        text: "%IMPERIALONLY%<br /><br /G>When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
+        text: "%IMPERIALONLY%%LINEBREAK%When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
       },
       "Ion Torpedoes": {
         text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."
