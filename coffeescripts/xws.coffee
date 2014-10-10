@@ -110,6 +110,7 @@ class exportObj.XWSManager
                 textarea.attr 'readonly'
                 xws_json = JSON.stringify(builder.toXWS())
                 textarea.val xws_json
+                $('#xws-qrcode-container').text ''
                 $('#xws-qrcode-container').qrcode exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
                 @xws_export_modal.modal 'show'
                 $('#xws-text-tab').tab 'show'
