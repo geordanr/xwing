@@ -3,15 +3,15 @@
   <head>
     <title>(Yet Another) X-Wing Miniatures Squad Builder</title>
     <meta charset='utf-8'>
-    <link href='bootstrap/css/bootstrap.min.css?1412788076' rel='stylesheet'>
-    <link href='fontawesome/css/font-awesome.min.css?1412788076' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap.min.css?1412912941' rel='stylesheet'>
+    <link href='fontawesome/css/font-awesome.min.css?1412912941' rel='stylesheet'>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
-    <link href='bootstrap/css/bootstrap-responsive.css?1412788076' media='screen' rel='stylesheet'>
-    <link href='select2-3.4.0/select2.css?1412788076' rel='stylesheet'>
-    <link href='stylesheets/xwing.css?1412788076' rel='stylesheet'>
-    <link href='stylesheets/xwing-screen.css?1412788076' media='screen,handheld' rel='stylesheet'>
-    <link href='stylesheets/xwing-print.css?1412788076' media='print' rel='stylesheet'>
-    <link href='stylesheets/backgrounds.css?1412788076' media='screen,handheld' rel='stylesheet'>
+    <link href='bootstrap/css/bootstrap-responsive.css?1412912941' media='screen' rel='stylesheet'>
+    <link href='select2-3.4.0/select2.css?1412912941' rel='stylesheet'>
+    <link href='stylesheets/xwing.css?1412912941' rel='stylesheet'>
+    <link href='stylesheets/xwing-screen.css?1412912941' media='screen,handheld' rel='stylesheet'>
+    <link href='stylesheets/xwing-print.css?1412912941' media='print' rel='stylesheet'>
+    <link href='stylesheets/backgrounds.css?1412912941' media='screen,handheld' rel='stylesheet'>
   </head>
   <body>
     <script>
@@ -123,20 +123,24 @@
         <strong class='site-placeholder'></strong>
       </div>
     </div>
-    <script src='javascripts/jquery-1.8.3.min.js?1412788076'></script>
-    <script src='javascripts/jquery.xdomainrequest.min.js?1412788076'></script>
-    <script src='bootstrap/js/bootstrap.min.js?1412788076'></script>
-    <script src='select2-3.4.0/select2.min.js?1412788076'></script>
-    <script src='javascripts/xwing.min.js?1412788076'></script>
-    <script src='javascripts/cards-common.min.js?1412788076'></script>
-    <script src='javascripts/cards-en.min.js?1412788076'></script>
-    <script src='javascripts/cards-de.min.js?1412788076'></script>
-    <script src='javascripts/cards-es.min.js?1412788076'></script>
-    <script src='javascripts/cards-fr.min.js?1412788076'></script>
-    <script src='javascripts/manifest.min.js?1412788076'></script>
-    <script src='javascripts/backend.min.js?1412788076'></script>
-    <script src='javascripts/browser.min.js?1412788076'></script>
-    <script src='javascripts/translate.min.js?1412788076'></script>
+    <script src='bower_components/jquery/dist/jquery.min.js?1412912941'></script>
+    <script src='http://code.jquery.com/jquery-migrate-1.2.1.js'></script>
+    <script src='javascripts/jquery.xdomainrequest.min.js?1412912941'></script>
+    <script src='bootstrap/js/bootstrap.min.js?1412912941'></script>
+    <script src='select2-3.4.0/select2.min.js?1412912941'></script>
+    <script src='bower_components/jquery-qrcode/jquery.qrcode.min.js?1412912941'></script>
+    <script src='bower_components/pako/dist/pako.min.js?1412912941'></script>
+    <script src='javascripts/xwing.min.js?1412912941'></script>
+    <script src='javascripts/cards-common.min.js?1412912941'></script>
+    <script src='javascripts/cards-en.min.js?1412912941'></script>
+    <script src='javascripts/cards-de.min.js?1412912941'></script>
+    <script src='javascripts/cards-es.min.js?1412912941'></script>
+    <script src='javascripts/cards-fr.min.js?1412912941'></script>
+    <script src='javascripts/manifest.min.js?1412912941'></script>
+    <script src='javascripts/backend.min.js?1412912941'></script>
+    <script src='javascripts/browser.min.js?1412912941'></script>
+    <script src='javascripts/translate.min.js?1412912941'></script>
+    <script src='javascripts/xws.min.js?1412912941'></script>
     <script>
       (function() {
         $(document).ready(function() {
@@ -173,18 +177,21 @@
             });
           });
           window.rebel_sb = new window.SquadBuilder({
+            tab: '#rebelTab',
             faction: 'Rebel Alliance',
             container: '#rebel-builder',
             printable_container: '#printable'
           });
           window.registerBuilderForTranslation(window.rebel_sb);
           window.empire_sb = new window.SquadBuilder({
+            tab: '#empireTab',
             faction: 'Galactic Empire',
             container: '#empire-builder',
             printable_container: '#printable'
           });
           window.registerBuilderForTranslation(window.empire_sb);
           window.scum_sb = new window.SquadBuilder({
+            tab: '#scumTab',
             faction: 'Scum and Villainy',
             container: '#scum-builder',
             printable_container: '#printable'
@@ -192,16 +199,16 @@
           window.registerBuilderForTranslation(window.scum_sb);
           switch ($.getParameterByName('f')) {
             case 'Rebel Alliance':
-              $('#rebelTab').click();
+              $('#rebelTab').tab('show');
               break;
             case 'Galactic Empire':
-              $('#empireTab').click();
+              $('#empireTab').tab('show');
               break;
             case 'Scum and Villainy':
-              $('#scumTab').click();
+              $('#scumTab').tab('show');
               break;
             default:
-              $('#rebelTab').click();
+              $('#rebelTab').tab('show');
           }
           window.backend = new SquadBuilderBackend({
             server: 'https://yasb-backend.herokuapp.com',
@@ -216,6 +223,9 @@
             return $(window).trigger('xwing:languageChanged', language);
           });
           window.setupTranslationUI(window.backend);
+          window.xws = new XWSManager({
+            container: '#xws'
+          });
           if ((window.location.href.indexOf('https:') !== 0) && ((navigator.userAgent.indexOf('MSIE 8') > -1) || (navigator.userAgent.indexOf('MSIE 9') > -1))) {
             $('.msie8-hax').html('Trouble logging in? Try clicking <a href="#">here</a> first.');
             return $('.msie8-hax a').click(function(e) {
@@ -229,6 +239,7 @@
     </script>
   </body>
 </html>
+<div id='xws'></div>
 <div class='font-hax'>
   <span style='font-family: BankGothicHD'>
     &nbsp;

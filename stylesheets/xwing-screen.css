@@ -148,7 +148,7 @@
         line-height: 33.75px;
         margin-right: 23.75px; }
 
-.bbcode-list textarea {
+.bbcode-list textarea, textarea.xws-content {
   width: 95%;
   height: 200px;
   cursor: text; }
