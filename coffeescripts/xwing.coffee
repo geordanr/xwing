@@ -44,6 +44,9 @@ Array::removeItem = (item) ->
     @splice(idx, 1) unless idx == -1
     this
 
+String::capitalize = ->
+    @charAt(0).toUpperCase() + @slice(1)
+
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -57,6 +60,7 @@ class exportObj.SquadBuilder
         @container = $ args.container
         @faction = $.trim args.faction
         @printable_container = $ args.printable_container
+        @tab = $ args.tab
 
         # internal state
         @ships = []
@@ -382,7 +386,7 @@ class exportObj.SquadBuilder
 
         @randomizer_options_modal = $ document.createElement('DIV')
         @randomizer_options_modal.addClass 'modal hide fade'
-        $(document).append @randomizer_options_modal
+        $('body').append @randomizer_options_modal
         @randomizer_options_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -518,7 +522,6 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="span3 info-container" />
             </div>
-
         """
 
         @ship_container = $ content_container.find('div.ship-container')
@@ -638,6 +641,12 @@ class exportObj.SquadBuilder
             @checkCollection()
         .on 'xwing-collection:destroyed', (e, collection) =>
             @collection_button.addClass 'hidden'
+        .on 'xwing:pingActiveBuilder', (e, cb) =>
+            cb(this) if @container.is(':visible')
+        .on 'xwing:activateBuilder', (e, faction, cb) =>
+            if faction == @faction
+                @tab.tab('show')
+                cb this
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -1354,6 +1363,143 @@ class exportObj.SquadBuilder
         if @collection?
             @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
 
+    toXWS: ->
+        # Often you will want JSON.stringify(builder.toXWS())
+        xws =
+            description: @getNotes()
+            faction: exportObj.toXWSFaction[@faction]
+            name: @current_squad.name
+            pilots: []
+            points: @total_points
+            vendor:
+                builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                builder_link: window.location.href.split('?')[0]
+                link: @permalink.attr 'href'
+            version: '0.1.0'
+
+        for ship in @ships
+            if ship.pilot?
+                xws.pilots.push ship.toXWS()
+
+        xws
+
+    loadFromXWS: (xws, cb) ->
+        success = null
+        error = null
+
+        # TODO - actual semver parsing
+        switch xws.version
+            when '0.1.0'
+                xws_faction = exportObj.fromXWSFaction[xws.faction]
+
+                if @faction != xws_faction
+                        throw new Error("Attempted to load XWS for #{xws.faction} but builder is #{@faction}")
+
+                if xws.name?
+                    @current_squad.name = xws.name
+                if xws.description?
+                    @notes.val xws.description
+
+                @suppress_automatic_new_ship = true
+                @removeAllShips()
+
+                for pilot in xws.pilots
+                    new_ship = @addShip()
+                    try
+                        new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                    catch err
+                        console.error err.message
+                        continue
+                    # Turn all the upgrades into a flat list so we can keep trying to add them
+                    addons = []
+                    for upgrade_type, upgrade_canonicals of pilot.upgrades ? {}
+                        for upgrade_canonical in upgrade_canonicals
+                            # console.log upgrade_type, upgrade_canonical
+                            slot = null
+                            yasb_upgrade_type = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
+                            addon = switch yasb_upgrade_type
+                                when 'Modification'
+                                    exportObj.modificationsByCanonicalName[upgrade_canonical]
+                                when 'Title'
+                                    exportObj.titlesByCanonicalName[upgrade_canonical]
+                                else
+                                    slot = yasb_upgrade_type
+                                    exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                            if addon?
+                                # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
+                                addons.push
+                                    type: yasb_upgrade_type
+                                    data: addon
+                                    slot: slot
+
+                    if addons.length > 0
+                        for _ in [0...1000]
+                            # Try to add an addon.  If it's not eligible, requeue it and
+                            # try it again later, as another addon might allow it.
+                            addon = addons.shift()
+                            # console.log "Adding #{addon.data.name} to #{new_ship}..."
+
+                            addon_added = false
+                            switch addon.type
+                                when 'Modification'
+                                    for modification in new_ship.modifications
+                                        continue if modification.data?
+                                        modification.setData addon.data
+                                        addon_added = true
+                                        break
+                                when 'Title'
+                                    unless new_ship.title.data?
+                                        new_ship.title.setData addon.data
+                                        addon_added = true
+                                else
+                                    # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
+                                    for upgrade, i in new_ship.upgrades
+                                        continue if upgrade.slot != addon.slot or upgrade.data?
+                                        upgrade.setData addon.data
+                                        addon_added = true
+                                        break
+
+                            if addon_added
+                                # console.log "Successfully added #{addon.data.name} to #{new_ship}"
+                                if addons.length == 0
+                                    # console.log "Done with addons for #{new_ship}"
+                                    break
+                            else
+                                # Can't add it, requeue unless there are no other addons to add
+                                # in which case this isn't valid
+                                if addons.length == 0
+                                    success = false
+                                    error = "Could not add #{addon.data.name} to #{new_ship}"
+                                    break
+                                else
+                                    # console.log "Could not add #{addon.data.name} to #{new_ship}, trying later"
+                                    addons.push addon
+
+                        if addons.length > 0
+                            success = false
+                            error = "Could not add all upgrades"
+                            break
+
+                @suppress_automatic_new_ship = false
+                # Finally, the unassigned ship
+                @addShip()
+
+                success = true
+            else
+                success = false
+                error = "Invalid or unsupported XWS version"
+
+        if success
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadNameChanged'
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+
+        # console.log "success: #{success}, error: #{error}"
+
+        cb
+            success: success
+            error: error
+
 class Ship
     constructor: (args) ->
         # args
@@ -1979,6 +2125,26 @@ class Ship
 
         false
 
+    toXWS: ->
+        xws =
+            name: @pilot.canonical_name
+            points: @getPoints()
+            ship: @data.canonical_name
+            upgrades: {}
+
+        for upgrade in @upgrades
+            if upgrade?.data?
+                upgrade.toXWS xws.upgrades
+
+        for modification in @modifications
+            if modification?.data?
+                modification.toXWS xws.upgrades
+
+        if @title?.data?
+            @title.toXWS xws.upgrades
+
+        xws
+
 class GenericAddon
     constructor: (args) ->
         # args
@@ -2133,6 +2299,14 @@ class GenericAddon
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
+
+    toXWS: (upgrade_dict) ->
+        upgrade_type = switch @type
+            when 'Upgrade'
+                exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
+            else
+                exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
+        (upgrade_dict[upgrade_type] ?= []).push @data.canonical_name
 
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->

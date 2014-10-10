@@ -16,7 +16,9 @@ exportObj.isReleased = (data) ->
     false
 
 String::canonicalize = ->
-    this.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+    this.toLowerCase()
+        .replace(/[^a-z0-9]/g, '')
+        .replace(/\s+/g, '-')
 
 # Returns an independent copy of the data which can be modified by translation
 # modules.
@@ -2039,7 +2041,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Scum)"
-            canonical_name: 'boba-fett'
+            canonical_name: 'bobafett'
             faction: "Scum and Villainy"
             id: 116
             ship: "Firespray-31"
@@ -2057,7 +2059,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kath Scarlet (Scum)"
-            canonical_name: 'kath-scarlet'
+            canonical_name: 'kathscarlet'
             unique: true
             faction: "Scum and Villainy"
             id: 117
@@ -2228,7 +2230,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
-            canonical_name: 'r2-d2'
+            canonical_name: 'r2d2'
             id: 3
             unique: true
             slot: "Astromech"
@@ -3262,6 +3264,16 @@ exportObj.basicCardData = ->
             ship: "A-Wing"
             restriction_func: (ship) ->
                 ship.effectiveStats().skill > 1
+            validation_func: (ship, upgrade_obj) ->
+                # Still need to respect the restriction
+                return false unless ship.effectiveStats().skill > 1
+                # No two Elites are on fir^W^W^Wcan be the same
+                elites = (upgrade.data.canonical_name for upgrade in ship.upgrades when upgrade.slot == 'Elite' and upgrade.data?)
+                while elites.length > 0
+                    elite = elites.pop()
+                    if elite in elites
+                        return false
+                true
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -3495,6 +3507,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name = ship_name
+        ship_data.canonical_name = ship_data.english_name.canonicalize()
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
@@ -3539,6 +3552,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
         throw new Error("At least one pilot shares an ID with another")
 
+    exportObj.pilotsByFactionCanonicalName = {}
+    for pilot_name, pilot of exportObj.pilots
+        (exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] = pilot
 
     exportObj.upgradesById = {}
     exportObj.upgradesByLocalizedName = {}
@@ -3550,6 +3566,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
         throw new Error("At least one upgrade shares an ID with another")
+
+    exportObj.upgradesBySlotCanonicalName = {}
+    for upgrade_name, upgrade of exportObj.upgrades
+        (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
 
     exportObj.modificationsById = {}
     exportObj.modificationsByLocalizedName = {}
@@ -3570,6 +3590,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
         throw new Error("At least one modification shares an ID with another")
 
+    exportObj.modificationsByCanonicalName = {}
+    for modification_name, modification of exportObj.modifications
+        (exportObj.modificationsByCanonicalName ?= {})[modification.canonical_name] = modification
+
     exportObj.titlesById = {}
     exportObj.titlesByLocalizedName = {}
     for title_name, title of exportObj.titles
@@ -3586,6 +3610,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         if title.ship not of exportObj.titlesByShip
             exportObj.titlesByShip[title.ship] = []
         exportObj.titlesByShip[title.ship].push title
+
+    exportObj.titlesByCanonicalName = {}
+    for title_name, title of exportObj.titles
+        (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
@@ -3628,11 +3656,12 @@ exportObj.fixIcons = (data) ->
             .replace(/%TURNRIGHT%/g, '<i class="xwing-font xwing-font-turnright"></i>')
             .replace(/%TURRET%/g, '<i class="xwing-font xwing-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>')
-            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship Only.</span>')
-            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship Only.</span>')
-            .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel Only.</span>')
-            .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial Only.</span>')
-            .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum Only.</span>')
+            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship only.</span>')
+            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship only.</span>')
+            .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>')
+            .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>')
+            .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>')
+            .replace(/%LINEBREAK%/g, '<br /><br />')
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]
