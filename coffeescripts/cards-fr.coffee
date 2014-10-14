@@ -602,7 +602,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaque touche, le défenseur subit 1 dégât et reçoit 2 marqueurs ioniques. Ensuite, annulez le résultat de <strong>tous<strong> les dés."""
         "Chardaan Refit":
             name: "Radoub à Chardaan"
-            text: """Cette carte a un coût en points d'escadron négatif."""
+            text: """<span class="card-restriction">A-Wing uniquement.</span>%LINEBREAK%Cette carte a un coût en points d'escadron négatif."""
         "Proton Rockets":
             name: "Roquettes à proton"
             text: """<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez lancer un nombre de dés d'attaque additionnels égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés additionnels."""
@@ -729,6 +729,14 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
         "Greedo": # Traduction non officielle
             text: """Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
+        "Salvaged Astromech": # Traduction non officielle
+            text: """Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."""
+        "Bomb Loadout": # Traduction non officielle
+            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."""
+        '"Genius"': # Traduction non officielle
+            text: """Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."""
+        "Unhinged Astromech": # Traduction non officielle
+            text: """Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
         # Soute
         "Frequency Jammer":
             name: "Brouilleurs de fréquence"
@@ -736,7 +744,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Expanded Cargo Hold":
             ship: "Transport moyen GR-75"
             name: "Compartiments supplémentaires"
-            text: """Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."""
+            text: """<span class="card-restriction">GR-75 uniquement.</span>%LINEBREAK%Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."""
         "Comms Booster":
             name: "Amplificateur Comm"
             text: """<strong>Énergie :</strong> dépensez 1 énergie pour retirer tous les marqueurs de stress d'un vaisseau allié situé à portée 1-3. Ensuite, assignez 1 marqueur de concentration à ce vaisseau."""
@@ -794,7 +802,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Augmentez votre valeur de boucliers de 1."""
         "Advanced Cloaking Device":
             name: "Système d'occultation avancé"
-            text: """Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
+            text: """<span class="card-restriction">TIE Fantôme uniquement.</span>%LINEBREAK%Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite."""
             ship: "TIE Fantôme"
         "Stealth Device":
             name: "Système d'occultation"
@@ -819,73 +827,75 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous vous désoccultez ou effectuez une action d'occultation, vous pouvez effectuer une action d'évasion gratuite."""
         "Combat Retrofit":
             name: "Préparé pour le combat"
-            text: """Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."""
+            text: """<span class="card-restriction">GR-75 uniquement.</span>%LINEBREAK%Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1."""
             ship: "Transport moyen GR-75"
         "B-Wing/E2":
-            text: """Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."""
+            text: """<span class="card-restriction">B-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."""
         "Countermeasures": # Traduction non officielle
             name: "Contremesures"
-            text: """Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."""
+            text: """%LARGESHIPuniquement%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."""
         "Experimental Interface": # Traduction non officielle
             name: "Interface expérimentale"
             text: """Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête "<strong>Action :</strong>". Puis recevez 1 marqueur de stress."""
         "Tactical Jammer": # Traduction non officielle
             name: "Brouilleur tactique"
-            text: """Votre vaisseau peut gêner les attaques ennemies."""
+            text: """%LARGESHIPuniquement%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
+        "Autoth???":
+            text: """Cette carte n'a pas encore été dévoilée."""
 
     title_translations =
         "Slave I":
-            text: """Votre bandeau d'amélioration gagne l'icône %TORPEDO%."""
+            text: """<span class="card-restriction">Firespray-31 uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône %TORPEDO%."""
         "Millennium Falcon":
             name: "Faucon Millenium"
-            text: """Votre barre d'actions gagne l'icône d'action %EVADE%."""
+            text: """<span class="card-restriction">YT-1300 uniquement.</span>%LINEBREAK%Votre barre d'actions gagne l'icône d'action %EVADE%."""
         "Moldy Crow":
-            text: """Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."""
+            text: """<span class="card-restriction">HWK-290 uniquement.</span>%LINEBREAK%Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."""
         "ST-321":
             ship: "Navette de classe Lambda"
-            text: """Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."""
+            text: """<span class="card-restriction">Navette de classe <em>Lambda</em> uniquement.</span>%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."""
         "Royal Guard TIE":
             ship: "Intercepteur TIE"
             name: "TIE de la Garde royale"
-            text: """Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de "4" ou moins."""
+            text: """<span class="card-restriction">TIE Interceptor uniquement.</span>%LINEBREAK%Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de "4" ou moins."""
         "Dodonna's Pride":
             ship: "Corvette CR90 (proue)"
-            text: """Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."""
+            text: """<span class="card-restriction">CR90 fore section uniquement.</span>%LINEBREAK%Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."""
         "A-Wing Test Pilot":
             name: "Pilote d'essai sur A-Wing"
-            text: """Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des "1" ou moins."""
+            text: """<span class="card-restriction">A-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des "1" ou moins."""
         "Tantive IV":
             ship: "Corvette CR90 (proue)"
-            text: """Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."""
+            text: """<span class="card-restriction">CR90 (proue) uniquement.</span>%LINEBREAK%Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."""
         "Bright Hope":
             ship: "Transport moyen GR-75"
-            text: """Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."""
+            text: """<span class="card-restriction">GR-75 uniquement.</span>%LINEBREAK%Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."""
         "Quantum Storm":
             ship: "Transport moyen GR-75"
-            text: """Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."""
+            text: """<span class="card-restriction">GR-75 uniquement.</span>%LINEBREAK%Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."""
         "Dutyfree":
             ship: "Transport moyen GR-75"
-            text: """Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."""
+            text: """<span class="card-restriction">GR-75 uniquement.</span>%LINEBREAK%Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."""
         "Jaina's Light":
             ship: "Corvette CR90 (proue)"
-            text: """Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
+            text: """<span class="card-restriction">CR90 (proue) uniquement.</span>%LINEBREAK%Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
         "Outrider": # Traduction non officielle
-            text: """Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
+            text: """<span class="card-restriction">YT-2400 uniquement.</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
         "Dauntless": # Traduction non officielle
             ship: "Décimateur VT-49"
-            text: """Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."""
+            text: """<span class="card-restriction">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."""
         "Virago":
-            text: """Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
+            text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.<br /><br />You cannot equip this card if your pilot skill value is "3" or lower."""
         '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
-            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
-            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Missile)'
-            text: """Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
-            text: """Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
+            text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

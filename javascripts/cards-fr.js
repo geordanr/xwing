@@ -721,7 +721,7 @@
       },
       "Chardaan Refit": {
         name: "Radoub à Chardaan",
-        text: "Cette carte a un coût en points d'escadron négatif."
+        text: "<span class=\"card-restriction\">A-Wing seulement.</span>%LINEBREAK%Cette carte a un coût en points d'escadron négatif."
       },
       "Proton Rockets": {
         name: "Roquettes à proton",
@@ -773,6 +773,7 @@
         text: "Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."
       },
       "Accuracy Corrector": {
+        name: "Correcteur de Précision",
         text: "Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.<br /><br />Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."
       },
       "Gunner": {
@@ -960,6 +961,7 @@
         text: "Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."
       },
       "Inertial Dampeners": {
+        name: "Amortisseurs Inertiels",
         text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
       }
     };
