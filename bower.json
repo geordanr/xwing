@@ -1,0 +1,24 @@
+{
+  "name": "xwing",
+  "version": "0.0.0",
+  "homepage": "https://github.com/geordanr/xwing",
+  "authors": [
+    "Geordan Rosario <geordan@gmail.com>"
+  ],
+  "description": "(Yet Another) X-Wing Squad Builder",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "pako": "~0.2.5",
+    "jquery-qrcode": "*"
+  }
+}

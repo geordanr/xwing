@@ -476,19 +476,10 @@
         name: "Transport moyen GR-75",
         ship: "Transport moyen GR-75"
       },
-      "CR90 Corvette (Crippled Fore)": {
-        ship: "Corvette CR90 (proue)",
-        name: "Corvette CR90 (proue abîmée)"
-      },
       "CR90 Corvette (Fore)": {
         ship: "Corvette CR90 (proue)",
         name: "Corvette CR90 (proue)",
         text: "Quand vous attaquez avec votre arme principale, vous pouvez dépenser 1 énergie pour lancer 1 dé d'attaque supplémentaire."
-      },
-      "CR90 Corvette (Crippled Aft)": {
-        ship: "Corvette CR90 (poupe)",
-        name: "Corvette CR90 (poupe abîmée)",
-        text: "Vous ne pouvez pas choisir ou exécuter de manœuvre (%STRAIGHT% 4), (%BANKLEFT% 2), et (%BANKRIGHT% 2)."
       },
       "CR90 Corvette (Aft)": {
         ship: "Corvette CR90 (poupe)",
@@ -553,7 +544,7 @@
       "Unspoiled PS3 Scum HWK Pilot": {
         text: "Cette carte n'a pas encore été révélée."
       },
-      "Unspoiled PS7 Scum Z-95 Pilot": {
+      "N'Dru Suhlak": {
         ship: "Chasseur de têtes Z-95",
         text: "Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."
       },
@@ -970,15 +961,6 @@
       },
       "Inertial Dampeners": {
         text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
-      },
-      "Dead???": {
-        text: "Cette carte n'a pas encore été révélée."
-      },
-      "Fee???": {
-        text: "Cette carte n'a pas encore été révélée."
-      },
-      '"Hot ??? Blaster"': {
-        text: "Cette carte n'a pas encore été révélée."
       }
     };
     modification_translations = {

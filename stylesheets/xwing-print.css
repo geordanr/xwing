@@ -22,7 +22,7 @@ body {
     border-left-color: transparent;
     border-top-color: transparent;
     border-right-color: transparent;
-    font-family: BankGothicHD, Impact, sans-serif; }
+    font-family: EurostileStandard, Impact, sans-serif; }
     #printable .fancy-header .squad-name {
       position: absolute;
       font-size: 0.4in;
@@ -119,6 +119,9 @@ body {
       #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content {
         position: relative;
         margin-top: -0.375in; }
+        #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-font {
+          vertical-align: 0.3em;
+          color: black; }
     #printable .fancy-ship .fancy-pilot-text {
       margin-left: 0.75in;
       padding: 5px;

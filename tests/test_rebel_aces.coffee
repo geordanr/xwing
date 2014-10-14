@@ -28,8 +28,8 @@ casper.test.begin "Kyle and Jan crew uniqueness", (test) ->
     ])
 
     # Can't add Kyle or Jan in their own ships
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Kyle Katarn')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Jan Ors')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Kyle Katarn')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForShipIndex 2} #{common.selectorForPilotDropdown}", 'Jan Ors')
 
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
@@ -60,12 +60,12 @@ casper.test.begin "Kyle and Jan crew uniqueness", (test) ->
     ])
 
     # Can't put Kyle or Jan on Kyle's ship
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Kyle Katarn')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Jan Ors')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Kyle Katarn')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Jan Ors')
 
     # Can't put Kyle or Jan on Jan's ship
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Kyle Katarn')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Jan Ors')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Kyle Katarn')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 3}", 'Jan Ors')
 
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
@@ -105,13 +105,13 @@ casper.test.begin "A-Wing Test Pilot", (test) ->
         test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
 
     # Equippable on PS1+ only (no Prototype)
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'A-Wing Test Pilot')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'A-Wing Test Pilot')
     common.addUpgrade('#rebel-builder', 2, 3, 'A-Wing Test Pilot')
     common.assertTotalPoints(test, '#rebel-builder', 59)
 
     # Can add two different elites
     common.addUpgrade('#rebel-builder', 2, 1, 'Adrenaline Rush')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Adrenaline Rush')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Adrenaline Rush')
     common.addUpgrade('#rebel-builder', 2, 5, 'Deadeye')
     common.assertTotalPoints(test, '#rebel-builder', 61)
 
@@ -162,13 +162,13 @@ casper.test.begin "A-Wing Test Pilot (German)", (test) ->
         test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
 
     # Equippable on PS1+ only (no Prototype)
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'A-Wing Test Pilot')
-    common.addUpgrade('#rebel-builder', 2, 3, 'A-Wing Test Pilot')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'Erfahrener Testpilot')
+    common.addUpgrade('#rebel-builder', 2, 3, 'Erfahrener Testpilot')
     common.assertTotalPoints(test, '#rebel-builder', 59)
 
     # Can add two different elites
     common.addUpgrade('#rebel-builder', 2, 1, 'Adrenalinschub')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Adrenalinschub')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Adrenalinschub')
     common.addUpgrade('#rebel-builder', 2, 5, 'Meisterschütze')
     common.assertTotalPoints(test, '#rebel-builder', 61)
 
@@ -221,13 +221,13 @@ casper.test.begin "A-Wing Test Pilot (Spanish)", (test) ->
         test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", "Green Squad doesn't have two elites by default"
 
     # Equippable on PS1+ only (no Prototype)
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'Piloto de Pruebas de Ala-A')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 2}", 'Piloto de Pruebas de Ala-A')
     common.addUpgrade('#rebel-builder', 2, 3, 'Piloto de Pruebas de Ala-A')
     common.assertTotalPoints(test, '#rebel-builder', 59)
 
     # Can add two different elites
     common.addUpgrade('#rebel-builder', 2, 1, 'Descarga de Adrenalina')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Descarga de Adrenalina')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 5}", 'Descarga de Adrenalina')
     common.addUpgrade('#rebel-builder', 2, 5, 'Certero')
     common.assertTotalPoints(test, '#rebel-builder', 61)
 

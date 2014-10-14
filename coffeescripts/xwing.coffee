@@ -44,6 +44,9 @@ Array::removeItem = (item) ->
     @splice(idx, 1) unless idx == -1
     this
 
+String::capitalize = ->
+    @charAt(0).toUpperCase() + @slice(1)
+
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -57,6 +60,7 @@ class exportObj.SquadBuilder
         @container = $ args.container
         @faction = $.trim args.faction
         @printable_container = $ args.printable_container
+        @tab = $ args.tab
 
         # internal state
         @ships = []
@@ -81,6 +85,8 @@ class exportObj.SquadBuilder
         @backend = null
         @current_squad = {}
         @language = 'English'
+
+        @collection = null
 
         @setupUI()
         @setupEventHandlers()
@@ -147,15 +153,17 @@ class exportObj.SquadBuilder
                     <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>
                     <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>
-                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Luke, Gunner, and Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
+                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
                     <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>
                     <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>
+                    <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You cannot field this list with your collection!</span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
 
                         <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->
+                        <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
                         <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <!--
@@ -327,6 +335,7 @@ class exportObj.SquadBuilder
         @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
         @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
         @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
+        @collection_invalid_container = $ @points_container.find('.collection-invalid')
         @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
         @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
         @max_epic_points_span = $ @points_container.find('.max-epic-points')
@@ -336,6 +345,12 @@ class exportObj.SquadBuilder
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
         @backend_status = $ @status_container.find('.backend-status')
         @backend_status.hide()
+
+        @collection_button = $ @status_container.find('div.button-container a.collection')
+        @collection_button.click (e) =>
+            e.preventDefault()
+            unless @collection_button.prop('disabled')
+                @collection.modal.modal 'show'
 
         @squad_name_input.keypress (e) =>
             if e.which == 13
@@ -371,7 +386,7 @@ class exportObj.SquadBuilder
 
         @randomizer_options_modal = $ document.createElement('DIV')
         @randomizer_options_modal.addClass 'modal hide fade'
-        $(document).append @randomizer_options_modal
+        $('body').append @randomizer_options_modal
         @randomizer_options_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -507,7 +522,6 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="span3 info-container" />
             </div>
-
         """
 
         @ship_container = $ content_container.find('div.ship-container')
@@ -614,6 +628,25 @@ class exportObj.SquadBuilder
 
         $(window).on 'xwing-backend:authenticationChanged', (e) =>
             @resetCurrentSquad()
+
+        .on 'xwing-collection:created', (e, collection) =>
+            # console.log "#{@faction}: collection was created"
+            @collection = collection
+            # console.log "#{@faction}: Collection created, checking squad"
+            @collection.onLanguageChange null, @language
+            @checkCollection()
+            @collection_button.removeClass 'hidden'
+        .on 'xwing-collection:changed', (e, collection) =>
+            # console.log "#{@faction}: Collection changed, checking squad"
+            @checkCollection()
+        .on 'xwing-collection:destroyed', (e, collection) =>
+            @collection_button.addClass 'hidden'
+        .on 'xwing:pingActiveBuilder', (e, cb) =>
+            cb(this) if @container.is(':visible')
+        .on 'xwing:activateBuilder', (e, faction, cb) =>
+            if faction == @faction
+                @tab.tab('show')
+                cb this
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -730,6 +763,8 @@ class exportObj.SquadBuilder
 
 [url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
 """
+        # console.log "#{@faction}: Squad updated, checking collection"
+        @checkCollection()
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -918,60 +953,72 @@ class exportObj.SquadBuilder
                 ships.push
                     id: ship_data.name
                     text: ship_data.name
+                    english_name: ship_data.english_name
         ships.sort exportObj.sortHelper
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        unclaimed_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term) and (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term))
+
+        eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
-            unclaimed_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship} for pilot in unclaimed_faction_pilots).sort exportObj.sortHelper
+            eligible_faction_pilots.push include_pilot
+        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='') ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        unclaimed_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not upgrade.faction? or upgrade.faction == @faction) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction))
+        
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
 
         # Special case #2 :(
-        current_upgrade_forcibly_removed = false
+        # current_upgrade_forcibly_removed = false
         if ship?.title?.data?.special_case == 'A-Wing Test Pilot'
             for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
-                unclaimed_upgrades.removeItem equipped_upgrade
-                current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
+                eligible_upgrades.removeItem equipped_upgrade
+                # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
 
-        # Re-add selected upgrade
-        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)) or current_upgrade_forcibly_removed)
-            unclaimed_upgrades.push include_upgrade
-        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points } for upgrade in unclaimed_upgrades).sort exportObj.sortHelper
+        # Re-enable selected upgrade
+        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
+            # available_upgrades.push include_upgrade
+            eligible_upgrades.push include_upgrade
+        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
-        unclaimed_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
+        
+        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
-        current_mod_forcibly_removed = false
+        # current_mod_forcibly_removed = false
         if ship?.title?.data?.special_case == 'Royal Guard TIE'
             for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
-                unclaimed_modifications.removeItem equipped_modification
-                current_mod_forcibly_removed = true if equipped_modification == include_modification
+                eligible_modifications.removeItem equipped_modification
+                # current_mod_forcibly_removed = true if equipped_modification == include_modification
 
         # Re-add selected modification
-        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)) or current_mod_forcibly_removed)
-            unclaimed_modifications.push include_modification
-        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points } for modification in unclaimed_modifications).sort exportObj.sortHelper
+        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
+            eligible_modifications.push include_modification
+        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
 
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
         # Titles are no longer unique!
-        unclaimed_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term) and (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term))
+
+        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)
-            unclaimed_titles.push include_title
-        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points } for title in unclaimed_titles).sort exportObj.sortHelper
+            eligible_titles.push include_title
+        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1092,7 +1139,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in effective_stats.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
@@ -1278,6 +1325,180 @@ class exportObj.SquadBuilder
 
     getNotes: ->
         @notes.val()
+
+    isSquadPossibleWithCollection: ->
+        # console.log "#{@faction}: isSquadPossibleWithCollection()"
+        # If the collection is uninitialized or empty, don't actually check it.
+        if Object.keys(@collection?.expansions ? {}).length == 0
+            # console.log "collection not ready or is empty"
+            return true
+        @collection.reset()
+        validity = true
+        for ship in @ships
+            if ship.pilot?
+                # Try to get both the physical model and the pilot card.
+                ship_is_available = @collection.use('ship', ship.pilot.english_ship)
+                pilot_is_available = @collection.use('pilot', ship.pilot.english_name)
+                # console.log "#{@faction}: Ship #{ship.pilot.english_ship} available: #{ship_is_available}"
+                # console.log "#{@faction}: Pilot #{ship.pilot.english_name} available: #{pilot_is_available}"
+                validity = false unless ship_is_available and pilot_is_available
+                for upgrade in ship.upgrades
+                    if upgrade.data?
+                        upgrade_is_available = @collection.use('upgrade', upgrade.data.english_name)
+                        # console.log "#{@faction}: Upgrade #{upgrade.data.english_name} available: #{upgrade_is_available}"
+                        validity = false unless upgrade_is_available
+                for modification in ship.modifications
+                    if modification.data?
+                        modification_is_available = @collection.use('modification', modification.data.english_name)
+                        # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
+                        validity = false unless modification_is_available
+                if ship.title?.data?
+                    title_is_available = @collection.use('title', ship.title.data.english_name)
+                    # console.log "#{@faction}: Title #{ship.title.data.english_name} available: #{title_is_available}"
+                    validity = false unless title_is_available
+        validity
+
+    checkCollection: ->
+        # console.log "#{@faction}: Checking validity of squad against collection..."
+        if @collection?
+            @collection_invalid_container.toggleClass 'hidden', @isSquadPossibleWithCollection()
+
+    toXWS: ->
+        # Often you will want JSON.stringify(builder.toXWS())
+        xws =
+            description: @getNotes()
+            faction: exportObj.toXWSFaction[@faction]
+            name: @current_squad.name
+            pilots: []
+            points: @total_points
+            vendor:
+                builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                builder_link: window.location.href.split('?')[0]
+                link: @permalink.attr 'href'
+            version: '0.1.0'
+
+        for ship in @ships
+            if ship.pilot?
+                xws.pilots.push ship.toXWS()
+
+        xws
+
+    loadFromXWS: (xws, cb) ->
+        success = null
+        error = null
+
+        # TODO - actual semver parsing
+        switch xws.version
+            when '0.1.0'
+                xws_faction = exportObj.fromXWSFaction[xws.faction]
+
+                if @faction != xws_faction
+                        throw new Error("Attempted to load XWS for #{xws.faction} but builder is #{@faction}")
+
+                if xws.name?
+                    @current_squad.name = xws.name
+                if xws.description?
+                    @notes.val xws.description
+
+                @suppress_automatic_new_ship = true
+                @removeAllShips()
+
+                for pilot in xws.pilots
+                    new_ship = @addShip()
+                    try
+                        new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                    catch err
+                        console.error err.message
+                        continue
+                    # Turn all the upgrades into a flat list so we can keep trying to add them
+                    addons = []
+                    for upgrade_type, upgrade_canonicals of pilot.upgrades ? {}
+                        for upgrade_canonical in upgrade_canonicals
+                            # console.log upgrade_type, upgrade_canonical
+                            slot = null
+                            yasb_upgrade_type = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
+                            addon = switch yasb_upgrade_type
+                                when 'Modification'
+                                    exportObj.modificationsByCanonicalName[upgrade_canonical]
+                                when 'Title'
+                                    exportObj.titlesByCanonicalName[upgrade_canonical]
+                                else
+                                    slot = yasb_upgrade_type
+                                    exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                            if addon?
+                                # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
+                                addons.push
+                                    type: yasb_upgrade_type
+                                    data: addon
+                                    slot: slot
+
+                    if addons.length > 0
+                        for _ in [0...1000]
+                            # Try to add an addon.  If it's not eligible, requeue it and
+                            # try it again later, as another addon might allow it.
+                            addon = addons.shift()
+                            # console.log "Adding #{addon.data.name} to #{new_ship}..."
+
+                            addon_added = false
+                            switch addon.type
+                                when 'Modification'
+                                    for modification in new_ship.modifications
+                                        continue if modification.data?
+                                        modification.setData addon.data
+                                        addon_added = true
+                                        break
+                                when 'Title'
+                                    unless new_ship.title.data?
+                                        new_ship.title.setData addon.data
+                                        addon_added = true
+                                else
+                                    # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
+                                    for upgrade, i in new_ship.upgrades
+                                        continue if upgrade.slot != addon.slot or upgrade.data?
+                                        upgrade.setData addon.data
+                                        addon_added = true
+                                        break
+
+                            if addon_added
+                                # console.log "Successfully added #{addon.data.name} to #{new_ship}"
+                                if addons.length == 0
+                                    # console.log "Done with addons for #{new_ship}"
+                                    break
+                            else
+                                # Can't add it, requeue unless there are no other addons to add
+                                # in which case this isn't valid
+                                if addons.length == 0
+                                    success = false
+                                    error = "Could not add #{addon.data.name} to #{new_ship}"
+                                    break
+                                else
+                                    # console.log "Could not add #{addon.data.name} to #{new_ship}, trying later"
+                                    addons.push addon
+
+                        if addons.length > 0
+                            success = false
+                            error = "Could not add all upgrades"
+                            break
+
+                @suppress_automatic_new_ship = false
+                # Finally, the unassigned ship
+                @addShip()
+
+                success = true
+            else
+                success = false
+                error = "Invalid or unsupported XWS version"
+
+        if success
+            @current_squad.dirty = true
+            @container.trigger 'xwing-backend:squadNameChanged'
+            @container.trigger 'xwing-backend:squadDirtinessChanged'
+
+        # console.log "success: #{success}, error: #{error}"
+
+        cb
+            success: success
+            error: error
 
 class Ship
     constructor: (args) ->
@@ -1507,10 +1728,26 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
             query: (query) =>
+                @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailableShipsMatching(query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+            formatResultCssClass: (obj) =>
+                if @builder.collection?
+                    not_in_collection = false
+                    if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
+                        # Currently selected ship; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@builder.collection.checkShelf('ship', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                            not_in_collection = true
+                    else
+                        # Not currently selected; check shelf only
+                        not_in_collection = not @builder.collection.checkShelf('ship', obj.english_name)
+                    if not_in_collection then 'select2-result-not-in-collection' else ''
+                else
+                    ''
+
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
         # assign ship row an id for testing purposes
@@ -1520,17 +1757,33 @@ class Ship
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'pilotSelectorPlaceholder'
             query: (query) =>
+                @builder.checkCollection()
                 query.callback
                     more: false
                     results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), @pilot, query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+            formatResultCssClass: (obj) =>
+                if @builder.collection?
+                    not_in_collection = false
+                    if obj.id == @pilot?.id
+                        # Currently selected pilot; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@builder.collection.checkShelf('pilot', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                            not_in_collection = true
+                    else
+                        # Not currently selected; check shelf only
+                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.english_name)
+                    if not_in_collection then 'select2-result-not-in-collection' else ''
+                else
+                    ''
+
         @pilot_selector.on 'change', (e) =>
             @setPilotById @pilot_selector.select2('val')
             @builder.current_squad.dirty = true
             @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
-            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
@@ -1568,31 +1821,32 @@ class Ship
 
     toHTML: ->
         effective_stats = @effectiveStats()
-        action_bar = ""
+        action_icons = []
         for action in effective_stats.actions
-            action_bar += switch action
+            action_icons.push switch action
                 when 'Focus'
-                    """<img class="icon-focus" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-focus"></i>"""
                 when 'Evade'
-                    """<img class="icon-evade" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-evade"></i>"""
                 when 'Barrel Roll'
-                    """<img class="icon-barrel-roll" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-barrelroll"></i>"""
                 when 'Target Lock'
-                    """<img class="icon-target-lock" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-targetlock"></i>"""
                 when 'Boost'
-                    """<img class="icon-boost" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-boost"></i>"""
                 when 'Coordinate'
-                    """<img class="icon-coordinate" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-coordinate"></i>"""
                 when 'Jam'
-                    """<img class="icon-jam" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-jam"></i>"""
                 when 'Recover'
-                    """<img class="icon-recover" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-recover"></i>"""
                 when 'Reinforce'
-                    """<img class="icon-reinforce" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-reinforce"></i>"""
                 when 'Cloak'
-                    """<img class="icon-cloak" src="images/transparent.png" />"""
+                    """<i class="xwing-font xwing-font-cloak"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
+        action_bar = action_icons.join ' '
 
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
             <img class="icon-attack" src="images/transparent.png" />
@@ -1808,7 +2062,7 @@ class Ship
         # until everything checks out
         # If there is no explicit validation_func, use restriction_func
         max_checks = 128 # that's a lot of addons (Epic?)
-        for i in [0..max_checks]
+        for i in [0...max_checks]
             valid = true
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
@@ -1871,6 +2125,26 @@ class Ship
 
         false
 
+    toXWS: ->
+        xws =
+            name: @pilot.canonical_name
+            points: @getPoints()
+            ship: @data.canonical_name
+            upgrades: {}
+
+        for upgrade in @upgrades
+            if upgrade?.data?
+                upgrade.toXWS xws.upgrades
+
+        for modification in @modifications
+            if modification?.data?
+                modification.toXWS xws.upgrades
+
+        if @title?.data?
+            @title.toXWS xws.upgrades
+
+        xws
+
 class GenericAddon
     constructor: (args) ->
         # args
@@ -1898,6 +2172,22 @@ class GenericAddon
         @selector.attr 'type', 'hidden'
         @container.append @selector
         args.minimumResultsForSearch = -1 if $.isMobile()
+        args.formatResultCssClass = (obj) =>
+            if @ship.builder.collection?
+                not_in_collection = false
+                if obj.id == @data?.id
+                    # Currently selected card; mark as not in collection if it's neither
+                    # on the shelf nor on the table
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
+                        not_in_collection = true
+                else
+                    # Not currently selected; check shelf only
+                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
+                if not_in_collection then 'select2-result-not-in-collection' else ''
+            else
+                ''
+
+
         @selector.select2 args
         @selector.on 'change', (e) =>
             @setById @selector.select2('val')
@@ -1905,7 +2195,7 @@ class GenericAddon
             @ship.builder.container.trigger 'xwing-backend:squadDirtinessChanged'
             @ship.builder.backend_status.fadeOut 'slow'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
-            select2_data = $(e.target).closest('.select2-result-selectable').data 'select2-data'
+            select2_data = $(e.target).closest('.select2-result').data 'select2-data'
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
             @ship.builder.showTooltip 'Addon', @data if @data?
@@ -1976,6 +2266,7 @@ class GenericAddon
 
     toHTML: ->
         if @data?
+            upgrade_slot_font = (@data.slot ? '').toLowerCase().replace(/[^0-9a-z]/gi, '')
             $.trim """
                 <div class="upgrade-container">
                     <div class="mask">
@@ -1983,7 +2274,7 @@ class GenericAddon
                             <div class="inner-circle upgrade-points">#{@data.points}</div>
                         </div>
                     </div>
-                    <div class="upgrade-name">#{@data.name}</div>
+                    <div class="upgrade-name"><i class="xwing-font xwing-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
                 </div>
             """
         else
@@ -2009,6 +2300,14 @@ class GenericAddon
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
 
+    toXWS: (upgrade_dict) ->
+        upgrade_type = switch @type
+            when 'Upgrade'
+                exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
+            else
+                exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
+        (upgrade_dict[upgrade_type] ?= []).push @data.canonical_name
+
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->
         # args
@@ -2027,6 +2326,7 @@ class exportObj.Upgrade extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term)
@@ -2047,6 +2347,7 @@ class exportObj.Modification extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder'
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term)
@@ -2067,6 +2368,7 @@ class exportObj.Title extends GenericAddon
             placeholder: exportObj.translate @ship.builder.language, 'ui', 'titlePlaceholder'
             allowClear: true
             query: (query) =>
+                @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)

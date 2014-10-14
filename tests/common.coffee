@@ -9,10 +9,18 @@ exports.setup = ->
 
     casper.test.on 'fail', ->
         casper.capture 'casperjs.png'
-        #casper.die()
+        # casper.die()
 
     casper.on 'remote.message', (message) ->
         casper.log("Console log: #{message}", "debug")
+
+    casper.on 'resource.error', (resourceError) ->
+        casper.log "Failed to load #{resourceError.url} (#{resourceError.errorCode} #{resourceError.errorString})", 'debug'
+
+    casper.on 'page.error', (msg, trace) ->
+        casper.log "Javascript error: #{msg}", "warning"
+        for obj in trace
+            casper.log "\t#{obj.file}:#{obj.line}, function #{obj.function}"
 
 # These fat arrows are necessary, despite what Coffeelint says
 exports.selectFirstMatch = (select2_selector, search_text) =>
@@ -35,6 +43,24 @@ exports.assertNoMatch = (test, select2_selector, search_text) =>
         @sendKeys 'input.select2-input', search_text
         test.assertExists '.select2-no-results', "No match found for #{search_text}"
         @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+
+exports.assertMatchIsDisabled = (test, select2_selector, search_text) =>
+    casper.then ->
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+        @waitUntilVisible 'input.select2-input'
+    .then ->
+        @sendKeys 'input.select2-input', search_text
+        test.assertSelectorHasText '.select2-disabled', search_text, "#{search_text} is disabled"
+        @mouseEvent 'mousedown', ".select2-drop-mask"
+
+exports.assertMatchIsNotInCollection = (test, select2_selector, search_text) =>
+    casper.then ->
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+        @waitUntilVisible 'input.select2-input'
+    .then ->
+        @sendKeys 'input.select2-input', search_text
+        test.assertSelectorHasText '.select2-result-not-in-collection', search_text, "#{search_text} is marked as not in collection"
+        @mouseEvent 'mousedown', ".select2-drop-mask"
 
 exports.deselect = (select2_selector) ->
     casper.then ->
@@ -233,3 +259,5 @@ exports.selectorForTooManyLargeShipsWarning = '.illegal-epic-too-many-large-ship
 
 exports.selectorForEpicPointsUsed = '.total-epic-points'
 exports.selectorForMaxEpicPoints = '.max-epic-points'
+
+exports.selectorForCollectionInvalid = '.collection-invalid'

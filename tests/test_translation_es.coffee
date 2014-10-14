@@ -40,15 +40,22 @@ casper.test.begin "Spanish translations: Rebel", (test) ->
                 "Motor Mejorado"
             ]
         }
+        {
+            ship: 'Ala-A'
+            pilot: 'Piloto de Pruebas'
+            upgrades: [
+                'Reajuste Chardaan'
+            ]
+        }
 
     ])
 
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'Luke Skywalker')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'R2-D2 (Crew)')
-    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'R2-D2 (Crew)')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'Luke Skywalker')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'Luke Skywalker')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 3)}", 'R2-D2 (Tripulante)')
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 4)}", 'R2-D2 (Tripulante)')
 
-    common.assertTotalPoints(test, '#rebel-builder', 122)
+    common.assertTotalPoints(test, '#rebel-builder', 137)
 
     common.selectLanguage('English')
 
@@ -74,7 +81,13 @@ casper.test.begin "Spanish translations: Rebel", (test) ->
     common.assertUpgradeInSlot(test, '#rebel-builder', 3, 5, 'Millennium Falcon')
     common.assertUpgradeInSlot(test, '#rebel-builder', 3, 6, 'Engine Upgrade')
 
-    common.assertTotalPoints(test, '#rebel-builder', 122)
+    common.assertShipTypeIs(test, '#rebel-builder', 4, 'A-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 4, 'Prototype Pilot')
+    common.assertUpgradeInSlot(test, '#rebel-builder', 4, 1, 'Chardaan Refit')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 4, 2)
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 4, 3)
+
+    common.assertTotalPoints(test, '#rebel-builder', 137)
 
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)

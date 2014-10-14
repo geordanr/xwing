@@ -76,6 +76,8 @@
 
                     Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
 
+                    X-Wing symbols font courtesy [Hinny](https://github.com/Hinny).
+
                     Fancy printout design inspired by TheKestrel on the FFG forums.
 
                     German translation by [failgod](https://github.com/failgod-marcus) and [strikegun](https://github.com/strikegun) from FFG Forums.
@@ -89,7 +91,6 @@
                     Interested in playing with the source or contributing features or bug fixes?  [Fork it on GitHub](http://github.com/geordanr/xwing).  (Issues can also be filed via GitHub.)
 
                     A backend is available if the ability to save squadrons is needed; it can be [forked on GitHub here](http://github.com/geordanr/xwing-backend).  You can view the privacy policy [here](privacy.html).
-
     .footer
       .msie8-hax
 
@@ -101,20 +102,24 @@
         %strong.site-placeholder
 
     -# JS linkages
-    %script{:src => "javascripts/jquery-1.8.3.min.js?#{Time.now.to_i}"}
+    %script{:src => "bower_components/jquery/dist/jquery.min.js?#{Time.now.to_i}"} 
+    -# %script{:src => "http://code.jquery.com/jquery-migrate-1.2.1.js"}
     %script{:src => "javascripts/jquery.xdomainrequest.min.js?#{Time.now.to_i}"}
     %script{:src => "bootstrap/js/bootstrap.min.js?#{Time.now.to_i}"}
     %script{:src => "select2-3.4.0/select2.min.js?#{Time.now.to_i}"}
+    %script{:src => "bower_components/jquery-qrcode/jquery.qrcode.min.js?#{Time.now.to_i}"}
+    %script{:src => "bower_components/pako/dist/pako.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/xwing.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-common.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-en.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-de.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-es.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/cards-fr.min.js?#{Time.now.to_i}"}
-    -#%script{:src => "javascripts/cards-caps.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/manifest.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/backend.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/browser.min.js?#{Time.now.to_i}"}
     %script{:src => "javascripts/translate.min.js?#{Time.now.to_i}"}
+    %script{:src => "javascripts/xws.min.js?#{Time.now.to_i}"}
     :coffee
       $(document).ready ->
         window.setupTranslationSupport()
@@ -142,18 +147,21 @@
             title: 'About'
 
         window.rebel_sb = new window.SquadBuilder
+            tab: '#rebelTab'
             faction: 'Rebel Alliance'
             container: '#rebel-builder'
             printable_container: '#printable'
         window.registerBuilderForTranslation window.rebel_sb
 
         window.empire_sb = new window.SquadBuilder
+            tab: '#empireTab'
             faction: 'Galactic Empire'
             container: '#empire-builder'
             printable_container: '#printable'
         window.registerBuilderForTranslation window.empire_sb
 
         window.scum_sb = new window.SquadBuilder
+            tab: '#scumTab'
             faction: 'Scum and Villainy'
             container: '#scum-builder'
             printable_container: '#printable'
@@ -161,13 +169,13 @@
 
         switch $.getParameterByName 'f'
           when 'Rebel Alliance'
-              $('#rebelTab').click()
+              $('#rebelTab').tab 'show'
           when 'Galactic Empire'
-              $('#empireTab').click()
+              $('#empireTab').tab 'show'
           when 'Scum and Villainy'
-              $('#scumTab').click()
+              $('#scumTab').tab 'show'
           else
-              $('#rebelTab').click()
+              $('#rebelTab').tab 'show'
 
         window.backend = new SquadBuilderBackend
             server: 'https://yasb-backend.herokuapp.com'
@@ -187,6 +195,9 @@
 
         window.setupTranslationUI window.backend
 
+        window.xws = new XWSManager
+            container: '#xws'
+
         if (window.location.href.indexOf('https:') != 0) and ((navigator.userAgent.indexOf('MSIE 8') > -1) or (navigator.userAgent.indexOf('MSIE 9') > -1))
             $('.msie8-hax').html '''
                 Trouble logging in? Try clicking <a href="#">here</a> first.
@@ -195,8 +206,12 @@
                 e.preventDefault()
                 window.location.href = window.location.href.replace(/^http:/, 'https:')
 
+#xws
+
 .font-hax
   %span{:style => "font-family: BankGothicHD"}
     &nbsp;
   %span{:style => "font-family: kimberley"}
+    &nbsp;
+  %span{:style => "font-family: XWing"}
     &nbsp;

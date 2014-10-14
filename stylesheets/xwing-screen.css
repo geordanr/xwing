@@ -102,6 +102,8 @@
     .fancy-ship .fancy-pilot-stats .pilot-stats-content {
       position: relative;
       margin-top: -30px; }
+      .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-font {
+        vertical-align: 0.3em; }
   .fancy-ship .fancy-pilot-text {
     margin-left: 60px;
     padding: 5px; }
@@ -146,7 +148,7 @@
         line-height: 33.75px;
         margin-right: 23.75px; }
 
-.bbcode-list textarea {
+.bbcode-list textarea, textarea.xws-content {
   width: 95%;
   height: 200px;
   cursor: text; }

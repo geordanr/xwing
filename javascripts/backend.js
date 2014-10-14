@@ -104,6 +104,7 @@
         }
       };
       this.squad_display_mode = 'all';
+      this.collection_save_timer = null;
       this.setupHandlers();
       this.setupUI();
       this.authenticate((function(_this) {
@@ -278,7 +279,7 @@
 
     SquadBuilderBackend.prototype.maybeAuthenticationChanged = function(old_auth_state, cb) {
       if (old_auth_state !== this.authenticated) {
-        $(window).trigger('xwing-backend:authenticationChanged', this.authenticated);
+        $(window).trigger('xwing-backend:authenticationChanged', [this.authenticated, this]);
       }
       this.oauth_window = null;
       this.auth_status.hide();
@@ -575,8 +576,11 @@
 
     SquadBuilderBackend.prototype.setupHandlers = function() {
       $(window).on('xwing-backend:authenticationChanged', (function(_this) {
-        return function() {
-          return _this.updateAuthenticationVisibility();
+        return function(authenticated, backend) {
+          _this.updateAuthenticationVisibility();
+          if (authenticated) {
+            return _this.loadCollection();
+          }
         };
       })(this));
       this.login_logout_button.click((function(_this) {
@@ -608,6 +612,19 @@
             console.log("Message received from unapproved origin " + ev.origin);
             return window.last_ev = e;
           }
+        };
+      })(this)).on('xwing-collection:changed', (function(_this) {
+        return function(e, collection) {
+          if (_this.collection_save_timer != null) {
+            clearTimeout(_this.collection_save_timer);
+          }
+          return _this.collection_save_timer = setTimeout(function() {
+            return _this.saveCollection(collection, function(res) {
+              if (res) {
+                return $(window).trigger('xwing-collection:saved', collection);
+              }
+            });
+          }, 1000);
         };
       })(this));
     };
@@ -683,7 +700,7 @@
                 return settings = arguments[0];
               };
             })(),
-            lineno: 576
+            lineno: 587
           }));
           __iced_deferrals._fulfill();
         });
@@ -704,7 +721,7 @@
                     return headers = arguments[0];
                   };
                 })(),
-                lineno: 580
+                lineno: 591
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -730,6 +747,29 @@
           }
         };
       })(this));
+    };
+
+    SquadBuilderBackend.prototype.saveCollection = function(collection, cb) {
+      var post_args;
+      if (cb == null) {
+        cb = $.noop;
+      }
+      post_args = {
+        expansions: collection.expansions
+      };
+      return $.post("" + this.server + "/collection", post_args).done(function(data, textStatus, jqXHR) {
+        return cb(data.success);
+      });
+    };
+
+    SquadBuilderBackend.prototype.loadCollection = function() {
+      return $.get("" + this.server + "/collection").done(function(data, textStatus, jqXHR) {
+        var collection;
+        collection = data.collection;
+        return new exportObj.Collection({
+          expansions: collection.expansions
+        });
+      });
     };
 
     return SquadBuilderBackend;

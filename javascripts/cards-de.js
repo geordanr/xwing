@@ -270,7 +270,7 @@
         text: "Wenn du angreifst und der Verteidiger mindestens 1 %CRIT% negiert, erhält er 1 Stressmarker."
       },
       "Boba Fett": {
-        text: "Immer wenn du ein Eindrehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, kannst du das Eindrehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."
+        text: "Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher eschwindigkeit, aber anderer Richtung, auf deinem Rad nachträglich einstellen."
       },
       "Krassis Trelix": {
         text: "Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."
@@ -386,7 +386,7 @@
       },
       "Rexler Brath": {
         ship: "TIE-Jagdbomber",
-        text: "Nachdem du angegriffen und damit dem Verteidiger mindestens 1 Schadenskarte zugeteilt hast, kannst du einen Fokusmarker ausgeben, um die soeben zugeteilte Schadenskarte aufzudecken."
+        text: "Nachdem du angegriffen und damit dem Verteidiger mindestens 1 Schadenskarte zugeteilt hast, kannst du einen Fokusmarker ausgeben, um die soeben zugeteilten Schadenskarten aufzudecken."
       },
       "Knave Squadron Pilot": {
         name: "Pilot der Schurken-Staffel"
@@ -395,7 +395,7 @@
         name: "Pilot der Schwarzmond-Staffel"
       },
       "Etahn A'baht": {
-        text: "Wenn sich ein feindliches Schiff in Reichweite 1-3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 seiner gewürfelten %HIT% in ein %CRIT% ändern."
+        text: "Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 %HIT% seiner in ein %CRIT% ändern."
       },
       "Corran Horn": {
         text: "Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."
@@ -436,26 +436,17 @@
         text: "Wenn ein feindliches Schiff einen Angriff gegen dich ansagt, kannst du dieses Schiff in die Zielerfassung nehmen."
       },
       "Jake Farrell": {
-        text: "After you perform a focus action or are assigned a focus token, you may perform a free boost or barrel roll action."
+        text: "Nachdem du die Aktion Fokussierung durchgeführt oder einen Fokusmarker erhalten hast, darfst du als freie Aktion einen Schub oder eine Fassrolle durchführen."
       },
       "Gemmer Sojan": {
         name: "Gemmer Sojan",
-        text: "While you are at Range 1 of at least 1 enemy ship, increase your agility value by 1."
+        text: "Solange du in Reichweite 1 zu mindestens einem feindlichen Schiff bist, steigt dein Wendigkeitswert um 1."
       },
       "Keyan Farlander": {
-        text: "When attacking, you may remove 1 stress token to change all of your %FOCUS% results to %HIT%results."
+        text: "Beim Angreifen darfst du 1 Stressmarker entfernen, um alle deine %FOCUS% in %HIT% zu ändern."
       },
       "Nera Dantels": {
-        text: "You can perform %TORPEDO% secondary weapon attacks against enemy ships outside your firing arc."
-      },
-      "CR90 Corvette (Crippled Aft)": {
-        name: "CR90-Korvette (Heck-Lahmgelegt)",
-        ship: "CR90-Korvette (Heck)",
-        text: "Folgende Manöver darfst du weder wählen noch ausführen: (%STRAIGHT% 4), (%BANKLEFT% 2), or (%BANKRIGHT% 2) ."
-      },
-      "CR90 Corvette (Crippled Fore)": {
-        name: "CR90-Korvette (Bug-Lahmgelegt)",
-        ship: "CR90-Korvette (Bug)"
+        text: "Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."
       },
       "Dash Rendar": {
         text: "You may ignore obstacles during the Activation phase and when performing actions."
@@ -511,7 +502,7 @@
       },
       "Swarm Tactics": {
         name: "Schwarmtaktik",
-        text: "Wähle zu Beginn der Kampfphase 1 freundliches Schiff in Reichweite 1.<br /><br />Bis zum Ende dieser Phase wird das gewählte Schiff so behandelt, als hätte es denselben Pilotenwert wie du."
+        text: "Du darfst zu Beginn der Kampfphase 1 freundliches Schiff in Reichweite 1 wählen.<br /><br />Bis zum Ende dieser Phase wird das gewählte Schiff so behandelt, als hätte es denselben Pilotenwert wie du."
       },
       "Squad Leader": {
         name: "Staffelführer",
@@ -519,7 +510,7 @@
       },
       "Expert Handling": {
         name: "Flugkunst",
-        text: "<strong>Aktion:</strong> Führe eine Fassrolle durch. Wenn du kein %BARRELROLL%-Symbol hast, erhälst du 1 Stressmarker.<br /><br />Dann darfst du 1 feindlichen Zielerfassungsmarker von deinem Schiff entfernen."
+        text: "<strong>Aktion:</strong> Führe als freie Aktion eine Fassrolle durch. Wenn du kein %BARRELROLL%-Symbol hast, erhältst du 1 Stressmarker.<br /><br />Dann darfst du 1 feindlichen Zielerfassungsmarker von deinem Schiff entfernen."
       },
       "Marksmanship": {
         name: "Treffsicherheit",
@@ -534,7 +525,8 @@
         text: "<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassungsmaker aus und lege diese Karte ab, um mit dieser Sekundärwaffe <strong>zwei Mal</strong> anzugreifen."
       },
       "Daredevil": {
-        text: "<strong>Aktion:</strong> Führe ein rotes (%TURNLEFT% 1) oder (%TURNRIGHT% 1) Manöver aus.<br /><br />Wenn du kein %BOOST%-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%)."
+        name: "Draufgänger",
+        text: "<strong>Aktion:</strong> Führe ein weißes (%TURNLEFT% 1) oder (%TURNRIGHT% 1) Manöver aus. Dann erhälst du einen Stresmarker.<br /><br />Wenn du kein %BOOST%-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%)."
       },
       "Elusiveness": {
         name: "Schwer zu Treffen",
@@ -558,7 +550,7 @@
       },
       "Gunner": {
         name: "Bordschütze",
-        text: "Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Danach kannst du in dieser Runde nicht noch einmal angreifen."
+        text: "Unmittelbar nachdem du mit einem Angriff verfehlt hast, darfst du einen weiteren Angriff mit deiner Primärwaffe durchführen. Danach kannst du in dieser Runde nicht noch einmal angreifen."
       },
       "Ion Cannon": {
         name: "Ionenkanonen",
@@ -586,18 +578,18 @@
       },
       "Proximity Mines": {
         name: "Annährungsminen",
-        text: "<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, wenn sich beim Ausführen eines Manövers die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."
+        text: "<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."
       },
       "Weapons Engineer": {
         name: "Waffen-Techniker",
-        text: "Du darfst 2 verschiedene Schiffe gleichzeitig in Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Wenn du die Aktion Zielerfassung durchführst darfst du zwei verschiedene Schiffe als Ziele erfassen."
+        text: "Du darfst 2 verschiedene Schiffe gleichzeitig in der Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Sobald du eine Zielerfassung durchführst, darfst du zwei verschiedene Schiffe als Ziele erfassen."
       },
       "Draw Their Fire": {
         name: "Das Feuer auf mich ziehen",
         text: "Wenn ein freundliches Schiff in Reichweite 1 durch einen Angriff getroffen wird, darfst du anstelle dieses Schiffs den Schaden für 1 nicht-negiertes %CRIT% auf dich nehmen."
       },
       "Luke Skywalker": {
-        text: "Führe, unmittelbar nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit deiner Primärwaffe aus. Du darfst ein %FOCUS% in ein %HIT% ändern. Danach kannst du in dieser Runde nicht noch einmal angreifen."
+        text: "Unmittelbar nachdem du mit einem Angriff verfehlt hast, darfst du einen weiteren Angriff mit deiner Primärwaffe durchführen. Du darfst ein %FOCUS% in ein %HIT% ändern. Danach kannst du in dieser Runde nicht noch einmal angreifen."
       },
       "Nien Nunb": {
         text: "Du darfst alle %STRAIGHT%-Manöver wie grüne Manöver behandeln."
@@ -752,28 +744,28 @@
         text: "Deine Aufwertungsleiste bekommt ein %ELITE%-Symbol.<br /><br />Du kannst diese Aufwertung nicht ausrüsten, wenn du bereits ein %ELITE%-Symbol hast oder dein Pilotenwert 2 oder weniger beträgt."
       },
       "Enhanced Scopes": {
-        name: "Enhanced Scopes",
-        text: "During the Activation phase, treat your pilot skill value as \"0\"."
+        name: "Verbessertes Radar",
+        text: "Behandle in der Aktivierungsphase deinen Pilotenwert als \"0\"."
       },
       "Chardaan Refit": {
-        name: "Chardaan Refit",
-        text: "This card has a negative squad point cost."
+        name: "Chardaan-Nachrüstung",
+        text: "Diese Karte hat negative Kommandopunktekosten."
       },
       "Proton Rockets": {
-        name: "Proton Rockets",
-        text: "<strong>Attack (Focus):</strong> Discard this card to perform this attack.<br /><br />You may roll additional attack dice equal to your agility value, to a maximum of 3 additional dice."
+        name: "Protonenraketen",
+        text: "<strong>Angriff (Fokussierung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst so viele zusätzliche Angriffswürfel werfen, wie du Wendigkeit hast (maximal 3 zusätzliche Würfel)."
       },
       "Kyle Katarn": {
-        text: "After you remove a stress token from your ship, you may assign a focus token to your ship."
+        text: "Nachdem du einen Stressmarker von deinem Schiff entfernt hast, darfst du deinem Schiff einen Fokusmarker geben."
       },
       "Jan Ors": {
-        text: "Once per round, when a friendly ship at Range 1-3 performs a focus action or would be assigned a focus token, you may assign it an evade token instead."
+        text: "Ein Mal pro runde darfst du einem freundlichem Schiff in Reichweite 1-3, das gerade die Aktion Fokussierung durchführt oder einen Fokusmarker erhalten würde, stattdessen einen Ausweichmarker geben."
       },
       "Toryn Farr": {
-        text: "<strong>Aktion:</strong> gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt.."
+        text: "<strong>Aktion:</strong> Gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt."
       },
       "R4-D6": {
-        text: "Wenn du von einem Angriff getroffen wirst und es mindest 3 nicht negierte %HIT% gibt, darfst du so viele %HIT% wählen und negieren, bis es nur noch 2 sind. Für jedes auf diese Weise negierte %HIT% bekommst du 1 Stressmarker."
+        text: "Wenn du von einem Angriff getroffen wirst und es mindestens 3 nicht negierte %HIT% gibt, darfst du so viele %HIT% wählen und negieren, bis es nur noch 2 sind. Für jedes auf diese Weise negierte %HIT% bekommst du 1 Stressmarker."
       },
       "R5-P9": {
         text: "Am Ende der Kampfphase kannst du 1 deiner Fokusmarker ausgeben, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert)."
@@ -886,7 +878,7 @@
       },
       "Targeting Computer": {
         name: "Zielerfassungssystem",
-        text: "Deine Aufwertungsleiste erhält das %TARGETLOCK%-Symbol."
+        text: "Deine Aktionsleiste erhält das %TARGETLOCK%-Symbol."
       },
       "Hull Upgrade": {
         name: "Verbesserte Hülle",
@@ -910,7 +902,7 @@
         text: "Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."
       },
       "B-Wing/E2": {
-        text: "Your upgrade bar gains the %CREW% upgrade icon."
+        text: "Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."
       },
       "Countermeasures": {
         text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
@@ -949,8 +941,8 @@
         text: "Wenn du die Aktion Koordination durchführst, kannst du 2 freundliche Schiffe wählen (anstatt 1). Jedes dieser Schiffe darf 1 freie Aktion durchführen."
       },
       "A-Wing Test Pilot": {
-        name: "A-Wing Test Pilot",
-        text: "Your upgrade bar gains 1 %ELITE% upgrade icon.<br /><br />You cannot equip 2 of the same %ELITE% Upgrade cards.  You cannot equip this if your pilot skill value is \"1\" or lower."
+        name: "Erfahrener Testpilot",
+        text: "Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert \"1\" oder niedriger ist."
       },
       "Tantive IV": {
         ship: "CR90-Korvette (Bug)",
