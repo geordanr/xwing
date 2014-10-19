@@ -656,11 +656,11 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Ingénieur en armement"
             text: """Vous pouvez verrouiller 2 cibles (1 seule acquisition de cible par vaisseau ennemi).%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller 2 vaisseaux différents."""
         "Luke Skywalker":
-            text: """Quand vous effectuez une attaque qui ne touche pas, effectuez aussitôt une attaque d'arme principale. Vous pouvez échanger un résultat %FOCUS% contre 1 résultat %HIT%. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."""
+            text: """%FR_REBELONLY%%LINEBREAK%Quand vous effectuez une attaque qui ne touche pas, effectuez aussitôt une attaque d'arme principale. Vous pouvez échanger un résultat %FOCUS% contre 1 résultat %HIT%. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."""
         "Nien Nunb":
-            text: """Vous pouvez traiter toute les manœuvres %STRAIGHT% comme des manœuvres vertes."""
+            text: """%FR_REBELONLY%%LINEBREAK%Vous pouvez traiter toute les manœuvres %STRAIGHT% comme des manœuvres vertes."""
         "Chewbacca":
-            text: """Quand vous recevez une carte de dégâts, vous pouvez la défaussez sur-le-champs et récupérer 1 bouclier. Ensuite, défaussez cette carte d'amélioration."""
+            text: """%FR_REBELONLY%%LINEBREAK%Quand vous recevez une carte de dégâts, vous pouvez la défaussez sur-le-champs et récupérer 1 bouclier. Ensuite, défaussez cette carte d'amélioration."""
         "Recon Specialist":
             name: "Officier en reconnaissance"
             text: """Quand vous effectuez une action de concentration, assignez 1 marqueur de concentration supplémentaire à votre vaisseau."""
@@ -671,10 +671,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-2. Vous pouvez regarder la manoeuvre choisie pour ce vaisseau."""
         "Darth Vader":
             name: "Dark Vador"
-            text: """Après avoir effectué une attaque contre un vaisseau ennemi, vous pouvez subir 2 dégâts pour infliger 1 dégât critique à cet appareil."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque contre un vaisseau ennemi, vous pouvez subir 2 dégâts pour infliger 1 dégât critique à cet appareil."""
         "Rebel Captive":
             name: "Prisonnier rebelle"
-            text: """Une fois par tour, le premier vaisseau qui vous déclare comme la cible d'une attaque reçoit aussitôt 1 marqueur de stress."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%Une fois par tour, le premier vaisseau qui vous déclare comme la cible d'une attaque reçoit aussitôt 1 marqueur de stress."""
         "Flight Instructor":
             name: "Pilote instructeur"
             text: """Quand vous défendez, vous pouvez relancer 1 de vos résultats %FOCUS%. Si la valeur de pilotage de l'attaquant est de 2 ou moins, vous pouvez relancer 1 de vos résultats vierges à la place."""
@@ -682,53 +682,53 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Navigateur"
             text: """Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.%LINEBREAK%Vous ne pouvez pas tourner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."""
         "Lando Calrissian": # Traduction non officielle
-            text: """<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
+            text: """%FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
         "Mara Jade": # Traduction non officielle
-            text: """À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."""
         "Fleet Officer": # Traduction non officielle
             name: "Officier de la flotte"
-            text: """<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."""
         "Han Solo":
-            text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."""
+            text: """%FR_REBELONLY%%LINEBREAK%Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."""
         "Leia Organa":
-            text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."""
+            text: """%FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."""
         "WED-15 Repair Droid":
             name: "Droïde de réparation WED-15"
-            text: """<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de dégâts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."""
+            text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de dégâts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."""
         "Carlist Rieekan":
-            text: """Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à "12", jusqu'à la fin de la phase."""
+            text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à "12", jusqu'à la fin de la phase."""
         "Jan Dodonna":
-            text: """Quand un autre vaisseau allié situé à portée 1 attaque, il peut échanger 1 de ses résultats %HIT% contre un résultat %CRIT%."""
+            text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Quand un autre vaisseau allié situé à portée 1 attaque, il peut échanger 1 de ses résultats %HIT% contre un résultat %CRIT%."""
         "Tactician":
             name: "Tacticien"
             text: "Après que vous avez effectué une attaque contre un vaisseau situé dans votre arc de tir à portée 2, ce vaisseau reçoit 1 marqueur de stress."
         "R2-D2 (Crew)":
             name: "R2-D2 (Équipage)"
-            text: """À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."""
+            text: """%FR_REBELONLY%%LINEBREAK%À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."""
         "C-3PO":
             name: "Z-6PO"
-            text: """Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."""
+            text: """%FR_REBELONLY%%LINEBREAK%Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."""
         "Kyle Katarn":
-            text: """Après avoir retiré un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à votre vaisseau."""
+            text: """%FR_REBELONLY%%LINEBREAK%Après avoir retiré un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à votre vaisseau."""
         "Jan Ors":
-            text: """Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou reçoit un marqueur de concentration, vous pouvez assigner un marqueur d'évasion à la place."""
+            text: """%FR_REBELONLY%%LINEBREAK%Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou reçoit un marqueur de concentration, vous pouvez assigner un marqueur d'évasion à la place."""
         "Toryn Farr":
-            text: """<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."""
+            text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."""
         "Targeting Coordinator":
             name: "Coordinateur de visée"
             text: """<strong>Énergie :</strong> vous pouvez dépenser 1 énergie pour choisir un vaisseau allié situé à portée 1-2. Verrouillez une cible, puis assignez le marqueur d'acquisition de cible bleu au vaisseau choisi."""
         "Raymus Antilles":
-            text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."""
+            text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."""
         '"Leebo"': # Traduction non officielle
             text: """<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."""
         "Dash Rendar": # Traduction non officielle
-            text: """Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."""
+            text: """%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."""
         "Ysanne Isard": # Traduction non officielle
-            text: """Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."""
         "Moff Jerjerrod": # Traduction non officielle
-            text: """Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
         "Greedo": # Traduction non officielle
-            text: """Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
+            text: """%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
         "Salvaged Astromech": # Traduction non officielle
             text: """Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."""
         "Bomb Loadout": # Traduction non officielle
@@ -787,7 +787,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Équipe de mécaniciens"
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
         "Ruthlessness": # Traduction non officielle
-            text: """Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."""
+            text: """%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."""
         "Intimidation": # Traduction non officielle
             text: """Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."""
             
@@ -812,7 +812,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Votre barre d'actions gagne l'icône d'action %BOOST%."""
         "Anti-Pursuit Lasers":
             name: "Lasers antipoursuite"
-            text: """Quand un vaisseau ennemi exécute une manœuvre qui l'oblige à chevaucher votre appareil, lancez 1 dé d'attaque. Sur un résultat %HIT% ou %CRIT%, le vaisseau ennemi subit 1 dégât."""
+            text: """%FR_LARGESHIPONLY%Quand un vaisseau ennemi exécute une manœuvre qui l'oblige à chevaucher votre appareil, lancez 1 dé d'attaque. Sur un résultat %HIT% ou %CRIT%, le vaisseau ennemi subit 1 dégât."""
         "Targeting Computer":
             name: "Ordinateur de visée"
             text: """Votre barre d'action gagne l'icône d'action %TARGETLOCK%."""
@@ -833,13 +833,13 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">B-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."""
         "Countermeasures": # Traduction non officielle
             name: "Contremesures"
-            text: """%LARGESHIPuniquement%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."""
+            text: """%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."""
         "Experimental Interface": # Traduction non officielle
             name: "Interface expérimentale"
             text: """Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête "<strong>Action :</strong>". Puis recevez 1 marqueur de stress."""
         "Tactical Jammer": # Traduction non officielle
             name: "Brouilleur tactique"
-            text: """%LARGESHIPuniquement%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
+            text: """%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
         "Autoth???":
             text: """Cette carte n'a pas encore été dévoilée."""
 
