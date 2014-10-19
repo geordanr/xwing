@@ -402,17 +402,10 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Transport moyen GR-75"
             ship: "Transport moyen GR-75"
         # CR90
-        # "CR90 Corvette (Crippled Fore)":
-        #     ship: "Corvette CR90 (proue)"
-        #     name: "Corvette CR90 (proue abîmée)"
         "CR90 Corvette (Fore)":
             ship: "Corvette CR90 (proue)"
             name: "Corvette CR90 (proue)"
             text: """Quand vous attaquez avec votre arme principale, vous pouvez dépenser 1 énergie pour lancer 1 dé d'attaque supplémentaire."""
-        # "CR90 Corvette (Crippled Aft)":
-        #     ship: "Corvette CR90 (poupe)"
-        #     name: "Corvette CR90 (poupe abîmée)"
-        #     text: """Vous ne pouvez pas choisir ou exécuter de manœuvre (%STRAIGHT% 4), (%BANKLEFT% 2), et (%BANKRIGHT% 2)."""
         "CR90 Corvette (Aft)":
             ship: "Corvette CR90 (poupe)"
             name: "Corvette CR90 (poupe)"
@@ -536,6 +529,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Considérez cette dernière comme une manœeuvre rouge."""
         "Calc???": # Traduction non officielle
             text: """Cette carte n'a pas encore été révélée."""
+        "Bodyguard":
+            text: """%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."""
         # Astromechs
         "R2 Astromech":
             name: "Astromech R2"
@@ -577,6 +572,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Ion Torpedoes": # Traduction non officielle
             name: "Torpilles ioniques"
             text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."""
+        "Bomb Loadout": # Traduction non officielle
+            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."""
         # Tourelles
         "Ion Cannon Turret":
             name: "Tourelles à canons ioniques"
@@ -729,14 +726,6 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
         "Greedo": # Traduction non officielle
             text: """%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
-        "Salvaged Astromech": # Traduction non officielle
-            text: """Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."""
-        "Bomb Loadout": # Traduction non officielle
-            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."""
-        '"Genius"': # Traduction non officielle
-            text: """Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."""
-        "Unhinged Astromech": # Traduction non officielle
-            text: """Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
         # Soute
         "Frequency Jammer":
             name: "Brouilleurs de fréquence"
@@ -790,11 +779,23 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."""
         "Intimidation": # Traduction non officielle
             text: """Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."""
-            
         # Illégal
         "Inertial Dampeners": # Traduction non officielle
             name: "Amortisseurs Inertiels"
             text: """Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."""
++        "Dead Man's Switch": # Traduction non officielle
++            text: """Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."""
+        "Feedback Array": # Traduction non officielle
+            text: """Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."""
+        '"Hot Shot" Blaster': # Traduction non officielle
+            text: """<strong>Attaque :</strong> Défaussez cette carte pour attaquer 1 vaisseau (même en dehors de votre arc de tir)."""
+        # Astromech récupéré
+        "Salvaged Astromech": # Traduction non officielle
+            text: """Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."""
+        '"Genius"': # Traduction non officielle
+            text: """Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."""
+        "Unhinged Astromech": # Traduction non officielle
+            text: """Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
 
     modification_translations =
         "Shield Upgrade":

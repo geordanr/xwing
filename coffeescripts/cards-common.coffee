@@ -3666,7 +3666,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>')
             .replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>')
             .replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>')
-            .replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racaille et scélérat uniquement.</span>')
+            .replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>')
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]
