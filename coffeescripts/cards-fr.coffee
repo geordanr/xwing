@@ -454,10 +454,10 @@ exportObj.cardLoaders['Français'] = () ->
         "Unspoiled PS6 Scum Firespray Pilot":
             text: """Cette carte n'a pas encore été révélée."""
         # Y-Wing
-        "Unspoiled PS7 Scum Y-Wing Pilot":
-            text: """Cette carte n'a pas encore été révélée."""
-        "Unspoiled PS5 Scum Y-Wing Pilot":
-            text: """Cette carte n'a pas encore été révélée."""
+        "Kavil":
+            text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
+        "Drea Renthal":
+            text: """After you spend a target lock, you may receive 1 stress token to acquire a target lock."""
         # HWK
         "Unspoiled PS7 Scum HWK Pilot":
             text: """Cette carte n'a pas encore été révélée."""
@@ -469,9 +469,9 @@ exportObj.cardLoaders['Français'] = () ->
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
             text: """Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
-        "Unspoiled PS5 Scum Z-95 Pilot":
+        "Kaa'To Leeachos":
             ship: "Chasseur de têtes Z-95"
-            text: """Cette carte n'a pas encore été révélée."""
+            text: """At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."""
 
     upgrade_translations =
         #Traits de pilotes
