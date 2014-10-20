@@ -1294,21 +1294,21 @@
           points: 17,
           slots: ["Elite", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS5 Scum Z-95 Pilot",
+          name: "Kaa'To Leeachos",
           unique: true,
           faction: "Scum and Villainy",
           id: 113,
           ship: "Z-95 Headhunter",
           skill: 5,
-          points: 99,
-          slots: ["Missile", "Illicit"]
+          points: 15,
+          slots: ["Elite", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS3 Scum Z-95 Pilot",
+          name: "Black Sun Soldier",
           faction: "Scum and Villainy",
           id: 114,
           ship: "Z-95 Headhunter",
           skill: 3,
-          points: 99,
+          points: 13,
           slots: ["Missile", "Illicit"]
         }, {
           name: "Binayre Pirate",
@@ -1356,23 +1356,23 @@
           points: 99,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS7 Scum Y-Wing Pilot",
+          name: "Kavil",
           unique: true,
           faction: "Scum and Villainy",
           id: 120,
           ship: "Y-Wing",
           skill: 7,
-          points: 99,
-          slots: ["Salvaged Astromech"]
+          points: 24,
+          slots: ["Elite", "Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS5 Scum Y-Wing Pilot",
+          name: "Drea Renthal",
           unique: true,
           faction: "Scum and Villainy",
           id: 121,
           ship: "Y-Wing",
           skill: 5,
-          points: 99,
-          slots: ["Salvaged Astromech"]
+          points: 22,
+          slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
           name: "Unspoiled PS4 Scum Y-Wing Pilot",
           faction: "Scum and Villainy",
@@ -1380,15 +1380,15 @@
           ship: "Y-Wing",
           skill: 4,
           points: 99,
-          slots: ["Salvaged Astromech"]
+          slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS2 Scum Y-Wing Pilot",
+          name: "Syndicate Thug",
           faction: "Scum and Villainy",
           id: 123,
           ship: "Y-Wing",
           skill: 2,
-          points: 99,
-          slots: ["Salvaged Astromech"]
+          points: 18,
+          slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
           name: "Unspoiled PS7 Scum HWK Pilot",
           unique: true,
@@ -2241,6 +2241,24 @@
               return _results;
             }
           }
+        }, {
+          name: "R4-B11",
+          id: 119,
+          unique: true,
+          slot: "Salvaged Astromech",
+          points: 3
+        }, {
+          name: "Autoblaster Turret",
+          id: 120,
+          slot: "Turret",
+          points: 2,
+          attack: 2,
+          range: "1"
+        }, {
+          name: "R4 Agromech",
+          id: 121,
+          slot: "Salvaged Astromech",
+          points: 2
         }
       ],
       modificationsById: [
@@ -2585,6 +2603,11 @@
           id: 20,
           points: 0,
           ship: "Aggressor"
+        }, {
+          name: "BTL-A4 Y-Wing",
+          id: 21,
+          points: 0,
+          ship: "Y-Wing"
         }
       ]
     };
