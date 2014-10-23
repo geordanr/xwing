@@ -1702,7 +1702,7 @@
           slot: "Crew",
           points: 1
         }, {
-          name: "Proton Bomb",
+          name: "Proton Bombs",
           id: 41,
           slot: "Bomb",
           points: 5
