@@ -24,6 +24,13 @@ exportObj.fromXWSUpgrade =
     'mod': 'Modification'
     'samd': 'Salvaged Astromech'
 
+# Until jquery-qrcode exposes this better...
+QRErrorCorrectLevel =
+    L: 1
+    M: 0
+    Q: 3
+    H: 2
+
 class exportObj.XWSManager
     constructor: (args) ->
         @container = $ args.container
@@ -111,7 +118,9 @@ class exportObj.XWSManager
                 xws_json = JSON.stringify(builder.toXWS())
                 textarea.val xws_json
                 $('#xws-qrcode-container').text ''
-                $('#xws-qrcode-container').qrcode exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
+                $('#xws-qrcode-container').qrcode
+                    text: exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
+                    correctLevel: QRErrorCorrectLevel.L
                 @xws_export_modal.modal 'show'
                 $('#xws-text-tab').tab 'show'
                 textarea.select()

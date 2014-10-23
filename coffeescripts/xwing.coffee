@@ -1372,10 +1372,11 @@ class exportObj.SquadBuilder
             pilots: []
             points: @total_points
             vendor:
-                builder: '(Yet Another) X-Wing Miniatures Squad Builder'
-                builder_link: window.location.href.split('?')[0]
-                link: @permalink.attr 'href'
-            version: '0.1.0'
+                yasb:
+                    builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                    builder_link: window.location.href.split('?')[0]
+                    link: @permalink.attr 'href'
+            version: '0.1.1'
 
         for ship in @ships
             if ship.pilot?
@@ -1389,7 +1390,8 @@ class exportObj.SquadBuilder
 
         # TODO - actual semver parsing
         switch xws.version
-            when '0.1.0'
+            # Not doing backward compatibility pre-1.x
+            when '0.1.1'
                 xws_faction = exportObj.fromXWSFaction[xws.faction]
 
                 if @faction != xws_faction
