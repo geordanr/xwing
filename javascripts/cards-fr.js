@@ -530,10 +530,10 @@
         text: "Cette carte n'a pas encore été révélée."
       },
       "Kavil": {
-        text: "When attacking a ship outside your firing arc, roll 1 additional attack die."
+        text: "Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."
       },
       "Drea Renthal": {
-        text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
+        text: "Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."
       },
       "Unspoiled PS7 Scum HWK Pilot": {
         text: "Cette carte n'a pas encore été révélée."
@@ -550,7 +550,7 @@
       },
       "Kaa'To Leeachos": {
         ship: "Chasseur de têtes Z-95",
-        text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
+        text: "Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."
       }
     };
     upgrade_translations = {
@@ -704,6 +704,9 @@
       "Blaster Turret": {
         name: "Tourelles blaster",
         text: "<strong>Attaque (concentration) :</strong> dépensez un marqueur concentration pour effectuer cette attaque contre 1 vaisseau (même s'il se situe en dehors de votre arc de tir)."
+      },
+      "Autoblaster Turret": {
+        text: "<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par les dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
       },
       "Concussion Missiles": {
         name: "Missiles à concussion",
@@ -987,6 +990,12 @@
       },
       "Unhinged Astromech": {
         text: "Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."
+      },
+      "R4-B11": {
+        text: "Quand vous attaquez, si vous avez une acquisition de cible sur le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir autant de dés de défense que souhaité. Le défenseur doit relancer les dés choisis."
+      },
+      "R4 Agromech": {
+        text: "Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."
       }
     };
     modification_translations = {
@@ -1123,6 +1132,9 @@
       },
       "IG-2000": {
         text: "<span class=\"card-restriction\">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."
+      },
+      "BTL-A4 Y-Wing": {
+        text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);

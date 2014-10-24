@@ -446,11 +446,11 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Cette carte n'a pas encore été révélée."""
         "Unspoiled PS6 Scum Firespray Pilot":
             text: """Cette carte n'a pas encore été révélée."""
-        # Y-Wing
+        # Y-Wing, traduit de l'anglais
         "Kavil":
-            text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
+            text: """Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."""
         "Drea Renthal":
-            text: """After you spend a target lock, you may receive 1 stress token to acquire a target lock."""
+            text: """Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."""
         # HWK
         "Unspoiled PS7 Scum HWK Pilot":
             text: """Cette carte n'a pas encore été révélée."""
@@ -458,13 +458,13 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Cette carte n'a pas encore été révélée."""
         "Unspoiled PS3 Scum HWK Pilot":
             text: """Cette carte n'a pas encore été révélée."""
-        # Z-95
+        # Z-95, traduit de l'anglais
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
             text: """Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
         "Kaa'To Leeachos":
             ship: "Chasseur de têtes Z-95"
-            text: """At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."""
+            text: """Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -529,7 +529,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Considérez cette dernière comme une manœeuvre rouge."""
         "Calc???": # Traduction non officielle
             text: """Cette carte n'a pas encore été révélée."""
-        "Bodyguard":
+        "Bodyguard": # Traduction non officielle
             text: """%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."""
         # Astromechs
         "R2 Astromech":
@@ -581,6 +581,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Blaster Turret":
             name: "Tourelles blaster"
             text: """<strong>Attaque (concentration) :</strong> dépensez un marqueur concentration pour effectuer cette attaque contre 1 vaisseau (même s'il se situe en dehors de votre arc de tir)."""
+        "Autoblaster Turret": # Traduction non officielle
+            text: """<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par les dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
         # Missiles
         "Concussion Missiles":
             name: "Missiles à concussion"
@@ -796,6 +798,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."""
         "Unhinged Astromech": # Traduction non officielle
             text: """Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
+        "R4-B11": # Traduction non officielle
+            text: """Quand vous attaquez, si vous avez une acquisition de cible sur le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir autant de dés de défense que souhaité. Le défenseur doit relancer les dés choisis."""
+        "R4 Agromech": # Traduction non officielle
+            text: """Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."""
 
     modification_translations =
         "Shield Upgrade":
@@ -898,5 +904,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
-
+        "BTL-A4 Y-Wing": # Traduction non officielle
+            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""
+ 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
