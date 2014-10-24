@@ -783,8 +783,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Inertial Dampeners": # Traduction non officielle
             name: "Amortisseurs Inertiels"
             text: """Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."""
-+        "Dead Man's Switch": # Traduction non officielle
-+            text: """Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."""
+        "Dead Man's Switch": # Traduction non officielle
+            text: """Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."""
         "Feedback Array": # Traduction non officielle
             text: """Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."""
         '"Hot Shot" Blaster': # Traduction non officielle

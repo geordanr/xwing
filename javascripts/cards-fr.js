@@ -636,6 +636,9 @@
       "Calc???": {
         text: "Cette carte n'a pas encore été révélée."
       },
+      "Bodyguard": {
+        text: "%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."
+      },
       "R2 Astromech": {
         name: "Astromech R2",
         text: "Considérez toutes les manœuvres à vitesse 1 ou 2 comme des manœuvres vertes."
@@ -690,6 +693,9 @@
       "Ion Torpedoes": {
         name: "Torpilles ioniques",
         text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."
+      },
+      "Bomb Loadout": {
+        text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."
       },
       "Ion Cannon Turret": {
         name: "Tourelles à canons ioniques",
@@ -893,18 +899,6 @@
       "Greedo": {
         text: "%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
       },
-      "Salvaged Astromech": {
-        text: "Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."
-      },
-      "Bomb Loadout": {
-        text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."
-      },
-      '"Genius"': {
-        text: "Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."
-      },
-      "Unhinged Astromech": {
-        text: "Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."
-      },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
         text: "Quand vous effectuez une action de brouillage, choisissez 1 vaisseau ennemi qui n'a pas de marqueur de stress et se situe à portée 1 du vaisseau brouillé. Le vaisseau choisi reçoit 1 marqueur de stress."
@@ -975,6 +969,24 @@
       "Inertial Dampeners": {
         name: "Amortisseurs Inertiels",
         text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
+      },
+      "Dead Man's Switch": {
+        text: "Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."
+      },
+      "Feedback Array": {
+        text: "Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."
+      },
+      '"Hot Shot" Blaster': {
+        text: "<strong>Attaque :</strong> Défaussez cette carte pour attaquer 1 vaisseau (même en dehors de votre arc de tir)."
+      },
+      "Salvaged Astromech": {
+        text: "Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."
+      },
+      '"Genius"': {
+        text: "Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."
+      },
+      "Unhinged Astromech": {
+        text: "Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."
       }
     };
     modification_translations = {
