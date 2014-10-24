@@ -524,9 +524,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.%LINEBREAK%Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."""
         "Lone Wolf": # Traduction non officielle
             text: """Quand vous attaquez ou défendez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."""
-        "Stay On Target": # Traduction non officielle
+        "Stay On Target":
             name: "Restez en ligne"
-            text: """Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Considérez cette dernière comme une manœeuvre rouge."""
+            text: """Quand vous révélez une manœuvre, vous pouvez tourner votre cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Traitez cette manœuvre comme une manœuvre rouge."""
         "Calc???": # Traduction non officielle
             text: """Cette carte n'a pas encore été révélée."""
         "Bodyguard": # Traduction non officielle

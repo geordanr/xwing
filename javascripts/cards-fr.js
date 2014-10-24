@@ -631,7 +631,7 @@
       },
       "Stay On Target": {
         name: "Restez en ligne",
-        text: "Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Considérez cette dernière comme une manœeuvre rouge."
+        text: "Quand vous révélez une manœuvre, vous pouvez tourner votre cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Traitez cette manœuvre comme une manœuvre rouge."
       },
       "Calc???": {
         text: "Cette carte n'a pas encore été révélée."
