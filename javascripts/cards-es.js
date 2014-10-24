@@ -568,11 +568,11 @@
       "Unspoiled PS6 Scum Firespray Pilot": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS7 Scum Y-Wing Pilot": {
-        text: "Esta carta todavía no ha sido revelada."
+      "Kavil": {
+        text: "When attacking a ship outside your firing arc, roll 1 additional attack die."
       },
-      "Unspoiled PS5 Scum Y-Wing Pilot": {
-        text: "Esta carta todavía no ha sido revelada."
+      "Drea Renthal": {
+        text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
       },
       "Unspoiled PS7 Scum HWK Pilot": {
         text: "Esta carta todavía no ha sido revelada."
@@ -586,8 +586,8 @@
       "N'Dru Suhlak": {
         text: "Cuando ataques, si no hay ninguna nave aliada a distancia 1-2, tira un dado de ataque adicional."
       },
-      "Unspoiled PS5 Scum Z-95 Pilot": {
-        text: "Esta carta todavía no ha sido revelada."
+      "Kaa'To Leeachos": {
+        text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
       }
     };
     upgrade_translations = {

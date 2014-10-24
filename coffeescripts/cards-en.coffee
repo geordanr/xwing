@@ -273,10 +273,10 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         "Unspoiled PS6 Scum Firespray Pilot":
             text: """This card has not yet been revealed."""
-        "Unspoiled PS7 Scum Y-Wing Pilot":
-            text: """This card has not yet been revealed."""
-        "Unspoiled PS5 Scum Y-Wing Pilot":
-            text: """This card has not yet been revealed."""
+        "Kavil":
+            text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
+        "Drea Renthal":
+            text: """After you spend a target lock, you may receive 1 stress token to acquire a target lock."""
         "Unspoiled PS7 Scum HWK Pilot":
             text: """This card has not yet been revealed."""
         "Unspoiled PS5 Scum HWK Pilot":
@@ -285,8 +285,8 @@ exportObj.cardLoaders.English = () ->
             text: """This card has not yet been revealed."""
         "N'Dru Suhlak":
             text: """When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."""
-        "Unspoiled PS5 Scum Z-95 Pilot":
-            text: """This card has not yet been revealed."""
+        "Kaa'To Leeachos":
+            text: """At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -527,6 +527,12 @@ exportObj.cardLoaders.English = () ->
             text: """If you are equipped with a bomb that can be dropped before you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
         "Unhinged Astromech":
             text: """You may treat all 3-speed maneuvers as green maneuvers."""
+        "R4-B11":
+            text: """When attacking, if you have a target lock on the defender, you may spend the target lock to choose any or all defense dice. The defender must reroll the chosen dice."""
+        "Autoblaster Turret":
+            text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%Your %HIT% results cannot be canceled by defense dice. The defender may cancel %CRIT% results before %HIT% results."""
+        "R4 Agromech":
+            text: """When attacking, after you spend a focus token, you may acquire a target lock on the defender."""
 
     modification_translations =
         "Stealth Device":
@@ -599,5 +605,7 @@ exportObj.cardLoaders.English = () ->
             text: """<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor only.</span>%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
+        "BTL-A4 Y-Wing":
+            text: """<span class="card-restriction">Y-Wing only.</span>%LINEBREAK%You cannot attack ships outside your firing arc. After you perform a primary weapon attack, you may immediately perform an attack with a %TURRET% secondary weapon."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

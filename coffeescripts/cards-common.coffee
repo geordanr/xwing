@@ -2003,25 +2003,26 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 Scum Z-95 Pilot"
+            name: "Kaa'To Leeachos"
             unique: true
             faction: "Scum and Villainy"
             id: 113
             ship: "Z-95 Headhunter"
             skill: 5
-            points: 99
+            points: 15
             slots: [
+                "Elite"
                 "Missile"
                 "Illicit"
             ]
         }
         {
-            name: "Unspoiled PS3 Scum Z-95 Pilot"
+            name: "Black Sun Soldier"
             faction: "Scum and Villainy"
             id: 114
             ship: "Z-95 Headhunter"
             skill: 3
-            points: 99
+            points: 13
             slots: [
                 "Missile"
                 "Illicit"
@@ -2106,26 +2107,33 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS7 Scum Y-Wing Pilot"
+            name: "Kavil"
             unique: true
             faction: "Scum and Villainy"
             id: 120
             ship: "Y-Wing"
             skill: 7
-            points: 99
+            points: 24
             slots: [
+                "Elite"
+                "Turret"
+                "Torpedo"
+                "Torpedo"
                 "Salvaged Astromech"
             ]
         }
         {
-            name: "Unspoiled PS5 Scum Y-Wing Pilot"
+            name: "Drea Renthal"
             unique: true
             faction: "Scum and Villainy"
             id: 121
             ship: "Y-Wing"
             skill: 5
-            points: 99
+            points: 22
             slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
                 "Salvaged Astromech"
             ]
         }
@@ -2137,17 +2145,23 @@ exportObj.basicCardData = ->
             skill: 4
             points: 99
             slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
                 "Salvaged Astromech"
             ]
         }
         {
-            name: "Unspoiled PS2 Scum Y-Wing Pilot"
+            name: "Syndicate Thug"
             faction: "Scum and Villainy"
             id: 123
             ship: "Y-Wing"
             skill: 2
-            points: 99
+            points: 18
             slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
                 "Salvaged Astromech"
             ]
         }
@@ -3078,6 +3092,27 @@ exportObj.basicCardData = ->
                         if stats.maneuvers[3][turn] > 0
                             stats.maneuvers[3][turn] = 2
         }
+        {
+            name: "R4-B11"
+            id: 119
+            unique: true
+            slot: "Salvaged Astromech"
+            points: 3
+        }
+        {
+            name: "Autoblaster Turret"
+            id: 120
+            slot: "Turret"
+            points: 2
+            attack: 2
+            range: "1"
+        }
+        {
+            name: "R4 Agromech"
+            id: 121
+            slot: "Salvaged Astromech"
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -3423,6 +3458,12 @@ exportObj.basicCardData = ->
             id: 20
             points: 0
             ship: "Aggressor"
+        }
+        {
+            name: "BTL-A4 Y-Wing"
+            id: 21
+            points: 0
+            ship: "Y-Wing"
         }
     ]
 
