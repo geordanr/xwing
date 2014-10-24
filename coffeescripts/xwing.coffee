@@ -2132,18 +2132,22 @@ class Ship
             name: @pilot.canonical_name
             points: @getPoints()
             ship: @data.canonical_name
-            upgrades: {}
+
+        upgrade_obj = {}
 
         for upgrade in @upgrades
             if upgrade?.data?
-                upgrade.toXWS xws.upgrades
+                upgrade.toXWS upgrade_obj
 
         for modification in @modifications
             if modification?.data?
-                modification.toXWS xws.upgrades
+                modification.toXWS upgrade_obj
 
         if @title?.data?
-            @title.toXWS xws.upgrades
+            @title.toXWS upgrade_obj
+
+        if Object.keys(upgrade_obj).length > 0
+            xws.upgrades = upgrade_obj
 
         xws
 
