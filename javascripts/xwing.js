@@ -2975,29 +2975,32 @@
     };
 
     Ship.prototype.toXWS = function() {
-      var modification, upgrade, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+      var modification, upgrade, upgrade_obj, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
       xws = {
         name: this.pilot.canonical_name,
         points: this.getPoints(),
-        ship: this.data.canonical_name,
-        upgrades: {}
+        ship: this.data.canonical_name
       };
+      upgrade_obj = {};
       _ref = this.upgrades;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         upgrade = _ref[_i];
         if ((upgrade != null ? upgrade.data : void 0) != null) {
-          upgrade.toXWS(xws.upgrades);
+          upgrade.toXWS(upgrade_obj);
         }
       }
       _ref1 = this.modifications;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         modification = _ref1[_j];
         if ((modification != null ? modification.data : void 0) != null) {
-          modification.toXWS(xws.upgrades);
+          modification.toXWS(upgrade_obj);
         }
       }
       if (((_ref2 = this.title) != null ? _ref2.data : void 0) != null) {
-        this.title.toXWS(xws.upgrades);
+        this.title.toXWS(upgrade_obj);
+      }
+      if (Object.keys(upgrade_obj).length > 0) {
+        xws.upgrades = upgrade_obj;
       }
       return xws;
     };
@@ -3035,7 +3038,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 2167
+                  lineno: 2171
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -3133,7 +3136,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 2213
+                    lineno: 2217
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -3155,7 +3158,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2216
+                      lineno: 2220
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3220,7 +3223,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2241
+              lineno: 2245
             }));
           }
           __iced_deferrals._fulfill();

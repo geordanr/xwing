@@ -82,9 +82,7 @@
                 to: 'string',
                 level: 9
               }),
-              correctLevel: QRErrorCorrectLevel.L,
-              width: 512,
-              height: 512
+              correctLevel: QRErrorCorrectLevel.L
             });
             _this.xws_export_modal.modal('show');
             $('#xws-text-tab').tab('show');
