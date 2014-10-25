@@ -530,10 +530,10 @@
         text: "Cette carte n'a pas encore été révélée."
       },
       "Kavil": {
-        text: "When attacking a ship outside your firing arc, roll 1 additional attack die."
+        text: "Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."
       },
       "Drea Renthal": {
-        text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
+        text: "Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."
       },
       "Unspoiled PS7 Scum HWK Pilot": {
         text: "Cette carte n'a pas encore été révélée."
@@ -550,7 +550,7 @@
       },
       "Kaa'To Leeachos": {
         ship: "Chasseur de têtes Z-95",
-        text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
+        text: "Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."
       }
     };
     upgrade_translations = {
@@ -560,15 +560,15 @@
       },
       "Swarm Tactics": {
         name: "Tactique de nuée",
-        text: "Au début de la phase de combat, choisissez 1 vaisseau allié situé à portée 1.<br /><br />Jusqu'à la fin de cette phase, considérez que la valeur de pilotage du vaisseau en question est égale à la vôtre."
+        text: "Au début de la phase de combat, choisissez 1 vaisseau allié situé à portée 1.%LINEBREAK%Jusqu'à la fin de cette phase, considérez que la valeur de pilotage du vaisseau en question est égale à la vôtre."
       },
       "Squad Leader": {
         name: "Chef d'escouade",
-        text: "<strong>Action :</strong> choisissez 1 vaisseau situé à portée 1 ou 2 dont la valeur de pilotage est inférieure à la vôtre.<br /><br />Ce vaisseau peut aussitôt effectuer 1 action gratuite."
+        text: "<strong>Action :</strong> choisissez 1 vaisseau situé à portée 1 ou 2 dont la valeur de pilotage est inférieure à la vôtre.%LINEBREAK%Ce vaisseau peut aussitôt effectuer 1 action gratuite."
       },
       "Expert Handling": {
         name: "As de l'espace",
-        text: "<strong>Action :</strong> effectuez une <strong>action gratuite</strong> de tonneau. Si vous n'avez pas l'icône d'action %BARRELROLL%, recevez 1 marqueur de stress.<br /><br />Ensuite, vous pouvez retirer 1 acquisition de cible ennemie de votre vaisseau."
+        text: "<strong>Action :</strong> effectuez une <strong>action gratuite</strong> de tonneau. Si vous n'avez pas l'icône d'action %BARRELROLL%, recevez 1 marqueur de stress.%LINEBREAK%Ensuite, vous pouvez retirer 1 acquisition de cible ennemie de votre vaisseau."
       },
       "Marksmanship": {
         name: "Adresse au tir",
@@ -576,19 +576,19 @@
       },
       "Daredevil": {
         name: "Casse-cou",
-        text: "<strong>Action :</strong> exécuter une manœuvre blanche (%TURNLEFT% 1) ou (%TURNRIGHT% 1).  Puis, recevez un marqueur de stress.<br /><br />Ensuite, si vous n'avez pas l'icône d'action %BOOST%, lancez 2 dés d'attaque et subissez les dégâts (%HIT%) et les dégâts critiques (%CRIT%) obtenus."
+        text: "<strong>Action :</strong> exécuter une manœuvre blanche (%TURNLEFT% 1) ou (%TURNRIGHT% 1).  Puis, recevez un marqueur de stress.%LINEBREAK%Ensuite, si vous n'avez pas l'icône d'action %BOOST%, lancez 2 dés d'attaque et subissez les dégâts (%HIT%) et les dégâts critiques (%CRIT%) obtenus."
       },
       "Elusiveness": {
         name: "Insaisissable",
-        text: "Quand vous défendez, vous pouvez recevoir un marqueur de stress pour choisir 1 dé d'attaque.<br /><br />Si vous avez au moins un marqueur de stress, vous ne pouvez pas utiliser cette capacité."
+        text: "Quand vous défendez, vous pouvez recevoir un marqueur de stress pour choisir 1 dé d'attaque.%LINEBREAK%Si vous avez au moins un marqueur de stress, vous ne pouvez pas utiliser cette capacité."
       },
       "Push the Limit": {
         name: "Repousser les limites",
-        text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite figurant dans votre barre d'action.<br /><br />Recevez ensuite un marqueur de stress."
+        text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite figurant dans votre barre d'action.%LINEBREAK%Recevez ensuite un marqueur de stress."
       },
       "Deadeye": {
         name: "Tireur d'élite",
-        text: "Vous pouvez considérer l'intitulé \"<strong>Attaque (acquisition de cible)</strong>\" comme un intitulé \"<strong>Attaque (concentration)</strong>\".<br /><br />Quand une attaque vous demande d'utiliser un marqueur d'acquisition de cible, vous pouvez utiliser un marqueur de concentration à la place."
+        text: "Vous pouvez considérer l'intitulé \"<strong>Attaque (acquisition de cible)</strong>\" comme un intitulé \"<strong>Attaque (concentration)</strong>\".%LINEBREAK%Quand une attaque vous demande d'utiliser un marqueur d'acquisition de cible, vous pouvez utiliser un marqueur de concentration à la place."
       },
       "Expose": {
         name: "Prise de risque",
@@ -624,17 +624,20 @@
       },
       "Opportunist": {
         name: "Opportuniste",
-        text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.<br /><br />Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
+        text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.%LINEBREAK%Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
       },
       "Lone Wolf": {
         text: "Quand vous attaquez ou défendez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."
       },
       "Stay On Target": {
         name: "Restez en ligne",
-        text: "Quand vous révélez une manœuvre, vous pouvez tourner le cadran sur une autre manœuvre ayant la même vitesse.<br /><br />Considérez cette dernière comme une manœeuvre rouge."
+        text: "Quand vous révélez une manœuvre, vous pouvez tourner votre cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Traitez cette manœuvre comme une manœuvre rouge."
       },
       "Calc???": {
         text: "Cette carte n'a pas encore été révélée."
+      },
+      "Bodyguard": {
+        text: "%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."
       },
       "R2 Astromech": {
         name: "Astromech R2",
@@ -647,10 +650,10 @@
         text: "<strong>Action :</strong> augmentez votre valeur d'agilité de 1 jusqu'à la fin de ce tour."
       },
       "R5-D8": {
-        text: "<strong>Action :</strong> lancez 1 dé de défense.<br /><br />Sur un résultat %EVADE% ou %FOCUS%, défaussez 1 de vos cartes de dégâts face cachée."
+        text: "<strong>Action :</strong> lancez 1 dé de défense.%LINEBREAK%Sur un résultat %EVADE% ou %FOCUS%, défaussez 1 de vos cartes de dégâts face cachée."
       },
       "R5-K6": {
-        text: "Après avoir utilisé votre acquisition de cible, lancez 1 dé de défense.<br /><br />Sur un résultat %EVADE%, verrouillez aussitôt le même vaisseau. Vous ne pouvez cependant pas utiliser cette nouvelle acquisition de cible durant cette attaque."
+        text: "Après avoir utilisé votre acquisition de cible, lancez 1 dé de défense.%LINEBREAK%Sur un résultat %EVADE%, verrouillez aussitôt le même vaisseau. Vous ne pouvez cependant pas utiliser cette nouvelle acquisition de cible durant cette attaque."
       },
       "R5 Astromech": {
         name: "Astromech R5",
@@ -673,35 +676,41 @@
         text: "Quand vous déclarez la cible de votre attaque, si le défenseur est dans votre arc de tir, vous pouvez recevoir 1 marqueur de stress pour que le défenseur en reçoive 1 aussi."
       },
       "R2-D6": {
-        text: "Votre bandeau d'amélioration gagne l'icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper cette amélioration si vous avez déjà une icône d'amélioration %ELITE% ou si votre valeur de pilotage est de \"2\" ou moins."
+        text: "Votre bandeau d'amélioration gagne l'icône d'amélioration %ELITE%.%LINEBREAK%Vous ne pouvez pas équiper cette amélioration si vous avez déjà une icône d'amélioration %ELITE% ou si votre valeur de pilotage est de \"2\" ou moins."
       },
       "Proton Torpedoes": {
         name: "Torpilles à protons",
-        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger 1 de vos résultats %FOCUS% contre 1 résultat %CRIT%."
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Vous pouvez échanger 1 de vos résultats %FOCUS% contre 1 résultat %CRIT%."
       },
       "Advanced Proton Torpedoes": {
         name: "Torpilles à protons avancées",
-        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger jusqu'à 3 de vos résultats vierge contre autant de résultats %FOCUS%."
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Vous pouvez échanger jusqu'à 3 de vos résultats vierge contre autant de résultats %FOCUS%."
       },
       "Flechette Torpedoes": {
         name: "Torpilles fléchettes",
-        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte et dépensez votre acquisition de cible pour effectuer cette attaque.<br /><br />Après que vous avez effectué cette attaque, le défenseur reçoit 1 marqueur de stress si sa valeur de coque est de \"4\" ou moins."
+        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte et dépensez votre acquisition de cible pour effectuer cette attaque.%LINEBREAK%Après que vous avez effectué cette attaque, le défenseur reçoit 1 marqueur de stress si sa valeur de coque est de \"4\" ou moins."
       },
       "Ion Torpedoes": {
         name: "Torpilles ioniques",
-        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."
+      },
+      "Bomb Loadout": {
+        text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."
       },
       "Ion Cannon Turret": {
         name: "Tourelles à canons ioniques",
-        text: "<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).<br /><br />Si cette attaque touche la cible, cette dernière subit 1 dégât et reçoit 1 marqueur ionique. Ensuite, annulez tous les résultats des dés."
+        text: "<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).%LINEBREAK%Si cette attaque touche la cible, cette dernière subit 1 dégât et reçoit 1 marqueur ionique. Ensuite, annulez tous les résultats des dés."
       },
       "Blaster Turret": {
         name: "Tourelles blaster",
         text: "<strong>Attaque (concentration) :</strong> dépensez un marqueur concentration pour effectuer cette attaque contre 1 vaisseau (même s'il se situe en dehors de votre arc de tir)."
       },
+      "Autoblaster Turret": {
+        text: "<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par les dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
+      },
       "Concussion Missiles": {
         name: "Missiles à concussion",
-        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez échanger 1 de vos résultats vierges contre 1 résultat %HIT%."
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Vous pouvez échanger 1 de vos résultats vierges contre 1 résultat %HIT%."
       },
       "Cluster Missiles": {
         name: "Missiles groupés",
@@ -709,27 +718,27 @@
       },
       "Homing Missiles": {
         name: "Missiles à tête chercheuse",
-        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Le défenseur ne peut pas utiliser de marqueurs d'évasion durant cette attaque."
+        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Le défenseur ne peut pas utiliser de marqueurs d'évasion durant cette attaque."
       },
       "Assault Missiles": {
         name: "Missiles d'assaut",
-        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaque touche, chaque vaisseau situé à portée 1 du défenseur subit 1 dégât."
+        text: "<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaque touche, chaque vaisseau situé à portée 1 du défenseur subit 1 dégât."
       },
       "Ion Pulse Missiles": {
         name: "Missiles à pulsations ioniques",
-        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Si cette attaque touche, le défenseur subit 1 dégât et reçoit 2 marqueurs ioniques. Ensuite, annulez le résultat de <strong>tous<strong> les dés."
+        text: "<strong>Attaque (acquisition de cible) :</strong> défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaque touche, le défenseur subit 1 dégât et reçoit 2 marqueurs ioniques. Ensuite, annulez le résultat de <strong>tous<strong> les dés."
       },
       "Chardaan Refit": {
         name: "Radoub à Chardaan",
-        text: "Cette carte a un coût en points d'escadron négatif."
+        text: "<span class=\"card-restriction\">A-Wing uniquement.</span>%LINEBREAK%Cette carte a un coût en points d'escadron négatif."
       },
       "Proton Rockets": {
         name: "Roquettes à proton",
-        text: "<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.<br /><br />Vous pouvez lancer un nombre de dés d'attaque additionnels égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés additionnels."
+        text: "<strong>Attaque (concentration) :</strong> défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Vous pouvez lancer un nombre de dés d'attaque additionnels égal à votre valeur d'agilité, jusqu'à un maximum de 3 dés additionnels."
       },
       "Seismic Charges": {
         name: "Charges sismiques",
-        text: "Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour  <strong>larguer</strong> 1 marqueur de charges sismiques.<br /><br />Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."
+        text: "Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour  <strong>larguer</strong> 1 marqueur de charges sismiques.%LINEBREAK%Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."
       },
       "Proximity Mines": {
         name: "Mines de proximité",
@@ -737,18 +746,18 @@
       },
       "Proton Bombs": {
         name: "Bombes à protons",
-        text: "Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.<br /><br />Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."
+        text: "Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.%LINEBREAK%Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."
       },
       "Ion Cannon": {
         name: "Canon ionique",
-        text: "<strong>Attaque :</strong> Attaque : attaquez 1 vaisseau.<br /><br />Si cette attaque touche, le défenseur subit 1 dégât et reçoit 1 marqueur ionique. Ensuite annulez le résultat de tous les dés."
+        text: "<strong>Attaque :</strong> Attaque : attaquez 1 vaisseau.%LINEBREAK%Si cette attaque touche, le défenseur subit 1 dégât et reçoit 1 marqueur ionique. Ensuite annulez le résultat de tous les dés."
       },
       "Heavy Laser Cannon": {
         name: "Canon laser lourd",
-        text: "<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Juste après avoir lancé vos dés d'attaque, vous devez changer tous vos résultats %CRIT% en résultats %HIT%."
+        text: "<strong>Attaque :</strong> attaquez 1 vaisseau.%LINEBREAK%Juste après avoir lancé vos dés d'attaque, vous devez changer tous vos résultats %CRIT% en résultats %HIT%."
       },
       "Autoblaster": {
-        text: "<strong>Attaque :</strong> attaquez 1 vaisseau.<br /><br />Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
+        text: "<strong>Attaque :</strong> attaquez 1 vaisseau.%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
       },
       "Flechette Cannon": {
         text: "Cette carte n'a pas encore été révélée."
@@ -766,14 +775,15 @@
       },
       "Advanced Sensors": {
         name: "Senseurs avancés",
-        text: "Juste avant de révéler votre manoeuvre, vous pouvez effectuer 1 action gratuite.<br /><br />Si vous utilisez cette capacité, vous devez passer l'étape \"Effectuer une action\" ce tour-ci."
+        text: "Juste avant de révéler votre manoeuvre, vous pouvez effectuer 1 action gratuite.%LINEBREAK%Si vous utilisez cette capacité, vous devez passer l'étape \"Effectuer une action\" ce tour-ci."
       },
       "Sensor Jammer": {
         name: "Brouilleur de senseurs",
         text: "Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."
       },
       "Accuracy Corrector": {
-        text: "Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.<br /><br />Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."
+        name: "Correcteur de Précision",
+        text: "Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.%LINEBREAK%Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."
       },
       "Gunner": {
         name: "Cannonier",
@@ -785,16 +795,16 @@
       },
       "Weapons Engineer": {
         name: "Ingénieur en armement",
-        text: "Vous pouvez verrouiller 2 cibles (1 seule acquisition de cible par vaisseau ennemi).<br /><br />Quand vous verrouillez une cible, vous pouvez verrouiller 2 vaisseaux différents."
+        text: "Vous pouvez verrouiller 2 cibles (1 seule acquisition de cible par vaisseau ennemi).%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller 2 vaisseaux différents."
       },
       "Luke Skywalker": {
-        text: "Quand vous effectuez une attaque qui ne touche pas, effectuez aussitôt une attaque d'arme principale. Vous pouvez échanger un résultat %FOCUS% contre 1 résultat %HIT%. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."
+        text: "%FR_REBELONLY%%LINEBREAK%Quand vous effectuez une attaque qui ne touche pas, effectuez aussitôt une attaque d'arme principale. Vous pouvez échanger un résultat %FOCUS% contre 1 résultat %HIT%. Vous ne pouvez pas effectuer d'autre attaque ce tour-ci."
       },
       "Nien Nunb": {
-        text: "Vous pouvez traiter toute les manœuvres %STRAIGHT% comme des manœuvres vertes."
+        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez traiter toute les manœuvres %STRAIGHT% comme des manœuvres vertes."
       },
       "Chewbacca": {
-        text: "Quand vous recevez une carte de dégâts, vous pouvez la défaussez sur-le-champs et récupérer 1 bouclier. Ensuite, défaussez cette carte d'amélioration."
+        text: "%FR_REBELONLY%%LINEBREAK%Quand vous recevez une carte de dégâts, vous pouvez la défaussez sur-le-champs et récupérer 1 bouclier. Ensuite, défaussez cette carte d'amélioration."
       },
       "Recon Specialist": {
         name: "Officier en reconnaissance",
@@ -809,11 +819,11 @@
       },
       "Darth Vader": {
         name: "Dark Vador",
-        text: "Après avoir effectué une attaque contre un vaisseau ennemi, vous pouvez subir 2 dégâts pour infliger 1 dégât critique à cet appareil."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque contre un vaisseau ennemi, vous pouvez subir 2 dégâts pour infliger 1 dégât critique à cet appareil."
       },
       "Rebel Captive": {
         name: "Prisonnier rebelle",
-        text: "Une fois par tour, le premier vaisseau qui vous déclare comme la cible d'une attaque reçoit aussitôt 1 marqueur de stress."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Une fois par tour, le premier vaisseau qui vous déclare comme la cible d'une attaque reçoit aussitôt 1 marqueur de stress."
       },
       "Flight Instructor": {
         name: "Pilote instructeur",
@@ -821,33 +831,33 @@
       },
       "Navigator": {
         name: "Navigateur",
-        text: "Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.<br /><br />Vous ne pouvez pas tourner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."
+        text: "Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.%LINEBREAK%Vous ne pouvez pas tourner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."
       },
       "Lando Calrissian": {
-        text: "<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."
+        text: "%FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."
       },
       "Mara Jade": {
-        text: "À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."
       },
       "Fleet Officer": {
         name: "Officier de la flotte",
-        text: "<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."
       },
       "Han Solo": {
-        text: "Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."
+        text: "%FR_REBELONLY%%LINEBREAK%Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."
       },
       "Leia Organa": {
-        text: "Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."
+        text: "%FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, vous pouvez défausser cette carte pour permettre à tous les vaisseaux alliés qui dévoilent une manœuvre rouge de considérer cette dernière comme une manœuvre blanche jusqu'à la fin de la phase."
       },
       "WED-15 Repair Droid": {
         name: "Droïde de réparation WED-15",
-        text: "<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de dégâts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."
+        text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> dépensez 1 énergie pour défausser 1 de vos cartes de dégâts face cachée, ou dépensez 3 énergie pour défausser 1 de vos cartes de dégâts face visible."
       },
       "Carlist Rieekan": {
-        text: "Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à \"12\", jusqu'à la fin de la phase."
+        text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, vous pouvez défausser cette carte pour traiter la valeur de pilotage de chaque vaisseau allié comme si elle s'élevait à \"12\", jusqu'à la fin de la phase."
       },
       "Jan Dodonna": {
-        text: "Quand un autre vaisseau allié situé à portée 1 attaque, il peut échanger 1 de ses résultats %HIT% contre un résultat %CRIT%."
+        text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Quand un autre vaisseau allié situé à portée 1 attaque, il peut échanger 1 de ses résultats %HIT% contre un résultat %CRIT%."
       },
       "Tactician": {
         name: "Tacticien",
@@ -855,42 +865,42 @@
       },
       "R2-D2 (Crew)": {
         name: "R2-D2 (Équipage)",
-        text: "À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."
+        text: "%FR_REBELONLY%%LINEBREAK%À la fin de la phase de dénouement, si vous n'avez pas de boucliers, vous pouvez récupérer 1 bouclier et lancer 1 dé d'attaque. Sur un résultat %HIT%, prenez au hasard 1 de vos cartes de dégâts face cachée, retournez-la et résolvez-la."
       },
       "C-3PO": {
         name: "Z-6PO",
-        text: "Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."
+        text: "%FR_REBELONLY%%LINEBREAK%Une fois par tour, avant de lancer 1 ou plusieurs dés de défense, vous pouvez tenter d'en deviner à voix haute le nombre de résultats %EVADE%. Si vous obtenez le nombre annoncé (avant de modifier des dés), ajoutez 1 résultat %EVADE%."
       },
       "Kyle Katarn": {
-        text: "Après avoir retiré un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à votre vaisseau."
+        text: "%FR_REBELONLY%%LINEBREAK%Après avoir retiré un marqueur stress de votre vaisseau, vous pouvez assigner un marqueur concentration à votre vaisseau."
       },
       "Jan Ors": {
-        text: "Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou reçoit un marqueur de concentration, vous pouvez assigner un marqueur d'évasion à la place."
+        text: "%FR_REBELONLY%%LINEBREAK%Une fois par tour, quand un vaisseau allié à portée 1-3 effectue une action de concentration ou reçoit un marqueur de concentration, vous pouvez assigner un marqueur d'évasion à la place."
       },
       "Toryn Farr": {
-        text: "<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."
+        text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> dépensez n'importe quelle quantité d'énergie pour choisir autant de vaisseaux ennemis situés à portée 1-2. Retirez tous les marqueurs de concentratino, d'évasion et d'acquisition de cible bleus de ces vaisseaux."
       },
       "Targeting Coordinator": {
         name: "Coordinateur de visée",
         text: "<strong>Énergie :</strong> vous pouvez dépenser 1 énergie pour choisir un vaisseau allié situé à portée 1-2. Verrouillez une cible, puis assignez le marqueur d'acquisition de cible bleu au vaisseau choisi."
       },
       "Raymus Antilles": {
-        text: "Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."
+        text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."
       },
       '"Leebo"': {
         text: "<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."
       },
       "Dash Rendar": {
-        text: "Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.<br /><br />Vos attaques ne peuvent pas être gênées."
+        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."
       },
       "Ysanne Isard": {
-        text: "Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
       },
       "Moff Jerjerrod": {
-        text: "Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."
       },
       "Greedo": {
-        text: "Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
+        text: "%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
       },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
@@ -899,7 +909,7 @@
       "Expanded Cargo Hold": {
         ship: "Transport moyen GR-75",
         name: "Compartiments supplémentaires",
-        text: "Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."
+        text: "<span class=\"card-restriction\">GR-75 uniquement.</span>%LINEBREAK%Une fois par tour, quand vous êtes censé recevoir une carte de dégâts face visible, vous pouvez la piocher dans le paquet de dégâts de poupe ou de proue."
       },
       "Comms Booster": {
         name: "Amplificateur Comm",
@@ -954,13 +964,38 @@
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
       },
       "Ruthlessness": {
-        text: "Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."
       },
       "Intimidation": {
         text: "Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."
       },
       "Inertial Dampeners": {
+        name: "Amortisseurs Inertiels",
         text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
+      },
+      "Dead Man's Switch": {
+        text: "Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."
+      },
+      "Feedback Array": {
+        text: "Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."
+      },
+      '"Hot Shot" Blaster': {
+        text: "<strong>Attaque :</strong> Défaussez cette carte pour attaquer 1 vaisseau (même en dehors de votre arc de tir)."
+      },
+      "Salvaged Astromech": {
+        text: "Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."
+      },
+      '"Genius"': {
+        text: "Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."
+      },
+      "Unhinged Astromech": {
+        text: "Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."
+      },
+      "R4-B11": {
+        text: "Quand vous attaquez, si vous avez une acquisition de cible sur le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir autant de dés de défense que souhaité. Le défenseur doit relancer les dés choisis."
+      },
+      "R4 Agromech": {
+        text: "Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."
       }
     };
     modification_translations = {
@@ -970,7 +1005,7 @@
       },
       "Advanced Cloaking Device": {
         name: "Système d'occultation avancé",
-        text: "Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite.",
+        text: "<span class=\"card-restriction\">TIE Fantôme uniquement.</span>%LINEBREAK%Après avoir effectué une attaque, vous pouvez effectuer une action d'occultation gratuite.",
         ship: "TIE Fantôme"
       },
       "Stealth Device": {
@@ -983,7 +1018,7 @@
       },
       "Anti-Pursuit Lasers": {
         name: "Lasers antipoursuite",
-        text: "Quand un vaisseau ennemi exécute une manœuvre qui l'oblige à chevaucher votre appareil, lancez 1 dé d'attaque. Sur un résultat %HIT% ou %CRIT%, le vaisseau ennemi subit 1 dégât."
+        text: "%FR_LARGESHIPONLY%Quand un vaisseau ennemi exécute une manœuvre qui l'oblige à chevaucher votre appareil, lancez 1 dé d'attaque. Sur un résultat %HIT% ou %CRIT%, le vaisseau ennemi subit 1 dégât."
       },
       "Targeting Computer": {
         name: "Ordinateur de visée",
@@ -1003,15 +1038,15 @@
       },
       "Combat Retrofit": {
         name: "Préparé pour le combat",
-        text: "Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1.",
+        text: "<span class=\"card-restriction\">GR-75 uniquement.</span>%LINEBREAK%Augmentez votre valeur de coque de 2 et votre valeur de boucliers de 1.",
         ship: "Transport moyen GR-75"
       },
       "B-Wing/E2": {
-        text: "Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
+        text: "<span class=\"card-restriction\">B-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
       },
       "Countermeasures": {
         name: "Contremesures",
-        text: "Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."
+        text: "%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."
       },
       "Experimental Interface": {
         name: "Interface expérimentale",
@@ -1019,81 +1054,87 @@
       },
       "Tactical Jammer": {
         name: "Brouilleur tactique",
-        text: "Votre vaisseau peut gêner les attaques ennemies."
+        text: "%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."
+      },
+      "Autoth???": {
+        text: "Cette carte n'a pas encore été dévoilée."
       }
     };
     title_translations = {
       "Slave I": {
-        text: "Votre bandeau d'amélioration gagne l'icône %TORPEDO%."
+        text: "<span class=\"card-restriction\">Firespray-31 uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône %TORPEDO%."
       },
       "Millennium Falcon": {
         name: "Faucon Millenium",
-        text: "Votre barre d'actions gagne l'icône d'action %EVADE%."
+        text: "<span class=\"card-restriction\">YT-1300 uniquement.</span>%LINEBREAK%Votre barre d'actions gagne l'icône d'action %EVADE%."
       },
       "Moldy Crow": {
-        text: "Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."
+        text: "<span class=\"card-restriction\">HWK-290 uniquement.</span>%LINEBREAK%Lors de la phase de dénouement, ne retirez pas les marqueurs concentrations inutilisés de votre vaisseau."
       },
       "ST-321": {
         ship: "Navette de classe Lambda",
-        text: "Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."
+        text: "<span class=\"card-restriction\">Navette de classe <em>Lambda</em> uniquement.</span>%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."
       },
       "Royal Guard TIE": {
         ship: "Intercepteur TIE",
         name: "TIE de la Garde royale",
-        text: "Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).<br /><br />Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de \"4\" ou moins."
+        text: "<span class=\"card-restriction\">TIE Interceptor uniquement.</span>%LINEBREAK%Vous pouvez vous équiper de 2 améliorations Modification différentes (au lieu de 1).%LINEBREAK%Cette carte ne peut pas équiper un vaisseau dont la valeur de pilotage est de \"4\" ou moins."
       },
       "Dodonna's Pride": {
         ship: "Corvette CR90 (proue)",
-        text: "Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."
+        text: "<span class=\"card-restriction\">CR90 fore section uniquement.</span>%LINEBREAK%Quand vous effectuez une action de coordination, vous pouvez choisir 2 vaisseaux alliés (au lieu de 1). Chacun de ces vaisseaux peut effectuer 1 action gratuite."
       },
       "A-Wing Test Pilot": {
         name: "Pilote d'essai sur A-Wing",
-        text: "Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.<br /><br />Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des \"1\" ou moins."
+        text: "<span class=\"card-restriction\">A-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne 1 icône d'amélioration %ELITE%.%LINEBREAK%Vous ne pouvez pas équiper 2 cartes amélioration %ELITE% identiques. Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est des \"1\" ou moins."
       },
       "Tantive IV": {
         ship: "Corvette CR90 (proue)",
-        text: "Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."
+        text: "<span class=\"card-restriction\">CR90 (proue) uniquement.</span>%LINEBREAK%Le bandeau d'amélioration de votre proue gagne 1 icône %CREW% et 1 icône %TEAM% d'améliorations supplémentaires."
       },
       "Bright Hope": {
         ship: "Transport moyen GR-75",
-        text: "Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."
+        text: "<span class=\"card-restriction\">GR-75 uniquement.</span>%LINEBREAK%Un marqueur de renforcement assigné à votre proue ajoute 2 résultats %EVADE% (au lieu de 1)."
       },
       "Quantum Storm": {
         ship: "Transport moyen GR-75",
-        text: "Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."
+        text: "<span class=\"card-restriction\">GR-75 uniquement.</span>%LINEBREAK%Au début de la phase de dénouement, si vous avez 1 marqueur d'énergie ou moins, vous gagnez 1 marqueur d'énergie."
       },
       "Dutyfree": {
         ship: "Transport moyen GR-75",
-        text: "Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."
+        text: "<span class=\"card-restriction\">GR-75 uniquement.</span>%LINEBREAK%Quand vous effectuez une action de brouillage, vous pouvez choisir un vaisseau ennemi situé à portée 1-3 (au lieu de portée 1-2)."
       },
       "Jaina's Light": {
         ship: "Corvette CR90 (proue)",
-        text: "Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."
+        text: "<span class=\"card-restriction\">CR90 (proue) uniquement.</span>%LINEBREAK%Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."
       },
       "Outrider": {
-        text: "Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."
+        text: "<span class=\"card-restriction\">YT-2400 uniquement.</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."
       },
       "Dauntless": {
         ship: "Décimateur VT-49",
-        text: "Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."
+        text: "<span class=\"card-restriction\">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."
       },
       "Virago": {
-        text: "Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.<br /><br />You cannot equip this card if your pilot skill value is \"3\" or lower."
+        text: "<span class=\"card-restriction\">StarViper uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is \"3\" or lower."
       },
       '"Heavy Scyk" Interceptor (Cannon)': {
         name: 'Intercepteur "Scyk Lourd" (Cannon)',
-        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+        text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Torpedo)': {
         name: 'Intercepteur "Scyk Lourd" (Torpille)',
-        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+        text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Missile)': {
         name: 'Intercepteur "Scyk Lourd" (Missile)',
-        text: "Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
+        text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       "IG-2000": {
-        text: "Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."
+        text: "<span class=\"card-restriction\">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."
+      },
+      "BTL-A4 Y-Wing": {
+        text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
