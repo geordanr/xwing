@@ -253,24 +253,3 @@ casper.test.begin "No collection cross-builder interaction", (test) ->
 
     .run ->
         test.done()
-
-casper.test.begin "Collections API: works through translations", (test) ->
-    common.waitForStartup('#rebel-builder')
-
-    common.selectLanguage('Deutsch')
-
-    casper.then ->
-        @evaluate ->
-            window.collection = new Collection
-                expansions:
-                    "Core": 1
-                    "TIE Interceptor Expansion Pack": 1
-
-        test.assertTruthy @evaluate ->
-            window.collection
-
-        test.assert @evaluate ->
-            window.collection.use "ship", "TIE-Abfangjäger"
-
-    .run ->
-        test.done()
