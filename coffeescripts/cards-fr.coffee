@@ -123,6 +123,7 @@ exportObj.cardLoaders['Français'] = () ->
 
     # Assumes cards-common has been loaded
     basic_cards = exportObj.basicCardData()
+    exportObj.canonicalizeShipNames basic_cards
 
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships

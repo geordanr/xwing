@@ -121,6 +121,7 @@ exportObj.cardLoaders.Deutsch = () ->
 
     # Assumes cards-common has been loaded
     basic_cards = exportObj.basicCardData()
+    exportObj.canonicalizeShipNames basic_cards
 
     exportObj.ships = basic_cards.ships
 

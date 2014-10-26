@@ -3546,10 +3546,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
                 throw e
 
-    for ship_name, ship_data of basic_cards.ships
-        ship_data.english_name = ship_name
-        ship_data.canonical_name = ship_data.english_name.canonicalize()
-
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
         for card in cards
@@ -3708,6 +3704,11 @@ exportObj.fixIcons = (data) ->
             .replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>')
             .replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>')
             .replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>')
+
+exportObj.canonicalizeShipNames = (card_data) ->
+    for ship_name, ship_data of card_data.ships
+        ship_data.english_name = ship_name
+        ship_data.canonical_name = ship_data.english_name.canonicalize()
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]
