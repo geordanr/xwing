@@ -136,6 +136,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Français';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('TIE Fighter', 'Chasseur TIE');
     exportObj.renameShip('TIE Interceptor', 'Intercepteur TIE');
