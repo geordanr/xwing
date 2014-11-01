@@ -136,6 +136,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Français';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('TIE Fighter', 'Chasseur TIE');
     exportObj.renameShip('TIE Interceptor', 'Intercepteur TIE');
@@ -891,7 +892,7 @@
         text: "<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."
       },
       "Dash Rendar": {
-        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."
+        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent <strong>pas être gênées</strong>."
       },
       "Ysanne Isard": {
         text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."

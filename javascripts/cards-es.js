@@ -149,6 +149,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Español';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('Lambda-Class Shuttle', 'Lanzadera clase Lambda');
     exportObj.renameShip('TIE Advanced', 'TIE Avanzado');
