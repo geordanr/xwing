@@ -149,6 +149,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Español';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('Lambda-Class Shuttle', 'Lanzadera clase Lambda');
     exportObj.renameShip('TIE Advanced', 'TIE Avanzado');
@@ -565,7 +566,7 @@
       "Kath Scarlet (Scum)": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS6 Scum Firespray Pilot": {
+      "Emon Azzameen": {
         text: "Esta carta todavía no ha sido revelada."
       },
       "Kavil": {
@@ -574,13 +575,13 @@
       "Drea Renthal": {
         text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
       },
-      "Unspoiled PS7 Scum HWK Pilot": {
+      "Dace Bonearm": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS5 Scum HWK Pilot": {
+      "Palob Godalhi": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS3 Scum HWK Pilot": {
+      "Torkil Mux": {
         text: "Esta carta todavía no ha sido revelada."
       },
       "N'Dru Suhlak": {
@@ -748,7 +749,7 @@
         name: "Agente del Servicio de Inteligencia",
         text: "Al comienzo de la fase de Activación, elige una nave enemiga que tengas a alcance 1-2. Puedes mirar el selector de maniobras de dicha nave."
       },
-      "Proton Bomb": {
+      "Proton Bombs": {
         name: "Bombas de Protones",
         text: "Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bombas de Protones.<br /><br />Esta ficha se <strong>detona</strong> al final de la fase de Activación."
       },

@@ -136,6 +136,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Deutsch';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('TIE Interceptor', 'TIE-Abfangjäger');
     exportObj.renameShip('Z-95 Headhunter', 'Z-95-Kopfjäger');
@@ -624,7 +625,7 @@
         name: "Geheimagent",
         text: "Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Du darfst dir das ausgewählte Manöver dieses Schiffs ansehen."
       },
-      "Proton Bomb": {
+      "Proton Bombs": {
         name: "Protonenbomben",
         text: "Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."
       },

@@ -456,17 +456,17 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando ataques o defiendas, puedes volver a tirar 1 de tus dados por cada nave a distancia 1."""
         "Kath Scarlet (Scum)":
             text: """Esta carta todavía no ha sido revelada."""
-        "Unspoiled PS6 Scum Firespray Pilot":
+        "Emon Azzameen":
             text: """Esta carta todavía no ha sido revelada."""
         "Kavil":
             text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
         "Drea Renthal":
             text: """After you spend a target lock, you may receive 1 stress token to acquire a target lock."""
-        "Unspoiled PS7 Scum HWK Pilot":
+        "Dace Bonearm":
             text: """Esta carta todavía no ha sido revelada."""
-        "Unspoiled PS5 Scum HWK Pilot":
+        "Palob Godalhi":
             text: """Esta carta todavía no ha sido revelada."""
-        "Unspoiled PS3 Scum HWK Pilot":
+        "Torkil Mux":
             text: """Esta carta todavía no ha sido revelada."""
         "N'Dru Suhlak":
             text: """Cuando ataques, si no hay ninguna nave aliada a distancia 1-2, tira un dado de ataque adicional."""

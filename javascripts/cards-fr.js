@@ -136,6 +136,7 @@
     var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
     exportObj.cardLanguage = 'Français';
     basic_cards = exportObj.basicCardData();
+    exportObj.canonicalizeShipNames(basic_cards);
     exportObj.ships = basic_cards.ships;
     exportObj.renameShip('TIE Fighter', 'Chasseur TIE');
     exportObj.renameShip('TIE Interceptor', 'Intercepteur TIE');
@@ -526,7 +527,7 @@
       "Kath Scarlet (Scum)": {
         text: "Cette carte n'a pas encore été révélée."
       },
-      "Unspoiled PS6 Scum Firespray Pilot": {
+      "Emon Azzameen": {
         text: "Cette carte n'a pas encore été révélée."
       },
       "Kavil": {
@@ -535,13 +536,13 @@
       "Drea Renthal": {
         text: "Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."
       },
-      "Unspoiled PS7 Scum HWK Pilot": {
+      "Dace Bonearm": {
         text: "Cette carte n'a pas encore été révélée."
       },
-      "Unspoiled PS5 Scum HWK Pilot": {
+      "Palob Godalhi": {
         text: "Cette carte n'a pas encore été révélée."
       },
-      "Unspoiled PS3 Scum HWK Pilot": {
+      "Torkil Mux": {
         text: "Cette carte n'a pas encore été révélée."
       },
       "N'Dru Suhlak": {
@@ -744,7 +745,7 @@
         name: "Mines de proximité",
         text: "<strong>Action :</strong> défaussez cette carte pour <strong>larguer</strong> 1 marqueur de mines de proximité. Quand un vaisseau exécute une manœuvre, si son socle ou son gabarit de manœuvre chevauche ce marqueur, ce marqueur <strong>explose</strong>."
       },
-      "Proton Bomb": {
+      "Proton Bombs": {
         name: "Bombes à protons",
         text: "Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.%LINEBREAK%Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."
       },

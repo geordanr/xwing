@@ -1339,22 +1339,22 @@
           points: 99,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS6 Scum Firespray Pilot",
+          name: "Emon Azzameen",
           unique: true,
           faction: "Scum and Villainy",
           id: 118,
           ship: "Firespray-31",
           skill: 6,
-          points: 99,
+          points: 36,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS5 Scum Firespray Pilot",
+          name: "Mandalorian Mercenary",
           faction: "Scum and Villainy",
           id: 119,
           ship: "Firespray-31",
           skill: 5,
-          points: 99,
-          slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
+          points: 35,
+          slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
           name: "Kavil",
           unique: true,
@@ -1390,32 +1390,32 @@
           points: 18,
           slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS7 Scum HWK Pilot",
+          name: "Dace Bonearm",
           unique: true,
           faction: "Scum and Villainy",
           id: 124,
           ship: "HWK-290",
           skill: 7,
-          points: 99,
-          slots: []
+          points: 23,
+          slots: ["Elite", "Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS5 Scum HWK Pilot",
+          name: "Palob Godalhi",
           unique: true,
           faction: "Scum and Villainy",
           id: 125,
           ship: "HWK-290",
           skill: 5,
-          points: 99,
-          slots: []
+          points: 20,
+          slots: ["Elite", "Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS3 Scum HWK Pilot",
+          name: "Torkil Mux",
           unique: true,
           faction: "Scum and Villainy",
           id: 126,
           ship: "HWK-290",
           skill: 3,
-          points: 99,
-          slots: []
+          points: 19,
+          slots: ["Turret", "Crew", "Illicit"]
         }, {
           name: "Unspoiled PS1 Scum HWK Pilot",
           faction: "Scum and Villainy",
@@ -1702,7 +1702,7 @@
           slot: "Crew",
           points: 1
         }, {
-          name: "Proton Bomb",
+          name: "Proton Bombs",
           id: 41,
           slot: "Bomb",
           points: 5
@@ -2259,6 +2259,19 @@
           id: 121,
           slot: "Salvaged Astromech",
           points: 2
+        }, {
+          name: "K4 Security Droid",
+          id: 122,
+          slot: "Crew",
+          faction: "Scum and Villainy",
+          points: 3
+        }, {
+          name: "Outlaw Tech",
+          id: 123,
+          limited: true,
+          slot: "Crew",
+          faction: "Scum and Villainy",
+          points: 2
         }
       ],
       modificationsById: [
@@ -2608,13 +2621,28 @@
           id: 21,
           points: 0,
           ship: "Y-Wing"
+        }, {
+          name: "Andrasta",
+          id: 22,
+          unique: true,
+          points: 0,
+          ship: "Firespray-31",
+          confersAddons: [
+            {
+              type: exportObj.Upgrade,
+              slot: "Bomb"
+            }, {
+              type: exportObj.Upgrade,
+              slot: "Bomb"
+            }
+          ]
         }
       ]
     };
   };
 
   exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, ship_data, ship_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
     _ref = basic_cards.pilotsById;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       pilot_data = _ref[i];
@@ -2748,15 +2776,9 @@
         }
       }
     }
-    _ref8 = basic_cards.ships;
-    for (ship_name in _ref8) {
-      ship_data = _ref8[ship_name];
-      ship_data.english_name = ship_name;
-      ship_data.canonical_name = ship_data.english_name.canonicalize();
-    }
-    _ref9 = exportObj.manifestByExpansion;
-    for (expansion in _ref9) {
-      cards = _ref9[expansion];
+    _ref8 = exportObj.manifestByExpansion;
+    for (expansion in _ref8) {
+      cards = _ref8[expansion];
       for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
         card = cards[_q];
         try {
@@ -2785,38 +2807,38 @@
         }
       }
     }
-    _ref10 = exportObj.pilots;
+    _ref9 = exportObj.pilots;
+    for (name in _ref9) {
+      card = _ref9[name];
+      card.sources = card.sources.sort();
+    }
+    _ref10 = exportObj.upgrades;
     for (name in _ref10) {
       card = _ref10[name];
       card.sources = card.sources.sort();
     }
-    _ref11 = exportObj.upgrades;
+    _ref11 = exportObj.modifications;
     for (name in _ref11) {
       card = _ref11[name];
       card.sources = card.sources.sort();
     }
-    _ref12 = exportObj.modifications;
+    _ref12 = exportObj.titles;
     for (name in _ref12) {
       card = _ref12[name];
-      card.sources = card.sources.sort();
-    }
-    _ref13 = exportObj.titles;
-    for (name in _ref13) {
-      card = _ref13[name];
       card.sources = card.sources.sort();
     }
     exportObj.expansions = {};
     exportObj.pilotsById = {};
     exportObj.pilotsByLocalizedName = {};
-    _ref14 = exportObj.pilots;
-    for (pilot_name in _ref14) {
-      pilot = _ref14[pilot_name];
+    _ref13 = exportObj.pilots;
+    for (pilot_name in _ref13) {
+      pilot = _ref13[pilot_name];
       exportObj.fixIcons(pilot);
       exportObj.pilotsById[pilot.id] = pilot;
       exportObj.pilotsByLocalizedName[pilot.name] = pilot;
-      _ref15 = pilot.sources;
-      for (_r = 0, _len9 = _ref15.length; _r < _len9; _r++) {
-        source = _ref15[_r];
+      _ref14 = pilot.sources;
+      for (_r = 0, _len9 = _ref14.length; _r < _len9; _r++) {
+        source = _ref14[_r];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2826,22 +2848,22 @@
       throw new Error("At least one pilot shares an ID with another");
     }
     exportObj.pilotsByFactionCanonicalName = {};
-    _ref16 = exportObj.pilots;
-    for (pilot_name in _ref16) {
-      pilot = _ref16[pilot_name];
+    _ref15 = exportObj.pilots;
+    for (pilot_name in _ref15) {
+      pilot = _ref15[pilot_name];
       ((_base = exportObj.pilotsByFactionCanonicalName)[_name = pilot.faction] != null ? _base[_name] : _base[_name] = {})[pilot.canonical_name] = pilot;
     }
     exportObj.upgradesById = {};
     exportObj.upgradesByLocalizedName = {};
-    _ref17 = exportObj.upgrades;
-    for (upgrade_name in _ref17) {
-      upgrade = _ref17[upgrade_name];
+    _ref16 = exportObj.upgrades;
+    for (upgrade_name in _ref16) {
+      upgrade = _ref16[upgrade_name];
       exportObj.fixIcons(upgrade);
       exportObj.upgradesById[upgrade.id] = upgrade;
       exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
-      _ref18 = upgrade.sources;
-      for (_s = 0, _len10 = _ref18.length; _s < _len10; _s++) {
-        source = _ref18[_s];
+      _ref17 = upgrade.sources;
+      for (_s = 0, _len10 = _ref17.length; _s < _len10; _s++) {
+        source = _ref17[_s];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2851,35 +2873,35 @@
       throw new Error("At least one upgrade shares an ID with another");
     }
     exportObj.upgradesBySlotCanonicalName = {};
-    _ref19 = exportObj.upgrades;
-    for (upgrade_name in _ref19) {
-      upgrade = _ref19[upgrade_name];
+    _ref18 = exportObj.upgrades;
+    for (upgrade_name in _ref18) {
+      upgrade = _ref18[upgrade_name];
       ((_base1 = exportObj.upgradesBySlotCanonicalName)[_name1 = upgrade.slot] != null ? _base1[_name1] : _base1[_name1] = {})[upgrade.canonical_name] = upgrade;
     }
     exportObj.modificationsById = {};
     exportObj.modificationsByLocalizedName = {};
-    _ref20 = exportObj.modifications;
-    for (modification_name in _ref20) {
-      modification = _ref20[modification_name];
+    _ref19 = exportObj.modifications;
+    for (modification_name in _ref19) {
+      modification = _ref19[modification_name];
       exportObj.fixIcons(modification);
       if (modification.huge != null) {
         if (modification.restriction_func == null) {
           modification.restriction_func = function(ship) {
-            var _ref21;
-            return (_ref21 = ship.data.huge) != null ? _ref21 : false;
+            var _ref20;
+            return (_ref20 = ship.data.huge) != null ? _ref20 : false;
           };
         }
       } else if (modification.restriction_func == null) {
         modification.restriction_func = function(ship) {
-          var _ref21;
-          return !((_ref21 = ship.data.huge) != null ? _ref21 : false);
+          var _ref20;
+          return !((_ref20 = ship.data.huge) != null ? _ref20 : false);
         };
       }
       exportObj.modificationsById[modification.id] = modification;
       exportObj.modificationsByLocalizedName[modification.name] = modification;
-      _ref21 = modification.sources;
-      for (_t = 0, _len11 = _ref21.length; _t < _len11; _t++) {
-        source = _ref21[_t];
+      _ref20 = modification.sources;
+      for (_t = 0, _len11 = _ref20.length; _t < _len11; _t++) {
+        source = _ref20[_t];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2889,22 +2911,22 @@
       throw new Error("At least one modification shares an ID with another");
     }
     exportObj.modificationsByCanonicalName = {};
-    _ref22 = exportObj.modifications;
-    for (modification_name in _ref22) {
-      modification = _ref22[modification_name];
+    _ref21 = exportObj.modifications;
+    for (modification_name in _ref21) {
+      modification = _ref21[modification_name];
       (exportObj.modificationsByCanonicalName != null ? exportObj.modificationsByCanonicalName : exportObj.modificationsByCanonicalName = {})[modification.canonical_name] = modification;
     }
     exportObj.titlesById = {};
     exportObj.titlesByLocalizedName = {};
-    _ref23 = exportObj.titles;
-    for (title_name in _ref23) {
-      title = _ref23[title_name];
+    _ref22 = exportObj.titles;
+    for (title_name in _ref22) {
+      title = _ref22[title_name];
       exportObj.fixIcons(title);
       exportObj.titlesById[title.id] = title;
       exportObj.titlesByLocalizedName[title.name] = title;
-      _ref24 = title.sources;
-      for (_u = 0, _len12 = _ref24.length; _u < _len12; _u++) {
-        source = _ref24[_u];
+      _ref23 = title.sources;
+      for (_u = 0, _len12 = _ref23.length; _u < _len12; _u++) {
+        source = _ref23[_u];
         if (!(source in exportObj.expansions)) {
           exportObj.expansions[source] = 1;
         }
@@ -2914,18 +2936,18 @@
       throw new Error("At least one title shares an ID with another");
     }
     exportObj.titlesByShip = {};
-    _ref25 = exportObj.titles;
-    for (title_name in _ref25) {
-      title = _ref25[title_name];
+    _ref24 = exportObj.titles;
+    for (title_name in _ref24) {
+      title = _ref24[title_name];
       if (!(title.ship in exportObj.titlesByShip)) {
         exportObj.titlesByShip[title.ship] = [];
       }
       exportObj.titlesByShip[title.ship].push(title);
     }
     exportObj.titlesByCanonicalName = {};
-    _ref26 = exportObj.titles;
-    for (title_name in _ref26) {
-      title = _ref26[title_name];
+    _ref25 = exportObj.titles;
+    for (title_name in _ref25) {
+      title = _ref25[title_name];
       (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
     }
     return exportObj.expansions = Object.keys(exportObj.expansions).sort();
@@ -2935,6 +2957,18 @@
     if (data.text != null) {
       return data.text = data.text.replace(/%ASTROMECH%/g, '<i class="xwing-font xwing-font-astromech"></i>').replace(/%BANKLEFT%/g, '<i class="xwing-font xwing-font-bankleft"></i>').replace(/%BANKRIGHT%/g, '<i class="xwing-font xwing-font-bankright"></i>').replace(/%BARRELROLL%/g, '<i class="xwing-font xwing-font-barrelroll"></i>').replace(/%BOMB%/g, '<i class="xwing-font xwing-font-bomb"></i>').replace(/%BOOST%/g, '<i class="xwing-font xwing-font-boost"></i>').replace(/%CANNON%/g, '<i class="xwing-font xwing-font-cannon"></i>').replace(/%CARGO%/g, '<i class="xwing-font xwing-font-cargo"></i>').replace(/%CLOAK%/g, '<i class="xwing-font xwing-font-cloak"></i>').replace(/%COORDINATE%/g, '<i class="xwing-font xwing-font-coordinate"></i>').replace(/%CRIT%/g, '<i class="xwing-font xwing-font-crit"></i>').replace(/%CREW%/g, '<i class="xwing-font xwing-font-crew"></i>').replace(/%ELITE%/g, '<i class="xwing-font xwing-font-elite"></i>').replace(/%EVADE%/g, '<i class="xwing-font xwing-font-evade"></i>').replace(/%FOCUS%/g, '<i class="xwing-font xwing-font-focus"></i>').replace(/%HARDPOINT%/g, '<i class="xwing-font xwing-font-hardpoint"></i>').replace(/%HIT%/g, '<i class="xwing-font xwing-font-hit"></i>').replace(/%ILLICIT%/g, '<i class="xwing-font xwing-font-illicit"></i>').replace(/%JAM%/g, '<i class="xwing-font xwing-font-jam"></i>').replace(/%KTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>').replace(/%MISSILE%/g, '<i class="xwing-font xwing-font-missile"></i>').replace(/%RECOVER%/g, '<i class="xwing-font xwing-font-recover"></i>').replace(/%REINFORCE%/g, '<i class="xwing-font xwing-font-reinforce"></i>').replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-font xwing-font-salvagedastromech"></i>').replace(/%SLOOPLEFT%/g, '<i class="xwing-font xwing-font-sloopleft"></i>').replace(/%SLOOPRIGHT%/g, '<i class="xwing-font xwing-font-sloopright"></i>').replace(/%STRAIGHT%/g, '<i class="xwing-font xwing-font-straight"></i>').replace(/%STOP%/g, '<i class="xwing-font xwing-font-stop"></i>').replace(/%SYSTEM%/g, '<i class="xwing-font xwing-font-system"></i>').replace(/%TARGETLOCK%/g, '<i class="xwing-font xwing-font-targetlock"></i>').replace(/%TEAM%/g, '<i class="xwing-font xwing-font-team"></i>').replace(/%TORPEDO%/g, '<i class="xwing-font xwing-font-torpedo"></i>').replace(/%TURNLEFT%/g, '<i class="xwing-font xwing-font-turnleft"></i>').replace(/%TURNRIGHT%/g, '<i class="xwing-font xwing-font-turnright"></i>').replace(/%TURRET%/g, '<i class="xwing-font xwing-font-turret"></i>').replace(/%UTURN%/g, '<i class="xwing-font xwing-font-kturn"></i>').replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship only.</span>').replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship only.</span>').replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>').replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>').replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>').replace(/%LINEBREAK%/g, '<br /><br />').replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>').replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>').replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>').replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>').replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>');
     }
+  };
+
+  exportObj.canonicalizeShipNames = function(card_data) {
+    var ship_data, ship_name, _ref, _results;
+    _ref = card_data.ships;
+    _results = [];
+    for (ship_name in _ref) {
+      ship_data = _ref[ship_name];
+      ship_data.english_name = ship_name;
+      _results.push(ship_data.canonical_name = ship_data.english_name.canonicalize());
+    }
+    return _results;
   };
 
   exportObj.renameShip = function(english_name, new_name) {
