@@ -442,23 +442,25 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."""
         # Firespray
         "Boba Fett (Scum)":
+            name: """Boba Fett (Racailles)"""
             text: """Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."""
-        "Kath Scarlet (Scum)":
-            text: """Cette carte n'a pas encore été révélée."""
-        "Emon Azzameen":
-            text: """Cette carte n'a pas encore été révélée."""
+        "Kath Scarlet (Scum)": # Traduit de l'anglais
+            name: """Kath Scarlet (Racailles)"""
+            text: """Quand vous attaquez un vaisseau dans votre arc de tir auxiliaire, lancez 1 dé d'attaque supplémentaire."""
+        "Emon Azzameen": # Traduit de l'anglais
+            text: """Quand vous larguez une bombe, vous pouvez utiliser le gabarit [%TURNLEFT% 3], [%STRAIGHT% 3], ou [%TURNRIGHT% 3] au lieu du gabarit [%STRAIGHT% 1]."""
         # Y-Wing, traduit de l'anglais
         "Kavil":
             text: """Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."""
         "Drea Renthal":
             text: """Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."""
         # HWK
-        "Dace Bonearm":
-            text: """Cette carte n'a pas encore été révélée."""
-        "Palob Godalhi":
-            text: """Cette carte n'a pas encore été révélée."""
-        "Torkil Mux":
-            text: """Cette carte n'a pas encore été révélée."""
+        "Dace Bonearm": # Traduit de l'anglais
+            text: """Quand un vaisseau ennemi à portée 1-3 reçoit au moins 1 marqueur ionique, si vous n'êtes pas stressé, vous pouvez recevoir 1 marqueur de stress pour que ce vaisseau subisse 1 dégât."""
+        "Palob Godalhi": # Traduit de l'anglais
+            text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur concentration ou évasion d'un vaisseau ennemi à portée 1-2 et l'assigner à vous-même."""
+        "Torkil Mux": # Traduit de l'anglais
+            text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi à portée 1-2. Jusqu'à la fin de la phase de combat, traitez la valeur de pilotage de ce vaisseau comme "0"."""
         # Z-95, traduit de l'anglais
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
@@ -729,6 +731,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."""
         "Greedo": # Traduction non officielle
             text: """%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
+        "Outlaw Tech": # Traduction non officielle
+            text: """Après avoir exécuté une manœuvre rouge, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."""
         # Soute
         "Frequency Jammer":
             name: "Brouilleurs de fréquence"
@@ -803,6 +807,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous attaquez, si vous avez une acquisition de cible sur le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir autant de dés de défense que souhaité. Le défenseur doit relancer les dés choisis."""
         "R4 Agromech": # Traduction non officielle
             text: """Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."""
+        "K4 Security Droid": # Traduction non officielle
+            text: """Après avoir exécuté une manœuvre verte, vous pouvez effectuer une acquisition de cible."""
 
     modification_translations =
         "Shield Upgrade":
@@ -907,5 +913,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
         "BTL-A4 Y-Wing": # Traduction non officielle
             text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""
+        "Andrasta": # Traduction non officielle
+            text: """Votre barre d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."""
  
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
