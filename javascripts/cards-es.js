@@ -566,7 +566,7 @@
       "Kath Scarlet (Scum)": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS6 Scum Firespray Pilot": {
+      "Emon Azzameen": {
         text: "Esta carta todavía no ha sido revelada."
       },
       "Kavil": {
@@ -575,13 +575,13 @@
       "Drea Renthal": {
         text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
       },
-      "Unspoiled PS7 Scum HWK Pilot": {
+      "Dace Bonearm": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS5 Scum HWK Pilot": {
+      "Palob Godalhi": {
         text: "Esta carta todavía no ha sido revelada."
       },
-      "Unspoiled PS3 Scum HWK Pilot": {
+      "Torkil Mux": {
         text: "Esta carta todavía no ha sido revelada."
       },
       "N'Dru Suhlak": {

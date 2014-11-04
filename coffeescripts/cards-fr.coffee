@@ -445,7 +445,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."""
         "Kath Scarlet (Scum)":
             text: """Cette carte n'a pas encore été révélée."""
-        "Unspoiled PS6 Scum Firespray Pilot":
+        "Emon Azzameen":
             text: """Cette carte n'a pas encore été révélée."""
         # Y-Wing, traduit de l'anglais
         "Kavil":
@@ -453,11 +453,11 @@ exportObj.cardLoaders['Français'] = () ->
         "Drea Renthal":
             text: """Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."""
         # HWK
-        "Unspoiled PS7 Scum HWK Pilot":
+        "Dace Bonearm":
             text: """Cette carte n'a pas encore été révélée."""
-        "Unspoiled PS5 Scum HWK Pilot":
+        "Palob Godalhi":
             text: """Cette carte n'a pas encore été révélée."""
-        "Unspoiled PS3 Scum HWK Pilot":
+        "Torkil Mux":
             text: """Cette carte n'a pas encore été révélée."""
         # Z-95, traduit de l'anglais
         "N'Dru Suhlak":

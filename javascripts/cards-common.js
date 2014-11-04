@@ -1336,25 +1336,25 @@
           id: 117,
           ship: "Firespray-31",
           skill: 7,
-          points: 99,
-          slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
+          points: 38,
+          slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS6 Scum Firespray Pilot",
+          name: "Emon Azzameen",
           unique: true,
           faction: "Scum and Villainy",
           id: 118,
           ship: "Firespray-31",
           skill: 6,
-          points: 99,
+          points: 36,
           slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
-          name: "Unspoiled PS5 Scum Firespray Pilot",
+          name: "Mandalorian Mercenary",
           faction: "Scum and Villainy",
           id: 119,
           ship: "Firespray-31",
           skill: 5,
-          points: 99,
-          slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
+          points: 35,
+          slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
           name: "Kavil",
           unique: true,
@@ -1390,32 +1390,32 @@
           points: 18,
           slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS7 Scum HWK Pilot",
+          name: "Dace Bonearm",
           unique: true,
           faction: "Scum and Villainy",
           id: 124,
           ship: "HWK-290",
           skill: 7,
-          points: 99,
-          slots: []
+          points: 23,
+          slots: ["Elite", "Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS5 Scum HWK Pilot",
+          name: "Palob Godalhi",
           unique: true,
           faction: "Scum and Villainy",
           id: 125,
           ship: "HWK-290",
           skill: 5,
-          points: 99,
-          slots: []
+          points: 20,
+          slots: ["Elite", "Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS3 Scum HWK Pilot",
+          name: "Torkil Mux",
           unique: true,
           faction: "Scum and Villainy",
           id: 126,
           ship: "HWK-290",
           skill: 3,
-          points: 99,
-          slots: []
+          points: 19,
+          slots: ["Turret", "Crew", "Illicit"]
         }, {
           name: "Unspoiled PS1 Scum HWK Pilot",
           faction: "Scum and Villainy",
@@ -2259,6 +2259,19 @@
           id: 121,
           slot: "Salvaged Astromech",
           points: 2
+        }, {
+          name: "K4 Security Droid",
+          id: 122,
+          slot: "Crew",
+          faction: "Scum and Villainy",
+          points: 3
+        }, {
+          name: "Outlaw Tech",
+          id: 123,
+          limited: true,
+          slot: "Crew",
+          faction: "Scum and Villainy",
+          points: 2
         }
       ],
       modificationsById: [
@@ -2608,6 +2621,21 @@
           id: 21,
           points: 0,
           ship: "Y-Wing"
+        }, {
+          name: "Andrasta",
+          id: 22,
+          unique: true,
+          points: 0,
+          ship: "Firespray-31",
+          confersAddons: [
+            {
+              type: exportObj.Upgrade,
+              slot: "Bomb"
+            }, {
+              type: exportObj.Upgrade,
+              slot: "Bomb"
+            }
+          ]
         }
       ]
     };

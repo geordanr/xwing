@@ -350,10 +350,10 @@
         text: "When attacking or defending, you may reroll 1 of your dice for each enemy ship at Range 1."
       },
       "Kath Scarlet (Scum)": {
-        text: "This card has not yet been revealed."
+        text: "When attacking a ship inside your auxiliary firing arc, roll 1 additional attack die."
       },
-      "Unspoiled PS6 Scum Firespray Pilot": {
-        text: "This card has not yet been revealed."
+      "Emon Azzameen": {
+        text: "When dropping a bomb, you may use the [%TURNLEFT% 3], [%STRAIGHT% 3], or [%TURNRIGHT% 3] template instead of the [%STRAIGHT% 1] template."
       },
       "Kavil": {
         text: "When attacking a ship outside your firing arc, roll 1 additional attack die."
@@ -361,14 +361,14 @@
       "Drea Renthal": {
         text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
       },
-      "Unspoiled PS7 Scum HWK Pilot": {
-        text: "This card has not yet been revealed."
+      "Dace Bonearm": {
+        text: "When an enemy ship at Range 1-3 receives at least 1 ion token, if you are not stressed, you may receive 1 stress token to cause that ship to suffer 1 damage."
       },
-      "Unspoiled PS5 Scum HWK Pilot": {
-        text: "This card has not yet been revealed."
+      "Palob Godalhi": {
+        text: "At the start of the Combat phase, you may remove 1 focus or evade token from an enemy ship at Range 1-2 and assign it to yourself."
       },
-      "Unspoiled PS3 Scum HWK Pilot": {
-        text: "This card has not yet been revealed."
+      "Torkil Mux": {
+        text: "At the end of the Activation phase, choose 1 enemy ship at Range 1-2. Until the end of the Combat phase, treat that ship's pilot skill value as \"0\"."
       },
       "N'Dru Suhlak": {
         text: "When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."
@@ -743,6 +743,12 @@
       },
       "R4 Agromech": {
         text: "When attacking, after you spend a focus token, you may acquire a target lock on the defender."
+      },
+      "K4 Security Droid": {
+        text: "After executing a green maneuver, you may acquire a target lock."
+      },
+      "Outlaw Tech": {
+        text: "After you execute a red maneuver, you may assign 1 focus token to your ship."
       }
     };
     modification_translations = {
@@ -852,6 +858,9 @@
       },
       "BTL-A4 Y-Wing": {
         text: "<span class=\"card-restriction\">Y-Wing only.</span>%LINEBREAK%You cannot attack ships outside your firing arc. After you perform a primary weapon attack, you may immediately perform an attack with a %TURRET% secondary weapon."
+      },
+      "Andrasta": {
+        text: "Your upgrade bar gains two additional %BOMB% upgrade icons."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
