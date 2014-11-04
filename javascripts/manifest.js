@@ -576,7 +576,7 @@
         type: 'pilot',
         count: 1
       }, {
-        name: 'Proton Bombs',
+        name: 'Proton Bomb',
         type: 'upgrade',
         count: 1
       }, {
@@ -953,7 +953,7 @@
         type: 'modification',
         count: 2
       }, {
-        name: 'Proton Bombs',
+        name: 'Proton Bomb',
         type: 'upgrade',
         count: 1
       }, {

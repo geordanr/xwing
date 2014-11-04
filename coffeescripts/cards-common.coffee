@@ -2066,8 +2066,9 @@ exportObj.basicCardData = ->
             id: 117
             ship: "Firespray-31"
             skill: 7
-            points: 99
+            points: 38
             slots: [
+                "Elite"
                 "Cannon"
                 "Bomb"
                 "Crew"

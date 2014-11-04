@@ -1336,8 +1336,8 @@
           id: 117,
           ship: "Firespray-31",
           skill: 7,
-          points: 99,
-          slots: ["Cannon", "Bomb", "Crew", "Missile", "Illicit"]
+          points: 38,
+          slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
           name: "Emon Azzameen",
           unique: true,
@@ -1702,7 +1702,7 @@
           slot: "Crew",
           points: 1
         }, {
-          name: "Proton Bombs",
+          name: "Proton Bomb",
           id: 41,
           slot: "Bomb",
           points: 5

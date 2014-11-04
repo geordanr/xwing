@@ -1,5 +1,5 @@
 (function() {
-  var QRErrorCorrectLevel, exportObj;
+  var exportObj;
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
@@ -29,13 +29,6 @@
     'elitepilottalent': 'Elite',
     'mod': 'Modification',
     'samd': 'Salvaged Astromech'
-  };
-
-  QRErrorCorrectLevel = {
-    L: 1,
-    M: 0,
-    Q: 3,
-    H: 2
   };
 
   exportObj.XWSManager = (function() {
@@ -77,13 +70,10 @@
             xws_json = JSON.stringify(builder.toXWS());
             textarea.val(xws_json);
             $('#xws-qrcode-container').text('');
-            $('#xws-qrcode-container').qrcode({
-              text: exportObj.pako.deflate(xws_json, {
-                to: 'string',
-                level: 9
-              }),
-              correctLevel: QRErrorCorrectLevel.L
-            });
+            $('#xws-qrcode-container').qrcode(exportObj.pako.deflate(xws_json, {
+              to: 'string',
+              level: 9
+            }));
             _this.xws_export_modal.modal('show');
             $('#xws-text-tab').tab('show');
             textarea.select();

@@ -361,12 +361,6 @@
       "Drea Renthal": {
         text: "After you spend a target lock, you may receive 1 stress token to acquire a target lock."
       },
-      "N'Dru Suhlak": {
-        text: "When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."
-      },
-      "Kaa'To Leeachos": {
-        text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
-      },
       "Dace Bonearm": {
         text: "When an enemy ship at Range 1-3 receives at least 1 ion token, if you are not stressed, you may receive 1 stress token to cause that ship to suffer 1 damage."
       },
@@ -375,6 +369,12 @@
       },
       "Torkil Mux": {
         text: "At the end of the Activation phase, choose 1 enemy ship at Range 1-2. Until the end of the Combat phase, treat that ship's pilot skill value as \"0\"."
+      },
+      "N'Dru Suhlak": {
+        text: "When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."
+      },
+      "Kaa'To Leeachos": {
+        text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
       }
     };
     upgrade_translations = {
@@ -501,7 +501,7 @@
       "Intelligence Agent": {
         text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."
       },
-      "Proton Bombs": {
+      "Proton Bomb": {
         text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Proton Bomb Token:</strong> When this bomb token detonates, deal 1 <strong>faceup</strong> Damage card to each ship at Range 1 of the token.  Then discard this token."
       },
       "Adrenaline Rush": {
