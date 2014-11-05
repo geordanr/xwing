@@ -522,13 +522,15 @@
         text: "Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."
       },
       "Boba Fett (Scum)": {
+        name: "Boba Fett (Racailles)",
         text: "Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."
       },
       "Kath Scarlet (Scum)": {
-        text: "Cette carte n'a pas encore été révélée."
+        name: "Kath Scarlet (Racailles)",
+        text: "Quand vous attaquez un vaisseau dans votre arc de tir auxiliaire, lancez 1 dé d'attaque supplémentaire."
       },
       "Emon Azzameen": {
-        text: "Cette carte n'a pas encore été révélée."
+        text: "Quand vous larguez une bombe, vous pouvez utiliser le gabarit [%TURNLEFT% 3], [%STRAIGHT% 3], ou [%TURNRIGHT% 3] au lieu du gabarit [%STRAIGHT% 1]."
       },
       "Kavil": {
         text: "Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."
@@ -537,13 +539,13 @@
         text: "Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."
       },
       "Dace Bonearm": {
-        text: "Cette carte n'a pas encore été révélée."
+        text: "Quand un vaisseau ennemi à portée 1-3 reçoit au moins 1 marqueur ionique, si vous n'êtes pas stressé, vous pouvez recevoir 1 marqueur de stress pour que ce vaisseau subisse 1 dégât."
       },
       "Palob Godalhi": {
-        text: "Cette carte n'a pas encore été révélée."
+        text: "Au début de la phase de combat, vous pouvez enlever 1 marqueur concentration ou évasion d'un vaisseau ennemi à portée 1-2 et l'assigner à vous-même."
       },
       "Torkil Mux": {
-        text: "Cette carte n'a pas encore été révélée."
+        text: "Au début de la phase d'activation, choisissez 1 vaisseau ennemi à portée 1-2. Jusqu'à la fin de la phase de combat, traitez la valeur de pilotage de ce vaisseau comme \"0\"."
       },
       "N'Dru Suhlak": {
         ship: "Chasseur de têtes Z-95",
@@ -892,7 +894,7 @@
         text: "<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."
       },
       "Dash Rendar": {
-        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques lorsque vous chevauchez un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."
+        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent <strong>pas être gênées</strong>."
       },
       "Ysanne Isard": {
         text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
@@ -902,6 +904,9 @@
       },
       "Greedo": {
         text: "%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
+      },
+      "Outlaw Tech": {
+        text: "Après avoir exécuté une manœuvre rouge, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."
       },
       "Frequency Jammer": {
         name: "Brouilleurs de fréquence",
@@ -997,6 +1002,9 @@
       },
       "R4 Agromech": {
         text: "Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."
+      },
+      "K4 Security Droid": {
+        text: "Après avoir exécuté une manœuvre verte, vous pouvez effectuer une acquisition de cible."
       }
     };
     modification_translations = {
@@ -1136,6 +1144,9 @@
       },
       "BTL-A4 Y-Wing": {
         text: "<span class=\"card-restriction\">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."
+      },
+      "Andrasta": {
+        text: "Votre barre d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
