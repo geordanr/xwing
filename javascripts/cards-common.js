@@ -210,7 +210,9 @@
           actions: ["Coordinate", "Target Lock"],
           huge: true,
           epic_points: 1.5,
-          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
+          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]],
+          multisection: ["CR90 Corvette (Aft)".canonicalize()],
+          canonical_name: "CR90 Corvette".canonicalize()
         },
         "CR90 Corvette (Aft)": {
           name: "CR90 Corvette (Aft)",
@@ -222,7 +224,9 @@
           actions: ["Reinforce", "Recover"],
           huge: true,
           epic_points: 1.5,
-          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
+          maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]],
+          multisection: ["CR90 Corvette (Fore)".canonicalize()],
+          canonical_name: "CR90 Corvette".canonicalize()
         },
         "YT-2400": {
           name: "YT-2400",
@@ -1320,7 +1324,7 @@
           slots: ["Missile", "Illicit"]
         }, {
           name: "Boba Fett (Scum)",
-          canonical_name: 'bobafett',
+          canonical_name: 'Boba Fett'.canonicalize(),
           faction: "Scum and Villainy",
           id: 116,
           ship: "Firespray-31",
@@ -1330,7 +1334,7 @@
           slots: ["Elite", "Cannon", "Bomb", "Crew", "Missile", "Illicit"]
         }, {
           name: "Kath Scarlet (Scum)",
-          canonical_name: 'kathscarlet',
+          canonical_name: 'Kath Scarlet'.canonicalize(),
           unique: true,
           faction: "Scum and Villainy",
           id: 117,
@@ -2580,6 +2584,7 @@
           ]
         }, {
           name: '"Heavy Scyk" Interceptor (Cannon)',
+          canonical_name: '"Heavy Scyk" Interceptor'.canonicalize(),
           id: 17,
           points: 2,
           ship: "M3-A Interceptor",
@@ -2591,6 +2596,7 @@
           ]
         }, {
           name: '"Heavy Scyk" Interceptor (Torpedo)',
+          canonical_name: '"Heavy Scyk" Interceptor'.canonicalize(),
           id: 18,
           points: 2,
           ship: "M3-A Interceptor",
@@ -2602,6 +2608,7 @@
           ]
         }, {
           name: '"Heavy Scyk" Interceptor (Missile)',
+          canonical_name: '"Heavy Scyk" Interceptor'.canonicalize(),
           id: 19,
           points: 2,
           ship: "M3-A Interceptor",
@@ -2642,7 +2649,7 @@
   };
 
   exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+    var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
     _ref = basic_cards.pilotsById;
     for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
       pilot_data = _ref[i];
@@ -2948,7 +2955,11 @@
     _ref25 = exportObj.titles;
     for (title_name in _ref25) {
       title = _ref25[title_name];
-      (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
+      if (title.canonical_name === '"Heavy Scyk" Interceptor'.canonicalize()) {
+        ((_base2 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name2 = title.canonical_name] != null ? _base2[_name2] : _base2[_name2] = []).push(title);
+      } else {
+        (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
+      }
     }
     return exportObj.expansions = Object.keys(exportObj.expansions).sort();
   };
@@ -2966,7 +2977,7 @@
     for (ship_name in _ref) {
       ship_data = _ref[ship_name];
       ship_data.english_name = ship_name;
-      _results.push(ship_data.canonical_name = ship_data.english_name.canonicalize());
+      _results.push(ship_data.canonical_name != null ? ship_data.canonical_name : ship_data.canonical_name = ship_data.english_name.canonicalize());
     }
     return _results;
   };
