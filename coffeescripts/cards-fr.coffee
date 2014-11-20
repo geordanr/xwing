@@ -284,21 +284,21 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Navette de classe Lambda"
             name:"Pilote du groupe Omicron"
         # Décimateur VT-49
-        "Captain Oicunn":  # Traduction non officielle
+        "Captain Oicunn": 
             ship: "Décimateur VT-49"
             name: "Capitaine Oicunn"
-            text: """Après avoir exécuté une manœuvre, chaque vaisseau ennemi que vous touchez subit 1 dégât."""
-        "Rear Admiral Chiraneau": # Traduction non officielle
+            text: """Après avoir exécuté une manœuvre, chaque vaisseau ennemi avec lequel vous êtes au contact subit 1 dégât."""
+        "Rear Admiral Chiraneau":
             ship: "Décimateur VT-49"
-            name: "Contre Amiral Chiraneau"
-            text: """Quand vous attaquez à portée 1-2, vous pouvez échanger 1 de vos résultats %FOCUS% contre un résultat %CRIT%."""
+            name: "Contre-Amiral Chiraneau"
+            text: """Quand vous attaquez à portée 1-2, vous pouvez changer 1 de vos résultats %FOCUS% en résultat %CRIT%."""
         "Patrol Leader": # Traduction non officielle
             ship: "Décimateur VT-49"
             name: "Chef de Patrouille"
-        "Commander Kenkirk": # Traduction non officielle
+        "Commander Kenkirk":
             ship: "Décimateur VT-49"
             name: "Commandant Kenkirk"
-            text: """Si vous n'avez plus de boucliers et au moins 1 carte dégâts assignée à votre vaisseau, augmentez votre valeur d'agilité de 1."""
+            text: """Si vous n'avez plus de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."""
             
         # Rebels
         # X-Wing
@@ -412,11 +412,11 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Corvette CR90 (poupe)"
         # YT-2400, traduit de l'anglais
         "Dash Rendar":
-            text: """Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."""
+            text: """Vous pouvez ignorer les obstacles durant la phase d'activation et quand vous effectuez des actions."""
         '"Leebo"':
-            text: """Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle, choisissez la carte que vous voulez résoudre, et défaussez l'autre."""
+            text: """Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle, choisissez-en 1 que vous résolvez et défaussez l'autre."""
         "Eaden Vrill":
-            text: """Quand vous effectuez une attaque d'arme principale contre un vaisseau stressé, lancez 1 dé d'attaque supplémentaire."""
+            text: """Quand vous effectuez une attaque d'arme principale contre un vaisseau sous l'effet du stress, lancez 1 dé d'attaque additionnel."""
         "Wild Space Fringer":
             name: "Wild Space Fringer"
             
@@ -525,8 +525,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Opportunist":
             name: "Opportuniste"
             text: """Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.%LINEBREAK%Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."""
-        "Lone Wolf": # Traduction non officielle
-            text: """Quand vous attaquez ou défendez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."""
+        "Lone Wolf":
+            name : "Loup Solitaire"
+            text: """Quand vous attaquez ou défendez, s'il n'y a pas de vaisseaux alliés à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."""
         "Stay On Target":
             name: "Restez en ligne"
             text: """Quand vous révélez une manœuvre, vous pouvez tourner votre cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Traitez cette manœuvre comme une manœuvre rouge."""
