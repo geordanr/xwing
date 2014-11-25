@@ -450,6 +450,13 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Boost"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 1, 2, 2, 2, 1, 0, 0, 0]
+                [ 1, 1, 2, 1, 1, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0, 3, 3]
+                [ 0, 0, 1, 0, 0, 0, 0, 0]
+            ]
         "M3-A Interceptor":
             name: "M3-A Interceptor"
             factions: [ "Scum and Villainy" ]
@@ -1846,35 +1853,36 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 StarViper Pilot"
+            name: "Guri"
             faction: "Scum and Villainy"
             id: 101
             unique: true
             ship: "StarViper"
             skill: 5
-            points: 99
+            points: 30
             slots: [
+                "Elite"
                 "Torpedo"
             ]
         }
         {
-            name: "Black ???"
+            name: "Black Sun Vigo"
             faction: "Scum and Villainy"
             id: 102
             ship: "StarViper"
             skill: 3
-            points: 99
+            points: 27
             slots: [
                 "Torpedo"
             ]
         }
         {
-            name: "Black Sun ???"
+            name: "Black Sun Enforcer"
             faction: "Scum and Villainy"
             id: 103
             ship: "StarViper"
             skill: 1
-            points: 99
+            points: 25
             slots: [
                 "Torpedo"
             ]
@@ -3250,9 +3258,11 @@ exportObj.basicCardData = ->
                 ship.data.large ? false
         }
         {
-            name: "Autoth???"
+            name: "Autothrusters"
             id: 15
-            points: 99
+            points: 2
+            restriction_func: (ship) ->
+                "Boost" in ship.effectiveStats().actions
         }
     ]
 

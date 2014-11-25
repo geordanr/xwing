@@ -440,6 +440,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Después de ejecutar un maniobra, cada nave enemiga que estés tocando sufre 1 daño."""
         "Prince Xizor":
             text: """Cuando defiendas, una unidad aliada a alcance 1 puede sufrir 1 de los resultados de %HIT% o %CRIT% no cancelado."""
+        "Guri":
+            text: """At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."""
         "Serissu":
             text: """Cuando otra nave aliada a alcance 1 defienda, podrá volver a tirar 1 dado de defensa."""
         "Laetin A'shera":
@@ -845,8 +847,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Una vez por ronda, trás realizar una acción, puedes hacer una acción gratuita de alguna de tus mejoras equipadas que tenga el texto "<strong>Acción:</strong>".  Recibe una ficha de tension."""
         "Tactical Jammer":
             text: """Tu nave obstruye ataques enemigos."""
-        "Autoth???":
-            text: """Esta carta todavía no ha sido revelada."""
+        "Autothrusters":
+            text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
             
     title_translations =
         "Slave I":

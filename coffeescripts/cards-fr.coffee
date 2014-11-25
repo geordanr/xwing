@@ -424,6 +424,8 @@ exportObj.cardLoaders['Français'] = () ->
         # Starviper, traduit de l'anglais
         "Prince Xizor":
             text: """Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."""
+        "Guri":
+            text: """At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."""
         # Intercepteur M3-A, traduit de l'anglais
         "Serissu":
             ship: "Intercepteur M3-A"
@@ -854,8 +856,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Tactical Jammer": # Traduction non officielle
             name: "Brouilleur tactique"
             text: """%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
-        "Autoth???":
-            text: """Cette carte n'a pas encore été dévoilée."""
+        "Autothrusters":
+            text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
 
     title_translations =
         "Slave I":

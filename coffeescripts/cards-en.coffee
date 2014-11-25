@@ -256,6 +256,8 @@ exportObj.cardLoaders.English = () ->
             text: """After executing a maneuver, each enemy ship you are touching suffers 1 damage."""
         "Prince Xizor":
             text: """When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."""
+        "Guri":
+            text: """At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."""
         "Serissu":
             text: """When another friendly ship at Range 1 is defending, it may reroll 1 defense die."""
         "Laetin A'shera":
@@ -568,8 +570,8 @@ exportObj.cardLoaders.English = () ->
             text: """Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the "<strong>Action:</strong>" header.  Then receive 1 stress token."""
         "Tactical Jammer":
             text: """%LARGESHIPONLY%%LINEBREAK%Your ship can obstruct enemy attacks."""
-        "Autoth???":
-            text: """This card has not yet been revealed."""
+        "Autothrusters":
+            text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
 
     title_translations =
         "Slave I":
