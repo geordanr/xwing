@@ -60,6 +60,12 @@ Spanish translations courtesy [evil_wins Solo](http://boardgamegeek.com/user/seb
 CHANGELOG
 =========
 
+24 Nov 2014
+-----------
+
+* I'm terrible at updating this.
+* [XWS](https://github.com/elistevens/xws-spec) support.
+
 2 Oct 2014
 ----------
 * Finally, support for tracking which expansions you own.

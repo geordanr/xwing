@@ -617,7 +617,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Proximity Mines":
             name: "Mines de proximité"
             text: """<strong>Action :</strong> défaussez cette carte pour <strong>larguer</strong> 1 marqueur de mines de proximité. Quand un vaisseau exécute une manœuvre, si son socle ou son gabarit de manœuvre chevauche ce marqueur, ce marqueur <strong>explose</strong>."""
-        "Proton Bomb":
+        "Proton Bombs":
             name: "Bombes à protons"
             text: """Quand vous révélez votre cadran de manoeuvres, vous pouvez défausser cette carte pour <strong>larguer</strong> 1 marqueur de bombe à protons.%LINEBREAK%Ce marqueur <strong>explose</strong> à la fin de la phase d'activation."""
         # Canons

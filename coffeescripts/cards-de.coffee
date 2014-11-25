@@ -491,7 +491,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Intelligence Agent":
             name: "Geheimagent"
             text: """Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Du darfst dir das ausgewählte Manöver dieses Schiffs ansehen."""
-        "Proton Bomb":
+        "Proton Bombs":
             name: "Protonenbomben"
             text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
         "Adrenaline Rush":

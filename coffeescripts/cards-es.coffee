@@ -592,7 +592,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Intelligence Agent":
             name: "Agente del Servicio de Inteligencia"
             text: """Al comienzo de la fase de Activación, elige una nave enemiga que tengas a alcance 1-2. Puedes mirar el selector de maniobras de dicha nave."""
-        "Proton Bomb":
+        "Proton Bombs":
             name: "Bombas de Protones"
             text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bombas de Protones.<br /><br />Esta ficha se <strong>detona</strong> al final de la fase de Activación."""
         "Adrenaline Rush":
