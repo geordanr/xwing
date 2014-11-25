@@ -1873,7 +1873,7 @@
     };
 
     SquadBuilder.prototype.toXWS = function() {
-      var ship, xws, _i, _len, _ref;
+      var candidate, last_id, match, matches, multisection_id_to_pilots, pilot, ship, unmatched, unmatched_pilot, xws, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _name, _ref, _ref1, _ref2, _ref3;
       xws = {
         description: this.getNotes(),
         faction: exportObj.toXWSFaction[this.faction],
@@ -1881,11 +1881,13 @@
         pilots: [],
         points: this.total_points,
         vendor: {
-          builder: '(Yet Another) X-Wing Miniatures Squad Builder',
-          builder_link: window.location.href.split('?')[0],
-          link: this.permalink.attr('href')
+          yasb: {
+            builder: '(Yet Another) X-Wing Miniatures Squad Builder',
+            builder_url: window.location.href.split('?')[0],
+            link: this.permalink.attr('href')
+          }
         },
-        version: '0.1.0'
+        version: '0.2.0'
       };
       _ref = this.ships;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -1894,15 +1896,69 @@
           xws.pilots.push(ship.toXWS());
         }
       }
+      multisection_id_to_pilots = {};
+      last_id = 0;
+      unmatched = (function() {
+        var _j, _len1, _ref1, _results;
+        _ref1 = xws.pilots;
+        _results = [];
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          pilot = _ref1[_j];
+          if (pilot.multisection != null) {
+            _results.push(pilot);
+          }
+        }
+        return _results;
+      })();
+      for (_ = _j = 0, _ref1 = Math.pow(unmatched.length, 2); 0 <= _ref1 ? _j < _ref1 : _j > _ref1; _ = 0 <= _ref1 ? ++_j : --_j) {
+        unmatched_pilot = unmatched.shift();
+        if (unmatched_pilot.multisection_id == null) {
+          unmatched_pilot.multisection_id = last_id++;
+        }
+        if (multisection_id_to_pilots[_name = unmatched_pilot.multisection_id] == null) {
+          multisection_id_to_pilots[_name] = [unmatched_pilot];
+        }
+        if (unmatched.length === 0) {
+          break;
+        }
+        matches = [];
+        for (_k = 0, _len1 = unmatched.length; _k < _len1; _k++) {
+          candidate = unmatched[_k];
+          if (_ref2 = unmatched_pilot.name, __indexOf.call(candidate.multisection, _ref2) >= 0) {
+            matches.push(candidate);
+            unmatched_pilot.multisection.removeItem(candidate.name);
+            candidate.multisection.removeItem(unmatched_pilot.name);
+            candidate.multisection_id = unmatched_pilot.multisection_id;
+            multisection_id_to_pilots[candidate.multisection_id].push(candidate);
+            if (unmatched_pilot.multisection.length === 0) {
+              break;
+            }
+          }
+        }
+        for (_l = 0, _len2 = matches.length; _l < _len2; _l++) {
+          match = matches[_l];
+          if (match.multisection.length === 0) {
+            unmatched.removeItem(match);
+          }
+        }
+      }
+      _ref3 = xws.pilots;
+      for (_m = 0, _len3 = _ref3.length; _m < _len3; _m++) {
+        pilot = _ref3[_m];
+        if (pilot.multisection != null) {
+          delete pilot.multisection;
+        }
+      }
       return xws;
     };
 
     SquadBuilder.prototype.loadFromXWS = function(xws, cb) {
-      var addon, addon_added, addons, err, error, i, modification, new_ship, pilot, slot, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+      var a, addon, addon_added, addons, err, error, i, modification, new_ship, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
       success = null;
       error = null;
       switch (xws.version) {
-        case '0.1.0':
+        case '0.2.0':
+        case '0.1.1':
           xws_faction = exportObj.fromXWSFaction[xws.faction];
           if (this.faction !== xws_faction) {
             throw new Error("Attempted to load XWS for " + xws.faction + " but builder is " + this.faction);
@@ -1973,7 +2029,26 @@
                     break;
                   case 'Title':
                     if (new_ship.title.data == null) {
-                      new_ship.title.setData(addon.data);
+                      if (addon.data instanceof Array) {
+                        slot_guesses = (function() {
+                          var _len3, _m, _ref5, _results;
+                          _results = [];
+                          for (_m = 0, _len3 = addons.length; _m < _len3; _m++) {
+                            a = addons[_m];
+                            if ((_ref5 = a.data.slot) === 'Cannon' || _ref5 === 'Missile' || _ref5 === 'Torpedo') {
+                              _results.push(a.data.slot);
+                            }
+                          }
+                          return _results;
+                        })();
+                        if (slot_guesses.length > 0) {
+                          new_ship.title.setData(exportObj.titlesByLocalizedName["\"Heavy Scyk\" Interceptor (" + slot_guesses[0] + ")"]);
+                        } else {
+                          new_ship.title.setData(addon.data[0]);
+                        }
+                      } else {
+                        new_ship.title.setData(addon.data);
+                      }
                       addon_added = true;
                     }
                     break;
@@ -2195,7 +2270,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1611
+                        lineno: 1660
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2265,7 +2340,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1635
+                  lineno: 1684
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2318,14 +2393,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1657
+              lineno: 1706
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1659
+              lineno: 1708
             }));
           }
           _ref1 = _this.modifications;
@@ -2333,7 +2408,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1661
+                lineno: 1710
               }));
             }
           }
@@ -2973,29 +3048,35 @@
     };
 
     Ship.prototype.toXWS = function() {
-      var modification, upgrade, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+      var modification, upgrade, upgrade_obj, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
       xws = {
         name: this.pilot.canonical_name,
         points: this.getPoints(),
-        ship: this.data.canonical_name,
-        upgrades: {}
+        ship: this.data.canonical_name
       };
+      if (this.data.multisection) {
+        xws.multisection = this.data.multisection.slice(0);
+      }
+      upgrade_obj = {};
       _ref = this.upgrades;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         upgrade = _ref[_i];
         if ((upgrade != null ? upgrade.data : void 0) != null) {
-          upgrade.toXWS(xws.upgrades);
+          upgrade.toXWS(upgrade_obj);
         }
       }
       _ref1 = this.modifications;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
         modification = _ref1[_j];
         if ((modification != null ? modification.data : void 0) != null) {
-          modification.toXWS(xws.upgrades);
+          modification.toXWS(upgrade_obj);
         }
       }
       if (((_ref2 = this.title) != null ? _ref2.data : void 0) != null) {
-        this.title.toXWS(xws.upgrades);
+        this.title.toXWS(upgrade_obj);
+      }
+      if (Object.keys(upgrade_obj).length > 0) {
+        xws.upgrades = upgrade_obj;
       }
       return xws;
     };
@@ -3033,7 +3114,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 2165
+                  lineno: 2221
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -3131,7 +3212,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 2211
+                    lineno: 2267
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -3153,7 +3234,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2214
+                      lineno: 2270
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3218,7 +3299,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2239
+              lineno: 2295
             }));
           }
           __iced_deferrals._fulfill();
