@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["YT-2400 Freighter Expansion Pack", "VT-49 Decimator Expansion Pack", "StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack"];
+  exportObj.unreleasedExpansions = ["StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;

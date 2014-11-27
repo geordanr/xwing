@@ -2,8 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "YT-2400 Freighter Expansion Pack"
-    "VT-49 Decimator Expansion Pack"
     "StarViper Expansion Pack"
     "M3-A Interceptor Expansion Pack"
     "IG-2000 Expansion Pack"
