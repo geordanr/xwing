@@ -1168,6 +1168,11 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
     ]
     'Imperial Aces Expansion Pack': [
         {
