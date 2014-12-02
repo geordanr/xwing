@@ -327,12 +327,12 @@
       "Captain Oicunn": {
         ship: "Décimateur VT-49",
         name: "Capitaine Oicunn",
-        text: "Après avoir exécuté une manœuvre, chaque vaisseau ennemi que vous touchez subit 1 dégât."
+        text: "Après avoir exécuté une manœuvre, chaque vaisseau ennemi avec lequel vous êtes au contact subit 1 dégât."
       },
       "Rear Admiral Chiraneau": {
         ship: "Décimateur VT-49",
-        name: "Contre Amiral Chiraneau",
-        text: "Quand vous attaquez à portée 1-2, vous pouvez échanger 1 de vos résultats %FOCUS% contre un résultat %CRIT%."
+        name: "Contre-Amiral Chiraneau",
+        text: "Quand vous attaquez à portée 1-2, vous pouvez changer 1 de vos résultats %FOCUS% en résultat %CRIT%."
       },
       "Patrol Leader": {
         ship: "Décimateur VT-49",
@@ -341,7 +341,7 @@
       "Commander Kenkirk": {
         ship: "Décimateur VT-49",
         name: "Commandant Kenkirk",
-        text: "Si vous n'avez plus de boucliers et au moins 1 carte dégâts assignée à votre vaisseau, augmentez votre valeur d'agilité de 1."
+        text: "Si vous n'avez plus de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."
       },
       "Red Squadron Pilot": {
         name: "Pilote de l'escadron Rouge"
@@ -487,16 +487,16 @@
         name: "Corvette CR90 (poupe)"
       },
       "Dash Rendar": {
-        text: "Vous pouvez ignorer les obstacles durant la phase d'activation et lorsque vous effectuez des actions."
+        text: "Vous pouvez ignorer les obstacles durant la phase d'activation et quand vous effectuez des actions."
       },
       '"Leebo"': {
-        text: "Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle, choisissez la carte que vous voulez résoudre, et défaussez l'autre."
+        text: "Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle ; choisissez-en 1 que vous résolvez et défaussez l'autre."
       },
       "Eaden Vrill": {
-        text: "Quand vous effectuez une attaque d'arme principale contre un vaisseau stressé, lancez 1 dé d'attaque supplémentaire."
+        text: "Quand vous effectuez une attaque d'arme principale contre un vaisseau sous l'effet du stress, lancez 1 dé d'attaque additionnel."
       },
       "Wild Space Fringer": {
-        name: "Wild Space Fringer"
+        name: "Frontalier de l'espace sauvage"
       },
       "Prince Xizor": {
         text: "Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."
@@ -630,7 +630,8 @@
         text: "Quand vous attaquez, si le défenseur n'a pas de marqueur de concentration ou d'évasion, vous pouvez recevoir 1 marqueur de stress pour lancer 1 dé d'attaque supplémentaire.%LINEBREAK%Vous ne pouvez pas utiliser cette capacité si vous avez au moins un marqueur de stress."
       },
       "Lone Wolf": {
-        text: "Quand vous attaquez ou défendez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."
+        name: "Loup Solitaire",
+        text: "Quand vous attaquez ou défendez, s'il n'y a pas de vaisseaux alliés à portée 1-2, vous pouvez relancer 1 de vos résultats vierges."
       },
       "Stay On Target": {
         name: "Restez en ligne",
@@ -891,10 +892,10 @@
         text: "%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."
       },
       '"Leebo"': {
-        text: "<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."
+        text: "<strong>Action :</strong> Effectuez une action d'accélération gratuite. Ensuite, recevez 1 marqueur ionique."
       },
       "Dash Rendar": {
-        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent <strong>pas être gênées</strong>."
+        text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."
       },
       "Ysanne Isard": {
         text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
@@ -1054,12 +1055,12 @@
         text: "<span class=\"card-restriction\">B-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."
       },
       "Countermeasures": {
-        name: "Contremesures",
-        text: "%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."
+        name: "Contre-mesures",
+        text: "%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Ensuite, vous pouvez retirer 1 acquisition de cible ennemie de votre vaisseau."
       },
       "Experimental Interface": {
         name: "Interface expérimentale",
-        text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête \"<strong>Action :</strong>\". Puis recevez 1 marqueur de stress."
+        text: "Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une de vos cartes amélioration équipée ayant l'entrée \"<strong>Action :</strong>\". Ensuite, recevez 1 marqueur de stress."
       },
       "Tactical Jammer": {
         name: "Brouilleur tactique",
@@ -1118,7 +1119,7 @@
         text: "<span class=\"card-restriction\">CR90 (proue) uniquement.</span>%LINEBREAK%Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."
       },
       "Outrider": {
-        text: "<span class=\"card-restriction\">YT-2400 uniquement.</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."
+        text: "<span class=\"card-restriction\">YT-2400 UNIQUEMENT. TITRE</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaques d'arme principale et vous pouvez effectuer des attaques d'arme secondaire %CANNON% contre des vaisseaux situés en dehors de votre arc de tir."
       },
       "Dauntless": {
         ship: "Décimateur VT-49",

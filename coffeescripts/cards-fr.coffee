@@ -414,11 +414,11 @@ exportObj.cardLoaders['Français'] = () ->
         "Dash Rendar":
             text: """Vous pouvez ignorer les obstacles durant la phase d'activation et quand vous effectuez des actions."""
         '"Leebo"':
-            text: """Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle, choisissez-en 1 que vous résolvez et défaussez l'autre."""
+            text: """Quand vous recevez une carte de dégâts face visible, piochez 1 carte de dégâts additionnelle ; choisissez-en 1 que vous résolvez et défaussez l'autre."""
         "Eaden Vrill":
             text: """Quand vous effectuez une attaque d'arme principale contre un vaisseau sous l'effet du stress, lancez 1 dé d'attaque additionnel."""
         "Wild Space Fringer":
-            name: "Wild Space Fringer"
+            name: "Frontalier de l'espace sauvage"
             
         # Scum and Villainy
         # Starviper, traduit de l'anglais
@@ -684,7 +684,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Navigator":
             name: "Navigateur"
             text: """Quand vous révélez une manoeuvre, vous pouvez tourner le cadran sur une autre manoeuvre ayant la même direction.%LINEBREAK%Vous ne pouvez pas tourner le cadran sur une manoeuvre rouge si vous avez au moins un marqueurs de stress."""
-        "Lando Calrissian": # Traduction non officielle
+        "Lando Calrissian":
             text: """%FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."""
         "Mara Jade": # Traduction non officielle
             text: """%FR_IMPERIALONLY%%LINEBREAK%À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."""
@@ -722,10 +722,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<strong>Énergie :</strong> vous pouvez dépenser 1 énergie pour choisir un vaisseau allié situé à portée 1-2. Verrouillez une cible, puis assignez le marqueur d'acquisition de cible bleu au vaisseau choisi."""
         "Raymus Antilles":
             text: """%FR_HUGESHIPONLY% %FR_REBELONLY%%LINEBREAK%Au début de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-3. Vous pouvez regarder la manœuvre choisie pour ce vaisseau. Si la manœuvre est blanche, assignez 1 marqueur de stress à ce vaisseau."""
-        '"Leebo"': # Traduction non officielle
-            text: """<strong>Action :</strong> Effectuez une action gratuite d'accélération. Puis recevez 1 marqueur de stress."""
+        '"Leebo"':
+            text: """<strong>Action :</strong> Effectuez une action d'accélération gratuite. Ensuite, recevez 1 marqueur ionique."""
         "Dash Rendar":
-            text: """%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent <strong>pas être gênées</strong>."""
+            text: """%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."""
         "Ysanne Isard": # Traduction non officielle
             text: """%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."""
         "Moff Jerjerrod": # Traduction non officielle
@@ -846,12 +846,12 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Transport moyen GR-75"
         "B-Wing/E2":
             text: """<span class="card-restriction">B-Wing uniquement.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %CREW%."""
-        "Countermeasures": # Traduction non officielle
-            name: "Contremesures"
-            text: """%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Vous pouvez ensuite retirer 1 marqueur acquisition de cible ennemi de votre vaisseau."""
-        "Experimental Interface": # Traduction non officielle
+        "Countermeasures":
+            name: "Contre-mesures"
+            text: """%FR_LARGESHIPONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez défausser cette carte pour augmenter votre valeur d'agilité de 1 jusqu'à la fin du tour. Ensuite, vous pouvez retirer 1 acquisition de cible ennemie de votre vaisseau."""
+        "Experimental Interface":
             name: "Interface expérimentale"
-            text: """Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une carte amélioration avec l'en-tête "<strong>Action :</strong>". Puis recevez 1 marqueur de stress."""
+            text: """Une fois par tour, après avoir effectué une action, vous pouvez effectuer 1 action gratuite d'une de vos cartes amélioration équipée ayant l'entrée "<strong>Action :</strong>". Ensuite, recevez 1 marqueur de stress."""
         "Tactical Jammer": # Traduction non officielle
             name: "Brouilleur tactique"
             text: """%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
@@ -894,8 +894,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Jaina's Light":
             ship: "Corvette CR90 (proue)"
             text: """<span class="card-restriction">CR90 (proue) uniquement.</span>%LINEBREAK%Quand vous défendez, une fois par attaque, si vous recevez une carte de dégâts face visible, vous pouvez la défausser et piocher une autre carte de dégâts face visible."""
-        "Outrider": # Traduction non officielle
-            text: """<span class="card-restriction">YT-2400 uniquement.</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaque d'arme principale et vous pouvez effectuer une attaque d'arme secondaire %CANNON% contre des vaisseaux en dehors de votre arc de tir."""
+        "Outrider":
+            text: """<span class="card-restriction">YT-2400 UNIQUEMENT. TITRE</span>%LINEBREAK%Tant que vous êtes équipé d'une carte d'amélioration %CANNON%, vous <strong>ne pouvez pas</strong> effectuer d'attaques d'arme principale et vous pouvez effectuer des attaques d'arme secondaire %CANNON% contre des vaisseaux situés en dehors de votre arc de tir."""
         "Dauntless": # Traduction non officielle
             ship: "Décimateur VT-49"
             text: """<span class="card-restriction">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."""
