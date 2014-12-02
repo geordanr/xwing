@@ -54,7 +54,7 @@ casper.test.begin "Virago title", (test) ->
     common.createList('#scum-builder', [
         {
             ship: 'StarViper'
-            pilot: 'Black Sun ???' # FIXME
+            pilot: 'Black Sun Enforcer'
             upgrades: [
             ]
         }

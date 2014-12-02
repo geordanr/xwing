@@ -1372,14 +1372,48 @@ class exportObj.SquadBuilder
             pilots: []
             points: @total_points
             vendor:
-                builder: '(Yet Another) X-Wing Miniatures Squad Builder'
-                builder_link: window.location.href.split('?')[0]
-                link: @permalink.attr 'href'
-            version: '0.1.0'
+                yasb:
+                    builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                    builder_url: window.location.href.split('?')[0]
+                    link: @permalink.attr 'href'
+            version: '0.2.0'
 
         for ship in @ships
             if ship.pilot?
                 xws.pilots.push ship.toXWS()
+
+        # Associate multisection ships
+        # This maps id to list of pilots it comprises
+        multisection_id_to_pilots = {}
+        last_id = 0
+        unmatched = (pilot for pilot in xws.pilots when pilot.multisection?)
+        for _ in [0...(unmatched.length ** 2)]
+            # console.log "Top of loop, unmatched: #{m.name for m in unmatched}"
+            unmatched_pilot = unmatched.shift()
+            unmatched_pilot.multisection_id ?= last_id++
+            multisection_id_to_pilots[unmatched_pilot.multisection_id] ?= [unmatched_pilot]
+            break if unmatched.length == 0
+            # console.log "Finding matches for #{unmatched_pilot.name} (assigned id=#{unmatched_pilot.multisection_id})"
+            matches = []
+            for candidate in unmatched
+                # console.log "-> examine #{candidate.name}"
+                if unmatched_pilot.name in candidate.multisection
+                    matches.push candidate
+                    unmatched_pilot.multisection.removeItem candidate.name
+                    candidate.multisection.removeItem unmatched_pilot.name
+                    candidate.multisection_id = unmatched_pilot.multisection_id
+                    # console.log "-> MATCH FOUND #{candidate.name}, assigned id=#{candidate.multisection_id}"
+                    multisection_id_to_pilots[candidate.multisection_id].push candidate
+                    if unmatched_pilot.multisection.length == 0
+                        # console.log "-> No more sections to match for #{unmatched_pilot.name}"
+                        break
+            for match in matches
+                if match.multisection.length == 0
+                    # console.log "Dequeue #{match.name} since it has no more sections to match"
+                    unmatched.removeItem match
+
+        for pilot in xws.pilots
+            delete pilot.multisection if pilot.multisection?
 
         xws
 
@@ -1389,7 +1423,8 @@ class exportObj.SquadBuilder
 
         # TODO - actual semver parsing
         switch xws.version
-            when '0.1.0'
+            # Not doing backward compatibility pre-1.x
+            when '0.2.0', '0.1.1'
                 xws_faction = exportObj.fromXWSFaction[xws.faction]
 
                 if @faction != xws_faction
@@ -1449,7 +1484,21 @@ class exportObj.SquadBuilder
                                         break
                                 when 'Title'
                                     unless new_ship.title.data?
-                                        new_ship.title.setData addon.data
+                                        # Special cases :(
+                                        if addon.data instanceof Array
+                                            # Right now, the only time this happens is because of
+                                            # Heavy Scyk.  Check the rest of the pending addons for torp,
+                                            # cannon, or missiles.  Otherwise, it doesn't really matter.
+                                            slot_guesses = (a.data.slot for a in addons when a.data.slot in ['Cannon', 'Missile', 'Torpedo'])
+                                            # console.log slot_guesses
+                                            if slot_guesses.length > 0
+                                                # console.log "Guessing #{slot_guesses[0]}"
+                                                new_ship.title.setData exportObj.titlesByLocalizedName[""""Heavy Scyk" Interceptor (#{slot_guesses[0]})"""]
+                                            else
+                                                # console.log "No idea, setting to #{addon.data[0].name}"
+                                                new_ship.title.setData addon.data[0]
+                                        else
+                                            new_ship.title.setData addon.data
                                         addon_added = true
                                 else
                                     # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
@@ -2130,18 +2179,25 @@ class Ship
             name: @pilot.canonical_name
             points: @getPoints()
             ship: @data.canonical_name
-            upgrades: {}
+
+        if @data.multisection
+            xws.multisection = @data.multisection.slice 0
+
+        upgrade_obj = {}
 
         for upgrade in @upgrades
             if upgrade?.data?
-                upgrade.toXWS xws.upgrades
+                upgrade.toXWS upgrade_obj
 
         for modification in @modifications
             if modification?.data?
-                modification.toXWS xws.upgrades
+                modification.toXWS upgrade_obj
 
         if @title?.data?
-            @title.toXWS xws.upgrades
+            @title.toXWS upgrade_obj
+
+        if Object.keys(upgrade_obj).length > 0
+            xws.upgrades = upgrade_obj
 
         xws
 

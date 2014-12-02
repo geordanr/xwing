@@ -2,8 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "YT-2400 Freighter Expansion Pack"
-    "VT-49 Decimator Expansion Pack"
     "StarViper Expansion Pack"
     "M3-A Interceptor Expansion Pack"
     "IG-2000 Expansion Pack"
@@ -378,6 +376,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 0]
             ]
+            multisection: [
+                "CR90 Corvette (Aft)".canonicalize()
+            ]
+            canonical_name: "CR90 Corvette".canonicalize()
         "CR90 Corvette (Aft)":
             name: "CR90 Corvette (Aft)"
             factions: [ "Rebel Alliance", ]
@@ -398,6 +400,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 0]
             ]
+            multisection: [
+                "CR90 Corvette (Fore)".canonicalize()
+            ]
+            canonical_name: "CR90 Corvette".canonicalize()
         "YT-2400":
             name: "YT-2400"
             factions: [ "Rebel Alliance", ]
@@ -449,6 +455,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
                 "Boost"
+            ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 1, 2, 2, 2, 1, 0, 0, 0]
+                [ 1, 1, 2, 1, 1, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0, 3, 3]
+                [ 0, 0, 1, 0, 0, 0, 0, 0]
             ]
         "M3-A Interceptor":
             name: "M3-A Interceptor"
@@ -1846,35 +1859,36 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 StarViper Pilot"
+            name: "Guri"
             faction: "Scum and Villainy"
             id: 101
             unique: true
             ship: "StarViper"
             skill: 5
-            points: 99
+            points: 30
             slots: [
+                "Elite"
                 "Torpedo"
             ]
         }
         {
-            name: "Black ???"
+            name: "Black Sun Vigo"
             faction: "Scum and Villainy"
             id: 102
             ship: "StarViper"
             skill: 3
-            points: 99
+            points: 27
             slots: [
                 "Torpedo"
             ]
         }
         {
-            name: "Black Sun ???"
+            name: "Black Sun Enforcer"
             faction: "Scum and Villainy"
             id: 103
             ship: "StarViper"
             skill: 1
-            points: 99
+            points: 25
             slots: [
                 "Torpedo"
             ]
@@ -2042,7 +2056,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Boba Fett (Scum)"
-            canonical_name: 'bobafett'
+            canonical_name: 'Boba Fett'.canonicalize()
             faction: "Scum and Villainy"
             id: 116
             ship: "Firespray-31"
@@ -2060,7 +2074,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Kath Scarlet (Scum)"
-            canonical_name: 'kathscarlet'
+            canonical_name: 'Kath Scarlet'.canonicalize()
             unique: true
             faction: "Scum and Villainy"
             id: 117
@@ -2520,7 +2534,7 @@ exportObj.basicCardData = ->
             points: 1
         }
         {
-            name: "Proton Bomb"
+            name: "Proton Bombs"
             id: 41
             slot: "Bomb"
             points: 5
@@ -3250,9 +3264,11 @@ exportObj.basicCardData = ->
                 ship.data.large ? false
         }
         {
-            name: "Autoth???"
+            name: "Autothrusters"
             id: 15
-            points: 99
+            points: 2
+            restriction_func: (ship) ->
+                "Boost" in ship.effectiveStats().actions
         }
     ]
 
@@ -3447,6 +3463,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Heavy Scyk" Interceptor (Cannon)'
+            canonical_name: '"Heavy Scyk" Interceptor'.canonicalize()
             id: 17
             points: 2
             ship: "M3-A Interceptor"
@@ -3459,6 +3476,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Heavy Scyk" Interceptor (Torpedo)'
+            canonical_name: '"Heavy Scyk" Interceptor'.canonicalize()
             id: 18
             points: 2
             ship: "M3-A Interceptor"
@@ -3471,6 +3489,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Heavy Scyk" Interceptor (Missile)'
+            canonical_name: '"Heavy Scyk" Interceptor'.canonicalize()
             id: 19
             points: 2
             ship: "M3-A Interceptor"
@@ -3695,7 +3714,11 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     exportObj.titlesByCanonicalName = {}
     for title_name, title of exportObj.titles
-        (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
+        # Special cases :(
+        if title.canonical_name == '"Heavy Scyk" Interceptor'.canonicalize()
+            ((exportObj.titlesByCanonicalName ?= {})[title.canonical_name] ?= []).push title
+        else
+            (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
@@ -3753,7 +3776,7 @@ exportObj.fixIcons = (data) ->
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
         ship_data.english_name = ship_name
-        ship_data.canonical_name = ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
 
 exportObj.renameShip = (english_name, new_name) ->
     exportObj.ships[new_name] = exportObj.ships[english_name]

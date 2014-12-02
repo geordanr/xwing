@@ -328,6 +328,9 @@
       "Prince Xizor": {
         text: "When defending, a friendly ship at Range 1 may suffer 1 uncanceled %HIT% or %CRIT% result instead of you."
       },
+      "Guri": {
+        text: "At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."
+      },
       "Serissu": {
         text: "When another friendly ship at Range 1 is defending, it may reroll 1 defense die."
       },
@@ -501,7 +504,7 @@
       "Intelligence Agent": {
         text: "At the start of the Activation phase, choose 1 enemy ship at Range 1-2.  You may look at that ship's chosen maneuver."
       },
-      "Proton Bomb": {
+      "Proton Bombs": {
         text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 proton bomb token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Proton Bomb Token:</strong> When this bomb token detonates, deal 1 <strong>faceup</strong> Damage card to each ship at Range 1 of the token.  Then discard this token."
       },
       "Adrenaline Rush": {
@@ -794,8 +797,8 @@
       "Tactical Jammer": {
         text: "%LARGESHIPONLY%%LINEBREAK%Your ship can obstruct enemy attacks."
       },
-      "Autoth???": {
-        text: "This card has not yet been revealed."
+      "Autothrusters": {
+        text: "When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."
       }
     };
     title_translations = {
