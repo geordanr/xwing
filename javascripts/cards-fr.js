@@ -341,7 +341,7 @@
       "Commander Kenkirk": {
         ship: "Décimateur VT-49",
         name: "Commandant Kenkirk",
-        text: "Si vous n'avez plus de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."
+        text: "Si vous n'avez pas de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."
       },
       "Red Squadron Pilot": {
         name: "Pilote de l'escadron Rouge"
@@ -637,6 +637,13 @@
         name: "Restez en ligne",
         text: "Quand vous révélez une manœuvre, vous pouvez tourner votre cadran sur une autre manœuvre ayant la même vitesse.%LINEBREAK%Traitez cette manœuvre comme une manœuvre rouge."
       },
+      "Ruthlessness": {
+        name: "Impitoyable",
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau situé à portée 1 du défenseur (autre que vous-même). Ce vaisseau subit 1 dégât."
+      },
+      "Intimidation": {
+        text: "Tant que vous êtes au contact avec un vaisseau ennemi, réduisez de 1 la valeur d'agilité de ce vaisseau."
+      },
       "Calc???": {
         text: "Cette carte n'a pas encore été révélée."
       },
@@ -841,11 +848,11 @@
         text: "%FR_REBELONLY%%LINEBREAK%<strong>Action :</strong> lancez 2 dés de défense. Pour chaque résultat %FOCUS%, assignez 1 marqueur de concentration à votre vaisseau. Pour chaque résultat %EVADE%, assignez 1 marqueur d'évasion à votre vaisseau."
       },
       "Mara Jade": {
-        text: "%FR_IMPERIALONLY%%LINEBREAK%À la fin de la phase de combat, chaque vaisseau ennemi à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%À la fin de la phase de combat, chaque vaisseau ennemi situé à portée 1 qui n'a pas de marqueur de stress reçoit 1 marqueur de stress."
       },
       "Fleet Officer": {
         name: "Officier de la flotte",
-        text: "%FR_IMPERIALONLY%%LINEBREAK%<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez un marqueur de concentration à chacun de ces vaisseaux. Puis recevez un marqueur de stress."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%<strong>Action :</strong> choisissez jusqu'à 2 vaisseaux alliés situés à portée 1-2 et assignez 1 marqueur de concentration à chacun d'eux. Ensuite, recevez 1 marqueur de stress."
       },
       "Han Solo": {
         text: "%FR_REBELONLY%%LINEBREAK%Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser ce marqueur d'acquisition de cible pour changer tous vos résultats %FOCUS% en résultats %HIT%."
@@ -898,10 +905,10 @@
         text: "%FR_REBELONLY%%LINEBREAK%Vous pouvez effectuer des attaques tout en chevauchant un obstacle.%LINEBREAK%Vos attaques ne peuvent pas être gênées."
       },
       "Ysanne Isard": {
-        text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez aucun bouclier et au moins 1 carte de dégâts assignée à votre vaisseau, vous pouvez effectuer une action gratuite d'évasion."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez pas de boucliers et qu'au moins 1 carte de dégâts est assignée à votre vaisseau, vous pouvez effectuer une action d'évasion gratuite."
       },
       "Moff Jerjerrod": {
-        text: "%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte %CREW% pour retourner cette carte dégâts face cachée (sans résoudre son effet)."
+        text: "%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte d'amélioration %CREW% pour retourner cette carte dégâts face cachée (sans en résoudre l'effet)."
       },
       "Greedo": {
         text: "%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."
@@ -969,12 +976,6 @@
       "Engineering Team": {
         name: "Équipe de mécaniciens",
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
-      },
-      "Ruthlessness": {
-        text: "%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau à portée 1 du défenseur (autre que le votre). Ce vaisseau subit 1 dégât."
-      },
-      "Intimidation": {
-        text: "Tant que vous touchez un vaisseau ennemi, réduisez sa valeur d'agilité de 1."
       },
       "Inertial Dampeners": {
         name: "Amortisseurs Inertiels",
@@ -1123,7 +1124,7 @@
       },
       "Dauntless": {
         ship: "Décimateur VT-49",
-        text: "<span class=\"card-restriction\">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Puis recevez 1 marqueur de stress."
+        text: "<span class=\"card-restriction\">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Ensuite, recevez 1 marqueur de stress."
       },
       "Virago": {
         text: "<span class=\"card-restriction\">StarViper uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is \"3\" or lower."
