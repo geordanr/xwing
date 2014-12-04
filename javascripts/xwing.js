@@ -2647,25 +2647,25 @@
         action_icons.push((function() {
           switch (action) {
             case 'Focus':
-              return "<i class=\"xwing-font xwing-font-focus\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-focus\"></i>";
             case 'Evade':
-              return "<i class=\"xwing-font xwing-font-evade\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-evade\"></i>";
             case 'Barrel Roll':
-              return "<i class=\"xwing-font xwing-font-barrelroll\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-barrelroll\"></i>";
             case 'Target Lock':
-              return "<i class=\"xwing-font xwing-font-targetlock\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-targetlock\"></i>";
             case 'Boost':
-              return "<i class=\"xwing-font xwing-font-boost\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-boost\"></i>";
             case 'Coordinate':
-              return "<i class=\"xwing-font xwing-font-coordinate\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-coordinate\"></i>";
             case 'Jam':
-              return "<i class=\"xwing-font xwing-font-jam\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-jam\"></i>";
             case 'Recover':
-              return "<i class=\"xwing-font xwing-font-recover\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-recover\"></i>";
             case 'Reinforce':
-              return "<i class=\"xwing-font xwing-font-reinforce\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-reinforce\"></i>";
             case 'Cloak':
-              return "<i class=\"xwing-font xwing-font-cloak\"></i>";
+              return "<i class=\"xwing-miniatures-font xwing-miniatures-font-cloak\"></i>";
             default:
               return "<span>&nbsp;" + action + "<span>";
           }
@@ -3351,7 +3351,7 @@
       var upgrade_slot_font, _ref;
       if (this.data != null) {
         upgrade_slot_font = ((_ref = this.data.slot) != null ? _ref : '').toLowerCase().replace(/[^0-9a-z]/gi, '');
-        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\"><i class=\"xwing-font xwing-font-" + upgrade_slot_font + "\"></i> " + this.data.name + "</div>\n</div>");
+        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\"><i class=\"xwing-miniatures-font xwing-miniatures-font-" + upgrade_slot_font + "\"></i> " + this.data.name + "</div>\n</div>");
       } else {
         return '';
       }

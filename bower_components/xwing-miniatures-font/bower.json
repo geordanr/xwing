@@ -1,0 +1,20 @@
+{
+  "name": "xwing-miniatures-font",
+  "version": "1.0.2",
+  "authors": [
+    "Geordan Rosario <geordan@gmail.com>"
+  ],
+  "description": "Font for X-Wing Miniatures game",
+  "main": [
+      "dist/xwing-miniatures.css",
+      "dist/xwing-miniatures.ttf"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
