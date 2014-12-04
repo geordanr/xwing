@@ -14,6 +14,7 @@
     %link{:rel => "stylesheet", :href => "stylesheets/xwing-screen.css?#{Time.now.to_i}", :media => "screen,handheld"}
     %link{:rel => "stylesheet", :href => "stylesheets/xwing-print.css?#{Time.now.to_i}", :media => "print"}
     %link{:rel => "stylesheet", :href => "stylesheets/backgrounds.css?#{Time.now.to_i}", :media => "screen,handheld"}
+    %link{:rel => "stylesheet", :href => "bower_components/xwing-miniatures-font/dist/xwing-miniatures.css?#{Time.now.to_i}", :media => "screen,handheld,print"}
 
   %body
     -# body layout
@@ -169,12 +170,24 @@
 
         switch $.getParameterByName 'f'
           when 'Rebel Alliance'
+              ga 'send', 'pageview',
+                page: '/rebels'
+                title: 'Rebel Alliance'
               $('#rebelTab').tab 'show'
           when 'Galactic Empire'
+              ga 'send', 'pageview',
+                page: '/empire'
+                title: 'Galactic Empire'
               $('#empireTab').tab 'show'
           when 'Scum and Villainy'
+              ga 'send', 'pageview',
+                page: '/scum'
+                title: 'Scum and Villainy'
               $('#scumTab').tab 'show'
           else
+              ga 'send', 'pageview',
+                page: '/rebels'
+                title: 'Rebel Alliance'
               $('#rebelTab').tab 'show'
 
         window.backend = new SquadBuilderBackend

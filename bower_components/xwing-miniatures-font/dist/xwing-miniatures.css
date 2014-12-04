@@ -1,0 +1,116 @@
+@font-face {
+  font-family: XWing;
+  src: url("xwing-miniatures.ttf"); }
+
+i.xwing-miniatures-font {
+  font-family: XWing;
+  font-style: normal;
+  font-size: 1.5em; }
+
+i.xwing-miniatures-font-sloopleft:before {
+  content: "\0031"; }
+
+i.xwing-miniatures-font-kturn:before {
+  content: "\0032"; }
+
+i.xwing-miniatures-font-sloopright:before {
+  content: "\0033"; }
+
+i.xwing-miniatures-font-turnleft:before {
+  content: "\0034"; }
+
+i.xwing-miniatures-font-stop:before {
+  content: "\0035"; }
+
+i.xwing-miniatures-font-turnright:before {
+  content: "\0036"; }
+
+i.xwing-miniatures-font-bankleft:before {
+  content: "\0037"; }
+
+i.xwing-miniatures-font-straight:before {
+  content: "\0038"; }
+
+i.xwing-miniatures-font-bankright:before {
+  content: "\0039"; }
+
+i.xwing-miniatures-font-astromech:before {
+  content: "\0041"; }
+
+i.xwing-miniatures-font-bomb:before {
+  content: "\0042"; }
+
+i.xwing-miniatures-font-cannon:before {
+  content: "\0043"; }
+
+i.xwing-miniatures-font-elite:before {
+  content: "\0045"; }
+
+i.xwing-miniatures-font-cargo:before {
+  content: "\0047"; }
+
+i.xwing-miniatures-font-hardpoint:before {
+  content: "\0048"; }
+
+i.xwing-miniatures-font-illicit:before {
+  content: "\0049"; }
+
+i.xwing-miniatures-font-missile:before {
+  content: "\004d"; }
+
+i.xwing-miniatures-font-torpedo:before {
+  content: "\0050"; }
+
+i.xwing-miniatures-font-system:before {
+  content: "\0053"; }
+
+i.xwing-miniatures-font-team:before {
+  content: "\0054"; }
+
+i.xwing-miniatures-font-turret:before {
+  content: "\0055"; }
+
+i.xwing-miniatures-font-salvagedastromech:before {
+  content: "\0056"; }
+
+i.xwing-miniatures-font-crew:before {
+  content: "\0057"; }
+
+i.xwing-miniatures-font-boost:before {
+  content: "\0062"; }
+
+i.xwing-miniatures-font-crit:before {
+  content: "\0063"; }
+
+i.xwing-miniatures-font-hit:before {
+  content: "\0064"; }
+
+i.xwing-miniatures-font-evade:before {
+  content: "\0065"; }
+
+i.xwing-miniatures-font-focus:before {
+  content: "\0066"; }
+
+i.xwing-miniatures-font-reinforce:before {
+  content: "\0069"; }
+
+i.xwing-miniatures-font-jam:before {
+  content: "\006a"; }
+
+i.xwing-miniatures-font-cloak:before {
+  content: "\006b"; }
+
+i.xwing-miniatures-font-targetlock:before {
+  content: "\006c"; }
+
+i.xwing-miniatures-font-coordinate:before {
+  content: "\006f"; }
+
+i.xwing-miniatures-font-barrelroll:before {
+  content: "\0072"; }
+
+i.xwing-miniatures-font-unique:before {
+  content: "\0075"; }
+
+i.xwing-miniatures-font-recover:before {
+  content: "\0076"; }

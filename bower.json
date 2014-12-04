@@ -19,6 +19,7 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "pako": "~0.2.5",
-    "jquery-qrcode": "*"
+    "jquery-qrcode": "*",
+    "xwing-miniatures-font": "~1.0.2"
   }
 }

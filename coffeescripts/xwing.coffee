@@ -1874,25 +1874,25 @@ class Ship
         for action in effective_stats.actions
             action_icons.push switch action
                 when 'Focus'
-                    """<i class="xwing-font xwing-font-focus"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>"""
                 when 'Evade'
-                    """<i class="xwing-font xwing-font-evade"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>"""
                 when 'Barrel Roll'
-                    """<i class="xwing-font xwing-font-barrelroll"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>"""
                 when 'Target Lock'
-                    """<i class="xwing-font xwing-font-targetlock"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>"""
                 when 'Boost'
-                    """<i class="xwing-font xwing-font-boost"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>"""
                 when 'Coordinate'
-                    """<i class="xwing-font xwing-font-coordinate"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>"""
                 when 'Jam'
-                    """<i class="xwing-font xwing-font-jam"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>"""
                 when 'Recover'
-                    """<i class="xwing-font xwing-font-recover"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>"""
                 when 'Reinforce'
-                    """<i class="xwing-font xwing-font-reinforce"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>"""
                 when 'Cloak'
-                    """<i class="xwing-font xwing-font-cloak"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '
@@ -2330,7 +2330,7 @@ class GenericAddon
                             <div class="inner-circle upgrade-points">#{@data.points}</div>
                         </div>
                     </div>
-                    <div class="upgrade-name"><i class="xwing-font xwing-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
+                    <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
                 </div>
             """
         else
