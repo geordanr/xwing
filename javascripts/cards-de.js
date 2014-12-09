@@ -64,8 +64,8 @@
       "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung",
       "Tantive IV Expansion Pack": "Tantive IV Erweiterung",
       "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung",
-      "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack",
-      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack",
+      "YT-2400 Freighter Expansion Pack": "YT-2400 Frachter Erweiterung",
+      "VT-49 Decimator Expansion Pack": "VT-49 Decimator Erweiterung",
       "StarViper Expansion Pack": "StarViper Expansion Pack",
       "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
       "IG-2000 Expansion Pack": "IG-2000 Expansion Pack",
@@ -450,22 +450,23 @@
         text: "Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."
       },
       "Dash Rendar": {
-        text: "You may ignore obstacles during the Activation phase and when performing actions."
+        text: "Du darfst in der Aktivierungsphase und beim Durchführen von Aktionen Hindernisse ignorieren."
       },
       '"Leebo"': {
-        text: "When you are dealt a faceup Damage card, draw 1 additional Damage card, choose 1 to resolve, and discard the other."
+        text: "Immer wenn du eine offene Schadenskarte erhälst, ziehst du 1 weitere Schadenskarte. Wähle 1, die abgehandelt wird, und lege die andere ab."
       },
       "Eaden Vrill": {
-        text: "When performing a primary weapon attack against a stressed ship, roll 1 additional attack die."
+        text: "Wirf 1 zusätzlichen Angriffswürfel, wenn du mit den Primärwaffen auf ein Schiff mit Stressmarker schießt."
       },
       "Rear Admiral Chiraneau": {
-        text: "When attacking at Range 1-2, you may change 1 of your %FOCUS% results to a %CRIT% result."
+        name: "Konteradmiral Chiraneau",
+        text: "Wenn du ein Ziel in Reichweite 1-2 angreifst, kannst du ein %FOCUS% in ein %CRIT% ändern."
       },
       "Commander Kenkirk": {
-        text: "If you have no shields and at least 1 Damage card assigned to you, increase your agility value by 1."
+        text: "Wenn du keine Schilde und mindestens 1 Schadenskarte hast, steigt deine Wendigkeit um 1."
       },
       "Captain Oicunn": {
-        text: "After executing a maneuver, each enemy ship you are touching suffers 1 damage."
+        text: "Nach dem Ausführen eines Manövers nimmt jedes feindliche Schiff, das du berührst, 1 Schaden."
       }
     };
     upgrade_translations = {
@@ -820,44 +821,50 @@
         text: "Wenn du in der Aktivierungsphase ein %STRAIGHT% Manöver aufdeckst, bekommst du im Schritt \"Energie gewinnen\" 1 zusätzlichen Energiemarker."
       },
       "Lando Calrissian": {
-        text: "<strong>Action:</strong> Roll 2 defense dice.  For each %FOCUS% result, assign 1 focus token to your ship.  For each %EVADE% result, assign 1 evade token to your ship."
+        text: "<strong>Aktion:</strong> Wirf 2 Verteidigungswürfel. Dein Schiff bekommt 1 Fokusmarker für jedes %FOCUS% und 1 Ausweichmarker für jedes %EVADE%."
       },
       "Mara Jade": {
-        text: "At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."
+        text: "Am Ende der Kampfphase erhält jedes feindliche Schiff in Reichweite 1, das keine Stressmarker hat, einen Stressmarker."
       },
       "Fleet Officer": {
-        text: "<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
+        name: "Flottenoffizier",
+        text: "<strong>Aktion:</strong> Wähle bis zu 2 freundliche Schiffe in Reichweite 1-2 und gib ihnen je 1 Fokusmarker. Dann erhältst du 1 Stressmarker."
       },
       "Targeting Coordinator": {
         name: "Zielkoordinator",
         text: "<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."
       },
       "Lone Wolf": {
-        text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."
+        name: "Einsamer Wolf",
+        text: "Wenn keine freundlichen Schiffe in Reichweite 1-2 sind, darfst du beim Angreifen und Verteidigen 1 gewürfelte Leerseite neu würfeln."
       },
       "Stay On Target": {
-        text: "When you reveal a maneuver, you may rotate your dial to another maneuver with the same speed.<br /><br />Treat that maneuver as a red maneuver."
+        name: "Am Ziel bleiben",
+        text: "Nach dem Aufdecken des Manöverrads darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."
       },
       "Dash Rendar": {
-        text: "You may perform attacks while overlapping an obstacle.<br /><br />Your attacks cannot be obstructed."
+        text: "Du darfst auch angreifen während du dich mit einem Hindernis überschneidest.<br /><br />Deine Schussbahn kann nicht versperrt werden."
       },
       '"Leebo"': {
-        text: "<strong>Action:</strong> Perform a free boost action.  Then receive 1 ion token."
+        text: "<strong>Aktion:</strong> Führe als freie Aktion einen Schub durch. Dann erhältst du 1 Ionenmarker."
       },
       "Ruthlessness": {
-        text: "After you perform an attack that hits, you <strong>must</strong> choose 1 other ship at Range 1 of the defender (other than yourself).  That ship suffers 1 damage."
+        name: "Erbarmungslos",
+        text: "Nachdem du mit einem Angriff getroffen hast, <strong>musst</strong> du 1 anderes Schiff in Reichweite 1 des Verteidigers (außer dir selbst) wählen. Das Schiff nimmt 1 Schaden."
       },
       "Intimidation": {
-        text: "While you are touching an enemy ship, reduce that ship's agility value by 1."
+        name: "Furchteinflössend",
+        text: "Die Wendigkeit feindlicher Schiffe sinkt um 1, solange du sie berührst."
       },
       "Ysanne Isard": {
-        text: "At the start of the Combat phase, if you have no shields and at least 1 Damage card assigned to your ship, you may perform a free evade action."
+        text: "Wenn du zu Beginn der Kampfphase keine Schilde und mindestens 1 Schadenskarte hast, darfst du als freie Aktion ausweichen."
       },
       "Moff Jerjerrod": {
-        text: "When you are dealt a faceup Damage card, you may discard this Upgrade card or another %CREW% Upgrade card to flip that Damage card facedown (without resolving its effect)."
+        text: "Wenn du eine offene Schadenskarte erhältst, kannst du diese Aufwertungskarte oder eine andere %CREW%-Aufwertung ablegen, um die Schadenskarte umzudrehen (ohne dass der Kartentext in Kraft tritt)."
       },
       "Ion Torpedoes": {
-        text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."
+        name: "Ionentorpedos",
+        text: "<strong>Angriff (Zielerfassung):</strong> gib deine Zielerfassungsmarker aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Triffst du, erhalten alle Schiffe in Reichweite 1 des Verteidigers und der Verteidiger selbst je 1 Ionenmarker."
       }
     };
     modification_translations = {
@@ -906,13 +913,16 @@
         text: "Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."
       },
       "Countermeasures": {
-        text: "At the start of the Combat phase, you may discard this card to increase your agility value by 1 until the end of the round.  Then you may remove 1 enemy target lock from your ship."
+        name: "Gegenmassnahmen",
+        text: "Zu Beginn der Kampfphase kannst du diese Karte ablegen, um deine Wendigkeit bis zum Ende der Runde um 1 zu erhöhen. Dann darfst du 1 feindliche Zielerfassung von deinem Schiff entfernen."
       },
       "Experimental Interface": {
-        text: "Once per round, after you perform an action, you may perform 1 free action from an equipped Upgrade card with the \"<strong>Action:</strong>\" header.  Then receive 1 stress token."
+        name: "Experimentelles Interface",
+        text: "Ein Mal pro Runde darfst du nach dem Durchführen einer Aktion 1 ausgerüstete Aufwertungskarte mit dem Stichwort \"<strong>Aktion:</strong>\" benutzen (dies zählt als freie Aktion). Dann erhältst du 1 Stressmarker."
       },
       "Tactical Jammer": {
-        text: "Your ship can obstruct enemy attacks."
+        name: "Taktischer Störsender",
+        text: "Dein Schiff kann die feindliche Schussbahn versperren."
       }
     };
     title_translations = {
@@ -967,10 +977,10 @@
         text: "Wenn du verteidigst, darfst du einmal pro Angriff eine soeben erhaltene, offene Schadenskarte ablegen und dafür eine neue offene Schadenskarte ziehen."
       },
       "Outrider": {
-        text: "While you have a %CANNON% Upgrade card equipped, you <strong>cannot</strong> perform primary weapon attacks and you may perform %CANNON% secondary weapon attacks against ships outside your firing arc."
+        text: "Solange du eine %CANNON%-Aufwertung ausgerüstet hast, kannst du deine Primärwaffen <strong>nicht</strong> verwenden. Dafür darfst du mit %CANNON%-Sekundärwaffen auch Ziele außerhalb deines Feuerwinkels angreifen."
       },
       "Dauntless": {
-        text: "After you execute a maneuver that causes you to overlap another ship, you may perform 1 free action.  Then receive 1 stress token."
+        text: "Nach dem Ausführen eines Manövers, das zur Überschneidung mit einem anderen Schiff geführt hat, darfst du 1 freie Aktion durchführen. Dann erhältst du 1 Stressmarker."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
