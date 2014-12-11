@@ -20,10 +20,10 @@ exportObj.translations.Deutsch =
     slot:
         "Astromech": "Astromech"
         "Bomb": "Bombe"
-        "Cannon": "Kanone"
+        "Cannon": "Kanonen"
         "Crew": "Crew"
         "Elite": "Elite"
-        "Missile": "Rakete"
+        "Missile": "Raketen"
         "System": "System"
         "Torpedo": "Torpedo"
         "Turret": "Geschützturm"
@@ -54,7 +54,7 @@ exportObj.translations.Deutsch =
         "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung"
         "Tantive IV Expansion Pack": "Tantive IV Erweiterung"
         "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung"
-        "YT-2400 Freighter Expansion Pack": "YT-2400 Frachter Erweiterung"
+        "YT-2400 Freighter Expansion Pack": "YT-2400-Frachter Erweiterung"
         "VT-49 Decimator Expansion Pack": "VT-49 Decimator Erweiterung"
         "StarViper Expansion Pack": "StarViper Expansion Pack"
         "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
@@ -362,12 +362,16 @@ exportObj.cardLoaders.Deutsch = () ->
         # "CR90 Corvette (Crippled Fore)":
         #     name: "CR90-Korvette (Bug-Lahmgelegt)"
         #     ship: "CR90-Korvette (Bug)"
+        "Wild Space Fringer":
+            name: "Grenzgänger aus dem Wilden Raum"
         "Dash Rendar":
             text: """Du darfst in der Aktivierungsphase und beim Durchführen von Aktionen Hindernisse ignorieren."""
         '"Leebo"':
             text: """Immer wenn du eine offene Schadenskarte erhälst, ziehst du 1 weitere Schadenskarte. Wähle 1, die abgehandelt wird, und lege die andere ab."""
         "Eaden Vrill":
             text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du mit den Primärwaffen auf ein Schiff mit Stressmarker schießt."""
+        "Patrol Leader":
+            name: "Patrouillenführer"
         "Rear Admiral Chiraneau":
             name: "Konteradmiral Chiraneau"
             text: """Wenn du ein Ziel in Reichweite 1-2 angreifst, kannst du ein %FOCUS% in ein %CRIT% ändern."""
