@@ -2322,7 +2322,7 @@ class GenericAddon
 
     toHTML: ->
         if @data?
-            upgrade_slot_font = (@data.slot ? '').toLowerCase().replace(/[^0-9a-z]/gi, '')
+            upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
             $.trim """
                 <div class="upgrade-container">
                     <div class="mask">

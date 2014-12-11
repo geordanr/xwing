@@ -1,6 +1,6 @@
 @font-face {
   font-family: XWing;
-  src: url("xwing-miniatures.ttf"); }
+  src: url('xwing-miniatures.ttf'); }
 
 i.xwing-miniatures-font {
   font-family: XWing;
@@ -43,6 +43,9 @@ i.xwing-miniatures-font-bomb:before {
 i.xwing-miniatures-font-cannon:before {
   content: "\0043"; }
 
+i.xwing-miniatures-font-modification:before {
+  content: "\0044"; }
+
 i.xwing-miniatures-font-elite:before {
   content: "\0045"; }
 
@@ -54,6 +57,9 @@ i.xwing-miniatures-font-hardpoint:before {
 
 i.xwing-miniatures-font-illicit:before {
   content: "\0049"; }
+
+i.xwing-miniatures-font-title:before {
+  content: "\004c"; }
 
 i.xwing-miniatures-font-missile:before {
   content: "\004d"; }
