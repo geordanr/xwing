@@ -8,6 +8,6 @@ module.exports = (grunt) ->
         dest: 'dist/'
         ext: '.css'
 
-  grunt.loadNpmTasks 'grunt-contrib-sass'
+  grunt.loadNpmTasks 'grunt-sass'
 
   grunt.registerTask 'default', [ 'sass' ]
