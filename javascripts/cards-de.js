@@ -29,10 +29,10 @@
     slot: {
       "Astromech": "Astromech",
       "Bomb": "Bombe",
-      "Cannon": "Kanone",
+      "Cannon": "Kanonen",
       "Crew": "Crew",
       "Elite": "Elite",
-      "Missile": "Rakete",
+      "Missile": "Raketen",
       "System": "System",
       "Torpedo": "Torpedo",
       "Turret": "Geschützturm",
@@ -64,7 +64,7 @@
       "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung",
       "Tantive IV Expansion Pack": "Tantive IV Erweiterung",
       "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung",
-      "YT-2400 Freighter Expansion Pack": "YT-2400 Frachter Erweiterung",
+      "YT-2400 Freighter Expansion Pack": "YT-2400-Frachter Erweiterung",
       "VT-49 Decimator Expansion Pack": "VT-49 Decimator Erweiterung",
       "StarViper Expansion Pack": "StarViper Expansion Pack",
       "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
@@ -449,6 +449,9 @@
       "Nera Dantels": {
         text: "Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."
       },
+      "Wild Space Fringer": {
+        name: "Grenzgänger aus dem Wilden Raum"
+      },
       "Dash Rendar": {
         text: "Du darfst in der Aktivierungsphase und beim Durchführen von Aktionen Hindernisse ignorieren."
       },
@@ -457,6 +460,9 @@
       },
       "Eaden Vrill": {
         text: "Wirf 1 zusätzlichen Angriffswürfel, wenn du mit den Primärwaffen auf ein Schiff mit Stressmarker schießt."
+      },
+      "Patrol Leader": {
+        name: "Patrouillenführer"
       },
       "Rear Admiral Chiraneau": {
         name: "Konteradmiral Chiraneau",
