@@ -69,7 +69,8 @@
       "StarViper Expansion Pack": "Paquet d'extension StarViper",
       "M3-A Interceptor Expansion Pack": "Paquet d'extension Intercepteur M3-A",
       "IG-2000 Expansion Pack": "Paquet d'extension IG-2000",
-      "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics"
+      "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics",
+      "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
     },
     ui: {
       shipSelectorPlaceholder: "Choisissez un vaisseau",
@@ -557,6 +558,9 @@
       "Kaa'To Leeachos": {
         ship: "Chasseur de têtes Z-95",
         text: "Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."
+      },
+      "Commander Alozen": {
+        text: "At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."
       }
     };
     upgrade_translations = {
@@ -1010,6 +1014,9 @@
       },
       "K4 Security Droid": {
         text: "Après avoir exécuté une manœuvre verte, vous pouvez effectuer une acquisition de cible."
+      },
+      "Advanced Targeting Computer": {
+        text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."
       }
     };
     modification_translations = {
@@ -1152,6 +1159,9 @@
       },
       "Andrasta": {
         text: "Votre barre d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."
+      },
+      "TIE/x1": {
+        text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);

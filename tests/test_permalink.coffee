@@ -213,5 +213,10 @@ casper.test.begin "Weird Empire standard permalink v3 missing trailing colon", (
     common.assertGameTypeIs(test, '#rebel-builder', 'standard')
     common.assertPointsRemaining(test, '#rebel-builder', 1)
 
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+
     .run ->
         test.done()

@@ -1129,7 +1129,7 @@
     };
 
     SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term) {
-      var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, upgrade, upgrade_name, _i, _len, _ref, _ref1, _ref2;
+      var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, retval, upgrade, upgrade_name, _i, _j, _len, _len1, _ref, _ref1, _ref2, _results;
       if (term == null) {
         term = '';
       }
@@ -1189,7 +1189,7 @@
       if ((include_upgrade != null) && (((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term))) {
         eligible_upgrades.push(include_upgrade);
       }
-      return ((function() {
+      retval = ((function() {
         var _j, _len1, _results;
         _results = [];
         for (_j = 0, _len1 = available_upgrades.length; _j < _len1; _j++) {
@@ -1204,6 +1204,16 @@
         }
         return _results;
       })()).sort(exportObj.sortHelper);
+      if (this_upgrade_obj.adjustment_func != null) {
+        _results = [];
+        for (_j = 0, _len1 = retval.length; _j < _len1; _j++) {
+          upgrade = retval[_j];
+          _results.push(this_upgrade_obj.adjustment_func(upgrade));
+        }
+        return _results;
+      } else {
+        return retval;
+      }
     };
 
     SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term) {
@@ -2270,7 +2280,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1660
+                        lineno: 1665
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2340,7 +2350,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1684
+                  lineno: 1689
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2393,14 +2403,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1706
+              lineno: 1711
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1708
+              lineno: 1713
             }));
           }
           _ref1 = _this.modifications;
@@ -2408,7 +2418,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1710
+                lineno: 1715
               }));
             }
           }
@@ -3090,6 +3100,7 @@
       this.ship = args.ship;
       this.container = $(args.container);
       this.data = null;
+      this.unadjusted_data = null;
       this.conferredAddons = [];
       this.serialization_code = 'X';
       this.type = null;
@@ -3114,7 +3125,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 2221
+                  lineno: 2228
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -3196,14 +3207,14 @@
     };
 
     GenericAddon.prototype.setData = function(new_data) {
-      var ___iced_passed_deferral, __iced_deferrals, __iced_k;
+      var ___iced_passed_deferral, __iced_deferrals, __iced_k, _ref;
       __iced_k = __iced_k_noop;
       ___iced_passed_deferral = iced.findDeferral(arguments);
-      if (new_data !== this.data) {
+      if ((new_data != null ? new_data.id : void 0) !== ((_ref = this.data) != null ? _ref.id : void 0)) {
         (function(_this) {
           return (function(__iced_k) {
-            var _ref;
-            if (((_ref = _this.data) != null ? _ref.unique : void 0) != null) {
+            var _ref1;
+            if (((_ref1 = _this.data) != null ? _ref1.unique : void 0) != null) {
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
@@ -3211,8 +3222,8 @@
                   funcname: "GenericAddon.setData"
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
-                  _this.data, _this.type, __iced_deferrals.defer({
-                    lineno: 2267
+                  _this.unadjusted_data, _this.type, __iced_deferrals.defer({
+                    lineno: 2274
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -3234,7 +3245,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2270
+                      lineno: 2277
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3243,8 +3254,13 @@
                 return __iced_k();
               }
             })(function() {
-              _this.data = new_data;
-              _this.conferAddons();
+              _this.data = _this.unadjusted_data = new_data;
+              if (_this.data != null) {
+                if (_this.adjustment_func != null) {
+                  _this.data = _this.adjustment_func(_this.data);
+                }
+                _this.conferAddons();
+              }
               return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
             });
           };
@@ -3255,12 +3271,12 @@
     };
 
     GenericAddon.prototype.conferAddons = function() {
-      var addon, args, cls, _i, _len, _ref, _ref1, _results;
-      if ((((_ref = this.data) != null ? _ref.confersAddons : void 0) != null) && this.data.confersAddons.length > 0) {
-        _ref1 = this.data.confersAddons;
+      var addon, args, cls, _i, _len, _ref, _results;
+      if ((this.data.confersAddons != null) && this.data.confersAddons.length > 0) {
+        _ref = this.data.confersAddons;
         _results = [];
-        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-          addon = _ref1[_i];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          addon = _ref[_i];
           cls = addon.type;
           args = {
             ship: this.ship,
@@ -3268,6 +3284,9 @@
           };
           if (addon.slot != null) {
             args.slot = addon.slot;
+          }
+          if (addon.adjustment_func != null) {
+            args.adjustment_func = addon.adjustment_func;
           }
           addon = new cls(args);
           if (addon instanceof exportObj.Upgrade) {
@@ -3299,7 +3318,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2295
+              lineno: 2309
             }));
           }
           __iced_deferrals._fulfill();
@@ -3406,6 +3425,9 @@
       this.dataById = exportObj.upgradesById;
       this.dataByName = exportObj.upgradesByLocalizedName;
       this.serialization_code = 'U';
+      if (args.adjustment_func != null) {
+        this.adjustment_func = args.adjustment_func;
+      }
       this.setupSelector();
     }
 

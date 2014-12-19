@@ -6,6 +6,7 @@ exportObj.unreleasedExpansions = [
     "M3-A Interceptor Expansion Pack"
     "IG-2000 Expansion Pack"
     "Most Wanted Expansion Pack"
+    "Imperial Raider Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -2235,7 +2236,19 @@ exportObj.basicCardData = ->
             slots: [
             ]
         }
-
+        {
+            name: "Commander Alozen"
+            faction: "Galactic Empire"
+            id: 128
+            ship: "TIE Advanced"
+            unique: true
+            skill: 5
+            points: 25
+            slots: [
+                "Elite"
+                "Missile"
+            ]
+        }
     ]
 
     upgradesById: [
@@ -3155,6 +3168,13 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             points: 2
         }
+        {
+            name: 'Advanced Targeting Computer'
+            id: 124
+            slot: "System"
+            points: 5
+            ship: "TIE Advanced"
+        }
     ]
 
     modificationsById: [
@@ -3270,6 +3290,7 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 "Boost" in ship.effectiveStats().actions
         }
+        
     ]
 
     titlesById: [
@@ -3526,6 +3547,22 @@ exportObj.basicCardData = ->
                 {
                     type: exportObj.Upgrade
                     slot: "Bomb"
+                }
+            ]
+        }
+        {
+            name: 'TIE/x1'
+            id: 23
+            points: 0
+            ship: "TIE Advanced"
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "System"
+                    adjustment_func: (upgrade) ->
+                        copy = $.extend true, {}, upgrade
+                        copy.points = Math.max(0, copy.points - 4)
+                        copy
                 }
             ]
         }

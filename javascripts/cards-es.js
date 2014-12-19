@@ -69,7 +69,8 @@
       "StarViper Expansion Pack": "StarViper Expansion Pack",
       "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
       "IG-2000 Expansion Pack": "IG-2000 Expansion Pack",
-      "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
+      "Most Wanted Expansion Pack": "Most Wanted Expansion Pack",
+      "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
     },
     ui: {
       shipSelectorPlaceholder: "Selecciona una nave",
@@ -592,6 +593,9 @@
       },
       "Kaa'To Leeachos": {
         text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
+      },
+      "Commander Alozen": {
+        text: "At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."
       }
     };
     upgrade_translations = {
@@ -1039,6 +1043,9 @@
       },
       "Unhinged Astromech": {
         text: "Puedes considerar todas las maniobras de velocidad 3 como maniobras verdes."
+      },
+      "Advanced Targeting Computer": {
+        text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."
       }
     };
     modification_translations = {
@@ -1178,6 +1185,9 @@
       },
       "IG-2000": {
         text: "<span class=\"card-restriction\">Solo Agressor.</span><br /><br />Tienes el texto de habilidad de piloto de otras naves <em>IG-2000</em> aliadas, adicionalmente a la tuya propia."
+      },
+      "TIE/x1": {
+        text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
       }
     };
     return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);

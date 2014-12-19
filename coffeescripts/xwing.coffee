@@ -986,7 +986,12 @@ class exportObj.SquadBuilder
         if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
-        ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        retval = ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        # Possibly adjust the upgrade
+        if this_upgrade_obj.adjustment_func?
+            (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
+        else
+            retval
 
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
@@ -2126,6 +2131,7 @@ class Ship
                 #console.log "Invalid title: #{@title?.data?.name}"
                 @title.setById null
                 continue
+
             for modification in @modifications
                 func = modification?.data?.validation_func ? modification?.data?.restriction_func ? undefined
                 if func? and not func(this, modification)
@@ -2209,6 +2215,7 @@ class GenericAddon
 
         # internal state
         @data = null
+        @unadjusted_data = null
         @conferredAddons = []
         @serialization_code = 'X'
 
@@ -2263,24 +2270,31 @@ class GenericAddon
         @setData @dataByName[$.trim name]
 
     setData: (new_data) ->
-        if new_data != @data
+        if new_data?.id != @data?.id
             if @data?.unique?
-                await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
+                await @ship.builder.container.trigger 'xwing:releaseUnique', [ @unadjusted_data, @type, defer() ]
             @rescindAddons()
             if new_data?.unique?
                 await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
-            @data = new_data
-            @conferAddons()
+            # Need to make a copy of the data, but that means I can't just check equality
+            @data = @unadjusted_data = new_data
+
+            if @data?
+                if @adjustment_func?
+                    @data = @adjustment_func(@data)
+                @conferAddons()
+
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
-        if @data?.confersAddons? and @data.confersAddons.length > 0
+        if @data.confersAddons? and @data.confersAddons.length > 0
             for addon in @data.confersAddons
                 cls = addon.type
                 args =
                     ship: @ship
                     container: @container
                 args.slot = addon.slot if addon.slot?
+                args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
                 addon = new cls args
                 if addon instanceof exportObj.Upgrade
                     @ship.upgrades.push addon
@@ -2373,6 +2387,7 @@ class exportObj.Upgrade extends GenericAddon
         @dataById = exportObj.upgradesById
         @dataByName = exportObj.upgradesByLocalizedName
         @serialization_code = 'U'
+        @adjustment_func = args.adjustment_func if args.adjustment_func?
 
         @setupSelector()
 

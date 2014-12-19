@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack"];
+  exportObj.unreleasedExpansions = ["StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack", "Imperial Raider Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;
@@ -1429,6 +1429,15 @@
           skill: 1,
           points: 99,
           slots: []
+        }, {
+          name: "Commander Alozen",
+          faction: "Galactic Empire",
+          id: 128,
+          ship: "TIE Advanced",
+          unique: true,
+          skill: 5,
+          points: 25,
+          slots: ["Elite", "Missile"]
         }
       ],
       upgradesById: [
@@ -2277,6 +2286,12 @@
           slot: "Crew",
           faction: "Scum and Villainy",
           points: 2
+        }, {
+          name: 'Advanced Targeting Computer',
+          id: 124,
+          slot: "System",
+          points: 5,
+          ship: "TIE Advanced"
         }
       ],
       modificationsById: [
@@ -2645,6 +2660,23 @@
             }, {
               type: exportObj.Upgrade,
               slot: "Bomb"
+            }
+          ]
+        }, {
+          name: 'TIE/x1',
+          id: 23,
+          points: 0,
+          ship: "TIE Advanced",
+          confersAddons: [
+            {
+              type: exportObj.Upgrade,
+              slot: "System",
+              adjustment_func: function(upgrade) {
+                var copy;
+                copy = $.extend(true, {}, upgrade);
+                copy.points = Math.max(0, copy.points - 4);
+                return copy;
+              }
             }
           ]
         }

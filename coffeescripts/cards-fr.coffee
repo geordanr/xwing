@@ -60,6 +60,7 @@ exportObj.translations['Français'] =
         "M3-A Interceptor Expansion Pack": "Paquet d'extension Intercepteur M3-A"
         "IG-2000 Expansion Pack": "Paquet d'extension IG-2000"
         "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics"
+        "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Choisissez un vaisseau"
         pilotSelectorPlaceholder: "Choisissez un pilote"
@@ -127,7 +128,7 @@ exportObj.cardLoaders['Français'] = () ->
 
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
-    
+
     # Rename ships
     exportObj.renameShip 'TIE Fighter', 'Chasseur TIE'
     exportObj.renameShip 'TIE Interceptor', 'Intercepteur TIE'
@@ -141,7 +142,7 @@ exportObj.cardLoaders['Français'] = () ->
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corvette CR90 (proue)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transport moyen GR-75'
     exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A'
-    
+
 
     # Names don't need updating, but text needs to be set
     pilot_translations =
@@ -284,7 +285,7 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Navette de classe Lambda"
             name:"Pilote du groupe Omicron"
         # Décimateur VT-49
-        "Captain Oicunn": 
+        "Captain Oicunn":
             ship: "Décimateur VT-49"
             name: "Capitaine Oicunn"
             text: """Après avoir exécuté une manœuvre, chaque vaisseau ennemi avec lequel vous êtes au contact subit 1 dégât."""
@@ -299,7 +300,7 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Décimateur VT-49"
             name: "Commandant Kenkirk"
             text: """Si vous n'avez pas de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."""
-            
+
         # Rebels
         # X-Wing
         "Red Squadron Pilot":
@@ -419,7 +420,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous effectuez une attaque d'arme principale contre un vaisseau sous l'effet du stress, lancez 1 dé d'attaque additionnel."""
         "Wild Space Fringer":
             name: "Frontalier de l'espace sauvage"
-            
+
         # Scum and Villainy
         # Starviper, traduit de l'anglais
         "Prince Xizor":
@@ -470,6 +471,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Kaa'To Leeachos":
             ship: "Chasseur de têtes Z-95"
             text: """Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."""
+        "Commander Alozen":
+            text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -813,6 +816,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."""
         "K4 Security Droid": # Traduction non officielle
             text: """Après avoir exécuté une manœuvre verte, vous pouvez effectuer une acquisition de cible."""
+        "Advanced Targeting Computer":
+            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
 
     modification_translations =
         "Shield Upgrade":
@@ -919,5 +924,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""
         "Andrasta": # Traduction non officielle
             text: """Votre barre d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."""
- 
+        "TIE/x1":
+            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
+
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
