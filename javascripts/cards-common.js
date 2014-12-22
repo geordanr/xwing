@@ -2292,6 +2292,14 @@
           slot: "System",
           points: 5,
           ship: "TIE Advanced"
+        }, {
+          name: 'Ion Cannon Battery',
+          id: 125,
+          slot: "Hardpoint",
+          points: 6,
+          energy: 2,
+          attack: 4,
+          range: "2-4"
         }
       ],
       modificationsById: [
