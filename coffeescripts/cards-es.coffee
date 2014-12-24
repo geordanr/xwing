@@ -446,7 +446,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Serissu":
             text: """Cuando otra nave aliada a alcance 1 defienda, podrá volver a tirar 1 dado de defensa."""
         "Laetin A'shera":
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."""
         "IG-88A":
             text: """Esta carta todavía no ha sido revelada."""
         "IG-88B":
@@ -788,9 +788,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Inertial Dampeners":
             text: """Cuando reveles tu dial de maniobra, puedes descartar esta carta para en su lugar realizar una maniobra [0%STOP%] blanca. Despúes recibe un marcador de tensión."""
         "Flechette Cannon":
-            text: """Esta carta todavía no ha sido revelada."""
-        '"Mang??? Cannon"':
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."""
+        '"Mangler" Cannon':
+            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%When attacking, you may change 1 of your %HIT% results to a %CRIT% result."""
         "Dead Man's Switch":
             text: """Cuando seas destruido, cada nave a distancia 1 sufre 1 daño."""
         "Feedback Array":

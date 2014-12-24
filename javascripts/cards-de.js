@@ -146,7 +146,6 @@
     exportObj.renameShip('GR-75 Medium Transport', 'Medium-Transporter GR-75');
     exportObj.renameShip('CR90 Corvette (Fore)', 'CR90-Korvette (Bug)');
     exportObj.renameShip('CR90 Corvette (Aft)', 'CR90-Korvette (Heck)');
-    exportObj.renameShip('M3-A Interceptor', 'M3-A Interceptor');
     pilot_translations = {
       "Wedge Antilles": {
         text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."

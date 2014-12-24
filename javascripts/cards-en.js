@@ -336,7 +336,7 @@
         text: "When another friendly ship at Range 1 is defending, it may reroll 1 defense die."
       },
       "Laetin A'shera": {
-        text: "This card has not yet been revealed."
+        text: "After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."
       },
       "IG-88A": {
         text: "This card has not yet been revealed."
@@ -713,10 +713,10 @@
         text: "When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."
       },
       "Flechette Cannon": {
-        text: "This card has not yet been revealed."
+        text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."
       },
-      '"Mang??? Cannon"': {
-        text: "This card has not yet been revealed."
+      '"Mangler" Cannon': {
+        text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%When attacking, you may change 1 of your %HIT% results to a %CRIT% result."
       },
       "Dead Man's Switch": {
         text: "When you are destroyed, each ship at Range 1 suffers 1 damage."

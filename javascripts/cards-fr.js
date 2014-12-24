@@ -511,7 +511,7 @@
       },
       "Laetin A'shera": {
         ship: "Intercepteur M3-A",
-        text: "Cette carte n'a pas encore été révélée."
+        text: "After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."
       },
       "IG-88A": {
         text: "Cette carte n'a pas encore été révélée."
@@ -778,10 +778,10 @@
         text: "<strong>Attaque :</strong> attaquez 1 vaisseau.%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."
       },
       "Flechette Cannon": {
-        text: "Cette carte n'a pas encore été révélée."
+        text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."
       },
-      '"Mang??? Cannon"': {
-        text: "Cette carte n'a pas encore été révélée."
+      '"Mangler" Cannon': {
+        text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%When attacking, you may change 1 of your %HIT% results to a %CRIT% result."
       },
       "Enhanced Scopes": {
         name: "Radars améliorés",

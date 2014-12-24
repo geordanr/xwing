@@ -140,7 +140,8 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'CR90 Corvette (Fore)', 'CR90-Korvette (Bug)'
     # Move CR90 Corvette (Aft) to CR90-Korvette (Heck)
     exportObj.renameShip 'CR90 Corvette (Aft)', 'CR90-Korvette (Heck)'
-    exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor'
+    # Needs translation
+    # exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor'
 
     pilot_translations =
         "Wedge Antilles":
