@@ -1234,7 +1234,7 @@
           id: 105,
           ship: "M3-A Interceptor",
           skill: 6,
-          points: 99,
+          points: 18,
           unique: true,
           slots: []
         }, {
@@ -2182,12 +2182,16 @@
           name: "Flechette Cannon",
           id: 109,
           slot: "Cannon",
-          points: 99
+          points: 2,
+          attack: 3,
+          range: "1-3"
         }, {
-          name: '"Mang??? Cannon"',
+          name: '"Mangler" Cannon',
           id: 110,
           slot: "Cannon",
-          points: 99
+          points: 4,
+          attack: 3,
+          range: "1-3"
         }, {
           name: "Dead Man's Switch",
           id: 111,
