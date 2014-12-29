@@ -89,27 +89,27 @@ casper.test.begin "Heavy Scyk title", (test) ->
     common.createList('#scum-builder', [
         {
             ship: 'M3-A Interceptor'
-            pilot: 'Cartel ???' # FIXME
+            pilot: 'Cartel Spacer'
             upgrades: [
             ]
         }
         {
             ship: 'M3-A Interceptor'
-            pilot: 'Cartel ???' # FIXME
+            pilot: 'Cartel Spacer'
             upgrades: [
                 '"Heavy Scyk" Interceptor (Cannon)'
             ]
         }
         {
             ship: 'M3-A Interceptor'
-            pilot: 'Cartel ???' # FIXME
+            pilot: 'Cartel Spacer'
             upgrades: [
                 '"Heavy Scyk" Interceptor (Missile)'
             ]
         }
         {
             ship: 'M3-A Interceptor'
-            pilot: 'Cartel ???' # FIXME
+            pilot: 'Cartel Spacer'
             upgrades: [
                 '"Heavy Scyk" Interceptor (Torpedo)'
             ]

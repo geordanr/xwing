@@ -1927,12 +1927,12 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Cartel ???"
+            name: "Cartel Spacer"
             faction: "Scum and Villainy"
             id: 107
             ship: "M3-A Interceptor"
             skill: 2
-            points: 99
+            points: 14
             slots: [ ]
         }
         {
