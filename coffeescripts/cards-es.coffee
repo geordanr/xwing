@@ -640,7 +640,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Señuelo"
             text: """Al comienzo de la fase de Combate, puedes eleir 1 nave aliada que tengas a alcance 1-2. Intercambia tu Habilidad de piloto por la Habilidad de piloto de esa nave hasta el final de la fase."""
         "Outmaneuver":
-            name: "Mejores maniobras"
+            name: "Superioridad Táctica"
             text: """Cuando ataques a una nave dentro de tu arco de fuego, si tu nave no se encuentra dentro del arco de fuego de dicha nave, reduce su valor de Agilidad en 1 (para un mínimo de 0)."""
         "Predator":
             name: "Depredador"
