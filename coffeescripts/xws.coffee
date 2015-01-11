@@ -127,6 +127,9 @@ class exportObj.XWSManager
                 textarea.select()
                 textarea.focus()
 
+        $('#xws-qrcode-container').click (e) ->
+            window.open $('#xws-qrcode-container canvas')[0].toDataURL()
+
         @load_xws_button = $ @xws_import_modal.find('button.import-xws')
         @load_xws_button.click (e) =>
             e.preventDefault()
