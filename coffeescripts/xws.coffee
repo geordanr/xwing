@@ -71,7 +71,7 @@ class exportObj.XWSManager
                         </div>
                     </div>
                     <div class="tab-pane" id="xws-qrcode">
-                        Below is a <b>zlib-compressed</b> QR Code of XWS.  <i>This is still very experimental!</i>
+                        Below is a QR Code of XWS.  <i>This is still very experimental!</i>
                         <div id="xws-qrcode-container"></div>
                     </div>
                 </div>
@@ -119,7 +119,8 @@ class exportObj.XWSManager
                 textarea.val xws_json
                 $('#xws-qrcode-container').text ''
                 $('#xws-qrcode-container').qrcode
-                    text: exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
+                    # text: exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
+                    text: xws_json
                     correctLevel: QRErrorCorrectLevel.L
                 @xws_export_modal.modal 'show'
                 $('#xws-text-tab').tab 'show'
