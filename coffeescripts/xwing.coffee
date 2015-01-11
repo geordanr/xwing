@@ -1393,6 +1393,7 @@ class exportObj.SquadBuilder
         last_id = 0
         unmatched = (pilot for pilot in xws.pilots when pilot.multisection?)
         for _ in [0...(unmatched.length ** 2)]
+            break if unmatched.length == 0
             # console.log "Top of loop, unmatched: #{m.name for m in unmatched}"
             unmatched_pilot = unmatched.shift()
             unmatched_pilot.multisection_id ?= last_id++
