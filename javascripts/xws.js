@@ -51,7 +51,7 @@
       this.xws_export_modal = $(document.createElement('DIV'));
       this.xws_export_modal.addClass('modal hide fade xws-modal hidden-print');
       this.container.append(this.xws_export_modal);
-      this.xws_export_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>XWS Export (Beta!)</h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-pills\">\n        <li><a id=\"xws-text-tab\" href=\"#xws-text\" data-toggle=\"tab\">Text</a></li>\n        <li><a id=\"xws-qrcode-tab\" href=\"#xws-qrcode\" data-toggle=\"tab\">QR Code</a></li>\n    </ul>\n    <div class=\"tab-content\">\n        <div class=\"tab-pane\" id=\"xws-text\">\n            Copy and paste this into an XWS-compliant application to transfer your list.\n            <i>(This is in beta, and the <a href=\"https://gist.github.com/voidstate/288965581669a2a68073\">spec</a> is still being defined, so it may not work!)</i>\n            <div class=\"container-fluid\">\n                <textarea class=\"xws-content\"></textarea>\n            </div>\n        </div>\n        <div class=\"tab-pane\" id=\"xws-qrcode\">\n            Below is a <b>zlib-compressed</b> QR Code of XWS.  <i>This is still very experimental!</i>\n            <div id=\"xws-qrcode-container\"></div>\n        </div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.xws_export_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3>XWS Export (Beta!)</h3>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-pills\">\n        <li><a id=\"xws-text-tab\" href=\"#xws-text\" data-toggle=\"tab\">Text</a></li>\n        <li><a id=\"xws-qrcode-tab\" href=\"#xws-qrcode\" data-toggle=\"tab\">QR Code</a></li>\n    </ul>\n    <div class=\"tab-content\">\n        <div class=\"tab-pane\" id=\"xws-text\">\n            Copy and paste this into an XWS-compliant application to transfer your list.\n            <i>(This is in beta, and the <a href=\"https://gist.github.com/voidstate/288965581669a2a68073\">spec</a> is still being defined, so it may not work!)</i>\n            <div class=\"container-fluid\">\n                <textarea class=\"xws-content\"></textarea>\n            </div>\n        </div>\n        <div class=\"tab-pane\" id=\"xws-qrcode\">\n            Below is a QR Code of XWS.  <i>This is still very experimental!</i>\n            <div id=\"xws-qrcode-container\"></div>\n        </div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.xws_import_modal = $(document.createElement('DIV'));
       this.xws_import_modal.addClass('modal hide fade xws-modal hidden-print');
       this.container.append(this.xws_import_modal);
@@ -78,10 +78,7 @@
             textarea.val(xws_json);
             $('#xws-qrcode-container').text('');
             $('#xws-qrcode-container').qrcode({
-              text: exportObj.pako.deflate(xws_json, {
-                to: 'string',
-                level: 9
-              }),
+              text: xws_json,
               correctLevel: QRErrorCorrectLevel.L
             });
             _this.xws_export_modal.modal('show');
@@ -91,6 +88,9 @@
           });
         };
       })(this));
+      $('#xws-qrcode-container').click(function(e) {
+        return window.open($('#xws-qrcode-container canvas')[0].toDataURL());
+      });
       this.load_xws_button = $(this.xws_import_modal.find('button.import-xws'));
       return this.load_xws_button.click((function(_this) {
         return function(e) {
