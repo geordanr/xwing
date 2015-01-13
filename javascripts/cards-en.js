@@ -339,13 +339,13 @@
         text: "After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."
       },
       "IG-88A": {
-        text: "This card has not yet been revealed."
+        text: "After you perform an attack that destroys the defender, you may recover 1 shield."
       },
       "IG-88B": {
-        text: "This card has not yet been revealed."
+        text: "Once per round, after you perform an attack that does not hit, you may perform an attack with an equipped %CANNON% secondary weapon."
       },
       "IG-88C": {
-        text: "This card has not yet been revealed."
+        text: "After you perform a boost action, you may perform a free evade action."
       },
       "IG-88D": {
         text: "You may execute the (%SLOOPLEFT% 3) or (%SLOOPRIGHT% 3) maneuver using the corresponding (%TURNLEFT% 3) or (%TURNRIGHT% 3) template."

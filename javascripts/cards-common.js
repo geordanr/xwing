@@ -278,7 +278,8 @@
           hull: 4,
           shields: 4,
           actions: ["Focus", "Target Lock", "Boost", "Evade"],
-          large: true
+          large: true,
+          maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [0, 2, 2, 2, 0, 0, 3, 3], [0, 0, 1, 0, 0, 3, 0, 0]]
         }
       },
       pilotsById: [
@@ -1261,7 +1262,7 @@
           unique: true,
           ship: "Aggressor",
           skill: 6,
-          points: 99,
+          points: 36,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
         }, {
           name: "IG-88B",
@@ -1270,7 +1271,7 @@
           unique: true,
           ship: "Aggressor",
           skill: 6,
-          points: 99,
+          points: 36,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
         }, {
           name: "IG-88C",
@@ -1279,7 +1280,7 @@
           unique: true,
           ship: "Aggressor",
           skill: 6,
-          points: 99,
+          points: 36,
           slots: ["Elite", "System", "Cannon", "Cannon", "Bomb", "Illicit"]
         }, {
           name: "IG-88D",
