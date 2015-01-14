@@ -1423,6 +1423,19 @@ class exportObj.SquadBuilder
 
         xws
 
+    toMinimalXWS: ->
+        # Just what's necessary
+        xws = @toXWS()
+
+        # Keep mandatory stuff only
+        for own k, v of xws
+            delete xws[k] unless k in ['faction', 'pilots', 'version']
+
+        for own k, v of xws.pilots
+            delete xws[k] unless k in ['name', 'ship', 'upgrades', 'multisection_id']
+
+        xws
+
     loadFromXWS: (xws, cb) ->
         success = null
         error = null

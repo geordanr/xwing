@@ -24,6 +24,8 @@ exportObj.fromXWSUpgrade =
     'mod': 'Modification'
     'samd': 'Salvaged Astromech'
 
+SPEC_URL = 'https://github.com/elistevens/xws-spec'
+
 # Until jquery-qrcode exposes this better...
 QRErrorCorrectLevel =
     L: 1
@@ -65,7 +67,7 @@ class exportObj.XWSManager
                 <div class="tab-content">
                     <div class="tab-pane" id="xws-text">
                         Copy and paste this into an XWS-compliant application to transfer your list.
-                        <i>(This is in beta, and the <a href="https://gist.github.com/voidstate/288965581669a2a68073">spec</a> is still being defined, so it may not work!)</i>
+                        <i>(This is in beta, and the <a href="#{SPEC_URL}">spec</a> is still being defined, so it may not work!)</i>
                         <div class="container-fluid">
                             <textarea class="xws-content"></textarea>
                         </div>
@@ -91,7 +93,7 @@ class exportObj.XWSManager
             </div>
             <div class="modal-body">
                 Paste XWS here to load a list exported from another application.
-                <i>(This is in beta, and the <a href="https://gist.github.com/voidstate/288965581669a2a68073">spec</a> is still being defined, so it may not work!)</i>
+                <i>(This is in beta, and the <a href="#{SPEC_URL}">spec</a> is still being defined, so it may not work!)</i>
                 <div class="container-fluid">
                     <textarea class="xws-content" placeholder="Paste XWS here..."></textarea>
                 </div>
@@ -115,12 +117,10 @@ class exportObj.XWSManager
             $(window).trigger 'xwing:pingActiveBuilder', (builder) =>
                 textarea = $ @xws_export_modal.find('.xws-content')
                 textarea.attr 'readonly'
-                xws_json = JSON.stringify(builder.toXWS())
-                textarea.val xws_json
+                textarea.val JSON.stringify(builder.toXWS())
                 $('#xws-qrcode-container').text ''
                 $('#xws-qrcode-container').qrcode
-                    # text: exportObj.pako.deflate(xws_json, {to: 'string', level: 9})
-                    text: xws_json
+                    text: JSON.stringify(builder.toMinimalXWS())
                     correctLevel: QRErrorCorrectLevel.L
                 @xws_export_modal.modal 'show'
                 $('#xws-text-tab').tab 'show'
