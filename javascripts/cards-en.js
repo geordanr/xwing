@@ -671,7 +671,7 @@
         text: "%IMPERIALONLY%%LINEBREAK%At the end of the Combat phase, each enemy ship at Range 1 that does not have a stress token receives 1 stress token."
       },
       "Fleet Officer": {
-        text: "%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 2 friendly ships within Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
+        text: "%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 2 friendly ships at Range 1-2 and assign 1 focus token to each of those ships.  Then receive 1 stress token."
       },
       "Lone Wolf": {
         text: "When attacking or defending, if there are no other friendly ships at Range 1-2, you may reroll 1 of your blank results."

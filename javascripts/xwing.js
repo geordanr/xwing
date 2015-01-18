@@ -163,6 +163,8 @@
       this.total_points = 0;
       this.isEpic = false;
       this.maxEpicPointsAllowed = 0;
+      this.maxSmallShipsOfOneType = null;
+      this.maxLargeShipsOfOneType = null;
       this.backend = null;
       this.current_squad = {};
       this.language = 'English';
@@ -475,7 +477,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 479
+                lineno: 481
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -680,19 +682,27 @@
         case 'standard':
           this.isEpic = false;
           this.desired_points_input.val(100);
+          this.maxSmallShipsOfOneType = null;
+          this.maxLargeShipsOfOneType = null;
           break;
         case 'epic':
           this.isEpic = true;
           this.maxEpicPointsAllowed = 5;
           this.desired_points_input.val(300);
+          this.maxSmallShipsOfOneType = 12;
+          this.maxLargeShipsOfOneType = 6;
           break;
         case 'team-epic':
           this.isEpic = true;
           this.maxEpicPointsAllowed = 3;
           this.desired_points_input.val(200);
+          this.maxSmallShipsOfOneType = 8;
+          this.maxLargeShipsOfOneType = 4;
           break;
         case 'custom':
           this.isEpic = false;
+          this.maxSmallShipsOfOneType = null;
+          this.maxLargeShipsOfOneType = null;
       }
       this.max_epic_points_span.text(this.maxEpicPointsAllowed);
       return this.onPointsUpdated(cb);
@@ -764,13 +774,15 @@
           }
         }
         this.illegal_epic_upgrades_container.toggleClass('hidden', !illegal_for_epic);
-        for (ship_name in shipCountsByType) {
-          count = shipCountsByType[ship_name];
-          ship_data = exportObj.ships[ship_name];
-          if ((ship_data.large != null) && count > 6) {
-            this.too_many_large_ships_container.toggleClass('hidden', false);
-          } else if ((ship.huge == null) && count > 12) {
-            this.too_many_small_ships_container.toggleClass('hidden', false);
+        if ((this.maxLargeShipsOfOneType != null) && (this.maxSmallShipsOfOneType != null)) {
+          for (ship_name in shipCountsByType) {
+            count = shipCountsByType[ship_name];
+            ship_data = exportObj.ships[ship_name];
+            if ((ship_data.large != null) && count > this.maxLargeShipsOfOneType) {
+              this.too_many_large_ships_container.toggleClass('hidden', false);
+            } else if ((ship.huge == null) && count > this.maxSmallShipsOfOneType) {
+              this.too_many_small_ships_container.toggleClass('hidden', false);
+            }
           }
         }
       }
@@ -1031,7 +1043,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 940
+            lineno: 951
           }));
           __iced_deferrals._fulfill();
         });
@@ -1044,7 +1056,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 941
+              lineno: 952
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -2304,7 +2316,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1679
+                        lineno: 1690
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2374,7 +2386,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1703
+                  lineno: 1714
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2427,14 +2439,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1725
+              lineno: 1736
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1727
+              lineno: 1738
             }));
           }
           _ref1 = _this.modifications;
@@ -2442,7 +2454,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1729
+                lineno: 1740
               }));
             }
           }
@@ -3149,7 +3161,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 2242
+                  lineno: 2253
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -3247,7 +3259,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                    lineno: 2288
+                    lineno: 2299
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -3269,7 +3281,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2291
+                      lineno: 2302
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3342,7 +3354,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2323
+              lineno: 2334
             }));
           }
           __iced_deferrals._fulfill();
