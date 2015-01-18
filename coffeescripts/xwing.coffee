@@ -81,6 +81,8 @@ class exportObj.SquadBuilder
         @total_points = 0
         @isEpic = false
         @maxEpicPointsAllowed = 0
+        @maxSmallShipsOfOneType = null
+        @maxLargeShipsOfOneType = null
 
         @backend = null
         @current_squad = {}
@@ -682,16 +684,24 @@ class exportObj.SquadBuilder
             when 'standard'
                 @isEpic = false
                 @desired_points_input.val 100
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
             when 'epic'
                 @isEpic = true
                 @maxEpicPointsAllowed = 5
                 @desired_points_input.val 300
+                @maxSmallShipsOfOneType = 12
+                @maxLargeShipsOfOneType = 6
             when 'team-epic'
                 @isEpic = true
                 @maxEpicPointsAllowed = 3
                 @desired_points_input.val 200
+                @maxSmallShipsOfOneType = 8
+                @maxLargeShipsOfOneType = 4
             when 'custom'
                 @isEpic = false
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
         @max_epic_points_span.text @maxEpicPointsAllowed
         @onPointsUpdated cb
 
@@ -738,12 +748,13 @@ class exportObj.SquadBuilder
                                     break
                             break if illegal_for_epic
             @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
-            for ship_name, count of shipCountsByType
-                ship_data = exportObj.ships[ship_name]
-                if ship_data.large? and count > 6
-                    @too_many_large_ships_container.toggleClass 'hidden', false
-                else if not ship.huge? and count > 12
-                    @too_many_small_ships_container.toggleClass 'hidden', false
+            if @maxLargeShipsOfOneType? and @maxSmallShipsOfOneType?
+                for ship_name, count of shipCountsByType
+                    ship_data = exportObj.ships[ship_name]
+                    if ship_data.large? and count > @maxLargeShipsOfOneType
+                        @too_many_large_ships_container.toggleClass 'hidden', false
+                    else if not ship.huge? and count > @maxSmallShipsOfOneType
+                        @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
