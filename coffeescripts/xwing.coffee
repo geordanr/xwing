@@ -2370,6 +2370,8 @@ class GenericAddon
                         </div>
                     </div>
                     <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
+                    <div class="upgrade-text">#{@data.text}</div>
+                    <div style="clear: both;"></div>
                 </div>
             """
         else
