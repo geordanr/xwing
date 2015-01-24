@@ -79,6 +79,7 @@ class exportObj.SquadBuilder
             sources: null
             points: 100
         @total_points = 0
+        @isCustom = false
         @isEpic = false
         @maxEpicPointsAllowed = 0
         @maxSmallShipsOfOneType = null
@@ -683,23 +684,27 @@ class exportObj.SquadBuilder
         switch gametype
             when 'standard'
                 @isEpic = false
+                @isCustom = false
                 @desired_points_input.val 100
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'epic'
                 @isEpic = true
+                @isCustom = false
                 @maxEpicPointsAllowed = 5
                 @desired_points_input.val 300
                 @maxSmallShipsOfOneType = 12
                 @maxLargeShipsOfOneType = 6
             when 'team-epic'
                 @isEpic = true
+                @isCustom = false
                 @maxEpicPointsAllowed = 3
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = 8
                 @maxLargeShipsOfOneType = 4
             when 'custom'
                 @isEpic = false
+                @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
         @max_epic_points_span.text @maxEpicPointsAllowed
@@ -961,10 +966,11 @@ class exportObj.SquadBuilder
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @faction in ship_data.factions and @matcher(ship_data.name, term)
-                ships.push
-                    id: ship_data.name
-                    text: ship_data.name
-                    english_name: ship_data.english_name
+                if not ship_data.huge or (@isEpic or @isCustom)
+                    ships.push
+                        id: ship_data.name
+                        text: ship_data.name
+                        english_name: ship_data.english_name
         ships.sort exportObj.sortHelper
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
@@ -982,7 +988,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
         
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
 

@@ -2,7 +2,6 @@ common = require './common'
 
 common.setup()
 
-
 casper.test.begin "No more than 12 small ships of the same type", (test) ->
     common.waitForStartup('#rebel-builder')
 
@@ -292,6 +291,53 @@ casper.test.begin "Max Team Epic points is 3", (test) ->
         test.assertVisible '#rebel-builder .total-epic-points.red'
 
     common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
+
+    casper.run ->
+        test.done()
+
+casper.test.begin "Epic ships only show up in epic modes", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'standard')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForLastShip} #{common.selectorForShipDropdown}", "CR90 Corvette")
+
+    common.setGameType('#rebel-builder', 'custom')
+    common.setShipType('#rebel-builder', 1, 'CR90 Corvette (Fore)')
+    common.removeShip('#rebel-builder', 1)
+
+    common.setGameType('#rebel-builder', 'epic')
+    common.setShipType('#rebel-builder', 1, 'CR90 Corvette (Fore)')
+    common.removeShip('#rebel-builder', 1)
+
+    common.setGameType('#rebel-builder', 'team-epic')
+    common.setShipType('#rebel-builder', 1, 'CR90 Corvette (Fore)')
+    common.removeShip('#rebel-builder', 1)
+
+    casper.run ->
+        test.done()
+
+casper.test.begin "Epic upgrades only show up in epic modes", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.setShipType('#rebel-builder', 1, 'YT-1300')
+
+    common.setGameType('#rebel-builder', 'standard')
+    common.assertNoMatch(test, "#rebel-builder #{common.selectorForUpgradeIndex 1, 1}", "Toryn Farr")
+
+    common.setGameType('#rebel-builder', 'custom')
+    common.setShipType('#rebel-builder', 1, 'YT-1300')
+    common.addUpgrade("#rebel-builder", 1, 1, "Toryn Farr")
+    common.removeShip('#rebel-builder', 1)
+
+    common.setGameType('#rebel-builder', 'epic')
+    common.setShipType('#rebel-builder', 1, 'YT-1300')
+    common.addUpgrade("#rebel-builder", 1, 1, "Toryn Farr")
+    common.removeShip('#rebel-builder', 1)
+
+    common.setGameType('#rebel-builder', 'team-epic')
+    common.setShipType('#rebel-builder', 1, 'YT-1300')
+    common.addUpgrade("#rebel-builder", 1, 1, "Toryn Farr")
     common.removeShip('#rebel-builder', 1)
 
     casper.run ->

@@ -41,7 +41,8 @@ exports.assertNoMatch = (test, select2_selector, search_text) =>
         @waitUntilVisible 'input.select2-input'
     .then ->
         @sendKeys 'input.select2-input', search_text
-        test.assertExists '.select2-no-results', "No match found for #{search_text}"
+        @capture 'casperjs.png'
+        test.assertVisible '.select2-no-results', "No match found for #{search_text}"
         @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
 
 exports.assertMatchIsDisabled = (test, select2_selector, search_text) =>

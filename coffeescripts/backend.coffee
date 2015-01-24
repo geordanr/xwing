@@ -583,9 +583,8 @@ class exportObj.SquadBuilderBackend
         $.get("#{@server}/headers").done (data, textStatus, jqXHR) =>
             cb data.headers
 
-    getLanguagePreference: (cb=$.noop) =>
+    getLanguagePreference: (settings, cb=$.noop) =>
         # Check session, then headers
-        await @getSettings defer(settings)
         if settings?.language?
             cb settings.language
         else

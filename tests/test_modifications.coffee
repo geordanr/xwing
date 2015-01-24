@@ -6,6 +6,8 @@ common.setup()
 casper.test.begin "Advanced Pursuit Lasers can only be fitted on Large ships", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.addShip('#rebel-builder', 'YT-1300', 'Outer Rim Smuggler')
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     common.addShip('#rebel-builder', 'A-Wing', 'Prototype Pilot')
