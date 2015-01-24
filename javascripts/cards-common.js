@@ -22,6 +22,11 @@
     return this.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '-');
   };
 
+  exportObj.hugeOnly = function(ship) {
+    var _ref;
+    return (_ref = ship.data.huge) != null ? _ref : false;
+  };
+
   exportObj.basicCardData = function() {
     return {
       ships: {
@@ -1964,10 +1969,7 @@
           slot: "Crew",
           points: 6,
           faction: "Rebel Alliance",
-          restriction_func: function(ship) {
-            var _ref;
-            return (_ref = ship.data.huge) != null ? _ref : false;
-          }
+          restriction_func: exportObj.hugeOnly
         }, {
           name: "R4-D6",
           id: 77,
@@ -1985,10 +1987,7 @@
           id: 79,
           slot: "Crew",
           points: 2,
-          restriction_func: function(ship) {
-            var _ref;
-            return (_ref = ship.data.huge) != null ? _ref : false;
-          }
+          restriction_func: exportObj.hugeOnly
         }, {
           name: "Carlist Rieekan",
           id: 80,
@@ -1996,10 +1995,7 @@
           slot: "Crew",
           points: 3,
           faction: "Rebel Alliance",
-          restriction_func: function(ship) {
-            var _ref;
-            return (_ref = ship.data.huge) != null ? _ref : false;
-          }
+          restriction_func: exportObj.hugeOnly
         }, {
           name: "Jan Dodonna",
           id: 81,
@@ -2007,10 +2003,7 @@
           slot: "Crew",
           points: 6,
           faction: "Rebel Alliance",
-          restriction_func: function(ship) {
-            var _ref;
-            return (_ref = ship.data.huge) != null ? _ref : false;
-          }
+          restriction_func: exportObj.hugeOnly
         }, {
           name: "Expanded Cargo Hold",
           id: 82,
@@ -2062,10 +2055,7 @@
           unique: true,
           faction: "Rebel Alliance",
           points: 6,
-          restriction_func: function(ship) {
-            var _ref;
-            return (_ref = ship.data.huge) != null ? _ref : false;
-          }
+          restriction_func: exportObj.hugeOnly
         }, {
           name: "Gunnery Team",
           id: 90,
@@ -2945,10 +2935,7 @@
       exportObj.fixIcons(modification);
       if (modification.huge != null) {
         if (modification.restriction_func == null) {
-          modification.restriction_func = function(ship) {
-            var _ref20;
-            return (_ref20 = ship.data.huge) != null ? _ref20 : false;
-          };
+          modification.restriction_func = exportObj.hugeOnly;
         }
       } else if (modification.restriction_func == null) {
         modification.restriction_func = function(ship) {
