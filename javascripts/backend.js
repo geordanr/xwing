@@ -680,73 +680,56 @@
       })(this));
     };
 
-    SquadBuilderBackend.prototype.getLanguagePreference = function(cb) {
-      var headers, language_code, language_range, language_tag, quality, settings, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+    SquadBuilderBackend.prototype.getLanguagePreference = function(settings, cb) {
+      var headers, language_code, language_range, language_tag, quality, ___iced_passed_deferral, __iced_deferrals, __iced_k;
       __iced_k = __iced_k_noop;
       ___iced_passed_deferral = iced.findDeferral(arguments);
       if (cb == null) {
         cb = $.noop;
       }
-      (function(_this) {
-        return (function(__iced_k) {
-          __iced_deferrals = new iced.Deferrals(__iced_k, {
-            parent: ___iced_passed_deferral,
-            filename: "coffeescripts/backend.coffee",
-            funcname: "SquadBuilderBackend.getLanguagePreference"
-          });
-          _this.getSettings(__iced_deferrals.defer({
-            assign_fn: (function() {
-              return function() {
-                return settings = arguments[0];
-              };
-            })(),
-            lineno: 587
-          }));
-          __iced_deferrals._fulfill();
-        });
-      })(this)((function(_this) {
-        return function() {
-          if ((typeof settings !== "undefined" && settings !== null ? settings.language : void 0) != null) {
-            return __iced_k(cb(settings.language));
-          } else {
-            (function(__iced_k) {
-              __iced_deferrals = new iced.Deferrals(__iced_k, {
-                parent: ___iced_passed_deferral,
-                filename: "coffeescripts/backend.coffee",
-                funcname: "SquadBuilderBackend.getLanguagePreference"
-              });
-              _this.getHeaders(__iced_deferrals.defer({
-                assign_fn: (function() {
-                  return function() {
-                    return headers = arguments[0];
-                  };
-                })(),
-                lineno: 591
-              }));
-              __iced_deferrals._fulfill();
-            })(function() {
-              var _i, _len, _ref, _ref1, _ref2;
-              if ((typeof headers !== "undefined" && headers !== null ? headers.HTTP_ACCEPT_LANGUAGE : void 0) != null) {
-                _ref = headers.HTTP_ACCEPT_LANGUAGE.split(',');
-                for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-                  language_range = _ref[_i];
-                  _ref1 = language_range.split(';'), language_tag = _ref1[0], quality = _ref1[1];
-                  if (language_tag === '*') {
-                    cb('English');
-                  } else {
-                    language_code = language_tag.split('-')[0];
-                    cb((_ref2 = exportObj.codeToLanguage[language_code]) != null ? _ref2 : 'English');
-                  }
-                  break;
-                }
-              } else {
-                cb('English');
-              }
-              return __iced_k();
+      if ((settings != null ? settings.language : void 0) != null) {
+        return __iced_k(cb(settings.language));
+      } else {
+        (function(_this) {
+          return (function(__iced_k) {
+            __iced_deferrals = new iced.Deferrals(__iced_k, {
+              parent: ___iced_passed_deferral,
+              filename: "coffeescripts/backend.coffee",
+              funcname: "SquadBuilderBackend.getLanguagePreference"
             });
-          }
-        };
-      })(this));
+            _this.getHeaders(__iced_deferrals.defer({
+              assign_fn: (function() {
+                return function() {
+                  return headers = arguments[0];
+                };
+              })(),
+              lineno: 590
+            }));
+            __iced_deferrals._fulfill();
+          });
+        })(this)((function(_this) {
+          return function() {
+            var _i, _len, _ref, _ref1, _ref2;
+            if ((typeof headers !== "undefined" && headers !== null ? headers.HTTP_ACCEPT_LANGUAGE : void 0) != null) {
+              _ref = headers.HTTP_ACCEPT_LANGUAGE.split(',');
+              for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+                language_range = _ref[_i];
+                _ref1 = language_range.split(';'), language_tag = _ref1[0], quality = _ref1[1];
+                if (language_tag === '*') {
+                  cb('English');
+                } else {
+                  language_code = language_tag.split('-')[0];
+                  cb((_ref2 = exportObj.codeToLanguage[language_code]) != null ? _ref2 : 'English');
+                }
+                break;
+              }
+            } else {
+              cb('English');
+            }
+            return __iced_k();
+          };
+        })(this));
+      }
     };
 
     SquadBuilderBackend.prototype.saveCollection = function(collection, cb) {
