@@ -205,8 +205,13 @@
         window.browser = new CardBrowser
             container: '#card-browser'
 
-        window.backend.getLanguagePreference (language) ->
-            $(window).trigger 'xwing:languageChanged', language
+        window.backend.getSettings (settings) ->
+            window.backend.getLanguagePreference settings, (language) ->
+              $(window).trigger 'xwing:languageChanged', language
+            unless settings.hugeShipMovedWarningSeen
+              $('.tab-content').before $('#huge-ships-moved')
+              $('#huge-ships-moved').removeClass 'hidden'
+              window.backend.set('hugeShipMovedWarningSeen', true)
 
         window.setupTranslationUI window.backend
 
@@ -222,6 +227,11 @@
                 window.location.href = window.location.href.replace(/^http:/, 'https:')
 
 #xws
+
+#huge-ships-moved.alert.alert-info.hidden
+  %a.close{:href => "#", 'data-dismiss' => "alert"} &times;
+  %strong Looking for Huge ships?
+  Change the mode from "Standard" to "Epic," "Team Epic," or "Custom."
 
 .font-hax
   %span{:style => "font-family: BankGothicHD"}
