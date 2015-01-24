@@ -6,6 +6,8 @@ common.setup()
 casper.test.begin "German translations: Rebel", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.selectLanguage('Deutsch')
 
     common.createList('#rebel-builder', [

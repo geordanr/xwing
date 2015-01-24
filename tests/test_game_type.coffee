@@ -17,11 +17,8 @@ casper.test.begin "Show warning when using Epic ships outside Epic play", (test)
     casper.then ->
         test.assertNotVisible("#rebel-builder #{common.selectorForEpicWarning}")
 
-    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
-    casper.then ->
-        test.assertVisible("#rebel-builder #{common.selectorForEpicWarning}")
-
     common.setGameType('#rebel-builder', 'epic')
+    common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     casper.then ->
         test.assertNotVisible("#rebel-builder #{common.selectorForEpicWarning}")
 
@@ -52,7 +49,11 @@ casper.test.begin "Show warning when using Epic ships outside Epic play", (test)
         test.done()
 
 casper.test.begin "Warn when using illegal upgrades for Huge ships in Epic play", (test) ->
+    # Right now it's just Navigator that's disallowed.
+
     common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'epic')
 
     common.createList('#rebel-builder', [
         {
@@ -64,9 +65,6 @@ casper.test.begin "Warn when using illegal upgrades for Huge ships in Epic play"
         }
     ])
 
-    casper.then ->
-        test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
-    common.setGameType('#rebel-builder', 'epic')
     casper.then ->
         test.assertNotVisible("#rebel-builder #{common.selectorForIllegalEpicWarning}")
     common.setGameType('#rebel-builder', 'team-epic')

@@ -19,6 +19,9 @@ String::canonicalize = ->
         .replace(/[^a-z0-9]/g, '')
         .replace(/\s+/g, '-')
 
+exportObj.hugeOnly = (ship) ->
+    ship.data.huge ? false
+
 # Returns an independent copy of the data which can be modified by translation
 # modules.
 exportObj.basicCardData = ->
@@ -2830,8 +2833,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 6
             faction: "Rebel Alliance"
-            restriction_func: (ship) ->
-                ship.data.huge ? false
+            restriction_func: exportObj.hugeOnly
         }
         {
             name: "R4-D6"
@@ -2852,8 +2854,7 @@ exportObj.basicCardData = ->
             id: 79
             slot: "Crew"
             points: 2
-            restriction_func: (ship) ->
-                ship.data.huge ? false
+            restriction_func: exportObj.hugeOnly
         }
         {
             name: "Carlist Rieekan"
@@ -2862,8 +2863,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 3
             faction: "Rebel Alliance"
-            restriction_func: (ship) ->
-                ship.data.huge ? false
+            restriction_func: exportObj.hugeOnly
         }
         {
             name: "Jan Dodonna"
@@ -2872,8 +2872,7 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 6
             faction: "Rebel Alliance"
-            restriction_func: (ship) ->
-                ship.data.huge ? false
+            restriction_func: exportObj.hugeOnly
         }
         {
             name: "Expanded Cargo Hold"
@@ -2933,8 +2932,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             points: 6
-            restriction_func: (ship) ->
-                ship.data.huge ? false
+            restriction_func: exportObj.hugeOnly
         }
         {
             name: "Gunnery Team"
@@ -3746,8 +3744,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         # Modifications cannot be added to huge ships unless specifically allowed
         if modification.huge?
             unless modification.restriction_func?
-                modification.restriction_func = (ship) ->
-                    ship.data.huge ? false
+                modification.restriction_func = exportObj.hugeOnly
         else unless modification.restriction_func?
             modification.restriction_func = (ship) ->
                 not (ship.data.huge ? false)

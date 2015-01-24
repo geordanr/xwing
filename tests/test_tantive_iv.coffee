@@ -6,6 +6,8 @@ common.setup()
 casper.test.begin "Tantive IV title grants crew and team", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.setShipType('#rebel-builder', 1, 'CR90 Corvette (Fore)')
     common.setPilot('#rebel-builder', 1, 'CR90 Corvette (Fore)')
     casper.then ->

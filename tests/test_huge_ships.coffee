@@ -6,6 +6,8 @@ common.setup()
 casper.test.begin "Huge ships can not mount modifications unless allowed", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
     common.addShip('#rebel-builder', 'CR90 Corvette (Aft)', 'CR90 Corvette (Aft)')
@@ -27,6 +29,8 @@ casper.test.begin "Huge ships can not mount modifications unless allowed", (test
 casper.test.begin "Huge-only crew", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
     common.addShip('#rebel-builder', 'YT-1300', 'Chewbacca')
 
@@ -45,6 +49,8 @@ casper.test.begin "Huge-only crew", (test) ->
 
 casper.test.begin "GR-75 specific modification", (test) ->
     common.waitForStartup('#rebel-builder')
+
+    common.setGameType('#rebel-builder', 'epic')
 
     common.addShip('#rebel-builder', 'GR-75 Medium Transport', 'GR-75 Medium Transport')
     common.addShip('#rebel-builder', 'YT-1300', 'Chewbacca')

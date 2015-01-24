@@ -6,6 +6,8 @@ common.setup()
 casper.test.begin "Limited keyword", (test) ->
     common.waitForStartup('#rebel-builder')
 
+    common.setGameType('#rebel-builder', 'epic')
+
     common.createList('#rebel-builder', [
         {
             ship: 'GR-75 Medium Transport'
