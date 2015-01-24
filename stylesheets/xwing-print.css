@@ -192,3 +192,5 @@ body {
       font-weight: bold; }
     #printable .simple-table .simple-addon .name {
       padding-left: 20px; }
+  #printable .print-notes {
+    color: black; }
