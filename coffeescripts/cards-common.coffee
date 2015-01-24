@@ -478,6 +478,14 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Evade"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 0, 1, 1, 0 ]
+                [ 1, 2, 2, 2, 1, 0 ]
+                [ 0, 1, 2, 1, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 3 ]
+            ]
         "Aggressor":
             name: "Aggressor"
             factions: [ "Scum and Villainy" ]
