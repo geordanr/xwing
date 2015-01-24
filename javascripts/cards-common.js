@@ -268,7 +268,8 @@
           agility: 3,
           hull: 2,
           shields: 1,
-          actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"]
+          actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
+          maneuvers: [[0, 0, 0, 0, 0, 0], [1, 1, 0, 1, 1, 0], [1, 2, 2, 2, 1, 0], [0, 1, 2, 1, 0, 3], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 3]]
         },
         "Aggressor": {
           name: "Aggressor",
