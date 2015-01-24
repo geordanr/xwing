@@ -659,14 +659,20 @@ class exportObj.SquadBuilder
             e.preventDefault()
             # Copy text list to printable
             @printable_container.find('.printable-header').html @list_modal.find('.modal-header').html()
+            @printable_container.find('.printable-body').text ''
             switch @list_display_mode
                 when 'simple'
                     @printable_container.find('.printable-body').html @simple_container.html()
                 else
-                    @printable_container.find('.printable-body').text ''
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
+            if $.trim(@notes.val()) != ''
+                @printable_container.find('.printable-body').append $.trim """
+                    <h5 class="print-notes">Notes:</h5>
+                    <pre class="print-notes"></pre>
+                """
+                @printable_container.find('.printable-body pre.print-notes').text @notes.val()
             window.print()
 
         $(window).resize =>
