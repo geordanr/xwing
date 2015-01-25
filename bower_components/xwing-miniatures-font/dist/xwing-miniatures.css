@@ -2,6 +2,10 @@
   font-family: XWing;
   src: url('xwing-miniatures.ttf'); }
 
+@font-face {
+  font-family: XWingShip;
+  src: url('xwing-miniatures-ships.ttf'); }
+
 i.xwing-miniatures-font {
   font-family: XWing;
   font-style: normal;
@@ -43,9 +47,6 @@ i.xwing-miniatures-font-bomb:before {
 i.xwing-miniatures-font-cannon:before {
   content: "\0043"; }
 
-i.xwing-miniatures-font-modification:before {
-  content: "\0044"; }
-
 i.xwing-miniatures-font-elite:before {
   content: "\0045"; }
 
@@ -57,9 +58,6 @@ i.xwing-miniatures-font-hardpoint:before {
 
 i.xwing-miniatures-font-illicit:before {
   content: "\0049"; }
-
-i.xwing-miniatures-font-title:before {
-  content: "\004c"; }
 
 i.xwing-miniatures-font-missile:before {
   content: "\004d"; }
@@ -120,3 +118,107 @@ i.xwing-miniatures-font-unique:before {
 
 i.xwing-miniatures-font-recover:before {
   content: "\0076"; }
+
+i.xwing-miniatures-font-rebel:before {
+  content: "!"; }
+
+i.xwing-miniatures-font-empire:before {
+  content: "@"; }
+
+i.xwing-miniatures-font-scum:before {
+  content: "#"; }
+
+i.xwing-miniatures-font-attack-turret:before {
+  content: "$"; }
+
+i.xwing-miniatures-font-attack:before {
+  content: "%"; }
+
+i.xwing-miniatures-font-agility:before {
+  content: "^"; }
+
+i.xwing-miniatures-font-hull:before {
+  content: "&"; }
+
+i.xwing-miniatures-font-shield:before {
+  content: "*"; }
+
+i.xwing-miniatures-font-energy:before {
+  content: "("; }
+
+i.xwing-miniatures-font-modification:before {
+  content: "m"; }
+
+i.xwing-miniatures-font-title:before {
+  content: "t"; }
+
+i.xwing-miniatures-ship {
+  font-family: XWingShip;
+  font-style: normal;
+  font-size: 1.5em; }
+
+i.xwing-miniatures-ship-tieadvanced:before {
+  content: "A"; }
+
+i.xwing-miniatures-ship-tiebomber:before {
+  content: "B"; }
+
+i.xwing-miniatures-ship-tiedefender:before {
+  content: "D"; }
+
+i.xwing-miniatures-ship-tiefighter:before {
+  content: "F"; }
+
+i.xwing-miniatures-ship-tieinterceptor:before {
+  content: "I"; }
+
+i.xwing-miniatures-ship-tiephantom:before {
+  content: "P"; }
+
+i.xwing-miniatures-ship-awing:before {
+  content: "a"; }
+
+i.xwing-miniatures-ship-bwing:before {
+  content: "b"; }
+
+i.xwing-miniatures-ship-vt49decimator:before {
+  content: "d"; }
+
+i.xwing-miniatures-ship-ewing:before {
+  content: "e"; }
+
+i.xwing-miniatures-ship-firespray31:before {
+  content: "f"; }
+
+i.xwing-miniatures-ship-hwk290:before {
+  content: "h"; }
+
+i.xwing-miniatures-ship-ig2000:before {
+  content: "i"; }
+
+i.xwing-miniatures-ship-aggressor:before {
+  content: "i"; }
+
+i.xwing-miniatures-ship-lambdaclassshuttle:before {
+  content: "l"; }
+
+i.xwing-miniatures-ship-yt1300:before {
+  content: "m"; }
+
+i.xwing-miniatures-ship-yt2400freighter:before {
+  content: "o"; }
+
+i.xwing-miniatures-ship-m3ainterceptor:before {
+  content: "s"; }
+
+i.xwing-miniatures-ship-starviper:before {
+  content: "v"; }
+
+i.xwing-miniatures-ship-xwing:before {
+  content: "x"; }
+
+i.xwing-miniatures-ship-ywing:before {
+  content: "y"; }
+
+i.xwing-miniatures-ship-z95headhunter:before {
+  content: "z"; }

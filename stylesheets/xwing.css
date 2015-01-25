@@ -58,6 +58,33 @@ strong em, em strong {
 .info-data.info-skill {
   color: #cd6d2d; }
 
+.card-icon, i.xwing-miniatures-font-attack, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield {
+  background: black;
+  border-radius: 50%;
+  padding: 3px;
+  font-weight: normal; }
+
+td.info-header {
+  padding: 3px; }
+
+i.xwing-miniatures-font-attack {
+  color: #ef232b; }
+
+i.xwing-miniatures-font-energy {
+  color: #c7b5e2;
+  padding: 2px 3px 5px 2px; }
+
+i.xwing-miniatures-font-agility {
+  color: #6bbe44;
+  padding: 1px; }
+
+i.xwing-miniatures-font-hull {
+  color: #b6b335; }
+
+i.xwing-miniatures-font-shield {
+  color: #7ed3e5;
+  padding: 2px 3px 4px 3px; }
+
 .info-data.info-attack {
   color: #ef232b; }
 

@@ -1,6 +1,6 @@
 {
   "name": "xwing-miniatures-font",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "Font for the X-Wing Miniatures game",
   "main": [
     "dist/xwing-miniatures.css",
@@ -14,13 +14,15 @@
   "author": "Geordan Rosario <geordan@gmail.com>",
   "license": "ISC",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/geordanr/xwing-miniatures-font.git"
+    "type": "git",
+    "url": "https://github.com/geordanr/xwing-miniatures-font.git"
   },
   "devDependencies": {
     "bower": "^1.3.12",
     "grunt": "^0.4.5",
+    "grunt-contrib-jade": "^0.14.0",
     "grunt-sass": "^0.17.0",
+    "jade": "^1.9.1",
     "node-sass": "^1.2.3"
   }
 }
