@@ -548,11 +548,11 @@ class exportObj.SquadBuilder
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-energy">
-                            <td class="info-header"><img class="icon-energy" src="images/transparent.png" alt="Energy" /></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-energy"></i></td>
                             <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-attack">
-                            <td class="info-header"><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
@@ -560,15 +560,15 @@ class exportObj.SquadBuilder
                             <td class="info-data info-range"></td>
                         </tr>
                         <tr class="info-agility">
-                            <td class="info-header"><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-agility"></i></td>
                             <td class="info-data info-agility"></td>
                         </tr>
                         <tr class="info-hull">
-                            <td class="info-header"><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i></td>
                             <td class="info-data info-hull"></td>
                         </tr>
                         <tr class="info-shields">
-                            <td class="info-header"><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i></td>
                             <td class="info-data info-shields"></td>
                         </tr>
                         <tr class="info-actions">
@@ -1940,18 +1940,18 @@ class Ship
         action_bar = action_icons.join ' '
 
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
-            <img class="icon-attack" src="images/transparent.png" />
+            <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
 
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
-            <img class="icon-energy" src="images/transparent.png" />
+            <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
         """ else ''
 
         html = $.trim """
             <div class="fancy-pilot-header">
-                <div class="pilot-header-text">#{@pilot.name} / #{@data.name}</div>
+                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.canonical_name}"></i></div>
                 <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{@pilot.points}</div>
@@ -1963,11 +1963,11 @@ class Ship
                     <span class="info-data info-skill">PS #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
                     #{energyHTML}
-                    <img class="icon-agility" src="images/transparent.png" />
+                    <i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
-                    <img class="icon-hull" src="images/transparent.png" />
+                    <i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>
                     <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
-                    <img class="icon-shields" src="images/transparent.png" />
+                    <i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>
                     <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
                     &nbsp;
                     #{action_bar}

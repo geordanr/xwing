@@ -19,6 +19,6 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "jquery-qrcode": "*",
-    "xwing-miniatures-font": "~1.0.2"
+    "xwing-miniatures-font": "~1.0.7"
   }
 }

@@ -1,5 +1,12 @@
 $xwing_icons_png: '../images/xwing-icons.png'
 
+$pilot_skill_color: #CD6D2D
+$attack_color: #EF232B
+$energy_color: #C7B5E2
+$agility_color: #6BBE44
+$hull_color: #B6B335
+$shields_color: #7ED3E5
+
 @font-face
   font-family: kimberley
   src: url('../fonts/kimberley bl.ttf')
@@ -59,27 +66,59 @@ strong em, em strong
 
 .info-data.info-skill
   @extend .card-stat
-  color: #CD6D2D
+  color: $pilot_skill_color
+
+.card-icon
+  background: black
+  border-radius: 50%
+  padding: 3px
+  font-weight: normal
+
+td.info-header
+  padding: 3px
+
+i.xwing-miniatures-font-attack
+  @extend .card-icon
+  color: $attack_color
+
+i.xwing-miniatures-font-energy
+  @extend .card-icon
+  color: $energy_color
+  padding: 2px 3px 5px 2px
+
+i.xwing-miniatures-font-agility
+  @extend .card-icon
+  color: $agility_color
+  padding: 1px
+
+i.xwing-miniatures-font-hull
+  @extend .card-icon
+  color: $hull_color
+
+i.xwing-miniatures-font-shield
+  @extend .card-icon
+  color: $shields_color
+  padding: 2px 3px 4px 3px
 
 .info-data.info-attack
   @extend .card-stat
-  color: #EF232B
+  color: $attack_color
 
 .info-data.info-energy
   @extend .card-stat
-  color: #C7B5E2
+  color: $energy_color
 
 .info-data.info-agility
   @extend .card-stat
-  color: #6BBE44
+  color: $agility_color
 
 .info-data.info-hull
   @extend .card-stat
-  color: #B6B335
+  color: $hull_color
 
 .info-data.info-shields
   @extend .card-stat
-  color: #7ED3E5
+  color: $shields_color
   padding: 2px
 
 .info-maneuvers table

@@ -80,11 +80,11 @@ class exportObj.CardBrowser
                                         <td class="info-data info-skill"></td>
                                     </tr>
                                     <tr class="info-energy">
-                                        <td class="info-header"><img class="icon-energy" src="images/transparent.png" alt="energy" /></td>
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-energy"></i></td>
                                         <td class="info-data info-energy"></td>
                                     </tr>
                                     <tr class="info-attack">
-                                        <td class="info-header"><img class="icon-attack" src="images/transparent.png" alt="Attack" /></td>
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
                                         <td class="info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-range">
@@ -92,15 +92,15 @@ class exportObj.CardBrowser
                                         <td class="info-data info-range"></td>
                                     </tr>
                                     <tr class="info-agility">
-                                        <td class="info-header"><img class="icon-agility" src="images/transparent.png" alt="Agility" /></td>
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-agility"></i></td>
                                         <td class="info-data info-agility"></td>
                                     </tr>
                                     <tr class="info-hull">
-                                        <td class="info-header"><img class="icon-hull" src="images/transparent.png" alt="Hull" /></td>
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i></td>
                                         <td class="info-data info-hull"></td>
                                     </tr>
                                     <tr class="info-shields">
-                                        <td class="info-header"><img class="icon-shields" src="images/transparent.png" alt="Shields" /></td>
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i></td>
                                         <td class="info-data info-shields"></td>
                                     </tr>
                                     <tr class="info-actions">
