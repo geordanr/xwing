@@ -126,7 +126,7 @@ $upgrade-circle-border-width: 5px
       margin-top: -$fancy-pilot-header-height + 5
       
       .xwing-miniatures-font
-        vertical-align: 0.3em
+        vertical-align: middle
 
   .fancy-pilot-text
     margin-left: $fancy-pilot-header-height * 2
@@ -149,10 +149,15 @@ $upgrade-circle-border-width: 5px
       clear: both
       border: 1px dotted lightgray
 
-      .mask
-        position: relative
+      .upgrade-stats
         float: right
-        clear: both
+        text-align: right
+        margin-left: 10px
+        min-width: 150px
+
+      .mask
+        display: inline-block
+        vertical-align: middle
         width: $upgrade-circle-diameter
         height: $upgrade-circle-diameter
         z-index: 999
@@ -162,7 +167,6 @@ $upgrade-circle-border-width: 5px
         width: $upgrade-circle-diameter
         height: $upgrade-circle-diameter
         border-radius: $upgrade-circle-diameter / 2
-        margin-left: -$upgrade-circle-diameter / 2
         background-color: white
 
         .inner-circle
@@ -179,10 +183,28 @@ $upgrade-circle-border-width: 5px
           color: white
 
       .upgrade-name
-        float: right
-        text-align: right
+        display: inline-block
+        vertical-align: middle
         line-height: $upgrade-circle-diameter
-        margin-right: $upgrade-circle-diameter - 10px
+
+      .upgrade-attack
+        text-align: right
+        margin-top: 4px
+        margin-right: 8px
+
+        .upgrade-attack-range
+          vertical-align: middle
+          padding: 2px 8px
+          color: white
+          background-color: black
+          font-family: kimberley
+          font-size: 1.2em
+
+        .info-attack
+          margin-right: 2px
+
+        .xwing-miniatures-font
+          vertical-align: middle
 
       .upgrade-text
         padding: 5px
