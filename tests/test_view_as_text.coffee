@@ -12,8 +12,8 @@ casper.test.begin "View as text", (test) ->
             pilot: 'Wedge Antilles'
             upgrades: [
                 null
+                'Proton Torpedoes'
                 null
-                'R2 Astromech'
                 null
             ]
         }
@@ -38,8 +38,12 @@ casper.test.begin "View as text", (test) ->
     .then ->
         test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "When attacking, reduce the defender's agility")
         test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "You may perform actions even while you have")
-        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "R2 Astromech")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "Proton Torpedoes")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "Attack (target lock):")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "2-3")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "4")
         test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "Push the Limit")
+        test.assertSelectorHasText('#rebel-builder .modal .fancy-list', "Once per round, after you perform an action")
     .then ->
         @click('#rebel-builder .modal .select-simple-view')
         @waitUntilVisible('#rebel-builder .modal .simple-list')
@@ -55,10 +59,10 @@ casper.test.begin "View as text", (test) ->
         bbcode = @evaluate ->
             $('#rebel-builder .modal .bbcode-list textarea').val()
         test.assertNot(bbcode.indexOf('[b]Wedge Antilles (29)[/b]') == -1)
-        test.assertNot(bbcode.indexOf('[i]R2 Astromech (1)[/i]') == -1)
+        test.assertNot(bbcode.indexOf('[i]Proton Torpedoes (4)[/i]') == -1)
         test.assertNot(bbcode.indexOf('[b]Tycho Celchu (26)[/b]') == -1)
         test.assertNot(bbcode.indexOf('[i]Push the Limit (3)[/i]') == -1)
-        test.assertNot(bbcode.indexOf('[b][i]Total: 59[/i][/b]') == -1)
+        test.assertNot(bbcode.indexOf('[b][i]Total: 62[/i][/b]') == -1)
 
     .run ->
         test.done()
