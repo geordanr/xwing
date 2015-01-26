@@ -2374,14 +2374,26 @@ class GenericAddon
     toHTML: ->
         if @data?
             upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
+
+            attackHTML = if (@data.attack?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attack}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>
+                </div>
+            """ else ''
+
             $.trim """
                 <div class="upgrade-container">
-                    <div class="mask">
-                        <div class="outer-circle">
-                            <div class="inner-circle upgrade-points">#{@data.points}</div>
+                    <div class="upgrade-stats">
+                        <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
+                        <div class="mask">
+                            <div class="outer-circle">
+                                <div class="inner-circle upgrade-points">#{@data.points}</div>
+                            </div>
                         </div>
+                        #{attackHTML}
                     </div>
-                    <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
                     <div class="upgrade-text">#{@data.text}</div>
                     <div style="clear: both;"></div>
                 </div>
