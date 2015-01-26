@@ -3414,10 +3414,11 @@
     };
 
     GenericAddon.prototype.toHTML = function() {
-      var upgrade_slot_font, _ref;
+      var attackHTML, upgrade_slot_font, _ref;
       if (this.data != null) {
         upgrade_slot_font = ((_ref = this.data.slot) != null ? _ref : this.type).toLowerCase().replace(/[^0-9a-z]/gi, '');
-        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"mask\">\n        <div class=\"outer-circle\">\n            <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n        </div>\n    </div>\n    <div class=\"upgrade-name\"><i class=\"xwing-miniatures-font xwing-miniatures-font-" + upgrade_slot_font + "\"></i> " + this.data.name + "</div>\n    <div class=\"upgrade-text\">" + this.data.text + "</div>\n    <div style=\"clear: both;\"></div>\n</div>");
+        attackHTML = (this.data.attack != null) ? $.trim("<div class=\"upgrade-attack\">\n    <span class=\"upgrade-attack-range\">" + this.data.range + "</span>\n    <span class=\"info-data info-attack\">" + this.data.attack + "</span>\n    <i class=\"xwing-miniatures-font xwing-miniatures-font-attack\"></i>\n</div>") : '';
+        return $.trim("<div class=\"upgrade-container\">\n    <div class=\"upgrade-stats\">\n        <div class=\"upgrade-name\"><i class=\"xwing-miniatures-font xwing-miniatures-font-" + upgrade_slot_font + "\"></i> " + this.data.name + "</div>\n        <div class=\"mask\">\n            <div class=\"outer-circle\">\n                <div class=\"inner-circle upgrade-points\">" + this.data.points + "</div>\n            </div>\n        </div>\n        " + attackHTML + "\n    </div>\n    <div class=\"upgrade-text\">" + this.data.text + "</div>\n    <div style=\"clear: both;\"></div>\n</div>");
       } else {
         return '';
       }

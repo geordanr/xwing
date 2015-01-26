@@ -166,7 +166,8 @@ ul.squad-list {
 
 .icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-cloak, img.icon-attack, img.icon-energy, img.icon-agility, img.icon-hull, img.icon-shields, img.icon-boost, img.icon-crew, img.icon-cannon, img.icon-cargo, img.icon-coordinate, img.icon-jam, img.icon-recover, img.icon-reinforce {
   background-image: url("../images/xwing-icons.png");
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  vertical-align: middle; }
 
 img.icon-straight {
   width: 9px;
@@ -346,8 +347,7 @@ select.card-selector {
   width: 100%; }
 
 .fancy-list .info-data {
-  position: relative;
-  top: -5px; }
+  vertical-align: middle; }
 
 .simple-list {
   font-family: Arial, Helvetica, sans-serif;
