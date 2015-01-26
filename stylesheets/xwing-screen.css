@@ -103,7 +103,7 @@
       position: relative;
       margin-top: -25px; }
       .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-miniatures-font {
-        vertical-align: 0.3em; }
+        vertical-align: middle; }
   .fancy-ship .fancy-pilot-text {
     margin-left: 60px;
     padding: 5px; }
@@ -118,10 +118,14 @@
       margin-right: 30px;
       clear: both;
       border: 1px dotted lightgrey; }
-      .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
-        position: relative;
+      .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-stats {
         float: right;
-        clear: both;
+        text-align: right;
+        margin-left: 10px;
+        min-width: 150px; }
+      .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
+        display: inline-block;
+        vertical-align: middle;
         width: 33.75px;
         height: 33.75px;
         z-index: 999;
@@ -130,7 +134,6 @@
         width: 33.75px;
         height: 33.75px;
         border-radius: 16.875px;
-        margin-left: -16.875px;
         background-color: white; }
         .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
           width: 28.75px;
@@ -145,10 +148,24 @@
           text-align: center;
           color: white; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
-        float: right;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 33.75px; }
+      .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
         text-align: right;
-        line-height: 33.75px;
-        margin-right: 23.75px; }
+        margin-top: 4px;
+        margin-right: 8px; }
+        .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .upgrade-attack-range {
+          vertical-align: middle;
+          padding: 2px 8px;
+          color: white;
+          background-color: black;
+          font-family: kimberley;
+          font-size: 1.2em; }
+        .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .info-attack {
+          margin-right: 2px; }
+        .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font {
+          vertical-align: middle; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
         padding: 5px; }
 
