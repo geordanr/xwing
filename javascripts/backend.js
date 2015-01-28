@@ -221,11 +221,12 @@
             for (_i = 0, _len = _ref.length; _i < _len; _i++) {
               squad = _ref[_i];
               li = $(document.createElement('LI'));
+              li.addClass('squad-summary');
               li.data('squad', squad);
               li.data('builder', builder);
               list_ul.append(li);
               li.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9\">\n        <h4>" + squad.name + "</h4>\n    </div>\n    <div class=\"span3\">\n        <h5>" + squad.additional_data.points + " Points</h5>\n    </div>\n</div>\n<div class=\"row-fluid\">\n    <div class=\"span10\">\n        " + squad.additional_data.description + "\n    </div>\n    <div class=\"span2\">\n        <button class=\"btn load-squad\">Load</button>\n    </div>\n</div>"));
-              li.find('button.load-squad').click(function(e) {
+              li.click(function(e) {
                 var button;
                 e.preventDefault();
                 button = $(e.target);
@@ -703,7 +704,7 @@
                   return headers = arguments[0];
                 };
               })(),
-              lineno: 590
+              lineno: 591
             }));
             __iced_deferrals._fulfill();
           });

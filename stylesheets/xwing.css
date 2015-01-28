@@ -404,3 +404,6 @@ input[type=number] {
 .card-restriction {
   font-style: italic;
   font-variant: small-caps; }
+
+li.squad-summary {
+  cursor: pointer; }
