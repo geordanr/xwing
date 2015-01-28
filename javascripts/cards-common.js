@@ -285,7 +285,27 @@
           shields: 4,
           actions: ["Focus", "Target Lock", "Boost", "Evade"],
           large: true,
-          maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [0, 2, 2, 2, 0, 0, 3, 3], [0, 0, 1, 0, 0, 3, 0, 0]]
+          maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [0, 2, 2, 2, 0, 0, 3, 3], [0, 0, 0, 0, 0, 3, 0, 0]]
+        },
+        "Raider-class Corvette (Fore)": {
+          name: "Raider-class Corvette (Fore)",
+          factions: ["Galactic Empire"],
+          attack: 4,
+          agility: 0,
+          hull: 8,
+          shields: 6,
+          actions: ["Recover", "Reinforce"],
+          huge: true
+        },
+        "Raider-class Corvette (Aft)": {
+          name: "Raider-class Corvette (Aft)",
+          factions: ["Galactic Empire"],
+          energy: 6,
+          agility: 0,
+          hull: 8,
+          shields: 4,
+          actions: ["Coordinate", "Target Lock"],
+          huge: true
         }
       },
       pilotsById: [
@@ -1446,6 +1466,24 @@
           skill: 5,
           points: 25,
           slots: ["Elite", "Missile"]
+        }, {
+          name: "Raider-class Corvette (Fore)",
+          faction: "Galactic Empire",
+          id: 129,
+          ship: "Raider-class Corvette (Fore)",
+          skill: 4,
+          points: 50,
+          epic: true,
+          slots: ["Hardpoint", "Crew", "Cargo"]
+        }, {
+          name: "Raider-class Corvette (Aft)",
+          faction: "Galactic Empire",
+          id: 130,
+          ship: "Raider-class Corvette (Aft)",
+          skill: 4,
+          points: 50,
+          epic: true,
+          slots: ["Crew", "Crew", "Hardpoint", "Hardpoint", "Team", "Team", "Cargo"]
         }
       ],
       upgradesById: [
