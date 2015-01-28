@@ -293,6 +293,8 @@ exportObj.cardLoaders.English = () ->
             text: """At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."""
         "Commander Alozen":
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
+        "Raider-class Corvette (Fore)":
+            text: """Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"""
 
     upgrade_translations =
         "Ion Cannon Turret":
