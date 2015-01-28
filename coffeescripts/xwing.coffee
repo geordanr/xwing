@@ -245,7 +245,12 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer hidden-print">
-                <label class="vertical-space-checkbox"><input type="checkbox" class="toggle-vertical-space" /> Add space for damage/upgrade cards when printing</label>
+                <label class="vertical-space-checkbox">
+                    Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
+                </label>
+                <label class="color-print-checkbox">
+                    Print color <input type="checkbox" class="toggle-color-print" />
+                </label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
@@ -262,7 +267,7 @@ class exportObj.SquadBuilder
         @bbcode_textarea = $ @bbcode_container.find('textarea')
         @bbcode_textarea.attr 'readonly', 'readonly'
         @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
-        @toggle_vertical_space_checkbox = $ @list_modal.find('.toggle-vertical-space')
+        @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
 
         @select_simple_view_button = $ @list_modal.find('.select-simple-view')
         @select_simple_view_button.click (e) =>
@@ -275,6 +280,7 @@ class exportObj.SquadBuilder
                 @fancy_container.hide()
                 @bbcode_container.hide()
                 @toggle_vertical_space_container.hide()
+                @toggle_color_print_container.hide()
 
         @select_fancy_view_button = $ @list_modal.find('.select-fancy-view')
         @select_fancy_view_button.click (e) =>
@@ -287,6 +293,7 @@ class exportObj.SquadBuilder
                 @simple_container.hide()
                 @bbcode_container.hide()
                 @toggle_vertical_space_container.show()
+                @toggle_color_print_container.show()
 
         @select_bbcode_view_button = $ @list_modal.find('.select-bbcode-view')
         @select_bbcode_view_button.click (e) =>
@@ -301,6 +308,7 @@ class exportObj.SquadBuilder
                 @bbcode_textarea.select()
                 @bbcode_textarea.focus()
                 @toggle_vertical_space_container.show()
+                @toggle_color_print_container.show()
 
         if $(window).width() >= 768
             @simple_container.hide()
@@ -667,6 +675,7 @@ class exportObj.SquadBuilder
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
+                    @printable_container.find('.printable-body').toggleClass 'bw', @list_modal.find('.toggle-print-color').prop('checked')
             if $.trim(@notes.val()) != ''
                 @printable_container.find('.printable-body').append $.trim """
                     <h5 class="print-notes">Notes:</h5>

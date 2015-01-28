@@ -24,8 +24,23 @@ body
 #printable
   overflow: hidden
 
+  .bw
+    .info-data
+      color: black
+
+    .fancy-pilot-stats
+      .xwing-miniatures-font
+        color: black
+
+    i.xwing-miniatures-font-attack, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield
+      background: white
+
+    .upgrade-attack
+      .xwing-miniatures-font-attack
+        background: black
+        color: white
+
   .info-data
-    color: black
     vertical-align: middle
 
   .fancy-header
@@ -148,7 +163,6 @@ body
         
         .xwing-miniatures-font
           vertical-align: middle
-          color: black
 
     .fancy-pilot-text
       margin-left: $fancy-pilot-header-height * 2
@@ -221,8 +235,6 @@ body
             font-size: 1.2em
 
           .xwing-miniatures-font-attack
-            background: black
-            color: white
             vertical-align: middle
 
           .info-attack
@@ -265,7 +277,4 @@ body
 
   .print-notes
     color: black
-
-  i.xwing-miniatures-font-attack, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield
-    background: white
 
