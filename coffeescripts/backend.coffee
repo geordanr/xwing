@@ -137,6 +137,7 @@ class exportObj.SquadBuilderBackend
             else
                 for squad in data[builder.faction]
                     li = $ document.createElement('LI')
+                    li.addClass 'squad-summary'
                     li.data 'squad', squad
                     li.data 'builder', builder
                     list_ul.append li
@@ -158,7 +159,7 @@ class exportObj.SquadBuilderBackend
                             </div>
                         </div>
                     """
-                    li.find('button.load-squad').click (e) =>
+                    li.click (e) =>
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
