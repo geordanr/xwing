@@ -98,7 +98,8 @@ exportObj.translations['Français'] =
         '.randomize-options' : 'Options…'
         # Print/View modal
         '.bbcode-list' : 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>'
-        '.vertical-space-checkbox' : """<input type="checkbox" class="toggle-vertical-space" /> Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression"""
+        '.vertical-space-checkbox' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type="checkbox" class="toggle-vertical-space" />"""
+        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Imprimer'
         # Randomizer options
         '.do-randomize' : 'Générer'
