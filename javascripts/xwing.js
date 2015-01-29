@@ -221,7 +221,7 @@
       this.list_modal = $(document.createElement('DIV'));
       this.list_modal.addClass('modal hide fade text-list-modal');
       this.container.append(this.list_modal);
-      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        Copy the BBCode below and paste it into your forum post.\n        <textarea></textarea>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\"><input type=\"checkbox\" class=\"toggle-vertical-space\" /> Add space for damage/upgrade cards when printing</label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+      this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        Copy the BBCode below and paste it into your forum post.\n        <textarea></textarea>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\">\n        Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />\n    </label>\n    <label class=\"color-print-checkbox\">\n        Print color <input type=\"checkbox\" class=\"toggle-color-print\" />\n    </label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
       this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
       this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
       this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
@@ -229,7 +229,7 @@
       this.bbcode_textarea = $(this.bbcode_container.find('textarea'));
       this.bbcode_textarea.attr('readonly', 'readonly');
       this.toggle_vertical_space_container = $(this.list_modal.find('.vertical-space-checkbox'));
-      this.toggle_vertical_space_checkbox = $(this.list_modal.find('.toggle-vertical-space'));
+      this.toggle_color_print_container = $(this.list_modal.find('.color-print-checkbox'));
       this.select_simple_view_button = $(this.list_modal.find('.select-simple-view'));
       this.select_simple_view_button.click((function(_this) {
         return function(e) {
@@ -241,7 +241,8 @@
             _this.simple_container.show();
             _this.fancy_container.hide();
             _this.bbcode_container.hide();
-            return _this.toggle_vertical_space_container.hide();
+            _this.toggle_vertical_space_container.hide();
+            return _this.toggle_color_print_container.hide();
           }
         };
       })(this));
@@ -256,7 +257,8 @@
             _this.fancy_container.show();
             _this.simple_container.hide();
             _this.bbcode_container.hide();
-            return _this.toggle_vertical_space_container.show();
+            _this.toggle_vertical_space_container.show();
+            return _this.toggle_color_print_container.show();
           }
         };
       })(this));
@@ -273,7 +275,8 @@
             _this.fancy_container.hide();
             _this.bbcode_textarea.select();
             _this.bbcode_textarea.focus();
-            return _this.toggle_vertical_space_container.show();
+            _this.toggle_vertical_space_container.show();
+            return _this.toggle_color_print_container.show();
           }
         };
       })(this));
@@ -478,7 +481,7 @@
                     return results = arguments[0];
                   };
                 })(),
-                lineno: 482
+                lineno: 490
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -653,6 +656,7 @@
                 }
               }
               _this.printable_container.find('.fancy-ship').toggleClass('tall', _this.list_modal.find('.toggle-vertical-space').prop('checked'));
+              _this.printable_container.find('.printable-body').toggleClass('bw', _this.list_modal.find('.toggle-print-color').prop('checked'));
           }
           if ($.trim(_this.notes.val()) !== '') {
             _this.printable_container.find('.printable-body').append($.trim("<h5 class=\"print-notes\">Notes:</h5>\n<pre class=\"print-notes\"></pre>"));
@@ -1052,7 +1056,7 @@
             funcname: "SquadBuilder.removeShip"
           });
           ship.destroy(__iced_deferrals.defer({
-            lineno: 962
+            lineno: 971
           }));
           __iced_deferrals._fulfill();
         });
@@ -1065,7 +1069,7 @@
               funcname: "SquadBuilder.removeShip"
             });
             _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-              lineno: 963
+              lineno: 972
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -2327,7 +2331,7 @@
                     });
                     _this.builder.container.trigger('xwing:claimUnique', [
                       new_pilot, 'Pilot', __iced_deferrals.defer({
-                        lineno: 1702
+                        lineno: 1711
                       })
                     ]);
                     __iced_deferrals._fulfill();
@@ -2397,7 +2401,7 @@
               });
               _this.builder.container.trigger('xwing:releaseUnique', [
                 _this.pilot, 'Pilot', __iced_deferrals.defer({
-                  lineno: 1726
+                  lineno: 1735
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -2450,14 +2454,14 @@
           });
           if (_this.title != null) {
             _this.title.destroy(__iced_deferrals.defer({
-              lineno: 1748
+              lineno: 1757
             }));
           }
           _ref = _this.upgrades;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             upgrade = _ref[_i];
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 1750
+              lineno: 1759
             }));
           }
           _ref1 = _this.modifications;
@@ -2465,7 +2469,7 @@
             modification = _ref1[_j];
             if (modification != null) {
               modification.destroy(__iced_deferrals.defer({
-                lineno: 1752
+                lineno: 1761
               }));
             }
           }
@@ -3172,7 +3176,7 @@
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.data, _this.type, __iced_deferrals.defer({
-                  lineno: 2265
+                  lineno: 2274
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -3270,7 +3274,7 @@
                 });
                 _this.ship.builder.container.trigger('xwing:releaseUnique', [
                   _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                    lineno: 2311
+                    lineno: 2320
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -3292,7 +3296,7 @@
                   });
                   _this.ship.builder.container.trigger('xwing:claimUnique', [
                     new_data, _this.type, __iced_deferrals.defer({
-                      lineno: 2314
+                      lineno: 2323
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -3365,7 +3369,7 @@
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             addon = _ref[_i];
             addon.destroy(__iced_deferrals.defer({
-              lineno: 2346
+              lineno: 2355
             }));
           }
           __iced_deferrals._fulfill();
