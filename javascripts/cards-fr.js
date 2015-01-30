@@ -109,7 +109,7 @@
       '.randomize-options': 'Options…',
       '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>',
       '.vertical-space-checkbox': "Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
-      '.color-print-checkbox': "Print color <input type=\"checkbox\" class=\"toggle-color-print\" />",
+      '.color-print-checkbox': "Imprimer en couleur <input type=\"checkbox\" class=\"toggle-color-print\" />",
       '.print-list': '<i class="icon-print"></i>&nbsp;Imprimer',
       '.do-randomize': 'Générer',
       '#empireTab': 'Empire Galactique',
