@@ -98,7 +98,7 @@ exportObj.translations.Deutsch =
         # Print/View modal
         '.bbcode-list' : 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>'
         '.vertical-space-checkbox' : """Platz für Schadenskarten und Upgrades im Druck berücksichtigen. <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color. <input type="checkbox" class="toggle-color-print" />"""
+        '.color-print-checkbox' : """Ausdrucken in farbe. <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Print'
         # Randomizer options
         '.do-randomize' : 'Zufall!'
