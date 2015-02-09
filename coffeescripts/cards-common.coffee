@@ -2302,7 +2302,7 @@ exportObj.basicCardData = ->
             epic: true
             slots: [
                 "Hardpoint"
-                "Crew"
+                "Team"
                 "Cargo"
             ]
         }
