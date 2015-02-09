@@ -1006,8 +1006,8 @@
       "Bodyguard": {
         text: "%SCUMONLY%<br /><br />Al principio de la fase de combate, puedes gastar una ficha de concentración para elegir una nave aliada a distancia 1, que tenga habilidad de piloto mayor. Incremente su agilidad en 1 hasta el final de la ronda."
       },
-      "Calc???": {
-        text: "Esta carta todavía no ha sido revelada."
+      "Calculation": {
+        text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "Accuracy Corrector": {
         text: "Cuando ataques, puedes ignorar todos los resultados de los dados. Entonces, puedes añadir 2 resultados de %HIT%.<br /><br />Tus dados no pueden ser modificados de nuevo durante este ataque."

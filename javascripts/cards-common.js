@@ -1266,13 +1266,13 @@
           unique: true,
           slots: []
         }, {
-          name: "Tansarii ???",
+          name: "Tansarii Point Veteran",
           faction: "Scum and Villainy",
           id: 106,
           ship: "M3-A Interceptor",
           skill: 5,
-          points: 99,
-          slots: []
+          points: 17,
+          slots: ["Elite"]
         }, {
           name: "Cartel Spacer",
           faction: "Scum and Villainy",
@@ -1474,7 +1474,7 @@
           skill: 4,
           points: 50,
           epic: true,
-          slots: ["Hardpoint", "Crew", "Cargo"]
+          slots: ["Hardpoint", "Team", "Cargo"]
         }, {
           name: "Raider-class Corvette (Aft)",
           faction: "Galactic Empire",
@@ -2196,10 +2196,10 @@
           points: 2,
           faction: "Scum and Villainy"
         }, {
-          name: "Calc???",
+          name: "Calculation",
           id: 106,
           slot: "Elite",
-          points: 99
+          points: 1
         }, {
           name: "Accuracy Corrector",
           id: 107,
