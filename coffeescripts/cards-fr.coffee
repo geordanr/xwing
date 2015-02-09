@@ -542,8 +542,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_IMPERIALONLY%%LINEBREAK%Après avoir effectué une attaque qui touche, vous <strong>devez</strong> choisir 1 autre vaisseau situé à portée 1 du défenseur (autre que vous-même). Ce vaisseau subit 1 dégât."""
         "Intimidation":
             text: """Tant que vous êtes au contact avec un vaisseau ennemi, réduisez de 1 la valeur d'agilité de ce vaisseau."""
-        "Calc???": # Traduction non officielle
-            text: """Cette carte n'a pas encore été révélée."""
+        "Calculation":
+            text: """When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."""
         "Bodyguard": # Traduction non officielle
             text: """%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."""
         # Astromechs

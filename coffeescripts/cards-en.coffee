@@ -510,8 +510,8 @@ exportObj.cardLoaders.English = () ->
             text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each ship at Range 1 of it receives 1 ion token."""
         "Bodyguard":
             text: """%SCUMONLY%%LINEBREAK%At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."""
-        "Calc???":
-            text: """This card has not yet been revealed."""
+        "Calculation":
+            text: """When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."""
         "Accuracy Corrector":
             text: """When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."""
         "Inertial Dampeners":

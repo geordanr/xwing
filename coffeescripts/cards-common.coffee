@@ -1960,13 +1960,14 @@ exportObj.basicCardData = ->
             slots: [ ]
         }
         {
-            name: "Tansarii ???"
+            name: "Tansarii Point Veteran"
             faction: "Scum and Villainy"
             id: 106
             ship: "M3-A Interceptor"
             skill: 5
-            points: 99
+            points: 17
             slots: [
+                "Elite"
             ]
         }
         {
@@ -3108,10 +3109,10 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
         }
         {
-            name: "Calc???"
+            name: "Calculation"
             id: 106
             slot: "Elite"
-            points: 99
+            points: 1
         }
         {
             name: "Accuracy Corrector"
