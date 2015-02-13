@@ -2634,7 +2634,7 @@
           points: 1,
           ship: "StarViper",
           restriction_func: function(ship) {
-            return ship.pilot.skill > 2;
+            return ship.pilot.skill > 3;
           },
           confersAddons: [
             {
