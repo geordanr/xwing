@@ -70,6 +70,8 @@ casper.test.begin "Virago title", (test) ->
         test.assertDoesntExist "#scum-builder #{common.selectorForUpgradeIndex 1, 5}", "StarVipers do not have Illicit upgrades by default"
     # Low PS ships cannot take Virago title
     common.assertNoMatch(test, "#scum-builder #{common.selectorForUpgradeIndex 1, 3}", 'Virago')
+    common.setPilot('#scum-builder', 1, 'Black Sun Vigo')
+    common.assertNoMatch(test, "#scum-builder #{common.selectorForUpgradeIndex 1, 3}", 'Virago')
     # High PS ships can take Virago title
     common.addUpgrade("#scum-builder", 2, 3, 'Virago')
     common.addUpgrade("#scum-builder", 2, 5, 'Accuracy Corrector')

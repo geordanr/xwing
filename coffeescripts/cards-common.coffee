@@ -3555,7 +3555,7 @@ exportObj.basicCardData = ->
             points: 1
             ship: "StarViper"
             restriction_func: (ship) ->
-                ship.pilot.skill > 2
+                ship.pilot.skill > 3
             confersAddons: [
                 {
                     type: exportObj.Upgrade
