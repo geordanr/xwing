@@ -877,7 +877,7 @@
         text: "TU barra de mejoras gana el icono de mejora %ELITE%.<br /><br />No puedes equiparte esta mejora si ya tienes un icono de mejora %ELITE% o si la Habilidad de de tu piloto es de 2 o menos.."
       },
       "Enhanced Scopes": {
-        name: "Miras Mejoradas",
+        name: "Radar Mejorado",
         text: "Durante la fase de Activación, trata tu habilidad de piloto como \"0\"."
       },
       "Chardaan Refit": {

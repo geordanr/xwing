@@ -1407,7 +1407,7 @@
           points: 22,
           slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS4 Scum Y-Wing Pilot",
+          name: "Hired Gun",
           faction: "Scum and Villainy",
           id: 122,
           ship: "Y-Wing",
@@ -1450,7 +1450,7 @@
           points: 19,
           slots: ["Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS1 Scum HWK Pilot",
+          name: "Spice Runner",
           faction: "Scum and Villainy",
           id: 127,
           ship: "HWK-290",
@@ -2868,6 +2868,9 @@
       cards = _ref8[expansion];
       for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
         card = cards[_q];
+        if (card.skipForSource) {
+          continue;
+        }
         try {
           switch (card.type) {
             case 'pilot':
