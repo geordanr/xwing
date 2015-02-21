@@ -253,3 +253,25 @@ casper.test.begin "No collection cross-builder interaction", (test) ->
 
     .run ->
         test.done()
+
+
+casper.test.begin "Collections API: Heavy Scyk hack", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "M3-A Interceptor Expansion Pack": 2
+
+        test.assert @evaluate ->
+            window.collection.use "title", '"Heavy Scyk" Interceptor (Cannon)'
+
+        test.assert @evaluate ->
+            window.collection.use "title", '"Heavy Scyk" Interceptor (Torpedo)'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "title", '"Heavy Scyk" Interceptor (Missile)'
+
+    .run ->
+        test.done()

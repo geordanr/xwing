@@ -2199,7 +2199,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS4 Scum Y-Wing Pilot"
+            name: "Hired Gun"
             faction: "Scum and Villainy"
             id: 122
             ship: "Y-Wing"
@@ -2271,7 +2271,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS1 Scum HWK Pilot"
+            name: "Spice Runner"
             faction: "Scum and Villainy"
             id: 127
             ship: "HWK-290"
@@ -3735,6 +3735,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
         for card in cards
+            continue if card.skipForSource # heavy scyk special case :(
             try
                 switch card.type
                     when 'pilot'

@@ -1612,6 +1612,376 @@ exportObj.manifestByExpansion =
             count: 3
         }
     ]
+    'StarViper Expansion Pack': [
+        {
+            name: 'StarViper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Prince Xizor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Guri'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Vigo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Enforcer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Virago'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Bodyguard'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Accuracy Corrector'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Autothrusters'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Calculation'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    "M3-A Interceptor Expansion Pack": [
+        {
+            name: 'M3-A Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Serissu'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Laetin A'shera"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Tansarii Point Veteran"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Cartel Spacer"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Heavy Scyk" Interceptor'
+            type: 'title'
+            count: 1
+            skipForSource: true # special :(
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Cannon)'
+            type: 'title'
+            count: 0 # special :(
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Missile)'
+            type: 'title'
+            count: 0 # special :(
+        }
+        {
+            name: '"Heavy Scyk" Interceptor (Torpedo)'
+            type: 'title'
+            count: 0 # special :(
+        }
+        {
+            name: 'Flechette Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Mangler" Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Stealth Device'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    "IG-2000 Expansion Pack": [
+        {
+            name: 'Aggressor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'IG-88A'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-88B'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-88C'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-88D'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'IG-2000'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Accuracy Corrector'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Autoblaster'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Mangler" Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Dead Man's Switch"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: '"Hot Shot" Blaster'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Most Wanted Expansion Pack": [
+        {
+            name: 'Z-95 Headhunter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: "N'Dru Suhlak"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Kaa'To Leeachos"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Black Sun Soldier"
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: "Binayre Pirate"
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: "Kavil"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Drea Renthal"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Hired Gun"
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: "Syndicate Thug"
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: "Boba Fett (Scum)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Kath Scarlet (Scum)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Emon Azzameen"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Mandalorian Mercenary"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Dace Bonearm"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Palob Godalhi"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Torkil Mux"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Spice Runner"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Greedo"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "K4 Security Droid"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Outlaw Tech"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Autoblaster Turret"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Bomb Loadout"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "R4-B11"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Genius"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "R4 Agromech"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Salvaged Astromech"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Unhinged Astromech"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "BTL-A4 Y-Wing"
+            type: 'title'
+            count: 2
+        }
+        {
+            name: "Andrasta"
+            type: 'title'
+            count: 1
+        }
+        {
+            name: '"Hot Shot" Blaster'
+            type: 'upgrade'
+            count: 1
+        }
+
+    ]
 
 class exportObj.Collection
     # collection = new exportObj.Collection
@@ -1656,13 +2026,24 @@ class exportObj.Collection
                     for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
 
+    fixName: (name) ->
+        # Special case handling for Heavy Scyk :(
+        if name.indexOf('"Heavy Scyk" Interceptor') == 0
+            '"Heavy Scyk" Interceptor'
+        else
+            name
+
+    check: (where, type, name) ->
+        (((where[type] ? {})[@fixName name] ? []).length ? 0) != 0
+
     checkShelf: (type, name) ->
-        (((@shelf[type] ? {})[name] ? []).length ? 0) != 0
+        @check @shelf, type, name
 
     checkTable: (type, name) ->
-        (((@table[type] ? {})[name] ? []).length ? 0) != 0
+        @check @table, type, name
 
     use: (type, name) ->
+        name = @fixName name
         try
             card = @shelf[type][name].pop()
         catch e
@@ -1675,6 +2056,7 @@ class exportObj.Collection
             false
 
     release: (type, name) ->
+        name = @fixName name
         try
             card = @table[type][name].pop()
         catch e
