@@ -711,7 +711,7 @@
         text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "Accuracy Corrector": {
-        text: "When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."
+        text: "When attacking, you may cancel all of your dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."
       },
       "Inertial Dampeners": {
         text: "When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."
