@@ -2204,7 +2204,7 @@ exportObj.basicCardData = ->
             id: 122
             ship: "Y-Wing"
             skill: 4
-            points: 99
+            points: 20
             slots: [
                 "Turret"
                 "Torpedo"
@@ -2276,8 +2276,11 @@ exportObj.basicCardData = ->
             id: 127
             ship: "HWK-290"
             skill: 1
-            points: 99
+            points: 16
             slots: [
+                "Turret"
+                "Crew"
+                "Illicit"
             ]
         }
         {
