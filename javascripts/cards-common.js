@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack", "Imperial Raider Expansion Pack"];
+  exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;
@@ -1722,6 +1722,7 @@
           points: 4
         }, {
           name: "Advanced Proton Torpedoes",
+          canonical_name: 'Adv. Proton Torpedoes'.canonicalize(),
           id: 34,
           slot: "Torpedo",
           attack: 5,
@@ -2324,6 +2325,7 @@
           points: 2
         }, {
           name: 'Advanced Targeting Computer',
+          canonical_name: 'Adv. Targeting Computer'.canonicalize(),
           id: 124,
           slot: "System",
           points: 5,
