@@ -4,7 +4,7 @@
 
   exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-  exportObj.unreleasedExpansions = ["StarViper Expansion Pack", "M3-A Interceptor Expansion Pack", "IG-2000 Expansion Pack", "Most Wanted Expansion Pack", "Imperial Raider Expansion Pack"];
+  exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack"];
 
   exportObj.isReleased = function(data) {
     var source, _i, _len, _ref;
@@ -274,7 +274,7 @@
           hull: 2,
           shields: 1,
           actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
-          maneuvers: [[0, 0, 0, 0, 0, 0], [1, 1, 0, 1, 1, 0], [1, 2, 2, 2, 1, 0], [0, 1, 2, 1, 0, 3], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 3]]
+          maneuvers: [[0, 0, 0, 0, 0, 0], [1, 2, 0, 2, 1, 0], [1, 2, 2, 2, 1, 0], [0, 1, 2, 1, 0, 3], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 3]]
         },
         "Aggressor": {
           name: "Aggressor",
@@ -1266,13 +1266,13 @@
           unique: true,
           slots: []
         }, {
-          name: "Tansarii ???",
+          name: "Tansarii Point Veteran",
           faction: "Scum and Villainy",
           id: 106,
           ship: "M3-A Interceptor",
           skill: 5,
-          points: 99,
-          slots: []
+          points: 17,
+          slots: ["Elite"]
         }, {
           name: "Cartel Spacer",
           faction: "Scum and Villainy",
@@ -1407,12 +1407,12 @@
           points: 22,
           slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
-          name: "Unspoiled PS4 Scum Y-Wing Pilot",
+          name: "Hired Gun",
           faction: "Scum and Villainy",
           id: 122,
           ship: "Y-Wing",
           skill: 4,
-          points: 99,
+          points: 20,
           slots: ["Turret", "Torpedo", "Torpedo", "Salvaged Astromech"]
         }, {
           name: "Syndicate Thug",
@@ -1450,13 +1450,13 @@
           points: 19,
           slots: ["Turret", "Crew", "Illicit"]
         }, {
-          name: "Unspoiled PS1 Scum HWK Pilot",
+          name: "Spice Runner",
           faction: "Scum and Villainy",
           id: 127,
           ship: "HWK-290",
           skill: 1,
-          points: 99,
-          slots: []
+          points: 16,
+          slots: ["Turret", "Crew", "Illicit"]
         }, {
           name: "Commander Alozen",
           faction: "Galactic Empire",
@@ -1474,7 +1474,7 @@
           skill: 4,
           points: 50,
           epic: true,
-          slots: ["Hardpoint", "Crew", "Cargo"]
+          slots: ["Hardpoint", "Team", "Cargo"]
         }, {
           name: "Raider-class Corvette (Aft)",
           faction: "Galactic Empire",
@@ -1722,6 +1722,7 @@
           points: 4
         }, {
           name: "Advanced Proton Torpedoes",
+          canonical_name: 'Adv. Proton Torpedoes'.canonicalize(),
           id: 34,
           slot: "Torpedo",
           attack: 5,
@@ -2196,10 +2197,10 @@
           points: 2,
           faction: "Scum and Villainy"
         }, {
-          name: "Calc???",
+          name: "Calculation",
           id: 106,
           slot: "Elite",
-          points: 99
+          points: 1
         }, {
           name: "Accuracy Corrector",
           id: 107,
@@ -2324,6 +2325,7 @@
           points: 2
         }, {
           name: 'Advanced Targeting Computer',
+          canonical_name: 'Adv. Targeting Computer'.canonicalize(),
           id: 124,
           slot: "System",
           points: 5,
@@ -2634,7 +2636,7 @@
           points: 1,
           ship: "StarViper",
           restriction_func: function(ship) {
-            return ship.pilot.skill > 2;
+            return ship.pilot.skill > 3;
           },
           confersAddons: [
             {
@@ -2868,6 +2870,9 @@
       cards = _ref8[expansion];
       for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
         card = cards[_q];
+        if (card.skipForSource) {
+          continue;
+        }
         try {
           switch (card.type) {
             case 'pilot':

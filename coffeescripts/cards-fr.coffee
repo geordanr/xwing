@@ -429,6 +429,10 @@ exportObj.cardLoaders['Français'] = () ->
         "Guri":
             text: """At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."""
         # Intercepteur M3-A, traduit de l'anglais
+        "Cartel Spacer":
+            ship: "Intercepteur M3-A"
+        "Tansarii Point Veteran":
+            ship: "Intercepteur M3-A"
         "Serissu":
             ship: "Intercepteur M3-A"
             text: """Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."""
@@ -466,6 +470,10 @@ exportObj.cardLoaders['Français'] = () ->
         "Torkil Mux": # Traduit de l'anglais
             text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi à portée 1-2. Jusqu'à la fin de la phase de combat, traitez la valeur de pilotage de ce vaisseau comme "0"."""
         # Z-95, traduit de l'anglais
+        "Black Sun Soldier":
+            ship: "Chasseur de têtes Z-95"
+        "Binayre Pirate":
+            ship: "Chasseur de têtes Z-95"
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
             text: """Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."""

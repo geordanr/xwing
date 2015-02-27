@@ -121,7 +121,8 @@
       '.randomize': 'Aleatorio!',
       '.randomize-options': 'Opciones de aleatoriedad…',
       '.bbcode-list': 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea>',
-      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Añade espacio para cartas de daño/mejora cuando imprima.",
+      '.vertical-space-checkbox': "Añade espacio para cartas de daño/mejora cuando imprima. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
+      '.color-print-checkbox': "Imprima en color. <input type=\"checkbox\" class=\"toggle-color-print\" />",
       '.print-list': '<i class="icon-print"></i>&nbsp;Imprimir',
       '.do-randomize': 'Genera Aleatoriamente!',
       '#empireTab': 'Imperio Galactico',
@@ -876,7 +877,7 @@
         text: "TU barra de mejoras gana el icono de mejora %ELITE%.<br /><br />No puedes equiparte esta mejora si ya tienes un icono de mejora %ELITE% o si la Habilidad de de tu piloto es de 2 o menos.."
       },
       "Enhanced Scopes": {
-        name: "Miras Mejoradas",
+        name: "Radar Mejorado",
         text: "Durante la fase de Activación, trata tu habilidad de piloto como \"0\"."
       },
       "Chardaan Refit": {
@@ -1005,8 +1006,8 @@
       "Bodyguard": {
         text: "%SCUMONLY%<br /><br />Al principio de la fase de combate, puedes gastar una ficha de concentración para elegir una nave aliada a distancia 1, que tenga habilidad de piloto mayor. Incremente su agilidad en 1 hasta el final de la ronda."
       },
-      "Calc???": {
-        text: "Esta carta todavía no ha sido revelada."
+      "Calculation": {
+        text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "Accuracy Corrector": {
         text: "Cuando ataques, puedes ignorar todos los resultados de los dados. Entonces, puedes añadir 2 resultados de %HIT%.<br /><br />Tus dados no pueden ser modificados de nuevo durante este ataque."

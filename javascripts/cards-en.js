@@ -108,7 +108,8 @@
       '.randomize': 'Random!',
       '.randomize-options': 'Randomizer options…',
       '.bbcode-list': 'Copy the BBCode below and paste it into your forum post.<textarea></textarea>',
-      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Add space for damage/upgrade cards when printing",
+      '.vertical-space-checkbox': "Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
+      '.color-print-checkbox': "Print color <input type=\"checkbox\" class=\"toggle-color-print\" />",
       '.print-list': '<i class="icon-print"></i>&nbsp;Print',
       '.do-randomize': 'Randomize!',
       '#empireTab': 'Galactic Empire',
@@ -706,11 +707,11 @@
       "Bodyguard": {
         text: "%SCUMONLY%%LINEBREAK%At the start of the Combat phase, you may spend a focus token to choose a friendly ship at Range 1 with higher pilot skill than you. Increase its agility value by 1 until the end of the round."
       },
-      "Calc???": {
-        text: "This card has not yet been revealed."
+      "Calculation": {
+        text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "Accuracy Corrector": {
-        text: "When attacking, you may cancel all dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."
+        text: "When attacking, you may cancel all of your dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."
       },
       "Inertial Dampeners": {
         text: "When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."
