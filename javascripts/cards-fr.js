@@ -108,7 +108,8 @@
       '.randomize': 'Aléatoire',
       '.randomize-options': 'Options…',
       '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>',
-      '.vertical-space-checkbox': "<input type=\"checkbox\" class=\"toggle-vertical-space\" /> Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression",
+      '.vertical-space-checkbox': "Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
+      '.color-print-checkbox': "Imprimer en couleur <input type=\"checkbox\" class=\"toggle-color-print\" />",
       '.print-list': '<i class="icon-print"></i>&nbsp;Imprimer',
       '.do-randomize': 'Générer',
       '#empireTab': 'Empire Galactique',
@@ -505,6 +506,12 @@
       "Guri": {
         text: "At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."
       },
+      "Cartel Spacer": {
+        ship: "Intercepteur M3-A"
+      },
+      "Tansarii Point Veteran": {
+        ship: "Intercepteur M3-A"
+      },
       "Serissu": {
         ship: "Intercepteur M3-A",
         text: "Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."
@@ -550,6 +557,12 @@
       },
       "Torkil Mux": {
         text: "Au début de la phase d'activation, choisissez 1 vaisseau ennemi à portée 1-2. Jusqu'à la fin de la phase de combat, traitez la valeur de pilotage de ce vaisseau comme \"0\"."
+      },
+      "Black Sun Soldier": {
+        ship: "Chasseur de têtes Z-95"
+      },
+      "Binayre Pirate": {
+        ship: "Chasseur de têtes Z-95"
       },
       "N'Dru Suhlak": {
         ship: "Chasseur de têtes Z-95",
@@ -651,8 +664,8 @@
       "Intimidation": {
         text: "Tant que vous êtes au contact avec un vaisseau ennemi, réduisez de 1 la valeur d'agilité de ce vaisseau."
       },
-      "Calc???": {
-        text: "Cette carte n'a pas encore été révélée."
+      "Calculation": {
+        text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
       },
       "Bodyguard": {
         text: "%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."
