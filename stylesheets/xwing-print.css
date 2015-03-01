@@ -12,8 +12,16 @@ body {
 
 #printable {
   overflow: hidden; }
+  #printable .bw .info-data {
+    color: black; }
+  #printable .bw .fancy-pilot-stats .xwing-miniatures-font {
+    color: black; }
+  #printable .bw i.xwing-miniatures-font-attack, #printable .bw i.xwing-miniatures-font-energy, #printable .bw i.xwing-miniatures-font-agility, #printable .bw i.xwing-miniatures-font-hull, #printable .bw i.xwing-miniatures-font-shield {
+    background: white; }
+  #printable .bw .upgrade-attack .xwing-miniatures-font-attack {
+    background: black;
+    color: white; }
   #printable .info-data {
-    color: black;
     vertical-align: middle; }
   #printable .fancy-header {
     border: 0.5in solid black;
@@ -119,8 +127,7 @@ body {
         position: relative;
         margin-top: -0.275in; }
         #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-miniatures-font {
-          vertical-align: middle;
-          color: black; }
+          vertical-align: middle; }
     #printable .fancy-ship .fancy-pilot-text {
       margin-left: 0.75in;
       padding: 5px;
@@ -178,8 +185,6 @@ body {
             font-family: kimberley;
             font-size: 1.2em; }
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack {
-            background: black;
-            color: white;
             vertical-align: middle; }
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .info-attack {
             margin-right: 0.02in; }
@@ -210,5 +215,3 @@ body {
       padding-left: 20px; }
   #printable .print-notes {
     color: black; }
-  #printable i.xwing-miniatures-font-attack, #printable i.xwing-miniatures-font-energy, #printable i.xwing-miniatures-font-agility, #printable i.xwing-miniatures-font-hull, #printable i.xwing-miniatures-font-shield {
-    background: white; }
