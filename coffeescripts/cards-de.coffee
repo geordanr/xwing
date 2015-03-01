@@ -31,7 +31,7 @@ exportObj.translations.Deutsch =
         "Hardpoint": "Hardpoint"
         "Team": "Team"
         "Illicit": "illegales"
-        "Salvaged Astromech": "Abgewrackter Astromechdroide"
+        "Salvaged Astromech": "geborgener Astromech"
     sources: # needed?
         "Core": "Grundspiel"
         "A-Wing Expansion Pack": "A-Wing Erweiterung"
@@ -439,12 +439,16 @@ exportObj.cardLoaders.Deutsch = () ->
         "Spice Runner":
             name: "Spiceschmuggler"
         "N'Dru Suhlak":
+            ship: "Z-95-Kopfjäger"
             text: """Sobald du angreifst, erhälst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."""
         "Kaa'To Leeachos":
+            ship: "Z-95-Kopfjäger"
             text: """Zu Beginn der Kampfphase darfst du 1 Fokus- oder Ausweichmarker von einem anderem freundlichen Schiff in Reichweite 1-2 entfernen und dir selbst zuordnen."""
         "Binayre Pirate":
+            ship: "Z-95-Kopfjäger"
             name: "Binayre-Pilot"
         "Black Sun Soldier":
+            ship: "Z-95-Kopfjäger"
             name: "Kampfpilot der Schwarzen Sonne"
         "Commander Alozen":
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
@@ -542,7 +546,6 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Das Feuer auf mich ziehen"
             text: """Wenn ein freundliches Schiff in Reichweite 1 durch einen Angriff getroffen wird, darfst du anstelle dieses Schiffs den Schaden für 1 nicht-negiertes %CRIT% auf dich nehmen."""
         "Luke Skywalker":
-            name: "Luke Skywalker"
             text: """%DE_REBELONLY%%LINEBREAK%Unmittelbar nachdem du mit einem Angriff verfehlt hast, darfst du einen weiteren Angriff mit deiner Primärwaffe durchführen. Du darfst ein %FOCUS% in ein %HIT% ändern. Danach kannst du in dieser Runde nicht noch einmal angreifen."""
         "Nien Nunb":
             text: """%DE_REBELONLY%%LINEBREAK%Du darfst alle %STRAIGHT%-Manöver wie grüne Manöver behandeln."""
