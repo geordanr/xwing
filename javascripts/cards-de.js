@@ -557,15 +557,19 @@
         name: "Spiceschmuggler"
       },
       "N'Dru Suhlak": {
+        ship: "Z-95-Kopfjäger",
         text: "Sobald du angreifst, erhälst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."
       },
       "Kaa'To Leeachos": {
+        ship: "Z-95-Kopfjäger",
         text: "Zu Beginn der Kampfphase darfst du 1 Fokus- oder Ausweichmarker von einem anderem freundlichen Schiff in Reichweite 1-2 entfernen und dir selbst zuordnen."
       },
       "Binayre Pirate": {
+        ship: "Z-95-Kopfjäger",
         name: "Binayre-Pilot"
       },
       "Black Sun Soldier": {
+        ship: "Z-95-Kopfjäger",
         name: "Kampfpilot der Schwarzen Sonne"
       },
       "Commander Alozen": {
