@@ -1180,14 +1180,17 @@
       },
       '"Heavy Scyk" Interceptor (Cannon)': {
         name: 'Intercepteur "Scyk Lourd" (Cannon)',
+        ship: "Intercepteur M3-A",
         text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Torpedo)': {
         name: 'Intercepteur "Scyk Lourd" (Torpille)',
+        ship: "Intercepteur M3-A",
         text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Missile)': {
         name: 'Intercepteur "Scyk Lourd" (Missile)',
+        ship: "Intercepteur M3-A",
         text: "<span class=\"card-restriction\">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       "IG-2000": {

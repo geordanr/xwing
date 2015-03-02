@@ -941,12 +941,15 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is "3" or lower."""
         '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
+            ship: "Intercepteur M3-A"
             text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
+            ship: "Intercepteur M3-A"
             text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Missile)'
+            ship: "Intercepteur M3-A"
             text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
