@@ -261,6 +261,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Darth Vader":
             name: "Dark Vador"
             text: """Vous pouvez effectuer 2 actions lors de l'étape "Effectuer une action"."""
+        "Commander Alozen": # Traduit de l'anglais
+            text: """Au début de la phase de combat, vous pouvez verrouiller un vaisseu ennemi situé à portée 1."""
         # Firespray
         "Bounty Hunter":
             name:"Chasseur de primes"
@@ -452,36 +454,44 @@ exportObj.cardLoaders['Français'] = () ->
         "Boba Fett (Scum)":
             name: """Boba Fett (Racailles)"""
             text: """Quand vous attaquez ou défendez, vous pouvez relancer 1 de vos dés pour chaque vaisseau ennemi à portée 1."""
-        "Kath Scarlet (Scum)": # Traduit de l'anglais
+        "Kath Scarlet (Scum)":
             name: """Kath Scarlet (Racailles)"""
             text: """Quand vous attaquez un vaisseau dans votre arc de tir auxiliaire, lancez 1 dé d'attaque supplémentaire."""
-        "Emon Azzameen": # Traduit de l'anglais
+        "Emon Azzameen":
             text: """Quand vous larguez une bombe, vous pouvez utiliser le gabarit [%TURNLEFT% 3], [%STRAIGHT% 3], ou [%TURNRIGHT% 3] au lieu du gabarit [%STRAIGHT% 1]."""
-        # Y-Wing, traduit de l'anglais
+        "Mandalorian Mercenary":
+            name: "Mercenaire mandalorien"
+        # Y-Wing
         "Kavil":
             text: """Quand vous attaquez un vaisseau en dehors de votre arc de tir, lancez 1 dé d'attaque supplémentaire."""
         "Drea Renthal":
-            text: """Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour acquérir une acquisition de cible."""
+            text: """Après avoir dépensé une acquisition de cible, vous pouvez recevoir 1 marqueur de stress pour verrouiller une cible."""
+        "Hired Gun" :
+            name: "Soudard"
+        "Syndicate Thug":
+            name: "Malfrat"
         # HWK
-        "Dace Bonearm": # Traduit de l'anglais
-            text: """Quand un vaisseau ennemi à portée 1-3 reçoit au moins 1 marqueur ionique, si vous n'êtes pas stressé, vous pouvez recevoir 1 marqueur de stress pour que ce vaisseau subisse 1 dégât."""
-        "Palob Godalhi": # Traduit de l'anglais
-            text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur concentration ou évasion d'un vaisseau ennemi à portée 1-2 et l'assigner à vous-même."""
-        "Torkil Mux": # Traduit de l'anglais
-            text: """Au début de la phase d'activation, choisissez 1 vaisseau ennemi à portée 1-2. Jusqu'à la fin de la phase de combat, traitez la valeur de pilotage de ce vaisseau comme "0"."""
+        "Dace Bonearm":
+            text: """Quand un vaisseau ennemi situé à portée 1-3 reçoit au moins 1 marqueur ionique, si vous n'êtes pas déjà sous l'effet du stress, vous pouvez recevoir 1 marqueur de stress pour que ce vaisseau subisse 1 dégât."""
+        "Palob Godalhi":
+            text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un vaisseau ennemi situé à portée 1-2 et vous l'assigner."""
+        "Torkil Mux":
+            text: """À la fin de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-2. Jusqu'à la fin de la phase de combat, considérez la valeur de pilotage de ce vaisseau égale "0"."""
+        "Spice Runner":
+            name: "Trafiquant d'épice"
         # Z-95, traduit de l'anglais
         "Black Sun Soldier":
+            name: "Soldat du Soleil Noir"
             ship: "Chasseur de têtes Z-95"
         "Binayre Pirate":
+            name: "Pirate Binayre"
             ship: "Chasseur de têtes Z-95"
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
-            text: """Quand vous attaquez, s'il n'y a pas d'autre vaisseau allié à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
+            text: """Quand vous attaquez, s'il n'y a pas d'autres vaisseaux alliés à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
         "Kaa'To Leeachos":
             ship: "Chasseur de têtes Z-95"
-            text: """Au début de la phase de combat, vous pouvez enlever 1 jeton d'avasion ou de concentraiton d'un autre vaisseau ami à portée 1-2 et l'assignez à vous-même."""
-        "Commander Alozen":
-            text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
+            text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -595,8 +605,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Ion Torpedoes": # Traduction non officielle
             name: "Torpilles ioniques"
             text: """<strong>Attaque (acquisition de cible) :</strong> utilisez votre acquisition de cible et défaussez cette carte pour effectuer cette attaque.%LINEBREAK%Si cette attaique touche, le défenseur et chaque vaisseau situé à portée 1 de celui-ci reçoit 1 marqueur ionique."""
-        "Bomb Loadout": # Traduction non officielle
-            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Votre barre d'améliorations gagne l'icone %BOMB%."""
+        "Bomb Loadout":
+            name: "Chargement de bombes"
+            text: """<span class="card-restriction">Y-Wing uniquement. Limité.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icone d'amélioration %BOMB%."""
         # Tourelles
         "Ion Cannon Turret":
             name: "Tourelles à canons ioniques"
@@ -604,8 +615,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Blaster Turret":
             name: "Tourelles blaster"
             text: """<strong>Attaque (concentration) :</strong> dépensez un marqueur concentration pour effectuer cette attaque contre 1 vaisseau (même s'il se situe en dehors de votre arc de tir)."""
-        "Autoblaster Turret": # Traduction non officielle
-            text: """<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se situe en dehors de votre arc de tir).%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par les dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
+        "Autoblaster Turret":
+            name: "Tourelle autoblaster"
+            text: """<strong>Attaque :</strong> attaquez 1 vaisseau (même s'il se trouve en dehors de votre arc de tir).%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
         # Missiles
         "Concussion Missiles":
             name: "Missiles à concussion"
@@ -749,9 +761,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_IMPERIALONLY%%LINEBREAK%Au début de la phase de combat, si vous n'avez pas de boucliers et qu'au moins 1 carte de dégâts est assignée à votre vaisseau, vous pouvez effectuer une action d'évasion gratuite."""
         "Moff Jerjerrod":
             text: """%FR_IMPERIALONLY%%LINEBREAK%Quand vous recevez une carte de dégâts face visible, vous pouvez défausser cette carte d'amélioration ou une autre carte d'amélioration %CREW% pour retourner cette carte dégâts face cachée (sans en résoudre l'effet)."""
-        "Greedo": # Traduction non officielle
-            text: """%FR_SCUMONLY%%LINEBREAK%Lors de la première attaque et de la première dépense de chaque tour, la première carte dégâts est reçue face visible."""
-        "Outlaw Tech": # Traduction non officielle
+        "Greedo":
+            text: """%FR_SCUMONLY%%LINEBREAK%La première fois que vous attaquez à chaque tour et la première fois que vous défendez à chaque tour, la première carte dégâts infligée l'est face visible."""
+        "Outlaw Tech":
+            name: "Technicien hors la loi"
             text: """Après avoir exécuté une manœuvre rouge, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."""
         # Soute
         "Frequency Jammer":
@@ -785,6 +798,8 @@ exportObj.cardLoaders['Français'] = () ->
         "EM Emitter":
             name: "Émetteur EM"
             text: """Quand vous gênez une attaque, le défenseur lance 3 dés de défense supplémentaires (au lieu de 1)."""
+        "Ion Cannon Battery": # Traduit de l'anglais
+            text: """<strong>Attaque (énergie):</strong> Dépensez 2 énergie de cette carte pour effectuer une attaque. Si cette attaque touche, le défenseur subit 1 dégât critique et reçoit 1 marqueur inioque. Puis annulez <strong>tous</strong> les résultats des dés."""
         # Point d'Attache
         "Single Turbolasers":
             name: "Turbolaser"
@@ -810,25 +825,29 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."""
         "Feedback Array": # Traduction non officielle
             text: """Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."""
-        '"Hot Shot" Blaster': # Traduction non officielle
-            text: """<strong>Attaque :</strong> Défaussez cette carte pour attaquer 1 vaisseau (même en dehors de votre arc de tir)."""
+        '"Hot Shot" Blaster':
+            name: "Blaster \"de la mort\""
+            text: """<strong>Attaque :</strong> défaussez cette carte pour attaquer 1 vaisseau (même s'il est en dehors de votre arc de tir)."""
         # Astromech récupéré
-        "Salvaged Astromech": # Traduction non officielle
-            text: """Quand vous recevez une carte dégât avec le trait <strong>Vaisseau</strong>, vous pouvez défausser cette carte immédiatement (avant de résoudre ses effets).%LINEBREAK%Puis, défaussez cette carte d'amélioration."""
-        '"Genius"': # Traduction non officielle
-            text: """Si vous êtes équipé d'une bombe qui peut être larguée avant de révéler votre cadran de manœuvre, vous pouvez larguer la bombe <strong>après</strong> avoir éxecuté la manœuvre."""
-        "Unhinged Astromech": # Traduction non officielle
-            text: """Vous pouvez traiter toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
-        "R4-B11": # Traduction non officielle
-            text: """Quand vous attaquez, si vous avez une acquisition de cible sur le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir autant de dés de défense que souhaité. Le défenseur doit relancer les dés choisis."""
-        "R4 Agromech": # Traduction non officielle
-            text: """Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez effectuer une acquisition de cible sur le défenseur."""
-        "K4 Security Droid": # Traduction non officielle
-            text: """Après avoir exécuté une manœuvre verte, vous pouvez effectuer une acquisition de cible."""
-        "Advanced Targeting Computer":
-            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
-        "Ion Cannon Battery":
-            text: """<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."""
+        "Salvaged Astromech":
+            name: "Atromech récupéré"
+            text: "Quand vous recevez une carte de dégâts ayant le trait <strong>Vaisseau</strong>, vous pouvez immédiatement la défausser (avant d'en résoudre l'effet).%LINEBREAK%Puis, défaussez cette carte d'amélioration."
+        '"Genius"':
+            name: "Génie"
+            text: """Si vous êtes équipé d'une bombe qui peut être larguée avant que vous ne révéliez votre manœuvre, vous pouvez au lieu de cela larguer la bombe <strong>après</strong> avoir éxecuté votre manœuvre."""
+        "Unhinged Astromech":
+            name: "Atromech déglingué"
+            text: """Vous pouvez considérer toutes les manœuvres de vitesse 3 comme manœuvres vertes."""
+        "R4-B11":
+            text: """Quand vous attaquez, si vous avez verrouillé le défenseur, vous pouvez dépenser l'acquisition de cible pour choisir tout ou partie des dés de défense. Le défenseur doit relancer les dés choisis."""
+        "R4 Agromech":
+            name: "Astromech R4"
+            text: """Quand vous attaquez, après avoir dépensé un marqueur de concentration, vous pouvez verrouiller le défenseur."""
+        "K4 Security Droid":
+            name: "Droïde de sécurité K4"
+            text: """%FR_SCUMONLY%%LINEBREAK%Après avoir exécuté une manœuvre verte, vous pouvez verrouiller cible."""
+        "Advanced Targeting Computer": # Traduit de l'anglais
+            text: """<span class="card-restriction">TIE Advanced uniquement.</span>%LINEBREAK%Quand vous attaquez avec votre arme principale, si vous avez verrouillé le défenseur, vous pouvez ajouter un résultat %CRIT% result à votre lancer de dés. Si vous le faîtes, vous ne pouvez pas dépenser de marqueur d'acquisition de cible durant cette attaque."""
 
     modification_translations =
         "Shield Upgrade":
@@ -919,23 +938,27 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Décimateur VT-49"
             text: """<span class="card-restriction">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Ensuite, recevez 1 marqueur de stress."""
         "Virago":
-            text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is "3" or lower."""
+            text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is "3" or lower."""
         '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            ship: "Intercepteur M3-A"
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            ship: "Intercepteur M3-A"
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
             name: 'Intercepteur "Scyk Lourd" (Missile)'
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre barre d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            ship: "Intercepteur M3-A"
+            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
-        "BTL-A4 Y-Wing": # Traduction non officielle
-            text: """<span class="card-restriction">Y-Wing uniquement.</span>%LINEBREAK%Vous ne pouvez pas attaque de vaisseaux en dehors de votre arc de tir. Apr!ès avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""
-        "Andrasta": # Traduction non officielle
-            text: """Votre barre d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."""
-        "TIE/x1":
-            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
+        "BTL-A4 Y-Wing":
+            name: "Y-wing BTL-A4"
+            text: """<span class="card-restriction">Y-Wing uniquement. Titre.</span>%LINEBREAK%Vous ne pouvez pas attaquer les vaisseaux en dehors de votre arc de tir. Après avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""
+        "Andrasta":
+            text: """Votre bandeau d'amélioration gagne deux icônes d'amélioration %BOMB% supplémentaires."""
+        "TIE/x1": # Traduit de l'anglais
+            text: """<span class="card-restriction">TIE Advanced uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %SYSTEM%.%LINEBREAK%Si vous êtes équipé d'une amélioration %SYSTEM%, ses points d'escadron sont réduits de 4 (jusqu'à un minimum de 0)."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
