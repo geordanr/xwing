@@ -459,7 +459,7 @@
         text: "Du darfst in der Aktivierungsphase und beim Durchführen von Aktionen Hindernisse ignorieren."
       },
       '"Leebo"': {
-        text: "Immer wenn du eine offene Schadenskarte erhälst, ziehst du 1 weitere Schadenskarte. Wähle 1, die abgehandelt wird, und lege die andere ab."
+        text: "Immer wenn du eine offene Schadenskarte erhältst, ziehst du 1 weitere Schadenskarte. Wähle 1, die abgehandelt wird, und lege die andere ab."
       },
       "Eaden Vrill": {
         text: "Wirf 1 zusätzlichen Angriffswürfel, wenn du mit den Primärwaffen auf ein Schiff mit Stressmarker schießt."
@@ -707,6 +707,7 @@
         text: "%DE_REBELONLY%%LINEBREAK%Du darfst alle %STRAIGHT%-Manöver wie grüne Manöver behandeln."
       },
       "Chewbacca": {
+        name: "Chewbacca (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%Wenn du eine Schadenskarte erhältst, darfst du sie sofort ablegen und 1 Schild wiederaufladen.<br /><br />Danach wird diese Aufwertungskarte abgelegt."
       },
       "Advanced Proton Torpedoes": {
@@ -869,9 +870,11 @@
         text: "<strong>Angriff (Fokussierung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst so viele zusätzliche Angriffswürfel werfen, wie du Wendigkeit hast (maximal 3 zusätzliche Würfel)."
       },
       "Kyle Katarn": {
+        name: "Kyle Katarn (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%Nachdem du einen Stressmarker von deinem Schiff entfernt hast, darfst du deinem Schiff einen Fokusmarker geben."
       },
       "Jan Ors": {
+        name: "Jan Ors (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%Ein Mal pro runde darfst du einem freundlichem Schiff in Reichweite 1-3, das gerade die Aktion Fokussierung durchführt oder einen Fokusmarker erhalten würde, stattdessen einen Ausweichmarker geben."
       },
       "Toryn Farr": {
@@ -911,6 +914,7 @@
         text: "Wenn du die Aktion Störsignal durchführst, wähle 1 feindliches Schiff ohne Stressmarker in Reichweite 1 des vom Störsignal betroffenen Schiffs. Das gewählte Schiff erhält 1 Stressmarker."
       },
       "Han Solo": {
+        name: "Han Solo (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%Wenn du angreifst und den Verteidiger in Zielerfassung hast, kannst du diese Zielerfassung ausgeben, um all deine gewürfelten %FOCUS% in %HIT% zu ändern."
       },
       "Leia Organa": {
@@ -935,6 +939,7 @@
         text: "Wenn du in der Aktivierungsphase ein %STRAIGHT% Manöver aufdeckst, bekommst du im Schritt \"Energie gewinnen\" 1 zusätzlichen Energiemarker."
       },
       "Lando Calrissian": {
+        name: "Lando Calrissian (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%<strong>Aktion:</strong> Wirf 2 Verteidigungswürfel. Dein Schiff bekommt 1 Fokusmarker für jedes %FOCUS% und 1 Ausweichmarker für jedes %EVADE%."
       },
       "Mara Jade": {
@@ -957,9 +962,11 @@
         text: "Nach dem Aufdecken des Manöverrads darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."
       },
       "Dash Rendar": {
+        name: "Dash Rendar (Crew)",
         text: "%DE_REBELONLY%%LINEBREAK%Du darfst auch angreifen während du dich mit einem Hindernis überschneidest.<br /><br />Deine Schussbahn kann nicht versperrt werden."
       },
       '"Leebo"': {
+        name: '"Leebo" (Crew)',
         text: "%DE_REBELONLY%%LINEBREAK%<strong>Aktion:</strong> Führe als freie Aktion einen Schub durch. Dann erhältst du 1 Ionenmarker."
       },
       "Ruthlessness": {
@@ -1183,14 +1190,17 @@
         text: "<span class=\"card-restriction\">Nur für SternenViper.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%- und ein %ILLICIT%-Symbol hinzu.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, wenn dein Pilotenwert \"3\" oder niedriger ist."
       },
       '"Heavy Scyk" Interceptor (Cannon)': {
+        ship: "M3-A Abfangjäger",
         name: '"Schwerer Scyk"-Abfangjäger (Kannone)',
         text: "<span class=\"card-restriction\">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Torpedo)': {
+        ship: "M3-A Abfangjäger",
         name: '"Schwerer Scyk"-Abfangjäger (Torpedo)',
         text: "<span class=\"card-restriction\">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%."
       },
       '"Heavy Scyk" Interceptor (Missile)': {
+        ship: "M3-A Abfangjäger",
         name: '"Schwerer Scyk"-Abfangjäger (Rakete)',
         text: "<span class=\"card-restriction\">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%."
       },
