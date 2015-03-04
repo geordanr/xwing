@@ -504,10 +504,16 @@
         name: "Frontalier de l'espace sauvage"
       },
       "Prince Xizor": {
-        text: "Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."
+        text: "Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% restant à votre place."
       },
       "Guri": {
-        text: "At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."
+        text: "Au début de la phase de combat, si vous êtes à portée 1 d'un vaisseau ennemi, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."
+      },
+      "Black Sun Vigo": {
+        name: "Vigo du Soleil Noir"
+      },
+      "Black Sun Enforcer": {
+        name: "Homme de main du Soleil Noir"
       },
       "Cartel Spacer": {
         ship: "Intercepteur M3-A"
@@ -679,10 +685,12 @@
         text: "Tant que vous êtes au contact avec un vaisseau ennemi, réduisez de 1 la valeur d'agilité de ce vaisseau."
       },
       "Calculation": {
-        text: "When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."
+        name: "Calcul",
+        text: "Quand vous attaquez, vous pouvez dépenser un marqueur de concentration pour changer 1 de vos résultats %FOCUS% en un résultat %CRIT%."
       },
       "Bodyguard": {
-        text: "%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."
+        name: "Garde du corps",
+        text: "%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 ayant une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."
       },
       "R2 Astromech": {
         name: "Astromech R2",
@@ -830,7 +838,7 @@
       },
       "Accuracy Corrector": {
         name: "Correcteur de Précision",
-        text: "Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.%LINEBREAK%Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."
+        text: "Quand vous attaquez, vous pouvez annuler le résultat de tous vos dés. Puis, vous pouvez ajouter 2 résultats %HIT%.%LINEBREAK%Vos dés ne peuvent pas être modifiés à nouveau lors de cette attaque."
       },
       "Gunner": {
         name: "Cannonier",
@@ -1018,8 +1026,8 @@
         text: "Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape \"Gagner de l'énergie\"."
       },
       "Inertial Dampeners": {
-        name: "Amortisseurs Inertiels",
-        text: "Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."
+        name: "Amortisseurs inertiels",
+        text: "Quand vous révélez votre cadran de manœuvre, vous pouvez défausser cette carte pour exécuter une manœuvre blanche [0%STOP%] à la place. Ensuite, recevez 1 marqueur de stress."
       },
       "Dead Man's Switch": {
         text: "Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."
@@ -1117,7 +1125,8 @@
         text: "%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."
       },
       "Autothrusters": {
-        text: "When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."
+        name: "Autopropulseurs",
+        text: "Quand vous défendez, si vous êtes au-delà de la portée 2 ou en dehors de l'arc de tir de l'attaquant, vous pouvez changer 1 de vos résultats vierges en un résultat %EVADE%. Vous ne pouvez vous équiper de cette carte que si vous avez l'icône d'action %BOOST%."
       }
     };
     title_translations = {
@@ -1176,7 +1185,7 @@
         text: "<span class=\"card-restriction\">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Ensuite, recevez 1 marqueur de stress."
       },
       "Virago": {
-        text: "<span class=\"card-restriction\">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is \"3\" or lower."
+        text: "<span class=\"card-restriction\">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est de \"3\" ou moins."
       },
       '"Heavy Scyk" Interceptor (Cannon)': {
         name: 'Intercepteur "Scyk Lourd" (Cannon)',
