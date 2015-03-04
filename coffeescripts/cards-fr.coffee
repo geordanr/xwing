@@ -425,29 +425,35 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Frontalier de l'espace sauvage"
 
         # Scum and Villainy
-        # Starviper, traduit de l'anglais
+        # Starviper
         "Prince Xizor":
-            text: """Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% non annulé à votre place."""
+            text: """Quand vous défendez, un vaisseau allié à portée 1 peut subir 1 dégât %HIT% ou %CRIT% restant à votre place."""
         "Guri":
-            text: """At the start of the Combat phase, if you are at Range 1 of an enemy ship, you may assign 1 focus token to your ship."""
-        # Intercepteur M3-A, traduit de l'anglais
+            text: """Au début de la phase de combat, si vous êtes à portée 1 d'un vaisseau ennemi, vous pouvez assigner 1 marqueur de concentration à votre vaisseau."""
+        "Black Sun Vigo":
+            name: "Vigo du Soleil Noir"
+        "Black Sun Enforcer":
+            name: "Homme de main du Soleil Noir"
+        # Intercepteur M3-A
         "Cartel Spacer":
+            name: "Astropilote du Cartel"
             ship: "Intercepteur M3-A"
         "Tansarii Point Veteran":
+            name: "Vétéran de Tansarii Point"
             ship: "Intercepteur M3-A"
         "Serissu":
             ship: "Intercepteur M3-A"
             text: """Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."""
         "Laetin A'shera":
             ship: "Intercepteur M3-A"
-            text: """After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."""
-        # Agressor, traduit de l'anglais
+            text: "Après avoir défendu contre une attaque, si cette dernière ne vous a pas touché, vous pouvez assigner 1 marqueur d'évasion à votre vaisseau."
+        # Agressor
         "IG-88A":
-            text: """After you perform an attack that destroys the defender, you may recover 1 shield."""
+            text: """Après avoir effectué une attaque qui détruit le défenseur, vous pouvez récupérer 1 bouclier."""
         "IG-88B":
-            text: """Once per round, after you perform an attack that does not hit, you may perform an attack with an equipped %CANNON% secondary weapon."""
+            text: """Une fois par tour, après avoir effectué une attaque qui ne touche pas, vous pouvez effectuer une attaque avec une arme secondaire %CANON% équipée."""
         "IG-88C":
-            text: """After you perform a boost action, you may perform a free evade action."""
+            text: """Après avoir effectué une action d'accélération, vous pouvez effectuer une action d'évasion gratuite."""
         "IG-88D":
             text: """Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."""
         # Firespray
@@ -479,7 +485,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: """À la fin de la phase d'activation, choisissez 1 vaisseau ennemi situé à portée 1-2. Jusqu'à la fin de la phase de combat, considérez la valeur de pilotage de ce vaisseau égale "0"."""
         "Spice Runner":
             name: "Trafiquant d'épice"
-        # Z-95, traduit de l'anglais
+        # Z-95
         "Black Sun Soldier":
             name: "Soldat du Soleil Noir"
             ship: "Chasseur de têtes Z-95"
@@ -561,9 +567,11 @@ exportObj.cardLoaders['Français'] = () ->
         "Intimidation":
             text: """Tant que vous êtes au contact avec un vaisseau ennemi, réduisez de 1 la valeur d'agilité de ce vaisseau."""
         "Calculation":
-            text: """When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."""
-        "Bodyguard": # Traduction non officielle
-            text: """%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 avec une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."""
+            name: "Calcul"
+            text: """Quand vous attaquez, vous pouvez dépenser un marqueur de concentration pour changer 1 de vos résultats %FOCUS% en un résultat %CRIT%."""
+        "Bodyguard":
+            name : "Garde du corps"
+            text: """%FR_SCUMONLY%%LINEBREAK%Au début de la phase de combat, vous pouvez dépenser un marqueur de concentration pour choisir un vaisseau allié à portée 1 ayant une valeur de pilotage supérieure à la votre. Augmentez sa valeur d'agilité de 1 jusqu'à la fin du tour."""
         # Astromechs
         "R2 Astromech":
             name: "Astromech R2"
@@ -660,9 +668,11 @@ exportObj.cardLoaders['Français'] = () ->
         "Autoblaster":
             text: """<strong>Attaque :</strong> attaquez 1 vaisseau.%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
         "Flechette Cannon":
-            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."""
+            name: "Canon à fléchettes"
+            text: """<strong>Attaque :</strong> Attaquez 1 vaisseau.%LINEBREAK%Si cette attaque touche, le défenseur subit 1 dégât et, si le défenseur n'est pas sous l'effet du stress, il reçoit aussi 1 marqueur de stress. Ensuite, annulez le résultat de <strong>tous</strong> les dés."""
         '"Mangler" Cannon':
-            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%When attacking, you may change 1 of your %HIT% results to a %CRIT% result."""
+            name: "Canon \"Lacérateur\""
+            text: """<strong>Attaque :</strong> Attaquez 1 vaisseau.%LINEBREAK% Quand vous attaquez, vous pouvez échanger 1 de vos résultats %HIT% contre 1 résultat %CRIT%."""
         # Systèmes
         "Enhanced Scopes":
             name: "Radars améliorés"
@@ -676,9 +686,9 @@ exportObj.cardLoaders['Français'] = () ->
         "Sensor Jammer":
             name: "Brouilleur de senseurs"
             text: """Quand vous défendez, vous pouvez changer un des résultats %HIT% de l'attaquant en résultat %FOCUS%. L'attaquant ne peut pas relancer le dés au résultat modifié."""
-        "Accuracy Corrector": # Traduction non officielle
+        "Accuracy Corrector":
             name: "Correcteur de Précision"
-            text: """Quand vous attaquez, vous pouvez annuler tous les résultats de dés. Puis, vous pouvez ajouter 2 résultats %HIT%.%LINEBREAK%Vos dés ne peuvent pas être modifiés de nouveau durant cette attaque."""
+            text: """Quand vous attaquez, vous pouvez annuler le résultat de tous vos dés. Puis, vous pouvez ajouter 2 résultats %HIT%.%LINEBREAK%Vos dés ne peuvent pas être modifiés à nouveau lors de cette attaque."""
         # Équipages
         "Gunner":
             name: "Cannonier"
@@ -818,13 +828,15 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Équipe de mécaniciens"
             text: """Durant la phase d'activation, quand vous dévoilez une manœuvre %STRAIGHT%, gagnez 1 énergie supplémentaire lors de l'étape "Gagner de l'énergie"."""
         # Illégal
-        "Inertial Dampeners": # Traduction non officielle
-            name: "Amortisseurs Inertiels"
-            text: """Quand vous révéler votre cadran de manœuvre, vous pouvez défausser cette carte pour effectuer à la place une manœuvre blanche [0%STOP%]. Puis recevez 1 marqueur de stress."""
-        "Dead Man's Switch": # Traduction non officielle
+        "Inertial Dampeners":
+            name: "Amortisseurs inertiels"
+            text: """Quand vous révélez votre cadran de manœuvre, vous pouvez défausser cette carte pour exécuter une manœuvre blanche [0%STOP%] à la place. Ensuite, recevez 1 marqueur de stress."""
+        "Dead Man's Switch":
+            name: "Salve automatique"
             text: """Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."""
-        "Feedback Array": # Traduction non officielle
-            text: """Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."""
+        "Feedback Array":
+            name: "Dispositif de retour"
+            text: """Lors de la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."""
         '"Hot Shot" Blaster':
             name: "Blaster \"de la mort\""
             text: """<strong>Attaque :</strong> défaussez cette carte pour attaquer 1 vaisseau (même s'il est en dehors de votre arc de tir)."""
@@ -894,7 +906,8 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Brouilleur tactique"
             text: """%FR_LARGESHIPONLY%%LINEBREAK%Votre vaisseau peut gêner les attaques ennemies."""
         "Autothrusters":
-            text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
+            name: "Autopropulseurs"
+            text: """Quand vous défendez, si vous êtes au-delà de la portée 2 ou en dehors de l'arc de tir de l'attaquant, vous pouvez changer 1 de vos résultats vierges en un résultat %EVADE%. Vous ne pouvez vous équiper de cette carte que si vous avez l'icône d'action %BOOST%."""
 
     title_translations =
         "Slave I":
@@ -938,21 +951,21 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Décimateur VT-49"
             text: """<span class="card-restriction">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Ensuite, recevez 1 marqueur de stress."""
         "Virago":
-            text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%You cannot equip this card if your pilot skill value is "3" or lower."""
-        '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
+            text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est de \"3\" ou moins."""
+        '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
-        '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
-        '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Missile)':
             name: 'Intercepteur "Scyk Lourd" (Missile)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
-            text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
+            text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre capacité de pilote)."""
         "BTL-A4 Y-Wing":
             name: "Y-wing BTL-A4"
             text: """<span class="card-restriction">Y-Wing uniquement. Titre.</span>%LINEBREAK%Vous ne pouvez pas attaquer les vaisseaux en dehors de votre arc de tir. Après avoir effectué une attaque d'arme principale, vous pouvez immédiatement effectuer une attaque avec une arme secondaire %TURRET%."""

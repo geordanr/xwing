@@ -482,7 +482,7 @@
         text: "Sobald du verteidigst, darf ein freundliches Schiff in Reichweite 1 ein nicht-negiertes %HIT% oder %CRIT% an deiner Stelle nehmen."
       },
       "Guri": {
-        text: "Wenn du zu Beginn der Kampfphase in Reichweite 1 zu einem freundlichen Schiff bist, darfst du 1 Fokusmarker auf dein Schiff legen."
+        text: "Wenn du zu Beginn der Kampfphase in Reichweite 1 zu einem feindlichen Schiff bist, darfst du 1 Fokusmarker auf dein Schiff legen."
       },
       "Black Sun Vigo": {
         name: "Vigo der Schwarzen Sonne"
