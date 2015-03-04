@@ -436,15 +436,17 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Homme de main du Soleil Noir"
         # Intercepteur M3-A, traduit de l'anglais
         "Cartel Spacer":
+            name: "Astropilote du Cartel"
             ship: "Intercepteur M3-A"
         "Tansarii Point Veteran":
+            name: "Vétéran de Tansarii Point"
             ship: "Intercepteur M3-A"
         "Serissu":
             ship: "Intercepteur M3-A"
             text: """Quand un autre vaisseau allié à portée 1 défend, it peut relancer 1 dé de défense."""
         "Laetin A'shera":
             ship: "Intercepteur M3-A"
-            text: """After you defend against an attack, if the attack did not hit, you may assign 1 evade token to your ship."""
+            text: "Après avoir défendu contre une attaque, si cette dernière ne vous a pas touché, vous pouvez assigner 1 marqueur d'évasion à votre vaisseau."
         # Agressor, traduit de l'anglais
         "IG-88A":
             text: """After you perform an attack that destroys the defender, you may recover 1 shield."""
@@ -666,9 +668,11 @@ exportObj.cardLoaders['Français'] = () ->
         "Autoblaster":
             text: """<strong>Attaque :</strong> attaquez 1 vaisseau.%LINEBREAK%Vos résultats %HIT% ne peuvent pas être annulés par des dés de défense. Le défenseur peut annuler les résultats %CRIT% avant les résultats %HIT%."""
         "Flechette Cannon":
-            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."""
+            name: "Canon à fléchettes"
+            text: """<strong>Attaque :</strong> Attaquez 1 vaisseau.%LINEBREAK%Si cette attaque touche, le défenseur subit 1 dégât et, si le défenseur n'est pas sous l'effet du stress, il reçoit aussi 1 marqueur de stress. Ensuite, annulez le résultat de <strong>tous</strong> les dés."""
         '"Mangler" Cannon':
-            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%When attacking, you may change 1 of your %HIT% results to a %CRIT% result."""
+            name: "Canon \"Lacérateur\""
+            text: """<strong>Attaque :</strong> Attaquez 1 vaisseau.%LINEBREAK% Quand vous attaquez, vous pouvez échanger 1 de vos résultats %HIT% contre 1 résultat %CRIT%."""
         # Systèmes
         "Enhanced Scopes":
             name: "Radars améliorés"
@@ -946,18 +950,18 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">Décimateur VT-49 uniquement.</span>%LINEBREAK%Après avoir exécuté une manœuvre qui vous fait chevaucher un autre vaisseau, vous pouvez effectuer 1 action gratuite. Ensuite, recevez 1 marqueur de stress."""
         "Virago":
             text: """<span class="card-restriction">StarViper uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %SYSTEM% et %ILLICIT%.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur de pilotage est de \"3\" ou moins."""
-        '"Heavy Scyk" Interceptor (Cannon)': # Traduction non officielle
+        '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
-        '"Heavy Scyk" Interceptor (Torpedo)': # Traduction non officielle
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
-        '"Heavy Scyk" Interceptor (Missile)': # Traduction non officielle
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+        '"Heavy Scyk" Interceptor (Missile)':
             name: 'Intercepteur "Scyk Lourd" (Missile)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">M3-A Interceptor uniquement.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icônes d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."""
         "BTL-A4 Y-Wing":
