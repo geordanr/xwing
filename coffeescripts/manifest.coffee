@@ -1953,7 +1953,7 @@ exportObj.manifestByExpansion =
         {
             name: "R4 Agromech"
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: "Salvaged Astromech"
