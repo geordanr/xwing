@@ -77,3 +77,53 @@
   background-image: url("../images/gr_75_medium_transport.png");
   background-repeat: no-repeat;
   background-position: 0px -30px; }
+
+.ship-cr90corvetteaft0, .ship-corbetacr90popa0 {
+  background-image: url("../images/cr90_corvette_aft.png");
+  background-repeat: no-repeat;
+  background-position: 77px -12px; }
+
+.ship-hwk2900 {
+  background-image: url("../images/hwk290.png");
+  background-repeat: no-repeat;
+  background-position: 0px -149px; }
+
+.ship-starviper0 {
+  background-image: url("../images/starviper0.png");
+  background-repeat: no-repeat;
+  background-position: 150px -261px; }
+
+.ship-z95headhunter0 {
+  background-image: url("../images/z95headhunter0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -189px; }
+
+.ship-m3ainterceptor0 {
+  background-image: url("../images/m3ainterceptor0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -119px; }
+
+.ship-ewing0 {
+  background-image: url("../images/ewing0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -89px; }
+
+.ship-yt24000 {
+  background-image: url("../images/yt2400.png");
+  background-repeat: no-repeat;
+  background-position: 0px -226px; }
+
+.ship-vt49decimator0 {
+  background-image: url("../images/vt49decimator0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -35px; }
+
+.ship-tiedefender0 {
+  background-image: url("../images/tiedefender0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -141px; }
+
+.ship-tiephantom0 {
+  background-image: url("../images/tiephantom0.png");
+  background-repeat: no-repeat;
+  background-position: 96px -35px; }
