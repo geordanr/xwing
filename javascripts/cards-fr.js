@@ -532,13 +532,13 @@
         text: "Après avoir défendu contre une attaque, si cette dernière ne vous a pas touché, vous pouvez assigner 1 marqueur d'évasion à votre vaisseau."
       },
       "IG-88A": {
-        text: "After you perform an attack that destroys the defender, you may recover 1 shield."
+        text: "Après avoir effectué une attaque qui détruit le défenseur, vous pouvez récupérer 1 bouclier."
       },
       "IG-88B": {
-        text: "Once per round, after you perform an attack that does not hit, you may perform an attack with an equipped %CANNON% secondary weapon."
+        text: "Une fois par tour, après avoir effectué une attaque qui ne touche pas, vous pouvez effectuer une attaque avec une arme secondaire %CANON% équipée."
       },
       "IG-88C": {
-        text: "After you perform a boost action, you may perform a free evade action."
+        text: "Après avoir effectué une action d'accélération, vous pouvez effectuer une action d'évasion gratuite."
       },
       "IG-88D": {
         text: "Vous pouvez exécuter la manœuvre (%SLOOPLEFT% 3) ou (%SLOOPRIGHT% 3) en utilisant le gabarit (%TURNLEFT% 3) ou (%TURNRIGHT% 3) correspondant."
@@ -1034,10 +1034,12 @@
         text: "Quand vous révélez votre cadran de manœuvre, vous pouvez défausser cette carte pour exécuter une manœuvre blanche [0%STOP%] à la place. Ensuite, recevez 1 marqueur de stress."
       },
       "Dead Man's Switch": {
+        name: "Salve automatique",
         text: "Quand vous êtes détruit, chaque vaisseau à portée 1 subit 1 dégât."
       },
       "Feedback Array": {
-        text: "Durant la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."
+        name: "Dispositif de retour",
+        text: "Lors de la phase de combat, au lieu d'effectuer des attaques, vous pouvez recevoir 1 marqueur ionique et subit 1 dégât pour choisir un vaisseau ennemi à portée 1. Ce vaisseau subit 1 dégât."
       },
       '"Hot Shot" Blaster': {
         name: "Blaster \"de la mort\"",
@@ -1207,7 +1209,7 @@
         text: "<span class=\"card-restriction\">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE%."
       },
       "IG-2000": {
-        text: "<span class=\"card-restriction\">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre propre capacité de pilote)."
+        text: "<span class=\"card-restriction\">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre capacité de pilote)."
       },
       "BTL-A4 Y-Wing": {
         name: "Y-wing BTL-A4",
