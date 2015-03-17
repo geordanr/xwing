@@ -33,21 +33,23 @@ Building
 ========
 
 1. Install [Node.js](http://nodejs.org/) to get `npm`.
-2. Run `sudo npm install` to install the dependencies listed in `package.json`.
-3. Install [Ruby](https://www.ruby-lang.org/en/) to get `gem`.
-4. Install [Bundler](http//bundler.io): `sudo gem install bundler`
-5. Use Bundler to install the remaining dependencies listed in `Gemfile`: `sudo bundle install`
+2. `npm install -g grunt-cli` to install the global Grunt CLI.
+3. `npm install` to install the dependencies listed in `package.json`.
+4. `grunt` to build everything into the `app` directory.  The builder is at `app/index.html`.
 
-Then run `cake build` and all the HTML, CoffeeScript, and CSS files will be created.
+Testing
+=======
+
+`npm test`
 
 Installing
 ==========
 
-Someday I'll make this a cake target, but until then:
+Someday I'll Bower all this junk up, but until then:
 
-Download and extract [Bootstrap](http://getbootstrap.com/2.3.2/), [FontAwesome](fortawesome.github.io/Font-Awesome/icons/), and [Select2](http://ivaynberg.github.io/select2/) into the top level.
+Download and extract [Bootstrap](http://getbootstrap.com/2.3.2/), [FontAwesome](fortawesome.github.io/Font-Awesome/icons/). [Select2](http://ivaynberg.github.io/select2/) has been monkeypatched.
 
-    cp -r *.html fontawesome bootstrap fonts images javascripts select2-* stylesheets coffeescripts $YOUR_WEB_ROOT
+    cp -r app/* fontawesome bootstrap select2-3.4.0 $YOUR_WEB_ROOT
 
 Credits
 -------

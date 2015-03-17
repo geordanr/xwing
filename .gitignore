@@ -2,8 +2,10 @@
 _vimrc_local.vim
 .sass-cache
 
+app
 images
 backgrounds.*
 casperjs.png
 xwing.history
 coffeelint.json
+node_modules

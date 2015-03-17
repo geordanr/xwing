@@ -24,8 +24,9 @@ module.exports = (grunt) ->
                 dest: 'app/'
                 ext: '.html'
         bower:
-            dev:
-                dest: 'app/bower_components'
+            install:
+                options:
+                    targetDir: 'app/bower_components'
         uglify:
             compile:
                 options:
@@ -34,7 +35,7 @@ module.exports = (grunt) ->
                 files:
                     'app/javascripts/xwing.min.js': 'app/javascripts/xwing.js'
 
-    grunt.loadNpmTasks 'grunt-bower'
+    grunt.loadNpmTasks 'grunt-bower-task'
     grunt.loadNpmTasks 'grunt-contrib-jade'
     grunt.loadNpmTasks 'grunt-contrib-sass'
     grunt.loadNpmTasks 'grunt-contrib-uglify'

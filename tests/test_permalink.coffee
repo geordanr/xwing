@@ -108,7 +108,7 @@ casper.test.begin "Unused conferred addons permalink correctly", (test) ->
 
 
 casper.test.begin "Weird Rebel permalink v2", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v2!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v2!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 99)
@@ -118,7 +118,7 @@ casper.test.begin "Weird Rebel permalink v2", (test) ->
 
 
 casper.test.begin "Weird Empire permalink v2", (test) ->
-    common.waitForStartup('#empire-builder', 'index.html?f=Galactic%20Empire&d=v2!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v2!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
     .then ->
         @waitUntilVisible '#empire-builder .total-points'
     common.assertTotalPoints(test, '#empire-builder', 99)
@@ -127,7 +127,7 @@ casper.test.begin "Weird Empire permalink v2", (test) ->
         test.done()
 
 casper.test.begin "Weird Rebel standard permalink v3", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 99)
@@ -139,7 +139,7 @@ casper.test.begin "Weird Rebel standard permalink v3", (test) ->
 
 
 casper.test.begin "Weird Empire standard permalink v3", (test) ->
-    common.waitForStartup('#empire-builder', 'index.html?f=Galactic%20Empire&d=v3!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v3!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
     .then ->
         @waitUntilVisible '#empire-builder .total-points'
     common.assertTotalPoints(test, '#empire-builder', 99)
@@ -150,7 +150,7 @@ casper.test.begin "Weird Empire standard permalink v3", (test) ->
         test.done()
 
 casper.test.begin "Epic permalink v3", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!e!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;33:21,47:-1:3:;33:21,47:-1:3:;33:21,47:-1:3:')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!e!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1:;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;33:21,47:-1:3:;33:21,47:-1:3:;33:21,47:-1:3:')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 300)
@@ -161,7 +161,7 @@ casper.test.begin "Epic permalink v3", (test) ->
         test.done()
 
 casper.test.begin "Custom permalink v3", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!c=256!31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!c=256!31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 256)
@@ -172,7 +172,7 @@ casper.test.begin "Custom permalink v3", (test) ->
         test.done()
 
 casper.test.begin "B-Wing/E2 permalink v3", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!89:19,43,23,34,34:-1:11:U.38;88:18,43,-1,34,34:-1:-1:')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!s!89:19,43,23,34,34:-1:11:U.38;88:18,43,-1,34,34:-1:-1:')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 100)
@@ -183,7 +183,7 @@ casper.test.begin "B-Wing/E2 permalink v3", (test) ->
         test.done()
 
 casper.test.begin "B-Wing/E2 permalink v3 minimal", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!44:-1,-1,-1,-1:-1:11:U.40')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!s!44:-1,-1,-1,-1:-1:11:U.40')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 24)
@@ -194,7 +194,7 @@ casper.test.begin "B-Wing/E2 permalink v3 minimal", (test) ->
         test.done()
 
 casper.test.begin "Weird Rebel standard permalink v3 missing trailing colon", (test) ->
-    common.waitForStartup('#rebel-builder', 'index.html?f=Rebel%20Alliance&d=v3!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1')
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v3!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70,18:-1:-1')
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
     common.assertTotalPoints(test, '#rebel-builder', 99)
@@ -206,7 +206,7 @@ casper.test.begin "Weird Rebel standard permalink v3 missing trailing colon", (t
 
 
 casper.test.begin "Weird Empire standard permalink v3 missing trailing colon", (test) ->
-    common.waitForStartup('#empire-builder', 'index.html?f=Galactic%20Empire&d=v3!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1')
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v3!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1')
     .then ->
         @waitUntilVisible '#empire-builder .total-points'
     common.assertTotalPoints(test, '#empire-builder', 99)

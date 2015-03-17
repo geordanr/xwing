@@ -103,7 +103,7 @@ exports.assertPointsRemaining = (test, builder_selector, remaining) ->
     casper.then ->
         test.assertSelectorHasText "#{builder_selector} #{exports.selectorForPointsRemaining}", remaining, "List has #{remaining} points available"
 
-exports.waitForStartup = (builder_selector, url="index.html") ->
+exports.waitForStartup = (builder_selector, url="app/index.html") ->
     casper.start url, ->
         @viewport(1280, 1024)
     .then ->
