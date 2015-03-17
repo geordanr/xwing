@@ -459,19 +459,24 @@ exportObj.cardLoaders['Español'] = () ->
         "Boba Fett (Scum)":
             text: """Cuando ataques o defiendas, puedes volver a tirar 1 de tus dados por cada nave a distancia 1."""
         "Kath Scarlet (Scum)":
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """When attacking a ship inside your auxiliary firing arc, roll 1 additional attack die."""
         "Emon Azzameen":
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """When dropping a bomb, you may use the [%TURNLEFT% 3], [%STRAIGHT% 3], or [%TURNRIGHT% 3] template instead of the [%STRAIGHT% 1] template."""
         "Kavil":
+            ship: "Ala-Y"
             text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
         "Drea Renthal":
+            ship: "Ala-Y"
             text: """After you spend a target lock, you may receive 1 stress token to acquire a target lock."""
         "Dace Bonearm":
-            text: """Esta carta todavía no ha sido revelada."""
+            ship: "Ala-Y"
+            text: """When an enemy ship at Range 1-3 receives at least 1 ion token, if you are not stressed, you may receive 1 stress token to cause that ship to suffer 1 damage."""
+        "Syndicate Thug":
+            ship: "Ala-Y"
         "Palob Godalhi":
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """At the start of the Combat phase, you may remove 1 focus or evade token from an enemy ship at Range 1-2 and assign it to yourself."""
         "Torkil Mux":
-            text: """Esta carta todavía no ha sido revelada."""
+            text: """At the end of the Activation phase, choose 1 enemy ship at Range 1-2. Until the end of the Combat phase, treat that ship's pilot skill value as "0"."""
         "N'Dru Suhlak":
             text: """Cuando ataques, si no hay ninguna nave aliada a distancia 1-2, tira un dado de ataque adicional."""
         "Kaa'To Leeachos":
