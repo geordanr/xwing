@@ -14,7 +14,7 @@ html
     link(rel="stylesheet", href="stylesheets/xwing-screen.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld")
     link(rel="stylesheet", href="stylesheets/xwing-print.css?#{parseInt(new Date().getTime() / 1000)}", media="print")
     link(rel="stylesheet", href="stylesheets/backgrounds.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld")
-    link(rel="stylesheet", href="bower_components/xwing-miniatures-font/dist/xwing-miniatures.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld,print")
+    link(rel="stylesheet", href="bower_components/xwing-miniatures-font/xwing-miniatures.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld,print")
 
   body
     // body layout
@@ -105,13 +105,12 @@ html
         strong.site-placeholder
 
     // JS linkages
-    script(src="bower_components/jquery/dist/jquery.min.js?#{parseInt(new Date().getTime() / 1000)}")
+    script(src="bower_components/js/jquery/jquery.min.js?#{parseInt(new Date().getTime() / 1000)}")
     // script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
     script(src="javascripts/jquery.xdomainrequest.min.js?#{parseInt(new Date().getTime() / 1000)}")
     script(src="bootstrap/js/bootstrap.min.js?#{parseInt(new Date().getTime() / 1000)}")
     script(src="select2-3.4.0/select2.min.js?#{parseInt(new Date().getTime() / 1000)}")
     script(src="bower_components/jquery-qrcode/jquery.qrcode.min.js?#{parseInt(new Date().getTime() / 1000)}")
-    // script(src="bower_components/pako/dist/pako.min.js?#{parseInt(new Date().getTime() / 1000)}")
     script(src="javascripts/xwing.min.js?#{parseInt(new Date().getTime() / 1000)}")
     script
       :coffee

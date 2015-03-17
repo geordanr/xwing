@@ -49,7 +49,7 @@ Someday I'll Bower all this junk up, but until then:
 
 Download and extract [Bootstrap](http://getbootstrap.com/2.3.2/), [FontAwesome](fortawesome.github.io/Font-Awesome/icons/). [Select2](http://ivaynberg.github.io/select2/) has been monkeypatched.
 
-    cp -r app/* fontawesome bootstrap select2-3.4.0 $YOUR_WEB_ROOT
+    cp -r app/* javascripts/* fonts fontawesome bootstrap select2-3.4.0 $YOUR_WEB_ROOT
 
 Credits
 -------
