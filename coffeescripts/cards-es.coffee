@@ -166,7 +166,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
-    exportObj.renameShip 'Agressor', 'Agresor'
+    exportObj.renameShip 'Aggressor', 'Agresor'
 
     pilot_translations =
         "Wedge Antilles":
