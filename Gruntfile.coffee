@@ -47,6 +47,11 @@ module.exports = (grunt) ->
                     'select2-3.4.0/**'
                 ]
                 dest: 'app/'
+            gh_pages:
+                expand: true
+                cwd: 'app'
+                src: '**'
+                dest: '../xwing_page'
 
     grunt.loadNpmTasks 'grunt-bower-task'
     grunt.loadNpmTasks 'grunt-contrib-copy'
@@ -61,5 +66,9 @@ module.exports = (grunt) ->
         'sass'
         'jade'
         'uglify'
-        'copy'
+        'copy:main'
+    ]
+
+    grunt.registerTask 'gh_pages', [
+        'copy:gh_pages'
     ]
