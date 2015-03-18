@@ -1,20 +1,21 @@
 doctype html
+- var now_ts = parseInt(new Date().getTime() / 1000)
 html
   head
     title (Yet Another) X-Wing Miniatures Squad Builder
     meta(charset="utf-8")
 
-    link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css?#{parseInt(new Date().getTime() / 1000)}")
-    link(rel="stylesheet", href="fontawesome/css/font-awesome.min.css?#{parseInt(new Date().getTime() / 1000)}")
+    link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css?#{now_ts}")
+    link(rel="stylesheet", href="fontawesome/css/font-awesome.min.css?#{now_ts}")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-    link(href="bootstrap/css/bootstrap-responsive.css?#{parseInt(new Date().getTime() / 1000)}", rel="stylesheet", media="screen")
-    link(rel="stylesheet", href="select2-3.4.0/select2.css?#{parseInt(new Date().getTime() / 1000)}")
+    link(href="bootstrap/css/bootstrap-responsive.css?#{now_ts}", rel="stylesheet", media="screen")
+    link(rel="stylesheet", href="select2-3.4.0/select2.css?#{now_ts}")
 
-    link(rel="stylesheet", href="stylesheets/xwing.css?#{parseInt(new Date().getTime() / 1000)}")
-    link(rel="stylesheet", href="stylesheets/xwing-screen.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld")
-    link(rel="stylesheet", href="stylesheets/xwing-print.css?#{parseInt(new Date().getTime() / 1000)}", media="print")
-    link(rel="stylesheet", href="stylesheets/backgrounds.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld")
-    link(rel="stylesheet", href="bower_components/xwing-miniatures-font/xwing-miniatures.css?#{parseInt(new Date().getTime() / 1000)}", media="screen,handheld,print")
+    link(rel="stylesheet", href="stylesheets/xwing.css?#{now_ts}")
+    link(rel="stylesheet", href="stylesheets/xwing-screen.css?#{now_ts}", media="screen,handheld")
+    link(rel="stylesheet", href="stylesheets/xwing-print.css?#{now_ts}", media="print")
+    link(rel="stylesheet", href="stylesheets/backgrounds.css?#{now_ts}", media="screen,handheld")
+    link(rel="stylesheet", href="bower_components/xwing-miniatures-font/xwing-miniatures.css?#{now_ts}", media="screen,handheld,print")
 
   body
     // body layout
@@ -105,13 +106,13 @@ html
         strong.site-placeholder
 
     // JS linkages
-    script(src="bower_components/js/jquery/jquery.min.js?#{parseInt(new Date().getTime() / 1000)}")
+    script(src="bower_components/js/jquery/jquery.min.js?#{now_ts}")
     // script(src="http://code.jquery.com/jquery-migrate-1.2.1.js")
-    script(src="javascripts/jquery.xdomainrequest.min.js?#{parseInt(new Date().getTime() / 1000)}")
-    script(src="bootstrap/js/bootstrap.min.js?#{parseInt(new Date().getTime() / 1000)}")
-    script(src="select2-3.4.0/select2.min.js?#{parseInt(new Date().getTime() / 1000)}")
-    script(src="bower_components/jquery-qrcode/jquery.qrcode.min.js?#{parseInt(new Date().getTime() / 1000)}")
-    script(src="javascripts/xwing.min.js?#{parseInt(new Date().getTime() / 1000)}")
+    script(src="bower_components/jquery-ajaxtransport-xdomainrequest/jquery.xdomainrequest.min.js?#{now_ts}")
+    script(src="bootstrap/js/bootstrap.min.js?#{now_ts}")
+    script(src="select2-3.4.0/select2.min.js?#{now_ts}")
+    script(src="bower_components/jquery-qrcode/jquery.qrcode.min.js?#{now_ts}")
+    script(src="javascripts/xwing.min.js?#{now_ts}")
     script
       :coffee
         $ ->
