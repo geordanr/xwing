@@ -44,7 +44,7 @@ casper.test.begin "Spanish translations: Rebel", (test) ->
             ship: 'Ala-A'
             pilot: 'Piloto de Pruebas'
             upgrades: [
-                'Reajuste Chardaan'
+                'Reequipado en Chardaan'
             ]
         }
 
