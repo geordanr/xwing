@@ -907,7 +907,6 @@ exportObj.cardLoaders['Español'] = () ->
         "Ion Cannon Battery":
             text: """<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."""
     
-
     modification_translations =
         "Stealth Device":
             name: "Dispositivo de Sigilo"
