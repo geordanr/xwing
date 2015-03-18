@@ -13,6 +13,7 @@
   "devDependencies": {
     "bower": "^1.3.12",
     "casperjs": "*",
+    "coffee-script": "^1.9.1",
     "grunt": "^0.4.5",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-copy": "^0.8.0",
