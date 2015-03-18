@@ -12,7 +12,7 @@ module.exports = (grunt) ->
         sass:
             compile:
                 expand: true
-                cwd: 'sass/'
+                cwd: 'stylesheets/'
                 src: ['*.sass']
                 dest: 'app/stylesheets/'
                 ext: '.css'
@@ -56,7 +56,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks 'grunt-bower-task'
     grunt.loadNpmTasks 'grunt-contrib-copy'
     grunt.loadNpmTasks 'grunt-contrib-jade'
-    grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-sass'
     grunt.loadNpmTasks 'grunt-contrib-uglify'
     grunt.loadNpmTasks 'grunt-iced-coffee'
 
