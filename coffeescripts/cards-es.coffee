@@ -885,6 +885,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Ataque:</strong> Descarta esta carta para atacar a 1 nave (aunque esté fuera de tu arco de fuego)."""
         "Greedo":
             text: """%SCUMONLY%<br /><br />La primera vez que ataques cada ronda y la primera vez que te defiendas cada ronda, la primera carta de Daño inflingida será asignada boca arriba."""
+        "Outlaw Tech":
+            name: "Técnico Clandestino"
+            text: """%SCUMONLY%<br /><br />Después de que ejecutes una maniobra roja, puedes asignar 1 ficha de Concentración a tu nave."""
+        "K4 Security Droid":
+            name: "Droide de Seguridad K4"
+            text: """%SCUMONLY%<br /><br />Después de que ejecutes una maniobra verde, puedes fijar un blanco."""
         "Salvaged Astromech":
             name: "Droide Astromecánico Remendado"
             text: """Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."""
