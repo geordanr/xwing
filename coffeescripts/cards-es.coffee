@@ -371,6 +371,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Airen Cracken":
             name: "Airen Cracken"
             text: """Después de que realices un ataque, puedes elegir otra nave aliada a alcance 1. Esa nave puede llevar a cabo 1 acción gratuita."""
+            ship: "Z-95 Cazacabezas"
         "Delta Squadron Pilot":
             name: "Piloto del escuadrón Delta"
             ship: "Defensor TIE"
@@ -448,12 +449,18 @@ exportObj.cardLoaders['Español'] = () ->
         # "CR90 Corvette (Crippled Fore)":
         #     name: "CR90 Corvette (Crippled Fore)"
         #     ship: "Corbeta CR90 (Proa)"
+        "Wild Space Fringer":
+            name: "Fronterizo del Espacio Salvaje"
+            ship: "YT-2400"
         "Dash Rendar":
             text: """Puedes ignorar obstáculos durante la fase de Activación y al realizar acciones."""
         '"Leebo"':
             text: """Cuando recibas una carta de Daño boca arriba, roba 1 carta de Daño adicional, resuelve 1 de ellas a tu elección y descarta la otra."""
         "Eaden Vrill":
             text: """Si efectúas un ataque con un armamento principal contra una nave que tenga fichas de Tensión, tiras 1 dado de ataque adicional."""
+        "Patrol Leader":
+            name: "Jefe de Patrulla"
+            ship: "VT-49 Diezmador"
         "Rear Admiral Chiraneau":
             name: "Contralmirante Chiraneau"
             text: """Cuando atacas a alcance 1-2, puedes cambiar 1 de tus resultados de %FOCUS% por un resultado %CRIT%."""
@@ -468,6 +475,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "VT-49 Diezmador"
         "Black Sun Enforcer":
             name: "Ejecutor del Sol Negro"
+            ship: "Víbora Estelar"
         "Black Sun Vigo":
             name: "Vigo del Sol Negro"
             ship: "Víbora Estelar"
@@ -494,14 +502,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Después de que efectúes un ataque que destruya al defensor, puedes recuperar 1 ficha de Escudos."""
             ship: "Agresor"
         "IG-88B":
-            text: """Una vez por ronda, después de que efectúes un ataque y lo falles, puedes efectuar un ataque con un sistema de armamento secundario %CANON% que tengas equipado."""
+            text: """Una vez por ronda, después de que efectúes un ataque y lo falles, puedes efectuar un ataque con un sistema de armamento secundario %CANNON% que tengas equipado."""
             ship: "Agresor"
         "IG-88C":
-            text: """Después de que realices una acción de impulso, puedes llevar a cabo una acción gratuita de evasión."""
+            text: """Después de que realices una acción de impulso, puedes llevar a cabo una acción gratuita de Evasión."""
             ship: "Agresor"
         "IG-88D":
             text: """Puedes ejecutar la maniobra (%SLOOPLEFT% 3) o (%SLOOPRIGHT% 3) utilizando la plantilla (%TURNLEFT% 3) o (%TURNRIGHT% 3) correspondiente."""
             ship: "Agresor"
+        "Mandalorian Mercenary":
+            name: "Mercenario Mandaloriano"
         "Boba Fett (Scum)":
             text: """Cuando ataques o te defiendas, puedes volver a tirar 1 de tus dados por cada nave enemiga que tengas a alcance 1."""
         "Kath Scarlet (Scum)":
@@ -857,7 +867,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando ataques, puedes anular los resultados de todos tus dados. Después puedes añadir 2 resultados %HIT%.<br /><br />Si decides hacerlo, no podrás volver a modificar tus dados durante este ataque."""
         "Inertial Dampeners":
             name: "Amortiguadores de Inercia"
-            text: """Cuando reveles tu maniobra, puedes descartar esta carta para ejecutar en su lugar una maniobra blanca [0%STOP%]. Despúes recibes 1 ficha de Tensión."""
+            text: """Cuando reveles tu maniobra, puedes descartar esta carta para ejecutar en su lugar una maniobra blanca [0%STOP%]. Después recibes 1 ficha de Tensión."""
         "Flechette Cannon":
             name: "Cañón de Fragmentación"
             text: """<strong>Ataque:</strong> Ataca a 1 nave.%LINEBREAK%Si este ataque impacta, el defensor sufre 1 de daño y, si no tiene asignada ninguna ficha de Tensión, recibe también 1 ficha de Tensión. Después se anulan <strong>todos</strong> los resultados de los dados."""
@@ -869,12 +879,18 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando seas destruido, toda nave que tengas a alcance 1 sufre 1 daño."""
         "Feedback Array":
             name: "Transmisor de Sobrecargas"
-            text: """Durante la fase de Combate, en vez de efectuar ataques, puedes recibir 1 ficha de Iones y sufri 1 daño para elegir 1 nave enemiga a alcance 1. Esa nave sufre 1 daño."""
+            text: """Durante la fase de Combate, en vez de efectuar ataques, puedes recibir 1 ficha de Iones y sufrir 1 daño para elegir 1 nave enemiga a alcance 1. Esa nave sufre 1 daño."""
         '"Hot Shot" Blaster':
             name: "Cañón Bláster Desechable"
-            text: """<strong>Ataque:</strong> Descarta esta carta para atacar a 1 nave (aunque estéfuera de tu arco de fuego)."""
+            text: """<strong>Ataque:</strong> Descarta esta carta para atacar a 1 nave (aunque esté fuera de tu arco de fuego)."""
         "Greedo":
             text: """%SCUMONLY%<br /><br />La primera vez que ataques cada ronda y la primera vez que te defiendas cada ronda, la primera carta de Daño inflingida será asignada boca arriba."""
+        "Outlaw Tech":
+            name: "Técnico Clandestino"
+            text: """%SCUMONLY%<br /><br />Después de que ejecutes una maniobra roja, puedes asignar 1 ficha de Concentración a tu nave."""
+        "K4 Security Droid":
+            name: "Droide de Seguridad K4"
+            text: """%SCUMONLY%<br /><br />Después de que ejecutes una maniobra verde, puedes fijar un blanco."""
         "Salvaged Astromech":
             name: "Droide Astromecánico Remendado"
             text: """Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."""
@@ -887,6 +903,14 @@ exportObj.cardLoaders['Español'] = () ->
         "Unhinged Astromech":
             name: "Droide Astromecánico Desquiciado"
             text: """Puedes ejecutar todas las maniobras de velocidad 3 como maniobras verdes."""
+        "R4 Agromech":
+            name: "Droide Agromecánico R4"
+            text: """Cuando ataques, después de gastar una ficha de Concentración puedes fijar al defensor como blanco."""
+        "R4-B11":
+            text: """Cuando ataques, si tienes al defensor fijado como blanco, puedes gastar la ficha de Blanco Fijado para elegir cualquier o todos sus dados de defensa. El defensor debe volver a tirar los dados elegidos."""
+        "Autoblaster Turret":
+            name: "Torreta de Bláster Automático"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""    
         "Advanced Targeting Computer":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
         "Ion Cannon Battery":
