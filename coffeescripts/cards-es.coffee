@@ -902,6 +902,9 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando ataques, después de gastar una ficha de Concentración puedes fijar al defensor como blanco."""
         "R4-B11":
             text: """Cuando ataques, si tienes al defensor fijado como blanco, puedes gastar la ficha de Blanco Fijado para elegir cualquier o todos sus dados de defensa. El defensor debe volver a tirar los dados elegidos."""
+        "Autoblaster Turret":
+            name: "Torreta de Bláster Automático"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""    
         "Advanced Targeting Computer":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
         "Ion Cannon Battery":
