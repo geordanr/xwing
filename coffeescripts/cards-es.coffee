@@ -1033,5 +1033,26 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<span class="card-restriction">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana 2 iconos %BOMB% adicionales."""
         "TIE/x1":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
+        "BTL-A4 Y-Wing":
+            name: "BTL-A4 Y-Wing"
+            ship: "Ala-Y"
+        "IG-2000":
+            name: "IG-2000"
+            ship: "Agresor"
+        "Virago":
+            name: "Virago"
+            ship: 'Víbora Estelar'
+        '"Heavy Scyk" Interceptor (Cannon)':
+            name: '"Heavy Scyk" Interceptor (Cannon)'
+            ship: 'Interceptor M3-A'
+        '"Heavy Scyk" Interceptor (Missile)':
+            name: '"Heavy Scyk" Interceptor (Missile)'
+            ship: 'Interceptor M3-A'
+        '"Heavy Scyk" Interceptor (Torpedo)':
+            name: '"Heavy Scyk" Interceptor (Torpedo)'
+            ship: 'Interceptor M3-A'
+        "Dauntless":
+            name: "Dauntless"
+            ship: 'VT-49 Diezmador'
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
