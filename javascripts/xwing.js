@@ -6880,8 +6880,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Commander Kenkirk": {
       ship: "VT-49 Diezmador",
-      text: "Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1.",
-      ship: "VT-49 Diezmador"
+      text: "Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."
     },
     "Captain Oicunn": {
       name: "Capitán Oicunn",
@@ -7403,6 +7402,11 @@ exportObj.cardLoaders['Español'] = function() {
       name: "Torpedos de Iones",
       text: "<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Si este ataque impacta, el defensor y toda nave que esté a alcance 1 reciben 1 ficha de Iones cada una."
     },
+    "Bomb Loadout": {
+      name: "Compartimento de Bombas",
+      text: "<span class=\"card-restriction\">Solo ala-Y.</span><br /><br />Tu barra de mejoras gana el icono %BOMB%.",
+      ship: "Ala-Y"
+    },
     "Bodyguard": {
       name: "Guardaespaldas",
       text: "%SCUMONLY%<br /><br />Al principio de la fase de Combate, puedes gastar 1 ficha de Concentración para elegir 1 nave aliada situada a alcance 1 cuyo piloto tenga una Habilidad más alta que la tuya. Hasta el final de la ronda, la puntuación de Agilidad de esa nave se incrementa en 1."
@@ -7453,10 +7457,6 @@ exportObj.cardLoaders['Español'] = function() {
     "Salvaged Astromech": {
       name: "Droide Astromecánico Remendado",
       text: "Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."
-    },
-    "Bomb Loadout": {
-      name: "Compartimento de Bombas",
-      text: "<span class=\"card-restriction\">Solo ala-Y.</span><br /><br />Tu barra de mejoras gana el icono %BOMB%."
     },
     '"Genius"': {
       name: '"Genio"',
@@ -7608,28 +7608,6 @@ exportObj.cardLoaders['Español'] = function() {
       name: "Jinete del Espacio",
       text: "<span class=\"card-restriction\">Solo YT-2400.</span><br /><br />Mientras tu nave tenga equipada una mejora de %CANNON%, <strong>no puedes</strong> atacar con tu armamento principal y puedes atacar con armamentos secundarios %CANNON% contra naves enemigas fuera de tu arco de fuego."
     },
-    "Dauntless": {
-      name: "Intrépido",
-      text: "<span class=\"card-restriction\">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión."
-    },
-    "Virago": {
-      text: "<span class=\"card-restriction\">Solo Víbora Estelar.</span><br /><br />Tu barra de mejoras gana los iconos %SYSTEM% y %ILLICIT%.<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 3 o inferior."
-    },
-    '"Heavy Scyk" Interceptor (Cannon)': {
-      name: 'Interceptor "Scyk Pesado" (Cañón)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%."
-    },
-    '"Heavy Scyk" Interceptor (Torpedo)': {
-      name: 'Interceptor "Scyk Pesado" (Torpedo)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%."
-    },
-    '"Heavy Scyk" Interceptor (Missile)': {
-      name: 'Interceptor "Scyk Pesado" (Misil)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%."
-    },
-    "IG-2000": {
-      text: "<span class=\"card-restriction\">Solo Agresor.</span><br /><br />Tu piloto tiene la misma capacidad especial que cualquier otra nave aliada equipada con la carta de Mejora <em>IG-2000</em> (además de su propia capacidad especial)."
-    },
     "Andrasta": {
       name: "Andrasta",
       text: "<span class=\"card-restriction\">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana 2 iconos %BOMB% adicionales."
@@ -7638,31 +7616,38 @@ exportObj.cardLoaders['Español'] = function() {
       text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
     },
     "BTL-A4 Y-Wing": {
-      name: "BTL-A4 Y-Wing",
+      name: "BTL-A4 Ala-Y",
+      text: "<span class=\"card-restriction\">Solo Ala-Y.</span><br /><br />No puedes atacar naves que estén fuera de tu arco de fuego. Después de que efectúes un ataque con tu armamento principal, puedes realizar inmediatamente un ataque con arma secundaria %TURRET%.",
       ship: "Ala-Y"
     },
     "IG-2000": {
       name: "IG-2000",
+      text: "<span class=\"card-restriction\">Solo Agresor.</span><br /><br />Tu piloto tiene la misma capacidad especial que cualquier otra nave aliada equipada con la carta de Mejora <em>IG-2000</em> (además de su propia capacidad especial).",
       ship: "Agresor"
     },
     "Virago": {
       name: "Virago",
+      text: "<span class=\"card-restriction\">Solo Víbora Estelar.</span><br /><br />Tu barra de mejoras gana los iconos %SYSTEM% y %ILLICIT%.<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 3 o inferior.",
       ship: 'Víbora Estelar'
     },
     '"Heavy Scyk" Interceptor (Cannon)': {
-      name: '"Heavy Scyk" Interceptor (Cannon)',
+      name: 'Interceptor "Scyk Pesado" (Cañón)',
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%.",
       ship: 'Interceptor M3-A'
     },
     '"Heavy Scyk" Interceptor (Missile)': {
-      name: '"Heavy Scyk" Interceptor (Missile)',
+      name: 'Interceptor "Scyk Pesado" (Misil)',
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%.",
       ship: 'Interceptor M3-A'
     },
     '"Heavy Scyk" Interceptor (Torpedo)': {
-      name: '"Heavy Scyk" Interceptor (Torpedo)',
+      name: 'Interceptor "Scyk Pesado" (Torpedo)',
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%.",
       ship: 'Interceptor M3-A'
     },
     "Dauntless": {
-      name: "Dauntless",
+      name: "Intrépido",
+      text: "<span class=\"card-restriction\">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión.",
       ship: 'VT-49 Diezmador'
     }
   };
@@ -10801,7 +10786,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 10623
+                    lineno: 10614
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -11293,7 +11278,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 11136
+              lineno: 11127
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -11867,7 +11852,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 11617
+          lineno: 11608
         }));
         __iced_deferrals._fulfill();
       });
@@ -11879,7 +11864,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 11618
+            lineno: 11609
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -13140,7 +13125,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 12357
+                      lineno: 12348
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -13209,7 +13194,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 12381
+                lineno: 12372
               })
             ]);
             __iced_deferrals._fulfill();
@@ -13261,14 +13246,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 12403
+            lineno: 12394
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 12405
+            lineno: 12396
           }));
         }
         _ref1 = _this.modifications;
@@ -13276,7 +13261,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 12407
+              lineno: 12398
             }));
           }
         }
@@ -13982,7 +13967,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 12920
+                lineno: 12911
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14079,7 +14064,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 12966
+                  lineno: 12957
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -14100,7 +14085,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 12969
+                    lineno: 12960
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -14172,7 +14157,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 13001
+            lineno: 12992
           }));
         }
         __iced_deferrals._fulfill();
