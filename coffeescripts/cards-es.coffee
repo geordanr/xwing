@@ -856,6 +856,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Ion Torpedoes":
             name: "Torpedos de Iones"
             text: """<strong>Ataque (Blanco Fijado):</strong> Gasta tu ficha de Blanco Fijado y descarta esta carta para efectuar este ataque.<br /><br />Si este ataque impacta, el defensor y toda nave que esté a alcance 1 reciben 1 ficha de Iones cada una."""
+        "Bomb Loadout":
+            name: "Compartimento de Bombas"
+            text: """<span class="card-restriction">Solo ala-Y.</span><br /><br />Tu barra de mejoras gana el icono %BOMB%."""
         "Bodyguard":
             name: "Guardaespaldas"
             text: """%SCUMONLY%<br /><br />Al principio de la fase de Combate, puedes gastar 1 ficha de Concentración para elegir 1 nave aliada situada a alcance 1 cuyo piloto tenga una Habilidad más alta que la tuya. Hasta el final de la ronda, la puntuación de Agilidad de esa nave se incrementa en 1."""
@@ -1012,47 +1015,38 @@ exportObj.cardLoaders['Español'] = () ->
         "Outrider":
             name: "Jinete del Espacio"
             text: """<span class="card-restriction">Solo YT-2400.</span><br /><br />Mientras tu nave tenga equipada una mejora de %CANNON%, <strong>no puedes</strong> atacar con tu armamento principal y puedes atacar con armamentos secundarios %CANNON% contra naves enemigas fuera de tu arco de fuego."""
-        "Dauntless":
-            name: "Intrépido"
-            text: """<span class="card-restriction">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión."""
-        "Virago":
-            text: """<span class="card-restriction">Solo Víbora Estelar.</span><br /><br />Tu barra de mejoras gana los iconos %SYSTEM% y %ILLICIT%.<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 3 o inferior."""
-        '"Heavy Scyk" Interceptor (Cannon)':
-            name: 'Interceptor "Scyk Pesado" (Cañón)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%."""
-        '"Heavy Scyk" Interceptor (Torpedo)':
-            name: 'Interceptor "Scyk Pesado" (Torpedo)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%."""
-        '"Heavy Scyk" Interceptor (Missile)':
-            name: 'Interceptor "Scyk Pesado" (Misil)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%."""
-        "IG-2000":
-            text: """<span class="card-restriction">Solo Agresor.</span><br /><br />Tu piloto tiene la misma capacidad especial que cualquier otra nave aliada equipada con la carta de Mejora <em>IG-2000</em> (además de su propia capacidad especial)."""
         "Andrasta":
             name: "Andrasta"
             text: """<span class="card-restriction">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana 2 iconos %BOMB% adicionales."""
         "TIE/x1":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
         "BTL-A4 Y-Wing":
-            name: "BTL-A4 Y-Wing"
+            name: "BTL-A4 Ala-Y"
+            text: """<span class="card-restriction">Solo Ala-Y.</span><br /><br />No puedes atacar naves que estén fuera de tu arco de fuego. Después de que efectúes un ataque con tu armamento principal, puedes realizar inmediatamente un ataque con arma secundaria %TURRET%."""
             ship: "Ala-Y"
         "IG-2000":
             name: "IG-2000"
+            text: """<span class="card-restriction">Solo Agresor.</span><br /><br />Tu piloto tiene la misma capacidad especial que cualquier otra nave aliada equipada con la carta de Mejora <em>IG-2000</em> (además de su propia capacidad especial)."""
             ship: "Agresor"
         "Virago":
             name: "Virago"
+            text: """<span class="card-restriction">Solo Víbora Estelar.</span><br /><br />Tu barra de mejoras gana los iconos %SYSTEM% y %ILLICIT%.<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 3 o inferior."""
             ship: 'Víbora Estelar'
         '"Heavy Scyk" Interceptor (Cannon)':
-            name: '"Heavy Scyk" Interceptor (Cannon)'
+            name: 'Interceptor "Scyk Pesado" (Cañón)'
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%."""
             ship: 'Interceptor M3-A'
         '"Heavy Scyk" Interceptor (Missile)':
-            name: '"Heavy Scyk" Interceptor (Missile)'
+            name: 'Interceptor "Scyk Pesado" (Misil)'
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%."""
             ship: 'Interceptor M3-A'
         '"Heavy Scyk" Interceptor (Torpedo)':
-            name: '"Heavy Scyk" Interceptor (Torpedo)'
+            name: 'Interceptor "Scyk Pesado" (Torpedo)'
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%."""
             ship: 'Interceptor M3-A'
         "Dauntless":
-            name: "Dauntless"
+            name: "Intrépido"
+            text: """<span class="card-restriction">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión."""
             ship: 'VT-49 Diezmador'
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
