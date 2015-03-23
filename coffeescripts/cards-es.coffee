@@ -468,7 +468,6 @@ exportObj.cardLoaders['Español'] = () ->
         "Commander Kenkirk":
             ship: "VT-49 Diezmador"
             text: """Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."""
-            ship: "VT-49 Diezmador"
         "Captain Oicunn":
             name: "Capitán Oicunn"
             text: """Después de ejecutar un maniobra, toda nave enemiga con la que estés en contacto sufre 1 daño."""
@@ -859,6 +858,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Bomb Loadout":
             name: "Compartimento de Bombas"
             text: """<span class="card-restriction">Solo ala-Y.</span><br /><br />Tu barra de mejoras gana el icono %BOMB%."""
+            ship: "Ala-Y"
         "Bodyguard":
             name: "Guardaespaldas"
             text: """%SCUMONLY%<br /><br />Al principio de la fase de Combate, puedes gastar 1 ficha de Concentración para elegir 1 nave aliada situada a alcance 1 cuyo piloto tenga una Habilidad más alta que la tuya. Hasta el final de la ronda, la puntuación de Agilidad de esa nave se incrementa en 1."""
@@ -897,9 +897,6 @@ exportObj.cardLoaders['Español'] = () ->
         "Salvaged Astromech":
             name: "Droide Astromecánico Remendado"
             text: """Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."""
-        "Bomb Loadout":
-            name: "Compartimento de Bombas"
-            text: """<span class="card-restriction">Solo ala-Y.</span><br /><br />Tu barra de mejoras gana el icono %BOMB%."""
         '"Genius"':
             name: '"Genio"'
             text: """Si estás equipado con una bomba que puede soltarse antes de revelar tu selector de maniobras, puedes elegir soltar la bomba <strong>después</strong> de ejecutar tu maniobra."""
@@ -913,7 +910,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando ataques, si tienes al defensor fijado como blanco, puedes gastar la ficha de Blanco Fijado para elegir cualquier o todos sus dados de defensa. El defensor debe volver a tirar los dados elegidos."""
         "Autoblaster Turret":
             name: "Torreta de Bláster Automático"
-            text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""    
+            text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""
         "Advanced Targeting Computer":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
         "Ion Cannon Battery":
