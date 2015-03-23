@@ -33,29 +33,24 @@ Building
 ========
 
 1. Install [Node.js](http://nodejs.org/) to get `npm`.
-2. Run `sudo npm install` to install the dependencies listed in `package.json`.
-3. Install [Ruby](https://www.ruby-lang.org/en/) to get `gem`.
-4. Install [Bundler](http//bundler.io): `sudo gem install bundler`
-5. Use Bundler to install the remaining dependencies listed in `Gemfile`: `sudo bundle install`
+2. `sudo npm install -g grunt-cli` to install the global Grunt CLI.
+3. `npm install` to install the dependencies listed in `package.json`.
+4. `grunt` to build everything into the `app` directory.  The builder is at `app/index.html`.
 
-Then run `cake build` and all the HTML, CoffeeScript, and CSS files will be created.
+Testing
+=======
 
-Installing
-==========
-
-Someday I'll make this a cake target, but until then:
-
-Download and extract [Bootstrap](http://getbootstrap.com/2.3.2/), [FontAwesome](fortawesome.github.io/Font-Awesome/icons/), and [Select2](http://ivaynberg.github.io/select2/) into the top level.
-
-    cp -r *.html fontawesome bootstrap fonts images javascripts select2-* stylesheets coffeescripts $YOUR_WEB_ROOT
+    npm test
 
 Credits
 -------
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
 Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
+X-Wing symbols and ships fonts courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7).
 German translations courtesy @failgod-marcus.
 Maneuver dials by @hpanderson.
 Spanish translations courtesy [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums.
+I'm bad at keeping this up to date; see the About section of the builder.
 
 CHANGELOG
 =========

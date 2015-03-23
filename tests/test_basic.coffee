@@ -4,7 +4,7 @@ common.setup()
 
 
 casper.test.begin "Page comes up", (test) ->
-    casper.start "index.html", ->
+    casper.start "app/index.html", ->
         @waitUntilVisible '.tab-content'
 
     .then ->
