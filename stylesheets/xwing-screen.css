@@ -50,7 +50,7 @@
   overflow: hidden;
   margin-bottom: 10px; }
   .fancy-ship .fancy-pilot-header {
-    border: 30px solid lightgrey;
+    border: 30px solid lightgray;
     color: black;
     border-left-color: transparent;
     border-bottom-color: transparent;
@@ -117,7 +117,7 @@
       margin-bottom: 5px;
       margin-right: 30px;
       clear: both;
-      border: 1px dotted lightgrey; }
+      border: 1px dotted lightgray; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-stats {
         float: right;
         text-align: right;

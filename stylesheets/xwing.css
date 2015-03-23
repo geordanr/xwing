@@ -1,30 +1,30 @@
 @font-face {
   font-family: kimberley;
-  src: url("../fonts/kimberley bl.ttf"); }
+  src: url('../fonts/kimberley bl.ttf'); }
 
 @font-face {
   font-family: EurostileStandard;
-  src: url("../fonts/EurostileLTStd.otf"); }
+  src: url('../fonts/EurostileLTStd.otf'); }
 
 @font-face {
   font-family: EurostileStandardBold;
-  src: url("../fonts/EurostileLTStd-Bold.otf"); }
+  src: url('../fonts/EurostileLTStd-Bold.otf'); }
 
 @font-face {
   font-family: EurostileStandardOblique;
-  src: url("../fonts/EurostileLTStd-Oblique.otf"); }
+  src: url('../fonts/EurostileLTStd-Oblique.otf'); }
 
 @font-face {
   font-family: EurostileStandardBoldOblique;
-  src: url("../fonts/EurostileLTStd-BoldOblique.otf"); }
+  src: url('../fonts/EurostileLTStd-BoldOblique.otf'); }
 
 @font-face {
   font-family: BankGothicMediumBT;
-  src: url("../fonts/Bank Gothic Medium BT.ttf"); }
+  src: url('../fonts/Bank Gothic Medium BT.ttf'); }
 
 @font-face {
   font-family: BankGothicHD;
-  src: url("../fonts/bankgthd.ttf"); }
+  src: url('../fonts/bankgthd.ttf'); }
 
 body, button {
   font-family: EurostileStandard; }
@@ -43,7 +43,7 @@ strong em, em strong {
   font-weight: normal; }
 
 .nav-pills {
-  border-bottom: thin solid darkgrey; }
+  border-bottom: thin solid darkgray; }
 
 .ship-container > .row-fluid {
   padding: 10px 0px; }
@@ -56,7 +56,7 @@ strong em, em strong {
   font-size: 1.5em; }
 
 .info-data.info-skill {
-  color: #cd6d2d; }
+  color: #CD6D2D; }
 
 .card-icon, i.xwing-miniatures-font-attack, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield {
   background: black;
@@ -71,37 +71,37 @@ i.xwing-miniatures-font {
   color: black; }
 
 i.xwing-miniatures-font-attack {
-  color: #ef232b; }
+  color: #EF232B; }
 
 i.xwing-miniatures-font-energy {
-  color: #c7b5e2;
+  color: #C7B5E2;
   padding: 2px 3px 5px 2px; }
 
 i.xwing-miniatures-font-agility {
-  color: #6bbe44;
+  color: #6BBE44;
   padding: 1px; }
 
 i.xwing-miniatures-font-hull {
-  color: #b6b335; }
+  color: #B6B335; }
 
 i.xwing-miniatures-font-shield {
-  color: #7ed3e5;
+  color: #7ED3E5;
   padding: 2px 3px 4px 3px; }
 
 .info-data.info-attack {
-  color: #ef232b; }
+  color: #EF232B; }
 
 .info-data.info-energy {
-  color: #c7b5e2; }
+  color: #C7B5E2; }
 
 .info-data.info-agility {
-  color: #6bbe44; }
+  color: #6BBE44; }
 
 .info-data.info-hull {
-  color: #b6b335; }
+  color: #B6B335; }
 
 .info-data.info-shields {
-  color: #7ed3e5;
+  color: #7ED3E5;
   padding: 2px; }
 
 .info-maneuvers table {
@@ -168,7 +168,7 @@ ul.squad-list {
   color: black; }
 
 .icon, img.icon-straight, img.icon-bankleft, img.icon-bankright, img.icon-turnleft, img.icon-turnright, img.icon-uturn, img.icon-focus, img.icon-evade, img.icon-barrel-roll, img.icon-target-lock, img.icon-hit, img.icon-crit, img.icon-turret, img.icon-elite, img.icon-missile, img.icon-torpedo, img.icon-astromech, img.icon-cloak, img.icon-attack, img.icon-energy, img.icon-agility, img.icon-hull, img.icon-shields, img.icon-boost, img.icon-crew, img.icon-cannon, img.icon-cargo, img.icon-coordinate, img.icon-jam, img.icon-recover, img.icon-reinforce {
-  background-image: url("../images/xwing-icons.png");
+  background-image: url('../images/xwing-icons.png');
   background-repeat: no-repeat;
   vertical-align: middle; }
 
@@ -344,7 +344,7 @@ div.tab-content {
   overflow: visible; }
 
 .squad-list > li:hover {
-  background-color: #cccccc; }
+  background-color: #ccc; }
 
 select.card-selector {
   width: 100%; }
@@ -353,7 +353,7 @@ select.card-selector {
   vertical-align: middle; }
 
 .simple-list {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial,Helvetica,sans-serif;
   font-size: 1.25em; }
   .simple-list table {
     width: 100%; }
@@ -367,12 +367,12 @@ select.card-selector {
     padding-left: 20px; }
 
 ul.nav li.dropdown ul.dropdown-menu li {
-  color: #333333;
+  color: #333;
   padding: 1px 5px;
   cursor: pointer; }
 ul.nav li.dropdown ul.dropdown-menu li:hover {
   color: white;
-  background-color: #333333; }
+  background-color: #333; }
 
 input[type=number] {
   width: 3em; }
@@ -393,16 +393,16 @@ input[type=number] {
   width: 8em; }
 
 .collection-content .row:hover {
-  background-color: lightgrey; }
+  background-color: lightgray; }
 
 .collection-status {
   color: green; }
 
 .select2-results .select2-result-not-in-collection {
-  color: #aa0000; }
+  color: #a00; }
 .select2-results .select2-disabled {
   color: gray;
-  background-color: lightgrey; }
+  background-color: lightgray; }
 
 .card-restriction {
   font-style: italic;

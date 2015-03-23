@@ -74,7 +74,7 @@ body {
     page-break-inside: avoid;
     position: relative; }
     #printable .fancy-ship .fancy-pilot-header {
-      border: 0.375in solid lightgrey;
+      border: 0.375in solid lightgray;
       color: black;
       border-left-color: transparent;
       border-bottom-color: transparent;
@@ -140,7 +140,7 @@ body {
         margin-bottom: 0.04in;
         margin-left: 0.75in;
         margin-right: 0.365in;
-        border: 1px dotted lightgrey;
+        border: 1px dotted lightgray;
         clear: both; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-stats {
           float: right;
@@ -148,31 +148,31 @@ body {
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
           display: inline-block;
           vertical-align: middle;
-          width: 0.42188in;
-          height: 0.42188in;
+          width: 0.421875in;
+          height: 0.421875in;
           z-index: 999;
           margin-right: 0.04in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle {
-          width: 0.42188in;
-          height: 0.42188in;
-          border-radius: 0.21094in;
+          width: 0.421875in;
+          height: 0.421875in;
+          border-radius: 0.2109375in;
           background-color: white; }
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
-            width: 0.35938in;
-            height: 0.35938in;
-            border-radius: 0.17969in;
+            width: 0.359375in;
+            height: 0.359375in;
+            border-radius: 0.1796875in;
             background-color: gray;
             position: relative;
             top: 0.03125in;
             left: 0.03125in;
-            line-height: 0.42188in;
+            line-height: 0.421875in;
             font-size: 0.1875in;
             text-align: center;
             color: white; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
           display: inline-block;
           vertical-align: middle;
-          line-height: 0.42188in; }
+          line-height: 0.421875in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
           text-align: right;
           margin-right: 0.07in;
@@ -198,7 +198,7 @@ body {
     text-align: right;
     display: none; }
   #printable .simple-table {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial,Helvetica,sans-serif;
     font-size: 1.25em;
     color: black;
     width: 95%;
