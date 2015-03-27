@@ -513,7 +513,7 @@ exportObj.cardLoaders.English = () ->
         "Calculation":
             text: """When attacking, you may spend a focus token to change 1 of your %FOCUS% results to a %CRIT% result."""
         "Accuracy Corrector":
-            text: """When attacking, you may cancel all of your dice results. Then, you may add 2 %HIT% results.%LINEBREAK%Your dice cannot be modified again during this attack."""
+            text: """When attacking, during the "Modify Attack Dice" step, you may cancel all of your dice results. Then, you may add 2 %HIT% results to your roll.%LINEBREAK%Your dice cannot be modified again during this attack."""
         "Inertial Dampeners":
             text: """When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."""
         "Flechette Cannon":
@@ -533,7 +533,7 @@ exportObj.cardLoaders.English = () ->
         "Bomb Loadout":
             text: """<span class="card-restriction">Y-Wing only.</span>%LINEBREAK%Your upgrade bar gains the %BOMB% icon."""
         '"Genius"':
-            text: """If you are equipped with a bomb that can be dropped before you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
+            text: """If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
         "Unhinged Astromech":
             text: """You may treat all 3-speed maneuvers as green maneuvers."""
         "R4-B11":
