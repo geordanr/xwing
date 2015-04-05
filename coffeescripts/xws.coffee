@@ -26,13 +26,6 @@ exportObj.fromXWSUpgrade =
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 
-# Until jquery-qrcode exposes this better...
-QRErrorCorrectLevel =
-    L: 1
-    M: 0
-    Q: 3
-    H: 2
-
 class exportObj.XWSManager
     constructor: (args) ->
         @container = $ args.container
@@ -120,8 +113,10 @@ class exportObj.XWSManager
                 textarea.val JSON.stringify(builder.toXWS())
                 $('#xws-qrcode-container').text ''
                 $('#xws-qrcode-container').qrcode
+                    render: 'canvas'
                     text: JSON.stringify(builder.toMinimalXWS())
-                    correctLevel: QRErrorCorrectLevel.L
+                    ec: 'L'
+                    size: 256
                 @xws_export_modal.modal 'show'
                 $('#xws-text-tab').tab 'show'
                 textarea.select()

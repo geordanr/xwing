@@ -17,10 +17,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-qrcode": "*",
     "xwing-miniatures-font": "~1.0.8",
     "jquery": "components/jquery#~2.1.3",
-    "jquery-ajaxtransport-xdomainrequest": "~1.0.4"
+    "jquery-ajaxtransport-xdomainrequest": "~1.0.4",
+    "jquery.qrcode": "~0.11.0"
   },
   "exportsOverride": {
     "jquery": {
