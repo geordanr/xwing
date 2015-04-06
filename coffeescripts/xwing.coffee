@@ -251,6 +251,9 @@ class exportObj.SquadBuilder
                 <label class="color-print-checkbox">
                     Print color <input type="checkbox" class="toggle-color-print" />
                 </label>
+                <label class="qrcode-checkbox">
+                    Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
+                </label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
@@ -678,7 +681,7 @@ class exportObj.SquadBuilder
                     @printable_container.find('.printable-body').toggleClass 'bw', @list_modal.find('.toggle-print-color').prop('checked')
             # Add List Juggler QR code
             query = @permalink.attr('href').split(/\?/)[1]
-            if query?
+            if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="juggler-qrcode-container">
                         <div>Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>
