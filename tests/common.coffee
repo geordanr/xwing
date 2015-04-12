@@ -262,3 +262,10 @@ exports.selectorForEpicPointsUsed = '.total-epic-points'
 exports.selectorForMaxEpicPoints = '.max-epic-points'
 
 exports.selectorForCollectionInvalid = '.collection-invalid'
+
+exports.selectorForViewAsTextButton = '.view-as-text'
+exports.selectorForBBCodeView = '.select-bbcode-view'
+exports.selectorForBBCodeTextarea = '.bbcode-list textarea'
+exports.selectorForHTMLView = '.select-html-view'
+exports.selectorForHTMLTextarea = '.html-list textarea'
+exports.selectorForClosePrintDialog = '.close-print-dialog'

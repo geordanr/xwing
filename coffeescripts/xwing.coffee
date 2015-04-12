@@ -243,6 +243,9 @@ class exportObj.SquadBuilder
                     Copy the BBCode below and paste it into your forum post.
                     <textarea></textarea>
                 </div>
+                <div class="html-list">
+                    <textarea></textarea>
+                </div>
             </div>
             <div class="modal-footer hidden-print">
                 <label class="vertical-space-checkbox">
@@ -258,9 +261,10 @@ class exportObj.SquadBuilder
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
                     <button class="btn select-bbcode-view">BBCode</button>
+                    <button class="btn select-html-view">HTML</button>
                 </div>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
@@ -269,6 +273,9 @@ class exportObj.SquadBuilder
         @bbcode_container = $ @list_modal.find('div.modal-body .bbcode-list')
         @bbcode_textarea = $ @bbcode_container.find('textarea')
         @bbcode_textarea.attr 'readonly', 'readonly'
+        @htmlview_container = $ @list_modal.find('div.modal-body .html-list')
+        @html_textarea = $ @htmlview_container.find('textarea')
+        @html_textarea.attr 'readonly', 'readonly'
         @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
         @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
 
@@ -282,6 +289,7 @@ class exportObj.SquadBuilder
                 @simple_container.show()
                 @fancy_container.hide()
                 @bbcode_container.hide()
+                @htmlview_container.hide()
                 @toggle_vertical_space_container.hide()
                 @toggle_color_print_container.hide()
 
@@ -295,6 +303,7 @@ class exportObj.SquadBuilder
                 @fancy_container.show()
                 @simple_container.hide()
                 @bbcode_container.hide()
+                @htmlview_container.hide()
                 @toggle_vertical_space_container.show()
                 @toggle_color_print_container.show()
 
@@ -306,10 +315,27 @@ class exportObj.SquadBuilder
                 @select_bbcode_view_button.addClass 'btn-inverse'
                 @list_display_mode = 'bbcode'
                 @bbcode_container.show()
+                @htmlview_container.hide()
                 @simple_container.hide()
                 @fancy_container.hide()
                 @bbcode_textarea.select()
                 @bbcode_textarea.focus()
+                @toggle_vertical_space_container.show()
+                @toggle_color_print_container.show()
+
+        @select_html_view_button = $ @list_modal.find('.select-html-view')
+        @select_html_view_button.click (e) =>
+            @select_html_view_button.blur()
+            unless @list_display_mode == 'html'
+                @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+                @select_html_view_button.addClass 'btn-inverse'
+                @list_display_mode = 'html'
+                @bbcode_container.hide()
+                @htmlview_container.show()
+                @simple_container.hide()
+                @fancy_container.hide()
+                @html_textarea.select()
+                @html_textarea.focus()
                 @toggle_vertical_space_container.show()
                 @toggle_color_print_container.show()
 
@@ -800,11 +826,19 @@ class exportObj.SquadBuilder
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
         bbcode_ships = []
+        htmlview_ships = []
         for ship in @ships
             if ship.pilot?
                 @fancy_container.append ship.toHTML()
                 @simple_container.find('table').append ship.toTableRow()
                 bbcode_ships.push ship.toBBCode()
+                htmlview_ships.push ship.toSimpleHTML()
+        @htmlview_container.find('textarea').val $.trim """#{htmlview_ships.join '<br />'}
+<br />
+<b><i>Total: #{@total_points}</i></b>
+<br />
+<a href="#{@permalink.attr 'href'}">View in Yet Another Squad Builder</a>
+        """
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
 
 [b][i]Total: #{@total_points}[/i][/b]
@@ -2058,6 +2092,19 @@ class Ship
 
         bbcode
 
+    toSimpleHTML: ->
+        html = """<b>#{@pilot.name} (#{@pilot.points})</b><br />"""
+
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+            .concat (modification for modification in @modifications when modification.data?)
+        slotted_upgrades.push @title if @title?.data?
+        if slotted_upgrades.length > 0
+            for upgrade in slotted_upgrades
+                upgrade_html = upgrade.toSimpleHTML()
+                html += upgrade_html if upgrade_html?
+
+        html
+
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
 
@@ -2443,6 +2490,12 @@ class GenericAddon
             """[i]#{@data.name} (#{@data.points})[/i]"""
         else
             null
+
+    toSimpleHTML: ->
+        if @data?
+            """<i>#{@data.name} (#{@data.points})</i><br />"""
+        else
+            ''
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
