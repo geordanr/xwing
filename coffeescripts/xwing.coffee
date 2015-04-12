@@ -260,7 +260,7 @@ class exportObj.SquadBuilder
                     <button class="btn select-bbcode-view">BBCode</button>
                 </div>
                 <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
