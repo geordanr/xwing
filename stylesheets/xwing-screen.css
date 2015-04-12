@@ -169,7 +169,7 @@
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
         padding: 5px; }
 
-.bbcode-list textarea, textarea.xws-content {
+.bbcode-list textarea, textarea.xws-content, .html-list textarea {
   width: 95%;
   height: 200px;
   cursor: text; }
