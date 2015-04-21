@@ -1142,7 +1142,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack"];
+exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack", "Hound's Tooth Expansion Pack", "Kihraxz Fighter Expansion Pack", "K-Wing Expansion Pack", "TIE Punisher Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1444,6 +1444,47 @@ exportObj.basicCardData = function() {
         shields: 4,
         actions: ["Coordinate", "Target Lock"],
         huge: true
+      },
+      "YV-666": {
+        name: "YV-666",
+        factions: ["Scum and Villainy"],
+        attack: 3,
+        agility: 1,
+        hull: 7,
+        shields: 6,
+        large: true,
+        actions: ["Focus", "Target Lock"],
+        maneuvers: []
+      },
+      "Kihraxz Fighter": {
+        name: "Kihraxz Fighter",
+        factions: ["Scum and Villainy"],
+        attack: 3,
+        agility: 2,
+        hull: 4,
+        shields: 1,
+        actions: ["Focus", "Target Lock"],
+        maneuvers: []
+      },
+      "K-Wing": {
+        name: "K-Wing",
+        factions: ["Rebel Alliance"],
+        attack: 2,
+        agility: 1,
+        hull: 5,
+        shields: 4,
+        actions: ["Focus", "Target Lock", "SLAM"],
+        maneuvers: []
+      },
+      "TIE Punisher": {
+        name: "TIE Punisher",
+        factions: ["Galactic Empire"],
+        attack: 2,
+        agility: 1,
+        hull: 6,
+        shields: 3,
+        actions: ["Focus", "Target Lock", "Boost"],
+        maneuvers: []
       }
     },
     pilotsById: [
@@ -2622,6 +2663,143 @@ exportObj.basicCardData = function() {
         points: 50,
         epic: true,
         slots: ["Crew", "Crew", "Hardpoint", "Hardpoint", "Team", "Team", "Cargo"]
+      }, {
+        name: "Bossk",
+        faction: "Scum and Villainy",
+        id: 131,
+        ship: "YV-666",
+        unique: true,
+        skill: 7,
+        points: 35,
+        slots: ["Elite", "Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
+      }, {
+        name: "Unspoiled PS6 YV-666 Pilot",
+        faction: "Scum and Villainy",
+        id: 132,
+        ship: "YV-666",
+        unique: true,
+        skill: 6,
+        points: 99,
+        slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
+      }, {
+        name: "Unspoiled PS5 YV-666 Pilot",
+        faction: "Scum and Villainy",
+        id: 133,
+        ship: "YV-666",
+        unique: true,
+        skill: 5,
+        points: 99,
+        slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
+      }, {
+        name: "Unspoiled PS2 YV-666 Pilot",
+        faction: "Scum and Villainy",
+        id: 134,
+        ship: "YV-666",
+        skill: 2,
+        points: 99,
+        slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
+      }, {
+        name: "Talonbane Cobra",
+        unique: true,
+        id: 135,
+        faction: "Scum and Villainy",
+        ship: "Kihraxz Fighter",
+        skill: 9,
+        slots: ["Elite", "Missile", "Illicit"],
+        points: 29
+      }, {
+        name: "Unspoiled PS6 Kihraxz Pilot",
+        unique: true,
+        id: 136,
+        faction: "Scum and Villainy",
+        ship: "Kihraxz Fighter",
+        skill: 6,
+        slots: ["Missile", "Illicit"],
+        points: 99
+      }, {
+        name: "Unspoiled PS5 Kihraxz Pilot",
+        faction: "Scum and Villainy",
+        id: 137,
+        ship: "Kihraxz Fighter",
+        skill: 5,
+        slots: ["Missile", "Illicit"],
+        points: 99
+      }, {
+        name: "Unspoiled PS2 Kihraxz Pilot",
+        faction: "Scum and Villainy",
+        id: 138,
+        ship: "Kihraxz Fighter",
+        skill: 2,
+        slots: ["Missile", "Illicit"],
+        points: 99
+      }, {
+        name: "Miranda Doni",
+        unique: true,
+        id: 139,
+        faction: "Rebel Alliance",
+        ship: "K-Wing",
+        skill: 8,
+        slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
+        points: 29
+      }, {
+        name: "Unspoiled PS6 K-Wing Pilot",
+        unique: true,
+        id: 140,
+        faction: "Rebel Alliance",
+        ship: "K-Wing",
+        skill: 6,
+        slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
+        points: 99
+      }, {
+        name: "Unspoiled PS4 K-Wing Pilot",
+        faction: "Rebel Alliance",
+        id: 141,
+        ship: "K-Wing",
+        skill: 4,
+        slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
+        points: 99
+      }, {
+        name: "Unspoiled PS2 K-Wing Pilot",
+        faction: "Rebel Alliance",
+        id: 142,
+        ship: "K-Wing",
+        skill: 2,
+        slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
+        points: 99
+      }, {
+        name: '"Redline"',
+        unique: true,
+        id: 143,
+        faction: "Galactic Empire",
+        ship: "TIE Punisher",
+        skill: 7,
+        slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
+        points: 27
+      }, {
+        name: 'Unspoiled PS6 TIE Punisher Pilot',
+        unique: true,
+        id: 144,
+        faction: "Galactic Empire",
+        ship: "TIE Punisher",
+        skill: 6,
+        slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
+        points: 99
+      }, {
+        name: 'Unspoiled PS4 TIE Punisher Pilot',
+        faction: "Galactic Empire",
+        id: 145,
+        ship: "TIE Punisher",
+        skill: 4,
+        slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
+        points: 99
+      }, {
+        name: 'Unspoiled PS2 TIE Punisher Pilot',
+        faction: "Galactic Empire",
+        id: 146,
+        ship: "TIE Punisher",
+        skill: 2,
+        slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
+        points: 99
       }
     ],
     upgradesById: [
@@ -3476,6 +3654,22 @@ exportObj.basicCardData = function() {
         energy: 2,
         attack: 4,
         range: "2-4"
+      }, {
+        name: "Extra Munitions",
+        id: 126,
+        slot: "Torpedo",
+        limited: true,
+        points: 2
+      }, {
+        name: "Cluster Mines",
+        id: 127,
+        slot: "Bomb",
+        points: 4
+      }, {
+        name: 'Glitterstim',
+        id: 128,
+        slot: "Illicit",
+        points: 2
       }
     ],
     modificationsById: [
@@ -3592,6 +3786,10 @@ exportObj.basicCardData = function() {
         restriction_func: function(ship) {
           return __indexOf.call(ship.effectiveStats().actions, "Boost") >= 0;
         }
+      }, {
+        name: "Advanced SLAM",
+        id: 16,
+        points: 2
       }
     ],
     titlesById: [
@@ -3863,6 +4061,12 @@ exportObj.basicCardData = function() {
             }
           }
         ]
+      }, {
+        name: "Hound's Tooth",
+        id: 24,
+        points: 6,
+        unique: true,
+        ship: "YV-666"
       }
     ]
   };
@@ -5451,7 +5655,8 @@ exportObj.translations.English = {
     "Reinforce": "Reinforce",
     "Jam": "Jam",
     "Coordinate": "Coordinate",
-    "Cloak": "Cloak"
+    "Cloak": "Cloak",
+    "SLAM": "SLAM"
   },
   slot: {
     "Astromech": "Astromech",
@@ -5497,7 +5702,11 @@ exportObj.translations.English = {
     "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack",
     "IG-2000 Expansion Pack": "IG-2000 Expansion Pack",
     "Most Wanted Expansion Pack": "Most Wanted Expansion Pack",
-    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
+    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack",
+    "Hound's Tooth Expansion Pack": "Hound's Tooth Expansion Pack",
+    "Kihraxz Fighter Expansion Pack": "Kihraxz Fighter Expansion Pack",
+    "K-Wing Expansion Pack": "K-Wing Expansion Pack",
+    "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack"
   },
   ui: {
     shipSelectorPlaceholder: "Select a ship",
@@ -5813,6 +6022,18 @@ exportObj.cardLoaders.English = function() {
     },
     "Raider-class Corvette (Fore)": {
       text: "Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"
+    },
+    "Bossk": {
+      text: "When you perform an attack that hits, before dealing damage, you may cancel 1 of your %CRIT% results to add 2 %HIT% results."
+    },
+    "Talonbane Cobra": {
+      text: "When attacking or defending, double the effect of your range combat bonuses."
+    },
+    "Miranda Doni": {
+      text: "Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."
+    },
+    '"Redline"': {
+      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
     }
   };
   upgrade_translations = {
@@ -6193,6 +6414,15 @@ exportObj.cardLoaders.English = function() {
     },
     "Ion Cannon Battery": {
       text: "<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Extra Munitions": {
+      text: "When you equip this card, place 1 ordnance token on each equipped %TORPEDO%, %MISSILE%, and %BOMB% Upgrade card.  When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead."
+    },
+    "Cluster Mines": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 cluster mine token set.%LINEBREAK%When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>."
+    },
+    "Glitterstim": {
+      text: "At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."
     }
   };
   modification_translations = {
@@ -6240,6 +6470,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Autothrusters": {
       text: "When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."
+    },
+    "Advanced SLAM": {
+      text: "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."
     }
   };
   title_translations = {
@@ -6308,6 +6541,9 @@ exportObj.cardLoaders.English = function() {
     },
     "TIE/x1": {
       text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
+    },
+    "Hound's Tooth": {
+      text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%After you are destroyed, before you are removed from the play area, you may <strong>deploy</strong> the <em>Nashtah Pup</em> ship.%LINEBREAK%It cannot attack this round."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -10786,7 +11022,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 10614
+                    lineno: 10982
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -11303,7 +11539,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 11156
+              lineno: 11524
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -11890,7 +12126,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 11659
+          lineno: 12027
         }));
         __iced_deferrals._fulfill();
       });
@@ -11902,7 +12138,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 11660
+            lineno: 12028
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -13163,7 +13399,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 12399
+                      lineno: 12767
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -13232,7 +13468,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 12423
+                lineno: 12791
               })
             ]);
             __iced_deferrals._fulfill();
@@ -13284,14 +13520,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 12445
+            lineno: 12813
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 12447
+            lineno: 12815
           }));
         }
         _ref1 = _this.modifications;
@@ -13299,7 +13535,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 12449
+              lineno: 12817
             }));
           }
         }
@@ -14046,7 +14282,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 12975
+                lineno: 13343
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14143,7 +14379,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 13021
+                  lineno: 13389
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -14164,7 +14400,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 13024
+                    lineno: 13392
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -14236,7 +14472,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 13056
+            lineno: 13424
           }));
         }
         __iced_deferrals._fulfill();
