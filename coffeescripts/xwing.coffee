@@ -1995,6 +1995,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>"""
                 when 'Cloak'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>"""
+                when 'SLAM'
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '

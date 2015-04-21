@@ -539,7 +539,7 @@ exportObj.basicCardData = ->
             factions: [ "Scum and Villainy" ]
             attack: 3
             agility: 1
-            hull: 7
+            hull: 6
             shields: 6
             large: true
             actions: [
@@ -2459,7 +2459,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Illicit"
             ]
-            points: 29
+            points: 28
         }
         {
             name: "Unspoiled PS6 Kihraxz Pilot"
