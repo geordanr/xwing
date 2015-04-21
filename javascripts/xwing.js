@@ -1450,7 +1450,7 @@ exportObj.basicCardData = function() {
         factions: ["Scum and Villainy"],
         attack: 3,
         agility: 1,
-        hull: 7,
+        hull: 6,
         shields: 6,
         large: true,
         actions: ["Focus", "Target Lock"],
@@ -2706,7 +2706,7 @@ exportObj.basicCardData = function() {
         ship: "Kihraxz Fighter",
         skill: 9,
         slots: ["Elite", "Missile", "Illicit"],
-        points: 29
+        points: 28
       }, {
         name: "Unspoiled PS6 Kihraxz Pilot",
         unique: true,
@@ -13793,6 +13793,8 @@ Ship = (function() {
             return "<i class=\"xwing-miniatures-font xwing-miniatures-font-reinforce\"></i>";
           case 'Cloak':
             return "<i class=\"xwing-miniatures-font xwing-miniatures-font-cloak\"></i>";
+          case 'SLAM':
+            return "<i class=\"xwing-miniatures-font xwing-miniatures-font-slam\"></i>";
           default:
             return "<span>&nbsp;" + action + "<span>";
         }
@@ -14282,7 +14284,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 13343
+                lineno: 13345
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14379,7 +14381,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 13389
+                  lineno: 13391
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -14400,7 +14402,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 13392
+                    lineno: 13394
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -14472,7 +14474,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 13424
+            lineno: 13426
           }));
         }
         __iced_deferrals._fulfill();
