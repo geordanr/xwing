@@ -17,6 +17,7 @@ exportObj.translations.English =
         "Jam": "Jam"
         "Coordinate": "Coordinate"
         "Cloak": "Cloak"
+        "SLAM": "SLAM"
     slot:
         "Astromech": "Astromech"
         "Bomb": "Bomb"
@@ -61,6 +62,10 @@ exportObj.translations.English =
         "IG-2000 Expansion Pack": "IG-2000 Expansion Pack"
         "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
         "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
+        "Hound's Tooth Expansion Pack": "Hound's Tooth Expansion Pack"
+        "Kihraxz Fighter Expansion Pack": "Kihraxz Fighter Expansion Pack"
+        "K-Wing Expansion Pack": "K-Wing Expansion Pack"
+        "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Select a ship"
         pilotSelectorPlaceholder: "Select a pilot"
@@ -296,6 +301,14 @@ exportObj.cardLoaders.English = () ->
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
         "Raider-class Corvette (Fore)":
             text: """Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"""
+        "Bossk":
+            text: """When you perform an attack that hits, before dealing damage, you may cancel 1 of your %CRIT% results to add 2 %HIT% results."""
+        "Talonbane Cobra":
+            text: """When attacking or defending, double the effect of your range combat bonuses."""
+        "Miranda Doni":
+            text: """Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."""
+        '"Redline"':
+            text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -550,6 +563,12 @@ exportObj.cardLoaders.English = () ->
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
         "Ion Cannon Battery":
             text: """<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all</strong> dice results."""
+        "Extra Munitions":
+            text: """When you equip this card, place 1 ordnance token on each equipped %TORPEDO%, %MISSILE%, and %BOMB% Upgrade card.  When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead."""
+        "Cluster Mines":
+            text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 cluster mine token set.%LINEBREAK%When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>."""
+        "Glitterstim":
+            text: """At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."""
 
     modification_translations =
         "Stealth Device":
@@ -582,6 +601,8 @@ exportObj.cardLoaders.English = () ->
             text: """%LARGESHIPONLY%%LINEBREAK%Your ship can obstruct enemy attacks."""
         "Autothrusters":
             text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
+        "Advanced SLAM":
+            text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."""
 
     title_translations =
         "Slave I":
@@ -628,5 +649,7 @@ exportObj.cardLoaders.English = () ->
             text: """Your upgrade bar gains two additional %BOMB% upgrade icons."""
         "TIE/x1":
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
+        "Hound's Tooth":
+            text: """<span class="card-restriction">YV-666 only.</span>%LINEBREAK%After you are destroyed, before you are removed from the play area, you may <strong>deploy</strong> the <em>Nashtah Pup</em> ship.%LINEBREAK%It cannot attack this round."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

@@ -3,6 +3,10 @@ exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
     "Imperial Raider Expansion Pack"
+    "Hound's Tooth Expansion Pack"
+    "Kihraxz Fighter Expansion Pack"
+    "K-Wing Expansion Pack"
+    "TIE Punisher Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -530,6 +534,57 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             huge: true
+        "YV-666":
+            name: "YV-666"
+            factions: [ "Scum and Villainy" ]
+            attack: 3
+            agility: 1
+            hull: 7
+            shields: 6
+            large: true
+            actions: [
+                "Focus"
+                "Target Lock"
+            ]
+            maneuvers: []
+        "Kihraxz Fighter":
+            name: "Kihraxz Fighter"
+            factions: ["Scum and Villainy"]
+            attack: 3
+            agility: 2
+            hull: 4
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+            ]
+            maneuvers: []
+        "K-Wing":
+            name: "K-Wing"
+            factions: ["Rebel Alliance"]
+            attack: 2
+            agility: 1
+            hull: 5
+            shields: 4
+            actions: [
+                "Focus"
+                "Target Lock"
+                "SLAM"
+            ]
+            maneuvers: []
+        "TIE Punisher":
+            name: "TIE Punisher"
+            factions: ["Galactic Empire"]
+            attack: 2
+            agility: 1
+            hull: 6
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+            ]
+            maneuvers: []
 
     # name field is for convenience only
     pilotsById: [
@@ -2324,6 +2379,266 @@ exportObj.basicCardData = ->
                 "Cargo"
             ]
         }
+        {
+            name: "Bossk"
+            faction: "Scum and Villainy"
+            id: 131
+            ship: "YV-666"
+            unique: true
+            skill: 7
+            points: 35
+            slots: [
+                "Elite"
+                "Cannon"
+                "Missile"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS6 YV-666 Pilot"
+            faction: "Scum and Villainy"
+            id: 132
+            ship: "YV-666"
+            unique: true
+            skill: 6
+            points: 99
+            slots: [
+                "Cannon"
+                "Missile"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS5 YV-666 Pilot"
+            faction: "Scum and Villainy"
+            id: 133
+            ship: "YV-666"
+            unique: true
+            skill: 5
+            points: 99
+            slots: [
+                "Cannon"
+                "Missile"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Unspoiled PS2 YV-666 Pilot"
+            faction: "Scum and Villainy"
+            id: 134
+            ship: "YV-666"
+            skill: 2
+            points: 99
+            slots: [
+                "Cannon"
+                "Missile"
+                "Crew"
+                "Crew"
+                "Crew"
+                "Illicit"
+            ]
+        }
+        {
+            name: "Talonbane Cobra"
+            unique: true
+            id: 135
+            faction: "Scum and Villainy"
+            ship: "Kihraxz Fighter"
+            skill: 9
+            slots: [
+                "Elite"
+                "Missile"
+                "Illicit"
+            ]
+            points: 29
+        }
+        {
+            name: "Unspoiled PS6 Kihraxz Pilot"
+            unique: true
+            id: 136
+            faction: "Scum and Villainy"
+            ship: "Kihraxz Fighter"
+            skill: 6
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+            points: 99
+        }
+        {
+            name: "Unspoiled PS5 Kihraxz Pilot"
+            faction: "Scum and Villainy"
+            id: 137
+            ship: "Kihraxz Fighter"
+            skill: 5
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+            points: 99
+        }
+        {
+            name: "Unspoiled PS2 Kihraxz Pilot"
+            faction: "Scum and Villainy"
+            id: 138
+            ship: "Kihraxz Fighter"
+            skill: 2
+            slots: [
+                "Missile"
+                "Illicit"
+            ]
+            points: 99
+        }
+        {
+            name: "Miranda Doni"
+            unique: true
+            id: 139
+            faction: "Rebel Alliance"
+            ship: "K-Wing"
+            skill: 8
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Crew"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 29
+        }
+        {
+            name: "Unspoiled PS6 K-Wing Pilot"
+            unique: true
+            id: 140
+            faction: "Rebel Alliance"
+            ship: "K-Wing"
+            skill: 6
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Crew"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+        {
+            name: "Unspoiled PS4 K-Wing Pilot"
+            faction: "Rebel Alliance"
+            id: 141
+            ship: "K-Wing"
+            skill: 4
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Crew"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+        {
+            name: "Unspoiled PS2 K-Wing Pilot"
+            faction: "Rebel Alliance"
+            id: 142
+            ship: "K-Wing"
+            skill: 2
+            slots: [
+                "Turret"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Crew"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+        {
+            name: '"Redline"'
+            unique: true
+            id: 143
+            faction: "Galactic Empire"
+            ship: "TIE Punisher"
+            skill: 7
+            slots: [
+                "System"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 27
+        }
+        {
+            name: 'Unspoiled PS6 TIE Punisher Pilot'
+            unique: true
+            id: 144
+            faction: "Galactic Empire"
+            ship: "TIE Punisher"
+            skill: 6
+            slots: [
+                "System"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+        {
+            name: 'Unspoiled PS4 TIE Punisher Pilot'
+            faction: "Galactic Empire"
+            id: 145
+            ship: "TIE Punisher"
+            skill: 4
+            slots: [
+                "System"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+        {
+            name: 'Unspoiled PS2 TIE Punisher Pilot'
+            faction: "Galactic Empire"
+            id: 146
+            ship: "TIE Punisher"
+            skill: 2
+            slots: [
+                "System"
+                "Torpedo"
+                "Torpedo"
+                "Missile"
+                "Missile"
+                "Bomb"
+                "Bomb"
+            ]
+            points: 99
+        }
+
     ]
 
     upgradesById: [
@@ -3261,6 +3576,25 @@ exportObj.basicCardData = ->
             attack: 4
             range: "2-4"
         }
+        {
+            name: "Extra Munitions"
+            id: 126
+            slot: "Torpedo"
+            limited: true
+            points: 2
+        }
+        {
+            name: "Cluster Mines"
+            id: 127
+            slot: "Bomb"
+            points: 4
+        }
+        {
+            name: 'Glitterstim'
+            id: 128
+            slot: "Illicit"
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -3376,7 +3710,11 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 "Boost" in ship.effectiveStats().actions
         }
-        
+        {
+            name: "Advanced SLAM"
+            id: 16
+            points: 2
+        }
     ]
 
     titlesById: [
@@ -3651,6 +3989,13 @@ exportObj.basicCardData = ->
                         copy
                 }
             ]
+        }
+        {
+            name: "Hound's Tooth"
+            id: 24
+            points: 6
+            unique: true
+            ship: "YV-666"
         }
     ]
 
