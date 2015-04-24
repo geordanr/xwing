@@ -3595,6 +3595,36 @@ exportObj.basicCardData = ->
             slot: "Illicit"
             points: 2
         }
+        {
+            name: 'Grand Moff Tarkin'
+            unique: true
+            id: 129
+            slot: "Crew"
+            points: 6
+            faction: "Galactic Empire"
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: 'Captain Needa'
+            unique: true
+            id: 130
+            slot: "Crew"
+            points: 2
+            faction: "Galactic Empire"
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: 'Admiral Ozzel'
+            unique: true
+            id: 131
+            slot: "Crew"
+            points: 2
+            faction: "Galactic Empire"
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
     ]
 
     modificationsById: [

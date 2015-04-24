@@ -300,7 +300,7 @@ exportObj.cardLoaders.English = () ->
         "Commander Alozen":
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
         "Raider-class Corvette (Fore)":
-            text: """Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"""
+            text: """Once per round, after you perform a primary weapon attack, you may spend 2 energy to perform another primary weapon attack."""
         "Bossk":
             text: """When you perform an attack that hits, before dealing damage, you may cancel 1 of your %CRIT% results to add 2 %HIT% results."""
         "Talonbane Cobra":
@@ -569,6 +569,12 @@ exportObj.cardLoaders.English = () ->
             text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 cluster mine token set.%LINEBREAK%When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>."""
         "Glitterstim":
             text: """At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."""
+        "Grand Moff Tarkin":
+            text: """%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%At the start of the Combat phase, you may choose another ship at Range 1-4.  Either remove 1 focus token from the chosen ship or assign 1 focus token to that ship."""
+        "Captain Needa":
+            text: """%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%If you overlap an obstacle during the Activation phase, do not suffer 1 faceup damage card.  Instead, roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage."""
+        "Admiral Ozzel":
+            text: """%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."""
 
     modification_translations =
         "Stealth Device":
