@@ -3670,6 +3670,39 @@ exportObj.basicCardData = function() {
         id: 128,
         slot: "Illicit",
         points: 2
+      }, {
+        name: 'Grand Moff Tarkin',
+        unique: true,
+        id: 129,
+        slot: "Crew",
+        points: 6,
+        faction: "Galactic Empire",
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
+      }, {
+        name: 'Captain Needa',
+        unique: true,
+        id: 130,
+        slot: "Crew",
+        points: 2,
+        faction: "Galactic Empire",
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
+      }, {
+        name: 'Admiral Ozzel',
+        unique: true,
+        id: 131,
+        slot: "Crew",
+        points: 2,
+        faction: "Galactic Empire",
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
       }
     ],
     modificationsById: [
@@ -6021,7 +6054,7 @@ exportObj.cardLoaders.English = function() {
       text: "At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."
     },
     "Raider-class Corvette (Fore)": {
-      text: "Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"
+      text: "Once per round, after you perform a primary weapon attack, you may spend 2 energy to perform another primary weapon attack."
     },
     "Bossk": {
       text: "When you perform an attack that hits, before dealing damage, you may cancel 1 of your %CRIT% results to add 2 %HIT% results."
@@ -6423,6 +6456,15 @@ exportObj.cardLoaders.English = function() {
     },
     "Glitterstim": {
       text: "At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."
+    },
+    "Grand Moff Tarkin": {
+      text: "%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%At the start of the Combat phase, you may choose another ship at Range 1-4.  Either remove 1 focus token from the chosen ship or assign 1 focus token to that ship."
+    },
+    "Captain Needa": {
+      text: "%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%If you overlap an obstacle during the Activation phase, do not suffer 1 faceup damage card.  Instead, roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage."
+    },
+    "Admiral Ozzel": {
+      text: "%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."
     }
   };
   modification_translations = {
@@ -11022,7 +11064,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 10982
+                    lineno: 11018
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -11539,7 +11581,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 11524
+              lineno: 11560
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -12126,7 +12168,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 12027
+          lineno: 12063
         }));
         __iced_deferrals._fulfill();
       });
@@ -12138,7 +12180,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 12028
+            lineno: 12064
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -13399,7 +13441,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 12767
+                      lineno: 12803
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -13468,7 +13510,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 12791
+                lineno: 12827
               })
             ]);
             __iced_deferrals._fulfill();
@@ -13520,14 +13562,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 12813
+            lineno: 12849
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 12815
+            lineno: 12851
           }));
         }
         _ref1 = _this.modifications;
@@ -13535,7 +13577,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 12817
+              lineno: 12853
             }));
           }
         }
@@ -14284,7 +14326,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 13345
+                lineno: 13381
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14381,7 +14423,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 13391
+                  lineno: 13427
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -14402,7 +14444,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 13394
+                    lineno: 13430
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -14474,7 +14516,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 13426
+            lineno: 13462
           }));
         }
         __iced_deferrals._fulfill();
