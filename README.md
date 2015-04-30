@@ -45,11 +45,16 @@ Testing
 Credits
 -------
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).
-Icons and fonts were taken from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
-X-Wing symbols and ships fonts courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7).
-German translations courtesy @failgod-marcus.
-Maneuver dials by @hpanderson.
-Spanish translations courtesy [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums.
+Icons and fonts originally from GeckoTH's excellent PSD, available [here](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
+X-Wing symbols and ships fonts courtesy [Hinny](https://github.com/Hinny) and [Josh Derksen](https://github.com/armoredgear7) and are available as a [Bower package](https://github.com/geordanr/xwing-miniatures-font).
+Maneuver dial support by @hpanderson.
+Fancy printout design inspired by TheKestrel on the FFG forums.
+German translation by [failgod](https://github.com/failgod-marcus) and [strikegun](https://github.com/strikegun) from FFG Forums.
+Spanish translation by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums and [negroscuro](https://github.com/negroscuro).
+French translation by [pejuaxel](https://github.com/pejuaxel).
+Polish translation by [Bober9000](https://github.com/Bober9000).
+Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
+
 I'm bad at keeping this up to date; see the About section of the builder.
 
 CHANGELOG
