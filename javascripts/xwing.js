@@ -2800,6 +2800,33 @@ exportObj.basicCardData = function() {
         skill: 2,
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
         points: 99
+      }, {
+        name: "Juno Eclipse",
+        id: 147,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced",
+        unique: true,
+        skill: 8,
+        points: 28,
+        slots: ["Elite", "Missile"]
+      }, {
+        name: "Zertik Strom",
+        id: 148,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced",
+        unique: true,
+        skill: 6,
+        points: 26,
+        slots: ["Elite", "Missile"]
+      }, {
+        name: "Lieutenant Colzet",
+        id: 149,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced",
+        unique: true,
+        skill: 3,
+        points: 23,
+        slots: ["Missile"]
       }
     ],
     upgradesById: [
@@ -5021,6 +5048,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Raider-class Corvette (Fore)": {
       text: "Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"
+    },
+    "Juno Eclipse": {
+      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    },
+    "Zertik Strom": {
+      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    },
+    "Lieutenant Colzet": {
+      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
     }
   };
   upgrade_translations = {
@@ -6067,6 +6103,15 @@ exportObj.cardLoaders.English = function() {
     },
     '"Redline"': {
       text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+    },
+    "Juno Eclipse": {
+      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    },
+    "Zertik Strom": {
+      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    },
+    "Lieutenant Colzet": {
+      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
     }
   };
   upgrade_translations = {
@@ -7273,7 +7318,20 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Z-95 Cazacabezas"
     },
     "Commander Alozen": {
+      ship: "TIE Avanzado",
       text: "At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."
+    },
+    "Juno Eclipse": {
+      ship: "TIE Avanzado",
+      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    },
+    "Zertik Strom": {
+      ship: "TIE Avanzado",
+      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    },
+    "Lieutenant Colzet": {
+      ship: "TIE Avanzado",
+      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
     }
   };
   upgrade_translations = {
@@ -8278,6 +8336,15 @@ exportObj.cardLoaders['Français'] = function() {
       ship: "Décimateur VT-49",
       name: "Commandant Kenkirk",
       text: "Si vous n'avez pas de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."
+    },
+    "Juno Eclipse": {
+      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    },
+    "Zertik Strom": {
+      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    },
+    "Lieutenant Colzet": {
+      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
     },
     "Red Squadron Pilot": {
       name: "Pilote de l'escadron Rouge"
@@ -9486,6 +9553,15 @@ exportObj.cardLoaders['Polski'] = function() {
       ship: "Decimator VT-49",
       name: "Commandant Kenkirk",
       text: "Jeśli nie masz żadnych osłon i masz przypisaną co najmniej 1 kartę uszkodzenia, wartość twojej zwrotności wzrasta o 1."
+    },
+    "Juno Eclipse": {
+      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    },
+    "Zertik Strom": {
+      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    },
+    "Lieutenant Colzet": {
+      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
     },
     "Red Squadron Pilot": {
       name: "Pilot Eskadry Czerwonych"
@@ -12272,7 +12348,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 11980
+                    lineno: 12053
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12789,7 +12865,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12522
+              lineno: 12595
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13376,7 +13452,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13025
+          lineno: 13098
         }));
         __iced_deferrals._fulfill();
       });
@@ -13388,7 +13464,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13026
+            lineno: 13099
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14649,7 +14725,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 13765
+                      lineno: 13838
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -14718,7 +14794,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 13789
+                lineno: 13862
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14770,14 +14846,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 13811
+            lineno: 13884
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 13813
+            lineno: 13886
           }));
         }
         _ref1 = _this.modifications;
@@ -14785,7 +14861,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 13815
+              lineno: 13888
             }));
           }
         }
@@ -15534,7 +15610,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14343
+                lineno: 14416
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15631,7 +15707,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14389
+                  lineno: 14462
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15652,7 +15728,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14392
+                    lineno: 14465
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15724,7 +15800,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14424
+            lineno: 14497
           }));
         }
         __iced_deferrals._fulfill();
