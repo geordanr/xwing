@@ -552,7 +552,17 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave."""
             ship: "Z-95 Cazacabezas"
         "Commander Alozen":
+            ship: "TIE Avanzado"
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
+        "Juno Eclipse":
+            ship: "TIE Avanzado"
+            text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
+        "Zertik Strom":
+            ship: "TIE Avanzado"
+            text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
+        "Lieutenant Colzet":
+            ship: "TIE Avanzado"
+            text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
 
     upgrade_translations =
         "Ion Cannon Turret":

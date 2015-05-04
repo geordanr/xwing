@@ -309,6 +309,12 @@ exportObj.cardLoaders.English = () ->
             text: """Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."""
         '"Redline"':
             text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
+        "Juno Eclipse":
+            text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
+        "Zertik Strom":
+            text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
+        "Lieutenant Colzet":
+            text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
 
     upgrade_translations =
         "Ion Cannon Turret":

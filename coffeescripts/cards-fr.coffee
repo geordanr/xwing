@@ -303,6 +303,12 @@ exportObj.cardLoaders['Français'] = () ->
             ship: "Décimateur VT-49"
             name: "Commandant Kenkirk"
             text: """Si vous n'avez pas de boucliers et qu'au moins 1 carte dégâts vous est assignée, augmentez de 1 votre valeur d'agilité."""
+        "Juno Eclipse":
+            text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
+        "Zertik Strom":
+            text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
+        "Lieutenant Colzet":
+            text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
 
         # Rebels
         # X-Wing

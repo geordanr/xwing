@@ -454,6 +454,12 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
         "Raider-class Corvette (Fore)":
             text: """Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"""
+        "Juno Eclipse":
+            text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
+        "Zertik Strom":
+            text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
+        "Lieutenant Colzet":
+            text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
 
     upgrade_translations =
         "Ion Cannon Turret":

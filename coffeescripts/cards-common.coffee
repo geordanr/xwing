@@ -2639,6 +2639,45 @@ exportObj.basicCardData = ->
             points: 99
         }
 
+        {
+            name: "Juno Eclipse"
+            id: 147
+            faction: "Galactic Empire"
+            ship: "TIE Advanced"
+            unique: true
+            skill: 8
+            points: 28
+            slots: [
+                "Elite"
+                "Missile"
+            ]
+        }
+        {
+            name: "Zertik Strom"
+            id: 148
+            faction: "Galactic Empire"
+            ship: "TIE Advanced"
+            unique: true
+            skill: 6
+            points: 26
+            slots: [
+                "Elite"
+                "Missile"
+            ]
+        }
+        {
+            name: "Lieutenant Colzet"
+            id: 149
+            faction: "Galactic Empire"
+            ship: "TIE Advanced"
+            unique: true
+            skill: 3
+            points: 23
+            slots: [
+                "Missile"
+            ]
+        }
+
     ]
 
     upgradesById: [
