@@ -13040,7 +13040,7 @@ exportObj.SquadBuilder = (function() {
               }
             }
             _this.printable_container.find('.fancy-ship').toggleClass('tall', _this.list_modal.find('.toggle-vertical-space').prop('checked'));
-            _this.printable_container.find('.printable-body').toggleClass('bw', _this.list_modal.find('.toggle-print-color').prop('checked'));
+            _this.printable_container.find('.printable-body').toggleClass('bw', !_this.list_modal.find('.toggle-color-print').prop('checked'));
         }
         query = _this.permalink.attr('href').split(/\?/)[1];
         if ((query != null) && _this.list_modal.find('.toggle-juggler-qrcode').prop('checked')) {
@@ -15168,6 +15168,7 @@ Ship = (function() {
       }
       html += $.trim("</div>");
     }
+    html += $.trim("<div class=\"ship-points-total\">\n    <strong>Ship Total: " + (this.getPoints()) + "</strong>\n</div>");
     return "<div class=\"fancy-ship\">" + html + "</div>";
   };
 
@@ -15206,6 +15207,7 @@ Ship = (function() {
         table_html += upgrade.toTableRow();
       }
     }
+    table_html += "<tr class=\"simple-ship-total\"><td></td><td>Ship Total: " + (this.getPoints()) + "</td></tr>";
     table_html += '<tr><td>&nbsp;</td><td></td></tr>';
     return table_html;
   };
@@ -15611,7 +15613,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14416
+                lineno: 14426
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15708,7 +15710,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14462
+                  lineno: 14472
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15729,7 +15731,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14465
+                    lineno: 14475
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15801,7 +15803,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14497
+            lineno: 14507
           }));
         }
         __iced_deferrals._fulfill();

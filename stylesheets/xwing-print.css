@@ -190,6 +190,13 @@ body {
             margin-right: 0.02in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
           padding: 5px; }
+    #printable .fancy-ship .ship-points-total {
+      color: black;
+      text-align: right;
+      margin-bottom: 0.04in;
+      margin-left: 0.75in;
+      margin-right: 0.365in;
+      clear: both; }
   #printable .printable-footer {
     position: fixed;
     bottom: 0;
@@ -213,6 +220,9 @@ body {
       font-weight: bold; }
     #printable .simple-table .simple-addon .name {
       padding-left: 20px; }
+    #printable .simple-table .simple-ship-total {
+      font-weight: bold;
+      text-align: right; }
   #printable .print-notes {
     color: black; }
   #printable .juggler-qrcode-container {
