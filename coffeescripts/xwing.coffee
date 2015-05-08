@@ -2058,6 +2058,13 @@ class Ship
                 </div>
             """
 
+        # if @getPoints() != @pilot.points
+        html += $.trim """
+            <div class="ship-points-total">
+                <strong>Ship Total: #{@getPoints()}</strong>
+            </div>
+        """
+
         """<div class="fancy-ship">#{html}</div>"""
 
     toTableRow: ->
@@ -2074,6 +2081,9 @@ class Ship
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
                 table_html += upgrade.toTableRow()
+
+        # if @getPoints() != @pilot.points
+        table_html += """<tr class="simple-ship-total"><td></td><td>Ship Total: #{@getPoints()}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
