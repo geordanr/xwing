@@ -14413,6 +14413,7 @@ exportObj.SquadBuilder = (function() {
     success = null;
     error = null;
     switch (xws.version) {
+      case '0.2.1':
       case '0.2.0':
       case '0.1.1':
         xws_faction = exportObj.fromXWSFaction[xws.faction];
