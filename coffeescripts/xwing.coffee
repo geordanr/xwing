@@ -1526,7 +1526,7 @@ class exportObj.SquadBuilder
         # TODO - actual semver parsing
         switch xws.version
             # Not doing backward compatibility pre-1.x
-            when '0.2.0', '0.1.1'
+            when '0.2.1', '0.2.0', '0.1.1'
                 xws_faction = exportObj.fromXWSFaction[xws.faction]
 
                 if @faction != xws_faction
