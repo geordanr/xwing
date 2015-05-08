@@ -704,7 +704,7 @@ class exportObj.SquadBuilder
                     for ship in @ships
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
-                    @printable_container.find('.printable-body').toggleClass 'bw', @list_modal.find('.toggle-print-color').prop('checked')
+                    @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
             # Add List Juggler QR code
             query = @permalink.attr('href').split(/\?/)[1]
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
