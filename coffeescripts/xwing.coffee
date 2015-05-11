@@ -254,7 +254,7 @@ class exportObj.SquadBuilder
                 <label class="color-print-checkbox">
                     Print color <input type="checkbox" class="toggle-color-print" />
                 </label>
-                <label class="qrcode-checkbox">
+                <label class="qrcode-checkbox hidden-phone">
                     Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
                 <div class="btn-group list-display-mode">
@@ -2083,7 +2083,7 @@ class Ship
                 table_html += upgrade.toTableRow()
 
         # if @getPoints() != @pilot.points
-        table_html += """<tr class="simple-ship-total"><td></td><td>Ship Total: #{@getPoints()}</td></tr>"""
+        table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
