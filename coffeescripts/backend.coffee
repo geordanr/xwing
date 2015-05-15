@@ -117,9 +117,9 @@ class exportObj.SquadBuilderBackend
     list: (builder, all=false) ->
         # TODO: Pagination
         if all
-            @squad_list_modal.find('.modal-header h3').text("Everyone's #{builder.faction} Squads")
+            @squad_list_modal.find('.modal-header .squad-list-header-placeholder').text("Everyone's #{builder.faction} Squads")
         else
-            @squad_list_modal.find('.modal-header h3').text("Your #{builder.faction} Squads")
+            @squad_list_modal.find('.modal-header .squad-list-header-placeholder').text("Your #{builder.faction} Squads")
         list_ul = $ @squad_list_modal.find('ul.squad-list')
         list_ul.text ''
         list_ul.hide()
@@ -328,7 +328,8 @@ class exportObj.SquadBuilderBackend
         @squad_list_modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3></h3>
+                <h3 class="squad-list-header-placeholder hidden-phone hidden-tablet"></h3>
+                <h4 class="squad-list-header-placeholder hidden-desktop"></h4>
             </div>
             <div class="modal-body">
                 <ul class="squad-list"></ul>
@@ -343,7 +344,7 @@ class exportObj.SquadBuilderBackend
                     <button class="btn btn-inverse show-all-squads">All</button>
                     <button class="btn show-standard-squads">Standard</button>
                     <button class="btn show-epic-squads">Epic</button>
-                    <button class="btn show-team-epic-squads">Team Epic</button>
+                    <button class="btn show-team-epic-squads">Team<span class="hidden-phone"> Epic</span></button>
                 </div>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
