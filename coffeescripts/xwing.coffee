@@ -257,6 +257,9 @@ class exportObj.SquadBuilder
                 <label class="qrcode-checkbox hidden-phone">
                     Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
+                <label class="qrcode-checkbox hidden-phone">
+                    Include obstacle silhouettes <input type="checkbox" class="toggle-obstacles" />
+                </label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
@@ -705,6 +708,24 @@ class exportObj.SquadBuilder
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
+
+            # Notes, if present
+            if $.trim(@notes.val()) != ''
+                @printable_container.find('.printable-body').append $.trim """
+                    <h5 class="print-notes">Notes:</h5>
+                    <pre class="print-notes"></pre>
+                """
+                @printable_container.find('.printable-body pre.print-notes').text @notes.val()
+
+            # Obstacles
+            if @list_modal.find('.toggle-obstacles').prop('checked')
+                @printable_container.find('.printable-body').append $.trim """
+                    <div class="obstacles">
+                        <div>Circle the three obstacles you are using.</div>
+                        <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
+                    </div>
+                """
+
             # Add List Juggler QR code
             query = @permalink.attr('href').split(/\?/)[1]
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
@@ -719,12 +740,7 @@ class exportObj.SquadBuilder
                     ec: 'M'
                     size: 144
                     text: "https://yasb-xws.herokuapp.com/juggler?#{query}"
-            if $.trim(@notes.val()) != ''
-                @printable_container.find('.printable-body').append $.trim """
-                    <h5 class="print-notes">Notes:</h5>
-                    <pre class="print-notes"></pre>
-                """
-                @printable_container.find('.printable-body pre.print-notes').text @notes.val()
+
             window.print()
 
         $(window).resize =>
