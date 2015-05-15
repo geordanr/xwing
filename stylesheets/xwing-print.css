@@ -235,3 +235,11 @@ body {
     width: 144px;
     margin-left: auto;
     margin-right: auto; }
+  #printable .obstacles {
+    color: black;
+    page-break-inside: avoid; }
+  #printable .obstacles > div {
+    width: 6in;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; }
