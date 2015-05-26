@@ -866,6 +866,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%FR_SCUMONLY%%LINEBREAK%Après avoir exécuté une manœuvre verte, vous pouvez verrouiller cible."""
         "Advanced Targeting Computer": # Traduit de l'anglais
             text: """<span class="card-restriction">TIE Advanced uniquement.</span>%LINEBREAK%Quand vous attaquez avec votre arme principale, si vous avez verrouillé le défenseur, vous pouvez ajouter un résultat %CRIT% result à votre lancer de dés. Si vous le faîtes, vous ne pouvez pas dépenser de marqueur d'acquisition de cible durant cette attaque."""
+        "Emperor Palpatine":
+            text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
 
     modification_translations =
         "Shield Upgrade":

@@ -2318,6 +2318,12 @@ class Ship
 
         false
 
+    hasAnotherUnoccupiedSlotLike: (upgrade_obj) ->
+        for upgrade in @upgrades
+            continue if upgrade == upgrade_obj or upgrade.slot != upgrade_obj.slot
+            return true unless upgrade.isOccupied()
+        false
+
     toXWS: ->
         xws =
             name: @pilot.canonical_name
@@ -2356,6 +2362,8 @@ class GenericAddon
         @unadjusted_data = null
         @conferredAddons = []
         @serialization_code = 'X'
+        @occupied_by = null
+        @occupying = []
 
         # Overridden by children
         @type = null
@@ -2365,6 +2373,7 @@ class GenericAddon
     destroy: (cb, args...) ->
         if @data?.unique?
             await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
+        @deoccupyOtherUpgrades()
         @selector.select2 'destroy'
         cb args
 
@@ -2420,7 +2429,10 @@ class GenericAddon
             if @data?
                 if @adjustment_func?
                     @data = @adjustment_func(@data)
+                @occupyOtherUpgrades()
                 @conferAddons()
+            else
+                @deoccupyOtherUpgrades()
 
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
@@ -2527,6 +2539,36 @@ class GenericAddon
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
+
+    isOccupied: ->
+        @data? or @occupied_by?
+
+    occupyOtherUpgrades: ->
+        for slot in @data?.also_occupies_upgrades ? []
+            for upgrade in @ship.upgrades
+                continue if upgrade.slot != slot or upgrade == this or upgrade.isOccupied()
+                @occupy upgrade
+                break
+
+    deoccupyOtherUpgrades: ->
+        for upgrade in @occupying
+            @deoccupy upgrade
+
+    occupy: (upgrade) ->
+        upgrade.occupied_by = this
+        upgrade.selector.select2 'enable', false
+        @occupying.push upgrade
+
+    deoccupy: (upgrade) ->
+        upgrade.occupied_by = null
+        upgrade.selector.select2 'enable', true
+
+    occupiesAnotherUpgradeSlot: ->
+        for upgrade in @ship.upgrades
+            continue if upgrade.slot != @slot or upgrade == this or upgrade.data?
+            if upgrade.occupied_by? and upgrade.occupied_by == this
+                return true
+        false
 
     toXWS: (upgrade_dict) ->
         upgrade_type = switch @type

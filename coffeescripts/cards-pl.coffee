@@ -850,6 +850,8 @@ exportObj.cardLoaders['Polski'] = () ->
         "R4 Agromech":
             name: "Agromech R4"
             text: """Kiedy atakujesz, po wydaniu żetonu skupienia, możesz namierzyć obrońcę."""
+        "Emperor Palpatine":
+            text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
 
     modification_translations =
         "Shield Upgrade":

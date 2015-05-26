@@ -3664,6 +3664,19 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.huge ? false
         }
+        {
+            name: 'Emperor Palpatine'
+            unique: true
+            id: 132
+            slot: "Crew"
+            points: 8
+            faction: "Galactic Empire"
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+        }
     ]
 
     modificationsById: [
