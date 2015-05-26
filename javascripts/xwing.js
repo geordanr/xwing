@@ -3730,6 +3730,20 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.huge) != null ? _ref : false;
         }
+      }, {
+        name: 'Emperor Palpatine',
+        unique: true,
+        id: 132,
+        slot: "Crew",
+        points: 8,
+        faction: "Galactic Empire",
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ["Crew"]
       }
     ],
     modificationsById: [
@@ -5545,6 +5559,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Ion Cannon Battery": {
       text: "<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."
+    },
+    "Emperor Palpatine": {
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
     }
   };
   modification_translations = {
@@ -6510,6 +6527,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Admiral Ozzel": {
       text: "%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."
+    },
+    "Emperor Palpatine": {
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
     }
   };
   modification_translations = {
@@ -7818,6 +7838,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Ion Cannon Battery": {
       text: "<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."
+    },
+    "Emperor Palpatine": {
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
     }
   };
   modification_translations = {
@@ -9068,6 +9091,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Advanced Targeting Computer": {
       text: "<span class=\"card-restriction\">TIE Advanced uniquement.</span>%LINEBREAK%Quand vous attaquez avec votre arme principale, si vous avez verrouillé le défenseur, vous pouvez ajouter un résultat %CRIT% result à votre lancer de dés. Si vous le faîtes, vous ne pouvez pas dépenser de marqueur d'acquisition de cible durant cette attaque."
+    },
+    "Emperor Palpatine": {
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
     }
   };
   modification_translations = {
@@ -10285,6 +10311,9 @@ exportObj.cardLoaders['Polski'] = function() {
     "R4 Agromech": {
       name: "Agromech R4",
       text: "Kiedy atakujesz, po wydaniu żetonu skupienia, możesz namierzyć obrońcę."
+    },
+    "Emperor Palpatine": {
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
     }
   };
   modification_translations = {
@@ -12348,7 +12377,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12054
+                    lineno: 12077
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12865,7 +12894,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12599
+              lineno: 12622
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13455,7 +13484,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13115
+          lineno: 13138
         }));
         __iced_deferrals._fulfill();
       });
@@ -13467,7 +13496,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13116
+            lineno: 13139
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14729,7 +14758,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 13855
+                      lineno: 13878
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -14798,7 +14827,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 13879
+                lineno: 13902
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14850,14 +14879,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 13901
+            lineno: 13924
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 13903
+            lineno: 13926
           }));
         }
         _ref1 = _this.modifications;
@@ -14865,7 +14894,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 13905
+              lineno: 13928
             }));
           }
         }
@@ -15549,6 +15578,21 @@ Ship = (function() {
     return false;
   };
 
+  Ship.prototype.hasAnotherUnoccupiedSlotLike = function(upgrade_obj) {
+    var upgrade, _i, _len, _ref;
+    _ref = this.upgrades;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      upgrade = _ref[_i];
+      if (upgrade === upgrade_obj || upgrade.slot !== upgrade_obj.slot) {
+        continue;
+      }
+      if (!upgrade.isOccupied()) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   Ship.prototype.toXWS = function() {
     var modification, upgrade, upgrade_obj, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
     xws = {
@@ -15595,6 +15639,8 @@ GenericAddon = (function() {
     this.unadjusted_data = null;
     this.conferredAddons = [];
     this.serialization_code = 'X';
+    this.occupied_by = null;
+    this.occupying = [];
     this.type = null;
     this.dataByName = null;
     this.dataById = null;
@@ -15616,7 +15662,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14443
+                lineno: 14474
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15627,6 +15673,7 @@ GenericAddon = (function() {
       });
     })(this)((function(_this) {
       return function() {
+        _this.deoccupyOtherUpgrades();
         _this.selector.select2('destroy');
         return cb(args);
       };
@@ -15713,7 +15760,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14489
+                  lineno: 14521
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15734,7 +15781,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14492
+                    lineno: 14524
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15748,7 +15795,10 @@ GenericAddon = (function() {
               if (_this.adjustment_func != null) {
                 _this.data = _this.adjustment_func(_this.data);
               }
+              _this.occupyOtherUpgrades();
               _this.conferAddons();
+            } else {
+              _this.deoccupyOtherUpgrades();
             }
             return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
           });
@@ -15806,7 +15856,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14524
+            lineno: 14559
           }));
         }
         __iced_deferrals._fulfill();
@@ -15892,6 +15942,71 @@ GenericAddon = (function() {
   GenericAddon.prototype.toSerialized = function() {
     var _ref, _ref1;
     return "" + this.serialization_code + "." + ((_ref = (_ref1 = this.data) != null ? _ref1.id : void 0) != null ? _ref : -1);
+  };
+
+  GenericAddon.prototype.isOccupied = function() {
+    return (this.data != null) || (this.occupied_by != null);
+  };
+
+  GenericAddon.prototype.occupyOtherUpgrades = function() {
+    var slot, upgrade, _i, _len, _ref, _ref1, _ref2, _results;
+    _ref2 = (_ref = (_ref1 = this.data) != null ? _ref1.also_occupies_upgrades : void 0) != null ? _ref : [];
+    _results = [];
+    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+      slot = _ref2[_i];
+      _results.push((function() {
+        var _j, _len1, _ref3, _results1;
+        _ref3 = this.ship.upgrades;
+        _results1 = [];
+        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+          upgrade = _ref3[_j];
+          if (upgrade.slot !== slot || upgrade === this || upgrade.isOccupied()) {
+            continue;
+          }
+          this.occupy(upgrade);
+          break;
+        }
+        return _results1;
+      }).call(this));
+    }
+    return _results;
+  };
+
+  GenericAddon.prototype.deoccupyOtherUpgrades = function() {
+    var upgrade, _i, _len, _ref, _results;
+    _ref = this.occupying;
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      upgrade = _ref[_i];
+      _results.push(this.deoccupy(upgrade));
+    }
+    return _results;
+  };
+
+  GenericAddon.prototype.occupy = function(upgrade) {
+    upgrade.occupied_by = this;
+    upgrade.selector.select2('enable', false);
+    return this.occupying.push(upgrade);
+  };
+
+  GenericAddon.prototype.deoccupy = function(upgrade) {
+    upgrade.occupied_by = null;
+    return upgrade.selector.select2('enable', true);
+  };
+
+  GenericAddon.prototype.occupiesAnotherUpgradeSlot = function() {
+    var upgrade, _i, _len, _ref;
+    _ref = this.ship.upgrades;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      upgrade = _ref[_i];
+      if (upgrade.slot !== this.slot || upgrade === this || (upgrade.data != null)) {
+        continue;
+      }
+      if ((upgrade.occupied_by != null) && upgrade.occupied_by === this) {
+        return true;
+      }
+    }
+    return false;
   };
 
   GenericAddon.prototype.toXWS = function(upgrade_dict) {
