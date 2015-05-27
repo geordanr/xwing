@@ -2183,9 +2183,21 @@ class Ship
                 [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
+                deferred_ids = []
                 for upgrade_id, i in upgrade_ids.split ','
                     upgrade_id = parseInt upgrade_id
-                    @upgrades[i].setById upgrade_id if upgrade_id >= 0
+                    continue if upgrade_id < 0 or isNaN(upgrade_id)
+                    if @upgrades[i].isOccupied()
+                        deferred_ids.push upgrade_id
+                    else
+                        @upgrades[i].setById upgrade_id
+
+                for deferred_id in deferred_ids
+                    for upgrade, i in @upgrades
+                        continue if upgrade.isOccupied() or upgrade.slot != exportObj.upgradesById[deferred_id].slot
+                        upgrade.setById deferred_id
+                        break
+
 
                 title_id = parseInt title_id
                 @title.setById title_id if title_id >= 0

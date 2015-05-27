@@ -106,3 +106,17 @@ casper.test.begin "Palpatine releases extra crew slot when changed to different 
 
     .run ->
         test.done()
+
+casper.test.begin "Permalink still works when Palpatine's extra slot would be occupied", (test) ->
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v3!s!96:-1,132,40,-1,-1:-1:-1:')
+    .then ->
+        @waitUntilVisible '#empire-builder .total-points'
+
+    common.assertUpgradeInSlot(test, '#empire-builder', 1, 2, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+    common.assertUpgradeInSlot(test, '#empire-builder', 1, 4, 'Intelligence Agent')
+
+    common.removeShip('#empire-builder', 1)
+
+    .run ->
+        test.done()
