@@ -15358,7 +15358,7 @@ Ship = (function() {
   };
 
   Ship.prototype.fromSerialized = function(version, serialized) {
-    var addon_cls, addon_id, addon_type_serialized, conferred_addon, conferredaddon_pair, conferredaddon_pairs, i, modification, modification_conferred_addon_pairs, modification_id, pilot_id, title_conferred_addon_pairs, title_conferred_upgrade_ids, title_id, upgrade_id, upgrade_ids, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+    var addon_cls, addon_id, addon_type_serialized, conferred_addon, conferredaddon_pair, conferredaddon_pairs, deferred_id, deferred_ids, i, modification, modification_conferred_addon_pairs, modification_id, pilot_id, title_conferred_addon_pairs, title_conferred_upgrade_ids, title_id, upgrade, upgrade_id, upgrade_ids, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _len7, _m, _n, _o, _p, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
     switch (version) {
       case 1:
         _ref = serialized.split(':'), pilot_id = _ref[0], upgrade_ids = _ref[1], title_id = _ref[2], title_conferred_upgrade_ids = _ref[3], modification_id = _ref[4];
@@ -15394,12 +15394,30 @@ Ship = (function() {
       case 3:
         _ref3 = serialized.split(':'), pilot_id = _ref3[0], upgrade_ids = _ref3[1], title_id = _ref3[2], modification_id = _ref3[3], conferredaddon_pairs = _ref3[4];
         this.setPilotById(parseInt(pilot_id));
+        deferred_ids = [];
         _ref4 = upgrade_ids.split(',');
         for (i = _k = 0, _len2 = _ref4.length; _k < _len2; i = ++_k) {
           upgrade_id = _ref4[i];
           upgrade_id = parseInt(upgrade_id);
-          if (upgrade_id >= 0) {
+          if (upgrade_id < 0 || isNaN(upgrade_id)) {
+            continue;
+          }
+          if (this.upgrades[i].isOccupied()) {
+            deferred_ids.push(upgrade_id);
+          } else {
             this.upgrades[i].setById(upgrade_id);
+          }
+        }
+        for (_l = 0, _len3 = deferred_ids.length; _l < _len3; _l++) {
+          deferred_id = deferred_ids[_l];
+          _ref5 = this.upgrades;
+          for (i = _m = 0, _len4 = _ref5.length; _m < _len4; i = ++_m) {
+            upgrade = _ref5[i];
+            if (upgrade.isOccupied() || upgrade.slot !== exportObj.upgradesById[deferred_id].slot) {
+              continue;
+            }
+            upgrade.setById(deferred_id);
+            break;
           }
         }
         title_id = parseInt(title_id);
@@ -15417,9 +15435,9 @@ Ship = (function() {
         }
         if ((this.title != null) && this.title.conferredAddons.length > 0) {
           title_conferred_addon_pairs = conferredaddon_pairs.splice(0, this.title.conferredAddons.length);
-          for (i = _l = 0, _len3 = title_conferred_addon_pairs.length; _l < _len3; i = ++_l) {
+          for (i = _n = 0, _len5 = title_conferred_addon_pairs.length; _n < _len5; i = ++_n) {
             conferredaddon_pair = title_conferred_addon_pairs[i];
-            _ref5 = conferredaddon_pair.split('.'), addon_type_serialized = _ref5[0], addon_id = _ref5[1];
+            _ref6 = conferredaddon_pair.split('.'), addon_type_serialized = _ref6[0], addon_id = _ref6[1];
             addon_id = parseInt(addon_id);
             addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
             conferred_addon = this.title.conferredAddons[i];
@@ -15430,14 +15448,14 @@ Ship = (function() {
             }
           }
         }
-        _ref6 = this.modifications;
-        for (_m = 0, _len4 = _ref6.length; _m < _len4; _m++) {
-          modification = _ref6[_m];
+        _ref7 = this.modifications;
+        for (_o = 0, _len6 = _ref7.length; _o < _len6; _o++) {
+          modification = _ref7[_o];
           if (((modification != null ? modification.data : void 0) != null) && modification.conferredAddons.length > 0) {
             modification_conferred_addon_pairs = conferredaddon_pairs.splice(0, modification.conferredAddons.length);
-            for (i = _n = 0, _len5 = modification_conferred_addon_pairs.length; _n < _len5; i = ++_n) {
+            for (i = _p = 0, _len7 = modification_conferred_addon_pairs.length; _p < _len7; i = ++_p) {
               conferredaddon_pair = modification_conferred_addon_pairs[i];
-              _ref7 = conferredaddon_pair.split('.'), addon_type_serialized = _ref7[0], addon_id = _ref7[1];
+              _ref8 = conferredaddon_pair.split('.'), addon_type_serialized = _ref8[0], addon_id = _ref8[1];
               addon_id = parseInt(addon_id);
               addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
               conferred_addon = modification.conferredAddons[i];
@@ -15662,7 +15680,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14474
+                lineno: 14486
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15760,7 +15778,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14521
+                  lineno: 14533
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15772,6 +15790,7 @@ GenericAddon = (function() {
       })(this)((function(_this) {
         return function() {
           _this.rescindAddons();
+          _this.deoccupyOtherUpgrades();
           (function(__iced_k) {
             if ((new_data != null ? new_data.unique : void 0) != null) {
               (function(__iced_k) {
@@ -15781,7 +15800,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14524
+                    lineno: 14537
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15797,8 +15816,6 @@ GenericAddon = (function() {
               }
               _this.occupyOtherUpgrades();
               _this.conferAddons();
-            } else {
-              _this.deoccupyOtherUpgrades();
             }
             return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
           });
@@ -15856,7 +15873,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14559
+            lineno: 14570
           }));
         }
         __iced_deferrals._fulfill();
