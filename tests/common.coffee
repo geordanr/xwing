@@ -63,6 +63,14 @@ exports.assertMatchIsNotInCollection = (test, select2_selector, search_text) =>
         test.assertSelectorHasText '.select2-result-not-in-collection', search_text, "#{search_text} is marked as not in collection"
         @mouseEvent 'mousedown', ".select2-drop-mask"
 
+exports.assertSelectorIsDisabled = (test, select2_selector) =>
+    casper.then ->
+        test.assertExists "#{select2_selector}.select2-container-disabled"
+
+exports.assertSelectorIsEnabled = (test, select2_selector) =>
+    casper.then ->
+        test.assertDoesntExist "#{select2_selector}.select2-container-disabled"
+
 exports.deselect = (select2_selector) ->
     casper.then ->
         @mouseEvent 'mousedown', "#{select2_selector} .select2-search-choice-close"

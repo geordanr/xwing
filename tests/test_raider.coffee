@@ -32,3 +32,77 @@ casper.test.begin "TIE/x1", (test) ->
 
     .run ->
         test.done()
+
+
+casper.test.begin "Palpatine occupies extra crew slot", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.openEmpireBuilder()
+
+    common.createList('#empire-builder', [
+        {
+            ship: 'VT-49 Decimator'
+            pilot: 'Patrol Leader'
+            upgrades: []
+        }
+    ])
+
+    common.addUpgrade('#empire-builder', 1, 2, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+
+    common.removeUpgrade('#empire-builder', 1, 2, 'Emperor Palpatine')
+    common.addUpgrade('#empire-builder', 1, 3, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+
+    common.removeUpgrade('#empire-builder', 1, 3, 'Emperor Palpatine')
+    common.addUpgrade('#empire-builder', 1, 4, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+
+    common.removeShip('#empire-builder', 1)
+
+    .run ->
+        test.done()
+
+casper.test.begin "Palpatine releases extra crew slot when changed to different crew", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.openEmpireBuilder()
+
+    common.createList('#empire-builder', [
+        {
+            ship: 'VT-49 Decimator'
+            pilot: 'Patrol Leader'
+            upgrades: []
+        }
+    ])
+
+    common.addUpgrade('#empire-builder', 1, 2, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+    common.addUpgrade('#empire-builder', 1, 2, 'Intelligence Agent')
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+
+    common.removeUpgrade('#empire-builder', 1, 2, 'Emperor Palpatine')
+    common.addUpgrade('#empire-builder', 1, 3, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+    common.addUpgrade('#empire-builder', 1, 3, 'Intelligence Agent')
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
+
+    common.removeUpgrade('#empire-builder', 1, 3, 'Emperor Palpatine')
+    common.addUpgrade('#empire-builder', 1, 4, 'Emperor Palpatine')
+    common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+    common.addUpgrade('#empire-builder', 1, 4, 'Intelligence Agent')
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 2}")
+    common.assertSelectorIsEnabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}")
+
+    common.removeShip('#empire-builder', 1)
+
+    .run ->
+        test.done()

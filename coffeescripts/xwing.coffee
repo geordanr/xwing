@@ -2421,6 +2421,7 @@ class GenericAddon
             if @data?.unique?
                 await @ship.builder.container.trigger 'xwing:releaseUnique', [ @unadjusted_data, @type, defer() ]
             @rescindAddons()
+            @deoccupyOtherUpgrades()
             if new_data?.unique?
                 await @ship.builder.container.trigger 'xwing:claimUnique', [ new_data, @type, defer() ]
             # Need to make a copy of the data, but that means I can't just check equality
@@ -2431,8 +2432,6 @@ class GenericAddon
                     @data = @adjustment_func(@data)
                 @occupyOtherUpgrades()
                 @conferAddons()
-            else
-                @deoccupyOtherUpgrades()
 
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
