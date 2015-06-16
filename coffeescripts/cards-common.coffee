@@ -546,7 +546,13 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "Kihraxz Fighter":
             name: "Kihraxz Fighter"
             factions: ["Scum and Villainy"]
@@ -2415,13 +2421,13 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS5 YV-666 Pilot"
+            name: "Latts Razzi"
             faction: "Scum and Villainy"
             id: 133
             ship: "YV-666"
             unique: true
             skill: 5
-            points: 99
+            points: 33
             slots: [
                 "Cannon"
                 "Missile"
@@ -2432,12 +2438,12 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS2 YV-666 Pilot"
+            name: "Trandoshan Slaver"
             faction: "Scum and Villainy"
             id: 134
             ship: "YV-666"
             skill: 2
-            points: 99
+            points: 29
             slots: [
                 "Cannon"
                 "Missile"
@@ -3676,6 +3682,14 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnotherUpgradeSlot()
             also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: 'Bossk'
+            unique: true
+            id: 133
+            faction: "Scum and Villainy"
+            slot: "Crew"
+            points: 2
         }
     ]
 

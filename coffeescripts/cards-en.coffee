@@ -315,6 +315,8 @@ exportObj.cardLoaders.English = () ->
             text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
         "Lieutenant Colzet":
             text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
+        "Latts Razzi":
+            text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -583,6 +585,8 @@ exportObj.cardLoaders.English = () ->
             text: """%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."""
         "Emperor Palpatine":
             text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
+        "Bossk":
+            text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
 
     modification_translations =
         "Stealth Device":

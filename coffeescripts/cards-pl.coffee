@@ -486,6 +486,8 @@ exportObj.cardLoaders['Polski'] = () ->
         "Kaa'To Leeachos":
             ship: "Z-95 Łowca głów"
             text: """Na początku fazy walki możesz usunąć 1 żeton skupienia lub uników z innego przyjaznego statku w Zasięgu 1-2 i przypisać go do siebie."""
+        "Latts Razzi":
+            text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
 
     upgrade_translations =
         #Elitarna zdolność
@@ -852,6 +854,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """Kiedy atakujesz, po wydaniu żetonu skupienia, możesz namierzyć obrońcę."""
         "Emperor Palpatine":
             text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
+        "Bossk":
+            text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
 
     modification_translations =
         "Shield Upgrade":

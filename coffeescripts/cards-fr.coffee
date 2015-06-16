@@ -504,6 +504,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Kaa'To Leeachos":
             ship: "Chasseur de têtes Z-95"
             text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."""
+        "Latts Razzi":
+            text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -868,6 +870,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """<span class="card-restriction">TIE Advanced uniquement.</span>%LINEBREAK%Quand vous attaquez avec votre arme principale, si vous avez verrouillé le défenseur, vous pouvez ajouter un résultat %CRIT% result à votre lancer de dés. Si vous le faîtes, vous ne pouvez pas dépenser de marqueur d'acquisition de cible durant cette attaque."""
         "Emperor Palpatine":
             text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
+        "Bossk":
+            text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
 
     modification_translations =
         "Shield Upgrade":
