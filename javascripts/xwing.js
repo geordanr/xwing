@@ -1454,7 +1454,7 @@ exportObj.basicCardData = function() {
         shields: 6,
         large: true,
         actions: ["Focus", "Target Lock"],
-        maneuvers: []
+        maneuvers: [[0, 0, 3, 0, 0, 0], [0, 2, 2, 2, 0, 0], [3, 1, 2, 1, 3, 0], [1, 1, 2, 1, 1, 0], [0, 0, 1, 0, 0, 0]]
       },
       "Kihraxz Fighter": {
         name: "Kihraxz Fighter",
@@ -2682,21 +2682,21 @@ exportObj.basicCardData = function() {
         points: 99,
         slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
       }, {
-        name: "Unspoiled PS5 YV-666 Pilot",
+        name: "Latts Razzi",
         faction: "Scum and Villainy",
         id: 133,
         ship: "YV-666",
         unique: true,
         skill: 5,
-        points: 99,
+        points: 33,
         slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
       }, {
-        name: "Unspoiled PS2 YV-666 Pilot",
+        name: "Trandoshan Slaver",
         faction: "Scum and Villainy",
         id: 134,
         ship: "YV-666",
         skill: 2,
-        points: 99,
+        points: 29,
         slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
       }, {
         name: "Talonbane Cobra",
@@ -3744,6 +3744,13 @@ exportObj.basicCardData = function() {
           return upgrade_obj.occupiesAnotherUpgradeSlot();
         },
         also_occupies_upgrades: ["Crew"]
+      }, {
+        name: 'Bossk',
+        unique: true,
+        id: 133,
+        faction: "Scum and Villainy",
+        slot: "Crew",
+        points: 2
       }
     ],
     modificationsById: [
@@ -5071,6 +5078,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Lieutenant Colzet": {
       text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
+    },
+    "Latts Razzi": {
+      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     }
   };
   upgrade_translations = {
@@ -5562,6 +5572,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Emperor Palpatine": {
       text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+    },
+    "Bossk": {
+      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
     }
   };
   modification_translations = {
@@ -6129,6 +6142,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Lieutenant Colzet": {
       text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
+    },
+    "Latts Razzi": {
+      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     }
   };
   upgrade_translations = {
@@ -6530,6 +6546,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Emperor Palpatine": {
       text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+    },
+    "Bossk": {
+      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
     }
   };
   modification_translations = {
@@ -7352,6 +7371,9 @@ exportObj.cardLoaders['Español'] = function() {
     "Lieutenant Colzet": {
       ship: "TIE Avanzado",
       text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
+    },
+    "Latts Razzi": {
+      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     }
   };
   upgrade_translations = {
@@ -7841,6 +7863,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Emperor Palpatine": {
       text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+    },
+    "Bossk": {
+      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
     }
   };
   modification_translations = {
@@ -8617,6 +8642,9 @@ exportObj.cardLoaders['Français'] = function() {
     "Kaa'To Leeachos": {
       ship: "Chasseur de têtes Z-95",
       text: "Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."
+    },
+    "Latts Razzi": {
+      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     }
   };
   upgrade_translations = {
@@ -9094,6 +9122,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Emperor Palpatine": {
       text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+    },
+    "Bossk": {
+      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
     }
   };
   modification_translations = {
@@ -9835,6 +9866,9 @@ exportObj.cardLoaders['Polski'] = function() {
     "Kaa'To Leeachos": {
       ship: "Z-95 Łowca głów",
       text: "Na początku fazy walki możesz usunąć 1 żeton skupienia lub uników z innego przyjaznego statku w Zasięgu 1-2 i przypisać go do siebie."
+    },
+    "Latts Razzi": {
+      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     }
   };
   upgrade_translations = {
@@ -10314,6 +10348,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Emperor Palpatine": {
       text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+    },
+    "Bossk": {
+      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
     }
   };
   modification_translations = {
@@ -12377,7 +12414,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12077
+                    lineno: 12111
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12894,7 +12931,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12622
+              lineno: 12656
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13484,7 +13521,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13138
+          lineno: 13172
         }));
         __iced_deferrals._fulfill();
       });
@@ -13496,7 +13533,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13139
+            lineno: 13173
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14758,7 +14795,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 13878
+                      lineno: 13912
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -14827,7 +14864,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 13902
+                lineno: 13936
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14879,14 +14916,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 13924
+            lineno: 13958
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 13926
+            lineno: 13960
           }));
         }
         _ref1 = _this.modifications;
@@ -14894,7 +14931,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 13928
+              lineno: 13962
             }));
           }
         }
@@ -15680,7 +15717,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14486
+                lineno: 14520
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15778,7 +15815,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14533
+                  lineno: 14567
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15800,7 +15837,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14537
+                    lineno: 14571
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15873,7 +15910,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14570
+            lineno: 14604
           }));
         }
         __iced_deferrals._fulfill();
