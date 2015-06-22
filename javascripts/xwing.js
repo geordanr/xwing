@@ -1464,7 +1464,7 @@ exportObj.basicCardData = function() {
         hull: 4,
         shields: 1,
         actions: ["Focus", "Target Lock"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [1, 2, 0, 2, 1, 0], [1, 2, 2, 2, 1, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 3], [0, 0, 0, 0, 0, 3]]
       },
       "K-Wing": {
         name: "K-Wing",
@@ -2708,30 +2708,30 @@ exportObj.basicCardData = function() {
         slots: ["Elite", "Missile", "Illicit"],
         points: 28
       }, {
-        name: "Unspoiled PS6 Kihraxz Pilot",
+        name: "Graz the Hunter",
         unique: true,
         id: 136,
         faction: "Scum and Villainy",
         ship: "Kihraxz Fighter",
         skill: 6,
         slots: ["Missile", "Illicit"],
-        points: 99
+        points: 25
       }, {
-        name: "Unspoiled PS5 Kihraxz Pilot",
+        name: "Black Sun Ace",
         faction: "Scum and Villainy",
         id: 137,
         ship: "Kihraxz Fighter",
         skill: 5,
-        slots: ["Missile", "Illicit"],
-        points: 99
+        slots: ["Elite", "Missile", "Illicit"],
+        points: 23
       }, {
-        name: "Unspoiled PS2 Kihraxz Pilot",
+        name: "Cartel Marauder",
         faction: "Scum and Villainy",
         id: 138,
         ship: "Kihraxz Fighter",
         skill: 2,
         slots: ["Missile", "Illicit"],
-        points: 99
+        points: 20
       }, {
         name: "Miranda Doni",
         unique: true,
@@ -3751,6 +3751,15 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         slot: "Crew",
         points: 2
+      }, {
+        name: "Lightning Reflexes",
+        id: 134,
+        slot: "Elite",
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
       }
     ],
     modificationsById: [
@@ -4471,7 +4480,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
 
 exportObj.fixIcons = function(data) {
   if (data.text != null) {
-    return data.text = data.text.replace(/%ASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>').replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>').replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>').replace(/%BARRELROLL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>').replace(/%BOMB%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>').replace(/%BOOST%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>').replace(/%CANNON%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>').replace(/%CARGO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>').replace(/%CLOAK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>').replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>').replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>').replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>').replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>').replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>').replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>').replace(/%HARDPOINT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>').replace(/%HIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>').replace(/%ILLICIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>').replace(/%JAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>').replace(/%KTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%MISSILE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>').replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>').replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>').replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-salvagedastromech"></i>').replace(/%SLOOPLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopleft"></i>').replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>').replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>').replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>').replace(/%SYSTEM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>').replace(/%TARGETLOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>').replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>').replace(/%TORPEDO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>').replace(/%TURNLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnleft"></i>').replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>').replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>').replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship only.</span>').replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship only.</span>').replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>').replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>').replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>').replace(/%LINEBREAK%/g, '<br /><br />').replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für Riesen Schiffe.</span>').replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>').replace(/%DE_REBELONLY%/g, '<span class="card-restriction">Nur für Rebellen.</span>').replace(/%DE_IMPERIALONLY%/g, '<span class="card-restriction">Nur für das Imperium.</span>').replace(/%DE_SCUMONLY%/g, '<span class="card-restriction">Nur für Abschaum & Kriminelle.</span>').replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>').replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>').replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>').replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>').replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>');
+    return data.text = data.text.replace(/%ASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>').replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>').replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>').replace(/%BARRELROLL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>').replace(/%BOMB%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>').replace(/%BOOST%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>').replace(/%CANNON%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>').replace(/%CARGO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>').replace(/%CLOAK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>').replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>').replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>').replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>').replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>').replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>').replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>').replace(/%HARDPOINT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>').replace(/%HIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>').replace(/%ILLICIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>').replace(/%JAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>').replace(/%KTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%MISSILE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>').replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>').replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>').replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-salvagedastromech"></i>').replace(/%SLOOPLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopleft"></i>').replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>').replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>').replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>').replace(/%SYSTEM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>').replace(/%TARGETLOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>').replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>').replace(/%TORPEDO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>').replace(/%TURNLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnleft"></i>').replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>').replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>').replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge ship only.</span>').replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large ship only.</span>').replace(/%SMALLSHIPONLY%/g, '<span class="card-restriction">Small ship only.</span>').replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>').replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>').replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>').replace(/%LINEBREAK%/g, '<br /><br />').replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für Riesen Schiffe.</span>').replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>').replace(/%DE_REBELONLY%/g, '<span class="card-restriction">Nur für Rebellen.</span>').replace(/%DE_IMPERIALONLY%/g, '<span class="card-restriction">Nur für das Imperium.</span>').replace(/%DE_SCUMONLY%/g, '<span class="card-restriction">Nur für Abschaum & Kriminelle.</span>').replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>').replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>').replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>').replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>').replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>');
   }
 };
 
@@ -5081,6 +5090,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+    },
+    "Graz the Hunter": {
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
     }
   };
   upgrade_translations = {
@@ -5575,6 +5587,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+    },
+    "Lightning Reflexes": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     }
   };
   modification_translations = {
@@ -6145,6 +6160,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+    },
+    "Graz the Hunter": {
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
     }
   };
   upgrade_translations = {
@@ -6549,6 +6567,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+    },
+    "Lightning Reflexes": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     }
   };
   modification_translations = {
@@ -7374,6 +7395,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+    },
+    "Graz the Hunter": {
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
     }
   };
   upgrade_translations = {
@@ -7866,6 +7890,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+    },
+    "Lightning Reflexes": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     }
   };
   modification_translations = {
@@ -8645,6 +8672,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+    },
+    "Graz the Hunter": {
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
     }
   };
   upgrade_translations = {
@@ -9125,6 +9155,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+    },
+    "Lightning Reflexes": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     }
   };
   modification_translations = {
@@ -9869,6 +9902,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+    },
+    "Graz the Hunter": {
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
     }
   };
   upgrade_translations = {
@@ -10351,6 +10387,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+    },
+    "Lightning Reflexes": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     }
   };
   modification_translations = {
@@ -12414,7 +12453,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12111
+                    lineno: 12148
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12931,7 +12970,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12656
+              lineno: 12693
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13521,7 +13560,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13172
+          lineno: 13209
         }));
         __iced_deferrals._fulfill();
       });
@@ -13533,7 +13572,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13173
+            lineno: 13210
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14795,7 +14834,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 13912
+                      lineno: 13949
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -14864,7 +14903,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 13936
+                lineno: 13973
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14916,14 +14955,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 13958
+            lineno: 13995
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 13960
+            lineno: 13997
           }));
         }
         _ref1 = _this.modifications;
@@ -14931,7 +14970,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 13962
+              lineno: 13999
             }));
           }
         }
@@ -15717,7 +15756,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14520
+                lineno: 14557
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15815,7 +15854,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14567
+                  lineno: 14604
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15837,7 +15876,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14571
+                    lineno: 14608
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15910,7 +15949,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14604
+            lineno: 14641
           }));
         }
         __iced_deferrals._fulfill();
