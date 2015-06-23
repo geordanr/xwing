@@ -564,7 +564,14 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 0, 2, 1, 0 ]
+                [ 1, 2, 2, 2, 1, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3 ]
+                [ 0, 0, 0, 0, 0, 3 ]
+            ]
         "K-Wing":
             name: "K-Wing"
             factions: ["Rebel Alliance"]
@@ -2468,7 +2475,7 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: "Unspoiled PS6 Kihraxz Pilot"
+            name: "Graz the Hunter"
             unique: true
             id: 136
             faction: "Scum and Villainy"
@@ -2478,22 +2485,23 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Illicit"
             ]
-            points: 99
+            points: 25
         }
         {
-            name: "Unspoiled PS5 Kihraxz Pilot"
+            name: "Black Sun Ace"
             faction: "Scum and Villainy"
             id: 137
             ship: "Kihraxz Fighter"
             skill: 5
             slots: [
+                "Elite"
                 "Missile"
                 "Illicit"
             ]
-            points: 99
+            points: 23
         }
         {
-            name: "Unspoiled PS2 Kihraxz Pilot"
+            name: "Cartel Marauder"
             faction: "Scum and Villainy"
             id: 138
             ship: "Kihraxz Fighter"
@@ -2502,7 +2510,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Illicit"
             ]
-            points: 99
+            points: 20
         }
         {
             name: "Miranda Doni"
@@ -3691,6 +3699,14 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 2
         }
+        {
+            name: "Lightning Reflexes"
+            id: 134
+            slot: "Elite"
+            points: 1
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
     ]
 
     modificationsById: [
@@ -4325,8 +4341,9 @@ exportObj.fixIcons = (data) ->
             .replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>')
             .replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>')
-            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge Ship only.</span>')
-            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large Ship only.</span>')
+            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge ship only.</span>')
+            .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large ship only.</span>')
+            .replace(/%SMALLSHIPONLY%/g, '<span class="card-restriction">Small ship only.</span>')
             .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>')
             .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>')
             .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>')

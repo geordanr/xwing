@@ -506,6 +506,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."""
         "Latts Razzi":
             text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
+        "Graz the Hunter":
+            text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
 
     upgrade_translations =
         #Traits de pilotes
@@ -872,6 +874,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
         "Bossk":
             text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
+        "Lightning Reflexes":
+            text: """%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the "Check Pilot Stress" step."""
 
     modification_translations =
         "Shield Upgrade":
