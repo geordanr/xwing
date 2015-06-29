@@ -2531,7 +2531,7 @@ exportObj.basicCardData = ->
             points: 29
         }
         {
-            name: "Unspoiled PS6 K-Wing Pilot"
+            name: "Esege Tuketu"
             unique: true
             id: 140
             faction: "Rebel Alliance"
@@ -2546,7 +2546,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 28
         }
         {
             name: "Unspoiled PS4 K-Wing Pilot"
@@ -2566,7 +2566,7 @@ exportObj.basicCardData = ->
             points: 99
         }
         {
-            name: "Unspoiled PS2 K-Wing Pilot"
+            name: "Warden Squadron Pilot"
             faction: "Rebel Alliance"
             id: 142
             ship: "K-Wing"
@@ -2580,7 +2580,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 23
         }
         {
             name: '"Redline"'
@@ -3707,6 +3707,44 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
+
+
+        {
+            name: "Twin Laser Turret"
+            id: 135
+            slot: "Turret"
+            points: 6
+            attack: 3
+            range: "2-3"
+        }
+        {
+            name: "Plasma Torpedoes"
+            id: 136
+            slot: "Torpedo"
+            points: 3
+            attack: 4
+            range: "2-3"
+        }
+        {
+            name: "Ion Bombs"
+            id: 137
+            slot: "Bomb"
+            points: 2
+        }
+        {
+            name: "Conner Net"
+            id: 138
+            slot: "Bomb"
+            points: 4
+        }
+        {
+            name: "Bombardier"
+            id: 139
+            slot: "Crew"
+            points: 1
+            version: 2
+        }
+
     ]
 
     modificationsById: [
