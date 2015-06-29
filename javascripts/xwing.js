@@ -2742,14 +2742,14 @@ exportObj.basicCardData = function() {
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
         points: 29
       }, {
-        name: "Unspoiled PS6 K-Wing Pilot",
+        name: "Esege Tuketu",
         unique: true,
         id: 140,
         faction: "Rebel Alliance",
         ship: "K-Wing",
         skill: 6,
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
-        points: 99
+        points: 28
       }, {
         name: "Unspoiled PS4 K-Wing Pilot",
         faction: "Rebel Alliance",
@@ -2759,13 +2759,13 @@ exportObj.basicCardData = function() {
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
         points: 99
       }, {
-        name: "Unspoiled PS2 K-Wing Pilot",
+        name: "Warden Squadron Pilot",
         faction: "Rebel Alliance",
         id: 142,
         ship: "K-Wing",
         skill: 2,
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
-        points: 99
+        points: 23
       }, {
         name: '"Redline"',
         unique: true,
@@ -3760,6 +3760,36 @@ exportObj.basicCardData = function() {
           var _ref, _ref1;
           return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
         }
+      }, {
+        name: "Twin Laser Turret",
+        id: 135,
+        slot: "Turret",
+        points: 6,
+        attack: 3,
+        range: "2-3"
+      }, {
+        name: "Plasma Torpedoes",
+        id: 136,
+        slot: "Torpedo",
+        points: 3,
+        attack: 4,
+        range: "2-3"
+      }, {
+        name: "Ion Bombs",
+        id: 137,
+        slot: "Bomb",
+        points: 2
+      }, {
+        name: "Conner Net",
+        id: 138,
+        slot: "Bomb",
+        points: 4
+      }, {
+        name: "Bombardier",
+        id: 139,
+        slot: "Crew",
+        points: 1,
+        version: 2
       }
     ],
     modificationsById: [
@@ -5093,6 +5123,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Graz the Hunter": {
       text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Esege Tuketu": {
+      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     }
   };
   upgrade_translations = {
@@ -5590,6 +5623,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
+    },
+    "Twin Laser Turret": {
+      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+    },
+    "Plasma Torpedoes": {
+      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+    },
+    "Ion Bombs": {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+    },
+    "Conner Net": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+    },
+    "Bombardier": {
+      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   modification_translations = {
@@ -6163,6 +6211,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Graz the Hunter": {
       text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Esege Tuketu": {
+      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     }
   };
   upgrade_translations = {
@@ -6570,6 +6621,21 @@ exportObj.cardLoaders.English = function() {
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
+    },
+    "Twin Laser Turret": {
+      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+    },
+    "Plasma Torpedoes": {
+      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+    },
+    "Ion Bombs": {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+    },
+    "Conner Net": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+    },
+    "Bombardier": {
+      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   modification_translations = {
@@ -7398,6 +7464,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Graz the Hunter": {
       text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Esege Tuketu": {
+      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     }
   };
   upgrade_translations = {
@@ -7893,6 +7962,21 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
+    },
+    "Twin Laser Turret": {
+      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+    },
+    "Plasma Torpedoes": {
+      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+    },
+    "Ion Bombs": {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+    },
+    "Conner Net": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+    },
+    "Bombardier": {
+      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   modification_translations = {
@@ -8675,6 +8759,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Graz the Hunter": {
       text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Esege Tuketu": {
+      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     }
   };
   upgrade_translations = {
@@ -9158,6 +9245,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
+    },
+    "Twin Laser Turret": {
+      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+    },
+    "Plasma Torpedoes": {
+      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+    },
+    "Ion Bombs": {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+    },
+    "Conner Net": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+    },
+    "Bombardier": {
+      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   modification_translations = {
@@ -9905,6 +10007,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Graz the Hunter": {
       text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Esege Tuketu": {
+      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     }
   };
   upgrade_translations = {
@@ -10390,6 +10495,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
+    },
+    "Twin Laser Turret": {
+      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+    },
+    "Plasma Torpedoes": {
+      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+    },
+    "Ion Bombs": {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+    },
+    "Conner Net": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+    },
+    "Bombardier": {
+      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   modification_translations = {
@@ -12453,7 +12573,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12148
+                    lineno: 12246
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12970,7 +13090,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12693
+              lineno: 12791
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13560,7 +13680,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13209
+          lineno: 13307
         }));
         __iced_deferrals._fulfill();
       });
@@ -13572,7 +13692,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13210
+            lineno: 13308
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14834,7 +14954,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 13949
+                      lineno: 14047
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -14903,7 +15023,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 13973
+                lineno: 14071
               })
             ]);
             __iced_deferrals._fulfill();
@@ -14955,14 +15075,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 13995
+            lineno: 14093
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 13997
+            lineno: 14095
           }));
         }
         _ref1 = _this.modifications;
@@ -14970,7 +15090,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 13999
+              lineno: 14097
             }));
           }
         }
@@ -15756,7 +15876,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14557
+                lineno: 14655
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15854,7 +15974,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14604
+                  lineno: 14702
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15876,7 +15996,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14608
+                    lineno: 14706
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -15949,7 +16069,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14641
+            lineno: 14739
           }));
         }
         __iced_deferrals._fulfill();
