@@ -1484,7 +1484,7 @@ exportObj.basicCardData = function() {
         hull: 6,
         shields: 3,
         actions: ["Focus", "Target Lock", "Boost"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [3, 1, 2, 1, 3, 0], [1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 3]]
       }
     },
     pilotsById: [
@@ -2776,14 +2776,14 @@ exportObj.basicCardData = function() {
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
         points: 27
       }, {
-        name: 'Unspoiled PS6 TIE Punisher Pilot',
+        name: '"Deathrain"',
         unique: true,
         id: 144,
         faction: "Galactic Empire",
         ship: "TIE Punisher",
         skill: 6,
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
-        points: 99
+        points: 26
       }, {
         name: 'Unspoiled PS4 TIE Punisher Pilot',
         faction: "Galactic Empire",
@@ -2793,13 +2793,13 @@ exportObj.basicCardData = function() {
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
         points: 99
       }, {
-        name: 'Unspoiled PS2 TIE Punisher Pilot',
+        name: 'Cutlass Squadron Pilot',
         faction: "Galactic Empire",
         id: 146,
         ship: "TIE Punisher",
         skill: 2,
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
-        points: 99
+        points: 21
       }, {
         name: "Juno Eclipse",
         id: 147,
@@ -3788,8 +3788,7 @@ exportObj.basicCardData = function() {
         name: "Bombardier",
         id: 139,
         slot: "Crew",
-        points: 1,
-        version: 2
+        points: 1
       }
     ],
     modificationsById: [
@@ -3910,6 +3909,30 @@ exportObj.basicCardData = function() {
         name: "Advanced SLAM",
         id: 16,
         points: 2
+      }, {
+        name: "Twin Ion Engine Mk. II",
+        id: 17,
+        points: 1,
+        restriction_func: function(ship) {
+          return ship.data.name.indexOf('TIE') !== -1;
+        },
+        modifier_func: function(stats) {
+          var s, _i, _len, _ref, _ref1, _results;
+          _ref1 = (_ref = stats.maneuvers) != null ? _ref : [];
+          _results = [];
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            s = _ref1[_i];
+            if (s[1] !== 0) {
+              s[1] = 2;
+            }
+            if (s[3] !== 0) {
+              _results.push(s[3] = 2);
+            } else {
+              _results.push(void 0);
+            }
+          }
+          return _results;
+        }
       }
     ],
     titlesById: [
@@ -5126,6 +5149,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Esege Tuketu": {
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    },
+    '"Redline"': {
+      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+    },
+    '"Deathrain"': {
+      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
     }
   };
   upgrade_translations = {
@@ -5638,6 +5667,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Bombardier": {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    "Cluster Mines": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     }
   };
   modification_translations = {
@@ -5700,6 +5732,9 @@ exportObj.cardLoaders.Deutsch = function() {
     "Autothrusters": {
       name: "Automatische Schubdüsen",
       text: "Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."
+    },
+    "Twin Ion Engine Mk. II": {
+      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     }
   };
   title_translations = {
@@ -6197,6 +6232,9 @@ exportObj.cardLoaders.English = function() {
     '"Redline"': {
       text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
     },
+    '"Deathrain"': {
+      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
     "Juno Eclipse": {
       text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
     },
@@ -6599,7 +6637,7 @@ exportObj.cardLoaders.English = function() {
       text: "When you equip this card, place 1 ordnance token on each equipped %TORPEDO%, %MISSILE%, and %BOMB% Upgrade card.  When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead."
     },
     "Cluster Mines": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 cluster mine token set.%LINEBREAK%When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>."
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     },
     "Glitterstim": {
       text: "At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."
@@ -6686,6 +6724,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Advanced SLAM": {
       text: "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."
+    },
+    "Twin Ion Engine Mk. II": {
+      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     }
   };
   title_translations = {
@@ -7467,6 +7508,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Esege Tuketu": {
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    },
+    '"Redline"': {
+      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+    },
+    '"Deathrain"': {
+      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
     }
   };
   upgrade_translations = {
@@ -7977,6 +8024,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Bombardier": {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    "Cluster Mines": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     }
   };
   modification_translations = {
@@ -8041,6 +8091,9 @@ exportObj.cardLoaders['Español'] = function() {
     "Autothrusters": {
       name: "Propulsores Automatizados",
       text: "Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."
+    },
+    "Twin Ion Engine Mk. II": {
+      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     }
   };
   title_translations = {
@@ -8762,6 +8815,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Esege Tuketu": {
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    },
+    '"Redline"': {
+      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+    },
+    '"Deathrain"': {
+      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
     }
   };
   upgrade_translations = {
@@ -9260,6 +9319,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Bombardier": {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    "Cluster Mines": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     }
   };
   modification_translations = {
@@ -9323,6 +9385,9 @@ exportObj.cardLoaders['Français'] = function() {
     "Autothrusters": {
       name: "Autopropulseurs",
       text: "Quand vous défendez, si vous êtes au-delà de la portée 2 ou en dehors de l'arc de tir de l'attaquant, vous pouvez changer 1 de vos résultats vierges en un résultat %EVADE%. Vous ne pouvez vous équiper de cette carte que si vous avez l'icône d'action %BOOST%."
+    },
+    "Twin Ion Engine Mk. II": {
+      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     }
   };
   title_translations = {
@@ -10010,6 +10075,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Esege Tuketu": {
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    },
+    '"Redline"': {
+      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+    },
+    '"Deathrain"': {
+      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
     }
   };
   upgrade_translations = {
@@ -10510,6 +10581,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Bombardier": {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    "Cluster Mines": {
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     }
   };
   modification_translations = {
@@ -10573,6 +10647,9 @@ exportObj.cardLoaders['Polski'] = function() {
     "Autothrusters": {
       name: "Autodopalacze",
       text: "Kiedy się bronisz, jeśli jesteś poza Zasięgiem 2 albo znajdujesz się poza polem rażenia atakującego, możesz zmienić 1 ze swoich pustych wyników na %EVADE%. Możesz wyposażyć swój statek w tę kartę tylko jeśli masz symbol akcji %BOOST%."
+    },
+    "Twin Ion Engine Mk. II": {
+      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     }
   };
   title_translations = {
@@ -12573,7 +12650,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12246
+                    lineno: 12299
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -13090,7 +13167,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12791
+              lineno: 12844
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13680,7 +13757,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13307
+          lineno: 13360
         }));
         __iced_deferrals._fulfill();
       });
@@ -13692,7 +13769,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13308
+            lineno: 13361
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -14954,7 +15031,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 14047
+                      lineno: 14100
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -15023,7 +15100,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 14071
+                lineno: 14124
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15075,14 +15152,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 14093
+            lineno: 14146
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 14095
+            lineno: 14148
           }));
         }
         _ref1 = _this.modifications;
@@ -15090,7 +15167,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 14097
+              lineno: 14150
             }));
           }
         }
@@ -15876,7 +15953,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14655
+                lineno: 14708
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15974,7 +16051,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14702
+                  lineno: 14755
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -15996,7 +16073,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14706
+                    lineno: 14759
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -16069,7 +16146,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14739
+            lineno: 14792
           }));
         }
         __iced_deferrals._fulfill();
