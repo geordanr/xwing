@@ -597,7 +597,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Boost"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0 ]
+                [ 1, 1, 1, 1, 1, 0 ]
+                [ 0, 0, 0, 0, 0, 3 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -2601,7 +2607,7 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: 'Unspoiled PS6 TIE Punisher Pilot'
+            name: '"Deathrain"'
             unique: true
             id: 144
             faction: "Galactic Empire"
@@ -2616,7 +2622,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 26
         }
         {
             name: 'Unspoiled PS4 TIE Punisher Pilot'
@@ -2636,7 +2642,7 @@ exportObj.basicCardData = ->
             points: 99
         }
         {
-            name: 'Unspoiled PS2 TIE Punisher Pilot'
+            name: 'Cutlass Squadron Pilot'
             faction: "Galactic Empire"
             id: 146
             ship: "TIE Punisher"
@@ -2650,7 +2656,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 21
         }
 
         {
@@ -3742,7 +3748,6 @@ exportObj.basicCardData = ->
             id: 139
             slot: "Crew"
             points: 1
-            version: 2
         }
 
     ]
@@ -3864,6 +3869,17 @@ exportObj.basicCardData = ->
             name: "Advanced SLAM"
             id: 16
             points: 2
+        }
+        {
+            name: "Twin Ion Engine Mk. II"
+            id: 17
+            points: 1
+            restriction_func: (ship) ->
+                ship.data.name.indexOf('TIE') != -1
+            modifier_func: (stats) ->
+                for s in (stats.maneuvers ? [])
+                    s[1] = 2 if s[1] != 0
+                    s[3] = 2 if s[3] != 0
         }
     ]
 

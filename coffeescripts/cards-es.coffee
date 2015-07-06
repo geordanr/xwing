@@ -569,6 +569,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
         "Esege Tuketu":
             text: """When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."""
+        '"Redline"':
+            text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
+        '"Deathrain"':
+            text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -947,6 +951,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its "Perform Action" step.  Then discard this token."""
         "Bombardier":
             text: """When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
+        "Cluster Mines":
+            text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."""
 
     modification_translations =
         "Stealth Device":
@@ -996,6 +1002,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Autothrusters":
             name: "Propulsores Automatizados"
             text: """Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."""
+        "Twin Ion Engine Mk. II":
+            text: """You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
 
     title_translations =
         "Slave I":

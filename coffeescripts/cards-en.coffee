@@ -309,6 +309,8 @@ exportObj.cardLoaders.English = () ->
             text: """Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."""
         '"Redline"':
             text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
+        '"Deathrain"':
+            text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
         "Juno Eclipse":
             text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
         "Zertik Strom":
@@ -578,7 +580,7 @@ exportObj.cardLoaders.English = () ->
         "Extra Munitions":
             text: """When you equip this card, place 1 ordnance token on each equipped %TORPEDO%, %MISSILE%, and %BOMB% Upgrade card.  When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead."""
         "Cluster Mines":
-            text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 cluster mine token set.%LINEBREAK%When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>."""
+            text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."""
         "Glitterstim":
             text: """At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."""
         "Grand Moff Tarkin":
@@ -637,6 +639,8 @@ exportObj.cardLoaders.English = () ->
             text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
         "Advanced SLAM":
             text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."""
+        "Twin Ion Engine Mk. II":
+            text: """You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
 
     title_translations =
         "Slave I":
