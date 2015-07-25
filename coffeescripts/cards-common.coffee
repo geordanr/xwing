@@ -2625,7 +2625,7 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Unspoiled PS4 TIE Punisher Pilot'
+            name: 'Black Eight Squadron Pilot'
             faction: "Galactic Empire"
             id: 145
             ship: "TIE Punisher"
@@ -2639,7 +2639,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 23
         }
         {
             name: 'Cutlass Squadron Pilot'
