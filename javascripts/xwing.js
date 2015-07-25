@@ -2785,13 +2785,13 @@ exportObj.basicCardData = function() {
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
         points: 26
       }, {
-        name: 'Unspoiled PS4 TIE Punisher Pilot',
+        name: 'Black Eight Squadron Pilot',
         faction: "Galactic Empire",
         id: 145,
         ship: "TIE Punisher",
         skill: 4,
         slots: ["System", "Torpedo", "Torpedo", "Missile", "Missile", "Bomb", "Bomb"],
-        points: 99
+        points: 23
       }, {
         name: 'Cutlass Squadron Pilot',
         faction: "Galactic Empire",
