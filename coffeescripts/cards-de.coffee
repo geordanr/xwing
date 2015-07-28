@@ -471,6 +471,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
         '"Deathrain"':
             text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
+        "Moralo Eval":
+            text: """You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."""
 
     upgrade_translations =
         "Ion Cannon Turret":

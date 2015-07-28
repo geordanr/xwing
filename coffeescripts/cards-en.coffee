@@ -323,6 +323,8 @@ exportObj.cardLoaders.English = () ->
             text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
         "Esege Tuketu":
             text: """When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."""
+        "Moralo Eval":
+            text: """You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."""
 
     upgrade_translations =
         "Ion Cannon Turret":

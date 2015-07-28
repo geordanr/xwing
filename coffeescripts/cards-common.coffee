@@ -2417,13 +2417,13 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Unspoiled PS6 YV-666 Pilot"
+            name: "Moralo Eval"
             faction: "Scum and Villainy"
             id: 132
             ship: "YV-666"
             unique: true
             skill: 6
-            points: 99
+            points: 34
             slots: [
                 "Cannon"
                 "Missile"
