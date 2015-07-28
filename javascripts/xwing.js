@@ -2673,13 +2673,13 @@ exportObj.basicCardData = function() {
         points: 35,
         slots: ["Elite", "Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
       }, {
-        name: "Unspoiled PS6 YV-666 Pilot",
+        name: "Moralo Eval",
         faction: "Scum and Villainy",
         id: 132,
         ship: "YV-666",
         unique: true,
         skill: 6,
-        points: 99,
+        points: 34,
         slots: ["Cannon", "Missile", "Crew", "Crew", "Crew", "Illicit"]
       }, {
         name: "Latts Razzi",
@@ -5155,6 +5155,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Deathrain"': {
       text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
+    "Moralo Eval": {
+      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
     }
   };
   upgrade_translations = {
@@ -6252,6 +6255,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Esege Tuketu": {
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    },
+    "Moralo Eval": {
+      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
     }
   };
   upgrade_translations = {
@@ -7514,6 +7520,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Deathrain"': {
       text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
+    "Moralo Eval": {
+      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
     }
   };
   upgrade_translations = {
@@ -8821,6 +8830,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Deathrain"': {
       text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
+    "Moralo Eval": {
+      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
     }
   };
   upgrade_translations = {
@@ -10081,6 +10093,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Deathrain"': {
       text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
+    "Moralo Eval": {
+      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
     }
   };
   upgrade_translations = {
@@ -12650,7 +12665,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12299
+                    lineno: 12309
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -13167,7 +13182,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12844
+              lineno: 12854
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13757,7 +13772,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13360
+          lineno: 13370
         }));
         __iced_deferrals._fulfill();
       });
@@ -13769,7 +13784,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13361
+            lineno: 13371
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -15031,7 +15046,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 14100
+                      lineno: 14110
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -15100,7 +15115,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 14124
+                lineno: 14134
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15152,14 +15167,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 14146
+            lineno: 14156
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 14148
+            lineno: 14158
           }));
         }
         _ref1 = _this.modifications;
@@ -15167,7 +15182,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 14150
+              lineno: 14160
             }));
           }
         }
@@ -15953,7 +15968,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14708
+                lineno: 14718
               })
             ]);
             __iced_deferrals._fulfill();
@@ -16051,7 +16066,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14755
+                  lineno: 14765
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -16073,7 +16088,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14759
+                    lineno: 14769
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -16146,7 +16161,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14792
+            lineno: 14802
           }));
         }
         __iced_deferrals._fulfill();
