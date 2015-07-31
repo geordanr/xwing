@@ -522,6 +522,13 @@ exportObj.basicCardData = ->
                 "Reinforce"
             ]
             huge: true
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "Raider-class Corvette (Aft)":
             name: "Raider-class Corvette (Aft)"
             factions: [ "Galactic Empire" ]
@@ -534,6 +541,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             huge: true
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "YV-666":
             name: "YV-666"
             factions: [ "Scum and Villainy" ]
@@ -584,7 +598,12 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "SLAM"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+            ]
         "TIE Punisher":
             name: "TIE Punisher"
             factions: ["Galactic Empire"]
@@ -2555,7 +2574,7 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: "Unspoiled PS4 K-Wing Pilot"
+            name: "Guardian Squadron Pilot"
             faction: "Rebel Alliance"
             id: 141
             ship: "K-Wing"
@@ -2569,7 +2588,7 @@ exportObj.basicCardData = ->
                 "Bomb"
                 "Bomb"
             ]
-            points: 99
+            points: 25
         }
         {
             name: "Warden Squadron Pilot"
@@ -3749,7 +3768,20 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 1
         }
-
+        {
+            name: 'Crack Shot'
+            id: 140
+            slot: 'Elite'
+            points: 1
+        }
+        {
+            name: "Advanced Homing Missiles"
+            id: 141
+            slot: "Missile"
+            points: 3
+            attack: 3
+            range: "2"
+        }
     ]
 
     modificationsById: [
@@ -3880,6 +3912,19 @@ exportObj.basicCardData = ->
                 for s in (stats.maneuvers ? [])
                     s[1] = 2 if s[1] != 0
                     s[3] = 2 if s[3] != 0
+        }
+        {
+            name: "Maneuvering Fins"
+            id: 18
+            points: 1
+            ship: "YV-666"
+        }
+        {
+            name: "Ion Projector"
+            id: 19
+            points: 2
+            restriction_func: (ship) ->
+                ship.data.large ? false
         }
     ]
 
