@@ -1433,7 +1433,8 @@ exportObj.basicCardData = function() {
         hull: 8,
         shields: 6,
         actions: ["Recover", "Reinforce"],
-        huge: true
+        huge: true,
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
       },
       "Raider-class Corvette (Aft)": {
         name: "Raider-class Corvette (Aft)",
@@ -1443,7 +1444,8 @@ exportObj.basicCardData = function() {
         hull: 8,
         shields: 4,
         actions: ["Coordinate", "Target Lock"],
-        huge: true
+        huge: true,
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
       },
       "YV-666": {
         name: "YV-666",
@@ -1474,7 +1476,7 @@ exportObj.basicCardData = function() {
         hull: 5,
         shields: 4,
         actions: ["Focus", "Target Lock", "SLAM"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [1, 1, 2, 1, 1, 0], [0, 1, 1, 1, 0, 0]]
       },
       "TIE Punisher": {
         name: "TIE Punisher",
@@ -2751,13 +2753,13 @@ exportObj.basicCardData = function() {
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
         points: 28
       }, {
-        name: "Unspoiled PS4 K-Wing Pilot",
+        name: "Guardian Squadron Pilot",
         faction: "Rebel Alliance",
         id: 141,
         ship: "K-Wing",
         skill: 4,
         slots: ["Turret", "Torpedo", "Torpedo", "Missile", "Crew", "Bomb", "Bomb"],
-        points: 99
+        points: 25
       }, {
         name: "Warden Squadron Pilot",
         faction: "Rebel Alliance",
@@ -3789,6 +3791,18 @@ exportObj.basicCardData = function() {
         id: 139,
         slot: "Crew",
         points: 1
+      }, {
+        name: 'Crack Shot',
+        id: 140,
+        slot: 'Elite',
+        points: 1
+      }, {
+        name: "Advanced Homing Missiles",
+        id: 141,
+        slot: "Missile",
+        points: 3,
+        attack: 3,
+        range: "2"
       }
     ],
     modificationsById: [
@@ -3932,6 +3946,19 @@ exportObj.basicCardData = function() {
             }
           }
           return _results;
+        }
+      }, {
+        name: "Maneuvering Fins",
+        id: 18,
+        points: 1,
+        ship: "YV-666"
+      }, {
+        name: "Ion Projector",
+        id: 19,
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.large) != null ? _ref : false;
         }
       }
     ],
@@ -5673,6 +5700,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Cluster Mines": {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+    },
+    'Crack Shot': {
+      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+    },
+    "Advanced Homing Missiles": {
+      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
     }
   };
   modification_translations = {
@@ -5738,6 +5771,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Twin Ion Engine Mk. II": {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+    },
+    "Maneuvering Fins": {
+      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+    },
+    "Ion Projector": {
+      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
     }
   };
   title_translations = {
@@ -6680,6 +6719,12 @@ exportObj.cardLoaders.English = function() {
     },
     "Bombardier": {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    'Crack Shot': {
+      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+    },
+    "Advanced Homing Missiles": {
+      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
     }
   };
   modification_translations = {
@@ -6733,6 +6778,12 @@ exportObj.cardLoaders.English = function() {
     },
     "Twin Ion Engine Mk. II": {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+    },
+    "Maneuvering Fins": {
+      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+    },
+    "Ion Projector": {
+      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
     }
   };
   title_translations = {
@@ -8036,6 +8087,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Cluster Mines": {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+    },
+    'Crack Shot': {
+      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+    },
+    "Advanced Homing Missiles": {
+      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
     }
   };
   modification_translations = {
@@ -8103,6 +8160,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Twin Ion Engine Mk. II": {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+    },
+    "Maneuvering Fins": {
+      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+    },
+    "Ion Projector": {
+      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
     }
   };
   title_translations = {
@@ -9334,6 +9397,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Cluster Mines": {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+    },
+    'Crack Shot': {
+      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+    },
+    "Advanced Homing Missiles": {
+      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
     }
   };
   modification_translations = {
@@ -9400,6 +9469,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Twin Ion Engine Mk. II": {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+    },
+    "Maneuvering Fins": {
+      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+    },
+    "Ion Projector": {
+      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
     }
   };
   title_translations = {
@@ -10599,6 +10674,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Cluster Mines": {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+    },
+    'Crack Shot': {
+      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+    },
+    "Advanced Homing Missiles": {
+      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
     }
   };
   modification_translations = {
@@ -10665,6 +10746,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Twin Ion Engine Mk. II": {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+    },
+    "Maneuvering Fins": {
+      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+    },
+    "Ion Projector": {
+      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
     }
   };
   title_translations = {
@@ -12665,7 +12752,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12309
+                    lineno: 12394
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -13182,7 +13269,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12854
+              lineno: 12939
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13772,7 +13859,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13370
+          lineno: 13455
         }));
         __iced_deferrals._fulfill();
       });
@@ -13784,7 +13871,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13371
+            lineno: 13456
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -15046,7 +15133,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 14110
+                      lineno: 14195
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -15115,7 +15202,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 14134
+                lineno: 14219
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15167,14 +15254,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 14156
+            lineno: 14241
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 14158
+            lineno: 14243
           }));
         }
         _ref1 = _this.modifications;
@@ -15182,7 +15269,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 14160
+              lineno: 14245
             }));
           }
         }
@@ -15968,7 +16055,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14718
+                lineno: 14803
               })
             ]);
             __iced_deferrals._fulfill();
@@ -16066,7 +16153,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14765
+                  lineno: 14850
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -16088,7 +16175,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14769
+                    lineno: 14854
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -16161,7 +16248,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14802
+            lineno: 14887
           }));
         }
         __iced_deferrals._fulfill();
