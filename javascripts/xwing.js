@@ -1142,7 +1142,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack", "Hound's Tooth Expansion Pack", "Kihraxz Fighter Expansion Pack", "K-Wing Expansion Pack", "TIE Punisher Expansion Pack"];
+exportObj.unreleasedExpansions = ["Imperial Raider Expansion Pack", "Hound's Tooth Expansion Pack", "Kihraxz Fighter Expansion Pack", "K-Wing Expansion Pack", "TIE Punisher Expansion Pack", "Imperial Assault Carrier Expansion Pack", "Ghost Expansion Pack", "Inquisitor's TIE Expansion Pack", "Mist Hunter Expansion Pack", "Punishing One Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1487,6 +1487,68 @@ exportObj.basicCardData = function() {
         shields: 3,
         actions: ["Focus", "Target Lock", "Boost"],
         maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [3, 1, 2, 1, 3, 0], [1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 3]]
+      },
+      "Gozanti-class Cruiser": {
+        name: "Gozanti-class Cruiser",
+        factions: ["Galactic Empire"],
+        energy: 4,
+        agility: 0,
+        hull: 9,
+        shields: 5,
+        huge: true,
+        actions: ["Recover", "Reinforce", "Coordinate", "Target Lock"]
+      },
+      "VCX-100": {
+        name: "VCX-100",
+        factions: ["Rebel Alliance"],
+        attack: 4,
+        agility: 0,
+        hull: 10,
+        shields: 6,
+        large: true,
+        actions: ["Focus", "Target Lock", "Evade"],
+        maneuvers: []
+      },
+      "Attack Shuttle": {
+        name: "Attack Shuttle",
+        factions: ["Rebel Alliance"],
+        attack: 3,
+        agility: 2,
+        hull: 2,
+        shields: 2,
+        actions: ["Focus", "Barrel Roll", "Evade"],
+        maneuvers: []
+      },
+      "TIE Advanced Prototype": {
+        name: "TIE Advanced Prototype",
+        factions: ["Galactic Empire"],
+        attack: 2,
+        agility: 3,
+        hull: 2,
+        shields: 2,
+        actions: ["Focus", "Target Lock", "Barrel Roll", "Boost"],
+        maneuvers: []
+      },
+      "G-1A Starfighter": {
+        name: "G-1A Starfighter",
+        factions: ["Scum and Villainy"],
+        attack: 3,
+        agility: 1,
+        hull: 4,
+        shields: 4,
+        actions: ["Focus", "Target Lock", "Evade"],
+        maneuvers: []
+      },
+      "JumpMaster 5000": {
+        name: "JumpMaster 5000",
+        factions: ["Scum and Villainy"],
+        large: true,
+        attack: 2,
+        agility: 2,
+        hull: 5,
+        shields: 4,
+        actions: ["Focus", "Target Lock", "Barrel Roll"],
+        maneuvers: []
       }
     },
     pilotsById: [
@@ -2829,6 +2891,225 @@ exportObj.basicCardData = function() {
         skill: 3,
         points: 23,
         slots: ["Missile"]
+      }, {
+        name: "Gozanti-class Cruiser",
+        id: 150,
+        faction: "Galactic Empire",
+        ship: "Gozanti-class Cruiser",
+        skill: 2,
+        slots: ['Crew', 'Crew', 'Hardpoint', 'Team', 'Cargo', 'Cargo'],
+        points: 40
+      }, {
+        name: '"Scourge"',
+        id: 151,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Fighter",
+        skill: 7,
+        slots: ['Elite'],
+        points: 17
+      }, {
+        name: 'Unspoiled PS6 TIE Fighter Pilot',
+        id: 152,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Fighter",
+        skill: 6,
+        slots: [],
+        points: 99
+      }, {
+        name: 'Unspoiled PS4 TIE Fighter Pilot',
+        id: 153,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Fighter",
+        skill: 4,
+        slots: [],
+        points: 99
+      }, {
+        name: 'Unspoiled PS3 TIE Fighter Pilot',
+        id: 154,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Fighter",
+        skill: 3,
+        slots: [],
+        points: 99
+      }, {
+        name: "Hera Syndulla",
+        id: 155,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "VCX-100",
+        skill: 7,
+        slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
+        points: 40
+      }, {
+        name: "Kanan Jarrus",
+        id: 156,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "VCX-100",
+        skill: 5,
+        slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
+        points: 99
+      }, {
+        name: '"Chopper"',
+        id: 157,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "VCX-100",
+        skill: 4,
+        slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
+        points: 99
+      }, {
+        name: 'Lothal ???',
+        id: 158,
+        faction: "Rebel Alliance",
+        ship: "VCX-100",
+        skill: 3,
+        slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
+        points: 99
+      }, {
+        name: 'Hera Syndulla (Attack Shuttle)',
+        id: 159,
+        canonical_name: 'Hera Syndulla'.canonicalize(),
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "Attack Shuttle",
+        skill: 7,
+        slots: ['Turret', 'Crew'],
+        points: 99
+      }, {
+        name: 'Sabine Wren',
+        id: 160,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "Attack Shuttle",
+        skill: 5,
+        slots: ['Turret', 'Crew'],
+        points: 99
+      }, {
+        name: 'Ezra Bridger',
+        id: 161,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "Attack Shuttle",
+        skill: 4,
+        slots: ['Turret', 'Crew'],
+        points: 99
+      }, {
+        name: '"Zeb" Orrelios',
+        id: 162,
+        unique: true,
+        faction: "Rebel Alliance",
+        ship: "Attack Shuttle",
+        skill: 3,
+        slots: ['Turret', 'Crew'],
+        points: 99
+      }, {
+        name: "The Inquisitor",
+        id: 163,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced Prototype",
+        skill: 8,
+        slots: ['Elite', 'Missile'],
+        points: 25
+      }, {
+        name: "Valen Rudor",
+        id: 164,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced Prototype",
+        skill: 6,
+        slots: ['Missile'],
+        points: 99
+      }, {
+        name: "Baron of ???",
+        id: 165,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced Prototype",
+        skill: 4,
+        slots: ['Missile'],
+        points: 99
+      }, {
+        name: "Sienar ???",
+        id: 166,
+        faction: "Galactic Empire",
+        ship: "TIE Advanced Prototype",
+        skill: 2,
+        slots: ['Missile'],
+        points: 99
+      }, {
+        name: "Zuckuss",
+        id: 167,
+        unique: true,
+        faction: "Scum and Villainy",
+        ship: "G-1A Starfighter",
+        skill: 7,
+        slots: ['Elite', 'Crew', 'System', 'Illicit'],
+        points: 28
+      }, {
+        name: "4-LOM",
+        id: 168,
+        unique: true,
+        faction: "Scum and Villainy",
+        ship: "G-1A Starfighter",
+        skill: 6,
+        slots: ['Crew', 'System', 'Illicit'],
+        points: 99
+      }, {
+        name: "Gand ???",
+        id: 169,
+        faction: "Scum and Villainy",
+        ship: "G-1A Starfighter",
+        skill: 5,
+        slots: ['Crew', 'System', 'Illicit'],
+        points: 99
+      }, {
+        name: "Ruth???",
+        id: 170,
+        faction: "Scum and Villainy",
+        ship: "G-1A Starfighter",
+        skill: 3,
+        slots: ['Crew', 'System', 'Illicit'],
+        points: 99
+      }, {
+        name: "Dengar",
+        id: 171,
+        unique: true,
+        faction: "Scum and Villainy",
+        ship: "JumpMaster 5000",
+        skill: 9,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        points: 33
+      }, {
+        name: "Tel Trevura",
+        id: 172,
+        unique: true,
+        faction: "Scum and Villainy",
+        ship: "JumpMaster 5000",
+        skill: 7,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        points: 99
+      }, {
+        name: "Manaroo",
+        id: 173,
+        unique: true,
+        faction: "Scum and Villainy",
+        ship: "JumpMaster 5000",
+        skill: 4,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        points: 99
+      }, {
+        name: "Contrac???",
+        id: 174,
+        faction: "Scum and Villainy",
+        ship: "JumpMaster 5000",
+        skill: 3,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        points: 99
       }
     ],
     upgradesById: [
@@ -3803,6 +4084,37 @@ exportObj.basicCardData = function() {
         points: 3,
         attack: 3,
         range: "2"
+      }, {
+        name: 'Agent Kallus',
+        id: 142,
+        unique: true,
+        points: 2,
+        slot: 'Crew',
+        faction: 'Galactic Empire'
+      }, {
+        name: 'XX-23 S-Thread Tracers',
+        id: 143,
+        points: 1,
+        slot: 'Missile',
+        attack: 3,
+        range: '1-3'
+      }, {
+        name: "Tractor Beam",
+        id: 144,
+        slot: "Cannon",
+        attack: 3,
+        range: "1-3",
+        points: 1
+      }, {
+        name: "Cloaking Device",
+        id: 145,
+        unique: true,
+        slot: "Illicit",
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
       }
     ],
     modificationsById: [
@@ -4237,13 +4549,60 @@ exportObj.basicCardData = function() {
         points: 6,
         unique: true,
         ship: "YV-666"
+      }, {
+        name: "Ghost",
+        id: 25,
+        unique: true,
+        points: 0,
+        ship: "VCX-100"
+      }, {
+        name: "Phantom",
+        id: 26,
+        unique: true,
+        points: 0,
+        ship: "Attack Shuttle"
+      }, {
+        name: "TIE/v1",
+        id: 27,
+        points: 1,
+        ship: "TIE Advanced Prototype"
+      }, {
+        name: "Mist Hunter",
+        id: 28,
+        unique: true,
+        points: 0,
+        ship: "G-1A Starfighter",
+        confersAddons: [
+          {
+            type: exportObj.RestrictedUpgrade,
+            slot: "Cannon",
+            filter_func: function(upgrade) {
+              return upgrade.english_name === 'Tractor Beam';
+            },
+            auto_equip: 144
+          }
+        ],
+        modifier_func: function(stats) {
+          if (__indexOf.call(stats.actions, 'Barrel Roll') < 0) {
+            return stats.actions.push('Barrel Roll');
+          }
+        }
+      }, {
+        name: "Punishing One",
+        id: 29,
+        unique: true,
+        points: 12,
+        ship: "JumpMaster 5000",
+        modifier_func: function(stats) {
+          return stats.attack += 1;
+        }
       }
     ]
   };
 };
 
 exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _base3, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
   _ref = basic_cards.pilotsById;
   for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
     pilot_data = _ref[i];
@@ -4455,7 +4814,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   _ref15 = exportObj.pilots;
   for (pilot_name in _ref15) {
     pilot = _ref15[pilot_name];
-    ((_base = exportObj.pilotsByFactionCanonicalName)[_name = pilot.faction] != null ? _base[_name] : _base[_name] = {})[pilot.canonical_name] = pilot;
+    ((_base = ((_base1 = exportObj.pilotsByFactionCanonicalName)[_name1 = pilot.faction] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = pilot.canonical_name] != null ? _base[_name] : _base[_name] = []).push(pilot);
   }
   exportObj.upgradesById = {};
   exportObj.upgradesByLocalizedName = {};
@@ -4480,7 +4839,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   _ref18 = exportObj.upgrades;
   for (upgrade_name in _ref18) {
     upgrade = _ref18[upgrade_name];
-    ((_base1 = exportObj.upgradesBySlotCanonicalName)[_name1 = upgrade.slot] != null ? _base1[_name1] : _base1[_name1] = {})[upgrade.canonical_name] = upgrade;
+    ((_base2 = exportObj.upgradesBySlotCanonicalName)[_name2 = upgrade.slot] != null ? _base2[_name2] : _base2[_name2] = {})[upgrade.canonical_name] = upgrade;
   }
   exportObj.modificationsById = {};
   exportObj.modificationsByLocalizedName = {};
@@ -4550,7 +4909,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   for (title_name in _ref25) {
     title = _ref25[title_name];
     if (title.canonical_name === '"Heavy Scyk" Interceptor'.canonicalize()) {
-      ((_base2 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name2 = title.canonical_name] != null ? _base2[_name2] : _base2[_name2] = []).push(title);
+      ((_base3 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name3 = title.canonical_name] != null ? _base3[_name3] : _base3[_name3] = []).push(title);
     } else {
       (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
     }
@@ -5185,6 +5544,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+    },
+    'Gozanti-class Cruiser': {
+      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+    },
+    '"Scourge"': {
+      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+    },
+    "The Inquisitor": {
+      text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
+    },
+    "Zuckuss": {
+      text: "When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."
+    },
+    "Dengar": {
+      text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
     }
   };
   upgrade_translations = {
@@ -5706,6 +6080,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    'Agent Kallus': {
+      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+    },
+    'XX-23 S-Thread Tracers': {
+      text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    "Tractor Beam": {
+      text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Cloaking Device": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     }
   };
   modification_translations = {
@@ -5866,6 +6252,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "TIE/x1": {
       text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
+    },
+    "Ghost": {
+      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+    },
+    "Phantom": {
+      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+    },
+    "TIE/v1": {
+      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+    },
+    "Mist Hunter": {
+      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+    },
+    "Punishing One": {
+      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -6297,6 +6698,21 @@ exportObj.cardLoaders.English = function() {
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+    },
+    'Gozanti-class Cruiser': {
+      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+    },
+    '"Scourge"': {
+      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+    },
+    "The Inquisitor": {
+      text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
+    },
+    "Zuckuss": {
+      text: "When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."
+    },
+    "Dengar": {
+      text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
     }
   };
   upgrade_translations = {
@@ -6725,6 +7141,18 @@ exportObj.cardLoaders.English = function() {
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    'Agent Kallus': {
+      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+    },
+    'XX-23 S-Thread Tracers': {
+      text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    "Tractor Beam": {
+      text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Cloaking Device": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     }
   };
   modification_translations = {
@@ -6855,6 +7283,21 @@ exportObj.cardLoaders.English = function() {
     },
     "Hound's Tooth": {
       text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%After you are destroyed, before you are removed from the play area, you may <strong>deploy</strong> the <em>Nashtah Pup</em> ship.%LINEBREAK%It cannot attack this round."
+    },
+    "Ghost": {
+      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+    },
+    "Phantom": {
+      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+    },
+    "TIE/v1": {
+      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+    },
+    "Mist Hunter": {
+      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+    },
+    "Punishing One": {
+      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -7574,6 +8017,21 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+    },
+    'Gozanti-class Cruiser': {
+      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+    },
+    '"Scourge"': {
+      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+    },
+    "The Inquisitor": {
+      text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
+    },
+    "Zuckuss": {
+      text: "When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."
+    },
+    "Dengar": {
+      text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
     }
   };
   upgrade_translations = {
@@ -8093,6 +8551,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    'Agent Kallus': {
+      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+    },
+    'XX-23 S-Thread Tracers': {
+      text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    "Tractor Beam": {
+      text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Cloaking Device": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     }
   };
   modification_translations = {
@@ -8269,6 +8739,21 @@ exportObj.cardLoaders['Español'] = function() {
       name: "Intrépido",
       text: "<span class=\"card-restriction\">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión.",
       ship: 'VT-49 Diezmador'
+    },
+    "Ghost": {
+      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+    },
+    "Phantom": {
+      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+    },
+    "TIE/v1": {
+      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+    },
+    "Mist Hunter": {
+      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+    },
+    "Punishing One": {
+      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -8896,6 +9381,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+    },
+    'Gozanti-class Cruiser': {
+      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+    },
+    '"Scourge"': {
+      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+    },
+    "The Inquisitor": {
+      text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
+    },
+    "Zuckuss": {
+      text: "When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."
+    },
+    "Dengar": {
+      text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
     }
   };
   upgrade_translations = {
@@ -9403,6 +9903,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    'Agent Kallus': {
+      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+    },
+    'XX-23 S-Thread Tracers': {
+      text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    "Tractor Beam": {
+      text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Cloaking Device": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     }
   };
   modification_translations = {
@@ -9562,6 +10074,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "TIE/x1": {
       text: "<span class=\"card-restriction\">TIE Advanced uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'améliorations gagne l'icône d'amélioration %SYSTEM%.%LINEBREAK%Si vous êtes équipé d'une amélioration %SYSTEM%, ses points d'escadron sont réduits de 4 (jusqu'à un minimum de 0)."
+    },
+    "Ghost": {
+      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+    },
+    "Phantom": {
+      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+    },
+    "TIE/v1": {
+      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+    },
+    "Mist Hunter": {
+      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+    },
+    "Punishing One": {
+      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -10171,6 +10698,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+    },
+    'Gozanti-class Cruiser': {
+      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+    },
+    '"Scourge"': {
+      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+    },
+    "The Inquisitor": {
+      text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
+    },
+    "Zuckuss": {
+      text: "When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."
+    },
+    "Dengar": {
+      text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
     }
   };
   upgrade_translations = {
@@ -10680,6 +11222,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    'Agent Kallus': {
+      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+    },
+    'XX-23 S-Thread Tracers': {
+      text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
+    },
+    "Tractor Beam": {
+      text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
+    },
+    "Cloaking Device": {
+      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     }
   };
   modification_translations = {
@@ -10839,6 +11393,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "TIE/x1": {
       text: "<span class=\"card-restriction\">Tylko TIE Advanced.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje symbol rozwinięcia %SYSTEM%. %LINEBREAK%Koszt przypisanej do tego statku karty rozwinięcia %SYSTEM% jest obniżony o 4 punkty (do minimum 0)."
+    },
+    "Ghost": {
+      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+    },
+    "Phantom": {
+      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+    },
+    "TIE/v1": {
+      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+    },
+    "Mist Hunter": {
+      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+    },
+    "Punishing One": {
+      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -12752,7 +13321,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 12394
+                    lineno: 13043
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -12896,6 +13465,8 @@ statAndEffectiveStat = function(base_stat, effective_stats, key) {
 };
 
 exportObj.SquadBuilder = (function() {
+  var dfl_filter_func;
+
   function SquadBuilder(args) {
     this._makeRandomizerLoopFunc = __bind(this._makeRandomizerLoopFunc, this);
     this._randomizerLoopBody = __bind(this._randomizerLoopBody, this);
@@ -13269,7 +13840,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 12939
+              lineno: 13588
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -13765,32 +14336,29 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.claimUnique = function(unique, type, cb) {
-    var crew, pilot, upgrade_alias, _i, _len, _ref, _ref1;
+    var bycanonical, canonical, other, otherslot, _i, _len, _ref, _ref1;
     if (this.uniqueIndex(unique, type) < 0) {
-      if (type === 'Pilot') {
-        crew = exportObj.upgradesByLocalizedName[unique.name];
-        if ((crew != null) && ((crew != null ? crew.unique : void 0) != null)) {
-          if (this.uniqueIndex(crew, 'Upgrade') < 0) {
-            this.uniques_in_use['Upgrade'].push(crew);
+      _ref = exportObj.pilotsByFactionCanonicalName[this.faction][unique.canonical_name] || [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        other = _ref[_i];
+        if (unique !== other) {
+          if (this.uniqueIndex(other, 'Pilot') < 0) {
+            this.uniques_in_use['Pilot'].push(other);
           } else {
-            throw new Error("Unique " + type + " '" + unique.name + "' already claimed as crew");
+            throw new Error("Unique " + type + " '" + unique.name + "' already claimed as pilot");
           }
         }
-      } else if (type === 'Upgrade') {
-        if (unique.slot === 'Crew') {
-          pilot = exportObj.pilotsByLocalizedName[unique.name];
-          if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
-            if (this.uniqueIndex(pilot, 'Pilot') < 0) {
-              this.uniques_in_use['Pilot'].push(pilot);
-            } else {
-              throw new Error("Unique " + type + " '" + unique.name + "' already claimed as pilot");
+      }
+      _ref1 = exportObj.upgradesBySlotCanonicalName;
+      for (otherslot in _ref1) {
+        bycanonical = _ref1[otherslot];
+        for (canonical in bycanonical) {
+          other = bycanonical[canonical];
+          if (canonical === unique.canonical_name && unique !== other) {
+            if (this.uniqueIndex(other, 'Upgrade') < 0) {
+              this.uniques_in_use['Upgrade'].push(other);
             }
           }
-        }
-        _ref1 = (_ref = unique.aka) != null ? _ref : [];
-        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-          upgrade_alias = _ref1[_i];
-          this.uniques_in_use['Upgrade'].push(exportObj.upgrades[upgrade_alias]);
         }
       }
       this.uniques_in_use[type].push(unique);
@@ -13801,35 +14369,18 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.releaseUnique = function(unique, type, cb) {
-    var alias_idx, crew, idx, pilot, upgrade_alias, _i, _len, _ref, _ref1;
+    var idx, u, uniques, _i, _len, _ref;
     idx = this.uniqueIndex(unique, type);
     if (idx >= 0) {
-      this.uniques_in_use[type].splice(idx, 1);
-      if (type === 'Pilot') {
-        crew = exportObj.upgradesByLocalizedName[unique.name];
-        if ((crew != null) && ((crew != null ? crew.unique : void 0) != null)) {
-          idx = this.uniqueIndex(crew, 'Upgrade');
-          if (idx < 0) {
-            throw new Error("Unique crew accompanying " + unique.name + " was not also claimed!");
+      _ref = this.uniques_in_use;
+      for (type in _ref) {
+        uniques = _ref[type];
+        this.uniques_in_use[type] = [];
+        for (_i = 0, _len = uniques.length; _i < _len; _i++) {
+          u = uniques[_i];
+          if (u.canonical_name !== unique.canonical_name) {
+            this.uniques_in_use[type].push(u);
           }
-          this.uniques_in_use['Upgrade'].splice(idx, 1);
-        }
-      } else if (type === 'Upgrade') {
-        if (unique.slot === 'Crew') {
-          pilot = exportObj.pilotsByLocalizedName[unique.name];
-          if ((pilot != null) && ((pilot != null ? pilot.unique : void 0) != null)) {
-            idx = this.uniqueIndex(pilot, 'Pilot');
-            if (idx < 0) {
-              throw new Error("Unique pilot accompanying " + unique.name + " was not also claimed!");
-            }
-            this.uniques_in_use['Pilot'].splice(idx, 1);
-          }
-        }
-        _ref1 = (_ref = unique.aka) != null ? _ref : [];
-        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-          upgrade_alias = _ref1[_i];
-          alias_idx = this.uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade');
-          this.uniques_in_use['Upgrade'].splice(alias_idx, 1);
         }
       }
     } else {
@@ -13859,7 +14410,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 13455
+          lineno: 14087
         }));
         __iced_deferrals._fulfill();
       });
@@ -13871,7 +14422,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 13456
+            lineno: 14088
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -13957,10 +14508,17 @@ exportObj.SquadBuilder = (function() {
     })()).sort(exportObj.sortHelper);
   };
 
-  SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term) {
+  dfl_filter_func = function() {
+    return true;
+  };
+
+  SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term, filter_func) {
     var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, retval, upgrade, upgrade_name, _i, _j, _len, _len1, _ref, _ref1, _ref2, _results;
     if (term == null) {
       term = '';
+    }
+    if (filter_func == null) {
+      filter_func = this.dfl_filter_func;
     }
     limited_upgrades_in_use = (function() {
       var _i, _len, _ref, _ref1, _results;
@@ -13974,18 +14532,33 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     })();
-    available_upgrades = (function() {
-      var _ref, _results;
-      _ref = exportObj.upgradesByLocalizedName;
-      _results = [];
-      for (upgrade_name in _ref) {
-        upgrade = _ref[upgrade_name];
-        if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || upgrade.faction === this.faction) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
-          _results.push(upgrade);
+    if (filter_func === this.dfl_filter_func) {
+      available_upgrades = (function() {
+        var _ref, _ref1, _results;
+        _ref = exportObj.upgradesByLocalizedName;
+        _results = [];
+        for (upgrade_name in _ref) {
+          upgrade = _ref[upgrade_name];
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || upgrade.faction === this.faction || (upgrade.faction instanceof Array && (_ref1 = this.faction, __indexOf.call(upgrade.faction, _ref1) >= 0))) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
+            _results.push(upgrade);
+          }
         }
-      }
-      return _results;
-    }).call(this);
+        return _results;
+      }).call(this);
+    } else {
+      available_upgrades = (function() {
+        var _ref, _results;
+        _ref = exportObj.upgradesByLocalizedName;
+        _results = [];
+        for (upgrade_name in _ref) {
+          upgrade = _ref[upgrade_name];
+          if (filter_func(upgrade)) {
+            _results.push(upgrade);
+          }
+        }
+        return _results;
+      })();
+    }
     eligible_upgrades = (function() {
       var _results;
       _results = [];
@@ -15133,7 +15706,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 14195
+                      lineno: 14833
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -15202,7 +15775,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 14219
+                lineno: 14857
               })
             ]);
             __iced_deferrals._fulfill();
@@ -15254,14 +15827,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 14241
+            lineno: 14879
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 14243
+            lineno: 14881
           }));
         }
         _ref1 = _this.modifications;
@@ -15269,7 +15842,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 14245
+              lineno: 14883
             }));
           }
         }
@@ -16055,7 +16628,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 14803
+                lineno: 15441
               })
             ]);
             __iced_deferrals._fulfill();
@@ -16153,7 +16726,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 14850
+                  lineno: 15488
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -16175,7 +16748,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 14854
+                    lineno: 15492
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -16191,6 +16764,8 @@ GenericAddon = (function() {
               }
               _this.occupyOtherUpgrades();
               _this.conferAddons();
+            } else {
+              _this.deoccupyOtherUpgrades();
             }
             return __iced_k(_this.ship.builder.container.trigger('xwing:pointsUpdated'));
           });
@@ -16218,6 +16793,12 @@ GenericAddon = (function() {
         }
         if (addon.adjustment_func != null) {
           args.adjustment_func = addon.adjustment_func;
+        }
+        if (addon.filter_func != null) {
+          args.filter_func = addon.filter_func;
+        }
+        if (addon.auto_equip != null) {
+          args.auto_equip = addon.auto_equip;
         }
         addon = new cls(args);
         if (addon instanceof exportObj.Upgrade) {
@@ -16248,7 +16829,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 14887
+            lineno: 15529
           }));
         }
         __iced_deferrals._fulfill();
@@ -16432,6 +17013,9 @@ exportObj.Upgrade = (function(_super) {
     if (args.adjustment_func != null) {
       this.adjustment_func = args.adjustment_func;
     }
+    if (args.filter_func != null) {
+      this.filter_func = args.filter_func;
+    }
     this.setupSelector();
   }
 
@@ -16445,7 +17029,7 @@ exportObj.Upgrade = (function(_super) {
           _this.ship.builder.checkCollection();
           return query.callback({
             more: false,
-            results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, _this, query.term)
+            results: _this.ship.builder.getAvailableUpgradesIncluding(_this.slot, _this.data, _this.ship, _this, query.term, _this.filter_func)
           });
         };
       })(this)
@@ -16522,10 +17106,27 @@ exportObj.Title = (function(_super) {
 
 })(GenericAddon);
 
+exportObj.RestrictedUpgrade = (function(_super) {
+  __extends(RestrictedUpgrade, _super);
+
+  function RestrictedUpgrade(args) {
+    this.filter_func = args.filter_func;
+    RestrictedUpgrade.__super__.constructor.call(this, args);
+    this.serialization_code = 'u';
+    if (args.auto_equip != null) {
+      this.setById(args.auto_equip);
+    }
+  }
+
+  return RestrictedUpgrade;
+
+})(exportObj.Upgrade);
+
 SERIALIZATION_CODE_TO_CLASS = {
   'M': exportObj.Modification,
   'T': exportObj.Title,
-  'U': exportObj.Upgrade
+  'U': exportObj.Upgrade,
+  'u': exportObj.RestrictedUpgrade
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
