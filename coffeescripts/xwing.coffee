@@ -2448,6 +2448,7 @@ class GenericAddon
                 args.slot = addon.slot if addon.slot?
                 args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
                 args.filter_func = addon.filter_func if addon.filter_func?
+                args.auto_equip = addon.auto_equip if addon.auto_equip?
                 addon = new cls args
                 if addon instanceof exportObj.Upgrade
                     @ship.upgrades.push addon
@@ -2654,6 +2655,8 @@ class exportObj.RestrictedUpgrade extends exportObj.Upgrade
         @filter_func = args.filter_func
         super args
         @serialization_code = 'u'
+        if args.auto_equip?
+            @setById args.auto_equip
 
 SERIALIZATION_CODE_TO_CLASS =
     'M': exportObj.Modification

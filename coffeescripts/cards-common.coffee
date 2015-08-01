@@ -4703,7 +4703,7 @@ exportObj.basicCardData = ->
                     slot: "Cannon"
                     filter_func: (upgrade) ->
                         upgrade.english_name == 'Tractor Beam'
-                    # TODO: auto-equip this slot
+                    auto_equip: 144
                 }
             ]
             modifier_func: (stats) ->
