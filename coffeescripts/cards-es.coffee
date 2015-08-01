@@ -575,6 +575,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
         "Moralo Eval":
             text: """You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."""
+        'Gozanti-class Cruiser':
+            text: """After you execute a maneuver, you may deploy up to 2 attached ships."""
+        '"Scourge"':
+            text: """When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."""
+        "The Inquisitor":
+            text: """When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."""
+        "Zuckuss":
+            text: """When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."""
+        "Dengar":
+            text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -959,6 +969,14 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender's %EVADE% results.'''
         "Advanced Homing Missiles":
             text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."""
+        'Agent Kallus':
+            text: '''%IMPERIALONLY%%LINEBREAK%At the start of the first combat phase, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'''
+        'XX-23 S-Thread Tracers':
+            text: """<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."""
+        "Tractor Beam":
+            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."""
+        "Cloaking Device":
+            text: """%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."""
 
     modification_translations =
         "Stealth Device":
@@ -1095,5 +1113,15 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Intrépido"
             text: """<span class="card-restriction">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión."""
             ship: 'VT-49 Diezmador'
+        "Ghost":
+            text: """<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."""
+        "Phantom":
+            text: """While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."""
+        "TIE/v1":
+            text: """<span class="card-restriction">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."""
+        "Mist Hunter":
+            text: """<span class="card-restriction">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 "Tractor Beam" Upgrade card (paying its squad point cost as normal)."""
+        "Punishing One":
+            text: """<span class="card-restriction">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

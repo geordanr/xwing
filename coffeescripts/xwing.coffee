@@ -969,30 +969,25 @@ class exportObj.SquadBuilder
 
     claimUnique: (unique, type, cb) =>
         if @uniqueIndex(unique, type) < 0
-            # Special case: pilots may be crew and vice versa
-            if type == 'Pilot'
-                # Check crew
-                crew = exportObj.upgradesByLocalizedName[unique.name]
-                if crew? and crew?.unique?
-                    if @uniqueIndex(crew, 'Upgrade') < 0
-                        # Not in crew either; claim it in use as well
-                        @uniques_in_use['Upgrade'].push crew
+            # Claim pilots with the same canonical name
+            for other in exportObj.pilotsByFactionCanonicalName[@faction][unique.canonical_name] or []
+                if unique != other
+                    if @uniqueIndex(other, 'Pilot') < 0
+                        # console.log "Also claiming unique pilot #{other.canonical_name} in use"
+                        @uniques_in_use['Pilot'].push other
                     else
-                        throw new Error("Unique #{type} '#{unique.name}' already claimed as crew")
-            else if type == 'Upgrade'
-                if unique.slot == 'Crew'
-                    # Check pilots
-                    pilot = exportObj.pilotsByLocalizedName[unique.name]
-                    if pilot? and pilot?.unique?
-                        if @uniqueIndex(pilot, 'Pilot') < 0
-                            # Not a pilot either; claim it in use as well
-                            @uniques_in_use['Pilot'].push pilot
-                        else
-                            throw new Error("Unique #{type} '#{unique.name}' already claimed as pilot")
-                # Multiple upgrades have the same name but different slots
-                for upgrade_alias in unique.aka ? []
-                    #console.log "Also claiming #{upgrade_alias} in use"
-                    @uniques_in_use['Upgrade'].push exportObj.upgrades[upgrade_alias]
+                        throw new Error("Unique #{type} '#{unique.name}' already claimed as pilot")
+
+            # Claim other upgrades with the same canonical name
+            for otherslot, bycanonical of exportObj.upgradesBySlotCanonicalName
+                for canonical, other of bycanonical
+                    if canonical == unique.canonical_name and unique != other
+                        if @uniqueIndex(other, 'Upgrade') < 0
+                            # console.log "Also claiming unique #{other.canonical_name} (#{otherslot}) in use"
+                            @uniques_in_use['Upgrade'].push other
+                        # else
+                        #     throw new Error("Unique #{type} '#{unique.name}' already claimed as #{otherslot}")
+
             @uniques_in_use[type].push unique
         else
             throw new Error("Unique #{type} '#{unique.name}' already claimed")
@@ -1001,28 +996,16 @@ class exportObj.SquadBuilder
     releaseUnique: (unique, type, cb) =>
         idx = @uniqueIndex(unique, type)
         if idx >= 0
-            @uniques_in_use[type].splice idx, 1
-            # Special case: releasing pilot needs to release equivalent crew (and vice versa)
-            if type == 'Pilot'
-                crew = exportObj.upgradesByLocalizedName[unique.name]
-                if crew? and crew?.unique?
-                    idx = @uniqueIndex crew, 'Upgrade'
-                    if idx < 0
-                        throw new Error("Unique crew accompanying #{unique.name} was not also claimed!")
-                    @uniques_in_use['Upgrade'].splice idx, 1
-            else if type == 'Upgrade'
-                if unique.slot == 'Crew'
-                    pilot = exportObj.pilotsByLocalizedName[unique.name]
-                    if pilot? and pilot?.unique?
-                        idx = @uniqueIndex pilot, 'Pilot'
-                        if idx < 0
-                            throw new Error("Unique pilot accompanying #{unique.name} was not also claimed!")
-                        @uniques_in_use['Pilot'].splice idx, 1
-                # Release any aliases
-                for upgrade_alias in unique.aka ? []
-                    #console.log "Also releasing #{upgrade_alias}"
-                    alias_idx = @uniqueIndex(exportObj.upgrades[upgrade_alias], 'Upgrade')
-                    @uniques_in_use['Upgrade'].splice alias_idx, 1
+            # Release all uniques with the same canonical name
+            for type, uniques of @uniques_in_use
+                # Removing stuff in a loop sucks, so we'll construct a new list
+                @uniques_in_use[type] = []
+                for u in uniques
+                    if u.canonical_name != unique.canonical_name
+                        # Keep this one
+                        @uniques_in_use[type].push u
+                    # else
+                    #     console.log "Releasing #{u.name} (#{type}) with canonical name #{unique.canonical_name}"
         else
             throw new Error("Unique #{type} '#{unique.name}' not in use")
         cb()
@@ -1066,12 +1049,18 @@ class exportObj.SquadBuilder
             eligible_faction_pilots.push include_pilot
         ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
-    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='') ->
+    dfl_filter_func = ->
+        true
+
+    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func) ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
-        
+        if filter_func == @dfl_filter_func
+            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction or (upgrade.faction instanceof Array and @faction in upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
+        else
+            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when filter_func(upgrade))
+
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
 
         # Special case #2 :(
@@ -2444,6 +2433,8 @@ class GenericAddon
                     @data = @adjustment_func(@data)
                 @occupyOtherUpgrades()
                 @conferAddons()
+            else
+                @deoccupyOtherUpgrades()
 
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
@@ -2456,6 +2447,7 @@ class GenericAddon
                     container: @container
                 args.slot = addon.slot if addon.slot?
                 args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
+                args.filter_func = addon.filter_func if addon.filter_func?
                 addon = new cls args
                 if addon instanceof exportObj.Upgrade
                     @ship.upgrades.push addon
@@ -2599,6 +2591,7 @@ class exportObj.Upgrade extends GenericAddon
         @dataByName = exportObj.upgradesByLocalizedName
         @serialization_code = 'U'
         @adjustment_func = args.adjustment_func if args.adjustment_func?
+        @filter_func = args.filter_func if args.filter_func?
 
         @setupSelector()
 
@@ -2611,7 +2604,7 @@ class exportObj.Upgrade extends GenericAddon
                 @ship.builder.checkCollection()
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term)
+                    results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
 
 class exportObj.Modification extends GenericAddon
     constructor: (args) ->
@@ -2655,7 +2648,15 @@ class exportObj.Title extends GenericAddon
                     more: false
                     results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)
 
+
+class exportObj.RestrictedUpgrade extends exportObj.Upgrade
+    constructor: (args) ->
+        @filter_func = args.filter_func
+        super args
+        @serialization_code = 'u'
+
 SERIALIZATION_CODE_TO_CLASS =
     'M': exportObj.Modification
     'T': exportObj.Title
     'U': exportObj.Upgrade
+    'u': exportObj.RestrictedUpgrade
