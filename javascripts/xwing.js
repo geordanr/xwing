@@ -10147,7 +10147,7 @@ exportObj.translations['Polski'] = {
     "TIE Interceptor Expansion Pack": "Zestaw dodatkowy TIE Interceptor",
     "TIE Bomber Expansion Pack": "Zestaw dodatkowy Bombowiec TIE",
     "TIE Advanced Expansion Pack": "Zestaw dodatkowy TIE Advanced",
-    "Lambda-Class Shuttle Expansion Pack": "Zestaw dodatkowy Prom klasy Lambda",
+    "Lambda-Class Shuttle Expansion Pack": "Zestaw dodatkowy Prom typu Lambda",
     "Slave I Expansion Pack": "Zestaw dodatkowy Slave I",
     "Imperial Aces Expansion Pack": "Zestaw dodatkowy Asy Imperium",
     "Rebel Transport Expansion Pack": "Zestaw dodatkowy Rebeliancki transportowiec",
@@ -10235,7 +10235,7 @@ exportObj.cardLoaders['Polski'] = function() {
   exportObj.ships = basic_cards.ships;
   exportObj.renameShip('TIE Fighter', 'Myśliwiec TIE');
   exportObj.renameShip('TIE Bomber', 'Bombowiec TIE');
-  exportObj.renameShip('Lambda-Class Shuttle', 'Prom klasy Lambda');
+  exportObj.renameShip('Lambda-Class Shuttle', 'Prom typu Lambda');
   exportObj.renameShip('VT-49 Decimator', 'Decimator VT-49');
   exportObj.renameShip('Z-95 Headhunter', 'Z-95 Łowca głów');
   exportObj.renameShip('CR90 Corvette (Aft)', 'Korweta CR90 (rufa)');
