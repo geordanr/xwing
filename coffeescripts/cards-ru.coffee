@@ -1,11 +1,11 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.de = 'Russian'
+exportObj.codeToLanguage.ru = 'Русский'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.Russian =
+exportObj.translations['Русский'] =
     action:
         "Barrel Roll": "Бочка"
         "Boost": "Ускорение"
@@ -65,11 +65,11 @@ exportObj.translations.Russian =
         shipSelectorPlaceholder: "Выберите корабль"
         pilotSelectorPlaceholder: "Выберите пилота"
         upgradePlaceholder: (translator, language, slot) ->
-            "Нет #{translator language, 'слота', slot} улучшения"
+            "Нет #{translator language, 'slot', slot} улучшения"
         modificationPlaceholder: "Нет модификации"
         titlePlaceholder: "Нет названия"
         upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'Слот', slot} улучшения"
+            "#{translator language, 'slot', slot} улучшения"
         unreleased: "не выпущено"
         epic: "Эпик"
         limited: "ограничено"
@@ -119,8 +119,8 @@ exportObj.translations.Russian =
         'Title': 'Название'
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.Russian = () ->
-    exportObj.cardLanguage = 'Russian'
+exportObj.cardLoaders['Русский'] = () ->
+    exportObj.cardLanguage = 'Русский'
 
     # Assumes cards-common has been loaded
     basic_cards = exportObj.basicCardData()
@@ -128,7 +128,7 @@ exportObj.cardLoaders.Russian = () ->
 
     exportObj.ships = basic_cards.ships
 
-      pilot_translations =
+    pilot_translations =
         "Wedge Antilles":
             text: """Во время атаки, уменьшите значение Мобильности защищающегося на 1 (значение не может быть меньше нуля)."""
         "Garven Dreis":
@@ -408,7 +408,6 @@ exportObj.cardLoaders.Russian = () ->
             text: """%REBELONLY%%LINEBREAK%Вы можете считать
 любые %STRAIGHT% манёвры зелёными."""
         "Chewbacca":
-            name: "Chewbacca (Crew)"
             text: """%REBELONLY%%LINEBREAK%Когда вы получаете карту Повреждения, вы можете немедленно сбросить эту карту и восстановить 1 щит.%LINEBREAK%Затем сбросьте эту карту улучшения."""
         "Advanced Proton Torpedoes":
             text: """<strong>Атака (Захват цели): </strong>Потратьте жетон Захвата цели и сбросьте эту карту для того, чтобы выполнить эту атаку.%LINEBREAK%Вы можете заменить до 3 пустых результатов на %FOCUS% результаты."""
@@ -433,18 +432,17 @@ exportObj.cardLoaders.Russian = () ->
         "Sensor Jammer":
             text: """Во время обороны вы можете заменить 1 из %HIT% результатов атакующего на %FOCUS% результат.%LINEBREAK%Атаковавший не может перебросить этот кубик."""
         "Darth Vader":
-            name: "Darth Vader (Crew)"
             text: """%IMPERIALONLY%%LINEBREAK%После выполнения вами атаки вражеского корабля вы можете получить 2 повреждения, чтобы вражеский корабль получил 1 критическое повреждение."""
         "Rebel Captive":
             text: """%IMPERIALONLY%%LINEBREAK%Единожды за раунд, первый корабль, объявивший вас целью для атаки, немедленно получает 1 жетон Стресса."""
         "Flight Instructor":
             text: """Во время обороны вы можете перебросить 1 из ваших %FOCUS% результатов. Если величина Мастерства нападающего пилота «2» или менее, вы можете перебросить 1 из ваших пустых результатов, вместо %FOCUS%."""
         "Navigator":
-            text: """Во время вскрытия манёвра вы можете выбрать другой манёвр такого же направления.%LINEBREAK%Красный манёвр не может быть выбран, если у вас уже есть хотя бы 1 жетон Стресса.""
+            text: """Во время вскрытия манёвра вы можете выбрать другой манёвр такого же направления.%LINEBREAK%Красный манёвр не может быть выбран, если у вас уже есть хотя бы 1 жетон Стресса."""
         "Opportunist":
             text: """Во время атаки, если защищающийся не имеет жетонов Концентрации или Уклонения, вы можете получить 1 жетон Стресса и бросить 1 дополнительный кубик атаки. %LINEBREAK%Вы не можете использовать эту способность при наличии у вас жетона Стресса."""
         "Comms Booster":
-            text: """"""<strong>Энергия:</strong> Потратьте 1 энергию и удалите все жетоны стресса на дружественном корабле на Дистанции 1-3. Затем положите 1 жетон концентрации на этот корабль."""
+            text: """<strong>Энергия:</strong> Потратьте 1 энергию и удалите все жетоны стресса на дружественном корабле на Дистанции 1-3. Затем положите 1 жетон концентрации на этот корабль."""
         "Slicer Tools":
             text: """<strong>Действие:</strong> Выберите 1 или более вражеских кораблей, имеющих жетоны стресса на Дистанции 1-3. Для каждого выбранного корабля вы можете потратить 1 энергию, чтобы нанести 1 Повреждение."""
         "Shield Projector":
@@ -460,7 +458,6 @@ exportObj.cardLoaders.Russian = () ->
         "Predator":
             text: """Во время атаки вы можете перебросить 1 кубик атаки. Если значение Мастерства защищающегося пилота равно ‘’2’’ или меньше, вы можете перебросить 2 кубика атаки."""
         "Flechette Torpedoes":
-            name: "Flechet-Torpedos"
             text: """<strong>Атака (Захват цели): </strong><br/>Потратьте жетон захвата цели и сбросьте эту карту для того, чтобы выполнить эту атаку.%LINEBREAK%После выполнения этой атаки защищающийся получает 1 жетон стресса, если значение корпуса его корабля равно 4 или меньше."""
         "R7 Astromech":
             text: """Один раз за раунд во время
@@ -470,7 +467,6 @@ exportObj.cardLoaders.Russian = () ->
         "Tactician":
             text: """После выполнения атаки по кораблю, находящемуся в вашем секторе обстрела и на Дистанции 2, этот корабль получает 1 жетон стресса."""
         "R2-D2 (Crew)":
-            name: "R2-D2 (Crew)"
             text: """%REBELONLY%%LINEBREAK% В конце фазы Завершения, если у вашего корабля нет щитов, вы можете восстановить один щит и кинуть кубик атаки. В случае результата %HIT% случайно выберите одну из карт повреждений, лежащих лицом вниз, и переверните. Затем выполните её инструкции."""
         "C-3PO":
             text: """%REBELONLY%%LINEBREAK%Один раз за раунд, до броска 1 или более кубиков защиты, назовите количестве будущих результатов %EVADE%. Если выпало ровно столько %EVADE% результатов (до изменения результатов броска), добавьте 1 результат %EVADE%."""
@@ -495,10 +491,8 @@ exportObj.cardLoaders.Russian = () ->
         "Proton Rockets":
             text: """<strong>Атака (Концентрация): </strong>%LINEBREAK%Сбросьте эту карту для того, чтобы выполнить эту атаку. Вы можете бросить дополнительные кубики атаки в количестве, равном показателю вашей Маневренности, но не более 3."""
         "Kyle Katarn":
-            name: "Kyle Katarn (Crew)"
             text: """%REBELONLY%%LINEBREAK%После удаления жетона стресса с вашего корабля, вы можете назначить ему жетон концентрации."""
         "Jan Ors":
-            name: "Jan Ors (Crew)"
             text: """%REBELONLY%%LINEBREAK%Один раз в раунд вы можете назначить дружественному кораблю на Дистанции 1-3 жетон уклонения, вместо выполнения данным кораблем действия концентрации или получения этим кораблем жетона концентрации."""
         "Toryn Farr":
             text: """%HUGESHIPONLY% %REBELONLY%%LINEBREAK%<strong>Action:</strong> Spend any amount of energy to choose that many enemy ships at Range 1-2.  Remove all focus, evade, and blue target lock tokens from those ships."""
@@ -515,7 +509,6 @@ exportObj.cardLoaders.Russian = () ->
             text: """%HUGESHIPONLY% %REBELONLY%%LINEBREAK%When another friendly ship at Range 1 is attacking, it may change 1 of its %HIT% results to a %CRIT%."""
         "Expanded Cargo Hold":
             text: """<span class="card-restriction">GR-75 only.</span>%LINEBREAK%Once per round, when you would be dealt a faceup Damage card, you may draw that card from either the fore or aft Damage deck."""
-            ship: "Medium-Transporter GR-75"
         "Backup Shield Generator":
             text: """At the end of each round, you may spend 1 energy to recover 1 shield (up to your shield value)."""
         "EM Emitter":
@@ -523,7 +516,6 @@ exportObj.cardLoaders.Russian = () ->
         "Frequency Jammer":
             text: """When you perform a jam action, choose 1 enemy ship that does not have a stress token and is at Range 1 of the jammed ship.  The chosen ship receives 1 stress token."""
         "Han Solo":
-            name: "Han Solo (Crew)"
             text: """%REBELONLY%%LINEBREAK%When attacking, if you have a target lock on the defender, you may spend that target lock to change all of your %FOCUS% results to %HIT% results."""
         "Leia Organa":
             text: """%REBELONLY%%LINEBREAK%В начале фазы Активации вы можете сбросить эту карту, чтобы позволить всем дружественным кораблям, раскрывающим красный маневр, рассматривать этот маневр белым до конца этой фазы."""
@@ -538,21 +530,18 @@ exportObj.cardLoaders.Russian = () ->
         "Engineering Team":
             text: """During the Activation phase, when you reveal a %STRAIGHT% maneuver, gain 1 additional energy during the "Gain Energy" step."""
         "Lando Calrissian":
-            name: "Lando Calrissian (Crew)"
             text: """%REBELONLY%%LINEBREAK%<strong>Действие: </strong>%LINEBREAK% Киньте два зеленых кубика. За каждый %FOCUS% результат назначьте 1 жетон Концентрации вашему кораблю. За каждый %EVADE% результат назначьте 1 жетон Уклонения вашему кораблю."""
         "Mara Jade":
             text: """%IMPERIALONLY%%LINEBREAK%В конце фазы Боя каждый вражеский корабль на Дистанции 1, не имеющий жетона Стресса, получает 1 жетон Стресса."""
         "Fleet Officer":
             text: """<strong>Действие: </strong>%LINEBREAK% Выберите до 2 дружественных кораблей на Дистанции 1-2, и назначьте 1 жетон Концентрации каждому из этих кораблей. Затем получите жетон Стресса."""
-       "Lone Wolf":
+        "Lone Wolf":
             text: """При атаке или защите, если не Дистанции 1-2 не других дружественных кораблей, вы можете перебросить один пустой результат."""
         "Stay On Target":
             text: """Когда вы вскрываете маневр, вы можете изменить его на другой доступный вам маневр той же скорости.%LINEBREAK% Считайте этот маневр как красный маневр."""
         "Dash Rendar":
-            name: "Dash Rendar (Crew)"
             text: """%REBELONLY%%LINEBREAK%Вы можете атаковать находясь на препятствии."""
         '"Leebo"':
-            name: '"Leebo" (Crew)'
             text: """%REBELONLY%%LINEBREAK%<strong>Действие: </strong>%LINEBREAK% Осуществите свободное действие Ускорение. Затем получите 1 жетон Иона."""
         "Ruthlessness":
             text: """%IMPERIALONLY%%LINEBREAK%После совершения атаки, которая попала в цель, вы <strong>должны</strong> выбрать один другой корабль на Дистанции 1 от цели (кроме своего). Этот корабль получает 1 Повреждение."""
@@ -594,7 +583,8 @@ exportObj.cardLoaders.Russian = () ->
             text: """Вы можете считать все маневры со скоростью 3 как зеленые маневры."""
         "R4-B11":
             text: """При атаке, если у вас есть захват цели на защищающегося, вы можете сбросить этот захват цели для выбора некоторых или всех кубиков защиты. Защищающийся должен перебросить выбранные кубики."""
-        "Autoblaster Turret":<strong>Атака: </strong>Атакуйте один корабль (даже если он вне вашего сектора обстрела)%LINEBREAK%Ваши результаты %HIT% не могут быть отменены кубиками защиты. Защищающийся может отменить результаты %CRIT% перед результатами %HIT%."""
+        "Autoblaster Turret":
+            text: """<strong>Атака: </strong>Атакуйте один корабль (даже если он вне вашего сектора обстрела)%LINEBREAK%Ваши результаты %HIT% не могут быть отменены кубиками защиты. Защищающийся может отменить результаты %CRIT% перед результатами %HIT%."""
         "R4 Agromech":
             text: """При атаке, после того как вы использовали жетон Концентрации, вы можете получить Захват цели на обороняющемся."""
         "K4 Security Droid":
@@ -656,7 +646,6 @@ exportObj.cardLoaders.Russian = () ->
         "Advanced Cloaking Device":
             text: """После выполнения атаки, вы можете выполнить свободное действие маскировки."""
         "Combat Retrofit":
-            ship: "Medium-Transporter GR-75"
             text: """<span class="card-restriction">GR-75 only.</span>%LINEBREAK%Increase your hull value by 2 and your shield value by 1."""
         "B-Wing/E2":
             text: """На вашу панель Улучшений добавляется улучшение %CREW%."""
@@ -688,26 +677,18 @@ exportObj.cardLoaders.Russian = () ->
         "Royal Guard TIE":
             text: """<span class="card-restriction">TIE Interceptor only.</span>%LINEBREAK%Вы можете экипировать до двух разных Улучшений-модификации (вместо одного).%LINEBREAK%Вы не можете экипировать это улучшение если Мастерство пилота "4" и меньше."""
         "Dodonna's Pride":
-            name: "Dodonnas Stolz"
-            ship: "CR90-Korvette (Bug)"
             text: """<span class="card-restriction">CR90 fore section only.</span>%LINEBREAK%When you perform a coordinate action, you may choose 2 friendly ships (instead of 1).  Those ships may each perform 1 free action."""
         "A-Wing Test Pilot":
             text: """<span class="card-restriction">A-Wing only.</span>%LINEBREAK%Ваша панель Улучшений получает 1 пиктограмму %ELITE%.%LINEBREAK%Вы не можете экипировать 2 одинаковых Улучшения %ELITE%. Вы не можете экипировать это улучшение, если мастерство пилота "1" и меньше."""
         "Tantive IV":
-            ship: "CR90-Korvette (Bug)"
             text: """<span class="card-restriction">CR90 fore section only.</span>%LINEBREAK%Your fore section upgrade bar gains 1 additional %CREW% and 1 additional %TEAM% upgrade icon."""
         "Bright Hope":
-            ship: "Medium-Transporter GR-75"
             text: """<span class="card-restriction">GR-75 only.</span>%LINEBREAK%A reinforce action assigned to your fore section adds 2 %EVADE% results (instead of 1)."""
         "Quantum Storm":
-            ship: "Medium-Transporter GR-75"
             text: """<span class="card-restriction">GR-75 only.</span>%LINEBREAK%At the start of the End phase, if you have 1 or fewer energy tokens, gain 1 energy token."""
         "Dutyfree":
-            ship: "Medium-Transporter GR-75"
             text: """<span class="card-restriction">GR-75 only.</span>%LINEBREAK%When performing a jam action, you may choose an enemy ship at Range 1-3 (instead of at Range 1-2)."""
         "Jaina's Light":
-            name: "Jainas Licht"
-            ship: "CR90-Korvette (Bug)"
             text: """<span class="card-restriction">CR90 fore section only.</span>%LINEBREAK%When defending, once per attack, if you are dealt a faceup Damage card, you may discard it and draw another faceup Damage card."""
         "Outrider":
             text: """<span class="card-restriction">YT-2400 only.</span>%LINEBREAK%Пока вы снаряжены Дополнительным Орудием %CANNON% вы <strong>не можете</strong> атаковать основным орудием, и вы можете атаковать Дополнительным Орудием %CANNON% корабли вне вашего сектора обстрела."""
