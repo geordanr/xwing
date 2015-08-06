@@ -16383,7 +16383,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.loadFromXWS = function(xws, cb) {
-    var a, addon, addon_added, addons, err, error, i, modification, new_ship, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+    var a, addon, addon_added, addons, err, error, i, modification, new_ship, p, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     success = null;
     error = null;
     switch (xws.version) {
@@ -16407,10 +16407,20 @@ exportObj.SquadBuilder = (function() {
           pilot = _ref[_i];
           new_ship = this.addShip();
           try {
-            new_ship.setPilot(exportObj.pilotsByFactionCanonicalName[this.faction][pilot.name]);
+            new_ship.setPilot(((function() {
+              var _j, _len1, _ref1, _results;
+              _ref1 = exportObj.pilotsByFactionCanonicalName[this.faction][pilot.name];
+              _results = [];
+              for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+                p = _ref1[_j];
+                if (p.ship.canonicalize() === pilot.ship) {
+                  _results.push(p);
+                }
+              }
+              return _results;
+            }).call(this))[0]);
           } catch (_error) {
             err = _error;
-            console.error(err.message);
             continue;
           }
           addons = [];
