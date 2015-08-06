@@ -1548,9 +1548,9 @@ class exportObj.SquadBuilder
                 for pilot in xws.pilots
                     new_ship = @addShip()
                     try
-                        new_ship.setPilot exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]
+                        new_ship.setPilot (p for p in exportObj.pilotsByFactionCanonicalName[@faction][pilot.name] when p.ship.canonicalize() == pilot.ship)[0]
                     catch err
-                        console.error err.message
+                        # console.error err.message
                         continue
                     # Turn all the upgrades into a flat list so we can keep trying to add them
                     addons = []
