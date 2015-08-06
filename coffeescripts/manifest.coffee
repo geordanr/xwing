@@ -1983,6 +1983,11 @@ exportObj.manifestByExpansion =
     ]
     "Hound's Tooth Expansion Pack": [
         {
+            name: 'YV-666'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Bossk'
             type: 'pilot'
             count: 1
@@ -2065,6 +2070,11 @@ exportObj.manifestByExpansion =
     ]
     'Kihraxz Fighter Expansion Pack': [
         {
+            name: 'Kihraxz Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
             name: 'Talonbane Cobra'
             type: 'pilot'
             count: 1
@@ -2111,6 +2121,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'K-Wing Expansion Pack': [
+        {
+            name: 'K-Wing'
+            type: 'ship'
+            count: 1
+        }
         {
             name: 'Miranda Doni'
             type: 'pilot'
@@ -2173,6 +2188,11 @@ exportObj.manifestByExpansion =
         }
     ]
     'TIE Punisher Expansion Pack': [
+        {
+            name: 'TIE Punisher'
+            type: 'ship'
+            count: 1
+        }
         {
             name: '"Redline"'
             type: 'pilot'
