@@ -14023,6 +14023,214 @@ exportObj.manifestByExpansion = {
       type: 'upgrade',
       count: 1
     }
+  ],
+  "Hound's Tooth Expansion Pack": [
+    {
+      name: 'Bossk',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Moralo Eval',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Lattz Razzi',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Trandoshan Slaver',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Lone Wolf',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Crack Shot',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Stay On Target',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Heavy Laser Cannon',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Bossk',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'K4 Security Droid',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Outlaw Tech',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Glitterstim',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Engine Upgrade',
+      type: 'modification',
+      count: 1
+    }, {
+      name: 'Ion Projector',
+      type: 'modification',
+      count: 2
+    }, {
+      name: 'Maneuvering Fins',
+      type: 'modification',
+      count: 1
+    }, {
+      name: "Hound's Tooth",
+      type: 'title',
+      count: 1
+    }
+  ],
+  'Kihraxz Fighter Expansion Pack': [
+    {
+      name: 'Talonbane Cobra',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Graz the Hunter',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Black Sun Ace',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Cartel Marauder',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Crack Shot',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Lightning Reflexes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Predator',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Homing Missiles',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Glitterstim',
+      type: 'upgrade',
+      count: 1
+    }
+  ],
+  'K-Wing Expansion Pack': [
+    {
+      name: 'Miranda Doni',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Esege Tuketu',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Guardian Squadron Pilot',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Warden Squadron Pilot',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Twin Laser Turret',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Plasma Torpedoes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Advanced Homing Missiles',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Bombardier',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Conner Net',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Extra Munitions',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Ion Bombs',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Advanced SLAM',
+      type: 'modification',
+      count: 1
+    }
+  ],
+  'TIE Punisher Expansion Pack': [
+    {
+      name: '"Redline"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Deathrain"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Black Eight Squadron Pilot',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Cutlass Squadron Pilot',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Enhanced Scopes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Extra Munitions',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Flechette Torpedoes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Plasma Torpedoes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Advanced Homing Missiles',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Cluster Mines',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Ion Bombs',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Twin Ion Engine Mk. II',
+      type: 'modification',
+      count: 2
+    }
   ]
 };
 
@@ -14315,7 +14523,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 13768
+                    lineno: 14021
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -14834,7 +15042,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14313
+              lineno: 14566
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15404,7 +15612,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 14812
+          lineno: 15065
         }));
         __iced_deferrals._fulfill();
       });
@@ -15416,7 +15624,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 14813
+            lineno: 15066
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -16710,7 +16918,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 15558
+                      lineno: 15811
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -16779,7 +16987,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 15582
+                lineno: 15835
               })
             ]);
             __iced_deferrals._fulfill();
@@ -16831,14 +17039,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 15604
+            lineno: 15857
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 15606
+            lineno: 15859
           }));
         }
         _ref1 = _this.modifications;
@@ -16846,7 +17054,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 15608
+              lineno: 15861
             }));
           }
         }
@@ -17632,7 +17840,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16166
+                lineno: 16419
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17730,7 +17938,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16213
+                  lineno: 16466
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -17752,7 +17960,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16217
+                    lineno: 16470
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -17833,7 +18041,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16254
+            lineno: 16507
           }));
         }
         __iced_deferrals._fulfill();
