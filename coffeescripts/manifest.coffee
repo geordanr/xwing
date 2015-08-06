@@ -1980,8 +1980,261 @@ exportObj.manifestByExpansion =
             type: 'upgrade'
             count: 1
         }
-
     ]
+    "Hound's Tooth Expansion Pack": [
+        {
+            name: 'Bossk'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Moralo Eval'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lattz Razzi'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Trandoshan Slaver'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Stay On Target'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bossk'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'K4 Security Droid'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Outlaw Tech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Glitterstim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Ion Projector'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Maneuvering Fins'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: "Hound's Tooth"
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Kihraxz Fighter Expansion Pack': [
+        {
+            name: 'Talonbane Cobra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Graz the Hunter'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Marauder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lightning Reflexes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Glitterstim'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'K-Wing Expansion Pack': [
+        {
+            name: 'Miranda Doni'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Esege Tuketu'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Guardian Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Warden Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Twin Laser Turret'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bombardier'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Net'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Extra Munitions'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    'TIE Punisher Expansion Pack': [
+        {
+            name: '"Redline"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Deathrain"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Eight Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cutlass Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Enhanced Scopes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Extra Munitions'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Flechette Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Twin Ion Engine Mk. II'
+            type: 'modification'
+            count: 2
+        }
+    ]
+
 
 class exportObj.Collection
     # collection = new exportObj.Collection
