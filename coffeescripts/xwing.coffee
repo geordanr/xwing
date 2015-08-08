@@ -204,17 +204,11 @@ class exportObj.SquadBuilder
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
 
                 <div class="hidden-phone hidden-print">
-                    <div class="fancy-header">
-                        <div class="squad-name"></div>
-                        <div class="mask">
-                            <div class="outer-circle">
-                                <div class="inner-circle">
-                                    <span class="total-points"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fancy-under-header"></div>
+                    <h3><span class="squad-name"></span> (<span class="total-points"></span>)<h3>
+                </div>
+
+                <div class="visible-phone hidden-print">
+                    <h4><span class="squad-name"></span> (<span class="total-points"></span>)<h4>
                 </div>
 
                 <div class="visible-print">
@@ -229,10 +223,6 @@ class exportObj.SquadBuilder
                         </div>
                     </div>
                     <div class="fancy-under-header"></div>
-                </div>
-
-                <div class="visible-phone hidden-print">
-                    <h4><span class="squad-name"></span> (<span class="total-points"></span>)<h4>
                 </div>
 
             </div>
