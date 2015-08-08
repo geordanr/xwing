@@ -22,7 +22,8 @@ body {
     background: black;
     color: white; }
   #printable .info-data {
-    vertical-align: middle; }
+    vertical-align: middle;
+    -webkit-text-stroke: 0.5px black; }
   #printable .fancy-header {
     border: 0.5in solid black;
     color: white;
