@@ -1998,7 +1998,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Lattz Razzi'
+            name: 'Latts Razzi'
             type: 'pilot'
             count: 1
         }
@@ -2252,6 +2252,173 @@ exportObj.manifestByExpansion =
             name: 'Twin Ion Engine Mk. II'
             type: 'modification'
             count: 2
+        }
+    ]
+    "Imperial Raider Expansion Pack": [
+        {
+            name: "Raider-class Corvette (Fore)"
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: "Raider-class Corvette (Aft)"
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: "TIE Advanced"
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: "Raider-class Corvette (Fore)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Raider-class Corvette (Aft)"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Juno Eclipse"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Zertik Strom"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Commander Alozen"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Lieutenant Colzet"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Storm Squadron Pilot"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Tempest Squadron Pilot"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Advanced Targeting Computer"
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: "TIE/x1"
+            type: 'title'
+            count: 4
+        }
+        {
+            name: "Cluster Missiles"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Proton Rockets"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Captain Needa"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Grand Moff Tarkin"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Emperor Palpatine"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Admiral Ozzel"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Shield Technician"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Gunnery Team"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Engineering Team"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Sensor Team"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Single Turbolasers"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Ion Cannon Battery"
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: "Quad Laser Cannons"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Tibanna Gas Supplies"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Engine Booster"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Backup Shield Generator"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Comms Booster"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Assailer"
+            type: 'title'
+            count: 1
+        }
+        {
+            name: "Instigator"
+            type: 'title'
+            count: 1
+        }
+        {
+            name: "Impetuous"
+            type: 'title'
+            count: 1
         }
     ]
 

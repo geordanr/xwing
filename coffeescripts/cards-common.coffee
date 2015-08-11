@@ -4245,6 +4245,14 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
+        {
+            name: 'Shield Technician'
+            id: 146
+            slot: "Crew"
+            points: 1
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
     ]
 
     modificationsById: [
@@ -4717,6 +4725,27 @@ exportObj.basicCardData = ->
             ship: "JumpMaster 5000"
             modifier_func: (stats) ->
                 stats.attack += 1
+        }
+        {
+            name: 'Assailer'
+            id: 30
+            points: 2
+            unique: true
+            ship: "Raider-class Corvette (Aft)"
+        }
+        {
+            name: 'Instigator'
+            id: 31
+            points: 4
+            unique: true
+            ship: "Raider-class Corvette (Aft)"
+        }
+        {
+            name: 'Impetuous'
+            id: 32
+            points: 3
+            unique: true
+            ship: "Raider-class Corvette (Aft)"
         }
     ]
 
