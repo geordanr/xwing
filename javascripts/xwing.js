@@ -4115,6 +4115,15 @@ exportObj.basicCardData = function() {
           var _ref, _ref1;
           return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
         }
+      }, {
+        name: 'Shield Technician',
+        id: 146,
+        slot: "Crew",
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
       }
     ],
     modificationsById: [
@@ -4596,6 +4605,24 @@ exportObj.basicCardData = function() {
         modifier_func: function(stats) {
           return stats.attack += 1;
         }
+      }, {
+        name: 'Assailer',
+        id: 30,
+        points: 2,
+        unique: true,
+        ship: "Raider-class Corvette (Aft)"
+      }, {
+        name: 'Instigator',
+        id: 31,
+        points: 4,
+        unique: true,
+        ship: "Raider-class Corvette (Aft)"
+      }, {
+        name: 'Impetuous',
+        id: 32,
+        points: 3,
+        unique: true,
+        ship: "Raider-class Corvette (Aft)"
       }
     ]
   };
@@ -6092,6 +6119,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -6267,6 +6297,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -7153,6 +7192,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -7298,6 +7340,15 @@ exportObj.cardLoaders.English = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -8563,6 +8614,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -8754,6 +8808,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -9915,6 +9978,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -10089,6 +10155,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -11234,6 +11309,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -11408,6 +11486,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -12263,6 +12350,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Cloaking Device": {
       text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+    },
+    "Shield Technician": {
+      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
     }
   };
   modification_translations = {
@@ -12402,6 +12492,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Assailer": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+    },
+    "Instigator": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+    },
+    "Impetuous": {
+      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -14038,7 +14137,7 @@ exportObj.manifestByExpansion = {
       type: 'pilot',
       count: 1
     }, {
-      name: 'Lattz Razzi',
+      name: 'Latts Razzi',
       type: 'pilot',
       count: 1
     }, {
@@ -14246,6 +14345,141 @@ exportObj.manifestByExpansion = {
       name: 'Twin Ion Engine Mk. II',
       type: 'modification',
       count: 2
+    }
+  ],
+  "Imperial Raider Expansion Pack": [
+    {
+      name: "Raider-class Corvette (Fore)",
+      type: 'ship',
+      count: 1
+    }, {
+      name: "Raider-class Corvette (Aft)",
+      type: 'ship',
+      count: 1
+    }, {
+      name: "TIE Advanced",
+      type: 'ship',
+      count: 1
+    }, {
+      name: "Raider-class Corvette (Fore)",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Raider-class Corvette (Aft)",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Juno Eclipse",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Zertik Strom",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Commander Alozen",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Lieutenant Colzet",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Storm Squadron Pilot",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Tempest Squadron Pilot",
+      type: 'pilot',
+      count: 1
+    }, {
+      name: "Advanced Targeting Computer",
+      type: 'upgrade',
+      count: 4
+    }, {
+      name: "TIE/x1",
+      type: 'title',
+      count: 4
+    }, {
+      name: "Cluster Missiles",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Proton Rockets",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Captain Needa",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Grand Moff Tarkin",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Emperor Palpatine",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Admiral Ozzel",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Shield Technician",
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: "Gunnery Team",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Engineering Team",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Sensor Team",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Single Turbolasers",
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: "Ion Cannon Battery",
+      type: 'upgrade',
+      count: 4
+    }, {
+      name: "Quad Laser Cannons",
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: "Tibanna Gas Supplies",
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: "Engine Booster",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Backup Shield Generator",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Comms Booster",
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: "Assailer",
+      type: 'title',
+      count: 1
+    }, {
+      name: "Instigator",
+      type: 'title',
+      count: 1
+    }, {
+      name: "Impetuous",
+      type: 'title',
+      count: 1
     }
   ]
 };
@@ -14539,7 +14773,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14041
+                    lineno: 14285
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15058,7 +15292,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14576
+              lineno: 14820
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15628,7 +15862,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15075
+          lineno: 15319
         }));
         __iced_deferrals._fulfill();
       });
@@ -15640,7 +15874,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15076
+            lineno: 15320
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -16934,7 +17168,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 15821
+                      lineno: 16065
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17003,7 +17237,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 15845
+                lineno: 16089
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17055,14 +17289,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 15867
+            lineno: 16111
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 15869
+            lineno: 16113
           }));
         }
         _ref1 = _this.modifications;
@@ -17070,7 +17304,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 15871
+              lineno: 16115
             }));
           }
         }
@@ -17856,7 +18090,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16429
+                lineno: 16673
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17954,7 +18188,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16476
+                  lineno: 16720
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -17976,7 +18210,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16480
+                    lineno: 16724
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18057,7 +18291,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16517
+            lineno: 16761
           }));
         }
         __iced_deferrals._fulfill();
