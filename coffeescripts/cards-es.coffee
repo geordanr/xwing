@@ -999,13 +999,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Admiral Ozzel":
             name: "Almirante Ozzel"
             text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%<strong>ENERGÍA</strong>: Puedes descartar hasta 3 fichas de Escudos de tu nave. Por cada ficha de Escudos descartada, obtienes 1 de Energía."""
-        "Shield Technician":
-            text: """%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."""
-        "Shield Technician":
-            text: """%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."""
-        
-
-  
+    
     modification_translations =
         "Stealth Device":
             name: "Dispositivo de Sigilo"
