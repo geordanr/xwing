@@ -1086,6 +1086,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Andrasta"
             text: """<span class="card-restriction">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana 2 iconos %BOMB% adicionales."""
         "TIE/x1":
+            ship: "TIE Avanzado"
             text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
         "BTL-A4 Y-Wing":
             name: "BTL-A4 Ala-Y"
