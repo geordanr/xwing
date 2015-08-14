@@ -526,6 +526,7 @@ exportObj.basicCardData = ->
                 "Reinforce"
             ]
             huge: true
+            epic_points: 1.5
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 0, 0 ]
@@ -545,6 +546,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             huge: true
+            epic_points: 1.5
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 0, 0 ]
@@ -635,6 +637,7 @@ exportObj.basicCardData = ->
             hull: 9
             shields: 5
             huge: true
+            epic_points: 2 # guessing it's the same as rebel transport
             actions: [
                 "Recover"
                 "Reinforce"
