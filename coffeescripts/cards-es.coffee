@@ -559,6 +559,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave."""
             ship: "Z-95 Cazacabezas"
         "Commander Alozen":
+            name: "Comandante Alozen"
             ship: "TIE Avanzado"
             text: """Al comienzo de la fase de Combate, puedes fijar como blanco una nave enemiga que tengas a alcance 1."""
         "Juno Eclipse":
@@ -568,6 +569,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "TIE Avanzado"
             text: """Las naves enemigas que tengas a alcance 1 no pueden aplicar su modificador al combate por alcance cuando ataquen."""
         "Lieutenant Colzet":
+            name: "Teniente Colzet"
             ship: "TIE Avanzado"
             text: """Al comienzo de la fase Final, puedes gastar una de tus fichas de Blanco fijado asignadas a una nave enemiga para seleccionar al azar y poner boca arriba 1 carta de Daño que esa nave tenga asignada boca abajo."""
         "Latts Razzi":
