@@ -63,7 +63,7 @@ exportObj.translations['Español'] =
         "Imperial Raider Expansion Pack": "Pack de Expansión Incursor Imperial"
         "K-Wing Expansion Pack": "Pack de Expansión Ala-K"
         "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE"
-        "Khiraxz Fighter Expansion Pack": "Pack de Expansión Caza Khiraxz"
+        "Kihraxz Fighter Expansion Pack": "Pack de Expansión Caza Kihraxz"
         "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
@@ -173,7 +173,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
-    exportObj.renameShip 'Khiraxz Fighter', 'Caza Khiraxz'
+    exportObj.renameShip 'Kihraxz Fighter', 'Caza Kihraxz'
 
     pilot_translations =
         "Wedge Antilles":
@@ -993,7 +993,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Shield Technician":
             name: "Técnico de Escudos"
             text: """%HUGESHIPONLY%%LINEBREAK%Cuando lleves a cabo una acción de recuperación, en vez de retirar todas tus fichas de Energía, puedes elegir qué cantidad de fichas de Energía deseas retirar."""
-        "Gran Moff Tarkin":
+        "Grand Moff Tarkin":
             text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%Al comienzo de la fase de Combate, puedes elegir otra nave que tengas a alcance 1-4. Escoge entre retirar 1 ficha de Concentración de la nave elegida o asignarle 1 ficha de Concentración a esa nave."""
         "Captain Needa":
             name: "Capitán Needa"
