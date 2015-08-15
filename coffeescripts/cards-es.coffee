@@ -61,6 +61,10 @@ exportObj.translations['Español'] =
         "IG-2000 Expansion Pack": "Pack de Expansión IG-2000"
         "Most Wanted Expansion Pack": "Pack de Expansión Los Más Buscados"
         "Imperial Raider Expansion Pack": "Pack de Expansión Incursor Imperial"
+        "K-Wing Expansion Pack": "Pack de Expansión Ala-K"
+        "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE"
+        "Khiraxz Fighter Expansion Pack": "Pack de Expansión Caza Khiraxz"
+        "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -154,12 +158,14 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Interceptor', 'Interceptor TIE'
     exportObj.renameShip 'TIE Phantom', 'TIE Fantasma'
     exportObj.renameShip 'TIE Defender', 'Defensor TIE'
+    exportObj.renameShip 'TIE Punisher', 'Castigador TIE'
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Diezmador'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
     exportObj.renameShip 'X-Wing', 'Ala-X'
     exportObj.renameShip 'Y-Wing', 'Ala-Y'
+    exportObj.renameShip 'K-Wing', 'Ala-K'
     exportObj.renameShip 'Z-95 Headhunter', 'Z-95 Cazacabezas'
     exportObj.renameShip 'CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)'
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
@@ -167,6 +173,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
+    exportObj.renameShip 'Khiraxz Fighter', 'Caza Khiraxz'
 
     pilot_translations =
         "Wedge Antilles":
@@ -552,17 +559,19 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave."""
             ship: "Z-95 Cazacabezas"
         "Commander Alozen":
+            name: "Comandante Alozen"
             ship: "TIE Avanzado"
-            text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
+            text: """Al comienzo de la fase de Combate, puedes fijar como blanco una nave enemiga que tengas a alcance 1."""
         "Juno Eclipse":
             ship: "TIE Avanzado"
-            text: """When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."""
+            text: """Cuando reveles tu maniobra, puedes incrementar o reducir en 1 la velocidad de la maniobra (hasta un mínimo de 1)."""
         "Zertik Strom":
             ship: "TIE Avanzado"
-            text: """Enemy ships at Range 1 cannot add their range combat bonus when attacking."""
+            text: """Las naves enemigas que tengas a alcance 1 no pueden aplicar su modificador al combate por alcance cuando ataquen."""
         "Lieutenant Colzet":
+            name: "Teniente Colzet"
             ship: "TIE Avanzado"
-            text: """At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."""
+            text: """Al comienzo de la fase Final, puedes gastar una de tus fichas de Blanco fijado asignadas a una nave enemiga para seleccionar al azar y poner boca arriba 1 carta de Daño que esa nave tenga asignada boca abajo."""
         "Latts Razzi":
             text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
         "Graz the Hunter":
@@ -944,11 +953,15 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Torreta de Bláster Automático"
             text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).<br /><br />Tus resultados %HIT% no pueden ser anulados por los dados de defensa.<br /><br />El defensor puede anular tus resultados %CRIT% antes que los %HIT%."""
         "Advanced Targeting Computer":
-            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."""
+            ship: "TIE Avanzado"
+            name: "Computadora de Selección de Blancos Avanzada"
+            text: """<span class="card-restriction">Solo TIE Avanzado.</span>%LINEBREAK%Cuando ataques con tu armamento principal, si tienes al defensor fijado como blanco, puedes añadir 1 %CRIT% al resultado de tu tirada. Si decides hacerlo, no podrás gastar fichas de Blanco Fijado durante este ataque."""
         "Ion Cannon Battery":
-            text: """<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."""
+            name: "Batería de Cañones de Iones"
+            text: """<strong>Ataque (Energía):</strong> Gasta 2 de Energía de esta carta para efectuar este ataque. Si este ataque impacta, el defensor sufre 1 de daño crítico y recibe 1 ficha de Iones. Después se anulan <strong>todos<strong> los resultados de los dados."""
         "Emperor Palpatine":
-            text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
+            name: "Emperador Palpatine"
+            text: """%IMPERIALONLY%%LINEBREAK%Una vez por ornda, puedes cambiar el resultado de una tirada de dado efectuada por otra nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."""
         "Bossk":
             text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
         "Lightning Reflexes":
@@ -978,8 +991,17 @@ exportObj.cardLoaders['Español'] = () ->
         "Cloaking Device":
             text: """%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."""
         "Shield Technician":
-            text: """%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."""
-
+            name: "Técnico de Escudos"
+            text: """%HUGESHIPONLY%%LINEBREAK%Cuando lleves a cabo una acción de recuperación, en vez de retirar todas tus fichas de Energía, puedes elegir qué cantidad de fichas de Energía deseas retirar."""
+        "Gran Moff Tarkin":
+            text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%Al comienzo de la fase de Combate, puedes elegir otra nave que tengas a alcance 1-4. Escoge entre retirar 1 ficha de Concentración de la nave elegida o asignarle 1 ficha de Concentración a esa nave."""
+        "Captain Needa":
+            name: "Capitán Needa"
+            text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%Si durante la fase de Activación te solapas con un obstáculo, en vez de recibir 1 carta de Daño boca arriba, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, sufres 1 de daño."""
+        "Admiral Ozzel":
+            name: "Almirante Ozzel"
+            text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%<strong>ENERGÍA</strong>: Puedes descartar hasta 3 fichas de Escudos de tu nave. Por cada ficha de Escudos descartada, obtienes 1 de Energía."""
+    
     modification_translations =
         "Stealth Device":
             name: "Dispositivo de Sigilo"
@@ -1087,7 +1109,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<span class="card-restriction">Solo Firespray-31.</span><br /><br />Tu barra de mejoras gana 2 iconos %BOMB% adicionales."""
         "TIE/x1":
             ship: "TIE Avanzado"
-            text: """<span class="card-restriction">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."""
+            text: """<span class="card-restriction">Solo TIE Avanzado.</span>%LINEBREAK%Tu barra de mejoras gana el icono %SYSTEM%.%LINEBREAK%Si te equipas con una mejora %SYSTEM%, su coste en puntos de escuadrón se reduce en 4 (hasta un mínimo de 0)."""
         "BTL-A4 Y-Wing":
             name: "BTL-A4 Ala-Y"
             text: """<span class="card-restriction">Solo Ala-Y.</span><br /><br />No puedes atacar naves que estén fuera de tu arco de fuego. Después de que efectúes un ataque con tu armamento principal, puedes realizar inmediatamente un ataque con arma secundaria %TURRET%."""
@@ -1127,10 +1149,13 @@ exportObj.cardLoaders['Español'] = () ->
         "Punishing One":
             text: """<span class="card-restriction">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."""
         "Assailer":
-            text: """<span class="card-restriction"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."""
+            name: "Acometedor"
+            text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Cuando te defiendas, si la sección atacada tiene asginada una ficha de Refuerzo, puedes cambiar 1 resultado de %FOCUS% por 1 resultado %EVADE%."""
         "Instigator":
-            text: """<span class="card-restriction"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."""
+            name: "Instigador"
+            text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%ADespués de que hayas llevado a cabo una acción de recuperación, recuperas 1 de Escudos adicional."""
         "Impetuous":
-            text: """<span class="card-restriction"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."""
+            name: "Impetuoso"
+            text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."""
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
