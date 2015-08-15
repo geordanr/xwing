@@ -8067,17 +8067,33 @@ exportObj.cardLoaders['Español'] = function() {
     "Latts Razzi": {
       text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
     },
-    "Graz the Hunter": {
-      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    "Miranda Doni": {
+      ship: 'Ala-K',
+      text: "Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."
     },
     "Esege Tuketu": {
+      ship: 'Ala-K',
       text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
     },
+    "Guardian Squadron Pilot": {
+      ship: 'Ala-K'
+    },
+    "Warden Squadron Pilot": {
+      ship: 'Ala-K'
+    },
     '"Redline"': {
+      ship: 'Castigador TIE',
       text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
     },
     '"Deathrain"': {
+      ship: 'Castigador TIE',
       text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+    },
+    'Black Eight Squadron Pilot': {
+      ship: 'Castigador TIE'
+    },
+    'Cutlass Squadron Pilot': {
+      ship: 'Castigador TIE'
     },
     "Moralo Eval": {
       text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
@@ -8096,6 +8112,20 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Talonbane Cobra": {
+      ship: "Caza Kihraxz",
+      text: "When attacking or defending, double the effect of your range combat bonuses."
+    },
+    "Graz the Hunter": {
+      ship: "Caza Kihraxz",
+      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
+    },
+    "Black Sun Ace": {
+      ship: "Caza Kihraxz"
+    },
+    "Cartel Marauder": {
+      ship: "Caza Kihraxz"
     }
   };
   upgrade_translations = {
@@ -14806,7 +14836,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14314
+                    lineno: 14336
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15325,7 +15355,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14849
+              lineno: 14871
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15895,7 +15925,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15348
+          lineno: 15370
         }));
         __iced_deferrals._fulfill();
       });
@@ -15907,7 +15937,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15349
+            lineno: 15371
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17201,7 +17231,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16094
+                      lineno: 16116
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17270,7 +17300,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16118
+                lineno: 16140
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17322,14 +17352,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16140
+            lineno: 16162
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16142
+            lineno: 16164
           }));
         }
         _ref1 = _this.modifications;
@@ -17337,7 +17367,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16144
+              lineno: 16166
             }));
           }
         }
@@ -18123,7 +18153,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16702
+                lineno: 16724
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18221,7 +18251,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16749
+                  lineno: 16771
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18243,7 +18273,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16753
+                    lineno: 16775
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18324,7 +18354,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16790
+            lineno: 16812
           }));
         }
         __iced_deferrals._fulfill();
