@@ -3585,6 +3585,7 @@ exportObj.basicCardData = ->
             id: 61
             slot: "Crew"
             points: 2
+            limited: true
         }
         {
             name: "R2-D2 (Crew)"
