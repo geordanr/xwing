@@ -574,14 +574,26 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Al comienzo de la fase Final, puedes gastar una de tus fichas de Blanco fijado asignadas a una nave enemiga para seleccionar al azar y poner boca arriba 1 carta de Daño que esa nave tenga asignada boca abajo."""
         "Latts Razzi":
             text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
-        "Graz the Hunter":
-            text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
+        "Miranda Doni":
+            ship: 'Ala-K'
+            text: """Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."""
         "Esege Tuketu":
+            ship: 'Ala-K'
             text: """When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."""
+        "Guardian Squadron Pilot":
+            ship: 'Ala-K'
+        "Warden Squadron Pilot":
+            ship: 'Ala-K'
         '"Redline"':
+            ship: 'Castigador TIE'
             text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
         '"Deathrain"':
+            ship: 'Castigador TIE'
             text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
+        'Black Eight Squadron Pilot':
+            ship: 'Castigador TIE'
+        'Cutlass Squadron Pilot':
+            ship: 'Castigador TIE'
         "Moralo Eval":
             text: """You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."""
         'Gozanti-class Cruiser':
@@ -594,6 +606,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: """When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."""
         "Dengar":
             text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
+        "Talonbane Cobra":
+            ship: "Caza Kihraxz"
+            text: """When attacking or defending, double the effect of your range combat bonuses."""
+        "Graz the Hunter":
+            ship: "Caza Kihraxz"
+            text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
+        "Black Sun Ace":
+            ship: "Caza Kihraxz"
+        "Cartel Marauder":
+            ship: "Caza Kihraxz"
 
     upgrade_translations =
         "Ion Cannon Turret":
