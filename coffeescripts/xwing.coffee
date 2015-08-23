@@ -1674,9 +1674,17 @@ class Ship
     copyFrom: (other) ->
         throw new Error("Cannot copy from self") if other is this
         #console.log "Attempt to copy #{other?.pilot?.name}"
-        return unless other.pilot? and other.data? and not other.pilot.unique
+        return unless other.pilot? and other.data?
         #console.log "Setting pilot to ID=#{other.pilot.id}"
-        @setPilotById other.pilot.id
+        if other.pilot.unique
+            # Look for cheapest generic or available unique, otherwise do nothing
+            available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
+            if available_pilots.length > 0
+                @setPilotById available_pilots[0].id
+            else
+                return
+        else
+            @setPilotById other.pilot.id
 
         # set up non-conferred addons
         other_conferred_addons = []
@@ -1758,7 +1766,7 @@ class Ship
                     await @builder.container.trigger 'xwing:claimUnique', [ new_pilot, 'Pilot', defer() ]
                 @pilot = new_pilot
                 @setupAddons() if @pilot?
-                @copy_button.toggle not @pilot?.unique
+                @copy_button.show()
                 @setShipType @pilot.ship
                 if ship_changed
                     # Hopefully this order is correct
@@ -1952,7 +1960,7 @@ class Ship
         @copy_button = $ @row.find('button.copy-pilot')
         @copy_button.click (e) =>
             clone = @builder.ships[@builder.ships.length - 1]
-            clone.copyFrom this
+            clone.copyFrom(this)
         @copy_button.hide()
 
     teardownUI: ->

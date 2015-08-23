@@ -15,7 +15,7 @@ casper.test.begin "Copy pilot", (test) ->
         }
         {
             ship: 'X-Wing'
-            pilot: 'Rookie Pilot'
+            pilot: 'Red Squadron Pilot'
             upgrades: [
                 'Proton Torpedoes'
                 'R2 Astromech'
@@ -24,20 +24,31 @@ casper.test.begin "Copy pilot", (test) ->
         }
     ])
 
-    # Unique pilots can't be cloned
+    # Unique pilots can't be cloned, but the clone will pick either a generic
+    # or the cheapest named
     .then ->
         @log("#rebel-builder #{common.selectorForCloneShip(1)}")
-        test.assertNotVisible("#rebel-builder #{common.selectorForCloneShip(1)}", "Unique pilots cannot be cloned")
+        test.assertVisible("#rebel-builder #{common.selectorForCloneShip(1)}", "Unique pilots may be cloned")
+    
+    # Unique clones to generic
+    common.cloneShip('#rebel-builder', 1)
+    common.assertShipTypeIs(test, '#rebel-builder', 3, 'X-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 3, 'Rookie Pilot')
 
     # Non-uniques
     common.cloneShip('#rebel-builder', 2)
-    common.assertTotalPoints(test, '#rebel-builder', 88)
+    common.assertShipTypeIs(test, '#rebel-builder', 4, 'X-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 4, 'Red Squadron Pilot')
 
     # Don't clone uniques
     common.addUpgrade('#rebel-builder', 2, 2, 'R2-D2')
     common.cloneShip('#rebel-builder', 2)
-    common.assertTotalPoints(test, '#rebel-builder', 120)
+    common.assertShipTypeIs(test, '#rebel-builder', 5, 'X-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 5, 'Red Squadron Pilot')
+    common.assertSelect2IsEmpty(test, "#rebel-builder #{common.selectorForUpgradeIndex(5, 2)}")
 
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
@@ -131,6 +142,51 @@ casper.test.begin "Copy Royal Guard Pilot with Royal Guard TIE", (test) ->
 
     common.removeShip('#empire-builder', 1)
     common.removeShip('#empire-builder', 1)
+
+    .run ->
+        test.done()
+
+casper.test.begin "Copy IG-88", (test) ->
+    common.waitForStartup('#rebel-builder')
+    common.openScumBuilder()
+
+    common.createList('#scum-builder', [
+        {
+            ship: 'Aggressor'
+            pilot: 'IG-88C'
+            upgrades: [
+                'Lone Wolf'
+                'Advanced Sensors'
+                'Heavy Laser Cannon'
+            ]
+        }
+    ])
+
+    common.cloneShip('#scum-builder', 1)
+    common.assertShipTypeIs(test, '#scum-builder', 2, 'Aggressor')
+    common.assertPilotIs(test, '#scum-builder', 2, 'IG-88A')
+    common.assertSelect2IsEmpty(test, "#scum-builder #{common.selectorForUpgradeIndex(2, 1)}")
+
+    common.cloneShip('#scum-builder', 1)
+    common.assertShipTypeIs(test, '#scum-builder', 2, 'Aggressor')
+    common.assertPilotIs(test, '#scum-builder', 2, 'IG-88A')
+    common.assertSelect2IsEmpty(test, "#scum-builder #{common.selectorForUpgradeIndex(3, 1)}")
+
+    common.cloneShip('#scum-builder', 1)
+    common.assertShipTypeIs(test, '#scum-builder', 2, 'Aggressor')
+    common.assertPilotIs(test, '#scum-builder', 2, 'IG-88A')
+    common.assertSelect2IsEmpty(test, "#scum-builder #{common.selectorForUpgradeIndex(4, 1)}")
+
+    # Clone should do nothing now
+    common.cloneShip('#scum-builder', 1)
+    common.assertSelect2IsEmpty(test, "#scum-builder #{common.selectorForShipIndex(5)}")
+
+    common.assertTotalPoints(test, '#scum-builder', 186)
+
+    common.removeShip('#scum-builder', 1)
+    common.removeShip('#scum-builder', 1)
+    common.removeShip('#scum-builder', 1)
+    common.removeShip('#scum-builder', 1)
 
     .run ->
         test.done()
