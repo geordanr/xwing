@@ -708,6 +708,33 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
             ]
             maneuvers: []
+        "T-70 X-Wing":
+            name: "T-70 X-Wing"
+            factions: ["Resistance"]
+            attack: 3
+            agility: 2
+            hull: 3
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+            ]
+            maneuvers: []
+        "TIE/fo Fighter":
+            name: "TIE/fo Fighter"
+            factions: ["First Order"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+                "Evade"
+            ]
+            maneuvers: []
 
     # name field is for convenience only
     pilotsById: [
@@ -3147,6 +3174,139 @@ exportObj.basicCardData = ->
             ]
             points: 99
         }
+
+        # T-70
+        {
+            name: "Poe Dameron"
+            id: 175
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 8
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+                'Unknown Upgrade Type'
+            ]
+            points: 31
+        }
+        {
+            name: '"Blue Ace"'
+            id: 176
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 5
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Unknown Upgrade Type'
+            ]
+            points: 27
+        }
+        {
+            name: "Red Squadron Veteran"
+            id: 177
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 4
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+                'Unknown Upgrade Type'
+            ]
+            points: 26
+        }
+        {
+            name: "Blue Squadron Novice"
+            id: 178
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 2
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Unknown Upgrade Type'
+            ]
+            points: 24
+        }
+
+        # TIE/fo
+        {
+            name: '"Omega Ace"'
+            id: 179
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 7
+            slots: [
+                'Elite'
+                'Unknown Upgrade Type'
+            ]
+            points: 20
+        }
+        {
+            name: '"Epsilon Leader"'
+            id: 180
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Unknown Upgrade Type'
+            ]
+            points: 19
+        }
+        {
+            name: '"Zeta Ace"'
+            id: 181
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Elite'
+                'Unknown Upgrade Type'
+            ]
+            points: 18
+        }
+        {
+            name: "Omega Squadron Pilot"
+            id: 182
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Elite'
+                'Unknown Upgrade Type'
+            ]
+            points: 17
+        }
+        {
+            name: "Zeta Squadron Pilot"
+            id: 183
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Unknown Upgrade Type'
+            ]
+            points: 16
+        }
+        {
+            name: "Epsilon Squadron Pilot"
+            id: 184
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Unknown Upgrade Type'
+            ]
+            points: 15
+        }
+
     ]
 
     upgradesById: [
