@@ -263,7 +263,7 @@ casper.test.begin "Chardaan Refit", (test) ->
             ]
         }
         {
-            ship: 'Z-95'
+            ship: 'Z-95 Headhunter'
             pilot: 'Bandit Squadron Pilot'
             upgrades: [
             ]
