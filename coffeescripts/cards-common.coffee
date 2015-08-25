@@ -720,7 +720,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Boost"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+            ]
         "TIE/fo Fighter":
             name: "TIE/fo Fighter"
             factions: ["First Order"]
@@ -734,7 +740,14 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Evade"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 0, 0, 0, 1, 0, 0, 0 ]
+                [ 2, 2, 2, 2, 2, 0, 3, 3 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -3187,7 +3200,7 @@ exportObj.basicCardData = ->
                 'Elite'
                 'Torpedo'
                 'Astromech'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 31
         }
@@ -3201,7 +3214,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Torpedo'
                 'Astromech'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 27
         }
@@ -3215,7 +3228,7 @@ exportObj.basicCardData = ->
                 'Elite'
                 'Torpedo'
                 'Astromech'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 26
         }
@@ -3228,7 +3241,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Torpedo'
                 'Astromech'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 24
         }
@@ -3243,7 +3256,7 @@ exportObj.basicCardData = ->
             skill: 7
             slots: [
                 'Elite'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 20
         }
@@ -3255,7 +3268,7 @@ exportObj.basicCardData = ->
             ship: "TIE/fo Fighter"
             skill: 2
             slots: [
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 19
         }
@@ -3268,7 +3281,7 @@ exportObj.basicCardData = ->
             skill: 2
             slots: [
                 'Elite'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 18
         }
@@ -3280,7 +3293,7 @@ exportObj.basicCardData = ->
             skill: 2
             slots: [
                 'Elite'
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 17
         }
@@ -3291,7 +3304,7 @@ exportObj.basicCardData = ->
             ship: "TIE/fo Fighter"
             skill: 2
             slots: [
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 16
         }
@@ -3302,7 +3315,7 @@ exportObj.basicCardData = ->
             ship: "TIE/fo Fighter"
             skill: 2
             slots: [
-                'Unknown Upgrade Type'
+                'Tech'
             ]
             points: 15
         }
@@ -4411,6 +4424,32 @@ exportObj.basicCardData = ->
             points: 1
             restriction_func: (ship) ->
                 ship.data.huge ? false
+        }
+        {
+            name: 'Weapons Guidance'
+            id: 147
+            slot: "Tech"
+            points: 2
+        }
+        {
+            name: 'BB-8'
+            id: 148
+            unique: true
+            slot: "Astromech"
+            points: 2
+        }
+        {
+            name: 'R5-X3'
+            id: 149
+            unique: true
+            slot: "Astromech"
+            points: 1
+        }
+        {
+            name: 'Wired'
+            id: 150
+            slot: "Elite"
+            points: 1
         }
     ]
 

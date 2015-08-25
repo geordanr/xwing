@@ -52,6 +52,15 @@ SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
     """#{base_stat}#{if effective_stats[key] != base_stat then " (#{effective_stats[key]})" else ""}"""
 
+getPrimaryFaction = (faction) ->
+    switch faction
+        when 'Rebel Alliance', 'Resistance'
+            'Rebel Alliance'
+        when 'Galactic Empire', 'First Order'
+            'Galactic Empire'
+        else
+            faction
+
 # Assumes cards.js will be loaded
 
 class exportObj.SquadBuilder
@@ -1017,10 +1026,19 @@ class exportObj.SquadBuilder
     matcher: (item, term) ->
         item.toUpperCase().indexOf(term.toUpperCase()) >= 0
 
+    isOurFaction: (faction) ->
+        if faction instanceof Array
+            for f in faction
+                if getPrimaryFaction(f) == @faction
+                    return true
+            false
+        else
+            getPrimaryFaction(faction) == @faction
+
     getAvailableShipsMatching: (term='') ->
         ships = []
         for ship_name, ship_data of exportObj.ships
-            if @faction in ship_data.factions and @matcher(ship_data.name, term)
+            if @isOurFaction(ship_data.factions) and @matcher(ship_data.name, term)
                 if not ship_data.huge or (@isEpic or @isCustom)
                     ships.push
                         id: ship_data.name
@@ -1030,7 +1048,7 @@ class exportObj.SquadBuilder
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and pilot.faction == @faction and @matcher(pilot_name, term))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term))
 
         eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
 
@@ -1047,7 +1065,7 @@ class exportObj.SquadBuilder
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
         if filter_func == @dfl_filter_func
-            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or upgrade.faction == @faction or (upgrade.faction instanceof Array and @faction in upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
+            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
         else
             available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when filter_func(upgrade))
 
@@ -1075,7 +1093,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
         
-        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or modification.faction == @faction) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up
@@ -1096,7 +1114,7 @@ class exportObj.SquadBuilder
         # Titles are no longer unique!
         available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term))
 
-        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or title.faction == @faction) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
 
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)
@@ -1107,6 +1125,16 @@ class exportObj.SquadBuilder
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
         if not maneuvers? or maneuvers.length == 0
             return "Missing maneuver info."
+
+        # Preprocess maneuvers to see which bearings are never used so we
+        # don't render them.
+        bearings_without_maneuvers = [0...maneuvers[0].length]
+        for bearings in maneuvers
+            for difficulty, bearing in bearings
+                if difficulty > 0
+                    bearings_without_maneuvers.removeItem bearing
+        console.log "bearings without maneuvers:"
+        console.dir bearings_without_maneuvers
 
         outTable = "<table><tbody>"
 
@@ -1122,6 +1150,7 @@ class exportObj.SquadBuilder
 
             outTable += "<tr><td>#{speed}</td>"
             for turn in [0 ... maneuvers[speed].length]
+                continue if turn in bearings_without_maneuvers
 
                 outTable += "<td>"
                 if maneuvers[speed][turn] > 0
@@ -1184,6 +1213,14 @@ class exportObj.SquadBuilder
                                 linePath = "M50,180 S50,120 120,60"
                                 trianglePath = "M120,100 V40 L170,70 Z"
                                 transform = "transform='translate(0 50)'"
+                            when 8
+                                # tallon roll left
+                                linePath = "M160,180 L160,70 80,70"
+                                trianglePath = "M60,100 H100 L80,140 Z"
+                            when 9
+                                # tallon roll right
+                                linePath = "M40,180 L40,70 120,70"
+                                trianglePath = "M100,100 H140 L120,140 Z"
 
                         outTable += $.trim """
                           <path d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
