@@ -2,10 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "Hound's Tooth Expansion Pack"
-    "Kihraxz Fighter Expansion Pack"
-    "K-Wing Expansion Pack"
-    "TIE Punisher Expansion Pack"
     "Imperial Assault Carrier Expansion Pack"
     "Ghost Expansion Pack"
     "Inquisitor's TIE Expansion Pack"
