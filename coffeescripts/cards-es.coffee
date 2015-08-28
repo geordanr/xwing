@@ -573,7 +573,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "TIE Avanzado"
             text: """Al comienzo de la fase Final, puedes gastar una de tus fichas de Blanco fijado asignadas a una nave enemiga para seleccionar al azar y poner boca arriba 1 carta de Daño que esa nave tenga asignada boca abajo."""
         "Latts Razzi":
-            text: """When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."""
+            text: """Cuando una nave aliada declare un ataque, puedes gastar una ficha de Blanco Fijado que hayas asignado al defensor para reducir su Agilidad en 1 contra el ataque declarado."""
         "Miranda Doni":
             ship: 'Ala-K'
             text: """Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."""
@@ -595,7 +595,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Cutlass Squadron Pilot':
             ship: 'Castigador TIE'
         "Moralo Eval":
-            text: """You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."""
+            text: """Puedes efectuar ataques con sistemas de armamento secundarios %CANNON% contra naves que estén dentro de tu arco de fuego auxiliar."""
         'Gozanti-class Cruiser':
             text: """After you execute a maneuver, you may deploy up to 2 attached ships."""
         '"Scourge"':
@@ -616,6 +616,12 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Caza Kihraxz"
         "Cartel Marauder":
             ship: "Caza Kihraxz"
+        "Trandoshan Slaver":
+            name: "Esclavista Trandoshano"
+            ship: "YV-666"
+        "Bossk":
+            ship: "YV-666"
+            text: """Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -985,7 +991,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Emperador Palpatine"
             text: """%IMPERIALONLY%%LINEBREAK%Una vez por ornda, puedes cambiar el resultado de una tirada de dado efectuada por otra nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."""
         "Bossk":
-            text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
+            text: """%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."""
         "Lightning Reflexes":
             text: """%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the "Check Pilot Stress" step."""
         "Twin Laser Turret":
@@ -1001,7 +1007,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Cluster Mines":
             text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."""
         'Crack Shot':
-            text: '''When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender's %EVADE% results.'''
+            name: "Tiro Certero"
+            text: '''Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'''
         "Advanced Homing Missiles":
             text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."""
         'Agent Kallus':
@@ -1023,6 +1030,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Admiral Ozzel":
             name: "Almirante Ozzel"
             text: """%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%<strong>ENERGÍA</strong>: Puedes descartar hasta 3 fichas de Escudos de tu nave. Por cada ficha de Escudos descartada, obtienes 1 de Energía."""
+        'Glitterstim':
+            name: "Brillestim"
+            text: """Al comienzo de la fase de Combate, puedes descartar esta carta y recibir 1 ficha de Tensión. Si lo haces, hasta el final de la ronda, cuando ataques o defiendes puedes cambiar todos tus resultados %FOCUS% por resultados %HIT% o %EVADE%."""
     
     modification_translations =
         "Stealth Device":
@@ -1075,9 +1085,11 @@ exportObj.cardLoaders['Español'] = () ->
         "Twin Ion Engine Mk. II":
             text: """You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
         "Maneuvering Fins":
-            text: """When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."""
+            name: "Alerones de Estabilización"
+            text: """Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."""
         "Ion Projector":
-            text: """%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."""
+            name: "Técnico de Escudos"
+            text: """%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."""
 
     title_translations =
         "Slave I":
@@ -1170,6 +1182,9 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<span class="card-restriction">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 "Tractor Beam" Upgrade card (paying its squad point cost as normal)."""
         "Punishing One":
             text: """<span class="card-restriction">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."""
+        "Hound's Tooth":
+            name: "Diente de Perro"
+            text: """<span class="card-restriction">Solo YV-666.</span>%LINEBREAK%Después de que seas destruido, y antes de retirarte de la zona de juego, puedes <strong>desplegar</strong> al Piloto del <span>Cachorro de Nashtah</span>.%LINEBREAK%El <span>Cachorro de Nashtah</span> no puede atacar en esta ronda."""
         "Assailer":
             name: "Acometedor"
             text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Cuando te defiendas, si la sección atacada tiene asginada una ficha de Refuerzo, puedes cambiar 1 resultado de %FOCUS% por 1 resultado %EVADE%."""
