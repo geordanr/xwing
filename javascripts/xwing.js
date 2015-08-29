@@ -8065,7 +8065,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Al comienzo de la fase Final, puedes gastar una de tus fichas de Blanco fijado asignadas a una nave enemiga para seleccionar al azar y poner boca arriba 1 carta de Daño que esa nave tenga asignada boca abajo."
     },
     "Latts Razzi": {
-      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
+      text: "Cuando una nave aliada declare un ataque, puedes gastar una ficha de Blanco Fijado que hayas asignado al defensor para reducir su Agilidad en 1 contra el ataque declarado."
     },
     "Miranda Doni": {
       ship: 'Ala-K',
@@ -8096,7 +8096,7 @@ exportObj.cardLoaders['Español'] = function() {
       ship: 'Castigador TIE'
     },
     "Moralo Eval": {
-      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+      text: "Puedes efectuar ataques con sistemas de armamento secundarios %CANNON% contra naves que estén dentro de tu arco de fuego auxiliar."
     },
     'Gozanti-class Cruiser': {
       text: "After you execute a maneuver, you may deploy up to 2 attached ships."
@@ -8126,6 +8126,14 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Cartel Marauder": {
       ship: "Caza Kihraxz"
+    },
+    "Trandoshan Slaver": {
+      name: "Esclavista Trandoshano",
+      ship: "YV-666"
+    },
+    "Bossk": {
+      ship: "YV-666",
+      text: "Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."
     }
   };
   upgrade_translations = {
@@ -8621,7 +8629,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "%IMPERIALONLY%%LINEBREAK%Una vez por ornda, puedes cambiar el resultado de una tirada de dado efectuada por otra nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."
     },
     "Bossk": {
-      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
+      text: "%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."
     },
     "Lightning Reflexes": {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
@@ -8645,7 +8653,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
     },
     'Crack Shot': {
-      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+      name: "Tiro Certero",
+      text: 'Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
@@ -8676,6 +8685,10 @@ exportObj.cardLoaders['Español'] = function() {
     "Admiral Ozzel": {
       name: "Almirante Ozzel",
       text: "%HUGESHIPONLY%%IMPERIALONLY%%LINEBREAK%<strong>ENERGÍA</strong>: Puedes descartar hasta 3 fichas de Escudos de tu nave. Por cada ficha de Escudos descartada, obtienes 1 de Energía."
+    },
+    'Glitterstim': {
+      name: "Brillestim",
+      text: "Al comienzo de la fase de Combate, puedes descartar esta carta y recibir 1 ficha de Tensión. Si lo haces, hasta el final de la ronda, cuando ataques o defiendes puedes cambiar todos tus resultados %FOCUS% por resultados %HIT% o %EVADE%."
     }
   };
   modification_translations = {
@@ -8745,10 +8758,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      name: "Alerones de Estabilización",
+      text: "Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."
     },
     "Ion Projector": {
-      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+      name: "Técnico de Escudos",
+      text: "%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."
     }
   };
   title_translations = {
@@ -8868,6 +8883,10 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Punishing One": {
       text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+    },
+    "Hound's Tooth": {
+      name: "Diente de Perro",
+      text: "<span class=\"card-restriction\">Solo YV-666.</span>%LINEBREAK%Después de que seas destruido, y antes de retirarte de la zona de juego, puedes <strong>desplegar</strong> al Piloto del <span>Cachorro de Nashtah</span>.%LINEBREAK%El <span>Cachorro de Nashtah</span> no puede atacar en esta ronda."
     },
     "Assailer": {
       name: "Acometedor",
@@ -14836,7 +14855,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14332
+                    lineno: 14347
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15355,7 +15374,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14867
+              lineno: 14882
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15925,7 +15944,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15366
+          lineno: 15381
         }));
         __iced_deferrals._fulfill();
       });
@@ -15937,7 +15956,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15367
+            lineno: 15382
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17251,7 +17270,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16120
+                      lineno: 16135
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17320,7 +17339,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16146
+                lineno: 16161
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17372,14 +17391,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16168
+            lineno: 16183
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16170
+            lineno: 16185
           }));
         }
         _ref1 = _this.modifications;
@@ -17387,7 +17406,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16172
+              lineno: 16187
             }));
           }
         }
@@ -18173,7 +18192,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16730
+                lineno: 16745
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18271,7 +18290,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16777
+                  lineno: 16792
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18293,7 +18312,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16781
+                    lineno: 16796
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18374,7 +18393,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16818
+            lineno: 16833
           }));
         }
         __iced_deferrals._fulfill();
