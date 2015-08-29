@@ -11,6 +11,10 @@ casper.test.begin "Copy pilot", (test) ->
             ship: 'X-Wing'
             pilot: 'Luke Skywalker'
             upgrades: [
+                'Lone Wolf'
+                'Proton Torpedoes'
+                'R5-P9'
+                'Engine Upgrade'
             ]
         }
         {
@@ -34,6 +38,10 @@ casper.test.begin "Copy pilot", (test) ->
     common.cloneShip('#rebel-builder', 1)
     common.assertShipTypeIs(test, '#rebel-builder', 3, 'X-Wing')
     common.assertPilotIs(test, '#rebel-builder', 3, 'Rookie Pilot')
+    # ...but only sends valid upgrades
+    common.assertUpgradeInSlot(test, '#rebel-builder', 3, 1, 'Proton Torpedoes')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 3, 2)
+    common.assertUpgradeInSlot(test, '#rebel-builder', 3, 3, 'Engine Upgrade')
 
     # Non-uniques
     common.cloneShip('#rebel-builder', 2)
@@ -45,8 +53,20 @@ casper.test.begin "Copy pilot", (test) ->
     common.cloneShip('#rebel-builder', 2)
     common.assertShipTypeIs(test, '#rebel-builder', 5, 'X-Wing')
     common.assertPilotIs(test, '#rebel-builder', 5, 'Red Squadron Pilot')
-    common.assertSelect2IsEmpty(test, "#rebel-builder #{common.selectorForUpgradeIndex(5, 2)}")
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 5, 2)
 
+    # Handle cloning when a unique would confer an upgrade
+    common.addShip('#rebel-builder', 'X-Wing', 'Tarn Mison')
+    common.addUpgrade('#rebel-builder', 6, 2, 'R2-D6')
+    common.addUpgrade('#rebel-builder', 6, 4, 'Calculation')
+    common.cloneShip('#rebel-builder', 6)
+    common.assertShipTypeIs(test, '#rebel-builder', 7, 'X-Wing')
+    common.assertPilotIs(test, '#rebel-builder', 7, 'Rookie Pilot')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 7, 2)
+    test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 7, 4}"
+
+    common.removeShip('#rebel-builder', 1)
+    common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
     common.removeShip('#rebel-builder', 1)
@@ -158,6 +178,11 @@ casper.test.begin "Copy IG-88", (test) ->
                 'Lone Wolf'
                 'Advanced Sensors'
                 'Heavy Laser Cannon'
+                null
+                null
+                null
+                'IG-2000'
+                'Autothrusters'
             ]
         }
     ])
@@ -181,7 +206,7 @@ casper.test.begin "Copy IG-88", (test) ->
     common.cloneShip('#scum-builder', 1)
     common.assertSelect2IsEmpty(test, "#scum-builder #{common.selectorForShipIndex(5)}")
 
-    common.assertTotalPoints(test, '#scum-builder', 186)
+    common.assertTotalPoints(test, '#scum-builder', 194)
 
     common.removeShip('#scum-builder', 1)
     common.removeShip('#scum-builder', 1)

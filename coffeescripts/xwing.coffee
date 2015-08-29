@@ -1681,36 +1681,63 @@ class Ship
             available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
             if available_pilots.length > 0
                 @setPilotById available_pilots[0].id
+                # Can't just copy upgrades since slots may be different
+                # Similar to setPilot() when ship is the same
+
+                other_upgrades = {}
+                for upgrade in other.upgrades
+                    if upgrade?.data? and not upgrade.data.unique
+                        other_upgrades[upgrade.slot] ?= []
+                        other_upgrades[upgrade.slot].push upgrade
+
+                other_modifications = []
+                for modification in other.modifications
+                    if modification?.data? and not modification.data.unique
+                        other_modifications.push modification
+
+                if other.title?.data? and not other.title.data.unique
+                    @title.setById other.title.data.id
+
+                for modification in @modifications
+                    other_modification = other_modifications.shift()
+                    if other_modification?
+                        modification.setById other_modification.data.id
+
+                for upgrade in @upgrades
+                    other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                    if other_upgrade?
+                        upgrade.setById other_upgrade.data.id
             else
                 return
         else
+            # Exact clone, so we can copy things over directly
             @setPilotById other.pilot.id
 
-        # set up non-conferred addons
-        other_conferred_addons = []
-        other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons) if other.title? and other.title.conferredAddons.length > 0
-        other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
-        #console.log "Looking for conferred upgrades..."
-        for other_upgrade, i in other.upgrades
-            #console.log "Examining upgrade #{other_upgrade}"
-            if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique
-                #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
-                @upgrades[i].setById other_upgrade.data.id
-        #console.log "Checking other ship title #{other.title ? null}"
-        @title.setById other.title.data.id if other.title?.data? and not other.title.data.unique
-        #console.log "Checking other ship base modification #{other.modifications[0] ? null}"
-        @modifications[0].setById other.modifications[0].data.id if other.modifications[0]?.data and not other.modifications[0].data.unique
+            # set up non-conferred addons
+            other_conferred_addons = []
+            other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons) if other.title? and other.title.conferredAddons.length > 0
+            other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
+            #console.log "Looking for conferred upgrades..."
+            for other_upgrade, i in other.upgrades
+                #console.log "Examining upgrade #{other_upgrade}"
+                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique
+                    #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
+                    @upgrades[i].setById other_upgrade.data.id
+            #console.log "Checking other ship title #{other.title ? null}"
+            @title.setById other.title.data.id if other.title?.data? and not other.title.data.unique
+            #console.log "Checking other ship base modification #{other.modifications[0] ? null}"
+            @modifications[0].setById other.modifications[0].data.id if other.modifications[0]?.data and not other.modifications[0].data.unique
 
-        # set up conferred non-unique addons
-        #console.log "Attempt to copy conferred addons..."
-        if other.title? and other.title.conferredAddons.length > 0
-            #console.log "Other ship title #{other.title} conferrs addons"
-            for other_conferred_addon, i in other.title.conferredAddons
-                @title.conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
-        if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
-            #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
-            for other_conferred_addon, i in other.modifications[0].conferredAddons
-                @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
+            # set up conferred non-unique addons
+            #console.log "Attempt to copy conferred addons..."
+            if other.title? and other.title.conferredAddons.length > 0
+                #console.log "Other ship title #{other.title} conferrs addons"
+                for other_conferred_addon, i in other.title.conferredAddons
+                    @title.conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
+            if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
+                #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
+                for other_conferred_addon, i in other.modifications[0].conferredAddons
+                    @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
 
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
@@ -1744,11 +1771,11 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
-            ship_changed = @pilot? and new_pilot?.ship == @pilot.ship
+            same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
             old_title = null
             old_modifications = []
-            if ship_changed
+            if same_ship
                 # track addons and try to reassign them
                 for upgrade in @upgrades
                     if upgrade?.data?
@@ -1768,7 +1795,7 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.show()
                 @setShipType @pilot.ship
-                if ship_changed
+                if same_ship
                     # Hopefully this order is correct
                     if old_title?.data?
                         @title.setById old_title.data.id
