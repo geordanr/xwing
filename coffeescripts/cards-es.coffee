@@ -585,14 +585,18 @@ exportObj.cardLoaders['Español'] = () ->
         "Warden Squadron Pilot":
             ship: 'Ala-K'
         '"Redline"':
+            name: ""Velocidad Terminal""
             ship: 'Castigador TIE'
-            text: """You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."""
+            text: """Puedes mantener 2 blancos fijados sobre una misma nave. Cuando fijes un blanco, puedes fijar la misma nave como blanco por segunda vez."""
         '"Deathrain"':
+            name: ""Lluvia de Muerte""
             ship: 'Castigador TIE'
-            text: """When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."""
+            text: """Cuando sueltes una bomba, puedes usar los salientes frontales de la peana de tu nave. Puedes realizar una acción gratuita de tonel volado después de soltar una bomba."""
         'Black Eight Squadron Pilot':
+            name: "Piloto del Escuadrón Ocho Negro"
             ship: 'Castigador TIE'
         'Cutlass Squadron Pilot':
+            name: "Piloto del Escuadrón Alfanje"
             ship: 'Castigador TIE'
         "Moralo Eval":
             text: """Puedes efectuar ataques con sistemas de armamento secundarios %CANNON% contra naves que estén dentro de tu arco de fuego auxiliar."""
@@ -997,20 +1001,24 @@ exportObj.cardLoaders['Español'] = () ->
         "Twin Laser Turret":
             text: """<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."""
         "Plasma Torpedoes":
-            text: """<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."""
+            name: "Torpedos de Plasma"
+            text: """<strong>Ataque (Blanco fijado):</strong> Gasta tu ficha de Blanco fijado y descarta esta carta para efectuar este ataque.<br /><br />Si el ataque impacta, después de inflingir daños quita 1 ficha de Escudos del defensor."""
         "Ion Bombs":
-            text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."""
+            name: "Bombas de Iones"
+            text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bomba de iones.<br /><br />Esta ficha <strong>detona</strong> al final de la fase de Activación.<br /><br /><strong>Ficha de Bomba de iones:</strong> Cuando se detona esta ficha de Bomba, toda nave que se encuentre a alcance 1 de ella recibe 2 fichas de Iones. Después se descarta esta ficha."""
         "Conner Net":
             text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its "Perform Action" step.  Then discard this token."""
         "Bombardier":
             text: """When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
         "Cluster Mines":
-            text: """<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."""
+            name: "Minas de Racimo"
+            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre todo el daño (%HIT%) obtenido en la tirada. Después se descarta esta ficha."""
         'Crack Shot':
             name: "Tiro Certero"
             text: '''Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'''
         "Advanced Homing Missiles":
-            text: """<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."""
+            name: "Misiles Rastreadores Avanzados"
+            text: """<strong>Ataque (Blanco fijado):</strong> Descarta esta carta para efectuar este ataque.%LINEBREAK%Si el ataque impacta, inflinge 1 carta de Daño boca arriba al defensor. Luego se anulan <strong>todos</strong> los resultados de los dados."""
         'Agent Kallus':
             text: '''%IMPERIALONLY%%LINEBREAK%At the start of the first round, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'''
         'XX-23 S-Thread Tracers':
@@ -1033,7 +1041,10 @@ exportObj.cardLoaders['Español'] = () ->
         'Glitterstim':
             name: "Brillestim"
             text: """Al comienzo de la fase de Combate, puedes descartar esta carta y recibir 1 ficha de Tensión. Si lo haces, hasta el final de la ronda, cuando ataques o defiendes puedes cambiar todos tus resultados %FOCUS% por resultados %HIT% o %EVADE%."""
-    
+        'Extra Munitions':
+            name: "Munición Adicional"
+            text: """Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."""
+
     modification_translations =
         "Stealth Device":
             name: "Dispositivo de Sigilo"
