@@ -585,11 +585,11 @@ exportObj.cardLoaders['Español'] = () ->
         "Warden Squadron Pilot":
             ship: 'Ala-K'
         '"Redline"':
-            name: ""Velocidad Terminal""
+            name: '"Velocidad Terminal"'
             ship: 'Castigador TIE'
             text: """Puedes mantener 2 blancos fijados sobre una misma nave. Cuando fijes un blanco, puedes fijar la misma nave como blanco por segunda vez."""
         '"Deathrain"':
-            name: ""Lluvia de Muerte""
+            name: '"Lluvia de Muerte"'
             ship: 'Castigador TIE'
             text: """Cuando sueltes una bomba, puedes usar los salientes frontales de la peana de tu nave. Puedes realizar una acción gratuita de tonel volado después de soltar una bomba."""
         'Black Eight Squadron Pilot':
