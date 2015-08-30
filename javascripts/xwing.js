@@ -8082,17 +8082,21 @@ exportObj.cardLoaders['Español'] = function() {
       ship: 'Ala-K'
     },
     '"Redline"': {
+      name: '"Velocidad Terminal"',
       ship: 'Castigador TIE',
-      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+      text: "Puedes mantener 2 blancos fijados sobre una misma nave. Cuando fijes un blanco, puedes fijar la misma nave como blanco por segunda vez."
     },
     '"Deathrain"': {
+      name: '"Lluvia de Muerte"',
       ship: 'Castigador TIE',
-      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+      text: "Cuando sueltes una bomba, puedes usar los salientes frontales de la peana de tu nave. Puedes realizar una acción gratuita de tonel volado después de soltar una bomba."
     },
     'Black Eight Squadron Pilot': {
+      name: "Piloto del Escuadrón Ocho Negro",
       ship: 'Castigador TIE'
     },
     'Cutlass Squadron Pilot': {
+      name: "Piloto del Escuadrón Alfanje",
       ship: 'Castigador TIE'
     },
     "Moralo Eval": {
@@ -8638,10 +8642,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
     },
     "Plasma Torpedoes": {
-      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
+      name: "Torpedos de Plasma",
+      text: "<strong>Ataque (Blanco fijado):</strong> Gasta tu ficha de Blanco fijado y descarta esta carta para efectuar este ataque.<br /><br />Si el ataque impacta, después de inflingir daños quita 1 ficha de Escudos del defensor."
     },
     "Ion Bombs": {
-      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
+      name: "Bombas de Iones",
+      text: "Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bomba de iones.<br /><br />Esta ficha <strong>detona</strong> al final de la fase de Activación.<br /><br /><strong>Ficha de Bomba de iones:</strong> Cuando se detona esta ficha de Bomba, toda nave que se encuentre a alcance 1 de ella recibe 2 fichas de Iones. Después se descarta esta ficha."
     },
     "Conner Net": {
       text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
@@ -8650,14 +8656,16 @@ exportObj.cardLoaders['Español'] = function() {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     },
     "Cluster Mines": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+      name: "Minas de Racimo",
+      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre todo el daño (%HIT%) obtenido en la tirada. Después se descarta esta ficha."
     },
     'Crack Shot': {
       name: "Tiro Certero",
       text: 'Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'
     },
     "Advanced Homing Missiles": {
-      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+      name: "Misiles Rastreadores Avanzados",
+      text: "<strong>Ataque (Blanco fijado):</strong> Descarta esta carta para efectuar este ataque.%LINEBREAK%Si el ataque impacta, inflinge 1 carta de Daño boca arriba al defensor. Luego se anulan <strong>todos</strong> los resultados de los dados."
     },
     'Agent Kallus': {
       text: '%IMPERIALONLY%%LINEBREAK%At the start of the first round, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
@@ -8689,6 +8697,10 @@ exportObj.cardLoaders['Español'] = function() {
     'Glitterstim': {
       name: "Brillestim",
       text: "Al comienzo de la fase de Combate, puedes descartar esta carta y recibir 1 ficha de Tensión. Si lo haces, hasta el final de la ronda, cuando ataques o defiendes puedes cambiar todos tus resultados %FOCUS% por resultados %HIT% o %EVADE%."
+    },
+    'Extra Munitions': {
+      name: "Munición Adicional",
+      text: "Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."
     }
   };
   modification_translations = {
@@ -14855,7 +14867,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14347
+                    lineno: 14358
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15374,7 +15386,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14882
+              lineno: 14893
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15944,7 +15956,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15381
+          lineno: 15392
         }));
         __iced_deferrals._fulfill();
       });
@@ -15956,7 +15968,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15382
+            lineno: 15393
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17115,7 +17127,7 @@ Ship = (function() {
   };
 
   Ship.prototype.copyFrom = function(other) {
-    var available_pilots, i, other_conferred_addon, other_conferred_addons, other_upgrade, pilot_data, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+    var available_pilots, i, modification, other_conferred_addon, other_conferred_addons, other_modification, other_modifications, other_upgrade, other_upgrades, pilot_data, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _name, _o, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     if (other === this) {
       throw new Error("Cannot copy from self");
     }
@@ -17137,47 +17149,85 @@ Ship = (function() {
       }).call(this);
       if (available_pilots.length > 0) {
         this.setPilotById(available_pilots[0].id);
+        other_upgrades = {};
+        _ref = other.upgrades;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          upgrade = _ref[_i];
+          if (((upgrade != null ? upgrade.data : void 0) != null) && !upgrade.data.unique) {
+            if (other_upgrades[_name = upgrade.slot] == null) {
+              other_upgrades[_name] = [];
+            }
+            other_upgrades[upgrade.slot].push(upgrade);
+          }
+        }
+        other_modifications = [];
+        _ref1 = other.modifications;
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          modification = _ref1[_j];
+          if (((modification != null ? modification.data : void 0) != null) && !modification.data.unique) {
+            other_modifications.push(modification);
+          }
+        }
+        if ((((_ref2 = other.title) != null ? _ref2.data : void 0) != null) && !other.title.data.unique) {
+          this.title.setById(other.title.data.id);
+        }
+        _ref3 = this.modifications;
+        for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+          modification = _ref3[_k];
+          other_modification = other_modifications.shift();
+          if (other_modification != null) {
+            modification.setById(other_modification.data.id);
+          }
+        }
+        _ref4 = this.upgrades;
+        for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
+          upgrade = _ref4[_l];
+          other_upgrade = ((_ref5 = other_upgrades[upgrade.slot]) != null ? _ref5 : []).shift();
+          if (other_upgrade != null) {
+            upgrade.setById(other_upgrade.data.id);
+          }
+        }
       } else {
         return;
       }
     } else {
       this.setPilotById(other.pilot.id);
-    }
-    other_conferred_addons = [];
-    if ((other.title != null) && other.title.conferredAddons.length > 0) {
-      other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons);
-    }
-    if (((_ref = other.modifications[0]) != null ? _ref.data : void 0) != null) {
-      other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons);
-    }
-    _ref1 = other.upgrades;
-    for (i = _i = 0, _len = _ref1.length; _i < _len; i = ++_i) {
-      other_upgrade = _ref1[i];
-      if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique) {
-        this.upgrades[i].setById(other_upgrade.data.id);
+      other_conferred_addons = [];
+      if ((other.title != null) && other.title.conferredAddons.length > 0) {
+        other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons);
       }
-    }
-    if ((((_ref2 = other.title) != null ? _ref2.data : void 0) != null) && !other.title.data.unique) {
-      this.title.setById(other.title.data.id);
-    }
-    if (((_ref3 = other.modifications[0]) != null ? _ref3.data : void 0) && !other.modifications[0].data.unique) {
-      this.modifications[0].setById(other.modifications[0].data.id);
-    }
-    if ((other.title != null) && other.title.conferredAddons.length > 0) {
-      _ref4 = other.title.conferredAddons;
-      for (i = _j = 0, _len1 = _ref4.length; _j < _len1; i = ++_j) {
-        other_conferred_addon = _ref4[i];
-        if ((other_conferred_addon.data != null) && !((_ref5 = other_conferred_addon.data) != null ? _ref5.unique : void 0)) {
-          this.title.conferredAddons[i].setById(other_conferred_addon.data.id);
+      if (((_ref6 = other.modifications[0]) != null ? _ref6.data : void 0) != null) {
+        other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons);
+      }
+      _ref7 = other.upgrades;
+      for (i = _m = 0, _len4 = _ref7.length; _m < _len4; i = ++_m) {
+        other_upgrade = _ref7[i];
+        if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique) {
+          this.upgrades[i].setById(other_upgrade.data.id);
         }
       }
-    }
-    if ((other.modifications[0] != null) && other.modifications[0].conferredAddons.length > 0) {
-      _ref6 = other.modifications[0].conferredAddons;
-      for (i = _k = 0, _len2 = _ref6.length; _k < _len2; i = ++_k) {
-        other_conferred_addon = _ref6[i];
-        if ((other_conferred_addon.data != null) && !((_ref7 = other_conferred_addon.data) != null ? _ref7.unique : void 0)) {
-          this.modifications[0].conferredAddons[i].setById(other_conferred_addon.data.id);
+      if ((((_ref8 = other.title) != null ? _ref8.data : void 0) != null) && !other.title.data.unique) {
+        this.title.setById(other.title.data.id);
+      }
+      if (((_ref9 = other.modifications[0]) != null ? _ref9.data : void 0) && !other.modifications[0].data.unique) {
+        this.modifications[0].setById(other.modifications[0].data.id);
+      }
+      if ((other.title != null) && other.title.conferredAddons.length > 0) {
+        _ref10 = other.title.conferredAddons;
+        for (i = _n = 0, _len5 = _ref10.length; _n < _len5; i = ++_n) {
+          other_conferred_addon = _ref10[i];
+          if ((other_conferred_addon.data != null) && !((_ref11 = other_conferred_addon.data) != null ? _ref11.unique : void 0)) {
+            this.title.conferredAddons[i].setById(other_conferred_addon.data.id);
+          }
+        }
+      }
+      if ((other.modifications[0] != null) && other.modifications[0].conferredAddons.length > 0) {
+        _ref12 = other.modifications[0].conferredAddons;
+        for (i = _o = 0, _len6 = _ref12.length; _o < _len6; i = ++_o) {
+          other_conferred_addon = _ref12[i];
+          if ((other_conferred_addon.data != null) && !((_ref13 = other_conferred_addon.data) != null ? _ref13.unique : void 0)) {
+            this.modifications[0].conferredAddons[i].setById(other_conferred_addon.data.id);
+          }
         }
       }
     }
@@ -17225,15 +17275,15 @@ Ship = (function() {
   };
 
   Ship.prototype.setPilot = function(new_pilot) {
-    var modification, old_modification, old_modifications, old_title, old_upgrade, old_upgrades, ship_changed, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k, _i, _j, _len, _len1, _name, _ref, _ref1;
+    var modification, old_modification, old_modifications, old_title, old_upgrade, old_upgrades, same_ship, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k, _i, _j, _len, _len1, _name, _ref, _ref1;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
     if (new_pilot !== this.pilot) {
-      ship_changed = (this.pilot != null) && (new_pilot != null ? new_pilot.ship : void 0) === this.pilot.ship;
+      same_ship = (this.pilot != null) && (new_pilot != null ? new_pilot.ship : void 0) === this.pilot.ship;
       old_upgrades = {};
       old_title = null;
       old_modifications = [];
-      if (ship_changed) {
+      if (same_ship) {
         _ref = this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
@@ -17270,7 +17320,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16135
+                      lineno: 16173
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17279,29 +17329,29 @@ Ship = (function() {
                 return __iced_k();
               }
             })(function() {
-              var _k, _l, _len2, _len3, _ref2, _ref3, _ref4, _ref5;
+              var _k, _l, _len2, _len3, _ref2, _ref3, _ref4;
               _this.pilot = new_pilot;
               if (_this.pilot != null) {
                 _this.setupAddons();
               }
-              _this.copy_button.toggle(!((_ref2 = _this.pilot) != null ? _ref2.unique : void 0));
+              _this.copy_button.show();
               _this.setShipType(_this.pilot.ship);
-              if (ship_changed) {
+              if (same_ship) {
                 if ((old_title != null ? old_title.data : void 0) != null) {
                   _this.title.setById(old_title.data.id);
                 }
-                _ref3 = _this.modifications;
-                for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
-                  modification = _ref3[_k];
+                _ref2 = _this.modifications;
+                for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+                  modification = _ref2[_k];
                   old_modification = old_modifications.shift();
                   if (old_modification != null) {
                     modification.setById(old_modification.data.id);
                   }
                 }
-                _ref4 = _this.upgrades;
-                for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
-                  upgrade = _ref4[_l];
-                  old_upgrade = ((_ref5 = old_upgrades[upgrade.slot]) != null ? _ref5 : []).shift();
+                _ref3 = _this.upgrades;
+                for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+                  upgrade = _ref3[_l];
+                  old_upgrade = ((_ref4 = old_upgrades[upgrade.slot]) != null ? _ref4 : []).shift();
                   if (old_upgrade != null) {
                     upgrade.setById(old_upgrade.data.id);
                   }
@@ -17339,7 +17389,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16161
+                lineno: 16197
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17391,14 +17441,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16183
+            lineno: 16219
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16185
+            lineno: 16221
           }));
         }
         _ref1 = _this.modifications;
@@ -17406,7 +17456,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16187
+              lineno: 16223
             }));
           }
         }
@@ -18192,7 +18242,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16745
+                lineno: 16781
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18290,7 +18340,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16792
+                  lineno: 16828
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18312,7 +18362,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16796
+                    lineno: 16832
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18393,7 +18443,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16833
+            lineno: 16869
           }));
         }
         __iced_deferrals._fulfill();
