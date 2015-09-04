@@ -33,7 +33,30 @@ exports.selectNthMatch = (select2_selector, n, search_text) =>
         @waitUntilVisible 'input.select2-input'
     .then ->
         @sendKeys 'input.select2-input', search_text
-        @mouseEvent 'mouseup', ".select2-match:nth-of-type(#{n})"
+        @mouseEvent 'mouseup', ".select2-result:nth-of-type(#{n})"
+
+exports.selectExactMatch = (select2_selector, search_text) =>
+    casper.waitUntilVisible("#{select2_selector}")
+    .then ->
+        @log "=== Opening selector #{select2_selector}", "debug"
+        @mouseEvent 'mousedown', "#{select2_selector} .select2-choice"
+        @waitUntilVisible 'input.select2-input'
+    .then ->
+        @log "=== Sending '#{search_text}' to selector #{select2_selector}", "debug"
+        @sendKeys 'input.select2-input', search_text
+    .then ->
+        matchIndices = @evaluate (q) ->
+            $('.select2-result').map (idx,elem) ->
+                if $(elem).text() == q
+                    idx
+        , search_text
+        if matchIndices.length == 1
+            @log "=== Clicking on result #{matchIndices[0]+1}", "debug"
+            @mouseEvent 'mouseup', ".select2-result:nth-of-type(#{matchIndices[0]+1})"
+        else
+            casper.log "No matches for search text '#{search_text}' at #{select2_selector}"
+    .then ->
+        @log "=== Exiting selectExactMatch", "debug"
 
 exports.assertNoMatch = (test, select2_selector, search_text) =>
     casper.then ->
@@ -123,7 +146,7 @@ exports.waitForStartup = (builder_selector, url="app/index.html") ->
 exports.addShip = (builder_selector, ship, pilot) ->
     casper.then ->
         @log("=== addShip('#{builder_selector}', '#{ship}', '#{pilot}')", "debug")
-    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForLastShip} #{exports.selectorForShipDropdown}", ship)
+    exports.selectExactMatch("#{builder_selector} #{exports.selectorForLastShip} #{exports.selectorForShipDropdown}", ship)
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForSecondToLastShip} #{exports.selectorForPilotDropdown}", pilot)
 
 exports.removeShip = (builder_selector, ship_idx) ->
@@ -150,7 +173,7 @@ exports.cloneShip = (builder_selector, ship_idx) ->
 exports.setShipType = (builder_selector, ship_idx, ship_type) ->
     casper.then ->
         @log("=== setShipType('#{builder_selector}', #{ship_idx}, '#{ship_type}')", "debug")
-    exports.selectFirstMatch("#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForShipDropdown}", ship_type)
+    exports.selectExactMatch("#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForShipDropdown}", ship_type)
 
 exports.setPilot = (builder_selector, ship_idx, pilot) ->
     casper.then ->
@@ -158,6 +181,8 @@ exports.setPilot = (builder_selector, ship_idx, pilot) ->
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForShipIndex(ship_idx)} #{exports.selectorForPilotDropdown}", pilot)
 
 exports.addUpgrade = (builder_selector, ship_idx, upgrade_idx, upgrade) ->
+    casper.then ->
+        @log("=== addUpgrade('#{builder_selector}', #{ship_idx}, #{upgrade_idx}, '#{upgrade}')", "debug")
     exports.selectFirstMatch("#{builder_selector} #{exports.selectorForUpgradeIndex(ship_idx, upgrade_idx)}", upgrade)
 
 exports.removeUpgrade = (builder_selector, ship_idx, upgrade_idx) ->

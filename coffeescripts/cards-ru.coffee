@@ -61,6 +61,7 @@ exportObj.translations['Русский'] =
         "IG-2000 Expansion Pack": "Дополнение IG-2000"
         "Most Wanted Expansion Pack": "Дополнение Most Wanted"
         "Imperial Raider Expansion Pack": "Дополнение Imperial Raider"
+        "The Force Awakens Core Set": "The Force Awakens Core Set"
     ui:
         shipSelectorPlaceholder: "Выберите корабль"
         pilotSelectorPlaceholder: "Выберите пилота"

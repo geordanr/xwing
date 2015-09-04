@@ -2421,6 +2421,93 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'The Force Awakens Core Set': [
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE/fo Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Poe Dameron'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Blue Ace"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Novice'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Omega Ace"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Epsilon Leader"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeta Ace"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Omega Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Zeta Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Epsilon Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Wired'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BB-8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-X3'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Weapons Guidance'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

@@ -708,6 +708,46 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
             ]
             maneuvers: []
+        "T-70 X-Wing":
+            name: "T-70 X-Wing"
+            factions: ["Resistance"]
+            attack: 3
+            agility: 2
+            hull: 3
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+            ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+            ]
+        "TIE/fo Fighter":
+            name: "TIE/fo Fighter"
+            factions: ["First Order"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 1
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+                "Evade"
+            ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 0, 0, 0, 1, 0, 0, 0 ]
+                [ 2, 2, 2, 2, 2, 0, 3, 3 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -3147,6 +3187,139 @@ exportObj.basicCardData = ->
             ]
             points: 99
         }
+
+        # T-70
+        {
+            name: "Poe Dameron"
+            id: 175
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 8
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 31
+        }
+        {
+            name: '"Blue Ace"'
+            id: 176
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 5
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 27
+        }
+        {
+            name: "Red Squadron Veteran"
+            id: 177
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 4
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 26
+        }
+        {
+            name: "Blue Squadron Novice"
+            id: 178
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 2
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 24
+        }
+
+        # TIE/fo
+        {
+            name: '"Omega Ace"'
+            id: 179
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 7
+            slots: [
+                'Elite'
+                'Tech'
+            ]
+            points: 20
+        }
+        {
+            name: '"Epsilon Leader"'
+            id: 180
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Tech'
+            ]
+            points: 19
+        }
+        {
+            name: '"Zeta Ace"'
+            id: 181
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Elite'
+                'Tech'
+            ]
+            points: 18
+        }
+        {
+            name: "Omega Squadron Pilot"
+            id: 182
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Elite'
+                'Tech'
+            ]
+            points: 17
+        }
+        {
+            name: "Zeta Squadron Pilot"
+            id: 183
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Tech'
+            ]
+            points: 16
+        }
+        {
+            name: "Epsilon Squadron Pilot"
+            id: 184
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 2
+            slots: [
+                'Tech'
+            ]
+            points: 15
+        }
+
     ]
 
     upgradesById: [
@@ -4251,6 +4424,32 @@ exportObj.basicCardData = ->
             points: 1
             restriction_func: (ship) ->
                 ship.data.huge ? false
+        }
+        {
+            name: 'Weapons Guidance'
+            id: 147
+            slot: "Tech"
+            points: 2
+        }
+        {
+            name: 'BB-8'
+            id: 148
+            unique: true
+            slot: "Astromech"
+            points: 2
+        }
+        {
+            name: 'R5-X3'
+            id: 149
+            unique: true
+            slot: "Astromech"
+            points: 1
+        }
+        {
+            name: 'Wired'
+            id: 150
+            slot: "Elite"
+            points: 1
         }
     ]
 
