@@ -627,6 +627,18 @@ exportObj.cardLoaders['Español'] = () ->
         "Bossk":
             ship: "YV-666"
             text: """Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."""
+        # T-70
+        "Poe Dameron":
+            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+        '"Blue Ace"':
+            text: """When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."""
+        # TIE/fo
+        '"Omega Ace"':
+            text: """When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."""
+        '"Epsilon Leader"':
+            text: """At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."""
+        '"Zeta Ace"':
+            text: """When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1045,6 +1057,14 @@ exportObj.cardLoaders['Español'] = () ->
         'Extra Munitions':
             name: "Munición Adicional"
             text: """Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."""
+        "Weapons Guidance":
+            text: """When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."""
+        "BB-8":
+            text: """When you reveal a green maneuver, you may perform a free barrel roll action."""
+        "R5-X3":
+            text: """Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."""
+        "Wired":
+            text: """When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."""
 
     modification_translations =
         "Stealth Device":
