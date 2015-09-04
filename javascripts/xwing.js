@@ -4,7 +4,7 @@
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
  */
-var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, exportObj, statAndEffectiveStat,
+var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, exportObj, getPrimaryFaction, statAndEffectiveStat,
   __slice = [].slice,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -1552,6 +1552,26 @@ exportObj.basicCardData = function() {
         shields: 4,
         actions: ["Focus", "Target Lock", "Barrel Roll"],
         maneuvers: []
+      },
+      "T-70 X-Wing": {
+        name: "T-70 X-Wing",
+        factions: ["Resistance"],
+        attack: 3,
+        agility: 2,
+        hull: 3,
+        shields: 3,
+        actions: ["Focus", "Target Lock", "Boost"],
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0, 0, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0, 3, 3], [0, 0, 1, 0, 0, 3, 0, 0, 0, 0]]
+      },
+      "TIE/fo Fighter": {
+        name: "TIE/fo Fighter",
+        factions: ["First Order"],
+        attack: 2,
+        agility: 3,
+        hull: 3,
+        shields: 1,
+        actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0], [2, 2, 2, 2, 2, 0, 3, 3], [1, 1, 2, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0]]
       }
     },
     pilotsById: [
@@ -3113,6 +3133,91 @@ exportObj.basicCardData = function() {
         skill: 3,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
         points: 99
+      }, {
+        name: "Poe Dameron",
+        id: 175,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 8,
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 31
+      }, {
+        name: '"Blue Ace"',
+        id: 176,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 5,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 27
+      }, {
+        name: "Red Squadron Veteran",
+        id: 177,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 4,
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 26
+      }, {
+        name: "Blue Squadron Novice",
+        id: 178,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 2,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 24
+      }, {
+        name: '"Omega Ace"',
+        id: 179,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 7,
+        slots: ['Elite', 'Tech'],
+        points: 20
+      }, {
+        name: '"Epsilon Leader"',
+        id: 180,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 2,
+        slots: ['Tech'],
+        points: 19
+      }, {
+        name: '"Zeta Ace"',
+        id: 181,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 2,
+        slots: ['Elite', 'Tech'],
+        points: 18
+      }, {
+        name: "Omega Squadron Pilot",
+        id: 182,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 2,
+        slots: ['Elite', 'Tech'],
+        points: 17
+      }, {
+        name: "Zeta Squadron Pilot",
+        id: 183,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 2,
+        slots: ['Tech'],
+        points: 16
+      }, {
+        name: "Epsilon Squadron Pilot",
+        id: 184,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 2,
+        slots: ['Tech'],
+        points: 15
       }
     ],
     upgradesById: [
@@ -4128,6 +4233,28 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.huge) != null ? _ref : false;
         }
+      }, {
+        name: 'Weapons Guidance',
+        id: 147,
+        slot: "Tech",
+        points: 2
+      }, {
+        name: 'BB-8',
+        id: 148,
+        unique: true,
+        slot: "Astromech",
+        points: 2
+      }, {
+        name: 'R5-X3',
+        id: 149,
+        unique: true,
+        slot: "Astromech",
+        points: 1
+      }, {
+        name: 'Wired',
+        id: 150,
+        slot: "Elite",
+        points: 1
       }
     ],
     modificationsById: [
@@ -5041,7 +5168,8 @@ exportObj.translations.Deutsch = {
     "M3-A Interceptor Expansion Pack": "M3-A Abfangjäger Erweiterung",
     "IG-2000 Expansion Pack": "IG-2000 Erweiterung",
     "Most Wanted Expansion Pack": "Abschaum und Kriminelle Erweiterung",
-    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
+    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -6389,7 +6517,8 @@ exportObj.translations.English = {
     "Hound's Tooth Expansion Pack": "Hound's Tooth Expansion Pack",
     "Kihraxz Fighter Expansion Pack": "Kihraxz Fighter Expansion Pack",
     "K-Wing Expansion Pack": "K-Wing Expansion Pack",
-    "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack"
+    "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Select a ship",
@@ -6756,6 +6885,21 @@ exportObj.cardLoaders.English = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -7199,6 +7343,18 @@ exportObj.cardLoaders.English = function() {
     },
     "Shield Technician": {
       text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -7431,7 +7587,8 @@ exportObj.translations['Español'] = {
     "K-Wing Expansion Pack": "Pack de Expansión Ala-K",
     "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE",
     "Kihraxz Fighter Expansion Pack": "Pack de Expansión Caza Kihraxz",
-    "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro"
+    "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -8985,7 +9142,8 @@ exportObj.translations['Français'] = {
     "M3-A Interceptor Expansion Pack": "Paquet d'extension Intercepteur M3-A",
     "IG-2000 Expansion Pack": "Paquet d'extension IG-2000",
     "Most Wanted Expansion Pack": "Paquet d'extension Ennemis Publics",
-    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
+    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Choisissez un vaisseau",
@@ -10332,7 +10490,8 @@ exportObj.translations['Polski'] = {
     "M3-A Interceptor Expansion Pack": "Zestaw dodatkowy M3-A Interceptor",
     "IG-2000 Expansion Pack": "Zestaw dodatkowy IG-2000",
     "Most Wanted Expansion Pack": "Zestaw dodatkowy Poszukiwani",
-    "Imperial Raider Expansion Pack": "Zestaw dodatkowy Imperialny Patrolowiec"
+    "Imperial Raider Expansion Pack": "Zestaw dodatkowy Imperialny Patrolowiec",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Wybór statków",
@@ -11663,7 +11822,8 @@ exportObj.translations['Русский'] = {
     "M3-A Interceptor Expansion Pack": "Дополнение M3-A Interceptor",
     "IG-2000 Expansion Pack": "Дополнение IG-2000",
     "Most Wanted Expansion Pack": "Дополнение Most Wanted",
-    "Imperial Raider Expansion Pack": "Дополнение Imperial Raider"
+    "Imperial Raider Expansion Pack": "Дополнение Imperial Raider",
+    "The Force Awakens Core Set": "The Force Awakens Core Set"
   },
   ui: {
     shipSelectorPlaceholder: "Выберите корабль",
@@ -14575,6 +14735,77 @@ exportObj.manifestByExpansion = {
       type: 'title',
       count: 1
     }
+  ],
+  'The Force Awakens Core Set': [
+    {
+      name: 'T-70 X-Wing',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'TIE/fo Fighter',
+      type: 'ship',
+      count: 2
+    }, {
+      name: 'Poe Dameron',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Blue Ace"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Red Squadron Veteran',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Blue Squadron Novice',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Omega Ace"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Epsilon Leader"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Zeta Ace"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Omega Squadron Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Zeta Squadron Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Epsilon Squadron Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Wired',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'BB-8',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'R5-X3',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Proton Torpedoes',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Weapons Guidance',
+      type: 'upgrade',
+      count: 1
+    }
   ]
 };
 
@@ -14867,7 +15098,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14358
+                    lineno: 14670
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15008,6 +15239,19 @@ SQUAD_DISPLAY_NAME_MAX_LENGTH = 24;
 
 statAndEffectiveStat = function(base_stat, effective_stats, key) {
   return "" + base_stat + (effective_stats[key] !== base_stat ? " (" + effective_stats[key] + ")" : "");
+};
+
+getPrimaryFaction = function(faction) {
+  switch (faction) {
+    case 'Rebel Alliance':
+    case 'Resistance':
+      return 'Rebel Alliance';
+    case 'Galactic Empire':
+    case 'First Order':
+      return 'Galactic Empire';
+    default:
+      return faction;
+  }
 };
 
 exportObj.SquadBuilder = (function() {
@@ -15386,7 +15630,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 14893
+              lineno: 15214
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -15956,7 +16200,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15392
+          lineno: 15713
         }));
         __iced_deferrals._fulfill();
       });
@@ -15968,7 +16212,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15393
+            lineno: 15714
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -15983,8 +16227,23 @@ exportObj.SquadBuilder = (function() {
     return item.toUpperCase().indexOf(term.toUpperCase()) >= 0;
   };
 
+  SquadBuilder.prototype.isOurFaction = function(faction) {
+    var f, _i, _len;
+    if (faction instanceof Array) {
+      for (_i = 0, _len = faction.length; _i < _len; _i++) {
+        f = faction[_i];
+        if (getPrimaryFaction(f) === this.faction) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      return getPrimaryFaction(faction) === this.faction;
+    }
+  };
+
   SquadBuilder.prototype.getAvailableShipsMatching = function(term) {
-    var ship_data, ship_name, ships, _ref, _ref1;
+    var ship_data, ship_name, ships, _ref;
     if (term == null) {
       term = '';
     }
@@ -15992,7 +16251,7 @@ exportObj.SquadBuilder = (function() {
     _ref = exportObj.ships;
     for (ship_name in _ref) {
       ship_data = _ref[ship_name];
-      if ((_ref1 = this.faction, __indexOf.call(ship_data.factions, _ref1) >= 0) && this.matcher(ship_data.name, term)) {
+      if (this.isOurFaction(ship_data.factions) && this.matcher(ship_data.name, term)) {
         if (!ship_data.huge || (this.isEpic || this.isCustom)) {
           ships.push({
             id: ship_data.name,
@@ -16016,7 +16275,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (pilot_name in _ref) {
         pilot = _ref[pilot_name];
-        if (((ship == null) || pilot.ship === ship) && pilot.faction === this.faction && this.matcher(pilot_name, term)) {
+        if (((ship == null) || pilot.ship === ship) && this.isOurFaction(pilot.faction) && this.matcher(pilot_name, term)) {
           _results.push(pilot);
         }
       }
@@ -16080,12 +16339,12 @@ exportObj.SquadBuilder = (function() {
     })();
     if (filter_func === this.dfl_filter_func) {
       available_upgrades = (function() {
-        var _ref, _ref1, _results;
+        var _ref, _results;
         _ref = exportObj.upgradesByLocalizedName;
         _results = [];
         for (upgrade_name in _ref) {
           upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || upgrade.faction === this.faction || (upgrade.faction instanceof Array && (_ref1 = this.faction, __indexOf.call(upgrade.faction, _ref1) >= 0))) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
+          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || this.isOurFaction(upgrade.faction)) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
             _results.push(upgrade);
           }
         }
@@ -16186,7 +16445,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (modification_name in available_modifications) {
         modification = available_modifications[modification_name];
-        if (((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || modification.faction === this.faction) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
+        if (((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || this.isOurFaction(modification.faction)) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
           _results.push(modification);
         }
       }
@@ -16252,7 +16511,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (title_name in available_titles) {
         title = available_titles[title_name];
-        if (((title.unique == null) || __indexOf.call(this.uniques_in_use['Title'], title) < 0) && ((title.faction == null) || title.faction === this.faction) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
+        if (((title.unique == null) || __indexOf.call(this.uniques_in_use['Title'], title) < 0) && ((title.faction == null) || this.isOurFaction(title.faction)) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
           _results.push(title);
         }
       }
@@ -16279,16 +16538,30 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getManeuverTableHTML = function(maneuvers, baseManeuvers) {
-    var color, haveManeuver, linePath, outTable, outlineColor, speed, transform, trianglePath, turn, v, _i, _j, _k, _len, _ref, _ref1, _ref2;
+    var bearing, bearings, bearings_without_maneuvers, color, difficulty, haveManeuver, linePath, outTable, outlineColor, speed, transform, trianglePath, turn, v, _i, _j, _k, _l, _len, _len1, _len2, _m, _n, _ref, _ref1, _ref2, _ref3, _results;
     if ((maneuvers == null) || maneuvers.length === 0) {
       return "Missing maneuver info.";
     }
+    bearings_without_maneuvers = (function() {
+      _results = [];
+      for (var _i = 0, _ref = maneuvers[0].length; 0 <= _ref ? _i < _ref : _i > _ref; 0 <= _ref ? _i++ : _i--){ _results.push(_i); }
+      return _results;
+    }).apply(this);
+    for (_j = 0, _len = maneuvers.length; _j < _len; _j++) {
+      bearings = maneuvers[_j];
+      for (bearing = _k = 0, _len1 = bearings.length; _k < _len1; bearing = ++_k) {
+        difficulty = bearings[bearing];
+        if (difficulty > 0) {
+          bearings_without_maneuvers.removeItem(bearing);
+        }
+      }
+    }
     outTable = "<table><tbody>";
-    for (speed = _i = _ref = maneuvers.length - 1; _ref <= 0 ? _i <= 0 : _i >= 0; speed = _ref <= 0 ? ++_i : --_i) {
+    for (speed = _l = _ref1 = maneuvers.length - 1; _ref1 <= 0 ? _l <= 0 : _l >= 0; speed = _ref1 <= 0 ? ++_l : --_l) {
       haveManeuver = false;
-      _ref1 = maneuvers[speed];
-      for (_j = 0, _len = _ref1.length; _j < _len; _j++) {
-        v = _ref1[_j];
+      _ref2 = maneuvers[speed];
+      for (_m = 0, _len2 = _ref2.length; _m < _len2; _m++) {
+        v = _ref2[_m];
         if (v > 0) {
           haveManeuver = true;
           break;
@@ -16298,7 +16571,10 @@ exportObj.SquadBuilder = (function() {
         continue;
       }
       outTable += "<tr><td>" + speed + "</td>";
-      for (turn = _k = 0, _ref2 = maneuvers[speed].length; 0 <= _ref2 ? _k < _ref2 : _k > _ref2; turn = 0 <= _ref2 ? ++_k : --_k) {
+      for (turn = _n = 0, _ref3 = maneuvers[speed].length; 0 <= _ref3 ? _n < _ref3 : _n > _ref3; turn = 0 <= _ref3 ? ++_n : --_n) {
+        if (__indexOf.call(bearings_without_maneuvers, turn) >= 0) {
+          continue;
+        }
         outTable += "<td>";
         if (maneuvers[speed][turn] > 0) {
           color = (function() {
@@ -16356,6 +16632,14 @@ exportObj.SquadBuilder = (function() {
                 linePath = "M50,180 S50,120 120,60";
                 trianglePath = "M120,100 V40 L170,70 Z";
                 transform = "transform='translate(0 50)'";
+                break;
+              case 8:
+                linePath = "M160,180 L160,70 80,70";
+                trianglePath = "M60,100 H100 L80,140 Z";
+                break;
+              case 9:
+                linePath = "M40,180 L40,70 120,70";
+                trianglePath = "M100,100 H140 L120,140 Z";
             }
             outTable += $.trim("<path d='" + trianglePath + "' fill='" + color + "' stroke-width='5' stroke='" + outlineColor + "' " + transform + "/>\n<path stroke-width='25' fill='none' stroke='" + outlineColor + "' d='" + linePath + "' />\n<path stroke-width='15' fill='none' stroke='" + color + "' d='" + linePath + "' />");
           }
@@ -17320,7 +17604,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16173
+                      lineno: 16522
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17389,7 +17673,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16197
+                lineno: 16546
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17441,14 +17725,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16219
+            lineno: 16568
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16221
+            lineno: 16570
           }));
         }
         _ref1 = _this.modifications;
@@ -17456,7 +17740,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16223
+              lineno: 16572
             }));
           }
         }
@@ -18242,7 +18526,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 16781
+                lineno: 17130
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18340,7 +18624,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 16828
+                  lineno: 17177
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18362,7 +18646,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 16832
+                    lineno: 17181
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18443,7 +18727,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 16869
+            lineno: 17218
           }));
         }
         __iced_deferrals._fulfill();
