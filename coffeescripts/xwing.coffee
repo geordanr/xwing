@@ -1133,8 +1133,8 @@ class exportObj.SquadBuilder
             for difficulty, bearing in bearings
                 if difficulty > 0
                     bearings_without_maneuvers.removeItem bearing
-        console.log "bearings without maneuvers:"
-        console.dir bearings_without_maneuvers
+        # console.log "bearings without maneuvers:"
+        # console.dir bearings_without_maneuvers
 
         outTable = "<table><tbody>"
 

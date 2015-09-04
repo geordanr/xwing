@@ -61,6 +61,7 @@ exportObj.translations['Polski'] =
         "IG-2000 Expansion Pack": "Zestaw dodatkowy IG-2000"
         "Most Wanted Expansion Pack": "Zestaw dodatkowy Poszukiwani"
         "Imperial Raider Expansion Pack": "Zestaw dodatkowy Imperialny Patrolowiec"
+        "The Force Awakens Core Set": "The Force Awakens Core Set"
     ui:
         shipSelectorPlaceholder: "Wybór statków"
         pilotSelectorPlaceholder: "Wybór pilotów"

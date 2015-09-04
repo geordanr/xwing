@@ -24,6 +24,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Slave I Expansion Pack"
         "StarViper Expansion Pack"
         "Tantive IV Expansion Pack"
+        "The Force Awakens Core Set"
         "TIE Advanced Expansion Pack"
         "TIE Bomber Expansion Pack"
         "TIE Defender Expansion Pack"

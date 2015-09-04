@@ -66,6 +66,7 @@ exportObj.translations.English =
         "Kihraxz Fighter Expansion Pack": "Kihraxz Fighter Expansion Pack"
         "K-Wing Expansion Pack": "K-Wing Expansion Pack"
         "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack"
+        "The Force Awakens Core Set": "The Force Awakens Core Set"
     ui:
         shipSelectorPlaceholder: "Select a ship"
         pilotSelectorPlaceholder: "Select a pilot"

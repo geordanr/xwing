@@ -65,6 +65,7 @@ exportObj.translations['Español'] =
         "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE"
         "Kihraxz Fighter Expansion Pack": "Pack de Expansión Caza Kihraxz"
         "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro"
+        "The Force Awakens Core Set": "The Force Awakens Core Set"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
