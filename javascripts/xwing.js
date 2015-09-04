@@ -5718,6 +5718,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -6254,6 +6269,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Shield Technician": {
       text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -8295,6 +8322,21 @@ exportObj.cardLoaders['Español'] = function() {
     "Bossk": {
       ship: "YV-666",
       text: "Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -8858,6 +8900,18 @@ exportObj.cardLoaders['Español'] = function() {
     'Extra Munitions': {
       name: "Munición Adicional",
       text: "Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -9711,6 +9765,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -10233,6 +10302,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Shield Technician": {
       text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -11041,6 +11122,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -11565,6 +11661,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Shield Technician": {
       text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -12179,6 +12287,21 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Dengar": {
       text: "Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."
+    },
+    "Poe Dameron": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    '"Blue Ace"': {
+      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+    },
+    '"Omega Ace"': {
+      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    },
+    '"Epsilon Leader"': {
+      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
+    },
+    '"Zeta Ace"': {
+      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     }
   };
   upgrade_translations = {
@@ -12607,6 +12730,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Shield Technician": {
       text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+    },
+    "Weapons Guidance": {
+      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+    },
+    "BB-8": {
+      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+    },
+    "R5-X3": {
+      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+    },
+    "Wired": {
+      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -15098,7 +15233,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14670
+                    lineno: 14770
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15630,7 +15765,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15214
+              lineno: 15314
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16200,7 +16335,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15713
+          lineno: 15813
         }));
         __iced_deferrals._fulfill();
       });
@@ -16212,7 +16347,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15714
+            lineno: 15814
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17604,7 +17739,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16522
+                      lineno: 16622
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17673,7 +17808,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16546
+                lineno: 16646
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17725,14 +17860,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16568
+            lineno: 16668
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16570
+            lineno: 16670
           }));
         }
         _ref1 = _this.modifications;
@@ -17740,7 +17875,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16572
+              lineno: 16672
             }));
           }
         }
@@ -18526,7 +18661,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17130
+                lineno: 17230
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18624,7 +18759,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17177
+                  lineno: 17277
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18646,7 +18781,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17181
+                    lineno: 17281
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18727,7 +18862,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17218
+            lineno: 17318
           }));
         }
         __iced_deferrals._fulfill();
