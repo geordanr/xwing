@@ -3266,7 +3266,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 2
+            skill: 6
             slots: [
                 'Tech'
             ]
@@ -3278,7 +3278,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 2
+            skill: 5
             slots: [
                 'Elite'
                 'Tech'
@@ -3290,7 +3290,7 @@ exportObj.basicCardData = ->
             id: 182
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 2
+            skill: 4
             slots: [
                 'Elite'
                 'Tech'
@@ -3302,7 +3302,7 @@ exportObj.basicCardData = ->
             id: 183
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 2
+            skill: 3
             slots: [
                 'Tech'
             ]
@@ -3313,7 +3313,7 @@ exportObj.basicCardData = ->
             id: 184
             faction: "First Order"
             ship: "TIE/fo Fighter"
-            skill: 2
+            skill: 1
             slots: [
                 'Tech'
             ]
