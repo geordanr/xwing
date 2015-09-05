@@ -924,7 +924,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "R5-X3":
             text: """Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."""
         "Wired":
-            text: """When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."""
+            text: """When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."""
 
     modification_translations =
         "Shield Upgrade":
