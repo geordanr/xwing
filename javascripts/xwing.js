@@ -3182,7 +3182,7 @@ exportObj.basicCardData = function() {
         unique: true,
         faction: "First Order",
         ship: "TIE/fo Fighter",
-        skill: 2,
+        skill: 6,
         slots: ['Tech'],
         points: 19
       }, {
@@ -3191,7 +3191,7 @@ exportObj.basicCardData = function() {
         unique: true,
         faction: "First Order",
         ship: "TIE/fo Fighter",
-        skill: 2,
+        skill: 5,
         slots: ['Elite', 'Tech'],
         points: 18
       }, {
@@ -3199,7 +3199,7 @@ exportObj.basicCardData = function() {
         id: 182,
         faction: "First Order",
         ship: "TIE/fo Fighter",
-        skill: 2,
+        skill: 4,
         slots: ['Elite', 'Tech'],
         points: 17
       }, {
@@ -3207,7 +3207,7 @@ exportObj.basicCardData = function() {
         id: 183,
         faction: "First Order",
         ship: "TIE/fo Fighter",
-        skill: 2,
+        skill: 3,
         slots: ['Tech'],
         points: 16
       }, {
@@ -3215,7 +3215,7 @@ exportObj.basicCardData = function() {
         id: 184,
         faction: "First Order",
         ship: "TIE/fo Fighter",
-        skill: 2,
+        skill: 1,
         slots: ['Tech'],
         points: 15
       }
@@ -6280,7 +6280,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -7381,7 +7381,7 @@ exportObj.cardLoaders.English = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -8911,7 +8911,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -10313,7 +10313,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -11672,7 +11672,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
@@ -12741,7 +12741,7 @@ exportObj.cardLoaders['Русский'] = function() {
       text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 of your %FOCUS% results."
+      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
     }
   };
   modification_translations = {
