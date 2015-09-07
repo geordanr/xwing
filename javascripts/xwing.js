@@ -8253,16 +8253,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Miranda Doni": {
       ship: 'Ala-K',
-      text: "Once per round when attacking, you may either spend 1 shield to roll 1 additional attack die <strong>or</strong> roll 1 fewer attack die to recover 1 shield."
+      text: "Una vez por ronda, cuando ataques, puedes elegir entre gastar 1 de Escudos para tirar 1 dado de ataque adicional <strong>o bien</strong> tirar 1 dado de ataque menos para recuperar 1 de Escudos."
     },
     "Esege Tuketu": {
       ship: 'Ala-K',
-      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+      text: "Cuando otra nave aliada que tengas a alcance 1-2 esté atacando, puede usar tus fichas de Concentración."
     },
     "Guardian Squadron Pilot": {
+      name: "Piloto del Escuadrón Guardián",
       ship: 'Ala-K'
     },
     "Warden Squadron Pilot": {
+      name: "Piloto del Escuadrón Custodio",
       ship: 'Ala-K'
     },
     '"Redline"': {
@@ -8829,7 +8831,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Emperor Palpatine": {
       name: "Emperador Palpatine",
-      text: "%IMPERIALONLY%%LINEBREAK%Una vez por ornda, puedes cambiar el resultado de una tirada de dado efectuada por otra nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."
+      text: "%IMPERIALONLY%%LINEBREAK%Una vez por ronda, puedes cambiar el resultado de una tirada de dado efectuada por cualquier nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."
@@ -8838,7 +8840,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
     },
     "Twin Laser Turret": {
-      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
+      name: "Torreta Láser Doble",
+      text: "<strong>Ataque:</strong> Efectúa este ataque <strong>dos veces</strong> (incluso contra una nave situada fuera de tu arco de fuego).<br /><br />Cada vez que este ataque impacte, el defensor sufre 1 de daño. Luego se anulan <strong>todos</strong> los resultados de los dados."
     },
     "Plasma Torpedoes": {
       name: "Torpedos de Plasma",
@@ -8849,10 +8852,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Bomba de iones.<br /><br />Esta ficha <strong>detona</strong> al final de la fase de Activación.<br /><br /><strong>Ficha de Bomba de iones:</strong> Cuando se detona esta ficha de Bomba, toda nave que se encuentre a alcance 1 de ella recibe 2 fichas de Iones. Después se descarta esta ficha."
     },
     "Conner Net": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
+      name: "Red Conner",
+      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Red Conner.<br /><br />Esta ficha se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solape con ella.<br /><br /><strong>Ficha de Red Conner:</strong> Cuando es detona esta ficha de Bomba, la nave que la haya atravesado o solapado sufre 1 daño, recibe 2 fichas de Iones y se salta su paso de \"Realizar una acción\". Después se descarta esta ficha."
     },
     "Bombardier": {
-      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+      name: "Bombardero",
+      text: "Cuando sueltes una bomba, puedes usar la plantilla (%STRAIGHT% 2) en lugar de la plantilla (%STRAIGHT% 1)."
     },
     "Cluster Mines": {
       name: "Minas de Racimo",
@@ -8987,6 +8992,10 @@ exportObj.cardLoaders['Español'] = function() {
     "Ion Projector": {
       name: "Técnico de Escudos",
       text: "%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."
+    },
+    "Advanced SLAM": {
+      name: "Motor Sublumínico Avanzado",
+      text: "Después de efectuar una acción de MASA, si no te has solapado con un obstáculo ni con otra nave, puedes llevar a cabo una acctión gratuita."
     }
   };
   title_translations = {
@@ -15233,7 +15242,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14770
+                    lineno: 14778
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15765,7 +15774,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15314
+              lineno: 15322
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16335,7 +16344,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15813
+          lineno: 15821
         }));
         __iced_deferrals._fulfill();
       });
@@ -16347,7 +16356,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15814
+            lineno: 15822
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17739,7 +17748,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16622
+                      lineno: 16630
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17808,7 +17817,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16646
+                lineno: 16654
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17860,14 +17869,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16668
+            lineno: 16676
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16670
+            lineno: 16678
           }));
         }
         _ref1 = _this.modifications;
@@ -17875,7 +17884,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16672
+              lineno: 16680
             }));
           }
         }
@@ -18661,7 +18670,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17230
+                lineno: 17238
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18759,7 +18768,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17277
+                  lineno: 17285
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18781,7 +18790,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17281
+                    lineno: 17289
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18862,7 +18871,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17318
+            lineno: 17326
           }));
         }
         __iced_deferrals._fulfill();
