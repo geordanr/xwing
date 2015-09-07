@@ -1037,9 +1037,6 @@ exportObj.cardLoaders['Español'] = () ->
         "Advanced Homing Missiles":
             name: "Misiles Rastreadores Avanzados"
             text: """<strong>Ataque (Blanco fijado):</strong> Descarta esta carta para efectuar este ataque.%LINEBREAK%Si el ataque impacta, inflinge 1 carta de Daño boca arriba al defensor. Luego se anulan <strong>todos</strong> los resultados de los dados."""
-        "Advanced SLAM":
-            name: "Motor Sublumínico Avanzado"
-            text: """Después de efectuar una acción de MASA, si no te has solapado con un obstáculo ni con otra nave, puedes llevar a cabo una acctión gratuita."""
         'Agent Kallus':
             text: '''%IMPERIALONLY%%LINEBREAK%At the start of the first round, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'''
         'XX-23 S-Thread Tracers':
@@ -1130,6 +1127,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Ion Projector":
             name: "Técnico de Escudos"
             text: """%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."""
+        "Advanced SLAM":
+            name: "Motor Sublumínico Avanzado"
+            text: """Después de efectuar una acción de MASA, si no te has solapado con un obstáculo ni con otra nave, puedes llevar a cabo una acctión gratuita."""
 
     title_translations =
         "Slave I":
