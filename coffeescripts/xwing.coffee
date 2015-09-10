@@ -1496,7 +1496,7 @@ class exportObj.SquadBuilder
                     builder: '(Yet Another) X-Wing Miniatures Squad Builder'
                     builder_url: window.location.href.split('?')[0]
                     link: @permalink.attr 'href'
-            version: '0.2.0'
+            version: '0.3.0'
 
         for ship in @ships
             if ship.pilot?
@@ -1555,10 +1555,11 @@ class exportObj.SquadBuilder
         success = null
         error = null
 
-        # TODO - actual semver parsing
-        switch xws.version
+        version_list = (parseInt x for x in xws.version.split('.'))
+
+        switch
             # Not doing backward compatibility pre-1.x
-            when '0.2.1', '0.2.0', '0.1.1'
+            when version_list > [0, 1]
                 xws_faction = exportObj.fromXWSFaction[xws.faction]
 
                 if @faction != xws_faction

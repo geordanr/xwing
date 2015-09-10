@@ -5167,6 +5167,12 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.pilotsByFactionCanonicalName = {}
     for pilot_name, pilot of exportObj.pilots
         ((exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] ?= []).push pilot
+        # Hack until we need to disambiguate same name pilots by subfaction
+        switch pilot.faction
+            when 'Resistance'
+                ((exportObj.pilotsByFactionCanonicalName['Rebel Alliance'] ?= {})[pilot.canonical_name] ?= []).push pilot
+            when 'First Order'
+                ((exportObj.pilotsByFactionCanonicalName['Galactic Empire'] ?= {})[pilot.canonical_name] ?= []).push pilot
 
     exportObj.upgradesById = {}
     exportObj.upgradesByLocalizedName = {}
