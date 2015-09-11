@@ -1142,7 +1142,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Assault Carrier Expansion Pack", "Ghost Expansion Pack", "Inquisitor's TIE Expansion Pack", "Mist Hunter Expansion Pack", "Punishing One Expansion Pack"];
+exportObj.unreleasedExpansions = ["Imperial Assault Carrier Expansion Pack", "Ghost Expansion Pack", "Inquisitor's TIE Expansion Pack", "Mist Hunter Expansion Pack", "Punishing One Expansion Pack", "T-70 X-Wing Expansion Pack", "TIE/fo Fighter Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -3218,6 +3218,51 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: ['Tech'],
         points: 15
+      }, {
+        name: "Unspoiled PS7 T-70 X-Wing Pilot",
+        id: 185,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 7,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 99
+      }, {
+        name: '"Red Ace"',
+        id: 186,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 6,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 29
+      }, {
+        name: '"Omega Leader"',
+        id: 187,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 8,
+        slots: ['Elite', 'Tech'],
+        points: 21
+      }, {
+        name: 'Unspoiled PS7 TIE/fo Pilot',
+        id: 188,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 7,
+        slots: ['Tech'],
+        points: 99
+      }, {
+        name: 'Unspoiled PS4 TIE/fo Pilot',
+        id: 189,
+        unique: true,
+        faction: "First Order",
+        ship: "TIE/fo Fighter",
+        skill: 4,
+        slots: ['Tech'],
+        points: 99
       }
     ],
     upgradesById: [
@@ -4255,6 +4300,25 @@ exportObj.basicCardData = function() {
         id: 150,
         slot: "Elite",
         points: 1
+      }, {
+        name: 'Cool Hand',
+        id: 151,
+        slot: 'Elite',
+        points: 1
+      }, {
+        name: 'Juke',
+        id: 152,
+        slot: 'Elite',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
+      }, {
+        name: 'Comm Relay',
+        id: 153,
+        slot: 'Tech',
+        points: 3
       }
     ],
     modificationsById: [
@@ -4412,6 +4476,13 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.large) != null ? _ref : false;
         }
+      }, {
+        name: 'Integrated Astromech',
+        id: 20,
+        restriction_func: function(ship) {
+          return ship.data.name.indexOf('X-Wing') !== -1;
+        },
+        points: 0
       }
     ],
     titlesById: [
@@ -5733,6 +5804,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -6281,6 +6358,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -6352,6 +6438,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -6927,6 +7016,12 @@ exportObj.cardLoaders.English = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -7382,6 +7477,15 @@ exportObj.cardLoaders.English = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -7441,6 +7545,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -8339,6 +8446,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -8917,6 +9030,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -8996,6 +9118,9 @@ exportObj.cardLoaders['Español'] = function() {
     "Advanced SLAM": {
       name: "Motor Sublumínico Avanzado",
       text: "Después de efectuar una acción de MASA, si no te has solapado con un obstáculo ni con otra nave, puedes llevar a cabo una acctión gratuita."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -9789,6 +9914,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -10323,6 +10454,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -10395,6 +10535,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -11146,6 +11289,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -11682,6 +11831,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -11754,6 +11912,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -12311,6 +12472,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Zeta Ace"': {
       text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    },
+    '"Red Ace"': {
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
+    '"Omega Leader"': {
+      text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
   upgrade_translations = {
@@ -12751,6 +12918,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Wired": {
       text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+    },
+    'Cool Hand': {
+      text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
+    },
+    'Juke': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+    },
+    'Comm Relay': {
+      text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
     }
   };
   modification_translations = {
@@ -12807,6 +12983,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+    },
+    'Integrated Astromech': {
+      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -15242,7 +15421,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14778
+                    lineno: 14945
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15774,7 +15953,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15322
+              lineno: 15489
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16344,7 +16523,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15821
+          lineno: 15988
         }));
         __iced_deferrals._fulfill();
       });
@@ -16356,7 +16535,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15822
+            lineno: 15989
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17748,7 +17927,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16630
+                      lineno: 16797
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17817,7 +17996,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16654
+                lineno: 16821
               })
             ]);
             __iced_deferrals._fulfill();
@@ -17869,14 +18048,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16676
+            lineno: 16843
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16678
+            lineno: 16845
           }));
         }
         _ref1 = _this.modifications;
@@ -17884,7 +18063,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16680
+              lineno: 16847
             }));
           }
         }
@@ -18670,7 +18849,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17238
+                lineno: 17405
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18768,7 +18947,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17285
+                  lineno: 17452
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18790,7 +18969,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17289
+                    lineno: 17456
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -18871,7 +19050,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17326
+            lineno: 17493
           }));
         }
         __iced_deferrals._fulfill();
