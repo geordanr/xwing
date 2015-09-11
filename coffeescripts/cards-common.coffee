@@ -7,6 +7,8 @@ exportObj.unreleasedExpansions = [
     "Inquisitor's TIE Expansion Pack"
     "Mist Hunter Expansion Pack"
     "Punishing One Expansion Pack"
+    "T-70 X-Wing Expansion Pack"
+    "TIE/fo Fighter Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -3320,6 +3322,71 @@ exportObj.basicCardData = ->
             points: 15
         }
 
+        {
+            name: "Unspoiled PS7 T-70 X-Wing Pilot"
+            id: 185
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 7
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 99
+        }
+        {
+            name: '"Red Ace"'
+            id: 186
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 6
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 29
+        }
+        {
+            name: '"Omega Leader"'
+            id: 187
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 8
+            slots: [
+                'Elite'
+                'Tech'
+            ]
+            points: 21
+        }
+        {
+            name: 'Unspoiled PS7 TIE/fo Pilot'
+            id: 188
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 7
+            slots: [
+                'Tech'
+            ]
+            points: 99
+        }
+        {
+            name: 'Unspoiled PS4 TIE/fo Pilot'
+            id: 189
+            unique: true
+            faction: "First Order"
+            ship: "TIE/fo Fighter"
+            skill: 4
+            slots: [
+                'Tech'
+            ]
+            points: 99
+        }
     ]
 
     upgradesById: [
@@ -4451,6 +4518,26 @@ exportObj.basicCardData = ->
             slot: "Elite"
             points: 1
         }
+        {
+            name: 'Cool Hand'
+            id: 151
+            slot: 'Elite'
+            points: 1
+        }
+        {
+            name: 'Juke'
+            id: 152
+            slot: 'Elite'
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Comm Relay'
+            id: 153
+            slot: 'Tech'
+            points: 3
+        }
     ]
 
     modificationsById: [
@@ -4594,6 +4681,13 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 ship.data.large ? false
+        }
+        {
+            name: 'Integrated Astromech'
+            id: 20
+            restriction_func: (ship) ->
+                ship.data.name.indexOf('X-Wing') != -1
+            points: 0
         }
     ]
 

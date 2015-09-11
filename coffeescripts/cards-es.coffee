@@ -641,6 +641,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: """At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."""
         '"Zeta Ace"':
             text: """When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
+        '"Red Ace"':
+            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
+        '"Omega Leader"':
+            text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1070,6 +1074,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."""
         "Wired":
             text: """When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."""
+        'Cool Hand':
+            text: '''When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'''
+        'Juke':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender's %EVADE% results into a %FOCUS% result.'''
+        'Comm Relay':
+            text: '''You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -1130,6 +1140,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Advanced SLAM":
             name: "Motor Sublumínico Avanzado"
             text: """Después de efectuar una acción de MASA, si no te has solapado con un obstáculo ni con otra nave, puedes llevar a cabo una acctión gratuita."""
+        'Integrated Astromech':
+            text: '''<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'''
 
     title_translations =
         "Slave I":
