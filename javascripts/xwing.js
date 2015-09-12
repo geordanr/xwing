@@ -4831,7 +4831,7 @@ exportObj.basicCardData = function() {
 };
 
 exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _base3, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _base3, _base4, _base5, _base6, _base7, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _name4, _name5, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
   _ref = basic_cards.pilotsById;
   for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
     pilot_data = _ref[i];
@@ -5044,6 +5044,13 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   for (pilot_name in _ref15) {
     pilot = _ref15[pilot_name];
     ((_base = ((_base1 = exportObj.pilotsByFactionCanonicalName)[_name1 = pilot.faction] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = pilot.canonical_name] != null ? _base[_name] : _base[_name] = []).push(pilot);
+    switch (pilot.faction) {
+      case 'Resistance':
+        ((_base2 = ((_base3 = exportObj.pilotsByFactionCanonicalName)['Rebel Alliance'] != null ? _base3['Rebel Alliance'] : _base3['Rebel Alliance'] = {}))[_name2 = pilot.canonical_name] != null ? _base2[_name2] : _base2[_name2] = []).push(pilot);
+        break;
+      case 'First Order':
+        ((_base4 = ((_base5 = exportObj.pilotsByFactionCanonicalName)['Galactic Empire'] != null ? _base5['Galactic Empire'] : _base5['Galactic Empire'] = {}))[_name3 = pilot.canonical_name] != null ? _base4[_name3] : _base4[_name3] = []).push(pilot);
+    }
   }
   exportObj.upgradesById = {};
   exportObj.upgradesByLocalizedName = {};
@@ -5068,7 +5075,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   _ref18 = exportObj.upgrades;
   for (upgrade_name in _ref18) {
     upgrade = _ref18[upgrade_name];
-    ((_base2 = exportObj.upgradesBySlotCanonicalName)[_name2 = upgrade.slot] != null ? _base2[_name2] : _base2[_name2] = {})[upgrade.canonical_name] = upgrade;
+    ((_base6 = exportObj.upgradesBySlotCanonicalName)[_name4 = upgrade.slot] != null ? _base6[_name4] : _base6[_name4] = {})[upgrade.canonical_name] = upgrade;
   }
   exportObj.modificationsById = {};
   exportObj.modificationsByLocalizedName = {};
@@ -5138,7 +5145,7 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   for (title_name in _ref25) {
     title = _ref25[title_name];
     if (title.canonical_name === '"Heavy Scyk" Interceptor'.canonicalize()) {
-      ((_base3 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name3 = title.canonical_name] != null ? _base3[_name3] : _base3[_name3] = []).push(title);
+      ((_base7 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name5 = title.canonical_name] != null ? _base7[_name5] : _base7[_name5] = []).push(title);
     } else {
       (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
     }
@@ -15421,7 +15428,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14945
+                    lineno: 14951
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15953,7 +15960,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15489
+              lineno: 15495
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16523,7 +16530,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15988
+          lineno: 15994
         }));
         __iced_deferrals._fulfill();
       });
@@ -16535,7 +16542,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 15989
+            lineno: 15995
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17452,7 +17459,7 @@ exportObj.SquadBuilder = (function() {
           link: this.permalink.attr('href')
         }
       },
-      version: '0.2.0'
+      version: '0.3.0'
     };
     _ref = this.ships;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -17542,13 +17549,21 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.loadFromXWS = function(xws, cb) {
-    var a, addon, addon_added, addons, err, error, i, modification, new_ship, p, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+    var a, addon, addon_added, addons, err, error, i, modification, new_ship, p, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, version_list, x, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     success = null;
     error = null;
-    switch (xws.version) {
-      case '0.2.1':
-      case '0.2.0':
-      case '0.1.1':
+    version_list = (function() {
+      var _i, _len, _ref, _results;
+      _ref = xws.version.split('.');
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        x = _ref[_i];
+        _results.push(parseInt(x));
+      }
+      return _results;
+    })();
+    switch (false) {
+      case !(version_list > [0, 1]):
         xws_faction = exportObj.fromXWSFaction[xws.faction];
         if (this.faction !== xws_faction) {
           throw new Error("Attempted to load XWS for " + xws.faction + " but builder is " + this.faction);
@@ -17927,7 +17942,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16797
+                      lineno: 16804
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -17996,7 +18011,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16821
+                lineno: 16828
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18048,14 +18063,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16843
+            lineno: 16850
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16845
+            lineno: 16852
           }));
         }
         _ref1 = _this.modifications;
@@ -18063,7 +18078,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16847
+              lineno: 16854
             }));
           }
         }
@@ -18849,7 +18864,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17405
+                lineno: 17412
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18947,7 +18962,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17452
+                  lineno: 17459
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18969,7 +18984,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17456
+                    lineno: 17463
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19050,7 +19065,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17493
+            lineno: 17500
           }));
         }
         __iced_deferrals._fulfill();
@@ -19353,14 +19368,16 @@ SERIALIZATION_CODE_TO_CLASS = {
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
 exportObj.fromXWSFaction = {
+  'rebel': 'Rebel Alliance',
   'rebels': 'Rebel Alliance',
   'empire': 'Galactic Empire',
+  'imperial': 'Galactic Empire',
   'scum': 'Scum and Villainy'
 };
 
 exportObj.toXWSFaction = {
-  'Rebel Alliance': 'rebels',
-  'Galactic Empire': 'empire',
+  'Rebel Alliance': 'rebel',
+  'Galactic Empire': 'imperial',
   'Scum and Villainy': 'scum'
 };
 

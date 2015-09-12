@@ -132,3 +132,13 @@
   background-image: url("../images/aggressor0.png");
   background-repeat: no-repeat;
   background-position: 186px -19px; }
+
+.ship-tiefofighter0 {
+  background-image: url("../images/tiefofighter0.png");
+  background-repeat: no-repeat;
+  background-position: -55px -130px; }
+
+.ship-t70xwing0 {
+  background-image: url("../images/t70xwing0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -98px; }
