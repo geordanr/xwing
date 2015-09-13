@@ -2460,7 +2460,17 @@ class GenericAddon
                 if not_in_collection then 'select2-result-not-in-collection' else ''
             else
                 ''
+        args.formatSelection = (obj, container) =>
+            icon = switch @type
+                when 'Upgrade'
+                    @slot.toLowerCase().replace(/[^0-9a-z]/gi, '')
+                else
+                    @type.toLowerCase().replace(/[^0-9a-z]/gi, '')
 
+            # Append directly so we don't have to disable markup escaping
+            $(container).append """<i class="xwing-miniatures-font xwing-miniatures-font-#{icon}"></i> #{obj.text}"""
+            # If you return a string, Select2 will render it
+            undefined
 
         @selector.select2 args
         @selector.on 'change', (e) =>
