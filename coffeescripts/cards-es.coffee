@@ -1140,7 +1140,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Alerones de Estabilización"
             text: """Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."""
         "Ion Projector":
-            name: "Técnico de Escudos"
+            name: "Proyector de Iones"
             text: """%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."""
         "Advanced SLAM":
             name: "Motor Sublumínico Avanzado"
