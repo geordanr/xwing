@@ -615,13 +615,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
         "Talonbane Cobra":
             ship: "Caza Kihraxz"
-            text: """When attacking or defending, double the effect of your range combat bonuses."""
+            text: """Cuando ataques o te defiendas, duplica el efecto de tus bonificaciones al combate por alcance."""
         "Graz the Hunter":
+            name: "Graz el Cazador"
             ship: "Caza Kihraxz"
-            text: """When defending, if the attacker is inside your firing arc, roll 1 additional defense die."""
+            text: """Cuando te defiendas, tira 1 dado de defensa adicional si el atacante está situado dentro de tu arco de fuego."""
         "Black Sun Ace":
+            name: "As del Sol Negro"
             ship: "Caza Kihraxz"
         "Cartel Marauder":
+            name: "Salteador del Cartel"
             ship: "Caza Kihraxz"
         "Trandoshan Slaver":
             name: "Esclavista Trandoshano"
@@ -1016,7 +1019,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Bossk":
             text: """%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."""
         "Lightning Reflexes":
-            text: """%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the "Check Pilot Stress" step."""
+            name: "Reflejos Rápidos"
+            text: """%SMALLSHIPONLY%%LINEBREAK%Después de que ejecutes una maniobra blanca o verde en tu selector, puedes descartar esta carta para rotar tu nave 180º. Luego recibes 1 ficha de Tensión <strong>después</strong> del paso de "comprobar Tensión del piloto."""
         "Twin Laser Turret":
             name: "Torreta Láser Doble"
             text: """<strong>Ataque:</strong> Efectúa este ataque <strong>dos veces</strong> (incluso contra una nave situada fuera de tu arco de fuego).<br /><br />Cada vez que este ataque impacte, el defensor sufre 1 de daño. Luego se anulan <strong>todos</strong> los resultados de los dados."""
@@ -1130,12 +1134,13 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Propulsores Automatizados"
             text: """Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."""
         "Twin Ion Engine Mk. II":
-            text: """You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
+            name: "Motor Iónico Doble Modelo II"
+            text: """Puedes tratar todas las maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%) como si fueran maniobras verdes."""
         "Maneuvering Fins":
             name: "Alerones de Estabilización"
             text: """Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."""
         "Ion Projector":
-            name: "Técnico de Escudos"
+            name: "Proyector de Iones"
             text: """%LARGESHIPONLY%%LINEBREAK%Después de que una nave enemiga ejecute una maniobra que la solape con tu nave, tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, la nave enemiga recibe 1 ficha de Iones."""
         "Advanced SLAM":
             name: "Motor Sublumínico Avanzado"
