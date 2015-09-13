@@ -147,3 +147,13 @@
   background-image: url("../images/tieadvancedprototype0.png");
   background-repeat: no-repeat;
   background-position: 0px -148px; }
+
+.ship-vcx1000 {
+  background-image: url("../images/vcx1000.png");
+  background-repeat: no-repeat;
+  background-position: 0px -33px; }
+
+.ship-attackshuttle0 {
+  background-image: url("../images/attackshuttle0.png");
+  background-repeat: no-repeat;
+  background-position: 0px -89px; }
