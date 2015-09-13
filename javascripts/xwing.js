@@ -18911,6 +18911,21 @@ GenericAddon = (function() {
         }
       };
     })(this);
+    args.formatSelection = (function(_this) {
+      return function(obj, container) {
+        var icon;
+        icon = (function() {
+          switch (this.type) {
+            case 'Upgrade':
+              return this.slot.toLowerCase().replace(/[^0-9a-z]/gi, '');
+            default:
+              return this.type.toLowerCase().replace(/[^0-9a-z]/gi, '');
+          }
+        }).call(_this);
+        $(container).append("<i class=\"xwing-miniatures-font xwing-miniatures-font-" + icon + "\"></i> " + obj.text);
+        return void 0;
+      };
+    })(this);
     this.selector.select2(args);
     this.selector.on('change', (function(_this) {
       return function(e) {
@@ -18962,7 +18977,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17459
+                  lineno: 17468
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -18984,7 +18999,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17463
+                    lineno: 17472
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19065,7 +19080,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17500
+            lineno: 17509
           }));
         }
         __iced_deferrals._fulfill();
