@@ -478,15 +478,19 @@ exportObj.cardLoaders.Deutsch = () ->
         "Commander Alozen":
             text: """Zu Beginn der Kampfphase darfst du ein feindliches Schiff in Reichweite 1 in die Zielerfassung nehmen."""
         "Raider-class Corvette (Fore)":
+            ship: "Korv. der Sturm-Klasse (Bug)"
             name: "Korv. der Sturm-Klasse (Bug)"
             text: """Ein Mal pro Runde darfst du, nachdem du einen Primärwaffen-Angriff durchgeführt hast, 2 Energie ausgeben, um einen weiteren Primärwaffen-Angriff durchzuführen."""
         "Raider-class Corvette (Aft)":
+            ship: "Korv. der Sturm-Klasse (Heck)"
             name: "Korv. der Sturm-Klasse (Heck)"
+        "Bossk":
+            text: """Sobald du einen Angriff durchführst und triffst, kannst du , bevor du Schaden verursachst, 1 deiner %CRIT% negieren, um 2 %HIT% hinzuzufügen."""
         "Talonbane Cobra":
             ship: "Kihraxz-Jäger"
             text: """Sobald du angreifst oder verteidigst, wird der Effekt deiner Kampfvorteile durch Reichweite verdoppelt."""
         "Miranda Doni":
-            text: """Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder<strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."""
+            text: """Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder</strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."""
         '"Redline"':
             name: '"Rote Linie"'
             ship: "TIE-Vergelter"
