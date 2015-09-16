@@ -483,14 +483,17 @@ exportObj.cardLoaders.Deutsch = () ->
         "Raider-class Corvette (Aft)":
             name: "Korv. der Sturm-Klasse (Heck)"
         "Talonbane Cobra":
+            ship: "Kihraxz-Jäger"
             text: """Sobald du angreifst oder verteidigst, wird der Effekt deiner Kampfvorteile durch Reichweite verdoppelt."""
         "Miranda Doni":
             text: """Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder<strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."""
         '"Redline"':
             name: '"Rote Linie"'
+            ship: "TIE-Vergelter"
             text: """Du darfst 2 Zielerfassungen auf demselben Schiff haben. Sobald du ein Schiff in die Zielerfassung nimmst, darfst du es ein zweites Mal in die Zielerfassung nehmen."""
         '"Deathrain"':
             name: '"Todesregen"'
+            ship: "TIE-Vergelter"
             text: """Sobald du eine Bombe legst, darfst du die Stopper am Bug deines Schiffs benutzen. Nachdem du eine Bombe gelegt hast, darfst du als freie Aktion eine Fassrolle durchführen."""
         "Juno Eclipse":
             text: """Sobald du dein Manöver aufdeckst, darfst du die Geschwindigkeit um 1 erhöhen oder reduzieren (bis zu einem Minimum von 1)."""
@@ -501,6 +504,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Latts Razzi":
             text: """Sobald ein freundliches Schiff einen Angriff deklariert und du den Verteidiger in der Zielerfassung hast, kannst du einen Zielerfassungsmarker ausgeben, um die Wendigkeit des Verteidigers für diesen Angriff um 1 zu senken."""
         "Graz the Hunter":
+            ship: "Kihraxz-Jäger"
             name: "Graz der Jäger"
             text: """Wirf 1 zusätzlichen Verteidigungswürfel, wenn der Angreifer in deinem Feuerwinkel ist, sobald du verteidigst."""
         "Esege Tuketu":
