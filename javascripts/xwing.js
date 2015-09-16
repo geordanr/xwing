@@ -5200,7 +5200,8 @@ exportObj.translations.Deutsch = {
     "Reinforce": "Verstärken",
     "Jam": "Störsignal",
     "Coordinate": "Koordination",
-    "Cloak": "Tarnen"
+    "Cloak": "Tarnen",
+    "SLAM": "SLAM"
   },
   slot: {
     "Astromech": "Astromech",
@@ -5215,7 +5216,7 @@ exportObj.translations.Deutsch = {
     "Cargo": "Fracht",
     "Hardpoint": "Hardpoint",
     "Team": "Team",
-    "Illicit": "illegales",
+    "Illicit": "Illegales",
     "Salvaged Astromech": "geborgener Astromech"
   },
   sources: {
@@ -5246,8 +5247,12 @@ exportObj.translations.Deutsch = {
     "M3-A Interceptor Expansion Pack": "M3-A Abfangjäger Erweiterung",
     "IG-2000 Expansion Pack": "IG-2000 Erweiterung",
     "Most Wanted Expansion Pack": "Abschaum und Kriminelle Erweiterung",
-    "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack",
-    "The Force Awakens Core Set": "The Force Awakens Core Set"
+    "Imperial Raider Expansion Pack": "Imperiale Sturm-Korvette Erweiterung",
+    "Hound's Tooth Expansion Pack": "Reisszahn Erweiterung",
+    "Kihraxz Fighter Expansion Pack": "Kihraxz-Jäger Erweiterung",
+    "K-Wing Expansion Pack": "K-Wing Erweiterung",
+    "TIE Punisher Expansion Pack": "TIE-Vergelter Erweiterung",
+    "The Force Awakens Core Set": "Das Erwachen der Macht Grundspiel"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -5265,7 +5270,7 @@ exportObj.translations.Deutsch = {
     limited: "limitiert"
   },
   byCSSSelector: {
-    '.translate.sort-cards-by': 'Sortiere Karten per',
+    '.translate.sort-cards-by': 'Sortiere Karten nach',
     '.xwing-card-browser option[value="name"]': 'Name',
     '.xwing-card-browser option[value="source"]': 'Quelle',
     '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)',
@@ -5277,24 +5282,28 @@ exportObj.translations.Deutsch = {
     '.info-well .info-actions td.info-header': 'Aktionen',
     '.info-well .info-upgrades td.info-header': 'Aufwertungen',
     '.info-well .info-range td.info-header': 'Reichweite',
-    '.clear-squad': 'Neues Squad',
+    '.clear-squad': 'Neue Staffel',
     '.save-list': 'Speichern',
     '.save-list-as': 'Speichern als…',
     '.delete-list': 'Löschen',
-    '.backend-list-my-squads': 'Squad laden',
+    '.backend-list-my-squads': 'Staffel laden',
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drucken/Anzeigen als </span>Text',
+    '.collection': '<span class="hidden-phone"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>',
     '.randomize': 'Zufallsliste!',
-    '.randomize-options': 'Zufallslistenoptionen…',
+    '.randomize-options': 'Zufallslisten-Optionen…',
+    '.notes-container': 'Staffelnotizen',
     '.bbcode-list': 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>',
-    '.vertical-space-checkbox': "Platz für Schadenskarten und Upgrades im Druck berücksichtigen. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
-    '.color-print-checkbox': "Ausdrucken in farbe. <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Print',
+    '.vertical-space-checkbox': "Platz für Schadenskarten und Aufwertungen im Druck berücksichtigen. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
+    '.color-print-checkbox': "Ausdrucken in Farbe. <input type=\"checkbox\" class=\"toggle-color-print\" />",
+    '.print-list': '<i class="icon-print"></i>&nbsp;Druck',
     '.do-randomize': 'Zufall!',
     '#empireTab': 'Galaktisches Imperium',
     '#rebelTab': 'Rebellen Allianz',
     '#scumTab': 'Abschaum und Kriminelle',
     '#browserTab': 'Karten Browser',
-    '#aboutTab': 'Über'
+    '#aboutTab': 'Über',
+    '.from-xws': 'Import von XWS (beta)',
+    '.to-xws': 'Export nach XWS (beta)'
   },
   singular: {
     'pilots': 'Pilot',
@@ -5326,6 +5335,11 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('CR90 Corvette (Fore)', 'CR90-Korvette (Bug)');
   exportObj.renameShip('CR90 Corvette (Aft)', 'CR90-Korvette (Heck)');
   exportObj.renameShip('M3-A Interceptor', 'M3-A Abfangjäger');
+  exportObj.renameShip('Raider-class Corvette (Fore)', 'Korv. der Sturm-Klasse (Bug)');
+  exportObj.renameShip('Raider-class Corvette (Aft)', 'Korv. der Sturm-Klasse (Heck)');
+  exportObj.renameShip('Kihraxz Fighter', 'Kihraxz-Jäger');
+  exportObj.renameShip('TIE Punisher', 'TIE-Vergelter');
+  exportObj.renameShip('StarViper', 'SternenViper');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."
@@ -5608,7 +5622,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Nachdem du einen Angriff durchgeführt hast, darfst du 1 Fokus-, Ausweich- oder blauen Zielerfassungsmarker vom Verteidiger entfernen."
     },
     "Jek Porkins": {
-      text: "Wenn du einen Stressmarker erhälst, darfst du ihn entfernen und 1 Angriffswürfel werfen. Bei %HIT% bekommt dein Schiff 1 verdeckte Schadenskarte."
+      text: "Wenn du einen Stressmarker erhältst, darfst du ihn entfernen und 1 Angriffswürfel werfen. Bei %HIT% bekommt dein Schiff 1 verdeckte Schadenskarte."
     },
     '"Hobbie" Klivian': {
       text: "Wenn du ein Schiff in die Zielerfassung nimmst oder einen Zielerfassungsmarker ausgibst, kannst du 1 Stressmarker von deinem Schiff entfernen."
@@ -5655,16 +5669,20 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Nach dem Ausführen eines Manövers nimmt jedes feindliche Schiff, das du berührst, 1 Schaden."
     },
     "Prince Xizor": {
+      ship: "SternenViper",
       name: "Prinz Xizor",
       text: "Sobald du verteidigst, darf ein freundliches Schiff in Reichweite 1 ein nicht-negiertes %HIT% oder %CRIT% an deiner Stelle nehmen."
     },
     "Guri": {
+      ship: "SternenViper",
       text: "Wenn du zu Beginn der Kampfphase in Reichweite 1 zu einem feindlichen Schiff bist, darfst du 1 Fokusmarker auf dein Schiff legen."
     },
     "Black Sun Vigo": {
+      ship: "SternenViper",
       name: "Vigo der Schwarzen Sonne"
     },
     "Black Sun Enforcer": {
+      ship: "SternenViper",
       name: "Vollstrecker der Schwarzen Sonne"
     },
     "Serissu": {
@@ -5735,7 +5753,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "N'Dru Suhlak": {
       ship: "Z-95-Kopfjäger",
-      text: "Sobald du angreifst, erhälst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."
+      text: "Sobald du angreifst, erhältst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."
     },
     "Kaa'To Leeachos": {
       ship: "Z-95-Kopfjäger",
@@ -5743,44 +5761,89 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Binayre Pirate": {
       ship: "Z-95-Kopfjäger",
-      name: "Binayre-Pilot"
+      name: "Binayre-Pirat"
     },
     "Black Sun Soldier": {
       ship: "Z-95-Kopfjäger",
       name: "Kampfpilot der Schwarzen Sonne"
     },
     "Commander Alozen": {
-      text: "At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."
+      text: "Zu Beginn der Kampfphase darfst du ein feindliches Schiff in Reichweite 1 in die Zielerfassung nehmen."
     },
     "Raider-class Corvette (Fore)": {
-      text: "Once per round, ??? perform a primary ??? attack, you may spend 2 e??? perform another primary wea???"
+      name: "Korv. der Sturm-Klasse (Bug)",
+      text: "Ein Mal pro Runde darfst du, nachdem du einen Primärwaffen-Angriff durchgeführt hast, 2 Energie ausgeben, um einen weiteren Primärwaffen-Angriff durchzuführen."
     },
-    "Juno Eclipse": {
-      text: "When you reveal your maneuver, you may increase or decrease its speed by 1 (to a minimum of 1)."
+    "Raider-class Corvette (Aft)": {
+      name: "Korv. der Sturm-Klasse (Heck)"
     },
-    "Zertik Strom": {
-      text: "Enemy ships at Range 1 cannot add their range combat bonus when attacking."
+    "Talonbane Cobra": {
+      ship: "Kihraxz-Jäger",
+      text: "Sobald du angreifst oder verteidigst, wird der Effekt deiner Kampfvorteile durch Reichweite verdoppelt."
     },
-    "Lieutenant Colzet": {
-      text: "At the start of the End phase, you may spend a target lock you have on an enemy ship to flip 1 random facedown Damage card assigned to it faceup."
-    },
-    "Latts Razzi": {
-      text: "When a friendly ship declares an attack, you may spend a target lock you have on the defender to reduce its agility by 1 for that attack."
-    },
-    "Graz the Hunter": {
-      text: "When defending, if the attacker is inside your firing arc, roll 1 additional defense die."
-    },
-    "Esege Tuketu": {
-      text: "When another friendly ship at Range 1-2 is attacking, it may treat your focus tokens as its own."
+    "Miranda Doni": {
+      text: "Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder<strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."
     },
     '"Redline"': {
-      text: "You may maintain 2 target locks on the same ship.  When you acquire a target lock, you may acquire a second lock on that ship."
+      name: '"Rote Linie"',
+      ship: "TIE-Vergelter",
+      text: "Du darfst 2 Zielerfassungen auf demselben Schiff haben. Sobald du ein Schiff in die Zielerfassung nimmst, darfst du es ein zweites Mal in die Zielerfassung nehmen."
     },
     '"Deathrain"': {
-      text: "When dropping a bomb, you may use the front guides of your ship.  After dropping a bomb, you may perform a free barrel roll action."
+      name: '"Todesregen"',
+      ship: "TIE-Vergelter",
+      text: "Sobald du eine Bombe legst, darfst du die Stopper am Bug deines Schiffs benutzen. Nachdem du eine Bombe gelegt hast, darfst du als freie Aktion eine Fassrolle durchführen."
+    },
+    "Juno Eclipse": {
+      text: "Sobald du dein Manöver aufdeckst, darfst du die Geschwindigkeit um 1 erhöhen oder reduzieren (bis zu einem Minimum von 1)."
+    },
+    "Zertik Strom": {
+      text: "Sobald feindliche Schiffe in Reichweite 1 angreifen, können sie ihren Kampfvorteil durch Reichweite nicht hinzufügen."
+    },
+    "Lieutenant Colzet": {
+      text: "Zu Beginn der Endphase darfst du einen Zielerfassungsmarker , den du auf einem feindlichen Schiff liegen hast, ausgeben, um 1 seiner verdeckten Schadenskarten (zufällig bestimmt) aufzudecken."
+    },
+    "Latts Razzi": {
+      text: "Sobald ein freundliches Schiff einen Angriff deklariert und du den Verteidiger in der Zielerfassung hast, kannst du einen Zielerfassungsmarker ausgeben, um die Wendigkeit des Verteidigers für diesen Angriff um 1 zu senken."
+    },
+    "Graz the Hunter": {
+      ship: "Kihraxz-Jäger",
+      name: "Graz der Jäger",
+      text: "Wirf 1 zusätzlichen Verteidigungswürfel, wenn der Angreifer in deinem Feuerwinkel ist, sobald du verteidigst."
+    },
+    "Esege Tuketu": {
+      text: "Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreifst, darf es deine Fokusmarker wie seine eigenen behandeln."
     },
     "Moralo Eval": {
-      text: "You can perform %CANNON% secondary attacks against ships inside your auxiliary firing arc."
+      text: "Du darfst Angriffe mit %CANNON%-Sekundärwaffen gegen Schiffe in deinem Zusatz-Feuerwinkel durchführen."
+    },
+    "Warden Squadron Pilot": {
+      ship: "K-Wing",
+      name: "Pilot der Beschützer-Staffel"
+    },
+    "Guardian Squadron Pilot": {
+      ship: "K-Wing",
+      name: "Pilot der Wächter-Staffel"
+    },
+    "Cutlass Squadron Pilot": {
+      ship: "TIE-Vergelter",
+      name: "Pilot der Entermesser-Staffel"
+    },
+    "Black Eight Squadron Pilot": {
+      ship: "TIE-Vergelter",
+      name: "Pilot der Schwarzen-Acht-Staffel"
+    },
+    "Cartel Marauder": {
+      ship: "Kihraxz-Jäger",
+      name: "Kartell-Marodeur"
+    },
+    "Black Sun Ace": {
+      ship: "Kihraxz-Jäger",
+      name: "Fliegerass der schwarzen Sonne"
+    },
+    "Trandoshan Slaver": {
+      ship: "YV-666",
+      name: "Trandoshanischer Sklavenjäger"
     },
     'Gozanti-class Cruiser': {
       text: "After you execute a maneuver, you may deploy up to 2 attached ships."
@@ -5878,7 +5941,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Daredevil": {
       name: "Draufgänger",
-      text: "<strong>Aktion:</strong> Führe ein weißes (%TURNLEFT% 1) oder (%TURNRIGHT% 1) Manöver aus. Dann erhälst du einen Stresmarker.<br /><br />Wenn du kein %BOOST%-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%)."
+      text: "<strong>Aktion:</strong> Führe ein weißes (%TURNLEFT% 1) oder (%TURNRIGHT% 1) Manöver aus. Dann erhältst du einen Stressmarker.<br /><br />Wenn du kein %BOOST%-Aktionssymbol hast, musst du dann 2 Angriffswürfel werfen. Du nimmst allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%)."
     },
     "Elusiveness": {
       name: "Schwer zu Treffen",
@@ -6103,7 +6166,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Chardaan Refit": {
       name: "Chardaan-Nachrüstung",
-      text: "Diese Karte hat negative Kommandopunktekosten."
+      text: "<span class=\"card-restriction\">Nur für A-Wing</span>%LINEBREAK%Diese Karte hat negative Kommandopunktekosten."
     },
     "Proton Rockets": {
       name: "Protonenraketen",
@@ -6241,7 +6304,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Inertial Dampeners": {
       name: "Trägheitsdämpfer",
-      text: "Sobald du dein Manöverraf aufdeckst, darfst du diese Karte ablegen, um [0%STOP%]-Manöver auszuführen. Dann erhältst du 1 Stressmarker."
+      text: "Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um stattdessen ein weißes [0%STOP%]-Manöver auszuführen. Dann erhältst du 1 Stressmarker."
     },
     "Flechette Cannon": {
       name: "Flechettekanonen",
@@ -6257,7 +6320,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Feedback Array": {
       name: "Rückkopplungsfeld",
-      text: "In der Kampfphase darfst du statt einen Angriff durchzuführen 1 Ionenmarker und 1 Schaden nehmen, um eine feindliches Schiff in Reichweite 1 zu wählen. Das gewählte Schiff nimmt 1 Schaden."
+      text: "In der Kampfphase darfst du statt einen Angriff durchzuführen 1 Ionenmarker und 1 Schaden nehmen, um ein feindliches Schiff in Reichweite 1 zu wählen. Das gewählte Schiff nimmt 1 Schaden."
     },
     '"Hot Shot" Blaster': {
       text: "<strong>Angriff:</strong> Lege diese Karte ab, um 1 Schiff (auch außerhalb deines Feuerwinkels) anzugreifen."
@@ -6267,7 +6330,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Salvaged Astromech": {
       name: "Abgewrackter Astromechdroide",
-      text: "Sobald du eine Schadenskarte mit dem Attribut <strong>Schiff</strong> erhälst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."
+      text: "Sobald du eine Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."
     },
     "Bomb Loadout": {
       name: "Bombenladung",
@@ -6301,46 +6364,77 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "%DE_SCUMONLY%%LINEBREAK%Nachdem du ein rotes Manöver ausgeführt hast, darfst du deinem Schiff 1 Fokusmarker zuweisen."
     },
     "Advanced Targeting Computer": {
-      text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%When attacking with your primary weapon, if you have a target lock on the defender, you may add 1 %CRIT% result to your roll.  If you do, you cannot spend target locks during this attack."
+      name: "Verbesserter Zielcomputer",
+      text: "<span class=\"card-restriction\">Nur für TIE Advanced</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."
     },
     "Ion Cannon Battery": {
-      text: "<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack.  If this attack hits, the defender suffers 1 critical damage and receives 1 ion token.  Then cancel <strong>all<strong> dice results."
+      name: "Ionengeschützbatterie",
+      text: "<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff durchzuführen. Wenn dieser Angriff trifft, nimmt der Verteidiger 1 kritischen Schaden und erhält 1 Ionenmarker. Dann werden <strong>alle</strong> Würfelergebnisse negiert."
     },
-    "Emperor Palpatine": {
-      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
-    },
-    "Bossk": {
-      text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
-    },
-    "Lightning Reflexes": {
-      text: "%SMALLSHIPONLY%%LINEBREAK%After you execute a white or green maneuver on your dial, you may discard this card to rotate your ship 180&deg;.  Then receive 1 stress token <strong>after</strong> the \"Check Pilot Stress\" step."
-    },
-    "Twin Laser Turret": {
-      text: "<strong>Attack:</strong> Perform this attack <strong>twice</strong> (even against a ship outside your firing arc).<br /><br />Each time this attack hits, the defender suffers 1 damage.  Then cancel <strong>all</strong> dice results."
-    },
-    "Plasma Torpedoes": {
-      text: "<strong>Attack (target lock):</strong> Spend your target lock and discard this card to perform this attack.<br /><br />If this attack hits, after dealing damage, remove 1 shield token from the defender."
-    },
-    "Ion Bombs": {
-      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 ion bomb token.<br /><br />This token <strong>detonates</strong> at the end of the Activation phase.<br /><br /><strong>Ion Bombs Token:</strong> When this bomb token detonates, each ship at Range 1 of the token receives 2 ion tokens.  Then discard this token."
-    },
-    "Conner Net": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 1 Conner Net token.<br /><br />When a ship's base or maneuver template overlaps this token, this token <strong>detonates</strong>.<br /><br /><strong>Conner Net Token:</strong> When this bomb token detonates, the ship that moved through or overlapped this token suffers 1 damage, receives 2 ion tokens, and skips its \"Perform Action\" step.  Then discard this token."
-    },
-    "Bombardier": {
-      text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    "Extra Munitions": {
+      name: "Ersatzmunition",
+      text: "Sobald du diese Karte ausrüstest, lege 1 Munitionsmarker auf jede ausgerüstete %TORPEDO%, %MISSILE% oder %BOMB% Aufwertungskarte. Sobald du angewiesen wirst eine Aufwertungskarte abzulegen, darfst du stattdessen 1 Munitionsmarker von der entsprechenden Karte ablegen."
     },
     "Cluster Mines": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+      name: "Clusterminen",
+      text: "<strong>Aktion</strong>: Lege diese Karte ab, um 1 Satz Clusterminenmarker zu <strong>legen</strong>.<br /><br />Ein Clusterminenmarker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit diesem Marker überschneidet."
+    },
+    "Glitterstim": {
+      name: "Glitzerstim",
+      text: "Zu Beginn der Kampfphase darfst du diese Karte ablegen und bekommst 1 Stressmarker. Tust du das , darfst du bis zum Ende der Runde, sobald du angreifst oder verteidigst, alle deine %FOCUS% in %HIT% oder %EVADE% ändern."
+    },
+    "Grand Moff Tarkin": {
+      name: "Grossmoff Tarkin",
+      text: "%DE_HUGESHIPONLY% %DE_IMPERIALONLY%%LINEBREAK%Zu Beginn der Kampfphase darfst du ein anderes Schiff in Reichweite 1-4 wählen. Entweder weist du ihm 1 Fokusmarker zu oder du entfernst 1 Fokusmarker von ihm."
+    },
+    "Captain Needa": {
+      text: "%DE_HUGESHIPONLY% %DE_IMPERIALONLY%%LINEBREAK%Wenn du dich in der Aktivierungsphase mit einem Hindernis überschneidest, erhältst du keine offene Schadenskarte. Stattdessen wirfst du 1 Angriffswürfel. Bei %HIT% oder %CRIT% nimmst du 1 Schaden."
+    },
+    "Admiral Ozzel": {
+      text: "%DE_HUGESHIPONLY% %DE_IMPERIALONLY%%LINEBREAK%<strong>Energie:</strong> Du darfst bis zu 3 Schilde von deinem Schiff entfernen. Für jedes entfernte Schild erhältst du 1 Energie."
+    },
+    "Emperor Palpatine": {
+      name: "Imperator Palpatine",
+      text: "%DE_IMPERIALONLY%%LINEBREAK%Ein Mal pro Runde darfst du das Ergebnis eines Würfels, den ein freundliches Schiff geworfen hat, in ein beliebiges anderes Ergebnis ändern. Dieses Ergebnis kann nicht nochmal modifiziert werden."
+    },
+    "Bossk": {
+      name: "Bossk (Crew)",
+      text: "%DE_SCUMONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der nicht geroffen hat, <strong>musst</strong> du 1 Stressmarker bekommen, wenn du keine Stressmarker hast. Weise dann deinem Schiff 1 Fokusmarker zu und nimm den Verteidiger in die Zielerfassung."
+    },
+    "Lightning Reflexes": {
+      name: "Blitzschnelle Reflexe",
+      text: "%DE_SMALLSHIPONLY%%LINEBREAK%Nachdem du ein weißes oder grünes Manöver von deinem Rad ausgeführt hast, darfst du diese Karte ablegen, um dein Schiff um 180&deg; zu drehen. Dann erhältst du 1 Stressmarker <strong>nach</strong> dem Schritt \"Stress des Piloten überprüfen\"."
+    },
+    "Twin Laser Turret": {
+      name: "Zwillingslasergeschütz",
+      text: "<strong>Angriff:</strong> Führe diesen Angriff zwei Mal durch (auch gegen ein Schiff außerhalb deines Feuerwinkels). Jedes Mal wenn dieser Angriff triffst, nimmt der Verteidiger 1 Schaden. Dann werden <strong>alle</strong> Würfelergebnisse negiert."
+    },
+    "Plasma Torpedoes": {
+      name: "Plasma Torpedos",
+      text: "<strong>Angriff (Zielerfassung):</strong> Gib deinen Zielerfassungsmarker aus und lege diese Karte ab, um diesen Angriff durchzuführen.<br /><br />Falls dieser Angriff trifft, entferne 1 Schildmarker des Verteidigers, nachdem du ihm Schaden zugefügt hast."
+    },
+    "Ion Bombs": {
+      name: "Ionenbomben",
+      text: "Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um 1 Ionenbombenmarker zu <strong>legen</strong>.<br /><br /> Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."
+    },
+    "Conner Net": {
+      name: "Connernetz",
+      text: "<strong>Aktion:</strong> Lege diese Karte ab, um 1 Connernetzmarker zu <strong>legen</strong>.<br /><br /> Der Marker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit dem Marker überschneidet."
+    },
+    "Bombardier": {
+      name: "Bombenschütze",
+      text: "Sobald du eine Bombe legst, darfst du die (%STRAIGHT% 2)-Schablone anstatt der (%STRAIGHT% 1)-Schablone verwenden."
     },
     'Crack Shot': {
-      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+      name: "Meisterhafter Schuss",
+      text: 'Sobald du ein Schiff innerhalb deines Feuerwinkels angreifst, darfst du diese Karte ablegen um 1 gewürfeltes %EVADE% des Verteidigers zu negieren.'
     },
     "Advanced Homing Missiles": {
-      text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
+      name: "Verstärkte Lenkraketen",
+      text: "<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen.%LINEBREAK%Falls dieser Angriff triffst, teile dem Verteidiger 1 offene Schadenskarte zu. Dann werden <strong>alle</strong> Würfelergebnisse negiert."
     },
     'Agent Kallus': {
-      text: '%IMPERIALONLY%%LINEBREAK%At the start of the first round, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
+      text: '%DE_IMPERIALONLY%%LINEBREAK%At the start of the first round, choose 1 enemy small or large ship.  When attacking or defending against that ship, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.'
     },
     'XX-23 S-Thread Tracers': {
       text: "<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."
@@ -6349,10 +6443,11 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
     },
     "Cloaking Device": {
-      text: "%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+      text: "%DE_SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
     },
     "Shield Technician": {
-      text: "%HUGESHIPONLY%%LINEBREAK%When you perform a recover action, instead of spending all of your energy, you can choose any amount of energy to spend."
+      name: "Schildtechniker",
+      text: "%DE_HUGESHIPONLY%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, kannst du wählen, wie viel Energie du ausgeben möchtest, anstatt alle Energie auszugeben."
     },
     "Weapons Guidance": {
       text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
@@ -6370,7 +6465,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
     },
     'Juke': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
+      text: '%DE_SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender\'s %EVADE% results into a %FOCUS% result.'
     },
     'Comm Relay': {
       text: 'You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'
@@ -6411,7 +6506,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Advanced Cloaking Device": {
       name: "Verbesserte Tarnvorrichtung",
-      text: "Nachdem du angegriffen hast, darfst du dich als freie Aktion tarnen."
+      text: "<span class=\"card-restriction\">Nur für TIE-Phantom.</span>%LINEBREAK%Nachdem du angegriffen hast, darfst du dich als freie Aktion tarnen."
     },
     "Combat Retrofit": {
       name: "Umrüstung für den Kampfeinsatz",
@@ -6438,16 +6533,19 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."
     },
     "Twin Ion Engine Mk. II": {
-      text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
+      name: "Zwillings-Ionenantrieb MK. II",
+      text: "Du darfst alle Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) als grüne Manöver behandeln."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      name: "Steuertragflächen",
+      text: "Sobald du ein Wendemanöver (%TURNLEFT% oder %TURNRIGHT%) aufdeckst, darfst du das entsprechende Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) mit gleicher Geschwindigkeit auf deinem Manöverrad einstellen."
     },
     "Ion Projector": {
-      text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
+      name: "Ionenprojektor",
+      text: "%DE_LARGESHIPONLY%%LINEBREAK%Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, das zur Überschneidung mit deinem Schiff führte, wirf 1 Angriffswürfel. Bei %HIT% oder %CRIT% bekommt das feindliche Schiff 1 Ionenmarker."
     },
     'Integrated Astromech': {
-      text: '<span class="card-restriction">X-wing only.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
+      text: '<span class="card-restriction">Nur für X-Wing.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'
     }
   };
   title_translations = {
@@ -6508,6 +6606,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "<span class=\"card-restriction\">Nur für VT-49 Decimator.</span>%LINEBREAK%Nach dem Ausführen eines Manövers, das zur Überschneidung mit einem anderen Schiff geführt hat, darfst du 1 freie Aktion durchführen. Dann erhältst du 1 Stressmarker."
     },
     "Virago": {
+      ship: "SternenViper",
       text: "<span class=\"card-restriction\">Nur für SternenViper.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%- und ein %ILLICIT%-Symbol hinzu.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, wenn dein Pilotenwert \"3\" oder niedriger ist."
     },
     '"Heavy Scyk" Interceptor (Cannon)': {
@@ -6536,31 +6635,41 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "<span class=\"card-restriction\">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu."
     },
     "TIE/x1": {
-      text: "<span class=\"card-restriction\">TIE Advanced only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% upgrade icon.%LINEBREAK%If you equip a %SYSTEM% upgrade, its squad point cost is reduced by 4 (to a minimum of 0)."
+      text: "<span class=\"card-restriction\">Nur für TIE Advanced.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0)."
+    },
+    "Hound's Tooth": {
+      name: "Reisszahn",
+      text: "<span class=\"card-restriction\">Nur für YV-666.</span>%LINEBREAK%Nachdem du zerstörst worden bist, darfst du das Schiff <em>Nashtahwelpe</em> <strong>absetzen</strong>, bevor du von der Spielfläche entfernt wirst.%LINEBREAK%Es darf diese Runde nicht angreifen."
     },
     "Ghost": {
-      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+      text: "<span class=\"card-restriction\">Nur für VCX-100.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
     },
     "Phantom": {
       text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
     },
     "TIE/v1": {
-      text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
+      text: "<span class=\"card-restriction\">Nur für TIE Advanced Prototype.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
     },
     "Mist Hunter": {
-      text: "<span class=\"card-restriction\">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
+      text: "<span class=\"card-restriction\">Nur für G-1A starfighter.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 \"Tractor Beam\" Upgrade card (paying its squad point cost as normal)."
     },
     "Punishing One": {
-      text: "<span class=\"card-restriction\">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."
+      text: "<span class=\"card-restriction\">Nur für JumpMaster 5000.</span>%LINEBREAK%Increase your primary weapon value by 1."
     },
     "Assailer": {
-      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%When defending, if the targeted section has a reinforce token, you may change 1 %FOCUS% result to a %EVADE% result."
+      ship: "Korv. der Sturm-Klasse (Heck)",
+      name: "Sturmbringer",
+      text: "<span class=\"card-restriction\">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Sobald du verteidigst und wenn die als Ziel bestimmten Sektion einen Verstärkungsmarker hat, darfst du 1 %FOCUS% in ein %EVADE% ändern."
     },
     "Instigator": {
-      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform a recover action, recover 1 additional shield."
+      ship: "Korv. der Sturm-Klasse (Heck)",
+      name: "Hetzer",
+      text: "<span class=\"card-restriction\">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du die Aktion Aufladen durchgeführt hast, lade 1 weiteres Schild wieder auf."
     },
     "Impetuous": {
-      text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
+      ship: "Korv. der Sturm-Klasse (Heck)",
+      name: "Ungestüm",
+      text: "<span class=\"card-restriction\">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen.."
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -15433,7 +15542,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 14956
+                    lineno: 15055
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15965,7 +16074,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15500
+              lineno: 15599
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16535,7 +16644,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 15999
+          lineno: 16098
         }));
         __iced_deferrals._fulfill();
       });
@@ -16547,7 +16656,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16000
+            lineno: 16099
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17947,7 +18056,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16809
+                      lineno: 16908
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18016,7 +18125,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16833
+                lineno: 16932
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18068,14 +18177,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16855
+            lineno: 16954
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16857
+            lineno: 16956
           }));
         }
         _ref1 = _this.modifications;
@@ -18083,7 +18192,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16859
+              lineno: 16958
             }));
           }
         }
@@ -18869,7 +18978,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17417
+                lineno: 17516
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18982,7 +19091,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17474
+                  lineno: 17573
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19004,7 +19113,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17478
+                    lineno: 17577
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19085,7 +19194,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17515
+            lineno: 17614
           }));
         }
         __iced_deferrals._fulfill();
