@@ -16,8 +16,8 @@ exportObj.translations.Deutsch =
         "Reinforce": "Verstärken"
         "Jam": "Störsignal"
         "Coordinate": "Koordination"
-        "Cloak": "Tarnen"
         "SLAM": "SLAM"
+        "Cloak": "Tarnen"
     slot:
         "Astromech": "Astromech"
         "Bomb": "Bombe"
@@ -512,7 +512,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Graz der Jäger"
             text: """Wirf 1 zusätzlichen Verteidigungswürfel, wenn der Angreifer in deinem Feuerwinkel ist, sobald du verteidigst."""
         "Esege Tuketu":
-            text: """Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreifst, darf es deine Fokusmarker wie seine eigenen behandeln."""
+            text: """Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreift, darf es deine Fokusmarker wie seine eigenen behandeln."""
         "Moralo Eval":
             text: """Du darfst Angriffe mit %CANNON%-Sekundärwaffen gegen Schiffe in deinem Zusatz-Feuerwinkel durchführen."""
         "Warden Squadron Pilot":
@@ -784,7 +784,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_REBELONLY%%LINEBREAK%Nachdem du einen Stressmarker von deinem Schiff entfernt hast, darfst du deinem Schiff einen Fokusmarker geben."""
         "Jan Ors":
             name: "Jan Ors (Crew)"
-            text: """%DE_REBELONLY%%LINEBREAK%Ein Mal pro runde darfst du einem freundlichem Schiff in Reichweite 1-3, das gerade die Aktion Fokussierung durchführt oder einen Fokusmarker erhalten würde, stattdessen einen Ausweichmarker geben."""
+            text: """%DE_REBELONLY%%LINEBREAK%Sobald ein freundliches Schiff in Reichweite 1-3 eine Aktion Fokussierung durchführt oder ihm ein Fokusmarker zugeordnet werden würde, darfst du diesem Schiff stattdessen ein Mal pro Runde einen Ausweichmarker zuordnen."""
         "Toryn Farr":
             text: """%DE_HUGESHIPONLY%%LINEBREAK%%DE_REBELONLY%%LINEBREAK%<strong>Aktion:</strong> Gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt."""
         # TODO Check card formatting
@@ -843,10 +843,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."""
         "Lone Wolf":
             name: "Einsamer Wolf"
-            text: """Wenn keine freundlichen Schiffe in Reichweite 1-2 sind, darfst du beim Angreifen und Verteidigen 1 gewürfelte Leerseite neu würfeln."""
+            text: """Sobald du angreifst oder verteidigst und wenn keine anderen freundlichen Schiffe in Reichweite 1-2 sind, darfst du 1 gewürfelte Leerseite neu würfeln."""
         "Stay On Target":
             name: "Am Ziel bleiben"
-            text: """Nach dem Aufdecken des Manöverrads darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."""
+            text: """Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."""
         "Dash Rendar":
             name: "Dash Rendar (Crew)"
             text: """%DE_REBELONLY%%LINEBREAK%Du darfst auch angreifen während du dich mit einem Hindernis überschneidest.<br /><br />Deine Schussbahn kann nicht versperrt werden."""
@@ -874,7 +874,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du angreifst, darfst du einen Fokusmarker ausgeben, um 1 deiner %FOCUS% in ein %CRIT% zu ändern."""
         "Accuracy Corrector":
             name: "Zielvisor"
-            text: """Sobald du angreifst, darfst du alle deine Würfelergebnisse negieren. Dann darfst du 2 %HIT% hinzufügen.%LINEBREAK%Deine Würfel können während dieses Angriffs nicht noch einmal modifiziert werden."""
+            text: """Wenn du angreifst, darfst du während des Schritts "Angriffswürfel modifizieren" alle deine Würfelergebnisse negieren. Dann darfst du 2 %HIT% hinzufügen.%LINEBREAK%Deine Würfel können während dieses Angriffs nicht noch einmal modifiziert werden."""
         "Inertial Dampeners":
             name: "Trägheitsdämpfer"
             text: """Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um stattdessen ein weißes [0%STOP%]-Manöver auszuführen. Dann erhältst du 1 Stressmarker."""
@@ -902,12 +902,12 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
         '"Genius"':
             name: '"Genie"'
-            text: """Wenn du eine Bombe ausgerüstet hast, die vor dem Aufdecken deines Manövers gelegt werden kann, darfst du sie stattdessen auch <strong>nach</strong> Ausführung des Manövers legen."""
+            text: """Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."""
         "Unhinged Astromech":
             name: "Ausgeklinkter Astromech-Droide"
             text: """Du darfst alle Manöver mit Geschwindigkeit 3 wie grüne Manöver behandeln."""
         "R4-B11":
-            text: """Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um einen oder alle Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."""
+            text: """Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um beliebig viele Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."""
         "Autoblaster Turret":
             name: "Autoblastergeschütz"
             text: """<strong>Angriff:</strong> Greife 1 Schiff (auch außerhalb deines Feuerwinkels) an. %LINEBREAK%Deine %HIT% können von Verteidigungswürfeln nicht negiert werden. Der Verteidiger darf %CRIT% vor %HIT% negieren."""
@@ -953,7 +953,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_SMALLSHIPONLY%%LINEBREAK%Nachdem du ein weißes oder grünes Manöver von deinem Rad ausgeführt hast, darfst du diese Karte ablegen, um dein Schiff um 180&deg; zu drehen. Dann erhältst du 1 Stressmarker <strong>nach</strong> dem Schritt "Stress des Piloten überprüfen"."""
         "Twin Laser Turret":
             name: "Zwillingslasergeschütz"
-            text: """<strong>Angriff:</strong> Führe diesen Angriff zwei Mal durch (auch gegen ein Schiff außerhalb deines Feuerwinkels). Jedes Mal wenn dieser Angriff triffst, nimmt der Verteidiger 1 Schaden. Dann werden <strong>alle</strong> Würfelergebnisse negiert."""
+            text: """<strong>Angriff:</strong> Führe diesen Angriff zwei Mal durch (auch gegen ein Schiff außerhalb deines Feuerwinkels). Jedes Mal wenn dieser Angriff trifft, nimmt der Verteidiger 1 Schaden. Dann werden <strong>alle</strong> Würfelergebnisse negiert."""
         "Plasma Torpedoes":
             name: "Plasma Torpedos"
             text: """<strong>Angriff (Zielerfassung):</strong> Gib deinen Zielerfassungsmarker aus und lege diese Karte ab, um diesen Angriff durchzuführen.<br /><br />Falls dieser Angriff trifft, entferne 1 Schildmarker des Verteidigers, nachdem du ihm Schaden zugefügt hast."""
@@ -1044,6 +1044,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Autothrusters":
             name: "Automatische Schubdüsen"
             text: """Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."""
+        "Advanced SLAM":
+            name: "Verbesserter SLAM"
+            text: """Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."""
         "Twin Ion Engine Mk. II":
             name: "Zwillings-Ionenantrieb MK. II"
             text: """Du darfst alle Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) als grüne Manöver behandeln."""
