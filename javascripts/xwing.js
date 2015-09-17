@@ -5771,18 +5771,23 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Zu Beginn der Kampfphase darfst du ein feindliches Schiff in Reichweite 1 in die Zielerfassung nehmen."
     },
     "Raider-class Corvette (Fore)": {
+      ship: "Korv. der Sturm-Klasse (Bug)",
       name: "Korv. der Sturm-Klasse (Bug)",
       text: "Ein Mal pro Runde darfst du, nachdem du einen Primärwaffen-Angriff durchgeführt hast, 2 Energie ausgeben, um einen weiteren Primärwaffen-Angriff durchzuführen."
     },
     "Raider-class Corvette (Aft)": {
+      ship: "Korv. der Sturm-Klasse (Heck)",
       name: "Korv. der Sturm-Klasse (Heck)"
+    },
+    "Bossk": {
+      text: "Sobald du einen Angriff durchführst und triffst, kannst du , bevor du Schaden verursachst, 1 deiner %CRIT% negieren, um 2 %HIT% hinzuzufügen."
     },
     "Talonbane Cobra": {
       ship: "Kihraxz-Jäger",
       text: "Sobald du angreifst oder verteidigst, wird der Effekt deiner Kampfvorteile durch Reichweite verdoppelt."
     },
     "Miranda Doni": {
-      text: "Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder<strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."
+      text: "Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder</strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."
     },
     '"Redline"': {
       name: '"Rote Linie"',
@@ -15542,7 +15547,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15055
+                    lineno: 15059
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16074,7 +16079,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15599
+              lineno: 15603
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16644,7 +16649,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16098
+          lineno: 16102
         }));
         __iced_deferrals._fulfill();
       });
@@ -16656,7 +16661,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16099
+            lineno: 16103
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18056,7 +18061,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16908
+                      lineno: 16912
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18125,7 +18130,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16932
+                lineno: 16936
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18177,14 +18182,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16954
+            lineno: 16958
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16956
+            lineno: 16960
           }));
         }
         _ref1 = _this.modifications;
@@ -18192,7 +18197,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16958
+              lineno: 16962
             }));
           }
         }
@@ -18978,7 +18983,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17516
+                lineno: 17520
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19091,7 +19096,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17573
+                  lineno: 17577
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19113,7 +19118,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17577
+                    lineno: 17581
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19194,7 +19199,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17614
+            lineno: 17618
           }));
         }
         __iced_deferrals._fulfill();
