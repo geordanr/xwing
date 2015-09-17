@@ -5200,8 +5200,8 @@ exportObj.translations.Deutsch = {
     "Reinforce": "Verstärken",
     "Jam": "Störsignal",
     "Coordinate": "Koordination",
-    "Cloak": "Tarnen",
-    "SLAM": "SLAM"
+    "SLAM": "SLAM",
+    "Cloak": "Tarnen"
   },
   slot: {
     "Astromech": "Astromech",
@@ -5817,7 +5817,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Wirf 1 zusätzlichen Verteidigungswürfel, wenn der Angreifer in deinem Feuerwinkel ist, sobald du verteidigst."
     },
     "Esege Tuketu": {
-      text: "Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreifst, darf es deine Fokusmarker wie seine eigenen behandeln."
+      text: "Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreift, darf es deine Fokusmarker wie seine eigenen behandeln."
     },
     "Moralo Eval": {
       text: "Du darfst Angriffe mit %CANNON%-Sekundärwaffen gegen Schiffe in deinem Zusatz-Feuerwinkel durchführen."
@@ -6183,7 +6183,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Jan Ors": {
       name: "Jan Ors (Crew)",
-      text: "%DE_REBELONLY%%LINEBREAK%Ein Mal pro runde darfst du einem freundlichem Schiff in Reichweite 1-3, das gerade die Aktion Fokussierung durchführt oder einen Fokusmarker erhalten würde, stattdessen einen Ausweichmarker geben."
+      text: "%DE_REBELONLY%%LINEBREAK%Sobald ein freundliches Schiff in Reichweite 1-3 eine Aktion Fokussierung durchführt oder ihm ein Fokusmarker zugeordnet werden würde, darfst du diesem Schiff stattdessen ein Mal pro Runde einen Ausweichmarker zuordnen."
     },
     "Toryn Farr": {
       text: "%DE_HUGESHIPONLY%%LINEBREAK%%DE_REBELONLY%%LINEBREAK%<strong>Aktion:</strong> Gib X Energie aus, um X feindliche Schiffe in Reichweite 1-2 zu wählen. Sämtliche Fokus-, Ausweich- und blauen Zielerfassungsmarker dieser Schiffe werden entfernt."
@@ -6263,11 +6263,11 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Lone Wolf": {
       name: "Einsamer Wolf",
-      text: "Wenn keine freundlichen Schiffe in Reichweite 1-2 sind, darfst du beim Angreifen und Verteidigen 1 gewürfelte Leerseite neu würfeln."
+      text: "Sobald du angreifst oder verteidigst und wenn keine anderen freundlichen Schiffe in Reichweite 1-2 sind, darfst du 1 gewürfelte Leerseite neu würfeln."
     },
     "Stay On Target": {
       name: "Am Ziel bleiben",
-      text: "Nach dem Aufdecken des Manöverrads darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."
+      text: "Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."
     },
     "Dash Rendar": {
       name: "Dash Rendar (Crew)",
@@ -6305,7 +6305,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Accuracy Corrector": {
       name: "Zielvisor",
-      text: "Sobald du angreifst, darfst du alle deine Würfelergebnisse negieren. Dann darfst du 2 %HIT% hinzufügen.%LINEBREAK%Deine Würfel können während dieses Angriffs nicht noch einmal modifiziert werden."
+      text: "Wenn du angreifst, darfst du während des Schritts \"Angriffswürfel modifizieren\" alle deine Würfelergebnisse negieren. Dann darfst du 2 %HIT% hinzufügen.%LINEBREAK%Deine Würfel können während dieses Angriffs nicht noch einmal modifiziert werden."
     },
     "Inertial Dampeners": {
       name: "Trägheitsdämpfer",
@@ -6343,14 +6343,14 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Genius"': {
       name: '"Genie"',
-      text: "Wenn du eine Bombe ausgerüstet hast, die vor dem Aufdecken deines Manövers gelegt werden kann, darfst du sie stattdessen auch <strong>nach</strong> Ausführung des Manövers legen."
+      text: "Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."
     },
     "Unhinged Astromech": {
       name: "Ausgeklinkter Astromech-Droide",
       text: "Du darfst alle Manöver mit Geschwindigkeit 3 wie grüne Manöver behandeln."
     },
     "R4-B11": {
-      text: "Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um einen oder alle Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."
+      text: "Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um beliebig viele Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."
     },
     "Autoblaster Turret": {
       name: "Autoblastergeschütz",
@@ -6412,7 +6412,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Twin Laser Turret": {
       name: "Zwillingslasergeschütz",
-      text: "<strong>Angriff:</strong> Führe diesen Angriff zwei Mal durch (auch gegen ein Schiff außerhalb deines Feuerwinkels). Jedes Mal wenn dieser Angriff triffst, nimmt der Verteidiger 1 Schaden. Dann werden <strong>alle</strong> Würfelergebnisse negiert."
+      text: "<strong>Angriff:</strong> Führe diesen Angriff zwei Mal durch (auch gegen ein Schiff außerhalb deines Feuerwinkels). Jedes Mal wenn dieser Angriff trifft, nimmt der Verteidiger 1 Schaden. Dann werden <strong>alle</strong> Würfelergebnisse negiert."
     },
     "Plasma Torpedoes": {
       name: "Plasma Torpedos",
@@ -6536,6 +6536,10 @@ exportObj.cardLoaders.Deutsch = function() {
     "Autothrusters": {
       name: "Automatische Schubdüsen",
       text: "Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."
+    },
+    "Advanced SLAM": {
+      name: "Verbesserter SLAM",
+      text: "Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."
     },
     "Twin Ion Engine Mk. II": {
       name: "Zwillings-Ionenantrieb MK. II",
@@ -15547,7 +15551,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15059
+                    lineno: 15062
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16079,7 +16083,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15603
+              lineno: 15606
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16649,7 +16653,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16102
+          lineno: 16105
         }));
         __iced_deferrals._fulfill();
       });
@@ -16661,7 +16665,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16103
+            lineno: 16106
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18061,7 +18065,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16912
+                      lineno: 16915
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18130,7 +18134,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16936
+                lineno: 16939
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18182,14 +18186,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16958
+            lineno: 16961
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16960
+            lineno: 16963
           }));
         }
         _ref1 = _this.modifications;
@@ -18197,7 +18201,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16962
+              lineno: 16965
             }));
           }
         }
@@ -18983,7 +18987,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17520
+                lineno: 17523
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19096,7 +19100,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17577
+                  lineno: 17580
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19118,7 +19122,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17581
+                    lineno: 17584
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19199,7 +19203,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17618
+            lineno: 17621
           }));
         }
         __iced_deferrals._fulfill();
