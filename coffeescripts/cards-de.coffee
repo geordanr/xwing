@@ -165,6 +165,10 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'TIE Punisher', 'TIE-Vergelter'
     # Move StarViper to SternenViper
     exportObj.renameShip 'StarViper', 'SternenViper'
+    # Move T-70 X-Wing to T-70-X-Flügler
+    exportObj.renameShip 'T-70 X-Wing', 'T-70-X-Flügler'
+    # Move TIE/fo Fighter to TIE/EO-Jäger
+    exportObj.renameShip 'TIE/fo Fighter', 'TIE/EO-Jäger'
 
     pilot_translations =
         "Wedge Antilles":
@@ -548,16 +552,40 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
         # T-70
         "Poe Dameron":
-            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+            ship: "T-70-X-Flügler"
+            text: """Solange du angreifst oder verteidigst, und wenn du einen Fokusmarker hast, darfst du 1 deiner %FOCUS% in %HIT% oder %EVADE% ändern."""
         '"Blue Ace"':
-            text: """When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."""
+            ship: "T-70-X-Flügler"
+            name: '"Ass Blau"'
+            text: """Soabld du eine Schub-Aktion ausführst, darfst du das Manöver (%TURNLEFT% 1) oder (%TURNRIGHT% 1) verwenden."""
+        "Blue Squadron Novice":
+            ship: "T-70-X-Flügler"
+            name: "Anfängerpilot der Blauen Staffel"
+        "Red Squadron Veteran":
+            ship: "T-70-X-Flügler"
+            name: "Veteran der Roten Staffel"
         # TIE/fo
         '"Omega Ace"':
-            text: """When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."""
+            ship: "TIE/EO-Jäger"
+            name: '"Ass Omega"'
+            text: """Sobald du angreifst, kannst du einen Fokusmarker und eine deiner Zielerfassungen auf dem Verteidiger ausgeben, um alle deine Würfelergebnisse in %KRIT% zu ändern."""
         '"Epsilon Leader"':
-            text: """At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."""
+            ship: "TIE/EO-Jäger"
+            name: "Epsilon Eins"
+            text: """Zu Beginn der Kampfphase entferne je 1 Stressmarker von jedem freundlichen Schiff in Reichweite 1."""
         '"Zeta Ace"':
-            text: """When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
+            ship: "TIE/EO-Jäger"
+            name: "Ass Zeta"
+            text: """sobald du eine Fassrolle ausführst, darfst du die (%STRAIGHT% 2) Manöverschablone verwenden anstatt der (%STRAIGHT% 1) Manöverschablone."""
+        "Omega Squadron Pilot":
+            ship: "TIE/EO-Jäger"
+            name: "Pilot der Omega-Staffel"
+        "Zeta Squadron Pilot":
+            ship: "TIE/EO-Jäger"
+            name: "Pilot der Zeta-Staffel"
+        "Epsilon Squadron Pilot":
+            ship: "TIE/EO-Jäger"
+            name: "Pilot der Epsilon-Staffel"
         '"Red Ace"':
             text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
         '"Omega Leader"':
@@ -569,7 +597,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Angriff:</strong> Greife 1 Schiff an (es muss nicht in deinem Feuerwinkel sein).<br /><br />Wenn der Angriff trifft, nimmt das verteidigende Schiff 1 Schaden und erhält 1 Ionenmarker. Dann werden alle übrigen Würfelergebnisse negiert."""
         "Proton Torpedoes":
             name: "Protonen-Torpedos"
-            text: """<strong>Angriff (Zielerfassung):</strong>Gib eine Zielerfassung aus und lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst eines deiner %FOCUS% in ein %CRIT% ändern."""
+            text: """<strong>Angriff (Zielerfassung):</strong>Gib deine Zielerfassung aus und lege diese Karte ab, um diesen Angriff durchzuführen.<br /><br />Du darfst eines deiner %FOCUS% in ein %CRIT% ändern."""
         "R2 Astromech":
             name: "R2 Astromechdroide"
             text: """Du darfst alle Manöver mit Geschwindigkeit 1 und 2 wie grüne Manöver behandeln."""
@@ -984,13 +1012,15 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Schildtechniker"
             text: """%DE_HUGESHIPONLY%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, kannst du wählen, wie viel Energie du ausgeben möchtest, anstatt alle Energie auszugeben."""
         "Weapons Guidance":
-            text: """When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."""
+            name: "Zielführung"
+            text: """Sobald du angreifst, darfst du eine Zielerfassung ausgeben, um 1 deiner gewürfelten Leerseiten in %HIT% zu ändern."""
         "BB-8":
-            text: """When you reveal a green maneuver, you may perform a free barrel roll action."""
+            text: """Sobald du eine grünes Manöver aufdeckst, darfst du als freie Aktion eine Fassrolle ausführen."""
         "R5-X3":
-            text: """Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."""
+            text: """Bevor du dein Manöver aufdeckst, darfst du diese Karte ablegen, um Hindernisse bis zum Ende der Runde zu ignorieren."""
         "Wired":
-            text: """When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."""
+            name: "Aufgedreht"
+            text: """Sobald du angreifst oder verteidigst, und wenn du gestresst bist, darfst du 1 oder mehrere %FOCUS% neu würfeln."""
         'Cool Hand':
             text: '''When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'''
         'Juke':
