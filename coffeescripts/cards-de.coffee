@@ -16,8 +16,8 @@ exportObj.translations.Deutsch =
         "Reinforce": "Verstärken"
         "Jam": "Störsignal"
         "Coordinate": "Koordination"
-        "Cloak": "Tarnen"
         "SLAM": "SLAM"
+        "Cloak": "Tarnen"
     slot:
         "Astromech": "Astromech"
         "Bomb": "Bombe"
@@ -1044,6 +1044,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Autothrusters":
             name: "Automatische Schubdüsen"
             text: """Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."""
+        "Advanced SLAM":
+            name: "Verbesserter SLAM"
+            text: """Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."""
         "Twin Ion Engine Mk. II":
             name: "Zwillings-Ionenantrieb MK. II"
             text: """Du darfst alle Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) als grüne Manöver behandeln."""
