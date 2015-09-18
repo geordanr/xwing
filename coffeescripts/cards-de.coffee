@@ -558,6 +558,9 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "T-70-X-Flügler"
             name: '"Ass Blau"'
             text: """Soabld du eine Schub-Aktion ausführst, darfst du das Manöver (%TURNLEFT% 1) oder (%TURNRIGHT% 1) verwenden."""
+        '"Red Ace"':
+            ship: "T-70-X-Flügler"
+            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
         "Blue Squadron Novice":
             ship: "T-70-X-Flügler"
             name: "Anfängerpilot der Blauen Staffel"
@@ -586,9 +589,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "Epsilon Squadron Pilot":
             ship: "TIE/EO-Jäger"
             name: "Pilot der Epsilon-Staffel"
-        '"Red Ace"':
-            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
         '"Omega Leader"':
+            ship: "TIE/EO-Jäger"
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
 
     upgrade_translations =
