@@ -5876,6 +5876,10 @@ exportObj.cardLoaders.Deutsch = function() {
       name: '"Ass Blau"',
       text: "Soabld du eine Schub-Aktion ausführst, darfst du das Manöver (%TURNLEFT% 1) oder (%TURNRIGHT% 1) verwenden."
     },
+    '"Red Ace"': {
+      ship: "T-70-X-Flügler",
+      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
+    },
     "Blue Squadron Novice": {
       ship: "T-70-X-Flügler",
       name: "Anfängerpilot der Blauen Staffel"
@@ -5911,10 +5915,8 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "TIE/EO-Jäger",
       name: "Pilot der Epsilon-Staffel"
     },
-    '"Red Ace"': {
-      text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
-    },
     '"Omega Leader"': {
+      ship: "TIE/EO-Jäger",
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     }
   };
@@ -15584,7 +15586,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15092
+                    lineno: 15094
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16116,7 +16118,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15636
+              lineno: 15638
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16686,7 +16688,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16135
+          lineno: 16137
         }));
         __iced_deferrals._fulfill();
       });
@@ -16698,7 +16700,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16136
+            lineno: 16138
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18098,7 +18100,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16945
+                      lineno: 16947
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18167,7 +18169,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16969
+                lineno: 16971
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18219,14 +18221,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16991
+            lineno: 16993
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16993
+            lineno: 16995
           }));
         }
         _ref1 = _this.modifications;
@@ -18234,7 +18236,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16995
+              lineno: 16997
             }));
           }
         }
@@ -19020,7 +19022,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17553
+                lineno: 17555
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19133,7 +19135,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17610
+                  lineno: 17612
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19155,7 +19157,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17614
+                    lineno: 17616
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19236,7 +19238,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17651
+            lineno: 17653
           }));
         }
         __iced_deferrals._fulfill();
