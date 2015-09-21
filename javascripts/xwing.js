@@ -5901,7 +5901,7 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Zeta Ace"': {
       ship: "TIE/EO-Jäger",
       name: "Ass Zeta",
-      text: "sobald du eine Fassrolle ausführst, darfst du die (%STRAIGHT% 2) Manöverschablone verwenden anstatt der (%STRAIGHT% 1) Manöverschablone."
+      text: "Sobald du eine Fassrolle ausführst, darfst du die (%STRAIGHT% 2) Manöverschablone verwenden anstatt der (%STRAIGHT% 1) Manöverschablone."
     },
     "Omega Squadron Pilot": {
       ship: "TIE/EO-Jäger",
@@ -5991,7 +5991,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Push the Limit": {
       name: "Bis an die Grenzen",
-      text: "Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durhführen.<br /><br />Dann erhältst du 1 Stressmarker."
+      text: "Einmal pro Runde darfst du nach dem Durchführen einer Aktion eine freie Aktion aus deiner Aktionsleiste durchführen.<br /><br />Dann erhältst du 1 Stressmarker."
     },
     "Deadeye": {
       name: "Meisterschütze",
