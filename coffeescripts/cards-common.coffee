@@ -4686,7 +4686,7 @@ exportObj.basicCardData = ->
             name: 'Integrated Astromech'
             id: 20
             restriction_func: (ship) ->
-                ship.data.name.indexOf('X-Wing') != -1
+                ship.data.canonical_name.indexOf('xwing') != -1
             points: 0
         }
     ]
