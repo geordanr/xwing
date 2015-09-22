@@ -4480,7 +4480,7 @@ exportObj.basicCardData = function() {
         name: 'Integrated Astromech',
         id: 20,
         restriction_func: function(ship) {
-          return ship.data.name.indexOf('X-Wing') !== -1;
+          return ship.data.canonical_name.indexOf('xwing') !== -1;
         },
         points: 0
       }
