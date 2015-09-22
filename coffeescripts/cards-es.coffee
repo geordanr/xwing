@@ -32,6 +32,7 @@ exportObj.translations['Español'] =
         "Team": "Equipo"
         "Illicit": "Ilícita"
         "Salvaged Astromech": "Droide Astromech Remendado"
+        "Tech": "Tecnología"
     sources: # needed?
         "Core": "Caja Básica"
         "A-Wing Expansion Pack": "Pack de Expansión Ala-A"
@@ -65,7 +66,7 @@ exportObj.translations['Español'] =
         "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE"
         "Kihraxz Fighter Expansion Pack": "Pack de Expansión Caza Kihraxz"
         "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro"
-        "The Force Awakens Core Set": "The Force Awakens Core Set"
+        "The Force Awakens Core Set": "Caja Básica El Despertar de la Fuerza"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -161,6 +162,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Defender', 'Defensor TIE'
     exportObj.renameShip 'TIE Punisher', 'Castigador TIE'
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Diezmador'
+    exportObj.renameShip 'TIE/fo Fighter', 'Caza TIE/fo'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -171,6 +173,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)'
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
+    exportObj.renameShip 'T-70 X-Wing', 'T-70 Ala-X'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
@@ -634,20 +637,52 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."""
         # T-70
         "Poe Dameron":
-            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+            ship: "T-70 Ala-X"
+            text: """Cuando ataques o te defiendas, si tienes una ficha de Concentración, puedes cambiar 1 de tus resultados %FOCUS% por un resultado %HIT% o %EVADE%."""
         '"Blue Ace"':
-            text: """When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."""
+            name: '"As Azul"'
+            ship: "T-70 Ala-X"
+            text: """Cuando realices una acción de impulso, puedes utilizar la plantilla de maniobra (%TURNLEFT% 1) o (%TURNRIGHT% 1)."""
+        "Red Squadron Veteran":
+            name: "Veterano del Esc. Rojo"
+            ship: "T-70 Ala-X"
+        "Blue Squadron Novice":
+            name: "Novato del Esc. Azul"
+            ship: "T-70 Ala-X"
+        '"Red Ace"':
+            ship: "T-70 Ala-X"
+            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
+        "Unspoiled PS7 T-70 X-Wing Pilot"
+            ship: "T-70 Ala-X"
         # TIE/fo
         '"Omega Ace"':
-            text: """When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."""
+            name: '"As Omega"'
+            ship: "Caza TIE/fo"
+            text: """Cuando ataques a un defensor que has fijado como blanco, puedes gastar las fichas de Blanco Fijado y una ficha de Concentración para cambiar todos tus resultados de dados por resultados %CRIT%."""
         '"Epsilon Leader"':
-            text: """At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."""
+            name: '"Jefe Epsilon"'
+            ship: "Caza TIE/fo"
+            text: """Al comienzo de la fase de Combate, retira 1 ficha de Tensión de cada nave aliada que tengas a alcance 1."""
         '"Zeta Ace"':
-            text: """When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
-        '"Red Ace"':
-            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
+            name: '"As Zeta"'
+            ship: "Caza TIE/fo"
+            text: """Cuando realices una acción de tonel volado, puedes utilizar la plantilla de maniobra (%STRAIGHT% 2) en vez de la plantilla (%STRAIGHT% 1)."""
+        "Omega Squadron Pilot":
+            name: "Piloto del Esc. Omega"
+            ship: "Caza TIE/fo"
+        "Zeta Squadron Pilot":
+            name: "Piloto del Esc. Zeta"
+            ship: "Caza TIE/fo"
+        "Epsilon Squadron Pilot":
+            name: "Piloto del Esc. Epsilon"
+            ship: "Caza TIE/fo"
         '"Omega Leader"':
+            ship: "Caza TIE/fo"
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
+        "Unspoiled PS4 TIE/fo Pilot"
+            ship: "Caza TIE/fo"
+        "Unspoiled PS7 TIE/fo Pilot"
+            ship: "Caza TIE/fo"
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1071,13 +1106,15 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Munición Adicional"
             text: """Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."""
         "Weapons Guidance":
-            text: """When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."""
+            name: "Sistema de Guiado de Armas"
+            text: """Cuando ataques, puedes gastar una ficha de Concentración para cambiar 1 de tus resultados de cara vacia por un resultado %HIT%."""
         "BB-8":
-            text: """When you reveal a green maneuver, you may perform a free barrel roll action."""
+            text: """Cuando reveles una maniobra verde, puedes realizar una acción gratuita de tonel volado."""
         "R5-X3":
-            text: """Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."""
+            text: """Antes de revelar tu maniobra, puedes descartar esta carta para ignorar todos los obstáculos hasta el final de la ronda."""
         "Wired":
-            text: """When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."""
+            name: "Enardecido"
+            text: """Cuando ataques o te defiendas, si estás bajo tensión, puedes volver a tirar 1 o más de tus resultados %FOCUS%."""
         'Cool Hand':
             text: '''When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'''
         'Juke':
