@@ -652,7 +652,8 @@ exportObj.cardLoaders['Español'] = () ->
         '"Red Ace"':
             ship: "T-70 Ala-X"
             text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
-        "Unspoiled PS7 T-70 X-Wing Pilot"
+        "Unspoiled PS7 T-70 X-Wing Pilot":
+            name: "Novato del Esc. Azul"
             ship: "T-70 Ala-X"
         # TIE/fo
         '"Omega Ace"':
@@ -679,9 +680,10 @@ exportObj.cardLoaders['Español'] = () ->
         '"Omega Leader"':
             ship: "Caza TIE/fo"
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
-        "Unspoiled PS4 TIE/fo Pilot"
+        "Unspoiled PS7 TIE/fo Pilot":
             ship: "Caza TIE/fo"
-        "Unspoiled PS7 TIE/fo Pilot"
+            text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
+        "Unspoiled PS4 TIE/fo Pilot":
             ship: "Caza TIE/fo"
 
     upgrade_translations =
