@@ -7847,7 +7847,8 @@ exportObj.translations['Español'] = {
     "Hardpoint": "Hardpoint",
     "Team": "Equipo",
     "Illicit": "Ilícita",
-    "Salvaged Astromech": "Droide Astromech Remendado"
+    "Salvaged Astromech": "Droide Astromech Remendado",
+    "Tech": "Tecnología"
   },
   sources: {
     "Core": "Caja Básica",
@@ -7882,7 +7883,7 @@ exportObj.translations['Español'] = {
     "TIE Punisher Expansion Pack": "Pack de Expansión Castigador TIE",
     "Kihraxz Fighter Expansion Pack": "Pack de Expansión Caza Kihraxz",
     "Hound's Tooth  Expansion Pack": "Pack de Expansión Diente de Perro",
-    "The Force Awakens Core Set": "The Force Awakens Core Set"
+    "The Force Awakens Core Set": "Caja Básica El Despertar de la Fuerza"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -7982,6 +7983,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('TIE Defender', 'Defensor TIE');
   exportObj.renameShip('TIE Punisher', 'Castigador TIE');
   exportObj.renameShip('VT-49 Decimator', 'VT-49 Diezmador');
+  exportObj.renameShip('TIE/fo Fighter', 'Caza TIE/fo');
   exportObj.renameShip('A-Wing', 'Ala-A');
   exportObj.renameShip('B-Wing', 'Ala-B');
   exportObj.renameShip('E-Wing', 'Ala-E');
@@ -7992,6 +7994,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)');
   exportObj.renameShip('CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)');
   exportObj.renameShip('GR-75 Medium Transport', 'Transporte mediano GR-75');
+  exportObj.renameShip('T-70 X-Wing', 'T-70 Ala-X');
   exportObj.renameShip('M3-A Interceptor', 'Interceptor M3-A');
   exportObj.renameShip('StarViper', 'Víbora Estelar');
   exportObj.renameShip('Aggressor', 'Agresor');
@@ -8596,25 +8599,65 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando realices un ataque con éxito, antes de inflingir el daño puedes anular 1 de tus resultados %CRIT% para añadir 2 resultados %HIT%."
     },
     "Poe Dameron": {
-      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+      ship: "T-70 Ala-X",
+      text: "Cuando ataques o te defiendas, si tienes una ficha de Concentración, puedes cambiar 1 de tus resultados %FOCUS% por un resultado %HIT% o %EVADE%."
     },
     '"Blue Ace"': {
-      text: "When performing a boost action, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template."
+      name: '"As Azul"',
+      ship: "T-70 Ala-X",
+      text: "Cuando realices una acción de impulso, puedes utilizar la plantilla de maniobra (%TURNLEFT% 1) o (%TURNRIGHT% 1)."
     },
-    '"Omega Ace"': {
-      text: "When attacking, you may spend a focus token and a target lock you have on the defender to change all of your results to %CRIT% results."
+    "Red Squadron Veteran": {
+      name: "Veterano del Esc. Rojo",
+      ship: "T-70 Ala-X"
     },
-    '"Epsilon Leader"': {
-      text: "At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."
-    },
-    '"Zeta Ace"': {
-      text: "When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
+    "Blue Squadron Novice": {
+      name: "Novato del Esc. Azul",
+      ship: "T-70 Ala-X"
     },
     '"Red Ace"': {
+      ship: "T-70 Ala-X",
       text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
     },
+    "Unspoiled PS7 T-70 X-Wing Pilot": {
+      ship: "T-70 Ala-X"
+    },
+    '"Omega Ace"': {
+      name: '"As Omega"',
+      ship: "Caza TIE/fo",
+      text: "Cuando ataques a un defensor que has fijado como blanco, puedes gastar las fichas de Blanco Fijado y una ficha de Concentración para cambiar todos tus resultados de dados por resultados %CRIT%."
+    },
+    '"Epsilon Leader"': {
+      name: '"Jefe Epsilon"',
+      ship: "Caza TIE/fo",
+      text: "Al comienzo de la fase de Combate, retira 1 ficha de Tensión de cada nave aliada que tengas a alcance 1."
+    },
+    '"Zeta Ace"': {
+      name: '"As Zeta"',
+      ship: "Caza TIE/fo",
+      text: "Cuando realices una acción de tonel volado, puedes utilizar la plantilla de maniobra (%STRAIGHT% 2) en vez de la plantilla (%STRAIGHT% 1)."
+    },
+    "Omega Squadron Pilot": {
+      name: "Piloto del Esc. Omega",
+      ship: "Caza TIE/fo"
+    },
+    "Zeta Squadron Pilot": {
+      name: "Piloto del Esc. Zeta",
+      ship: "Caza TIE/fo"
+    },
+    "Epsilon Squadron Pilot": {
+      name: "Piloto del Esc. Epsilon",
+      ship: "Caza TIE/fo"
+    },
     '"Omega Leader"': {
+      ship: "Caza TIE/fo",
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    "Unspoiled PS7 TIE/fo Pilot": {
+      ship: "Caza TIE/fo"
+    },
+    "Unspoiled PS4 TIE/fo Pilot": {
+      ship: "Caza TIE/fo"
     }
   };
   upgrade_translations = {
@@ -9184,16 +9227,18 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando te equipas con esta carta, coloca 1 ficha de Munición de artillería sobre cada carta de Mejora %TORPEDO%, %MISSILE% y %BOMB% que tengas equipada. Cuando se te indique que descartes una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que haya encima de esa carta."
     },
     "Weapons Guidance": {
-      text: "When attacking, you may spend a focus token to change 1 of your blank results to a %HIT% result."
+      name: "Sistema de Guiado de Armas",
+      text: "Cuando ataques, puedes gastar una ficha de Concentración para cambiar 1 de tus resultados de cara vacia por un resultado %HIT%."
     },
     "BB-8": {
-      text: "When you reveal a green maneuver, you may perform a free barrel roll action."
+      text: "Cuando reveles una maniobra verde, puedes realizar una acción gratuita de tonel volado."
     },
     "R5-X3": {
-      text: "Before you reveal your maneuver, you may discard this card to ignore obstacles until the end of the round."
+      text: "Antes de revelar tu maniobra, puedes descartar esta carta para ignorar todos los obstáculos hasta el final de la ronda."
     },
     "Wired": {
-      text: "When attacking or defending, if you are stressed, you may reroll 1 or more of your %FOCUS% results."
+      name: "Enardecido",
+      text: "Cuando ataques o te defiendas, si estás bajo tensión, puedes volver a tirar 1 o más de tus resultados %FOCUS%."
     },
     'Cool Hand': {
       text: 'When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'
@@ -15586,7 +15631,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15094
+                    lineno: 15131
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16118,7 +16163,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15638
+              lineno: 15675
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16688,7 +16733,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16137
+          lineno: 16174
         }));
         __iced_deferrals._fulfill();
       });
@@ -16700,7 +16745,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16138
+            lineno: 16175
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18100,7 +18145,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16947
+                      lineno: 16984
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18169,7 +18214,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 16971
+                lineno: 17008
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18221,14 +18266,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 16993
+            lineno: 17030
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 16995
+            lineno: 17032
           }));
         }
         _ref1 = _this.modifications;
@@ -18236,7 +18281,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 16997
+              lineno: 17034
             }));
           }
         }
@@ -19022,7 +19067,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17555
+                lineno: 17592
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19135,7 +19180,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17612
+                  lineno: 17649
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19157,7 +19202,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17616
+                    lineno: 17653
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19238,7 +19283,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17653
+            lineno: 17690
           }));
         }
         __iced_deferrals._fulfill();
