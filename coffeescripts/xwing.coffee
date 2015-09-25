@@ -239,11 +239,11 @@ class exportObj.SquadBuilder
                 <div class="fancy-list hidden-phone"></div>
                 <div class="simple-list"></div>
                 <div class="bbcode-list">
-                    Copy the BBCode below and paste it into your forum post.
-                    <textarea></textarea>
+                    <p>Copy the BBCode below and paste it into your forum post.</p>
+                    <textarea></textarea><button class="btn btn-copy">Copy</button>
                 </div>
                 <div class="html-list">
-                    <textarea></textarea>
+                    <textarea></textarea><button class="btn btn-copy">Copy</button>
                 </div>
             </div>
             <div class="modal-footer hidden-print">
@@ -280,6 +280,16 @@ class exportObj.SquadBuilder
         @html_textarea.attr 'readonly', 'readonly'
         @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
         @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
+
+        @list_modal.on 'click', 'button.btn-copy', (event) =>
+            @self = $(event.currentTarget)
+            @self.siblings('textarea').select()
+            @success = document.execCommand('copy')
+            if @success
+                @self.addClass 'btn-success'
+                setTimeout ( =>
+                    @self.removeClass 'btn-success'
+                ), 1000
 
         @select_simple_view_button = $ @list_modal.find('.select-simple-view')
         @select_simple_view_button.click (e) =>
@@ -1092,7 +1102,7 @@ class exportObj.SquadBuilder
     getAvailableModificationsIncluding: (include_modification, ship, term='') ->
         # Returns data formatted for Select2
         available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
-        
+
         eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it

@@ -102,7 +102,8 @@ exportObj.translations.English =
         '.randomize' : 'Random!'
         '.randomize-options' : 'Randomizer options…'
         # Print/View modal
-        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea>'
+        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Print'

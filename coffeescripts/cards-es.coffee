@@ -121,7 +121,8 @@ exportObj.translations['Español'] =
         '.randomize' : 'Aleatorio!'
         '.randomize-options' : 'Opciones de aleatoriedad…'
         # Print/View modal
-        '.bbcode-list' : 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea>'
+        '.bbcode-list' : 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea><button class="btn btn-copy">Copia</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copia</button>'
         '.vertical-space-checkbox' : """Añade espacio para cartas de daño/mejora cuando imprima. <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Imprima en color. <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Imprimir'
