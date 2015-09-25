@@ -281,8 +281,8 @@ class exportObj.SquadBuilder
         @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
         @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
 
-        @list_modal.on 'click', 'button.btn-copy', (event) =>
-            @self = $(event.currentTarget)
+        @list_modal.on 'click', 'button.btn-copy', (e) =>
+            @self = $(e.currentTarget)
             @self.siblings('textarea').select()
             @success = document.execCommand('copy')
             if @success
