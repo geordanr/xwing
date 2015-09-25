@@ -592,6 +592,8 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Omega Leader"':
             ship: "TIE/EO-Jäger"
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
+        'Hera Syndulla':
+            text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
 
     upgrade_translations =
         "Ion Cannon Turret":

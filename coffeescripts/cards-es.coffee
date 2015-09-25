@@ -683,6 +683,8 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Caza TIE/fo"
         "Unspoiled PS4 TIE/fo Pilot":
             ship: "Caza TIE/fo"
+        'Hera Syndulla':
+            text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
 
     upgrade_translations =
         "Ion Cannon Turret":

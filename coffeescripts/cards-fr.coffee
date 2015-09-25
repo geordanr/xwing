@@ -543,6 +543,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
         '"Omega Leader"':
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
+        'Hera Syndulla':
+            text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
 
     upgrade_translations =
         #Traits de pilotes
