@@ -6834,7 +6834,8 @@ exportObj.translations.English = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text',
     '.randomize': 'Random!',
     '.randomize-options': 'Randomizer options…',
-    '.bbcode-list': 'Copy the BBCode below and paste it into your forum post.<textarea></textarea>',
+    '.bbcode-list': 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>',
+    '.html-list': '<textarea></textarea><button class="btn btn-copy">Copy</button>',
     '.vertical-space-checkbox': "Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Print color <input type=\"checkbox\" class=\"toggle-color-print\" />",
     '.print-list': '<i class="icon-print"></i>&nbsp;Print',
@@ -7947,7 +7948,8 @@ exportObj.translations['Español'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimir/Ver como </span>Text',
     '.randomize': 'Aleatorio!',
     '.randomize-options': 'Opciones de aleatoriedad…',
-    '.bbcode-list': 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea>',
+    '.bbcode-list': 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea><button class="btn btn-copy">Copia</button>',
+    '.html-list': '<textarea></textarea><button class="btn btn-copy">Copia</button>',
     '.vertical-space-checkbox': "Añade espacio para cartas de daño/mejora cuando imprima. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Imprima en color. <input type=\"checkbox\" class=\"toggle-color-print\" />",
     '.print-list': '<i class="icon-print"></i>&nbsp;Imprimir',
@@ -9587,7 +9589,8 @@ exportObj.translations['Français'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte',
     '.randomize': 'Aléatoire',
     '.randomize-options': 'Options…',
-    '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea>',
+    '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea><button class="btn btn-copy">Copiez</button>',
+    '.html-list': '<textarea></textarea><button class="btn btn-copy">Copiez</button>',
     '.vertical-space-checkbox': "Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Imprimer en couleur <input type=\"checkbox\" class=\"toggle-color-print\" />",
     '.print-list': '<i class="icon-print"></i>&nbsp;Imprimer',
@@ -10983,7 +10986,8 @@ exportObj.translations['Polski'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst',
     '.randomize': 'randomizuj',
     '.randomize-options': 'Opcje ...',
-    '.bbcode-list': 'Skopiuj BBCode poniżej i wklej go do swojego posta.<textarea></textarea>',
+    '.bbcode-list': 'Skopiuj BBCode poniżej i wklej go do swojego posta.<textarea></textarea><button class="btn btn-copy">Skopiuj</button>',
+    '.html-list': '<textarea></textarea><button class="btn btn-copy">Skopiuj</button>',
     '.vertical-space-checkbox': "Dodaj miejsce na karty ulepszeń \ uszkodzeń podczas drukowania <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Wydrukuj w kolorze <input type=\"checkbox\" class=\"toggle-color-print\" />",
     '.print-list': '<i class="icon-print"></i>&nbsp;Drukuj',
@@ -12364,7 +12368,8 @@ exportObj.translations['Русский'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Печать\Просмотр как </span>Text',
     '.randomize': 'Случайно',
     '.randomize-options': 'Опции генератора случайности',
-    '.bbcode-list': 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea>',
+    '.bbcode-list': 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea><button class="btn btn-copy">Скопируйте</button>',
+    '.html-list': '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>',
     '.vertical-space-checkbox': "Добавить пространство для карт повреждений\улучшений на распечатке. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Печать в цвете. <input type=\"checkbox\" class=\"toggle-color-print\" />",
     '.print-list': '<i class="icon-print"></i>&nbsp;Печать',
@@ -15649,7 +15654,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15143
+                    lineno: 15148
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -15897,7 +15902,7 @@ exportObj.SquadBuilder = (function() {
     this.list_modal = $(document.createElement('DIV'));
     this.list_modal.addClass('modal hide fade text-list-modal');
     this.container.append(this.list_modal);
-    this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <h3><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h3>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        Copy the BBCode below and paste it into your forum post.\n        <textarea></textarea>\n    </div>\n    <div class=\"html-list\">\n        <textarea></textarea>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\">\n        Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />\n    </label>\n    <label class=\"color-print-checkbox\">\n        Print color <input type=\"checkbox\" class=\"toggle-color-print\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include List Juggler QR code <input type=\"checkbox\" class=\"toggle-juggler-qrcode\" checked=\"checked\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include obstacle silhouettes <input type=\"checkbox\" class=\"toggle-obstacles\" />\n    </label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n        <button class=\"btn select-html-view\">HTML</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn close-print-dialog\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <h3><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h3>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        <p>Copy the BBCode below and paste it into your forum post.</p>\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n    <div class=\"html-list\">\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\">\n        Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />\n    </label>\n    <label class=\"color-print-checkbox\">\n        Print color <input type=\"checkbox\" class=\"toggle-color-print\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include List Juggler QR code <input type=\"checkbox\" class=\"toggle-juggler-qrcode\" checked=\"checked\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include obstacle silhouettes <input type=\"checkbox\" class=\"toggle-obstacles\" />\n    </label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n        <button class=\"btn select-html-view\">HTML</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn close-print-dialog\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
     this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
     this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
     this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
@@ -15909,6 +15914,19 @@ exportObj.SquadBuilder = (function() {
     this.html_textarea.attr('readonly', 'readonly');
     this.toggle_vertical_space_container = $(this.list_modal.find('.vertical-space-checkbox'));
     this.toggle_color_print_container = $(this.list_modal.find('.color-print-checkbox'));
+    this.list_modal.on('click', 'button.btn-copy', (function(_this) {
+      return function(e) {
+        _this.self = $(e.currentTarget);
+        _this.self.siblings('textarea').select();
+        _this.success = document.execCommand('copy');
+        if (_this.success) {
+          _this.self.addClass('btn-success');
+          return setTimeout((function() {
+            return _this.self.removeClass('btn-success');
+          }), 1000);
+        }
+      };
+    })(this));
     this.select_simple_view_button = $(this.list_modal.find('.select-simple-view'));
     this.select_simple_view_button.click((function(_this) {
       return function(e) {
@@ -16181,7 +16199,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15687
+              lineno: 15702
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16751,7 +16769,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16186
+          lineno: 16201
         }));
         __iced_deferrals._fulfill();
       });
@@ -16763,7 +16781,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16187
+            lineno: 16202
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18163,7 +18181,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16996
+                      lineno: 17011
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18232,7 +18250,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17020
+                lineno: 17035
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18284,14 +18302,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17042
+            lineno: 17057
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17044
+            lineno: 17059
           }));
         }
         _ref1 = _this.modifications;
@@ -18299,7 +18317,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17046
+              lineno: 17061
             }));
           }
         }
@@ -19085,7 +19103,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17604
+                lineno: 17619
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19198,7 +19216,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17661
+                  lineno: 17676
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19220,7 +19238,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17665
+                    lineno: 17680
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19301,7 +19319,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17702
+            lineno: 17717
           }));
         }
         __iced_deferrals._fulfill();
