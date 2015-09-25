@@ -98,7 +98,8 @@ exportObj.translations['Русский'] =
         '.randomize' : 'Случайно'
         '.randomize-options' : 'Опции генератора случайности'
         # Print/View modal
-        '.bbcode-list' : 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea>'
+        '.bbcode-list' : 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea><button class="btn btn-copy">Скопируйте</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>'
         '.vertical-space-checkbox' : """Добавить пространство для карт повреждений\улучшений на распечатке. <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Печать в цвете. <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Печать'

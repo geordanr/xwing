@@ -98,7 +98,8 @@ exportObj.translations['Polski'] =
         '.randomize' : 'randomizuj'
         '.randomize-options' : 'Opcje ...'
         # Print/View modal
-        '.bbcode-list' : 'Skopiuj BBCode poniżej i wklej go do swojego posta.<textarea></textarea>'
+        '.bbcode-list' : 'Skopiuj BBCode poniżej i wklej go do swojego posta.<textarea></textarea><button class="btn btn-copy">Skopiuj</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Skopiuj</button>'
         '.vertical-space-checkbox' : """Dodaj miejsce na karty ulepszeń \ uszkodzeń podczas drukowania <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Wydrukuj w kolorze <input type="checkbox" class="toggle-color-print" />"""
         '.print-list' : '<i class="icon-print"></i>&nbsp;Drukuj'
