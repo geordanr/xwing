@@ -5918,6 +5918,9 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Omega Leader"': {
       ship: "TIE/EO-Jäger",
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -7182,6 +7185,9 @@ exportObj.cardLoaders.English = function() {
     },
     '"Omega Leader"': {
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -8658,6 +8664,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Unspoiled PS4 TIE/fo Pilot": {
       ship: "Caza TIE/fo"
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -10130,6 +10139,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Omega Leader"': {
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -11505,6 +11517,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Omega Leader"': {
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -12688,6 +12703,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Omega Leader"': {
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
+    },
+    'Hera Syndulla': {
+      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     }
   };
   upgrade_translations = {
@@ -15631,7 +15649,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15131
+                    lineno: 15143
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16163,7 +16181,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15675
+              lineno: 15687
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16733,7 +16751,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16174
+          lineno: 16186
         }));
         __iced_deferrals._fulfill();
       });
@@ -16745,7 +16763,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16175
+            lineno: 16187
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18145,7 +18163,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 16984
+                      lineno: 16996
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18214,7 +18232,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17008
+                lineno: 17020
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18266,14 +18284,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17030
+            lineno: 17042
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17032
+            lineno: 17044
           }));
         }
         _ref1 = _this.modifications;
@@ -18281,7 +18299,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17034
+              lineno: 17046
             }));
           }
         }
@@ -19067,7 +19085,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17592
+                lineno: 17604
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19180,7 +19198,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17649
+                  lineno: 17661
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19202,7 +19220,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17653
+                    lineno: 17665
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19283,7 +19301,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17690
+            lineno: 17702
           }));
         }
         __iced_deferrals._fulfill();
