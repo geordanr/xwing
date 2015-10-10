@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "xwing-miniatures-font": "~1.0.9",
+    "xwing-miniatures-font": "~1.0.10",
     "jquery": "components/jquery#~2.1.3",
     "jquery-ajaxtransport-xdomainrequest": "~1.0.4",
     "jquery.qrcode": "~0.11.0"
