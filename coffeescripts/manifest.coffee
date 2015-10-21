@@ -1126,7 +1126,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Ruthlessness'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Dauntless'
