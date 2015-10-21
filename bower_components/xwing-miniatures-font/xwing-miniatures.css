@@ -1,10 +1,10 @@
 @font-face {
   font-family: XWing;
-  src: url('xwing-miniatures.ttf'); }
+  src: url("xwing-miniatures.ttf"); }
 
 @font-face {
   font-family: XWingShip;
-  src: url('xwing-miniatures-ships.ttf'); }
+  src: url("xwing-miniatures-ships.ttf"); }
 
 i.xwing-miniatures-font {
   font-family: XWing;
@@ -155,6 +155,15 @@ i.xwing-miniatures-font-slam:before {
 i.xwing-miniatures-font-title:before {
   content: "t"; }
 
+i.xwing-miniatures-font-trollleft:before {
+  content: "\003a"; }
+
+i.xwing-miniatures-font-trollright:before {
+  content: "\003b"; }
+
+i.xwing-miniatures-font-tech:before {
+  content: "\0058"; }
+
 i.xwing-miniatures-ship {
   font-family: XWingShip;
   font-style: normal;
@@ -177,6 +186,9 @@ i.xwing-miniatures-ship-tieinterceptor:before {
 
 i.xwing-miniatures-ship-tiepunisher:before {
   content: "N"; }
+
+i.xwing-miniatures-ship-tiefofighter:before {
+  content: "O"; }
 
 i.xwing-miniatures-ship-tiephantom:before {
   content: "P"; }
@@ -228,6 +240,9 @@ i.xwing-miniatures-ship-yv666:before {
 
 i.xwing-miniatures-ship-starviper:before {
   content: "v"; }
+
+i.xwing-miniatures-ship-t70xwing:before {
+  content: "w"; }
 
 i.xwing-miniatures-ship-xwing:before {
   content: "x"; }
