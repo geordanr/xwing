@@ -4310,7 +4310,6 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Advanced Targeting Computer'
-            canonical_name: 'Adv. Targeting Computer'.canonicalize()
             id: 124
             slot: "System"
             points: 5
