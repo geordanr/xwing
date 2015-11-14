@@ -586,6 +586,8 @@ class exportObj.SquadBuilder
                 <span class="info-name"></span>
                 <br />
                 <span class="info-sources"></span>
+                <br />
+                <span class="info-collection"></span>
                 <table>
                     <tbody>
                         <tr class="info-ship">
@@ -1244,11 +1246,17 @@ class exportObj.SquadBuilder
         outTable += "</tbody></table>"
         outTable
 
-    showTooltip: (type, data) ->
+    showTooltip: (type, data, additional_opts) ->
         if data != @tooltip_currently_displaying
             switch type
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
+                    if @collection?.counts?
+                        ship_count = @collection.counts.ship[data.data.english_name] ? 0
+                        pilot_count = @collection.counts.pilot[data.pilot.english_name] ? 0
+                        @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
+                    else
+                        @info_container.find('.info-collection').text ''
                     effective_stats = data.effectiveStats()
                     extra_actions = $.grep effective_stats.actions, (el, i) ->
                         el not in data.data.actions
@@ -1277,6 +1285,12 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    if @collection?.counts?
+                        pilot_count = @collection.counts.pilot[data.english_name] ? 0
+                        ship_count = @collection.counts.ship[additional_opts.ship] ? 0
+                        @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
+                    else
+                        @info_container.find('.info-collection').text ''
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     ship = exportObj.ships[data.ship]
@@ -1303,6 +1317,11 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
+                    if @collection?.counts?
+                        addon_count = @collection.counts[additional_opts.addon_type.toLowerCase()][data.english_name] ? 0
+                        @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
+                    else
+                        @info_container.find('.info-collection').text ''
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
@@ -2013,7 +2032,7 @@ class Ship
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
-            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id] if select2_data?.id?
+            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data.english_name} if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
 
@@ -2490,9 +2509,9 @@ class GenericAddon
             @ship.builder.backend_status.fadeOut 'slow'
         @selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
-            @ship.builder.showTooltip 'Addon', @dataById[select2_data.id] if select2_data?.id?
+            @ship.builder.showTooltip 'Addon', @dataById[select2_data.id], {addon_type: @type} if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
-            @ship.builder.showTooltip 'Addon', @data if @data?
+            @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
 
     setById: (id) ->
         @setData @dataById[parseInt id]

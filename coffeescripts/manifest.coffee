@@ -1,5 +1,15 @@
 exportObj = exports ? this
 
+sortWithoutQuotes = (a, b) ->
+    a_name = a.replace /[^a-z0-9]/ig, ''
+    b_name = b.replace /[^a-z0-9]/ig, ''
+    if a < b
+        -1
+    else if a > b
+        1
+    else
+        0
+
 exportObj.manifestByExpansion =
     'Core': [
         {
@@ -2608,10 +2618,16 @@ class exportObj.Collection
         @modal.append $.trim """
             <div class="modal-header">
                 <button type="button" class="close hidden-print" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3>Expansions You Own</h3>
+                <h4>Your Collection</h4>
             </div>
             <div class="modal-body">
-                <div class="container-fluid collection-content">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions You Own</a><li>
+                    <li><a data-target="#collection-components" data-toggle="tab">Your Inventory</a><li>
+                </ul>
+                <div class="tab-content">
+                    <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
+                    <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
             <div class="modal-footer hidden-print">
@@ -2622,7 +2638,7 @@ class exportObj.Collection
         """
         @modal_status = $ @modal.find('.collection-status')
 
-        modal_body = $ @modal.find('.collection-content')
+        collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
             row = $.parseHTML $.trim """
@@ -2639,7 +2655,26 @@ class exportObj.Collection
             input.data 'expansion', expansion
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.expansion-name').data 'english_name', expansion
-            modal_body.append row
+            collection_content.append row
+
+        component_content = $ @modal.find('.collection-inventory-content')
+        @counts = {}
+        for own type of @shelf
+            for own thing of @shelf[type]
+                (@counts[type] ?= {})[thing] ?= 0
+                @counts[type][thing] += @shelf[type][thing].length
+        for own type, things of @counts
+            contents = component_content.append $.trim """
+                <div class="row-fluid">
+                    <div class="span12"><h5>#{type.capitalize()}</h5></div>
+                </div>
+                <div class="row-fluid">
+                    <ul id="counts-#{type}" class="span12"></ul>
+                </div>
+            """
+            ul = $ contents.find("ul#counts-#{type}")
+            for thing in Object.keys(things).sort(sortWithoutQuotes)
+                ul.append """<li>#{thing} - #{things[thing]}</li>"""
 
     destroyUI: ->
         @modal.modal 'hide'
