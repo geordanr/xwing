@@ -304,7 +304,7 @@ exportObj.SquadBuilderBackend = (function() {
     return $.get("" + this.server + "/auth/logout", (function(_this) {
       return function(data, textStatus, jqXHR) {
         _this.authenticated = false;
-        $(window).trigger('xwing-backend:authenticationChanged', _this.authenticated);
+        $(window).trigger('xwing-backend:authenticationChanged', [_this.authenticated, _this]);
         _this.auth_status.hide();
         return cb();
       };
@@ -578,7 +578,7 @@ exportObj.SquadBuilderBackend = (function() {
 
   SquadBuilderBackend.prototype.setupHandlers = function() {
     $(window).on('xwing-backend:authenticationChanged', (function(_this) {
-      return function(authenticated, backend) {
+      return function(e, authenticated, backend) {
         _this.updateAuthenticationVisibility();
         if (authenticated) {
           return _this.loadCollection();
@@ -13322,9 +13322,9 @@ sortWithoutQuotes = function(a, b) {
   var a_name, b_name;
   a_name = a.replace(/[^a-z0-9]/ig, '');
   b_name = b.replace(/[^a-z0-9]/ig, '');
-  if (a < b) {
+  if (a_name < b_name) {
     return -1;
-  } else if (a > b) {
+  } else if (a_name > b_name) {
     return 1;
   } else {
     return 0;
@@ -15383,18 +15383,17 @@ exportObj.Collection = (function() {
     this.onLanguageChange = __bind(this.onLanguageChange, this);
     this.expansions = args.expansions;
     this.backend = args.backend;
-    this.reset();
     this.setupUI();
     this.setupHandlers();
+    this.reset();
     this.language = 'English';
   }
 
   Collection.prototype.reset = function() {
-    var card, count, expansion, _, _ref, _results;
+    var card, component_content, contents, count, expansion, thing, things, type, ul, _, _base, _base1, _base2, _base3, _i, _j, _k, _len, _name, _name1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
     this.shelf = {};
     this.table = {};
     _ref = this.expansions;
-    _results = [];
     for (expansion in _ref) {
       count = _ref[expansion];
       try {
@@ -15402,30 +15401,48 @@ exportObj.Collection = (function() {
       } catch (_error) {
         count = 0;
       }
+      for (_ = _i = 0; 0 <= count ? _i < count : _i > count; _ = 0 <= count ? ++_i : --_i) {
+        _ref2 = (_ref1 = exportObj.manifestByExpansion[expansion]) != null ? _ref1 : [];
+        for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
+          card = _ref2[_j];
+          for (_ = _k = 0, _ref3 = card.count; 0 <= _ref3 ? _k < _ref3 : _k > _ref3; _ = 0 <= _ref3 ? ++_k : --_k) {
+            ((_base = ((_base1 = this.shelf)[_name1 = card.type] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = card.name] != null ? _base[_name] : _base[_name] = []).push(expansion);
+          }
+        }
+      }
+    }
+    this.counts = {};
+    _ref4 = this.shelf;
+    for (type in _ref4) {
+      if (!__hasProp.call(_ref4, type)) continue;
+      _ref5 = this.shelf[type];
+      for (thing in _ref5) {
+        if (!__hasProp.call(_ref5, thing)) continue;
+        if ((_base2 = ((_base3 = this.counts)[type] != null ? _base3[type] : _base3[type] = {}))[thing] == null) {
+          _base2[thing] = 0;
+        }
+        this.counts[type][thing] += this.shelf[type][thing].length;
+      }
+    }
+    component_content = $(this.modal.find('.collection-inventory-content'));
+    component_content.text('');
+    _ref6 = this.counts;
+    _results = [];
+    for (type in _ref6) {
+      if (!__hasProp.call(_ref6, type)) continue;
+      things = _ref6[type];
+      contents = component_content.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\"><h5>" + (type.capitalize()) + "</h5></div>\n</div>\n<div class=\"row-fluid\">\n    <ul id=\"counts-" + type + "\" class=\"span12\"></ul>\n</div>"));
+      ul = $(contents.find("ul#counts-" + type));
       _results.push((function() {
-        var _i, _results1;
+        var _l, _len1, _ref7, _results1;
+        _ref7 = Object.keys(things).sort(sortWithoutQuotes);
         _results1 = [];
-        for (_ = _i = 0; 0 <= count ? _i < count : _i > count; _ = 0 <= count ? ++_i : --_i) {
-          _results1.push((function() {
-            var _j, _len, _ref1, _ref2, _results2;
-            _ref2 = (_ref1 = exportObj.manifestByExpansion[expansion]) != null ? _ref1 : [];
-            _results2 = [];
-            for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
-              card = _ref2[_j];
-              _results2.push((function() {
-                var _base, _base1, _k, _name, _name1, _ref3, _results3;
-                _results3 = [];
-                for (_ = _k = 0, _ref3 = card.count; 0 <= _ref3 ? _k < _ref3 : _k > _ref3; _ = 0 <= _ref3 ? ++_k : --_k) {
-                  _results3.push(((_base = ((_base1 = this.shelf)[_name1 = card.type] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = card.name] != null ? _base[_name] : _base[_name] = []).push(expansion));
-                }
-                return _results3;
-              }).call(this));
-            }
-            return _results2;
-          }).call(this));
+        for (_l = 0, _len1 = _ref7.length; _l < _len1; _l++) {
+          thing = _ref7[_l];
+          _results1.push(ul.append("<li>" + thing + " - " + things[thing] + "</li>"));
         }
         return _results1;
-      }).call(this));
+      })());
     }
     return _results;
   };
@@ -15503,7 +15520,7 @@ exportObj.Collection = (function() {
   };
 
   Collection.prototype.setupUI = function() {
-    var collection_content, component_content, contents, count, expansion, input, row, thing, things, type, ul, _base, _base1, _i, _len, _ref, _ref1, _ref2, _ref3, _ref4, _results;
+    var collection_content, count, expansion, input, row, _i, _len, _ref, _ref1, _results;
     this.modal = $(document.createElement('DIV'));
     this.modal.addClass('modal hide fade collection-modal hidden-print');
     $('body').append(this.modal);
@@ -15511,6 +15528,7 @@ exportObj.Collection = (function() {
     this.modal_status = $(this.modal.find('.collection-status'));
     collection_content = $(this.modal.find('.collection-content'));
     _ref = exportObj.expansions;
+    _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       expansion = _ref[_i];
       count = parseInt((_ref1 = this.expansions[expansion]) != null ? _ref1 : 0);
@@ -15519,39 +15537,7 @@ exportObj.Collection = (function() {
       input.data('expansion', expansion);
       input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
       $(row).find('.expansion-name').data('english_name', expansion);
-      collection_content.append(row);
-    }
-    component_content = $(this.modal.find('.collection-inventory-content'));
-    this.counts = {};
-    _ref2 = this.shelf;
-    for (type in _ref2) {
-      if (!__hasProp.call(_ref2, type)) continue;
-      _ref3 = this.shelf[type];
-      for (thing in _ref3) {
-        if (!__hasProp.call(_ref3, thing)) continue;
-        if ((_base = ((_base1 = this.counts)[type] != null ? _base1[type] : _base1[type] = {}))[thing] == null) {
-          _base[thing] = 0;
-        }
-        this.counts[type][thing] += this.shelf[type][thing].length;
-      }
-    }
-    _ref4 = this.counts;
-    _results = [];
-    for (type in _ref4) {
-      if (!__hasProp.call(_ref4, type)) continue;
-      things = _ref4[type];
-      contents = component_content.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\"><h5>" + (type.capitalize()) + "</h5></div>\n</div>\n<div class=\"row-fluid\">\n    <ul id=\"counts-" + type + "\" class=\"span12\"></ul>\n</div>"));
-      ul = $(contents.find("ul#counts-" + type));
-      _results.push((function() {
-        var _j, _len1, _ref5, _results1;
-        _ref5 = Object.keys(things).sort(sortWithoutQuotes);
-        _results1 = [];
-        for (_j = 0, _len1 = _ref5.length; _j < _len1; _j++) {
-          thing = _ref5[_j];
-          _results1.push(ul.append("<li>" + thing + " - " + things[thing] + "</li>"));
-        }
-        return _results1;
-      })());
+      _results.push(collection_content.append(row));
     }
     return _results;
   };
@@ -15698,7 +15684,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15186
+                    lineno: 15188
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16243,7 +16229,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15740
+              lineno: 15742
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16377,6 +16363,7 @@ exportObj.SquadBuilder = (function() {
       };
     })(this)).on('xwing-collection:destroyed', (function(_this) {
       return function(e, collection) {
+        _this.collection = null;
         return _this.collection_button.addClass('hidden');
       };
     })(this)).on('xwing:pingActiveBuilder', (function(_this) {
@@ -16813,7 +16800,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16241
+          lineno: 16244
         }));
         __iced_deferrals._fulfill();
       });
@@ -16825,7 +16812,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16242
+            lineno: 16245
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18245,7 +18232,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17068
+                      lineno: 17071
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18314,7 +18301,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17092
+                lineno: 17095
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18366,14 +18353,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17114
+            lineno: 17117
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17116
+            lineno: 17119
           }));
         }
         _ref1 = _this.modifications;
@@ -18381,7 +18368,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17118
+              lineno: 17121
             }));
           }
         }
@@ -19169,7 +19156,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17676
+                lineno: 17679
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19286,7 +19273,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17733
+                  lineno: 17736
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19308,7 +19295,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17737
+                    lineno: 17740
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19389,7 +19376,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17774
+            lineno: 17777
           }));
         }
         __iced_deferrals._fulfill();
