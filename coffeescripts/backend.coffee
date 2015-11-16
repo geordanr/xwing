@@ -209,7 +209,7 @@ class exportObj.SquadBuilderBackend
         @auth_status.show()
         $.get "#{@server}/auth/logout", (data, textStatus, jqXHR) =>
             @authenticated = false
-            $(window).trigger 'xwing-backend:authenticationChanged', @authenticated
+            $(window).trigger 'xwing-backend:authenticationChanged', [ @authenticated, this ]
             @auth_status.hide()
             cb()
 
@@ -531,7 +531,7 @@ class exportObj.SquadBuilderBackend
             @unsaved_modal.modal 'hide'
 
     setupHandlers: () ->
-        $(window).on 'xwing-backend:authenticationChanged', (authenticated, backend) =>
+        $(window).on 'xwing-backend:authenticationChanged', (e, authenticated, backend) =>
             @updateAuthenticationVisibility()
             if authenticated
                 @loadCollection()

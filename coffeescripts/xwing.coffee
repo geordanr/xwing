@@ -694,6 +694,7 @@ class exportObj.SquadBuilder
             # console.log "#{@faction}: Collection changed, checking squad"
             @checkCollection()
         .on 'xwing-collection:destroyed', (e, collection) =>
+            @collection = null
             @collection_button.addClass 'hidden'
         .on 'xwing:pingActiveBuilder', (e, cb) =>
             cb(this) if @container.is(':visible')
