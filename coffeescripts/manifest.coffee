@@ -3,9 +3,9 @@ exportObj = exports ? this
 sortWithoutQuotes = (a, b) ->
     a_name = a.replace /[^a-z0-9]/ig, ''
     b_name = b.replace /[^a-z0-9]/ig, ''
-    if a < b
+    if a_name < b_name
         -1
-    else if a > b
+    else if a_name > b_name
         1
     else
         0
