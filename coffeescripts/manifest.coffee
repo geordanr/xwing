@@ -2543,10 +2543,10 @@ class exportObj.Collection
         # To save collection (optional)
         @backend = args.backend
 
-        @reset()
-
         @setupUI()
         @setupHandlers()
+
+        @reset()
 
         @language = 'English'
 
@@ -2562,6 +2562,27 @@ class exportObj.Collection
                 for card in (exportObj.manifestByExpansion[expansion] ? [])
                     for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+
+        @counts = {}
+        for own type of @shelf
+            for own thing of @shelf[type]
+                (@counts[type] ?= {})[thing] ?= 0
+                @counts[type][thing] += @shelf[type][thing].length
+
+        component_content = $ @modal.find('.collection-inventory-content')
+        component_content.text ''
+        for own type, things of @counts
+            contents = component_content.append $.trim """
+                <div class="row-fluid">
+                    <div class="span12"><h5>#{type.capitalize()}</h5></div>
+                </div>
+                <div class="row-fluid">
+                    <ul id="counts-#{type}" class="span12"></ul>
+                </div>
+            """
+            ul = $ contents.find("ul#counts-#{type}")
+            for thing in Object.keys(things).sort(sortWithoutQuotes)
+                ul.append """<li>#{thing} - #{things[thing]}</li>"""
 
     fixName: (name) ->
         # Special case handling for Heavy Scyk :(
@@ -2656,25 +2677,6 @@ class exportObj.Collection
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.expansion-name').data 'english_name', expansion
             collection_content.append row
-
-        component_content = $ @modal.find('.collection-inventory-content')
-        @counts = {}
-        for own type of @shelf
-            for own thing of @shelf[type]
-                (@counts[type] ?= {})[thing] ?= 0
-                @counts[type][thing] += @shelf[type][thing].length
-        for own type, things of @counts
-            contents = component_content.append $.trim """
-                <div class="row-fluid">
-                    <div class="span12"><h5>#{type.capitalize()}</h5></div>
-                </div>
-                <div class="row-fluid">
-                    <ul id="counts-#{type}" class="span12"></ul>
-                </div>
-            """
-            ul = $ contents.find("ul#counts-#{type}")
-            for thing in Object.keys(things).sort(sortWithoutQuotes)
-                ul.append """<li>#{thing} - #{things[thing]}</li>"""
 
     destroyUI: ->
         @modal.modal 'hide'
