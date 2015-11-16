@@ -1252,8 +1252,8 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     if @collection?.counts?
-                        ship_count = @collection.counts.ship[data.data.english_name] ? 0
-                        pilot_count = @collection.counts.pilot[data.pilot.english_name] ? 0
+                        ship_count = @collection.counts?.ship?[data.data.english_name] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.pilot.english_name] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1286,8 +1286,8 @@ class exportObj.SquadBuilder
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        pilot_count = @collection.counts.pilot[data.english_name] ? 0
-                        ship_count = @collection.counts.ship[additional_opts.ship] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.english_name] ? 0
+                        ship_count = @collection.counts.ship?[additional_opts.ship] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1318,7 +1318,7 @@ class exportObj.SquadBuilder
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        addon_count = @collection.counts[additional_opts.addon_type.toLowerCase()][data.english_name] ? 0
+                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.english_name] ? 0
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
