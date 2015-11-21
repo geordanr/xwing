@@ -4538,6 +4538,50 @@ exportObj.basicCardData = ->
             slot: 'Tech'
             points: 3
         }
+        {
+            name: 'Dual Laser Turret'
+            id: 154
+            points: 5
+            slot: 'Hardpoint'
+            attack: 3
+            range: '1-3'
+            energy: 1
+            ship: 'Gozanti-class Cruiser'
+        }
+        {
+            name: 'Broadcast Array'
+            id: 155
+            ship: 'Gozanti-class Cruiser'
+            points: 2
+            slot: 'Cargo'
+            modifier_func: (stats) ->
+                stats.actions.push 'Jam' if 'Jam' not in stats.actions
+        }
+        {
+            name: 'Rear Admiral Chiraneau'
+            id: 156
+            unique: true
+            points: 3
+            slot: 'Crew'
+            faction: 'Galactic Empire'
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: 'Ordnance Experts'
+            id: 157
+            limited: true
+            points: 5
+            slot: 'Team'
+        }
+        {
+            name: 'Docking Clamps'
+            id: 158
+            points: 0
+            limited: true
+            slot: 'Cargo'
+            ship: 'Gozanti-class Cruiser'
+        }
     ]
 
     modificationsById: [
@@ -4688,6 +4732,20 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.canonical_name.indexOf('xwing') != -1
             points: 0
+        }
+        {
+            name: 'Optimized Generators'
+            id: 21
+            points: 5
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: 'Automated Protocols'
+            id: 22
+            points: 5
+            restriction_func: (ship) ->
+                ship.data.huge ? false
         }
     ]
 
@@ -5286,6 +5344,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>')
             .replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>')
             .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>')
+            .replace(/%LIMITED%/g, '<span class="card-restriction">Limited.</span>')
             .replace(/%LINEBREAK%/g, '<br /><br />')
             .replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für Riesen Schiffe.</span>')
             .replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>')
@@ -5297,6 +5356,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>')
             .replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>')
             .replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>')
+            .replace(/%GOZANTIONLY%/g, '<span class="card-restriction"><em>Gozanti</em>-class cruiser only.</span>')
 
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
