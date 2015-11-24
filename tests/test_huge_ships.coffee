@@ -12,9 +12,9 @@ casper.test.begin "Huge ships can not mount modifications unless allowed", (test
     common.addShip('#rebel-builder', 'CR90 Corvette (Fore)', 'CR90 Corvette (Fore)')
     common.addShip('#rebel-builder', 'CR90 Corvette (Aft)', 'CR90 Corvette (Aft)')
 
-    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(1, 7)}", 'Shield Upgrade')
-    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 8)}", 'Shield Upgrade')
-    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 5)}", 'Shield Upgrade')
+    common.assertSelect2IsEmpty(test, "#rebel-builder #{common.selectorForUpgradeIndex(1, 7)}", 'Shield Upgrade')
+    common.assertSelect2IsEmpty(test, "#rebel-builder #{common.selectorForUpgradeIndex(2, 8)}", 'Shield Upgrade')
+    common.assertSelect2IsEmpty(test, "#rebel-builder #{common.selectorForUpgradeIndex(3, 5)}", 'Shield Upgrade')
 
     common.removeShip("#rebel-builder", 1)
     common.removeShip("#rebel-builder", 1)
