@@ -5351,7 +5351,7 @@ exportObj.translations.Deutsch = {
     '.collection': '<span class="hidden-phone"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>',
     '.randomize': 'Zufallsliste!',
     '.randomize-options': 'Zufallslisten-Optionen…',
-    '.notes-container': 'Staffelnotizen',
+    '.notes-container > span': 'Staffelnotizen',
     '.bbcode-list': 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>',
     '.vertical-space-checkbox': "Platz für Schadenskarten und Aufwertungen im Druck berücksichtigen. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Ausdrucken in Farbe. <input type=\"checkbox\" class=\"toggle-color-print\" />",
@@ -6915,6 +6915,7 @@ exportObj.translations.English = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text',
     '.randomize': 'Random!',
     '.randomize-options': 'Randomizer options…',
+    '.notes-container > span': 'Squad Notes',
     '.bbcode-list': 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>',
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copy</button>',
     '.vertical-space-checkbox': "Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
@@ -8050,6 +8051,7 @@ exportObj.translations['Español'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimir/Ver como </span>Text',
     '.randomize': 'Aleatorio!',
     '.randomize-options': 'Opciones de aleatoriedad…',
+    '.notes-container > span': 'Squad Notes',
     '.bbcode-list': 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea><button class="btn btn-copy">Copia</button>',
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copia</button>',
     '.vertical-space-checkbox': "Añade espacio para cartas de daño/mejora cuando imprima. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
@@ -9712,6 +9714,7 @@ exportObj.translations['Français'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte',
     '.randomize': 'Aléatoire',
     '.randomize-options': 'Options…',
+    '.notes-container > span': 'Squad Notes',
     '.bbcode-list': 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea><button class="btn btn-copy">Copiez</button>',
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copiez</button>',
     '.vertical-space-checkbox': "Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
@@ -11130,6 +11133,7 @@ exportObj.translations['Polski'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst',
     '.randomize': 'randomizuj',
     '.randomize-options': 'Opcje ...',
+    '.notes-container > span': 'Squad Notes',
     '.bbcode-list': 'Skopiuj BBCode poniżej i wklej go do swojego posta.<textarea></textarea><button class="btn btn-copy">Skopiuj</button>',
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Skopiuj</button>',
     '.vertical-space-checkbox': "Dodaj miejsce na karty ulepszeń \ uszkodzeń podczas drukowania <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
@@ -12533,6 +12537,7 @@ exportObj.translations['Русский'] = {
     '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Печать\Просмотр как </span>Text',
     '.randomize': 'Случайно',
     '.randomize-options': 'Опции генератора случайности',
+    '.notes-container > span': 'Squad Notes',
     '.bbcode-list': 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea><button class="btn btn-copy">Скопируйте</button>',
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>',
     '.vertical-space-checkbox': "Добавить пространство для карт повреждений\улучшений на распечатке. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
@@ -15845,22 +15850,16 @@ exportObj.setupTranslationSupport = function() {
             _ref = builders;
             _len = _ref.length;
             _i = 0;
-            _results = [];
             _while = function(__iced_k) {
               var _break, _continue, _next;
-              _break = function() {
-                return __iced_k(_results);
-              };
+              _break = __iced_k;
               _continue = function() {
                 return iced.trampoline(function() {
                   ++_i;
                   return _while(__iced_k);
                 });
               };
-              _next = function(__iced_next_arg) {
-                _results.push(__iced_next_arg);
-                return _continue();
-              };
+              _next = _continue;
               if (!(_i < _len)) {
                 return _break();
               } else {
@@ -15870,7 +15869,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15332
+                    lineno: 15337
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16415,7 +16414,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15886
+              lineno: 15891
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16448,7 +16447,7 @@ exportObj.SquadBuilder = (function() {
     content_container = $(document.createElement('DIV'));
     content_container.addClass('container-fluid');
     this.container.append(content_container);
-    content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    Squad Notes:\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>"));
+    content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    <span>Squad Notes:</span>\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>"));
     this.ship_container = $(content_container.find('div.ship-container'));
     this.info_container = $(content_container.find('div.info-container'));
     this.notes_container = $(content_container.find('.notes-container'));
@@ -16986,7 +16985,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16388
+          lineno: 16393
         }));
         __iced_deferrals._fulfill();
       });
@@ -16998,7 +16997,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16389
+            lineno: 16394
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17226,6 +17225,19 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
+    if ((ship != null) && exportObj.hugeOnly(ship) > 0) {
+      available_modifications = (function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = available_modifications.length; _i < _len; _i++) {
+          modification = available_modifications[_i];
+          if ((modification.ship != null) || (modification.restriction_func == null) || modification.restriction_func(ship)) {
+            _results.push(modification);
+          }
+        }
+        return _results;
+      })();
+    }
     eligible_modifications = (function() {
       var _results;
       _results = [];
@@ -18418,7 +18430,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17215
+                      lineno: 17224
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18487,7 +18499,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17239
+                lineno: 17248
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18539,14 +18551,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17261
+            lineno: 17270
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17263
+            lineno: 17272
           }));
         }
         _ref1 = _this.modifications;
@@ -18554,7 +18566,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17265
+              lineno: 17274
             }));
           }
         }
@@ -19342,7 +19354,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17823
+                lineno: 17832
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19459,7 +19471,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17880
+                  lineno: 17889
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19481,7 +19493,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17884
+                    lineno: 17893
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19562,7 +19574,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17921
+            lineno: 17930
           }));
         }
         __iced_deferrals._fulfill();
