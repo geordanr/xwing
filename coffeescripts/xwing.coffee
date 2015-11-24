@@ -1106,6 +1106,10 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
 
+        if ship? and exportObj.hugeOnly(ship) > 0
+            # Only show allowed mods for Epic ships
+            available_modifications = (modification for modification in available_modifications when modification.ship? or not modification.restriction_func? or modification.restriction_func ship)
+
         eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
 
         # I finally had to add a special case :(  If something else demands it
