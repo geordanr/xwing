@@ -567,7 +567,7 @@ class exportObj.SquadBuilder
             <div class="row-fluid">
                 <div class="span9 ship-container">
                             <label class="notes-container show-authenticated">
-                                Squad Notes:
+                                <span>Squad Notes:</span>
                                 <br />
                                 <textarea class="squad-notes"></textarea>
                             </label>

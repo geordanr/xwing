@@ -97,6 +97,7 @@ exportObj.translations['Русский'] =
         '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Печать\Просмотр как </span>Text'
         '.randomize' : 'Случайно'
         '.randomize-options' : 'Опции генератора случайности'
+        '.notes-container > span' : 'Squad Notes'
         # Print/View modal
         '.bbcode-list' : 'Скопируйте BBCode ниже и вставьте в пост на форуме.<textarea></textarea><button class="btn btn-copy">Скопируйте</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>'

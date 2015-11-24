@@ -103,7 +103,7 @@ exportObj.translations.Deutsch =
         '.collection' : '<span class="hidden-phone"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>'
         '.randomize' : 'Zufallsliste!'
         '.randomize-options' : 'Zufallslisten-Optionen…'
-        '.notes-container' : 'Staffelnotizen'
+        '.notes-container > span' : 'Staffelnotizen'
         # Print/View modal
         '.bbcode-list' : 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>'
         '.vertical-space-checkbox' : """Platz für Schadenskarten und Aufwertungen im Druck berücksichtigen. <input type="checkbox" class="toggle-vertical-space" />"""

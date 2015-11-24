@@ -120,6 +120,7 @@ exportObj.translations['Español'] =
         '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimir/Ver como </span>Text'
         '.randomize' : 'Aleatorio!'
         '.randomize-options' : 'Opciones de aleatoriedad…'
+        '.notes-container > span' : 'Squad Notes'
         # Print/View modal
         '.bbcode-list' : 'Copia el BBCode de debajo y pegalo en el post de tu foro.<textarea></textarea><button class="btn btn-copy">Copia</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copia</button>'

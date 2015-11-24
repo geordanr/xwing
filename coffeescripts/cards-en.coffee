@@ -101,6 +101,7 @@ exportObj.translations.English =
         '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text'
         '.randomize' : 'Random!'
         '.randomize-options' : 'Randomizer options…'
+        '.notes-container > span' : 'Squad Notes'
         # Print/View modal
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
