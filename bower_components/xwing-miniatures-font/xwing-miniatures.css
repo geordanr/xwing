@@ -169,6 +169,18 @@ i.xwing-miniatures-ship {
   font-style: normal;
   font-size: 1.5em; }
 
+i.xwing-miniatures-ship-gr75mediumtransport:before {
+  content: "1"; }
+
+i.xwing-miniatures-ship-cr90corvette:before {
+  content: "2"; }
+
+i.xwing-miniatures-ship-raiderclasscorvette:before {
+  content: "3"; }
+
+i.xwing-miniatures-ship-gozanticlasscruiser:before {
+  content: "4"; }
+
 i.xwing-miniatures-ship-tieadvanced:before {
   content: "A"; }
 
