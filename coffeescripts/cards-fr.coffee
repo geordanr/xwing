@@ -547,6 +547,12 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
         'Hera Syndulla':
             text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
+        '"Youngster"':
+            text: """Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."""
+        '"Wampa"':
+            text: """When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."""
+        '"Chaser"':
+            text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
 
     upgrade_translations =
         #Traits de pilotes

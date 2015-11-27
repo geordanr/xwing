@@ -2871,34 +2871,36 @@ exportObj.basicCardData = ->
             points: 17
         }
         {
-            name: 'Unspoiled PS6 TIE Fighter Pilot'
+            name: '"Youngster"'
             id: 152
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 6
-            slots: []
-            points: 99
+            slots: [
+                'Elite'
+            ]
+            points: 15
         }
         {
-            name: 'Unspoiled PS4 TIE Fighter Pilot'
+            name: '"Wampa"'
             id: 153
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 4
             slots: []
-            points: 99
+            points: 14
         }
         {
-            name: 'Unspoiled PS3 TIE Fighter Pilot'
+            name: '"Chaser"'
             id: 154
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 3
             slots: []
-            points: 99
+            points: 14
         }
         {
             name: "Hera Syndulla"
