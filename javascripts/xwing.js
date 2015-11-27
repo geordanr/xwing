@@ -2932,32 +2932,32 @@ exportObj.basicCardData = function() {
         slots: ['Elite'],
         points: 17
       }, {
-        name: 'Unspoiled PS6 TIE Fighter Pilot',
+        name: '"Youngster"',
         id: 152,
         unique: true,
         faction: "Galactic Empire",
         ship: "TIE Fighter",
         skill: 6,
-        slots: [],
-        points: 99
+        slots: ['Elite'],
+        points: 15
       }, {
-        name: 'Unspoiled PS4 TIE Fighter Pilot',
+        name: '"Wampa"',
         id: 153,
         unique: true,
         faction: "Galactic Empire",
         ship: "TIE Fighter",
         skill: 4,
         slots: [],
-        points: 99
+        points: 14
       }, {
-        name: 'Unspoiled PS3 TIE Fighter Pilot',
+        name: '"Chaser"',
         id: 154,
         unique: true,
         faction: "Galactic Empire",
         ship: "TIE Fighter",
         skill: 3,
         slots: [],
-        points: 99
+        points: 14
       }, {
         name: "Hera Syndulla",
         id: 155,
@@ -5981,6 +5981,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -7271,6 +7280,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -8773,6 +8791,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -10271,6 +10298,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -11672,6 +11708,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -12881,6 +12926,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+    },
+    '"Youngster"': {
+      text: "Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."
+    },
+    '"Wampa"': {
+      text: "When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."
+    },
+    '"Chaser"': {
+      text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     }
   };
   upgrade_translations = {
@@ -15869,7 +15923,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15337
+                    lineno: 15375
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16414,7 +16468,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15891
+              lineno: 15929
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -16985,7 +17039,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16393
+          lineno: 16431
         }));
         __iced_deferrals._fulfill();
       });
@@ -16997,7 +17051,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16394
+            lineno: 16432
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18430,7 +18484,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17224
+                      lineno: 17262
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18499,7 +18553,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17248
+                lineno: 17286
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18551,14 +18605,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17270
+            lineno: 17308
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17272
+            lineno: 17310
           }));
         }
         _ref1 = _this.modifications;
@@ -18566,7 +18620,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17274
+              lineno: 17312
             }));
           }
         }
@@ -19354,7 +19408,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17832
+                lineno: 17870
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19471,7 +19525,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17889
+                  lineno: 17927
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19493,7 +19547,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17893
+                    lineno: 17931
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19574,7 +19628,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17930
+            lineno: 17968
           }));
         }
         __iced_deferrals._fulfill();
