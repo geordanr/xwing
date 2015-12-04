@@ -3019,8 +3019,8 @@ exportObj.basicCardData = function() {
         faction: "Rebel Alliance",
         ship: "Attack Shuttle",
         skill: 4,
-        slots: ['Turret', 'Crew'],
-        points: 99
+        slots: ['Elite', 'Turret', 'Crew'],
+        points: 20
       }, {
         name: '"Zeb" Orrelios',
         id: 162,
@@ -4363,6 +4363,36 @@ exportObj.basicCardData = function() {
         limited: true,
         slot: 'Cargo',
         ship: 'Gozanti-class Cruiser'
+      }, {
+        name: 'Kanan Jarrus',
+        id: 159,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 3,
+        slot: 'Crew'
+      }, {
+        name: '"Zeb" Orrelios',
+        id: 160,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 1,
+        slot: 'Crew'
+      }, {
+        name: 'Reinforced Deflectors',
+        id: 161,
+        points: 3,
+        slot: 'System',
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.large) != null ? _ref : false;
+        }
+      }, {
+        name: 'Dorsal Turret',
+        id: 162,
+        points: 3,
+        slot: 'Turret',
+        attack: 2,
+        range: '1-2'
       }
     ],
     modificationsById: [
@@ -5990,6 +6020,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -6596,6 +6629,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -7289,6 +7334,9 @@ exportObj.cardLoaders.English = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -7768,6 +7816,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -8800,6 +8860,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -9405,6 +9468,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -10307,6 +10382,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -10865,6 +10943,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -11717,6 +11807,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -12277,6 +12370,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -12935,6 +13040,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Chaser"': {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
+    },
+    'Ezra Bridger': {
+      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     }
   };
   upgrade_translations = {
@@ -13399,6 +13507,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Docking Clamps': {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+    },
+    '"Zeb" Orrelios': {
+      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+    },
+    'Kanan Jarrus': {
+      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+    },
+    'Reinforced Deflectors': {
+      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+    },
+    'Dorsal Turret': {
+      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
     }
   };
   modification_translations = {
@@ -15923,7 +16043,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15375
+                    lineno: 15468
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16468,7 +16588,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 15929
+              lineno: 16022
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17039,7 +17159,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16431
+          lineno: 16524
         }));
         __iced_deferrals._fulfill();
       });
@@ -17051,7 +17171,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16432
+            lineno: 16525
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18484,7 +18604,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17262
+                      lineno: 17355
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18553,7 +18673,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17286
+                lineno: 17379
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18605,14 +18725,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17308
+            lineno: 17401
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17310
+            lineno: 17403
           }));
         }
         _ref1 = _this.modifications;
@@ -18620,7 +18740,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17312
+              lineno: 17405
             }));
           }
         }
@@ -18795,11 +18915,11 @@ Ship = (function() {
     })(this));
     this.pilot_selector.data('select2').results.on('mousemove-filtered', (function(_this) {
       return function(e) {
-        var select2_data;
+        var select2_data, _ref;
         select2_data = $(e.target).closest('.select2-result').data('select2-data');
         if ((select2_data != null ? select2_data.id : void 0) != null) {
           return _this.builder.showTooltip('Pilot', exportObj.pilotsById[select2_data.id], {
-            ship: _this.data.english_name
+            ship: (_ref = _this.data) != null ? _ref.english_name : void 0
           });
         }
       };
@@ -19408,7 +19528,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17870
+                lineno: 17963
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19525,7 +19645,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 17927
+                  lineno: 18020
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19547,7 +19667,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 17931
+                    lineno: 18024
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19628,7 +19748,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 17968
+            lineno: 18061
           }));
         }
         __iced_deferrals._fulfill();
