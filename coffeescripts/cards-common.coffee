@@ -3004,10 +3004,11 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 4
             slots: [
+                'Elite'
                 'Turret'
                 'Crew'
             ]
-            points: 99
+            points: 20
         }
         {
             name: '"Zeb" Orrelios'
@@ -4583,6 +4584,38 @@ exportObj.basicCardData = ->
             limited: true
             slot: 'Cargo'
             ship: 'Gozanti-class Cruiser'
+        }
+        {
+            name: 'Kanan Jarrus'
+            id: 159
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 3
+            slot: 'Crew'
+        }
+        {
+            name: '"Zeb" Orrelios'
+            id: 160
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 1
+            slot: 'Crew'
+        }
+        {
+            name: 'Reinforced Deflectors'
+            id: 161
+            points: 3
+            slot: 'System'
+            restriction_func: (ship) ->
+                ship.data.large ? false
+        }
+        {
+            name: 'Dorsal Turret'
+            id: 162
+            points: 3
+            slot: 'Turret'
+            attack: 2
+            range: '1-2'
         }
     ]
 

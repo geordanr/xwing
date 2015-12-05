@@ -693,6 +693,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."""
         '"Chaser"':
             text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
+        'Ezra Bridger':
+            text: """When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1141,6 +1143,14 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Once per round, when a friendly ship at Range 1-3 performs an attack with a %TORPEDO% or %MISSILE% secondary weapon, it may change 1 of its blank results to a %HIT% result.'''
         'Docking Clamps':
             text: '''%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'''
+        '"Zeb" Orrelios':
+            text: """%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."""
+        'Kanan Jarrus':
+            text: """%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."""
+        'Reinforced Deflectors':
+            text: """%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."""
+        'Dorsal Turret':
+            text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."""
 
     modification_translations =
         "Stealth Device":

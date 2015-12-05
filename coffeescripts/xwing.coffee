@@ -2037,7 +2037,7 @@ class Ship
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
-            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data.english_name} if select2_data?.id?
+            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.english_name} if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
 
