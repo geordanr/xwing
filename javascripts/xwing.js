@@ -1510,7 +1510,7 @@ exportObj.basicCardData = function() {
         shields: 6,
         large: true,
         actions: ["Focus", "Target Lock", "Evade"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [3, 1, 2, 1, 3, 0], [1, 2, 2, 2, 1, 0], [3, 1, 1, 1, 3, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 3]]
       },
       "Attack Shuttle": {
         name: "Attack Shuttle",
@@ -1520,7 +1520,7 @@ exportObj.basicCardData = function() {
         hull: 2,
         shields: 2,
         actions: ["Focus", "Barrel Roll", "Evade"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [3, 2, 2, 2, 3, 0], [1, 1, 2, 1, 1, 0], [3, 1, 1, 1, 3, 0], [0, 0, 1, 0, 0, 3]]
       },
       "TIE Advanced Prototype": {
         name: "TIE Advanced Prototype",
@@ -2975,7 +2975,7 @@ exportObj.basicCardData = function() {
         ship: "VCX-100",
         skill: 5,
         slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
-        points: 99
+        points: 38
       }, {
         name: '"Chopper"',
         id: 157,
@@ -2984,7 +2984,7 @@ exportObj.basicCardData = function() {
         ship: "VCX-100",
         skill: 4,
         slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
-        points: 99
+        points: 37
       }, {
         name: 'Lothal ???',
         id: 158,
@@ -3001,8 +3001,8 @@ exportObj.basicCardData = function() {
         faction: "Rebel Alliance",
         ship: "Attack Shuttle",
         skill: 7,
-        slots: ['Turret', 'Crew'],
-        points: 99
+        slots: ['Elite', 'Turret', 'Crew'],
+        points: 22
       }, {
         name: 'Sabine Wren',
         id: 160,
@@ -3010,8 +3010,8 @@ exportObj.basicCardData = function() {
         faction: "Rebel Alliance",
         ship: "Attack Shuttle",
         skill: 5,
-        slots: ['Turret', 'Crew'],
-        points: 99
+        slots: ['Elite', 'Turret', 'Crew'],
+        points: 21
       }, {
         name: 'Ezra Bridger',
         id: 161,
@@ -3029,7 +3029,7 @@ exportObj.basicCardData = function() {
         ship: "Attack Shuttle",
         skill: 3,
         slots: ['Turret', 'Crew'],
-        points: 99
+        points: 18
       }, {
         name: "The Inquisitor",
         id: 163,
@@ -4398,6 +4398,40 @@ exportObj.basicCardData = function() {
         id: 163,
         slot: 'Astromech',
         points: 2
+      }, {
+        name: 'Hera Syndulla',
+        id: 164,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 1,
+        slot: 'Crew'
+      }, {
+        name: 'Ezra Bridger',
+        id: 165,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 3,
+        slot: 'Crew'
+      }, {
+        name: 'Sabine Wren',
+        id: 166,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 2,
+        slot: 'Crew',
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Bomb"
+          }
+        ]
+      }, {
+        name: '"Chopper"',
+        id: 167,
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 0,
+        slot: 'Crew'
       }
     ],
     modificationsById: [
@@ -6034,6 +6068,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -6655,6 +6704,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -7357,6 +7418,21 @@ exportObj.cardLoaders.English = function() {
     },
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -7851,6 +7927,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -8888,6 +8976,21 @@ exportObj.cardLoaders['Español'] = function() {
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."',
       ship: "Caza TIE/fo"
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -9508,6 +9611,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -10419,6 +10534,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -10992,6 +11122,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -11853,6 +11995,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -12428,6 +12585,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -13095,6 +13264,21 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Epsilon Ace"': {
       text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+    },
+    "Kanan Jarrus": {
+      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+    },
+    '"Chopper"': {
+      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+    },
+    'Hera Syndulla (Attack Shuttle)': {
+      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+    },
+    'Sabine Wren': {
+      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+    },
+    '"Zeb" Orrelios': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     }
   };
   upgrade_translations = {
@@ -13574,6 +13758,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Targeting Astromech': {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
+    },
+    'Hera Syndulla': {
+      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+    },
+    'Ezra Bridger': {
+      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+    },
+    'Sabine Wren': {
+      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+    },
+    '"Chopper"': {
+      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
     }
   };
   modification_translations = {
@@ -16098,7 +16294,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15509
+                    lineno: 15670
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16643,7 +16839,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16063
+              lineno: 16224
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17214,7 +17410,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16565
+          lineno: 16726
         }));
         __iced_deferrals._fulfill();
       });
@@ -17226,7 +17422,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16566
+            lineno: 16727
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18659,7 +18855,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17396
+                      lineno: 17557
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18728,7 +18924,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17420
+                lineno: 17581
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18780,14 +18976,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17442
+            lineno: 17603
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17444
+            lineno: 17605
           }));
         }
         _ref1 = _this.modifications;
@@ -18795,7 +18991,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17446
+              lineno: 17607
             }));
           }
         }
@@ -19583,7 +19779,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18004
+                lineno: 18165
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19700,7 +19896,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18061
+                  lineno: 18222
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19722,7 +19918,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18065
+                    lineno: 18226
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19803,7 +19999,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18102
+            lineno: 18263
           }));
         }
         __iced_deferrals._fulfill();
