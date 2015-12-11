@@ -602,6 +602,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
         'Ezra Bridger':
             text: """When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."""
+        '"Zeta Leader"':
+            text: '''When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'''
+        '"Epsilon Ace"':
+            text: '''While you do not have any Damage cards, treat your pilot skill value as "12."'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1057,6 +1061,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."""
         'Dorsal Turret':
             text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."""
+        'Targeting Astromech':
+            text: '''After you execute a red maneuver, you may acquire a target lock.'''
 
     modification_translations =
         "Stealth Device":

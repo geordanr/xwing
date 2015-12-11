@@ -3367,19 +3367,20 @@ exportObj.basicCardData = ->
             points: 21
         }
         {
-            name: 'Unspoiled PS7 TIE/fo Pilot'
+            name: '"Zeta Leader"'
             id: 188
             unique: true
             faction: "First Order"
             ship: "TIE/fo Fighter"
             skill: 7
             slots: [
+                'Elite'
                 'Tech'
             ]
-            points: 99
+            points: 20
         }
         {
-            name: 'Unspoiled PS4 TIE/fo Pilot'
+            name: '"Epsilon Ace"'
             id: 189
             unique: true
             faction: "First Order"
@@ -3388,7 +3389,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Tech'
             ]
-            points: 99
+            points: 17
         }
     ]
 
@@ -4616,6 +4617,12 @@ exportObj.basicCardData = ->
             slot: 'Turret'
             attack: 2
             range: '1-2'
+        }
+        {
+            name: 'Targeting Astromech'
+            id: 163
+            slot: 'Astromech'
+            points: 2
         }
     ]
 
