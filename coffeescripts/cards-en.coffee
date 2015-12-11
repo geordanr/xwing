@@ -369,6 +369,16 @@ exportObj.cardLoaders.English = () ->
             text: '''When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'''
         '"Epsilon Ace"':
             text: '''While you do not have any Damage cards, treat your pilot skill value as "12."'''
+        "Kanan Jarrus":
+            text: """When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."""
+        '"Chopper"':
+            text: """At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."""
+        'Hera Syndulla (Attack Shuttle)':
+            text: """When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."""
+        'Sabine Wren':
+            text: """Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."""
+        '"Zeb" Orrelios':
+            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -699,6 +709,14 @@ exportObj.cardLoaders.English = () ->
             text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."""
         'Targeting Astromech':
             text: '''After you execute a red maneuver, you may acquire a target lock.'''
+        'Hera Syndulla':
+            text: """%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."""
+        'Ezra Bridger':
+            text: """%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."""
+        'Sabine Wren':
+            text: """%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."""
+        '"Chopper"':
+            text: """%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."""
 
     modification_translations =
         "Stealth Device":

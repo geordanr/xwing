@@ -655,7 +655,14 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Evade"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0 ]
+                [ 1, 2, 2, 2, 1, 0 ]
+                [ 3, 1, 1, 1, 3, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 3 ]
+            ]
         "Attack Shuttle":
             name: "Attack Shuttle"
             factions: ["Rebel Alliance"]
@@ -668,7 +675,13 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Evade"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 3, 1, 1, 1, 3, 0 ]
+                [ 0, 0, 1, 0, 0, 3 ]
+            ]
         "TIE Advanced Prototype":
             name: "TIE Advanced Prototype"
             factions: ["Galactic Empire"]
@@ -2934,7 +2947,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 99
+            points: 38
         }
         {
             name: '"Chopper"'
@@ -2951,7 +2964,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 99
+            points: 37
         }
         {
             name: 'Lothal ???'
@@ -2978,10 +2991,11 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 7
             slots: [
+                'Elite'
                 'Turret'
                 'Crew'
             ]
-            points: 99
+            points: 22
         }
         {
             name: 'Sabine Wren'
@@ -2991,10 +3005,11 @@ exportObj.basicCardData = ->
             ship: "Attack Shuttle"
             skill: 5
             slots: [
+                'Elite'
                 'Turret'
                 'Crew'
             ]
-            points: 99
+            points: 21
         }
         {
             name: 'Ezra Bridger'
@@ -3021,7 +3036,7 @@ exportObj.basicCardData = ->
                 'Turret'
                 'Crew'
             ]
-            points: 99
+            points: 18
         }
         {
             name: "The Inquisitor"
@@ -4623,6 +4638,44 @@ exportObj.basicCardData = ->
             id: 163
             slot: 'Astromech'
             points: 2
+        }
+        {
+            name: 'Hera Syndulla'
+            id: 164
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 1
+            slot: 'Crew'
+        }
+        {
+            name: 'Ezra Bridger'
+            id: 165
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 3
+            slot: 'Crew'
+        }
+        {
+            name: 'Sabine Wren'
+            id: 166
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 2
+            slot: 'Crew'
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Bomb"
+                }
+            ]
+        }
+        {
+            name: '"Chopper"'
+            id: 167
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 0
+            slot: 'Crew'
         }
     ]
 
