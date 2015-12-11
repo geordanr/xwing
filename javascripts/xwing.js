@@ -3246,23 +3246,23 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Tech'],
         points: 21
       }, {
-        name: 'Unspoiled PS7 TIE/fo Pilot',
+        name: '"Zeta Leader"',
         id: 188,
         unique: true,
         faction: "First Order",
         ship: "TIE/fo Fighter",
         skill: 7,
-        slots: ['Tech'],
-        points: 99
+        slots: ['Elite', 'Tech'],
+        points: 20
       }, {
-        name: 'Unspoiled PS4 TIE/fo Pilot',
+        name: '"Epsilon Ace"',
         id: 189,
         unique: true,
         faction: "First Order",
         ship: "TIE/fo Fighter",
         skill: 4,
         slots: ['Tech'],
-        points: 99
+        points: 17
       }
     ],
     upgradesById: [
@@ -4393,6 +4393,11 @@ exportObj.basicCardData = function() {
         slot: 'Turret',
         attack: 2,
         range: '1-2'
+      }, {
+        name: 'Targeting Astromech',
+        id: 163,
+        slot: 'Astromech',
+        points: 2
       }
     ],
     modificationsById: [
@@ -6023,6 +6028,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
     }
   };
   upgrade_translations = {
@@ -6641,6 +6652,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -7337,6 +7351,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
     }
   };
   upgrade_translations = {
@@ -7828,6 +7848,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -8843,12 +8866,6 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Caza TIE/fo",
       text: 'Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'
     },
-    "Unspoiled PS7 TIE/fo Pilot": {
-      ship: "Caza TIE/fo"
-    },
-    "Unspoiled PS4 TIE/fo Pilot": {
-      ship: "Caza TIE/fo"
-    },
     'Hera Syndulla': {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     },
@@ -8863,6 +8880,14 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.',
+      ship: "Caza TIE/fo"
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."',
+      ship: "Caza TIE/fo"
     }
   };
   upgrade_translations = {
@@ -9480,6 +9505,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -10385,6 +10413,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
     }
   };
   upgrade_translations = {
@@ -10955,6 +10989,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -11810,6 +11847,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
     }
   };
   upgrade_translations = {
@@ -12382,6 +12425,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -13043,6 +13089,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Ezra Bridger': {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeta Leader"': {
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+    },
+    '"Epsilon Ace"': {
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
     }
   };
   upgrade_translations = {
@@ -13519,6 +13571,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Dorsal Turret': {
       text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+    },
+    'Targeting Astromech': {
+      text: 'After you execute a red maneuver, you may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -16043,7 +16098,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15468
+                    lineno: 15509
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16588,7 +16643,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16022
+              lineno: 16063
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17159,7 +17214,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16524
+          lineno: 16565
         }));
         __iced_deferrals._fulfill();
       });
@@ -17171,7 +17226,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16525
+            lineno: 16566
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -18604,7 +18659,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17355
+                      lineno: 17396
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18673,7 +18728,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17379
+                lineno: 17420
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18725,14 +18780,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17401
+            lineno: 17442
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17403
+            lineno: 17444
           }));
         }
         _ref1 = _this.modifications;
@@ -18740,7 +18795,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17405
+              lineno: 17446
             }));
           }
         }
@@ -19528,7 +19583,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 17963
+                lineno: 18004
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19645,7 +19700,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18020
+                  lineno: 18061
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19667,7 +19722,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18024
+                    lineno: 18065
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19748,7 +19803,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18061
+            lineno: 18102
           }));
         }
         __iced_deferrals._fulfill();
