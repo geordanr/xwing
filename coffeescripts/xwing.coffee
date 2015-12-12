@@ -1082,6 +1082,11 @@ class exportObj.SquadBuilder
         else
             available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when filter_func(upgrade))
 
+        # Special case #3
+        # Ordnance tube hack
+        if @isEpic and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name for m in ship.modifications when m.data?)
+            available_upgrades = available_upgrades.concat (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot in ['Missile', 'Torpedo'])
+
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
 
         # Special case #2 :(

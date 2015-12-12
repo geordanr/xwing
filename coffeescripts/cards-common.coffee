@@ -4842,6 +4842,14 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.huge ? false
         }
+        {
+            name: 'Ordnance Tubes'
+            id: 23
+            points: 5
+            slot: 'Hardpoint'
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
     ]
 
     titlesById: [
