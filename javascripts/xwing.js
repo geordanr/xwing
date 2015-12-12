@@ -4612,6 +4612,15 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.huge) != null ? _ref : false;
         }
+      }, {
+        name: 'Ordnance Tubes',
+        id: 23,
+        points: 5,
+        slot: 'Hardpoint',
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
       }
     ],
     titlesById: [
@@ -6803,6 +6812,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -8007,6 +8019,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -9712,6 +9727,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -11215,6 +11233,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -12678,6 +12699,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -13835,6 +13859,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Automated Protocols': {
       text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+    },
+    'Ordnance Tubes': {
+      text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     }
   };
   title_translations = {
@@ -16294,7 +16321,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15670
+                    lineno: 15690
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16839,7 +16866,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16224
+              lineno: 16244
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17410,7 +17437,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16726
+          lineno: 16746
         }));
         __iced_deferrals._fulfill();
       });
@@ -17422,7 +17449,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16727
+            lineno: 16747
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17528,7 +17555,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term, filter_func) {
-    var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, retval, upgrade, upgrade_name, _i, _j, _len, _len1, _ref, _ref1, _ref2, _results;
+    var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, m, retval, upgrade, upgrade_name, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _results;
     if (term == null) {
       term = '';
     }
@@ -17574,6 +17601,31 @@ exportObj.SquadBuilder = (function() {
         return _results;
       })();
     }
+    if (this.isEpic && (_ref = 'Ordnance Tubes'.canonicalize(), __indexOf.call((function() {
+      var _i, _len, _ref1, _results;
+      _ref1 = ship.modifications;
+      _results = [];
+      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+        m = _ref1[_i];
+        if (m.data != null) {
+          _results.push(m.data.canonical_name);
+        }
+      }
+      return _results;
+    })(), _ref) >= 0)) {
+      available_upgrades = available_upgrades.concat((function() {
+        var _ref1, _ref2, _results;
+        _ref1 = exportObj.upgradesByLocalizedName;
+        _results = [];
+        for (upgrade_name in _ref1) {
+          upgrade = _ref1[upgrade_name];
+          if ((_ref2 = upgrade.slot) === 'Missile' || _ref2 === 'Torpedo') {
+            _results.push(upgrade);
+          }
+        }
+        return _results;
+      })());
+    }
     eligible_upgrades = (function() {
       var _results;
       _results = [];
@@ -17585,21 +17637,21 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
-    if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
-      _ref2 = (function() {
-        var _j, _len, _ref2, _results;
-        _ref2 = ship.upgrades;
+    if ((ship != null ? (_ref1 = ship.title) != null ? (_ref2 = _ref1.data) != null ? _ref2.special_case : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
+      _ref3 = (function() {
+        var _j, _len, _ref3, _results;
+        _ref3 = ship.upgrades;
         _results = [];
-        for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
-          upgrade = _ref2[_j];
+        for (_j = 0, _len = _ref3.length; _j < _len; _j++) {
+          upgrade = _ref3[_j];
           if ((upgrade != null ? upgrade.data : void 0) != null) {
             _results.push(upgrade.data);
           }
         }
         return _results;
       })();
-      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
-        equipped_upgrade = _ref2[_i];
+      for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
+        equipped_upgrade = _ref3[_i];
         eligible_upgrades.removeItem(equipped_upgrade);
       }
     }
@@ -18855,7 +18907,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17557
+                      lineno: 17582
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18924,7 +18976,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17581
+                lineno: 17606
               })
             ]);
             __iced_deferrals._fulfill();
@@ -18976,14 +19028,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17603
+            lineno: 17628
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17605
+            lineno: 17630
           }));
         }
         _ref1 = _this.modifications;
@@ -18991,7 +19043,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17607
+              lineno: 17632
             }));
           }
         }
@@ -19779,7 +19831,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18165
+                lineno: 18190
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19896,7 +19948,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18222
+                  lineno: 18247
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19918,7 +19970,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18226
+                    lineno: 18251
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19999,7 +20051,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18263
+            lineno: 18288
           }));
         }
         __iced_deferrals._fulfill();
