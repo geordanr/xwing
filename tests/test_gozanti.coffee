@@ -12,10 +12,19 @@ casper.test.begin "Ordnance Tubes", (test) ->
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Assault Missiles')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Plasma Torpedoes')
 
+    # Other slots should not be affected
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 1}", 'Assault Missiles')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 1}", 'Plasma Torpedoes')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}", 'Assault Missiles')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}", 'Plasma Torpedoes')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 5}", 'Assault Missiles')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 5}", 'Plasma Torpedoes')
+
     common.addUpgrade('#empire-builder', 1, 7, 'Ordnance Tubes')
 
     common.addUpgrade('#empire-builder', 1, 3, 'Assault Missiles')
     common.addUpgrade('#empire-builder', 1, 3, 'Plasma Torpedoes')
+    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Bomb Loadout')
 
     common.removeUpgrade('#empire-builder', 1, 7)
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Assault Missiles')
