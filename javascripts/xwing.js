@@ -17601,7 +17601,7 @@ exportObj.SquadBuilder = (function() {
         return _results;
       })();
     }
-    if (this.isEpic && (_ref = 'Ordnance Tubes'.canonicalize(), __indexOf.call((function() {
+    if (this.isEpic && slot === 'Hardpoint' && (_ref = 'Ordnance Tubes'.canonicalize(), __indexOf.call((function() {
       var _i, _len, _ref1, _results;
       _ref1 = ship.modifications;
       _results = [];
@@ -17619,12 +17619,12 @@ exportObj.SquadBuilder = (function() {
         _results = [];
         for (upgrade_name in _ref1) {
           upgrade = _ref1[upgrade_name];
-          if ((_ref2 = upgrade.slot) === 'Missile' || _ref2 === 'Torpedo') {
+          if (((_ref2 = upgrade.slot) === 'Missile' || _ref2 === 'Torpedo') && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || this.isOurFaction(upgrade.faction)) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
             _results.push(upgrade);
           }
         }
         return _results;
-      })());
+      }).call(this));
     }
     eligible_upgrades = (function() {
       var _results;
