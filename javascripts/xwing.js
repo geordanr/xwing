@@ -3263,6 +3263,59 @@ exportObj.basicCardData = function() {
         skill: 4,
         slots: ['Tech'],
         points: 17
+      }, {
+        name: "Tomax Bren",
+        id: 190,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Bomber",
+        skill: 8,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
+        points: 24
+      }, {
+        name: "Gamma Squadron Veteran",
+        id: 191,
+        faction: "Galactic Empire",
+        ship: "TIE Bomber",
+        skill: 5,
+        slots: ['Elite', 'Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
+        points: 19
+      }, {
+        name: '"Dea???"',
+        id: 192,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Bomber",
+        skill: 3,
+        slots: ['Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
+        points: 99
+      }, {
+        name: "Maarek Stele (TIE Defender)",
+        canonical_name: 'Maarek Stele'.canonicalize(),
+        id: 193,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Defender",
+        skill: 7,
+        slots: ['Cannon', 'Missile'],
+        points: 99
+      }, {
+        name: "Glaive Squa???",
+        id: 194,
+        faction: "Galactic Empire",
+        ship: "TIE Defender",
+        skill: 6,
+        slots: ['Cannon', 'Missile'],
+        points: 99
+      }, {
+        name: "Count???",
+        id: 195,
+        unique: true,
+        faction: "Galactic Empire",
+        ship: "TIE Defender",
+        skill: 5,
+        slots: ['Cannon', 'Missile'],
+        points: 99
       }
     ],
     upgradesById: [
@@ -4621,6 +4674,36 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.huge) != null ? _ref : false;
         }
+      }, {
+        name: 'Long-Range Scanners',
+        id: 24,
+        points: 0,
+        restriction_func: function(ship) {
+          var upgrade;
+          return (((function() {
+            var _i, _len, _ref, _results;
+            _ref = ship.upgrades;
+            _results = [];
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              upgrade = _ref[_i];
+              if (upgrade.slot === 'Torpedo' && (upgrade.occupied_by == null)) {
+                _results.push(upgrade);
+              }
+            }
+            return _results;
+          })()).length >= 1) && (((function() {
+            var _i, _len, _ref, _results;
+            _ref = ship.upgrades;
+            _results = [];
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              upgrade = _ref[_i];
+              if (upgrade.slot === 'Missile' && (upgrade.occupied_by == null)) {
+                _results.push(upgrade);
+              }
+            }
+            return _results;
+          })()).length >= 1);
+        }
       }
     ],
     titlesById: [
@@ -4963,6 +5046,40 @@ exportObj.basicCardData = function() {
         points: 3,
         unique: true,
         ship: "Raider-class Corvette (Aft)"
+      }, {
+        name: 'TIE/x7',
+        id: 33,
+        ship: 'TIE Defender',
+        points: -2,
+        unequips_upgrades: ['Cannon', 'Missile'],
+        also_occupies_upgrades: ['Cannon', 'Missile']
+      }, {
+        name: 'TIE/D',
+        id: 34,
+        ship: 'TIE Defender',
+        points: 0
+      }, {
+        name: 'TIE Shuttle',
+        id: 35,
+        ship: 'TIE Bomber',
+        points: 0,
+        unequips_upgrades: ['Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
+        also_occupies_upgrades: ['Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
+        confersAddons: [
+          {
+            type: exportObj.RestrictedUpgrade,
+            slot: 'Crew',
+            filter_func: function(upgrade) {
+              return upgrade.points <= 4;
+            }
+          }, {
+            type: exportObj.RestrictedUpgrade,
+            slot: 'Crew',
+            filter_func: function(upgrade) {
+              return upgrade.points <= 4;
+            }
+          }
+        ]
       }
     ]
   };
@@ -6092,6 +6209,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -6815,6 +6935,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -6939,6 +7062,15 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "Korv. der Sturm-Klasse (Heck)",
       name: "Ungestüm",
       text: "<span class=\"card-restriction\">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen.."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -7445,6 +7577,9 @@ exportObj.cardLoaders.English = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -8022,6 +8157,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -8117,6 +8255,15 @@ exportObj.cardLoaders.English = function() {
     },
     "Impetuous": {
       text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -9006,6 +9153,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -9730,6 +9880,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -9865,6 +10018,15 @@ exportObj.cardLoaders['Español'] = function() {
     "Impetuous": {
       name: "Impetuoso",
       text: "<span class=\"card-restriction\">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -10567,6 +10729,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -11236,6 +11401,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -11347,6 +11515,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Impetuous": {
       text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -12031,6 +12208,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -12702,6 +12882,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -12813,6 +12996,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Impetuous": {
       text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -13303,6 +13495,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Zeb" Orrelios': {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Tomax Bren': {
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     }
   };
   upgrade_translations = {
@@ -13862,6 +14057,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
+    },
+    'Long-Range Scanners': {
+      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
     }
   };
   title_translations = {
@@ -13954,6 +14152,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Impetuous": {
       text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
+    },
+    'TIE/x7': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+    },
+    'TIE/D': {
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+    },
+    'TIE Shuttle': {
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -16321,7 +16528,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15690
+                    lineno: 15899
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -16866,7 +17073,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16244
+              lineno: 16453
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17437,7 +17644,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16746
+          lineno: 16955
         }));
         __iced_deferrals._fulfill();
       });
@@ -17449,7 +17656,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16747
+            lineno: 16956
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -17574,26 +17781,24 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     })();
-    if (filter_func === this.dfl_filter_func) {
-      available_upgrades = (function() {
-        var _ref, _results;
-        _ref = exportObj.upgradesByLocalizedName;
-        _results = [];
-        for (upgrade_name in _ref) {
-          upgrade = _ref[upgrade_name];
-          if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || this.isOurFaction(upgrade.faction)) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
-            _results.push(upgrade);
-          }
+    available_upgrades = (function() {
+      var _ref, _results;
+      _ref = exportObj.upgradesByLocalizedName;
+      _results = [];
+      for (upgrade_name in _ref) {
+        upgrade = _ref[upgrade_name];
+        if (upgrade.slot === slot && this.matcher(upgrade_name, term) && ((upgrade.ship == null) || upgrade.ship === ship.data.name) && ((upgrade.faction == null) || this.isOurFaction(upgrade.faction)) && ((this.isEpic || this.isCustom) || upgrade.restriction_func !== exportObj.hugeOnly)) {
+          _results.push(upgrade);
         }
-        return _results;
-      }).call(this);
-    } else {
+      }
+      return _results;
+    }).call(this);
+    if (filter_func !== this.dfl_filter_func) {
       available_upgrades = (function() {
-        var _ref, _results;
-        _ref = exportObj.upgradesByLocalizedName;
+        var _i, _len, _results;
         _results = [];
-        for (upgrade_name in _ref) {
-          upgrade = _ref[upgrade_name];
+        for (_i = 0, _len = available_upgrades.length; _i < _len; _i++) {
+          upgrade = available_upgrades[_i];
           if (filter_func(upgrade)) {
             _results.push(upgrade);
           }
@@ -18907,7 +19112,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17582
+                      lineno: 17790
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -18976,7 +19181,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17606
+                lineno: 17814
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19028,14 +19233,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17628
+            lineno: 17836
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17630
+            lineno: 17838
           }));
         }
         _ref1 = _this.modifications;
@@ -19043,7 +19248,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17632
+              lineno: 17840
             }));
           }
         }
@@ -19831,7 +20036,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18190
+                lineno: 18398
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19948,7 +20153,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18247
+                  lineno: 18455
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -19970,7 +20175,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18251
+                    lineno: 18459
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -19984,6 +20189,7 @@ GenericAddon = (function() {
               if (_this.adjustment_func != null) {
                 _this.data = _this.adjustment_func(_this.data);
               }
+              _this.unequipOtherUpgrades();
               _this.occupyOtherUpgrades();
               _this.conferAddons();
             } else {
@@ -20051,7 +20257,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18288
+            lineno: 18497
           }));
         }
         __iced_deferrals._fulfill();
@@ -20137,6 +20343,30 @@ GenericAddon = (function() {
   GenericAddon.prototype.toSerialized = function() {
     var _ref, _ref1;
     return "" + this.serialization_code + "." + ((_ref = (_ref1 = this.data) != null ? _ref1.id : void 0) != null ? _ref : -1);
+  };
+
+  GenericAddon.prototype.unequipOtherUpgrades = function() {
+    var slot, upgrade, _i, _len, _ref, _ref1, _ref2, _results;
+    _ref2 = (_ref = (_ref1 = this.data) != null ? _ref1.unequips_upgrades : void 0) != null ? _ref : [];
+    _results = [];
+    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+      slot = _ref2[_i];
+      _results.push((function() {
+        var _j, _len1, _ref3, _results1;
+        _ref3 = this.ship.upgrades;
+        _results1 = [];
+        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+          upgrade = _ref3[_j];
+          if (upgrade.slot !== slot || upgrade === this || !upgrade.isOccupied()) {
+            continue;
+          }
+          upgrade.setData(null);
+          break;
+        }
+        return _results1;
+      }).call(this));
+    }
+    return _results;
   };
 
   GenericAddon.prototype.isOccupied = function() {
