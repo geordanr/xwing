@@ -3406,6 +3406,94 @@ exportObj.basicCardData = ->
             ]
             points: 17
         }
+        {
+            name: "Tomax Bren"
+            id: 190
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Bomber"
+            skill: 8
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Torpedo'
+                'Missile'
+                'Missile'
+                'Bomb'
+            ]
+            points: 24
+        }
+        {
+            name: "Gamma Squadron Veteran"
+            id: 191
+            faction: "Galactic Empire"
+            ship: "TIE Bomber"
+            skill: 5
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Torpedo'
+                'Missile'
+                'Missile'
+                'Bomb'
+            ]
+            points: 19
+        }
+        {
+            name: '"Dea???"'
+            id: 192
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Bomber"
+            skill: 3
+            slots: [
+                'Torpedo'
+                'Torpedo'
+                'Missile'
+                'Missile'
+                'Bomb'
+            ]
+            points: 99
+        }
+        {
+            name: "Maarek Stele (TIE Defender)"
+            canonical_name: 'Maarek Stele'.canonicalize()
+            id: 193
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 7
+            slots: [
+                'Cannon'
+                'Missile'
+            ]
+            points: 99
+        }
+        {
+            name: "Glaive Squa???"
+            id: 194
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 6
+            slots: [
+                'Cannon'
+                'Missile'
+            ]
+            points: 99
+        }
+        {
+            name: "Count???"
+            id: 195
+            unique: true
+            faction: "Galactic Empire"
+            ship: "TIE Defender"
+            skill: 5
+            slots: [
+                'Cannon'
+                'Missile'
+            ]
+            points: 99
+        }
     ]
 
     upgradesById: [
@@ -4850,6 +4938,13 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.huge ? false
         }
+        {
+            name: 'Long-Range Scanners'
+            id: 24
+            points: 0
+            restriction_func: (ship) ->
+                ((upgrade for upgrade in ship.upgrades when upgrade.slot == 'Torpedo' and not upgrade.occupied_by?).length >= 1) and ((upgrade for upgrade in ship.upgrades when upgrade.slot == 'Missile' and not upgrade.occupied_by?).length >= 1)
+        }
     ]
 
     titlesById: [
@@ -5199,6 +5294,60 @@ exportObj.basicCardData = ->
             points: 3
             unique: true
             ship: "Raider-class Corvette (Aft)"
+        }
+        {
+            name: 'TIE/x7'
+            id: 33
+            ship: 'TIE Defender'
+            points: -2
+            unequips_upgrades: [
+                'Cannon'
+                'Missile'
+            ]
+            also_occupies_upgrades: [
+                'Cannon'
+                'Missile'
+            ]
+        }
+        {
+            name: 'TIE/D'
+            id: 34
+            ship: 'TIE Defender'
+            points: 0
+        }
+        {
+            name: 'TIE Shuttle'
+            id: 35
+            ship: 'TIE Bomber'
+            points: 0
+            unequips_upgrades: [
+                'Torpedo'
+                'Torpedo'
+                'Missile'
+                'Missile'
+                'Bomb'
+            ]
+            also_occupies_upgrades: [
+                'Torpedo'
+                'Torpedo'
+                'Missile'
+                'Missile'
+                'Bomb'
+            ]
+            confersAddons: [
+                {
+                    type: exportObj.RestrictedUpgrade
+                    slot: 'Crew'
+                    filter_func: (upgrade) ->
+                        upgrade.points <= 4
+                }
+                {
+                    type: exportObj.RestrictedUpgrade
+                    slot: 'Crew'
+                    filter_func: (upgrade) ->
+                        upgrade.points <= 4
+                }
+            ]
         }
     ]
 

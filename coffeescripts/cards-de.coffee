@@ -616,6 +616,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."""
         '"Zeb" Orrelios':
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+        'Tomax Bren':
+            text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1148,6 +1150,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'''
         'Ordnance Tubes':
             text: '''%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'''
+        'Long-Range Scanners':
+            text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
 
 
     title_translations =
@@ -1242,5 +1246,11 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Korv. der Sturm-Klasse (Heck)"
             name: "Ungestüm"
             text: """<span class="card-restriction">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen.."""
+        'TIE/x7':
+            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'''
+        'TIE/D':
+            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
+        'TIE Shuttle':
+            text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

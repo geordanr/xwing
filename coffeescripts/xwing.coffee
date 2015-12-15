@@ -1077,10 +1077,9 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        if filter_func == @dfl_filter_func
-            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
-        else
-            available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when filter_func(upgrade))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
+        if filter_func != @dfl_filter_func
+            available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
         # Special case #3
         # Ordnance tube hack
@@ -2543,6 +2542,7 @@ class GenericAddon
             if @data?
                 if @adjustment_func?
                     @data = @adjustment_func(@data)
+                @unequipOtherUpgrades()
                 @occupyOtherUpgrades()
                 @conferAddons()
             else
@@ -2655,6 +2655,13 @@ class GenericAddon
 
     toSerialized: ->
         """#{@serialization_code}.#{@data?.id ? -1}"""
+
+    unequipOtherUpgrades: ->
+        for slot in @data?.unequips_upgrades ? []
+            for upgrade in @ship.upgrades
+                continue if upgrade.slot != slot or upgrade == this or not upgrade.isOccupied()
+                upgrade.setData null
+                break
 
     isOccupied: ->
         @data? or @occupied_by?
