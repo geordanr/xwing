@@ -3219,14 +3219,14 @@ exportObj.basicCardData = function() {
         slots: ['Tech'],
         points: 15
       }, {
-        name: "Unspoiled PS7 T-70 X-Wing Pilot",
+        name: "Ello Asty",
         id: 185,
         unique: true,
         faction: "Resistance",
         ship: "T-70 X-Wing",
         skill: 7,
-        slots: ['Torpedo', 'Astromech', 'Tech'],
-        points: 99
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 30
       }, {
         name: '"Red Ace"',
         id: 186,
@@ -6212,6 +6212,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
     }
   };
   upgrade_translations = {
@@ -7580,6 +7583,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
     }
   };
   upgrade_translations = {
@@ -9082,9 +9088,6 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "T-70 Ala-X",
       text: 'The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'
     },
-    "Unspoiled PS7 T-70 X-Wing Pilot": {
-      ship: "T-70 Ala-X"
-    },
     '"Omega Ace"': {
       name: '"As Omega"',
       ship: "Caza TIE/fo",
@@ -9155,7 +9158,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     },
     'Tomax Bren': {
-      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.',
+      ship: "Bombardero TIE"
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.',
+      ship: "T-70 Ala-X"
     }
   };
   upgrade_translations = {
@@ -10732,6 +10740,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
     }
   };
   upgrade_translations = {
@@ -12211,6 +12222,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
     }
   };
   upgrade_translations = {
@@ -13498,6 +13512,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    'Ello Asty': {
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
     }
   };
   upgrade_translations = {
@@ -16528,7 +16545,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15899
+                    lineno: 15912
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17073,7 +17090,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16453
+              lineno: 16466
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17644,7 +17661,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16955
+          lineno: 16968
         }));
         __iced_deferrals._fulfill();
       });
@@ -17656,7 +17673,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16956
+            lineno: 16969
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19112,7 +19129,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17790
+                      lineno: 17803
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19181,7 +19198,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17814
+                lineno: 17827
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19233,14 +19250,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17836
+            lineno: 17849
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17838
+            lineno: 17851
           }));
         }
         _ref1 = _this.modifications;
@@ -19248,7 +19265,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17840
+              lineno: 17853
             }));
           }
         }
@@ -20036,7 +20053,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18398
+                lineno: 18411
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20153,7 +20170,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18455
+                  lineno: 18468
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20175,7 +20192,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18459
+                    lineno: 18472
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20257,7 +20274,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18497
+            lineno: 18510
           }));
         }
         __iced_deferrals._fulfill();
