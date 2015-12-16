@@ -654,8 +654,6 @@ exportObj.cardLoaders['Español'] = () ->
         '"Red Ace"':
             ship: "T-70 Ala-X"
             text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
-        "Unspoiled PS7 T-70 X-Wing Pilot":
-            ship: "T-70 Ala-X"
         # TIE/fo
         '"Omega Ace"':
             name: '"As Omega"'
@@ -709,6 +707,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Tomax Bren':
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
+            ship: "Bombardero TIE"
+        'Ello Asty':
+            text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
+            ship: "T-70 Ala-X"
 
     upgrade_translations =
         "Ion Cannon Turret":

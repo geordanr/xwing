@@ -3341,18 +3341,19 @@ exportObj.basicCardData = ->
         }
 
         {
-            name: "Unspoiled PS7 T-70 X-Wing Pilot"
+            name: "Ello Asty"
             id: 185
             unique: true
             faction: "Resistance"
             ship: "T-70 X-Wing"
             skill: 7
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
                 'Tech'
             ]
-            points: 99
+            points: 30
         }
         {
             name: '"Red Ace"'

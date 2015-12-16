@@ -381,6 +381,8 @@ exportObj.cardLoaders.English = () ->
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Tomax Bren':
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
+        'Ello Asty':
+            text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
