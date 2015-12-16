@@ -2980,7 +2980,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 99
+            points: 100
         }
         {
             name: 'Hera Syndulla (Attack Shuttle)'
@@ -3061,7 +3061,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Baron of ???"
@@ -3072,7 +3072,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Sienar ???"
@@ -3083,7 +3083,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Zuckuss"
@@ -3112,7 +3112,7 @@ exportObj.basicCardData = ->
                 'System'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Gand ???"
@@ -3125,7 +3125,7 @@ exportObj.basicCardData = ->
                 'System'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Ruth???"
@@ -3138,7 +3138,7 @@ exportObj.basicCardData = ->
                 'System'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Dengar"
@@ -3172,7 +3172,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Manaroo"
@@ -3189,7 +3189,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Contrac???"
@@ -3205,7 +3205,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 99
+            points: 100
         }
 
         # T-70
@@ -3454,7 +3454,7 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Bomb'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Maarek Stele (TIE Defender)"
@@ -3468,7 +3468,7 @@ exportObj.basicCardData = ->
                 'Cannon'
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Glaive Squa???"
@@ -3480,7 +3480,7 @@ exportObj.basicCardData = ->
                 'Cannon'
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
         {
             name: "Count???"
@@ -3493,7 +3493,7 @@ exportObj.basicCardData = ->
                 'Cannon'
                 'Missile'
             ]
-            points: 99
+            points: 100
         }
     ]
 
