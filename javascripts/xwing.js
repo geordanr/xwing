@@ -2992,7 +2992,7 @@ exportObj.basicCardData = function() {
         ship: "VCX-100",
         skill: 3,
         slots: ['System', 'Turret', 'Torpedo', 'Torpedo', 'Crew', 'Crew'],
-        points: 99
+        points: 100
       }, {
         name: 'Hera Syndulla (Attack Shuttle)',
         id: 159,
@@ -3047,7 +3047,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Advanced Prototype",
         skill: 6,
         slots: ['Missile'],
-        points: 99
+        points: 100
       }, {
         name: "Baron of ???",
         id: 165,
@@ -3055,7 +3055,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Advanced Prototype",
         skill: 4,
         slots: ['Missile'],
-        points: 99
+        points: 100
       }, {
         name: "Sienar ???",
         id: 166,
@@ -3063,7 +3063,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Advanced Prototype",
         skill: 2,
         slots: ['Missile'],
-        points: 99
+        points: 100
       }, {
         name: "Zuckuss",
         id: 167,
@@ -3081,7 +3081,7 @@ exportObj.basicCardData = function() {
         ship: "G-1A Starfighter",
         skill: 6,
         slots: ['Crew', 'System', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Gand ???",
         id: 169,
@@ -3089,7 +3089,7 @@ exportObj.basicCardData = function() {
         ship: "G-1A Starfighter",
         skill: 5,
         slots: ['Crew', 'System', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Ruth???",
         id: 170,
@@ -3097,7 +3097,7 @@ exportObj.basicCardData = function() {
         ship: "G-1A Starfighter",
         skill: 3,
         slots: ['Crew', 'System', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Dengar",
         id: 171,
@@ -3115,7 +3115,7 @@ exportObj.basicCardData = function() {
         ship: "JumpMaster 5000",
         skill: 7,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Manaroo",
         id: 173,
@@ -3124,7 +3124,7 @@ exportObj.basicCardData = function() {
         ship: "JumpMaster 5000",
         skill: 4,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Contrac???",
         id: 174,
@@ -3132,7 +3132,7 @@ exportObj.basicCardData = function() {
         ship: "JumpMaster 5000",
         skill: 3,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 99
+        points: 100
       }, {
         name: "Poe Dameron",
         id: 175,
@@ -3288,7 +3288,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Bomber",
         skill: 3,
         slots: ['Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
-        points: 99
+        points: 100
       }, {
         name: "Maarek Stele (TIE Defender)",
         canonical_name: 'Maarek Stele'.canonicalize(),
@@ -3298,7 +3298,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Defender",
         skill: 7,
         slots: ['Cannon', 'Missile'],
-        points: 99
+        points: 100
       }, {
         name: "Glaive Squa???",
         id: 194,
@@ -3306,7 +3306,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Defender",
         skill: 6,
         slots: ['Cannon', 'Missile'],
-        points: 99
+        points: 100
       }, {
         name: "Count???",
         id: 195,
@@ -3315,7 +3315,7 @@ exportObj.basicCardData = function() {
         ship: "TIE Defender",
         skill: 5,
         slots: ['Cannon', 'Missile'],
-        points: 99
+        points: 100
       }
     ],
     upgradesById: [
