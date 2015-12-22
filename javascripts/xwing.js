@@ -4485,6 +4485,21 @@ exportObj.basicCardData = function() {
         faction: 'Rebel Alliance',
         points: 0,
         slot: 'Crew'
+      }, {
+        name: 'Construction Droid',
+        id: 168,
+        points: 3,
+        slot: 'Crew',
+        limited: true,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
+      }, {
+        name: 'Cluster Bombs',
+        id: 169,
+        points: 4,
+        slot: 'Cargo'
       }
     ],
     modificationsById: [
@@ -5080,6 +5095,33 @@ exportObj.basicCardData = function() {
             }
           }
         ]
+      }, {
+        name: 'Requiem',
+        id: 36,
+        unique: true,
+        ship: 'Gozanti-class Cruiser',
+        energy: '+0',
+        points: 4
+      }, {
+        name: 'Vector',
+        id: 37,
+        unique: true,
+        ship: 'Gozanti-class Cruiser',
+        energy: '+1',
+        points: 2,
+        modifier_func: function(stats) {
+          return stats.energy += 1;
+        }
+      }, {
+        name: 'Suppressor',
+        id: 38,
+        unique: true,
+        ship: 'Gozanti-class Cruiser',
+        energy: '+2',
+        points: 6,
+        modifier_func: function(stats) {
+          return stats.energy += 2;
+        }
       }
     ]
   };
@@ -6848,6 +6890,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -7074,6 +7122,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -7935,7 +7992,7 @@ exportObj.cardLoaders.English = function() {
       text: "%SCUMONLY%%LINEBREAK%The first time you attack each round and the first time you defend each round, the first Damage card dealt is dealt faceup."
     },
     "Salvaged Astromech": {
-      text: "When you are dealt a Damage card with the <strong>Ship</strong> trait, you may immediately discard that card (before resolving its effect).%LINEBREAK%Then, discard this Upgrade card."
+      text: "When you are dealt a faceup Damage card with the <strong>Ship</strong> trait, you may immediately discard that card (before resolving its effect).%LINEBREAK%Then, discard this Upgrade card."
     },
     "Bomb Loadout": {
       text: "<span class=\"card-restriction\">Y-Wing only.</span>%LINEBREAK%Your upgrade bar gains the %BOMB% icon."
@@ -8010,7 +8067,7 @@ exportObj.cardLoaders.English = function() {
       text: "When dropping a bomb, you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."
     },
     'Crack Shot': {
-      text: 'When attacking a ship inside your firing arc, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
+      text: 'When attacking a ship inside your firing arc, at the start of the "Compare Results" step, you may discard this card to cancel 1 of the defender\'s %EVADE% results.'
     },
     "Advanced Homing Missiles": {
       text: "<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, deal 1 faceup Damage card to the defender.  Then cancel <strong>all</strong> dice results."
@@ -8092,6 +8149,12 @@ exportObj.cardLoaders.English = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -8270,6 +8333,15 @@ exportObj.cardLoaders.English = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -9796,6 +9868,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -10035,6 +10113,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -11328,6 +11415,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -11535,6 +11628,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -12812,6 +12914,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -13019,6 +13127,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -14006,6 +14123,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Chopper"': {
       text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+    },
+    'Construction Droid': {
+      text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
+    },
+    'Cluster Bombs': {
+      text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -14178,6 +14301,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'TIE Shuttle': {
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+    },
+    'Requiem': {
+      text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
+    },
+    'Vector': {
+      text: '%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'
+    },
+    'Suppressor': {
+      text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -16242,6 +16374,105 @@ exportObj.manifestByExpansion = {
       type: 'upgrade',
       count: 1
     }
+  ],
+  'Imperial Assault Carrier Expansion Pack': [
+    {
+      name: 'TIE Fighter',
+      type: 'ship',
+      count: 2
+    }, {
+      name: 'Gozanti-class Cruiser',
+      type: 'ship',
+      count: 1
+    }, {
+      name: '"Scourge"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Wampa"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Youngster"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Chaser"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Academy Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Black Squadron Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Obsidian Squadron Pilot',
+      type: 'pilot',
+      count: 2
+    }, {
+      name: 'Expose',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Marksmanship',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Expert Handling',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Agent Kallus',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Rear Admiral Chiraneau',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Broadcast Array',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Dual Laser Turret',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Docking Clamps',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Ordnance Experts',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Automated Protocols',
+      type: 'modification',
+      count: 3
+    }, {
+      name: 'Optimized Generators',
+      type: 'modification',
+      count: 3
+    }, {
+      name: 'Ordnance Tubes',
+      type: 'modification',
+      count: 3
+    }, {
+      name: 'Requiem',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Vector',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Suppressor',
+      type: 'title',
+      count: 1
+    }
   ]
 };
 
@@ -16545,7 +16776,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 15912
+                    lineno: 16137
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17090,7 +17321,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16466
+              lineno: 16691
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17661,7 +17892,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 16968
+          lineno: 17193
         }));
         __iced_deferrals._fulfill();
       });
@@ -17673,7 +17904,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 16969
+            lineno: 17194
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19129,7 +19360,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 17803
+                      lineno: 18028
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19198,7 +19429,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 17827
+                lineno: 18052
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19250,14 +19481,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 17849
+            lineno: 18074
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 17851
+            lineno: 18076
           }));
         }
         _ref1 = _this.modifications;
@@ -19265,7 +19496,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 17853
+              lineno: 18078
             }));
           }
         }
@@ -20053,7 +20284,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18411
+                lineno: 18636
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20170,7 +20401,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18468
+                  lineno: 18693
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20192,7 +20423,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18472
+                    lineno: 18697
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20274,7 +20505,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18510
+            lineno: 18735
           }));
         }
         __iced_deferrals._fulfill();
