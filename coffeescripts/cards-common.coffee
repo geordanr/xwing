@@ -4766,6 +4766,21 @@ exportObj.basicCardData = ->
             points: 0
             slot: 'Crew'
         }
+        {
+            name: 'Construction Droid'
+            id: 168
+            points: 3
+            slot: 'Crew'
+            limited: true
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
+        {
+            name: 'Cluster Bombs'
+            id: 169
+            points: 4
+            slot: 'Cargo'
+        }
     ]
 
     modificationsById: [
@@ -5349,6 +5364,34 @@ exportObj.basicCardData = ->
                         upgrade.points <= 4
                 }
             ]
+        }
+        {
+            name: 'Requiem'
+            id: 36
+            unique: true
+            ship: 'Gozanti-class Cruiser'
+            energy: '+0'
+            points: 4
+        }
+        {
+            name: 'Vector'
+            id: 37
+            unique: true
+            ship: 'Gozanti-class Cruiser'
+            energy: '+1'
+            points: 2
+            modifier_func: (stats) ->
+                stats.energy += 1
+        }
+        {
+            name: 'Suppressor'
+            id: 38
+            unique: true
+            ship: 'Gozanti-class Cruiser'
+            energy: '+2'
+            points: 6
+            modifier_func: (stats) ->
+                stats.energy += 2
         }
     ]
 

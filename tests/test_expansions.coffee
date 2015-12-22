@@ -12,6 +12,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "HWK-290 Expansion Pack"
         "IG-2000 Expansion Pack"
         "Imperial Aces Expansion Pack"
+        "Imperial Assault Carrier Expansion Pack"
         "Imperial Raider Expansion Pack"
         "Kihraxz Fighter Expansion Pack"
         "K-Wing Expansion Pack"

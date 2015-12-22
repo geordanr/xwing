@@ -2518,6 +2518,128 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Imperial Assault Carrier Expansion Pack': [
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Gozanti-class Cruiser'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Scourge"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Wampa"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Youngster"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Chaser"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Academy Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Black Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Obsidian Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Expose'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Expert Handling'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Agent Kallus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rear Admiral Chiraneau'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Broadcast Array'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dual Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Docking Clamps'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ordnance Experts'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Automated Protocols'
+            type: 'modification'
+            count: 3
+        }
+        {
+            name: 'Optimized Generators'
+            type: 'modification'
+            count: 3
+        }
+        {
+            name: 'Ordnance Tubes'
+            type: 'modification'
+            count: 3
+        }
+        {
+            name: 'Requiem'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Vector'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Suppressor'
+            type: 'title'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

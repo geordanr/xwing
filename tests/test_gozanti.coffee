@@ -20,13 +20,13 @@ casper.test.begin "Ordnance Tubes", (test) ->
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 5}", 'Assault Missiles')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 5}", 'Plasma Torpedoes')
 
-    common.addUpgrade('#empire-builder', 1, 7, 'Ordnance Tubes')
+    common.addUpgrade('#empire-builder', 1, 8, 'Ordnance Tubes')
 
     common.addUpgrade('#empire-builder', 1, 3, 'Assault Missiles')
     common.addUpgrade('#empire-builder', 1, 3, 'Plasma Torpedoes')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Bomb Loadout')
 
-    common.removeUpgrade('#empire-builder', 1, 7)
+    common.removeUpgrade('#empire-builder', 1, 8)
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Assault Missiles')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 3}", 'Plasma Torpedoes')
 
