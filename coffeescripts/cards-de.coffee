@@ -604,8 +604,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."""
         '"Zeta Leader"':
             text: '''When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'''
+            ship: "TIE/EO-Jäger"
         '"Epsilon Ace"':
             text: '''While you do not have any Damage cards, treat your pilot skill value as "12."'''
+            ship: "TIE/EO-Jäger"
         "Kanan Jarrus":
             text: """When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."""
         '"Chopper"':
@@ -620,6 +622,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         'Ello Asty':
             text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
+            ship: "T-70-X-Flügler"
 
     upgrade_translations =
         "Ion Cannon Turret":
