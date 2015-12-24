@@ -33,6 +33,8 @@ casper.test.begin "Validate Expansions", (test) ->
         "TIE Interceptor Expansion Pack"
         "TIE Phantom Expansion Pack"
         "TIE Punisher Expansion Pack"
+        "TIE/fo Fighter Expansion Pack"
+        "T-70 X-Wing Expansion Pack"
         "VT-49 Decimator Expansion Pack"
         "X-Wing Expansion Pack"
         "YT-2400 Freighter Expansion Pack"
