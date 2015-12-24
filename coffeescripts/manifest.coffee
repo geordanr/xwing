@@ -2692,6 +2692,53 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'TIE/fo Fighter Expansion Pack': [
+        {
+            name: 'TIE/fo Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Omega Leader"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeta Leader"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Epsilon Ace"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Omega Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zeta Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Epsilon Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Comm Relay'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
