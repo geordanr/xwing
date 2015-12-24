@@ -1142,7 +1142,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Assault Carrier Expansion Pack", "Ghost Expansion Pack", "Inquisitor's TIE Expansion Pack", "Mist Hunter Expansion Pack", "Punishing One Expansion Pack", "T-70 X-Wing Expansion Pack", "TIE/fo Fighter Expansion Pack"];
+exportObj.unreleasedExpansions = ["Ghost Expansion Pack", "Inquisitor's TIE Expansion Pack", "Mist Hunter Expansion Pack", "Punishing One Expansion Pack", "T-70 X-Wing Expansion Pack", "TIE/fo Fighter Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -6232,10 +6232,12 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
-      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
+      text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.',
+      ship: "TIE/EO-Jäger"
     },
     '"Epsilon Ace"': {
-      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."'
+      text: 'While you do not have any Damage cards, treat your pilot skill value as "12."',
+      ship: "TIE/EO-Jäger"
     },
     "Kanan Jarrus": {
       text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
@@ -6256,7 +6258,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     },
     'Ello Asty': {
-      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
+      text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.',
+      ship: "T-70-X-Flügler"
     }
   };
   upgrade_translations = {
@@ -16776,7 +16779,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16137
+                    lineno: 16139
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17321,7 +17324,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16691
+              lineno: 16693
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17892,7 +17895,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17193
+          lineno: 17195
         }));
         __iced_deferrals._fulfill();
       });
@@ -17904,7 +17907,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17194
+            lineno: 17196
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19360,7 +19363,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18028
+                      lineno: 18030
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19429,7 +19432,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18052
+                lineno: 18054
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19481,14 +19484,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18074
+            lineno: 18076
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18076
+            lineno: 18078
           }));
         }
         _ref1 = _this.modifications;
@@ -19496,7 +19499,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18078
+              lineno: 18080
             }));
           }
         }
@@ -20284,7 +20287,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18636
+                lineno: 18638
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20401,7 +20404,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18693
+                  lineno: 18695
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20423,7 +20426,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18697
+                    lineno: 18699
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20505,7 +20508,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18735
+            lineno: 18737
           }));
         }
         __iced_deferrals._fulfill();
