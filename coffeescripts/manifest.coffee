@@ -2640,6 +2640,58 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'T-70 X-Wing Expansion Pack': [
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Ello Asty'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Red Ace"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Novice'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cool Hand'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Weapons Guidance'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Integrated Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
