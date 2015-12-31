@@ -2782,6 +2782,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Black Eight Squadron Pilot'
+            canonical_name: 'Black Eight Sq. Pilot'.canonicalize()
             faction: "Galactic Empire"
             id: 145
             ship: "TIE Punisher"
