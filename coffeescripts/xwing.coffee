@@ -103,17 +103,24 @@ class exportObj.SquadBuilder
         @setupUI()
         @setupEventHandlers()
 
-        @resetCurrentSquad()
-
         if $.getParameterByName('f') == @faction
+            @resetCurrentSquad(true)
             @loadFromSerialized $.getParameterByName('d')
         else
+            @resetCurrentSquad()
             @addShip()
+        console.log("done loading page")
 
-    resetCurrentSquad: ->
+    resetCurrentSquad: (initial_load=false) ->
         default_squad_name = 'Unnamed Squadron'
-        squad_name = $.trim(@squad_name_input.val()) or $.trim $.getParameterByName('sn') or default_squad_name
-        squad_notes = $.trim(@notes.val()) or $.trim $.getParameterByName('sno') or ''
+
+        squad_name = $.trim(@squad_name_input.val()) or default_squad_name
+        squad_notes = $.trim(@notes.val()) or ''
+        if initial_load and $.trim $.getParameterByName('sn')
+            squad_name = $.trim $.getParameterByName('sn')
+        if initial_load and $.trim $.getParameterByName('sno')
+            squad_notes = $.trim $.getParameterByName('sno')
+        
         @current_squad =
             id: null
             name: squad_name
@@ -129,6 +136,7 @@ class exportObj.SquadBuilder
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
         @notes.val(squad_notes)
+        @updatePermaLink()
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
