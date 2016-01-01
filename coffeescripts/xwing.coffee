@@ -109,7 +109,6 @@ class exportObj.SquadBuilder
         else
             @resetCurrentSquad()
             @addShip()
-        console.log("done loading page")
 
     resetCurrentSquad: (initial_load=false) ->
         default_squad_name = 'Unnamed Squadron'
