@@ -1524,13 +1524,14 @@ exportObj.basicCardData = function() {
       },
       "TIE Advanced Prototype": {
         name: "TIE Advanced Prototype",
+        canonical_name: 'TIE Adv. Prototype'.canonicalize(),
         factions: ["Galactic Empire"],
         attack: 2,
         agility: 3,
         hull: 2,
         shields: 2,
         actions: ["Focus", "Target Lock", "Barrel Roll", "Boost"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [2, 2, 0, 2, 2, 0], [1, 1, 2, 1, 1, 0], [1, 1, 2, 1, 1, 0], [0, 0, 2, 0, 0, 3], [0, 0, 1, 0, 0, 0]]
       },
       "G-1A Starfighter": {
         name: "G-1A Starfighter",
@@ -3047,8 +3048,8 @@ exportObj.basicCardData = function() {
         faction: "Galactic Empire",
         ship: "TIE Advanced Prototype",
         skill: 6,
-        slots: ['Missile'],
-        points: 100
+        slots: ['Elite', 'Missile'],
+        points: 22
       }, {
         name: "Baron of ???",
         id: 165,
@@ -3058,13 +3059,13 @@ exportObj.basicCardData = function() {
         slots: ['Missile'],
         points: 100
       }, {
-        name: "Sienar ???",
+        name: "Sienar Test Pilot",
         id: 166,
         faction: "Galactic Empire",
         ship: "TIE Advanced Prototype",
         skill: 2,
         slots: ['Missile'],
-        points: 100
+        points: 16
       }, {
         name: "Zuckuss",
         id: 167,
@@ -4720,6 +4721,10 @@ exportObj.basicCardData = function() {
             return _results;
           })()).length >= 1);
         }
+      }, {
+        name: "Guidance Chips",
+        id: 25,
+        points: 0
       }
     ],
     titlesById: [
@@ -6261,6 +6266,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.',
       ship: "T-70-X-Flügler"
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -6993,6 +7001,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -7647,6 +7658,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -8233,6 +8247,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -9240,6 +9257,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.',
       ship: "T-70 Ala-X"
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -9973,6 +9993,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -10834,6 +10857,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -11512,6 +11538,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -12331,6 +12360,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -13011,6 +13043,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -13636,6 +13671,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Ello Asty': {
       text: 'While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'
+    },
+    "Valen Rudor": {
+      text: "After defending, you may perform a free action."
     }
   };
   upgrade_translations = {
@@ -14204,6 +14242,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Long-Range Scanners': {
       text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+    },
+    "Guidance Chips": {
+      text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
     }
   };
   title_translations = {
@@ -16862,7 +16903,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16237
+                    lineno: 16275
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17407,7 +17448,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16791
+              lineno: 16829
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -17978,7 +18019,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17293
+          lineno: 17331
         }));
         __iced_deferrals._fulfill();
       });
@@ -17990,7 +18031,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17294
+            lineno: 17332
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19446,7 +19487,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18128
+                      lineno: 18166
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19515,7 +19556,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18152
+                lineno: 18190
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19567,14 +19608,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18174
+            lineno: 18212
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18176
+            lineno: 18214
           }));
         }
         _ref1 = _this.modifications;
@@ -19582,7 +19623,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18178
+              lineno: 18216
             }));
           }
         }
@@ -20370,7 +20411,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18736
+                lineno: 18774
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20487,7 +20528,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18793
+                  lineno: 18831
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20509,7 +20550,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18797
+                    lineno: 18835
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20591,7 +20632,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18835
+            lineno: 18873
           }));
         }
         __iced_deferrals._fulfill();
