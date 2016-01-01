@@ -555,6 +555,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         'Ello Asty':
             text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
+        "Valen Rudor":
+            text: """After defending, you may perform a free action."""
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1061,6 +1063,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'''
         'Long-Range Scanners':
             text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
+        "Guidance Chips":
+            text: """Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is "3" or higher)."""
 
     title_translations =
         "Slave I":

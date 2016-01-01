@@ -681,6 +681,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced Prototype":
             name: "TIE Advanced Prototype"
+            canonical_name: 'TIE Adv. Prototype'.canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 3
@@ -692,7 +693,14 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
                 "Boost"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 0, 2, 2, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 0, 0, 2, 0, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "G-1A Starfighter":
             name: "G-1A Starfighter"
             factions: ["Scum and Villainy"]
@@ -3057,9 +3065,10 @@ exportObj.basicCardData = ->
             ship: "TIE Advanced Prototype"
             skill: 6
             slots: [
+                'Elite'
                 'Missile'
             ]
-            points: 100
+            points: 22
         }
         {
             name: "Baron of ???"
@@ -3073,7 +3082,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: "Sienar ???"
+            name: "Sienar Test Pilot"
             id: 166
             faction: "Galactic Empire"
             ship: "TIE Advanced Prototype"
@@ -3081,7 +3090,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Missile'
             ]
-            points: 100
+            points: 16
         }
         {
             name: "Zuckuss"
@@ -4958,6 +4967,11 @@ exportObj.basicCardData = ->
             points: 0
             restriction_func: (ship) ->
                 ((upgrade for upgrade in ship.upgrades when upgrade.slot == 'Torpedo' and not upgrade.occupied_by?).length >= 1) and ((upgrade for upgrade in ship.upgrades when upgrade.slot == 'Missile' and not upgrade.occupied_by?).length >= 1)
+        }
+        {
+            name: "Guidance Chips"
+            id: 25
+            points: 0
         }
     ]
 
