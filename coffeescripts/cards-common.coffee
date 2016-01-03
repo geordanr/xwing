@@ -4560,6 +4560,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Advanced Homing Missiles"
+            canonical_name: 'Adv. Homing Missiles'.canonicalize()
             id: 141
             slot: "Missile"
             points: 3
