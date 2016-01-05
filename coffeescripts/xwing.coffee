@@ -781,10 +781,9 @@ class exportObj.SquadBuilder
         @permalink.attr 'href', squad_link
 
     onNotesChanged: =>
-        if @total_points > 0
-            @current_squad.additional_data.notes = @notes.val()
-            @updatePermaLink()
-            @onNotesUpdated()
+        @current_squad.additional_data.notes = @notes.val()
+        @updatePermaLink()
+        @onNotesUpdated()
 
     onNotesUpdated: =>
         if @total_points > 0
