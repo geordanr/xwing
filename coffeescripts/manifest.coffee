@@ -2683,7 +2683,7 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Integrated Astromech'
-            type: 'upgrade'
+            type: 'modification'
             count: 1
         }
         {
