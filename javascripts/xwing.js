@@ -16555,7 +16555,7 @@ exportObj.manifestByExpansion = {
       count: 1
     }, {
       name: 'Integrated Astromech',
-      type: 'upgrade',
+      type: 'modification',
       count: 1
     }, {
       name: 'Advanced Proton Torpedoes',
