@@ -713,7 +713,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Evade"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 0, 3, 2, 3, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 3 ]
+            ]
         "JumpMaster 5000":
             name: "JumpMaster 5000"
             factions: ["Scum and Villainy"]
