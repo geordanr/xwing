@@ -713,6 +713,8 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "T-70 Ala-X"
         "Valen Rudor":
             text: """After defending, you may perform a free action."""
+        "4-LOM":
+            text: """At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1183,6 +1185,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'''
         'Cluster Bombs':
             text: '''After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'''
+        "Adaptability (+1)":
+            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."""
+        "Adaptability (-1)":
+            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."""
+        "Electronic Baffle":
+            text: """When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."""
+        "4-LOM":
+            text: """%SCUMONLY%%LINEBREAK%When attacking, during the "Modify Attack Dice" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."""
+        "Zuckuss":
+            text: """%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."""
 
     modification_translations =
         "Stealth Device":

@@ -3115,11 +3115,12 @@ exportObj.basicCardData = ->
             ship: "G-1A Starfighter"
             skill: 6
             slots: [
+                'Elite'
                 'Crew'
                 'System'
                 'Illicit'
             ]
-            points: 100
+            points: 27
         }
         {
             name: "Gand ???"
@@ -4788,6 +4789,46 @@ exportObj.basicCardData = ->
             id: 169
             points: 4
             slot: 'Cargo'
+        }
+        {
+            name: "Adaptability (+1)"
+            id: 170
+            canonical_name: 'Adaptability'.canonicalize()
+            slot: "Elite"
+            points: 0
+            modifier_func: (stats) ->
+                stats.skill += 1
+        }
+        {
+            name: "Adaptability (-1)"
+            id: 171
+            canonical_name: 'Adaptability'.canonicalize()
+            slot: "Elite"
+            points: 0
+            modifier_func: (stats) ->
+                stats.skill -= 1
+        }
+        {
+            name: "Electronic Baffle"
+            id: 172
+            slot: "System"
+            points: 1
+        }
+        {
+            name: "4-LOM"
+            id: 173
+            unique: true
+            slot: "Crew"
+            points: 1
+            faction: "Scum and Villainy"
+        }
+        {
+            name: "Zuckuss"
+            id: 174
+            unique: true
+            slot: "Crew"
+            points: 1
+            faction: "Scum and Villainy"
         }
     ]
 
