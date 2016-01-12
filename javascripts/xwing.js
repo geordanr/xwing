@@ -3082,8 +3082,8 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         ship: "G-1A Starfighter",
         skill: 6,
-        slots: ['Crew', 'System', 'Illicit'],
-        points: 100
+        slots: ['Elite', 'Crew', 'System', 'Illicit'],
+        points: 27
       }, {
         name: "Gand ???",
         id: 169,
@@ -4503,6 +4503,43 @@ exportObj.basicCardData = function() {
         id: 169,
         points: 4,
         slot: 'Cargo'
+      }, {
+        name: "Adaptability (+1)",
+        id: 170,
+        canonical_name: 'Adaptability'.canonicalize(),
+        slot: "Elite",
+        points: 0,
+        modifier_func: function(stats) {
+          return stats.skill += 1;
+        }
+      }, {
+        name: "Adaptability (-1)",
+        id: 171,
+        canonical_name: 'Adaptability'.canonicalize(),
+        slot: "Elite",
+        points: 0,
+        modifier_func: function(stats) {
+          return stats.skill -= 1;
+        }
+      }, {
+        name: "Electronic Baffle",
+        id: 172,
+        slot: "System",
+        points: 1
+      }, {
+        name: "4-LOM",
+        id: 173,
+        unique: true,
+        slot: "Crew",
+        points: 1,
+        faction: "Scum and Villainy"
+      }, {
+        name: "Zuckuss",
+        id: 174,
+        unique: true,
+        slot: "Crew",
+        points: 1,
+        faction: "Scum and Villainy"
       }
     ],
     modificationsById: [
@@ -6270,6 +6307,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -6909,6 +6949,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -7662,6 +7717,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -8174,6 +8232,21 @@ exportObj.cardLoaders.English = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -9261,6 +9334,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -9899,6 +9975,21 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -10861,6 +10952,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -11452,6 +11546,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -12364,6 +12473,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -12957,6 +13069,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -13675,6 +13802,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Valen Rudor": {
       text: "After defending, you may perform a free action."
+    },
+    "4-LOM": {
+      text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
     }
   };
   upgrade_translations = {
@@ -14172,6 +14302,21 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
+    },
+    "Adaptability (+1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
+    },
+    "Adaptability (-1)": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    },
+    "Electronic Baffle": {
+      text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
+    },
+    "4-LOM": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
+    },
+    "Zuckuss": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     }
   };
   modification_translations = {
@@ -16904,7 +17049,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16276
+                    lineno: 16389
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17449,7 +17594,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16830
+              lineno: 16943
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18020,7 +18165,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17332
+          lineno: 17445
         }));
         __iced_deferrals._fulfill();
       });
@@ -18032,7 +18177,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17333
+            lineno: 17446
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19488,7 +19633,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18167
+                      lineno: 18280
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19557,7 +19702,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18191
+                lineno: 18304
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19609,14 +19754,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18213
+            lineno: 18326
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18215
+            lineno: 18328
           }));
         }
         _ref1 = _this.modifications;
@@ -19624,7 +19769,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18217
+              lineno: 18330
             }));
           }
         }
@@ -20412,7 +20557,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18775
+                lineno: 18888
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20529,7 +20674,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 18832
+                  lineno: 18945
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20551,7 +20696,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 18836
+                    lineno: 18949
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20633,7 +20778,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 18874
+            lineno: 18987
           }));
         }
         __iced_deferrals._fulfill();
