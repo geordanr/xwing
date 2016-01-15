@@ -766,7 +766,7 @@ class exportObj.SquadBuilder
         $(window).resize =>
             @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
--        @notes.change @onNotesUpdated
+         @notes.change @onNotesUpdated
 
          @notes.on 'keyup', @onNotesUpdated
 
