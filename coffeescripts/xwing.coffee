@@ -114,11 +114,8 @@ class exportObj.SquadBuilder
         default_squad_name = 'Unnamed Squadron'
 
         squad_name = $.trim(@squad_name_input.val()) or default_squad_name
-        squad_notes = $.trim(@notes.val()) or ''
         if initial_load and $.trim $.getParameterByName('sn')
             squad_name = $.trim $.getParameterByName('sn')
-        if initial_load and $.trim $.getParameterByName('sno')
-            squad_notes = $.trim $.getParameterByName('sno')
         
         @current_squad =
             id: null
@@ -128,13 +125,12 @@ class exportObj.SquadBuilder
                 points: @total_points
                 description: ''
                 cards: []
-                notes: squad_notes
+                notes: ''
             faction: @faction
         if @total_points > 0
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
-        @notes.val(squad_notes)
         @updatePermaLink()
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
@@ -770,20 +766,13 @@ class exportObj.SquadBuilder
         $(window).resize =>
             @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
-        # separate function for on change that accesses the notes values
-        @notes.change @onNotesChanged
-        @notes.on 'keyup', @onNotesUpdated
+-        @notes.change @onNotesUpdated
+
+         @notes.on 'keyup', @onNotesUpdated
 
     updatePermaLink: () =>
         squad_link = "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
-        if @current_squad.additional_data.notes
-            squad_link = squad_link + "&sno=#{encodeURIComponent @current_squad.additional_data.notes}"
         @permalink.attr 'href', squad_link
-
-    onNotesChanged: =>
-        @current_squad.additional_data.notes = @notes.val()
-        @updatePermaLink()
-        @onNotesUpdated()
 
     onNotesUpdated: =>
         if @total_points > 0
