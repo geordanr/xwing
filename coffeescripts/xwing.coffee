@@ -103,17 +103,23 @@ class exportObj.SquadBuilder
         @setupUI()
         @setupEventHandlers()
 
-        @resetCurrentSquad()
-
         if $.getParameterByName('f') == @faction
+            @resetCurrentSquad(true)
             @loadFromSerialized $.getParameterByName('d')
         else
+            @resetCurrentSquad()
             @addShip()
 
-    resetCurrentSquad: ->
+    resetCurrentSquad: (initial_load=false) ->
+        default_squad_name = 'Unnamed Squadron'
+
+        squad_name = $.trim(@squad_name_input.val()) or default_squad_name
+        if initial_load and $.trim $.getParameterByName('sn')
+            squad_name = $.trim $.getParameterByName('sn')
+        
         @current_squad =
             id: null
-            name: $.trim(@squad_name_input.val()) or "Unnamed Squadron"
+            name: squad_name
             dirty: false
             additional_data:
                 points: @total_points
@@ -122,8 +128,10 @@ class exportObj.SquadBuilder
                 notes: ''
             faction: @faction
         if @total_points > 0
-            @current_squad.name = 'Unsaved Squadron'
+            if squad_name == default_squad_name
+                @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
+        @updatePermaLink()
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -758,8 +766,13 @@ class exportObj.SquadBuilder
         $(window).resize =>
             @select_simple_view_button.click() if $(window).width() < 768 and @list_display_mode != 'simple'
 
-        @notes.change @onNotesUpdated
-        @notes.on 'keyup', @onNotesUpdated
+         @notes.change @onNotesUpdated
+
+         @notes.on 'keyup', @onNotesUpdated
+
+    updatePermaLink: () =>
+        squad_link = "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
+        @permalink.attr 'href', squad_link
 
     onNotesUpdated: =>
         if @total_points > 0
@@ -849,7 +862,8 @@ class exportObj.SquadBuilder
 
         @fancy_total_points_container.text @total_points
         # update permalink while we're at it
-        @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}"
+        @updatePermaLink()
+        # @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURI @current_squad.name}&sno=#{encodeURI @notes.val()}"
         # and text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
@@ -901,6 +915,7 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text ''
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
+        @updatePermaLink()
 
     removeAllShips: ->
         while @ships.length > 0
