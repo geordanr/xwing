@@ -611,6 +611,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Gozanti-class Cruiser':
             text: """After you execute a maneuver, you may deploy up to 2 attached ships."""
         '"Scourge"':
+            ship: "Caza TIE"
             text: """When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."""
         "The Inquisitor":
             text: """When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."""
@@ -682,10 +683,13 @@ exportObj.cardLoaders['Español'] = () ->
         'Hera Syndulla':
             text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
         '"Youngster"':
+            ship: "Caza TIE"
             text: """Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."""
         '"Wampa"':
+            ship: "Caza TIE"
             text: """When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."""
         '"Chaser"':
+            ship: "Caza TIE"
             text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
         'Ezra Bridger':
             text: """When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."""
