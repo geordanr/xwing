@@ -741,7 +741,7 @@ class exportObj.SquadBuilder
             if @list_modal.find('.toggle-obstacles').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="obstacles">
-                        <div>Circle the three obstacles you are using.</div>
+                        <div>Mark the three obstacles you are using.</div>
                         <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
                     </div>
                 """
