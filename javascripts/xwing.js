@@ -17795,7 +17795,7 @@ exportObj.SquadBuilder = (function() {
           _this.printable_container.find('.printable-body pre.print-notes').text(_this.notes.val());
         }
         if (_this.list_modal.find('.toggle-obstacles').prop('checked')) {
-          _this.printable_container.find('.printable-body').append($.trim("<div class=\"obstacles\">\n    <div>Circle the three obstacles you are using.</div>\n    <img class=\"obstacle-silhouettes\" src=\"images/xws-obstacles.png\" />\n</div>"));
+          _this.printable_container.find('.printable-body').append($.trim("<div class=\"obstacles\">\n    <div>Mark the three obstacles you are using.</div>\n    <img class=\"obstacle-silhouettes\" src=\"images/xws-obstacles.png\" />\n</div>"));
         }
         query = _this.permalink.attr('href').split(/\?/)[1];
         if ((query != null) && _this.list_modal.find('.toggle-juggler-qrcode').prop('checked')) {
