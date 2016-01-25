@@ -639,6 +639,13 @@ exportObj.basicCardData = ->
                 "Coordinate"
                 "Target Lock"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         "VCX-100":
             name: "VCX-100"
             factions: ["Rebel Alliance"]

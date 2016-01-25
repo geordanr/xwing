@@ -2530,6 +2530,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Gozanti-class Cruiser'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: '"Scourge"'
             type: 'pilot'
             count: 1
