@@ -3127,7 +3127,7 @@ exportObj.basicCardData = function() {
         ship: "JumpMaster 5000",
         skill: 4,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 27
       }, {
         name: "Contrac???",
         id: 174,
@@ -6274,7 +6274,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.',
@@ -7687,7 +7687,7 @@ exportObj.cardLoaders.English = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
@@ -9304,7 +9304,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.',
@@ -10926,7 +10926,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
@@ -12447,7 +12447,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
@@ -13776,7 +13776,7 @@ exportObj.cardLoaders['Русский'] = function() {
       text: "When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
     },
     '"Zeta Leader"': {
       text: 'When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'
