@@ -3210,7 +3210,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 27
         }
         {
             name: "Contrac???"
