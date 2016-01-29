@@ -601,7 +601,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Chaser"':
             text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
         'Ezra Bridger':
-            text: """When defending, if you are stressed, you may change 2 of your %FOCUS% results to %EVADE% results."""
+            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
         '"Zeta Leader"':
             text: '''When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'''
             ship: "TIE/EO-Jäger"
