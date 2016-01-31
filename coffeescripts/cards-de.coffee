@@ -67,6 +67,9 @@ exportObj.translations.Deutsch =
         "K-Wing Expansion Pack": "K-Wing Erweiterung"
         "TIE Punisher Expansion Pack": "TIE-Vergelter Erweiterung"
         "The Force Awakens Core Set": "Das Erwachen der Macht Grundspiel"
+        "Imperial Assault Carrier Expansion Pack": "Imperialer Angriffsträger Erweiterung"
+        "T-70 X-Wing Expansion Pack": "T-70-X-Flügler Erweiterung"
+        "TIE/fo Fighter Expansion Pack": "TIE/EO-Jäger Erweiterung"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -560,7 +563,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Soabld du eine Schub-Aktion ausführst, darfst du das Manöver (%TURNLEFT% 1) oder (%TURNRIGHT% 1) verwenden."""
         '"Red Ace"':
             ship: "T-70-X-Flügler"
-            text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
+            name: '"Ass Rot"'
+            text: '''Das erste Mal wenn du in jeder Runde ein Schild von deinem Schiff entfernst, weise deinem Schiff 1 Ausweichmarker zu.'''
         "Blue Squadron Novice":
             ship: "T-70-X-Flügler"
             name: "Anfängerpilot der Blauen Staffel"
@@ -591,23 +595,26 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Epsilon-Staffel"
         '"Omega Leader"':
             ship: "TIE/EO-Jäger"
-            text: '''Enemy ships that you have locked cannot modify any dice when attacking you or defending against your attacks.'''
+            name: '"Omega Eins"'
+            text: '''Feindliche Schiffe, die du in der Zielerfassung hast, können keine Würfel modifizieren, sobald sie dich angreifen oder sich gegen dich verteidigen.'''
         'Hera Syndulla':
             text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
         '"Youngster"':
-            text: """Friendly TIE fighters at Range 1-3 may perform the action on your equipped %ELITE% Upgrade card."""
+            text: """Freundliche TIE-Jäger in Reichweite 1-3 dürfen die Aktion einer von dir ausgerüsteten %ELITE%-Aufwertung durchführen."""
         '"Wampa"':
-            text: """When attacking, you may cancel all die results.  If you cancel a %CRIT% result, deal 1 facedown Damage card to the defender."""
+            text: """Sobald du angreifst, darfst du alle Würfelergebnisse negieren. Negierst du ein %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."""
         '"Chaser"':
-            text: """When another friendly ship at Range 1 spends a focus token, assign a focus token to your ship."""
+            text: """Sobald ein anderes freundliches Schiff in Reichweite 1 einen Fokusmarker ausgibt, wird deinem Schiff ein Fokusmarker zugeteilt."""
         'Ezra Bridger':
             text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
         '"Zeta Leader"':
-            text: '''When attacking, if you are not stressed, you may receive 1 stress token to roll 1 additional die.'''
             ship: "TIE/EO-Jäger"
+            name: '"Zeta Eins"'
+            text: '''Sobald du angreifst und falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten, um 1 zusätzlichen Würfel zu werfen.'''
         '"Epsilon Ace"':
-            text: '''While you do not have any Damage cards, treat your pilot skill value as "12."'''
             ship: "TIE/EO-Jäger"
+            name: '"Ass Epsilon"'
+            text: '''Solange du keine Schadenskarten hast, behandle deinen Pilotenwert als "12".'''
         "Kanan Jarrus":
             text: """When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."""
         '"Chopper"':
@@ -1059,21 +1066,29 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Aufgedreht"
             text: """Sobald du angreifst oder verteidigst, und wenn du gestresst bist, darfst du 1 oder mehrere %FOCUS% neu würfeln."""
         'Cool Hand':
-            text: '''When you receive a stress token, you may discard this card to assign 1 focus or evade token to your ship.'''
+            name: "Sichere Hand"
+            text: '''Sobald du einen Stressmarker erhältst, darfst du diese Karte ablegen, um deinem Schiff 1 Fokus- oder Ausweichmarker zuzuweisen.'''
         'Juke':
-            text: '''%DE_SMALLSHIPONLY%%LINEBREAK%When attacking, if you have an evade token, you may change 1 of the defender's %EVADE% results into a %FOCUS% result.'''
+            name: "Finte"
+            text: '''%DE_SMALLSHIPONLY%%LINEBREAK%Sobald du angreifst und falls du einen Ausweichmarker hast, darfst du 1 %EVADE% des Verteidigers in ein %FOCUS% ändern.'''
         'Comm Relay':
-            text: '''You cannot have more than 1 evade token.%LINEBREAK%During the End phase, do not remove an unused evade token from your ship.'''
+            name: "Kommunikations-Relais"
+            text: '''Du kannst nicht mehr als 1 Ausweichmarker haben.%LINEBREAK%Während der Endphase wird ein nicht verwendeter Ausweichmarker nicht entfernt.'''
         'Dual Laser Turret':
-            text: '''%GOZANTIONLY%%LINEBREAK%<strong>Attack (energy):</strong> Spend 1 energy from this card to perform this attack against 1 ship (even a ship outside your firing arc).'''
+            name: "Doppellasergeschütz"
+            text: '''%GOZANTIONLY%%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 1 Energie von dieser Karte aus, um diesen Angriff gegen 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'''
         'Broadcast Array':
-            text: '''%GOZANTIONLY%%LINEBREAK%Your action bar gains the %JAM% action icon.'''
+            name: "Sendephalanx"
+            text: '''%GOZANTIONLY%%LINEBREAK%Deine Aktionsleiste erhält das %JAM%-Aktionssymbol.'''
         'Rear Admiral Chiraneau':
-            text: '''%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Execute a white (%STRAIGHT% 1) maneuver.'''
+            name: "Konteradmiral Chiraneau"
+            text: '''%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Führe ein weißes (%STRAIGHT% 1)-Manöver aus.'''
         'Ordnance Experts':
-            text: '''Once per round, when a friendly ship at Range 1-3 performs an attack with a %TORPEDO% or %MISSILE% secondary weapon, it may change 1 of its blank results to a %HIT% result.'''
+            name: "Flugkörperexperten"
+            text: '''Sobald ein freundliches Schiff in Reichweite 1-3 einen Angriff mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe durchführt, darf es ein Mal pro Runde 1 seiner Leerseiten in ein %HIT% ändern.'''
         'Docking Clamps':
-            text: '''%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'''
+            name: "Andockklammern"
+            text: '''%GOZANTIONLY% %LIMITED%%LINEBREAK%An diesem Schiff können bis zu 4 TIE-Jäger, TIE-Abfangjäger, TIE-Bomber oder TIE-Turbojäger andocken. Alle angedockten Schiffe müssen denselben Schiffstyp haben.'''
         '"Zeb" Orrelios':
             text: """%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."""
         'Kanan Jarrus':
@@ -1083,7 +1098,8 @@ exportObj.cardLoaders.Deutsch = () ->
         'Dorsal Turret':
             text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."""
         'Targeting Astromech':
-            text: '''After you execute a red maneuver, you may acquire a target lock.'''
+            name: "Zielender Astromech"
+            text: '''Nachdem du eine rotes Manöver ausgeführt hast, darfst du ein Schiff in die Zielerfassung nehmen.'''
         'Hera Syndulla':
             text: """%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."""
         'Ezra Bridger':
@@ -1093,9 +1109,11 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Chopper"':
             text: """%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."""
         'Construction Droid':
-            text: '''%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'''
+            name: "Baudroide"
+            text: '''%HUGESHIPONLY% %LIMITED%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, darfst du 1 Energie ausgeben, um 1 verdeckte Schadenskarte abzulegen.'''
         'Cluster Bombs':
-            text: '''After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'''
+            name: "Clusterbomben"
+            text: '''Nachdem du dich verteidigt hast, darfst du diese Karte ablegen. Wenn du dies tust, wirft jedes andere Schiff in Reichweite 1 der verteidigenden Sektion 2 Angriffswürfel und nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%).'''
         "Adaptability (+1)":
             text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."""
         "Adaptability (-1)":
@@ -1168,11 +1186,14 @@ exportObj.cardLoaders.Deutsch = () ->
         'Integrated Astromech':
             text: '''<span class="card-restriction">Nur für X-Wing.</span>%LINEBREAK%When you are dealt a Damage card, you may discard 1 of your %ASTROMECH% Upgrade cards to discard that Damage card.'''
         'Optimized Generators':
-            text: '''%HUGESHIPONLY%%LINEBREAK%Once per round, when you assign energy to an equipped Upgrade card, gain 2 energy.'''
+            name: "Optimierte Generatoren"
+            text: '''%HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde erhältst du 2 Energie, sobald du Energie auf einer ausgerüsteten Aufwertung zuordnest.'''
         'Automated Protocols':
-            text: '''%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'''
+            name: "Vollautomatische Protokolle"
+            text: '''%HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du eine Aktion durchgeführt hast (außer Aufladen und Verstärken), 1 Energie ausgeben, um Aufladen oder Verstärken als freie Aktion durchzuführen.'''
         'Ordnance Tubes':
-            text: '''%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'''
+            name: "Abschussrohre"
+            text: '''%HUGESHIPONLY%%LINEBREAK%Du darfst jedes deiner %HARDPOINT%-Aufwertungssymbole wie ein %TORPEDO%- oder %MISSILE%- Symbol behandeln.%LINEBREAK%Sobald du angewiesen wirst eine %TORPEDO%- oder %MISSILE%-Aufwertung abzulegen, lege sie nicht ab.'''
         'Long-Range Scanners':
             text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
         "Guidance Chips":
@@ -1278,10 +1299,12 @@ exportObj.cardLoaders.Deutsch = () ->
         'TIE Shuttle':
             text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
         'Requiem':
-            text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
+            text: '''%GOZANTIONLY%%LINEBREAK%Sobald du ein Schiff startest, wird es bis zum Ende der Runde behandelt, als hätte es einen Pilotenwert von 8.'''
         'Vector':
-            text: '''%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'''
+            name: "Vektor"
+            text: '''%GOZANTIONLY%%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du bis zu 4 angedockte Schiffe starten (anstatt 2).'''
         'Suppressor':
-            text: '''%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'''
+            name: "Unterdrücker"
+            text: '''%GOZANTIONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du ein feindliches Schiff in die Zielerfassung genommen hast, 1 Fokus-, Ausweich- oder blaue Zielerfassungsmarker von dem Schiff entfernen.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
