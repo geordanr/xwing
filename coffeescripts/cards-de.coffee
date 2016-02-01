@@ -204,7 +204,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pilot der Gold-Staffel"
         "Academy Pilot":
             ship: "TIE-Jäger"
-           name: "Pilot der Akademie"
+            name: "Pilot der Akademie"
         "Obsidian Squadron Pilot":
             ship: "TIE-Jäger"
             name: "Pilot der Obsidian-Staffel"
@@ -574,7 +574,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Nachdem du ein Manöver ausgeführt hast, darfst du 2 angedockte Schiffe absetzen."""
         '"Scourge"':
             ship: "TIE-Jäger"
-            text: """When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."""
+            name: "Geissel"
+            text: """Sobald du einen Verteidiger angreifst, der 1 oder mehr Schadenskarten hat, wirf 1 zusätzlichen Angriffswürfel."""
         "The Inquisitor":
             text: """When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."""
         "Zuckuss":
