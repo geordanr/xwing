@@ -41,7 +41,7 @@ exportObj.translations.Deutsch =
         "Y-Wing Expansion Pack": "Y-Wing Erweiterung"
         "Millennium Falcon Expansion Pack": "Millenium Falke Erweiterung"
         "HWK-290 Expansion Pack": "HWK-290 Erweiterung"
-        "TIE Fighter Expansion Pack": "TIE-Fighter Erweiterung"
+        "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung"
         "TIE Interceptor Expansion Pack": "TIE-Abfangjäger Erweiterung"
         "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung"
         "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
@@ -142,8 +142,12 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.ships = basic_cards.ships
 
+    # Move TIE Fighter to TIE-Jäger
+    exportObj.renameShip 'TIE Fighter', 'TIE-Jäger'
     # Move TIE Interceptor to TIE-Abfangjäger
     exportObj.renameShip 'TIE Interceptor', 'TIE-Abfangjäger'
+    # Move TIE Bomber to TIE-Bomber
+    exportObj.renameShip 'TIE Bomber', 'TIE-Bomber'
     # Move Z-95 Headhunter to Z-95-Kopfjäger
     exportObj.renameShip 'Z-95 Headhunter', 'Z-95-Kopfjäger'
     # Move TIE Defender to TIE-Jagdbomber
@@ -162,6 +166,8 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'Raider-class Corvette (Fore)', 'Korv. der Sturm-Klasse (Bug)'
     # Move Raider-class Corvette (Aft) to Korv. der Sturm-Klasse (Heck)
     exportObj.renameShip 'Raider-class Corvette (Aft)', 'Korv. der Sturm-Klasse (Heck)'
+    # Move TIE Phantom to TIE-Phantom
+    exportObj.renameShip 'TIE Phantom', 'TIE-Phantom'
     # Move Kihraxz Fighter to Kihraxz-Jäger
     exportObj.renameShip 'Kihraxz Fighter', 'Kihraxz-Jäger'
     # Move TIE Punisher to TIE-Vergelter
@@ -172,6 +178,8 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'T-70 X-Wing', 'T-70-X-Flügler'
     # Move TIE/fo Fighter to TIE/EO-Jäger
     exportObj.renameShip 'TIE/fo Fighter', 'TIE/EO-Jäger'
+    # Move Gozanti-class Cruiser to Kreuzer der Gozanti-Klasse
+    exportObj.renameShip 'Gozanti-class Cruiser', 'Kreuzer der Gozanti-Klasse'
 
     pilot_translations =
         "Wedge Antilles":
@@ -195,24 +203,33 @@ exportObj.cardLoaders.Deutsch = () ->
         "Gold Squadron Pilot":
             name: "Pilot der Gold-Staffel"
         "Academy Pilot":
-            name: "Pilot der Akademie"
+            ship: "TIE-Jäger"
+           name: "Pilot der Akademie"
         "Obsidian Squadron Pilot":
+            ship: "TIE-Jäger"
             name: "Pilot der Obsidian-Staffel"
         "Black Squadron Pilot":
+            ship: "TIE-Jäger"
             name: "Pilot der Schwarz-Staffel"
         '"Winged Gundark"':
+            ship: "TIE-Jäger"
             name: '"Geflügelter Gundark"'
             text: """Wenn du ein Ziel in Reichweite 1 angreifst, darfst du eines deiner %HIT% in ein %CRIT% ändern."""
         '"Night Beast"':
             name: '"Nachtbestie"'
+            ship: "TIE-Jäger"
             text: """Nachdem du ein grünes Manöver ausgeführt hast, darfst du als freie Aktion eine Fokussierung durchführen."""
         '"Backstabber"':
+            ship: "TIE-Jäger"
             text: """Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhältst du 1 zusätzlichen Angriffswürfel."""
         '"Dark Curse"':
+            ship: "TIE-Jäger"
             text: """Wenn du verteidigst, können angreifende Schiffe keine Fokusmarker ausgeben oder Angriffswürfel neu würfeln."""
         '"Mauler Mithel"':
+            ship: "TIE-Jäger"
             text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du ein Ziel in Reichweite 1 angreifst."""
         '"Howlrunner"':
+            ship: "TIE-Jäger"
             name: '"Kreischläufer"'
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
@@ -282,12 +299,16 @@ exportObj.cardLoaders.Deutsch = () ->
         "Jan Ors":
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1-3 angreift und du keine Stressmarker hast, darfst du 1 Stressmarker nehmen, damit dieses Schiff 1 zusätzlichen Angriffswürfel erhält."""
         "Scimitar Squadron Pilot":
+            ship: "TIE-Bomber"
             name: "Pilot der Scimitar-Staffel"
         "Gamma Squadron Pilot":
+            ship: "TIE-Bomber"
             name: "Pilot der Gamma-Staffel"
         "Captain Jonus":
+            ship: "TIE-Bomber"
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."""
         "Major Rhymer":
+            ship: "TIE-Bomber"
             text: """Beim Angreifen mit einer Sekundärwaffe darfst du die Reichweite der Waffe um 1 erhöhen oder verringern, bis zu einer Reichweite von 1-3."""
         "Captain Kagi":
             ship: "Raumfähre der Lambda-Klasse"
@@ -354,13 +375,17 @@ exportObj.cardLoaders.Deutsch = () ->
         "Corran Horn":
             text: """Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."""
         "Sigma Squadron Pilot":
+            ship: "TIE-Phantom"
             name: "Pilot der Sigma-Staffel"
         "Shadow Squadron Pilot":
+            ship: "TIE-Phantom"
             name: "Pilot der Schatten-Staffel"
         '"Echo"':
+            ship: "TIE-Phantom"
             name: '"Echo"'
             text: """Wenn du dich enttarnst, musst du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."""
         '"Whisper"':
+            ship: "TIE-Phantom"
             name: '"Geflüster"'
             text: """Nachdem du mit einem Angriff getroffen hast, darfst du deinem Schiff 1 Fokusmarker geben."""
         "CR90 Corvette (Fore)":
@@ -544,8 +569,11 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "YV-666"
             name: "Trandoshanischer Sklavenjäger"
         'Gozanti-class Cruiser':
-            text: """After you execute a maneuver, you may deploy up to 2 attached ships."""
+            ship: "Kreuzer der Gozanti-Klasse"
+            name: "Kreuzer der Gozanti-Klasse"
+            text: """Nachdem du ein Manöver ausgeführt hast, darfst du 2 angedockte Schiffe absetzen."""
         '"Scourge"':
+            ship: "TIE-Jäger"
             text: """When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."""
         "The Inquisitor":
             text: """When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."""
@@ -600,10 +628,13 @@ exportObj.cardLoaders.Deutsch = () ->
         'Hera Syndulla':
             text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
         '"Youngster"':
+            ship: "TIE-Jäger"
             text: """Freundliche TIE-Jäger in Reichweite 1-3 dürfen die Aktion einer von dir ausgerüsteten %ELITE%-Aufwertung durchführen."""
         '"Wampa"':
+            ship: "TIE-Jäger"
             text: """Sobald du angreifst, darfst du alle Würfelergebnisse negieren. Negierst du ein %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."""
         '"Chaser"':
+            ship: "TIE-Jäger"
             text: """Sobald ein anderes freundliches Schiff in Reichweite 1 einen Fokusmarker ausgibt, wird deinem Schiff ein Fokusmarker zugeteilt."""
         'Ezra Bridger':
             text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
@@ -626,6 +657,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Zeb" Orrelios':
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Tomax Bren':
+            ship: "TIE-Bomber"
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         'Ello Asty':
             text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
