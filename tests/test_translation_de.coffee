@@ -126,7 +126,7 @@ casper.test.begin "German translations: Imperial", (test) ->
             ]
         }
         {
-            ship: 'TIE Fighter'
+            ship: 'TIE-Jäger'
             pilot: "Pilot der Akademie"
             upgrades: [
                 null
