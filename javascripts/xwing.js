@@ -5569,7 +5569,7 @@ exportObj.translations.Deutsch = {
     "Y-Wing Expansion Pack": "Y-Wing Erweiterung",
     "Millennium Falcon Expansion Pack": "Millenium Falke Erweiterung",
     "HWK-290 Expansion Pack": "HWK-290 Erweiterung",
-    "TIE Fighter Expansion Pack": "TIE-Fighter Erweiterung",
+    "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung",
     "TIE Interceptor Expansion Pack": "TIE-Abfangjäger Erweiterung",
     "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung",
     "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung",
@@ -5672,7 +5672,9 @@ exportObj.cardLoaders.Deutsch = function() {
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
   exportObj.ships = basic_cards.ships;
+  exportObj.renameShip('TIE Fighter', 'TIE-Jäger');
   exportObj.renameShip('TIE Interceptor', 'TIE-Abfangjäger');
+  exportObj.renameShip('TIE Bomber', 'TIE-Bomber');
   exportObj.renameShip('Z-95 Headhunter', 'Z-95-Kopfjäger');
   exportObj.renameShip('TIE Defender', 'TIE-Jagdbomber');
   exportObj.renameShip('Lambda-Class Shuttle', 'Raumfähre der Lambda-Klasse');
@@ -5682,11 +5684,13 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('M3-A Interceptor', 'M3-A Abfangjäger');
   exportObj.renameShip('Raider-class Corvette (Fore)', 'Korv. der Sturm-Klasse (Bug)');
   exportObj.renameShip('Raider-class Corvette (Aft)', 'Korv. der Sturm-Klasse (Heck)');
+  exportObj.renameShip('TIE Phantom', 'TIE-Phantom');
   exportObj.renameShip('Kihraxz Fighter', 'Kihraxz-Jäger');
   exportObj.renameShip('TIE Punisher', 'TIE-Vergelter');
   exportObj.renameShip('StarViper', 'SternenViper');
   exportObj.renameShip('T-70 X-Wing', 'T-70-X-Flügler');
   exportObj.renameShip('TIE/fo Fighter', 'TIE/EO-Jäger');
+  exportObj.renameShip('Gozanti-class Cruiser', 'Kreuzer der Gozanti-Klasse');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."
@@ -5719,32 +5723,41 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Pilot der Gold-Staffel"
     },
     "Academy Pilot": {
+      ship: "TIE-Jäger",
       name: "Pilot der Akademie"
     },
     "Obsidian Squadron Pilot": {
+      ship: "TIE-Jäger",
       name: "Pilot der Obsidian-Staffel"
     },
     "Black Squadron Pilot": {
+      ship: "TIE-Jäger",
       name: "Pilot der Schwarz-Staffel"
     },
     '"Winged Gundark"': {
+      ship: "TIE-Jäger",
       name: '"Geflügelter Gundark"',
       text: "Wenn du ein Ziel in Reichweite 1 angreifst, darfst du eines deiner %HIT% in ein %CRIT% ändern."
     },
     '"Night Beast"': {
       name: '"Nachtbestie"',
+      ship: "TIE-Jäger",
       text: "Nachdem du ein grünes Manöver ausgeführt hast, darfst du als freie Aktion eine Fokussierung durchführen."
     },
     '"Backstabber"': {
+      ship: "TIE-Jäger",
       text: "Wenn du bei deinem Angriff nicht im Feuerwinkel des Verteidigers bist, erhältst du 1 zusätzlichen Angriffswürfel."
     },
     '"Dark Curse"': {
+      ship: "TIE-Jäger",
       text: "Wenn du verteidigst, können angreifende Schiffe keine Fokusmarker ausgeben oder Angriffswürfel neu würfeln."
     },
     '"Mauler Mithel"': {
+      ship: "TIE-Jäger",
       text: "Wirf 1 zusätzlichen Angriffswürfel, wenn du ein Ziel in Reichweite 1 angreifst."
     },
     '"Howlrunner"': {
+      ship: "TIE-Jäger",
       name: '"Kreischläufer"',
       text: "Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."
     },
@@ -5845,15 +5858,19 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Wenn ein anderes freundliches Schiff in Reichweite 1-3 angreift und du keine Stressmarker hast, darfst du 1 Stressmarker nehmen, damit dieses Schiff 1 zusätzlichen Angriffswürfel erhält."
     },
     "Scimitar Squadron Pilot": {
+      ship: "TIE-Bomber",
       name: "Pilot der Scimitar-Staffel"
     },
     "Gamma Squadron Pilot": {
+      ship: "TIE-Bomber",
       name: "Pilot der Gamma-Staffel"
     },
     "Captain Jonus": {
+      ship: "TIE-Bomber",
       text: "Wenn ein anderes freundliches Schiff in Reichweite 1 mit einer Sekundärwaffe angreift, darf es bis zu 2 Angriffswürfel neu würfeln."
     },
     "Major Rhymer": {
+      ship: "TIE-Bomber",
       text: "Beim Angreifen mit einer Sekundärwaffe darfst du die Reichweite der Waffe um 1 erhöhen oder verringern, bis zu einer Reichweite von 1-3."
     },
     "Captain Kagi": {
@@ -5943,16 +5960,20 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."
     },
     "Sigma Squadron Pilot": {
+      ship: "TIE-Phantom",
       name: "Pilot der Sigma-Staffel"
     },
     "Shadow Squadron Pilot": {
+      ship: "TIE-Phantom",
       name: "Pilot der Schatten-Staffel"
     },
     '"Echo"': {
+      ship: "TIE-Phantom",
       name: '"Echo"',
       text: "Wenn du dich enttarnst, musst du statt der (%STRAIGHT% 2)-Manöverschablone die (%BANKRIGHT% 2)- oder (%BANKLEFT% 2)-Schablone verwenden."
     },
     '"Whisper"': {
+      ship: "TIE-Phantom",
       name: '"Geflüster"',
       text: "Nachdem du mit einem Angriff getroffen hast, darfst du deinem Schiff 1 Fokusmarker geben."
     },
@@ -6198,10 +6219,14 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Trandoshanischer Sklavenjäger"
     },
     'Gozanti-class Cruiser': {
-      text: "After you execute a maneuver, you may deploy up to 2 attached ships."
+      ship: "Kreuzer der Gozanti-Klasse",
+      name: "Kreuzer der Gozanti-Klasse",
+      text: "Nachdem du ein Manöver ausgeführt hast, darfst du 2 angedockte Schiffe absetzen."
     },
     '"Scourge"': {
-      text: "When attacking a defender that has 1 or more Damage cards, roll 1 additional attack die."
+      ship: "TIE-Jäger",
+      name: "Geissel",
+      text: "Sobald du einen Verteidiger angreifst, der 1 oder mehr Schadenskarten hat, wirf 1 zusätzlichen Angriffswürfel."
     },
     "The Inquisitor": {
       text: "When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."
@@ -6270,12 +6295,15 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
     },
     '"Youngster"': {
+      ship: "TIE-Jäger",
       text: "Freundliche TIE-Jäger in Reichweite 1-3 dürfen die Aktion einer von dir ausgerüsteten %ELITE%-Aufwertung durchführen."
     },
     '"Wampa"': {
+      ship: "TIE-Jäger",
       text: "Sobald du angreifst, darfst du alle Würfelergebnisse negieren. Negierst du ein %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."
     },
     '"Chaser"': {
+      ship: "TIE-Jäger",
       text: "Sobald ein anderes freundliches Schiff in Reichweite 1 einen Fokusmarker ausgibt, wird deinem Schiff ein Fokusmarker zugeteilt."
     },
     'Ezra Bridger': {
@@ -6307,6 +6335,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     },
     'Tomax Bren': {
+      ship: "TIE-Bomber",
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     },
     'Ello Asty': {
@@ -17081,7 +17110,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16434
+                    lineno: 16467
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17640,7 +17669,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 16996
+              lineno: 17029
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18218,7 +18247,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17505
+          lineno: 17538
         }));
         __iced_deferrals._fulfill();
       });
@@ -18230,7 +18259,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17506
+            lineno: 17539
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19686,7 +19715,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18340
+                      lineno: 18373
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19755,7 +19784,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18364
+                lineno: 18397
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19807,14 +19836,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18386
+            lineno: 18419
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18388
+            lineno: 18421
           }));
         }
         _ref1 = _this.modifications;
@@ -19822,7 +19851,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18390
+              lineno: 18423
             }));
           }
         }
@@ -20610,7 +20639,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 18948
+                lineno: 18981
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20727,7 +20756,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19005
+                  lineno: 19038
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20749,7 +20778,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19009
+                    lineno: 19042
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20831,7 +20860,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19047
+            lineno: 19080
           }));
         }
         __iced_deferrals._fulfill();
