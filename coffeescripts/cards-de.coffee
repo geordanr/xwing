@@ -1108,11 +1108,13 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Kommunikations-Relais"
             text: '''Du kannst nicht mehr als 1 Ausweichmarker haben.%LINEBREAK%Während der Endphase wird ein nicht verwendeter Ausweichmarker nicht entfernt.'''
         'Dual Laser Turret':
+            ship: "Kreuzer der Gozanti-Klasse"
             name: "Doppellasergeschütz"
-            text: '''%GOZANTIONLY%%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 1 Energie von dieser Karte aus, um diesen Angriff gegen 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'''
+            text: '''%DE_GOZANTIONLY%%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 1 Energie von dieser Karte aus, um diesen Angriff gegen 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'''
         'Broadcast Array':
+            ship: "Kreuzer der Gozanti-Klasse"
             name: "Sendephalanx"
-            text: '''%GOZANTIONLY%%LINEBREAK%Deine Aktionsleiste erhält das %JAM%-Aktionssymbol.'''
+            text: '''%DE_GOZANTIONLY%%LINEBREAK%Deine Aktionsleiste erhält das %JAM%-Aktionssymbol.'''
         'Rear Admiral Chiraneau':
             name: "Konteradmiral Chiraneau"
             text: '''%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Führe ein weißes (%STRAIGHT% 1)-Manöver aus.'''
@@ -1120,8 +1122,9 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Flugkörperexperten"
             text: '''Sobald ein freundliches Schiff in Reichweite 1-3 einen Angriff mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe durchführt, darf es ein Mal pro Runde 1 seiner Leerseiten in ein %HIT% ändern.'''
         'Docking Clamps':
+            ship: "Kreuzer der Gozanti-Klasse"
             name: "Andockklammern"
-            text: '''%GOZANTIONLY% %LIMITED%%LINEBREAK%An diesem Schiff können bis zu 4 TIE-Jäger, TIE-Abfangjäger, TIE-Bomber oder TIE-Turbojäger andocken. Alle angedockten Schiffe müssen denselben Schiffstyp haben.'''
+            text: '''%DE_GOZANTIONLY% %DE_LIMITED%%LINEBREAK%An diesem Schiff können bis zu 4 TIE-Jäger, TIE-Abfangjäger, TIE-Bomber oder TIE-Turbojäger andocken. Alle angedockten Schiffe müssen denselben Schiffstyp haben.'''
         '"Zeb" Orrelios':
             text: """%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."""
         'Kanan Jarrus':
@@ -1143,7 +1146,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."""
         'Construction Droid':
             name: "Baudroide"
-            text: '''%HUGESHIPONLY% %LIMITED%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, darfst du 1 Energie ausgeben, um 1 verdeckte Schadenskarte abzulegen.'''
+            text: '''%HUGESHIPONLY% %DE_LIMITED%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, darfst du 1 Energie ausgeben, um 1 verdeckte Schadenskarte abzulegen.'''
         'Cluster Bombs':
             name: "Clusterbomben"
             text: '''Nachdem du dich verteidigt hast, darfst du diese Karte ablegen. Wenn du dies tust, wirft jedes andere Schiff in Reichweite 1 der verteidigenden Sektion 2 Angriffswürfel und nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%).'''
@@ -1184,6 +1187,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Stygium-Teilchen-Beschleuniger"
             text: """immer wenn du dich enttarnst oder die Aktion Tarnen durchführst, darfst du als freie Aktion ausweichen."""
         "Advanced Cloaking Device":
+            ship: "TIE-Phantom"
             name: "Verbesserte Tarnvorrichtung"
             text: """<span class="card-restriction">Nur für TIE-Phantom.</span>%LINEBREAK%Nachdem du angegriffen hast, darfst du dich als freie Aktion tarnen."""
         "Combat Retrofit":
@@ -1310,7 +1314,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "TIE/v1":
             text: """<span class="card-restriction">Nur für TIE Advanced Prototype.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."""
         "Mist Hunter":
-            text: """<span class="card-restriction">Nur für G-1A starfighter.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 "Tractor Beam" Upgrade card (paying its squad point cost as normal)."""
+            text: """<span class="card-restriction">Nur für G-1A Starfighter.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 "Tractor Beam" Upgrade card (paying its squad point cost as normal)."""
         "Punishing One":
             text: """<span class="card-restriction">Nur für JumpMaster 5000.</span>%LINEBREAK%Increase your primary weapon value by 1."""
         "Assailer":
@@ -1326,18 +1330,24 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Ungestüm"
             text: """<span class="card-restriction">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen.."""
         'TIE/x7':
+            ship: "TIE-Jagdbomber"
             text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'''
         'TIE/D':
+            ship: "TIE-Jagdbomber"
             text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
         'TIE Shuttle':
+            ship: "TIE-Bomber"
             text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
         'Requiem':
-            text: '''%GOZANTIONLY%%LINEBREAK%Sobald du ein Schiff startest, wird es bis zum Ende der Runde behandelt, als hätte es einen Pilotenwert von 8.'''
+            ship: "Kreuzer der Gozanti-Klasse"
+            text: '''%DE_GOZANTIONLY%%LINEBREAK%Sobald du ein Schiff startest, wird es bis zum Ende der Runde behandelt, als hätte es einen Pilotenwert von 8.'''
         'Vector':
+            ship: "Kreuzer der Gozanti-Klasse"
             name: "Vektor"
-            text: '''%GOZANTIONLY%%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du bis zu 4 angedockte Schiffe starten (anstatt 2).'''
+            text: '''%DE_GOZANTIONLY%%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du bis zu 4 angedockte Schiffe starten (anstatt 2).'''
         'Suppressor':
+            ship: "Kreuzer der Gozanti-Klasse"
             name: "Unterdrücker"
-            text: '''%GOZANTIONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du ein feindliches Schiff in die Zielerfassung genommen hast, 1 Fokus-, Ausweich- oder blaue Zielerfassungsmarker von dem Schiff entfernen.'''
+            text: '''%DE_GOZANTIONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du ein feindliches Schiff in die Zielerfassung genommen hast, 1 Fokus-, Ausweich- oder blaue Zielerfassungsmarker von dem Schiff entfernen.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
