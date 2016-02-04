@@ -769,7 +769,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Verstärkte Protonen-Torpedos"
             text: """<strong>Angriff (Zielerfassung):</strong> Gib eine Zielerfassung aus und lege diese Karte ab um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst bis zu 3 deiner Leerseiten in %FOCUS% ändern."""
         "Autoblaster":
-            name: "Repertierblaster"
+            name: "Repetierblaster"
             text: """<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Deine %HIT% können von Verteidigungswürfeln nicht negiert werden.<br /><br />Der Verteidiger darf %CRIT% negieren, bevor alle %HIT% negiert wurden."""
         "Fire-Control System":
             name: "Feuerkontrollsystem"
