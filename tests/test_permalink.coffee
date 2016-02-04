@@ -220,3 +220,117 @@ casper.test.begin "Weird Empire standard permalink v3 missing trailing colon", (
 
     .run ->
         test.done()
+
+casper.test.begin "Sabine on B/Wing (bug #285)", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.addShip('#rebel-builder', 'B-Wing', 'Blue Squadron Pilot')
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Sabine Wren')
+    common.addUpgrade('#rebel-builder', 1, 7, 'Seismic Charges')
+
+    .then ->
+        @click '#rebel-builder .permalink'
+        @waitForUrl(/d=/)
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 27)
+
+    .run ->
+        test.done()
+
+casper.test.begin "Weird Rebel standard permalink v4", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70:-1:-1:U.18')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    .run ->
+        test.done()
+
+
+casper.test.begin "Weird Empire standard permalink v4", (test) ->
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v4!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1:')
+    .then ->
+        @waitUntilVisible '#empire-builder .total-points'
+    common.assertTotalPoints(test, '#empire-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    .run ->
+        test.done()
+
+casper.test.begin "Epic permalink v4", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!e!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70:-1:-1:U.18;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;72:-1,-1,-1:-1:-1:;33:21,47:-1:3:;33:21,47:-1:3:;33:21,47:-1:3:')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 300)
+    common.assertPointsRemaining(test, '#rebel-builder', 0)
+    common.assertGameTypeIs(test, '#rebel-builder', 'epic')
+
+    .run ->
+        test.done()
+
+casper.test.begin "Custom permalink v4", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!c=256!31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;31:-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;43:-1,-1,-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:;3:-1,-1:-1:-1:')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 256)
+    common.assertPointsRemaining(test, '#rebel-builder', 0)
+    common.assertGameTypeIs(test, '#rebel-builder', 'custom')
+
+    .run ->
+        test.done()
+
+casper.test.begin "B-Wing/E2 permalink v4", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!s!89:19,43,23,34,34:-1:11:U.38;88:18,43,-1,34,34:-1:-1:')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 100)
+    common.assertPointsRemaining(test, '#rebel-builder', 0)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+
+    .run ->
+        test.done()
+
+casper.test.begin "B-Wing/E2 permalink v4 minimal", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!s!44:-1,-1,-1,-1:-1:11:U.40')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 24)
+    common.assertPointsRemaining(test, '#rebel-builder', 76)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+
+    .run ->
+        test.done()
+
+casper.test.begin "Weird Rebel standard permalink v4 missing trailing colon", (test) ->
+    common.waitForStartup('#rebel-builder', 'app/index.html?f=Rebel%20Alliance&d=v4!s!29:10,72:7:2:U.27;44:-1,-1,-1,-1:-1:-1:;44:-1,-1,-1,-1:-1:-1:;6:-1,-1,-1,70:-1:-1:U.18')
+    .then ->
+        @waitUntilVisible '#rebel-builder .total-points'
+    common.assertTotalPoints(test, '#rebel-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    .run ->
+        test.done()
+
+
+casper.test.begin "Weird Empire standard permalink v4 missing trailing colon", (test) ->
+    common.waitForStartup('#empire-builder', 'app/index.html?f=Galactic%20Empire&d=v4!s!38:-1,-1,-1,-1,-1:1:-1:U.1;28:-1:5:1:M.5;10::-1:-1:;10::-1:-1')
+    .then ->
+        @waitUntilVisible '#empire-builder .total-points'
+    common.assertTotalPoints(test, '#empire-builder', 99)
+    common.assertGameTypeIs(test, '#rebel-builder', 'standard')
+    common.assertPointsRemaining(test, '#rebel-builder', 1)
+
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+    common.removeShip('#empire-builder', 1)
+
+    .run ->
+        test.done()
+

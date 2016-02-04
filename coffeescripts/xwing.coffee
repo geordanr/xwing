@@ -929,7 +929,7 @@ class exportObj.SquadBuilder
     serialize: ->
         #( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
-        serialization_version = 3
+        serialization_version = 4
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
@@ -952,7 +952,7 @@ class exportObj.SquadBuilder
             # versioned
             version = parseInt matches[1]
             switch version
-                when 3
+                when 3, 4
                     # parse out game type
                     [ game_type_abbrev, serialized_ships ] = matches[2].split('!')
                     switch game_type_abbrev
@@ -2245,6 +2245,8 @@ class Ship
         conferred_addons = @title?.conferredAddons ? []
         for modification in @modifications
             conferred_addons = conferred_addons.concat(modification?.conferredAddons ? [])
+        for upgrade in @upgrades
+            conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
         upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
 
         serialized_conferred_addons = []
@@ -2336,6 +2338,78 @@ class Ship
                             addon_id = parseInt addon_id
                             addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
                             conferred_addon = modification.conferredAddons[i]
+                            if conferred_addon instanceof addon_cls
+                                conferred_addon.setById addon_id
+                            else
+                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+
+            when 4
+                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+                [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
+                @setPilotById parseInt(pilot_id)
+
+                deferred_ids = []
+                for upgrade_id, i in upgrade_ids.split ','
+                    upgrade_id = parseInt upgrade_id
+                    continue if upgrade_id < 0 or isNaN(upgrade_id)
+                    if @upgrades[i].isOccupied()
+                        deferred_ids.push upgrade_id
+                    else
+                        @upgrades[i].setById upgrade_id
+
+                for deferred_id in deferred_ids
+                    for upgrade, i in @upgrades
+                        continue if upgrade.isOccupied() or upgrade.slot != exportObj.upgradesById[deferred_id].slot
+                        upgrade.setById deferred_id
+                        break
+
+
+                title_id = parseInt title_id
+                @title.setById title_id if title_id >= 0
+
+                modification_id = parseInt modification_id
+                @modifications[0].setById modification_id if modification_id >= 0
+
+                # We confer title addons before modification addons, to pick an arbitrary ordering.
+                if conferredaddon_pairs?
+                    conferredaddon_pairs = conferredaddon_pairs.split ','
+                else
+                    conferredaddon_pairs = []
+
+                if @title? and @title.conferredAddons.length > 0
+                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @title.conferredAddons.length
+                    for conferredaddon_pair, i in title_conferred_addon_pairs
+                        [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
+                        addon_id = parseInt addon_id
+                        addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                        conferred_addon = @title.conferredAddons[i]
+                        if conferred_addon instanceof addon_cls
+                            conferred_addon.setById addon_id
+                        else
+                            throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+
+                for modification in @modifications
+                    if modification?.data? and modification.conferredAddons.length > 0
+                        modification_conferred_addon_pairs = conferredaddon_pairs.splice 0, modification.conferredAddons.length
+                        for conferredaddon_pair, i in modification_conferred_addon_pairs
+                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
+                            addon_id = parseInt addon_id
+                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                            conferred_addon = modification.conferredAddons[i]
+                            if conferred_addon instanceof addon_cls
+                                conferred_addon.setById addon_id
+                            else
+                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+
+
+                for upgrade in @upgrades
+                    if upgrade?.data? and upgrade.conferredAddons.length > 0
+                        upgrade_conferred_addon_pairs = conferredaddon_pairs.splice 0, upgrade.conferredAddons.length
+                        for conferredaddon_pair, i in upgrade_conferred_addon_pairs
+                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
+                            addon_id = parseInt addon_id
+                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                            conferred_addon = upgrade.conferredAddons[i]
                             if conferred_addon instanceof addon_cls
                                 conferred_addon.setById addon_id
                             else
