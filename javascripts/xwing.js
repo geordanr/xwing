@@ -6485,7 +6485,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "<strong>Angriff (Zielerfassung):</strong> Gib eine Zielerfassung aus und lege diese Karte ab um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst bis zu 3 deiner Leerseiten in %FOCUS% ändern."
     },
     "Autoblaster": {
-      name: "Repertierblaster",
+      name: "Repetierblaster",
       text: "<strong>Angriff:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Deine %HIT% können von Verteidigungswürfeln nicht negiert werden.<br /><br />Der Verteidiger darf %CRIT% negieren, bevor alle %HIT% negiert wurden."
     },
     "Fire-Control System": {
@@ -18420,7 +18420,7 @@ exportObj.SquadBuilder = (function() {
         return _results;
       })();
     }
-    if (this.isEpic && slot === 'Hardpoint' && (_ref = 'Ordnance Tubes'.canonicalize(), __indexOf.call((function() {
+    if ((this.isEpic || this.isCustom) && slot === 'Hardpoint' && (_ref = 'Ordnance Tubes'.canonicalize(), __indexOf.call((function() {
       var _i, _len, _ref1, _results;
       _ref1 = ship.modifications;
       _results = [];
