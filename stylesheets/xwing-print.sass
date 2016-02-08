@@ -2,7 +2,7 @@ $fancy-header-height: 0.375in
 $header-circle-diameter: $fancy-header-height * 1.5
 $header-circle-border-width: 0.0625in
 
-$fancy-pilot-header-height: 0.375in
+$fancy-pilot-header-height: 0.3in
 $pilot-circle-diameter: $fancy-pilot-header-height * 1.5
 $pilot-circle-border-width: 0.0625in
 
@@ -29,6 +29,9 @@ body
       color: black
 
     .fancy-pilot-stats
+      .info-data
+        color: white
+
       .xwing-miniatures-font
         color: black
 
@@ -43,6 +46,8 @@ body
   .info-data
     vertical-align: middle
     -webkit-text-stroke: 0.5px black
+    font-size: $fancy-pilot-header-height * 0.75 !important
+    position: relative
 
   .fancy-header
     border: $fancy-header-height solid black
@@ -164,6 +169,10 @@ body
         
         .xwing-miniatures-font
           vertical-align: middle
+
+      .info-data, .xwing-miniatures-font
+        position: relative
+        bottom: $fancy-pilot-header-height * 0.16
 
     .fancy-pilot-text
       margin-left: $fancy-pilot-header-height * 2
