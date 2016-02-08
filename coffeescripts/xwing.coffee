@@ -231,6 +231,7 @@ class exportObj.SquadBuilder
                 <div class="visible-print">
                     <div class="fancy-header">
                         <div class="squad-name"></div>
+                        <div class="squad-faction"></div>
                         <div class="mask">
                             <div class="outer-circle">
                                 <div class="inner-circle">
@@ -728,6 +729,15 @@ class exportObj.SquadBuilder
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
+
+                    faction = switch @faction
+                        when 'Rebel Alliance'
+                            'rebel'
+                        when 'Galactic Empire'
+                            'empire'
+                        when 'Scum and Villainy'
+                            'scum'
+                    @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
 
             # Notes, if present
             if $.trim(@notes.val()) != ''
