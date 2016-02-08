@@ -747,7 +747,7 @@ class exportObj.SquadBuilder
                 """
 
             # Add List Juggler QR code
-            query = @permalink.attr('href').split(/\?/)[1]
+            query = @permalink.attr('href').split(/\?/)[1].replace(/&sn=.*/, '')
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="juggler-qrcode-container">
