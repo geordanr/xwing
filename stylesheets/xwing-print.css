@@ -14,6 +14,8 @@ body {
   overflow: hidden; }
   #printable .bw .info-data {
     color: black; }
+  #printable .bw .fancy-pilot-stats .info-data {
+    color: white; }
   #printable .bw .fancy-pilot-stats .xwing-miniatures-font {
     color: black; }
   #printable .bw i.xwing-miniatures-font-attack, #printable .bw i.xwing-miniatures-font-energy, #printable .bw i.xwing-miniatures-font-agility, #printable .bw i.xwing-miniatures-font-hull, #printable .bw i.xwing-miniatures-font-shield {
@@ -23,9 +25,11 @@ body {
     color: white; }
   #printable .info-data {
     vertical-align: middle;
-    -webkit-text-stroke: 0.5px black; }
+    -webkit-text-stroke: 0.5px black;
+    font-size: 0.225in !important;
+    position: relative; }
   #printable .fancy-header {
-    border: 0.5in solid black;
+    border: 0.375in solid black;
     color: white;
     border-left-color: transparent;
     border-top-color: transparent;
@@ -33,40 +37,48 @@ body {
     font-family: EurostileStandard, Impact, sans-serif; }
     #printable .fancy-header .squad-name {
       position: absolute;
-      font-size: 0.4in;
-      margin-top: 0.1in;
+      font-size: 0.3in;
+      margin-top: 0.075in;
       font-weight: 100; }
+    #printable .fancy-header .squad-faction {
+      position: absolute;
+      margin-top: 0.075in;
+      right: 0.984375in;
+      font-weight: 100; }
+      #printable .fancy-header .squad-faction .xwing-miniatures-font {
+        color: white;
+        font-size: 0.3in; }
     #printable .fancy-header .mask {
       position: absolute;
       right: 0;
-      width: 0.75in;
+      width: 0.5625in;
       background-color: white;
-      height: 0.75in;
+      height: 0.5625in;
       z-index: 999; }
     #printable .fancy-header .outer-circle {
-      width: 0.75in;
-      height: 0.75in;
-      border-radius: 0.375in;
-      margin-left: -0.375in;
+      width: 0.5625in;
+      height: 0.5625in;
+      border-radius: 0.28125in;
+      margin-left: -0.28125in;
       background-color: white; }
       #printable .fancy-header .outer-circle .inner-circle {
-        width: 0.6875in;
-        height: 0.6875in;
-        border-radius: 0.34375in;
+        width: 0.5in;
+        height: 0.5in;
+        border-radius: 0.25in;
         background-color: gray;
         position: relative;
         top: 0.03125in;
         left: 0.03125in;
-        line-height: 0.6875in;
-        font-size: 0.25in;
+        line-height: 0.5in;
+        font-size: 0.1875in;
         text-align: center; }
   #printable .fancy-under-header {
-    border: 0.25in solid gray;
+    border: 0.1875in solid gray;
     border-left-color: transparent;
     border-bottom-color: transparent;
     border-right-color: transparent;
     position: relative;
-    left: 0.5in; }
+    left: 0.375in; }
   #printable .tall {
     min-height: 2.5in; }
   #printable .fancy-ship {
@@ -75,7 +87,7 @@ body {
     page-break-inside: avoid;
     position: relative; }
     #printable .fancy-ship .fancy-pilot-header {
-      border: 0.375in solid lightgray;
+      border: 0.3in solid lightgray;
       color: black;
       border-left-color: transparent;
       border-bottom-color: transparent;
@@ -84,53 +96,56 @@ body {
       height: 0px; }
       #printable .fancy-ship .fancy-pilot-header .pilot-header-text {
         position: absolute;
-        font-size: 0.3in;
-        margin-top: -0.3in;
+        font-size: 0.24in;
+        margin-top: -0.24in;
         font-weight: 100; }
       #printable .fancy-ship .fancy-pilot-header .mask {
         position: relative;
         float: right;
         clear: both;
-        right: -0.5625in;
-        top: -0.375in;
-        width: 0.5625in;
+        right: -0.45in;
+        top: -0.3in;
+        width: 0.45in;
         background-color: white;
-        height: 0.75in;
+        height: 0.6in;
         z-index: 999; }
       #printable .fancy-ship .fancy-pilot-header .outer-circle {
-        width: 0.5625in;
-        height: 0.5625in;
-        border-radius: 0.28125in;
-        margin-left: -0.28125in;
+        width: 0.45in;
+        height: 0.45in;
+        border-radius: 0.225in;
+        margin-left: -0.225in;
         background-color: white; }
         #printable .fancy-ship .fancy-pilot-header .outer-circle .inner-circle {
-          width: 0.5in;
-          height: 0.5in;
-          border-radius: 0.25in;
+          width: 0.3875in;
+          height: 0.3875in;
+          border-radius: 0.19375in;
           background-color: gray;
           position: relative;
           top: 0.03125in;
           left: 0.03125in;
-          line-height: 0.53125in;
-          font-size: 0.1875in;
+          line-height: 0.41875in;
+          font-size: 0.15in;
           text-align: center;
           color: white; }
     #printable .fancy-ship .fancy-pilot-stats {
       position: relative;
-      left: 0.375in;
-      top: -0.375in;
-      border: 0.375in solid gray;
+      left: 0.3in;
+      top: -0.3in;
+      border: 0.3in solid gray;
       border-left-color: transparent;
       border-bottom-color: transparent;
       border-right-color: transparent;
-      margin-bottom: -0.75in; }
+      margin-bottom: -0.6in; }
       #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content {
         position: relative;
-        margin-top: -0.275in; }
+        margin-top: -0.2in; }
         #printable .fancy-ship .fancy-pilot-stats .pilot-stats-content .xwing-miniatures-font {
           vertical-align: middle; }
+      #printable .fancy-ship .fancy-pilot-stats .info-data, #printable .fancy-ship .fancy-pilot-stats .xwing-miniatures-font {
+        position: relative;
+        bottom: 0.048in; }
     #printable .fancy-ship .fancy-pilot-text {
-      margin-left: 0.75in;
+      margin-left: 0.6in;
       padding: 5px;
       color: black; }
     #printable .fancy-ship .fancy-upgrade-container {
@@ -149,31 +164,31 @@ body {
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
           display: inline-block;
           vertical-align: middle;
-          width: 0.421875in;
-          height: 0.421875in;
+          width: 0.3375in;
+          height: 0.3375in;
           z-index: 999;
           margin-right: 0.04in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle {
-          width: 0.421875in;
-          height: 0.421875in;
-          border-radius: 0.2109375in;
+          width: 0.3375in;
+          height: 0.3375in;
+          border-radius: 0.16875in;
           background-color: white; }
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .outer-circle .inner-circle {
-            width: 0.359375in;
-            height: 0.359375in;
-            border-radius: 0.1796875in;
+            width: 0.275in;
+            height: 0.275in;
+            border-radius: 0.1375in;
             background-color: gray;
             position: relative;
             top: 0.03125in;
             left: 0.03125in;
-            line-height: 0.421875in;
-            font-size: 0.1875in;
+            line-height: 0.3375in;
+            font-size: 0.15in;
             text-align: center;
             color: white; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
           display: inline-block;
           vertical-align: middle;
-          line-height: 0.421875in; }
+          line-height: 0.3375in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
           text-align: right;
           margin-right: 0.07in;
@@ -231,7 +246,21 @@ body {
     width: 6in;
     margin-left: auto;
     margin-right: auto;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  #printable .juggler-qrcode-container:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; }
+  #printable .juggler-qrcode-container > div {
+    display: inline-block;
+    vertical-align: middle; }
+  #printable .juggler-qrcode-text {
+    width: 4.25in; }
   #printable .juggler-qrcode {
     width: 144px;
     margin-left: auto;
