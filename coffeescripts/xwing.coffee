@@ -751,7 +751,7 @@ class exportObj.SquadBuilder
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="juggler-qrcode-container">
-                        <div>Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>
+                        <div class="juggler-qrcode-text">Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>
                         <div class="juggler-qrcode"></div>
                     </div>
                 """

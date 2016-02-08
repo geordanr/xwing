@@ -1,4 +1,4 @@
-$fancy-header-height: 0.5in
+$fancy-header-height: 0.375in
 $header-circle-diameter: $fancy-header-height * 1.5
 $header-circle-border-width: 0.0625in
 
@@ -297,6 +297,23 @@ body
     margin-left: auto
     margin-right: auto
     page-break-inside: avoid
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+  .juggler-qrcode-container:before
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+
+  .juggler-qrcode-container > div
+    display: inline-block
+    vertical-align: middle
+
+  .juggler-qrcode-text
+    width: 4.25in
 
   .juggler-qrcode
     width: 144px
