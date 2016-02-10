@@ -740,7 +740,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 2, 1, 1, 0, 0, 0 ]
+                [ 2, 2, 2, 1, 1, 0, 1, 3 ]
+                [ 0, 1, 1, 1, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
+            ]
         "T-70 X-Wing":
             name: "T-70 X-Wing"
             factions: ["Resistance"]
@@ -3193,7 +3199,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 30
         }
         {
             name: "Manaroo"
@@ -3213,7 +3219,7 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: "Contrac???"
+            name: "Contracted Scout"
             id: 174
             faction: "Scum and Villainy"
             ship: "JumpMaster 5000"
@@ -3226,7 +3232,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 25
         }
 
         # T-70
@@ -4842,6 +4848,50 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 1
             faction: "Scum and Villainy"
+        }
+        {
+            name: 'Rage'
+            id: 175
+            points: 1
+            slot: 'Elite'
+        }
+        {
+            name: "Attanni Mindlink"
+            id: 176
+            faction: "Scum and Villainy"
+            slot: "Elite"
+            points: 1
+        }
+        {
+            name: "Boba Fett"
+            id: 177
+            unique: true
+            slot: "Crew"
+            points: 1
+            faction: "Scum and Villainy"
+        }
+        {
+            name: "Dengar"
+            id: 178
+            unique: true
+            slot: "Crew"
+            points: 3
+            faction: "Scum and Villainy"
+        }
+        {
+            name: '"Gonk"'
+            id: 179
+            unique: true
+            slot: "Crew"
+            faction: "Scum and Villainy"
+            points: 2
+        }
+        {
+            name: "R5-P8"
+            id: 180
+            unique: true
+            slot: "Salvaged Astromech"
+            points: 3
         }
     ]
 
