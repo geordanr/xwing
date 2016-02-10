@@ -1553,7 +1553,7 @@ exportObj.basicCardData = function() {
         hull: 5,
         shields: 4,
         actions: ["Focus", "Target Lock", "Barrel Roll"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [2, 2, 2, 1, 1, 0, 0, 0], [2, 2, 2, 1, 1, 0, 1, 3], [0, 1, 1, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0]]
       },
       "T-70 X-Wing": {
         name: "T-70 X-Wing",
@@ -3118,7 +3118,7 @@ exportObj.basicCardData = function() {
         ship: "JumpMaster 5000",
         skill: 7,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 30
       }, {
         name: "Manaroo",
         id: 173,
@@ -3129,13 +3129,13 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
         points: 27
       }, {
-        name: "Contrac???",
+        name: "Contracted Scout",
         id: 174,
         faction: "Scum and Villainy",
         ship: "JumpMaster 5000",
         skill: 3,
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 25
       }, {
         name: "Poe Dameron",
         id: 175,
@@ -4541,6 +4541,44 @@ exportObj.basicCardData = function() {
         slot: "Crew",
         points: 1,
         faction: "Scum and Villainy"
+      }, {
+        name: 'Rage',
+        id: 175,
+        points: 1,
+        slot: 'Elite'
+      }, {
+        name: "Attanni Mindlink",
+        id: 176,
+        faction: "Scum and Villainy",
+        slot: "Elite",
+        points: 1
+      }, {
+        name: "Boba Fett",
+        id: 177,
+        unique: true,
+        slot: "Crew",
+        points: 1,
+        faction: "Scum and Villainy"
+      }, {
+        name: "Dengar",
+        id: 178,
+        unique: true,
+        slot: "Crew",
+        points: 3,
+        faction: "Scum and Villainy"
+      }, {
+        name: '"Gonk"',
+        id: 179,
+        unique: true,
+        slot: "Crew",
+        faction: "Scum and Villainy",
+        points: 2
+      }, {
+        name: "R5-P8",
+        id: 180,
+        unique: true,
+        slot: "Salvaged Astromech",
+        points: 3
       }
     ],
     modificationsById: [
@@ -6347,6 +6385,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -7015,6 +7059,24 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -7783,6 +7845,12 @@ exportObj.cardLoaders.English = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -8310,6 +8378,24 @@ exportObj.cardLoaders.English = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -9404,6 +9490,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -10057,6 +10149,24 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -11022,6 +11132,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -11628,6 +11744,24 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -12543,6 +12677,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -13151,6 +13291,24 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -13872,6 +14030,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "4-LOM": {
       text: "At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."
+    },
+    "Tel Trevura": {
+      text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
+    },
+    "Manaroo": {
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     }
   };
   upgrade_translations = {
@@ -14384,6 +14548,24 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Zuckuss": {
       text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+    },
+    'Rage': {
+      text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
+    },
+    "Attanni Mindlink": {
+      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+    },
+    "Boba Fett": {
+      text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
+    },
+    "Dengar": {
+      text: "%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."
+    },
+    '"Gonk"': {
+      text: "%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."
+    },
+    "R5-P8": {
+      text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     }
   };
   modification_translations = {
@@ -17120,7 +17302,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16479
+                    lineno: 16625
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17679,7 +17861,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17042
+              lineno: 17188
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18269,7 +18451,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17560
+          lineno: 17706
         }));
         __iced_deferrals._fulfill();
       });
@@ -18281,7 +18463,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17561
+            lineno: 17707
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19737,7 +19919,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18395
+                      lineno: 18541
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -19806,7 +19988,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18419
+                lineno: 18565
               })
             ]);
             __iced_deferrals._fulfill();
@@ -19858,14 +20040,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18441
+            lineno: 18587
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18443
+            lineno: 18589
           }));
         }
         _ref1 = _this.modifications;
@@ -19873,7 +20055,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18445
+              lineno: 18591
             }));
           }
         }
@@ -20762,7 +20944,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19077
+                lineno: 19223
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20879,7 +21061,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19134
+                  lineno: 19280
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -20901,7 +21083,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19138
+                    lineno: 19284
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -20983,7 +21165,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19176
+            lineno: 19322
           }));
         }
         __iced_deferrals._fulfill();
