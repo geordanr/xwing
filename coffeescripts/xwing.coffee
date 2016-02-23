@@ -103,6 +103,8 @@ class exportObj.SquadBuilder
         @setupUI()
         @setupEventHandlers()
 
+        @isUpdatingPoints = false
+
         if $.getParameterByName('f') == @faction
             @resetCurrentSquad(true)
             @loadFromSerialized $.getParameterByName('d')
@@ -657,7 +659,13 @@ class exportObj.SquadBuilder
         .on 'xwing:releaseUnique', (e, unique, type, cb) =>
             @releaseUnique unique, type, cb
         .on 'xwing:pointsUpdated', (e, cb=$.noop) =>
-            @onPointsUpdated cb
+            if @isUpdatingPoints
+                cb()
+            else
+                @isUpdatingPoints = true
+                @onPointsUpdated () =>
+                    @isUpdatingPoints = false
+                    cb()
         .on 'xwing-backend:squadLoadRequested', (e, squad) =>
             @onSquadLoadRequested squad
         .on 'xwing-backend:squadDirtinessChanged', (e) =>
