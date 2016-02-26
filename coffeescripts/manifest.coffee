@@ -2870,10 +2870,23 @@ class exportObj.Collection
             <div class="modal-body">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions You Own</a><li>
+                    <li><a data-target="#collection-cards" data-toggle="tab">Cards</a><li>
                     <li><a data-target="#collection-components" data-toggle="tab">Your Inventory</a><li>
                 </ul>
                 <div class="tab-content">
                     <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
+                    <div id="collection-cards" class="tab-pane active container-fluid collection-card-content">
+                        <div class="row-fluid">
+                            <div class="span4 offset4">
+                                <span>
+                                    Coming soon.
+                                    <br />
+                                    <button class="nineties-mode">Enable '90s Mode</button>
+                                </span>
+                                <img class="hidden underconstruction" src="images/underconstruction.gif" />
+                            </div>
+                        </div>
+                    </div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
@@ -2884,6 +2897,11 @@ class exportObj.Collection
             </div>
         """
         @modal_status = $ @modal.find('.collection-status')
+
+        # 90's mode
+        @modal.find('.nineties-mode').click (e) =>
+            $(e.target).parent().hide()
+            @modal.find('.underconstruction').removeClass 'hidden'
 
         collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
