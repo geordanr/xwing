@@ -17166,8 +17166,14 @@ exportObj.Collection = (function() {
     this.modal = $(document.createElement('DIV'));
     this.modal.addClass('modal hide fade collection-modal hidden-print');
     $('body').append(this.modal);
-    this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h4>Your Collection</h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"active\"><a data-target=\"#collection-expansions\" data-toggle=\"tab\">Expansions You Own</a><li>\n        <li><a data-target=\"#collection-components\" data-toggle=\"tab\">Your Inventory</a><li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"collection-expansions\" class=\"tab-pane active container-fluid collection-content\"></div>\n        <div id=\"collection-components\" class=\"tab-pane container-fluid collection-inventory-content\"></div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h4>Your Collection</h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"active\"><a data-target=\"#collection-expansions\" data-toggle=\"tab\">Expansions You Own</a><li>\n        <li><a data-target=\"#collection-cards\" data-toggle=\"tab\">Cards</a><li>\n        <li><a data-target=\"#collection-components\" data-toggle=\"tab\">Your Inventory</a><li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"collection-expansions\" class=\"tab-pane active container-fluid collection-content\"></div>\n        <div id=\"collection-cards\" class=\"tab-pane active container-fluid collection-card-content\">\n            <div class=\"row-fluid\">\n                <div class=\"span4 offset4\">\n                    <span>\n                        Coming soon.\n                        <br />\n                        <button class=\"nineties-mode\">Enable '90s Mode</button>\n                    </span>\n                    <img class=\"hidden underconstruction\" src=\"images/underconstruction.gif\" />\n                </div>\n            </div>\n        </div>\n        <div id=\"collection-components\" class=\"tab-pane container-fluid collection-inventory-content\"></div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
     this.modal_status = $(this.modal.find('.collection-status'));
+    this.modal.find('.nineties-mode').click((function(_this) {
+      return function(e) {
+        $(e.target).parent().hide();
+        return _this.modal.find('.underconstruction').removeClass('hidden');
+      };
+    })(this));
     collection_content = $(this.modal.find('.collection-content'));
     _ref = exportObj.expansions;
     _results = [];
@@ -17320,7 +17326,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16643
+                    lineno: 16660
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17880,7 +17886,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17208
+              lineno: 17225
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18478,7 +18484,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17732
+          lineno: 17749
         }));
         __iced_deferrals._fulfill();
       });
@@ -18490,7 +18496,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17733
+            lineno: 17750
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19946,7 +19952,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18567
+                      lineno: 18584
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20015,7 +20021,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18591
+                lineno: 18608
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20067,14 +20073,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18613
+            lineno: 18630
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18615
+            lineno: 18632
           }));
         }
         _ref1 = _this.modifications;
@@ -20082,7 +20088,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18617
+              lineno: 18634
             }));
           }
         }
@@ -20971,7 +20977,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19249
+                lineno: 19266
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21088,7 +21094,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19306
+                  lineno: 19323
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21110,7 +21116,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19310
+                    lineno: 19327
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21192,7 +21198,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19348
+            lineno: 19365
           }));
         }
         __iced_deferrals._fulfill();
