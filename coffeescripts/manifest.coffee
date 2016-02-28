@@ -2887,13 +2887,21 @@ class exportObj.Collection
             </div>
             <div class="modal-body">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions You Own</a><li>
-                    <li><a data-target="#collection-cards" data-toggle="tab">Cards</a><li>
-                    <li><a data-target="#collection-components" data-toggle="tab">Your Inventory</a><li>
+                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions</a><li>
+                    <li><a data-target="#collection-ships" data-toggle="tab">Ships</a><li>
+                    <li><a data-target="#collection-pilots" data-toggle="tab">Pilots</a><li>
+                    <li><a data-target="#collection-upgrades" data-toggle="tab">Upgrades</a><li>
+                    <li><a data-target="#collection-modifications" data-toggle="tab">Mods</a><li>
+                    <li><a data-target="#collection-titles" data-toggle="tab">Titles</a><li>
+                    <li><a data-target="#collection-components" data-toggle="tab">Inventory</a><li>
                 </ul>
                 <div class="tab-content">
                     <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
-                    <div id="collection-cards" class="tab-pane active container-fluid collection-card-content"></div>
+                    <div id="collection-ships" class="tab-pane active container-fluid collection-ship-content"></div>
+                    <div id="collection-pilots" class="tab-pane active container-fluid collection-pilot-content"></div>
+                    <div id="collection-upgrades" class="tab-pane active container-fluid collection-upgrade-content"></div>
+                    <div id="collection-modifications" class="tab-pane active container-fluid collection-modification-content"></div>
+                    <div id="collection-titles" class="tab-pane active container-fluid collection-title-content"></div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
@@ -2912,7 +2920,7 @@ class exportObj.Collection
                 <div class="row-fluid">
                     <div class="span12">
                         <label>
-                            <input type="number" size="3" value="#{count}" />
+                            <input class="expansion-count" type="number" size="3" value="#{count}" />
                             <span class="expansion-name">#{expansion}</span>
                         </label>
                     </div>
@@ -2923,6 +2931,108 @@ class exportObj.Collection
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.expansion-name').data 'english_name', expansion
             collection_content.append row
+
+        shipcollection_content = $ @modal.find('.collection-ship-content')
+        for ship in Object.keys(exportObj.ships).sort(sortWithoutQuotes)
+            count = parseInt(@singletons.ship?[ship] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="ship-name">#{ship}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'ship'
+            input.data 'singletonName', ship
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.ship-name').data 'english_name', expansion
+            shipcollection_content.append row
+
+        pilotcollection_content = $ @modal.find('.collection-pilot-content')
+        for pilot in Object.keys(exportObj.pilots).sort(sortWithoutQuotes)
+            count = parseInt(@singletons.pilot?[pilot] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="pilot-name">#{pilot}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'pilot'
+            input.data 'singletonName', pilot
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.pilot-name').data 'english_name', expansion
+            pilotcollection_content.append row
+
+        upgradecollection_content = $ @modal.find('.collection-upgrade-content')
+        for upgrade in Object.keys(exportObj.upgrades).sort(sortWithoutQuotes)
+            count = parseInt(@singletons.upgrade?[upgrade] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="upgrade-name">#{upgrade}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'upgrade'
+            input.data 'singletonName', upgrade
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.upgrade-name').data 'english_name', expansion
+            upgradecollection_content.append row
+
+        modificationcollection_content = $ @modal.find('.collection-modification-content')
+        for modification in Object.keys(exportObj.modifications).sort(sortWithoutQuotes)
+            count = parseInt(@singletons.modification?[modification] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="modification-name">#{modification}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'modification'
+            input.data 'singletonName', modification
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.modification-name').data 'english_name', expansion
+            modificationcollection_content.append row
+
+        titlecollection_content = $ @modal.find('.collection-title-content')
+        # Heavy Scyk hack
+        sorted_titles = ((t for t of exportObj.titles when not t.startsWith('"Heavy Scyk" Interceptor')).concat('"Heavy Scyk" Interceptor')).sort(sortWithoutQuotes)
+        for title in sorted_titles
+            count = parseInt(@singletons.title?[title] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="title-name">#{title}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'title'
+            input.data 'singletonName', title
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.title-name').data 'english_name', expansion
+            titlecollection_content.append row
 
     destroyUI: ->
         @modal.modal 'hide'
@@ -2941,11 +3051,22 @@ class exportObj.Collection
                 @modal_status.fadeOut 5000
         .on 'xwing:languageChanged', @onLanguageChange
 
-        $ @modal.find('input').change (e) =>
+        $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
             val = target.val()
             target.val(0) if val < 0 or isNaN(parseInt(val))
             @expansions[target.data 'expansion'] = parseInt(target.val())
+
+            target.closest('div').css 'background-color', @countToBackgroundColor(val)
+
+            # console.log "Input changed, triggering collection change"
+            $(exportObj).trigger 'xwing-collection:changed', this
+
+        $ @modal.find('input.singleton-count').change (e) =>
+            target = $(e.target)
+            val = target.val()
+            target.val(0) if val < 0 or isNaN(parseInt(val))
+            (@singletons[target.data 'singletonType'] ?= {})[target.data 'singletonName'] = parseInt(target.val())
 
             target.closest('div').css 'background-color', @countToBackgroundColor(val)
 
