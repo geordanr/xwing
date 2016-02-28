@@ -617,3 +617,4 @@ class exportObj.SquadBuilderBackend
             collection = data.collection
             new exportObj.Collection
                 expansions: collection.expansions
+                singletons: collection.singletons

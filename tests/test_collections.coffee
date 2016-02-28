@@ -275,3 +275,127 @@ casper.test.begin "Collections API: Heavy Scyk hack", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Collections API: Singleton pilots", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "The Force Awakens Core Set": 1
+                singletons:
+                    pilot:
+                        "Poe Dameron": 1
+
+        test.assert @evaluate ->
+            window.collection.use "pilot", 'Poe Dameron'
+
+        test.assert @evaluate ->
+            window.collection.use "pilot", 'Poe Dameron'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "pilot", 'Poe Dameron'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Collections API: Singleton upgrades", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "Tantive IV Expansion Pack": 1
+                singletons:
+                    upgrade:
+                        "C-3PO": 1
+
+        test.assert @evaluate ->
+            window.collection.use "upgrade", 'C-3PO'
+
+        test.assert @evaluate ->
+            window.collection.use "upgrade", 'C-3PO'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "upgrade", 'C-3PO'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Collections API: Singleton modifications", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "StarViper Expansion Pack": 1
+                singletons:
+                    modification:
+                        "Autothrusters": 1
+
+        test.assert @evaluate ->
+            window.collection.use "modification", 'Autothrusters'
+
+        test.assert @evaluate ->
+            window.collection.use "modification", 'Autothrusters'
+
+        test.assert @evaluate ->
+            window.collection.use "modification", 'Autothrusters'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "modification", 'Autothrusters'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Collections API: Singleton titles", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "Millennium Falcon Expansion Pack": 1
+                singletons:
+                    title:
+                        "Millennium Falcon": 1
+
+        test.assert @evaluate ->
+            window.collection.use "title", 'Millennium Falcon'
+
+        test.assert @evaluate ->
+            window.collection.use "title", 'Millennium Falcon'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "title", 'Millennium Falcon'
+
+    .run ->
+        test.done()
+
+casper.test.begin "Collections API: Singleton ships", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    casper.then ->
+        @evaluate ->
+            window.collection = new Collection
+                expansions:
+                    "The Force Awakens Core Set": 1
+                singletons:
+                    ship:
+                        "T-70 X-Wing": 1
+
+        test.assert @evaluate ->
+            window.collection.use "ship", 'T-70 X-Wing'
+
+        test.assert @evaluate ->
+            window.collection.use "ship", 'T-70 X-Wing'
+
+        test.assertFalsy @evaluate ->
+            window.collection.use "ship", 'T-70 X-Wing'
+
+    .run ->
+        test.done()
+

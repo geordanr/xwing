@@ -2752,6 +2752,18 @@ class exportObj.Collection
     #     "Core": 2
     #     "TIE Fighter Expansion Pack": 4
     #     "B-Wing Expansion Pack": 2
+    #   singletons:
+    #     ship:
+    #       "T-70 X-Wing": 1
+    #     pilot:
+    #       "Academy Pilot": 16
+    #     upgrade:
+    #       "C-3PO": 4
+    #       "Gunner": 5
+    #     modification:
+    #       "Engine Upgrade": 2
+    #     title:
+    #       "TIE/x1": 1
     #
     # # or
     #
@@ -2765,7 +2777,8 @@ class exportObj.Collection
     # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
-        @expansions = args.expansions
+        @expansions = args.expansions ? {}
+        @singletons = args.singletons ? {}
         # To save collection (optional)
         @backend = args.backend
 
@@ -2788,6 +2801,11 @@ class exportObj.Collection
                 for card in (exportObj.manifestByExpansion[expansion] ? [])
                     for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+
+        for type, counts of @singletons
+            for name, count of counts
+                for _ in [0...count]
+                    ((@shelf[type] ?= {})[name] ?= []).push 'singleton'
 
         @counts = {}
         for own type of @shelf
@@ -2875,18 +2893,7 @@ class exportObj.Collection
                 </ul>
                 <div class="tab-content">
                     <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
-                    <div id="collection-cards" class="tab-pane active container-fluid collection-card-content">
-                        <div class="row-fluid">
-                            <div class="span4 offset4">
-                                <span>
-                                    Coming soon.
-                                    <br />
-                                    <button class="nineties-mode">Enable '90s Mode</button>
-                                </span>
-                                <img class="hidden underconstruction" src="images/underconstruction.gif" />
-                            </div>
-                        </div>
-                    </div>
+                    <div id="collection-cards" class="tab-pane active container-fluid collection-card-content"></div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
@@ -2897,11 +2904,6 @@ class exportObj.Collection
             </div>
         """
         @modal_status = $ @modal.find('.collection-status')
-
-        # 90's mode
-        @modal.find('.nineties-mode').click (e) =>
-            $(e.target).parent().hide()
-            @modal.find('.underconstruction').removeClass 'hidden'
 
         collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
