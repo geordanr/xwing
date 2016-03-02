@@ -1,5 +1,8 @@
 exportObj = exports ? this
 
+String::startsWith ?= (t) ->
+    @indexOf t == 0
+
 sortWithoutQuotes = (a, b) ->
     a_name = a.replace /[^a-z0-9]/ig, ''
     b_name = b.replace /[^a-z0-9]/ig, ''
@@ -2877,6 +2880,15 @@ class exportObj.Collection
         backend.loadCollection cb
 
     setupUI: ->
+        # Create list of released singletons
+        singletonsByType = {}
+        for expname, items of exportObj.manifestByExpansion
+            for item in items
+                (singletonsByType[item.type] ?= {})[item.name] = true
+        for type, names of singletonsByType
+            sorted_names = (name for name of names).sort(sortWithoutQuotes)
+            singletonsByType[type] = sorted_names
+
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
         $('body').append @modal
@@ -2933,7 +2945,7 @@ class exportObj.Collection
             collection_content.append row
 
         shipcollection_content = $ @modal.find('.collection-ship-content')
-        for ship in Object.keys(exportObj.ships).sort(sortWithoutQuotes)
+        for ship in singletonsByType.ship
             count = parseInt(@singletons.ship?[ship] ? 0)
             row = $.parseHTML $.trim """
                 <div class="row-fluid">
@@ -2953,7 +2965,7 @@ class exportObj.Collection
             shipcollection_content.append row
 
         pilotcollection_content = $ @modal.find('.collection-pilot-content')
-        for pilot in Object.keys(exportObj.pilots).sort(sortWithoutQuotes)
+        for pilot in singletonsByType.pilot
             count = parseInt(@singletons.pilot?[pilot] ? 0)
             row = $.parseHTML $.trim """
                 <div class="row-fluid">
@@ -2973,7 +2985,7 @@ class exportObj.Collection
             pilotcollection_content.append row
 
         upgradecollection_content = $ @modal.find('.collection-upgrade-content')
-        for upgrade in Object.keys(exportObj.upgrades).sort(sortWithoutQuotes)
+        for upgrade in singletonsByType.upgrade
             count = parseInt(@singletons.upgrade?[upgrade] ? 0)
             row = $.parseHTML $.trim """
                 <div class="row-fluid">
@@ -2993,7 +3005,7 @@ class exportObj.Collection
             upgradecollection_content.append row
 
         modificationcollection_content = $ @modal.find('.collection-modification-content')
-        for modification in Object.keys(exportObj.modifications).sort(sortWithoutQuotes)
+        for modification in singletonsByType.modification
             count = parseInt(@singletons.modification?[modification] ? 0)
             row = $.parseHTML $.trim """
                 <div class="row-fluid">
@@ -3013,9 +3025,7 @@ class exportObj.Collection
             modificationcollection_content.append row
 
         titlecollection_content = $ @modal.find('.collection-title-content')
-        # Heavy Scyk hack
-        sorted_titles = ((t for t of exportObj.titles when not t.startsWith('"Heavy Scyk" Interceptor')).concat('"Heavy Scyk" Interceptor')).sort(sortWithoutQuotes)
-        for title in sorted_titles
+        for title in singletonsByType.title
             count = parseInt(@singletons.title?[title] ? 0)
             row = $.parseHTML $.trim """
                 <div class="row-fluid">
