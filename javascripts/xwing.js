@@ -4,7 +4,7 @@
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
  */
-var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, exportObj, getPrimaryFaction, sortWithoutQuotes, statAndEffectiveStat,
+var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, exportObj, getPrimaryFaction, sortWithoutQuotes, statAndEffectiveStat, _base,
   __slice = [].slice,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -739,7 +739,8 @@ exportObj.SquadBuilderBackend = (function() {
       cb = $.noop;
     }
     post_args = {
-      expansions: collection.expansions
+      expansions: collection.expansions,
+      singletons: collection.singletons
     };
     return $.post("" + this.server + "/collection", post_args).done(function(data, textStatus, jqXHR) {
       return cb(data.success);
@@ -751,7 +752,8 @@ exportObj.SquadBuilderBackend = (function() {
       var collection;
       collection = data.collection;
       return new exportObj.Collection({
-        expansions: collection.expansions
+        expansions: collection.expansions,
+        singletons: collection.singletons
       });
     });
   };
@@ -14775,6 +14777,12 @@ exportObj.cardLoaders['Русский'] = function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
+if ((_base = String.prototype).startsWith == null) {
+  _base.startsWith = function(t) {
+    return this.indexOf(t === 0);
+  };
+}
+
 sortWithoutQuotes = function(a, b) {
   var a_name, b_name;
   a_name = a.replace(/[^a-z0-9]/ig, '');
@@ -17023,7 +17031,9 @@ exportObj.manifestByExpansion = {
 exportObj.Collection = (function() {
   function Collection(args) {
     this.onLanguageChange = __bind(this.onLanguageChange, this);
-    this.expansions = args.expansions;
+    var _ref, _ref1;
+    this.expansions = (_ref = args.expansions) != null ? _ref : {};
+    this.singletons = (_ref1 = args.singletons) != null ? _ref1 : {};
     this.backend = args.backend;
     this.setupUI();
     this.setupHandlers();
@@ -17032,7 +17042,7 @@ exportObj.Collection = (function() {
   }
 
   Collection.prototype.reset = function() {
-    var card, component_content, contents, count, expansion, thing, things, type, ul, _, _base, _base1, _base2, _base3, _i, _j, _k, _len, _name, _name1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _results;
+    var card, component_content, contents, count, counts, expansion, name, thing, things, type, ul, _, _base1, _base2, _base3, _base4, _base5, _base6, _i, _j, _k, _l, _len, _name, _name1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _results;
     this.shelf = {};
     this.table = {};
     _ref = this.expansions;
@@ -17048,39 +17058,49 @@ exportObj.Collection = (function() {
         for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
           card = _ref2[_j];
           for (_ = _k = 0, _ref3 = card.count; 0 <= _ref3 ? _k < _ref3 : _k > _ref3; _ = 0 <= _ref3 ? ++_k : --_k) {
-            ((_base = ((_base1 = this.shelf)[_name1 = card.type] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = card.name] != null ? _base[_name] : _base[_name] = []).push(expansion);
+            ((_base1 = ((_base2 = this.shelf)[_name1 = card.type] != null ? _base2[_name1] : _base2[_name1] = {}))[_name = card.name] != null ? _base1[_name] : _base1[_name] = []).push(expansion);
           }
         }
       }
     }
-    this.counts = {};
-    _ref4 = this.shelf;
+    _ref4 = this.singletons;
     for (type in _ref4) {
-      if (!__hasProp.call(_ref4, type)) continue;
-      _ref5 = this.shelf[type];
-      for (thing in _ref5) {
-        if (!__hasProp.call(_ref5, thing)) continue;
-        if ((_base2 = ((_base3 = this.counts)[type] != null ? _base3[type] : _base3[type] = {}))[thing] == null) {
-          _base2[thing] = 0;
+      counts = _ref4[type];
+      for (name in counts) {
+        count = counts[name];
+        for (_ = _l = 0; 0 <= count ? _l < count : _l > count; _ = 0 <= count ? ++_l : --_l) {
+          ((_base3 = ((_base4 = this.shelf)[type] != null ? _base4[type] : _base4[type] = {}))[name] != null ? _base3[name] : _base3[name] = []).push('singleton');
+        }
+      }
+    }
+    this.counts = {};
+    _ref5 = this.shelf;
+    for (type in _ref5) {
+      if (!__hasProp.call(_ref5, type)) continue;
+      _ref6 = this.shelf[type];
+      for (thing in _ref6) {
+        if (!__hasProp.call(_ref6, thing)) continue;
+        if ((_base5 = ((_base6 = this.counts)[type] != null ? _base6[type] : _base6[type] = {}))[thing] == null) {
+          _base5[thing] = 0;
         }
         this.counts[type][thing] += this.shelf[type][thing].length;
       }
     }
     component_content = $(this.modal.find('.collection-inventory-content'));
     component_content.text('');
-    _ref6 = this.counts;
+    _ref7 = this.counts;
     _results = [];
-    for (type in _ref6) {
-      if (!__hasProp.call(_ref6, type)) continue;
-      things = _ref6[type];
+    for (type in _ref7) {
+      if (!__hasProp.call(_ref7, type)) continue;
+      things = _ref7[type];
       contents = component_content.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\"><h5>" + (type.capitalize()) + "</h5></div>\n</div>\n<div class=\"row-fluid\">\n    <ul id=\"counts-" + type + "\" class=\"span12\"></ul>\n</div>"));
       ul = $(contents.find("ul#counts-" + type));
       _results.push((function() {
-        var _l, _len1, _ref7, _results1;
-        _ref7 = Object.keys(things).sort(sortWithoutQuotes);
+        var _len1, _m, _ref8, _results1;
+        _ref8 = Object.keys(things).sort(sortWithoutQuotes);
         _results1 = [];
-        for (_l = 0, _len1 = _ref7.length; _l < _len1; _l++) {
-          thing = _ref7[_l];
+        for (_m = 0, _len1 = _ref8.length; _m < _len1; _m++) {
+          thing = _ref8[_m];
           _results1.push(ul.append("<li>" + thing + " - " + things[thing] + "</li>"));
         }
         return _results1;
@@ -17111,7 +17131,7 @@ exportObj.Collection = (function() {
   };
 
   Collection.prototype.use = function(type, name) {
-    var card, e, _base, _base1;
+    var card, e, _base1, _base2;
     name = this.fixName(name);
     try {
       card = this.shelf[type][name].pop();
@@ -17122,7 +17142,7 @@ exportObj.Collection = (function() {
       }
     }
     if (card != null) {
-      ((_base = ((_base1 = this.table)[type] != null ? _base1[type] : _base1[type] = {}))[name] != null ? _base[name] : _base[name] = []).push(card);
+      ((_base1 = ((_base2 = this.table)[type] != null ? _base2[type] : _base2[type] = {}))[name] != null ? _base1[name] : _base1[name] = []).push(card);
       return true;
     } else {
       return false;
@@ -17130,7 +17150,7 @@ exportObj.Collection = (function() {
   };
 
   Collection.prototype.release = function(type, name) {
-    var card, e, _base, _base1;
+    var card, e, _base1, _base2;
     name = this.fixName(name);
     try {
       card = this.table[type][name].pop();
@@ -17141,7 +17161,7 @@ exportObj.Collection = (function() {
       }
     }
     if (card != null) {
-      ((_base = ((_base1 = this.shelf)[type] != null ? _base1[type] : _base1[type] = {}))[name] != null ? _base[name] : _base[name] = []).push(card);
+      ((_base1 = ((_base2 = this.shelf)[type] != null ? _base2[type] : _base2[type] = {}))[name] != null ? _base1[name] : _base1[name] = []).push(card);
       return true;
     } else {
       return false;
@@ -17162,30 +17182,110 @@ exportObj.Collection = (function() {
   };
 
   Collection.prototype.setupUI = function() {
-    var collection_content, count, expansion, input, row, _i, _len, _ref, _ref1, _results;
+    var collection_content, count, expansion, expname, input, item, items, modification, modificationcollection_content, name, names, pilot, pilotcollection_content, row, ship, shipcollection_content, singletonsByType, sorted_names, title, titlecollection_content, type, upgrade, upgradecollection_content, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _name, _o, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _results;
+    singletonsByType = {};
+    _ref = exportObj.manifestByExpansion;
+    for (expname in _ref) {
+      items = _ref[expname];
+      for (_i = 0, _len = items.length; _i < _len; _i++) {
+        item = items[_i];
+        (singletonsByType[_name = item.type] != null ? singletonsByType[_name] : singletonsByType[_name] = {})[item.name] = true;
+      }
+    }
+    for (type in singletonsByType) {
+      names = singletonsByType[type];
+      sorted_names = ((function() {
+        var _results;
+        _results = [];
+        for (name in names) {
+          _results.push(name);
+        }
+        return _results;
+      })()).sort(sortWithoutQuotes);
+      singletonsByType[type] = sorted_names;
+    }
     this.modal = $(document.createElement('DIV'));
     this.modal.addClass('modal hide fade collection-modal hidden-print');
     $('body').append(this.modal);
-    this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h4>Your Collection</h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"active\"><a data-target=\"#collection-expansions\" data-toggle=\"tab\">Expansions You Own</a><li>\n        <li><a data-target=\"#collection-cards\" data-toggle=\"tab\">Cards</a><li>\n        <li><a data-target=\"#collection-components\" data-toggle=\"tab\">Your Inventory</a><li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"collection-expansions\" class=\"tab-pane active container-fluid collection-content\"></div>\n        <div id=\"collection-cards\" class=\"tab-pane active container-fluid collection-card-content\">\n            <div class=\"row-fluid\">\n                <div class=\"span4 offset4\">\n                    <span>\n                        Coming soon.\n                        <br />\n                        <button class=\"nineties-mode\">Enable '90s Mode</button>\n                    </span>\n                    <img class=\"hidden underconstruction\" src=\"images/underconstruction.gif\" />\n                </div>\n            </div>\n        </div>\n        <div id=\"collection-components\" class=\"tab-pane container-fluid collection-inventory-content\"></div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h4>Your Collection</h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"nav nav-tabs\">\n        <li class=\"active\"><a data-target=\"#collection-expansions\" data-toggle=\"tab\">Expansions</a><li>\n        <li><a data-target=\"#collection-ships\" data-toggle=\"tab\">Ships</a><li>\n        <li><a data-target=\"#collection-pilots\" data-toggle=\"tab\">Pilots</a><li>\n        <li><a data-target=\"#collection-upgrades\" data-toggle=\"tab\">Upgrades</a><li>\n        <li><a data-target=\"#collection-modifications\" data-toggle=\"tab\">Mods</a><li>\n        <li><a data-target=\"#collection-titles\" data-toggle=\"tab\">Titles</a><li>\n        <li><a data-target=\"#collection-components\" data-toggle=\"tab\">Inventory</a><li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"collection-expansions\" class=\"tab-pane active container-fluid collection-content\"></div>\n        <div id=\"collection-ships\" class=\"tab-pane active container-fluid collection-ship-content\"></div>\n        <div id=\"collection-pilots\" class=\"tab-pane active container-fluid collection-pilot-content\"></div>\n        <div id=\"collection-upgrades\" class=\"tab-pane active container-fluid collection-upgrade-content\"></div>\n        <div id=\"collection-modifications\" class=\"tab-pane active container-fluid collection-modification-content\"></div>\n        <div id=\"collection-titles\" class=\"tab-pane active container-fluid collection-title-content\"></div>\n        <div id=\"collection-components\" class=\"tab-pane container-fluid collection-inventory-content\"></div>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <span class=\"collection-status\"></span>\n    &nbsp;\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
     this.modal_status = $(this.modal.find('.collection-status'));
-    this.modal.find('.nineties-mode').click((function(_this) {
-      return function(e) {
-        $(e.target).parent().hide();
-        return _this.modal.find('.underconstruction').removeClass('hidden');
-      };
-    })(this));
     collection_content = $(this.modal.find('.collection-content'));
-    _ref = exportObj.expansions;
-    _results = [];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      expansion = _ref[_i];
-      count = parseInt((_ref1 = this.expansions[expansion]) != null ? _ref1 : 0);
-      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"expansion-name\">" + expansion + "</span>\n        </label>\n    </div>\n</div>"));
+    _ref1 = exportObj.expansions;
+    for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+      expansion = _ref1[_j];
+      count = parseInt((_ref2 = this.expansions[expansion]) != null ? _ref2 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"expansion-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"expansion-name\">" + expansion + "</span>\n        </label>\n    </div>\n</div>"));
       input = $($(row).find('input'));
       input.data('expansion', expansion);
       input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
       $(row).find('.expansion-name').data('english_name', expansion);
-      _results.push(collection_content.append(row));
+      collection_content.append(row);
+    }
+    shipcollection_content = $(this.modal.find('.collection-ship-content'));
+    _ref3 = singletonsByType.ship;
+    for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+      ship = _ref3[_k];
+      count = parseInt((_ref4 = (_ref5 = this.singletons.ship) != null ? _ref5[ship] : void 0) != null ? _ref4 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"singleton-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"ship-name\">" + ship + "</span>\n        </label>\n    </div>\n</div>"));
+      input = $($(row).find('input'));
+      input.data('singletonType', 'ship');
+      input.data('singletonName', ship);
+      input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+      $(row).find('.ship-name').data('english_name', expansion);
+      shipcollection_content.append(row);
+    }
+    pilotcollection_content = $(this.modal.find('.collection-pilot-content'));
+    _ref6 = singletonsByType.pilot;
+    for (_l = 0, _len3 = _ref6.length; _l < _len3; _l++) {
+      pilot = _ref6[_l];
+      count = parseInt((_ref7 = (_ref8 = this.singletons.pilot) != null ? _ref8[pilot] : void 0) != null ? _ref7 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"singleton-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"pilot-name\">" + pilot + "</span>\n        </label>\n    </div>\n</div>"));
+      input = $($(row).find('input'));
+      input.data('singletonType', 'pilot');
+      input.data('singletonName', pilot);
+      input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+      $(row).find('.pilot-name').data('english_name', expansion);
+      pilotcollection_content.append(row);
+    }
+    upgradecollection_content = $(this.modal.find('.collection-upgrade-content'));
+    _ref9 = singletonsByType.upgrade;
+    for (_m = 0, _len4 = _ref9.length; _m < _len4; _m++) {
+      upgrade = _ref9[_m];
+      count = parseInt((_ref10 = (_ref11 = this.singletons.upgrade) != null ? _ref11[upgrade] : void 0) != null ? _ref10 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"singleton-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"upgrade-name\">" + upgrade + "</span>\n        </label>\n    </div>\n</div>"));
+      input = $($(row).find('input'));
+      input.data('singletonType', 'upgrade');
+      input.data('singletonName', upgrade);
+      input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+      $(row).find('.upgrade-name').data('english_name', expansion);
+      upgradecollection_content.append(row);
+    }
+    modificationcollection_content = $(this.modal.find('.collection-modification-content'));
+    _ref12 = singletonsByType.modification;
+    for (_n = 0, _len5 = _ref12.length; _n < _len5; _n++) {
+      modification = _ref12[_n];
+      count = parseInt((_ref13 = (_ref14 = this.singletons.modification) != null ? _ref14[modification] : void 0) != null ? _ref13 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"singleton-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"modification-name\">" + modification + "</span>\n        </label>\n    </div>\n</div>"));
+      input = $($(row).find('input'));
+      input.data('singletonType', 'modification');
+      input.data('singletonName', modification);
+      input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+      $(row).find('.modification-name').data('english_name', expansion);
+      modificationcollection_content.append(row);
+    }
+    titlecollection_content = $(this.modal.find('.collection-title-content'));
+    _ref15 = singletonsByType.title;
+    _results = [];
+    for (_o = 0, _len6 = _ref15.length; _o < _len6; _o++) {
+      title = _ref15[_o];
+      count = parseInt((_ref16 = (_ref17 = this.singletons.title) != null ? _ref17[title] : void 0) != null ? _ref16 : 0);
+      row = $.parseHTML($.trim("<div class=\"row-fluid\">\n    <div class=\"span12\">\n        <label>\n            <input class=\"singleton-count\" type=\"number\" size=\"3\" value=\"" + count + "\" />\n            <span class=\"title-name\">" + title + "</span>\n        </label>\n    </div>\n</div>"));
+      input = $($(row).find('input'));
+      input.data('singletonType', 'title');
+      input.data('singletonName', title);
+      input.closest('div').css('background-color', this.countToBackgroundColor(input.val()));
+      $(row).find('.title-name').data('english_name', expansion);
+      _results.push(titlecollection_content.append(row));
     }
     return _results;
   };
@@ -17212,7 +17312,7 @@ exportObj.Collection = (function() {
         });
       };
     })(this)).on('xwing:languageChanged', this.onLanguageChange);
-    return $(this.modal.find('input').change((function(_this) {
+    $(this.modal.find('input.expansion-count').change((function(_this) {
       return function(e) {
         var target, val;
         target = $(e.target);
@@ -17221,6 +17321,19 @@ exportObj.Collection = (function() {
           target.val(0);
         }
         _this.expansions[target.data('expansion')] = parseInt(target.val());
+        target.closest('div').css('background-color', _this.countToBackgroundColor(val));
+        return $(exportObj).trigger('xwing-collection:changed', _this);
+      };
+    })(this)));
+    return $(this.modal.find('input.singleton-count').change((function(_this) {
+      return function(e) {
+        var target, val, _base1, _name;
+        target = $(e.target);
+        val = target.val();
+        if (val < 0 || isNaN(parseInt(val))) {
+          target.val(0);
+        }
+        ((_base1 = _this.singletons)[_name = target.data('singletonType')] != null ? _base1[_name] : _base1[_name] = {})[target.data('singletonName')] = parseInt(target.val());
         target.closest('div').css('background-color', _this.countToBackgroundColor(val));
         return $(exportObj).trigger('xwing-collection:changed', _this);
       };
@@ -17326,7 +17439,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16660
+                    lineno: 16796
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17886,7 +17999,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17225
+              lineno: 17361
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18484,7 +18597,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17749
+          lineno: 17885
         }));
         __iced_deferrals._fulfill();
       });
@@ -18496,7 +18609,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17750
+            lineno: 17886
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19952,7 +20065,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18584
+                      lineno: 18720
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20021,7 +20134,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18608
+                lineno: 18744
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20073,14 +20186,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18630
+            lineno: 18766
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18632
+            lineno: 18768
           }));
         }
         _ref1 = _this.modifications;
@@ -20088,7 +20201,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18634
+              lineno: 18770
             }));
           }
         }
@@ -20977,7 +21090,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19266
+                lineno: 19402
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21094,7 +21207,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19323
+                  lineno: 19459
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21116,7 +21229,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19327
+                    lineno: 19463
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21198,7 +21311,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19365
+            lineno: 19501
           }));
         }
         __iced_deferrals._fulfill();
