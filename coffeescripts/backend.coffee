@@ -608,6 +608,7 @@ class exportObj.SquadBuilderBackend
     saveCollection: (collection, cb=$.noop) ->
         post_args =
             expansions: collection.expansions
+            singletons: collection.singletons
         $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
             cb data.success
 
@@ -617,3 +618,4 @@ class exportObj.SquadBuilderBackend
             collection = data.collection
             new exportObj.Collection
                 expansions: collection.expansions
+                singletons: collection.singletons

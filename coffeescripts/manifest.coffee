@@ -1,5 +1,8 @@
 exportObj = exports ? this
 
+String::startsWith ?= (t) ->
+    @indexOf t == 0
+
 sortWithoutQuotes = (a, b) ->
     a_name = a.replace /[^a-z0-9]/ig, ''
     b_name = b.replace /[^a-z0-9]/ig, ''
@@ -2752,6 +2755,18 @@ class exportObj.Collection
     #     "Core": 2
     #     "TIE Fighter Expansion Pack": 4
     #     "B-Wing Expansion Pack": 2
+    #   singletons:
+    #     ship:
+    #       "T-70 X-Wing": 1
+    #     pilot:
+    #       "Academy Pilot": 16
+    #     upgrade:
+    #       "C-3PO": 4
+    #       "Gunner": 5
+    #     modification:
+    #       "Engine Upgrade": 2
+    #     title:
+    #       "TIE/x1": 1
     #
     # # or
     #
@@ -2765,7 +2780,8 @@ class exportObj.Collection
     # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
-        @expansions = args.expansions
+        @expansions = args.expansions ? {}
+        @singletons = args.singletons ? {}
         # To save collection (optional)
         @backend = args.backend
 
@@ -2788,6 +2804,11 @@ class exportObj.Collection
                 for card in (exportObj.manifestByExpansion[expansion] ? [])
                     for _ in [0...card.count]
                         ((@shelf[card.type] ?= {})[card.name] ?= []).push expansion
+
+        for type, counts of @singletons
+            for name, count of counts
+                for _ in [0...count]
+                    ((@shelf[type] ?= {})[name] ?= []).push 'singleton'
 
         @counts = {}
         for own type of @shelf
@@ -2859,6 +2880,15 @@ class exportObj.Collection
         backend.loadCollection cb
 
     setupUI: ->
+        # Create list of released singletons
+        singletonsByType = {}
+        for expname, items of exportObj.manifestByExpansion
+            for item in items
+                (singletonsByType[item.type] ?= {})[item.name] = true
+        for type, names of singletonsByType
+            sorted_names = (name for name of names).sort(sortWithoutQuotes)
+            singletonsByType[type] = sorted_names
+
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
         $('body').append @modal
@@ -2869,24 +2899,21 @@ class exportObj.Collection
             </div>
             <div class="modal-body">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions You Own</a><li>
-                    <li><a data-target="#collection-cards" data-toggle="tab">Cards</a><li>
-                    <li><a data-target="#collection-components" data-toggle="tab">Your Inventory</a><li>
+                    <li class="active"><a data-target="#collection-expansions" data-toggle="tab">Expansions</a><li>
+                    <li><a data-target="#collection-ships" data-toggle="tab">Ships</a><li>
+                    <li><a data-target="#collection-pilots" data-toggle="tab">Pilots</a><li>
+                    <li><a data-target="#collection-upgrades" data-toggle="tab">Upgrades</a><li>
+                    <li><a data-target="#collection-modifications" data-toggle="tab">Mods</a><li>
+                    <li><a data-target="#collection-titles" data-toggle="tab">Titles</a><li>
+                    <li><a data-target="#collection-components" data-toggle="tab">Inventory</a><li>
                 </ul>
                 <div class="tab-content">
                     <div id="collection-expansions" class="tab-pane active container-fluid collection-content"></div>
-                    <div id="collection-cards" class="tab-pane active container-fluid collection-card-content">
-                        <div class="row-fluid">
-                            <div class="span4 offset4">
-                                <span>
-                                    Coming soon.
-                                    <br />
-                                    <button class="nineties-mode">Enable '90s Mode</button>
-                                </span>
-                                <img class="hidden underconstruction" src="images/underconstruction.gif" />
-                            </div>
-                        </div>
-                    </div>
+                    <div id="collection-ships" class="tab-pane active container-fluid collection-ship-content"></div>
+                    <div id="collection-pilots" class="tab-pane active container-fluid collection-pilot-content"></div>
+                    <div id="collection-upgrades" class="tab-pane active container-fluid collection-upgrade-content"></div>
+                    <div id="collection-modifications" class="tab-pane active container-fluid collection-modification-content"></div>
+                    <div id="collection-titles" class="tab-pane active container-fluid collection-title-content"></div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
@@ -2898,11 +2925,6 @@ class exportObj.Collection
         """
         @modal_status = $ @modal.find('.collection-status')
 
-        # 90's mode
-        @modal.find('.nineties-mode').click (e) =>
-            $(e.target).parent().hide()
-            @modal.find('.underconstruction').removeClass 'hidden'
-
         collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
@@ -2910,7 +2932,7 @@ class exportObj.Collection
                 <div class="row-fluid">
                     <div class="span12">
                         <label>
-                            <input type="number" size="3" value="#{count}" />
+                            <input class="expansion-count" type="number" size="3" value="#{count}" />
                             <span class="expansion-name">#{expansion}</span>
                         </label>
                     </div>
@@ -2921,6 +2943,106 @@ class exportObj.Collection
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.expansion-name').data 'english_name', expansion
             collection_content.append row
+
+        shipcollection_content = $ @modal.find('.collection-ship-content')
+        for ship in singletonsByType.ship
+            count = parseInt(@singletons.ship?[ship] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="ship-name">#{ship}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'ship'
+            input.data 'singletonName', ship
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.ship-name').data 'english_name', expansion
+            shipcollection_content.append row
+
+        pilotcollection_content = $ @modal.find('.collection-pilot-content')
+        for pilot in singletonsByType.pilot
+            count = parseInt(@singletons.pilot?[pilot] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="pilot-name">#{pilot}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'pilot'
+            input.data 'singletonName', pilot
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.pilot-name').data 'english_name', expansion
+            pilotcollection_content.append row
+
+        upgradecollection_content = $ @modal.find('.collection-upgrade-content')
+        for upgrade in singletonsByType.upgrade
+            count = parseInt(@singletons.upgrade?[upgrade] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="upgrade-name">#{upgrade}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'upgrade'
+            input.data 'singletonName', upgrade
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.upgrade-name').data 'english_name', expansion
+            upgradecollection_content.append row
+
+        modificationcollection_content = $ @modal.find('.collection-modification-content')
+        for modification in singletonsByType.modification
+            count = parseInt(@singletons.modification?[modification] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="modification-name">#{modification}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'modification'
+            input.data 'singletonName', modification
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.modification-name').data 'english_name', expansion
+            modificationcollection_content.append row
+
+        titlecollection_content = $ @modal.find('.collection-title-content')
+        for title in singletonsByType.title
+            count = parseInt(@singletons.title?[title] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="title-name">#{title}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'title'
+            input.data 'singletonName', title
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.title-name').data 'english_name', expansion
+            titlecollection_content.append row
 
     destroyUI: ->
         @modal.modal 'hide'
@@ -2939,11 +3061,22 @@ class exportObj.Collection
                 @modal_status.fadeOut 5000
         .on 'xwing:languageChanged', @onLanguageChange
 
-        $ @modal.find('input').change (e) =>
+        $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
             val = target.val()
             target.val(0) if val < 0 or isNaN(parseInt(val))
             @expansions[target.data 'expansion'] = parseInt(target.val())
+
+            target.closest('div').css 'background-color', @countToBackgroundColor(val)
+
+            # console.log "Input changed, triggering collection change"
+            $(exportObj).trigger 'xwing-collection:changed', this
+
+        $ @modal.find('input.singleton-count').change (e) =>
+            target = $(e.target)
+            val = target.val()
+            target.val(0) if val < 0 or isNaN(parseInt(val))
+            (@singletons[target.data 'singletonType'] ?= {})[target.data 'singletonName'] = parseInt(target.val())
 
             target.closest('div').css 'background-color', @countToBackgroundColor(val)
 
