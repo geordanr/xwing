@@ -337,7 +337,7 @@ exportObj.cardLoaders.English = () ->
         "Zuckuss":
             text: """When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."""
         "Dengar":
-            text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
+            text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against that ship."""
         # T-70
         "Poe Dameron":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
