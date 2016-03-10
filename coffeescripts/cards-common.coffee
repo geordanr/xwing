@@ -2992,7 +2992,7 @@ exportObj.basicCardData = ->
             points: 37
         }
         {
-            name: 'Lothal ???'
+            name: 'Lothal Rebel'
             id: 158
             faction: "Rebel Alliance"
             ship: "VCX-100"
@@ -3005,7 +3005,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 35
         }
         {
             name: 'Hera Syndulla (Attack Shuttle)'
@@ -3090,15 +3090,16 @@ exportObj.basicCardData = ->
             points: 22
         }
         {
-            name: "Baron of ???"
+            name: "Baron of the Empire"
             id: 165
             faction: "Galactic Empire"
             ship: "TIE Advanced Prototype"
             skill: 4
             slots: [
+                'Elite'
                 'Missile'
             ]
-            points: 100
+            points: 19
         }
         {
             name: "Sienar Test Pilot"
