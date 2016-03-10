@@ -4581,6 +4581,11 @@ exportObj.basicCardData = function() {
         unique: true,
         slot: "Salvaged Astromech",
         points: 3
+      }, {
+        name: 'Thermal Detonators',
+        id: 181,
+        points: 3,
+        slot: 'Bomb'
       }
     ],
     modificationsById: [
@@ -7079,6 +7084,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -8398,6 +8406,9 @@ exportObj.cardLoaders.English = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -10184,6 +10195,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -11782,6 +11796,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -13329,6 +13346,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -14586,6 +14606,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "R5-P8": {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
+    },
+    'Thermal Detonators': {
+      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
     }
   };
   modification_translations = {
@@ -17439,7 +17462,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16797
+                    lineno: 16815
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -17999,7 +18022,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17362
+              lineno: 17380
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18597,7 +18620,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17886
+          lineno: 17904
         }));
         __iced_deferrals._fulfill();
       });
@@ -18609,7 +18632,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17887
+            lineno: 17905
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20065,7 +20088,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18721
+                      lineno: 18739
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20134,7 +20157,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18745
+                lineno: 18763
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20186,14 +20209,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18767
+            lineno: 18785
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18769
+            lineno: 18787
           }));
         }
         _ref1 = _this.modifications;
@@ -20201,7 +20224,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18771
+              lineno: 18789
             }));
           }
         }
@@ -21090,7 +21113,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19403
+                lineno: 19421
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21207,7 +21230,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19460
+                  lineno: 19478
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21229,7 +21252,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19464
+                    lineno: 19482
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21311,7 +21334,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19502
+            lineno: 19520
           }));
         }
         __iced_deferrals._fulfill();
