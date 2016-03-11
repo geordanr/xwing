@@ -4586,6 +4586,11 @@ exportObj.basicCardData = function() {
         id: 181,
         points: 3,
         slot: 'Bomb'
+      }, {
+        name: "Overclocked R4",
+        id: 182,
+        slot: "Salvaged Astromech",
+        points: 1
       }
     ],
     modificationsById: [
@@ -7087,6 +7092,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -8409,6 +8417,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -10198,6 +10209,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -11799,6 +11813,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -13349,6 +13366,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -14609,6 +14629,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Thermal Detonators': {
       text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+    },
+    "Overclocked R4": {
+      text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
     }
   };
   modification_translations = {
@@ -17462,7 +17485,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 16816
+                    lineno: 16834
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18022,7 +18045,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17381
+              lineno: 17399
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18620,7 +18643,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 17905
+          lineno: 17923
         }));
         __iced_deferrals._fulfill();
       });
@@ -18632,7 +18655,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 17906
+            lineno: 17924
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20088,7 +20111,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 18740
+                      lineno: 18758
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20157,7 +20180,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 18764
+                lineno: 18782
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20209,14 +20232,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 18786
+            lineno: 18804
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 18788
+            lineno: 18806
           }));
         }
         _ref1 = _this.modifications;
@@ -20224,7 +20247,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 18790
+              lineno: 18808
             }));
           }
         }
@@ -21113,7 +21136,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19422
+                lineno: 19440
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21230,7 +21253,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19479
+                  lineno: 19497
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21252,7 +21275,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19483
+                    lineno: 19501
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21334,7 +21357,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19521
+            lineno: 19539
           }));
         }
         __iced_deferrals._fulfill();
