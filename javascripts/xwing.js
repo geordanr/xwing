@@ -433,7 +433,7 @@ exportObj.SquadBuilderBackend = (function() {
           _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
           _this.show_standard_squads_button.addClass('btn-inverse');
           return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
-            return $(elem).toggle(($(elem).data().squad.serialized.indexOf('v3!e') === -1) && ($(elem).data().squad.serialized.indexOf('v3!t') === -1));
+            return $(elem).toggle(($(elem).data().squad.serialized.search(/v\d+!e/) === -1) && ($(elem).data().squad.serialized.search(/v\d+!t/) === -1));
           });
         }
       };
@@ -446,7 +446,7 @@ exportObj.SquadBuilderBackend = (function() {
           _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
           _this.show_epic_squads_button.addClass('btn-inverse');
           return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
-            return $(elem).toggle($(elem).data().squad.serialized.indexOf('v3!e') !== -1);
+            return $(elem).toggle($(elem).data().squad.serialized.search(/v\d+!e/) !== -1);
           });
         }
       };
@@ -459,7 +459,7 @@ exportObj.SquadBuilderBackend = (function() {
           _this.squad_list_modal.find('.squad-display-mode .btn').removeClass('btn-inverse');
           _this.show_team_epic_squads_button.addClass('btn-inverse');
           return _this.squad_list_modal.find('.squad-list li').each(function(idx, elem) {
-            return $(elem).toggle($(elem).data().squad.serialized.indexOf('v3!t') !== -1);
+            return $(elem).toggle($(elem).data().squad.serialized.search(/v\d+!t/) !== -1);
           });
         }
       };
