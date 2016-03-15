@@ -2573,11 +2573,6 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Expose'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'Marksmanship'
             type: 'upgrade'
             count: 1
@@ -2586,6 +2581,41 @@ exportObj.manifestByExpansion =
             name: 'Expert Handling'
             type: 'upgrade'
             count: 1
+        }
+        {
+            name: 'Expose'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dual Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Broadcast Array'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Construction Droid'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Agent Kallus'
@@ -2598,14 +2628,9 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Broadcast Array'
+            name: 'Ordnance Experts'
             type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Dual Laser Turret'
-            type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Docking Clamps'
@@ -2613,7 +2638,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Ordnance Experts'
+            name: 'Cluster Bombs'
             type: 'upgrade'
             count: 2
         }
