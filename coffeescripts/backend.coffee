@@ -366,7 +366,7 @@ class exportObj.SquadBuilderBackend
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
                 @show_standard_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle (($(elem).data().squad.serialized.indexOf('v3!e') == -1) and ($(elem).data().squad.serialized.indexOf('v3!t') == -1))
+                    $(elem).toggle (($(elem).data().squad.serialized.search(/v\d+!e/) == -1) and ($(elem).data().squad.serialized.search(/v\d+!t/) == -1))
 
         @show_epic_squads_button = $ @squad_list_modal.find('.show-epic-squads')
         @show_epic_squads_button.click (e) =>
@@ -375,7 +375,7 @@ class exportObj.SquadBuilderBackend
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
                 @show_epic_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle $(elem).data().squad.serialized.indexOf('v3!e') != -1
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!e/) != -1
 
         @show_team_epic_squads_button = $ @squad_list_modal.find('.show-team-epic-squads')
         @show_team_epic_squads_button.click (e) =>
@@ -384,7 +384,7 @@ class exportObj.SquadBuilderBackend
                 @squad_list_modal.find('.squad-display-mode .btn').removeClass 'btn-inverse'
                 @show_team_epic_squads_button.addClass 'btn-inverse'
                 @squad_list_modal.find('.squad-list li').each (idx, elem) ->
-                    $(elem).toggle $(elem).data().squad.serialized.indexOf('v3!t') != -1
+                    $(elem).toggle $(elem).data().squad.serialized.search(/v\d+!t/) != -1
 
         @save_as_modal = $ document.createElement('DIV')
         @save_as_modal.addClass 'modal hide fade hidden-print'
