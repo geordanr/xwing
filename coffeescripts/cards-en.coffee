@@ -790,7 +790,7 @@ exportObj.cardLoaders.English = () ->
         "Advanced SLAM":
             text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."""
         "Twin Ion Engine Mk. II":
-            text: """You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
+            text: """<span class="card-restriction">TIE only.</span>%LINEBREAK%You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
         "Maneuvering Fins":
             text: """When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."""
         "Ion Projector":
