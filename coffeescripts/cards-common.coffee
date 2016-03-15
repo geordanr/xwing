@@ -3143,20 +3143,21 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: "Gand ???"
+            name: "Gand Findsman"
             id: 169
             faction: "Scum and Villainy"
             ship: "G-1A Starfighter"
             skill: 5
             slots: [
+                'Elite'
                 'Crew'
                 'System'
                 'Illicit'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: "Ruth???"
+            name: "Ruthless Freelancer"
             id: 170
             faction: "Scum and Villainy"
             ship: "G-1A Starfighter"
@@ -3166,7 +3167,7 @@ exportObj.basicCardData = ->
                 'System'
                 'Illicit'
             ]
-            points: 100
+            points: 23
         }
         {
             name: "Dengar"
@@ -4893,6 +4894,18 @@ exportObj.basicCardData = ->
             unique: true
             slot: "Salvaged Astromech"
             points: 3
+        }
+        {
+            name: 'Thermal Detonators'
+            id: 181
+            points: 3
+            slot: 'Bomb'
+        }
+        {
+            name: "Overclocked R4"
+            id: 182
+            slot: "Salvaged Astromech"
+            points: 1
         }
     ]
 
