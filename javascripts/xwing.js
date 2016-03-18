@@ -4507,23 +4507,17 @@ exportObj.basicCardData = function() {
         points: 4,
         slot: 'Cargo'
       }, {
-        name: "Adaptability (+1)",
+        name: "Adaptability",
         id: 170,
-        canonical_name: 'Adaptability'.canonicalize(),
         slot: "Elite",
-        points: 0,
-        modifier_func: function(stats) {
-          return stats.skill += 1;
-        }
+        points: 0
       }, {
-        name: "Adaptability (-1)",
+        name: "Adaptability (old)",
+        skip: true,
         id: 171,
-        canonical_name: 'Adaptability'.canonicalize(),
+        superseded_by_id: 170,
         slot: "Elite",
-        points: 0,
-        modifier_func: function(stats) {
-          return stats.skill -= 1;
-        }
+        points: 0
       }, {
         name: "Electronic Baffle",
         id: 172,
@@ -7057,11 +7051,8 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Clusterbomben",
       text: 'Nachdem du dich verteidigt hast, darfst du diese Karte ablegen. Wenn du dies tust, wirft jedes andere Schiff in Reichweite 1 der verteidigenden Sektion 2 Angriffswürfel und nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%).'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -8382,11 +8373,8 @@ exportObj.cardLoaders.English = function() {
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -10174,11 +10162,8 @@ exportObj.cardLoaders['Español'] = function() {
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -11778,11 +11763,8 @@ exportObj.cardLoaders['Français'] = function() {
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -13331,11 +13313,8 @@ exportObj.cardLoaders['Polski'] = function() {
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -14594,11 +14573,8 @@ exportObj.cardLoaders['Русский'] = function() {
     'Cluster Bombs': {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
-    "Adaptability (+1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."
-    },
-    "Adaptability (-1)": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."
+    "Adaptability": {
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -17343,7 +17319,7 @@ exportObj.manifestByExpansion = {
       type: 'upgrade',
       count: 1
     }, {
-      name: 'XX-23 Thread Tracers',
+      name: 'XX-23 S-Thread Tracers',
       type: 'upgrade',
       count: 1
     }, {
@@ -17769,7 +17745,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17179
+                    lineno: 17163
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18329,7 +18305,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17744
+              lineno: 17728
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -18927,7 +18903,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18268
+          lineno: 18252
         }));
         __iced_deferrals._fulfill();
       });
@@ -18939,7 +18915,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18269
+            lineno: 18253
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20395,7 +20371,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19103
+                      lineno: 19087
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20464,7 +20440,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19127
+                lineno: 19111
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20516,14 +20492,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19149
+            lineno: 19133
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 19151
+            lineno: 19135
           }));
         }
         _ref1 = _this.modifications;
@@ -20531,7 +20507,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19153
+              lineno: 19137
             }));
           }
         }
@@ -21420,7 +21396,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19785
+                lineno: 19769
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21537,7 +21513,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19842
+                  lineno: 19826
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21559,7 +21535,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19846
+                    lineno: 19830
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21570,6 +21546,9 @@ GenericAddon = (function() {
           })(function() {
             _this.data = _this.unadjusted_data = new_data;
             if (_this.data != null) {
+              if (_this.data.superseded_by_id) {
+                return _this.setById(_this.data.superseded_by_id);
+              }
               if (_this.adjustment_func != null) {
                 _this.data = _this.adjustment_func(_this.data);
               }
@@ -21641,7 +21620,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19884
+            lineno: 19870
           }));
         }
         __iced_deferrals._fulfill();
