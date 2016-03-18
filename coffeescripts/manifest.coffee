@@ -2772,6 +2772,329 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Ghost Expansion Pack': [
+        {
+            name: 'VCX-100'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Attack Shuttle'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kanan Jarrus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Chopper"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lothal Rebel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla (Attack Shuttle)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ezra Bridger'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Reinforced Deflectors'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dorsal Turret'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hera Syndulla'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Kanan Jarrus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ezra Bridger'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Chopper"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Net'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ghost'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Phantom'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Punishing One Expansion Pack': [
+        {
+            name: 'JumpMaster 5000'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Dengar'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tel Trevura'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Manaroo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Contracted Scout'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Rage'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Attanni Mindlink'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Dengar'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Boba Fett'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Gonk"'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-P8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Overclocked R4'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Punishing One'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Guidance Chips'
+            type: 'modification'
+            count: 2
+        }
+    ]
+    'Mist Hunter Expansion Pack': [
+        {
+            name: 'G-1A Starfighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Zuckuss'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '4-LOM'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gand Findsman'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ruthless Freelancer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adaptability'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: '4-LOM'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Zuckuss'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cloaking Device'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Mist Hunter'
+            type: 'title'
+            count: 1
+        }
+    ]
+    "Inquisitor's TIE Expansion Pack": [
+        {
+            name: 'TIE Advanced Prototype'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'The Inquisitor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Baron of the Empire'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sienar Test Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Deadeye'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XX-23 Thread Tracers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Guidance Chips'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'TIE/v1'
+            type: 'title'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
