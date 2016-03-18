@@ -3080,7 +3080,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'XX-23 Thread Tracers'
+            name: 'XX-23 S-Thread Tracers'
             type: 'upgrade'
             count: 1
         }
