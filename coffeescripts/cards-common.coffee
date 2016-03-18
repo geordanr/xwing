@@ -4809,22 +4809,18 @@ exportObj.basicCardData = ->
             slot: 'Cargo'
         }
         {
-            name: "Adaptability (+1)"
+            name: "Adaptability"
             id: 170
-            canonical_name: 'Adaptability'.canonicalize()
             slot: "Elite"
             points: 0
-            modifier_func: (stats) ->
-                stats.skill += 1
         }
         {
-            name: "Adaptability (-1)"
+            name: "Adaptability (old)"
+            skip: true
             id: 171
-            canonical_name: 'Adaptability'.canonicalize()
+            superseded_by_id: 170
             slot: "Elite"
             points: 0
-            modifier_func: (stats) ->
-                stats.skill -= 1
         }
         {
             name: "Electronic Baffle"

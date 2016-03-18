@@ -1154,10 +1154,8 @@ exportObj.cardLoaders.Deutsch = () ->
         'Cluster Bombs':
             name: "Clusterbomben"
             text: '''Nachdem du dich verteidigt hast, darfst du diese Karte ablegen. Wenn du dies tust, wirft jedes andere Schiff in Reichweite 1 der verteidigenden Sektion 2 Angriffswürfel und nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%).'''
-        "Adaptability (+1)":
-            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%Increase your pilot skill value by 1."""
-        "Adaptability (-1)":
-            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%Decrease your pilot skill value by 1."""
+        "Adaptability":
+            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."""
         "Electronic Baffle":
             text: """When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."""
         "4-LOM":

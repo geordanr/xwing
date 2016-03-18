@@ -2647,6 +2647,8 @@ class GenericAddon
             @data = @unadjusted_data = new_data
 
             if @data?
+                if @data.superseded_by_id
+                    return @setById @data.superseded_by_id
                 if @adjustment_func?
                     @data = @adjustment_func(@data)
                 @unequipOtherUpgrades()
