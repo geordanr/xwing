@@ -124,6 +124,14 @@ html
         $ ->
           window.setupTranslationSupport()
 
+          switch window.location.hash
+            when '#rebelContent'
+              window.location.replace '?f=Rebel Alliance'
+            when '#empireContent'
+              window.location.replace '?f=Galactic Empire'
+            when '#scumContent'
+              window.location.replace '?f=Scum and Villainy'
+
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
             ga 'send', 'pageview',
