@@ -18535,7 +18535,7 @@ exportObj.SquadBuilder = (function() {
 
   SquadBuilder.prototype.updatePermaLink = function() {
     var squad_link;
-    squad_link = "" + (window.location.href.split('?')[0]) + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())) + "&sn=" + (encodeURIComponent(this.current_squad.name));
+    squad_link = "" + window.location.pathname + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())) + "&sn=" + (encodeURIComponent(this.current_squad.name));
     return this.permalink.attr('href', squad_link);
   };
 
