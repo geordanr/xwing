@@ -682,7 +682,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Tel Trevura":
             text: """Wenn du zum ersten Mal zerstörst werden würdest, negiere stattdessen alle restlichen Schaden, lege alle Schadenskarten ab und teile diesem Schiff 4 verdeckte Schadenskarten zu."""
         "Manaroo":
-            text: """Zu Beginn darfst du alle dir zugeordneten Fokus-, Ausweich- und Zielerfassungsmarker einem anderen freundlichen Schiff zuordnen."""
+            text: """Zu Beginn der Kampfphase darfst du alle dir zugeordneten Fokus-, Ausweich- und Zielerfassungsmarker einem anderen freundlichen Schiff zuordnen."""
         # TIE Advanced Prototype
         "Sienar Test Pilot":
             ship: "TIE-Turbojäger-Prototyp"
