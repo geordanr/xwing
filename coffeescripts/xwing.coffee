@@ -789,7 +789,7 @@ class exportObj.SquadBuilder
          @notes.on 'keyup', @onNotesUpdated
 
     updatePermaLink: () =>
-        squad_link = "#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
+        squad_link = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
         @permalink.attr 'href', squad_link
 
     onNotesUpdated: =>
