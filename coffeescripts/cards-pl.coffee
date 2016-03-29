@@ -1142,15 +1142,12 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """<span class="card-restriction">Tylko StarViper.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje symbole rozwinięć %SYSTEM% i %ILLICIT%. Nie możesz wyposażyć swojego statku w tę kartę jeśli wartość umiejętności twojego pilota wynosi „3” lub mniej."""
         '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Interceptor typu Heavy Scyk (Działo)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Interceptor typu Heavy Scyk (Torpeda)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         '"Heavy Scyk" Interceptor (Missile)':
             name: 'Intercepteur "Scyk Lourd" (Rakieta)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Tylko Aggressor.</span>%LINEBREAK%Masz zdolność pilota każdego innego przyjaznego statku z kartą ulepszenia IG-2000 (jako dodatek do swojej zdolności pilota)."""
