@@ -1313,6 +1313,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-ship').show()
                     @info_container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.pilot.skill, effective_stats, 'skill')
                     @info_container.find('tr.info-skill').show()
+
+                    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-attack')
+
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
                     @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
                     @info_container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.energy ? data.data.energy), effective_stats, 'energy')
@@ -1347,6 +1352,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill').show()
                     @info_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                     @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+
+                    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
+
                     @info_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
                     @info_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     @info_container.find('tr.info-range').hide()
@@ -2146,8 +2156,9 @@ class Ship
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '
 
+        attack_icon = @data.attack_icon ? 'xwing-miniatures-font-attack'
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>
+            <i class="xwing-miniatures-font #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
 

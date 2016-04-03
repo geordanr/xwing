@@ -236,6 +236,11 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-skill').show()
                 @card_viewer_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                 @card_viewer_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+
+                for cls in @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                    @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
+
                 @card_viewer_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
                 @card_viewer_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                 @card_viewer_container.find('tr.info-range').hide()
