@@ -8794,7 +8794,11 @@ exportObj.translations['Español'] = {
     "The Force Awakens Core Set": "Caja Básica El Despertar de la Fuerza",
     "T-70 X-Wing Expansion Pack": "Pack de Expansión T-70 Ala-X",
     "TIE/fo Fighter Expansion Pack": "Pack de Expansión Caza TIE/fo",
-    "Imperial Assault Carrier Expansion Pack": "Pack de Expansión Portacazas de Asalto Imperial"
+    "Imperial Assault Carrier Expansion Pack": "Pack de Expansión Portacazas de Asalto Imperial",
+    "Ghost Expansion Pack": "Pack de Expansión Espíritu",
+    "Inquisitor's TIE Expansion Pack": "Pack de Expansión TIE del Inquisidor",
+    "Mist Hunter Expansion Pack": "Pack de Expansión Cazador de la Niebla",
+    "Punishing One Expansion Pack": "Pack de Expansión Castigadora"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -9110,6 +9114,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Gamma Squadron Pilot": {
       name: "Piloto del escuadrón Gamma",
+      ship: "Bombardero TIE"
+    },
+    "Gamma Squadron Veteran": {
+      ship: "Bombardero TIE"
+    },
+    '"Dea???"': {
       ship: "Bombardero TIE"
     },
     "Captain Jonus": {
@@ -9568,7 +9578,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'Las naves enemigas que tienes fijadas como blanco no pueden modificar ningún dado cuando te atacan o se defienden de tus ataques.'
     },
     'Hera Syndulla': {
-      text: 'When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'
+      text: 'Cuando reveles una maniobra verde o roja, puedes girar tu selector de maniobras para escoger otra maniobra del mismo color.'
     },
     '"Youngster"': {
       name: "Pipiolo",
@@ -9585,7 +9595,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando otra nave aliada que tengas a alcance 1 gaste una ficha de Concentración, asigna 1 ficha de Concentración a tu nave."
     },
     'Ezra Bridger': {
-      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+      text: "Cuando te defiendas, si estás bajo tensión, puedes cambiar hasta 2 de tus resultados %FOCUS% por resultados %EVADE%."
     },
     '"Zeta Leader"': {
       name: "Jefe Zeta",
@@ -9598,19 +9608,24 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Caza TIE/fo"
     },
     "Kanan Jarrus": {
-      text: "When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."
+      text: "Cuando una nave enemiga que tengas a alcance 1-2 efectúe un ataque, puedes gastar una ficha de Concentración. Si decides hacerlo, el atacante tira 1 dado de ataque menos."
     },
     '"Chopper"': {
-      text: "At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."
+      text: "Al comienzo de la fase de Combate, toda nave enemiga con la que estés en contacto recibe 1 ficha de Tensión."
     },
     'Hera Syndulla (Attack Shuttle)': {
-      text: "When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."
+      name: "Hera Syndulla (Lanzadera de Ataque)",
+      text: "Cuando reveles una maniobra verde o roja, puedes girar tu selector de maniobras para escoger otra maniobra del mismo color."
     },
     'Sabine Wren': {
-      text: "Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."
+      text: "Inmediatamente antes de revelar tu maniobra, puedes realizar una acción gratuita de impulso o tonel volado."
     },
     '"Zeb" Orrelios': {
-      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+      text: 'Cuando te defiendas, puedes anular resultados %CRIT% antes de anular resultados %HIT%.'
+    },
+    "Lothal Rebel": {
+      name: "Rebelde de Lothal",
+      ship: "VCX-100"
     },
     'Tomax Bren': {
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.',
@@ -10242,32 +10257,34 @@ exportObj.cardLoaders['Español'] = function() {
       text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
     },
     '"Zeb" Orrelios': {
-      text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
+      text: "%REBELONLY%%LINEBREAK%Las naves enemigas dentro de tu arco de fuego que estén en contacto contigo no se consideran en contacto contigo cuando tú o ellas os activéis durante la fase de Combate."
     },
     'Kanan Jarrus': {
-      text: "%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."
+      text: "%REBELONLY%%LINEBREAK%Una vez por ronda, después de que una nave aliada que tengas a alcance 1-2 ejecute una maniobra blanca, puedes quitar 1 ficha de Tensión de esa nave."
     },
     'Reinforced Deflectors': {
-      text: "%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."
+      name: "Deflectores Reforzados",
+      text: "%LARGESHIPONLY%%LINEBREAK%Después de que sufras 3 o más de daño debido a un mismo ataque, recuperas 1 ficha de Escudos (hasta un máximo igual a tu valor de Escudos)."
     },
     'Dorsal Turret': {
-      text: "<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."
+      name: "Torreta Dorsal",
+      text: "<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).%LINEBREAK%Si el objetivo de este ataque está a alcance 1, tiras 1 dado de ataque adicional."
     },
     'Targeting Astromech': {
       name: "Droide Astromecánico de Selección de Blancos",
       text: 'Después de que ejecutes una maniobra roja, puedes fijar un blanco.'
     },
     'Hera Syndulla': {
-      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+      text: "%REBELONLY%%LINEBREAK%Puedes revelar y ejectuar maniobras rojas incluso aunque estés bajo tensión."
     },
     'Ezra Bridger': {
-      text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
+      text: "%REBELONLY%%LINEBREAK%Cuando ataques, si estás bajo tensión puedes cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT%."
     },
     'Sabine Wren': {
-      text: "%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."
+      text: "%REBELONLY%%LINEBREAK%Tu barra de mejoras gana el icono %BOMB%.  Una vez por ronda, antes de retirar una ficha de Bomba aliada, elige 1 nave enemiga situada a Alcance 1 de esa ficha. Esa nave sufre 1 de daño."
     },
     '"Chopper"': {
-      text: "%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."
+      text: "%REBELONLY%%LINEBREAK%Puedes realizar acciones incluso aunque estés bajo tensión.%LINEBREAK%Después de que realices una acción mientras estás bajo tensión, sufres 1 de daño."
     },
     'Construction Droid': {
       text: '%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'
@@ -10306,7 +10323,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."
     },
     'Thermal Detonators': {
-      text: "When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."
+      name: "Detonadores Térmicos",
+      text: "Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Detonador térmico.%LINEBREAK%Esta ficha se <strong>detona</strong> al final de la fase de Activación.%LINEBREAK%<strong>Ficha de Detonador Térmico:</strong> Cuando esta bomba detona, cada nave a Alcance 1 de la ficha sufre 1 de daño y recibe 1 ficha de tensión.  Después, descarta esta ficha."
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
@@ -10515,10 +10533,12 @@ exportObj.cardLoaders['Español'] = function() {
       ship: 'VT-49 Diezmador'
     },
     "Ghost": {
-      text: "<span class=\"card-restriction\">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."
+      name: "Espíritu",
+      text: "<span class=\"card-restriction\">Sólo VCX-100.</span>%LINEBREAK%Equipa la carta de Título <em>Fantasma</em> a una Lanzadera de ataque aliada y acóplala a esta nave.%LINEBREAK%Después de que ejecutes una maniobra, puedes desplegar la Lanzadera de ataque desde los salientes de la parte trasera de tu peana."
     },
     "Phantom": {
-      text: "While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."
+      name: "Fantasma",
+      text: "Mientras estás acoplado, el <em>Espíritu</em> puede efectuar ataques de armamento principal desde su arco de fuego especial y, al final de la fase de Combate, puede efectuar un ataque adicional con una %TURRET% equipada. Si efectúa este ataque, no puede volver a atacar durante esta ronda."
     },
     "TIE/v1": {
       text: "<span class=\"card-restriction\">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."
@@ -10554,7 +10574,8 @@ exportObj.cardLoaders['Español'] = function() {
       ship: 'Defensor TIE'
     },
     'TIE Shuttle': {
-      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.',
+      ship: 'Bombardero TIE'
     },
     'Requiem': {
       text: '%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'
@@ -17855,7 +17876,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17283
+                    lineno: 17301
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18415,7 +18436,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17848
+              lineno: 17866
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19013,7 +19034,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18372
+          lineno: 18390
         }));
         __iced_deferrals._fulfill();
       });
@@ -19025,7 +19046,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18373
+            lineno: 18391
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20481,7 +20502,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19207
+                      lineno: 19225
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20550,7 +20571,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19231
+                lineno: 19249
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20602,14 +20623,14 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19253
+            lineno: 19271
           }));
         }
         _ref = _this.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
           upgrade.destroy(__iced_deferrals.defer({
-            lineno: 19255
+            lineno: 19273
           }));
         }
         _ref1 = _this.modifications;
@@ -20617,7 +20638,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19257
+              lineno: 19275
             }));
           }
         }
@@ -21506,7 +21527,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19889
+                lineno: 19907
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21623,7 +21644,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 19946
+                  lineno: 19964
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21645,7 +21666,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 19950
+                    lineno: 19968
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21730,7 +21751,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 19990
+            lineno: 20008
           }));
         }
         __iced_deferrals._fulfill();
