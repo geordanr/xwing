@@ -677,13 +677,18 @@ class exportObj.SquadBuilder
             # Need to remove ships here because the cards will change when the
             # new language is loaded, and we don't want to have problems with
             # unclaiming uniques.
+            # Preserve squad dirtiness
+            old_dirty = @current_squad.dirty
             @removeAllShips()
+            @current_squad.dirty = old_dirty
             cb()
         .on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
             @language = language
+            old_dirty = @current_squad.dirty
             @loadFromSerialized @pretranslation_serialized
             for ship in @ships
                 ship.updateSelections()
+            @current_squad.dirty = old_dirty
             @pretranslation_serialized = undefined
             cb()
         # Recently moved this here.  Did this ever work?
@@ -1880,6 +1885,7 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
+            @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
             old_title = null
