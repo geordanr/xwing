@@ -90,6 +90,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 1, 2, 2, 2, 1, 0]
@@ -172,6 +173,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Evade"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 0, 2, 2, 2, 0, 0]
@@ -369,6 +371,7 @@ exportObj.basicCardData = ->
             ]
             huge: true
             epic_points: 1.5
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 0, 1, 0, 1, 0, 0]
@@ -418,6 +421,7 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
             ]
             large: true
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 1, 2, 2, 2, 1, 0]
@@ -437,6 +441,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             large: true
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 0, 1, 1, 1, 0, 0]
@@ -558,6 +563,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-180'
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -596,6 +602,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "SLAM"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -737,6 +744,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 2, 2, 2, 1, 1, 0, 0, 0 ]
