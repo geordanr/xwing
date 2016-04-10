@@ -1389,6 +1389,10 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-energy').hide()
                     if data.attack?
+                        # Attack icons on upgrade cards don't get special icons
+                        for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                            @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-attack')
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
                     else
