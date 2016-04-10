@@ -1953,7 +1953,7 @@ class Ship
         await
             @title.destroy defer() if @title?
             for upgrade in @upgrades
-                upgrade.destroy defer()
+                upgrade.destroy defer() if upgrade?
             for modification in @modifications
                 modification.destroy defer() if modification?
         @upgrades = []
@@ -2579,6 +2579,7 @@ class GenericAddon
         @serialization_code = 'X'
         @occupied_by = null
         @occupying = []
+        @destroyed = false
 
         # Overridden by children
         @type = null
@@ -2586,8 +2587,11 @@ class GenericAddon
         @dataById = null
 
     destroy: (cb, args...) ->
+        return cb(args) if @destroyed
         if @data?.unique?
             await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
+        @destroyed = true
+        @rescindAddons()
         @deoccupyOtherUpgrades()
         @selector.select2 'destroy'
         cb args
