@@ -131,6 +131,12 @@ i.xwing-miniatures-font-scum:before {
 i.xwing-miniatures-font-attack-turret:before {
   content: "$"; }
 
+i.xwing-miniatures-font-attack-frontback:before {
+  content: "<"; }
+
+i.xwing-miniatures-font-attack-180:before {
+  content: ">"; }
+
 i.xwing-miniatures-font-attack:before {
   content: "%"; }
 
@@ -193,6 +199,9 @@ i.xwing-miniatures-ship-tiedefender:before {
 i.xwing-miniatures-ship-tiefighter:before {
   content: "F"; }
 
+i.xwing-miniatures-ship-vcx100:before {
+  content: "G"; }
+
 i.xwing-miniatures-ship-tieinterceptor:before {
   content: "I"; }
 
@@ -204,6 +213,9 @@ i.xwing-miniatures-ship-tiefofighter:before {
 
 i.xwing-miniatures-ship-tiephantom:before {
   content: "P"; }
+
+i.xwing-miniatures-ship-tieadvancedprototype:before {
+  content: "R"; }
 
 i.xwing-miniatures-ship-awing:before {
   content: "a"; }
@@ -219,6 +231,9 @@ i.xwing-miniatures-ship-ewing:before {
 
 i.xwing-miniatures-ship-firespray31:before {
   content: "f"; }
+
+i.xwing-miniatures-ship-attackshuttle:before {
+  content: "g"; }
 
 i.xwing-miniatures-ship-hwk290:before {
   content: "h"; }
@@ -238,8 +253,14 @@ i.xwing-miniatures-ship-lambdaclassshuttle:before {
 i.xwing-miniatures-ship-yt1300:before {
   content: "m"; }
 
+i.xwing-miniatures-ship-g1astarfighter:before {
+  content: "n"; }
+
 i.xwing-miniatures-ship-yt2400freighter:before {
   content: "o"; }
+
+i.xwing-miniatures-ship-jumpmaster5000:before {
+  content: "p"; }
 
 i.xwing-miniatures-ship-kihraxzfighter:before {
   content: "r"; }
