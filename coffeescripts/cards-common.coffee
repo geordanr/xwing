@@ -3475,7 +3475,7 @@ exportObj.basicCardData = ->
             points: 19
         }
         {
-            name: '"Dea???"'
+            name: '"Deathfire"'
             id: 192
             unique: true
             faction: "Galactic Empire"
@@ -3488,7 +3488,7 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Bomb'
             ]
-            points: 100
+            points: 17
         }
         {
             name: "Maarek Stele (TIE Defender)"
@@ -4907,6 +4907,14 @@ exportObj.basicCardData = ->
             id: 182
             slot: "Salvaged Astromech"
             points: 1
+        }
+        {
+            name: 'Systems Officer'
+            id: 183
+            faction: 'Galactic Empire'
+            limited: true
+            points: 2
+            slot: 'Crew'
         }
     ]
 

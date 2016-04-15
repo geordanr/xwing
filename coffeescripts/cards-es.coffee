@@ -339,8 +339,6 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Bombardero TIE"
         "Gamma Squadron Veteran":
             ship: "Bombardero TIE"
-        '"Dea???"':
-            ship: "Bombardero TIE"
         "Captain Jonus":
             name: "Capitán Jonus"
             ship: "Bombardero TIE"
@@ -745,6 +743,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."""
         "Manaroo":
             text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
+        '"Deathfire"':
+            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1247,6 +1247,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Detonador térmico.%LINEBREAK%Esta ficha se <strong>detona</strong> al final de la fase de Activación.%LINEBREAK%<strong>Ficha de Detonador Térmico:</strong> Cuando esta bomba detona, cada nave a Alcance 1 de la ficha sufre 1 de daño y recibe 1 ficha de tensión.  Después, descarta esta ficha."""
         "Overclocked R4":
             text: """During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."""
+        'Systems Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
 
     modification_translations =
         "Stealth Device":
