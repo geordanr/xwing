@@ -3346,14 +3346,14 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
         points: 19
       }, {
-        name: '"Dea???"',
+        name: '"Deathfire"',
         id: 192,
         unique: true,
         faction: "Galactic Empire",
         ship: "TIE Bomber",
         skill: 3,
         slots: ['Torpedo', 'Torpedo', 'Missile', 'Missile', 'Bomb'],
-        points: 100
+        points: 17
       }, {
         name: "Maarek Stele (TIE Defender)",
         canonical_name: 'Maarek Stele'.canonicalize(),
@@ -4645,6 +4645,13 @@ exportObj.basicCardData = function() {
         id: 182,
         slot: "Salvaged Astromech",
         points: 1
+      }, {
+        name: 'Systems Officer',
+        id: 183,
+        faction: 'Galactic Empire',
+        limited: true,
+        points: 2,
+        slot: 'Crew'
       }
     ],
     modificationsById: [
@@ -6496,6 +6503,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Tomax Bren': {
       ship: "TIE-Bomber",
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -7207,6 +7217,9 @@ exportObj.cardLoaders.Deutsch = function() {
     "Overclocked R4": {
       name: "Übertakteter R4",
       text: "Sobald du in der Kampfphase einen Fokusmarker ausgibst, darfst du 1 Stressmarker erhalten, um deinem Schiff 1 Fokusmarker zuzuordnen."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -7989,6 +8002,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Manaroo": {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -8537,6 +8553,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -9135,9 +9154,6 @@ exportObj.cardLoaders['Español'] = function() {
     "Gamma Squadron Veteran": {
       ship: "Bombardero TIE"
     },
-    '"Dea???"': {
-      ship: "Bombardero TIE"
-    },
     "Captain Jonus": {
       name: "Capitán Jonus",
       ship: "Bombardero TIE",
@@ -9662,6 +9678,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Manaroo": {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -10344,6 +10363,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -11321,6 +11343,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Manaroo": {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -11948,6 +11973,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -12869,6 +12897,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Manaroo": {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -13498,6 +13529,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -14222,6 +14256,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Manaroo": {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+    },
+    '"Deathfire"': {
+      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     }
   };
   upgrade_translations = {
@@ -14755,6 +14792,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Overclocked R4": {
       text: "During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."
+    },
+    'Systems Officer': {
+      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
     }
   };
   modification_translations = {
@@ -17892,7 +17932,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17314
+                    lineno: 17344
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18452,7 +18492,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17879
+              lineno: 17909
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19055,7 +19095,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18408
+          lineno: 18438
         }));
         __iced_deferrals._fulfill();
       });
@@ -19067,7 +19107,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18409
+            lineno: 18439
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20548,7 +20588,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19258
+                      lineno: 19288
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20617,7 +20657,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19282
+                lineno: 19312
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20669,7 +20709,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19304
+            lineno: 19334
           }));
         }
         _ref = _this.upgrades;
@@ -20677,7 +20717,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19306
+              lineno: 19336
             }));
           }
         }
@@ -20686,7 +20726,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19308
+              lineno: 19338
             }));
           }
         }
@@ -21580,7 +21620,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 19943
+                lineno: 19973
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21699,7 +21739,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20002
+                  lineno: 20032
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21721,7 +21761,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20006
+                    lineno: 20036
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21806,7 +21846,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20046
+            lineno: 20076
           }));
         }
         __iced_deferrals._fulfill();
