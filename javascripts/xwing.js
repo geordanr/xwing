@@ -3362,25 +3362,25 @@ exportObj.basicCardData = function() {
         faction: "Galactic Empire",
         ship: "TIE Defender",
         skill: 7,
-        slots: ['Cannon', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Cannon', 'Missile'],
+        points: 35
       }, {
-        name: "Glaive Squa???",
+        name: "Glaive Squadron Pilot",
         id: 194,
         faction: "Galactic Empire",
         ship: "TIE Defender",
         skill: 6,
-        slots: ['Cannon', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Cannon', 'Missile'],
+        points: 34
       }, {
-        name: "Count???",
+        name: "Countess Ryad",
         id: 195,
         unique: true,
         faction: "Galactic Empire",
         ship: "TIE Defender",
         skill: 5,
-        slots: ['Cannon', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Cannon', 'Missile'],
+        points: 34
       }
     ],
     upgradesById: [
@@ -6506,6 +6506,14 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others.",
+      ship: "TIE-Jagdbomber"
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
+      ship: "TIE-Jagdbomber"
     }
   };
   upgrade_translations = {
@@ -8005,6 +8013,12 @@ exportObj.cardLoaders.English = function() {
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
     }
   };
   upgrade_translations = {
@@ -9718,6 +9732,14 @@ exportObj.cardLoaders['Español'] = function() {
     "Baron of the Empire": {
       name: "Barón del Imperio",
       ship: "Prototipo de TIE Avanzado"
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others.",
+      ship: "Defensor TIE"
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
+      ship: "Defensor TIE"
     }
   };
   upgrade_translations = {
@@ -11399,6 +11421,14 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others.",
+      ship: "Défenseur TIE"
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
+      ship: "Défenseur TIE"
     }
   };
   upgrade_translations = {
@@ -12953,6 +12983,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
     }
   };
   upgrade_translations = {
@@ -14312,6 +14348,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+    },
+    "Maarek Stele (TIE Defender)": {
+      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."
+    },
+    "Countess Ryad": {
+      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
     }
   };
   upgrade_translations = {
@@ -17985,7 +18027,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17392
+                    lineno: 17425
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18545,7 +18587,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17957
+              lineno: 17990
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19148,7 +19190,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18486
+          lineno: 18519
         }));
         __iced_deferrals._fulfill();
       });
@@ -19160,7 +19202,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18487
+            lineno: 18520
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20641,7 +20683,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19336
+                      lineno: 19369
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20710,7 +20752,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19360
+                lineno: 19393
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20762,7 +20804,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19382
+            lineno: 19415
           }));
         }
         _ref = _this.upgrades;
@@ -20770,7 +20812,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19384
+              lineno: 19417
             }));
           }
         }
@@ -20779,7 +20821,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19386
+              lineno: 19419
             }));
           }
         }
@@ -21673,7 +21715,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 20021
+                lineno: 20054
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21792,7 +21834,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20080
+                  lineno: 20113
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21814,7 +21856,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20084
+                    lineno: 20117
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21899,7 +21941,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20124
+            lineno: 20157
           }));
         }
         __iced_deferrals._fulfill();
