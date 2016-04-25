@@ -3499,35 +3499,38 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             skill: 7
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 35
         }
         {
-            name: "Glaive Squa???"
+            name: "Glaive Squadron Pilot"
             id: 194
             faction: "Galactic Empire"
             ship: "TIE Defender"
             skill: 6
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 34
         }
         {
-            name: "Count???"
+            name: "Countess Ryad"
             id: 195
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Defender"
             skill: 5
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 34
         }
     ]
 

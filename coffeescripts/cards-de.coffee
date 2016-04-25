@@ -716,6 +716,12 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         '"Deathfire"':
             text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+        "Maarek Stele (TIE Defender)":
+            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+            ship: "TIE-Jagdbomber"
+        "Countess Ryad":
+            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            ship: "TIE-Jagdbomber"
 
     upgrade_translations =
         "Ion Cannon Turret":
