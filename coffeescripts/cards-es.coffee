@@ -777,11 +777,13 @@ exportObj.cardLoaders['Español'] = () ->
         "Baron of the Empire":
             name: "Barón del Imperio"
             ship: "Prototipo de TIE Avanzado"
-        "Maarek Stele (TIE Defender)":
-            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+        "Maarek Stele (Defensor TIE)":
+            text: """Cuando tu ataque inflija una carta de Daño boca arriba al defensor, en vez de eso roba 3 cartas de Daño, elige 1 de ellas a tu elección y luego descarta las otras."""
             ship: "Defensor TIE"
         "Countess Ryad":
             text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            ship: "Defensor TIE"
+        "Glaive Squadron Pilot":
             ship: "Defensor TIE"
 
     upgrade_translations =
