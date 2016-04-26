@@ -722,6 +722,12 @@ exportObj.cardLoaders.Deutsch = () ->
         "Countess Ryad":
             text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
             ship: "TIE-Jagdbomber"
+        "Gamma Squadron Veteran":
+            ship: "TIE-Bomber"
+            name: "Veteran der Gamma-Staffel"
+        "Glaive Squadron Pilot":
+            ship: "TIE-Jagdbomber"
+            name: "Pilot der Glaive-Staffel"
 
     upgrade_translations =
         "Ion Cannon Turret":
