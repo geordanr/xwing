@@ -777,7 +777,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Baron of the Empire":
             name: "Barón del Imperio"
             ship: "Prototipo de TIE Avanzado"
-        "Maarek Stele (Defensor TIE)":
+        "Maarek Stele (TIE Defender)":
+            name: "Maarek Stele (Defensor TIE)"
             text: """Cuando tu ataque inflija una carta de Daño boca arriba al defensor, en vez de eso roba 3 cartas de Daño, elige 1 de ellas a tu elección y luego descarta las otras."""
             ship: "Defensor TIE"
         "Countess Ryad":
