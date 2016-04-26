@@ -677,13 +677,18 @@ class exportObj.SquadBuilder
             # Need to remove ships here because the cards will change when the
             # new language is loaded, and we don't want to have problems with
             # unclaiming uniques.
+            # Preserve squad dirtiness
+            old_dirty = @current_squad.dirty
             @removeAllShips()
+            @current_squad.dirty = old_dirty
             cb()
         .on 'xwing:afterLanguageLoad', (e, language, cb=$.noop) =>
             @language = language
+            old_dirty = @current_squad.dirty
             @loadFromSerialized @pretranslation_serialized
             for ship in @ships
                 ship.updateSelections()
+            @current_squad.dirty = old_dirty
             @pretranslation_serialized = undefined
             cb()
         # Recently moved this here.  Did this ever work?
@@ -789,7 +794,7 @@ class exportObj.SquadBuilder
          @notes.on 'keyup', @onNotesUpdated
 
     updatePermaLink: () =>
-        squad_link = "#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
+        squad_link = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
         @permalink.attr 'href', squad_link
 
     onNotesUpdated: =>
@@ -1308,6 +1313,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-ship').show()
                     @info_container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.pilot.skill, effective_stats, 'skill')
                     @info_container.find('tr.info-skill').show()
+
+                    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-attack')
+
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
                     @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
                     @info_container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.energy ? data.data.energy), effective_stats, 'energy')
@@ -1342,6 +1352,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill').show()
                     @info_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                     @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+
+                    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
+
                     @info_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
                     @info_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
                     @info_container.find('tr.info-range').hide()
@@ -1374,6 +1389,10 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-energy').hide()
                     if data.attack?
+                        # Attack icons on upgrade cards don't get special icons
+                        for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                            @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-attack')
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
                     else
@@ -1880,6 +1899,7 @@ class Ship
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
+            @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
             old_title = null
@@ -1947,7 +1967,7 @@ class Ship
         await
             @title.destroy defer() if @title?
             for upgrade in @upgrades
-                upgrade.destroy defer()
+                upgrade.destroy defer() if upgrade?
             for modification in @modifications
                 modification.destroy defer() if modification?
         @upgrades = []
@@ -2140,8 +2160,9 @@ class Ship
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '
 
+        attack_icon = @data.attack_icon ? 'xwing-miniatures-font-attack'
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>
+            <i class="xwing-miniatures-font #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
 
@@ -2573,6 +2594,7 @@ class GenericAddon
         @serialization_code = 'X'
         @occupied_by = null
         @occupying = []
+        @destroyed = false
 
         # Overridden by children
         @type = null
@@ -2580,8 +2602,11 @@ class GenericAddon
         @dataById = null
 
     destroy: (cb, args...) ->
+        return cb(args) if @destroyed
         if @data?.unique?
             await @ship.builder.container.trigger 'xwing:releaseUnique', [ @data, @type, defer() ]
+        @destroyed = true
+        @rescindAddons()
         @deoccupyOtherUpgrades()
         @selector.select2 'destroy'
         cb args

@@ -714,6 +714,14 @@ exportObj.cardLoaders.Deutsch = () ->
         'Tomax Bren':
             ship: "TIE-Bomber"
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
+        '"Deathfire"':
+            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+        "Maarek Stele (TIE Defender)":
+            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+            ship: "TIE-Jagdbomber"
+        "Countess Ryad":
+            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            ship: "TIE-Jagdbomber"
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1243,6 +1251,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "Overclocked R4":
             name: "Übertakteter R4"
             text: """Sobald du in der Kampfphase einen Fokusmarker ausgibst, darfst du 1 Stressmarker erhalten, um deinem Schiff 1 Fokusmarker zuzuordnen."""
+        'Systems Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
 
     modification_translations =
         "Stealth Device":

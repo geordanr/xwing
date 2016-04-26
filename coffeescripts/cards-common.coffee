@@ -90,6 +90,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 1, 2, 2, 2, 1, 0]
@@ -172,6 +173,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Evade"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 0, 2, 2, 2, 0, 0]
@@ -369,6 +371,7 @@ exportObj.basicCardData = ->
             ]
             huge: true
             epic_points: 1.5
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 0, 1, 0, 1, 0, 0]
@@ -418,6 +421,7 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
             ]
             large: true
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 1, 2, 2, 2, 1, 0]
@@ -437,6 +441,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
             ]
             large: true
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 0, 1, 1, 1, 0, 0]
@@ -558,6 +563,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-180'
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -596,6 +602,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "SLAM"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -737,6 +744,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Barrel Roll"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 2, 2, 2, 1, 1, 0, 0, 0 ]
@@ -3467,7 +3475,7 @@ exportObj.basicCardData = ->
             points: 19
         }
         {
-            name: '"Dea???"'
+            name: '"Deathfire"'
             id: 192
             unique: true
             faction: "Galactic Empire"
@@ -3480,7 +3488,7 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Bomb'
             ]
-            points: 100
+            points: 17
         }
         {
             name: "Maarek Stele (TIE Defender)"
@@ -3491,35 +3499,38 @@ exportObj.basicCardData = ->
             ship: "TIE Defender"
             skill: 7
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 35
         }
         {
-            name: "Glaive Squa???"
+            name: "Glaive Squadron Pilot"
             id: 194
             faction: "Galactic Empire"
             ship: "TIE Defender"
             skill: 6
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 34
         }
         {
-            name: "Count???"
+            name: "Countess Ryad"
             id: 195
             unique: true
             faction: "Galactic Empire"
             ship: "TIE Defender"
             skill: 5
             slots: [
+                'Elite'
                 'Cannon'
                 'Missile'
             ]
-            points: 100
+            points: 34
         }
     ]
 
@@ -4899,6 +4910,14 @@ exportObj.basicCardData = ->
             id: 182
             slot: "Salvaged Astromech"
             points: 1
+        }
+        {
+            name: 'Systems Officer'
+            id: 183
+            faction: 'Galactic Empire'
+            limited: true
+            points: 2
+            slot: 'Crew'
         }
     ]
 

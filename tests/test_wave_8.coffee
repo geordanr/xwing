@@ -21,3 +21,22 @@ casper.test.begin "Mist Hunter equips Tractor Beam", (test) ->
 
     .run ->
         test.done()
+
+casper.test.begin "Sabine and B-Wing/E2 #315", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.addShip('#rebel-builder', 'B-Wing', 'Blue Squadron Pilot')
+    common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Sabine Wren')
+    common.addUpgrade('#rebel-builder', 1, 7, 'Ion Bombs')
+
+    common.removeUpgrade('#rebel-builder', 1, 5)
+    .then ->
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 7}", "B-Wing should no longer have a bomb slot"
+    .then ->
+        test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "B-Wing should no longer have a crew slot"
+
+    common.removeShip('#rebel-builder', 1)
+
+    .run ->
+        test.done()

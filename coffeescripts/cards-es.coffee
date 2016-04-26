@@ -70,6 +70,10 @@ exportObj.translations['Español'] =
         "T-70 X-Wing Expansion Pack": "Pack de Expansión T-70 Ala-X"
         "TIE/fo Fighter Expansion Pack": "Pack de Expansión Caza TIE/fo"
         "Imperial Assault Carrier Expansion Pack": "Pack de Expansión Portacazas de Asalto Imperial"
+        "Ghost Expansion Pack": "Pack de Expansión Espíritu"
+        "Inquisitor's TIE Expansion Pack": "Pack de Expansión TIE del Inquisidor"
+        "Mist Hunter Expansion Pack": "Pack de Expansión Cazador de la Niebla"
+        "Punishing One Expansion Pack": "Pack de Expansión Castigadora"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -166,6 +170,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Phantom', 'TIE Fantasma'
     exportObj.renameShip 'TIE Defender', 'Defensor TIE'
     exportObj.renameShip 'TIE Punisher', 'Castigador TIE'
+    exportObj.renameShip 'TIE Advanced Prototype', 'Prototipo de TIE Avanzado'
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Diezmador'
     exportObj.renameShip 'TIE/fo Fighter', 'Caza TIE/fo'
     exportObj.renameShip 'A-Wing', 'Ala-A'
@@ -175,6 +180,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'Y-Wing', 'Ala-Y'
     exportObj.renameShip 'K-Wing', 'Ala-K'
     exportObj.renameShip 'Z-95 Headhunter', 'Z-95 Cazacabezas'
+    exportObj.renameShip 'Attack Shuttle', 'Lanzadera de Ataque'
     exportObj.renameShip 'CR90 Corvette (Aft)', 'Corbeta CR90 (Popa)'
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
@@ -183,6 +189,8 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
     exportObj.renameShip 'Kihraxz Fighter', 'Caza Kihraxz'
+    exportObj.renameShip 'G-1A Starfighter', 'Caza Estelar G-1A'
+    exportObj.renameShip 'JumpMaster 5000', 'Saltador Maestro 5000'
 
     pilot_translations =
         "Wedge Antilles":
@@ -332,6 +340,8 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Bombardero TIE"
         "Gamma Squadron Pilot":
             name: "Piloto del escuadrón Gamma"
+            ship: "Bombardero TIE"
+        "Gamma Squadron Veteran":
             ship: "Bombardero TIE"
         "Captain Jonus":
             name: "Capitán Jonus"
@@ -618,11 +628,21 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Caza TIE"
             text: """Cuando ataques a un defensor que tiene 1 o más cartas de Daño, tira 1 dado de ataque adicional."""
         "The Inquisitor":
-            text: """When attacking with your primary weapon at Range 2-3, treat the range of the attack as Range 1."""
+            name: "El Inquisidor"
+            ship: "Prototipo de TIE Avanzado"
+            text: """Cuando ataques con tu armamento principal a alcance 2-3, el alcance del ataque se considera 1."""
         "Zuckuss":
-            text: """When attacking, you may roll 1 additional attack die.  If you do, the defender rolls 1 additional defense die."""
+            ship: "Caza Estelar G-1A"
+            text: """Cuando ataques, puedes tirar 1 dado de ataque adicional. Si decides hacerlo, el defensor tira 1 dado de defensa adicional."""
+        "Ruthless Freelancer":
+            name: "Mercenario Despiadado"
+            ship: "Caza Estelar G-1A"
+        "Gand Findsman":
+            name: "Buscador Gandiano"
+            ship: "Caza Estelar G-1A"
         "Dengar":
-            text: """Once per round after defending, if the attacker is inside your firing arc, you may perform an attack against the that ship."""
+            ship: "Saltador Maestro 5000"
+            text: """Una vez por ronda, después de que te defiendas, si el atacante está dentro de tu arco de fuego, puedes efectuar un ataque contra esa nave."""
         "Talonbane Cobra":
             ship: "Caza Kihraxz"
             text: """Cuando ataques o te defiendas, duplica el efecto de tus bonificaciones al combate por alcance."""
@@ -687,7 +707,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Caza TIE/fo"
             text: '''Las naves enemigas que tienes fijadas como blanco no pueden modificar ningún dado cuando te atacan o se defienden de tus ataques.'''
         'Hera Syndulla':
-            text: '''When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty.'''
+            text: '''Cuando reveles una maniobra verde o roja, puedes girar tu selector de maniobras para escoger otra maniobra del mismo color.'''
         '"Youngster"':
             name: "Pipiolo"
             ship: "Caza TIE"
@@ -700,7 +720,8 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Caza TIE"
             text: """Cuando otra nave aliada que tengas a alcance 1 gaste una ficha de Concentración, asigna 1 ficha de Concentración a tu nave."""
         'Ezra Bridger':
-            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
+            ship: "Lanzadera de Ataque"
+            text: """Cuando te defiendas, si estás bajo tensión, puedes cambiar hasta 2 de tus resultados %FOCUS% por resultados %EVADE%."""
         '"Zeta Leader"':
             name: "Jefe Zeta"
             text: '''Cuando ataques, si no estás bajo tensión, puedes recibir 1 ficha de Tensión para tirar 1 dado de ataque adicional.'''
@@ -710,15 +731,22 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Mientras no tengas ninguna carta de Daño asignada, se considera que tienes Habilidad 12.'''
             ship: "Caza TIE/fo"
         "Kanan Jarrus":
-            text: """When an enemy ship at Range 1-2 is attacking, you may spend a focus token.  If you do, the attacker rolls 1 fewer attack die."""
+            text: """Cuando una nave enemiga que tengas a alcance 1-2 efectúe un ataque, puedes gastar una ficha de Concentración. Si decides hacerlo, el atacante tira 1 dado de ataque menos."""
         '"Chopper"':
-            text: """At the start of the Combat phase, each enemy ship you are touching receives 1 stress token."""
+            text: """Al comienzo de la fase de Combate, toda nave enemiga con la que estés en contacto recibe 1 ficha de Tensión."""
         'Hera Syndulla (Attack Shuttle)':
-            text: """When you reveal a green or red maneuver, you may rotate your dial to another maneuver of the same difficulty."""
+            name: "Hera Syndulla (Lanzadera de Ataque)"
+            ship: "Lanzadera de Ataque"
+            text: """Cuando reveles una maniobra verde o roja, puedes girar tu selector de maniobras para escoger otra maniobra del mismo color."""
         'Sabine Wren':
-            text: """Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action."""
+            ship: "Lanzadera de Ataque"
+            text: """Inmediatamente antes de revelar tu maniobra, puedes realizar una acción gratuita de impulso o tonel volado."""
         '"Zeb" Orrelios':
-            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+            ship: "Lanzadera de Ataque"
+            text: '''Cuando te defiendas, puedes anular resultados %CRIT% antes de anular resultados %HIT%.'''
+        "Lothal Rebel":
+            name: "Rebelde de Lothal"
+            ship: "VCX-100"
         'Tomax Bren':
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
             ship: "Bombardero TIE"
@@ -726,13 +754,35 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Mientras no estés bajo tensión, puedes ejecutar tus maniobras %TROLLLEFT% y %TROLLRIGHT% como maniobras blancas.'''
             ship: "T-70 Ala-X"
         "Valen Rudor":
-            text: """After defending, you may perform a free action."""
+            text: """Después de que te defiendas, puedes ralizar una acción gratuita."""
+            ship: "Prototipo de TIE Avanzado"
         "4-LOM":
-            text: """At the start of the End phase, you may assign 1 of your stress tokens to another ship at Range 1."""
+            ship: "Caza Estelar G-1A"
+            text: """Al comienzo de la fase Final, puedes asignar 1 de tus fichas de Tensión a otra nave que tengas a alcance 1."""
         "Tel Trevura":
-            text: """The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."""
+            ship: "Saltador Maestro 5000"
+            text: """La primrea vez que seas destruido, en vez de eso anula todo el daño restante, descarta todas tus cartas de Daño e inflinge 4 cartas de Daño boca abajo a esta nave."""
         "Manaroo":
-            text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
+            ship: "Saltador Maestro 5000"
+            text: """Al comienzo de la fase de Combate, puedes asignar a otra nave aliada todas las fichas de Concentración, Evasión y Blanco Fijado que tengas asignadas."""
+        "Contracted Scout":
+            name: "Explorador Contratado"
+            ship: "Saltador Maestro 5000"
+        '"Deathfire"':
+            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+            ship: "TIE Bombardero"
+        "Sienar Test Pilot":
+            name: "Piloto de pruebas de Sienar"
+            ship: "Prototipo de TIE Avanzado"
+        "Baron of the Empire":
+            name: "Barón del Imperio"
+            ship: "Prototipo de TIE Avanzado"
+        "Maarek Stele (TIE Defender)":
+            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+            ship: "Defensor TIE"
+        "Countess Ryad":
+            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            ship: "Defensor TIE"
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1134,11 +1184,14 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Agente Kallus"
             text: '''%IMPERIALONLY%%LINEBREAK%Al comienzo de la primera ronda, elige 1 nave enemiga pequeña o grande. Cuando ataques a esa nave o te defiendas de esa nave, puedes cambiar 1 de tus resultados %FOCUS% por un resultado %HIT% o %EVADE%.'''
         'XX-23 S-Thread Tracers':
-            text: """<strong>Attack (focus):</strong> Discard this card to perform this attack.  If this attack hits, each friendly ship at Range 1-2 of you may acquire a target lock on the defender.  Then cancel <strong>all</strong> dice results."""
+            name: "Hiperrastreadores XX-23"
+            text: """<strong>Ataque (Concentración):</strong> Descarta esta carta para efectuar este ataque. Si este ataque impacta, toda nave aliada que tengas a alcance 1-2 puede fijar al defensor como blanco. Después se anulan <strong>todos</strong> los resultados de los dados."""
         "Tractor Beam":
-            text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."""
+            name: "Proyector de Campo de Tracción"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave.%LINEBREAK%Si este ataque impacta, el defensor recibe 1 ficha de Campo de Tracción. Después se anulan <strong>todos</strong> los resultados de los dados."""
         "Cloaking Device":
-            text: """%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."""
+            name: "Dispositivo de Camuflaje"
+            text: """%SMALLSHIPONLY%%LINEBREAK%<strong>Acción:</strong> Realiza una acción gratuita de camuflaje.%LINEBREAK%Al final de cada ronda, si estás camuflado, tira 1 dado de ataque. Si sacas %FOCUS%, descarta esta carta y luego elige entre desactivar el camuflaje o retirar tu ficha de Camuflaje."""
         "Shield Technician":
             name: "Técnico de Escudos"
             text: """%HUGESHIPONLY%%LINEBREAK%Cuando lleves a cabo una acción de recuperación, en vez de retirar todas tus fichas de Energía, puedes elegir qué cantidad de fichas de Energía deseas retirar."""
@@ -1186,52 +1239,63 @@ exportObj.cardLoaders['Español'] = () ->
         'Docking Clamps':
             text: '''%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'''
         '"Zeb" Orrelios':
-            text: """%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."""
+            text: """%REBELONLY%%LINEBREAK%Las naves enemigas dentro de tu arco de fuego que estén en contacto contigo no se consideran en contacto contigo cuando tú o ellas os activéis durante la fase de Combate."""
         'Kanan Jarrus':
-            text: """%REBELONLY%%LINEBREAK%Once per round, after a friendly ship at Range 1-2 executes a white maneuver, you may remove 1 stress token from that ship."""
+            text: """%REBELONLY%%LINEBREAK%Una vez por ronda, después de que una nave aliada que tengas a alcance 1-2 ejecute una maniobra blanca, puedes quitar 1 ficha de Tensión de esa nave."""
         'Reinforced Deflectors':
-            text: """%LARGESHIPONLY%%LINEBREAK%After you suffer 3 or more damage from an attack, recover one shield (up to your shield value)."""
+            name: "Deflectores Reforzados"
+            text: """%LARGESHIPONLY%%LINEBREAK%Después de que sufras 3 o más de daño debido a un mismo ataque, recuperas 1 ficha de Escudos (hasta un máximo igual a tu valor de Escudos)."""
         'Dorsal Turret':
-            text: """<strong>Attack:</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the target of this attack is at Range 1, roll 1 additional attack die."""
+            name: "Torreta Dorsal"
+            text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).%LINEBREAK%Si el objetivo de este ataque está a alcance 1, tiras 1 dado de ataque adicional."""
         'Targeting Astromech':
             name: "Droide Astromecánico de Selección de Blancos"
             text: '''Después de que ejecutes una maniobra roja, puedes fijar un blanco.'''
         'Hera Syndulla':
-            text: """%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."""
+            text: """%REBELONLY%%LINEBREAK%Puedes revelar y ejectuar maniobras rojas incluso aunque estés bajo tensión."""
         'Ezra Bridger':
-            text: """%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."""
+            text: """%REBELONLY%%LINEBREAK%Cuando ataques, si estás bajo tensión puedes cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT%."""
         'Sabine Wren':
-            text: """%REBELONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% upgrade icon.  Once per round, before a friendly bomb token is removed, choose 1 enemy ship at Range 1 of that token. That ship suffers 1 damage."""
+            text: """%REBELONLY%%LINEBREAK%Tu barra de mejoras gana el icono %BOMB%.  Una vez por ronda, antes de retirar una ficha de Bomba aliada, elige 1 nave enemiga situada a Alcance 1 de esa ficha. Esa nave sufre 1 de daño."""
         '"Chopper"':
-            text: """%REBELONLY%%LINEBREAK%You may perform actions even while you are stressed.%LINEBREAK%After you perform an action while you are stressed, suffer 1 damage."""
+            text: """%REBELONLY%%LINEBREAK%Puedes realizar acciones incluso aunque estés bajo tensión.%LINEBREAK%Después de que realices una acción mientras estás bajo tensión, sufres 1 de daño."""
         'Construction Droid':
             text: '''%HUGESHIPONLY% %LIMITED%%LINEBREAK%When you perform a recover action, you may spend 1 energy to discard 1 facedown Damage card.'''
         'Cluster Bombs':
             text: '''After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'''
         "Adaptability":
-            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."""
+            name: "Adaptabilidad"
+            text: """<span class="card-restriction">Carta dual.</span>%LINEBREAK%<strong>Cara A:</strong>%LINEBREAK%La Habilidad de tu piloto se incrementa en 1.%LINEBREAK%<strong>Cara B:</strong>%LINEBREAK%La habilidad de tu piloto se reduce en 1."""
         "Electronic Baffle":
-            text: """When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."""
+            name: "Regulador Electrónico"
+            text: """Cuando recibas una ficha de Tensión o una ficha de Iones, puedes sufrir 1 de daño para descartar esa ficha."""
         "4-LOM":
-            text: """%SCUMONLY%%LINEBREAK%When attacking, during the "Modify Attack Dice" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."""
+            text: """%SCUMONLY%%LINEBREAK%Cuando ataques, durante el paso "Modificar la tirada de ataque" puedes recibir 1 ficha de Iones para elegir 1 de las fichas de Concentración o Evasión del defensor. Esa ficha no se puede gastar durante este ataque."""
         "Zuckuss":
-            text: """%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."""
+            text: """%SCUMONLY%%LINEBREAK%Cuando ataques, puedes recibir tantas fichas de Tensión como quieras para elegir una cantidad igual de dados de defensa. El defensor debe volver a tirar esos dados."""
         'Rage':
-            text: """<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."""
+            name: "Furia"
+            text: """<strong>Acción:</strong> Asigna 1 ficha de Concentración a tu nave y recibe 2 fichas de Tensión. Hasta el final de la ronda, cuando ataques puedes volver a tirar hasta 3 dados de ataque."""
         "Attanni Mindlink":
-            text: """%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
+            name: "Enlace Mental Attani"
+            text: """%SCUMONLY%%LINEBREAK%Cada vez que se te asigne una ficha de Concentración o de Tensión, a todas las demás naves aliadas equipadas con "Enlace Mental Attani" se les debe asignar también una ficha de ese mismo tipo si es que no tienen ya una."""
         "Boba Fett":
-            text: """%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."""
+            text: """%SCUMONLY%%LINEBREAK%Después de que efectúes un ataque, si al defensor se le infligió una carta de Daño boca arriba, puedes descartar esta carta para elegir y descartar 1 de las cartas de Mejora del defensor."""
         "Dengar":
-            text: """%SCUMONLY%%LINEBREAK%When attacking, you may reroll 1 attack die.  If the defender is a unique pilot, you may instead reroll up to 2 attack dice."""
+            text: """%SCUMONLY%%LINEBREAK%Cuando ataques, puedes volver a tirar 1 dado de ataque. Si el defensor es un piloto único, en vez de eso puedes volver a tirar hasta 2 dados de ataque."""
         '"Gonk"':
-            text: """%SCUMONLY%%LINEBREAK%<strong>Action:</strong> Place 1 shield token on this card.%LINEBREAK%<strong>Action:</strong> Remove 1 shield token from this card to recover 1 shield (up to your shield value)."""
+            name: '"Gonk"'
+            text: """%SCUMONLY%%LINEBREAK%<strong>Acción:</strong> Coloca 1 ficha de Escudos sobre esta carta.%LINEBREAK%<strong>Acción:</strong> Quita 1 ficha de Escudos de esta carta para recupera 1 de Escudos (hast aun máximo igual a tu valor de Escudos)."""
         "R5-P8":
-            text: """Once per round, after defending, you may roll 1 attack die.  On a %HIT% result, the attacker suffers 1 damage.  On a %CRIT% result, you and the attacker each suffer 1 damage."""
+            text: """Una vez por ronda, después de que te defiendas puedes volver a tirar 1 dado de ataque. Si sacas %HIT%, el atacante sufre 1 de daño. Si sacas %CRIT%, tanto tú como el atacante sufrís 1 de daño."""
         'Thermal Detonators':
-            text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."""
+            name: "Detonadores Térmicos"
+            text: """Cuando reveles tu selector de maniobras, puedes descartar esta carta para <strong>soltar</strong> 1 ficha de Detonador térmico.%LINEBREAK%Esta ficha se <strong>detona</strong> al final de la fase de Activación.%LINEBREAK%<strong>Ficha de Detonador Térmico:</strong> Cuando esta bomba detona, cada nave a Alcance 1 de la ficha sufre 1 de daño y recibe 1 ficha de tensión.  Después, descarta esta ficha."""
         "Overclocked R4":
-            text: """During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."""
+            name: "Droide R4 trucado"
+            text: """Durante la fase de Combate, cuando gastes una ficha de Concentración puedes recibir 1 ficha de Tensión para asignar 1 ficha de Concentración a tu nave."""
+        'Systems Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
 
     modification_translations =
         "Stealth Device":
@@ -1305,7 +1369,8 @@ exportObj.cardLoaders['Español'] = () ->
         'Long-Range Scanners':
             text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
         "Guidance Chips":
-            text: """Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is "3" or higher)."""
+            name: "Chips de Guiado"
+            text: """Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."""
 
     title_translations =
         "Slave I":
@@ -1389,15 +1454,23 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<span class="card-restriction">Solo VT-49 Diezmador.</span><br /><br />Después de que ejecutes una maniobra que te solape con otra nave, puedes realizar 1 acción gratuita. Luego recibes 1 ficha de Tensión."""
             ship: 'VT-49 Diezmador'
         "Ghost":
-            text: """<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom</em> title card to a friendly Attack Shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides."""
+            name: "Espíritu"
+            text: """<span class="card-restriction">Sólo VCX-100.</span>%LINEBREAK%Equipa la carta de Título <em>Fantasma</em> a una Lanzadera de ataque aliada y acóplala a esta nave.%LINEBREAK%Después de que ejecutes una maniobra, puedes desplegar la Lanzadera de ataque desde los salientes de la parte trasera de tu peana."""
         "Phantom":
-            text: """While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc, and, at the end of the Combat phase, it may perform an additional attack with an equipped %TURRET%. If it performs this attack, it cannot attack again this round."""
+            name: "Fantasma"
+            text: """Mientras estás acoplado, el <em>Espíritu</em> puede efectuar ataques de armamento principal desde su arco de fuego especial y, al final de la fase de Combate, puede efectuar un ataque adicional con una %TURRET% equipada. Si efectúa este ataque, no puede volver a atacar durante esta ronda."""
+            ship: 'Lanzadera de Ataque'
         "TIE/v1":
-            text: """<span class="card-restriction">TIE Advanced Prototype only.</span>%LINEBREAK%After you acquire a target lock, you may perform a free evade action."""
+            text: """<span class="card-restriction">Solo Prototipo de TIE Av.</span>%LINEBREAK%Después de que fijes a un blanco, puedes realizar una acción gratuita de evasión."""
+            ship: 'Prototipo de TIE Avanzado'
         "Mist Hunter":
-            text: """<span class="card-restriction">G-1A starfighter only.</span>%LINEBREAK%Your upgrade bar gains the %BARRELROLL% Upgrade icon.%LINEBREAK%You <strong>must</strong> equip 1 "Tractor Beam" Upgrade card (paying its squad point cost as normal)."""
+            name: "Cazador de la Niebla"
+            text: """<span class="card-restriction">Solo Caza Estelar G-1A.</span>%LINEBREAK%Tu barra de acción gana el icono %BARRELROLL%.%LINEBREAK%<strong>Debes</strong> equiparte con 1 carta de Mejora "Proyector de Campo de Tracción" (pagando su coste normal en puntos de escuadrón)."""
+            ship: 'Caza Estelar G-1A'
         "Punishing One":
-            text: """<span class="card-restriction">JumpMaster 5000 only.</span>%LINEBREAK%Increase your primary weapon value by 1."""
+            name: "Castigadora"
+            text: """<span class="card-restriction">Solo Saltador Maestro 5000.</span>%LINEBREAK%Tu valor de Armamento principal se incrementa en 1."""
+            ship: 'Saltador Maestro 5000'
         "Hound's Tooth":
             name: "Diente de Perro"
             text: """<span class="card-restriction">Solo YV-666.</span>%LINEBREAK%Después de que seas destruido, y antes de retirarte de la zona de juego, puedes <strong>desplegar</strong> al Piloto del <span>Cachorro de Nashtah</span>.%LINEBREAK%El <span>Cachorro de Nashtah</span> no puede atacar en esta ronda."""
@@ -1418,6 +1491,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: 'Defensor TIE'
         'TIE Shuttle':
             text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
+            ship: 'Bombardero TIE'
         'Requiem':
             text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
         'Vector':

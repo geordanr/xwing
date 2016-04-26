@@ -150,26 +150,75 @@ class exportObj.SquadBuilderBackend
                                 <h5>#{squad.additional_data.points} Points</h5>
                             </div>
                         </div>
-                        <div class="row-fluid">
-                            <div class="span10">
+                        <div class="row-fluid squad-description">
+                            <div class="span8">
                                 #{squad.additional_data.description}
                             </div>
-                            <div class="span2">
+                            <div class="span4">
                                 <button class="btn load-squad">Load</button>
+                                &nbsp;
+                                <button class="btn btn-danger delete-squad">Delete</button>
+                            </div>
+                        </div>
+                        <div class="row-fluid squad-delete-confirm">
+                            <div class="span8">
+                                Really delete <em>#{squad.name}</em>?
+                            </div>
+                            <div class="span4">
+                                <button class="btn btn-danger confirm-delete-squad">Delete</button>
+                                &nbsp;
+                                <button class="btn cancel-delete-squad">Cancel</button>
                             </div>
                         </div>
                     """
-                    li.click (e) =>
+                    li.find('.squad-delete-confirm').hide()
+
+                    li.find('button.load-squad').click (e) =>
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
                         builder = li.data('builder')
                         @squad_list_modal.modal 'hide'
                         if builder.current_squad.dirty
-                            @warnUnsaved builder, () =>
+                            @warnUnsaved builder, () ->
                                 builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
                         else
                             builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
+
+                    li.find('button.delete-squad').click (e) ->
+                        e.preventDefault()
+                        button = $ e.target
+                        li = button.closest 'li'
+                        builder = li.data('builder')
+                        do (li) ->
+                            li.find('.squad-description').fadeOut 'fast', ->
+                                li.find('.squad-delete-confirm').fadeIn 'fast'
+
+                    li.find('button.cancel-delete-squad').click (e) ->
+                        e.preventDefault()
+                        button = $ e.target
+                        li = button.closest 'li'
+                        builder = li.data('builder')
+                        do (li) ->
+                            li.find('.squad-delete-confirm').fadeOut 'fast', ->
+                                li.find('.squad-description').fadeIn 'fast'
+
+                    li.find('button.confirm-delete-squad').click (e) =>
+                        e.preventDefault()
+                        button = $ e.target
+                        li = button.closest 'li'
+                        builder = li.data('builder')
+                        li.find('.cancel-delete-squad').fadeOut 'fast'
+                        li.find('.confirm-delete-squad').addClass 'disabled'
+                        li.find('.confirm-delete-squad').text 'Deleting...'
+                        @delete li.data('squad').id, (results) ->
+                            if results.success
+                                li.slideUp 'fast', ->
+                                    $(li).remove()
+                            else
+                                li.html $.trim """
+                                    Error deleting #{li.data('squad').name}: <em>#{results.error}</em>
+                                """
 
             loading_pane.fadeOut 'fast'
             list_ul.fadeIn 'fast'

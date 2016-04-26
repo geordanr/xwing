@@ -563,6 +563,12 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."""
         "Manaroo":
             text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
+        '"Deathfire"':
+            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+        "Maarek Stele (TIE Defender)":
+            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+        "Countess Ryad":
+            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1029,6 +1035,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """When you reveal your maneuver dial, you may discard this card to <strong>drop</strong> 1 thermal detonator token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Thermal Detonator Token:</strong> When this bomb token detonates, each ship at Range 1 of the token suffers 1 damage and receives 1 stress token.  Then discard this token."""
         "Overclocked R4":
             text: """During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."""
+        'Systems Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1142,15 +1150,12 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """<span class="card-restriction">Tylko StarViper.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje symbole rozwinięć %SYSTEM% i %ILLICIT%. Nie możesz wyposażyć swojego statku w tę kartę jeśli wartość umiejętności twojego pilota wynosi „3” lub mniej."""
         '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Interceptor typu Heavy Scyk (Działo)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Interceptor typu Heavy Scyk (Torpeda)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         '"Heavy Scyk" Interceptor (Missile)':
             name: 'Intercepteur "Scyk Lourd" (Rakieta)'
-            ship: "Interceptor M3-A"
             text: """<span class="card-restriction">Tylko Interceptor M3-A.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje jeden z symboli rozwinięć: %CANNON%, %TORPEDO% lub %MISSILE%."""
         "IG-2000":
             text: """<span class="card-restriction">Tylko Aggressor.</span>%LINEBREAK%Masz zdolność pilota każdego innego przyjaznego statku z kartą ulepszenia IG-2000 (jako dodatek do swojej zdolności pilota)."""
