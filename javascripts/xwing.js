@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Veterans Expansion Pack"];
+exportObj.unreleasedExpansions = ["Imperial Veterans Expansion Pack", "Heroes of the Resistance Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -3381,6 +3381,99 @@ exportObj.basicCardData = function() {
         skill: 5,
         slots: ['Elite', 'Cannon', 'Missile'],
         points: 34
+      }, {
+        name: "Poe Dameron (PS9)",
+        canonical_name: "Poe Dameron".canonicalize(),
+        id: 196,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 9,
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 33
+      }, {
+        name: 'Nien Nunb???',
+        id: 197,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 7,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 100
+      }, {
+        name: '"Snap" Wexley',
+        id: 198,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 6,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 100
+      }, {
+        name: 'Jess Pava',
+        id: 199,
+        unique: true,
+        faction: "Resistance",
+        ship: "T-70 X-Wing",
+        skill: 3,
+        slots: ['Torpedo', 'Astromech', 'Tech'],
+        points: 100
+      }, {
+        name: "Han Solo (TFA)",
+        canonical_name: "Han Solo".canonicalize(),
+        id: 200,
+        unique: true,
+        faction: "Resistance",
+        ship: "YT-1300",
+        skill: 9,
+        points: 100,
+        slots: ["Elite", "Missile", "Crew", "Crew"],
+        ship_override: {
+          attack: 3,
+          agility: 1,
+          hull: 8,
+          shields: 5
+        }
+      }, {
+        name: "Rey",
+        id: 201,
+        unique: true,
+        faction: "Resistance",
+        ship: "YT-1300",
+        skill: 8,
+        points: 45,
+        slots: ["Elite", "Missile", "Crew", "Crew"],
+        ship_override: {
+          attack: 3,
+          agility: 1,
+          hull: 8,
+          shields: 5
+        }
+      }, {
+        name: "Chewbacca (TFA)",
+        canonical_name: "Chewbacca".canonicalize(),
+        id: 202,
+        unique: true,
+        faction: "Resistance",
+        ship: "YT-1300",
+        skill: 5,
+        points: 100,
+        slots: ["Elite", "Missile", "Crew", "Crew"],
+        ship_override: {
+          attack: 3,
+          agility: 1,
+          hull: 8,
+          shields: 5
+        }
+      }, {
+        name: "Resistance???",
+        canonical_name: "Chewbacca".canonicalize(),
+        id: 203,
+        faction: "Resistance",
+        ship: "YT-1300",
+        skill: 5,
+        points: 100,
+        slots: ["Missile", "Crew", "Crew"]
       }
     ],
     upgradesById: [
@@ -5278,6 +5371,22 @@ exportObj.basicCardData = function() {
         modifier_func: function(stats) {
           return stats.energy += 2;
         }
+      }, {
+        name: 'Black One',
+        id: 39,
+        unique: true,
+        ship: 'T-70 X-Wing',
+        points: 1,
+        restriction_func: function(ship) {
+          return ship.effectiveStats().skill > 6;
+        }
+      }, {
+        name: "Millennium Falcon (TFA)",
+        canonical_name: "Millennium Falcon".canonicalize(),
+        id: 40,
+        unique: true,
+        points: 1,
+        ship: "YT-1300"
       }
     ]
   };
@@ -6522,6 +6631,19 @@ exportObj.cardLoaders.Deutsch = function() {
     "Glaive Squadron Pilot": {
       ship: "TIE-Jagdbomber",
       name: "Pilot der Glaive-Staffel"
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.",
+      ship: "T-70-X-Flügler"
+    },
+    '"Snap" Wexley': {
+      ship: "T-70-X-Flügler"
+    },
+    'Jess Pava': {
+      ship: "T-70-X-Flügler"
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -7494,6 +7616,12 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "Kreuzer der Gozanti-Klasse",
       name: "Unterdrücker",
       text: '%DE_GOZANTIONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du ein feindliches Schiff in die Zielerfassung genommen hast, 1 Fokus-, Ausweich- oder blaue Zielerfassungsmarker von dem Schiff entfernen.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -8027,6 +8155,12 @@ exportObj.cardLoaders.English = function() {
     },
     "Countess Ryad": {
       text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -8768,6 +8902,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -9752,6 +9892,19 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Glaive Squadron Pilot": {
       ship: "Defensor TIE"
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.",
+      ship: "T-70 Ala-X"
+    },
+    '"Snap" Wexley': {
+      ship: "T-70 Ala-X"
+    },
+    'Jess Pava': {
+      ship: "T-70 Ala-X"
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -10710,6 +10863,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -11441,6 +11600,12 @@ exportObj.cardLoaders['Français'] = function() {
     "Countess Ryad": {
       text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
       ship: "Défenseur TIE"
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -12290,6 +12455,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -13001,6 +13172,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Countess Ryad": {
       text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -13849,6 +14026,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -14366,6 +14549,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Countess Ryad": {
       text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."
+    },
+    "Poe Dameron (PS9)": {
+      text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     }
   };
   upgrade_translations = {
@@ -15086,6 +15275,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'
+    },
+    'Black One': {
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+    },
+    'Millennium Falcon (TFA)': {
+      text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -18039,7 +18234,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17434
+                    lineno: 17644
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18599,7 +18794,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 17999
+              lineno: 18209
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19202,7 +19397,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18528
+          lineno: 18738
         }));
         __iced_deferrals._fulfill();
       });
@@ -19214,7 +19409,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18529
+            lineno: 18739
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20695,7 +20890,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19378
+                      lineno: 19588
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20764,7 +20959,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19402
+                lineno: 19612
               })
             ]);
             __iced_deferrals._fulfill();
@@ -20816,7 +21011,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19424
+            lineno: 19634
           }));
         }
         _ref = _this.upgrades;
@@ -20824,7 +21019,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19426
+              lineno: 19636
             }));
           }
         }
@@ -20833,7 +21028,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19428
+              lineno: 19638
             }));
           }
         }
@@ -21727,7 +21922,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 20063
+                lineno: 20273
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21846,7 +22041,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20122
+                  lineno: 20332
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -21868,7 +22063,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20126
+                    lineno: 20336
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -21953,7 +22148,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20166
+            lineno: 20376
           }));
         }
         __iced_deferrals._fulfill();
