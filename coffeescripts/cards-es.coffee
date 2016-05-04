@@ -786,6 +786,15 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Defensor TIE"
         "Glaive Squadron Pilot":
             ship: "Defensor TIE"
+        "Poe Dameron (PS9)":
+            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+            ship: "T-70 Ala-X"
+        '''"Snap" Wexley''':
+            ship: "T-70 Ala-X"
+        'Jess Pava':
+            ship: "T-70 Ala-X"
+        "Rey":
+            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1501,5 +1510,9 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'''
         'Suppressor':
             text: '''%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'''
+        'Black One':
+            text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'''
+        'Millennium Falcon (TFA)':
+            text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations

@@ -3,6 +3,7 @@ exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
     "Imperial Veterans Expansion Pack"
+    "Heroes of the Resistance Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -3532,6 +3533,140 @@ exportObj.basicCardData = ->
             ]
             points: 34
         }
+        {
+            name: "Poe Dameron (PS9)"
+            canonical_name: "Poe Dameron".canonicalize()
+            id: 196
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 9
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 33
+        }
+        {
+            name: 'Nien Nunb???'
+            id: 197
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 7
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: '''"Snap" Wexley'''
+            id: 198
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 6
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Jess Pava'
+            id: 199
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 3
+            slots: [
+                'Torpedo'
+                'Astromech'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: "Han Solo (TFA)"
+            canonical_name: "Han Solo".canonicalize()
+            id: 200
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300"
+            skill: 9
+            points: 100
+            slots: [
+                "Elite"
+                "Missile"
+                "Crew"
+                "Crew"
+            ]
+            ship_override:
+                attack: 3
+                agility: 1
+                hull: 8
+                shields: 5
+        }
+        {
+            name: "Rey"
+            id: 201
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300"
+            skill: 8
+            points: 45
+            slots: [
+                "Elite"
+                "Missile"
+                "Crew"
+                "Crew"
+            ]
+            ship_override:
+                attack: 3
+                agility: 1
+                hull: 8
+                shields: 5
+        }
+        {
+            name: "Chewbacca (TFA)"
+            canonical_name: "Chewbacca".canonicalize()
+            id: 202
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300"
+            skill: 5
+            points: 100
+            slots: [
+                "Elite"
+                "Missile"
+                "Crew"
+                "Crew"
+            ]
+            ship_override:
+                attack: 3
+                agility: 1
+                hull: 8
+                shields: 5
+        }
+        {
+            name: "Resistance???"
+            canonical_name: "Chewbacca".canonicalize()
+            id: 203
+            faction: "Resistance"
+            ship: "YT-1300"
+            skill: 5
+            points: 100
+            slots: [
+                "Missile"
+                "Crew"
+                "Crew"
+            ]
+        }
     ]
 
     upgradesById: [
@@ -5535,6 +5670,23 @@ exportObj.basicCardData = ->
             points: 6
             modifier_func: (stats) ->
                 stats.energy += 2
+        }
+        {
+            name: 'Black One'
+            id: 39
+            unique: true
+            ship: 'T-70 X-Wing'
+            points: 1
+            restriction_func: (ship) ->
+                ship.effectiveStats().skill > 6
+        }
+        {
+            name: "Millennium Falcon (TFA)"
+            canonical_name: "Millennium Falcon".canonicalize()
+            id: 40
+            unique: true
+            points: 1
+            ship: "YT-1300"
         }
     ]
 
