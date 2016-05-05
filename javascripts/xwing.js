@@ -3392,7 +3392,7 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
         points: 33
       }, {
-        name: 'Nien Nunb???',
+        name: 'Nien Nunb',
         id: 197,
         unique: true,
         faction: "Resistance",
