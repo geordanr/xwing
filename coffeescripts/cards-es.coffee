@@ -1495,6 +1495,9 @@ exportObj.cardLoaders['Español'] = () ->
         'TIE Shuttle':
             text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
             ship: 'Bombardero TIE'
+        'Black One':
+            text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1. You cannot equip this card if your pilot skill is "6" or lower.'''
+            ship: "T-70 Ala-X"
         'Requiem':
             text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
         'Vector':
