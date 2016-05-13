@@ -3535,7 +3535,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Poe Dameron (PS9)"
-            canonical_name: "Poe Dameron".canonicalize()
+            canonical_name: "poedameron-swx57"
             id: 196
             unique: true
             faction: "Resistance"
@@ -3593,7 +3593,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Han Solo (TFA)"
-            canonical_name: "Han Solo".canonicalize()
+            canonical_name: "hansolo-swx57"
             id: 200
             unique: true
             faction: "Resistance"
@@ -3634,7 +3634,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Chewbacca (TFA)"
-            canonical_name: "Chewbacca".canonicalize()
+            canonical_name: "chewbacca-swx57"
             id: 202
             unique: true
             faction: "Resistance"
@@ -3702,7 +3702,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
-            canonical_name: 'r2d2'
+            canonical_name: 'r2d2-swx22'
             id: 3
             unique: true
             slot: "Astromech"
@@ -5682,7 +5682,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Millennium Falcon (TFA)"
-            canonical_name: "Millennium Falcon".canonicalize()
+            canonical_name: "millenniumfalcon-swx57"
             id: 40
             unique: true
             points: 1
