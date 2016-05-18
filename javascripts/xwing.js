@@ -3383,7 +3383,7 @@ exportObj.basicCardData = function() {
         points: 34
       }, {
         name: "Poe Dameron (PS9)",
-        canonical_name: "Poe Dameron".canonicalize(),
+        canonical_name: "poedameron-swx57",
         id: 196,
         unique: true,
         faction: "Resistance",
@@ -3420,7 +3420,7 @@ exportObj.basicCardData = function() {
         points: 100
       }, {
         name: "Han Solo (TFA)",
-        canonical_name: "Han Solo".canonicalize(),
+        canonical_name: "hansolo-swx57",
         id: 200,
         unique: true,
         faction: "Resistance",
@@ -3451,7 +3451,7 @@ exportObj.basicCardData = function() {
         }
       }, {
         name: "Chewbacca (TFA)",
-        canonical_name: "Chewbacca".canonicalize(),
+        canonical_name: "chewbacca-swx57",
         id: 202,
         unique: true,
         faction: "Resistance",
@@ -3467,7 +3467,6 @@ exportObj.basicCardData = function() {
         }
       }, {
         name: "Resistance???",
-        canonical_name: "Chewbacca".canonicalize(),
         id: 203,
         faction: "Resistance",
         ship: "YT-1300",
@@ -3516,7 +3515,7 @@ exportObj.basicCardData = function() {
       }, {
         name: "R2-D2",
         aka: ["R2-D2 (Crew)"],
-        canonical_name: 'r2d2',
+        canonical_name: 'r2d2-swx22',
         id: 3,
         unique: true,
         slot: "Astromech",
@@ -5382,7 +5381,7 @@ exportObj.basicCardData = function() {
         }
       }, {
         name: "Millennium Falcon (TFA)",
-        canonical_name: "Millennium Falcon".canonicalize(),
+        canonical_name: "millenniumfalcon-swx57",
         id: 40,
         unique: true,
         points: 1,
@@ -5393,7 +5392,7 @@ exportObj.basicCardData = function() {
 };
 
 exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base2, _base3, _base4, _base5, _base6, _base7, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _name4, _name5, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base10, _base2, _base3, _base4, _base5, _base6, _base7, _base8, _base9, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _name4, _name5, _name6, _name7, _name8, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
   _ref = basic_cards.pilotsById;
   for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
     pilot_data = _ref[i];
@@ -5602,16 +5601,18 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     throw new Error("At least one pilot shares an ID with another");
   }
   exportObj.pilotsByFactionCanonicalName = {};
+  exportObj.pilotsByUniqueName = {};
   _ref15 = exportObj.pilots;
   for (pilot_name in _ref15) {
     pilot = _ref15[pilot_name];
     ((_base = ((_base1 = exportObj.pilotsByFactionCanonicalName)[_name1 = pilot.faction] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = pilot.canonical_name] != null ? _base[_name] : _base[_name] = []).push(pilot);
+    ((_base2 = exportObj.pilotsByUniqueName)[_name2 = pilot.canonical_name.getXWSBaseName()] != null ? _base2[_name2] : _base2[_name2] = []).push(pilot);
     switch (pilot.faction) {
       case 'Resistance':
-        ((_base2 = ((_base3 = exportObj.pilotsByFactionCanonicalName)['Rebel Alliance'] != null ? _base3['Rebel Alliance'] : _base3['Rebel Alliance'] = {}))[_name2 = pilot.canonical_name] != null ? _base2[_name2] : _base2[_name2] = []).push(pilot);
+        ((_base3 = ((_base4 = exportObj.pilotsByFactionCanonicalName)['Rebel Alliance'] != null ? _base4['Rebel Alliance'] : _base4['Rebel Alliance'] = {}))[_name3 = pilot.canonical_name] != null ? _base3[_name3] : _base3[_name3] = []).push(pilot);
         break;
       case 'First Order':
-        ((_base4 = ((_base5 = exportObj.pilotsByFactionCanonicalName)['Galactic Empire'] != null ? _base5['Galactic Empire'] : _base5['Galactic Empire'] = {}))[_name3 = pilot.canonical_name] != null ? _base4[_name3] : _base4[_name3] = []).push(pilot);
+        ((_base5 = ((_base6 = exportObj.pilotsByFactionCanonicalName)['Galactic Empire'] != null ? _base6['Galactic Empire'] : _base6['Galactic Empire'] = {}))[_name4 = pilot.canonical_name] != null ? _base5[_name4] : _base5[_name4] = []).push(pilot);
     }
   }
   exportObj.upgradesById = {};
@@ -5634,10 +5635,12 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     throw new Error("At least one upgrade shares an ID with another");
   }
   exportObj.upgradesBySlotCanonicalName = {};
+  exportObj.upgradesBySlotUniqueName = {};
   _ref18 = exportObj.upgrades;
   for (upgrade_name in _ref18) {
     upgrade = _ref18[upgrade_name];
-    ((_base6 = exportObj.upgradesBySlotCanonicalName)[_name4 = upgrade.slot] != null ? _base6[_name4] : _base6[_name4] = {})[upgrade.canonical_name] = upgrade;
+    ((_base7 = exportObj.upgradesBySlotCanonicalName)[_name5 = upgrade.slot] != null ? _base7[_name5] : _base7[_name5] = {})[upgrade.canonical_name] = upgrade;
+    ((_base8 = exportObj.upgradesBySlotUniqueName)[_name6 = upgrade.slot] != null ? _base8[_name6] : _base8[_name6] = {})[upgrade.canonical_name.getXWSBaseName()] = upgrade;
   }
   exportObj.modificationsById = {};
   exportObj.modificationsByLocalizedName = {};
@@ -5669,10 +5672,12 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     throw new Error("At least one modification shares an ID with another");
   }
   exportObj.modificationsByCanonicalName = {};
+  exportObj.modificationsByUniqueName = {};
   _ref21 = exportObj.modifications;
   for (modification_name in _ref21) {
     modification = _ref21[modification_name];
     (exportObj.modificationsByCanonicalName != null ? exportObj.modificationsByCanonicalName : exportObj.modificationsByCanonicalName = {})[modification.canonical_name] = modification;
+    (exportObj.modificationsByUniqueName != null ? exportObj.modificationsByUniqueName : exportObj.modificationsByUniqueName = {})[modification.canonical_name.getXWSBaseName()] = modification;
   }
   exportObj.titlesById = {};
   exportObj.titlesByLocalizedName = {};
@@ -5703,13 +5708,16 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     exportObj.titlesByShip[title.ship].push(title);
   }
   exportObj.titlesByCanonicalName = {};
+  exportObj.titlesByUniqueName = {};
   _ref25 = exportObj.titles;
   for (title_name in _ref25) {
     title = _ref25[title_name];
     if (title.canonical_name === '"Heavy Scyk" Interceptor'.canonicalize()) {
-      ((_base7 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name5 = title.canonical_name] != null ? _base7[_name5] : _base7[_name5] = []).push(title);
+      ((_base9 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name7 = title.canonical_name] != null ? _base9[_name7] : _base9[_name7] = []).push(title);
+      ((_base10 = (exportObj.titlesByUniqueName != null ? exportObj.titlesByUniqueName : exportObj.titlesByUniqueName = {}))[_name8 = title.canonical_name.getXWSBaseName()] != null ? _base10[_name8] : _base10[_name8] = []).push(title);
     } else {
       (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {})[title.canonical_name] = title;
+      (exportObj.titlesByUniqueName != null ? exportObj.titlesByUniqueName : exportObj.titlesByUniqueName = {})[title.canonical_name.getXWSBaseName()] = title;
     }
   }
   return exportObj.expansions = Object.keys(exportObj.expansions).sort();
@@ -18235,7 +18243,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17645
+                    lineno: 17654
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18370,6 +18378,10 @@ Array.prototype.removeItem = function(item) {
 
 String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+String.prototype.getXWSBaseName = function() {
+  return this.split('-')[0];
 };
 
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24;
@@ -18795,7 +18807,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 18210
+              lineno: 18222
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19326,7 +19338,7 @@ exportObj.SquadBuilder = (function() {
   SquadBuilder.prototype.claimUnique = function(unique, type, cb) {
     var bycanonical, canonical, other, otherslot, _i, _len, _ref, _ref1;
     if (this.uniqueIndex(unique, type) < 0) {
-      _ref = exportObj.pilotsByFactionCanonicalName[this.faction][unique.canonical_name] || [];
+      _ref = exportObj.pilotsByUniqueName[unique.canonical_name.getXWSBaseName()] || [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         other = _ref[_i];
         if (unique !== other) {
@@ -19337,12 +19349,12 @@ exportObj.SquadBuilder = (function() {
           }
         }
       }
-      _ref1 = exportObj.upgradesBySlotCanonicalName;
+      _ref1 = exportObj.upgradesBySlotUniqueName;
       for (otherslot in _ref1) {
         bycanonical = _ref1[otherslot];
         for (canonical in bycanonical) {
           other = bycanonical[canonical];
-          if (canonical === unique.canonical_name && unique !== other) {
+          if (canonical.getXWSBaseName() === unique.canonical_name.getXWSBaseName() && unique !== other) {
             if (this.uniqueIndex(other, 'Upgrade') < 0) {
               this.uniques_in_use['Upgrade'].push(other);
             }
@@ -19366,7 +19378,7 @@ exportObj.SquadBuilder = (function() {
         this.uniques_in_use[type] = [];
         for (_i = 0, _len = uniques.length; _i < _len; _i++) {
           u = uniques[_i];
-          if (u.canonical_name !== unique.canonical_name) {
+          if (u.canonical_name.getXWSBaseName() !== unique.canonical_name.getXWSBaseName()) {
             this.uniques_in_use[type].push(u);
           }
         }
@@ -19398,7 +19410,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18739
+          lineno: 18751
         }));
         __iced_deferrals._fulfill();
       });
@@ -19410,7 +19422,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18740
+            lineno: 18752
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -19484,7 +19496,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (pilot_name in available_faction_pilots) {
         pilot = available_faction_pilots[pilot_name];
-        if ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0) {
+        if ((pilot.unique == null) || __indexOf.call(this.uniques_in_use['Pilot'], pilot) < 0 || pilot.canonical_name.getXWSBaseName() === (include_pilot != null ? include_pilot.canonical_name.getXWSBaseName() : void 0)) {
           _results.push(pilot);
         }
       }
@@ -19567,7 +19579,7 @@ exportObj.SquadBuilder = (function() {
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
         m = _ref1[_i];
         if (m.data != null) {
-          _results.push(m.data.canonical_name);
+          _results.push(m.data.canonical_name.getXWSBaseName());
         }
       }
       return _results;
@@ -19724,7 +19736,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableTitlesIncluding = function(ship, include_title, term) {
-    var available_titles, eligible_titles, title, title_name;
+    var available_titles, eligible_titles, t, title, title_name;
     if (term == null) {
       term = '';
     }
@@ -19741,11 +19753,20 @@ exportObj.SquadBuilder = (function() {
       return _results;
     }).call(this);
     eligible_titles = (function() {
-      var _results;
+      var _ref, _results;
       _results = [];
       for (title_name in available_titles) {
         title = available_titles[title_name];
-        if (((title.unique == null) || __indexOf.call(this.uniques_in_use['Title'], title) < 0) && ((title.faction == null) || this.isOurFaction(title.faction)) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
+        if (((title.unique == null) || (__indexOf.call(this.uniques_in_use['Title'], title) < 0 && (_ref = title.canonical_name.getXWSBaseName(), __indexOf.call((function() {
+          var _i, _len, _ref1, _results1;
+          _ref1 = this.uniques_in_use['Title'];
+          _results1 = [];
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            t = _ref1[_i];
+            _results1.push(t.canonical_name.getXWSBaseName());
+          }
+          return _results1;
+        }).call(this), _ref) < 0)) || title.canonical_name.getXWSBaseName() === (include_title != null ? include_title.canonical_name.getXWSBaseName() : void 0)) && ((title.faction == null) || this.isOurFaction(title.faction)) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
           _results.push(title);
         }
       }
@@ -20891,7 +20912,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19589
+                      lineno: 19601
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20960,7 +20981,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19613
+                lineno: 19625
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21012,7 +21033,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19635
+            lineno: 19647
           }));
         }
         _ref = _this.upgrades;
@@ -21020,7 +21041,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19637
+              lineno: 19649
             }));
           }
         }
@@ -21029,7 +21050,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19639
+              lineno: 19651
             }));
           }
         }
@@ -21923,7 +21944,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 20274
+                lineno: 20286
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22042,7 +22063,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20333
+                  lineno: 20345
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -22064,7 +22085,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20337
+                    lineno: 20349
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -22149,7 +22170,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20377
+            lineno: 20389
           }));
         }
         __iced_deferrals._fulfill();
