@@ -74,7 +74,8 @@ casper.test.begin "XWS Import: 0.3.0", (test) ->
     common.assertNoUpgradeInSlot(test, '#rebel-builder', 3, 2)
     common.assertNoUpgradeInSlot(test, '#rebel-builder', 3, 3)
     common.assertUpgradeInSlot(test, '#rebel-builder', 3, 4, 'Weapons Guidance')
-    common.assertUpgradeInSlot(test, '#rebel-builder', 3, 5, 'Autothrusters')
+    common.assertNoUpgradeInSlot(test, '#rebel-builder', 3, 5)
+    common.assertUpgradeInSlot(test, '#rebel-builder', 3, 6, 'Autothrusters')
 
     common.assertShipTypeIs(test, '#rebel-builder', 4, 'Z-95 Headhunter')
     common.assertPilotIs(test, '#rebel-builder', 4, 'Bandit Squadron Pilot')
@@ -84,3 +85,28 @@ casper.test.begin "XWS Import: 0.3.0", (test) ->
     .run ->
         test.done()
 
+
+casper.test.begin "Canonicalization update for R2-D2", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    common.createList('#rebel-builder', [
+        {
+            ship: 'YT-1300'
+            pilot: 'Chewbacca'
+            upgrades: [
+                null
+                null
+                'R2-D2 (Crew)'
+            ]
+        }
+        {
+            ship: 'X-Wing'
+            pilot: 'Luke Skywalker'
+            upgrades: [ ]
+        }
+    ])
+
+    common.assertMatchIsDisabled(test, "#rebel-builder #{common.selectorForUpgradeIndex 2, 3}", "R2-D2")
+
+    .run ->
+        test.done()
