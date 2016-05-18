@@ -47,6 +47,9 @@ Array::removeItem = (item) ->
 String::capitalize = ->
     @charAt(0).toUpperCase() + @slice(1)
 
+String::getXWSBaseName = ->
+    @split('-')[0]
+
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -1020,7 +1023,7 @@ class exportObj.SquadBuilder
     claimUnique: (unique, type, cb) =>
         if @uniqueIndex(unique, type) < 0
             # Claim pilots with the same canonical name
-            for other in exportObj.pilotsByFactionCanonicalName[@faction][unique.canonical_name] or []
+            for other in (exportObj.pilotsByUniqueName[unique.canonical_name.getXWSBaseName()] or [])
                 if unique != other
                     if @uniqueIndex(other, 'Pilot') < 0
                         # console.log "Also claiming unique pilot #{other.canonical_name} in use"
@@ -1029,9 +1032,9 @@ class exportObj.SquadBuilder
                         throw new Error("Unique #{type} '#{unique.name}' already claimed as pilot")
 
             # Claim other upgrades with the same canonical name
-            for otherslot, bycanonical of exportObj.upgradesBySlotCanonicalName
+            for otherslot, bycanonical of exportObj.upgradesBySlotUniqueName
                 for canonical, other of bycanonical
-                    if canonical == unique.canonical_name and unique != other
+                    if canonical.getXWSBaseName() == unique.canonical_name.getXWSBaseName() and unique != other
                         if @uniqueIndex(other, 'Upgrade') < 0
                             # console.log "Also claiming unique #{other.canonical_name} (#{otherslot}) in use"
                             @uniques_in_use['Upgrade'].push other
@@ -1046,12 +1049,12 @@ class exportObj.SquadBuilder
     releaseUnique: (unique, type, cb) =>
         idx = @uniqueIndex(unique, type)
         if idx >= 0
-            # Release all uniques with the same canonical name
+            # Release all uniques with the same canonical name and base name
             for type, uniques of @uniques_in_use
                 # Removing stuff in a loop sucks, so we'll construct a new list
                 @uniques_in_use[type] = []
                 for u in uniques
-                    if u.canonical_name != unique.canonical_name
+                    if u.canonical_name.getXWSBaseName() != unique.canonical_name.getXWSBaseName()
                         # Keep this one
                         @uniques_in_use[type].push u
                     # else
@@ -1101,7 +1104,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term))
 
-        eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot']))
+        eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()))
 
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
@@ -1121,7 +1124,7 @@ class exportObj.SquadBuilder
 
         # Special case #3
         # Ordnance tube hack
-        if (@isEpic or @isCustom) and slot == 'Hardpoint' and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name for m in ship.modifications when m.data?)
+        if (@isEpic or @isCustom) and slot == 'Hardpoint' and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name.getXWSBaseName() for m in ship.modifications when m.data?)
             available_upgrades = available_upgrades.concat (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot in ['Missile', 'Torpedo'] and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
 
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
@@ -1173,7 +1176,7 @@ class exportObj.SquadBuilder
         # Titles are no longer unique!
         available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term))
 
-        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or title not in @uniques_in_use['Title']) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or (title not in @uniques_in_use['Title'] and title.canonical_name.getXWSBaseName() not in (t.canonical_name.getXWSBaseName() for t in @uniques_in_use['Title'])) or title.canonical_name.getXWSBaseName() == include_title?.canonical_name.getXWSBaseName()) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
 
         # Re-add selected title
         if include_title? and include_title.unique? and @matcher(include_title.name, term)

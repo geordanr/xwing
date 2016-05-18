@@ -3655,7 +3655,6 @@ exportObj.basicCardData = ->
         }
         {
             name: "Resistance???"
-            canonical_name: "Chewbacca".canonicalize()
             id: 203
             faction: "Resistance"
             ship: "YT-1300"
@@ -5814,8 +5813,11 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         throw new Error("At least one pilot shares an ID with another")
 
     exportObj.pilotsByFactionCanonicalName = {}
+    # uniqueness can't be enforced just be canonical name, but by the base part
+    exportObj.pilotsByUniqueName = {}
     for pilot_name, pilot of exportObj.pilots
         ((exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] ?= []).push pilot
+        (exportObj.pilotsByUniqueName[pilot.canonical_name.getXWSBaseName()] ?= []).push pilot
         # Hack until we need to disambiguate same name pilots by subfaction
         switch pilot.faction
             when 'Resistance'
@@ -5835,8 +5837,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         throw new Error("At least one upgrade shares an ID with another")
 
     exportObj.upgradesBySlotCanonicalName = {}
+    exportObj.upgradesBySlotUniqueName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
+        (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
 
     exportObj.modificationsById = {}
     exportObj.modificationsByLocalizedName = {}
@@ -5857,8 +5861,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         throw new Error("At least one modification shares an ID with another")
 
     exportObj.modificationsByCanonicalName = {}
+    exportObj.modificationsByUniqueName = {}
     for modification_name, modification of exportObj.modifications
         (exportObj.modificationsByCanonicalName ?= {})[modification.canonical_name] = modification
+        (exportObj.modificationsByUniqueName ?= {})[modification.canonical_name.getXWSBaseName()] = modification
 
     exportObj.titlesById = {}
     exportObj.titlesByLocalizedName = {}
@@ -5878,12 +5884,15 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         exportObj.titlesByShip[title.ship].push title
 
     exportObj.titlesByCanonicalName = {}
+    exportObj.titlesByUniqueName = {}
     for title_name, title of exportObj.titles
         # Special cases :(
         if title.canonical_name == '"Heavy Scyk" Interceptor'.canonicalize()
             ((exportObj.titlesByCanonicalName ?= {})[title.canonical_name] ?= []).push title
+            ((exportObj.titlesByUniqueName ?= {})[title.canonical_name.getXWSBaseName()] ?= []).push title
         else
             (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
+            (exportObj.titlesByUniqueName ?= {})[title.canonical_name.getXWSBaseName()] = title
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
