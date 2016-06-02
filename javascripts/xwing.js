@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Imperial Veterans Expansion Pack", "Heroes of the Resistance Expansion Pack"];
+exportObj.unreleasedExpansions = ["Imperial Veterans Expansion Pack", "Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1636,6 +1636,47 @@ exportObj.basicCardData = function() {
         shields: 1,
         actions: ["Focus", "Target Lock", "Barrel Roll", "Evade"],
         maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0], [2, 2, 2, 2, 2, 0, 3, 3], [1, 1, 2, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0]]
+      },
+      'ARC-170': {
+        name: 'ARC-170',
+        factions: ["Rebel Alliance"],
+        attack: 2,
+        agility: 1,
+        hull: 6,
+        shields: 3,
+        actions: ["Focus", "Target Lock"],
+        maneuvers: []
+      },
+      'TIE/sf Fighter': {
+        name: 'TIE/sf Fighter',
+        factions: ["Galactic Empire"],
+        attack: 2,
+        agility: 2,
+        hull: 3,
+        shields: 3,
+        actions: ['Focus', 'Target Lock', 'Barrel Roll'],
+        maneuvers: []
+      },
+      'Protectorate Starfighter': {
+        name: 'Protectorate Starfighter',
+        factions: ["Scum and Villainy"],
+        attack: 3,
+        agility: 3,
+        hull: 4,
+        shields: 0,
+        actions: ['Focus', 'Target Lock', 'Barrel Roll', 'Boost'],
+        maneuvers: []
+      },
+      'Lancer-class Pursuit Craft': {
+        name: 'Lancer-class Pursuit Craft',
+        factions: ["Scum and Villainy"],
+        large: true,
+        attack: 3,
+        agility: 2,
+        hull: 7,
+        shields: 3,
+        actions: ['Focus', 'Target Lock', 'Evade', 'Rotate Arc'],
+        maneuvers: []
       }
     },
     pilotsById: [
@@ -3473,6 +3514,163 @@ exportObj.basicCardData = function() {
         skill: 5,
         points: 100,
         slots: ["Missile", "Crew", "Crew"]
+      }, {
+        name: 'Norra Wexley',
+        id: 204,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'ARC-170',
+        skill: 7,
+        slots: ['Elite', 'Torpedo', 'Crew', 'Astromech'],
+        points: 29
+      }, {
+        name: 'Shara Bey',
+        id: 205,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'ARC-170',
+        skill: 6,
+        slots: ['Elite', 'Torpedo', 'Crew', 'Astromech'],
+        points: 28
+      }, {
+        name: 'Unspoiled PS4 ARC-170 Pilot',
+        id: 206,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'ARC-170',
+        skill: 4,
+        slots: ['Torpedo', 'Crew', 'Astromech'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS3 ARC-170 Pilot',
+        id: 207,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'ARC-170',
+        skill: 3,
+        slots: ['Torpedo', 'Crew', 'Astromech'],
+        points: 100
+      }, {
+        name: '"Quickdraw"',
+        id: 208,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE/sf Fighter',
+        skill: 9,
+        slots: ['Elite', 'System', 'Missile', 'Tech'],
+        points: 29
+      }, {
+        name: 'Unspoiled PS7 TIE/sf Pilot',
+        id: 209,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE/sf Fighter',
+        skill: 7,
+        slots: ['System', 'Missile', 'Tech'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS5 TIE/sf Pilot',
+        id: 210,
+        faction: 'Galactic Empire',
+        ship: 'TIE/sf Fighter',
+        skill: 5,
+        slots: ['System', 'Missile', 'Tech'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS3 TIE/sf Pilot',
+        id: 211,
+        faction: 'Galactic Empire',
+        ship: 'TIE/sf Fighter',
+        skill: 3,
+        slots: ['System', 'Missile', 'Tech'],
+        points: 100
+      }, {
+        name: 'Fenn Rau',
+        id: 212,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 9,
+        slots: ['Elite', 'Torpedo'],
+        points: 28
+      }, {
+        name: 'Old ???',
+        id: 213,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 7,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Kad Solus',
+        id: 214,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 6,
+        slots: ['Torpedo'],
+        points: 25
+      }, {
+        name: 'Unspoiled PS5 Protectorate Starfighter Pilot',
+        id: 215,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 5,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS3 Protectorate Starfighter Pilot',
+        id: 216,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 3,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Zealous ???',
+        id: 217,
+        faction: 'Scum and Villainy',
+        ship: 'Protectorate Starfighter',
+        skill: 1,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Ketsu Onyo',
+        id: 218,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Lancer-class Pursuit Craft',
+        skill: 7,
+        slots: ['Elite', 'Crew', 'Illicit', 'Illicit'],
+        points: 38
+      }, {
+        name: 'Asajj ???',
+        id: 219,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Lancer-class Pursuit Craft',
+        skill: 6,
+        slots: ['Crew', 'Illicit', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Sabine Wren',
+        canonical_name: "sabinewren-swx56",
+        id: 220,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Lancer-class Pursuit Craft',
+        skill: 5,
+        slots: ['Crew', 'Illicit', 'Illicit'],
+        points: 35
+      }, {
+        name: 'Shadowfo???',
+        id: 221,
+        faction: 'Scum and Villainy',
+        ship: 'Lancer-class Pursuit Craft',
+        skill: 2,
+        slots: ['Crew', 'Illicit', 'Illicit'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -5386,6 +5584,26 @@ exportObj.basicCardData = function() {
         unique: true,
         points: 1,
         ship: "YT-1300"
+      }, {
+        name: 'Alliance Overhaul',
+        id: 41,
+        ship: 'ARC-170',
+        points: 0
+      }, {
+        name: 'Special Ops Training',
+        id: 42,
+        ship: 'TIE/sf Fighter',
+        points: 0
+      }, {
+        name: 'Concord Dawn Protector',
+        id: 43,
+        ship: 'Protectorate Starfighter',
+        points: 1
+      }, {
+        name: 'Shadow Caster',
+        id: 44,
+        ship: 'Lancer-class Pursuit Craft',
+        points: 3
       }
     ]
   };
@@ -8169,6 +8387,27 @@ exportObj.cardLoaders.English = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -8916,6 +9155,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -18243,7 +18494,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 17654
+                    lineno: 18000
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -18807,7 +19058,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 18222
+              lineno: 18568
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19410,7 +19661,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 18751
+          lineno: 19097
         }));
         __iced_deferrals._fulfill();
       });
@@ -19422,7 +19673,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 18752
+            lineno: 19098
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -20912,7 +21163,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19601
+                      lineno: 19947
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -20981,7 +21232,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19625
+                lineno: 19971
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21033,7 +21284,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19647
+            lineno: 19993
           }));
         }
         _ref = _this.upgrades;
@@ -21041,7 +21292,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19649
+              lineno: 19995
             }));
           }
         }
@@ -21050,7 +21301,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19651
+              lineno: 19997
             }));
           }
         }
@@ -21944,7 +22195,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 20286
+                lineno: 20632
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22063,7 +22314,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20345
+                  lineno: 20691
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -22085,7 +22336,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20349
+                    lineno: 20695
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -22170,7 +22421,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20389
+            lineno: 20735
           }));
         }
         __iced_deferrals._fulfill();
