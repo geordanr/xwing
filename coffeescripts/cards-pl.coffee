@@ -585,7 +585,7 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''After you execute a red maneuver, assign 2 focus tokens to your ship.'''
         'Ketsu Onyo':
             text: '''At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'''
-        'Sabine Wren':
+        'Sabine Wren (Scum)':
             text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
 
     upgrade_translations =

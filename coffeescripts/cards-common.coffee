@@ -3937,7 +3937,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Sabine Wren'
+            name: 'Sabine Wren (Scum)'
             canonical_name: "sabinewren-swx56"
             id: 220
             unique: true
