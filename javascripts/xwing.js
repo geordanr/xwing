@@ -3610,7 +3610,7 @@ exportObj.basicCardData = function() {
         ship: 'Protectorate Starfighter',
         skill: 6,
         slots: ['Torpedo'],
-        points: 25
+        points: 100
       }, {
         name: 'Unspoiled PS5 Protectorate Starfighter Pilot',
         id: 215,
@@ -6870,6 +6870,27 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -7848,6 +7869,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -10164,6 +10197,27 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -11129,6 +11183,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -11866,6 +11932,27 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -12721,6 +12808,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -13438,6 +13537,27 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -14292,6 +14412,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -14815,6 +14947,27 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Sabine Wren': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -15541,6 +15694,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
+    },
+    'Alliance Overhaul': {
+      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+    },
+    'Special Ops Training': {
+      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+    },
+    'Concord Dawn Protector': {
+      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+    },
+    'Shadow Caster': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
@@ -18494,7 +18659,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 18000
+                    lineno: 18108
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -19058,7 +19223,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 18568
+              lineno: 18676
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -19230,7 +19395,7 @@ exportObj.SquadBuilder = (function() {
     })(this));
     this.print_list_button.click((function(_this) {
       return function(e) {
-        var faction, query, ship, _i, _len, _ref;
+        var faction, query, ship, text, _i, _len, _ref;
         e.preventDefault();
         _this.printable_container.find('.printable-header').html(_this.list_modal.find('.modal-header').html());
         _this.printable_container.find('.printable-body').text('');
@@ -19270,11 +19435,12 @@ exportObj.SquadBuilder = (function() {
         query = _this.permalink.attr('href').split(/\?/)[1].replace(/&sn=.*/, '');
         if ((query != null) && _this.list_modal.find('.toggle-juggler-qrcode').prop('checked')) {
           _this.printable_container.find('.printable-body').append($.trim("<div class=\"juggler-qrcode-container\">\n    <div class=\"juggler-qrcode-text\">Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>\n    <div class=\"juggler-qrcode\"></div>\n</div>"));
+          text = "https://yasb-xws.herokuapp.com/juggler?" + query;
           _this.printable_container.find('.juggler-qrcode').qrcode({
             render: 'div',
             ec: 'M',
-            size: 144,
-            text: "https://yasb-xws.herokuapp.com/juggler?" + query
+            size: text.length < 144 ? 144 : 160,
+            text: text
           });
         }
         return window.print();
@@ -19661,7 +19827,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 19097
+          lineno: 19206
         }));
         __iced_deferrals._fulfill();
       });
@@ -19673,7 +19839,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 19098
+            lineno: 19207
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -21163,7 +21329,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 19947
+                      lineno: 20056
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -21232,7 +21398,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 19971
+                lineno: 20080
               })
             ]);
             __iced_deferrals._fulfill();
@@ -21284,7 +21450,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 19993
+            lineno: 20102
           }));
         }
         _ref = _this.upgrades;
@@ -21292,7 +21458,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 19995
+              lineno: 20104
             }));
           }
         }
@@ -21301,7 +21467,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 19997
+              lineno: 20106
             }));
           }
         }
@@ -22195,7 +22361,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 20632
+                lineno: 20741
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22314,7 +22480,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 20691
+                  lineno: 20800
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -22336,7 +22502,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 20695
+                    lineno: 20804
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -22421,7 +22587,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 20735
+            lineno: 20844
           }));
         }
         __iced_deferrals._fulfill();
