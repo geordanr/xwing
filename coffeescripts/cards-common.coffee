@@ -3872,7 +3872,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Torpedo'
             ]
-            points: 25
+            points: 100
         }
         {
             name: 'Unspoiled PS5 Protectorate Starfighter Pilot'
