@@ -781,11 +781,12 @@ class exportObj.SquadBuilder
                         <div class="juggler-qrcode"></div>
                     </div>
                 """
+                text = "https://yasb-xws.herokuapp.com/juggler?#{query}"
                 @printable_container.find('.juggler-qrcode').qrcode
                     render: 'div'
                     ec: 'M'
-                    size: 144
-                    text: "https://yasb-xws.herokuapp.com/juggler?#{query}"
+                    size: if text.length < 144 then 144 else 160
+                    text: text
 
             window.print()
 
