@@ -3654,7 +3654,7 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Illicit', 'Illicit'],
         points: 100
       }, {
-        name: 'Sabine Wren',
+        name: 'Sabine Wren (Scum)',
         canonical_name: "sabinewren-swx56",
         id: 220,
         unique: true,
@@ -6889,7 +6889,7 @@ exportObj.cardLoaders.Deutsch = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
@@ -8439,7 +8439,7 @@ exportObj.cardLoaders.English = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
@@ -10216,7 +10216,7 @@ exportObj.cardLoaders['Español'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
@@ -11951,7 +11951,7 @@ exportObj.cardLoaders['Français'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
@@ -13556,7 +13556,7 @@ exportObj.cardLoaders['Polski'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
@@ -14966,7 +14966,7 @@ exportObj.cardLoaders['Русский'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
-    'Sabine Wren': {
+    'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
