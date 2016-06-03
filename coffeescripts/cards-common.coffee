@@ -4,6 +4,10 @@ exportObj = exports ? this
 exportObj.unreleasedExpansions = [
     "Imperial Veterans Expansion Pack"
     "Heroes of the Resistance Expansion Pack"
+    "ARC-170 Expansion Pack"
+    "Special Forces TIE Expansion Pack"
+    "Protectorate Starfighter Expansion Pack"
+    "Shadow Caster Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -793,6 +797,60 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 3, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0 ]
             ]
+        'ARC-170':
+            name: 'ARC-170'
+            factions: ["Rebel Alliance"]
+            attack: 2
+            agility: 1
+            hull: 6
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+            ]
+            maneuvers: []
+        'TIE/sf Fighter':
+            name: 'TIE/sf Fighter'
+            factions: ["Galactic Empire"]
+            attack: 2
+            agility: 2
+            hull: 3
+            shields: 3
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Barrel Roll'
+            ]
+            maneuvers: []
+        'Protectorate Starfighter':
+            name: 'Protectorate Starfighter'
+            factions: ["Scum and Villainy"]
+            attack: 3
+            agility: 3
+            hull: 4
+            shields: 0
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Barrel Roll'
+                'Boost'
+            ]
+            maneuvers: []
+        'Lancer-class Pursuit Craft':
+            name: 'Lancer-class Pursuit Craft'
+            factions: ["Scum and Villainy"]
+            large: true
+            attack: 3
+            agility: 2
+            hull: 7
+            shields: 3
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Evade'
+                'Rotate Arc'
+            ]
+            maneuvers: []
 
     # name field is for convenience only
     pilotsById: [
@@ -3666,6 +3724,246 @@ exportObj.basicCardData = ->
                 "Crew"
             ]
         }
+        {
+            name: 'Norra Wexley'
+            id: 204
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'ARC-170'
+            skill: 7
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Crew'
+                'Astromech'
+            ]
+            points: 29
+        }
+        {
+            name: 'Shara Bey'
+            id: 205
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'ARC-170'
+            skill: 6
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Crew'
+                'Astromech'
+            ]
+            points: 28
+        }
+        {
+            name: 'Unspoiled PS4 ARC-170 Pilot'
+            id: 206
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'ARC-170'
+            skill: 4
+            slots: [
+                'Torpedo'
+                'Crew'
+                'Astromech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS3 ARC-170 Pilot'
+            id: 207
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'ARC-170'
+            skill: 3
+            slots: [
+                'Torpedo'
+                'Crew'
+                'Astromech'
+            ]
+            points: 100
+        }
+        {
+            name: '"Quickdraw"'
+            id: 208
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE/sf Fighter'
+            skill: 9
+            slots: [
+                'Elite'
+                'System'
+                'Missile'
+                'Tech'
+            ]
+            points: 29
+        }
+        {
+            name: 'Unspoiled PS7 TIE/sf Pilot'
+            id: 209
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE/sf Fighter'
+            skill: 7
+            slots: [
+                'System'
+                'Missile'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS5 TIE/sf Pilot'
+            id: 210
+            faction: 'Galactic Empire'
+            ship: 'TIE/sf Fighter'
+            skill: 5
+            slots: [
+                'System'
+                'Missile'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS3 TIE/sf Pilot'
+            id: 211
+            faction: 'Galactic Empire'
+            ship: 'TIE/sf Fighter'
+            skill: 3
+            slots: [
+                'System'
+                'Missile'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Fenn Rau'
+            id: 212
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 9
+            slots: [
+                'Elite'
+                'Torpedo'
+            ]
+            points: 28
+        }
+        {
+            name: 'Old ???'
+            id: 213
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 7
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Kad Solus'
+            id: 214
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 6
+            slots: [
+                'Torpedo'
+            ]
+            points: 25
+        }
+        {
+            name: 'Unspoiled PS5 Protectorate Starfighter Pilot'
+            id: 215
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 5
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS3 Protectorate Starfighter Pilot'
+            id: 216
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 3
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Zealous ???'
+            id: 217
+            faction: 'Scum and Villainy'
+            ship: 'Protectorate Starfighter'
+            skill: 1
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Ketsu Onyo'
+            id: 218
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Lancer-class Pursuit Craft'
+            skill: 7
+            slots: [
+                'Elite'
+                'Crew'
+                'Illicit'
+                'Illicit'
+            ]
+            points: 38
+        }
+        {
+            name: 'Asajj ???'
+            id: 219
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Lancer-class Pursuit Craft'
+            skill: 6
+            slots: [
+                'Crew'
+                'Illicit'
+                'Illicit'
+            ]
+            points: 100
+        }
+        {
+            name: 'Sabine Wren'
+            canonical_name: "sabinewren-swx56"
+            id: 220
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Lancer-class Pursuit Craft'
+            skill: 5
+            slots: [
+                'Crew'
+                'Illicit'
+                'Illicit'
+            ]
+            points: 35
+        }
+        {
+            name: 'Shadowfo???'
+            id: 221
+            faction: 'Scum and Villainy'
+            ship: 'Lancer-class Pursuit Craft'
+            skill: 2
+            slots: [
+                'Crew'
+                'Illicit'
+                'Illicit'
+            ]
+            points: 100
+        }
     ]
 
     upgradesById: [
@@ -5686,6 +5984,30 @@ exportObj.basicCardData = ->
             unique: true
             points: 1
             ship: "YT-1300"
+        }
+        {
+            name: 'Alliance Overhaul'
+            id: 41
+            ship: 'ARC-170'
+            points: 0
+        }
+        {
+            name: 'Special Ops Training'
+            id: 42
+            ship: 'TIE/sf Fighter'
+            points: 0
+        }
+        {
+            name: 'Concord Dawn Protector'
+            id: 43
+            ship: 'Protectorate Starfighter'
+            points: 1
+        }
+        {
+            name: 'Shadow Caster'
+            id: 44
+            ship: 'Lancer-class Pursuit Craft'
+            points: 3
         }
     ]
 
