@@ -2742,6 +2742,15 @@ class GenericAddon
         if @data?
             upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
 
+            match_array = @data.text.match(/(<span.*<\/span>)<br \/><br \/>(.*)/)
+
+            if match_array
+                restriction_html = '<div class="card-restriction-container">' + match_array[1] + '</div>'
+                text_str = match_array[2]
+            else
+                restriction_html = ''
+                text_str = @data.text
+
             attackHTML = if (@data.attack?) then $.trim """
                 <div class="upgrade-attack">
                     <span class="upgrade-attack-range">#{@data.range}</span>
@@ -2759,9 +2768,10 @@ class GenericAddon
                                 <div class="inner-circle upgrade-points">#{@data.points}</div>
                             </div>
                         </div>
-                        #{attackHTML}
+                        #{restriction_html}
                     </div>
-                    <div class="upgrade-text">#{@data.text}</div>
+                    #{attackHTML}
+                    <div class="upgrade-text">#{text_str}</div>
                     <div style="clear: both;"></div>
                 </div>
             """

@@ -206,10 +206,14 @@ body
         clear: both
 
         .upgrade-stats
-          float: right
-          text-align: right
+          min-height: 36px
+
+        .card-restriction-container
+          padding-top: 10px
 
         .mask
+          float: right
+          text-align: right
           display: inline-block
           vertical-align: middle
           width: $upgrade-circle-diameter
@@ -240,11 +244,19 @@ body
           display: inline-block
           vertical-align: middle
           line-height: $upgrade-circle-diameter
+          float: left
+          text-align: left
+          margin-left: 10px
+          margin-right: 5px
+          min-width: 150px
+          font-family: EurostileStandardBold
 
         .upgrade-attack
+          float: right
           text-align: right
           margin-right: 0.07in
           margin-top: 0.02in
+          height: 28px
 
           .upgrade-attack-range
             vertical-align: middle
@@ -261,7 +273,9 @@ body
             margin-right: 0.02in
 
         .upgrade-text
-          padding: 5px
+          padding-right: $upgrade-circle-diameter
+          padding-left: 26px
+          margin-left: 10px
 
     .ship-points-total
       color: black
@@ -322,10 +336,10 @@ body
     right: 0
 
   .juggler-qrcode-container:before
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
 
   .juggler-qrcode-container > div
     display: inline-block
