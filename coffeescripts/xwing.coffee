@@ -2762,7 +2762,7 @@ class GenericAddon
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
-                        <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i> #{@data.name}</div>
+                        <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i>#{@data.name}</div>
                         <div class="mask">
                             <div class="outer-circle">
                                 <div class="inner-circle upgrade-points">#{@data.points}</div>
