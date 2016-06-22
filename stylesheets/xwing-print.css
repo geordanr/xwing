@@ -159,9 +159,12 @@ body {
         border: 1px dotted lightgray;
         clear: both; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-stats {
-          float: right;
-          text-align: right; }
+          min-height: 0.38in; }
+        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .card-restriction-container {
+          padding-top: 0.10in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
+          float: right;
+          text-align: right;
           display: inline-block;
           vertical-align: middle;
           width: 0.3375in;
@@ -188,11 +191,22 @@ body {
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
           display: inline-block;
           vertical-align: middle;
-          line-height: 0.3375in; }
+          line-height: 0.3375in;
+          float: left;
+          text-align: left;
+          margin-left: 0.10in;
+          margin-right: 0.05in;
+          min-width: 1.50in;
+          font-family: EurostileStandardBold; }
+          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name i {
+            display: inline-block;
+            min-width: 0.27in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
+          float: right;
           text-align: right;
           margin-right: 0.07in;
-          margin-top: 0.02in; }
+          margin-top: 0.02in;
+          height: 0.28in; }
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .upgrade-attack-range {
             vertical-align: middle;
             padding: 2px 8px;
@@ -205,7 +219,9 @@ body {
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .info-attack {
             margin-right: 0.02in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
-          padding: 5px; }
+          padding-right: 0.3375in;
+          padding-left: 0.27in;
+          margin-left: 0.10in; }
     #printable .fancy-ship .ship-points-total {
       color: black;
       text-align: right;

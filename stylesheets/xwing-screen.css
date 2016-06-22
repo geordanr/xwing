@@ -119,11 +119,13 @@
       clear: both;
       border: 1px dotted lightgray; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-stats {
+        min-height: 38px; }
+      .fancy-ship .fancy-upgrade-container .upgrade-container .card-restriction-container {
+        padding-top: 10px; }
+      .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
         float: right;
         text-align: right;
         margin-left: 10px;
-        min-width: 150px; }
-      .fancy-ship .fancy-upgrade-container .upgrade-container .mask {
         display: inline-block;
         vertical-align: middle;
         width: 33.75px;
@@ -150,11 +152,22 @@
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name {
         display: inline-block;
         vertical-align: middle;
-        line-height: 33.75px; }
+        line-height: 33.75px;
+        float: left;
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 5px;
+        min-width: 150px;
+        font-family: EurostileStandardBold; }
+        .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name i {
+          display: inline-block;
+          min-width: 26px; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
+        float: right;
         text-align: right;
         margin-top: 4px;
-        margin-right: 8px; }
+        margin-right: 8px;
+        height: 28px; }
         .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .upgrade-attack-range {
           vertical-align: middle;
           padding: 2px 8px;
@@ -167,7 +180,9 @@
         .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font {
           vertical-align: middle; }
       .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
-        padding: 5px; }
+        padding-right: 33.75px;
+        padding-left: 26px;
+        margin-left: 10px; }
   .fancy-ship .ship-points-total {
     text-align: right;
     padding-bottom: 3px;
