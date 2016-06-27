@@ -74,6 +74,7 @@ exportObj.translations.Deutsch =
         "Inquisitor's TIE Expansion Pack": "TIE des Inquisitors Erweiterung"
         "Mist Hunter Expansion Pack": "Nebeljäger Erweiterung"
         "Punishing One Expansion Pack": "Vollstrecker Eins Erweiterung"
+        "Ghost Expansion Pack": "Ghost Erweiterung"
         "Imperial Veterans Expansion Pack": "Veteranen des Imperiums Erweiterung"
         "ARC-170 Expansion Pack": "ARC-170 Erweiterung"
         "Special Forces TIE Expansion Pack": "TIE der Spezialeinheiten Erweiterung"
