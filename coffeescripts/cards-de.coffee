@@ -854,7 +854,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Dein Pilotenwert steigt um 2."""
         "Proximity Mines":
             name: "Annäherungsminen"
-            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
+            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annäherungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
         "Weapons Engineer":
             name: "Waffentechniker"
             text: """Du darfst 2 verschiedene Schiffe gleichzeitig in der Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Sobald du eine Zielerfassung durchführst, darfst du zwei verschiedene Schiffe als Ziele erfassen."""
@@ -1429,7 +1429,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für SternenViper.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%- und ein %ILLICIT%-Symbol hinzu.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, wenn dein Pilotenwert "3" oder niedriger ist.'''
         '"Heavy Scyk" Interceptor (Cannon)':
             ship: "M3-A Abfangjäger"
-            name: '"Schwerer Scyk"-Abfangjäger (Kannone)'
+            name: '"Schwerer Scyk"-Abfangjäger (Kanone)'
             text: '''<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.'''
         '"Heavy Scyk" Interceptor (Torpedo)':
             ship: "M3-A Abfangjäger"
