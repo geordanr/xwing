@@ -20,19 +20,20 @@ exportObj.translations.Deutsch =
         "Cloak": "Tarnen"
     slot:
         "Astromech": "Astromech"
-        "Bomb": "Bombe"
+        "Bomb": "Bomben"
         "Cannon": "Kanonen"
-        "Crew": "Crew"
+        "Crew": "Mannschaft"
         "Elite": "Elite"
         "Missile": "Raketen"
         "System": "System"
         "Torpedo": "Torpedo"
-        "Turret": "Geschützturm"
         "Cargo": "Fracht"
-        "Hardpoint": "Hardpoint"
+        "Turret": "Geschütz"
+        "Hardpoint": "Waffenaufhängung"
         "Team": "Team"
-        "Illicit": "Illegales"
-        "Salvaged Astromech": "geborgener Astromech"
+        "Illicit": "Schmuggelwaren"
+        "Salvaged Astromech": "Abgewrackter Astromech"
+        "Tech": "Technik"
     sources: # needed?
         "Core": "Grundspiel"
         "A-Wing Expansion Pack": "A-Wing Erweiterung"
@@ -73,21 +74,35 @@ exportObj.translations.Deutsch =
         "Inquisitor's TIE Expansion Pack": "TIE des Inquisitors Erweiterung"
         "Mist Hunter Expansion Pack": "Nebeljäger Erweiterung"
         "Punishing One Expansion Pack": "Vollstrecker Eins Erweiterung"
-        "Ghost Expansion Pack": "Ghost Erweiterung"
+        "Imperial Veterans Expansion Pack": "Veteranen des Imperiums Erweiterung"
+        "ARC-170 Expansion Pack": "ARC-170 Erweiterung"
+        "Special Forces TIE Expansion Pack": "TIE der Spezialeinheiten Erweiterung"
+        "Protectorate Starfighter Expansion Pack": "Sternjäger des Protektors Erweiterung"
+        "Shadow Caster Expansion Pack": "Shadow Caster Erweiterung"
+        "Heroes of the Resistance Expansion Pack": "Helden des Widerstands Erweiterung"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->
-            "kein #{translator language, 'slot', slot} Upgrade"
+            "kein #{translator language, 'slot', slot} Aufwertung"
         modificationPlaceholder: "keine Modifikation"
         titlePlaceholder: "kein Titel"
         upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Upgrade"
+            "#{translator language, 'slot', slot} Aufwertung"
         unreleased: "unveröffentlicht"
         epic: "Episch"
         limited: "limitiert"
     byCSSSelector:
         '.translate.sort-cards-by': 'Sortiere Karten nach'
+        '.squad-name': 'unbenannte Staffel'
+        '.unreleased-content-used': '<br></br><i class="icon-exclamation-sign"></i>Diese Liste verwendet noch nicht veröffentlichte Inhalte!'
+        '.epic-content-used': '<br></br><i class="icon-exclamation-sign"></i>Diese Staffel verwendet epischen Inhalt!'
+        '.illegal-epic-too-many-small-ships': '<br></br><i class="icon-exclamation-sign"></i>Du kannst nicht mehr als 12 kleine Schiffe einsetzen!'
+        '.illegal-epic-too-many-large-ships': '<br></br><i class="icon-exclamation-sign"></i>Du kannst nicht mehr als 6 große Schiffe einsetzen!'
+        '.collection-invalid': <br></br><i class="icon-exclamation-sign"></i>Du kannst diese Liste nicht mit deiner Sammlung aufstellen!'
+        '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
+        '.game-type-selector option[value="epic"]': 'Episch'
+        '.game-type-selector option[value="team-epic"]': 'Team Episch'
         '.xwing-card-browser option[value="name"]': 'Name'
         '.xwing-card-browser option[value="source"]': 'Quelle'
         '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)'
@@ -287,7 +302,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Kath Scarlet":
             text: """Wenn du angreifst und der Verteidiger mindestens 1 %CRIT% negiert, erhält er 1 Stressmarker."""
         "Boba Fett":
-            text: """Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher eschwindigkeit, aber anderer Richtung, auf deinem Rad nachträglich einstellen."""
+            text: """Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."""
         "Krassis Trelix":
             text: """Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."""
         "Bounty Hunter":
@@ -381,7 +396,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Blackmoon Squadron Pilot":
             name: "Pilot der Schwarzmond-Staffel"
         "Etahn A'baht":
-            text: """Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 %HIT% seiner in ein %CRIT% ändern."""
+            text: """Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 seiner %HIT% in ein %CRIT% ändern."""
         "Corran Horn":
             text: """Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."""
         "Sigma Squadron Pilot":
@@ -647,7 +662,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Freundliche TIE-Jäger in Reichweite 1-3 dürfen die Aktion einer von dir ausgerüsteten %ELITE%-Aufwertung durchführen."""
         '"Wampa"':
             ship: "TIE-Jäger"
-            text: """Sobald du angreifst, darfst du alle Würfelergebnisse negieren. Negierst du ein %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."""
+            text: """Sobald du angreifst, darfst du zu Beginn des "Ergebnisse vergleichen"-Schritts alle Würfelergebnisse negieren. Negierst du %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."""
         '"Chaser"':
             ship: "TIE-Jäger"
             text: """Sobald ein anderes freundliches Schiff in Reichweite 1 einen Fokusmarker ausgibt, wird deinem Schiff ein Fokusmarker zugeteilt."""
@@ -713,21 +728,25 @@ exportObj.cardLoaders.Deutsch = () ->
         # Imperial Aces 2
         'Tomax Bren':
             ship: "TIE-Bomber"
-            text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
+            text: '''Ein Mal pro Runde, nachdem du eine %ELITE%-Aufwertung abgelegt hast, decke die abgelegte Karte auf.'''
         '"Deathfire"':
-            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+            name: '"Todesfeuer"'
+            ship: "TIE-Bomber"
+            text: '''Sobald du dein Manöverrad aufdeckst oder nachdem du eine Aktion durchgeführt hast, darfst du die Aktion einer %BOMB%-Aufwertung als freie Aktion durchführen.'''
         "Maarek Stele (TIE Defender)":
-            text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
+            name: "Maarek Stele (TIE-Jagdbomber)"
             ship: "TIE-Jagdbomber"
+            text: """Sobald durch deinen Angriff dem Verteidiger eine offene Schadenskarte zugeteilt wird, ziehst du stattdessen 3 Schadenskarten, wählst 1 aus, die ihm zugeteilt wird, und legst die anderen ab."""
         "Countess Ryad":
-            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            name: "Gräfin Ryad"
             ship: "TIE-Jagdbomber"
+            text: """Sobald du ein %STRAIGHT%-Manöver aufdeckst, darfst du es wie ein %KTURN%-Manöver behandeln."""
         "Gamma Squadron Veteran":
             ship: "TIE-Bomber"
             name: "Veteran der Gamma-Staffel"
         "Glaive Squadron Pilot":
             ship: "TIE-Jagdbomber"
-            name: "Pilot der Glaive-Staffel"
+            name: "Pilot der Gleven-Staffel"
         "Poe Dameron (PS9)":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
             ship: "T-70-X-Flügler"
@@ -834,10 +853,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Veteraneninstinkte"
             text: """Dein Pilotenwert steigt um 2."""
         "Proximity Mines":
-            name: "Annährungsminen"
+            name: "Annäherungsminen"
             text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
         "Weapons Engineer":
-            name: "Waffen-Techniker"
+            name: "Waffentechniker"
             text: """Du darfst 2 verschiedene Schiffe gleichzeitig in der Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Sobald du eine Zielerfassung durchführst, darfst du zwei verschiedene Schiffe als Ziele erfassen."""
         "Draw Their Fire":
             name: "Das Feuer auf mich ziehen"
@@ -1035,7 +1054,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du angreifst oder verteidigst und wenn keine anderen freundlichen Schiffe in Reichweite 1-2 sind, darfst du 1 gewürfelte Leerseite neu würfeln."""
         "Stay On Target":
             name: "Am Ziel bleiben"
-            text: """Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."""
+            text: """Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dein Manöver wird wie ein rotes Manöver behandelt."""
         "Dash Rendar":
             name: "Dash Rendar (Crew)"
             text: """%DE_REBELONLY%%LINEBREAK%Du darfst auch angreifen während du dich mit einem Hindernis überschneidest.<br /><br />Deine Schussbahn kann nicht versperrt werden."""
@@ -1085,7 +1104,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_SCUMONLY%%LINEBREAK%In jeder Runde wird bei deinem ersten Angriff und deiner ersten Verteidigung die erste Schadenskarte offen zugeteilt."""
         "Salvaged Astromech":
             name: "Abgewrackter Astromechdroide"
-            text: """Sobald du eine Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."""
+            text: """Sobald du eine offene Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."""
         "Bomb Loadout":
             name: "Bombenladung"
             text: """<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
@@ -1157,7 +1176,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du eine Bombe legst, darfst du die (%STRAIGHT% 2)-Schablone anstatt der (%STRAIGHT% 1)-Schablone verwenden."""
         'Crack Shot':
             name: "Meisterhafter Schuss"
-            text: '''Sobald du ein Schiff innerhalb deines Feuerwinkels angreifst, darfst du diese Karte ablegen um 1 gewürfeltes %EVADE% des Verteidigers zu negieren.'''
+            text: '''Sobald du ein Schiff innerhalb deines Feuerwinkels angreifst, darfst du zu Beginn des Schritts "Ergebnisse vergleichen" diese Karte ablegen, um 1 gewürfeltes %EVADE% des Verteidigers zu negieren.'''
         "Advanced Homing Missiles":
             name: "Verstärkte Lenkraketen"
             text: """<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen.%LINEBREAK%Falls dieser Angriff triffst, teile dem Verteidiger 1 offene Schadenskarte zu. Dann werden <strong>alle</strong> Würfelergebnisse negiert."""
@@ -1281,7 +1300,8 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Übertakteter R4"
             text: """Sobald du in der Kampfphase einen Fokusmarker ausgibst, darfst du 1 Stressmarker erhalten, um deinem Schiff 1 Fokusmarker zuzuordnen."""
         'Systems Officer':
-            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
+            name: "Systemoffizier"
+            text: '''%IMPERIALONLY%%LINEBREAK%Nachdem du ein grünes Manöver ausgeführt hast, wähle ein anderes freundliches Schiff in Reichweite 1. Das ausgewählte Schiff darf eine Zielerfassung durchführen.'''
 
     modification_translations =
         "Stealth Device":
@@ -1329,7 +1349,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_LARGESHIPONLY%%LINEBREAK%Dein Schiff kann die feindliche Schussbahn versperren."""
         "Autothrusters":
             name: "Automatische Schubdüsen"
-            text: """Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."""
+            text: """Sobald du verteidigst und du im Feuerwinkel jenseits Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."""
         "Advanced SLAM":
             name: "Verbesserter SLAM"
             text: """Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."""
@@ -1355,11 +1375,11 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Abschussrohre"
             text: '''%HUGESHIPONLY%%LINEBREAK%Du darfst jedes deiner %HARDPOINT%-Aufwertungssymbole wie ein %TORPEDO%- oder %MISSILE%- Symbol behandeln.%LINEBREAK%Sobald du angewiesen wirst eine %TORPEDO%- oder %MISSILE%-Aufwertung abzulegen, lege sie nicht ab.'''
         'Long-Range Scanners':
-            text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
+            name: "Langstreckenscanner"
+            text: '''Du kannst Schiffe in und jenseits von Reichweite 3 in die Zielerfassung nehmen. Schiffe in Reichweite 1-2 darfst du nicht in die Zielerfassung nehmen. Du kannst diese Karte nur ausrüsten, falls du %TORPEDO% und %MISSILE% in deiner Aufwertungsleiste hast.'''
         "Guidance Chips":
             name: "Steuerungschips"
             text: """Ein Mal pro Runde darfst du, sobald du mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe angreifst, 1 Würfelergebnis in ein %HIT% ändern (oder in ein %CRIT%, falls dein Primärwaffenwert 3 oder höher ist)."""
-
 
     title_translations =
         "Slave I":
@@ -1461,13 +1481,14 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen..'''
         'TIE/x7':
             ship: "TIE-Jagdbomber"
-            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'''
+            text: '''<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert die Symbole %CANNON% und %MISSILE%.%LINEBREAK%Nachdem du ein Manöver mit Geschwindigkeit 3, 4 oder 5 ausgeführt hast, darfst du deinem Schiff 1 Ausweichmarker zuordnen.'''
         'TIE/D':
             ship: "TIE-Jagdbomber"
-            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
+            text: '''<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Ein Mal pro Runde, nachdem du einen Angriff mit einer %CANNON%-Sekundärwaffe durchgeführt hast, die 3 oder weniger Kommandopunkte kosten, darfst du einen Primärwaffenangriff durchführen.'''
         'TIE Shuttle':
             ship: "TIE-Bomber"
-            text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
+            name: "TIE-Shuttle"
+            text: '''<span class="card-restriction">Nur für TIE-Bomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert alle Symbole %TORPEDO%, %MISSILE%, und %BOMB% und erhält 2 %CREW%-Aufwertungssymbole. Du darfst keine %CREW%-Aufwertung ausrüsten, die mehr als 4 Kommandopunkte kostet.'''
         'Requiem':
             ship: "Kreuzer der Gozanti-Klasse"
             text: '''%DE_GOZANTIONLY%%LINEBREAK%Sobald du ein Schiff startest, wird es bis zum Ende der Runde behandelt, als hätte es einen Pilotenwert von 8.'''
