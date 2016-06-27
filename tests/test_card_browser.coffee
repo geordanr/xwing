@@ -19,7 +19,7 @@ casper.test.begin "Card Browser", (test) ->
 
     common.selectLanguage('Deutsch')
 
-    common.selectInCardBrowser('Annährungsminen (3)')
+    common.selectInCardBrowser('Annäherungsminen (3)')
     common.assertInCardBrowserDisplay(test, 'sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet')
 
     common.selectLanguage('English')
