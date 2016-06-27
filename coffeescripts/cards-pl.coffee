@@ -569,6 +569,24 @@ exportObj.cardLoaders['Polski'] = () ->
             text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
         "Countess Ryad":
             text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+        "Poe Dameron (PS9)":
+            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+        "Rey":
+            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+        'Norra Wexley':
+            text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
+        'Shara Bey':
+            text: '''When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'''
+        '"Quickdraw"':
+            text: '''Once per round, when you lose a shield token, you may perform a primary weapon attack.'''
+        'Fenn Rau':
+            text: '''When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'''
+        'Kad Solus':
+            text: '''After you execute a red maneuver, assign 2 focus tokens to your ship.'''
+        'Ketsu Onyo':
+            text: '''At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'''
+        'Sabine Wren (Scum)':
+            text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1193,5 +1211,17 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''%GOZANTIONLY%%LINEBREAK%After you execute a maneuver, you may deploy up to 4 attached ships (instead of 2).'''
         'Suppressor':
             text: '''%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'''
+        'Black One':
+            text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'''
+        'Millennium Falcon (TFA)':
+            text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
+        'Alliance Overhaul':
+            text: '''<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'''
+        'Special Ops Training':
+            text: '''<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'''
+        'Concord Dawn Protector':
+            text: '''<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker's firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'''
+        'Shadow Caster':
+            text: '''<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations
