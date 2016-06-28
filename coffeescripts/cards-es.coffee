@@ -107,6 +107,17 @@ exportObj.translations['Español'] =
         unreleased: "inédito"
         epic: "épico"
     byCSSSelector:
+        # Warnings
+        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
+        '.epic-content-used .translated': 'This squad uses Epic content!'
+        '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!'
+        '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!'
+        '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        # Type selector
+        '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="custom"]': 'Custom'
+        '.game-type-selector option[value="epic"]': 'Epic'
+        '.game-type-selector option[value="team-epic"]': 'Team Epic'
         '.xwing-card-browser .translate.sort-cards-by': 'Ordenar cartas por'
         '.xwing-card-browser option[value="name"]': 'Nombre'
         '.xwing-card-browser option[value="source"]': 'Fuente'

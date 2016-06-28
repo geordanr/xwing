@@ -75,6 +75,17 @@ exportObj.translations['Русский'] =
         epic: "Эпик"
         limited: "ограничено"
     byCSSSelector:
+        # Warnings
+        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
+        '.epic-content-used .translated': 'This squad uses Epic content!'
+        '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!'
+        '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!'
+        '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        # Type selector
+        '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="custom"]': 'Custom'
+        '.game-type-selector option[value="epic"]': 'Epic'
+        '.game-type-selector option[value="team-epic"]': 'Team Epic'
         '.translate.sort-cards-by': 'Сортировать карты по'
         '.xwing-card-browser option[value="name"]': 'Имени'
         '.xwing-card-browser option[value="source"]': 'Источнику'

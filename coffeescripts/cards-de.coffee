@@ -95,12 +95,11 @@ exportObj.translations.Deutsch =
         limited: "limitiert"
     byCSSSelector:
         '.translate.sort-cards-by': 'Sortiere Karten nach'
-        '.squad-name': 'unbenannte Staffel'
-        '.unreleased-content-used': '<br></br><i class="icon-exclamation-sign"></i> Diese Liste verwendet noch nicht veröffentlichte Inhalte!'
-        '.epic-content-used': '<br></br><i class="icon-exclamation-sign"></i> Diese Staffel verwendet epischen Inhalt!'
-        '.illegal-epic-too-many-small-ships': '<br></br><i class="icon-exclamation-sign"></i> Du kannst nicht mehr als 12 kleine Schiffe einsetzen!'
-        '.illegal-epic-too-many-large-ships': '<br></br><i class="icon-exclamation-sign"></i> Du kannst nicht mehr als 6 große Schiffe einsetzen!'
-        '.collection-invalid': '<br></br><i class="icon-exclamation-sign"></i> Du kannst diese Liste nicht mit deiner Sammlung aufstellen!'
+        '.unreleased-content-used .translated': 'Diese Liste verwendet noch nicht veröffentlichte Inhalte!'
+        '.epic-content-used .translated': 'Diese Staffel verwendet epischen Inhalt!'
+        '.illegal-epic-too-many-small-ships .translated': 'Du kannst nicht mehr als 12 kleine Schiffe einsetzen!'
+        '.illegal-epic-too-many-large-ships .translated': 'Du kannst nicht mehr als 6 große Schiffe einsetzen!'
+        '.collection-invalid .translated': 'Du kannst diese Liste nicht mit deiner Sammlung aufstellen!'
         '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
         '.game-type-selector option[value="epic"]': 'Episch'
         '.game-type-selector option[value="team-epic"]': 'Team Episch'

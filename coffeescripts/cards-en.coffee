@@ -80,12 +80,24 @@ exportObj.translations.English =
         epic: "epic"
         limited: "limited"
     byCSSSelector:
-        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
+        # Warnings
+        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
+        '.epic-content-used .translated': 'This squad uses Epic content!'
+        '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!'
+        '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!'
+        '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        # Type selector
+        '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="custom"]': 'Custom'
+        '.game-type-selector option[value="epic"]': 'Epic'
+        '.game-type-selector option[value="team-epic"]': 'Team Epic'
+        # Card browser
         '.xwing-card-browser option[value="name"]': 'Name'
         '.xwing-card-browser option[value="source"]': 'Source'
         '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)'
         '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
         '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
+        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
         # Info well
         '.info-well .info-ship td.info-header': 'Ship'
         '.info-well .info-skill td.info-header': 'Skill'
