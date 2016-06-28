@@ -74,6 +74,7 @@ exportObj.translations['Español'] =
         "Inquisitor's TIE Expansion Pack": "Pack de Expansión TIE del Inquisidor"
         "Mist Hunter Expansion Pack": "Pack de Expansión Cazador de la Niebla"
         "Punishing One Expansion Pack": "Pack de Expansión Castigadora"
+        "Imperial Veterans Expansion Pack": "Pack de Expansión Veteranos Imperiales"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -342,6 +343,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto del escuadrón Gamma"
             ship: "Bombardero TIE"
         "Gamma Squadron Veteran":
+            name: "Veterano del escuadrón Gamma"
             ship: "Bombardero TIE"
         "Captain Jonus":
             name: "Capitán Jonus"
@@ -748,7 +750,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Rebelde de Lothal"
             ship: "VCX-100"
         'Tomax Bren':
-            text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
+            text: '''Una vez por ronda, después de que te descartes de una carta de Mejora %ELITE%, dale la vuelta a esa carta para ponerla boca arriba.'''
             ship: "Bombardero TIE"
         'Ello Asty':
             text: '''Mientras no estés bajo tensión, puedes ejecutar tus maniobras %TROLLLEFT% y %TROLLRIGHT% como maniobras blancas.'''
@@ -769,7 +771,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Explorador Contratado"
             ship: "Saltador Maestro 5000"
         '"Deathfire"':
-            text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
+            name: "Muerte Ígnea"
+            text: '''Cuando reveles tu selector de maniobras o después de que realices una acción, puedes realizar una acción de carta de Mejora %BOMB% como acción gratuita.'''
             ship: "TIE Bombardero"
         "Sienar Test Pilot":
             name: "Piloto de pruebas de Sienar"
@@ -782,9 +785,11 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando tu ataque inflija una carta de Daño boca arriba al defensor, en vez de eso roba 3 cartas de Daño, elige 1 de ellas a tu elección y luego descarta las otras."""
             ship: "Defensor TIE"
         "Countess Ryad":
-            text: """When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver."""
+            name: "Condesa Ryad"
+            text: """Cuando reveles una maniobra %STRAIGHT%, puedes considerarla como una maniobra %KTURN%."""
             ship: "Defensor TIE"
         "Glaive Squadron Pilot":
+            name: "Piloto del escuadrón Guja"
             ship: "Defensor TIE"
         "Poe Dameron (PS9)":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
@@ -1321,7 +1326,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Droide R4 trucado"
             text: """Durante la fase de Combate, cuando gastes una ficha de Concentración puedes recibir 1 ficha de Tensión para asignar 1 ficha de Concentración a tu nave."""
         'Systems Officer':
-            text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
+            name: "Oficial de Sistemas"
+            text: '''%IMPERIALONLY%%LINEBREAK%Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave puede fijar un blanco.'''
 
     modification_translations =
         "Stealth Device":
@@ -1393,7 +1399,8 @@ exportObj.cardLoaders['Español'] = () ->
         'Ordnance Tubes':
             text: '''%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'''
         'Long-Range Scanners':
-            text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
+            name: "Sensores de Largo Alcance"
+            text: '''Puedes fijar como blanco naves que tengas a alcance 3 o superior. No puedes fijar como blanco naves que tengas a alcance 1-2. Para poder equipar esta carta has de tener los iconos de mejora %TORPEDO% y %MISSILE% en tu barra de mejoras.'''
         "Guidance Chips":
             name: "Chips de Guiado"
             text: """Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."""
@@ -1510,13 +1517,14 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Impetuoso"
             text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."""
         'TIE/x7':
-            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'''
+            text: '''<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, puedes asignar 1 ficha de Evasión a tu nave.'''
             ship: 'Defensor TIE'
         'TIE/D':
-            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
+            text: '''<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Una vez por ronda, después de que efectúes un ataque con un armamento secundario %CANNON% con un coste en puntos de escuadrón inferior a 4, puedes efcetuar un ataque con tu armamento principal.'''
             ship: 'Defensor TIE'
         'TIE Shuttle':
-            text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
+            name: "Lanzadera TIE"
+            text: '''<span class="card-restriction">Sólo TIE Bombardero.</span>%LINEBREAK%Tu barra de mejoras pierde todos los iconos de mejora %TORPEDO%, %MISSILE% y %BOMB% y gana 2 iconos de mejora %CREW%.  No puedes equipar ninguna carta de Mejora %CREW% con un coste en puntos de escuadrón superior a 4.'''
             ship: 'Bombardero TIE'
         'Requiem':
             text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
