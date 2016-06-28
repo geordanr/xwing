@@ -5993,19 +5993,20 @@ exportObj.translations.Deutsch = {
   },
   slot: {
     "Astromech": "Astromech",
-    "Bomb": "Bombe",
+    "Bomb": "Bomben",
     "Cannon": "Kanonen",
-    "Crew": "Crew",
+    "Crew": "Mannschaft",
     "Elite": "Elite",
     "Missile": "Raketen",
     "System": "System",
     "Torpedo": "Torpedo",
-    "Turret": "Geschützturm",
     "Cargo": "Fracht",
-    "Hardpoint": "Hardpoint",
+    "Turret": "Geschütz",
+    "Hardpoint": "Waffenaufhängung",
     "Team": "Team",
-    "Illicit": "Illegales",
-    "Salvaged Astromech": "geborgener Astromech"
+    "Illicit": "Schmuggelwaren",
+    "Salvaged Astromech": "Abgewrackter Astromech",
+    "Tech": "Technik"
   },
   sources: {
     "Core": "Grundspiel",
@@ -6047,18 +6048,24 @@ exportObj.translations.Deutsch = {
     "Inquisitor's TIE Expansion Pack": "TIE des Inquisitors Erweiterung",
     "Mist Hunter Expansion Pack": "Nebeljäger Erweiterung",
     "Punishing One Expansion Pack": "Vollstrecker Eins Erweiterung",
-    "Ghost Expansion Pack": "Ghost Erweiterung"
+    "Ghost Expansion Pack": "Ghost Erweiterung",
+    "Imperial Veterans Expansion Pack": "Veteranen des Imperiums Erweiterung",
+    "ARC-170 Expansion Pack": "ARC-170 Erweiterung",
+    "Special Forces TIE Expansion Pack": "TIE der Spezialeinheiten Erweiterung",
+    "Protectorate Starfighter Expansion Pack": "Sternjäger des Protektors Erweiterung",
+    "Shadow Caster Expansion Pack": "Shadow Caster Erweiterung",
+    "Heroes of the Resistance Expansion Pack": "Helden des Widerstands Erweiterung"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
     pilotSelectorPlaceholder: "Wähle einen Piloten",
     upgradePlaceholder: function(translator, language, slot) {
-      return "kein " + (translator(language, 'slot', slot)) + " Upgrade";
+      return "kein " + (translator(language, 'slot', slot)) + " Aufwertung";
     },
     modificationPlaceholder: "keine Modifikation",
     titlePlaceholder: "kein Titel",
     upgradeHeader: function(translator, language, slot) {
-      return "" + (translator(language, 'slot', slot)) + " Upgrade";
+      return "" + (translator(language, 'slot', slot)) + " Aufwertung";
     },
     unreleased: "unveröffentlicht",
     epic: "Episch",
@@ -6066,6 +6073,14 @@ exportObj.translations.Deutsch = {
   },
   byCSSSelector: {
     '.translate.sort-cards-by': 'Sortiere Karten nach',
+    '.unreleased-content-used .translated': 'Diese Liste verwendet noch nicht veröffentlichte Inhalte!',
+    '.epic-content-used .translated': 'Diese Staffel verwendet epischen Inhalt!',
+    '.illegal-epic-too-many-small-ships .translated': 'Du kannst nicht mehr als 12 kleine Schiffe einsetzen!',
+    '.illegal-epic-too-many-large-ships .translated': 'Du kannst nicht mehr als 6 große Schiffe einsetzen!',
+    '.collection-invalid .translated': 'Du kannst diese Liste nicht mit deiner Sammlung aufstellen!',
+    '.game-type-selector option[value="custom"]': 'Benutzerdefiniert',
+    '.game-type-selector option[value="epic"]': 'Episch',
+    '.game-type-selector option[value="team-epic"]': 'Team Episch',
     '.xwing-card-browser option[value="name"]': 'Name',
     '.xwing-card-browser option[value="source"]': 'Quelle',
     '.xwing-card-browser option[value="type-by-points"]': 'Typ (Punkte)',
@@ -6278,7 +6293,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Wenn du angreifst und der Verteidiger mindestens 1 %CRIT% negiert, erhält er 1 Stressmarker."
     },
     "Boba Fett": {
-      text: "Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher eschwindigkeit, aber anderer Richtung, auf deinem Rad nachträglich einstellen."
+      text: "Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."
     },
     "Krassis Trelix": {
       text: "Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."
@@ -6407,7 +6422,7 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Pilot der Schwarzmond-Staffel"
     },
     "Etahn A'baht": {
-      text: "Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 %HIT% seiner in ein %CRIT% ändern."
+      text: "Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 seiner %HIT% in ein %CRIT% ändern."
     },
     "Corran Horn": {
       text: "Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."
@@ -6755,7 +6770,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Wampa"': {
       ship: "TIE-Jäger",
-      text: "Sobald du angreifst, darfst du alle Würfelergebnisse negieren. Negierst du ein %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."
+      text: "Sobald du angreifst, darfst du zu Beginn des \"Ergebnisse vergleichen\"-Schritts alle Würfelergebnisse negieren. Negierst du %CRIT%, teile dem Verteidiger 1 verdeckte Schadenskarte zu."
     },
     '"Chaser"': {
       ship: "TIE-Jäger",
@@ -6837,18 +6852,22 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Tomax Bren': {
       ship: "TIE-Bomber",
-      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
+      text: 'Ein Mal pro Runde, nachdem du eine %ELITE%-Aufwertung abgelegt hast, decke die abgelegte Karte auf.'
     },
     '"Deathfire"': {
-      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
+      name: '"Todesfeuer"',
+      ship: "TIE-Bomber",
+      text: 'Sobald du dein Manöverrad aufdeckst oder nachdem du eine Aktion durchgeführt hast, darfst du die Aktion einer %BOMB%-Aufwertung als freie Aktion durchführen.'
     },
     "Maarek Stele (TIE Defender)": {
-      text: "When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others.",
-      ship: "TIE-Jagdbomber"
+      name: "Maarek Stele (TIE-Jagdbomber)",
+      ship: "TIE-Jagdbomber",
+      text: "Sobald durch deinen Angriff dem Verteidiger eine offene Schadenskarte zugeteilt wird, ziehst du stattdessen 3 Schadenskarten, wählst 1 aus, die ihm zugeteilt wird, und legst die anderen ab."
     },
     "Countess Ryad": {
-      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
-      ship: "TIE-Jagdbomber"
+      name: "Gräfin Ryad",
+      ship: "TIE-Jagdbomber",
+      text: "Sobald du ein %STRAIGHT%-Manöver aufdeckst, darfst du es wie ein %KTURN%-Manöver behandeln."
     },
     "Gamma Squadron Veteran": {
       ship: "TIE-Bomber",
@@ -6856,7 +6875,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Glaive Squadron Pilot": {
       ship: "TIE-Jagdbomber",
-      name: "Pilot der Glaive-Staffel"
+      name: "Pilot der Gleven-Staffel"
     },
     "Poe Dameron (PS9)": {
       text: "When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result.",
@@ -7003,11 +7022,11 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Dein Pilotenwert steigt um 2."
     },
     "Proximity Mines": {
-      name: "Annährungsminen",
-      text: "<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annährungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."
+      name: "Annäherungsminen",
+      text: "<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annäherungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."
     },
     "Weapons Engineer": {
-      name: "Waffen-Techniker",
+      name: "Waffentechniker",
       text: "Du darfst 2 verschiedene Schiffe gleichzeitig in der Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Sobald du eine Zielerfassung durchführst, darfst du zwei verschiedene Schiffe als Ziele erfassen."
     },
     "Draw Their Fire": {
@@ -7273,7 +7292,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Stay On Target": {
       name: "Am Ziel bleiben",
-      text: "Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dieses Manöver wird wie ein rotes Manöver behandelt."
+      text: "Sobald du ein Manöverrad aufdeckst, darfst du ein anderes Manöver mit gleicher Geschwindigkeit auf deinem Rad einstellen.<br /><br />Dein Manöver wird wie ein rotes Manöver behandelt."
     },
     "Dash Rendar": {
       name: "Dash Rendar (Crew)",
@@ -7341,7 +7360,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Salvaged Astromech": {
       name: "Abgewrackter Astromechdroide",
-      text: "Sobald du eine Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."
+      text: "Sobald du eine offene Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."
     },
     "Bomb Loadout": {
       name: "Bombenladung",
@@ -7438,7 +7457,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Crack Shot': {
       name: "Meisterhafter Schuss",
-      text: 'Sobald du ein Schiff innerhalb deines Feuerwinkels angreifst, darfst du diese Karte ablegen um 1 gewürfeltes %EVADE% des Verteidigers zu negieren.'
+      text: 'Sobald du ein Schiff innerhalb deines Feuerwinkels angreifst, darfst du zu Beginn des Schritts "Ergebnisse vergleichen" diese Karte ablegen, um 1 gewürfeltes %EVADE% des Verteidigers zu negieren.'
     },
     "Advanced Homing Missiles": {
       name: "Verstärkte Lenkraketen",
@@ -7604,7 +7623,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Sobald du in der Kampfphase einen Fokusmarker ausgibst, darfst du 1 Stressmarker erhalten, um deinem Schiff 1 Fokusmarker zuzuordnen."
     },
     'Systems Officer': {
-      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+      name: "Systemoffizier",
+      text: '%IMPERIALONLY%%LINEBREAK%Nachdem du ein grünes Manöver ausgeführt hast, wähle ein anderes freundliches Schiff in Reichweite 1. Das ausgewählte Schiff darf eine Zielerfassung durchführen.'
     }
   };
   modification_translations = {
@@ -7667,7 +7687,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Autothrusters": {
       name: "Automatische Schubdüsen",
-      text: "Sobald du verteidigst und jenseits von Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."
+      text: "Sobald du verteidigst und du im Feuerwinkel jenseits Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."
     },
     "Advanced SLAM": {
       name: "Verbesserter SLAM",
@@ -7702,7 +7722,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '%HUGESHIPONLY%%LINEBREAK%Du darfst jedes deiner %HARDPOINT%-Aufwertungssymbole wie ein %TORPEDO%- oder %MISSILE%- Symbol behandeln.%LINEBREAK%Sobald du angewiesen wirst eine %TORPEDO%- oder %MISSILE%-Aufwertung abzulegen, lege sie nicht ab.'
     },
     'Long-Range Scanners': {
-      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+      name: "Langstreckenscanner",
+      text: 'Du kannst Schiffe in und jenseits von Reichweite 3 in die Zielerfassung nehmen. Schiffe in Reichweite 1-2 darfst du nicht in die Zielerfassung nehmen. Du kannst diese Karte nur ausrüsten, falls du %TORPEDO% und %MISSILE% in deiner Aufwertungsleiste hast.'
     },
     "Guidance Chips": {
       name: "Steuerungschips",
@@ -7772,7 +7793,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Heavy Scyk" Interceptor (Cannon)': {
       ship: "M3-A Abfangjäger",
-      name: '"Schwerer Scyk"-Abfangjäger (Kannone)',
+      name: '"Schwerer Scyk"-Abfangjäger (Kanone)',
       text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.'
     },
     '"Heavy Scyk" Interceptor (Torpedo)': {
@@ -7840,15 +7861,16 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'TIE/x7': {
       ship: "TIE-Jagdbomber",
-      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+      text: '<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert die Symbole %CANNON% und %MISSILE%.%LINEBREAK%Nachdem du ein Manöver mit Geschwindigkeit 3, 4 oder 5 ausgeführt hast, darfst du deinem Schiff 1 Ausweichmarker zuordnen.'
     },
     'TIE/D': {
       ship: "TIE-Jagdbomber",
-      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
+      text: '<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Ein Mal pro Runde, nachdem du einen Angriff mit einer %CANNON%-Sekundärwaffe durchgeführt hast, die 3 oder weniger Kommandopunkte kosten, darfst du einen Primärwaffenangriff durchführen.'
     },
     'TIE Shuttle': {
       ship: "TIE-Bomber",
-      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
+      name: "TIE-Shuttle",
+      text: '<span class="card-restriction">Nur für TIE-Bomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert alle Symbole %TORPEDO%, %MISSILE%, und %BOMB% und erhält 2 %CREW%-Aufwertungssymbole. Du darfst keine %CREW%-Aufwertung ausrüsten, die mehr als 4 Kommandopunkte kostet.'
     },
     'Requiem': {
       ship: "Kreuzer der Gozanti-Klasse",
@@ -7979,12 +8001,21 @@ exportObj.translations.English = {
     limited: "limited"
   },
   byCSSSelector: {
-    '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by',
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.xwing-card-browser option[value="name"]': 'Name',
     '.xwing-card-browser option[value="source"]': 'Source',
     '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)',
     '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)',
     '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.',
+    '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by',
     '.info-well .info-ship td.info-header': 'Ship',
     '.info-well .info-skill td.info-header': 'Skill',
     '.info-well .info-actions td.info-header': 'Actions',
@@ -9287,7 +9318,8 @@ exportObj.translations['Español'] = {
     "Ghost Expansion Pack": "Pack de Expansión Espíritu",
     "Inquisitor's TIE Expansion Pack": "Pack de Expansión TIE del Inquisidor",
     "Mist Hunter Expansion Pack": "Pack de Expansión Cazador de la Niebla",
-    "Punishing One Expansion Pack": "Pack de Expansión Castigadora"
+    "Punishing One Expansion Pack": "Pack de Expansión Castigadora",
+    "Imperial Veterans Expansion Pack": "Pack de Expansión Veteranos Imperiales"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -9326,6 +9358,15 @@ exportObj.translations['Español'] = {
     epic: "épico"
   },
   byCSSSelector: {
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.xwing-card-browser .translate.sort-cards-by': 'Ordenar cartas por',
     '.xwing-card-browser option[value="name"]': 'Nombre',
     '.xwing-card-browser option[value="source"]': 'Fuente',
@@ -9610,6 +9651,7 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Bombardero TIE"
     },
     "Gamma Squadron Veteran": {
+      name: "Veterano del escuadrón Gamma",
       ship: "Bombardero TIE"
     },
     "Captain Jonus": {
@@ -10134,7 +10176,7 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "VCX-100"
     },
     'Tomax Bren': {
-      text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.',
+      text: 'Una vez por ronda, después de que te descartes de una carta de Mejora %ELITE%, dale la vuelta a esa carta para ponerla boca arriba.',
       ship: "Bombardero TIE"
     },
     'Ello Asty': {
@@ -10162,7 +10204,8 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Saltador Maestro 5000"
     },
     '"Deathfire"': {
-      text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.',
+      name: "Muerte Ígnea",
+      text: 'Cuando reveles tu selector de maniobras o después de que realices una acción, puedes realizar una acción de carta de Mejora %BOMB% como acción gratuita.',
       ship: "TIE Bombardero"
     },
     "Sienar Test Pilot": {
@@ -10179,10 +10222,12 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Defensor TIE"
     },
     "Countess Ryad": {
-      text: "When you reveal a %STRAIGHT% maneuver, you may treat it as a %KTURN% maneuver.",
+      name: "Condesa Ryad",
+      text: "Cuando reveles una maniobra %STRAIGHT%, puedes considerarla como una maniobra %KTURN%.",
       ship: "Defensor TIE"
     },
     "Glaive Squadron Pilot": {
+      name: "Piloto del escuadrón Guja",
       ship: "Defensor TIE"
     },
     "Poe Dameron (PS9)": {
@@ -10911,7 +10956,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Durante la fase de Combate, cuando gastes una ficha de Concentración puedes recibir 1 ficha de Tensión para asignar 1 ficha de Concentración a tu nave."
     },
     'Systems Officer': {
-      text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+      name: "Oficial de Sistemas",
+      text: '%IMPERIALONLY%%LINEBREAK%Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave puede fijar un blanco.'
     }
   };
   modification_translations = {
@@ -11007,7 +11053,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
     },
     'Long-Range Scanners': {
-      text: 'You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'
+      name: "Sensores de Largo Alcance",
+      text: 'Puedes fijar como blanco naves que tengas a alcance 3 o superior. No puedes fijar como blanco naves que tengas a alcance 1-2. Para poder equipar esta carta has de tener los iconos de mejora %TORPEDO% y %MISSILE% en tu barra de mejoras.'
     },
     "Guidance Chips": {
       name: "Chips de Guiado",
@@ -11157,15 +11204,16 @@ exportObj.cardLoaders['Español'] = function() {
       text: "<span class=\"card-restriction\">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."
     },
     'TIE/x7': {
-      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.',
+      text: '<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, puedes asignar 1 ficha de Evasión a tu nave.',
       ship: 'Defensor TIE'
     },
     'TIE/D': {
-      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.',
+      text: '<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Una vez por ronda, después de que efectúes un ataque con un armamento secundario %CANNON% con un coste en puntos de escuadrón inferior a 4, puedes efcetuar un ataque con tu armamento principal.',
       ship: 'Defensor TIE'
     },
     'TIE Shuttle': {
-      text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.',
+      name: "Lanzadera TIE",
+      text: '<span class="card-restriction">Sólo TIE Bombardero.</span>%LINEBREAK%Tu barra de mejoras pierde todos los iconos de mejora %TORPEDO%, %MISSILE% y %BOMB% y gana 2 iconos de mejora %CREW%.  No puedes equipar ninguna carta de Mejora %CREW% con un coste en puntos de escuadrón superior a 4.',
       ship: 'Bombardero TIE'
     },
     'Requiem': {
@@ -11287,6 +11335,15 @@ exportObj.translations['Français'] = {
     epic: "épique"
   },
   byCSSSelector: {
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.xwing-card-browser .translate.sort-cards-by': 'Trier les cartes par',
     '.xwing-card-browser option[value="name"]': 'Nom',
     '.xwing-card-browser option[value="source"]': 'Source',
@@ -12912,6 +12969,15 @@ exportObj.translations['Polski'] = {
     epic: "epickie"
   },
   byCSSSelector: {
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!</span>',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.xwing-card-browser .translate.sort-cards-by': 'Sortuj karty po',
     '.xwing-card-browser option[value="name"]': 'nazwie',
     '.xwing-card-browser option[value="source"]': 'źródle',
@@ -14517,6 +14583,15 @@ exportObj.translations['Русский'] = {
     limited: "ограничено"
   },
   byCSSSelector: {
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.translate.sort-cards-by': 'Сортировать карты по',
     '.xwing-card-browser option[value="name"]': 'Имени',
     '.xwing-card-browser option[value="source"]': 'Источнику',
@@ -15799,6 +15874,15 @@ exportObj.translations['Türkçe'] = {
     limited: "Sınırlı"
   },
   byCSSSelector: {
+    '.unreleased-content-used .translated': 'This squad uses unreleased content!',
+    '.epic-content-used .translated': 'This squad uses Epic content!',
+    '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!',
+    '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!',
+    '.collection-invalid .translated': 'You cannot field this list with your collection!',
+    '.game-type-selector option[value="standard"]': 'Standard',
+    '.game-type-selector option[value="custom"]': 'Custom',
+    '.game-type-selector option[value="epic"]': 'Epic',
+    '.game-type-selector option[value="team-epic"]': 'Team Epic',
     '.translate.sort-cards-by': 'Sıralama Ölçütü',
     '.xwing-card-browser option[value="name"]': 'İsim',
     '.xwing-card-browser option[value="source"]': 'Kaynak',
@@ -19880,7 +19964,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 18965
+                    lineno: 19061
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20142,7 +20226,7 @@ exportObj.SquadBuilder = (function() {
     DEFAULT_RANDOMIZER_ITERATIONS = 1000;
     this.status_container = $(document.createElement('DIV'));
     this.status_container.addClass('container-fluid');
-    this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses unreleased content!</span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;This squad uses Epic content!</span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 12 of the same type Small ship!</span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You may not field more than 6 of the same type Large ship!</span>\n        <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;You cannot field this list with your collection!</span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+    this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
     this.container.append(this.status_container);
     this.list_modal = $(document.createElement('DIV'));
     this.list_modal.addClass('modal hide fade text-list-modal');
@@ -20444,7 +20528,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19533
+              lineno: 19629
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21048,7 +21132,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20063
+          lineno: 20159
         }));
         __iced_deferrals._fulfill();
       });
@@ -21060,7 +21144,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20064
+            lineno: 20160
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -22550,7 +22634,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 20913
+                      lineno: 21009
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -22619,7 +22703,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 20937
+                lineno: 21033
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22671,7 +22755,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 20959
+            lineno: 21055
           }));
         }
         _ref = _this.upgrades;
@@ -22679,7 +22763,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 20961
+              lineno: 21057
             }));
           }
         }
@@ -22688,7 +22772,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 20963
+              lineno: 21059
             }));
           }
         }
@@ -23582,7 +23666,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 21598
+                lineno: 21694
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23701,7 +23785,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 21657
+                  lineno: 21753
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -23723,7 +23807,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 21661
+                    lineno: 21757
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -23808,7 +23892,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 21701
+            lineno: 21797
           }));
         }
         __iced_deferrals._fulfill();
