@@ -15,6 +15,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Imperial Aces Expansion Pack"
         "Imperial Assault Carrier Expansion Pack"
         "Imperial Raider Expansion Pack"
+        "Imperial Veterans Expansion Pack"
         "Inquisitor's TIE Expansion Pack"
         "Kihraxz Fighter Expansion Pack"
         "K-Wing Expansion Pack"

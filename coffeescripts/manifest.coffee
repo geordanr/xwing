@@ -3095,6 +3095,93 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Imperial Veterans Expansion Pack": [
+        {
+            name: 'TIE Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Defender'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Tomax Bren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Deathfire"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gamma Squadron Veteran'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Maarek Stele (TIE Defender)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Countess Ryad'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Glaive Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Systems Officer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cluster Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Long-Range Scanners'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'TIE/x7'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'TIE/D'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'TIE Shuttle'
+            type: 'title'
+            count: 2
+        }
+    ]
 
 
 class exportObj.Collection
