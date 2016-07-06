@@ -23,6 +23,9 @@ body {
   #printable .bw .upgrade-attack .xwing-miniatures-font-attack {
     background: black;
     color: white; }
+  #printable .bw .upgrade-energy .xwing-miniatures-font-energy {
+    background: black;
+    color: white; }
   #printable .info-data {
     vertical-align: middle;
     -webkit-text-stroke: 0.5px black;
@@ -201,22 +204,22 @@ body {
           #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-name i {
             display: inline-block;
             min-width: 0.27in; }
-        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack {
+        #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy {
           float: right;
           text-align: right;
           margin-right: 0.07in;
           margin-top: 0.02in;
           height: 0.28in; }
-          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .upgrade-attack-range {
+          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .upgrade-attack-range, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .upgrade-attack-range {
             vertical-align: middle;
             padding: 2px 8px;
             color: white;
             background-color: black;
             font-family: kimberley;
             font-size: 1.2em; }
-          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-turret, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-frontback, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-180 {
+          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-turret, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-frontback, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .xwing-miniatures-font-attack-180, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .xwing-miniatures-font-attack, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .xwing-miniatures-font-attack-turret, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .xwing-miniatures-font-attack-frontback, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .xwing-miniatures-font-attack-180 {
             vertical-align: middle; }
-          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .info-attack {
+          #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-attack .info-attack, #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-energy .info-attack {
             margin-right: 0.02in; }
         #printable .fancy-ship .fancy-upgrade-container .upgrade-container .upgrade-text {
           padding-right: 0.3375in;
