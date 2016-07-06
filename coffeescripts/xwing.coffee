@@ -271,7 +271,7 @@ class exportObj.SquadBuilder
                     Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
-                    Include obstacle silhouettes <input type="checkbox" class="toggle-obstacles" />
+                    Include obstacle/damage deck choices <input type="checkbox" class="toggle-obstacles" />
                 </label>
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
@@ -769,6 +769,8 @@ class exportObj.SquadBuilder
                     <div class="obstacles">
                         <div>Mark the three obstacles you are using.</div>
                         <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
+                        <div>Mark which damage deck you are using.</div>
+                        <div><i class="icon-check-empty"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class="icon-check-empty"></i>The Force Awakens Core Set</div>
                     </div>
                 """
 
