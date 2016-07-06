@@ -2759,6 +2759,13 @@ class GenericAddon
                 </div>
             """ else ''
 
+            energyHTML = if (@data.energy?) then $.trim """
+                <div class="upgrade-energy">
+                    <span class="info-data info-energy">#{@data.energy}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
+                </div>
+            """ else ''
+
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
@@ -2771,6 +2778,7 @@ class GenericAddon
                         #{restriction_html}
                     </div>
                     #{attackHTML}
+                    #{energyHTML}
                     <div class="upgrade-text">#{text_str}</div>
                     <div style="clear: both;"></div>
                 </div>
