@@ -3533,23 +3533,23 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Crew', 'Astromech'],
         points: 28
       }, {
-        name: 'Unspoiled PS4 ARC-170 Pilot',
+        name: 'Thane Kyrell',
         id: 206,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'ARC-170',
         skill: 4,
         slots: ['Torpedo', 'Crew', 'Astromech'],
-        points: 100
+        points: 26
       }, {
-        name: 'Unspoiled PS3 ARC-170 Pilot',
+        name: 'Braylen Stramm',
         id: 207,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'ARC-170',
         skill: 3,
         slots: ['Torpedo', 'Crew', 'Astromech'],
-        points: 100
+        points: 25
       }, {
         name: '"Quickdraw"',
         id: 208,
@@ -4942,6 +4942,17 @@ exportObj.basicCardData = function() {
         limited: true,
         points: 2,
         slot: 'Crew'
+      }, {
+        name: 'Tail Gunner',
+        id: 184,
+        slot: 'Crew',
+        limited: true,
+        points: 2
+      }, {
+        name: 'R3 Astromech',
+        id: 185,
+        slot: 'Astromech',
+        points: 2
       }
     ],
     modificationsById: [
@@ -5165,6 +5176,19 @@ exportObj.basicCardData = function() {
         name: "Guidance Chips",
         id: 25,
         points: 0
+      }, {
+        name: 'Vectored Thrusters',
+        id: 26,
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        },
+        modifier_func: function(stats) {
+          if (__indexOf.call(stats.actions, 'Barrel Roll') < 0) {
+            return stats.actions.push('Barrel Roll');
+          }
+        }
       }
     ],
     titlesById: [
@@ -6896,6 +6920,12 @@ exportObj.cardLoaders.Deutsch = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -7625,6 +7655,12 @@ exportObj.cardLoaders.Deutsch = function() {
     'Systems Officer': {
       name: "Systemoffizier",
       text: '%IMPERIALONLY%%LINEBREAK%Nachdem du ein grünes Manöver ausgeführt hast, wähle ein anderes freundliches Schiff in Reichweite 1. Das ausgewählte Schiff darf eine Zielerfassung durchführen.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -7728,6 +7764,9 @@ exportObj.cardLoaders.Deutsch = function() {
     "Guidance Chips": {
       name: "Steuerungschips",
       text: "Ein Mal pro Runde darfst du, sobald du mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe angreifst, 1 Würfelergebnis in ein %HIT% ändern (oder in ein %CRIT%, falls dein Primärwaffenwert 3 oder höher ist)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -8458,6 +8497,12 @@ exportObj.cardLoaders.English = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -8950,7 +8995,7 @@ exportObj.cardLoaders.English = function() {
       text: 'Once per round, when a friendly ship at Range 1-3 performs an attack with a %TORPEDO% or %MISSILE% secondary weapon, it may change 1 of its blank results to a %HIT% result.'
     },
     'Docking Clamps': {
-      text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach 4 up to TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
+      text: '%GOZANTIONLY% %LIMITED%%LINEBREAK%You may attach up to 4 TIE fighters, TIE interceptors, TIE bombers, or TIE Advanced to this ship.  All attached ships must have the same ship type.'
     },
     '"Zeb" Orrelios': {
       text: "%REBELONLY%%LINEBREAK%Enemy ships inside your firing arc that you are touching are not considered to be touching you when either you or they activate during the Combat phase."
@@ -9023,6 +9068,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Systems Officer': {
       text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -9100,6 +9151,9 @@ exportObj.cardLoaders.English = function() {
     },
     "Guidance Chips": {
       text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -10249,6 +10303,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -10958,6 +11018,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Systems Officer': {
       name: "Oficial de Sistemas",
       text: '%IMPERIALONLY%%LINEBREAK%Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave puede fijar un blanco.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -11059,6 +11125,9 @@ exportObj.cardLoaders['Español'] = function() {
     "Guidance Chips": {
       name: "Chips de Guiado",
       text: "Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -11996,6 +12065,12 @@ exportObj.cardLoaders['Français'] = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -12640,6 +12715,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Systems Officer': {
       text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -12730,6 +12811,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     "Guidance Chips": {
       text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -13610,6 +13694,12 @@ exportObj.cardLoaders['Polski'] = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -14256,6 +14346,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Systems Officer': {
       text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -14346,6 +14442,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Guidance Chips": {
       text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -15029,6 +15128,12 @@ exportObj.cardLoaders['Русский'] = function() {
     'Shara Bey': {
       text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
     },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
@@ -15579,6 +15684,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Systems Officer': {
       text: '%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -15653,6 +15764,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     "Guidance Chips": {
       text: "Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is \"3\" or higher)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -16300,6 +16414,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     "Manaroo": {
       text: "Savaş safhasının başlangıcında, size atanmış tüm odaklanma (focus), kaçınma (evade) ve hedefe kilitlenme (target lock) fişlerinibaşka bir dost gemiye atayabilirsiniz."
+    },
+    'Norra Wexley': {
+      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+    },
+    'Shara Bey': {
+      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+    },
+    'Thane Kyrell': {
+      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+    },
+    'Braylen Stramm': {
+      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
     }
   };
   upgrade_translations = {
@@ -16827,6 +16953,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     "R5-P8": {
       text: "Her turda bir defa, savunduktan sonra 1 saldırı zarı tekrar atabilirsiniz. Bir %HIT% sonucunda, saldıran 1 hasara maruz kalır. Bir %CRIT% sonucunda, siz ve saldıran birer hasara maruz kalırsınız."
+    },
+    'Tail Gunner': {
+      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+    },
+    'R3 Astromech': {
+      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
     }
   };
   modification_translations = {
@@ -16901,6 +17033,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     "Guidance Chips": {
       text: "Her turda bir defa, bir %TORPEDO% veya %MISSILE% ikincil silahınızla saldırırken, 1 zar sonucunu bir %HIT% sonucuna çevirebilirsiniz (veya birincil silahınızın değeri \"3\" veya daha fazla ise bir %CRIT% sonucu)."
+    },
+    'Vectored Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
     }
   };
   title_translations = {
@@ -20035,7 +20170,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19147
+                    lineno: 19242
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20599,7 +20734,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19715
+              lineno: 19810
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21203,7 +21338,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20247
+          lineno: 20342
         }));
         __iced_deferrals._fulfill();
       });
@@ -21215,7 +21350,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20248
+            lineno: 20343
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -22705,7 +22840,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21097
+                      lineno: 21192
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -22774,7 +22909,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21121
+                lineno: 21216
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22826,7 +22961,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21143
+            lineno: 21238
           }));
         }
         _ref = _this.upgrades;
@@ -22834,7 +22969,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21145
+              lineno: 21240
             }));
           }
         }
@@ -22843,7 +22978,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21147
+              lineno: 21242
             }));
           }
         }
@@ -23737,7 +23872,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 21782
+                lineno: 21877
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23856,7 +23991,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 21841
+                  lineno: 21936
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -23878,7 +24013,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 21845
+                    lineno: 21940
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -23963,7 +24098,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 21885
+            lineno: 21980
           }));
         }
         __iced_deferrals._fulfill();
