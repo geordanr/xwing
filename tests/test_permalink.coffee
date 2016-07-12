@@ -33,7 +33,7 @@ casper.test.begin "Permalink", (test) ->
                 'Draw Their Fire'
                 null
                 'Nien Nunb'
-                'Gunner'
+                'Flight Instructor'
                 'Millennium Falcon'
                 'Engine Upgrade'
             ]
@@ -60,7 +60,7 @@ casper.test.begin "Permalink", (test) ->
     .then ->
         test.assertUrlMatch /f=/, 'Faction specified in permalink'
         test.assertUrlMatch /d=/, 'Serialization in permalink'
-    common.assertTotalPoints(test, '#rebel-builder', 153)
+    common.assertTotalPoints(test, '#rebel-builder', 152)
 
     .run ->
         test.done()

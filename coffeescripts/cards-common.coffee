@@ -3754,7 +3754,7 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: 'Unspoiled PS4 ARC-170 Pilot'
+            name: 'Thane Kyrell'
             id: 206
             unique: true
             faction: 'Rebel Alliance'
@@ -3765,10 +3765,10 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 26
         }
         {
-            name: 'Unspoiled PS3 ARC-170 Pilot'
+            name: 'Braylen Stramm'
             id: 207
             unique: true
             faction: 'Rebel Alliance'
@@ -3779,7 +3779,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 25
         }
         {
             name: '"Quickdraw"'
@@ -5350,6 +5350,19 @@ exportObj.basicCardData = ->
             points: 2
             slot: 'Crew'
         }
+        {
+            name: 'Tail Gunner'
+            id: 184
+            slot: 'Crew'
+            limited: true
+            points: 2
+        }
+        {
+            name: 'R3 Astromech'
+            id: 185
+            slot: 'Astromech'
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -5534,6 +5547,15 @@ exportObj.basicCardData = ->
             name: "Guidance Chips"
             id: 25
             points: 0
+        }
+        {
+            name: 'Vectored Thrusters'
+            id: 26
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+            modifier_func: (stats) ->
+                stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
         }
     ]
 

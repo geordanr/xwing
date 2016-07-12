@@ -417,6 +417,10 @@ exportObj.cardLoaders.English = () ->
             text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
         'Shara Bey':
             text: '''When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'''
+        'Thane Kyrell':
+            text: '''After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'''
+        'Braylen Stramm':
+            text: '''After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'''
         '"Quickdraw"':
             text: '''Once per round, when you lose a shield token, you may perform a primary weapon attack.'''
         'Fenn Rau':
@@ -795,6 +799,10 @@ exportObj.cardLoaders.English = () ->
             text: """During the Combat phase, when you spend a focus token, you may receive 1 stress token to assign 1 focus token to your ship."""
         'Systems Officer':
             text: '''%IMPERIALONLY%%LINEBREAK%After you execute a green maneuver, choose another friendly ship at Range 1.  That ship may acquire a target lock.'''
+        'Tail Gunner':
+            text: '''When attacking from your rear-facing auxiliary firing arc, reduce the defender's agility by 1 (to a minimum of "0").'''
+        'R3 Astromech':
+            text: '''Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -847,6 +855,8 @@ exportObj.cardLoaders.English = () ->
             text: '''You can acquire target locks on ships at Range 3 and beyond.  You cannot acquire target locks on ships at Range 1-2.  You can equip this card only if you have %TORPEDO% and %MISSILE% in your upgrade bar.'''
         "Guidance Chips":
             text: """Once per round, when attacking with a %TORPEDO% or %MISSILE% secondary weapon, you may change 1 die result to a %HIT% result (or a %CRIT% result if your primary weapon value is "3" or higher)."""
+        'Vectored Thrusters':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
 
     title_translations =
         "Slave I":

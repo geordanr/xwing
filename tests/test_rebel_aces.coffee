@@ -343,8 +343,8 @@ casper.test.begin "B-Wing/E2", (test) ->
         test.assertDoesntExist "#rebel-builder #{common.selectorForUpgradeIndex 1, 6}", "Blue Squad doesn't have crew by default"
 
     common.addUpgrade('#rebel-builder', 1, 5, 'B-Wing/E2')
-    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
-    common.assertTotalPoints(test, '#rebel-builder', 51)
+    common.addUpgrade('#rebel-builder', 1, 6, 'Flight Instructor')
+    common.assertTotalPoints(test, '#rebel-builder', 50)
 
     # Removing the modification removes the crew slot
     common.removeUpgrade('#rebel-builder', 1, 5)

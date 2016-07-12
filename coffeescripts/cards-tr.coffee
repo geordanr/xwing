@@ -386,6 +386,14 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: """İlk defa imha edilecekken bunu yerine kalan herhangi hasar kartını iptal edin, tüm hasar kartlarını kaldırın ve bu gemiye 4 kapalı hasar kartı uygulayınız."""
         "Manaroo":
             text: """Savaş safhasının başlangıcında, size atanmış tüm odaklanma (focus), kaçınma (evade) ve hedefe kilitlenme (target lock) fişlerinibaşka bir dost gemiye atayabilirsiniz."""
+        'Norra Wexley':
+            text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
+        'Shara Bey':
+            text: '''When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'''
+        'Thane Kyrell':
+            text: '''After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'''
+        'Braylen Stramm':
+            text: '''After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -738,6 +746,10 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: """%SCUMONLY%%LINEBREAK%<strong>Aksiyon:</strong> Bu kartın üzerine 1 kalkan (shield) fişi yerleştirin.%LINEBREAK%<strong>Aksiyon:</strong> 1 kalkanınızı geri kazanmak için bu karttan 1 kalkan kaldırınız (kalkan değerinize kadar)."""
         "R5-P8":
             text: """Her turda bir defa, savunduktan sonra 1 saldırı zarı tekrar atabilirsiniz. Bir %HIT% sonucunda, saldıran 1 hasara maruz kalır. Bir %CRIT% sonucunda, siz ve saldıran birer hasara maruz kalırsınız."""
+        'Tail Gunner':
+            text: '''When attacking from your rear-facing auxiliary firing arc, reduce the defender's agility by 1 (to a minimum of "0").'''
+        'R3 Astromech':
+            text: '''Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -788,7 +800,8 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: '''3 menzil veya ötesindeki gemilere hedefe kilitlenme (target lock) edinebilirsiniz. 1-2 menzildeki gemilere hedefe kilitlenme edinemezsiniz. Bu kartı sadece geliştirme barınızda %TORPEDO% veya %MISSILE% varsa donatabilirsiniz.'''
         "Guidance Chips":
             text: """Her turda bir defa, bir %TORPEDO% veya %MISSILE% ikincil silahınızla saldırırken, 1 zar sonucunu bir %HIT% sonucuna çevirebilirsiniz (veya birincil silahınızın değeri "3" veya daha fazla ise bir %CRIT% sonucu)."""
-
+        'Vectored Thrusters':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
 
     title_translations =
         "Slave I":

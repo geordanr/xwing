@@ -32,8 +32,6 @@ casper.test.begin "TIE Shuttle", (test) ->
     common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 4}")
     common.assertSelectorIsDisabled(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 5}")
 
-    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 8}", 'Gunner')
-    common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 9}", 'Gunner')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 8}", 'Emperor Palpatine')
     common.assertNoMatch(test, "#empire-builder #{common.selectorForUpgradeIndex 1, 9}", 'Emperor Palpatine')
     common.selectExactMatch("#empire-builder #{common.selectorForUpgradeIndex 1, 8}", 'Fleet Officer')

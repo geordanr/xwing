@@ -815,6 +815,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
         'Shara Bey':
             text: '''When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'''
+        'Thane Kyrell':
+            text: '''After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'''
+        'Braylen Stramm':
+            text: '''After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'''
         '"Quickdraw"':
             text: '''Once per round, when you lose a shield token, you may perform a primary weapon attack.'''
         'Fenn Rau':
@@ -1339,6 +1343,10 @@ exportObj.cardLoaders['Español'] = () ->
         'Systems Officer':
             name: "Oficial de Sistemas"
             text: '''%IMPERIALONLY%%LINEBREAK%Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave puede fijar un blanco.'''
+        'Tail Gunner':
+            text: '''When attacking from your rear-facing auxiliary firing arc, reduce the defender's agility by 1 (to a minimum of "0").'''
+        'R3 Astromech':
+            text: '''Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -1415,6 +1423,8 @@ exportObj.cardLoaders['Español'] = () ->
         "Guidance Chips":
             name: "Chips de Guiado"
             text: """Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."""
+        'Vectored Thrusters':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
 
     title_translations =
         "Slave I":

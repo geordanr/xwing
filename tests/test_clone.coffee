@@ -125,9 +125,9 @@ casper.test.begin "Copy B-Wing with B-Wing/E2", (test) ->
         }
     ])
 
-    common.addUpgrade('#rebel-builder', 1, 6, 'Gunner')
+    common.addUpgrade('#rebel-builder', 1, 6, 'Targeting Coordinator')
     common.cloneShip('#rebel-builder', 1)
-    common.assertTotalPoints(test, '#rebel-builder', 34 * 2)
+    common.assertTotalPoints(test, '#rebel-builder', 33 * 2)
 
     common.removeShip('#rebel-builder', 1)
     common.addUpgrade('#rebel-builder', 1, 6, 'Nien Nunb')
