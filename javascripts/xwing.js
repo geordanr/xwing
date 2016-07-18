@@ -1655,7 +1655,7 @@ exportObj.basicCardData = function() {
         hull: 3,
         shields: 3,
         actions: ['Focus', 'Target Lock', 'Barrel Roll'],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [3, 2, 2, 2, 3, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0], [3, 1, 2, 1, 3, 0, 3, 3], [0, 0, 1, 0, 0, 0, 0, 0]]
       },
       'Protectorate Starfighter': {
         name: 'Protectorate Starfighter',
@@ -3560,14 +3560,14 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'System', 'Missile', 'Tech'],
         points: 29
       }, {
-        name: 'Unspoiled PS7 TIE/sf Pilot',
+        name: '"Backdraft"',
         id: 209,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'TIE/sf Fighter',
         skill: 7,
-        slots: ['System', 'Missile', 'Tech'],
-        points: 100
+        slots: ['Elite', 'System', 'Missile', 'Tech'],
+        points: 27
       }, {
         name: 'Unspoiled PS5 TIE/sf Pilot',
         id: 210,
@@ -3577,13 +3577,13 @@ exportObj.basicCardData = function() {
         slots: ['System', 'Missile', 'Tech'],
         points: 100
       }, {
-        name: 'Unspoiled PS3 TIE/sf Pilot',
+        name: 'Zeta Specialist',
         id: 211,
         faction: 'Galactic Empire',
         ship: 'TIE/sf Fighter',
         skill: 3,
         slots: ['System', 'Missile', 'Tech'],
-        points: 100
+        points: 23
       }, {
         name: 'Fenn Rau',
         id: 212,
@@ -4952,6 +4952,16 @@ exportObj.basicCardData = function() {
         name: 'R3 Astromech',
         id: 185,
         slot: 'Astromech',
+        points: 2
+      }, {
+        name: 'Collision Detector',
+        id: 186,
+        slot: 'System',
+        points: 0
+      }, {
+        name: 'Sensor Cluster',
+        id: 187,
+        slot: 'Tech',
         points: 2
       }
     ],
@@ -6929,6 +6939,9 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -7661,6 +7674,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -8506,6 +8525,9 @@ exportObj.cardLoaders.English = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -9074,6 +9096,12 @@ exportObj.cardLoaders.English = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -10312,6 +10340,9 @@ exportObj.cardLoaders['Español'] = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -11024,6 +11055,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -12074,6 +12111,9 @@ exportObj.cardLoaders['Français'] = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -12721,6 +12761,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -13703,6 +13749,9 @@ exportObj.cardLoaders['Polski'] = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -14352,6 +14401,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -15137,6 +15192,9 @@ exportObj.cardLoaders['Русский'] = function() {
     '"Quickdraw"': {
       text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
     },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
@@ -15690,6 +15748,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -16426,6 +16490,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Braylen Stramm': {
       text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+    },
+    '"Quickdraw"': {
+      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+    },
+    '"Backdraft"': {
+      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
     }
   };
   upgrade_translations = {
@@ -16959,6 +17029,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'R3 Astromech': {
       text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+    },
+    'Collision Detector': {
+      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+    },
+    'Sensor Cluster': {
+      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
     }
   };
   modification_translations = {
@@ -20170,7 +20246,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19242
+                    lineno: 19305
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20734,7 +20810,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19810
+              lineno: 19873
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21338,7 +21414,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20342
+          lineno: 20405
         }));
         __iced_deferrals._fulfill();
       });
@@ -21350,7 +21426,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20343
+            lineno: 20406
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -22840,7 +22916,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21192
+                      lineno: 21255
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -22909,7 +22985,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21216
+                lineno: 21279
               })
             ]);
             __iced_deferrals._fulfill();
@@ -22961,7 +23037,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21238
+            lineno: 21301
           }));
         }
         _ref = _this.upgrades;
@@ -22969,7 +23045,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21240
+              lineno: 21303
             }));
           }
         }
@@ -22978,7 +23054,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21242
+              lineno: 21305
             }));
           }
         }
@@ -23872,7 +23948,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 21877
+                lineno: 21940
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23991,7 +24067,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 21936
+                  lineno: 21999
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24013,7 +24089,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 21940
+                    lineno: 22003
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24098,7 +24174,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 21980
+            lineno: 22043
           }));
         }
         __iced_deferrals._fulfill();
