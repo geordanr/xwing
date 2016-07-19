@@ -405,6 +405,8 @@ exportObj.cardLoaders['Русский'] = () ->
             text: '''After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'''
         '"Quickdraw"':
             text: '''Once per round, when you lose a shield token, you may perform a primary weapon attack.'''
+        '"Backdraft"':
+            text: '''When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'''
         'Fenn Rau':
             text: '''When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'''
         'Kad Solus':
@@ -797,6 +799,10 @@ exportObj.cardLoaders['Русский'] = () ->
             text: '''When attacking from your rear-facing auxiliary firing arc, reduce the defender's agility by 1 (to a minimum of "0").'''
         'R3 Astromech':
             text: '''Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'''
+        'Collision Detector':
+            text: '''When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'''
+        'Sensor Cluster':
+            text: '''When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'''
 
     modification_translations =
         "Stealth Device":

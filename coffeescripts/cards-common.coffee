@@ -820,7 +820,13 @@ exportObj.basicCardData = ->
                 'Target Lock'
                 'Barrel Roll'
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+            ]
         'Protectorate Starfighter':
             name: 'Protectorate Starfighter'
             factions: ["Scum and Villainy"]
@@ -3797,18 +3803,19 @@ exportObj.basicCardData = ->
             points: 29
         }
         {
-            name: 'Unspoiled PS7 TIE/sf Pilot'
+            name: '"Backdraft"'
             id: 209
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE/sf Fighter'
             skill: 7
             slots: [
+                'Elite'
                 'System'
                 'Missile'
                 'Tech'
             ]
-            points: 100
+            points: 27
         }
         {
             name: 'Unspoiled PS5 TIE/sf Pilot'
@@ -3824,7 +3831,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Unspoiled PS3 TIE/sf Pilot'
+            name: 'Zeta Specialist'
             id: 211
             faction: 'Galactic Empire'
             ship: 'TIE/sf Fighter'
@@ -3834,7 +3841,7 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Tech'
             ]
-            points: 100
+            points: 23
         }
         {
             name: 'Fenn Rau'
@@ -5361,6 +5368,18 @@ exportObj.basicCardData = ->
             name: 'R3 Astromech'
             id: 185
             slot: 'Astromech'
+            points: 2
+        }
+        {
+            name: 'Collision Detector'
+            id: 186
+            slot: 'System'
+            points: 0
+        }
+        {
+            name: 'Sensor Cluster'
+            id: 187
+            slot: 'Tech'
             points: 2
         }
     ]
