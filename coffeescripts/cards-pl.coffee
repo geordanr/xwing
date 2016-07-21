@@ -1047,7 +1047,7 @@ exportObj.cardLoaders['Polski'] = () ->
         'Cluster Bombs':
             text: '''After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'''
         "Adaptability":
-            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."""
+            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong> Decrease your pilot skill value by 1."""
         "Electronic Baffle":
             text: """When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."""
         "4-LOM":
