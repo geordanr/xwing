@@ -708,7 +708,7 @@ exportObj.cardLoaders['Türkçe'] = () ->
         'Cluster Bombs':
             text: '''Savunduktan sonra, bu kartı kaldırabilirsiniz. Eğer bunu yaparsanız, savunan kısmın 1 menzilindeki tüm diğer gemiler 2 saldırı zarı atar, gelen tüm (%HIT%) hasarına ve (%CRIT%) kritik hasarına maruz kalırlar.'''
         "Adaptability":
-            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>Pilot yetenek değerinizi 1 arttırınız.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Pilot yetenek değerinizi 1 düşürünüz."""
+            text: """<span class="card-restriction">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Pilot yetenek değerinizi 1 arttırınız.%LINEBREAK%<strong>Side B:</strong> Pilot yetenek değerinizi 1 düşürünüz."""
         "Electronic Baffle":
             text: """Bir stres fişi veya bir iyon fişi aldığınızda, bu fişi kaldırmak için 1 hasara maruz kalabilirsiniz."""
         "4-LOM":

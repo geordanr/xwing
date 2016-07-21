@@ -1247,7 +1247,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Nachdem du dich verteidigt hast, darfst du diese Karte ablegen. Wenn du dies tust, wirft jedes andere Schiff in Reichweite 1 der verteidigenden Sektion 2 Angriffswürfel und nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%).'''
         "Adaptability":
             name: "Anpassungsfähig"
-            text: """<span class="card-restriction">Doppelseitige Karte.</span>%LINEBREAK%<strong>Seite A:</strong>%LINEBREAK%Dein Pilotwert steigt um 1.%LINEBREAK%<strong>Seite B:</strong>%LINEBREAK%Dein Pilotwert sinkt um 1."""
+            text: """<span class="card-restriction">Doppelseitige Karte.</span>%LINEBREAK%<strong>Seite A:</strong> Dein Pilotwert steigt um 1.%LINEBREAK%<strong>Seite B:</strong> Dein Pilotwert sinkt um 1."""
         "Electronic Baffle":
             name: "Elektronischer Dämpfer"
             text: """Sobald du einen Stressmarker oder Ionenmarker erhältst, darfst du 1 Schaden nehmen, um diesen Marker abzulegen."""

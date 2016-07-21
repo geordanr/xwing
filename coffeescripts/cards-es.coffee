@@ -1291,7 +1291,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'''
         "Adaptability":
             name: "Adaptabilidad"
-            text: """<span class="card-restriction">Carta dual.</span>%LINEBREAK%<strong>Cara A:</strong>%LINEBREAK%La Habilidad de tu piloto se incrementa en 1.%LINEBREAK%<strong>Cara B:</strong>%LINEBREAK%La habilidad de tu piloto se reduce en 1."""
+            text: """<span class="card-restriction">Carta dual.</span>%LINEBREAK%<strong>Cara A:</strong> La Habilidad de tu piloto se incrementa en 1.%LINEBREAK%<strong>Cara B:</strong> La habilidad de tu piloto se reduce en 1."""
         "Electronic Baffle":
             name: "Regulador Electrónico"
             text: """Cuando recibas una ficha de Tensión o una ficha de Iones, puedes sufrir 1 de daño para descartar esa ficha."""
