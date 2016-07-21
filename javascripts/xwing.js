@@ -7620,7 +7620,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Adaptability": {
       name: "Anpassungsfähig",
-      text: "<span class=\"card-restriction\">Doppelseitige Karte.</span>%LINEBREAK%<strong>Seite A:</strong>%LINEBREAK%Dein Pilotwert steigt um 1.%LINEBREAK%<strong>Seite B:</strong>%LINEBREAK%Dein Pilotwert sinkt um 1."
+      text: "<span class=\"card-restriction\">Doppelseitige Karte.</span>%LINEBREAK%<strong>Seite A:</strong> Dein Pilotwert steigt um 1.%LINEBREAK%<strong>Seite B:</strong> Dein Pilotwert sinkt um 1."
     },
     "Electronic Baffle": {
       name: "Elektronischer Dämpfer",
@@ -9053,7 +9053,7 @@ exportObj.cardLoaders.English = function() {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
     "Adaptability": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong> Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -11005,7 +11005,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Adaptability": {
       name: "Adaptabilidad",
-      text: "<span class=\"card-restriction\">Carta dual.</span>%LINEBREAK%<strong>Cara A:</strong>%LINEBREAK%La Habilidad de tu piloto se incrementa en 1.%LINEBREAK%<strong>Cara B:</strong>%LINEBREAK%La habilidad de tu piloto se reduce en 1."
+      text: "<span class=\"card-restriction\">Carta dual.</span>%LINEBREAK%<strong>Cara A:</strong> La Habilidad de tu piloto se incrementa en 1.%LINEBREAK%<strong>Cara B:</strong> La habilidad de tu piloto se reduce en 1."
     },
     "Electronic Baffle": {
       name: "Regulador Electrónico",
@@ -12718,7 +12718,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
     "Adaptability": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong> Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -14358,7 +14358,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
     "Adaptability": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong> Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -15705,7 +15705,7 @@ exportObj.cardLoaders['Русский'] = function() {
       text: 'After defending, you may discard this card.  If you do, each other ship at Range 1 of the defending section rolls 2 attack dice, suffering all damage (%HIT%) and critical damage (%CRIT%) rolled.'
     },
     "Adaptability": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Decrease your pilot skill value by 1."
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Increase your pilot skill value by 1.%LINEBREAK%<strong>Side B:</strong> Decrease your pilot skill value by 1."
     },
     "Electronic Baffle": {
       text: "When you receive a stress token or an ion token, you may suffer 1 damage to discard that token."
@@ -16995,7 +16995,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: 'Savunduktan sonra, bu kartı kaldırabilirsiniz. Eğer bunu yaparsanız, savunan kısmın 1 menzilindeki tüm diğer gemiler 2 saldırı zarı atar, gelen tüm (%HIT%) hasarına ve (%CRIT%) kritik hasarına maruz kalırlar.'
     },
     "Adaptability": {
-      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong>Pilot yetenek değerinizi 1 arttırınız.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%Pilot yetenek değerinizi 1 düşürünüz."
+      text: "<span class=\"card-restriction\">Dual card.</span>%LINEBREAK%<strong>Side A:</strong> Pilot yetenek değerinizi 1 arttırınız.%LINEBREAK%<strong>Side B:</strong> Pilot yetenek değerinizi 1 düşürünüz."
     },
     "Electronic Baffle": {
       text: "Bir stres fişi veya bir iyon fişi aldığınızda, bu fişi kaldırmak için 1 hasara maruz kalabilirsiniz."
