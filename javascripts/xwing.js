@@ -3594,14 +3594,14 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo'],
         points: 28
       }, {
-        name: 'Old ???',
+        name: 'Old Teroch',
         id: 213,
         unique: true,
         faction: 'Scum and Villainy',
         ship: 'Protectorate Starfighter',
         skill: 7,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 26
       }, {
         name: 'Kad Solus',
         id: 214,
@@ -3609,32 +3609,32 @@ exportObj.basicCardData = function() {
         faction: 'Scum and Villainy',
         ship: 'Protectorate Starfighter',
         skill: 6,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 25
       }, {
-        name: 'Unspoiled PS5 Protectorate Starfighter Pilot',
+        name: 'Concord Dawn Ace',
         id: 215,
         faction: 'Scum and Villainy',
         ship: 'Protectorate Starfighter',
         skill: 5,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 23
       }, {
-        name: 'Unspoiled PS3 Protectorate Starfighter Pilot',
+        name: 'Concord Dawn Veteran',
         id: 216,
         faction: 'Scum and Villainy',
         ship: 'Protectorate Starfighter',
         skill: 3,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 22
       }, {
-        name: 'Zealous ???',
+        name: 'Zealous Recruit',
         id: 217,
         faction: 'Scum and Villainy',
         ship: 'Protectorate Starfighter',
         skill: 1,
         slots: ['Torpedo'],
-        points: 100
+        points: 20
       }, {
         name: 'Ketsu Onyo',
         id: 218,
@@ -4963,6 +4963,12 @@ exportObj.basicCardData = function() {
         id: 187,
         slot: 'Tech',
         points: 2
+      }, {
+        name: 'Fearlessness',
+        id: 188,
+        slot: 'Elite',
+        faction: 'Scum and Villainy',
+        points: 1
       }
     ],
     modificationsById: [
@@ -6945,6 +6951,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -7680,6 +7689,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -8531,6 +8543,9 @@ exportObj.cardLoaders.English = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -9102,6 +9117,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -10346,6 +10364,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -11061,6 +11082,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -12117,6 +12141,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -12767,6 +12794,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -13755,6 +13785,9 @@ exportObj.cardLoaders['Polski'] = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -14407,6 +14440,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -15198,6 +15234,9 @@ exportObj.cardLoaders['Русский'] = function() {
     'Fenn Rau': {
       text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
     },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     },
@@ -15754,6 +15793,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -16496,6 +16538,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Backdraft"': {
       text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+    },
+    'Fenn Rau': {
+      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+    },
+    'Old Teroch': {
+      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+    },
+    'Kad Solus': {
+      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
     }
   };
   upgrade_translations = {
@@ -17035,6 +17086,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Sensor Cluster': {
       text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+    },
+    'Fearlessness': {
+      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
     }
   };
   modification_translations = {
@@ -20246,7 +20300,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19305
+                    lineno: 19348
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20810,7 +20864,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19873
+              lineno: 19916
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21414,7 +21468,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20405
+          lineno: 20448
         }));
         __iced_deferrals._fulfill();
       });
@@ -21426,7 +21480,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20406
+            lineno: 20449
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -22916,7 +22970,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21255
+                      lineno: 21298
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -22985,7 +23039,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21279
+                lineno: 21322
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23037,7 +23091,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21301
+            lineno: 21344
           }));
         }
         _ref = _this.upgrades;
@@ -23045,7 +23099,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21303
+              lineno: 21346
             }));
           }
         }
@@ -23054,7 +23108,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21305
+              lineno: 21348
             }));
           }
         }
@@ -23948,7 +24002,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 21940
+                lineno: 21983
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24067,7 +24121,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 21999
+                  lineno: 22042
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24089,7 +24143,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 22003
+                    lineno: 22046
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24174,7 +24228,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 22043
+            lineno: 22086
           }));
         }
         __iced_deferrals._fulfill();
