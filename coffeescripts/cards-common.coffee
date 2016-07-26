@@ -3857,16 +3857,17 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: 'Old ???'
+            name: 'Old Teroch'
             id: 213
             unique: true
             faction: 'Scum and Villainy'
             ship: 'Protectorate Starfighter'
             skill: 7
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 26
         }
         {
             name: 'Kad Solus'
@@ -3876,34 +3877,37 @@ exportObj.basicCardData = ->
             ship: 'Protectorate Starfighter'
             skill: 6
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: 'Unspoiled PS5 Protectorate Starfighter Pilot'
+            name: 'Concord Dawn Ace'
             id: 215
             faction: 'Scum and Villainy'
             ship: 'Protectorate Starfighter'
             skill: 5
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 23
         }
         {
-            name: 'Unspoiled PS3 Protectorate Starfighter Pilot'
+            name: 'Concord Dawn Veteran'
             id: 216
             faction: 'Scum and Villainy'
             ship: 'Protectorate Starfighter'
             skill: 3
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 22
         }
         {
-            name: 'Zealous ???'
+            name: 'Zealous Recruit'
             id: 217
             faction: 'Scum and Villainy'
             ship: 'Protectorate Starfighter'
@@ -3911,7 +3915,7 @@ exportObj.basicCardData = ->
             slots: [
                 'Torpedo'
             ]
-            points: 100
+            points: 20
         }
         {
             name: 'Ketsu Onyo'
@@ -5381,6 +5385,13 @@ exportObj.basicCardData = ->
             id: 187
             slot: 'Tech'
             points: 2
+        }
+        {
+            name: 'Fearlessness'
+            id: 188
+            slot: 'Elite'
+            faction: 'Scum and Villainy'
+            points: 1
         }
     ]
 

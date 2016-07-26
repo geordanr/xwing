@@ -427,6 +427,8 @@ exportObj.cardLoaders.English = () ->
             text: '''When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'''
         'Fenn Rau':
             text: '''When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'''
+        'Old Teroch':
+            text: '''At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'''
         'Kad Solus':
             text: '''After you execute a red maneuver, assign 2 focus tokens to your ship.'''
         'Ketsu Onyo':
@@ -809,6 +811,8 @@ exportObj.cardLoaders.English = () ->
             text: '''When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'''
         'Sensor Cluster':
             text: '''When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'''
+        'Fearlessness':
+            text: '''%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender's firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'''
 
     modification_translations =
         "Stealth Device":
