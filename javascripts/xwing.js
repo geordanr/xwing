@@ -5205,6 +5205,26 @@ exportObj.basicCardData = function() {
             return stats.actions.push('Barrel Roll');
           }
         }
+      }, {
+        name: 'Smuggling Compartment',
+        id: 27,
+        points: 0,
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Illicit"
+          }, {
+            type: exportObj.RestrictedModification,
+            filter_func: function(mod) {
+              return mod.points <= 3;
+            }
+          }
+        ],
+        limited: true,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.name) === 'YT-1300' || _ref === 'YT-2400';
+        }
       }
     ],
     titlesById: [
@@ -7798,6 +7818,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -9200,6 +9223,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -11189,6 +11215,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -12890,6 +12919,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -14536,6 +14568,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -15873,6 +15908,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -17166,6 +17204,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Vectored Thrusters': {
       text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+    },
+    'Smuggling Compartment': {
+      text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     }
   };
   title_translations = {
@@ -20300,7 +20341,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19348
+                    lineno: 19381
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20864,7 +20905,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19916
+              lineno: 19949
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21468,7 +21509,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20448
+          lineno: 20481
         }));
         __iced_deferrals._fulfill();
       });
@@ -21480,7 +21521,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20449
+            lineno: 20482
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -21714,11 +21755,26 @@ exportObj.SquadBuilder = (function() {
     }
   };
 
-  SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term) {
-    var available_modifications, eligible_modifications, equipped_modification, modification, modification_name, _i, _len, _ref, _ref1, _ref2;
+  SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term, filter_func) {
+    var available_modifications, eligible_modifications, equipped_modification, limited_modifications_in_use, modification, modification_name, _i, _len, _ref, _ref1, _ref2;
     if (term == null) {
       term = '';
     }
+    if (filter_func == null) {
+      filter_func = this.dfl_filter_func;
+    }
+    limited_modifications_in_use = (function() {
+      var _i, _len, _ref, _ref1, _results;
+      _ref = ship.modifications;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        modification = _ref[_i];
+        if ((modification != null ? (_ref1 = modification.data) != null ? _ref1.limited : void 0 : void 0) != null) {
+          _results.push(modification.data);
+        }
+      }
+      return _results;
+    })();
     available_modifications = (function() {
       var _ref, _results;
       _ref = exportObj.modificationsByLocalizedName;
@@ -21731,6 +21787,19 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
+    if (filter_func !== this.dfl_filter_func) {
+      available_modifications = (function() {
+        var _i, _len, _results;
+        _results = [];
+        for (_i = 0, _len = available_modifications.length; _i < _len; _i++) {
+          modification = available_modifications[_i];
+          if (filter_func(modification)) {
+            _results.push(modification);
+          }
+        }
+        return _results;
+      })();
+    }
     if ((ship != null) && exportObj.hugeOnly(ship) > 0) {
       available_modifications = (function() {
         var _i, _len, _results;
@@ -21749,7 +21818,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (modification_name in available_modifications) {
         modification = available_modifications[modification_name];
-        if (((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || this.isOurFaction(modification.faction)) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship))) {
+        if (((modification.unique == null) || __indexOf.call(this.uniques_in_use['Modification'], modification) < 0) && ((modification.faction == null) || this.isOurFaction(modification.faction)) && (!((ship != null) && (modification.restriction_func != null)) || modification.restriction_func(ship)) && __indexOf.call(limited_modifications_in_use, modification) < 0) {
           _results.push(modification);
         }
       }
@@ -21773,7 +21842,7 @@ exportObj.SquadBuilder = (function() {
         eligible_modifications.removeItem(equipped_modification);
       }
     }
-    if ((include_modification != null) && ((include_modification.unique != null) && this.matcher(include_modification.name, term))) {
+    if ((include_modification != null) && (((include_modification.unique != null) || (include_modification.limited != null)) && this.matcher(include_modification.name, term))) {
       eligible_modifications.push(include_modification);
     }
     return ((function() {
@@ -22970,7 +23039,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21298
+                      lineno: 21337
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -23039,7 +23108,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21322
+                lineno: 21361
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23091,7 +23160,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21344
+            lineno: 21383
           }));
         }
         _ref = _this.upgrades;
@@ -23099,7 +23168,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21346
+              lineno: 21385
             }));
           }
         }
@@ -23108,7 +23177,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21348
+              lineno: 21387
             }));
           }
         }
@@ -24002,7 +24071,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 21983
+                lineno: 22022
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24121,7 +24190,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 22042
+                  lineno: 22081
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24143,7 +24212,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 22046
+                    lineno: 22085
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24228,7 +24297,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 22086
+            lineno: 22125
           }));
         }
         __iced_deferrals._fulfill();
@@ -24481,6 +24550,9 @@ exportObj.Modification = (function(_super) {
     this.dataById = exportObj.modificationsById;
     this.dataByName = exportObj.modificationsByLocalizedName;
     this.serialization_code = 'M';
+    if (args.filter_func != null) {
+      this.filter_func = args.filter_func;
+    }
     this.setupSelector();
   }
 
@@ -24494,7 +24566,7 @@ exportObj.Modification = (function(_super) {
           _this.ship.builder.checkCollection();
           return query.callback({
             more: false,
-            results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, _this.ship, query.term)
+            results: _this.ship.builder.getAvailableModificationsIncluding(_this.data, _this.ship, query.term, _this.filter_func)
           });
         };
       })(this)
@@ -24554,11 +24626,28 @@ exportObj.RestrictedUpgrade = (function(_super) {
 
 })(exportObj.Upgrade);
 
+exportObj.RestrictedModification = (function(_super) {
+  __extends(RestrictedModification, _super);
+
+  function RestrictedModification(args) {
+    this.filter_func = args.filter_func;
+    RestrictedModification.__super__.constructor.call(this, args);
+    this.serialization_code = 'm';
+    if (args.auto_equip != null) {
+      this.setById(args.auto_equip);
+    }
+  }
+
+  return RestrictedModification;
+
+})(exportObj.Modification);
+
 SERIALIZATION_CODE_TO_CLASS = {
   'M': exportObj.Modification,
   'T': exportObj.Title,
   'U': exportObj.Upgrade,
-  'u': exportObj.RestrictedUpgrade
+  'u': exportObj.RestrictedUpgrade,
+  'm': exportObj.RestrictedModification
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
