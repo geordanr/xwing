@@ -1435,6 +1435,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."""
         'Vectored Thrusters':
             text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
+        'Smuggling Compartment':
+            text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
 
     title_translations =
         "Slave I":

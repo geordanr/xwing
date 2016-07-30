@@ -1122,6 +1122,7 @@ class exportObj.SquadBuilder
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
         available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
+
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
@@ -1150,15 +1151,20 @@ class exportObj.SquadBuilder
         else
             retval
 
-    getAvailableModificationsIncluding: (include_modification, ship, term='') ->
+    getAvailableModificationsIncluding: (include_modification, ship, term='', filter_func=@dfl_filter_func) ->
         # Returns data formatted for Select2
+        limited_modifications_in_use = (modification.data for modification in ship.modifications when modification?.data?.limited?)
+
         available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
+
+        if filter_func != @dfl_filter_func
+            available_modifications = (modification for modification in available_modifications when filter_func(modification))
 
         if ship? and exportObj.hugeOnly(ship) > 0
             # Only show allowed mods for Epic ships
             available_modifications = (modification for modification in available_modifications when modification.ship? or not modification.restriction_func? or modification.restriction_func ship)
 
-        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship))
+        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship) and modification not in limited_modifications_in_use)
 
         # I finally had to add a special case :(  If something else demands it
         # then I will try to make this more systematic, but I haven't come up
@@ -1170,7 +1176,7 @@ class exportObj.SquadBuilder
                 # current_mod_forcibly_removed = true if equipped_modification == include_modification
 
         # Re-add selected modification
-        if include_modification? and ((include_modification.unique? and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
+        if include_modification? and (((include_modification.unique? or include_modification.limited?) and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
             eligible_modifications.push include_modification
         ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
 
@@ -2891,6 +2897,7 @@ class exportObj.Modification extends GenericAddon
         @dataById = exportObj.modificationsById
         @dataByName = exportObj.modificationsByLocalizedName
         @serialization_code = 'M'
+        @filter_func = args.filter_func if args.filter_func?
 
         @setupSelector()
 
@@ -2903,7 +2910,7 @@ class exportObj.Modification extends GenericAddon
                 @ship.builder.checkCollection()
                 query.callback
                     more: false
-                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term)
+                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term, @filter_func)
 
 class exportObj.Title extends GenericAddon
     constructor: (args) ->
@@ -2935,8 +2942,17 @@ class exportObj.RestrictedUpgrade extends exportObj.Upgrade
         if args.auto_equip?
             @setById args.auto_equip
 
+class exportObj.RestrictedModification extends exportObj.Modification
+    constructor: (args) ->
+        @filter_func = args.filter_func
+        super args
+        @serialization_code = 'm'
+        if args.auto_equip?
+            @setById args.auto_equip
+
 SERIALIZATION_CODE_TO_CLASS =
     'M': exportObj.Modification
     'T': exportObj.Title
     'U': exportObj.Upgrade
     'u': exportObj.RestrictedUpgrade
+    'm': exportObj.RestrictedModification

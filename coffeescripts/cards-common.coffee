@@ -5587,6 +5587,25 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
         }
+        {
+            name: 'Smuggling Compartment'
+            id: 27
+            points: 0
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Illicit"
+                }
+                {
+                    type: exportObj.RestrictedModification
+                    filter_func: (mod) ->
+                        mod.points <= 3
+                }
+            ]
+            limited: true
+            restriction_func: (ship) ->
+                ship.data.name in ['YT-1300', 'YT-2400']
+        }
     ]
 
     titlesById: [

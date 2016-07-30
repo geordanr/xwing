@@ -818,6 +818,8 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: """Her turda bir defa, bir %TORPEDO% veya %MISSILE% ikincil silahınızla saldırırken, 1 zar sonucunu bir %HIT% sonucuna çevirebilirsiniz (veya birincil silahınızın değeri "3" veya daha fazla ise bir %CRIT% sonucu)."""
         'Vectored Thrusters':
             text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
+        'Smuggling Compartment':
+            text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
 
     title_translations =
         "Slave I":
