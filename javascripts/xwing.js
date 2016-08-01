@@ -3645,14 +3645,14 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Crew', 'Illicit', 'Illicit'],
         points: 38
       }, {
-        name: 'Asajj ???',
+        name: 'Asajj Ventress',
         id: 219,
         unique: true,
         faction: 'Scum and Villainy',
         ship: 'Lancer-class Pursuit Craft',
         skill: 6,
-        slots: ['Crew', 'Illicit', 'Illicit'],
-        points: 100
+        slots: ['Elite', 'Crew', 'Illicit', 'Illicit'],
+        points: 37
       }, {
         name: 'Sabine Wren (Scum)',
         canonical_name: "sabinewren-swx56",
@@ -4969,6 +4969,41 @@ exportObj.basicCardData = function() {
         slot: 'Elite',
         faction: 'Scum and Villainy',
         points: 1
+      }, {
+        name: 'Ketsu Onyo',
+        id: 189,
+        slot: 'Crew',
+        faction: 'Scum and Villainy',
+        unique: true,
+        points: 1
+      }, {
+        name: 'Latts Razzi',
+        id: 190,
+        slot: 'Crew',
+        faction: 'Scum and Villainy',
+        unique: true,
+        points: 2
+      }, {
+        name: 'IG-88D',
+        id: 191,
+        slot: 'Crew',
+        faction: 'Scum and Villainy',
+        unique: true,
+        points: 1
+      }, {
+        name: 'Rigged Cargo Chute',
+        id: 192,
+        slot: 'Illicit',
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.large) != null ? _ref : false;
+        }
+      }, {
+        name: 'Seismic Torpedo',
+        id: 193,
+        slot: 'Torpedo',
+        points: 2
       }
     ],
     modificationsById: [
@@ -6980,6 +7015,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -7712,6 +7750,21 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -8575,6 +8628,9 @@ exportObj.cardLoaders.English = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -9143,6 +9199,21 @@ exportObj.cardLoaders.English = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -10399,6 +10470,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -11111,6 +11185,21 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -12179,6 +12268,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -12826,6 +12918,21 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -13826,6 +13933,9 @@ exportObj.cardLoaders['Polski'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -14475,6 +14585,21 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -15278,6 +15403,9 @@ exportObj.cardLoaders['Русский'] = function() {
     'Ketsu Onyo': {
       text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
     },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
@@ -15831,6 +15959,21 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -16585,6 +16728,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Kad Solus': {
       text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+    },
+    'Ketsu Onyo': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+    },
+    'Asajj Ventress': {
+      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+    },
+    'Sabine Wren (Scum)': {
+      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     }
   };
   upgrade_translations = {
@@ -17127,6 +17279,21 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Fearlessness': {
       text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+    },
+    'Ketsu Onyo': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+    },
+    'Latts Razzi': {
+      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+    },
+    'IG-88D': {
+      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+    },
+    'Rigged Cargo Chute': {
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+    },
+    'Seismic Torpedo': {
+      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
     }
   };
   modification_translations = {
@@ -20341,7 +20508,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19381
+                    lineno: 19508
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20905,7 +21072,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 19949
+              lineno: 20076
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21509,7 +21676,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20481
+          lineno: 20608
         }));
         __iced_deferrals._fulfill();
       });
@@ -21521,7 +21688,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20482
+            lineno: 20609
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -23039,7 +23206,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21337
+                      lineno: 21464
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -23108,7 +23275,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21361
+                lineno: 21488
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23160,7 +23327,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21383
+            lineno: 21510
           }));
         }
         _ref = _this.upgrades;
@@ -23168,7 +23335,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21385
+              lineno: 21512
             }));
           }
         }
@@ -23177,7 +23344,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21387
+              lineno: 21514
             }));
           }
         }
@@ -24071,7 +24238,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 22022
+                lineno: 22149
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24190,7 +24357,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 22081
+                  lineno: 22208
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24212,7 +24379,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 22085
+                    lineno: 22212
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24297,7 +24464,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 22125
+            lineno: 22252
           }));
         }
         __iced_deferrals._fulfill();
