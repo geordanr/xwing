@@ -831,6 +831,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After you execute a red maneuver, assign 2 focus tokens to your ship.'''
         'Ketsu Onyo':
             text: '''At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'''
+        'Asajj Ventress':
+            text: '''At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'''
         'Sabine Wren (Scum)':
             text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
 
@@ -1357,6 +1359,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'''
         'Fearlessness':
             text: '''%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender's firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'''
+        'Ketsu Onyo':
+            text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'''
+        'Latts Razzi':
+            text: '''%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'''
+        'IG-88D':
+            text: '''%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'''
+        'Rigged Cargo Chute':
+            text: '''%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'''
+        'Seismic Torpedo':
+            text: '''<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'''
 
     modification_translations =
         "Stealth Device":

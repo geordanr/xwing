@@ -3933,18 +3933,19 @@ exportObj.basicCardData = ->
             points: 38
         }
         {
-            name: 'Asajj ???'
+            name: 'Asajj Ventress'
             id: 219
             unique: true
             faction: 'Scum and Villainy'
             ship: 'Lancer-class Pursuit Craft'
             skill: 6
             slots: [
+                'Elite'
                 'Crew'
                 'Illicit'
                 'Illicit'
             ]
-            points: 100
+            points: 37
         }
         {
             name: 'Sabine Wren (Scum)'
@@ -5392,6 +5393,44 @@ exportObj.basicCardData = ->
             slot: 'Elite'
             faction: 'Scum and Villainy'
             points: 1
+        }
+        {
+            name: 'Ketsu Onyo'
+            id: 189
+            slot: 'Crew'
+            faction: 'Scum and Villainy'
+            unique: true
+            points: 1
+        }
+        {
+            name: 'Latts Razzi'
+            id: 190
+            slot: 'Crew'
+            faction: 'Scum and Villainy'
+            unique: true
+            points: 2
+        }
+        {
+            name: 'IG-88D'
+            id: 191
+            slot: 'Crew'
+            faction: 'Scum and Villainy'
+            unique: true
+            points: 1
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            id: 192
+            slot: 'Illicit'
+            points: 1
+            restriction_func: (ship) ->
+                ship.data.large ? false
+        }
+        {
+            name: 'Seismic Torpedo'
+            id: 193
+            slot: 'Torpedo'
+            points: 2
         }
     ]
 
