@@ -3183,6 +3183,242 @@ exportObj.manifestByExpansion =
         }
     ]
 
+    'ARC-170 Expansion Pack': [
+        {
+            name: 'ARC-170'
+            type: 'ship'
+            count: 1
+        }
+
+        {
+            name: 'Norra Wexley'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shara Bey'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Thane Kyrell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Braylen Stramm'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Adrenaline Rush'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Recon Specialist'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tail Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seismic Torpedo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Vectored Thrusters'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Alliance Overhaul'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Special Forces TIE Expansion Pack': [
+        {
+            name: 'TIE/sf Fighter'
+            type: 'ship'
+            count: 1
+        }
+
+        {
+            name: '"Quickdraw"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Backdraft"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Omega Specialist'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zeta Specialist'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wired'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sensor Cluster'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Special Ops Training'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Protectorate Starfighter Expansion Pack': [
+        {
+            name: 'Protectorate Starfighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Fenn Rau'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Old Teroch'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kad Solus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Concord Dawn Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Concord Dawn Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zealous Recruit'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Fearlessness'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Concord Dawn Protector'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Shadow Caster Expansion Pack': [
+        {
+            name: 'Lancer-class Pursuit Craft'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Ketsu Onyo'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Asajj Ventress'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren (Scum)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Shadowport Hunter'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Veteran Instincts'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'IG-88D'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ketsu Onyo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Latts Razzi'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Black Market Slicer Tools'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Countermeasures'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Gyroscopic Targeting'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Tactical Jammer'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Shadow Caster'
+            type: 'title'
+            count: 1
+        }
+    ]
+
 
 class exportObj.Collection
     # collection = new exportObj.Collection

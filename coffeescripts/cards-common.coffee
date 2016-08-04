@@ -807,7 +807,13 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0 ]
+                [ 3, 1, 1, 1, 3, 0 ]
+                [ 0, 0, 3, 0, 0, 3 ]
+            ]
         'TIE/sf Fighter':
             name: 'TIE/sf Fighter'
             factions: ["Galactic Empire"]
@@ -840,7 +846,14 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Boost'
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 0, 0, 0, 1, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 2, 2, 2, 0, 0, 0, 3, 3 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
         'Lancer-class Pursuit Craft':
             name: 'Lancer-class Pursuit Craft'
             factions: ["Scum and Villainy"]
@@ -855,7 +868,14 @@ exportObj.basicCardData = ->
                 'Evade'
                 'Rotate Arc'
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 1, 1, 0, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 2, 2, 2, 2, 2, 0]
+                [ 0, 0, 2, 0, 0, 0]
+                [ 0, 0, 1, 0, 0, 3]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -3818,17 +3838,18 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: 'Unspoiled PS5 TIE/sf Pilot'
+            name: 'Omega Specialist'
             id: 210
             faction: 'Galactic Empire'
             ship: 'TIE/sf Fighter'
             skill: 5
             slots: [
+                'Elite'
                 'System'
                 'Missile'
                 'Tech'
             ]
-            points: 100
+            points: 25
         }
         {
             name: 'Zeta Specialist'
@@ -3963,7 +3984,7 @@ exportObj.basicCardData = ->
             points: 35
         }
         {
-            name: 'Shadowfo???'
+            name: 'Shadowport Hunter'
             id: 221
             faction: 'Scum and Villainy'
             ship: 'Lancer-class Pursuit Craft'
@@ -5432,6 +5453,12 @@ exportObj.basicCardData = ->
             slot: 'Torpedo'
             points: 2
         }
+        {
+            name: 'Black Market Slicer Tools'
+            id: 194
+            slot: 'Illicit'
+            points: 1
+        }
     ]
 
     modificationsById: [
@@ -5644,6 +5671,12 @@ exportObj.basicCardData = ->
             limited: true
             restriction_func: (ship) ->
                 ship.data.name in ['YT-1300', 'YT-2400']
+        }
+        {
+            id: 28
+            name: 'Gyroscopic Targeting'
+            ship: 'Lancer-class Pursuit Craft'
+            points: 2
         }
     ]
 

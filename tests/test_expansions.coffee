@@ -4,6 +4,7 @@ common.setup()
 
 casper.test.begin "Validate Expansions", (test) ->
     valid_expansions = [
+        "ARC-170 Expansion Pack"
         "A-Wing Expansion Pack"
         "B-Wing Expansion Pack"
         "Core"
@@ -24,10 +25,13 @@ casper.test.begin "Validate Expansions", (test) ->
         "Millennium Falcon Expansion Pack"
         'Mist Hunter Expansion Pack'
         "Most Wanted Expansion Pack"
+        "Protectorate Starfighter Expansion Pack"
         'Punishing One Expansion Pack'
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
+        "Shadow Caster Expansion Pack"
         "Slave I Expansion Pack"
+        "Special Forces TIE Expansion Pack"
         "StarViper Expansion Pack"
         "T-70 X-Wing Expansion Pack"
         "Tantive IV Expansion Pack"
