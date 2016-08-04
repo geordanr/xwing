@@ -1645,7 +1645,7 @@ exportObj.basicCardData = function() {
         hull: 6,
         shields: 3,
         actions: ["Focus", "Target Lock"],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [1, 2, 2, 2, 1, 0], [3, 1, 1, 1, 3, 0], [0, 0, 3, 0, 0, 3]]
       },
       'TIE/sf Fighter': {
         name: 'TIE/sf Fighter',
@@ -1665,7 +1665,7 @@ exportObj.basicCardData = function() {
         hull: 4,
         shields: 0,
         actions: ['Focus', 'Target Lock', 'Barrel Roll', 'Boost'],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 0, 0, 0, 3, 3], [1, 1, 2, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]]
       },
       'Lancer-class Pursuit Craft': {
         name: 'Lancer-class Pursuit Craft',
@@ -1676,7 +1676,7 @@ exportObj.basicCardData = function() {
         hull: 7,
         shields: 3,
         actions: ['Focus', 'Target Lock', 'Evade', 'Rotate Arc'],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [1, 1, 2, 1, 1, 0], [2, 2, 2, 2, 2, 0], [0, 0, 2, 0, 0, 0], [0, 0, 1, 0, 0, 3]]
       }
     },
     pilotsById: [
@@ -3569,13 +3569,13 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'System', 'Missile', 'Tech'],
         points: 27
       }, {
-        name: 'Unspoiled PS5 TIE/sf Pilot',
+        name: 'Omega Specialist',
         id: 210,
         faction: 'Galactic Empire',
         ship: 'TIE/sf Fighter',
         skill: 5,
-        slots: ['System', 'Missile', 'Tech'],
-        points: 100
+        slots: ['Elite', 'System', 'Missile', 'Tech'],
+        points: 25
       }, {
         name: 'Zeta Specialist',
         id: 211,
@@ -3664,7 +3664,7 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Illicit', 'Illicit'],
         points: 35
       }, {
-        name: 'Shadowfo???',
+        name: 'Shadowport Hunter',
         id: 221,
         faction: 'Scum and Villainy',
         ship: 'Lancer-class Pursuit Craft',
@@ -5004,6 +5004,11 @@ exportObj.basicCardData = function() {
         id: 193,
         slot: 'Torpedo',
         points: 2
+      }, {
+        name: 'Black Market Slicer Tools',
+        id: 194,
+        slot: 'Illicit',
+        points: 1
       }
     ],
     modificationsById: [
@@ -5260,6 +5265,11 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.name) === 'YT-1300' || _ref === 'YT-2400';
         }
+      }, {
+        id: 28,
+        name: 'Gyroscopic Targeting',
+        ship: 'Lancer-class Pursuit Craft',
+        points: 2
       }
     ],
     titlesById: [
@@ -7765,6 +7775,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -7874,6 +7887,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -9214,6 +9230,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -9297,6 +9316,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -11200,6 +11222,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -11307,6 +11332,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -12933,6 +12961,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -13029,6 +13060,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -14600,6 +14634,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -14696,6 +14733,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -15974,6 +16014,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -16054,6 +16097,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -17294,6 +17340,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Seismic Torpedo': {
       text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+    },
+    'Black Market Slicer Tools': {
+      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
     }
   };
   modification_translations = {
@@ -17374,6 +17423,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Gyroscopic Targeting': {
+      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -20094,6 +20146,198 @@ exportObj.manifestByExpansion = {
       type: 'title',
       count: 2
     }
+  ],
+  'ARC-170 Expansion Pack': [
+    {
+      name: 'ARC-170',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Norra Wexley',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Shara Bey',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Thane Kyrell',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Braylen Stramm',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Adrenaline Rush',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Recon Specialist',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Tail Gunner',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'R3 Astromech',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Seismic Torpedo',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Vectored Thrusters',
+      type: 'modification',
+      count: 2
+    }, {
+      name: 'Alliance Overhaul',
+      type: 'title',
+      count: 1
+    }
+  ],
+  'Special Forces TIE Expansion Pack': [
+    {
+      name: 'TIE/sf Fighter',
+      type: 'ship',
+      count: 1
+    }, {
+      name: '"Quickdraw"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Backdraft"',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Omega Specialist',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Zeta Specialist',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Wired',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Collision Detector',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Sensor Cluster',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Special Ops Training',
+      type: 'title',
+      count: 1
+    }
+  ],
+  'Protectorate Starfighter Expansion Pack': [
+    {
+      name: 'Protectorate Starfighter',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Fenn Rau',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Old Teroch',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Kad Solus',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Concord Dawn Ace',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Concord Dawn Veteran',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Zealous Recruit',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Fearlessness',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Concord Dawn Protector',
+      type: 'title',
+      count: 1
+    }
+  ],
+  'Shadow Caster Expansion Pack': [
+    {
+      name: 'Lancer-class Pursuit Craft',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Ketsu Onyo',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Asajj Ventress',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Sabine Wren (Scum)',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Shadowport Hunter',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Veteran Instincts',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'IG-88D',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Ketsu Onyo',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Latts Razzi',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Black Market Slicer Tools',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Rigged Cargo Chute',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Countermeasures',
+      type: 'modification',
+      count: 1
+    }, {
+      name: 'Gyroscopic Targeting',
+      type: 'modification',
+      count: 1
+    }, {
+      name: 'Tactical Jammer',
+      type: 'modification',
+      count: 2
+    }, {
+      name: 'Shadow Caster',
+      type: 'title',
+      count: 1
+    }
   ]
 };
 
@@ -20508,7 +20752,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19508
+                    lineno: 19805
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -21072,7 +21316,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 20076
+              lineno: 20373
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21676,7 +21920,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20608
+          lineno: 20905
         }));
         __iced_deferrals._fulfill();
       });
@@ -21688,7 +21932,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20609
+            lineno: 20906
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -23206,7 +23450,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21464
+                      lineno: 21761
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -23275,7 +23519,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21488
+                lineno: 21785
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23327,7 +23571,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21510
+            lineno: 21807
           }));
         }
         _ref = _this.upgrades;
@@ -23335,7 +23579,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21512
+              lineno: 21809
             }));
           }
         }
@@ -23344,7 +23588,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21514
+              lineno: 21811
             }));
           }
         }
@@ -24238,7 +24482,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 22149
+                lineno: 22446
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24357,7 +24601,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 22208
+                  lineno: 22505
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24379,7 +24623,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 22212
+                    lineno: 22509
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24464,7 +24708,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 22252
+            lineno: 22549
           }));
         }
         __iced_deferrals._fulfill();
