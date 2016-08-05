@@ -292,3 +292,21 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
+
+.conditions-container {
+  width: 6in; }
+
+.condition {
+  float: left;
+  width: 2.5in;
+  margin: 0.125in;
+  padding: 1em;
+  border-radius: 10px;
+  border: thin solid black;
+  background: white;
+  color: black;
+  page-break-inside: avoid; }
+  .condition > .name {
+    font-family: EurostileStandardBold;
+    font-weight: 100;
+    font-style: italic; }

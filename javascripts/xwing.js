@@ -4,7 +4,7 @@
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
  */
-var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, exportObj, getPrimaryFaction, sortWithoutQuotes, statAndEffectiveStat, _base,
+var DFL_LANGUAGE, GenericAddon, SERIALIZATION_CODE_TO_CLASS, SPEC_URL, SQUAD_DISPLAY_NAME_MAX_LENGTH, Ship, TYPES, builders, byName, byPoints, conditionToHTML, exportObj, getPrimaryFaction, sortWithoutQuotes, statAndEffectiveStat, _base,
   __slice = [].slice,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack"];
+exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack", "Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1266,7 +1266,7 @@ exportObj.basicCardData = function() {
       },
       "TIE Fighter": {
         name: "TIE Fighter",
-        factions: ["Galactic Empire"],
+        factions: ["Rebel Alliance", "Galactic Empire"],
         attack: 2,
         agility: 3,
         hull: 3,
@@ -1677,6 +1677,27 @@ exportObj.basicCardData = function() {
         shields: 3,
         actions: ['Focus', 'Target Lock', 'Evade', 'Rotate Arc'],
         maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [1, 1, 2, 1, 1, 0], [2, 2, 2, 2, 2, 0], [0, 0, 2, 0, 0, 0], [0, 0, 1, 0, 0, 3]]
+      },
+      'Upsilon-class Shuttle': {
+        name: 'Upsilon-class Shuttle',
+        factions: ["First Order"],
+        large: true,
+        attack: 4,
+        agility: 1,
+        hull: 6,
+        shields: 6,
+        actions: ['Focus', 'Target Lock', 'Coordinate'],
+        maneuvers: []
+      },
+      'Quadjumper': {
+        name: 'Quadjumper',
+        factions: ["Scum and Villainy"],
+        attack: 2,
+        agility: 2,
+        hull: 5,
+        shields: 0,
+        actions: ['Barrel Roll', 'Focus'],
+        maneuvers: []
       }
     },
     pilotsById: [
@@ -3671,6 +3692,115 @@ exportObj.basicCardData = function() {
         skill: 2,
         slots: ['Crew', 'Illicit', 'Illicit'],
         points: 100
+      }, {
+        name: 'Ahso???',
+        id: 222,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'TIE Fighter',
+        skill: 7,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Sabine Wren (TIE Fighter)',
+        id: 223,
+        canonical_name: 'Sabine Wren'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'TIE Fighter',
+        skill: 5,
+        slots: ['Elite'],
+        points: 15
+      }, {
+        name: 'Cap???',
+        id: 224,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'TIE Fighter',
+        skill: 4,
+        slots: [],
+        points: 100
+      }, {
+        name: '"Zeb" Orrelios (TIE Fighter)',
+        id: 225,
+        canonical_name: '"Zeb" Orrelios'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'TIE Fighter',
+        skill: 3,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Kylo Ren',
+        id: 226,
+        unique: true,
+        faction: 'First Order',
+        ship: 'Upsilon-class Shuttle',
+        skill: 6,
+        slots: ['Elite', 'System', 'Crew', 'Crew', 'Tech', 'Tech'],
+        points: 34,
+        applies_condition: 'I\'ll Show You the Dark Side'.canonicalize()
+      }, {
+        name: 'Major ???',
+        id: 227,
+        unique: true,
+        faction: 'First Order',
+        ship: 'Upsilon-class Shuttle',
+        skill: 4,
+        slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
+        points: 100
+      }, {
+        name: 'Lieutenant Dormitz',
+        id: 228,
+        unique: true,
+        faction: 'First Order',
+        ship: 'Upsilon-class Shuttle',
+        skill: 3,
+        slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
+        points: 100
+      }, {
+        name: 'Starkiller ???',
+        id: 229,
+        faction: 'First Order',
+        ship: 'Upsilon-class Shuttle',
+        skill: 2,
+        slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
+        points: 100
+      }, {
+        name: 'Const???',
+        id: 230,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Quadjumper',
+        skill: 7,
+        slots: ['Elite', 'Crew', 'Bomb', 'Tech', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Sarco Plank',
+        id: 231,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Quadjumper',
+        skill: 5,
+        slots: ['Elite', 'Crew', 'Bomb', 'Tech', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Unkar Plutt',
+        id: 232,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Quadjumper',
+        skill: 3,
+        slots: ['Crew', 'Bomb', 'Tech', 'Illicit'],
+        points: 17
+      }, {
+        name: 'Jakku ???',
+        id: 233,
+        faction: 'Scum and Villainy',
+        ship: 'Quadjumper',
+        skill: 1,
+        slots: ['Crew', 'Bomb', 'Tech', 'Illicit'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -5009,6 +5139,27 @@ exportObj.basicCardData = function() {
         id: 194,
         slot: 'Illicit',
         points: 1
+      }, {
+        name: 'Kylo Ren',
+        id: 195,
+        slot: 'Crew',
+        unique: true,
+        faction: 'Galactic Empire',
+        points: 3,
+        applies_condition: 'I\'ll Show You the Dark Side'.canonicalize()
+      }, {
+        name: 'Unkar Plutt',
+        id: 196,
+        faction: 'Scum and Villainy',
+        slot: 'Crew',
+        unique: true,
+        points: 1
+      }, {
+        name: 'A Score to Settle',
+        id: 197,
+        slot: 'Elite',
+        unique: true,
+        points: 0
       }
     ],
     modificationsById: [
@@ -5709,13 +5860,48 @@ exportObj.basicCardData = function() {
         id: 44,
         ship: 'Lancer-class Pursuit Craft',
         points: 3
+      }, {
+        name: 'Kylo Ren\'s Shuttle',
+        id: 45,
+        ship: 'Upsilon-class Shuttle',
+        points: 2
+      }, {
+        name: 'Sabine\'s Masterpiece',
+        id: 46,
+        ship: 'TIE Fighter',
+        faction: 'Rebel Alliance',
+        unique: true,
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Crew"
+          }, {
+            type: exportObj.Upgrade,
+            slot: "Illicit"
+          }
+        ],
+        points: 1
+      }
+    ],
+    conditionsById: [
+      {
+        name: 'Zero Condition',
+        id: 0
+      }, {
+        name: 'I\'ll Show You the Dark Side',
+        id: 1,
+        unique: true
+      }, {
+        name: 'A Debt to Pay',
+        id: 2,
+        unique: true
       }
     ]
   };
 };
 
-exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) {
-  var card, cards, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base10, _base2, _base3, _base4, _base5, _base6, _base7, _base8, _base9, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _name4, _name5, _name6, _name7, _name8, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u;
+exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations) {
+  var card, cards, condition, condition_data, condition_name, e, expansion, field, i, modification, modification_data, modification_name, name, pilot, pilot_data, pilot_name, ship_data, ship_name, source, title, title_data, title_name, translation, translations, upgrade, upgrade_data, upgrade_name, _base, _base1, _base10, _base2, _base3, _base4, _base5, _base6, _base7, _base8, _base9, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len13, _len14, _len15, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _name, _name1, _name2, _name3, _name4, _name5, _name6, _name7, _name8, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref27, _ref28, _ref29, _ref3, _ref30, _ref31, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u, _v, _w, _x;
   _ref = basic_cards.pilotsById;
   for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
     pilot_data = _ref[i];
@@ -5744,10 +5930,17 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
       throw new Error("ID mismatch: modification at index " + i + " has ID " + modification_data.id);
     }
   }
+  _ref4 = basic_cards.conditionsById;
+  for (i = _m = 0, _len4 = _ref4.length; _m < _len4; i = ++_m) {
+    condition_data = _ref4[i];
+    if (condition_data.id !== i) {
+      throw new Error("ID mismatch: condition at index " + i + " has ID " + condition_data.id);
+    }
+  }
   exportObj.pilots = {};
-  _ref4 = basic_cards.pilotsById;
-  for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
-    pilot_data = _ref4[_m];
+  _ref5 = basic_cards.pilotsById;
+  for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
+    pilot_data = _ref5[_n];
     if (pilot_data.skip == null) {
       pilot_data.sources = [];
       pilot_data.english_name = pilot_data.name;
@@ -5772,9 +5965,9 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     }
   }
   exportObj.upgrades = {};
-  _ref5 = basic_cards.upgradesById;
-  for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
-    upgrade_data = _ref5[_n];
+  _ref6 = basic_cards.upgradesById;
+  for (_o = 0, _len6 = _ref6.length; _o < _len6; _o++) {
+    upgrade_data = _ref6[_o];
     if (upgrade_data.skip == null) {
       upgrade_data.sources = [];
       upgrade_data.english_name = upgrade_data.name;
@@ -5798,9 +5991,9 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     }
   }
   exportObj.modifications = {};
-  _ref6 = basic_cards.modificationsById;
-  for (_o = 0, _len6 = _ref6.length; _o < _len6; _o++) {
-    modification_data = _ref6[_o];
+  _ref7 = basic_cards.modificationsById;
+  for (_p = 0, _len7 = _ref7.length; _p < _len7; _p++) {
+    modification_data = _ref7[_p];
     if (modification_data.skip == null) {
       modification_data.sources = [];
       modification_data.english_name = modification_data.name;
@@ -5824,9 +6017,9 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
     }
   }
   exportObj.titles = {};
-  _ref7 = basic_cards.titlesById;
-  for (_p = 0, _len7 = _ref7.length; _p < _len7; _p++) {
-    title_data = _ref7[_p];
+  _ref8 = basic_cards.titlesById;
+  for (_q = 0, _len8 = _ref8.length; _q < _len8; _q++) {
+    title_data = _ref8[_q];
     if (title_data.skip == null) {
       title_data.sources = [];
       title_data.english_name = title_data.name;
@@ -5849,11 +6042,43 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
       }
     }
   }
-  _ref8 = exportObj.manifestByExpansion;
-  for (expansion in _ref8) {
-    cards = _ref8[expansion];
-    for (_q = 0, _len8 = cards.length; _q < _len8; _q++) {
-      card = cards[_q];
+  exportObj.conditions = {};
+  _ref9 = basic_cards.conditionsById;
+  for (_r = 0, _len9 = _ref9.length; _r < _len9; _r++) {
+    condition_data = _ref9[_r];
+    if (condition_data.skip == null) {
+      condition_data.sources = [];
+      condition_data.english_name = condition_data.name;
+      if (condition_data.canonical_name == null) {
+        condition_data.canonical_name = condition_data.english_name.canonicalize();
+      }
+      exportObj.conditions[condition_data.name] = condition_data;
+    }
+  }
+  for (condition_name in condition_translations) {
+    translations = condition_translations[condition_name];
+    for (field in translations) {
+      translation = translations[field];
+      try {
+        exportObj.conditions[condition_name][field] = translation;
+      } catch (_error) {
+        e = _error;
+        console.error("Cannot find translation for attribute " + field + " for condition " + condition_name);
+        throw e;
+      }
+    }
+  }
+  _ref10 = basic_cards.ships;
+  for (ship_name in _ref10) {
+    ship_data = _ref10[ship_name];
+    ship_data.english_name = ship_name;
+    ship_data.canonical_name = ship_data.english_name.canonicalize();
+  }
+  _ref11 = exportObj.manifestByExpansion;
+  for (expansion in _ref11) {
+    cards = _ref11[expansion];
+    for (_s = 0, _len10 = cards.length; _s < _len10; _s++) {
+      card = cards[_s];
       if (card.skipForSource) {
         continue;
       }
@@ -5883,38 +6108,38 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
       }
     }
   }
-  _ref9 = exportObj.pilots;
-  for (name in _ref9) {
-    card = _ref9[name];
-    card.sources = card.sources.sort();
-  }
-  _ref10 = exportObj.upgrades;
-  for (name in _ref10) {
-    card = _ref10[name];
-    card.sources = card.sources.sort();
-  }
-  _ref11 = exportObj.modifications;
-  for (name in _ref11) {
-    card = _ref11[name];
-    card.sources = card.sources.sort();
-  }
-  _ref12 = exportObj.titles;
+  _ref12 = exportObj.pilots;
   for (name in _ref12) {
     card = _ref12[name];
+    card.sources = card.sources.sort();
+  }
+  _ref13 = exportObj.upgrades;
+  for (name in _ref13) {
+    card = _ref13[name];
+    card.sources = card.sources.sort();
+  }
+  _ref14 = exportObj.modifications;
+  for (name in _ref14) {
+    card = _ref14[name];
+    card.sources = card.sources.sort();
+  }
+  _ref15 = exportObj.titles;
+  for (name in _ref15) {
+    card = _ref15[name];
     card.sources = card.sources.sort();
   }
   exportObj.expansions = {};
   exportObj.pilotsById = {};
   exportObj.pilotsByLocalizedName = {};
-  _ref13 = exportObj.pilots;
-  for (pilot_name in _ref13) {
-    pilot = _ref13[pilot_name];
+  _ref16 = exportObj.pilots;
+  for (pilot_name in _ref16) {
+    pilot = _ref16[pilot_name];
     exportObj.fixIcons(pilot);
     exportObj.pilotsById[pilot.id] = pilot;
     exportObj.pilotsByLocalizedName[pilot.name] = pilot;
-    _ref14 = pilot.sources;
-    for (_r = 0, _len9 = _ref14.length; _r < _len9; _r++) {
-      source = _ref14[_r];
+    _ref17 = pilot.sources;
+    for (_t = 0, _len11 = _ref17.length; _t < _len11; _t++) {
+      source = _ref17[_t];
       if (!(source in exportObj.expansions)) {
         exportObj.expansions[source] = 1;
       }
@@ -5925,9 +6150,9 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   }
   exportObj.pilotsByFactionCanonicalName = {};
   exportObj.pilotsByUniqueName = {};
-  _ref15 = exportObj.pilots;
-  for (pilot_name in _ref15) {
-    pilot = _ref15[pilot_name];
+  _ref18 = exportObj.pilots;
+  for (pilot_name in _ref18) {
+    pilot = _ref18[pilot_name];
     ((_base = ((_base1 = exportObj.pilotsByFactionCanonicalName)[_name1 = pilot.faction] != null ? _base1[_name1] : _base1[_name1] = {}))[_name = pilot.canonical_name] != null ? _base[_name] : _base[_name] = []).push(pilot);
     ((_base2 = exportObj.pilotsByUniqueName)[_name2 = pilot.canonical_name.getXWSBaseName()] != null ? _base2[_name2] : _base2[_name2] = []).push(pilot);
     switch (pilot.faction) {
@@ -5940,15 +6165,15 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   }
   exportObj.upgradesById = {};
   exportObj.upgradesByLocalizedName = {};
-  _ref16 = exportObj.upgrades;
-  for (upgrade_name in _ref16) {
-    upgrade = _ref16[upgrade_name];
+  _ref19 = exportObj.upgrades;
+  for (upgrade_name in _ref19) {
+    upgrade = _ref19[upgrade_name];
     exportObj.fixIcons(upgrade);
     exportObj.upgradesById[upgrade.id] = upgrade;
     exportObj.upgradesByLocalizedName[upgrade.name] = upgrade;
-    _ref17 = upgrade.sources;
-    for (_s = 0, _len10 = _ref17.length; _s < _len10; _s++) {
-      source = _ref17[_s];
+    _ref20 = upgrade.sources;
+    for (_u = 0, _len12 = _ref20.length; _u < _len12; _u++) {
+      source = _ref20[_u];
       if (!(source in exportObj.expansions)) {
         exportObj.expansions[source] = 1;
       }
@@ -5959,17 +6184,17 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   }
   exportObj.upgradesBySlotCanonicalName = {};
   exportObj.upgradesBySlotUniqueName = {};
-  _ref18 = exportObj.upgrades;
-  for (upgrade_name in _ref18) {
-    upgrade = _ref18[upgrade_name];
+  _ref21 = exportObj.upgrades;
+  for (upgrade_name in _ref21) {
+    upgrade = _ref21[upgrade_name];
     ((_base7 = exportObj.upgradesBySlotCanonicalName)[_name5 = upgrade.slot] != null ? _base7[_name5] : _base7[_name5] = {})[upgrade.canonical_name] = upgrade;
     ((_base8 = exportObj.upgradesBySlotUniqueName)[_name6 = upgrade.slot] != null ? _base8[_name6] : _base8[_name6] = {})[upgrade.canonical_name.getXWSBaseName()] = upgrade;
   }
   exportObj.modificationsById = {};
   exportObj.modificationsByLocalizedName = {};
-  _ref19 = exportObj.modifications;
-  for (modification_name in _ref19) {
-    modification = _ref19[modification_name];
+  _ref22 = exportObj.modifications;
+  for (modification_name in _ref22) {
+    modification = _ref22[modification_name];
     exportObj.fixIcons(modification);
     if (modification.huge != null) {
       if (modification.restriction_func == null) {
@@ -5977,15 +6202,15 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
       }
     } else if (modification.restriction_func == null) {
       modification.restriction_func = function(ship) {
-        var _ref20;
-        return !((_ref20 = ship.data.huge) != null ? _ref20 : false);
+        var _ref23;
+        return !((_ref23 = ship.data.huge) != null ? _ref23 : false);
       };
     }
     exportObj.modificationsById[modification.id] = modification;
     exportObj.modificationsByLocalizedName[modification.name] = modification;
-    _ref20 = modification.sources;
-    for (_t = 0, _len11 = _ref20.length; _t < _len11; _t++) {
-      source = _ref20[_t];
+    _ref23 = modification.sources;
+    for (_v = 0, _len13 = _ref23.length; _v < _len13; _v++) {
+      source = _ref23[_v];
       if (!(source in exportObj.expansions)) {
         exportObj.expansions[source] = 1;
       }
@@ -5996,23 +6221,23 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   }
   exportObj.modificationsByCanonicalName = {};
   exportObj.modificationsByUniqueName = {};
-  _ref21 = exportObj.modifications;
-  for (modification_name in _ref21) {
-    modification = _ref21[modification_name];
+  _ref24 = exportObj.modifications;
+  for (modification_name in _ref24) {
+    modification = _ref24[modification_name];
     (exportObj.modificationsByCanonicalName != null ? exportObj.modificationsByCanonicalName : exportObj.modificationsByCanonicalName = {})[modification.canonical_name] = modification;
     (exportObj.modificationsByUniqueName != null ? exportObj.modificationsByUniqueName : exportObj.modificationsByUniqueName = {})[modification.canonical_name.getXWSBaseName()] = modification;
   }
   exportObj.titlesById = {};
   exportObj.titlesByLocalizedName = {};
-  _ref22 = exportObj.titles;
-  for (title_name in _ref22) {
-    title = _ref22[title_name];
+  _ref25 = exportObj.titles;
+  for (title_name in _ref25) {
+    title = _ref25[title_name];
     exportObj.fixIcons(title);
     exportObj.titlesById[title.id] = title;
     exportObj.titlesByLocalizedName[title.name] = title;
-    _ref23 = title.sources;
-    for (_u = 0, _len12 = _ref23.length; _u < _len12; _u++) {
-      source = _ref23[_u];
+    _ref26 = title.sources;
+    for (_w = 0, _len14 = _ref26.length; _w < _len14; _w++) {
+      source = _ref26[_w];
       if (!(source in exportObj.expansions)) {
         exportObj.expansions[source] = 1;
       }
@@ -6021,10 +6246,27 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   if (Object.keys(exportObj.titlesById).length !== Object.keys(exportObj.titles).length) {
     throw new Error("At least one title shares an ID with another");
   }
+  exportObj.conditionsById = {};
+  _ref27 = exportObj.conditions;
+  for (condition_name in _ref27) {
+    condition = _ref27[condition_name];
+    exportObj.fixIcons(condition);
+    exportObj.conditionsById[condition.id] = condition;
+    _ref28 = condition.sources;
+    for (_x = 0, _len15 = _ref28.length; _x < _len15; _x++) {
+      source = _ref28[_x];
+      if (!(source in exportObj.expansions)) {
+        exportObj.expansions[source] = 1;
+      }
+    }
+  }
+  if (Object.keys(exportObj.conditionsById).length !== Object.keys(exportObj.conditions).length) {
+    throw new Error("At least one condition shares an ID with another");
+  }
   exportObj.titlesByShip = {};
-  _ref24 = exportObj.titles;
-  for (title_name in _ref24) {
-    title = _ref24[title_name];
+  _ref29 = exportObj.titles;
+  for (title_name in _ref29) {
+    title = _ref29[title_name];
     if (!(title.ship in exportObj.titlesByShip)) {
       exportObj.titlesByShip[title.ship] = [];
     }
@@ -6032,9 +6274,9 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
   }
   exportObj.titlesByCanonicalName = {};
   exportObj.titlesByUniqueName = {};
-  _ref25 = exportObj.titles;
-  for (title_name in _ref25) {
-    title = _ref25[title_name];
+  _ref30 = exportObj.titles;
+  for (title_name in _ref30) {
+    title = _ref30[title_name];
     if (title.canonical_name === '"Heavy Scyk" Interceptor'.canonicalize()) {
       ((_base9 = (exportObj.titlesByCanonicalName != null ? exportObj.titlesByCanonicalName : exportObj.titlesByCanonicalName = {}))[_name7 = title.canonical_name] != null ? _base9[_name7] : _base9[_name7] = []).push(title);
       ((_base10 = (exportObj.titlesByUniqueName != null ? exportObj.titlesByUniqueName : exportObj.titlesByUniqueName = {}))[_name8 = title.canonical_name.getXWSBaseName()] != null ? _base10[_name8] : _base10[_name8] = []).push(title);
@@ -6043,12 +6285,18 @@ exportObj.setupCardData = function(basic_cards, pilot_translations, upgrade_tran
       (exportObj.titlesByUniqueName != null ? exportObj.titlesByUniqueName : exportObj.titlesByUniqueName = {})[title.canonical_name.getXWSBaseName()] = title;
     }
   }
+  exportObj.conditionsByCanonicalName = {};
+  _ref31 = exportObj.conditions;
+  for (condition_name in _ref31) {
+    condition = _ref31[condition_name];
+    (exportObj.conditionsByCanonicalName != null ? exportObj.conditionsByCanonicalName : exportObj.conditionsByCanonicalName = {})[condition.canonical_name] = condition;
+  }
   return exportObj.expansions = Object.keys(exportObj.expansions).sort();
 };
 
 exportObj.fixIcons = function(data) {
   if (data.text != null) {
-    return data.text = data.text.replace(/%ASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>').replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>').replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>').replace(/%BARRELROLL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>').replace(/%BOMB%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>').replace(/%BOOST%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>').replace(/%CANNON%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>').replace(/%CARGO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>').replace(/%CLOAK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>').replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>').replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>').replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>').replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>').replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>').replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>').replace(/%HARDPOINT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>').replace(/%HIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>').replace(/%ILLICIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>').replace(/%JAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>').replace(/%KTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%MISSILE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>').replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>').replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>').replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-salvagedastromech"></i>').replace(/%SLOOPLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopleft"></i>').replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>').replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>').replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>').replace(/%SYSTEM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>').replace(/%TARGETLOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>').replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>').replace(/%TECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>').replace(/%TORPEDO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>').replace(/%TROLLLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-trollleft"></i>').replace(/%TROLLRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-trollright"></i>').replace(/%TURNLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnleft"></i>').replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>').replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>').replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge ship only.</span>').replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large ship only.</span>').replace(/%SMALLSHIPONLY%/g, '<span class="card-restriction">Small ship only.</span>').replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>').replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>').replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>').replace(/%LIMITED%/g, '<span class="card-restriction">Limited.</span>').replace(/%LINEBREAK%/g, '<br /><br />').replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für riesige Schiffe.</span>').replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>').replace(/%DE_REBELONLY%/g, '<span class="card-restriction">Nur für Rebellen.</span>').replace(/%DE_IMPERIALONLY%/g, '<span class="card-restriction">Nur für das Imperium.</span>').replace(/%DE_SCUMONLY%/g, '<span class="card-restriction">Nur für Abschaum & Kriminelle.</span>').replace(/%DE_GOZANTIONLY%/g, '<span class="card-restriction">Nur für Kreuzer der <em>Gozanti</em>-Klasse.</span>').replace(/%DE_LIMITED%/g, '<span class="card-restriction">Limitiert.</span>').replace(/%DE_SMALLSHIPONLY%/g, '<span class="card-restriction">Nur für kleine Schiffe.</span>').replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>').replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>').replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>').replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>').replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>').replace(/%GOZANTIONLY%/g, '<span class="card-restriction"><em>Gozanti</em>-class cruiser only.</span>');
+    return data.text = data.text.replace(/%ASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>').replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>').replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>').replace(/%BARRELROLL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>').replace(/%BOMB%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>').replace(/%BOOST%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>').replace(/%CANNON%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>').replace(/%CARGO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cargo"></i>').replace(/%CLOAK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>').replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>').replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>').replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>').replace(/%DUALCARD%/g, '<span class="card-restriction">Dual card.</span>').replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>').replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>').replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>').replace(/%HARDPOINT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>').replace(/%HIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-hit"></i>').replace(/%ILLICIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>').replace(/%JAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>').replace(/%KTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%MISSILE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>').replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>').replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>').replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-salvagedastromech"></i>').replace(/%SLAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>').replace(/%SLOOPLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopleft"></i>').replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>').replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>').replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>').replace(/%SYSTEM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>').replace(/%TARGETLOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>').replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>').replace(/%TECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>').replace(/%TORPEDO%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>').replace(/%TROLLLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-trollleft"></i>').replace(/%TROLLRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-trollright"></i>').replace(/%TURNLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnleft"></i>').replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>').replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>').replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>').replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge ship only.</span>').replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large ship only.</span>').replace(/%SMALLSHIPONLY%/g, '<span class="card-restriction">Small ship only.</span>').replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>').replace(/%IMPERIALONLY%/g, '<span class="card-restriction">Imperial only.</span>').replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>').replace(/%LIMITED%/g, '<span class="card-restriction">Limited.</span>').replace(/%LINEBREAK%/g, '<br /><br />').replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für riesige Schiffe.</span>').replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>').replace(/%DE_REBELONLY%/g, '<span class="card-restriction">Nur für Rebellen.</span>').replace(/%DE_IMPERIALONLY%/g, '<span class="card-restriction">Nur für das Imperium.</span>').replace(/%DE_SCUMONLY%/g, '<span class="card-restriction">Nur für Abschaum & Kriminelle.</span>').replace(/%DE_GOZANTIONLY%/g, '<span class="card-restriction">Nur für Kreuzer der <em>Gozanti</em>-Klasse.</span>').replace(/%DE_LIMITED%/g, '<span class="card-restriction">Limitiert.</span>').replace(/%DE_SMALLSHIPONLY%/g, '<span class="card-restriction">Nur für kleine Schiffe.</span>').replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>').replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>').replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>').replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>').replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>').replace(/%GOZANTIONLY%/g, '<span class="card-restriction"><em>Gozanti</em>-class cruiser only.</span>');
   }
 };
 
@@ -6237,7 +6485,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders.Deutsch = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Deutsch';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -7030,6 +7278,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -7778,6 +8038,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -8065,9 +8334,20 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -8221,7 +8501,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders.English = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'English';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -8649,6 +8929,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -9233,6 +9525,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -9450,9 +9751,20 @@ exportObj.cardLoaders.English = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -9635,7 +9947,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders['Español'] = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Español';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -10497,6 +10809,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -11225,6 +11549,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -11519,9 +11852,20 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -11670,7 +12014,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders['Français'] = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Français';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -12301,6 +12645,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -12964,6 +13320,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -13210,9 +13575,20 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -13361,7 +13737,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders['Polski'] = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Polski';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -13972,6 +14348,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -14637,6 +15025,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -14880,9 +15277,20 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -15032,7 +15440,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders['Русский'] = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Русский';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -15448,6 +15856,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -16017,6 +16437,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -16228,9 +16657,20 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Shadow Caster': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -16379,7 +16819,7 @@ if (exportObj.cardLoaders == null) {
 }
 
 exportObj.cardLoaders['Türkçe'] = function() {
-  var basic_cards, modification_translations, pilot_translations, title_translations, upgrade_translations;
+  var basic_cards, condition_translations, modification_translations, pilot_translations, title_translations, upgrade_translations;
   exportObj.cardLanguage = 'Türkçe';
   basic_cards = exportObj.basicCardData();
   exportObj.canonicalizeShipNames(basic_cards);
@@ -16783,6 +17223,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Sabine Wren (Scum)': {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+    },
+    'Sabine Wren (TIE Fighter)': {
+      text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
+    },
+    '"Zeb" Orrelios (TIE Fighter)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'Kylo Ren': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Unkar Plutt': {
+      text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     }
   };
   upgrade_translations = {
@@ -17343,6 +17795,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Black Market Slicer Tools': {
       text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+    },
+    'Kylo Ren': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+    },
+    'Unkar Plutt': {
+      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+    },
+    'A Score to Settle': {
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -17536,9 +17997,20 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Suppressor': {
       text: '%GOZANTIONLY%%LINEBREAK%Her turda bir defa, bir hedefe kilitlenme (target lock) elde ettikten sonra, bu gemiden 1 odaklanma (focus), kaçınma (evade) veya mavi hedefe kilitlenme fişi kaldırabilirsiniz.'
+    },
+    'Sabine\'s Masterpiece': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
+    },
+    'Kylo Ren\'s Shuttle': {
+      text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     }
   };
-  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations);
+  condition_translations = {
+    'I\'ll Show You the Dark Side': {
+      text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    }
+  };
+  return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
 };
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
@@ -20752,7 +21224,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 19805
+                    lineno: 20277
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -20910,6 +21382,11 @@ getPrimaryFaction = function(faction) {
     default:
       return faction;
   }
+};
+
+conditionToHTML = function(condition) {
+  var html;
+  return html = $.trim("<div class=\"condition\">\n    <div class=\"name\">" + (condition.unique ? "&middot;&nbsp;" : "") + condition.name + "</div>\n    <div class=\"text\">" + condition.text + "</div>\n</div>");
 };
 
 exportObj.SquadBuilder = (function() {
@@ -21316,7 +21793,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 20373
+              lineno: 20853
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -21357,7 +21834,10 @@ exportObj.SquadBuilder = (function() {
     this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <br />\n    <span class=\"info-collection\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td class=\"info-header\">Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td class=\"info-header\">Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-energy\"></i></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-attack\"></i></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td class=\"info-header\">Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-agility\"></i></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-hull\"></i></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-shield\"></i></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td class=\"info-header\">Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td class=\"info-header\">Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n    <p class=\"info-maneuvers\" />\n</div>"));
     this.info_container.hide();
     this.print_list_button = $(this.container.find('button.print-list'));
-    return this.container.find('[rel=tooltip]').tooltip();
+    this.container.find('[rel=tooltip]').tooltip();
+    this.condition_container = $(document.createElement('div'));
+    this.condition_container.addClass('conditions-container');
+    return this.container.append(this.condition_container);
   };
 
   SquadBuilder.prototype.setupEventHandlers = function() {
@@ -21518,6 +21998,8 @@ exportObj.SquadBuilder = (function() {
             }).call(_this);
             _this.printable_container.find('.squad-faction').html("<i class=\"xwing-miniatures-font xwing-miniatures-font-" + faction + "\"></i>");
         }
+        _this.printable_container.find('.printable-body').append($.trim("<div class=\"print-conditions\"></div>"));
+        _this.printable_container.find('.printable-body .print-conditions').html(_this.condition_container.html());
         if ($.trim(_this.notes.val()) !== '') {
           _this.printable_container.find('.printable-body').append($.trim("<h5 class=\"print-notes\">Notes:</h5>\n<pre class=\"print-notes\"></pre>"));
           _this.printable_container.find('.printable-body pre.print-notes').text(_this.notes.val());
@@ -21602,7 +22084,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.onPointsUpdated = function(cb) {
-    var bbcode_ships, count, epic_content_used, htmlview_ships, i, illegal_for_epic, points_left, ship, shipCountsByType, ship_data, ship_name, ship_uses_epic_content, ship_uses_unreleased_content, unreleased_content_used, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _name, _ref, _ref1, _ref2, _ref3, _ref4;
+    var bbcode_ships, conditions, conditions_set, count, epic_content_used, htmlview_ships, i, illegal_for_epic, points_left, ship, shipCountsByType, ship_data, ship_name, ship_uses_epic_content, ship_uses_unreleased_content, unreleased_content_used, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _name, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     if (cb == null) {
       cb = $.noop;
     }
@@ -21698,6 +22180,35 @@ exportObj.SquadBuilder = (function() {
     this.htmlview_container.find('textarea').val($.trim("" + (htmlview_ships.join('<br />')) + "\n<br />\n<b><i>Total: " + this.total_points + "</i></b>\n<br />\n<a href=\"" + (this.permalink.attr('href')) + "\">View in Yet Another Squad Builder</a>"));
     this.bbcode_container.find('textarea').val($.trim("" + (bbcode_ships.join("\n\n")) + "\n\n[b][i]Total: " + this.total_points + "[/i][/b]\n\n[url=" + (this.permalink.attr('href')) + "]View in Yet Another Squad Builder[/url]"));
     this.checkCollection();
+    if (typeof Set !== "undefined" && Set !== null) {
+      conditions_set = new Set();
+      _ref5 = this.ships;
+      for (_m = 0, _len4 = _ref5.length; _m < _len4; _m++) {
+        ship = _ref5[_m];
+        ship.getConditions().forEach(function(condition) {
+          return conditions_set.add(condition);
+        });
+      }
+      conditions = [];
+      conditions_set.forEach(function(condition) {
+        return conditions.push(condition);
+      });
+      conditions.sort(function(a, b) {
+        if (a.name.canonicalize() < b.name.canonicalize()) {
+          return -1;
+        } else if (b.name.canonicalize() > a.name.canonicalize()) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      this.condition_container.text('');
+      conditions.forEach((function(_this) {
+        return function(condition) {
+          return _this.condition_container.append(conditionToHTML(condition));
+        };
+      })(this));
+    }
     return cb(this.total_points);
   };
 
@@ -21920,7 +22431,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 20905
+          lineno: 21420
         }));
         __iced_deferrals._fulfill();
       });
@@ -21932,7 +22443,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 20906
+            lineno: 21421
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -23450,7 +23961,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 21761
+                      lineno: 22276
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -23519,7 +24030,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 21785
+                lineno: 22300
               })
             ]);
             __iced_deferrals._fulfill();
@@ -23571,7 +24082,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 21807
+            lineno: 22322
           }));
         }
         _ref = _this.upgrades;
@@ -23579,7 +24090,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 21809
+              lineno: 22324
             }));
           }
         }
@@ -23588,7 +24099,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 21811
+              lineno: 22326
             }));
           }
         }
@@ -24443,6 +24954,27 @@ Ship = (function() {
     return xws;
   };
 
+  Ship.prototype.getConditions = function() {
+    var conditions, upgrade, _i, _len, _ref, _ref1, _ref2;
+    if (typeof Set !== "undefined" && Set !== null) {
+      conditions = new Set();
+      if (((_ref = this.pilot) != null ? _ref.applies_condition : void 0) != null) {
+        conditions.add(exportObj.conditionsByCanonicalName[this.pilot.applies_condition]);
+      }
+      _ref1 = this.upgrades;
+      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+        upgrade = _ref1[_i];
+        if ((upgrade != null ? (_ref2 = upgrade.data) != null ? _ref2.applies_condition : void 0 : void 0) != null) {
+          conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition]);
+        }
+      }
+      return conditions;
+    } else {
+      console.warn('Set not supported in this JS implementation, not implementing conditions');
+      return [];
+    }
+  };
+
   return Ship;
 
 })();
@@ -24482,7 +25014,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 22446
+                lineno: 22972
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24601,7 +25133,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 22505
+                  lineno: 23031
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -24623,7 +25155,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 22509
+                    lineno: 23035
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -24708,7 +25240,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 22549
+            lineno: 23075
           }));
         }
         __iced_deferrals._fulfill();

@@ -195,3 +195,19 @@
   width: 95%;
   height: 200px;
   cursor: text; }
+
+.conditions-container {
+  width: 90em; }
+
+.condition {
+  float: left;
+  width: 20em;
+  margin: 5px;
+  padding: 1em;
+  border-radius: 10px;
+  background: white;
+  color: black; }
+  .condition > .name {
+    font-family: EurostileStandardBold;
+    font-weight: 100;
+    font-style: italic; }
