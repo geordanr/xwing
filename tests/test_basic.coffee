@@ -42,8 +42,9 @@ casper.test.begin "Basic empire functionality", (test) ->
     common.assertShipHasPoints(test, '#empire-builder', 1, 12)
     common.assertTotalPoints(test, '#empire-builder', 12)
     .then ->
-        test.assertSelectorHasText "#empire-builder #{common.selectorForUpgradeIndex 1, 1} .select2-choice", 'No Modification'
-        test.assertDoesntExist "#empire-builder #{common.selectorForUpgradeIndex 1, 2}"
+        test.assertSelectorHasText "#empire-builder #{common.selectorForUpgradeIndex 1, 1} .select2-choice", 'No Title'
+        test.assertSelectorHasText "#empire-builder #{common.selectorForUpgradeIndex 1, 2} .select2-choice", 'No Modification'
+        test.assertDoesntExist "#empire-builder #{common.selectorForUpgradeIndex 1, 3}"
 
     .run ->
         test.done()

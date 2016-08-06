@@ -7,6 +7,9 @@ exportObj.unreleasedExpansions = [
     "Special Forces TIE Expansion Pack"
     "Protectorate Starfighter Expansion Pack"
     "Shadow Caster Expansion Pack"
+    "Sabine's TIE Fighter Expansion Pack"
+    "Upsilon-class Shuttle Expansion Pack"
+    "Quadjumper Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -105,7 +108,7 @@ exportObj.basicCardData = ->
             large: true
         "TIE Fighter":
             name: "TIE Fighter"
-            factions: [ "Galactic Empire", ]
+            factions: ["Rebel Alliance", "Galactic Empire"]
             attack: 2
             agility: 3
             hull: 3
@@ -876,6 +879,32 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 3]
             ]
+        'Upsilon-class Shuttle':
+            name: 'Upsilon-class Shuttle'
+            factions: ["First Order"]
+            large: true
+            attack: 4
+            agility: 1
+            hull: 6
+            shields: 6
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Coordinate'
+            ]
+            maneuvers: []
+        'Quadjumper':
+            name: 'Quadjumper'
+            factions: ["Scum and Villainy"]
+            attack: 2
+            agility: 2
+            hull: 5
+            shields: 0
+            actions: [
+                'Barrel Roll'
+                'Focus'
+            ]
+            maneuvers: []
 
     # name field is for convenience only
     pilotsById: [
@@ -3325,7 +3354,6 @@ exportObj.basicCardData = ->
             ]
             points: 25
         }
-
         # T-70
         {
             name: "Poe Dameron"
@@ -3383,7 +3411,6 @@ exportObj.basicCardData = ->
             ]
             points: 24
         }
-
         # TIE/fo
         {
             name: '"Omega Ace"'
@@ -3457,7 +3484,6 @@ exportObj.basicCardData = ->
             ]
             points: 15
         }
-
         {
             name: "Ello Asty"
             id: 185
@@ -3996,6 +4022,179 @@ exportObj.basicCardData = ->
             ]
             points: 100
         }
+        {
+            name: 'Ahso???'
+            id: 222
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'TIE Fighter'
+            skill: 7
+            slots: [
+            ]
+            points: 100
+        }
+        {
+            name: 'Sabine Wren (TIE Fighter)'
+            id: 223
+            canonical_name: 'Sabine Wren'.canonicalize()
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'TIE Fighter'
+            skill: 5
+            slots: [
+                'Elite'
+            ]
+            points: 15
+        }
+        {
+            name: 'Cap???'
+            id: 224
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'TIE Fighter'
+            skill: 4
+            slots: []
+            points: 100
+        }
+        {
+            name: '"Zeb" Orrelios (TIE Fighter)'
+            id: 225
+            canonical_name: '"Zeb" Orrelios'.canonicalize()
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'TIE Fighter'
+            skill: 3
+            slots: []
+            points: 100
+        }
+        {
+            name: 'Kylo Ren'
+            id: 226
+            unique: true
+            faction: 'First Order'
+            ship: 'Upsilon-class Shuttle'
+            skill: 6
+            slots: [
+                'Elite'
+                'System'
+                'Crew'
+                'Crew'
+                'Tech'
+                'Tech'
+            ]
+            points: 34
+            applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
+        }
+        {
+            name: 'Major ???'
+            id: 227
+            unique: true
+            faction: 'First Order'
+            ship: 'Upsilon-class Shuttle'
+            skill: 4
+            slots: [
+                'System'
+                'Crew'
+                'Crew'
+                'Tech'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Lieutenant Dormitz'
+            id: 228
+            unique: true
+            faction: 'First Order'
+            ship: 'Upsilon-class Shuttle'
+            skill: 3
+            slots: [
+                'System'
+                'Crew'
+                'Crew'
+                'Tech'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Starkiller ???'
+            id: 229
+            faction: 'First Order'
+            ship: 'Upsilon-class Shuttle'
+            skill: 2
+            slots: [
+                'System'
+                'Crew'
+                'Crew'
+                'Tech'
+                'Tech'
+            ]
+            points: 100
+        }
+
+        {
+            name: 'Const???'
+            id: 230
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Quadjumper'
+            skill: 7
+            slots: [
+                'Elite'
+                'Crew'
+                'Bomb'
+                'Tech'
+                'Illicit'
+            ]
+            points: 100
+        }
+        {
+            name: 'Sarco Plank'
+            id: 231
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Quadjumper'
+            skill: 5
+            slots: [
+                'Elite'
+                'Crew'
+                'Bomb'
+                'Tech'
+                'Illicit'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unkar Plutt'
+            id: 232
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Quadjumper'
+            skill: 3
+            slots: [
+                'Crew'
+                'Bomb'
+                'Tech'
+                'Illicit'
+            ]
+            points: 17
+        }
+        {
+            name: 'Jakku ???'
+            id: 233
+            faction: 'Scum and Villainy'
+            ship: 'Quadjumper'
+            skill: 1
+            slots: [
+                'Crew'
+                'Bomb'
+                'Tech'
+                'Illicit'
+            ]
+            points: 100
+        }
+
     ]
 
     upgradesById: [
@@ -5459,6 +5658,32 @@ exportObj.basicCardData = ->
             slot: 'Illicit'
             points: 1
         }
+        {
+            name: 'Kylo Ren'
+            id: 195
+            slot: 'Crew'
+            unique: true
+            faction: 'Galactic Empire'
+            points: 3
+            applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
+        }
+        {
+            name: 'Unkar Plutt'
+            id: 196
+            faction: 'Scum and Villainy'
+            slot: 'Crew'
+            unique: true
+            points: 1
+        }
+        {
+            name: 'A Score to Settle'
+            id: 197
+            # uncomment when we know what A Debt to Pay does
+            # applies_condition: 'A Debt to Pay'.canonicalize()
+            slot: 'Elite'
+            unique: true
+            points: 0
+        }
     ]
 
     modificationsById: [
@@ -6151,9 +6376,50 @@ exportObj.basicCardData = ->
             ship: 'Lancer-class Pursuit Craft'
             points: 3
         }
+        {
+            name: '''Kylo Ren's Shuttle'''
+            id: 45
+            ship: 'Upsilon-class Shuttle'
+            points: 2
+        }
+        {
+            name: '''Sabine's Masterpiece'''
+            id: 46
+            ship: 'TIE Fighter'
+            faction: 'Rebel Alliance'
+            unique: true
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Illicit"
+                }
+            ]
+            points: 1
+        }
     ]
 
-exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations) ->
+    conditionsById: [
+        {
+            name: '''Zero Condition'''
+            id: 0
+        }
+        {
+            name: '''I'll Show You the Dark Side'''
+            id: 1
+            unique: true
+        }
+        {
+            name: 'A Debt to Pay'
+            id: 2
+            unique: true
+        }
+    ]
+
+exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
         if pilot_data.id != i
@@ -6167,6 +6433,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for modification_data, i in basic_cards.modificationsById
         if modification_data.id != i
             throw new Error("ID mismatch: modification at index #{i} has ID #{modification_data.id}")
+    for condition_data, i in basic_cards.conditionsById
+        if condition_data.id != i
+            throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
 
     exportObj.pilots = {}
     # Assuming a given pilot is unique by name...
@@ -6231,6 +6500,25 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             catch e
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
                 throw e
+
+    exportObj.conditions = {}
+    for condition_data in basic_cards.conditionsById
+        unless condition_data.skip?
+            condition_data.sources = []
+            condition_data.english_name = condition_data.name
+            condition_data.canonical_name = condition_data.english_name.canonicalize() unless condition_data.canonical_name?
+            exportObj.conditions[condition_data.name] = condition_data
+    for condition_name, translations of condition_translations
+        for field, translation of translations
+            try
+                exportObj.conditions[condition_name][field] = translation
+            catch e
+                console.error "Cannot find translation for attribute #{field} for condition #{condition_name}"
+                throw e
+
+    for ship_name, ship_data of basic_cards.ships
+        ship_data.english_name = ship_name
+        ship_data.canonical_name = ship_data.english_name.canonicalize()
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
@@ -6341,6 +6629,15 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
         throw new Error("At least one title shares an ID with another")
 
+    exportObj.conditionsById = {}
+    for condition_name, condition of exportObj.conditions
+        exportObj.fixIcons condition
+        exportObj.conditionsById[condition.id] = condition
+        for source in condition.sources
+            exportObj.expansions[source] = 1 if source not of exportObj.expansions
+    if Object.keys(exportObj.conditionsById).length != Object.keys(exportObj.conditions).length
+        throw new Error("At least one condition shares an ID with another")
+
     exportObj.titlesByShip = {}
     for title_name, title of exportObj.titles
         if title.ship not of exportObj.titlesByShip
@@ -6357,6 +6654,10 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         else
             (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
             (exportObj.titlesByUniqueName ?= {})[title.canonical_name.getXWSBaseName()] = title
+
+    exportObj.conditionsByCanonicalName = {}
+    for condition_name, condition of exportObj.conditions
+        (exportObj.conditionsByCanonicalName ?= {})[condition.canonical_name] = condition
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
@@ -6375,6 +6676,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%COORDINATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>')
             .replace(/%CRIT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crit"></i>')
             .replace(/%CREW%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>')
+            .replace(/%DUALCARD%/g, '<span class="card-restriction">Dual card.</span>')
             .replace(/%ELITE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-elite"></i>')
             .replace(/%EVADE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>')
             .replace(/%FOCUS%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>')
@@ -6387,6 +6689,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%RECOVER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>')
             .replace(/%REINFORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>')
             .replace(/%SALVAGEDASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-salvagedastromech"></i>')
+            .replace(/%SLAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>')
             .replace(/%SLOOPLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopleft"></i>')
             .replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>')
             .replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>')

@@ -64,6 +64,14 @@ getPrimaryFaction = (faction) ->
         else
             faction
 
+conditionToHTML = (condition) ->
+    html = $.trim """
+        <div class="condition">
+            <div class="name">#{if condition.unique then "&middot;&nbsp;" else ""}#{condition.name}</div>
+            <div class="text">#{condition.text}</div>
+        </div>
+    """
+
 # Assumes cards.js will be loaded
 
 class exportObj.SquadBuilder
@@ -656,6 +664,11 @@ class exportObj.SquadBuilder
 
         @container.find('[rel=tooltip]').tooltip()
 
+        # conditions
+        @condition_container = $ document.createElement('div')
+        @condition_container.addClass 'conditions-container'
+        @container.append @condition_container
+
     setupEventHandlers: ->
         @container.on 'xwing:claimUnique', (e, unique, type, cb) =>
             @claimUnique unique, type, cb
@@ -754,6 +767,13 @@ class exportObj.SquadBuilder
                         when 'Scum and Villainy'
                             'scum'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
+
+            # Conditions
+            @printable_container.find('.printable-body').append $.trim """
+                <div class="print-conditions"></div>
+            """
+            @printable_container.find('.printable-body .print-conditions').html @condition_container.html()
+
 
             # Notes, if present
             if $.trim(@notes.val()) != ''
@@ -918,6 +938,29 @@ class exportObj.SquadBuilder
 """
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
+
+        # update conditions used
+        # this old version of phantomjs i'm using doesn't support Set
+        if Set?
+            conditions_set = new Set()
+            for ship in @ships
+                # shouldn't there be a set union
+                ship.getConditions().forEach (condition) ->
+                    conditions_set.add(condition)
+            conditions = []
+            conditions_set.forEach (condition) ->
+                conditions.push(condition)
+            conditions.sort (a, b) ->
+                if a.name.canonicalize() < b.name.canonicalize()
+                    -1
+                else if b.name.canonicalize() > a.name.canonicalize()
+                    1
+                else
+                    0
+            @condition_container.text ''
+            conditions.forEach (condition) =>
+                @condition_container.append conditionToHTML(condition)
+
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
@@ -2592,6 +2635,17 @@ class Ship
             xws.upgrades = upgrade_obj
 
         xws
+
+    getConditions: ->
+        if Set?
+            conditions = new Set()
+            conditions.add(exportObj.conditionsByCanonicalName[@pilot.applies_condition]) if @pilot?.applies_condition?
+            for upgrade in @upgrades
+                conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition]) if upgrade?.data?.applies_condition?
+            conditions
+        else
+            console.warn 'Set not supported in this JS implementation, not implementing conditions'
+            []
 
 class GenericAddon
     constructor: (args) ->
