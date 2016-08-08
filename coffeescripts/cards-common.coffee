@@ -810,6 +810,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Target Lock"
             ]
+            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -829,6 +830,7 @@ exportObj.basicCardData = ->
                 'Target Lock'
                 'Barrel Roll'
             ]
+            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 3, 2, 2, 2, 3, 0, 0, 0 ]
