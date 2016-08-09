@@ -2211,6 +2211,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>"""
                 when 'SLAM'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>"""
+                when 'Rotate Arc'
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '
