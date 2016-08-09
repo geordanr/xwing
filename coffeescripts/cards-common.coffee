@@ -4022,7 +4022,7 @@ exportObj.basicCardData = ->
                 'Illicit'
                 'Illicit'
             ]
-            points: 100
+            points: 33
         }
         {
             name: 'Ahso???'
