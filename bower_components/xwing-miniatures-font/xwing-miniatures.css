@@ -152,6 +152,12 @@ i.xwing-miniatures-font-shield:before {
 i.xwing-miniatures-font-energy:before {
   content: "("; }
 
+i.xwing-miniatures-font-epic:before {
+  content: ")"; }
+
+i.xwing-miniatures-font-firstorder:before {
+  content: "+"; }
+
 i.xwing-miniatures-font-modification:before {
   content: "m"; }
 
@@ -160,6 +166,9 @@ i.xwing-miniatures-font-slam:before {
 
 i.xwing-miniatures-font-title:before {
   content: "t"; }
+
+i.xwing-miniatures-font-rotatearc:before {
+  content: "R"; }
 
 i.xwing-miniatures-font-trollleft:before {
   content: "\003a"; }
@@ -205,6 +214,12 @@ i.xwing-miniatures-ship-vcx100:before {
 i.xwing-miniatures-ship-tieinterceptor:before {
   content: "I"; }
 
+i.xwing-miniatures-ship-lancerclasspursuitcraft:before {
+  content: "L"; }
+
+i.xwing-miniatures-ship-protectoratefighter:before {
+  content: "M"; }
+
 i.xwing-miniatures-ship-tiepunisher:before {
   content: "N"; }
 
@@ -217,11 +232,17 @@ i.xwing-miniatures-ship-tiephantom:before {
 i.xwing-miniatures-ship-tieadvancedprototype:before {
   content: "R"; }
 
+i.xwing-miniatures-ship-tiesffighter:before {
+  content: "S"; }
+
 i.xwing-miniatures-ship-awing:before {
   content: "a"; }
 
 i.xwing-miniatures-ship-bwing:before {
   content: "b"; }
+
+i.xwing-miniatures-ship-arc170:before {
+  content: "c"; }
 
 i.xwing-miniatures-ship-vt49decimator:before {
   content: "d"; }

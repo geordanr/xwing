@@ -1645,6 +1645,7 @@ exportObj.basicCardData = function() {
         hull: 6,
         shields: 3,
         actions: ["Focus", "Target Lock"],
+        attack_icon: 'xwing-miniatures-font-attack-frontback',
         maneuvers: [[0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0], [1, 2, 2, 2, 1, 0], [3, 1, 1, 1, 3, 0], [0, 0, 3, 0, 0, 3]]
       },
       'TIE/sf Fighter': {
@@ -1655,6 +1656,7 @@ exportObj.basicCardData = function() {
         hull: 3,
         shields: 3,
         actions: ['Focus', 'Target Lock', 'Barrel Roll'],
+        attack_icon: 'xwing-miniatures-font-attack-frontback',
         maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [3, 2, 2, 2, 3, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0], [3, 1, 2, 1, 3, 0, 3, 3], [0, 0, 1, 0, 0, 0, 0, 0]]
       },
       'Protectorate Starfighter': {
@@ -3691,7 +3693,7 @@ exportObj.basicCardData = function() {
         ship: 'Lancer-class Pursuit Craft',
         skill: 2,
         slots: ['Crew', 'Illicit', 'Illicit'],
-        points: 100
+        points: 33
       }, {
         name: 'Ahso???',
         id: 222,
@@ -9533,7 +9535,7 @@ exportObj.cardLoaders.English = function() {
       text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
     },
     'A Score to Settle': {
-      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+      text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%When attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -21224,7 +21226,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20277
+                    lineno: 20279
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -21793,7 +21795,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 20853
+              lineno: 20855
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -22431,7 +22433,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21420
+          lineno: 21422
         }));
         __iced_deferrals._fulfill();
       });
@@ -22443,7 +22445,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21421
+            lineno: 21423
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -23961,7 +23963,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22276
+                      lineno: 22278
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24030,7 +24032,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22300
+                lineno: 22302
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24082,7 +24084,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22322
+            lineno: 22324
           }));
         }
         _ref = _this.upgrades;
@@ -24090,7 +24092,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22324
+              lineno: 22326
             }));
           }
         }
@@ -24099,7 +24101,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22326
+              lineno: 22328
             }));
           }
         }
@@ -24361,6 +24363,8 @@ Ship = (function() {
             return "<i class=\"xwing-miniatures-font xwing-miniatures-font-cloak\"></i>";
           case 'SLAM':
             return "<i class=\"xwing-miniatures-font xwing-miniatures-font-slam\"></i>";
+          case 'Rotate Arc':
+            return "<i class=\"xwing-miniatures-font xwing-miniatures-font-rotatearc\"></i>";
           default:
             return "<span>&nbsp;" + action + "<span>";
         }
@@ -25014,7 +25018,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 22972
+                lineno: 22976
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25133,7 +25137,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23031
+                  lineno: 23035
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25155,7 +25159,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23035
+                    lineno: 23039
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25240,7 +25244,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23075
+            lineno: 23079
           }));
         }
         __iced_deferrals._fulfill();
