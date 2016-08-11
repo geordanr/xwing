@@ -6375,12 +6375,14 @@ exportObj.basicCardData = ->
         {
             name: 'Shadow Caster'
             id: 44
+            unique: true
             ship: 'Lancer-class Pursuit Craft'
             points: 3
         }
         {
             name: '''Kylo Ren's Shuttle'''
             id: 45
+            unique: true
             ship: 'Upsilon-class Shuttle'
             points: 2
         }
