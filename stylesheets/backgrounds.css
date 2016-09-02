@@ -157,3 +157,28 @@
   background-image: url("../images/attackshuttle0.png");
   background-repeat: no-repeat;
   background-position: 0px -89px; }
+
+.ship-arc1700 {
+  background-image: url("../images/arc170.png");
+  background-repeat: no-repeat;
+  background-position: 0px -30px; }
+
+.ship-lancerclasspursuitcraft0 {
+  background-image: url("../images/lancerclasspursuitcraft.png");
+  background-repeat: no-repeat;
+  background-position: 0px -63px; }
+
+.ship-protectoratestarfighter0 {
+  background-image: url("../images/protectoratestarfighter.png");
+  background-repeat: no-repeat;
+  background-position: 0px -126px; }
+
+.ship-tiesffighter0 {
+  background-image: url("../images/tiesffighter.png");
+  background-repeat: no-repeat;
+  background-position: 0px -86px; }
+
+.ship-upsilonclassshuttle0 {
+  background-image: url("../images/upsilonclassshuttle.png");
+  background-repeat: no-repeat;
+  background-position: 0px -112px; }
