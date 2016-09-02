@@ -3706,7 +3706,7 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Sabine Wren (TIE Fighter)',
         id: 223,
-        canonical_name: 'Sabine Wren'.canonicalize(),
+        canonical_name: "sabinewren-swx59",
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'TIE Fighter',
