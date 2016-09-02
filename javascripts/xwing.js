@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack", "Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack"];
+exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack", "Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack", "U-Wing Expansion Pack", "TIE Striker Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1699,6 +1699,26 @@ exportObj.basicCardData = function() {
         hull: 5,
         shields: 0,
         actions: ['Barrel Roll', 'Focus'],
+        maneuvers: []
+      },
+      'U-Wing': {
+        name: 'U-Wing',
+        factions: ["Rebel Alliance"],
+        attack: 3,
+        agility: 1,
+        hull: 4,
+        shields: 4,
+        actions: ['Focus', 'Target Lock'],
+        maneuvers: []
+      },
+      'TIE Striker': {
+        name: 'TIE Striker',
+        factions: ["Galactic Empire"],
+        attack: 3,
+        agility: 2,
+        hull: 4,
+        shields: 0,
+        actions: ['Focus', 'Barrel Roll', 'Evade'],
         maneuvers: []
       }
     },
@@ -3803,6 +3823,92 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: ['Crew', 'Bomb', 'Tech', 'Illicit'],
         points: 100
+      }, {
+        name: 'Cassian Andor',
+        id: 234,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 6,
+        slots: ['Elite', 'System', 'Torpedo', 'Crew', 'Crew'],
+        points: 27
+      }, {
+        name: 'Unspoiled PS4 U-Wing Pilot',
+        id: 235,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 4,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS3 U-Wing Pilot',
+        id: 236,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 3,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS2 U-Wing Pilot',
+        id: 237,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 2,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 100
+      }, {
+        name: '"Duchess"',
+        id: 238,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 8,
+        slots: ['Elite'],
+        points: 23
+      }, {
+        name: '"Pure???"',
+        id: 239,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 6,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Unspoiled PS5 TIE Striker Pilot',
+        id: 240,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 5,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Unspoiled PS4 TIE Striker Pilot',
+        id: 241,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 4,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Unspoiled PS3 TIE Striker Pilot',
+        id: 242,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 3,
+        slots: [],
+        points: 100
+      }, {
+        name: 'Unspoiled PS1 TIE Striker Pilot',
+        id: 243,
+        faction: 'Galactic Empire',
+        ship: 'TIE Striker',
+        skill: 1,
+        slots: [],
+        points: 100
       }
     ],
     upgradesById: [
@@ -5162,6 +5268,20 @@ exportObj.basicCardData = function() {
         slot: 'Elite',
         unique: true,
         points: 0
+      }, {
+        name: 'Jyn Erso',
+        id: 198,
+        faction: 'Rebel Alliance',
+        slot: 'Crew',
+        unique: true,
+        points: 2
+      }, {
+        name: 'Cassian Andor',
+        id: 199,
+        faction: 'Rebel Alliance',
+        slot: 'Crew',
+        unique: true,
+        points: 2
       }
     ],
     modificationsById: [
@@ -5885,6 +6005,16 @@ exportObj.basicCardData = function() {
           }
         ],
         points: 1
+      }, {
+        name: 'Pivot Wing',
+        id: 47,
+        ship: 'U-Wing',
+        points: 0
+      }, {
+        name: 'Adaptive Ailerons',
+        id: 48,
+        ship: 'TIE Striker',
+        points: 0
       }
     ],
     conditionsById: [
@@ -7297,6 +7427,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -8054,6 +8190,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -8347,6 +8489,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -8731,7 +8879,7 @@ exportObj.cardLoaders.English = function() {
       text: "When attacking a ship inside your auxiliary firing arc, roll 1 additional attack die."
     },
     "Emon Azzameen": {
-      text: "When dropping a bomb, you may use the [%TURNLEFT% 3], [%STRAIGHT% 3], or [%TURNRIGHT% 3] template instead of the [%STRAIGHT% 1] template."
+      text: "When dropping a bomb, you may use the (%TURNLEFT% 3), (%STRAIGHT% 3), or (%TURNRIGHT% 3) template instead of the (%STRAIGHT% 1) template."
     },
     "Kavil": {
       text: "When attacking a ship outside your firing arc, roll 1 additional attack die."
@@ -8948,6 +9096,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -9276,7 +9430,7 @@ exportObj.cardLoaders.English = function() {
       text: "When attacking, during the \"Modify Attack Dice\" step, you may cancel all of your dice results. Then, you may add 2 %HIT% results to your roll.%LINEBREAK%Your dice cannot be modified again during this attack."
     },
     "Inertial Dampeners": {
-      text: "When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."
+      text: "When you reveal your maneuver, you may discard this card to instead perform a white (0 %STOP%) maneuver. Then receive 1 stress token."
     },
     "Flechette Cannon": {
       text: "<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."
@@ -9541,6 +9695,12 @@ exportObj.cardLoaders.English = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%When attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -9764,6 +9924,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -10828,6 +10994,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -11565,6 +11737,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -11865,6 +12043,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -12664,6 +12848,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -13336,6 +13526,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -13588,6 +13784,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -14367,6 +14569,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -15041,6 +15249,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -15290,6 +15504,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -15875,6 +16095,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -16453,6 +16679,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -16670,6 +16902,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -17242,6 +17480,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Unkar Plutt': {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
+    },
+    'Cassian Andor': {
+      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+    },
+    '"Duchess"': {
+      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     }
   };
   upgrade_translations = {
@@ -17811,6 +18055,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Jyn Erso': {
+      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+    },
+    'Cassian Andor': {
+      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     }
   };
   modification_translations = {
@@ -18010,6 +18260,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Kylo Ren\'s Shuttle': {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
+    },
+    'Pivot Wing': {
+      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+    },
+    'Adaptive Ailerons': {
+      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     }
   };
   condition_translations = {
@@ -21231,7 +21487,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20282
+                    lineno: 20544
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -21800,7 +22056,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 20858
+              lineno: 21120
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -22438,7 +22694,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21425
+          lineno: 21687
         }));
         __iced_deferrals._fulfill();
       });
@@ -22450,7 +22706,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21426
+            lineno: 21688
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -23968,7 +24224,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22281
+                      lineno: 22543
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24037,7 +24293,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22305
+                lineno: 22567
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24089,7 +24345,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22327
+            lineno: 22589
           }));
         }
         _ref = _this.upgrades;
@@ -24097,7 +24353,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22329
+              lineno: 22591
             }));
           }
         }
@@ -24106,7 +24362,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22331
+              lineno: 22593
             }));
           }
         }
@@ -25023,7 +25279,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 22979
+                lineno: 23241
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25142,7 +25398,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23038
+                  lineno: 23300
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25164,7 +25420,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23042
+                    lineno: 23304
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25249,7 +25505,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23082
+            lineno: 23344
           }));
         }
         __iced_deferrals._fulfill();
