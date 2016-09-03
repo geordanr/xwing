@@ -912,6 +912,7 @@ exportObj.basicCardData = ->
         'U-Wing':
             name: 'U-Wing'
             factions: ["Rebel Alliance"]
+            large: true
             attack: 3
             agility: 1
             hull: 4
