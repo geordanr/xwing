@@ -10,6 +10,8 @@ exportObj.unreleasedExpansions = [
     "Sabine's TIE Fighter Expansion Pack"
     "Upsilon-class Shuttle Expansion Pack"
     "Quadjumper Expansion Pack"
+    "U-Wing Expansion Pack"
+    "TIE Striker Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -905,6 +907,31 @@ exportObj.basicCardData = ->
             actions: [
                 'Barrel Roll'
                 'Focus'
+            ]
+            maneuvers: []
+        'U-Wing':
+            name: 'U-Wing'
+            factions: ["Rebel Alliance"]
+            attack: 3
+            agility: 1
+            hull: 4
+            shields: 4
+            actions: [
+                'Focus'
+                'Target Lock'
+            ]
+            maneuvers: []
+        'TIE Striker':
+            name: 'TIE Striker'
+            factions: ["Galactic Empire"]
+            attack: 3
+            agility: 2
+            hull: 4
+            shields: 0
+            actions: [
+                'Focus'
+                'Barrel Roll'
+                'Evade'
             ]
             maneuvers: []
 
@@ -4134,7 +4161,6 @@ exportObj.basicCardData = ->
             ]
             points: 100
         }
-
         {
             name: 'Const???'
             id: 230
@@ -4197,6 +4223,130 @@ exportObj.basicCardData = ->
             points: 100
         }
 
+        {
+            name: 'Cassian Andor'
+            id: 234
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 6
+            slots: [
+                'Elite'
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 27
+        }
+        {
+            name: 'Unspoiled PS4 U-Wing Pilot'
+            id: 235
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 4
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS3 U-Wing Pilot'
+            id: 236
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 3
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS2 U-Wing Pilot'
+            id: 237
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 2
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: '"Duchess"'
+            id: 238
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 8
+            slots: [
+                'Elite'
+            ]
+            points: 23
+        }
+        {
+            name: '"Pure???"'
+            id: 239
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 6
+            slots: [
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS5 TIE Striker Pilot'
+            id: 240
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 5
+            slots: [
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS4 TIE Striker Pilot'
+            id: 241
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 4
+            slots: [
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS3 TIE Striker Pilot'
+            id: 242
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 3
+            slots: [
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS1 TIE Striker Pilot'
+            id: 243
+            faction: 'Galactic Empire'
+            ship: 'TIE Striker'
+            skill: 1
+            slots: [
+            ]
+            points: 100
+        }
     ]
 
     upgradesById: [
@@ -5686,6 +5836,22 @@ exportObj.basicCardData = ->
             unique: true
             points: 0
         }
+        {
+            name: 'Jyn Erso'
+            id: 198
+            faction: 'Rebel Alliance'
+            slot: 'Crew'
+            unique: true
+            points: 2
+        }
+        {
+            name: 'Cassian Andor'
+            id: 199
+            faction: 'Rebel Alliance'
+            slot: 'Crew'
+            unique: true
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -6403,6 +6569,18 @@ exportObj.basicCardData = ->
                 }
             ]
             points: 1
+        }
+        {
+            name: '''Pivot Wing'''
+            id: 47
+            ship: 'U-Wing'
+            points: 0
+        }
+        {
+            name: '''Adaptive Ailerons'''
+            id: 48
+            ship: 'TIE Striker'
+            points: 0
         }
     ]
 
