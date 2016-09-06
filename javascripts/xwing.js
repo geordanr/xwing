@@ -3511,7 +3511,7 @@ exportObj.basicCardData = function() {
         faction: "Resistance",
         ship: "YT-1300",
         skill: 9,
-        points: 100,
+        points: 46,
         slots: ["Elite", "Missile", "Crew", "Crew"],
         ship_override: {
           attack: 3,
@@ -3542,7 +3542,7 @@ exportObj.basicCardData = function() {
         faction: "Resistance",
         ship: "YT-1300",
         skill: 5,
-        points: 100,
+        points: 42,
         slots: ["Elite", "Missile", "Crew", "Crew"],
         ship_override: {
           attack: 3,
@@ -5283,6 +5283,34 @@ exportObj.basicCardData = function() {
         slot: 'Crew',
         unique: true,
         points: 2
+      }, {
+        name: 'Finn',
+        id: 200,
+        faction: 'Rebel Alliance',
+        unique: true,
+        slot: 'Crew',
+        points: 5
+      }, {
+        name: 'Rey',
+        id: 201,
+        faction: 'Rebel Alliance',
+        unique: true,
+        slot: 'Crew',
+        points: 2
+      }, {
+        name: 'Burnout SLAM',
+        id: 202,
+        slot: 'Illicit',
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.large) != null ? _ref : false;
+        },
+        modifier_func: function(stats) {
+          if (__indexOf.call(stats.actions, 'SLAM') < 0) {
+            return stats.actions.push('SLAM');
+          }
+        }
       }
     ],
     modificationsById: [
@@ -7381,6 +7409,12 @@ exportObj.cardLoaders.Deutsch = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -8197,6 +8231,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -9050,6 +9093,12 @@ exportObj.cardLoaders.English = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -9702,6 +9751,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -10948,6 +11006,12 @@ exportObj.cardLoaders['Español'] = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -11744,6 +11808,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -12802,6 +12875,12 @@ exportObj.cardLoaders['Français'] = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -13533,6 +13612,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
     }
   };
   modification_translations = {
@@ -14523,6 +14608,12 @@ exportObj.cardLoaders['Polski'] = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -15256,6 +15347,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -16049,6 +16149,12 @@ exportObj.cardLoaders['Русский'] = function() {
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
     'Norra Wexley': {
       text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
     },
@@ -16686,6 +16792,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -17487,6 +17602,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    "Rey": {
+      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+    },
+    'Han Solo (TFA)': {
+      text: 'When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'
+    },
+    'Chewbacca (TFA)': {
+      text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
     }
   };
   upgrade_translations = {
@@ -18062,6 +18186,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Cassian Andor': {
       text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+    },
+    'Finn': {
+      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+    },
+    'Rey': {
+      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+    },
+    'Burnout SLAM': {
+      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     }
   };
   modification_translations = {
@@ -21488,7 +21621,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20545
+                    lineno: 20641
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22057,7 +22190,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21121
+              lineno: 21217
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -22695,7 +22828,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21688
+          lineno: 21784
         }));
         __iced_deferrals._fulfill();
       });
@@ -22707,7 +22840,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21689
+            lineno: 21785
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24225,7 +24358,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22544
+                      lineno: 22640
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24294,7 +24427,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22568
+                lineno: 22664
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24346,7 +24479,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22590
+            lineno: 22686
           }));
         }
         _ref = _this.upgrades;
@@ -24354,7 +24487,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22592
+              lineno: 22688
             }));
           }
         }
@@ -24363,7 +24496,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22594
+              lineno: 22690
             }));
           }
         }
@@ -25280,7 +25413,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23242
+                lineno: 23338
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25399,7 +25532,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23301
+                  lineno: 23397
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25421,7 +25554,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23305
+                    lineno: 23401
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25506,7 +25639,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23345
+            lineno: 23441
           }));
         }
         __iced_deferrals._fulfill();
