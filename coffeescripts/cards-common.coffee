@@ -3738,7 +3738,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "YT-1300"
             skill: 9
-            points: 100
+            points: 46
             slots: [
                 "Elite"
                 "Missile"
@@ -3779,7 +3779,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "YT-1300"
             skill: 5
-            points: 100
+            points: 42
             slots: [
                 "Elite"
                 "Missile"
@@ -5852,6 +5852,32 @@ exportObj.basicCardData = ->
             slot: 'Crew'
             unique: true
             points: 2
+        }
+        {
+            name: 'Finn'
+            id: 200
+            faction: 'Rebel Alliance'
+            unique: true
+            slot: 'Crew'
+            points: 5
+        }
+        {
+            name: 'Rey'
+            id: 201
+            faction: 'Rebel Alliance'
+            unique: true
+            slot: 'Crew'
+            points: 2
+        }
+        {
+            name: 'Burnout SLAM'
+            id: 202
+            slot: 'Illicit'
+            points: 1
+            restriction_func: (ship) ->
+                ship.data.large ? false
+            modifier_func: (stats) ->
+                stats.actions.push 'SLAM' if 'SLAM' not in stats.actions
         }
     ]
 
