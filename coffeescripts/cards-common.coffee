@@ -4585,7 +4585,8 @@ exportObj.basicCardData = ->
             slot: "Crew"
             points: 1
             modifier_func: (stats) ->
-                for s in (stats.maneuvers ? [])
+                for s, spd in (stats.maneuvers ? [])
+                    continue if spd == 0
                     if s[2] > 0 # is there a straight (2) maneuver at this speed?
                         s[2] = 2 # set it to green (2)
         }
