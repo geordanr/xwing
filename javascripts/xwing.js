@@ -3483,8 +3483,8 @@ exportObj.basicCardData = function() {
         faction: "Resistance",
         ship: "T-70 X-Wing",
         skill: 7,
-        slots: ['Torpedo', 'Astromech', 'Tech'],
-        points: 100
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 29
       }, {
         name: '"Snap" Wexley',
         id: 198,
@@ -3492,8 +3492,8 @@ exportObj.basicCardData = function() {
         faction: "Resistance",
         ship: "T-70 X-Wing",
         skill: 6,
-        slots: ['Torpedo', 'Astromech', 'Tech'],
-        points: 100
+        slots: ['Elite', 'Torpedo', 'Astromech', 'Tech'],
+        points: 28
       }, {
         name: 'Jess Pava',
         id: 199,
@@ -3502,7 +3502,7 @@ exportObj.basicCardData = function() {
         ship: "T-70 X-Wing",
         skill: 3,
         slots: ['Torpedo', 'Astromech', 'Tech'],
-        points: 100
+        points: 25
       }, {
         name: "Han Solo (TFA)",
         canonical_name: "hansolo-swx57",
@@ -4126,11 +4126,14 @@ exportObj.basicCardData = function() {
         slot: "Crew",
         points: 1,
         modifier_func: function(stats) {
-          var s, _i, _len, _ref, _ref1, _results;
+          var s, spd, _i, _len, _ref, _ref1, _results;
           _ref1 = (_ref = stats.maneuvers) != null ? _ref : [];
           _results = [];
-          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-            s = _ref1[_i];
+          for (spd = _i = 0, _len = _ref1.length; _i < _len; spd = ++_i) {
+            s = _ref1[spd];
+            if (spd === 0) {
+              continue;
+            }
             if (s[2] > 0) {
               _results.push(s[2] = 2);
             } else {
@@ -5311,6 +5314,33 @@ exportObj.basicCardData = function() {
             return stats.actions.push('SLAM');
           }
         }
+      }, {
+        name: 'Primed Thrusters',
+        id: 203,
+        slot: 'Tech',
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
+      }, {
+        name: 'Pattern Analyzer',
+        id: 204,
+        slot: 'Tech',
+        points: 2
+      }, {
+        name: 'Snap Shot',
+        id: 205,
+        slot: 'Elite',
+        points: 2,
+        attack: 2,
+        range: 1
+      }, {
+        name: 'M9-G8',
+        id: 206,
+        slot: 'Astromech',
+        unique: true,
+        points: 3
       }
     ],
     modificationsById: [
@@ -7468,6 +7498,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -8240,6 +8279,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -9152,6 +9203,15 @@ exportObj.cardLoaders.English = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -9760,6 +9820,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -11065,6 +11137,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -11817,6 +11898,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -12934,6 +13027,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -13621,6 +13723,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -14670,6 +14784,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -15359,6 +15482,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -16211,6 +16346,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -16804,6 +16948,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -17614,6 +17770,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Chewbacca (TFA)': {
       text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
+    },
+    'Nien Nunb': {
+      text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
+    },
+    '"Snap" Wexley': {
+      text: 'After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'
+    },
+    'Jess Pava': {
+      text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     }
   };
   upgrade_translations = {
@@ -18198,6 +18363,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Burnout SLAM': {
       text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+    },
+    'Primed Thrusters': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+    },
+    'Pattern Analyzer': {
+      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+    },
+    'Snap Shot': {
+      text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
+    },
+    'M9-G8': {
+      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -21624,7 +21801,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20643
+                    lineno: 20773
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22193,7 +22370,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21219
+              lineno: 21349
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -22831,7 +23008,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21786
+          lineno: 21916
         }));
         __iced_deferrals._fulfill();
       });
@@ -22843,7 +23020,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21787
+            lineno: 21917
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24361,7 +24538,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22642
+                      lineno: 22772
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24430,7 +24607,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22666
+                lineno: 22796
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24482,7 +24659,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22688
+            lineno: 22818
           }));
         }
         _ref = _this.upgrades;
@@ -24490,7 +24667,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22690
+              lineno: 22820
             }));
           }
         }
@@ -24499,7 +24676,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22692
+              lineno: 22822
             }));
           }
         }
@@ -25416,7 +25593,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23340
+                lineno: 23470
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25535,7 +25712,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23399
+                  lineno: 23529
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25557,7 +25734,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23403
+                    lineno: 23533
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25642,7 +25819,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23443
+            lineno: 23573
           }));
         }
         __iced_deferrals._fulfill();
