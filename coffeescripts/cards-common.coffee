@@ -3696,11 +3696,12 @@ exportObj.basicCardData = ->
             ship: "T-70 X-Wing"
             skill: 7
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
                 'Tech'
             ]
-            points: 100
+            points: 29
         }
         {
             name: '''"Snap" Wexley'''
@@ -3710,11 +3711,12 @@ exportObj.basicCardData = ->
             ship: "T-70 X-Wing"
             skill: 6
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
                 'Tech'
             ]
-            points: 100
+            points: 28
         }
         {
             name: 'Jess Pava'
@@ -3728,7 +3730,7 @@ exportObj.basicCardData = ->
                 'Astromech'
                 'Tech'
             ]
-            points: 100
+            points: 25
         }
         {
             name: "Han Solo (TFA)"
@@ -5879,6 +5881,35 @@ exportObj.basicCardData = ->
                 ship.data.large ? false
             modifier_func: (stats) ->
                 stats.actions.push 'SLAM' if 'SLAM' not in stats.actions
+        }
+        {
+            name: 'Primed Thrusters'
+            id: 203
+            slot: 'Tech'
+            points: 1
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Pattern Analyzer'
+            id: 204
+            slot: 'Tech'
+            points: 2
+        }
+        {
+            name: 'Snap Shot'
+            id: 205
+            slot: 'Elite'
+            points: 2
+            attack: 2
+            range: 1
+        }
+        {
+            name: 'M9-G8'
+            id: 206
+            slot: 'Astromech'
+            unique: true
+            points: 3
         }
     ]
 
