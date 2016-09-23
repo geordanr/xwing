@@ -75,6 +75,10 @@ exportObj.translations['Español'] =
         "Mist Hunter Expansion Pack": "Pack de Expansión Cazador de la Niebla"
         "Punishing One Expansion Pack": "Pack de Expansión Castigadora"
         "Imperial Veterans Expansion Pack": "Pack de Expansión Veteranos Imperiales"
+        "Protectorate Starfighter Expansion Pack": "Pack de Expansión Caza estelar del Protectorado"
+        "Shadow Caster Expansion Pack": "Pack de Expansión Sombra Alargada"
+        "Special Forces TIE Expansion Pack": "Pack de Expansión TIE de las Fuerzas Especiales"
+        "ARC-170 Expansion Pack": "Pack de Expansión ARC-170"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -185,6 +189,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Advanced Prototype', 'Prototipo de TIE Avanzado'
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Diezmador'
     exportObj.renameShip 'TIE/fo Fighter', 'Caza TIE/fo'
+    exportObj.renameShip 'TIE/sf Fighter', 'Caza TIE/sf'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -197,12 +202,15 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
     exportObj.renameShip 'T-70 X-Wing', 'T-70 Ala-X'
+    exportObj.renameShip 'ARC-170', 'ARC-170'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
     exportObj.renameShip 'Kihraxz Fighter', 'Caza Kihraxz'
     exportObj.renameShip 'G-1A Starfighter', 'Caza Estelar G-1A'
     exportObj.renameShip 'JumpMaster 5000', 'Saltador Maestro 5000'
+    exportObj.renameShip 'Protectorate Starfighter', 'Caza Estelar del Protectorado'
+    exportObj.renameShip 'Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero'
 
     pilot_translations =
         "Wedge Antilles":
@@ -805,10 +813,6 @@ exportObj.cardLoaders['Español'] = () ->
         "Poe Dameron (PS9)":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
             ship: "T-70 Ala-X"
-        '''"Snap" Wexley''':
-            ship: "T-70 Ala-X"
-        'Jess Pava':
-            ship: "T-70 Ala-X"
         "Rey":
             text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
         'Han Solo (TFA)':
@@ -816,32 +820,71 @@ exportObj.cardLoaders['Español'] = () ->
         'Chewbacca (TFA)':
             text: '''After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'''
         'Norra Wexley':
-            text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
+            ship: "ARC-170"
+            text: '''Cuando ataques o te defiendas, puedes gastar una ficha de Blanco fijado que tengas sobre la nave enemiga para añadir 1 resultado %FOCUS% a tu tirada.'''
         'Shara Bey':
-            text: '''When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'''
+            ship: "ARC-170"
+            text: '''Cuando otra nave aliada que tengas a alcance 1-2 esté atacando, puede usar tus fichas azules de Blanco fijado como si fuesen suyas.'''
         'Thane Kyrell':
-            text: '''After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'''
+            ship: "ARC-170"
+            text: '''Después de que una nave enemiga que tengas dentro de tu arco de fuego a alcance 1-3 ataque a otra nave aliada, puedes realizar una acción gratuita.'''
         'Braylen Stramm':
-            text: '''After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'''
+            ship: "ARC-170"
+            text: '''Después de que ejecutes una maniobra, puedes tirar 1 dado de ataque. Si sacas %HIT% o %CRIT%, quita 1 ficha de Tensión de tu nave.'''
         '"Quickdraw"':
-            text: '''Once per round, when you lose a shield token, you may perform a primary weapon attack.'''
+            name: "Centella"
+            ship: "Caza TIE/sf"
+            text: '''Una vez por ronda, cuando pierdas una ficha de Escudos, puedes realizar un ataque de armamento principal.'''
         '"Backdraft"':
-            text: '''When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'''
+            name: "Llamarada"
+            ship: "Caza TIE/sf"
+            text: '''Cuando ataques a una nave dentro de tu arco de fuego auxiliar,  puedes añadir 1 resultado %CRIT%.'''
+        '"Omega Specialist"':
+            name: "Especialista Omega"
+            ship: "Caza TIE/sf"
+        '"Zeta Specialist"':
+            name: "Especialista Zeta"
+            ship: "Caza TIE/sf"
         'Fenn Rau':
-            text: '''When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'''
+            ship: "Caza estelar del Protectorado"
+            text: '''Cuando ataques o te defiendas, si tienes la nave enemiga a alcance 1, puedes tirar 1 dado adicional.'''
         'Old Teroch':
-            text: '''At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'''
+            name: "Viejo Teroch"
+            ship: "Caza estelar del Protectorado"
+            text: '''Al comienzo de la fase de Combate, puedes elegir 1 nave enemiga que tengas a alcance 1. Si estás dentro de su arco de fuego, esa nave descarta todas sus fichas de Concentración y Evasión.'''
         'Kad Solus':
-            text: '''After you execute a red maneuver, assign 2 focus tokens to your ship.'''
+            ship: "Caza estelar del Protectorado"
+            text: '''Después de que ejecutes una maniobra roja, asigna 2 fichas de Concentración a tu nave.'''
+        'Concord Dawn Ace':
+            name: "As de Concord Dawn"
+            ship: "Caza estelar del Protectorado"
+        'Concord Dawn Veteran':
+            name: "Veterano de Concord Dawn"
+            ship: "Caza estelar del Protectorado"
+        'Zealous Recruit':
+            name: "Recluta entusiasta"
+            ship: "Caza estelar del Protectorado"
         'Ketsu Onyo':
-            text: '''At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'''
+            ship: "Nave de persecución clase Lancero"
+            text: '''Al comienzo de la fase de Combate, puedes elegir una nave que tengas a alcance 1. Si esa nave está dentro de tus arcos de fuego normal <strong>y</strong> móvil, asígnale 1 ficha de Campo de tracción.'''
         'Asajj Ventress':
-            text: '''At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'''
+            ship: "Nave de persecución clase Lancero"
+            text: '''Al comienzo de la fase de Combate, puedes elegir una nave que tengas a alcance 1-2. Si esa nave está dentro de tu arco de fuego móvil, asígnale 1 ficha de Tensión.'''
         'Sabine Wren (Scum)':
-            text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
+            ship: "Nave de persecución clase Lancero"
+            text: '''Cuando te defiendas contra una nave enemiga que tengas dentro de tu arco de fuego móvil a alcance 1-2, puedes añadir 1 resultado %FOCUS% a tu tirada.'''
+        'Shadowport Hunter':
+            name: "Cazador de puerto clandestino"
+            ship: "Nave de persecución clase Lancero"
         'Sabine Wren (TIE Fighter)':
+            ship: "Caza TIE"
             text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
+        'Cap???':
+            ship: "Caza TIE"
+        '"Ahso???':
+            ship: "Caza TIE"
         '"Zeb" Orrelios (TIE Fighter)':
+            ship: "Caza TIE"
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Kylo Ren':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
@@ -852,10 +895,13 @@ exportObj.cardLoaders['Español'] = () ->
         '''"Duchess"''':
             text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
         'Nien Nunb':
+            ship: "T-70 Ala-X"
             text: '''When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'''
         '"Snap" Wexley':
+            ship: "T-70 Ala-X"
             text: '''After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'''
         'Jess Pava':
+            ship: "T-70 Ala-X"
             text: '''When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'''
 
     upgrade_translations =
@@ -1372,15 +1418,18 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Oficial de Sistemas"
             text: '''%IMPERIALONLY%%LINEBREAK%Después de que ejecutes una maniobra verde, elige otra nave aliada que tengas a alcance 1. Esa nave puede fijar un blanco.'''
         'Tail Gunner':
-            text: '''When attacking from your rear-facing auxiliary firing arc, reduce the defender's agility by 1 (to a minimum of "0").'''
+            name: "Artillero de cola"
+            text: '''Cuando ataques desde tu arco de fuego auxiliar trasero, la Agilidad del defensor se reduce en 1 (hasta un mínimo de 0).'''
         'R3 Astromech':
-            text: '''Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'''
+            name: "Droide astromecánico R3"
+            text: '''Una vez por ronda, cuando ataques con un armamento principal, durante el paso "Modificar la tirada de ataque" puedes anular 1 de tus resultados %FOCUS% para asignar 1 ficha de Evasión a tu nave.'''
         'Collision Detector':
             text: '''When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'''
         'Sensor Cluster':
             text: '''When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'''
         'Fearlessness':
-            text: '''%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender's firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'''
+            name: "Intrepidez"
+            text: '''%SCUMONLY%%LINEBREAK%Cuando ataques, si estás dentro del arco de fuego del defensor a alcance 1 y el defensor está dentro de tu arco de fuego, puedes añadir 1 resultado %HIT% a tu tirada.'''
         'Ketsu Onyo':
             text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'''
         'Latts Razzi':
@@ -1390,7 +1439,8 @@ exportObj.cardLoaders['Español'] = () ->
         'Rigged Cargo Chute':
             text: '''%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'''
         'Seismic Torpedo':
-            text: '''<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'''
+            name: "Torpedo sísmico"
+            text: '''<strong>Acción:</strong> Descarta esta carta para elegir un obstáculo que tengas a alcance 1-2 y dentro de tu arco de fuego normal. Toda nave situada a alcance 1 del obstáculo tira 1 dado de ataque y sufre cualquier daño (%HIT%) o o daño crítico (%CRIT%) otenido. Luego retira el obstáculo.'''
         'Black Market Slicer Tools':
             text: '''<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'''
         # Wave X
@@ -1495,7 +1545,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Chips de Guiado"
             text: """Una vez por ronda, cuando ataques con un sistema de armamento secundario %TORPEDO% o %MISSILE%, puedes cambiar 1 de tus resultados de dado por un resultado %HIT% (o por un resultad %CRIT% si tu valor de Armamento principal es de 3 o más)."""
         'Vectored Thrusters':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'''
+            name: "Propulsores vectoriales"
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Tu barra de acciones gana el icono de acción %BARRELROLL%.'''
         'Smuggling Compartment':
             text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
         'Gyroscopic Targeting':
@@ -1634,11 +1685,13 @@ exportObj.cardLoaders['Español'] = () ->
         'Millennium Falcon (TFA)':
             text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
         'Alliance Overhaul':
-            text: '''<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'''
+            name: "Reacondicionado por la Alianza"
+            text: '''<span class="card-restriction">Sólo ARC-170.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado de ataque adicional. Cuando ataques desde tu arco de fuego auxiliar, puedes cambiar 1 de tus resultados %FOCUS% por 1 resultado %CRIT%.'''
         'Special Ops Training':
             text: '''<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'''
         'Concord Dawn Protector':
-            text: '''<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker's firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'''
+            name: "Protector de Concord Dawn"
+            text: '''<span class="card-restriction">Sólo Caza estelar del Protectorado.</span>%LINEBREAK%Cuando te defiendas, si estás dentro del arco de fuego del atacante y a alcance 1 y el atacante está dentro de tu arco de fuego, añade 1 resultado %EVADE%.'''
         'Shadow Caster':
             text: '''<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'''
         # Wave X
