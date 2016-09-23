@@ -881,7 +881,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
         'Cap???':
             ship: "Caza TIE"
-        '"Ahso???':
+        'Ahso???':
             ship: "Caza TIE"
         '"Zeb" Orrelios (TIE Fighter)':
             ship: "Caza TIE"
