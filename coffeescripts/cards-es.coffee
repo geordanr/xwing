@@ -839,10 +839,10 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Llamarada"
             ship: "Caza TIE/sf"
             text: '''Cuando ataques a una nave dentro de tu arco de fuego auxiliar,  puedes añadir 1 resultado %CRIT%.'''
-        '"Omega Specialist"':
+        'Omega Specialist':
             name: "Especialista Omega"
             ship: "Caza TIE/sf"
-        '"Zeta Specialist"':
+        'Zeta Specialist':
             name: "Especialista Zeta"
             ship: "Caza TIE/sf"
         'Fenn Rau':
