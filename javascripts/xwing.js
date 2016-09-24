@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "ARC-170 Expansion Pack", "Special Forces TIE Expansion Pack", "Protectorate Starfighter Expansion Pack", "Shadow Caster Expansion Pack", "Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack", "U-Wing Expansion Pack", "TIE Striker Expansion Pack"];
+exportObj.unreleasedExpansions = ["Heroes of the Resistance Expansion Pack", "Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack", "U-Wing Expansion Pack", "TIE Striker Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -10284,7 +10284,6 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)');
   exportObj.renameShip('GR-75 Medium Transport', 'Transporte mediano GR-75');
   exportObj.renameShip('T-70 X-Wing', 'T-70 Ala-X');
-  exportObj.renameShip('ARC-170', 'ARC-170');
   exportObj.renameShip('M3-A Interceptor', 'Interceptor M3-A');
   exportObj.renameShip('StarViper', 'Víbora Estelar');
   exportObj.renameShip('Aggressor', 'Agresor');
@@ -11121,25 +11120,25 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Caza TIE/sf"
     },
     'Fenn Rau': {
-      ship: "Caza estelar del Protectorado",
+      ship: "Caza Estelar del Protectorado",
       text: 'Cuando ataques o te defiendas, si tienes la nave enemiga a alcance 1, puedes tirar 1 dado adicional.'
     },
     'Old Teroch': {
       name: "Viejo Teroch",
-      ship: "Caza estelar del Protectorado",
+      ship: "Caza Estelar del Protectorado",
       text: 'Al comienzo de la fase de Combate, puedes elegir 1 nave enemiga que tengas a alcance 1. Si estás dentro de su arco de fuego, esa nave descarta todas sus fichas de Concentración y Evasión.'
     },
     'Kad Solus': {
-      ship: "Caza estelar del Protectorado",
+      ship: "Caza Estelar del Protectorado",
       text: 'Después de que ejecutes una maniobra roja, asigna 2 fichas de Concentración a tu nave.'
     },
     'Concord Dawn Ace': {
       name: "As de Concord Dawn",
-      ship: "Caza estelar del Protectorado"
+      ship: "Caza Estelar del Protectorado"
     },
     'Concord Dawn Veteran': {
       name: "Veterano de Concord Dawn",
-      ship: "Caza estelar del Protectorado"
+      ship: "Caza Estelar del Protectorado"
     },
     'Zealous Recruit': {
       name: "Recluta entusiasta",
@@ -11913,23 +11912,25 @@ exportObj.cardLoaders['Español'] = function() {
       text: '%SCUMONLY%%LINEBREAK%Cuando ataques, si estás dentro del arco de fuego del defensor a alcance 1 y el defensor está dentro de tu arco de fuego, puedes añadir 1 resultado %HIT% a tu tirada.'
     },
     'Ketsu Onyo': {
-      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+      text: '%SCUMONLY%%LINEBREAK%Al comienzo de la fase Final, puedes elegir 1 nave enemiga que tengas dentro de tu arco de fuego a alcance 1-2. Esa nave no retira sus fichas de Campo de tracción.'
     },
     'Latts Razzi': {
-      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+      text: '%SCUMONLY%%LINEBREAK%Cuando te defiendas, puedes quitarle al atacante 1 ficha de Tensión para añadir 1 resultado 1 %EVADE% a tu tirada.'
     },
     'IG-88D': {
-      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+      text: '%SCUMONLY%%LINEBREAK%Tu piloto tiene la misma capacidad especial que cualquier otra nave aliada equipada con la carta de Mejora <em>IG-2000</em> (además de su propia capacidad especial).'
     },
     'Rigged Cargo Chute': {
-      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+      name: "Tolva de evacuación de carga",
+      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Cargamento.'
     },
     'Seismic Torpedo': {
       name: "Torpedo sísmico",
       text: '<strong>Acción:</strong> Descarta esta carta para elegir un obstáculo que tengas a alcance 1-2 y dentro de tu arco de fuego normal. Toda nave situada a alcance 1 del obstáculo tira 1 dado de ataque y sufre cualquier daño (%HIT%) o o daño crítico (%CRIT%) otenido. Luego retira el obstáculo.'
     },
     'Black Market Slicer Tools': {
-      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+      name: "Sistemas ilegales de guerra electrónica",
+      text: '<strong>Acción:</strong> Elige una nave enemiga bajo tensión que tengas a alcance 1-2 y tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, quítale 1 ficha de Tensión e inflíngele 1 carta de Daño boca abajo.'
     },
     'Kylo Ren': {
       text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
@@ -12076,7 +12077,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
     },
     'Gyroscopic Targeting': {
-      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+      name: "Estabilización giroscópica",
+      text: '<span class="card-restriction">Solo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'
     }
   };
   title_translations = {
@@ -12255,6 +12257,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo ARC-170.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado de ataque adicional. Cuando ataques desde tu arco de fuego auxiliar, puedes cambiar 1 de tus resultados %FOCUS% por 1 resultado %CRIT%.'
     },
     'Special Ops Training': {
+      ship: "Caza TIE/sf",
       text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
     },
     'Concord Dawn Protector': {
@@ -12262,9 +12265,11 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo Caza estelar del Protectorado.</span>%LINEBREAK%Cuando te defiendas, si estás dentro del arco de fuego del atacante y a alcance 1 y el atacante está dentro de tu arco de fuego, añade 1 resultado %EVADE%.'
     },
     'Shadow Caster': {
-      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+      ship: "Nave de persecución clase Lancero",
+      text: '<span class="card-restriction">Sólo Nave de persecución clase Lancero</span>%LINEBREAK%Después de que efectúes un ataque que impacte, si el defensor está dentro de tu arco de fuego móvil y a alcance 1-2, puedes asignarle 1 ficha de Campo de tracción.'
     },
     'Sabine\'s Masterpiece': {
+      ship: "Caza TIE",
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
     },
     'Kylo Ren\'s Shuttle': {
@@ -21860,7 +21865,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20826
+                    lineno: 20827
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22429,7 +22434,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21402
+              lineno: 21403
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23067,7 +23072,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21969
+          lineno: 21970
         }));
         __iced_deferrals._fulfill();
       });
@@ -23079,7 +23084,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21970
+            lineno: 21971
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24597,7 +24602,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22825
+                      lineno: 22826
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24666,7 +24671,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22849
+                lineno: 22850
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24718,7 +24723,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22871
+            lineno: 22872
           }));
         }
         _ref = _this.upgrades;
@@ -24726,7 +24731,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22873
+              lineno: 22874
             }));
           }
         }
@@ -24735,7 +24740,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22875
+              lineno: 22876
             }));
           }
         }
@@ -25652,7 +25657,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23523
+                lineno: 23524
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25771,7 +25776,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23582
+                  lineno: 23583
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25793,7 +25798,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23586
+                    lineno: 23587
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25878,7 +25883,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23626
+            lineno: 23627
           }));
         }
         __iced_deferrals._fulfill();
