@@ -1552,7 +1552,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
         'Gyroscopic Targeting':
             name: "Estabilización giroscópica"
-            text: '''<span class="card-restriction">Solo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'''
+            ship: "Nave de persecución clase Lancero"
+            text: '''<span class="card-restriction">Sólo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'''
 
     title_translations =
         "Slave I":
@@ -1694,6 +1695,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'''
         'Concord Dawn Protector':
             name: "Protector de Concord Dawn"
+            ship: "Caza Estelar del Protectorado"
             text: '''<span class="card-restriction">Sólo Caza estelar del Protectorado.</span>%LINEBREAK%Cuando te defiendas, si estás dentro del arco de fuego del atacante y a alcance 1 y el atacante está dentro de tu arco de fuego, añade 1 resultado %EVADE%.'''
         'Shadow Caster':
             ship: "Nave de persecución clase Lancero"
