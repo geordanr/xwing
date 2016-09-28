@@ -837,12 +837,12 @@ exportObj.cardLoaders['Español'] = () ->
         '"Backdraft"':
             name: "Llamarada"
             ship: "Caza TIE/sf"
-            text: '''Cuando ataques a una nave dentro de tu arco de fuego auxiliar,  puedes añadir 1 resultado %CRIT%.'''
+            text: '''Cuando ataques a una nave que esté dentro de tu arco de fuego auxiliar, puedes añadir 1 resultado %CRIT%.'''
         'Omega Specialist':
-            name: "Especialista Omega"
+            name: "Especialista del Escuadrón Omega"
             ship: "Caza TIE/sf"
         'Zeta Specialist':
-            name: "Especialista Zeta"
+            name: "Especialista del Escuadrón Zeta"
             ship: "Caza TIE/sf"
         'Fenn Rau':
             ship: "Caza Estelar del Protectorado"
@@ -1423,9 +1423,11 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Droide astromecánico R3"
             text: '''Una vez por ronda, cuando ataques con un armamento principal, durante el paso "Modificar la tirada de ataque" puedes anular 1 de tus resultados %FOCUS% para asignar 1 ficha de Evasión a tu nave.'''
         'Collision Detector':
-            text: '''When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'''
+            name: "Detector de colisiones"
+            text: '''Cuando realices un impulso, un tonel volado o desactives tu camuflaje, tu nave y plantilla de maniobra se pueden solapar con obstáculos.%LINEBREAK%Cuando hagas una tirada de dados para determinar el daño causado por obstáculos, ignora todos tus resultados %CRIT%.'''
         'Sensor Cluster':
-            text: '''When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'''
+            name: "Conjunto de sensores"
+            text: '''Cuando te defiendas, puedes gastar una ficha de Concentración para cambiar 1 de tus resultados de car avacía por 1 resultado %EVADE%.'''
         'Fearlessness':
             name: "Intrepidez"
             text: '''%SCUMONLY%%LINEBREAK%Cuando ataques, si estás dentro del arco de fuego del defensor a alcance 1 y el defensor está dentro de tu arco de fuego, puedes añadir 1 resultado %HIT% a tu tirada.'''
@@ -1692,7 +1694,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">Sólo ARC-170.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado de ataque adicional. Cuando ataques desde tu arco de fuego auxiliar, puedes cambiar 1 de tus resultados %FOCUS% por 1 resultado %CRIT%.'''
         'Special Ops Training':
             ship: "Caza TIE/sf"
-            text: '''<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'''
+            name: "Entrenamiento de operaciones especiales"
+            text: '''<span class="card-restriction">Sólo TIE/sf.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado adicional de ataque. Si decides no hacerlo, puedes realizar un ataque adicional desde tu arco de fuego aixiliar.'''
         'Concord Dawn Protector':
             name: "Protector de Concord Dawn"
             ship: "Caza Estelar del Protectorado"
