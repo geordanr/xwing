@@ -3441,7 +3441,7 @@ exportObj.basicCardData = function() {
         points: 17
       }, {
         name: "Maarek Stele (TIE Defender)",
-        canonical_name: 'Maarek Stele'.canonicalize(),
+        canonical_name: 'maarekstele-swx52',
         id: 193,
         unique: true,
         faction: "Galactic Empire",
@@ -11109,14 +11109,14 @@ exportObj.cardLoaders['Español'] = function() {
     '"Backdraft"': {
       name: "Llamarada",
       ship: "Caza TIE/sf",
-      text: 'Cuando ataques a una nave dentro de tu arco de fuego auxiliar,  puedes añadir 1 resultado %CRIT%.'
+      text: 'Cuando ataques a una nave que esté dentro de tu arco de fuego auxiliar, puedes añadir 1 resultado %CRIT%.'
     },
     'Omega Specialist': {
-      name: "Especialista Omega",
+      name: "Especialista del Escuadrón Omega",
       ship: "Caza TIE/sf"
     },
     'Zeta Specialist': {
-      name: "Especialista Zeta",
+      name: "Especialista del Escuadrón Zeta",
       ship: "Caza TIE/sf"
     },
     'Fenn Rau': {
@@ -11902,10 +11902,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'Una vez por ronda, cuando ataques con un armamento principal, durante el paso "Modificar la tirada de ataque" puedes anular 1 de tus resultados %FOCUS% para asignar 1 ficha de Evasión a tu nave.'
     },
     'Collision Detector': {
-      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+      name: "Detector de colisiones",
+      text: 'Cuando realices un impulso, un tonel volado o desactives tu camuflaje, tu nave y plantilla de maniobra se pueden solapar con obstáculos.%LINEBREAK%Cuando hagas una tirada de dados para determinar el daño causado por obstáculos, ignora todos tus resultados %CRIT%.'
     },
     'Sensor Cluster': {
-      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+      name: "Conjunto de sensores",
+      text: 'Cuando te defiendas, puedes gastar una ficha de Concentración para cambiar 1 de tus resultados de car avacía por 1 resultado %EVADE%.'
     },
     'Fearlessness': {
       name: "Intrepidez",
@@ -12259,7 +12261,8 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Special Ops Training': {
       ship: "Caza TIE/sf",
-      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+      name: "Entrenamiento de operaciones especiales",
+      text: '<span class="card-restriction">Sólo TIE/sf.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado adicional de ataque. Si decides no hacerlo, puedes realizar un ataque adicional desde tu arco de fuego aixiliar.'
     },
     'Concord Dawn Protector': {
       name: "Protector de Concord Dawn",
@@ -21867,7 +21870,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20829
+                    lineno: 20832
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22436,7 +22439,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21405
+              lineno: 21408
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23074,7 +23077,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21972
+          lineno: 21975
         }));
         __iced_deferrals._fulfill();
       });
@@ -23086,7 +23089,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21973
+            lineno: 21976
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24604,7 +24607,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22828
+                      lineno: 22831
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24673,7 +24676,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22852
+                lineno: 22855
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24725,7 +24728,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22874
+            lineno: 22877
           }));
         }
         _ref = _this.upgrades;
@@ -24733,7 +24736,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22876
+              lineno: 22879
             }));
           }
         }
@@ -24742,7 +24745,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22878
+              lineno: 22881
             }));
           }
         }
@@ -25659,7 +25662,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23526
+                lineno: 23529
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25778,7 +25781,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23585
+                  lineno: 23588
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25800,7 +25803,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23589
+                    lineno: 23592
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25885,7 +25888,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23629
+            lineno: 23632
           }));
         }
         __iced_deferrals._fulfill();
