@@ -3628,7 +3628,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Maarek Stele (TIE Defender)"
-            canonical_name: 'Maarek Stele'.canonicalize()
+            canonical_name: 'maarekstele-swx52'
             id: 193
             unique: true
             faction: "Galactic Empire"
