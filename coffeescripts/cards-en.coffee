@@ -297,7 +297,7 @@ exportObj.cardLoaders.English = () ->
         "Kath Scarlet (Scum)":
             text: """When attacking a ship inside your auxiliary firing arc, roll 1 additional attack die."""
         "Emon Azzameen":
-            text: """When dropping a bomb, you may use the [%TURNLEFT% 3], [%STRAIGHT% 3], or [%TURNRIGHT% 3] template instead of the [%STRAIGHT% 1] template."""
+            text: """When dropping a bomb, you may use the (%TURNLEFT% 3), (%STRAIGHT% 3), or (%TURNRIGHT% 3) template instead of the (%STRAIGHT% 1) template."""
         "Kavil":
             text: """When attacking a ship outside your firing arc, roll 1 additional attack die."""
         "Drea Renthal":
@@ -413,6 +413,10 @@ exportObj.cardLoaders.English = () ->
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
         "Rey":
             text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+        'Han Solo (TFA)':
+            text: '''When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'''
+        'Chewbacca (TFA)':
+            text: '''After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'''
         'Norra Wexley':
             text: '''When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'''
         'Shara Bey':
@@ -434,7 +438,7 @@ exportObj.cardLoaders.English = () ->
         'Ketsu Onyo':
             text: '''At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'''
         'Asajj Ventress':
-            text: '''At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'''
+            text: '''At the start of the Combat phase, you may choose a ship at Range 1-2.  If it is inside your mobile firing arc, assign 1 stress token to it.'''
         'Sabine Wren (Scum)':
             text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
         # Wave X
@@ -446,6 +450,16 @@ exportObj.cardLoaders.English = () ->
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
         'Unkar Plutt':
             text: '''At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'''
+        'Cassian Andor':
+            text: '''At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'''
+        '''"Duchess"''':
+            text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
+        'Nien Nunb':
+            text: '''When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'''
+        '"Snap" Wexley':
+            text: '''After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'''
+        'Jess Pava':
+            text: '''When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -665,7 +679,7 @@ exportObj.cardLoaders.English = () ->
         "Accuracy Corrector":
             text: """When attacking, during the "Modify Attack Dice" step, you may cancel all of your dice results. Then, you may add 2 %HIT% results to your roll.%LINEBREAK%Your dice cannot be modified again during this attack."""
         "Inertial Dampeners":
-            text: """When you reveal your maneuver, you may discard this card to instead perform a white [0%STOP%] maneuver. Then receive 1 stress token."""
+            text: """When you reveal your maneuver, you may discard this card to instead perform a white (0 %STOP%) maneuver. Then receive 1 stress token."""
         "Flechette Cannon":
             text: """<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender suffers 1 damage and, if the defender is not stressed, it also receives 1 stress token.  Then cancel <strong>all</strong> dice results."""
         '"Mangler" Cannon':
@@ -842,7 +856,25 @@ exportObj.cardLoaders.English = () ->
         'Unkar Plutt':
             text: '''%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'''
         'A Score to Settle':
-            text: '''During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            text: '''During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%When attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'''
+        'Jyn Erso':
+            text: '''%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'''
+        'Cassian Andor':
+            text: '''%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship's bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'''
+        'Finn':
+            text: '''%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'''
+        'Rey':
+            text: '''%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship's focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'''
+        'Burnout SLAM':
+            text: '''%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'''
+        'Primed Thrusters':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'''
+        'Pattern Analyzer':
+            text: '''When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'''
+        'Snap Shot':
+            text: '''After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'''
+        'M9-G8':
+            text: '''%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'''
 
     modification_translations =
         "Stealth Device":
@@ -994,6 +1026,10 @@ exportObj.cardLoaders.English = () ->
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'''
         '''Kylo Ren's Shuttle''':
             text: '''<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'''
+        '''Pivot Wing''':
+            text: '''<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'''
+        '''Adaptive Ailerons''':
+            text: '''<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
