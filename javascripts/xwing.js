@@ -8365,7 +8365,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Maneuvering Fins": {
       name: "Steuertragflächen",
-      text: "Sobald du ein Wendemanöver (%TURNLEFT% oder %TURNRIGHT%) aufdeckst, darfst du das entsprechende Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) mit gleicher Geschwindigkeit auf deinem Manöverrad einstellen."
+      text: "<span class=\"card-restriction\">Nur für YV-666.</span>%LINEBREAK%Sobald du ein Wendemanöver (%TURNLEFT% oder %TURNRIGHT%) aufdeckst, darfst du das entsprechende Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) mit gleicher Geschwindigkeit auf deinem Manöverrad einstellen."
     },
     "Ion Projector": {
       name: "Ionenprojektor",
@@ -9887,7 +9887,7 @@ exportObj.cardLoaders.English = function() {
       text: "<span class=\"card-restriction\">TIE only.</span>%LINEBREAK%You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
@@ -12040,7 +12040,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Maneuvering Fins": {
       name: "Alerones de Estabilización",
-      text: "Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."
+      text: "<span class=\"card-restriction\">Solo YV-666.</span>%LINEBREAK%Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."
     },
     "Ion Projector": {
       name: "Proyector de Iones",
@@ -13872,7 +13872,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
@@ -15631,7 +15631,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
@@ -17081,7 +17081,7 @@ exportObj.cardLoaders['Русский'] = function() {
       text: "You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
     },
     "Maneuvering Fins": {
-      text: "When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
+      text: "<span class=\"card-restriction\">YV-666 only.</span>%LINEBREAK%When you reveal a turn maneuver (%TURNLEFT% or %TURNRIGHT%), you may rotate your dial to the corresponding bank maneuver (%BANKLEFT% or %BANKRIGHT%) of the same speed."
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%After an enemy ship executes a maneuver that causes it to overlap your ship, roll 1 attack die.  On a %HIT% or %CRIT% result, the enemy ship receives 1 ion token."
@@ -18496,7 +18496,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: "Tüm kenar (bank) manevralarını (%BANKLEFT% veya %BANKRIGHT%) yeşil manevra olarak sayabilirsiniz."
     },
     "Maneuvering Fins": {
-      text: "Bir dönüş (turn) manevrası açıkladığınızda (%TURNLEFT% veya %TURNRIGHT%), kadranınızı aynı hızda eşdeğer kenar (bank) manevrasına (%BANKLEFT% or %BANKRIGHT%) çevirebilirsiniz."
+      text: "<span class=\"card-restriction\">Sadece YV-666.</span>%LINEBREAK%Bir dönüş (turn) manevrası açıkladığınızda (%TURNLEFT% veya %TURNRIGHT%), kadranınızı aynı hızda eşdeğer kenar (bank) manevrasına (%BANKLEFT% or %BANKRIGHT%) çevirebilirsiniz."
     },
     "Ion Projector": {
       text: "%LARGESHIPONLY%%LINEBREAK%Bir düşman gemisi geminizle çakışan bir manevra gerçekleştirdikten sonra 1 saldırı zarı atınız. %HIT% veya %CRIT% sonucunda bu düşman gemisi 1 iyon fişi alır."
