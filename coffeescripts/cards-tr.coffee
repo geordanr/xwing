@@ -868,7 +868,7 @@ exportObj.cardLoaders['Türkçe'] = () ->
         "Twin Ion Engine Mk. II":
             text: """Tüm kenar (bank) manevralarını (%BANKLEFT% veya %BANKRIGHT%) yeşil manevra olarak sayabilirsiniz."""
         "Maneuvering Fins":
-            text: """Bir dönüş (turn) manevrası açıkladığınızda (%TURNLEFT% veya %TURNRIGHT%), kadranınızı aynı hızda eşdeğer kenar (bank) manevrasına (%BANKLEFT% or %BANKRIGHT%) çevirebilirsiniz."""
+            text: """<span class="card-restriction">Sadece YV-666.</span>%LINEBREAK%Bir dönüş (turn) manevrası açıkladığınızda (%TURNLEFT% veya %TURNRIGHT%), kadranınızı aynı hızda eşdeğer kenar (bank) manevrasına (%BANKLEFT% or %BANKRIGHT%) çevirebilirsiniz."""
         "Ion Projector":
             text: """%LARGESHIPONLY%%LINEBREAK%Bir düşman gemisi geminizle çakışan bir manevra gerçekleştirdikten sonra 1 saldırı zarı atınız. %HIT% veya %CRIT% sonucunda bu düşman gemisi 1 iyon fişi alır."""
         'Integrated Astromech':
