@@ -1513,6 +1513,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%DE_SMALLSHIPONLY%%LINEBREAK%Füge deiner Aktionsleiste ein %BARRELROLL%-Symbol hinzu.'''
         'Gyroscopic Targeting':
             name: "Gyroskopisches Zielsystem"
+            ship: 'Jagdschiff der Lanzen-Klasse'
             text: '''<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%Am Ende der Kampfphase darfst du deinen mobilen Feuerwinkel rotieren, falls du in dieser Runde ein Manöver mit der Geschwindigkeit 3, 4 oder 5 ausgeführt hast.'''
         'Smuggling Compartment':
             text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
