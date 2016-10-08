@@ -6708,6 +6708,9 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('TIE Advanced Prototype', 'TIE-Turbojäger-Prototyp');
   exportObj.renameShip('G-1A Starfighter', 'G-1A-Sternenjäger');
   exportObj.renameShip('Attack Shuttle', 'Jagdshuttle');
+  exportObj.renameShip('TIE/sf Fighter', 'TIE/SE-Jäger');
+  exportObj.renameShip('Lancer-class Pursuit Craft', 'Jagdschiff der Lanzen-Klasse');
+  exportObj.renameShip('Protectorate Starfighter', 'Sternenjäger des Protektors');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."
@@ -7446,40 +7449,76 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'
     },
     'Norra Wexley': {
-      text: 'When attacking or defending, you may spend a target lock you have on the enemy ship to add 1 %FOCUS% result to your roll.'
+      text: 'Sobald du angreifst oder du verteidigst, darfst du einen Zielerfassungsmarker, den du auf dem feindlichen Schiff hast, ausgeben, um 1 %FOCUS% zu deinem Wurf hinzuzufügen.'
     },
     'Shara Bey': {
-      text: 'When another friendly ship at Range 1-2 is attacking, it may treat your blue target lock tokens as its own.'
+      text: 'Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreift, darf es deine blauen Zielerfassungsmarker wie seine eigenen behandeln.'
     },
     'Thane Kyrell': {
-      text: 'After an enemy ship in your firing arc at Range 1-3 attacks another friendly ship, you may perform a free action.'
+      text: 'Nachdem ein feindliches Schiff innerhalb deines Feuerwinkels und in Reichweite 1-3 ein anderes freundliches Schiff angegriffen hat, darfst du eine freie Aktion durchführen.'
     },
     'Braylen Stramm': {
-      text: 'After you execute a maneuver, you may roll an attack die.  On a %HIT% or %CRIT% result, remove 1 stress token from your ship.'
+      text: 'Nachdem du ein Manöver ausgeführt hast, darfst du einen Angriffswürfel werfen. Bei %HIT% oder %CRIT% entferne 1 Stressmarker von deinem Schiff.'
     },
     '"Quickdraw"': {
-      text: 'Once per round, when you lose a shield token, you may perform a primary weapon attack.'
+      ship: "TIE/SE-Jäger",
+      name: '"Schnellschuss"',
+      text: 'Ein Mal pro Runde darfst du, sobald du einen Schildmarker verlierst, einen Primärwaffenangriff durchführen.'
     },
     '"Backdraft"': {
-      text: 'When attacking a ship inside your auxiliary firing arc, you may add 1 %CRIT% result.'
+      ship: "TIE/SE-Jäger",
+      name: '"Feuersaat"',
+      text: 'Sobald du ein Schiff innerhalb deines Zusatz-Feuerwinkels angreifst, darfst du 1 %CRIT% hinzufügen.'
+    },
+    'Omega Specialist': {
+      ship: "TIE/SE-Jäger",
+      name: "Elitepilot der Omega-Staffel"
+    },
+    'Zeta Specialist': {
+      ship: "TIE/SE-Jäger",
+      name: "Elitepilot der Zeta-Staffel"
     },
     'Fenn Rau': {
-      text: 'When attacking or defending, if the enemy ship is at Range 1, you may roll 1 additional die.'
+      ship: "Sternenjäger des Protektors",
+      text: 'Sobald du angreifst oder verteidigst, darfst du 1 zusätzliche Würfel werfen, falls das feindliche Schiff in Reichweite 1 ist.'
     },
     'Old Teroch': {
-      text: 'At the start of the Combat phase, you may choose 1 enemy ship at Range 1.  If you are inside its firing arc, it discards all focus and evade tokens.'
+      ship: "Sternenjäger des Protektors",
+      name: "Der Alte Teroch",
+      text: 'Zu Beginn der Kampfphase darfst du 1 feindliches Schiff in Reichweite 1 wählen. Falls du innerhalb seines Feuerwinkels bist, legt es alle Fokus- und Ausweichmarker ab.'
     },
     'Kad Solus': {
-      text: 'After you execute a red maneuver, assign 2 focus tokens to your ship.'
+      ship: "Sternenjäger des Protektors",
+      text: 'Nachdem du ein rotes Manöver ausgeführt hast, ordne deinem SChiff 2 Fokusmarker zu.'
+    },
+    'Concord Dawn Ace': {
+      ship: "Sternenjäger des Protektors",
+      name: "Fliegerass von Concord Dawn"
+    },
+    'Concord Dawn Veteran': {
+      ship: "Sternenjäger des Protektors",
+      name: "Veteran von Concord Dawn"
+    },
+    'Zealous Recruit': {
+      ship: "Sternenjäger des Protektors",
+      name: "Fanatischer Rekrut"
+    },
+    'Shadowport Hunter': {
+      ship: "Jagdschiff der Lanzen-Klasse",
+      name: "Schattenhafen-Jäger"
     },
     'Ketsu Onyo': {
-      text: 'At the start of the Combat phase, you may choose a ship at Range 1.  If it is inside your primary <strong>and</strong> mobile firing arcs, assign 1 tractor beam token to it.'
+      ship: "Jagdschiff der Lanzen-Klasse",
+      text: 'Zu Beginn der Kampfphase darfst du ein Schiff in Reichweite 1 wählen. Falls es innerhalb deines normalen Feuerwinkels <strong>und</strong> deines mobilen Feuerwinkels ist, ordne ihm 1 Traktorstrahlmarker zu.'
     },
     'Asajj Ventress': {
-      text: 'At the start of the Combat phase, you may choose a ship at Range 1-2.  If it inside your mobile firing arc, assign 1 stress token to it.'
+      ship: "Jagdschiff der Lanzen-Klasse",
+      text: 'Zu Beginn der Kampfphase darfst du ein Schiff in Reichweite 1-2 wählen. Falls es innerhalb deines mobilen Feuerwinkel ist, ordne ihm 1 Stressmarker zu.'
     },
     'Sabine Wren (Scum)': {
-      text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
+      ship: "Jagdschiff der Lanzen-Klasse",
+      name: "Sabine Wren (Abschaum)",
+      text: 'Sobald du dich gegen ein feindliches Schiff innerhalb deines mobilen Feuerwinkels und Reichweite 1-2 verteidigst, darfst du 1 %FOCUS% zu deinem Wurf hinzufügen.'
     },
     'Sabine Wren (TIE Fighter)': {
       text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
@@ -7881,7 +7920,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Targeting Coordinator": {
       name: "Zielkoordinator",
-      text: "<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."
+      text: "<strong>Energie:</strong> Du kannst 1 Energie ausgeben, um 1 freundliches Schiff in Reichweite 1-2 zu wählen. Nimm dann ein Schiff in die Zielerfassung und gibt den blauen Zielerfassungsmarker dem gewählten Schiff."
     },
     "Lone Wolf": {
       name: "Einsamer Wolf",
@@ -8130,15 +8169,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Zeb" Orrelios': {
       name: '"Zeb" Orrelios (Crew)',
-      text: "%REBELONLY%%LINEBREAK%Feindliche Schiffe in deinem Feuerwinkel, deren Basis du berührst, gelten nicht als berührt, sobald du oder sie in der Kampfphase aktiviert werden."
+      text: "%DE_REBELONLY%%LINEBREAK%Feindliche Schiffe in deinem Feuerwinkel, deren Basis du berührst, gelten nicht als berührt, sobald du oder sie in der Kampfphase aktiviert werden."
     },
     'Kanan Jarrus': {
       name: "Kanan Jarrus (Crew)",
-      text: "%REBELONLY%%LINEBREAK%Ein Mal pro Runde, nachdem ein freundliches Schiff in Reichweite 1-2 ein weißes Manöver ausgeführt hat, darfst du 1 Stressmarker von jenem Schiff entfernen.."
+      text: "%DE_REBELONLY%%LINEBREAK%Ein Mal pro Runde, nachdem ein freundliches Schiff in Reichweite 1-2 ein weißes Manöver ausgeführt hat, darfst du 1 Stressmarker von jenem Schiff entfernen.."
     },
     'Reinforced Deflectors': {
       name: "Verstärkte Deflektoren",
-      text: "%LARGESHIPONLY%%LINEBREAK%Nachdem du durch einen Angriff 3 oder mehr Schaden genommen hast, lädst du 1 Schild wieder auf (bis maximal zu deinem Schildwert)."
+      text: "%DE_LARGESHIPONLY%%LINEBREAK%Nachdem du durch einen Angriff 3 oder mehr Schaden genommen hast, lädst du 1 Schild wieder auf (bis maximal zu deinem Schildwert)."
     },
     'Dorsal Turret': {
       name: "Dorsaler Geschützturm",
@@ -8150,23 +8189,23 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Hera Syndulla': {
       name: "Hera Syndulla (Crew)",
-      text: "%REBELONLY%%LINEBREAK%Du kannst auch rote Manöver aufdecken und ausführen, solange du gestresst bist."
+      text: "%DE_REBELONLY%%LINEBREAK%Du kannst auch rote Manöver aufdecken und ausführen, solange du gestresst bist."
     },
     'Ezra Bridger': {
       name: "Ezra Bridger (Crew)",
-      text: "%REBELONLY%%LINEBREAK%Sobald du angreifst und falls du gestresst bist, darfst du 1 deiner %FOCUS% in ein %CRIT% ändern."
+      text: "%DE_REBELONLY%%LINEBREAK%Sobald du angreifst und falls du gestresst bist, darfst du 1 deiner %FOCUS% in ein %CRIT% ändern."
     },
     'Sabine Wren': {
       name: "Sabine Wren (Crew)",
-      text: "%REBELONLY%%LINEBREAK%Deine Aufwertungsleiste erhält ein %BOMB%-Symbol. Wähle ein Mal pro Runde, vor dem Entfernen eines freundlichen Bombenmarkers, ein feindliches Schiff in Reichweite 1 des Markers. Das gewählte Schiff nimmt 1 Schaden."
+      text: "%DE_REBELONLY%%LINEBREAK%Deine Aufwertungsleiste erhält ein %BOMB%-Symbol. Wähle ein Mal pro Runde, vor dem Entfernen eines freundlichen Bombenmarkers, ein feindliches Schiff in Reichweite 1 des Markers. Das gewählte Schiff nimmt 1 Schaden."
     },
     '"Chopper"': {
       name: '"Chopper" (Crew)',
-      text: "%REBELONLY%%LINEBREAK%Du darfst auch Aktionen durchführen, solange du gestresst bist.%LINEBREAK%Nachdem du eine Aktion durchgeführt hast, solange du gestresst bist, nimmst du 1 Schaden."
+      text: "%DE_REBELONLY%%LINEBREAK%Du darfst auch Aktionen durchführen, solange du gestresst bist.%LINEBREAK%Nachdem du eine Aktion durchgeführt hast, solange du gestresst bist, nimmst du 1 Schaden."
     },
     'Construction Droid': {
       name: "Baudroide",
-      text: '%HUGESHIPONLY% %DE_LIMITED%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, darfst du 1 Energie ausgeben, um 1 verdeckte Schadenskarte abzulegen.'
+      text: '%DE_HUGESHIPONLY% %DE_LIMITED%%LINEBREAK%Sobald du die Aktion Aufladen durchführst, darfst du 1 Energie ausgeben, um 1 verdeckte Schadenskarte abzulegen.'
     },
     'Cluster Bombs': {
       name: "Clusterbomben",
@@ -8182,11 +8221,11 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "4-LOM": {
       name: "4-LOM (Crew)",
-      text: "%SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du im Schritt \"Angriffswürfel modifizieren\" 1 Ionenmarker erhalten, um 1 Fokus- oder Ausweichmarker des Verteidigers zu wählen. Der gewählte Marker kann bei diesem Angriff nicht ausgegeben werden."
+      text: "%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du im Schritt \"Angriffswürfel modifizieren\" 1 Ionenmarker erhalten, um 1 Fokus- oder Ausweichmarker des Verteidigers zu wählen. Der gewählte Marker kann bei diesem Angriff nicht ausgegeben werden."
     },
     "Zuckuss": {
       name: "Zuckuss (Crew)",
-      text: "%SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du beliebig viele Stressmarker erhalten, um ebenso viele Verteidigungswürfel zu wählen. Der Verteidiger muss alle gewählten Würfel neu würfeln."
+      text: "%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du beliebig viele Stressmarker erhalten, um ebenso viele Verteidigungswürfel zu wählen. Der Verteidiger muss alle gewählten Würfel neu würfeln."
     },
     'Rage': {
       name: "Wutanfall",
@@ -8194,19 +8233,19 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Attanni Mindlink": {
       name: "Attanni-Implantat",
-      text: "%SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."
+      text: "%DE_SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."
     },
     "Boba Fett": {
       name: "Boba Fett (Crew)",
-      text: "%SCUMONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast und falls dem Verteidiger eine offene Schadenskarte zugeteilt worden ist, darfst du diese Karte ablegen, um 1 der Aufwertungskarten des Verteidigers zu wählen und abzulegen."
+      text: "%DE_SCUMONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast und falls dem Verteidiger eine offene Schadenskarte zugeteilt worden ist, darfst du diese Karte ablegen, um 1 der Aufwertungskarten des Verteidigers zu wählen und abzulegen."
     },
     "Dengar": {
       name: "Dengar (Crew)",
-      text: "%SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 Angriffswürfel neu würfeln. Falls der Verteidiger ein einzigartiger Pilot ist, darfst du stattdessen bis zu 2 Angriffswürfel neu würfeln."
+      text: "%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 Angriffswürfel neu würfeln. Falls der Verteidiger ein einzigartiger Pilot ist, darfst du stattdessen bis zu 2 Angriffswürfel neu würfeln."
     },
     '"Gonk"': {
       name: '"Gonk" (Crew)',
-      text: "%SCUMONLY%%LINEBREAK%<strong>Aktion:</strong> Lege 1 Schildmarker auf diese Karte.%LINEBREAK%<strong>Aktion:</strong> Entferne 1 Schildmarker von dieser Karte, um 1 Schild wieder aufzuladen (bis maximal zu deinem Schildwert)."
+      text: "%DE_SCUMONLY%%LINEBREAK%<strong>Aktion:</strong> Lege 1 Schildmarker auf diese Karte.%LINEBREAK%<strong>Aktion:</strong> Entferne 1 Schildmarker von dieser Karte, um 1 Schild wieder aufzuladen (bis maximal zu deinem Schildwert)."
     },
     "R5-P8": {
       text: "Ein Mal pro Runde darfst du nach dem Verteidigen 1 Angriffswürfel werfen. Bei %HIT% nimmt der Angreifer 1 Schaden. Bei %CRIT% nehmen du und der Angreifer je 1 Schaden."
@@ -8221,67 +8260,75 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Systems Officer': {
       name: "Systemoffizier",
-      text: '%IMPERIALONLY%%LINEBREAK%Nachdem du ein grünes Manöver ausgeführt hast, wähle ein anderes freundliches Schiff in Reichweite 1. Das ausgewählte Schiff darf eine Zielerfassung durchführen.'
+      text: '%DE_IMPERIALONLY%%LINEBREAK%Nachdem du ein grünes Manöver ausgeführt hast, wähle ein anderes freundliches Schiff in Reichweite 1. Das ausgewählte Schiff darf eine Zielerfassung durchführen.'
     },
     'Tail Gunner': {
-      text: 'When attacking from your rear-facing auxiliary firing arc, reduce the defender\'s agility by 1 (to a minimum of "0").'
+      name: "Heckschütze",
+      text: 'Sobald du von deinem Heck-Zusatz-Feuerwinkel aus angreifst, senke die Wendigkeit des Verteidigers um 1 (Minimum 0).'
     },
     'R3 Astromech': {
-      text: 'Once per round, when attacking with a primary weapon, you may cancel 1 of your %FOCUS% results during the "Modify Attack Dice" step to assign 1 evade token to your ship.'
+      name: "R3-Astromech-Droide",
+      text: 'Ein Mal pro Runde darfst du, sobald du mit einer Primärwaffe angreifst im Schritt "Angriffswürfel modifizieren" 1 deiner %FOCUS% negieren, um deinem Schiff 1 Ausweichmarker zuzuordnen.'
     },
     'Collision Detector': {
-      text: 'When performing a boost, barrel roll, or decloak, your ship and maneuver template can overlap obstacles.%LINEBREAK%When rolling for obstacle damage, ignore all %CRIT% results.'
+      name: "Kollisionssensor",
+      text: 'Sobald du SChub, Fassrolle oder Enttarnen durchführst, können sich dein SChiff und die Manöverschablone mit Hindernissen überschneiden.%LINEBREAK%Sobald du wegen der Überschneidung mit einem Hindernis Schaden auswürfelst, ignorierst du alle %CRIT%.'
     },
     'Sensor Cluster': {
-      text: 'When defending, you may spend a focus token to change 1 of your blank results to an %EVADE% result.'
+      name: "Sensorcluster",
+      text: 'Sobald du verteidigst, darfst du einen Fokusmarker ausgeben, um 1 deiner Leerseiten in ein %EVADE% zu ändern.'
     },
     'Fearlessness': {
-      text: '%SCUMONLY%%LINEBREAK%When attacking, if you are inside the defender\'s firing arc at Range 1 and the defender is inside your firing arc, you may add 1 %HIT% result to your roll.'
+      name: "Furchtlosigkeit",
+      text: '%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 %HIT% zu deinem Wurf hinzufügen, falls du innerhalb des Feuerwinkels des Verteidigers in Reichweite 1 zu ihm bist und der Verteidiger innerhalb deines Feuerwinkels ist.'
     },
     'Ketsu Onyo': {
-      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may choose 1 ship in your firing arc at Range 1-2.  That ship does not remove its tractor beam tokens.'
+      text: '%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 feindliches Schiff innerhalb deines Feuerwinkels in Reichweite 1-2 wählen. Das Schiff entfernt seine Traktorstrahlmarker nicht..'
     },
     'Latts Razzi': {
-      text: '%SCUMONLY%%LINEBREAK%When defending, you may remove 1 stress token from the attacker to add 1 %EVADE% result to your roll.'
+      text: '%DE_SCUMONLY%%LINEBREAK%Sobald du verteidigst, darfst du 1 Stressmarker vom Angreifer entfernen, um 1 %EVADE% zu deinem Wurf hinzuzufügen.'
     },
     'IG-88D': {
-      text: '%SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability).'
+      text: '%DE_SCUMONLY%%LINEBREAK%Du hast die Pilotenfähigkeit jedes freundlichen Schiffs mit der Aufwertungskarte <em>IG-2000</em> (zusätzlich zu deiner eigenen Pilotenfähigkeit.'
     },
     'Rigged Cargo Chute': {
-      text: '%LARGESHIPONLY%%LINEBREAK%<strong>Action:</strong> Discard this card to <strong>drop</strong> one cargo token.'
+      name: "Manipulierte Frachtrampe",
+      text: '%DE_LARGESHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Lege diese KArte ab, um 1 Frachtmarker zu <strong>legen</strong>.'
     },
     'Seismic Torpedo': {
-      text: '<strong>Action:</strong> Discard this card to choose an obstacle at Range 1-2 and inside your primary firing arc.  Each ship at Range 1 of the obstacle rolls 1 attack die and suffers any damage (%HIT%) or critical damage (%CRIT%) rolled.  Then remove the obstacle.'
+      name: "Seismische Torpedos",
+      text: '<strong>Aktion:</strong> Lege diese Karte ab, um ein Hindernis in Reichweite 1-2 und innerhalb deines normalen Feuerwinkels zu wählen. Jedes Schiff in Reichweite 1 zu dem Hindernis wirfst 1 Angriffswürfel und erleidet den gewürfelten Schaden (%HIT%) oder kritischen Schaden (%CRIT%). Dann wird das Hindernis entfernt.'
     },
     'Black Market Slicer Tools': {
-      text: '<strong>Action:</strong> Choose a stressed enemy ship at Range 1-2 and roll 1 attack die. On a (%HIT%) or (%CRIT%) result, remove 1 stress token and deal it 1 facedown Damage card.'
+      name: "Hacker-Tools vom Schwarzmarkt",
+      text: '<strong>Aktion:</strong> Wähle ein gestresstes Schiff in Reichweite 1-2 und wirf 1 Angriffswürfel. Bei %HIT% oder %CRIT% entferne 1 Stressmarker und teile ihm 1 verdeckte Schadenskarte zu.'
     },
     'Kylo Ren': {
-      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
+      text: '%DE_IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I\'ll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'
     },
     'Unkar Plutt': {
-      text: '%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
+      text: '%DE_SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'
     },
     'A Score to Settle': {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     },
     'Jyn Erso': {
-      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+      text: '%DE_REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
     },
     'Cassian Andor': {
-      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+      text: '%DE_REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
     },
     'Finn': {
-      text: '%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
+      text: '%DE_REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'
     },
     'Rey': {
-      text: '%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
+      text: '%DE_REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship\'s focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'
     },
     'Burnout SLAM': {
-      text: '%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
+      text: '%DE_LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'
     },
     'Primed Thrusters': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
+      text: '%DE_SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'
     },
     'Pattern Analyzer': {
       text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
@@ -8290,7 +8337,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'
     },
     'M9-G8': {
-      text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+      text: '%DE_REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
     }
   };
   modification_translations = {
@@ -8377,15 +8424,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Optimized Generators': {
       name: "Optimierte Generatoren",
-      text: '%HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde erhältst du 2 Energie, sobald du Energie auf einer ausgerüsteten Aufwertung zuordnest.'
+      text: '%DE_HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde erhältst du 2 Energie, sobald du Energie auf einer ausgerüsteten Aufwertung zuordnest.'
     },
     'Automated Protocols': {
       name: "Vollautomatische Protokolle",
-      text: '%HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du eine Aktion durchgeführt hast (außer Aufladen und Verstärken), 1 Energie ausgeben, um Aufladen oder Verstärken als freie Aktion durchzuführen.'
+      text: '%DE_HUGESHIPONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du eine Aktion durchgeführt hast (außer Aufladen und Verstärken), 1 Energie ausgeben, um Aufladen oder Verstärken als freie Aktion durchzuführen.'
     },
     'Ordnance Tubes': {
       name: "Abschussrohre",
-      text: '%HUGESHIPONLY%%LINEBREAK%Du darfst jedes deiner %HARDPOINT%-Aufwertungssymbole wie ein %TORPEDO%- oder %MISSILE%- Symbol behandeln.%LINEBREAK%Sobald du angewiesen wirst eine %TORPEDO%- oder %MISSILE%-Aufwertung abzulegen, lege sie nicht ab.'
+      text: '%DE_HUGESHIPONLY%%LINEBREAK%Du darfst jedes deiner %HARDPOINT%-Aufwertungssymbole wie ein %TORPEDO%- oder %MISSILE%- Symbol behandeln.%LINEBREAK%Sobald du angewiesen wirst eine %TORPEDO%- oder %MISSILE%-Aufwertung abzulegen, lege sie nicht ab.'
     },
     'Long-Range Scanners': {
       name: "Langstreckenscanner",
@@ -8396,13 +8443,15 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Ein Mal pro Runde darfst du, sobald du mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe angreifst, 1 Würfelergebnis in ein %HIT% ändern (oder in ein %CRIT%, falls dein Primärwaffenwert 3 oder höher ist)."
     },
     'Vectored Thrusters': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%Your action bar gains the %BARRELROLL% action icon.'
+      name: "Schwenkbare Schubdüsen",
+      text: '%DE_SMALLSHIPONLY%%LINEBREAK%Füge deiner Aktionsleiste ein %BARRELROLL%-Symbol hinzu.'
+    },
+    'Gyroscopic Targeting': {
+      name: "Gyroskopisches Zielsystem",
+      text: '<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%Am Ende der Kampfphase darfst du deinen mobilen Feuerwinkel rotieren, falls du in dieser Runde ein Manöver mit der Geschwindigkeit 3, 4 oder 5 ausgeführt hast.'
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
-    },
-    'Gyroscopic Targeting': {
-      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
     }
   };
   title_translations = {
@@ -8568,16 +8617,22 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
     },
     'Alliance Overhaul': {
-      text: '<span class="card-restriction">ARC-170 only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  When attacking from your auxiliary firing arc, you may change 1 of your %FOCUS% results to a %CRIT% result.'
+      name: "Generalüberholt von der Allianz",
+      text: '<span class="card-restriction">Nur für ARC-170.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit der Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Sobald du von deinem Zusatz-Feuerwinkel aus angreifst, darfst du 1 deiner %FOCUS% in ein %CRIT% änern.'
     },
     'Special Ops Training': {
-      text: '<span class="card-restriction">TIE/sf only.</span>%LINEBREAK%When attacking with a primary weapon from your primary firing arc, you may roll 1 additional attack die.  If you do not, you may perform an additional attack from your auxiliary firing arc.'
+      name: "Training der Spezialeinheiten",
+      ship: "TIE/SE-Jäger",
+      text: '<span class="card-restriction">Nur für TIE/SE-Jäger.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit einer Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Falls du das nicht tust, darfst du einen zusätzlichen Angriff von deinem Zusatz-Feuerwinkel aus durchführen.'
     },
     'Concord Dawn Protector': {
-      text: '<span class="card-restriction">Protectorate Starfighter only.</span>%LINEBREAK%When defending, if you are inside the attacker\'s firing arc and at Range 1 and the attacker is inside your firing arc, add 1 %EVADE% result.'
+      name: "Protektor von Concord Dawn",
+      ship: "Sternenjäger des Protektors",
+      text: '<span class="card-restriction">Nur für Sternenjäger des Protektors.</span>%LINEBREAK%Sobald du verteidigst, darfst du 1 %EVADE% hinzufügen, falls du innerhalb des Feuerwinkels des Angreifers und in Reichweite 1 zu ihm bist un der Angreifer innerhalb deines Feuerwinkels ist.'
     },
     'Shadow Caster': {
-      text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
+      ship: "Jagdschiff der Lanzen-Klasse",
+      text: '<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%NAchdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du dem Verteidiger 1 Traktorstrahlmarker zuordnen, falls er innerhalb deines mobilen Feuerwinkels in Reichweite 1-2 ist.'
     },
     'Sabine\'s Masterpiece': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
@@ -21870,7 +21925,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20832
+                    lineno: 20890
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22439,7 +22494,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21408
+              lineno: 21466
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23077,7 +23132,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 21975
+          lineno: 22033
         }));
         __iced_deferrals._fulfill();
       });
@@ -23089,7 +23144,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 21976
+            lineno: 22034
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24607,7 +24662,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22831
+                      lineno: 22889
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24676,7 +24731,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22855
+                lineno: 22913
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24728,7 +24783,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22877
+            lineno: 22935
           }));
         }
         _ref = _this.upgrades;
@@ -24736,7 +24791,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22879
+              lineno: 22937
             }));
           }
         }
@@ -24745,7 +24800,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22881
+              lineno: 22939
             }));
           }
         }
@@ -25662,7 +25717,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23529
+                lineno: 23587
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25781,7 +25836,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23588
+                  lineno: 23646
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25803,7 +25858,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23592
+                    lineno: 23650
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25888,7 +25943,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23632
+            lineno: 23690
           }));
         }
         __iced_deferrals._fulfill();
