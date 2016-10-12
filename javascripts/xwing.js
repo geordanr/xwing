@@ -7276,7 +7276,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Zeta Ace"': {
       ship: "TIE/EO-Jäger",
-      name: "Ass Zeta",
+      name: '"Ass Zeta"',
       text: "Sobald du eine Fassrolle ausführst, darfst du die (%STRAIGHT% 2) Manöverschablone verwenden anstatt der (%STRAIGHT% 1) Manöverschablone."
     },
     "Omega Squadron Pilot": {
@@ -7489,7 +7489,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Kad Solus': {
       ship: "Sternenjäger des Protektors",
-      text: 'Nachdem du ein rotes Manöver ausgeführt hast, ordne deinem SChiff 2 Fokusmarker zu.'
+      text: 'Nachdem du ein rotes Manöver ausgeführt hast, ordne deinem Schiff 2 Fokusmarker zu.'
     },
     'Concord Dawn Ace': {
       ship: "Sternenjäger des Protektors",
@@ -8272,7 +8272,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Collision Detector': {
       name: "Kollisionssensor",
-      text: 'Sobald du SChub, Fassrolle oder Enttarnen durchführst, können sich dein SChiff und die Manöverschablone mit Hindernissen überschneiden.%LINEBREAK%Sobald du wegen der Überschneidung mit einem Hindernis Schaden auswürfelst, ignorierst du alle %CRIT%.'
+      text: 'Sobald du Schub, Fassrolle oder Enttarnen durchführst, können sich dein Schiff und die Manöverschablone mit Hindernissen überschneiden.%LINEBREAK%Sobald du wegen der Überschneidung mit einem Hindernis Schaden auswürfelst, ignorierst du alle %CRIT%.'
     },
     'Sensor Cluster': {
       name: "Sensorcluster",
@@ -8283,7 +8283,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 %HIT% zu deinem Wurf hinzufügen, falls du innerhalb des Feuerwinkels des Verteidigers in Reichweite 1 zu ihm bist und der Verteidiger innerhalb deines Feuerwinkels ist.'
     },
     'Ketsu Onyo': {
-      text: '%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 feindliches Schiff innerhalb deines Feuerwinkels in Reichweite 1-2 wählen. Das Schiff entfernt seine Traktorstrahlmarker nicht..'
+      name: "Ketsu Onyo (Crew)",
+      text: '%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 feindliches Schiff innerhalb deines Feuerwinkels in Reichweite 1-2 wählen. Das Schiff entfernt seine Traktorstrahlmarker nicht.'
     },
     'Latts Razzi': {
       text: '%DE_SCUMONLY%%LINEBREAK%Sobald du verteidigst, darfst du 1 Stressmarker vom Angreifer entfernen, um 1 %EVADE% zu deinem Wurf hinzuzufügen.'
@@ -8293,7 +8294,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Rigged Cargo Chute': {
       name: "Manipulierte Frachtrampe",
-      text: '%DE_LARGESHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Lege diese KArte ab, um 1 Frachtmarker zu <strong>legen</strong>.'
+      text: '%DE_LARGESHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Lege diese Karte ab, um 1 Frachtmarker zu <strong>legen</strong>.'
     },
     'Seismic Torpedo': {
       name: "Seismische Torpedos",
@@ -8619,7 +8620,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Alliance Overhaul': {
       name: "Generalüberholt von der Allianz",
-      text: '<span class="card-restriction">Nur für ARC-170.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit der Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Sobald du von deinem Zusatz-Feuerwinkel aus angreifst, darfst du 1 deiner %FOCUS% in ein %CRIT% änern.'
+      text: '<span class="card-restriction">Nur für ARC-170.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit der Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Sobald du von deinem Zusatz-Feuerwinkel aus angreifst, darfst du 1 deiner %FOCUS% in ein %CRIT% ändern.'
     },
     'Special Ops Training': {
       name: "Training der Spezialeinheiten",
@@ -8629,11 +8630,11 @@ exportObj.cardLoaders.Deutsch = function() {
     'Concord Dawn Protector': {
       name: "Protektor von Concord Dawn",
       ship: "Sternenjäger des Protektors",
-      text: '<span class="card-restriction">Nur für Sternenjäger des Protektors.</span>%LINEBREAK%Sobald du verteidigst, darfst du 1 %EVADE% hinzufügen, falls du innerhalb des Feuerwinkels des Angreifers und in Reichweite 1 zu ihm bist un der Angreifer innerhalb deines Feuerwinkels ist.'
+      text: '<span class="card-restriction">Nur für Sternenjäger des Protektors.</span>%LINEBREAK%Sobald du verteidigst, darfst du 1 %EVADE% hinzufügen, falls du innerhalb des Feuerwinkels des Angreifers und in Reichweite 1 zu ihm bist und der Angreifer innerhalb deines Feuerwinkels ist.'
     },
     'Shadow Caster': {
       ship: "Jagdschiff der Lanzen-Klasse",
-      text: '<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%NAchdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du dem Verteidiger 1 Traktorstrahlmarker zuordnen, falls er innerhalb deines mobilen Feuerwinkels in Reichweite 1-2 ist.'
+      text: '<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du dem Verteidiger 1 Traktorstrahlmarker zuordnen, falls er innerhalb deines mobilen Feuerwinkels in Reichweite 1-2 ist.'
     },
     'Sabine\'s Masterpiece': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
@@ -21926,7 +21927,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20891
+                    lineno: 20892
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22495,7 +22496,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21467
+              lineno: 21468
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23133,7 +23134,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22034
+          lineno: 22035
         }));
         __iced_deferrals._fulfill();
       });
@@ -23145,7 +23146,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22035
+            lineno: 22036
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24663,7 +24664,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22890
+                      lineno: 22891
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24732,7 +24733,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22914
+                lineno: 22915
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24784,7 +24785,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22936
+            lineno: 22937
           }));
         }
         _ref = _this.upgrades;
@@ -24792,7 +24793,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22938
+              lineno: 22939
             }));
           }
         }
@@ -24801,7 +24802,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22940
+              lineno: 22941
             }));
           }
         }
@@ -25718,7 +25719,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23588
+                lineno: 23589
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25837,7 +25838,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23647
+                  lineno: 23648
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25859,7 +25860,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23651
+                    lineno: 23652
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25944,7 +25945,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23691
+            lineno: 23692
           }));
         }
         __iced_deferrals._fulfill();
