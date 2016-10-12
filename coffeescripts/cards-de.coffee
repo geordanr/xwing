@@ -630,7 +630,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Zu Beginn der Kampfphase entferne je 1 Stressmarker von jedem freundlichen Schiff in Reichweite 1."""
         '"Zeta Ace"':
             ship: "TIE/EO-Jäger"
-            name: "Ass Zeta"
+            name: '"Ass Zeta"'
             text: """Sobald du eine Fassrolle ausführst, darfst du die (%STRAIGHT% 2) Manöverschablone verwenden anstatt der (%STRAIGHT% 1) Manöverschablone."""
         "Omega Squadron Pilot":
             ship: "TIE/EO-Jäger"
@@ -799,7 +799,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Zu Beginn der Kampfphase darfst du 1 feindliches Schiff in Reichweite 1 wählen. Falls du innerhalb seines Feuerwinkels bist, legt es alle Fokus- und Ausweichmarker ab.'''
         'Kad Solus':
             ship: "Sternenjäger des Protektors"
-            text: '''Nachdem du ein rotes Manöver ausgeführt hast, ordne deinem SChiff 2 Fokusmarker zu.'''
+            text: '''Nachdem du ein rotes Manöver ausgeführt hast, ordne deinem Schiff 2 Fokusmarker zu.'''
         'Concord Dawn Ace':
             ship: "Sternenjäger des Protektors"
             name: "Fliegerass von Concord Dawn"
@@ -1382,7 +1382,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Ein Mal pro Runde darfst du, sobald du mit einer Primärwaffe angreifst im Schritt "Angriffswürfel modifizieren" 1 deiner %FOCUS% negieren, um deinem Schiff 1 Ausweichmarker zuzuordnen.'''
         'Collision Detector':
             name: "Kollisionssensor"
-            text: '''Sobald du SChub, Fassrolle oder Enttarnen durchführst, können sich dein SChiff und die Manöverschablone mit Hindernissen überschneiden.%LINEBREAK%Sobald du wegen der Überschneidung mit einem Hindernis Schaden auswürfelst, ignorierst du alle %CRIT%.'''
+            text: '''Sobald du Schub, Fassrolle oder Enttarnen durchführst, können sich dein Schiff und die Manöverschablone mit Hindernissen überschneiden.%LINEBREAK%Sobald du wegen der Überschneidung mit einem Hindernis Schaden auswürfelst, ignorierst du alle %CRIT%.'''
         'Sensor Cluster':
             name: "Sensorcluster"
             text: '''Sobald du verteidigst, darfst du einen Fokusmarker ausgeben, um 1 deiner Leerseiten in ein %EVADE% zu ändern.'''
@@ -1390,14 +1390,15 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Furchtlosigkeit"
             text: '''%DE_SCUMONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 %HIT% zu deinem Wurf hinzufügen, falls du innerhalb des Feuerwinkels des Verteidigers in Reichweite 1 zu ihm bist und der Verteidiger innerhalb deines Feuerwinkels ist.'''
         'Ketsu Onyo':
-            text: '''%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 feindliches Schiff innerhalb deines Feuerwinkels in Reichweite 1-2 wählen. Das Schiff entfernt seine Traktorstrahlmarker nicht..'''
+            name: "Ketsu Onyo (Crew)"
+            text: '''%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 feindliches Schiff innerhalb deines Feuerwinkels in Reichweite 1-2 wählen. Das Schiff entfernt seine Traktorstrahlmarker nicht.'''
         'Latts Razzi':
             text: '''%DE_SCUMONLY%%LINEBREAK%Sobald du verteidigst, darfst du 1 Stressmarker vom Angreifer entfernen, um 1 %EVADE% zu deinem Wurf hinzuzufügen.'''
         'IG-88D':
             text: '''%DE_SCUMONLY%%LINEBREAK%Du hast die Pilotenfähigkeit jedes freundlichen Schiffs mit der Aufwertungskarte <em>IG-2000</em> (zusätzlich zu deiner eigenen Pilotenfähigkeit.'''
         'Rigged Cargo Chute':
             name: "Manipulierte Frachtrampe"
-            text: '''%DE_LARGESHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Lege diese KArte ab, um 1 Frachtmarker zu <strong>legen</strong>.'''
+            text: '''%DE_LARGESHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Lege diese Karte ab, um 1 Frachtmarker zu <strong>legen</strong>.'''
         'Seismic Torpedo':
             name: "Seismische Torpedos"
             text: '''<strong>Aktion:</strong> Lege diese Karte ab, um ein Hindernis in Reichweite 1-2 und innerhalb deines normalen Feuerwinkels zu wählen. Jedes Schiff in Reichweite 1 zu dem Hindernis wirfst 1 Angriffswürfel und erleidet den gewürfelten Schaden (%HIT%) oder kritischen Schaden (%CRIT%). Dann wird das Hindernis entfernt.'''
@@ -1644,7 +1645,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
         'Alliance Overhaul':
             name: "Generalüberholt von der Allianz"
-            text: '''<span class="card-restriction">Nur für ARC-170.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit der Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Sobald du von deinem Zusatz-Feuerwinkel aus angreifst, darfst du 1 deiner %FOCUS% in ein %CRIT% änern.'''
+            text: '''<span class="card-restriction">Nur für ARC-170.</span>%LINEBREAK%Sobald du von deinem normalen Feuerwinkel aus mit der Primärwaffe angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Sobald du von deinem Zusatz-Feuerwinkel aus angreifst, darfst du 1 deiner %FOCUS% in ein %CRIT% ändern.'''
         'Special Ops Training':
             name: "Training der Spezialeinheiten"
             ship: "TIE/SE-Jäger"
@@ -1652,10 +1653,10 @@ exportObj.cardLoaders.Deutsch = () ->
         'Concord Dawn Protector':
             name: "Protektor von Concord Dawn"
             ship: "Sternenjäger des Protektors"
-            text: '''<span class="card-restriction">Nur für Sternenjäger des Protektors.</span>%LINEBREAK%Sobald du verteidigst, darfst du 1 %EVADE% hinzufügen, falls du innerhalb des Feuerwinkels des Angreifers und in Reichweite 1 zu ihm bist un der Angreifer innerhalb deines Feuerwinkels ist.'''
+            text: '''<span class="card-restriction">Nur für Sternenjäger des Protektors.</span>%LINEBREAK%Sobald du verteidigst, darfst du 1 %EVADE% hinzufügen, falls du innerhalb des Feuerwinkels des Angreifers und in Reichweite 1 zu ihm bist und der Angreifer innerhalb deines Feuerwinkels ist.'''
         'Shadow Caster':
             ship: "Jagdschiff der Lanzen-Klasse"
-            text: '''<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%NAchdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du dem Verteidiger 1 Traktorstrahlmarker zuordnen, falls er innerhalb deines mobilen Feuerwinkels in Reichweite 1-2 ist.'''
+            text: '''<span class="card-restriction">Nur für Jagdschiffe der Lanzen-Klasse.</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du dem Verteidiger 1 Traktorstrahlmarker zuordnen, falls er innerhalb deines mobilen Feuerwinkels in Reichweite 1-2 ist.'''
         # Wave X
         '''Sabine's Masterpiece''':
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'''
