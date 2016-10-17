@@ -3716,14 +3716,14 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Illicit', 'Illicit'],
         points: 33
       }, {
-        name: 'Ahso???',
+        name: 'Ahsoka Tano',
         id: 222,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'TIE Fighter',
         skill: 7,
-        slots: [],
-        points: 100
+        slots: ['Elite'],
+        points: 17
       }, {
         name: 'Sabine Wren (TIE Fighter)',
         id: 223,
@@ -3735,14 +3735,15 @@ exportObj.basicCardData = function() {
         slots: ['Elite'],
         points: 15
       }, {
-        name: 'Cap???',
+        name: 'Captain Rex',
         id: 224,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'TIE Fighter',
         skill: 4,
         slots: [],
-        points: 100
+        points: 14,
+        applies_condition: 'Suppressive Fire'.canonicalize()
       }, {
         name: '"Zeb" Orrelios (TIE Fighter)',
         id: 225,
@@ -3852,13 +3853,13 @@ exportObj.basicCardData = function() {
         slots: ['System', 'Torpedo', 'Crew', 'Crew'],
         points: 100
       }, {
-        name: 'Unspoiled PS2 U-Wing Pilot',
+        name: 'Blue Squadron Pathfinder',
         id: 237,
         faction: 'Rebel Alliance',
         ship: 'U-Wing',
         skill: 2,
         slots: ['System', 'Torpedo', 'Crew', 'Crew'],
-        points: 100
+        points: 23
       }, {
         name: '"Duchess"',
         id: 238,
@@ -4046,7 +4047,11 @@ exportObj.basicCardData = function() {
         name: "Deadeye",
         id: 19,
         slot: "Elite",
-        points: 1
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
       }, {
         name: "Expose",
         id: 20,
@@ -5341,6 +5346,19 @@ exportObj.basicCardData = function() {
         slot: 'Astromech',
         unique: true,
         points: 3
+      }, {
+        name: 'EMP Device',
+        id: 207,
+        slot: 'Illicit',
+        unique: true,
+        points: 2
+      }, {
+        name: 'Captain Rex',
+        id: 208,
+        slot: 'Crew',
+        faction: 'Rebel Alliance',
+        unique: true,
+        points: 2
       }
     ],
     modificationsById: [
@@ -5602,6 +5620,13 @@ exportObj.basicCardData = function() {
         name: 'Gyroscopic Targeting',
         ship: 'Lancer-class Pursuit Craft',
         points: 2
+      }, {
+        name: 'Captured TIE',
+        id: 29,
+        unique: true,
+        ship: 'TIE Fighter',
+        faction: 'Rebel Alliance',
+        points: 1
       }
     ],
     titlesById: [
@@ -5806,7 +5831,10 @@ exportObj.basicCardData = function() {
             type: exportObj.Upgrade,
             slot: "Cannon"
           }
-        ]
+        ],
+        modifier_func: function(stats) {
+          return stats.hull += 1;
+        }
       }, {
         name: '"Heavy Scyk" Interceptor (Torpedo)',
         canonical_name: '"Heavy Scyk" Interceptor'.canonicalize(),
@@ -5818,7 +5846,10 @@ exportObj.basicCardData = function() {
             type: exportObj.Upgrade,
             slot: "Torpedo"
           }
-        ]
+        ],
+        modifier_func: function(stats) {
+          return stats.hull += 1;
+        }
       }, {
         name: '"Heavy Scyk" Interceptor (Missile)',
         canonical_name: '"Heavy Scyk" Interceptor'.canonicalize(),
@@ -5830,7 +5861,10 @@ exportObj.basicCardData = function() {
             type: exportObj.Upgrade,
             slot: "Missile"
           }
-        ]
+        ],
+        modifier_func: function(stats) {
+          return stats.hull += 1;
+        }
       }, {
         name: 'IG-2000',
         id: 20,
@@ -6087,6 +6121,10 @@ exportObj.basicCardData = function() {
       }, {
         name: 'A Debt to Pay',
         id: 2,
+        unique: true
+      }, {
+        name: 'Suppressive Fire',
+        id: 3,
         unique: true
       }
     ]
@@ -7546,6 +7584,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -8339,6 +8383,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'M9-G8': {
       text: '%DE_REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -8454,6 +8504,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Smuggling Compartment': {
       text: '<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -8652,6 +8705,9 @@ exportObj.cardLoaders.Deutsch = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -9269,6 +9325,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -9330,7 +9392,7 @@ exportObj.cardLoaders.English = function() {
       text: "Once per round, after you perform an action, you may perform 1 free action shown in your action bar.%LINEBREAK%Then receive 1 stress token."
     },
     "Deadeye": {
-      text: "You may treat the <strong>Attack (target lock):</strong> header as <strong>Attack (focus):</strong>.%LINEBREAK%When an attack instructs you to spend a target lock, you may spend a focus token instead."
+      text: "%SMALLSHIPONLY%%LINEBREAK%You may treat the <strong>Attack (target lock):</strong> header as <strong>Attack (focus):</strong>.%LINEBREAK%When an attack instructs you to spend a target lock, you may spend a focus token instead."
     },
     "Expose": {
       text: "<strong>Action:</strong> Until the end of the round, increase your primary weapon value by 1 and decrease your agility value by 1."
@@ -9654,7 +9716,7 @@ exportObj.cardLoaders.English = function() {
       text: "When you equip this card, place 1 ordnance token on each equipped %TORPEDO%, %MISSILE%, and %BOMB% Upgrade card.  When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead."
     },
     "Cluster Mines": {
-      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers all damage (%HIT%) rolled.  Then discard this token."
+      text: "<strong>Action:</strong> Discard this card to <strong>drop</strong> 3 cluster mine tokens.<br /><br />When a ship's base or maneuver template overlaps a cluster mine token, that token <strong>detonates</strong>.<br /><br /><strong>Cluster Mines Tokens:</strong> When one of these bomb tokens detonates, the ship that moved through or overlapped this token rolls 2 attack dice and suffers 1 damage for each %HIT% and %CRIT% rolled.  Then discard that token."
     },
     "Glitterstim": {
       text: "At the start of the Combat phase, you may discard this card and receive 1 stress token.  If you do, until the end of the round, when attacking  or defending, you may change all of your %FOCUS% results to %HIT% or %EVADE% results."
@@ -9889,6 +9951,12 @@ exportObj.cardLoaders.English = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -9975,6 +10043,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Gyroscopic Targeting': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span> %REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -10024,13 +10095,13 @@ exportObj.cardLoaders.English = function() {
       text: "<span class=\"card-restriction\">StarViper only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %ILLICIT% upgrade icons.%LINEBREAK%You cannot equip this card if your pilot skill value is \"3\" or lower."
     },
     '"Heavy Scyk" Interceptor (Cannon)': {
-      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."
+      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon.%LINEBREAK%Increase your hull value by 1."
     },
     '"Heavy Scyk" Interceptor (Torpedo)': {
-      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."
+      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon.%LINEBREAK%Increase your hull value by 1."
     },
     '"Heavy Scyk" Interceptor (Missile)': {
-      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon."
+      text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon.%LINEBREAK%Increase your hull value by 1."
     },
     "IG-2000": {
       text: "<span class=\"card-restriction\">Aggressor only.</span>%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."
@@ -10123,6 +10194,9 @@ exportObj.cardLoaders.English = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -11221,12 +11295,6 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Caza TIE",
       text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
     },
-    'Cap???': {
-      ship: "Caza TIE"
-    },
-    'Ahso???': {
-      ship: "Caza TIE"
-    },
     '"Zeb" Orrelios (TIE Fighter)': {
       ship: "Caza TIE",
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
@@ -11254,6 +11322,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Jess Pava': {
       ship: "T-70 Ala-X",
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -12026,6 +12100,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -12139,6 +12219,9 @@ exportObj.cardLoaders['Español'] = function() {
       name: "Estabilización giroscópica",
       ship: "Nave de persecución clase Lancero",
       text: '<span class="card-restriction">Sólo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -12347,6 +12430,9 @@ exportObj.cardLoaders['Español'] = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -13162,6 +13248,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -13861,6 +13953,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -13960,6 +14058,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Gyroscopic Targeting': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -14124,6 +14225,9 @@ exportObj.cardLoaders['Français'] = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -14919,6 +15023,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -15620,6 +15730,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -15719,6 +15835,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Gyroscopic Targeting': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -15880,6 +15999,9 @@ exportObj.cardLoaders['Polski'] = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16481,6 +16603,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -17086,6 +17214,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -17169,6 +17303,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Gyroscopic Targeting': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -17314,6 +17451,9 @@ exportObj.cardLoaders['Русский'] = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -17905,6 +18045,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Jess Pava': {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
+    },
+    'Ahsoka Tano': {
+      text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
+    },
+    'Captain Rex': {
+      text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     }
   };
   upgrade_translations = {
@@ -18501,6 +18647,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'M9-G8': {
       text: '%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'
+    },
+    'EMP Device': {
+      text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
+    },
+    'Captain Rex': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
     }
   };
   modification_translations = {
@@ -18584,6 +18736,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Gyroscopic Targeting': {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%At the end of the Combat phase, if you executed a 3-, 4-, or 5-speed maneuver this round, you may rotate your mobile firing arc.'
+    },
+    'Captured TIE': {
+      text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
     }
   };
   title_translations = {
@@ -18711,6 +18866,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
   condition_translations = {
     'I\'ll Show You the Dark Side': {
       text: 'When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'
+    },
+    'Suppressive Fire': {
+      text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -21927,7 +22085,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 20892
+                    lineno: 21010
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22496,7 +22654,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21468
+              lineno: 21586
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23134,7 +23292,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22035
+          lineno: 22153
         }));
         __iced_deferrals._fulfill();
       });
@@ -23146,7 +23304,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22036
+            lineno: 22154
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24664,7 +24822,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 22891
+                      lineno: 23009
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24733,7 +24891,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 22915
+                lineno: 23033
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24785,7 +24943,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 22937
+            lineno: 23055
           }));
         }
         _ref = _this.upgrades;
@@ -24793,7 +24951,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 22939
+              lineno: 23057
             }));
           }
         }
@@ -24802,7 +24960,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 22941
+              lineno: 23059
             }));
           }
         }
@@ -25719,7 +25877,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23589
+                lineno: 23707
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25838,7 +25996,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23648
+                  lineno: 23766
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -25860,7 +26018,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23652
+                    lineno: 23770
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -25945,7 +26103,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23692
+            lineno: 23810
           }));
         }
         __iced_deferrals._fulfill();
