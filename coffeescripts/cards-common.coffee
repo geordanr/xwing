@@ -4051,15 +4051,16 @@ exportObj.basicCardData = ->
             points: 33
         }
         {
-            name: 'Ahso???'
+            name: 'Ahsoka Tano'
             id: 222
             unique: true
             faction: 'Rebel Alliance'
             ship: 'TIE Fighter'
             skill: 7
             slots: [
+                'Elite'
             ]
-            points: 100
+            points: 17
         }
         {
             name: 'Sabine Wren (TIE Fighter)'
@@ -4075,14 +4076,15 @@ exportObj.basicCardData = ->
             points: 15
         }
         {
-            name: 'Cap???'
+            name: 'Captain Rex'
             id: 224
             unique: true
             faction: 'Rebel Alliance'
             ship: 'TIE Fighter'
             skill: 4
             slots: []
-            points: 100
+            points: 14
+            applies_condition: 'Suppressive Fire'.canonicalize()
         }
         {
             name: '"Zeb" Orrelios (TIE Fighter)'
@@ -4269,7 +4271,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Unspoiled PS2 U-Wing Pilot'
+            name: 'Blue Squadron Pathfinder'
             id: 237
             faction: 'Rebel Alliance'
             ship: 'U-Wing'
@@ -4280,7 +4282,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 23
         }
         {
             name: '"Duchess"'
@@ -4492,6 +4494,8 @@ exportObj.basicCardData = ->
             id: 19
             slot: "Elite"
             points: 1
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
         {
             name: "Expose"
@@ -5907,6 +5911,21 @@ exportObj.basicCardData = ->
             unique: true
             points: 3
         }
+        {
+            name: 'EMP Device'
+            id: 207
+            slot: 'Illicit'
+            unique: true
+            points: 2
+        }
+        {
+            name: 'Captain Rex'
+            id: 208
+            slot: 'Crew'
+            faction: 'Rebel Alliance'
+            unique: true
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -6126,6 +6145,14 @@ exportObj.basicCardData = ->
             ship: 'Lancer-class Pursuit Craft'
             points: 2
         }
+        {
+            name: 'Captured TIE'
+            id: 29
+            unique: true
+            ship: 'TIE Fighter'
+            faction: 'Rebel Alliance'
+            points: 1
+        }
     ]
 
     titlesById: [
@@ -6329,6 +6356,8 @@ exportObj.basicCardData = ->
                     slot: "Cannon"
                 }
             ]
+            modifier_func: (stats) ->
+                stats.hull += 1
         }
         {
             name: '"Heavy Scyk" Interceptor (Torpedo)'
@@ -6342,6 +6371,8 @@ exportObj.basicCardData = ->
                     slot: "Torpedo"
                 }
             ]
+            modifier_func: (stats) ->
+                stats.hull += 1
         }
         {
             name: '"Heavy Scyk" Interceptor (Missile)'
@@ -6355,6 +6386,8 @@ exportObj.basicCardData = ->
                     slot: "Missile"
                 }
             ]
+            modifier_func: (stats) ->
+                stats.hull += 1
         }
         {
             name: 'IG-2000'
@@ -6652,6 +6685,10 @@ exportObj.basicCardData = ->
         {
             name: 'A Debt to Pay'
             id: 2
+        }
+        {
+            name: 'Suppressive Fire'
+            id: 3
             unique: true
         }
     ]

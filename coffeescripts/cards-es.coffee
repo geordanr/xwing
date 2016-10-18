@@ -878,10 +878,6 @@ exportObj.cardLoaders['Español'] = () ->
         'Sabine Wren (TIE Fighter)':
             ship: "Caza TIE"
             text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
-        'Cap???':
-            ship: "Caza TIE"
-        'Ahso???':
-            ship: "Caza TIE"
         '"Zeb" Orrelios (TIE Fighter)':
             ship: "Caza TIE"
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
@@ -902,6 +898,10 @@ exportObj.cardLoaders['Español'] = () ->
         'Jess Pava':
             ship: "T-70 Ala-X"
             text: '''When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'''
+        'Ahsoka Tano':
+            text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
+        'Captain Rex':
+            text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1471,6 +1471,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'''
         'M9-G8':
             text: '''%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'''
+        'EMP Device':
+            text: '''During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'''
+        'Captain Rex':
+            text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -1556,6 +1560,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Estabilización giroscópica"
             ship: "Nave de persecución clase Lancero"
             text: '''<span class="card-restriction">Sólo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'''
+        'Captured TIE':
+            text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'''
 
     title_translations =
         "Slave I":
@@ -1717,5 +1723,7 @@ exportObj.cardLoaders['Español'] = () ->
     condition_translations =
         '''I'll Show You the Dark Side''':
             text: '''When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
+        'Suppressive Fire':
+            text: '''When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
