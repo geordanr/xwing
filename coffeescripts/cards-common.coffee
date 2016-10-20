@@ -86,7 +86,7 @@ exportObj.basicCardData = ->
             ]
         "YT-1300":
             name: "YT-1300"
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance", "Resistance" ]
             attack: 2
             agility: 1
             hull: 6
