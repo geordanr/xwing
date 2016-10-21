@@ -3796,7 +3796,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "YT-1300"
             skill: 5
-            points: 100
+            points: 38
             slots: [
                 "Missile"
                 "Crew"
