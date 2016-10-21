@@ -1526,7 +1526,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."""
         "Twin Ion Engine Mk. II":
             name: "Motor Iónico Doble Modelo II"
-            text: """Puedes tratar todas las maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%) como si fueran maniobras verdes."""
+            text: """<span class="card-restriction">Solo TIE.</span>%LINEBREAK%Puedes tratar todas las maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%) como si fueran maniobras verdes."""
         "Maneuvering Fins":
             name: "Alerones de Estabilización"
             text: """<span class="card-restriction">Solo YV-666.</span>%LINEBREAK%Cuando reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%), puedes rotar tu selector para elegir en su lugar la maniobra de inclinación correspondiente (%BANKLEFT% o %BANKRIGHT%) de igual velocidad."""
