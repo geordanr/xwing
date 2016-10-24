@@ -3765,14 +3765,14 @@ exportObj.basicCardData = function() {
         points: 34,
         applies_condition: 'I\'ll Show You the Dark Side'.canonicalize()
       }, {
-        name: 'Major ???',
+        name: 'Major Stridan',
         id: 227,
         unique: true,
         faction: 'First Order',
         ship: 'Upsilon-class Shuttle',
         skill: 4,
         slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
-        points: 100
+        points: 32
       }, {
         name: 'Lieutenant Dormitz',
         id: 228,
@@ -3781,15 +3781,15 @@ exportObj.basicCardData = function() {
         ship: 'Upsilon-class Shuttle',
         skill: 3,
         slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
-        points: 100
+        points: 31
       }, {
-        name: 'Starkiller ???',
+        name: 'Starkiller Base Pilot',
         id: 229,
         faction: 'First Order',
         ship: 'Upsilon-class Shuttle',
         skill: 2,
         slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
-        points: 100
+        points: 30
       }, {
         name: 'Const???',
         id: 230,
@@ -5359,6 +5359,30 @@ exportObj.basicCardData = function() {
         faction: 'Rebel Alliance',
         unique: true,
         points: 2
+      }, {
+        name: 'General Hux',
+        id: 209,
+        slot: 'Crew',
+        unique: true,
+        faction: 'Galactic Empire',
+        points: 5,
+        applies_condition: 'Fanatical Devotion'.canonicalize()
+      }, {
+        name: 'Operations Specialist',
+        id: 210,
+        slot: 'Crew',
+        limited: true,
+        points: 3
+      }, {
+        name: 'Targeting Synchronizer',
+        id: 211,
+        slot: 'Tech',
+        points: 3
+      }, {
+        name: 'Hyperwave Comm Scanner',
+        id: 212,
+        slot: 'Tech',
+        points: 1
       }
     ],
     modificationsById: [
@@ -6124,6 +6148,10 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Suppressive Fire',
         id: 3,
+        unique: true
+      }, {
+        name: 'Fanatical Devotion',
+        id: 4,
         unique: true
       }
     ]
@@ -7589,6 +7617,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -8388,6 +8422,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -8707,6 +8753,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -9330,6 +9379,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -9956,6 +10011,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -10196,6 +10263,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -11327,6 +11397,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -12105,6 +12181,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -12432,6 +12520,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -13253,6 +13344,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -13958,6 +14055,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -14227,6 +14336,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -15028,6 +15140,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -15735,6 +15853,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -16001,6 +16131,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16608,6 +16741,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -17219,6 +17358,18 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -17453,6 +17604,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -18050,6 +18204,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Captain Rex': {
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
+    },
+    'Major Stridan': {
+      text: 'For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'
+    },
+    'Lieutenant Dormitz': {
+      text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
     }
   };
   upgrade_translations = {
@@ -18652,6 +18812,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Captain Rex': {
       text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'
+    },
+    'General Hux': {
+      text: '%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'
+    },
+    'Operations Specialist': {
+      text: '%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'
+    },
+    'Targeting Synchronizer': {
+      text: 'When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'
+    },
+    'Hyperwave Comm Scanner': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
     }
   };
   modification_translations = {
@@ -18868,6 +19040,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Suppressive Fire': {
       text: 'When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'
+    },
+    'Fanatical Devotion': {
+      text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -22084,7 +22259,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21009
+                    lineno: 21140
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22653,7 +22828,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21585
+              lineno: 21716
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23291,7 +23466,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22152
+          lineno: 22283
         }));
         __iced_deferrals._fulfill();
       });
@@ -23303,7 +23478,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22153
+            lineno: 22284
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24821,7 +24996,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23008
+                      lineno: 23139
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -24890,7 +25065,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23032
+                lineno: 23163
               })
             ]);
             __iced_deferrals._fulfill();
@@ -24942,7 +25117,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23054
+            lineno: 23185
           }));
         }
         _ref = _this.upgrades;
@@ -24950,7 +25125,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23056
+              lineno: 23187
             }));
           }
         }
@@ -24959,7 +25134,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23058
+              lineno: 23189
             }));
           }
         }
@@ -25876,7 +26051,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23706
+                lineno: 23837
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25995,7 +26170,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23765
+                  lineno: 23896
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26017,7 +26192,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23769
+                    lineno: 23900
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26102,7 +26277,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23809
+            lineno: 23940
           }));
         }
         __iced_deferrals._fulfill();
