@@ -4116,7 +4116,7 @@ exportObj.basicCardData = ->
             applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
         }
         {
-            name: 'Major ???'
+            name: 'Major Stridan'
             id: 227
             unique: true
             faction: 'First Order'
@@ -4129,7 +4129,7 @@ exportObj.basicCardData = ->
                 'Tech'
                 'Tech'
             ]
-            points: 100
+            points: 32
         }
         {
             name: 'Lieutenant Dormitz'
@@ -4145,10 +4145,10 @@ exportObj.basicCardData = ->
                 'Tech'
                 'Tech'
             ]
-            points: 100
+            points: 31
         }
         {
-            name: 'Starkiller ???'
+            name: 'Starkiller Base Pilot'
             id: 229
             faction: 'First Order'
             ship: 'Upsilon-class Shuttle'
@@ -4160,7 +4160,7 @@ exportObj.basicCardData = ->
                 'Tech'
                 'Tech'
             ]
-            points: 100
+            points: 30
         }
         {
             name: 'Const???'
@@ -5926,6 +5926,34 @@ exportObj.basicCardData = ->
             unique: true
             points: 2
         }
+        {
+            name: 'General Hux'
+            id: 209
+            slot: 'Crew'
+            unique: true
+            faction: 'Galactic Empire'
+            points: 5
+            applies_condition: '''Fanatical Devotion'''.canonicalize()
+        }
+        {
+            name: 'Operations Specialist'
+            id: 210
+            slot: 'Crew'
+            limited: true
+            points: 3
+        }
+        {
+            name: 'Targeting Synchronizer'
+            id: 211
+            slot: 'Tech'
+            points: 3
+        }
+        {
+            name: 'Hyperwave Comm Scanner'
+            id: 212
+            slot: 'Tech'
+            points: 1
+        }
     ]
 
     modificationsById: [
@@ -6689,6 +6717,11 @@ exportObj.basicCardData = ->
         {
             name: 'Suppressive Fire'
             id: 3
+            unique: true
+        }
+        {
+            name: '''Fanatical Devotion'''
+            id: 4
             unique: true
         }
     ]
