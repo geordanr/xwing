@@ -62,6 +62,8 @@
       font-size: 24px;
       margin-top: -24px;
       font-weight: 100; }
+      .fancy-ship .fancy-pilot-header .pilot-header-text .fancy-ship-type {
+        display: none; }
     .fancy-ship .fancy-pilot-header .mask {
       position: relative;
       float: right;

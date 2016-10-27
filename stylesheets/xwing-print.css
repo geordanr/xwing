@@ -41,7 +41,7 @@ body {
     #printable .fancy-header .squad-name {
       position: absolute;
       font-size: 0.3in;
-      margin-top: 0.075in;
+      margin-top: 0.09375in;
       font-weight: 100; }
     #printable .fancy-header .squad-faction {
       position: absolute;
@@ -102,6 +102,10 @@ body {
         font-size: 0.24in;
         margin-top: -0.24in;
         font-weight: 100; }
+        #printable .fancy-ship .fancy-pilot-header .pilot-header-text .fancy-ship-type {
+          font-style: italic;
+          font-variant: small-caps;
+          font-size: 0.18in; }
       #printable .fancy-ship .fancy-pilot-header .mask {
         position: relative;
         float: right;
