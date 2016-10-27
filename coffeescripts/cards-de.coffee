@@ -1450,6 +1450,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'''
         'Hyperwave Comm Scanner':
             text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'''
+        'Trick Shot':
+            text: '''When attacking, if the attack is obstructed, you may roll 1 additional attack die.'''
+        'Hotshot Co-pilot':
+            text: '''When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'''
 
     modification_translations =
         "Stealth Device":
