@@ -3551,7 +3551,7 @@ exportObj.basicCardData = function() {
           shields: 5
         }
       }, {
-        name: "Resistance???",
+        name: "Resistance Sympathizer",
         id: 203,
         faction: "Resistance",
         ship: "YT-1300",
@@ -5383,6 +5383,16 @@ exportObj.basicCardData = function() {
         id: 212,
         slot: 'Tech',
         points: 1
+      }, {
+        name: 'Hotshot Co-pilot',
+        id: 213,
+        slot: 'Crew',
+        points: 4
+      }, {
+        name: 'Trick Shot',
+        id: 214,
+        slot: 'Elite',
+        points: 0
       }
     ],
     modificationsById: [
@@ -8434,6 +8444,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -10023,6 +10039,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -12193,6 +12215,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -14067,6 +14095,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -15865,6 +15899,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -17370,6 +17410,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -18824,6 +18870,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Hyperwave Comm Scanner': {
       text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'
+    },
+    'Trick Shot': {
+      text: 'When attacking, if the attack is obstructed, you may roll 1 additional attack die.'
+    },
+    'Hotshot Co-pilot': {
+      text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
     }
   };
   modification_translations = {
@@ -22259,7 +22311,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21140
+                    lineno: 21180
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22828,7 +22880,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21716
+              lineno: 21756
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23466,7 +23518,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22283
+          lineno: 22323
         }));
         __iced_deferrals._fulfill();
       });
@@ -23478,7 +23530,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22284
+            lineno: 22324
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24996,7 +25048,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23139
+                      lineno: 23179
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25065,7 +25117,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23163
+                lineno: 23203
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25117,7 +25169,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23185
+            lineno: 23225
           }));
         }
         _ref = _this.upgrades;
@@ -25125,7 +25177,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23187
+              lineno: 23227
             }));
           }
         }
@@ -25134,7 +25186,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23189
+              lineno: 23229
             }));
           }
         }
@@ -26051,7 +26103,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 23837
+                lineno: 23877
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26170,7 +26222,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 23896
+                  lineno: 23936
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26192,7 +26244,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 23900
+                    lineno: 23940
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26277,7 +26329,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 23940
+            lineno: 23980
           }));
         }
         __iced_deferrals._fulfill();
