@@ -3802,6 +3802,11 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Crew"
             ]
+            ship_override:
+                attack: 3
+                agility: 1
+                hull: 8
+                shields: 5
         }
         {
             name: 'Norra Wexley'
