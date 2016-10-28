@@ -10,6 +10,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Core"
         "E-Wing Expansion Pack"
         'Ghost Expansion Pack'
+        'Heroes of the Resistance Expansion Pack'
         "Hound's Tooth Expansion Pack"
         "HWK-290 Expansion Pack"
         "IG-2000 Expansion Pack"

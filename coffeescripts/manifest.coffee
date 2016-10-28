@@ -3418,6 +3418,133 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Heroes of the Resistance Expansion Pack': [
+        {
+            name: 'YT-1300'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Han Solo (TFA)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Rey'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Chewbacca (TFA)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Resistance Sympathizer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Poe Dameron (PS9)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nien Nunb'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '''"Snap" Wexley'''
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jess Pava'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Novice'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Finn'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hotshot Co-pilot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rey'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'M9-G8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Burnout SLAM'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Millennium Falcon (TFA)'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Black One'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Integrated Astromech'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Smuggling Compartment'
+            type: 'modification'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

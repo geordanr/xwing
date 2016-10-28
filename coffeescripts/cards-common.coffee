@@ -2,7 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "Heroes of the Resistance Expansion Pack"
     "Sabine's TIE Fighter Expansion Pack"
     "Upsilon-class Shuttle Expansion Pack"
     "Quadjumper Expansion Pack"
