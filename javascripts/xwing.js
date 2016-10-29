@@ -8733,7 +8733,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '%DE_GOZANTIONLY%%LINEBREAK%Ein Mal pro Runde darfst du, nachdem du ein feindliches Schiff in die Zielerfassung genommen hast, 1 Fokus-, Ausweich- oder blaue Zielerfassungsmarker von dem Schiff entfernen.'
     },
     'Black One': {
-      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'
+      text: 'After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.',
+      ship: "T-70-X-Flügler"
     },
     'Millennium Falcon (TFA)': {
       text: 'After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'
@@ -22420,7 +22421,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21311
+                    lineno: 21312
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -22989,7 +22990,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21887
+              lineno: 21888
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23627,7 +23628,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22454
+          lineno: 22455
         }));
         __iced_deferrals._fulfill();
       });
@@ -23639,7 +23640,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22455
+            lineno: 22456
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25157,7 +25158,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23310
+                      lineno: 23311
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25226,7 +25227,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23334
+                lineno: 23335
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25278,7 +25279,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23356
+            lineno: 23357
           }));
         }
         _ref = _this.upgrades;
@@ -25286,7 +25287,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23358
+              lineno: 23359
             }));
           }
         }
@@ -25295,7 +25296,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23360
+              lineno: 23361
             }));
           }
         }
@@ -26212,7 +26213,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24008
+                lineno: 24009
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26331,7 +26332,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24067
+                  lineno: 24068
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26353,7 +26354,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24071
+                    lineno: 24072
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26438,7 +26439,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24111
+            lineno: 24112
           }));
         }
         __iced_deferrals._fulfill();
