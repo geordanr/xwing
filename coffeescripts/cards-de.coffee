@@ -1667,6 +1667,7 @@ exportObj.cardLoaders.Deutsch = () ->
         # Wave IX
         'Black One':
             text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'''
+            ship: "T-70-X-Flügler"
         'Millennium Falcon (TFA)':
             text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
         'Alliance Overhaul':
