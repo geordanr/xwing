@@ -105,7 +105,7 @@ exportObj.translations['Polski'] =
         '.save-list-as' : 'Zapisz jako ...'
         '.delete-list' : 'Usuń'
         '.backend-list-my-squads' : 'Lista eskadr'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst'
         '.randomize' : 'randomizuj'
         '.randomize-options' : 'Opcje ...'
         '.notes-container > span' : 'Squad Notes'
@@ -114,7 +114,7 @@ exportObj.translations['Polski'] =
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Skopiuj</button>'
         '.vertical-space-checkbox' : """Dodaj miejsce na karty ulepszeń \ uszkodzeń podczas drukowania <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Wydrukuj w kolorze <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Drukuj'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drukuj'
         # Randomizer options
         '.do-randomize' : 'Generuj'
         # Top tab bar

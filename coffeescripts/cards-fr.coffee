@@ -105,7 +105,7 @@ exportObj.translations['Français'] =
         '.save-list-as' : 'Enregistrer sous…'
         '.delete-list' : 'Supprimer'
         '.backend-list-my-squads' : 'Charger un escadron'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte'
         '.randomize' : 'Aléatoire'
         '.randomize-options' : 'Options…'
         '.notes-container > span' : 'Squad Notes'
@@ -114,7 +114,7 @@ exportObj.translations['Français'] =
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copiez</button>'
         '.vertical-space-checkbox' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Imprimer en couleur <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Imprimer'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Imprimer'
         # Randomizer options
         '.do-randomize' : 'Générer'
         # Top tab bar

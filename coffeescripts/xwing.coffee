@@ -167,11 +167,11 @@ class exportObj.SquadBuilder
                 <div class="span3 squad-name-container">
                     <div class="display-name">
                         <span class="squad-name"></span>
-                        <i class="icon-pencil"></i>
+                        <i class="fa fa-pencil"></i>
                     </div>
                     <div class="input-append">
                         <input type="text" maxlength="64" placeholder="Name your squad..." />
-                        <button class="btn save"><i class="icon-edit"></i></button>
+                        <button class="btn save"><i class="fa fa-pencil-square-o"></i></button>
                     </div>
                 </div>
                 <div class="span4 points-display-container">
@@ -184,23 +184,23 @@ class exportObj.SquadBuilder
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
                     <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>
-                    <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
-                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning epic-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
+                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
+                    <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                 </div>
                 <div class="span5 pull-right button-container">
                     <div class="btn-group pull-right">
 
-                        <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>
-                        <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->
-                        <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
-                        <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
+                        <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>
+                        <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
+                        <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
+                        <a class="btn btn-primary permalink"><i class="fa fa-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <!--
-                        <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
+                        <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
@@ -213,11 +213,11 @@ class exportObj.SquadBuilder
                 </div>
             </div>
 
-            <div class="row-fluid style="display: none;">
+            <div class="row-fluid">
                 <div class="span12">
-                    <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>
-                    <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>
-                    <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>
+                    <button class="show-authenticated btn btn-primary save-list"><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
+                    <button class="show-authenticated btn btn-primary save-list-as"><i class="fa fa-files-o"></i>&nbsp;Save As...</button>
+                    <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash-o"></i>&nbsp;Delete</button>
                     <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>
                     <button class="btn btn-danger clear-squad">New Squad</button>
                     <span class="show-authenticated backend-status"></span>
@@ -287,7 +287,7 @@ class exportObj.SquadBuilder
                     <button class="btn select-bbcode-view">BBCode</button>
                     <button class="btn select-html-view">HTML</button>
                 </div>
-                <button class="btn print-list hidden-phone"><i class="icon-print"></i>&nbsp;Print</button>
+                <button class="btn print-list hidden-phone"><i class="fa fa-print"></i>&nbsp;Print</button>
                 <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -547,7 +547,7 @@ class exportObj.SquadBuilder
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
                 @backend_status.html $.trim """
-                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                    <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
                 """
                 @backend_status.show()
                 @backend_save_list_button.addClass 'disabled'
@@ -556,17 +556,17 @@ class exportObj.SquadBuilder
                     @current_squad.dirty = false
                     if @current_squad.id?
                         @backend_status.html $.trim """
-                            <i class="icon-ok"></i>&nbsp;Squad updated successfully.
+                            <i class="fa fa-check"></i>&nbsp;Squad updated successfully.
                         """
                     else
                         @backend_status.html $.trim """
-                            <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                            <i class="fa fa-check"></i>&nbsp;New squad saved successfully.
                         """
                         @current_squad.id = results.id
                     @container.trigger 'xwing-backend:squadDirtinessChanged'
                 else
                     @backend_status.html $.trim """
-                        <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;#{results.error}
                     """
                     @backend_save_list_button.removeClass 'disabled'
         @backend_save_list_as_button = $ @container.find('button.save-list-as')
@@ -790,7 +790,7 @@ class exportObj.SquadBuilder
                         <div>Mark the three obstacles you are using.</div>
                         <img class="obstacle-silhouettes" src="images/xws-obstacles.png" />
                         <div>Mark which damage deck you are using.</div>
-                        <div><i class="icon-check-empty"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class="icon-check-empty"></i>The Force Awakens Core Set</div>
+                        <div><i class="fa fa-square-o"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class="fa fa-square-o"></i>The Force Awakens Core Set</div>
                     </div>
                 """
 
@@ -2080,8 +2080,8 @@ class Ship
             </div>
             <div class="span6 addon-container" />
             <div class="span2 button-container">
-                <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="icon-remove"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
-                <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="icon-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>
+                <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>
+                <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="fa fa-files-o"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>
             </div>
         '''
         @row.find('.button-container span').tooltip()

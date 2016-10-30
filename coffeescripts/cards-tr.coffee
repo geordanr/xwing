@@ -104,7 +104,7 @@ exportObj.translations['Türkçe'] =
         '.save-list-as' : 'Farklı Kaydet'
         '.delete-list' : 'Sil'
         '.backend-list-my-squads' : 'Takımı Yükle'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Metin Olarak</span> Baskı Önizleme'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Metin Olarak</span> Baskı Önizleme'
         '.randomize' : 'Rastgele!'
         '.randomize-options' : 'Rastgele Seçenekleri'
         '.notes-container > span' : 'Takım Notları'
@@ -113,7 +113,7 @@ exportObj.translations['Türkçe'] =
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopyala</button>'
         '.vertical-space-checkbox' : """Hasar/Yükseltme kartları için yer ekleyin <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Renkli yazdır <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Yazdır'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Yazdır'
         # Randomizer options
         '.do-randomize' : 'Rastgele!'
         # Top tab bar

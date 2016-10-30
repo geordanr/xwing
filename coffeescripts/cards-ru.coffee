@@ -105,7 +105,7 @@ exportObj.translations['Русский'] =
         '.save-list-as' : 'Сохранить как'
         '.delete-list' : 'Удалить'
         '.backend-list-my-squads' : 'Загрузить отряд'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Печать\Просмотр как </span>Text'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Печать\Просмотр как </span>Text'
         '.randomize' : 'Случайно'
         '.randomize-options' : 'Опции генератора случайности'
         '.notes-container > span' : 'Squad Notes'
@@ -114,7 +114,7 @@ exportObj.translations['Русский'] =
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>'
         '.vertical-space-checkbox' : """Добавить пространство для карт повреждений\улучшений на распечатке. <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Печать в цвете. <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Печать'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Печать'
         # Randomizer options
         '.do-randomize' : 'Случайно!'
         # Top tab bar

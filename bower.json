@@ -20,7 +20,8 @@
     "xwing-miniatures-font": "~1.0.14",
     "jquery": "components/jquery#~2.1.3",
     "jquery-ajaxtransport-xdomainrequest": "~1.0.4",
-    "jquery.qrcode": "~0.14.0"
+    "jquery.qrcode": "~0.14.0",
+    "font-awesome": "fontawesome#^4.7.0"
   },
   "exportsOverride": {
     "jquery": {
@@ -28,6 +29,10 @@
     },
     "jquery.qrcode": {
       "js": "**/*.js"
+    },
+    "font-awesome": {
+      "css": "css/*",
+      "fonts": "fonts/*"
     }
   }
 }

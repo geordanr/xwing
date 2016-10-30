@@ -121,8 +121,8 @@ exportObj.translations.Deutsch =
         '.save-list-as' : 'Speichern als…'
         '.delete-list' : 'Löschen'
         '.backend-list-my-squads' : 'Staffel laden'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drucken/Anzeigen als </span>Text'
-        '.collection' : '<span class="hidden-phone"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drucken/Anzeigen als </span>Text'
+        '.collection' : '<span class="hidden-phone"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>'
         '.randomize' : 'Zufallsliste!'
         '.randomize-options' : 'Zufallslisten-Optionen…'
         '.notes-container > span' : 'Staffelnotizen'
@@ -130,7 +130,7 @@ exportObj.translations.Deutsch =
         '.bbcode-list' : 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>'
         '.vertical-space-checkbox' : """Platz für Schadenskarten und Aufwertungen im Druck berücksichtigen. <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Ausdrucken in Farbe. <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Druck'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Druck'
         # Randomizer options
         '.do-randomize' : 'Zufall!'
         # Top tab bar

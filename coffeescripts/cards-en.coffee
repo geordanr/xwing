@@ -110,7 +110,7 @@ exportObj.translations.English =
         '.save-list-as' : 'Save as…'
         '.delete-list' : 'Delete'
         '.backend-list-my-squads' : 'Load squad'
-        '.view-as-text' : '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text'
         '.randomize' : 'Random!'
         '.randomize-options' : 'Randomizer options…'
         '.notes-container > span' : 'Squad Notes'
@@ -119,7 +119,7 @@ exportObj.translations.English =
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="icon-print"></i>&nbsp;Print'
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
         # Randomizer options
         '.do-randomize' : 'Randomize!'
         # Top tab bar

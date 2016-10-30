@@ -29,6 +29,7 @@ module.exports = (grunt) ->
                     targetDir: 'app/bower_components'
                     cleanTargetDir: true
                     cleanBowerDir: true
+                    layout: 'byComponent'
         uglify:
             compile:
                 options:
@@ -42,8 +43,6 @@ module.exports = (grunt) ->
                 src: [
                     'fonts/**'
                     'bootstrap/**'
-                    'fontawesome/**'
-                    'FortAwesome-Font-Awesome-13d5dd3/**'
                     'select2-3.4.0/**'
                 ]
                 dest: 'app/'

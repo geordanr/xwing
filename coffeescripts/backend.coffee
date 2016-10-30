@@ -41,13 +41,13 @@ class exportObj.SquadBuilderBackend
 
         @method_metadata =
             google_oauth2:
-                icon: 'icon-google-plus-sign'
+                icon: 'fa fa-google-plus-square'
                 text: 'Google'
             facebook:
-                icon: 'icon-facebook-sign'
+                icon: 'fa fa-facebook-square'
                 text: 'Facebook'
             twitter:
-                icon: 'icon-twitter-sign'
+                icon: 'fa fa-twitter-square'
                 text: 'Twitter'
 
         @squad_display_mode = 'all'
@@ -281,19 +281,19 @@ class exportObj.SquadBuilderBackend
         if name.length == 0
             @name_availability_container.text ''
             @name_availability_container.append $.trim """
-                <i class="icon-thumbs-down"> A name is required
+                <i class="fa fa-thumbs-down"> A name is required
             """
         else
             $.post "#{@server}/squads/namecheck", { name: name }, (data) =>
                 @name_availability_container.text ''
                 if data.available
                     @name_availability_container.append $.trim """
-                        <i class="icon-thumbs-up"> Name is available
+                        <i class="fa fa-thumbs-up"> Name is available
                     """
                     @save_as_save_button.removeClass 'disabled'
                 else
                     @name_availability_container.append $.trim """
-                        <i class="icon-thumbs-down"> You already have a squad with that name
+                        <i class="fa fa-thumbs-down"> You already have a squad with that name
                     """
                     @save_as_save_button.addClass 'disabled'
 
@@ -383,7 +383,7 @@ class exportObj.SquadBuilderBackend
             <div class="modal-body">
                 <ul class="squad-list"></ul>
                 <p class="pagination-centered squad-list-loading">
-                    <i class="icon-spinner icon-spin icon-3x"></i>
+                    <i class="fa fa-spinner fa-spin fa-3x"></i>
                     <br />
                     Fetching squads...
                 </p>
@@ -477,7 +477,7 @@ class exportObj.SquadBuilderBackend
                     notes: builder.getNotes()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
-                    <i class="icon-refresh icon-spin"></i>&nbsp;Saving squad...
+                    <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
                 """
                 builder.backend_status.show()
                 new_name = $.trim @save_as_input.val()
@@ -489,11 +489,11 @@ class exportObj.SquadBuilderBackend
                         builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                         builder.container.trigger 'xwing-backend:squadNameChanged'
                         builder.backend_status.html $.trim """
-                            <i class="icon-ok"></i>&nbsp;New squad saved successfully.
+                            <i class="fa fa-check"></i>&nbsp;New squad saved successfully.
                         """
                     else
                         builder.backend_status.html $.trim """
-                            <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                            <i class="fa fa-exclamation-circle"></i>&nbsp;#{results.error}
                         """
                     builder.backend_save_list_as_button.removeClass 'disabled'
 
@@ -505,7 +505,7 @@ class exportObj.SquadBuilderBackend
             else
                 @name_availability_container.text ''
                 @name_availability_container.append $.trim """
-                    <i class="icon-spin icon-spinner"></i> Checking name availability...
+                    <i class="fa fa-spin fa-spinner"></i> Checking name availability...
                 """
                 timer = @save_as_modal.data('timer')
                 window.clearInterval(timer) if timer?
@@ -536,7 +536,7 @@ class exportObj.SquadBuilderBackend
             e.preventDefault()
             builder = @delete_modal.data 'builder'
             builder.backend_status.html $.trim """
-                <i class="icon-refresh icon-spin"></i>&nbsp;Deleting squad...
+                <i class="fa fa-refresh fa-spin"></i>&nbsp;Deleting squad...
             """
             builder.backend_status.show()
             builder.backend_delete_list_button.addClass 'disabled'
@@ -547,11 +547,11 @@ class exportObj.SquadBuilderBackend
                     builder.current_squad.dirty = true
                     builder.container.trigger 'xwing-backend:squadDirtinessChanged'
                     builder.backend_status.html $.trim """
-                        <i class="icon-ok"></i>&nbsp;Squad deleted.
+                        <i class="fa fa-check"></i>&nbsp;Squad deleted.
                     """
                 else
                     builder.backend_status.html $.trim """
-                        <i class="icon-exclamation-sign"></i>&nbsp;#{results.error}
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;#{results.error}
                     """
                     # Failed, so offer chance to delete again
                     builder.backend_delete_list_button.removeClass 'disabled'
