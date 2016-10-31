@@ -92,15 +92,15 @@ exportObj.SquadBuilderBackend = (function() {
     this.oauth_window = null;
     this.method_metadata = {
       google_oauth2: {
-        icon: 'icon-google-plus-sign',
+        icon: 'fa fa-google-plus-square',
         text: 'Google'
       },
       facebook: {
-        icon: 'icon-facebook-sign',
+        icon: 'fa fa-facebook-square',
         text: 'Facebook'
       },
       twitter: {
-        icon: 'icon-twitter-sign',
+        icon: 'fa fa-twitter-square',
         text: 'Twitter'
       }
     };
@@ -375,7 +375,7 @@ exportObj.SquadBuilderBackend = (function() {
     name = $.trim(this.save_as_input.val());
     if (name.length === 0) {
       this.name_availability_container.text('');
-      return this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> A name is required"));
+      return this.name_availability_container.append($.trim("<i class=\"fa fa-thumbs-down\"> A name is required"));
     } else {
       return $.post("" + this.server + "/squads/namecheck", {
         name: name
@@ -383,10 +383,10 @@ exportObj.SquadBuilderBackend = (function() {
         return function(data) {
           _this.name_availability_container.text('');
           if (data.available) {
-            _this.name_availability_container.append($.trim("<i class=\"icon-thumbs-up\"> Name is available"));
+            _this.name_availability_container.append($.trim("<i class=\"fa fa-thumbs-up\"> Name is available"));
             return _this.save_as_save_button.removeClass('disabled');
           } else {
-            _this.name_availability_container.append($.trim("<i class=\"icon-thumbs-down\"> You already have a squad with that name"));
+            _this.name_availability_container.append($.trim("<i class=\"fa fa-thumbs-down\"> You already have a squad with that name"));
             return _this.save_as_save_button.addClass('disabled');
           }
         };
@@ -456,7 +456,7 @@ exportObj.SquadBuilderBackend = (function() {
     this.squad_list_modal = $(document.createElement('DIV'));
     this.squad_list_modal.addClass('modal hide fade hidden-print squad-list');
     $(document.body).append(this.squad_list_modal);
-    this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3 class=\"squad-list-header-placeholder hidden-phone hidden-tablet\"></h3>\n    <h4 class=\"squad-list-header-placeholder hidden-desktop\"></h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"icon-spinner icon-spin icon-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <div class=\"btn-group squad-display-mode\">\n        <button class=\"btn btn-inverse show-all-squads\">All</button>\n        <button class=\"btn show-standard-squads\">Standard</button>\n        <button class=\"btn show-epic-squads\">Epic</button>\n        <button class=\"btn show-team-epic-squads\">Team<span class=\"hidden-phone\"> Epic</span></button>\n    </div>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.squad_list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n    <h3 class=\"squad-list-header-placeholder hidden-phone hidden-tablet\"></h3>\n    <h4 class=\"squad-list-header-placeholder hidden-desktop\"></h4>\n</div>\n<div class=\"modal-body\">\n    <ul class=\"squad-list\"></ul>\n    <p class=\"pagination-centered squad-list-loading\">\n        <i class=\"fa fa-spinner fa-spin fa-3x\"></i>\n        <br />\n        Fetching squads...\n    </p>\n</div>\n<div class=\"modal-footer\">\n    <div class=\"btn-group squad-display-mode\">\n        <button class=\"btn btn-inverse show-all-squads\">All</button>\n        <button class=\"btn show-standard-squads\">Standard</button>\n        <button class=\"btn show-epic-squads\">Epic</button>\n        <button class=\"btn show-team-epic-squads\">Team<span class=\"hidden-phone\"> Epic</span></button>\n    </div>\n    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
     this.squad_list_modal.find('ul.squad-list').hide();
     this.show_all_squads_button = $(this.squad_list_modal.find('.show-all-squads'));
     this.show_all_squads_button.click((function(_this) {
@@ -539,7 +539,7 @@ exportObj.SquadBuilderBackend = (function() {
             notes: builder.getNotes()
           };
           builder.backend_save_list_as_button.addClass('disabled');
-          builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
+          builder.backend_status.html($.trim("<i class=\"fa fa-refresh fa-spin\"></i>&nbsp;Saving squad..."));
           builder.backend_status.show();
           new_name = $.trim(_this.save_as_input.val());
           return _this.save(builder.serialize(), null, new_name, builder.faction, additional_data, function(results) {
@@ -549,9 +549,9 @@ exportObj.SquadBuilderBackend = (function() {
               builder.current_squad.dirty = false;
               builder.container.trigger('xwing-backend:squadDirtinessChanged');
               builder.container.trigger('xwing-backend:squadNameChanged');
-              builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully."));
+              builder.backend_status.html($.trim("<i class=\"fa fa-check\"></i>&nbsp;New squad saved successfully."));
             } else {
-              builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error));
+              builder.backend_status.html($.trim("<i class=\"fa fa-exclamation-circle\"></i>&nbsp;" + results.error));
             }
             return builder.backend_save_list_as_button.removeClass('disabled');
           });
@@ -567,7 +567,7 @@ exportObj.SquadBuilderBackend = (function() {
           return false;
         } else {
           _this.name_availability_container.text('');
-          _this.name_availability_container.append($.trim("<i class=\"icon-spin icon-spinner\"></i> Checking name availability..."));
+          _this.name_availability_container.append($.trim("<i class=\"fa fa-spin fa-spinner\"></i> Checking name availability..."));
           timer = _this.save_as_modal.data('timer');
           if (timer != null) {
             window.clearInterval(timer);
@@ -588,7 +588,7 @@ exportObj.SquadBuilderBackend = (function() {
         var builder;
         e.preventDefault();
         builder = _this.delete_modal.data('builder');
-        builder.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Deleting squad..."));
+        builder.backend_status.html($.trim("<i class=\"fa fa-refresh fa-spin\"></i>&nbsp;Deleting squad..."));
         builder.backend_status.show();
         builder.backend_delete_list_button.addClass('disabled');
         _this.delete_modal.modal('hide');
@@ -597,9 +597,9 @@ exportObj.SquadBuilderBackend = (function() {
             builder.resetCurrentSquad();
             builder.current_squad.dirty = true;
             builder.container.trigger('xwing-backend:squadDirtinessChanged');
-            return builder.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad deleted."));
+            return builder.backend_status.html($.trim("<i class=\"fa fa-check\"></i>&nbsp;Squad deleted."));
           } else {
-            builder.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error));
+            builder.backend_status.html($.trim("<i class=\"fa fa-exclamation-circle\"></i>&nbsp;" + results.error));
             return builder.backend_delete_list_button.removeClass('disabled');
           }
         });
@@ -6727,15 +6727,15 @@ exportObj.translations.Deutsch = {
     '.save-list-as': 'Speichern als…',
     '.delete-list': 'Löschen',
     '.backend-list-my-squads': 'Staffel laden',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drucken/Anzeigen als </span>Text',
-    '.collection': '<span class="hidden-phone"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drucken/Anzeigen als </span>Text',
+    '.collection': '<span class="hidden-phone"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung</span>',
     '.randomize': 'Zufallsliste!',
     '.randomize-options': 'Zufallslisten-Optionen…',
     '.notes-container > span': 'Staffelnotizen',
     '.bbcode-list': 'Kopiere den BBCode von unten und füge ihn in deine Forenposts ein.<textarea></textarea>',
     '.vertical-space-checkbox': "Platz für Schadenskarten und Aufwertungen im Druck berücksichtigen. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Ausdrucken in Farbe. <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Druck',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Druck',
     '.do-randomize': 'Zufall!',
     '#empireTab': 'Galaktisches Imperium',
     '#rebelTab': 'Rebellen Allianz',
@@ -8902,7 +8902,7 @@ exportObj.translations.English = {
     '.save-list-as': 'Save as…',
     '.delete-list': 'Delete',
     '.backend-list-my-squads': 'Load squad',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text',
     '.randomize': 'Random!',
     '.randomize-options': 'Randomizer options…',
     '.notes-container > span': 'Squad Notes',
@@ -8910,7 +8910,7 @@ exportObj.translations.English = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copy</button>',
     '.vertical-space-checkbox': "Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Print color <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Print',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Print',
     '.do-randomize': 'Randomize!',
     '#empireTab': 'Galactic Empire',
     '#rebelTab': 'Rebel Alliance',
@@ -10451,7 +10451,7 @@ exportObj.translations['Español'] = {
     '.save-list-as': 'Grabar como...',
     '.delete-list': 'Eliminar',
     '.backend-list-my-squads': 'Cargar Escuadron',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimir/Ver como </span>Text',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Imprimir/Ver como </span>Text',
     '.randomize': 'Aleatorio!',
     '.randomize-options': 'Opciones de aleatoriedad…',
     '.notes-container > span': 'Squad Notes',
@@ -10459,7 +10459,7 @@ exportObj.translations['Español'] = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copia</button>',
     '.vertical-space-checkbox': "Añade espacio para cartas de daño/mejora cuando imprima. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Imprima en color. <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Imprimir',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Imprimir',
     '.do-randomize': 'Genera Aleatoriamente!',
     '#empireTab': 'Imperio Galactico',
     '#rebelTab': 'Alianza Rebelde',
@@ -12676,7 +12676,7 @@ exportObj.translations['Français'] = {
     '.save-list-as': 'Enregistrer sous…',
     '.delete-list': 'Supprimer',
     '.backend-list-my-squads': 'Charger un escadron',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Imprimer/Afficher commme </span>Texte',
     '.randomize': 'Aléatoire',
     '.randomize-options': 'Options…',
     '.notes-container > span': 'Squad Notes',
@@ -12684,7 +12684,7 @@ exportObj.translations['Français'] = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Copiez</button>',
     '.vertical-space-checkbox': "Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Imprimer en couleur <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Imprimer',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Imprimer',
     '.do-randomize': 'Générer',
     '#empireTab': 'Empire Galactique',
     '#rebelTab': 'Alliance Rebelle',
@@ -14498,7 +14498,7 @@ exportObj.translations['Polski'] = {
     '.save-list-as': 'Zapisz jako ...',
     '.delete-list': 'Usuń',
     '.backend-list-my-squads': 'Lista eskadr',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drukuj \ Wyświetl jako </span>Tekst',
     '.randomize': 'randomizuj',
     '.randomize-options': 'Opcje ...',
     '.notes-container > span': 'Squad Notes',
@@ -14506,7 +14506,7 @@ exportObj.translations['Polski'] = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Skopiuj</button>',
     '.vertical-space-checkbox': "Dodaj miejsce na karty ulepszeń \ uszkodzeń podczas drukowania <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Wydrukuj w kolorze <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Drukuj',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Drukuj',
     '.do-randomize': 'Generuj',
     '#empireTab': 'Imperium Galaktyczne',
     '#rebelTab': 'Sojusz Rebeliancki',
@@ -16300,7 +16300,7 @@ exportObj.translations['Русский'] = {
     '.save-list-as': 'Сохранить как',
     '.delete-list': 'Удалить',
     '.backend-list-my-squads': 'Загрузить отряд',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Печать\Просмотр как </span>Text',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Печать\Просмотр как </span>Text',
     '.randomize': 'Случайно',
     '.randomize-options': 'Опции генератора случайности',
     '.notes-container > span': 'Squad Notes',
@@ -16308,7 +16308,7 @@ exportObj.translations['Русский'] = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Скопируйте</button>',
     '.vertical-space-checkbox': "Добавить пространство для карт повреждений\улучшений на распечатке. <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Печать в цвете. <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Печать',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Печать',
     '.do-randomize': 'Случайно!',
     '#empireTab': 'Галактическая империя',
     '#rebelTab': 'Альянс повстанцев',
@@ -17778,7 +17778,7 @@ exportObj.translations['Türkçe'] = {
     '.save-list-as': 'Farklı Kaydet',
     '.delete-list': 'Sil',
     '.backend-list-my-squads': 'Takımı Yükle',
-    '.view-as-text': '<span class="hidden-phone"><i class="icon-print"></i>&nbsp;Metin Olarak</span> Baskı Önizleme',
+    '.view-as-text': '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Metin Olarak</span> Baskı Önizleme',
     '.randomize': 'Rastgele!',
     '.randomize-options': 'Rastgele Seçenekleri',
     '.notes-container > span': 'Takım Notları',
@@ -17786,7 +17786,7 @@ exportObj.translations['Türkçe'] = {
     '.html-list': '<textarea></textarea><button class="btn btn-copy">Kopyala</button>',
     '.vertical-space-checkbox': "Hasar/Yükseltme kartları için yer ekleyin <input type=\"checkbox\" class=\"toggle-vertical-space\" />",
     '.color-print-checkbox': "Renkli yazdır <input type=\"checkbox\" class=\"toggle-color-print\" />",
-    '.print-list': '<i class="icon-print"></i>&nbsp;Yazdır',
+    '.print-list': '<i class="fa fa-print"></i>&nbsp;Yazdır',
     '.do-randomize': 'Rastgele!',
     '#empireTab': 'Galaktik İmparatorluk',
     '#rebelTab': 'Asi İttifakı',
@@ -22688,12 +22688,12 @@ exportObj.SquadBuilder = (function() {
     DEFAULT_RANDOMIZER_ITERATIONS = 1000;
     this.status_container = $(document.createElement('DIV'));
     this.status_container.addClass('container-fluid');
-    this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="icon-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="icon-edit"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning collection-invalid hidden"><br /><i class="icon-exclamation-sign"></i>&nbsp;<span class="translated"></span></span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="icon-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="icon-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary hidden collection"><i class="icon-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>\n            <a class="btn btn-primary permalink"><i class="icon-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="icon-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid style="display: none;">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="icon-save"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="icon-copy"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="icon-trash"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
+    this.status_container.append($.trim('<div class="row-fluid">\n    <div class="span3 squad-name-container">\n        <div class="display-name">\n            <span class="squad-name"></span>\n            <i class="fa fa-pencil"></i>\n        </div>\n        <div class="input-append">\n            <input type="text" maxlength="64" placeholder="Name your squad..." />\n            <button class="btn save"><i class="fa fa-pencil-square-o"></i></button>\n        </div>\n    </div>\n    <div class="span4 points-display-container">\n        Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">\n        <select class="game-type-selector">\n            <option value="standard">Standard</option>\n            <option value="epic">Epic</option>\n            <option value="team-epic">Team Epic</option>\n            <option value="custom">Custom</option>\n        </select>\n        <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>\n        <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>\n        <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning epic-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>\n        <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>\n        <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>\n    </div>\n    <div class="span5 pull-right button-container">\n        <div class="btn-group pull-right">\n\n            <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>\n            <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->\n            <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>\n            <a class="btn btn-primary permalink"><i class="fa fa-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>\n\n            <!--\n            <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>\n            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n                <span class="caret"></span>\n            </button>\n            <ul class="dropdown-menu">\n                <li><a class="randomize-options">Randomizer Options...</a></li>\n            </ul>\n            -->\n\n        </div>\n    </div>\n</div>\n\n<div class="row-fluid">\n    <div class="span12">\n        <button class="show-authenticated btn btn-primary save-list"><i class="fa fa-floppy-o"></i>&nbsp;Save</button>\n        <button class="show-authenticated btn btn-primary save-list-as"><i class="fa fa-files-o"></i>&nbsp;Save As...</button>\n        <button class="show-authenticated btn btn-primary delete-list disabled"><i class="fa fa-trash-o"></i>&nbsp;Delete</button>\n        <button class="show-authenticated btn btn-primary backend-list-my-squads show-authenticated">Load Squad</button>\n        <button class="btn btn-danger clear-squad">New Squad</button>\n        <span class="show-authenticated backend-status"></span>\n    </div>\n</div>'));
     this.container.append(this.status_container);
     this.list_modal = $(document.createElement('DIV'));
     this.list_modal.addClass('modal hide fade text-list-modal');
     this.container.append(this.list_modal);
-    this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <h3><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h3>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"squad-faction\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        <p>Copy the BBCode below and paste it into your forum post.</p>\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n    <div class=\"html-list\">\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\">\n        Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />\n    </label>\n    <label class=\"color-print-checkbox\">\n        Print color <input type=\"checkbox\" class=\"toggle-color-print\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include List Juggler QR code <input type=\"checkbox\" class=\"toggle-juggler-qrcode\" checked=\"checked\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include obstacle/damage deck choices <input type=\"checkbox\" class=\"toggle-obstacles\" />\n    </label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n        <button class=\"btn select-html-view\">HTML</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"icon-print\"></i>&nbsp;Print</button>\n    <button class=\"btn close-print-dialog\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.list_modal.append($.trim("<div class=\"modal-header\">\n    <button type=\"button\" class=\"close hidden-print\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n\n    <div class=\"hidden-phone hidden-print\">\n        <h3><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h3>\n    </div>\n\n    <div class=\"visible-phone hidden-print\">\n        <h4><span class=\"squad-name\"></span> (<span class=\"total-points\"></span>)<h4>\n    </div>\n\n    <div class=\"visible-print\">\n        <div class=\"fancy-header\">\n            <div class=\"squad-name\"></div>\n            <div class=\"squad-faction\"></div>\n            <div class=\"mask\">\n                <div class=\"outer-circle\">\n                    <div class=\"inner-circle\">\n                        <span class=\"total-points\"></span>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"fancy-under-header\"></div>\n    </div>\n\n</div>\n<div class=\"modal-body\">\n    <div class=\"fancy-list hidden-phone\"></div>\n    <div class=\"simple-list\"></div>\n    <div class=\"bbcode-list\">\n        <p>Copy the BBCode below and paste it into your forum post.</p>\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n    <div class=\"html-list\">\n        <textarea></textarea><button class=\"btn btn-copy\">Copy</button>\n    </div>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <label class=\"vertical-space-checkbox\">\n        Add space for damage/upgrade cards when printing <input type=\"checkbox\" class=\"toggle-vertical-space\" />\n    </label>\n    <label class=\"color-print-checkbox\">\n        Print color <input type=\"checkbox\" class=\"toggle-color-print\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include List Juggler QR code <input type=\"checkbox\" class=\"toggle-juggler-qrcode\" checked=\"checked\" />\n    </label>\n    <label class=\"qrcode-checkbox hidden-phone\">\n        Include obstacle/damage deck choices <input type=\"checkbox\" class=\"toggle-obstacles\" />\n    </label>\n    <div class=\"btn-group list-display-mode\">\n        <button class=\"btn select-simple-view\">Simple</button>\n        <button class=\"btn select-fancy-view hidden-phone\">Fancy</button>\n        <button class=\"btn select-bbcode-view\">BBCode</button>\n        <button class=\"btn select-html-view\">HTML</button>\n    </div>\n    <button class=\"btn print-list hidden-phone\"><i class=\"fa fa-print\"></i>&nbsp;Print</button>\n    <button class=\"btn close-print-dialog\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
     this.fancy_container = $(this.list_modal.find('div.modal-body .fancy-list'));
     this.fancy_total_points_container = $(this.list_modal.find('div.modal-header .total-points'));
     this.simple_container = $(this.list_modal.find('div.modal-body .simple-list'));
@@ -22977,7 +22977,7 @@ exportObj.SquadBuilder = (function() {
             cards: _this.listCards(),
             notes: _this.notes.val().substr(0, 1024)
           };
-          _this.backend_status.html($.trim("<i class=\"icon-refresh icon-spin\"></i>&nbsp;Saving squad..."));
+          _this.backend_status.html($.trim("<i class=\"fa fa-refresh fa-spin\"></i>&nbsp;Saving squad..."));
           _this.backend_status.show();
           _this.backend_save_list_button.addClass('disabled');
           (function(__iced_k) {
@@ -22994,7 +22994,7 @@ exportObj.SquadBuilder = (function() {
             }));
             __iced_deferrals._fulfill();
           })(function() {
-            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"icon-ok\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id), _this.container.trigger('xwing-backend:squadDirtinessChanged')) : (_this.backend_status.html($.trim("<i class=\"icon-exclamation-sign\"></i>&nbsp;" + results.error)), _this.backend_save_list_button.removeClass('disabled')));
+            return __iced_k(results.success ? (_this.current_squad.dirty = false, _this.current_squad.id != null ? _this.backend_status.html($.trim("<i class=\"fa fa-check\"></i>&nbsp;Squad updated successfully.")) : (_this.backend_status.html($.trim("<i class=\"fa fa-check\"></i>&nbsp;New squad saved successfully.")), _this.current_squad.id = results.id), _this.container.trigger('xwing-backend:squadDirtinessChanged')) : (_this.backend_status.html($.trim("<i class=\"fa fa-exclamation-circle\"></i>&nbsp;" + results.error)), _this.backend_save_list_button.removeClass('disabled')));
           });
         } else {
           return __iced_k();
@@ -23202,7 +23202,7 @@ exportObj.SquadBuilder = (function() {
           _this.printable_container.find('.printable-body pre.print-notes').text(_this.notes.val());
         }
         if (_this.list_modal.find('.toggle-obstacles').prop('checked')) {
-          _this.printable_container.find('.printable-body').append($.trim("<div class=\"obstacles\">\n    <div>Mark the three obstacles you are using.</div>\n    <img class=\"obstacle-silhouettes\" src=\"images/xws-obstacles.png\" />\n    <div>Mark which damage deck you are using.</div>\n    <div><i class=\"icon-check-empty\"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class=\"icon-check-empty\"></i>The Force Awakens Core Set</div>\n</div>"));
+          _this.printable_container.find('.printable-body').append($.trim("<div class=\"obstacles\">\n    <div>Mark the three obstacles you are using.</div>\n    <img class=\"obstacle-silhouettes\" src=\"images/xws-obstacles.png\" />\n    <div>Mark which damage deck you are using.</div>\n    <div><i class=\"fa fa-square-o\"></i>Original Core Set&nbsp;&nbsp&nbsp;<i class=\"fa fa-square-o\"></i>The Force Awakens Core Set</div>\n</div>"));
         }
         query = _this.permalink.attr('href').split(/\?/)[1].replace(/&sn=.*/, '');
         if ((query != null) && _this.list_modal.find('.toggle-juggler-qrcode').prop('checked')) {
@@ -25379,7 +25379,7 @@ Ship = (function() {
     this.row = $(document.createElement('DIV'));
     this.row.addClass('row-fluid ship');
     this.row.insertBefore(this.builder.notes_container);
-    this.row.append($.trim('<div class="span3">\n    <input class="ship-selector-container" type="hidden" />\n    <br />\n    <input type="hidden" class="pilot-selector-container" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span2 button-container">\n    <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="icon-remove"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>\n    <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="icon-copy"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>\n</div>'));
+    this.row.append($.trim('<div class="span3">\n    <input class="ship-selector-container" type="hidden" />\n    <br />\n    <input type="hidden" class="pilot-selector-container" />\n</div>\n<div class="span1 points-display-container">\n    <span></span>\n</div>\n<div class="span6 addon-container" />\n<div class="span2 button-container">\n    <button class="btn btn-danger remove-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Remove Pilot"><i class="fa fa-times"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Remove Pilot</span></button>\n    <button class="btn copy-pilot"><span class="visible-desktop visible-tablet hidden-phone" data-toggle="tooltip" title="Clone Pilot"><i class="fa fa-files-o"></i></span><span class="hidden-desktop hidden-tablet visible-phone">Clone Pilot</span></button>\n</div>'));
     this.row.find('.button-container span').tooltip();
     this.ship_selector = $(this.row.find('input.ship-selector-container'));
     this.pilot_selector = $(this.row.find('input.pilot-selector-container'));
