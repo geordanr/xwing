@@ -812,12 +812,15 @@ exportObj.cardLoaders['Español'] = () ->
         "Poe Dameron (PS9)":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
             ship: "T-70 Ala-X"
+        "Resistance Sympathizer":
+            name: "Simpatizante de la Resistencia"
+            ship: "Yt-1300"
         "Rey":
-            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+            text: """Cuando ataques o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes volver a tirar hasta 2 dados en los que hayas sacado caras vacías."""
         'Han Solo (TFA)':
-            text: '''When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'''
+            text: '''En el momento de desplegarte durante la preparación de la partida, se te puede colocar en cualquier parte de la zona de juego que esté más allá de alcance 3 de las naves enemigas.'''
         'Chewbacca (TFA)':
-            text: '''After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'''
+            text: '''Después de que otra nave aliada que tengas a alcance 1-3 sea destruida (pero no hay aabandonado el campo de batalla), puedes efectuar un ataque.'''
         'Norra Wexley':
             ship: "ARC-170"
             text: '''Cuando ataques o te defiendas, puedes gastar una ficha de Blanco fijado que tengas sobre la nave enemiga para añadir 1 resultado %FOCUS% a tu tirada.'''
@@ -891,16 +894,18 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
         'Nien Nunb':
             ship: "T-70 Ala-X"
-            text: '''When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'''
+            text: '''Cuando recibas una ficha de Tensión, si hay alguna nave enemiga dentro de tu arco de fuego a alcance 1, puedes descartar esa ficha de Tensión.'''
         '"Snap" Wexley':
             ship: "T-70 Ala-X"
-            text: '''After you execute a 2-, 3-, or 4-speed maneuver, if you are not touching a ship, you may perform a free boost action.'''
+            text: '''Después de que ejecutes una maniobra de velocidad 2, 3 ó 4, si no estás en contacto con ninguna nave, puedes realizar una acción gratuita de impulso.'''
         'Jess Pava':
             ship: "T-70 Ala-X"
-            text: '''When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'''
+            text: '''Cuando ataques o te defiendas, puedes volver a tirar 1 de tus dados por cada otra nave aliada que tengas a Alcance 1.'''
         'Ahsoka Tano':
+            ship: "Caza TIE"
             text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
         'Captain Rex':
+            ship: "Caza TIE"
             text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
         'Major Stridan':
             text: '''For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'''
@@ -1462,19 +1467,23 @@ exportObj.cardLoaders['Español'] = () ->
         'Cassian Andor':
             text: '''%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship's bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'''
         'Finn':
-            text: '''%REBELONLY%%LINEBREAK%When attacking with a primary weapon or defending, if the enemy ship is inside your firing arc, you may add 1 blank result to your roll.'''
+            text: '''%REBELONLY%%LINEBREAK%Cuando ataques con un armamento principal o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes añadir 1 resultado de cara vacía a tu tirada.'''
         'Rey':
-            text: '''%REBELONLY%%LINEBREAK%At the start of the End phase, you may place 1 of your ship's focus tokens on this card.  At the start of the Combat phase, you may assign 1 of those tokens to your ship.'''
+            text: '''%REBELONLY%%LINEBREAK%Al comienzo de la fase Final, puedes colocar 1 de las fichas de Concentración de tu nave sobre esta carta. Al comienzo de la fase de Combate, puedes asignar 1 de esas fichas a tu nave.'''
         'Burnout SLAM':
-            text: '''%LARGESHIPONLY%%LINEBREAK%Your action bar gains the %SLAM% action icon.%LINEBREAK%After you perform a SLAM action, discard this card.'''
+            name: "Superacelerador de emergencia"
+            text: '''%LARGESHIPONLY%%LINEBREAK%Tu barra de acciones gana el icono %SLAM%.%LINEBREAK%Después de que realices una acción de MASA, descarta esta carta.'''
         'Primed Thrusters':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%Stress tokens do not prevent you from performing boost or barrel roll actions unless you have 3 or more stress tokens.'''
+            name: "Propulsores sobrealimentados"
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Las fichas de Tensión no te impiden realizar acciones de impulso o de tonel volado a menos que tengas asignadas 3 fichas de Tensión o más.'''
         'Pattern Analyzer':
-            text: '''When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'''
+            name: "Analizador de patrones"
+            text: '''Cuando ejecutes una maniobra, puedes resolver el paso "Comprobar Tensión del piloto" después del paso "Realizar una acción" (en vez de antes de ese paso).'''
         'Snap Shot':
-            text: '''After an enemy ship executes a maneuver, you may perform this attack against that ship.  <strong>Attack:</strong> Attack 1 ship.  You cannot modify your attack dice and cannot attack again this phase.'''
+            name: "Disparo de reacción"
+            text: '''Después de que una nave enemiga ejecute una maniobra, puedes efectuar este ataque contra esa nave. <strong>Ataque:</strong> Ataca a 1 nave. No puedes modificar tus dados de ataque y no puedes volver a atacar en esta fase.'''
         'M9-G8':
-            text: '''%REBELONLY%%LINEBREAK%When a ship you have locked is attacking, you may choose 1 attack die.  The attacker must reroll that die.%LINEBREAK%You can acquire target locks on other friendly ships.'''
+            text: '''%REBELONLY%%LINEBREAK%Cuando una nave que tengas fijada como blanco esté atacando, puedes elegir 1 dado de ataque. El atacante debe volver a tirar ese dado.%LINEBREAK%Puedes fijar como blanco otras naves aliadas.'''
         'EMP Device':
             text: '''During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'''
         'Captain Rex':
@@ -1488,9 +1497,11 @@ exportObj.cardLoaders['Español'] = () ->
         'Hyperwave Comm Scanner':
             text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'''
         'Trick Shot':
-            text: '''When attacking, if the attack is obstructed, you may roll 1 additional attack die.'''
+            name: "Disparo inverosímil"
+            text: '''Cuando ataques, si el ataque se considera obstruido, puedes tirar 1 dado de ataque adicional.'''
         'Hotshot Co-pilot':
-            text: '''When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'''
+            name: "Copiloto extraordinario"
+            text: '''Cuando ataques con un armamento princnipal, el defensor debe gastar 1 ficha de Concentración si le es posible.%LINEBREAK%Cuando te defiendas, el atacante debe gastar 1 ficha de Concentración si le es posible.'''
 
     modification_translations =
         "Stealth Device":
@@ -1571,7 +1582,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Propulsores vectoriales"
             text: '''%SMALLSHIPONLY%%LINEBREAK%Tu barra de acciones gana el icono de acción %BARRELROLL%.'''
         'Smuggling Compartment':
-            text: '''<span class="card-restriction">YT-1300 and YT-2400 only.</span>%LINEBREAK%Your upgrade bar gains the %ILLICIT% upgrade icon.%LINEBREAK%You may equip 1 additional Modification upgrade that costs 3 or fewer squad points.'''
+            name: "Compartimento para contrabando"
+            text: '''<span class="card-restriction">Sólo YT-1300 y YT-2400.</span>%LINEBREAK%Tu barra de mejoras gana el icono %ILLICIT%.%LINEBREAK%Puedes equipar 1 mejora de Modificación adicional que no cueste más de 3 puntos de escuadrón.'''
         'Gyroscopic Targeting':
             name: "Estabilización giroscópica"
             ship: "Nave de persecución clase Lancero"
@@ -1707,10 +1719,12 @@ exportObj.cardLoaders['Español'] = () ->
         'Suppressor':
             text: '''%GOZANTIONLY%%LINEBREAK%Once per round, after you acquire a target lock, you may remove 1 focus, evade, or blue target lock token from that ship.'''
         'Black One':
-            text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1.  You cannot equip this card if your pilot skill is "6" or lower.'''
+            name: "Negro Uno"
+            text: '''Después de que realices una acción de impulso o de tonel volado, puedes quitar 1 ficha de Blanco fijado enemiga de una nave aliada que tengas a alcance 1. Esta mejora no puede equiparse en naves con pilotos de Habilidad 6 o inferior.'''
             ship: "T-70 Ala-X"
         'Millennium Falcon (TFA)':
-            text: '''After you execute a 3-speed bank maneuver (%BANKLEFT% or %BANKRIGHT%), if you are not touching another ship and you are not stressed, you may receive 1 stress token to rotate your ship 180&deg;.'''
+            name: "Halcón Milenario (TFA)"
+            text: '''Después de que ejecutes una maniobra de inclinación (%BANKLEFT% o %BANKRIGHT%) de velocidad 3, si no estás en contacto con otra nave y no estás bajo tensión, puedes recibir 1 ficha de Tensión para cambiar la orientación de tu nave 180&deg;.'''
         'Alliance Overhaul':
             name: "Reacondicionado por la Alianza"
             text: '''<span class="card-restriction">Sólo ARC-170.</span>%LINEBREAK%Cuando ataques con un armamento principal desde tu arco de fuego normal, puedes tirar 1 dado de ataque adicional. Cuando ataques desde tu arco de fuego auxiliar, puedes cambiar 1 de tus resultados %FOCUS% por 1 resultado %CRIT%.'''
