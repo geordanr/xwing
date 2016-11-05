@@ -812,12 +812,15 @@ exportObj.cardLoaders['Español'] = () ->
         "Poe Dameron (PS9)":
             text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
             ship: "T-70 Ala-X"
+        "Resistance Sympathizer":
+            name: "Simpatizante de la Resistencia"
+            ship: "Yt-1300"
         "Rey":
-            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+            text: """Cuando ataques o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes volver a tirar hasta 2 dados en los que hayas sacado caras vacías."""
         'Han Solo (TFA)':
-            text: '''When you are placed during setup, you can be placed anywhere in the play area beyond Range 3 of enemy ships.'''
+            text: '''En el momento de desplegarte durante la preparación de la partida, se te puede colocar en cualquier parte de la zona de juego que esté más allá de alcance 3 de las naves enemigas.'''
         'Chewbacca (TFA)':
-            text: '''After another friendly ship at Range 1-3 is destroyed (but has not fled the battlefield), you may perform an attack.'''
+            text: '''Después de que otra nave aliada que tengas a alcance 1-3 sea destruida (pero no hay aabandonado el campo de batalla), puedes efectuar un ataque.'''
         'Norra Wexley':
             ship: "ARC-170"
             text: '''Cuando ataques o te defiendas, puedes gastar una ficha de Blanco fijado que tengas sobre la nave enemiga para añadir 1 resultado %FOCUS% a tu tirada.'''
