@@ -4028,7 +4028,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Sabine Wren (Scum)'
-            canonical_name: "sabinewren-swx56"
+            canonical_name: "sabinewren"
             id: 220
             unique: true
             faction: 'Scum and Villainy'
