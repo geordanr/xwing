@@ -4387,7 +4387,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2"
             aka: [ "R2-D2 (Crew)" ]
-            canonical_name: 'r2d2-swx22'
+            canonical_name: 'r2d2'
             id: 3
             unique: true
             slot: "Astromech"
@@ -4794,7 +4794,7 @@ exportObj.basicCardData = ->
         {
             name: "R2-D2 (Crew)"
             aka: [ "R2-D2" ]
-            canonical_name: 'r2d2'
+            canonical_name: 'r2d2-swx22'
             id: 62
             unique: true
             slot: "Crew"
