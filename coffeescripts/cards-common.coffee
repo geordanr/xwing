@@ -3627,7 +3627,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Maarek Stele (TIE Defender)"
-            canonical_name: 'maarekstele-swx52'
+            canonical_name: 'maarekstele'
             id: 193
             unique: true
             faction: "Galactic Empire"
@@ -4069,7 +4069,7 @@ exportObj.basicCardData = ->
         {
             name: 'Sabine Wren (TIE Fighter)'
             id: 223
-            canonical_name: "sabinewren-swx59"
+            canonical_name: "sabinewren"
             unique: true
             faction: 'Rebel Alliance'
             ship: 'TIE Fighter'
