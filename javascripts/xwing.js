@@ -3441,7 +3441,7 @@ exportObj.basicCardData = function() {
         points: 17
       }, {
         name: "Maarek Stele (TIE Defender)",
-        canonical_name: 'maarekstele-swx52',
+        canonical_name: 'maarekstele',
         id: 193,
         unique: true,
         faction: "Galactic Empire",
@@ -3705,7 +3705,7 @@ exportObj.basicCardData = function() {
         points: 37
       }, {
         name: 'Sabine Wren (Scum)',
-        canonical_name: "sabinewren-swx56",
+        canonical_name: "sabinewren",
         id: 220,
         unique: true,
         faction: 'Scum and Villainy',
@@ -3733,7 +3733,7 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Sabine Wren (TIE Fighter)',
         id: 223,
-        canonical_name: "sabinewren-swx59",
+        canonical_name: "sabinewren",
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'TIE Fighter',
@@ -3959,7 +3959,7 @@ exportObj.basicCardData = function() {
       }, {
         name: "R2-D2",
         aka: ["R2-D2 (Crew)"],
-        canonical_name: 'r2d2-swx22',
+        canonical_name: 'r2d2',
         id: 3,
         unique: true,
         slot: "Astromech",
@@ -4324,7 +4324,7 @@ exportObj.basicCardData = function() {
       }, {
         name: "R2-D2 (Crew)",
         aka: ["R2-D2"],
-        canonical_name: 'r2d2',
+        canonical_name: 'r2d2-swx22',
         id: 62,
         unique: true,
         slot: "Crew",
