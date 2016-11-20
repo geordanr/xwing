@@ -11307,7 +11307,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Resistance Sympathizer": {
       name: "Simpatizante de la Resistencia",
-      ship: "Yt-1300"
+      ship: "YT-1300"
     },
     "Rey": {
       text: "Cuando ataques o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes volver a tirar hasta 2 dados en los que hayas sacado caras vacías."
