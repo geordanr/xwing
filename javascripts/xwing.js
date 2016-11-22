@@ -8801,7 +8801,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -10329,7 +10329,7 @@ exportObj.cardLoaders.English = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -12619,7 +12619,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -14453,7 +14453,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16266,7 +16266,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -17757,7 +17757,7 @@ exportObj.cardLoaders['Русский'] = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -19211,7 +19211,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
     },
     'A Debt to Pay': {
-      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
