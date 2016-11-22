@@ -267,3 +267,6 @@ li.squad-summary {
 
 .collection-inventory-content ul {
   list-style-type: none; }
+
+svg > g.maneuver.backwards {
+  transform: translate(200px, 200px) rotate(180deg); }

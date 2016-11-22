@@ -1699,7 +1699,7 @@ exportObj.basicCardData = function() {
         hull: 5,
         shields: 0,
         actions: ['Barrel Roll', 'Focus'],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 3, 3, 3], [1, 2, 2, 2, 1, 0, 3, 3, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
       },
       'U-Wing': {
         name: 'U-Wing',
@@ -3797,14 +3797,14 @@ exportObj.basicCardData = function() {
         slots: ['System', 'Crew', 'Crew', 'Tech', 'Tech'],
         points: 30
       }, {
-        name: 'Const???',
+        name: 'Constable Zuvio',
         id: 230,
         unique: true,
         faction: 'Scum and Villainy',
         ship: 'Quadjumper',
         skill: 7,
         slots: ['Elite', 'Crew', 'Bomb', 'Tech', 'Illicit'],
-        points: 100
+        points: 19
       }, {
         name: 'Sarco Plank',
         id: 231,
@@ -3824,13 +3824,13 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Bomb', 'Tech', 'Illicit'],
         points: 17
       }, {
-        name: 'Jakku ???',
+        name: 'Jakku Gunrunner',
         id: 233,
         faction: 'Scum and Villainy',
         ship: 'Quadjumper',
         skill: 1,
         slots: ['Crew', 'Bomb', 'Tech', 'Illicit'],
-        points: 100
+        points: 15
       }, {
         name: 'Cassian Andor',
         id: 234,
@@ -5280,6 +5280,7 @@ exportObj.basicCardData = function() {
       }, {
         name: 'A Score to Settle',
         id: 197,
+        applies_condition: 'A Debt to Pay'.canonicalize(),
         slot: 'Elite',
         unique: true,
         points: 0
@@ -5399,6 +5400,11 @@ exportObj.basicCardData = function() {
         id: 214,
         slot: 'Elite',
         points: 0
+      }, {
+        name: 'Scavenger Crane',
+        id: 215,
+        slot: 'Illicit',
+        points: 2
       }
     ],
     modificationsById: [
@@ -5667,6 +5673,11 @@ exportObj.basicCardData = function() {
         ship: 'TIE Fighter',
         faction: 'Rebel Alliance',
         points: 1
+      }, {
+        name: 'Spacetug Tractor Array',
+        id: 30,
+        ship: 'Quadjumper',
+        points: 2
       }
     ],
     titlesById: [
@@ -7639,6 +7650,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -8456,6 +8470,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -8574,6 +8591,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -8779,6 +8799,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -9408,6 +9431,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -10052,6 +10078,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -10141,6 +10170,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span> %REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -10295,6 +10327,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -11438,6 +11473,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -12240,6 +12278,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Hotshot Co-pilot': {
       name: "Copiloto extraordinario",
       text: 'Cuando ataques con un armamento princnipal, el defensor debe gastar 1 ficha de Concentración si le es posible.%LINEBREAK%Cuando te defiendas, el atacante debe gastar 1 ficha de Concentración si le es posible.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -12357,6 +12398,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -12573,6 +12617,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -13400,6 +13447,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -14123,6 +14173,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -14225,6 +14278,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -14395,6 +14451,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -15202,6 +15261,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -15927,6 +15989,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -16029,6 +16094,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -16196,6 +16264,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16809,6 +16880,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -17438,6 +17512,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -17524,6 +17601,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -17675,6 +17755,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -18278,6 +18361,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Lieutenant Dormitz': {
       text: 'During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'
+    },
+    'Constable Zuvio': {
+      text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
     }
   };
   upgrade_translations = {
@@ -18898,6 +18984,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Hotshot Co-pilot': {
       text: 'When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'
+    },
+    'Scavenger Crane': {
+      text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     }
   };
   modification_translations = {
@@ -18984,6 +19073,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
+    },
+    'Spacetug Tractor Array': {
+      text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     }
   };
   title_translations = {
@@ -19117,6 +19209,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Fanatical Devotion': {
       text: 'When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'
+    },
+    'A Debt to Pay': {
+      text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %HIT% result.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -22436,7 +22531,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21326
+                    lineno: 21397
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23005,7 +23100,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21902
+              lineno: 21973
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23643,7 +23738,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22469
+          lineno: 22540
         }));
         __iced_deferrals._fulfill();
       });
@@ -23655,7 +23750,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22470
+            lineno: 22541
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -24054,7 +24149,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getManeuverTableHTML = function(maneuvers, baseManeuvers) {
-    var bearing, bearings, bearings_without_maneuvers, color, difficulty, haveManeuver, linePath, outTable, outlineColor, speed, transform, trianglePath, turn, v, _i, _j, _k, _l, _len, _len1, _len2, _m, _n, _ref, _ref1, _ref2, _ref3, _results;
+    var bearing, bearings, bearings_without_maneuvers, className, color, difficulty, haveManeuver, linePath, outTable, outlineColor, speed, transform, trianglePath, turn, v, _i, _j, _k, _l, _len, _len1, _len2, _m, _n, _ref, _ref1, _ref2, _ref3, _results;
     if ((maneuvers == null) || maneuvers.length === 0) {
       return "Missing maneuver info.";
     }
@@ -24112,6 +24207,7 @@ exportObj.SquadBuilder = (function() {
               outlineColor = "gold";
             }
             transform = "";
+            className = "";
             switch (turn) {
               case 0:
                 linePath = "M160,180 L160,70 80,70";
@@ -24156,8 +24252,25 @@ exportObj.SquadBuilder = (function() {
               case 9:
                 linePath = "M40,180 L40,70 120,70";
                 trianglePath = "M100,100 H140 L120,140 Z";
+                break;
+              case 10:
+                linePath = "M50,180 S50,120 120,60";
+                trianglePath = "M120,100 V40 L170,70 Z";
+                transform = "transform='translate(5 -15) rotate(-45 130 90)' ";
+                className = 'backwards';
+                break;
+              case 11:
+                linePath = "M100,180 L100,100 100,80";
+                trianglePath = "M70,80 H130 L100,30 Z";
+                className = 'backwards';
+                break;
+              case 12:
+                linePath = "M150,180 S150,120 80,60";
+                trianglePath = "M80,100 V40 L30,70 Z";
+                transform = "transform='translate(-5 -15) rotate(45 70 90)' ";
+                className = 'backwards';
             }
-            outTable += $.trim("<path d='" + trianglePath + "' fill='" + color + "' stroke-width='5' stroke='" + outlineColor + "' " + transform + "/>\n<path stroke-width='25' fill='none' stroke='" + outlineColor + "' d='" + linePath + "' />\n<path stroke-width='15' fill='none' stroke='" + color + "' d='" + linePath + "' />");
+            outTable += $.trim("<g class=\"maneuver " + className + "\">\n  <path d='" + trianglePath + "' fill='" + color + "' stroke-width='5' stroke='" + outlineColor + "' " + transform + "/>\n  <path stroke-width='25' fill='none' stroke='" + outlineColor + "' d='" + linePath + "' />\n  <path stroke-width='15' fill='none' stroke='" + color + "' d='" + linePath + "' />\n</g>");
           }
           outTable += "</svg>";
         }
@@ -25173,7 +25286,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23325
+                      lineno: 23411
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25242,7 +25355,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23349
+                lineno: 23435
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25294,7 +25407,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23371
+            lineno: 23457
           }));
         }
         _ref = _this.upgrades;
@@ -25302,7 +25415,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23373
+              lineno: 23459
             }));
           }
         }
@@ -25311,7 +25424,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23375
+              lineno: 23461
             }));
           }
         }
@@ -26228,7 +26341,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24023
+                lineno: 24109
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26347,7 +26460,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24082
+                  lineno: 24168
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26369,7 +26482,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24086
+                    lineno: 24172
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26454,7 +26567,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24126
+            lineno: 24212
           }));
         }
         __iced_deferrals._fulfill();
