@@ -452,6 +452,10 @@ exportObj.cardLoaders.English = () ->
             text: '''At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'''
         'Cassian Andor':
             text: '''At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'''
+        'Bodhi Rook':
+            text: '''When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'''
+        'Heff Tobber':
+            text: '''After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'''
         '''"Duchess"''':
             text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
         'Nien Nunb':
@@ -903,6 +907,12 @@ exportObj.cardLoaders.English = () ->
             text: '''When attacking with a primary weapon, the defender must spend 1 focus token if able.%LINEBREAK%When defending, the attacker must spend 1 focus token if able.'''
         '''Scavenger Crane''':
             text: '''After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'''
+        'Bodhi Rook':
+            text: '''%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'''
+        'Baze Malbus':
+            text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'''
+        'Inspiring Recruit':
+            text: '''Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'''
 
     modification_translations =
         "Stealth Device":

@@ -921,7 +921,13 @@ exportObj.basicCardData = ->
                 'Focus'
                 'Target Lock'
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 3, 0, 0 ]
+                [ 0, 2, 2, 2, 0 ]
+                [ 1, 2, 2, 2, 1 ]
+                [ 0, 1, 1, 1, 0 ]
+                [ 0, 0, 1, 0, 0 ]
+            ]
         'TIE Striker':
             name: 'TIE Striker'
             factions: ["Galactic Empire"]
@@ -4249,7 +4255,7 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: 'Unspoiled PS4 U-Wing Pilot'
+            name: 'Bodhi Rook'
             id: 235
             unique: true
             faction: 'Rebel Alliance'
@@ -4261,10 +4267,10 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: 'Unspoiled PS3 U-Wing Pilot'
+            name: 'Heff Tobber'
             id: 236
             unique: true
             faction: 'Rebel Alliance'
@@ -4276,7 +4282,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Blue Squadron Pathfinder'
@@ -5978,6 +5984,28 @@ exportObj.basicCardData = ->
             id: 215
             slot: 'Illicit'
             points: 2
+        }
+        {
+            name: 'Bodhi Rook'
+            id: 216
+            slot: 'Crew'
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 1
+        }
+        {
+            name: 'Baze Malbus'
+            id: 217
+            slot: 'Crew'
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 3
+        }
+        {
+            name: 'Inspiring Recruit'
+            id: 218
+            slot: 'Crew'
+            points: 1
         }
     ]
 
