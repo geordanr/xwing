@@ -1710,7 +1710,7 @@ exportObj.basicCardData = function() {
         hull: 4,
         shields: 4,
         actions: ['Focus', 'Target Lock'],
-        maneuvers: []
+        maneuvers: [[0, 0, 3, 0, 0], [0, 2, 2, 2, 0], [1, 2, 2, 2, 1], [0, 1, 1, 1, 0], [0, 0, 1, 0, 0]]
       },
       'TIE Striker': {
         name: 'TIE Striker',
@@ -3841,23 +3841,23 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'System', 'Torpedo', 'Crew', 'Crew'],
         points: 27
       }, {
-        name: 'Unspoiled PS4 U-Wing Pilot',
+        name: 'Bodhi Rook',
         id: 235,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'U-Wing',
         skill: 4,
         slots: ['System', 'Torpedo', 'Crew', 'Crew'],
-        points: 100
+        points: 25
       }, {
-        name: 'Unspoiled PS3 U-Wing Pilot',
+        name: 'Heff Tobber',
         id: 236,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'U-Wing',
         skill: 3,
         slots: ['System', 'Torpedo', 'Crew', 'Crew'],
-        points: 100
+        points: 24
       }, {
         name: 'Blue Squadron Pathfinder',
         id: 237,
@@ -5405,6 +5405,25 @@ exportObj.basicCardData = function() {
         id: 215,
         slot: 'Illicit',
         points: 2
+      }, {
+        name: 'Bodhi Rook',
+        id: 216,
+        slot: 'Crew',
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 1
+      }, {
+        name: 'Baze Malbus',
+        id: 217,
+        slot: 'Crew',
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 3
+      }, {
+        name: 'Inspiring Recruit',
+        id: 218,
+        slot: 'Crew',
+        points: 1
       }
     ],
     modificationsById: [
@@ -7627,6 +7646,12 @@ exportObj.cardLoaders.Deutsch = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -8473,6 +8498,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -9408,6 +9442,12 @@ exportObj.cardLoaders.English = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -10081,6 +10121,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -11445,6 +11494,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -12281,6 +12336,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -13424,6 +13488,12 @@ exportObj.cardLoaders['Français'] = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -14176,6 +14246,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -15238,6 +15317,12 @@ exportObj.cardLoaders['Polski'] = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -15992,6 +16077,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -16857,6 +16951,12 @@ exportObj.cardLoaders['Русский'] = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -17515,6 +17615,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -18329,6 +18438,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     'Cassian Andor': {
       text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
     },
+    'Bodhi Rook': {
+      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Heff Tobber': {
+      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+    },
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
@@ -18987,6 +19102,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
+    },
+    'Bodhi Rook': {
+      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+    },
+    'Baze Malbus': {
+      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+    },
+    'Inspiring Recruit': {
+      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
     }
   };
   modification_translations = {
@@ -22531,7 +22655,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21397
+                    lineno: 21495
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23100,7 +23224,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 21973
+              lineno: 22071
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23738,7 +23862,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22540
+          lineno: 22638
         }));
         __iced_deferrals._fulfill();
       });
@@ -23750,7 +23874,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22541
+            lineno: 22639
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25286,7 +25410,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23411
+                      lineno: 23509
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25355,7 +25479,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23435
+                lineno: 23533
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25407,7 +25531,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23457
+            lineno: 23555
           }));
         }
         _ref = _this.upgrades;
@@ -25415,7 +25539,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23459
+              lineno: 23557
             }));
           }
         }
@@ -25424,7 +25548,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23461
+              lineno: 23559
             }));
           }
         }
@@ -26341,7 +26465,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24109
+                lineno: 24207
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26460,7 +26584,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24168
+                  lineno: 24266
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26482,7 +26606,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24172
+                    lineno: 24270
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26567,7 +26691,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24212
+            lineno: 24310
           }));
         }
         __iced_deferrals._fulfill();
