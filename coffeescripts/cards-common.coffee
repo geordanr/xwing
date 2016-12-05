@@ -940,7 +940,12 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Evade'
             ]
-            maneuvers: []
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 3, 3, 3 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -4311,18 +4316,19 @@ exportObj.basicCardData = ->
             points: 23
         }
         {
-            name: '"Pure???"'
+            name: '"Pure Sabacc"'
             id: 239
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Striker'
             skill: 6
             slots: [
+                'Elite'
             ]
-            points: 100
+            points: 22
         }
         {
-            name: 'Unspoiled PS5 TIE Striker Pilot'
+            name: '"Countdown"'
             id: 240
             unique: true
             faction: 'Galactic Empire'
@@ -4330,7 +4336,7 @@ exportObj.basicCardData = ->
             skill: 5
             slots: [
             ]
-            points: 100
+            points: 20
         }
         {
             name: 'Unspoiled PS4 TIE Striker Pilot'
@@ -4353,14 +4359,14 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Unspoiled PS1 TIE Striker Pilot'
+            name: 'Imperial Trainee'
             id: 243
             faction: 'Galactic Empire'
             ship: 'TIE Striker'
             skill: 1
             slots: [
             ]
-            points: 100
+            points: 17
         }
     ]
 
@@ -6007,6 +6013,13 @@ exportObj.basicCardData = ->
             slot: 'Crew'
             points: 1
         }
+        {
+            name: 'Swarm Leader'
+            id: 219
+            unique: true
+            slot: 'Elite'
+            points: 3
+        }
     ]
 
     modificationsById: [
@@ -6239,6 +6252,13 @@ exportObj.basicCardData = ->
             id: 30
             ship: 'Quadjumper'
             points: 2
+        }
+        {
+            name: 'Lightweight Frame'
+            id: 31
+            points: 2
+            restriction_func: (ship) ->
+                ship.data.name.indexOf('TIE') != -1 and ship.effectiveStats().agility < 3
         }
     ]
 

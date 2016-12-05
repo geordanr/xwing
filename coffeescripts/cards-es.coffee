@@ -896,6 +896,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'''
         '''"Duchess"''':
             text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
+        '''"Pure Sabacc"''':
+            text: '''When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'''
+        '''"Countdown"''':
+            text: '''When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'''
         'Nien Nunb':
             ship: "T-70 Ala-X"
             text: '''Cuando recibas una ficha de Tensión, si hay alguna nave enemiga dentro de tu arco de fuego a alcance 1, puedes descartar esa ficha de Tensión.'''
@@ -1516,6 +1520,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'''
         'Inspiring Recruit':
             text: '''Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'''
+        'Swarm Leader':
+            text: '''When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'''
 
     modification_translations =
         "Stealth Device":
@@ -1606,6 +1612,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'''
         'Spacetug Tractor Array':
             text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
+        'Lightweight Frame':
+            text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'''
 
     title_translations =
         "Slave I":
