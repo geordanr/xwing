@@ -1720,7 +1720,7 @@ exportObj.basicCardData = function() {
         hull: 4,
         shields: 0,
         actions: ['Focus', 'Barrel Roll', 'Evade'],
-        maneuvers: []
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 1, 2, 1, 1, 3, 3, 3], [0, 1, 2, 1, 0, 0, 0, 0]]
       }
     },
     pilotsById: [
@@ -3876,23 +3876,23 @@ exportObj.basicCardData = function() {
         slots: ['Elite'],
         points: 23
       }, {
-        name: '"Pure???"',
+        name: '"Pure Sabacc"',
         id: 239,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'TIE Striker',
         skill: 6,
-        slots: [],
-        points: 100
+        slots: ['Elite'],
+        points: 22
       }, {
-        name: 'Unspoiled PS5 TIE Striker Pilot',
+        name: '"Countdown"',
         id: 240,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'TIE Striker',
         skill: 5,
         slots: [],
-        points: 100
+        points: 20
       }, {
         name: 'Unspoiled PS4 TIE Striker Pilot',
         id: 241,
@@ -3910,13 +3910,13 @@ exportObj.basicCardData = function() {
         slots: [],
         points: 100
       }, {
-        name: 'Unspoiled PS1 TIE Striker Pilot',
+        name: 'Imperial Trainee',
         id: 243,
         faction: 'Galactic Empire',
         ship: 'TIE Striker',
         skill: 1,
         slots: [],
-        points: 100
+        points: 17
       }
     ],
     upgradesById: [
@@ -5424,6 +5424,12 @@ exportObj.basicCardData = function() {
         id: 218,
         slot: 'Crew',
         points: 1
+      }, {
+        name: 'Swarm Leader',
+        id: 219,
+        unique: true,
+        slot: 'Elite',
+        points: 3
       }
     ],
     modificationsById: [
@@ -5697,6 +5703,13 @@ exportObj.basicCardData = function() {
         id: 30,
         ship: 'Quadjumper',
         points: 2
+      }, {
+        name: 'Lightweight Frame',
+        id: 31,
+        points: 2,
+        restriction_func: function(ship) {
+          return ship.data.name.indexOf('TIE') !== -1 && ship.effectiveStats().agility < 3;
+        }
       }
     ],
     titlesById: [
@@ -7655,6 +7668,12 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
     },
@@ -8507,6 +8526,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -8628,6 +8650,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -9451,6 +9476,12 @@ exportObj.cardLoaders.English = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
     },
@@ -10130,6 +10161,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -10222,6 +10256,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -11503,6 +11540,12 @@ exportObj.cardLoaders['Español'] = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       ship: "T-70 Ala-X",
       text: 'Cuando recibas una ficha de Tensión, si hay alguna nave enemiga dentro de tu arco de fuego a alcance 1, puedes descartar esa ficha de Tensión.'
@@ -12345,6 +12388,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -12465,6 +12511,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -13497,6 +13546,12 @@ exportObj.cardLoaders['Français'] = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
     },
@@ -14255,6 +14310,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -14360,6 +14418,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -15326,6 +15387,12 @@ exportObj.cardLoaders['Polski'] = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
     },
@@ -16086,6 +16153,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -16191,6 +16261,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -16960,6 +17033,12 @@ exportObj.cardLoaders['Русский'] = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     'Nien Nunb': {
       text: 'When you receive a stress token, if there is an enemy ship inside your firing arc at Range 1, you may discard that stress token.'
     },
@@ -17624,6 +17703,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -17713,6 +17795,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -18447,6 +18532,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     '"Duchess"': {
       text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
     },
+    '"Pure Sabacc"': {
+      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+    },
+    '"Countdown"': {
+      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+    },
     "Rey": {
       text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
     },
@@ -19111,6 +19202,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Inspiring Recruit': {
       text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+    },
+    'Swarm Leader': {
+      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
     }
   };
   modification_translations = {
@@ -19200,6 +19294,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Spacetug Tractor Array': {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
+    },
+    'Lightweight Frame': {
+      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     }
   };
   title_translations = {
@@ -22655,7 +22752,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21495
+                    lineno: 21571
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23224,7 +23321,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 22071
+              lineno: 22147
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23862,7 +23959,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22638
+          lineno: 22714
         }));
         __iced_deferrals._fulfill();
       });
@@ -23874,7 +23971,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22639
+            lineno: 22715
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25410,7 +25507,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23509
+                      lineno: 23585
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25479,7 +25576,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23533
+                lineno: 23609
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25531,7 +25628,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23555
+            lineno: 23631
           }));
         }
         _ref = _this.upgrades;
@@ -25539,7 +25636,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23557
+              lineno: 23633
             }));
           }
         }
@@ -25548,7 +25645,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23559
+              lineno: 23635
             }));
           }
         }
@@ -26465,7 +26562,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24207
+                lineno: 24283
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26584,7 +26681,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24266
+                  lineno: 24342
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26606,7 +26703,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24270
+                    lineno: 24346
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26691,7 +26788,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24310
+            lineno: 24386
           }));
         }
         __iced_deferrals._fulfill();
