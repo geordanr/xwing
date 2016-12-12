@@ -5430,6 +5430,18 @@ exportObj.basicCardData = function() {
         unique: true,
         slot: 'Elite',
         points: 3
+      }, {
+        name: 'Expertise',
+        id: 220,
+        slot: 'Elite',
+        points: 4
+      }, {
+        name: 'Bistan',
+        id: 221,
+        slot: 'Crew',
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 2
       }
     ],
     modificationsById: [
@@ -8529,6 +8541,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -10164,6 +10182,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -12391,6 +12415,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -14313,6 +14343,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -16156,6 +16192,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -17706,6 +17748,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -19205,6 +19253,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Swarm Leader': {
       text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+    },
+    'Bistan': {
+      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Expertise': {
+      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
     }
   };
   modification_translations = {
@@ -22752,7 +22806,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21571
+                    lineno: 21613
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23321,7 +23375,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 22147
+              lineno: 22189
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -23959,7 +24013,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22714
+          lineno: 22756
         }));
         __iced_deferrals._fulfill();
       });
@@ -23971,7 +24025,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22715
+            lineno: 22757
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25507,7 +25561,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23585
+                      lineno: 23627
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25576,7 +25630,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23609
+                lineno: 23651
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25628,7 +25682,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23631
+            lineno: 23673
           }));
         }
         _ref = _this.upgrades;
@@ -25636,7 +25690,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23633
+              lineno: 23675
             }));
           }
         }
@@ -25645,7 +25699,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23635
+              lineno: 23677
             }));
           }
         }
@@ -26562,7 +26616,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24283
+                lineno: 24325
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26681,7 +26735,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24342
+                  lineno: 24384
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26703,7 +26757,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24346
+                    lineno: 24388
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26788,7 +26842,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24386
+            lineno: 24428
           }));
         }
         __iced_deferrals._fulfill();
