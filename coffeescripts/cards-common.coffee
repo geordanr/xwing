@@ -6020,6 +6020,20 @@ exportObj.basicCardData = ->
             slot: 'Elite'
             points: 3
         }
+        {
+            name: 'Expertise'
+            id: 220
+            slot: 'Elite'
+            points: 4
+        }
+        {
+            name: 'Bistan'
+            id: 221
+            slot: 'Crew'
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 2
+        }
     ]
 
     modificationsById: [

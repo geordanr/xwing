@@ -1189,6 +1189,10 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'''
         'Swarm Leader':
             text: '''When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'''
+        'Bistan':
+            text: '''%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'''
+        'Expertise':
+            text: '''When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'''
 
     modification_translations =
         "Shield Upgrade":
