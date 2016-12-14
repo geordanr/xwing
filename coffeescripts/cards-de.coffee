@@ -859,6 +859,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'''
         'Constable Zuvio':
             text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
+        'Sarco Plank':
+            text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1478,6 +1480,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'''
         'Expertise':
             text: '''When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'''
+        'BoShek':
+            text: '''When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'''
 
     modification_translations =
         "Stealth Device":

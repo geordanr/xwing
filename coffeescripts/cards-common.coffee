@@ -891,7 +891,12 @@ exportObj.basicCardData = ->
                 'Target Lock'
                 'Coordinate'
             ]
-            maneuvers: []
+            maneuvers: [
+              [ 0, 0, 3, 0, 0]
+              [ 3, 1, 2, 1, 3]
+              [ 1, 2, 2, 2, 1]
+              [ 3, 1, 1, 1, 3]
+            ]
         'Quadjumper':
             name: 'Quadjumper'
             factions: ["Scum and Villainy"]
@@ -4115,7 +4120,7 @@ exportObj.basicCardData = ->
             ship: 'TIE Fighter'
             skill: 3
             slots: []
-            points: 100
+            points: 13
         }
         {
             name: 'Kylo Ren'
@@ -4212,7 +4217,7 @@ exportObj.basicCardData = ->
                 'Tech'
                 'Illicit'
             ]
-            points: 100
+            points: 18
         }
         {
             name: 'Unkar Plutt'
@@ -4339,24 +4344,25 @@ exportObj.basicCardData = ->
             points: 20
         }
         {
-            name: 'Unspoiled PS4 TIE Striker Pilot'
+            name: 'Black Squadron Scout'
             id: 241
             faction: 'Galactic Empire'
             ship: 'TIE Striker'
             skill: 4
             slots: [
+                'Elite'
             ]
-            points: 100
+            points: 20
         }
         {
-            name: 'Unspoiled PS3 TIE Striker Pilot'
+            name: 'Scarif Defender'
             id: 242
             faction: 'Galactic Empire'
             ship: 'TIE Striker'
             skill: 3
             slots: [
             ]
-            points: 100
+            points: 18
         }
         {
             name: 'Imperial Trainee'
@@ -6032,6 +6038,13 @@ exportObj.basicCardData = ->
             slot: 'Crew'
             unique: true
             faction: 'Rebel Alliance'
+            points: 2
+        }
+        {
+            name: 'BoShek'
+            id: 222
+            slot: 'Crew'
+            unique: true
             points: 2
         }
     ]
