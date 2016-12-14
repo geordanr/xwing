@@ -1689,7 +1689,7 @@ exportObj.basicCardData = function() {
         hull: 6,
         shields: 6,
         actions: ['Focus', 'Target Lock', 'Coordinate'],
-        maneuvers: []
+        maneuvers: [[0, 0, 3, 0, 0], [3, 1, 2, 1, 3], [1, 2, 2, 2, 1], [3, 1, 1, 1, 3]]
       },
       'Quadjumper': {
         name: 'Quadjumper',
@@ -3759,7 +3759,7 @@ exportObj.basicCardData = function() {
         ship: 'TIE Fighter',
         skill: 3,
         slots: [],
-        points: 100
+        points: 13
       }, {
         name: 'Kylo Ren',
         id: 226,
@@ -3813,7 +3813,7 @@ exportObj.basicCardData = function() {
         ship: 'Quadjumper',
         skill: 5,
         slots: ['Elite', 'Crew', 'Bomb', 'Tech', 'Illicit'],
-        points: 100
+        points: 18
       }, {
         name: 'Unkar Plutt',
         id: 232,
@@ -3894,21 +3894,21 @@ exportObj.basicCardData = function() {
         slots: [],
         points: 20
       }, {
-        name: 'Unspoiled PS4 TIE Striker Pilot',
+        name: 'Black Squadron Scout',
         id: 241,
         faction: 'Galactic Empire',
         ship: 'TIE Striker',
         skill: 4,
-        slots: [],
-        points: 100
+        slots: ['Elite'],
+        points: 20
       }, {
-        name: 'Unspoiled PS3 TIE Striker Pilot',
+        name: 'Scarif Defender',
         id: 242,
         faction: 'Galactic Empire',
         ship: 'TIE Striker',
         skill: 3,
         slots: [],
-        points: 100
+        points: 18
       }, {
         name: 'Imperial Trainee',
         id: 243,
@@ -5441,6 +5441,12 @@ exportObj.basicCardData = function() {
         slot: 'Crew',
         unique: true,
         faction: 'Rebel Alliance',
+        points: 2
+      }, {
+        name: 'BoShek',
+        id: 222,
+        slot: 'Crew',
+        unique: true,
         points: 2
       }
     ],
@@ -7709,6 +7715,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -8547,6 +8556,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -9523,6 +9535,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -10188,6 +10203,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -11598,6 +11616,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -12421,6 +12442,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -13605,6 +13629,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -14349,6 +14376,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -15452,6 +15482,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -16198,6 +16231,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -17104,6 +17140,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -17754,6 +17793,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -18618,6 +18660,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Constable Zuvio': {
       text: 'When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'
+    },
+    'Sarco Plank': {
+      text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
     }
   };
   upgrade_translations = {
@@ -19259,6 +19304,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Expertise': {
       text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+    },
+    'BoShek': {
+      text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
     }
   };
   modification_translations = {
@@ -22806,7 +22854,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 21613
+                    lineno: 21654
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23375,7 +23423,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 22189
+              lineno: 22230
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -24013,7 +24061,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 22756
+          lineno: 22797
         }));
         __iced_deferrals._fulfill();
       });
@@ -24025,7 +24073,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 22757
+            lineno: 22798
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25561,7 +25609,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 23627
+                      lineno: 23668
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -25630,7 +25678,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 23651
+                lineno: 23692
               })
             ]);
             __iced_deferrals._fulfill();
@@ -25682,7 +25730,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 23673
+            lineno: 23714
           }));
         }
         _ref = _this.upgrades;
@@ -25690,7 +25738,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 23675
+              lineno: 23716
             }));
           }
         }
@@ -25699,7 +25747,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 23677
+              lineno: 23718
             }));
           }
         }
@@ -26616,7 +26664,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 24325
+                lineno: 24366
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26735,7 +26783,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 24384
+                  lineno: 24425
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -26757,7 +26805,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 24388
+                    lineno: 24429
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -26842,7 +26890,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 24428
+            lineno: 24469
           }));
         }
         __iced_deferrals._fulfill();
