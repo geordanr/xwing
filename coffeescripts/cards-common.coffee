@@ -5,8 +5,6 @@ exportObj.unreleasedExpansions = [
     "Sabine's TIE Fighter Expansion Pack"
     "Upsilon-class Shuttle Expansion Pack"
     "Quadjumper Expansion Pack"
-    "U-Wing Expansion Pack"
-    "TIE Striker Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
