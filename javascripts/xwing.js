@@ -8915,10 +8915,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Pivot Wing': {
       name: "Schwenkflügel",
+      ship: 'U-Flügler',
       text: '<span class="card-restriction">Nur U-Flügler.</span> %DUALCARD%%LINEBREAK%<strong>Angriffsposition:</strong> Erhöhe deinen Wendigkeitswert um 1.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Landeposition:</strong> Sobald du ein (0 %STOP%)-Manöver aufdeckst, darfst du dein Schiff um 180&deg; drehen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.'
     },
     'Adaptive Ailerons': {
       name: "Adaptive Querruder",
+      ship: "TIE-Stürmer",
       text: '<span class="card-restriction">Nur für TIE-Stürmer.</span>%LINEBREAK%Unmittelbar bevor du dein Rad aufdeckst, <strong>musst</strong> du ein weißes (%BANKLEFT% 1)-, (%STRAIGHT% 1)- oder (%BANKRIGHT% 1)-Manöver ausführen, falls du nicht gestresst bist.'
     }
   };
@@ -17040,9 +17042,11 @@ exportObj.cardLoaders['Polski'] = function() {
       text: 'When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'
     },
     'Sabine Wren (TIE Fighter)': {
+      ship: 'Myśliwiec TIE',
       text: 'Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'
     },
     '"Zeb" Orrelios (TIE Fighter)': {
+      ship: 'Myśliwiec TIE',
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     },
     'Kylo Ren': {
@@ -17079,9 +17083,11 @@ exportObj.cardLoaders['Polski'] = function() {
       text: 'When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'
     },
     'Ahsoka Tano': {
+      ship: 'Myśliwiec TIE',
       text: 'At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'
     },
     'Captain Rex': {
+      ship: 'Myśliwiec TIE',
       text: 'After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'
     },
     'Major Stridan': {
@@ -17966,7 +17972,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "<span class=\"card-restriction\">Tylko HWK-290.</span>%LINEBREAK%Podczas fazy końcowej nie usuwaj ze swojego statku niewykorzystanych żetonów skupienia."
     },
     "ST-321": {
-      ship: "Navette de classe Lambda",
+      ship: "Prom typu Lambda",
       text: "<span class=\"card-restriction\">Navette de classe <em>Lambda</em> uniquement.</span>%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."
     },
     "Royal Guard TIE": {
@@ -18007,7 +18013,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "<span class=\"card-restriction\">Tylko YT-2400.</span>%LINEBREAK%Dopóki jesteś wyposażony w kartę rozwinięcia [cannon], nie możesz wykonywać ataków bronią podstawową. Przy pomocy dodatkowej broni [cannon] możesz wykonywać ataki skierowane przeciwko statkom znajdujacym się poza twoim polem rażenia. "
     },
     "Dauntless": {
-      ship: "Décimateur VT-49",
+      ship: 'Decimator VT-49',
       text: "<span class=\"card-restriction\">Tylko Decimator VT-49.</span>%LINEBREAK%Po tym jak wykonasz manewr, który sprawi że będziesz nachodzić na inny statek, możesz wykonać 1 darmową akcję. Następnie otrzymujesz 1 żeton stresu."
     },
     "Virago": {
@@ -18068,6 +18074,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
     },
     'TIE Shuttle': {
+      ship: 'Bombowiec TIE',
       text: '<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'
     },
     'Requiem': {
@@ -18098,6 +18105,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: '<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'
     },
     'Sabine\'s Masterpiece': {
+      ship: 'Myśliwiec TIE',
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'
     },
     'Kylo Ren\'s Shuttle': {
@@ -24562,7 +24570,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22918
+                    lineno: 22926
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25131,7 +25139,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23494
+              lineno: 23502
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25769,7 +25777,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24061
+          lineno: 24069
         }));
         __iced_deferrals._fulfill();
       });
@@ -25781,7 +25789,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24062
+            lineno: 24070
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27317,7 +27325,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24932
+                      lineno: 24940
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27386,7 +27394,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24956
+                lineno: 24964
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27438,7 +27446,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24978
+            lineno: 24986
           }));
         }
         _ref = _this.upgrades;
@@ -27446,7 +27454,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24980
+              lineno: 24988
             }));
           }
         }
@@ -27455,7 +27463,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24982
+              lineno: 24990
             }));
           }
         }
@@ -28372,7 +28380,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25630
+                lineno: 25638
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28491,7 +28499,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25689
+                  lineno: 25697
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28513,7 +28521,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25693
+                    lineno: 25701
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28598,7 +28606,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25733
+            lineno: 25741
           }));
         }
         __iced_deferrals._fulfill();
