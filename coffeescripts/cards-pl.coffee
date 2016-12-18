@@ -248,6 +248,8 @@ exportObj.cardLoaders['Polski'] = () ->
         "Major Rhymer":
             ship: "Bombowiec TIE"
             text: "Kiedy atakujesz przy pomocy dodatkowej broni, możesz zwiększyć lub zmniejszyć zasięg broni o 1. Musisz przy tym zachować limit zasięgu 1-3."
+        "Gamma Squadron Veteran":
+            ship: "Bombowiec TIE"
         # TIE Advanced
         "Tempest Squadron Pilot":
             name: "Pilot Eskadry Burzy"
@@ -563,6 +565,7 @@ exportObj.cardLoaders['Polski'] = () ->
         '"Zeb" Orrelios':
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Tomax Bren':
+            ship: "Bombowiec TIE"
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         'Ello Asty':
             text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
@@ -575,6 +578,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "Manaroo":
             text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
         '"Deathfire"':
+            ship: "Bombowiec TIE"
             text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
         "Maarek Stele (TIE Defender)":
             text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
