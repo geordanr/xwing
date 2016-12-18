@@ -658,6 +658,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
         'Sarco Plank':
             text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+        "Talonbane Cobra":
+            text: """When attacking or defending, double the effect of your range combat bonuses."""
 
     upgrade_translations =
         #Elitarna zdolność
