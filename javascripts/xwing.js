@@ -16554,6 +16554,9 @@ exportObj.cardLoaders['Polski'] = function() {
       ship: "Bombowiec TIE",
       text: "Kiedy atakujesz przy pomocy dodatkowej broni, możesz zwiększyć lub zmniejszyć zasięg broni o 1. Musisz przy tym zachować limit zasięgu 1-3."
     },
+    "Gamma Squadron Veteran": {
+      ship: "Bombowiec TIE"
+    },
     "Tempest Squadron Pilot": {
       name: "Pilot Eskadry Burzy"
     },
@@ -16967,6 +16970,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
     },
     'Tomax Bren': {
+      ship: "Bombowiec TIE",
       text: 'Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'
     },
     'Ello Asty': {
@@ -16985,6 +16989,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
     },
     '"Deathfire"': {
+      ship: "Bombowiec TIE",
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
     },
     "Maarek Stele (TIE Defender)": {
@@ -17101,6 +17106,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Sarco Plank': {
       text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
+    },
+    "Talonbane Cobra": {
+      text: "When attacking or defending, double the effect of your range combat bonuses."
     }
   };
   upgrade_translations = {
@@ -24570,7 +24578,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22926
+                    lineno: 22932
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25139,7 +25147,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23502
+              lineno: 23508
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25777,7 +25785,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24069
+          lineno: 24075
         }));
         __iced_deferrals._fulfill();
       });
@@ -25789,7 +25797,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24070
+            lineno: 24076
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27325,7 +27333,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24940
+                      lineno: 24946
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27394,7 +27402,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24964
+                lineno: 24970
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27446,7 +27454,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24986
+            lineno: 24992
           }));
         }
         _ref = _this.upgrades;
@@ -27454,7 +27462,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24988
+              lineno: 24994
             }));
           }
         }
@@ -27463,7 +27471,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24990
+              lineno: 24996
             }));
           }
         }
@@ -28380,7 +28388,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25638
+                lineno: 25644
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28499,7 +28507,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25697
+                  lineno: 25703
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28521,7 +28529,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25701
+                    lineno: 25707
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28606,7 +28614,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25741
+            lineno: 25747
           }));
         }
         __iced_deferrals._fulfill();
