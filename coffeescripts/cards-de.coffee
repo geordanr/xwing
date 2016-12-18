@@ -1769,6 +1769,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur U-Flügler.</span> %DUALCARD%%LINEBREAK%<strong>Angriffsposition:</strong> Erhöhe deinen Wendigkeitswert um 1.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Landeposition:</strong> Sobald du ein (0 %STOP%)-Manöver aufdeckst, darfst du dein Schiff um 180&deg; drehen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.'''
         '''Adaptive Ailerons''':
             name: "Adaptive Querruder"
+            ship: "TIE-Stürmer"
             text: '''<span class="card-restriction">Nur für TIE-Stürmer.</span>%LINEBREAK%Unmittelbar bevor du dein Rad aufdeckst, <strong>musst</strong> du ein weißes (%BANKLEFT% 1)-, (%STRAIGHT% 1)- oder (%BANKRIGHT% 1)-Manöver ausführen, falls du nicht gestresst bist.'''
 
     condition_translations =
