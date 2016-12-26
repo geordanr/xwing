@@ -8535,14 +8535,14 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Pattern Analyzer': {
       name: "Mustererkennung",
-      text: 'sobald du ein Manöver ausführst, darfst du den Schritt "Aktion durchführen" vor dem Schritt "Stress des Piloten überprüfen" abhandeln (anstatt nach diesem Schritt).'
+      text: 'Sobald du ein Manöver ausführst, darfst du den Schritt "Aktion durchführen" vor dem Schritt "Stress des Piloten überprüfen" abhandeln (anstatt nach diesem Schritt).'
     },
     'Snap Shot': {
       name: "Schnellfeuer",
       text: 'Nachdem ein feindliches Schiff ein Manöver ausgeführt hat, darfst du diesen Angriff auf das Schiff durchführen.  <strong>Angriff:</strong> Greife 1 Schiff an. Du darfst deine Angriffswürfel nicht modifizieren und in dieser Phase nicht erneut angreifen.'
     },
     'M9-G8': {
-      text: '%DE_REBELONLY%%LINEBREAK%sobald ein Schiff angreift, das du in der Zielerfassung hast, darfst du 1 Angriffswürfel wählen. Der Angreifer muss den gewählten Würfel neu würfeln.%LINEBREAK%du kannst andere freundliche Schiffe in die Zielerfassung nehmen.'
+      text: '%DE_REBELONLY%%LINEBREAK%Sobald ein Schiff angreift, das du in der Zielerfassung hast, darfst du 1 Angriffswürfel wählen. Der Angreifer muss den gewählten Würfel neu würfeln.%LINEBREAK%Du kannst andere freundliche Schiffe in die Zielerfassung nehmen.'
     },
     'EMP Device': {
       text: 'During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'
@@ -8564,11 +8564,11 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Trick Shot': {
       name: "Trickschuss",
-      text: 'Sobald du angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen, falls die Schussbahn versperrt ist..'
+      text: 'Sobald du angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen, falls die Schussbahn versperrt ist.'
     },
     'Hotshot Co-pilot': {
       name: "Kopilotenass",
-      text: 'sobald du mit einer Primärwaffe angreifst, muss der Verteidiger 1 Fokusmarker ausgeben, falls möglich.%LINEBREAK%Sobald du verteidigst, muss der Angreifer 1 Fokusmarker ausgeben, falls möglich.'
+      text: 'Sobald du mit einer Primärwaffe angreifst, muss der Verteidiger 1 Fokusmarker ausgeben, falls möglich.%LINEBREAK%Sobald du verteidigst, muss der Angreifer 1 Fokusmarker ausgeben, falls möglich.'
     },
     'Scavenger Crane': {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
@@ -8588,7 +8588,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'Sobald du einen Angriff mit einer Primärwaffe ausführst, wähle bis zu 2 andere freundliche Schiffe, die den Verteidiger in ihren Feuerwinkeln in Reichweite 1-3 haben. Entferne 1 Ausweichmarker von jedem gewählten Schiff, um 1 zusätzlichen Angriffswürfel für jeden entfernten Marker zu würfeln.'
     },
     'Bistan': {
-      text: '%REBELONLY%%LINEBREAK%sobald du in Reichweite 1-2 angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'
+      text: '%REBELONLY%%LINEBREAK%Sobald du in Reichweite 1-2 angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'
     },
     'Expertise': {
       name: "Expertenwissen",
@@ -8711,7 +8711,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Smuggling Compartment': {
       name: "Schmuggelverschläge",
-      text: '<span class="card-restriction">Nur für YT-1300 und YT-2400.</span>%LINEBREAK%füge deiner Aufwertungsleiste ein %ILLICIT% hinzu.%LINEBREAK%Du darfst 1 zusätzliche Modifikation-Aufwertung mit Kosten von 3 oder weniger ausrüsten.'
+      text: '<span class="card-restriction">Nur für YT-1300 und YT-2400.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %ILLICIT% hinzu.%LINEBREAK%Du darfst 1 zusätzliche Modifikation-Aufwertung mit Kosten von 3 oder weniger ausrüsten.'
     },
     'Captured TIE': {
       text: '<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'
