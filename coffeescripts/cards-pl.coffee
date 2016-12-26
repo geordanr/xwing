@@ -248,6 +248,8 @@ exportObj.cardLoaders['Polski'] = () ->
         "Major Rhymer":
             ship: "Bombowiec TIE"
             text: "Kiedy atakujesz przy pomocy dodatkowej broni, możesz zwiększyć lub zmniejszyć zasięg broni o 1. Musisz przy tym zachować limit zasięgu 1-3."
+        "Gamma Squadron Veteran":
+            ship: "Bombowiec TIE"
         # TIE Advanced
         "Tempest Squadron Pilot":
             name: "Pilot Eskadry Burzy"
@@ -563,6 +565,7 @@ exportObj.cardLoaders['Polski'] = () ->
         '"Zeb" Orrelios':
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Tomax Bren':
+            ship: "Bombowiec TIE"
             text: '''Once per round, after you discard an %ELITE% Upgrade card, flip that card faceup.'''
         'Ello Asty':
             text: '''While you are not stressed, you may treat your %TROLLLEFT% and %TROLLRIGHT% maneuvers as white maneuvers.'''
@@ -575,6 +578,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "Manaroo":
             text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
         '"Deathfire"':
+            ship: "Bombowiec TIE"
             text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
         "Maarek Stele (TIE Defender)":
             text: """When your attack deals a faceup Damage card to the defender, instead draw 3 Damage cards, choose 1 to deal, and discard the others."""
@@ -613,8 +617,10 @@ exportObj.cardLoaders['Polski'] = () ->
         'Sabine Wren (Scum)':
             text: '''When defending against an enemy ship inside your mobile firing arc at Range 1-2, you may add 1 %FOCUS% result to your roll.'''
         'Sabine Wren (TIE Fighter)':
+            ship: 'Myśliwiec TIE'
             text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
         '"Zeb" Orrelios (TIE Fighter)':
+            ship: 'Myśliwiec TIE'
             text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Kylo Ren':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
@@ -639,8 +645,10 @@ exportObj.cardLoaders['Polski'] = () ->
         'Jess Pava':
             text: '''When attacking or defending, you may reroll 1 of your dice for each other friendly ship at Range 1.'''
         'Ahsoka Tano':
+            ship: 'Myśliwiec TIE'
             text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
         'Captain Rex':
+            ship: 'Myśliwiec TIE'
             text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
         'Major Stridan':
             text: '''For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'''
@@ -650,6 +658,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
         'Sarco Plank':
             text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+        "Talonbane Cobra":
+            text: """When attacking or defending, double the effect of your range combat bonuses."""
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1285,7 +1295,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "Moldy Crow":
             text: """<span class="card-restriction">Tylko HWK-290.</span>%LINEBREAK%Podczas fazy końcowej nie usuwaj ze swojego statku niewykorzystanych żetonów skupienia."""
         "ST-321":
-            ship: "Navette de classe Lambda"
+            ship: "Prom typu Lambda"
             text: """<span class="card-restriction">Navette de classe <em>Lambda</em> uniquement.</span>%LINEBREAK%Quand vous verrouillez une cible, vous pouvez verrouiller n'importe quel vaisseau ennemi situé dans la zone de jeu."""
         "Royal Guard TIE":
             ship: "TIE Interceptor"
@@ -1316,7 +1326,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "Outrider":
             text: """<span class="card-restriction">Tylko YT-2400.</span>%LINEBREAK%Dopóki jesteś wyposażony w kartę rozwinięcia [cannon], nie możesz wykonywać ataków bronią podstawową. Przy pomocy dodatkowej broni [cannon] możesz wykonywać ataki skierowane przeciwko statkom znajdujacym się poza twoim polem rażenia. """
         "Dauntless":
-            ship: "Décimateur VT-49"
+            ship: 'Decimator VT-49'
             text: """<span class="card-restriction">Tylko Decimator VT-49.</span>%LINEBREAK%Po tym jak wykonasz manewr, który sprawi że będziesz nachodzić na inny statek, możesz wykonać 1 darmową akcję. Następnie otrzymujesz 1 żeton stresu."""
         "Virago":
             text: """<span class="card-restriction">Tylko StarViper.</span>%LINEBREAK%Twój pasek rozwinięć zyskuje symbole rozwinięć %SYSTEM% i %ILLICIT%. Nie możesz wyposażyć swojego statku w tę kartę jeśli wartość umiejętności twojego pilota wynosi „3” lub mniej."""
@@ -1358,6 +1368,7 @@ exportObj.cardLoaders['Polski'] = () ->
         'TIE/D':
             text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
         'TIE Shuttle':
+            ship: 'Bombowiec TIE'
             text: '''<span class="card-restriction">TIE Bomber only.</span>%LINEBREAK%Your upgrade bar loses all %TORPEDO%, %MISSILE%, and %BOMB% upgrade icons and gains 2 %CREW% upgrade icons.  You cannot equip a %CREW% Upgrade card that costs more than 4 squad points.'''
         'Requiem':
             text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
@@ -1379,6 +1390,7 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%After you perform an attack that hits, if the defender is inside your mobile firing arc and at Range 1-2, you may assign the defender 1 tractor beam token.'''
         # Wave X
         '''Sabine's Masterpiece''':
+            ship: 'Myśliwiec TIE'
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'''
         '''Kylo Ren's Shuttle''':
             text: '''<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'''
