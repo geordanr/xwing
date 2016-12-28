@@ -3604,7 +3604,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Expertise'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Pivot Wing'
