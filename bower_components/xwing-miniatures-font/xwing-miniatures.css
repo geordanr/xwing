@@ -343,6 +343,9 @@ i.xwing-miniatures-ship-tieadvancedprototype:before {
 i.xwing-miniatures-ship-tiesffighter:before {
   content: "S"; }
 
+i.xwing-miniatures-ship-tiestriker:before {
+  content: "T"; }
+
 i.xwing-miniatures-ship-awing:before {
   content: "a"; }
 
@@ -405,6 +408,9 @@ i.xwing-miniatures-ship-starviper:before {
 
 i.xwing-miniatures-ship-t70xwing:before {
   content: "w"; }
+
+i.xwing-miniatures-ship-uwing:before {
+  content: "u"; }
 
 i.xwing-miniatures-ship-xwing:before {
   content: "x"; }
