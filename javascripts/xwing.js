@@ -1196,7 +1196,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack"];
+exportObj.unreleasedExpansions = ["Sabine's TIE Fighter Expansion Pack", "Upsilon-class Shuttle Expansion Pack", "Quadjumper Expansion Pack", "C-ROC Cruiser Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1721,6 +1721,16 @@ exportObj.basicCardData = function() {
         shields: 0,
         actions: ['Focus', 'Barrel Roll', 'Evade'],
         maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 1, 2, 1, 1, 3, 3, 3], [0, 1, 2, 1, 0, 0, 0, 0]]
+      },
+      "C-ROC Cruiser": {
+        name: "C-ROC Cruiser",
+        factions: ["Scum and Villainy"],
+        energy: 4,
+        agility: 0,
+        hull: 10,
+        shields: 4,
+        huge: true,
+        actions: ["Recover", "Reinforce", "Target Lock", "Jam"]
       }
     },
     pilotsById: [
@@ -3917,6 +3927,14 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: [],
         points: 17
+      }, {
+        name: 'C-ROC Cruiser',
+        id: 244,
+        faction: 'Scum and Villainy',
+        ship: 'C-ROC Cruiser',
+        skill: 1,
+        slots: ['Crew', 'Crew', 'Hardpoint', 'Team', 'Cargo', 'Cargo', 'Cargo'],
+        points: 35
       }
     ],
     upgradesById: [
@@ -5448,6 +5466,32 @@ exportObj.basicCardData = function() {
         slot: 'Crew',
         unique: true,
         points: 2
+      }, {
+        name: 'Heavy Laser Turret',
+        id: 223,
+        ship: 'C-ROC Cruiser',
+        slot: 'Hardpoint',
+        points: 5,
+        energy: 2,
+        attack: 4,
+        range: '2-3'
+      }, {
+        name: 'Cikatro Vizago',
+        id: 224,
+        unique: true,
+        faction: 'Scum and Villainy',
+        slot: 'Crew',
+        points: 0
+      }, {
+        name: 'Azmorigan',
+        id: 225,
+        faction: 'Scum and Villainy',
+        slot: 'Crew',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.data.huge) != null ? _ref : false;
+        }
       }
     ],
     modificationsById: [
@@ -6209,6 +6253,47 @@ exportObj.basicCardData = function() {
         id: 48,
         ship: 'TIE Striker',
         points: 0
+      }, {
+        name: 'Merchant One',
+        id: 49,
+        ship: 'C-ROC Cruiser',
+        points: 2,
+        energy: '+1',
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Crew"
+          }, {
+            type: exportObj.Upgrade,
+            slot: "Team"
+          }
+        ],
+        unequips_upgrades: ["Cargo"],
+        also_occupies_upgrades: ["Cargo"]
+      }, {
+        name: '"Light Scyk" Interceptor',
+        id: 50,
+        ship: 'M3-A Interceptor',
+        points: -2,
+        unequips_modifications: true,
+        also_occupies_modifications: true,
+        modifier_func: function(stats) {
+          var s, _i, _len, _ref, _ref1, _results;
+          _ref1 = (_ref = stats.maneuvers) != null ? _ref : [];
+          _results = [];
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            s = _ref1[_i];
+            if (s[1] !== 0) {
+              s[1] = 2;
+            }
+            if (s[3] !== 0) {
+              _results.push(s[3] = 2);
+            } else {
+              _results.push(void 0);
+            }
+          }
+          return _results;
+        }
       }
     ],
     conditionsById: [
@@ -8596,6 +8681,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -8922,6 +9016,12 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Adaptive Querruder",
       ship: "TIE-Stürmer",
       text: '<span class="card-restriction">Nur für TIE-Stürmer.</span>%LINEBREAK%Unmittelbar bevor du dein Rad aufdeckst, <strong>musst</strong> du ein weißes (%BANKLEFT% 1)-, (%STRAIGHT% 1)- oder (%BANKRIGHT% 1)-Manöver ausführen, falls du nicht gestresst bist.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -10251,6 +10351,15 @@ exportObj.cardLoaders.English = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -10489,6 +10598,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -12490,6 +12605,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -12818,6 +12942,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -14424,6 +14554,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -14691,6 +14830,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -16021,6 +16166,15 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'BoShek': {
       text: 'Mikor a hajó amivel érintkezel aktiválódik, megnézheted a kiválasztott menőverét. Ha így teszel, az gazdájának át kell forgatni a tárcsát egy szomszédos manőverre. A hajó ezt a manővert fedi fel és hajtja végre, még ha stresszes is.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -16259,6 +16413,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajts egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -17859,6 +18019,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -18125,6 +18294,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -19423,6 +19598,15 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -19655,6 +19839,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -20934,6 +21124,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
+    },
+    'Heavy Laser Turret': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+    },
+    'Cikatro Vizago': {
+      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Azmorigan': {
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
     }
   };
   modification_translations = {
@@ -21148,6 +21347,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Adaptive Ailerons': {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+    },
+    'Merchant One': {
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+    },
+    '"Light Scyk" Interceptor': {
+      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -24579,7 +24784,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22933
+                    lineno: 23119
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25148,7 +25353,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23509
+              lineno: 23695
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25786,7 +25991,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24076
+          lineno: 24262
         }));
         __iced_deferrals._fulfill();
       });
@@ -25798,7 +26003,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24077
+            lineno: 24263
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27334,7 +27539,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24947
+                      lineno: 25133
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27403,7 +27608,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24971
+                lineno: 25157
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27455,7 +27660,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24993
+            lineno: 25179
           }));
         }
         _ref = _this.upgrades;
@@ -27463,7 +27668,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24995
+              lineno: 25181
             }));
           }
         }
@@ -27472,7 +27677,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24997
+              lineno: 25183
             }));
           }
         }
@@ -28389,7 +28594,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25645
+                lineno: 25831
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28508,7 +28713,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25704
+                  lineno: 25890
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28530,7 +28735,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25708
+                    lineno: 25894
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28615,7 +28820,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25748
+            lineno: 25934
           }));
         }
         __iced_deferrals._fulfill();
@@ -28713,27 +28918,32 @@ GenericAddon = (function() {
   };
 
   GenericAddon.prototype.unequipOtherUpgrades = function() {
-    var slot, upgrade, _i, _len, _ref, _ref1, _ref2, _results;
+    var modification, slot, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _results;
     _ref2 = (_ref = (_ref1 = this.data) != null ? _ref1.unequips_upgrades : void 0) != null ? _ref : [];
-    _results = [];
     for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
       slot = _ref2[_i];
-      _results.push((function() {
-        var _j, _len1, _ref3, _results1;
-        _ref3 = this.ship.upgrades;
-        _results1 = [];
-        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
-          upgrade = _ref3[_j];
-          if (upgrade.slot !== slot || upgrade === this || !upgrade.isOccupied()) {
-            continue;
-          }
-          upgrade.setData(null);
-          break;
+      _ref3 = this.ship.upgrades;
+      for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+        upgrade = _ref3[_j];
+        if (upgrade.slot !== slot || upgrade === this || !upgrade.isOccupied()) {
+          continue;
         }
-        return _results1;
-      }).call(this));
+        upgrade.setData(null);
+        break;
+      }
     }
-    return _results;
+    if ((_ref4 = this.data) != null ? _ref4.unequips_modifications : void 0) {
+      _ref5 = this.ship.modifications;
+      _results = [];
+      for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
+        modification = _ref5[_k];
+        if (!(modification === this || modification.isOccupied())) {
+          continue;
+        }
+        _results.push(modification.setData(null));
+      }
+      return _results;
+    }
   };
 
   GenericAddon.prototype.isOccupied = function() {
@@ -28741,27 +28951,32 @@ GenericAddon = (function() {
   };
 
   GenericAddon.prototype.occupyOtherUpgrades = function() {
-    var slot, upgrade, _i, _len, _ref, _ref1, _ref2, _results;
+    var modification, slot, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _results;
     _ref2 = (_ref = (_ref1 = this.data) != null ? _ref1.also_occupies_upgrades : void 0) != null ? _ref : [];
-    _results = [];
     for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
       slot = _ref2[_i];
-      _results.push((function() {
-        var _j, _len1, _ref3, _results1;
-        _ref3 = this.ship.upgrades;
-        _results1 = [];
-        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
-          upgrade = _ref3[_j];
-          if (upgrade.slot !== slot || upgrade === this || upgrade.isOccupied()) {
-            continue;
-          }
-          this.occupy(upgrade);
-          break;
+      _ref3 = this.ship.upgrades;
+      for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+        upgrade = _ref3[_j];
+        if (upgrade.slot !== slot || upgrade === this || upgrade.isOccupied()) {
+          continue;
         }
-        return _results1;
-      }).call(this));
+        this.occupy(upgrade);
+        break;
+      }
     }
-    return _results;
+    if ((_ref4 = this.data) != null ? _ref4.also_occupies_modifications : void 0) {
+      _ref5 = this.ship.modifications;
+      _results = [];
+      for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
+        modification = _ref5[_k];
+        if (modification === this || modification.isOccupied()) {
+          continue;
+        }
+        _results.push(this.occupy(modification));
+      }
+      return _results;
+    }
   };
 
   GenericAddon.prototype.deoccupyOtherUpgrades = function() {
