@@ -3574,7 +3574,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Inspiring Recruit'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
             name: 'Cassian Andor'
@@ -3609,6 +3609,16 @@ exportObj.manifestByExpansion =
         {
             name: 'Pivot Wing'
             type: 'title'
+            count: 1
+        }
+        {
+            name: 'Stealth Device'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Sensor Jammer'
+            type: 'upgrade'
             count: 1
         }
     ]
