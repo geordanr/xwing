@@ -2897,6 +2897,10 @@ class GenericAddon
                 continue if upgrade.slot != slot or upgrade == this or not upgrade.isOccupied()
                 upgrade.setData null
                 break
+        if @data?.unequips_modifications
+            for modification in @ship.modifications
+                continue unless modification == this or modification.isOccupied()
+                modification.setData null
 
     isOccupied: ->
         @data? or @occupied_by?
@@ -2907,6 +2911,10 @@ class GenericAddon
                 continue if upgrade.slot != slot or upgrade == this or upgrade.isOccupied()
                 @occupy upgrade
                 break
+        if @data?.also_occupies_modifications
+            for modification in @ship.modifications
+                continue if modification == this or modification.isOccupied()
+                @occupy modification
 
     deoccupyOtherUpgrades: ->
         for upgrade in @occupying

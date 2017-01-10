@@ -8,6 +8,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "A-Wing Expansion Pack"
         "B-Wing Expansion Pack"
         "Core"
+        "C-ROC Cruiser Expansion Pack"
         "E-Wing Expansion Pack"
         'Ghost Expansion Pack'
         'Heroes of the Resistance Expansion Pack'
