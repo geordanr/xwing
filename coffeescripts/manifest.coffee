@@ -3545,6 +3545,135 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "U-Wing Expansion Pack": [
+        {
+            name: 'U-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Cassian Andor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Bodhi Rook'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Heff Tobber'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Pathfinder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Inspiring Recruit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cassian Andor'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bistan'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jyn Erso'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Baze Malbus'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Bodhi Rook'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Expertise'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pivot Wing'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Stealth Device'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Sensor Jammer'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "TIE Striker Expansion Pack": [
+        {
+            name: 'TIE Striker'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Duchess"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Pure Sabacc"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Countdown"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Squadron Scout'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scarif Defender'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Imperial Trainee'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Swarm Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lightweight Frame'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Adaptive Ailerons'
+            type: 'title'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

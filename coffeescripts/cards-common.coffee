@@ -5,8 +5,7 @@ exportObj.unreleasedExpansions = [
     "Sabine's TIE Fighter Expansion Pack"
     "Upsilon-class Shuttle Expansion Pack"
     "Quadjumper Expansion Pack"
-    "U-Wing Expansion Pack"
-    "TIE Striker Expansion Pack"
+    "C-ROC Cruiser Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -950,6 +949,20 @@ exportObj.basicCardData = ->
                 [ 1, 2, 2, 2, 1, 0, 0, 0 ]
                 [ 1, 1, 2, 1, 1, 3, 3, 3 ]
                 [ 0, 1, 2, 1, 0, 0, 0, 0 ]
+            ]
+        "C-ROC Cruiser":
+            name: "C-ROC Cruiser"
+            factions: ["Scum and Villainy"]
+            energy: 4
+            agility: 0
+            hull: 10
+            shields: 4
+            huge: true
+            actions: [
+                "Recover"
+                "Reinforce"
+                "Target Lock"
+                "Jam"
             ]
 
     # name field is for convenience only
@@ -4374,6 +4387,23 @@ exportObj.basicCardData = ->
             ]
             points: 17
         }
+        {
+            name: 'C-ROC Cruiser'
+            id: 244
+            faction: 'Scum and Villainy'
+            ship: 'C-ROC Cruiser'
+            skill: 1
+            slots: [
+                'Crew'
+                'Crew'
+                'Hardpoint'
+                'Team'
+                'Cargo'
+                'Cargo'
+                'Cargo'
+            ]
+            points: 35
+        }
     ]
 
     upgradesById: [
@@ -6047,6 +6077,33 @@ exportObj.basicCardData = ->
             unique: true
             points: 2
         }
+        {
+            name: 'Heavy Laser Turret'
+            id: 223
+            ship: 'C-ROC Cruiser'
+            slot: 'Hardpoint'
+            points: 5
+            energy: 2
+            attack: 4
+            range: '2-3'
+        }
+        {
+            name: 'Cikatro Vizago'
+            id: 224
+            unique: true
+            faction: 'Scum and Villainy'
+            slot: 'Crew'
+            points: 0
+        }
+        {
+            name: 'Azmorigan'
+            id: 225
+            faction: 'Scum and Villainy'
+            slot: 'Crew'
+            points: 2
+            restriction_func: (ship) ->
+                ship.data.huge ? false
+        }
     ]
 
     modificationsById: [
@@ -6803,6 +6860,37 @@ exportObj.basicCardData = ->
             id: 48
             ship: 'TIE Striker'
             points: 0
+        }
+        {
+            name: '''Merchant One'''
+            id: 49
+            ship: 'C-ROC Cruiser'
+            points: 2
+            energy: '+1'
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Crew"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Team"
+                }
+            ]
+            unequips_upgrades: [ "Cargo" ]
+            also_occupies_upgrades: [ "Cargo" ]
+        }
+        {
+            name: '''"Light Scyk" Interceptor'''
+            id: 50
+            ship: 'M3-A Interceptor'
+            points: -2
+            unequips_modifications: true
+            also_occupies_modifications: true
+            modifier_func: (stats) ->
+                for s in (stats.maneuvers ? [])
+                    s[1] = 2 if s[1] != 0
+                    s[3] = 2 if s[3] != 0
         }
     ]
 

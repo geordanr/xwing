@@ -1127,6 +1127,11 @@ exportObj.cardLoaders.Magyar = () ->
         '''Adaptive Ailerons''':
             name: "Adaptive Ailerons (Adaptív csűrőlapok)"
             text: '''<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajtanod egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'''
+        # C-ROC
+        '''Merchant One''':
+            text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
+        '''"Light Scyk" Interceptor''':
+            text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
