@@ -514,7 +514,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Squad Leader":
             text: """<strong>Akció:</strong> válassz egy hajót 1-2 távolságon belül, akinek a pilótaképzettsége alacsonyabb mint a sajátod. A választott hajó azonnal végrehajthat egy szabad akciót."""
         "Expert Handling":
-            text: """<strong>Akció:</strong> hajts végre egy orsózás akciót. Ha nem rendelkezel %BARRELROLL% képességgel, kapsz egy stressz jelzőt. Ezután eltávolíthatsz egy ellenséges célpontbemérő jelzőt a hajódról."""
+            text: """<strong>Akció:</strong> hajts végre egy ingyenes orsózás akciót. Ha nem rendelkezel %BARRELROLL% képességgel, kapsz egy stressz jelzőt. Ezután eltávolíthatsz egy ellenséges célpontbemérő jelzőt a hajódról."""
         "Marksmanship":
             text: """<strong>Akció:</strong> amikor támadsz ebben a körben, egy %FOCUS% eredményt %CRIT% eredményre, az összes többi %FOCUS% dobásod pedig %HIT%-ra változtathatod."""
         "Concussion Missiles":
@@ -540,7 +540,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Heavy Laser Cannon":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. Támadó kockák: 4; Hatótáv: 2-3"""
         "Seismic Charges":
-            text: """Amikor felfeded a manőveredet, eldobhatod ezt a kártyát, hogy <strong>letehess</strong> 1 Seismic Charges (szeizmikus töltetek) jelzőt. Ez a jelző az Aktivációs fázis végén <strong>felrobban</strong>.%LINEBREAK%Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."""
+            text: """Amikor felfeded a manőveretárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."""
         "Mercenary Copilot":
             text: """Amikor 3-as távolságra támadsz, egy %HIT% eredményt %CRIT% eredményre változtathatsz."""
         "Assault Missiles":
@@ -549,7 +549,7 @@ exportObj.cardLoaders.Magyar = () ->
             name: "Veteran Instincts (Veterán ösztönök)"
             text: """Növeld kettővel a pilótaképzettség értékedet."""
         "Proximity Mines":
-            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess egy Proximity Mine (közelségi gyújtós akna) jelzőt. Ha egy hajó a manőver végrehajtása során a talpával vagy a manőver sablonjával átlapolja a jelzőt, akkor az akna felrobban.%LINEBREAK%A érintett hajók dobnak  3 támadó kockával és elszenvednek minden %HIT% és %CRIT% dobást.  Aztán a jelzőt le kell venni."""
+            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess egy Proximity Mine jelzőt.<br />Ha egy hajó a manőver végrehajtása során a talpával vagy a manőver sablonjával átlapolja a jelzőt, akkor az akna felrobban.<br />A érintett hajók dobnak 3 támadó kockával és elszenvednek minden %HIT% és %CRIT% dobást.  Aztán a jelzőt le kell venni."""
         "Weapons Engineer":
             text: """Egyszerre két célpontbemérőd lehet (egy ellenséges hajóra csak egyet tehetsz). Amikor kapsz egy célpontbemérőt, bemérhetsz két ellenséges hajót."""
         "Draw Their Fire":
@@ -576,9 +576,10 @@ exportObj.cardLoaders.Magyar = () ->
         "Intelligence Agent":
             text: """Az aktiválási fázis kezdetén válasz egy ellenséges hajót 1-2 távolságon belül. Megnézheted, hogy az a hajó milyen manővert fog végrehajtani."""
         "Proton Bombs":
-            text: """Amikor felfeded a manőveredet, eldobhatod ezt a kártyát, hogy <strong>letehess</strong> egy proton bomba jelzőt. Ez a jelző az Aktivációs fázis végén <strong>felrobban</strong>.%LINEBREAK%Minden 1-es távolságon belüli hajó kap 1 felfordított sérülés kártyát.  Aztán a jelzőt le kell venni."""
+            text: """Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess egy proton bomba jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden 1-es távolságon belüli hajó kap 1 felfordított sérülés kártyát. Aztán a jelzőt le kell venni."""
         "Adrenaline Rush":
-            text: """<em>(Adrenalinlöket)</em> Amikor felfedsz egy piros manővert, eldobhatod ezt a lapot, hogy az a manőver fehér színűnek számítson az aktiválási fázis végéig."""
+            name: "Adrenaline Rush (Adrenalinlöket)"
+            text: """Amikor felfedsz egy piros manővert, eldobhatod ezt a lapot, hogy az a manőver fehér színűnek számítson az aktiválási fázis végéig."""
         "Advanced Sensors":
             text: """Közvetlen a manőver tárcsa felfedése előtt végrehajthatsz egy szabad akciót. Amennyiben használod ezt a képességet, hagyd ki ebből a körből az "Akció végrehajtása" fázist."""
         "Sensor Jammer":
@@ -593,7 +594,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Navigator":
             text: """Amikor felfeded a manővered, áttekerheted a tárcsádat egy másik, de az eredeti iránnyal egyező manőverre. Nem választhatsz piros manővert, ha már van rajtad egy stressz jelző."""
         "Opportunist":
-            text: """Amikor támadsz, és a védekező hajónak nincs se fókusz se kitérés jelzője, akkor kaphatsz egy stressz jelzőt, hogy plusz egy támadókockával guríts. Nem használhatod ezt a képességet, ha már van stressz jelződ."""
+            text: """Amikor támadsz, és a védekező hajónak nincs se %FOCUS%, se %EVADE% jelzője, akkor kaphatsz egy stressz jelzőt, hogy plusz egy támadókockával guríts. Nem használhatod ezt a képességet, ha már van stressz jelződ."""
         "Comms Booster":
             text: """<strong>Energia:</strong> Költs el egy energiát, így leveheted az összes stressz jelzőt egy 1-3 távolságra lévő baráti hajóról. Ezek után tégy egy fókusz jelzőt arra a hajóra."""
         "Slicer Tools":
@@ -605,7 +606,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Wingman":
             text: """A harc fázis elején távolíts el 1 stressz jelzőt egy 1-es távolságon belül lévő másik baráti hajóról."""
         "Decoy":
-            text: """A Harci fázis kezdetén választhatsz egy 1-2 távolságra lévő saját hajót. Cseréld ki a pilóta képességeteket a fázis végéig"""
+            text: """A harci fázis kezdetén választhatsz egy 1-2 távolságra lévő saját hajót. Cseréld ki a pilóta képességeteket a fázis végéig."""
         "Outmaneuver":
             text: """Amikor a saját tüzelési szögeden belül támadsz, és kívül esel a támadott hajó tüzelési szögén (magyarul, ha hátba támadod), csökkentsd a mozgékonyságát 1-el (minimum 0-ig)."""
         "Predator":
@@ -618,7 +619,7 @@ exportObj.cardLoaders.Magyar = () ->
         "R7-T1":
             text: """<strong>Action:</strong> Válassz 1 ellenséges hajót 1-2 távolságra. Ha benne vagy a tüzelési szögében, tehetsz rá célpontbemérőt. Ezután végrehajthatsz egy ingyenes %BOOST% akciót."""
         "Tactician":
-			      text: """Amikor megtámadsz egy 2-es távolságra és a tüzelési szögedben lévő hajót, az kap egy stressz jelzőt."""
+			      text: """Miután végrehajtasz egy támadást egy 2-es távolságra és a tüzelési szögedben lévő hajón, az kap egy stressz jelzőt."""
         "R2-D2 (Crew)":
             text: """<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Ha a kör végén nincs pajzsod, kapsz 1 pajzs jelzőt és dobnod kell egy támadókockával. %HIT% esetén véletlenszerűen fordítsd fel az egyik sebzés kártyádat és hajtsd végre."""
         "C-3PO":
@@ -652,7 +653,7 @@ exportObj.cardLoaders.Magyar = () ->
         "R4-D6":
             text: """Amikor eltalálnak és legalább három olyan %HIT% találat van, amit nem tudsz érvényteleníteni, változtasd meg őket addig, míg 2 nem marad. Minden egyes így érvénytelenített találatért kapsz 1 stressz jelzőt."""
         "R5-P9":
-            text: """A Harci fázis végén elkölthetsz 1 fókusz jelzőt, hogy visszakapj 1 pajzsot (max. pajzs értékig)."""
+            text: """A harci fázis végén elkölthetsz 1 fókusz jelzőt, hogy visszakapj 1 pajzsot (max. pajzs értékig)."""
         "WED-15 Repair Droid":
             text: """<span class="card-restriction">Csak óriás hajó.</span>%LINEBREAK%<strong>Akció:</strong> Költs el 1 energiát, hogy eldobhasd 1 lefordított sérülés kártyádat, vagy költs el 3-at, hogy eldobhass 1 felfordított sérüléskártyát."""
         "Carlist Rieekan":
@@ -676,7 +677,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Raymus Antilles":
             text: """<span class="card-restriction">Csak óriás hajó. Csak lázadó.</span> %LINEBREAK%Az Aktiválási fázis elején válassz 1 ellenséges hajót 1-3 távolságra. Megnézheted a választott manőverét. Amennyiben az fehér, kap 1 stressz jelzőt."""
         "Gunnery Team":
-            text: """<span class="card-restriction">Limitált.</span>Egy körben egyszer, amikor másodlagos fegyverrel támadsz, elkölthetsz egy energiát annak érdekében, hogy egy üres kockát %HIT%-ra forgathass."""
+            text: """<span class="card-restriction">Limitált.</span>%LINEBREAK%Egy körben egyszer, amikor másodlagos fegyverrel támadsz, elkölthetsz egy energiát annak érdekében, hogy egy üres kockát %HIT%-ra forgathass."""
         "Sensor Team":
             text: """A célpont bemérését 1-5 távolságra lévő hajón is használhatod (1-3 helyett)."""
         "Engineering Team":
@@ -684,7 +685,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Lando Calrissian":
             text: """<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%<strong>Akció:</strong> Dobj két védekező kockával. Annyi fókusz jelzőt adj a hajódnak, amennyi %FOCUS%-t, valamint annyi kitérés jelzőt, ahány %EVADE%-t dobtál."""
         "Mara Jade":
-            text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%A Harci fázis végén minden olyan 1 távolságra lévő ellenséges hajó, amin nincs stressz jelző, kap egy stressz jelzőt."""
+            text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%A harci fázis végén minden olyan 1 távolságra lévő ellenséges hajó, amin nincs stressz jelző, kap egy stressz jelzőt."""
         "Fleet Officer":
             text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%<strong>Akció:</strong>Válassz ki maximum 2 hajót 1-2 távolságon belül és adj nekik 1-1 fókusz jelzőt. Ezután kapsz egy stressz jelzőt."""
         "Lone Wolf":
@@ -700,13 +701,13 @@ exportObj.cardLoaders.Magyar = () ->
         "Intimidation":
             text: """Amíg egy ellenséges hajóval érintkezel, annak a hajónak a mozgékonyságát csökkentsd eggyel."""
         "Ysanne Isard":
-            text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%A Harci fázis elején, ha nincs pajzsod és legalább egy sérülés jelző van a hajódon, végrehajthatsz egy ingyen kitérés akciót."""
+            text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%A harci fázis elején, ha nincs pajzsod és legalább egy sérülés jelző van a hajódon, végrehajthatsz egy ingyen kitérés akciót."""
         "Moff Jerjerrod":
             text: """<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%Csak birodalmiak. Amikor kapnál egy felfordított sérülés kártyát, eldobhatod ezt vagy egy másik %CREW% fejlesztés kártyádat, hogy a sérülés kártyát lefelé fordítsd (a hatása így nem érvényesül)."""
         "Ion Torpedoes":
             text: """<strong>Támadás (célpontbemérő):</strong> költs el egy célpontbemérő jelzőt és dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás talál, akkor a célpont és a tőle 1-es távolságra lévő hajók kapnak 1 ion jelzőt."""
         "Bodyguard":
-            text: """<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A Harci fázis elején egy fókuszt elköltve kiválaszthatsz egy 1-es távolságra lévő baráti hajót, aminek a tiednél nagyobb a pilóta képzettsége. A kör végéig annak a hajónak növeld meg eggyel a mozgékonyságát."""
+            text: """<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A harci fázis elején egy fókuszt elköltve kiválaszthatsz egy 1-es távolságra lévő baráti hajót, aminek a tiednél nagyobb a pilóta képzettsége. A kör végéig annak a hajónak növeld meg eggyel a mozgékonyságát."""
         "Calculation":
             text: """Amikor támadsz, elkölthetsz egy fókusz jelzőt, hogy egy %FOCUS% dobásod %CRIT%-ra módosíts."""
         "Accuracy Corrector":
@@ -720,7 +721,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Dead Man's Switch":
             text: """Amikor megsemmisülsz, minden, tőled 1-es távolságra lévő hajó elszenved 1 sérülést."""
         "Feedback Array":
-            text: """A Harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést."""
+            text: """A harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést."""
         '"Hot Shot" Blaster':
             text: """<strong>Támadás:</strong>: Dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."""
         "Greedo":
@@ -734,7 +735,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Unhinged Astromech":
             text: """Az összes 3-as sebességű manővert vedd zöld színűnek."""
         "R4-B11":
-            text: """Ha támadsz és ha már elhelyeztél egy célpontbemérő jelzőt a célponton, akkor válaszd ki a védő bármelyik vagy akár mindegyik kockáját. Ezekkel neki újra kell dobnia."""
+            text: """Ha támadsz, elköltheted a célponton lévő célpontbemérőd, hogy kiválassz bármennyi védő kockát. A védekezőnek ezeket újra kell dobnia."""
         "Autoblaster Turret":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. A %HIT% dobásaid nem lehet a védekező kockákkal érvényteleníteni. A védő a %CRIT% dobásokat a %HIT%-ok előtt semlegesítheti."""
         "R4 Agromech":
@@ -750,11 +751,11 @@ exportObj.cardLoaders.Magyar = () ->
         "Extra Munitions":
             text: """<span class="card-restriction">Limitált.</span>%LINEBREAK%Amikor hozzárendeled ezt a kártyád a hajódhoz, tégy 1 hadianyag jelzőt minden a hajóra felszerelt %TORPEDO%, %MISSILE% és %BOMB% fejlesztés kártyára. Amikor azt az utasítást kapod, hogy dobd el a fejlesztés kártyádat, ahelyett az azon a kártyán található hadianyag jelzőt is eldobhatod."""
         "Cluster Mines":
-            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy <strong>letehess</strong> 3 Cluster Mine jelzőt. Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba <strong>felrobban</strong>. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán a akna jelzőt le kell venni."""
+            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 3 Cluster Mine jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán az akna jelzőt le kell venni."""
         "Glitterstim":
-            text: """A Harci fázis elején eldobhatod ezt a kártyát és kaphatsz 1 stressz jelzőt. Ha megteszed, a kör végéig mind támadásnál, mind védekezésnél minden %FOCUS% dobásod %HIT%-ra vagy %EVADE%-re módosíthatod."""
+            text: """A harci fázis elején eldobhatod ezt a kártyát és kaphatsz 1 stressz jelzőt. Ha megteszed, a kör végéig mind támadásnál, mind védekezésnél minden %FOCUS% dobásod %HIT%-ra vagy %EVADE%-re módosíthatod."""
         "Grand Moff Tarkin":
-            text: """<span class="card-restriction">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriási hajók. Csak birodalmiak. A Harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."""
+            text: """<span class="card-restriction">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriási hajók. Csak birodalmiak. A harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."""
         "Captain Needa":
             text: """<span class="card-restriction">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Ha az Aktivációs fázis során átfedésbe kerülnél egy akadállyal, nem kapsz 1 felfordított sérülés kártyát. Helyette dobj 1 támadó kockával. %HIT% vagy %CRIT% találat esetén 1 sérülést szenvedsz el."""
         "Admiral Ozzel":
@@ -770,9 +771,9 @@ exportObj.cardLoaders.Magyar = () ->
         "Plasma Torpedoes":
             text: """<strong>Támadás (célpontbemérő):</strong> költs el egy célpontbemérő jelzőt és dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás talál, a sebzés kiosztása után végy le egy pajzs jelzőt a védőről."""
         "Ion Bombs":
-            text: """Amikor felfeded a manővertárcsád, <strong>eldobhatod</strong> ezt a kártyát, hogy letehess egy 1 ion bomba jelzőt. Ez a bomba az aktivációs fázis végén <strong>felrobban</strong>.<br />A bombától mért 1 távolságra minden hajó kap 2 ion jelzőt. Aztán a jelzőt le kell venni."""
+            text: """Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess egy 1 ion bomba jelzőt.<br />Ez a bomba az aktivációs fázis végén felrobban.<br />A bombától mért 1 távolságra minden hajó kap 2 ion jelzőt. Aztán a jelzőt le kell venni."""
         "Conner Net":
-            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy <strong>letehess</strong> 1 Conner Net (Conner háló) jelzőt. Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba <strong>felrobban</strong>.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni."""
+            text: """<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 1 Conner Net jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni."""
         "Bombardier":
             text: """Amikor ledobsz egy bombát, használhatod a (%STRAIGHT% 2) sablont a (%STRAIGHT% 1) helyett."""
         'Crack Shot':
@@ -786,7 +787,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Tractor Beam":
             text: """<strong>Támadás:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."""
         "Cloaking Device":
-            text: """<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."""
+            text: """<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Hajts végre egy ingyenes álcázás akciót.<br>A kör végén, ha álcázva vagy, dobj egy támadó kockával. %FOCUS% eredménynél dobd el ezt a kártyát, majd fedd fel magad vagy dobd el az álcázás jelzőt."""
         "Shield Technician":
             text: """<span class="card-restriction">Csak óriási hajók.</span>%LINEBREAK%Amikor végrehajtasz egy visszanyerés akciót, ahelyett, hogy elköltenéd az összes energiádat, te döntheted el, mennyi energiát használsz fel."""
         "Weapons Guidance":
@@ -858,7 +859,7 @@ exportObj.cardLoaders.Magyar = () ->
         "R5-P8":
             text: """Körönként egyszer, védekezés után dobj egy támadó kockával. %HIT% dobáskor a támadó leszenved egy sérülést. %CRIT% dobáskor mindketten elszenvedtek egy séerülést."""
         'Thermal Detonators':
-            text: """Mikor felfeded tárcsád eldobhatod ezt a kártyát, hogy ledobj egy thermal detonator jelzőt.%LINEBREAK%Ez a jelző felrobban az aktiválási fázis végén.%LINEBREAK%<strong>Thermal Detonator:</strong> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."""
+            text: """Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy thermal detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."""
         "Overclocked R4":
             text: """A harci fázis alatt, mikor elköltesz egy %FOCUS% jelzőt, egy stressz jelzővel együtt kaphatsz egy újabb %FOCUS% jelzőt."""
         'Systems Officer':
@@ -952,11 +953,11 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Mikor a hajó amivel érintkezel aktiválódik, megnézheted a kiválasztott menőverét. Ha így teszel, az gazdájának át kell forgatni a tárcsát egy szomszédos manőverre. A hajó ezt a manővert fedi fel és hajtja végre, még ha stresszes is.'''
         # C-ROC
         'Heavy Laser Turret':
-            text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'''
+            text: '''<span class="card-restriction">Csak C-ROC Cruiser.</span>%LINEBREAK%<strong>Támadás (energia):</strong> Költs el 2 energiát erről a kártyáról, hogy végrehajtsd ezt a támadást egy hajó ellen (akkor is, ha a hajó kívül esik a tüzelési szögeden).'''
         'Cikatro Vizago':
-            text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+            text: '''<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A befejező fázis kezdetén eldobhatod ezt a kártyát, hogy kicseréld egy felszerelt és még felfordított %ILLICIT% vagy %CARGO% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'''
         'Azmorigan':
-            text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+            text: '''<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'''
 
     modification_translations =
         "Stealth Device":
@@ -977,13 +978,13 @@ exportObj.cardLoaders.Magyar = () ->
         "Stygium Particle Accelerator":
             text: """Amikor végrehajtod az álcázás akciót vagy leveszed az álcát, végrehajthatsz egy szabad kitérés akciót."""
         "Advanced Cloaking Device":
-            text: """<span class="card-restriction">Csak TIE Phantom.</span>Miután végrehajtottál egy támadást, végrehajthatsz egy szabad álcázás akciót."""
+            text: """<span class="card-restriction">Csak TIE Phantom.</span>%LINEBREAK%Miután végrehajtottál egy támadást, végrehajthatsz egy szabad álcázás akciót."""
         "Combat Retrofit":
-            text: """<span class="card-restriction">Csak GR-75. Csak óriási hajó.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."""
+            text: """<span class="card-restriction">Csak GR-75. Csak óriási hajók.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."""
         "B-Wing/E2":
             text: """<span class="card-restriction">Csak B-Wing.</span>%LINEBREAK%Csak B-Wing. Módosítás. A fejlesztés sávod megkapja a %CREW% fejlesztés ikont."""
         "Countermeasures":
-            text: """<span class="card-restriction">Csak nagy hajók.</span>%LINEBREAK%A Harci fázis elején eldobhatod ezt a kártyát, hogy eggyel megnöveld a mozgékonyság értékedet a kör végéig. Levehetsz egy ellenséges célpontbemérő jelzőt a hajódról."""
+            text: """<span class="card-restriction">Csak nagy hajók.</span>%LINEBREAK%A harci fázis elején eldobhatod ezt a kártyát, hogy eggyel megnöveld a mozgékonyság értékedet a kör végéig. Levehetsz egy ellenséges célpontbemérő jelzőt a hajódról."""
         "Experimental Interface":
             text: """Körönként egyszer, miután végrehajtottál egy akciót, végrehajthatsz egy ingyen akciót egy "<strong>Action:</strong>" fejléccel rendelkező Fejlesztés kártyáról. Ezután kapsz egy stressz jelzőt."""
         "Tactical Jammer":
@@ -1069,7 +1070,7 @@ exportObj.cardLoaders.Magyar = () ->
         "BTL-A4 Y-Wing":
             text: """<span class="card-restriction">Csak Y-Wing.</span>%LINEBREAK%Nem támadhatod meg a tüzelési íveden kívül eső hajókat. Miután támadtál az elsődleges fegyvereddel, azonnal támadhatsz a %TURRET% másodlagos fegyvereddel is."""
         "Andrasta":
-            text: """<span class="card-restriction">Csak Firespray-31.</span>%LINEBREAK%.A fejlesztés sávod kap két további %BOMB% fejlesztés ikont."""
+            text: """<span class="card-restriction">Csak Firespray-31.</span>%LINEBREAK%A fejlesztés sávod kap két további %BOMB% fejlesztés ikont."""
         "TIE/x1":
             text: """<span class="card-restriction">Csak TIE Advanced.</span>%LINEBREAK%Az akció sávod megkapja a %SYSTEM% fejlesztés ikont. Ha a hajódra %SYSTEM% fejlesztés kártyát teszel, a raj pontértéke 4-gyel csökken (minimum 0-ig)."""
         "Hound's Tooth":
@@ -1108,9 +1109,9 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Miután végrehajtottál egy 3-as sebességű (%BANKLEFT% vagy %BANKRIGHT%) manővert és nem érintkezel másik hajóval és nem vagy stresszes, kaphatsz egy stressz tokent, hogy 180 fokban megfordítsd a hajód'''
         'Alliance Overhaul':
             name: "Alliance Overhaul (Szövetségi felújítás)"
-            text: '''<span class="card-restriction">Csak ARC-170.</span>%LINEBREAK%<em>(Szövetségi felújítás)</em> Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz 1 támadó kockával dobhatsz. Mikor a kiegészítő tüzelési szögedből támadsz 1 %FOCUS% találadod %CRIT%-re változtathatod.'''
+            text: '''<span class="card-restriction">Csak ARC-170.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz 1 támadó kockával dobhatsz. Mikor a kiegészítő tüzelési szögedből támadsz 1 %FOCUS% találadod %CRIT%-re változtathatod.'''
         'Special Ops Training':
-            text: '''<span class="card-restriction">Csak TIE/sf.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz agy elsődleges tüzelési szögedben, plusz egy kockával dobhatsz. Ha nem így teszel, végrehajthatsz egy plusz támadást a hátsó tüzelési szögedből.'''
+            text: '''<span class="card-restriction">Csak TIE/sf.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz egy kockával dobhatsz. Ha nem így teszel, végrehajthatsz egy plusz támadást a hátsó tüzelési szögedből.'''
         'Concord Dawn Protector':
             text: '''<span class="card-restriction">Csak Protectorate Starfighter.</span>%LINEBREAK%Védekezéskor, ha a támadóval egymás tüzelési szögében vagytok 1-es távolságon belül, adj egy %EVADE% eredményt a dobásodhoz.'''
         'Shadow Caster':
@@ -1127,11 +1128,6 @@ exportObj.cardLoaders.Magyar = () ->
         '''Adaptive Ailerons''':
             name: "Adaptive Ailerons (Adaptív csűrőlapok)"
             text: '''<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajtanod egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'''
-        # C-ROC
-        '''Merchant One''':
-            text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
-        '''"Light Scyk" Interceptor''':
-            text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
