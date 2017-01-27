@@ -12972,11 +12972,13 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     },
     'Pivot Wing': {
+      name: "Ala pivotante",
       ship: "Ala-U",
       text: '<span class="card-restriction">Sólo Ala-U.</span> %DUALCARD%%LINEBREAK%<strong>Cara A (Ataque):</strong> Tu Agilidad se incrementa en 1.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Aterrizaje):</strong> Cuando reveles una maniobra (%STOP% 0), puedes cambiar la orientación de tu nave en 180&deg;.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.'
     },
     'Adaptive Ailerons': {
       name: "Alerones adaptativos",
+      ship: "Fustigador TIE",
       text: '<span class="card-restriction">Sólo Fustigador TIE.</span>%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'
     },
     'Merchant One': {
@@ -24855,7 +24857,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23188
+                    lineno: 23190
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25424,7 +25426,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23764
+              lineno: 23766
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26062,7 +26064,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24331
+          lineno: 24333
         }));
         __iced_deferrals._fulfill();
       });
@@ -26074,7 +26076,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24332
+            lineno: 24334
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27610,7 +27612,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25202
+                      lineno: 25204
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27679,7 +27681,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25226
+                lineno: 25228
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27731,7 +27733,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25248
+            lineno: 25250
           }));
         }
         _ref = _this.upgrades;
@@ -27739,7 +27741,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25250
+              lineno: 25252
             }));
           }
         }
@@ -27748,7 +27750,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25252
+              lineno: 25254
             }));
           }
         }
@@ -28665,7 +28667,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25900
+                lineno: 25902
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28784,7 +28786,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25959
+                  lineno: 25961
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28806,7 +28808,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25963
+                    lineno: 25965
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28891,7 +28893,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26003
+            lineno: 26005
           }));
         }
         __iced_deferrals._fulfill();
