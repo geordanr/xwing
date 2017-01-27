@@ -1820,7 +1820,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">Sólo Ala-U.</span> %DUALCARD%%LINEBREAK%<strong>Cara A (Ataque):</strong> Tu Agilidad se incrementa en 1.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Aterrizaje):</strong> Cuando reveles una maniobra (%STOP% 0), puedes cambiar la orientación de tu nave en 180&deg;.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.'''
         '''Adaptive Ailerons''':
             name: "Alerones adaptativos"
-            ship: "TIE Fustigador"
+            ship: "Fustigador TIE"
             text: '''<span class="card-restriction">Sólo Fustigador TIE.</span>%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'''
         # C-ROC
         '''Merchant One''':
