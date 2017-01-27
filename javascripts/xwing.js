@@ -10710,7 +10710,9 @@ exportObj.translations['Español'] = {
     "Protectorate Starfighter Expansion Pack": "Pack de Expansión Caza estelar del Protectorado",
     "Shadow Caster Expansion Pack": "Pack de Expansión Sombra Alargada",
     "Special Forces TIE Expansion Pack": "Pack de Expansión TIE de las Fuerzas Especiales",
-    "ARC-170 Expansion Pack": "Pack de Expansión ARC-170"
+    "ARC-170 Expansion Pack": "Pack de Expansión ARC-170",
+    "U-Wing Expansion Pack": "Pack de Expansión Ala-U",
+    "TIE Striker Expansion Pack": "Pack de Expansión Fustigador TIE"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -10824,6 +10826,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('VT-49 Decimator', 'VT-49 Diezmador');
   exportObj.renameShip('TIE/fo Fighter', 'Caza TIE/fo');
   exportObj.renameShip('TIE/sf Fighter', 'Caza TIE/sf');
+  exportObj.renameShip('TIE Striker', 'Fustigador TIE');
   exportObj.renameShip('A-Wing', 'Ala-A');
   exportObj.renameShip('B-Wing', 'Ala-B');
   exportObj.renameShip('E-Wing', 'Ala-E');
@@ -10836,6 +10839,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)');
   exportObj.renameShip('GR-75 Medium Transport', 'Transporte mediano GR-75');
   exportObj.renameShip('T-70 X-Wing', 'T-70 Ala-X');
+  exportObj.renameShip('U-Wing', 'Ala-U');
   exportObj.renameShip('M3-A Interceptor', 'Interceptor M3-A');
   exportObj.renameShip('StarViper', 'Víbora Estelar');
   exportObj.renameShip('Aggressor', 'Agresor');
@@ -11731,22 +11735,31 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'
     },
     'Cassian Andor': {
-      text: 'At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'
+      ship: "Ala-U",
+      text: 'Al comienzo de la fase de Activación, puedes quitar 1 ficha de Tensión de 1 otra nave aliada que tengas a alcance 1-2.'
     },
     'Bodhi Rook': {
-      text: 'When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+      ship: "Ala-U",
+      text: 'Cuando una nave aliada fije un blanco, esa nave puede fijarlo sobre una nave enemiga que esté situada a alcance 1-3 de cualquier nave aliada.'
     },
     'Heff Tobber': {
-      text: 'After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'
+      ship: "Ala-U",
+      text: 'Después de que una nave enemiga ejecute una maniobra que la haga solaparse con tu nave, puedes realizar una acción gratuita.'
     },
     '"Duchess"': {
-      text: 'While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'
+      ship: "Fustigador TIE",
+      name: '"Duquesa"',
+      text: 'Cuando tengas equipada la carta de Mejora "Alreones adaptativos", puedes elegir ignorar su capacidad de carta.'
     },
     '"Pure Sabacc"': {
-      text: 'When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'
+      ship: "Fustigador TIE",
+      name: '"Sabacc Puro"',
+      text: 'Cuando ataques, si tienes 1 o menos cartas de Daño, tira 1 dado de ataque adicional.'
     },
     '"Countdown"': {
-      text: 'When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'
+      ship: "Fustigador TIE",
+      name: '"Cuenta Atrás"',
+      text: 'Cuando te defiendas, si no estás bajo tensión, durante el paso "Comparar los resultados", puedes sufrir 1 punto de daño para anular <strong>todos</strong> los resultados de los dados. Si lo haces, recibes 1 ficha de Tensión.'
     },
     'Nien Nunb': {
       ship: "T-70 Ala-X",
@@ -11779,6 +11792,22 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Sarco Plank': {
       text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
+    },
+    "Blue Squadron Pathfinder": {
+      name: "Infiltrador del Escuadrón Azul",
+      ship: "Ala-U"
+    },
+    "Black Squadron Scout": {
+      name: "Explorador del Escuadrón Negro",
+      ship: "Fustigador TIE"
+    },
+    "Scarif Defender": {
+      name: "Defensor de Scarif",
+      ship: "Fustigador TIE"
+    },
+    "Imperial Trainee": {
+      name: "Cadete Imperial",
+      ship: "Fustigador TIE"
     }
   };
   upgrade_translations = {
@@ -12526,10 +12555,10 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'
     },
     'Jyn Erso': {
-      text: '%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'
+      text: '%REBELONLY%%LINEBREAK%<strong>Acción:</strong> Elige 1 nave aliada que tengas a alcance 1-2. Asigna 1 ficha de Concentración a esa nave por cada nave enemiga que tengas dentro de tu arco de fuego a alcance 1-3. No puedes asignar más de 3 fichas de esta forma.'
     },
     'Cassian Andor': {
-      text: '%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship\'s bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'
+      text: '%REBELONLY%%LINEBREAK%Al final de la fase de Planificación, puedes elegir una nave enemiga que tengas a alcance 1-2. Di en voz alta la dirección y velocidad que crees que va a tener esa nave, y luego mira su selector d emaniobras. Si aciertas, puedes girar la rueda de tu selector para asignarle otra maniobra.'
     },
     'Finn': {
       text: '%REBELONLY%%LINEBREAK%Cuando ataques con un armamento principal o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes añadir 1 resultado de cara vacía a tu tirada.'
@@ -12586,22 +12615,25 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'
     },
     'Bodhi Rook': {
-      text: '%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'
+      text: '%REBELONLY%%LINEBREAK%Cuando fijes un blanco, puedes fijarlo sobre una nave enemiga que esté situada a alcance 1-3 de cualquier nave aliada.'
     },
     'Baze Malbus': {
-      text: '%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'
+      text: '%REBELONLY%%LINEBREAK%Después de que efectúes un ataque que no impacte, puedes realizar inmediatamente un ataque con tu armamento principal contra una nave diferente. No podrás realizar ningún otro ataque en esta misma ronda.'
     },
     'Inspiring Recruit': {
-      text: 'Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'
+      name: "Recluta inspirador",
+      text: 'Una vez por ronda, cuando una nave aliada que tengas a alcance 1-2 se quite una ficha de Tensión, puede quitarse 1 ficha de Tensión adicional.'
     },
     'Swarm Leader': {
-      text: 'When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'
+      name: "Jefe de enjambre",
+      text: 'Cuando ataques con un armamento principal, elige hasta 2 ortas naves aliadas que tengan al defensor dentro de sus arcos de fuego a alcance 1-3. Quita 1 ficha de Evasión de cada nave elegida para tirar 1 dado de ataque adicional por cada ficha quitada.'
     },
     'Bistan': {
-      text: '%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'
+      text: '%REBELONLY%%LINEBREAK%Cuando ataques a alcance 1-2, puedes cambiar 1 de tus resultados %HIT% por un resultado %CRIT%.'
     },
     'Expertise': {
-      text: 'When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'
+      name: "Maestría",
+      text: 'Cuando ataques, si no estás bajo tensión, puedes cambair todos tus resultados %FOCUS% por resultados %HIT%.'
     },
     'BoShek': {
       text: 'When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'
@@ -12737,7 +12769,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'
     },
     'Lightweight Frame': {
-      text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
+      name: "Fuselaje ultraligero",
+      text: '<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'
     }
   };
   title_translations = {
@@ -12939,10 +12972,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'
     },
     'Pivot Wing': {
-      text: '<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'
+      ship: "Ala-U",
+      text: '<span class="card-restriction">Sólo Ala-U.</span> %DUALCARD%%LINEBREAK%<strong>Cara A (Ataque):</strong> Tu Agilidad se incrementa en 1.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Aterrizaje):</strong> Cuando reveles una maniobra (%STOP% 0), puedes cambiar la orientación de tu nave en 180&deg;.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.'
     },
     'Adaptive Ailerons': {
-      text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
+      name: "Alerones adaptativos",
+      text: '<span class="card-restriction">Sólo Fustigador TIE.</span>%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'
     },
     'Merchant One': {
       text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
@@ -15545,7 +15580,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Akció:</strong> válassz egy hajót 1-2 távolságon belül, akinek a pilótaképzettsége alacsonyabb mint a sajátod. A választott hajó azonnal végrehajthat egy szabad akciót."
     },
     "Expert Handling": {
-      text: "<strong>Akció:</strong> hajts végre egy orsózás akciót. Ha nem rendelkezel %BARRELROLL% képességgel, kapsz egy stressz jelzőt. Ezután eltávolíthatsz egy ellenséges célpontbemérő jelzőt a hajódról."
+      text: "<strong>Akció:</strong> hajts végre egy ingyenes orsózás akciót. Ha nem rendelkezel %BARRELROLL% képességgel, kapsz egy stressz jelzőt. Ezután eltávolíthatsz egy ellenséges célpontbemérő jelzőt a hajódról."
     },
     "Marksmanship": {
       text: "<strong>Akció:</strong> amikor támadsz ebben a körben, egy %FOCUS% eredményt %CRIT% eredményre, az összes többi %FOCUS% dobásod pedig %HIT%-ra változtathatod."
@@ -15584,7 +15619,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. Támadó kockák: 4; Hatótáv: 2-3"
     },
     "Seismic Charges": {
-      text: "Amikor felfeded a manőveredet, eldobhatod ezt a kártyát, hogy <strong>letehess</strong> 1 Seismic Charges (szeizmikus töltetek) jelzőt. Ez a jelző az Aktivációs fázis végén <strong>felrobban</strong>.%LINEBREAK%Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."
+      text: "Amikor felfeded a manőveretárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."
     },
     "Mercenary Copilot": {
       text: "Amikor 3-as távolságra támadsz, egy %HIT% eredményt %CRIT% eredményre változtathatsz."
@@ -15597,7 +15632,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Növeld kettővel a pilótaképzettség értékedet."
     },
     "Proximity Mines": {
-      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess egy Proximity Mine (közelségi gyújtós akna) jelzőt. Ha egy hajó a manőver végrehajtása során a talpával vagy a manőver sablonjával átlapolja a jelzőt, akkor az akna felrobban.%LINEBREAK%A érintett hajók dobnak  3 támadó kockával és elszenvednek minden %HIT% és %CRIT% dobást.  Aztán a jelzőt le kell venni."
+      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess egy Proximity Mine jelzőt.<br />Ha egy hajó a manőver végrehajtása során a talpával vagy a manőver sablonjával átlapolja a jelzőt, akkor az akna felrobban.<br />A érintett hajók dobnak 3 támadó kockával és elszenvednek minden %HIT% és %CRIT% dobást.  Aztán a jelzőt le kell venni."
     },
     "Weapons Engineer": {
       text: "Egyszerre két célpontbemérőd lehet (egy ellenséges hajóra csak egyet tehetsz). Amikor kapsz egy célpontbemérőt, bemérhetsz két ellenséges hajót."
@@ -15637,10 +15672,11 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Az aktiválási fázis kezdetén válasz egy ellenséges hajót 1-2 távolságon belül. Megnézheted, hogy az a hajó milyen manővert fog végrehajtani."
     },
     "Proton Bombs": {
-      text: "Amikor felfeded a manőveredet, eldobhatod ezt a kártyát, hogy <strong>letehess</strong> egy proton bomba jelzőt. Ez a jelző az Aktivációs fázis végén <strong>felrobban</strong>.%LINEBREAK%Minden 1-es távolságon belüli hajó kap 1 felfordított sérülés kártyát.  Aztán a jelzőt le kell venni."
+      text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess egy proton bomba jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden 1-es távolságon belüli hajó kap 1 felfordított sérülés kártyát. Aztán a jelzőt le kell venni."
     },
     "Adrenaline Rush": {
-      text: "<em>(Adrenalinlöket)</em> Amikor felfedsz egy piros manővert, eldobhatod ezt a lapot, hogy az a manőver fehér színűnek számítson az aktiválási fázis végéig."
+      name: "Adrenaline Rush (Adrenalinlöket)",
+      text: "Amikor felfedsz egy piros manővert, eldobhatod ezt a lapot, hogy az a manőver fehér színűnek számítson az aktiválási fázis végéig."
     },
     "Advanced Sensors": {
       text: "Közvetlen a manőver tárcsa felfedése előtt végrehajthatsz egy szabad akciót. Amennyiben használod ezt a képességet, hagyd ki ebből a körből az \"Akció végrehajtása\" fázist."
@@ -15662,7 +15698,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor felfeded a manővered, áttekerheted a tárcsádat egy másik, de az eredeti iránnyal egyező manőverre. Nem választhatsz piros manővert, ha már van rajtad egy stressz jelző."
     },
     "Opportunist": {
-      text: "Amikor támadsz, és a védekező hajónak nincs se fókusz se kitérés jelzője, akkor kaphatsz egy stressz jelzőt, hogy plusz egy támadókockával guríts. Nem használhatod ezt a képességet, ha már van stressz jelződ."
+      text: "Amikor támadsz, és a védekező hajónak nincs se %FOCUS%, se %EVADE% jelzője, akkor kaphatsz egy stressz jelzőt, hogy plusz egy támadókockával guríts. Nem használhatod ezt a képességet, ha már van stressz jelződ."
     },
     "Comms Booster": {
       text: "<strong>Energia:</strong> Költs el egy energiát, így leveheted az összes stressz jelzőt egy 1-3 távolságra lévő baráti hajóról. Ezek után tégy egy fókusz jelzőt arra a hajóra."
@@ -15680,7 +15716,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "A harc fázis elején távolíts el 1 stressz jelzőt egy 1-es távolságon belül lévő másik baráti hajóról."
     },
     "Decoy": {
-      text: "A Harci fázis kezdetén választhatsz egy 1-2 távolságra lévő saját hajót. Cseréld ki a pilóta képességeteket a fázis végéig"
+      text: "A harci fázis kezdetén választhatsz egy 1-2 távolságra lévő saját hajót. Cseréld ki a pilóta képességeteket a fázis végéig."
     },
     "Outmaneuver": {
       text: "Amikor a saját tüzelési szögeden belül támadsz, és kívül esel a támadott hajó tüzelési szögén (magyarul, ha hátba támadod), csökkentsd a mozgékonyságát 1-el (minimum 0-ig)."
@@ -15699,7 +15735,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Action:</strong> Válassz 1 ellenséges hajót 1-2 távolságra. Ha benne vagy a tüzelési szögében, tehetsz rá célpontbemérőt. Ezután végrehajthatsz egy ingyenes %BOOST% akciót."
     },
     "Tactician": {
-      text: "Amikor megtámadsz egy 2-es távolságra és a tüzelési szögedben lévő hajót, az kap egy stressz jelzőt."
+      text: "Miután végrehajtasz egy támadást egy 2-es távolságra és a tüzelési szögedben lévő hajón, az kap egy stressz jelzőt."
     },
     "R2-D2 (Crew)": {
       text: "<span class=\"card-restriction\">Csak lázadók.</span>%LINEBREAK%Ha a kör végén nincs pajzsod, kapsz 1 pajzs jelzőt és dobnod kell egy támadókockával. %HIT% esetén véletlenszerűen fordítsd fel az egyik sebzés kártyádat és hajtsd végre."
@@ -15750,7 +15786,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor eltalálnak és legalább három olyan %HIT% találat van, amit nem tudsz érvényteleníteni, változtasd meg őket addig, míg 2 nem marad. Minden egyes így érvénytelenített találatért kapsz 1 stressz jelzőt."
     },
     "R5-P9": {
-      text: "A Harci fázis végén elkölthetsz 1 fókusz jelzőt, hogy visszakapj 1 pajzsot (max. pajzs értékig)."
+      text: "A harci fázis végén elkölthetsz 1 fókusz jelzőt, hogy visszakapj 1 pajzsot (max. pajzs értékig)."
     },
     "WED-15 Repair Droid": {
       text: "<span class=\"card-restriction\">Csak óriás hajó.</span>%LINEBREAK%<strong>Akció:</strong> Költs el 1 energiát, hogy eldobhasd 1 lefordított sérülés kártyádat, vagy költs el 3-at, hogy eldobhass 1 felfordított sérüléskártyát."
@@ -15786,7 +15822,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak óriás hajó. Csak lázadó.</span> %LINEBREAK%Az Aktiválási fázis elején válassz 1 ellenséges hajót 1-3 távolságra. Megnézheted a választott manőverét. Amennyiben az fehér, kap 1 stressz jelzőt."
     },
     "Gunnery Team": {
-      text: "<span class=\"card-restriction\">Limitált.</span>Egy körben egyszer, amikor másodlagos fegyverrel támadsz, elkölthetsz egy energiát annak érdekében, hogy egy üres kockát %HIT%-ra forgathass."
+      text: "<span class=\"card-restriction\">Limitált.</span>%LINEBREAK%Egy körben egyszer, amikor másodlagos fegyverrel támadsz, elkölthetsz egy energiát annak érdekében, hogy egy üres kockát %HIT%-ra forgathass."
     },
     "Sensor Team": {
       text: "A célpont bemérését 1-5 távolságra lévő hajón is használhatod (1-3 helyett)."
@@ -15798,7 +15834,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak lázadók.</span>%LINEBREAK%<strong>Akció:</strong> Dobj két védekező kockával. Annyi fókusz jelzőt adj a hajódnak, amennyi %FOCUS%-t, valamint annyi kitérés jelzőt, ahány %EVADE%-t dobtál."
     },
     "Mara Jade": {
-      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%A Harci fázis végén minden olyan 1 távolságra lévő ellenséges hajó, amin nincs stressz jelző, kap egy stressz jelzőt."
+      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%A harci fázis végén minden olyan 1 távolságra lévő ellenséges hajó, amin nincs stressz jelző, kap egy stressz jelzőt."
     },
     "Fleet Officer": {
       text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%<strong>Akció:</strong>Válassz ki maximum 2 hajót 1-2 távolságon belül és adj nekik 1-1 fókusz jelzőt. Ezután kapsz egy stressz jelzőt."
@@ -15822,7 +15858,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amíg egy ellenséges hajóval érintkezel, annak a hajónak a mozgékonyságát csökkentsd eggyel."
     },
     "Ysanne Isard": {
-      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%A Harci fázis elején, ha nincs pajzsod és legalább egy sérülés jelző van a hajódon, végrehajthatsz egy ingyen kitérés akciót."
+      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%A harci fázis elején, ha nincs pajzsod és legalább egy sérülés jelző van a hajódon, végrehajthatsz egy ingyen kitérés akciót."
     },
     "Moff Jerjerrod": {
       text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%Csak birodalmiak. Amikor kapnál egy felfordított sérülés kártyát, eldobhatod ezt vagy egy másik %CREW% fejlesztés kártyádat, hogy a sérülés kártyát lefelé fordítsd (a hatása így nem érvényesül)."
@@ -15831,7 +15867,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás (célpontbemérő):</strong> költs el egy célpontbemérő jelzőt és dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás talál, akkor a célpont és a tőle 1-es távolságra lévő hajók kapnak 1 ion jelzőt."
     },
     "Bodyguard": {
-      text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%A Harci fázis elején egy fókuszt elköltve kiválaszthatsz egy 1-es távolságra lévő baráti hajót, aminek a tiednél nagyobb a pilóta képzettsége. A kör végéig annak a hajónak növeld meg eggyel a mozgékonyságát."
+      text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%A harci fázis elején egy fókuszt elköltve kiválaszthatsz egy 1-es távolságra lévő baráti hajót, aminek a tiednél nagyobb a pilóta képzettsége. A kör végéig annak a hajónak növeld meg eggyel a mozgékonyságát."
     },
     "Calculation": {
       text: "Amikor támadsz, elkölthetsz egy fókusz jelzőt, hogy egy %FOCUS% dobásod %CRIT%-ra módosíts."
@@ -15852,7 +15888,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor megsemmisülsz, minden, tőled 1-es távolságra lévő hajó elszenved 1 sérülést."
     },
     "Feedback Array": {
-      text: "A Harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést."
+      text: "A harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést."
     },
     '"Hot Shot" Blaster': {
       text: "<strong>Támadás:</strong>: Dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."
@@ -15873,7 +15909,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Az összes 3-as sebességű manővert vedd zöld színűnek."
     },
     "R4-B11": {
-      text: "Ha támadsz és ha már elhelyeztél egy célpontbemérő jelzőt a célponton, akkor válaszd ki a védő bármelyik vagy akár mindegyik kockáját. Ezekkel neki újra kell dobnia."
+      text: "Ha támadsz, elköltheted a célponton lévő célpontbemérőd, hogy kiválassz bármennyi védő kockát. A védekezőnek ezeket újra kell dobnia."
     },
     "Autoblaster Turret": {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. A %HIT% dobásaid nem lehet a védekező kockákkal érvényteleníteni. A védő a %CRIT% dobásokat a %HIT%-ok előtt semlegesítheti."
@@ -15897,13 +15933,13 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Limitált.</span>%LINEBREAK%Amikor hozzárendeled ezt a kártyád a hajódhoz, tégy 1 hadianyag jelzőt minden a hajóra felszerelt %TORPEDO%, %MISSILE% és %BOMB% fejlesztés kártyára. Amikor azt az utasítást kapod, hogy dobd el a fejlesztés kártyádat, ahelyett az azon a kártyán található hadianyag jelzőt is eldobhatod."
     },
     "Cluster Mines": {
-      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy <strong>letehess</strong> 3 Cluster Mine jelzőt. Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba <strong>felrobban</strong>. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán a akna jelzőt le kell venni."
+      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 3 Cluster Mine jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán az akna jelzőt le kell venni."
     },
     "Glitterstim": {
-      text: "A Harci fázis elején eldobhatod ezt a kártyát és kaphatsz 1 stressz jelzőt. Ha megteszed, a kör végéig mind támadásnál, mind védekezésnél minden %FOCUS% dobásod %HIT%-ra vagy %EVADE%-re módosíthatod."
+      text: "A harci fázis elején eldobhatod ezt a kártyát és kaphatsz 1 stressz jelzőt. Ha megteszed, a kör végéig mind támadásnál, mind védekezésnél minden %FOCUS% dobásod %HIT%-ra vagy %EVADE%-re módosíthatod."
     },
     "Grand Moff Tarkin": {
-      text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriási hajók. Csak birodalmiak. A Harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."
+      text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriási hajók. Csak birodalmiak. A harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."
     },
     "Captain Needa": {
       text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Ha az Aktivációs fázis során átfedésbe kerülnél egy akadállyal, nem kapsz 1 felfordított sérülés kártyát. Helyette dobj 1 támadó kockával. %HIT% vagy %CRIT% találat esetén 1 sérülést szenvedsz el."
@@ -15927,10 +15963,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás (célpontbemérő):</strong> költs el egy célpontbemérő jelzőt és dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás talál, a sebzés kiosztása után végy le egy pajzs jelzőt a védőről."
     },
     "Ion Bombs": {
-      text: "Amikor felfeded a manővertárcsád, <strong>eldobhatod</strong> ezt a kártyát, hogy letehess egy 1 ion bomba jelzőt. Ez a bomba az aktivációs fázis végén <strong>felrobban</strong>.<br />A bombától mért 1 távolságra minden hajó kap 2 ion jelzőt. Aztán a jelzőt le kell venni."
+      text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess egy 1 ion bomba jelzőt.<br />Ez a bomba az aktivációs fázis végén felrobban.<br />A bombától mért 1 távolságra minden hajó kap 2 ion jelzőt. Aztán a jelzőt le kell venni."
     },
     "Conner Net": {
-      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy <strong>letehess</strong> 1 Conner Net (Conner háló) jelzőt. Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba <strong>felrobban</strong>.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni."
+      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 1 Conner Net jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni."
     },
     "Bombardier": {
       text: "Amikor ledobsz egy bombát, használhatod a (%STRAIGHT% 2) sablont a (%STRAIGHT% 1) helyett."
@@ -15951,7 +15987,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, the defender receives 1 tractor beam token.  Then cancel <strong>all</strong> dice results."
     },
     "Cloaking Device": {
-      text: "<span class=\"card-restriction\">Csak kis hajók.</span>%LINEBREAK%<strong>Action:</strong> Perform a free cloak action.%LINEBREAK%At the end of each round, if you are cloaked, roll 1 attack die.  On a %FOCUS% result, discard this card, then decloak or discard your cloak token."
+      text: "<span class=\"card-restriction\">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Hajts végre egy ingyenes álcázás akciót.<br>A kör végén, ha álcázva vagy, dobj egy támadó kockával. %FOCUS% eredménynél dobd el ezt a kártyát, majd fedd fel magad vagy dobd el az álcázás jelzőt."
     },
     "Shield Technician": {
       text: "<span class=\"card-restriction\">Csak óriási hajók.</span>%LINEBREAK%Amikor végrehajtasz egy visszanyerés akciót, ahelyett, hogy elköltenéd az összes energiádat, te döntheted el, mennyi energiát használsz fel."
@@ -16058,7 +16094,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Körönként egyszer, védekezés után dobj egy támadó kockával. %HIT% dobáskor a támadó leszenved egy sérülést. %CRIT% dobáskor mindketten elszenvedtek egy séerülést."
     },
     'Thermal Detonators': {
-      text: "Mikor felfeded tárcsád eldobhatod ezt a kártyát, hogy ledobj egy thermal detonator jelzőt.%LINEBREAK%Ez a jelző felrobban az aktiválási fázis végén.%LINEBREAK%<strong>Thermal Detonator:</strong> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."
+      text: "Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy thermal detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."
     },
     "Overclocked R4": {
       text: "A harci fázis alatt, mikor elköltesz egy %FOCUS% jelzőt, egy stressz jelzővel együtt kaphatsz egy újabb %FOCUS% jelzőt."
@@ -16192,13 +16228,13 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Mikor a hajó amivel érintkezel aktiválódik, megnézheted a kiválasztott menőverét. Ha így teszel, az gazdájának át kell forgatni a tárcsát egy szomszédos manőverre. A hajó ezt a manővert fedi fel és hajtja végre, még ha stresszes is.'
     },
     'Heavy Laser Turret': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+      text: '<span class="card-restriction">Csak C-ROC Cruiser.</span>%LINEBREAK%<strong>Támadás (energia):</strong> Költs el 2 energiát erről a kártyáról, hogy végrehajtsd ezt a támadást egy hajó ellen (akkor is, ha a hajó kívül esik a tüzelési szögeden).'
     },
     'Cikatro Vizago': {
-      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A befejező fázis kezdetén eldobhatod ezt a kártyát, hogy kicseréld egy felszerelt és még felfordított %ILLICIT% vagy %CARGO% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
     },
     'Azmorigan': {
-      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
     }
   };
   modification_translations = {
@@ -16228,16 +16264,16 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor végrehajtod az álcázás akciót vagy leveszed az álcát, végrehajthatsz egy szabad kitérés akciót."
     },
     "Advanced Cloaking Device": {
-      text: "<span class=\"card-restriction\">Csak TIE Phantom.</span>Miután végrehajtottál egy támadást, végrehajthatsz egy szabad álcázás akciót."
+      text: "<span class=\"card-restriction\">Csak TIE Phantom.</span>%LINEBREAK%Miután végrehajtottál egy támadást, végrehajthatsz egy szabad álcázás akciót."
     },
     "Combat Retrofit": {
-      text: "<span class=\"card-restriction\">Csak GR-75. Csak óriási hajó.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."
+      text: "<span class=\"card-restriction\">Csak GR-75. Csak óriási hajók.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."
     },
     "B-Wing/E2": {
       text: "<span class=\"card-restriction\">Csak B-Wing.</span>%LINEBREAK%Csak B-Wing. Módosítás. A fejlesztés sávod megkapja a %CREW% fejlesztés ikont."
     },
     "Countermeasures": {
-      text: "<span class=\"card-restriction\">Csak nagy hajók.</span>%LINEBREAK%A Harci fázis elején eldobhatod ezt a kártyát, hogy eggyel megnöveld a mozgékonyság értékedet a kör végéig. Levehetsz egy ellenséges célpontbemérő jelzőt a hajódról."
+      text: "<span class=\"card-restriction\">Csak nagy hajók.</span>%LINEBREAK%A harci fázis elején eldobhatod ezt a kártyát, hogy eggyel megnöveld a mozgékonyság értékedet a kör végéig. Levehetsz egy ellenséges célpontbemérő jelzőt a hajódról."
     },
     "Experimental Interface": {
       text: "Körönként egyszer, miután végrehajtottál egy akciót, végrehajthatsz egy ingyen akciót egy \"<strong>Action:</strong>\" fejléccel rendelkező Fejlesztés kártyáról. Ezután kapsz egy stressz jelzőt."
@@ -16363,7 +16399,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak Y-Wing.</span>%LINEBREAK%Nem támadhatod meg a tüzelési íveden kívül eső hajókat. Miután támadtál az elsődleges fegyvereddel, azonnal támadhatsz a %TURRET% másodlagos fegyvereddel is."
     },
     "Andrasta": {
-      text: "<span class=\"card-restriction\">Csak Firespray-31.</span>%LINEBREAK%.A fejlesztés sávod kap két további %BOMB% fejlesztés ikont."
+      text: "<span class=\"card-restriction\">Csak Firespray-31.</span>%LINEBREAK%A fejlesztés sávod kap két további %BOMB% fejlesztés ikont."
     },
     "TIE/x1": {
       text: "<span class=\"card-restriction\">Csak TIE Advanced.</span>%LINEBREAK%Az akció sávod megkapja a %SYSTEM% fejlesztés ikont. Ha a hajódra %SYSTEM% fejlesztés kártyát teszel, a raj pontértéke 4-gyel csökken (minimum 0-ig)."
@@ -16421,10 +16457,10 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Alliance Overhaul': {
       name: "Alliance Overhaul (Szövetségi felújítás)",
-      text: '<span class="card-restriction">Csak ARC-170.</span>%LINEBREAK%<em>(Szövetségi felújítás)</em> Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz 1 támadó kockával dobhatsz. Mikor a kiegészítő tüzelési szögedből támadsz 1 %FOCUS% találadod %CRIT%-re változtathatod.'
+      text: '<span class="card-restriction">Csak ARC-170.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz 1 támadó kockával dobhatsz. Mikor a kiegészítő tüzelési szögedből támadsz 1 %FOCUS% találadod %CRIT%-re változtathatod.'
     },
     'Special Ops Training': {
-      text: '<span class="card-restriction">Csak TIE/sf.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz agy elsődleges tüzelési szögedben, plusz egy kockával dobhatsz. Ha nem így teszel, végrehajthatsz egy plusz támadást a hátsó tüzelési szögedből.'
+      text: '<span class="card-restriction">Csak TIE/sf.</span>%LINEBREAK%Mikor az elsődleges fegyvereddel támadsz az elsődleges tüzelési szögedben, plusz egy kockával dobhatsz. Ha nem így teszel, végrehajthatsz egy plusz támadást a hátsó tüzelési szögedből.'
     },
     'Concord Dawn Protector': {
       text: '<span class="card-restriction">Csak Protectorate Starfighter.</span>%LINEBREAK%Védekezéskor, ha a támadóval egymás tüzelési szögében vagytok 1-es távolságon belül, adj egy %EVADE% eredményt a dobásodhoz.'
@@ -16446,12 +16482,6 @@ exportObj.cardLoaders.Magyar = function() {
     'Adaptive Ailerons': {
       name: "Adaptive Ailerons (Adaptív csűrőlapok)",
       text: '<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajtanod egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'
-    },
-    'Merchant One': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
-    },
-    '"Light Scyk" Interceptor': {
-      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
     }
   };
   condition_translations = {
@@ -24825,7 +24855,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23161
+                    lineno: 23188
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25394,7 +25424,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23737
+              lineno: 23764
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26032,7 +26062,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24304
+          lineno: 24331
         }));
         __iced_deferrals._fulfill();
       });
@@ -26044,7 +26074,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24305
+            lineno: 24332
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27580,7 +27610,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25175
+                      lineno: 25202
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27649,7 +27679,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25199
+                lineno: 25226
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27701,7 +27731,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25221
+            lineno: 25248
           }));
         }
         _ref = _this.upgrades;
@@ -27709,7 +27739,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25223
+              lineno: 25250
             }));
           }
         }
@@ -27718,7 +27748,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25225
+              lineno: 25252
             }));
           }
         }
@@ -28635,7 +28665,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25873
+                lineno: 25900
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28754,7 +28784,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25932
+                  lineno: 25959
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28776,7 +28806,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25936
+                    lineno: 25963
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28861,7 +28891,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25976
+            lineno: 26003
           }));
         }
         __iced_deferrals._fulfill();
