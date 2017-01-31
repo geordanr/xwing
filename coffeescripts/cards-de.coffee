@@ -534,7 +534,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "N'Dru Suhlak":
             ship: "Z-95-Kopfjäger"
             text: """Sobald du angreifst, erhältst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             ship: "Z-95-Kopfjäger"
             text: """Zu Beginn der Kampfphase darfst du 1 Fokus- oder Ausweichmarker von einem anderem freundlichen Schiff in Reichweite 1-2 entfernen und dir selbst zuordnen."""
         "Binayre Pirate":

@@ -1854,7 +1854,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: "Kaa'To Leeachos"
+            name: "Kaa'to Leeachos"
             type: 'pilot'
             count: 1
         }

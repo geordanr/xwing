@@ -2492,7 +2492,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Kaa'To Leeachos"
+            name: "Kaa'to Leeachos"
             unique: true
             faction: "Scum and Villainy"
             id: 113

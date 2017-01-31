@@ -515,7 +515,7 @@ exportObj.cardLoaders['Français'] = () ->
         "N'Dru Suhlak":
             ship: "Chasseur de têtes Z-95"
             text: """Quand vous attaquez, s'il n'y a pas d'autres vaisseaux alliés à portée 1-2, lancez 1 dé d'attaque supplémentaire."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             ship: "Chasseur de têtes Z-95"
             text: """Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."""
         "Latts Razzi":
