@@ -2752,7 +2752,7 @@ exportObj.basicCardData = function() {
         points: 17,
         slots: ["Elite", "Missile", "Illicit"]
       }, {
-        name: "Kaa'To Leeachos",
+        name: "Kaa'to Leeachos",
         unique: true,
         faction: "Scum and Villainy",
         id: 113,
@@ -7374,7 +7374,7 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "Z-95-Kopfjäger",
       text: "Sobald du angreifst, erhältst du 1 zusätzlichen Angriffswürfel, falls keine anderen freundlichen Schiffe in Reichweite 1-2 zu dir sind."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       ship: "Z-95-Kopfjäger",
       text: "Zu Beginn der Kampfphase darfst du 1 Fokus- oder Ausweichmarker von einem anderem freundlichen Schiff in Reichweite 1-2 entfernen und dir selbst zuordnen."
     },
@@ -9435,7 +9435,7 @@ exportObj.cardLoaders.English = function() {
     "N'Dru Suhlak": {
       text: "When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       text: "At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."
     },
     "Commander Alozen": {
@@ -11349,7 +11349,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando ataques, si no tienes ninguna otra nave aliada a alcance 1-2, tira 1 dado de ataque adicional.",
       ship: "Z-95 Cazacabezas"
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       text: "Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave.",
       ship: "Z-95 Cazacabezas"
     },
@@ -13618,7 +13618,7 @@ exportObj.cardLoaders['Français'] = function() {
       ship: "Chasseur de têtes Z-95",
       text: "Quand vous attaquez, s'il n'y a pas d'autres vaisseaux alliés à portée 1-2, lancez 1 dé d'attaque supplémentaire."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       ship: "Chasseur de têtes Z-95",
       text: "Au début de la phase de combat, vous pouvez enlever 1 marqueur de concentration ou d'évasion d'un autre vaisseau allié situé à portée 1-2 et vous l'assigner."
     },
@@ -15287,7 +15287,7 @@ exportObj.cardLoaders.Magyar = function() {
     "N'Dru Suhlak": {
       text: "Mikor támadsz és nincs másik baráti hajó 1-2 távolságban, plusz egy támadó kockával dobhatsz."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       text: "A támadás fázis elején, elvehetsz egy %FOCUS% vagy %EVADE% jelzőt egy baráti hajótól 1-2 távolságban és magadra rakhatod."
     },
     "Commander Alozen": {
@@ -17101,7 +17101,7 @@ exportObj.cardLoaders['Polski'] = function() {
       ship: "Z-95 Łowca głów",
       text: "Kiedy atakujesz rzucasz 1 dodatkową kością ataku, jeśli w Zasięgu 1-2 nie ma żadnych innych przyjaznych statków."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       ship: "Z-95 Łowca głów",
       text: "Na początku fazy walki możesz usunąć 1 żeton skupienia lub uników z innego przyjaznego statku w Zasięgu 1-2 i przypisać go do siebie."
     },
@@ -18771,7 +18771,7 @@ exportObj.cardLoaders['Русский'] = function() {
     "N'Dru Suhlak": {
       text: "При атаке, если на Дистанции 1-2 нет других дружественных кораблей, бростайте один дополнительный кубик атаки."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       text: "В начале фазы Боя вы можете удалить один жетон %FOCUS% или %EVADE% с другого дружественного корабля на Дистанции 1-2, и назначить его себе."
     },
     "Commander Alozen": {
@@ -20318,7 +20318,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
     "N'Dru Suhlak": {
       text: "Saldırırken 1-2 menzilde başka bir dost gemi yoksa fazladan 1 saldırı zarı atınız."
     },
-    "Kaa'To Leeachos": {
+    "Kaa'to Leeachos": {
       text: "Savaş safhasının başında 1-2 menzildeki bir dost gemiden 1 %FOCUS% veya %EVADE% fişini kaldırıp kendinize atayabilirsiniz."
     },
     "Commander Alozen": {
@@ -22960,7 +22960,7 @@ exportObj.manifestByExpansion = {
       type: 'pilot',
       count: 1
     }, {
-      name: "Kaa'To Leeachos",
+      name: "Kaa'to Leeachos",
       type: 'pilot',
       count: 1
     }, {
