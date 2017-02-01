@@ -499,7 +499,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "N'Dru Suhlak":
             ship: "Z-95 Łowca głów"
             text: """Kiedy atakujesz rzucasz 1 dodatkową kością ataku, jeśli w Zasięgu 1-2 nie ma żadnych innych przyjaznych statków."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             ship: "Z-95 Łowca głów"
             text: """Na początku fazy walki możesz usunąć 1 żeton skupienia lub uników z innego przyjaznego statku w Zasięgu 1-2 i przypisać go do siebie."""
         "Latts Razzi":

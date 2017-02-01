@@ -598,7 +598,7 @@ exportObj.cardLoaders['Español'] = () ->
         "N'Dru Suhlak":
             text: """Cuando ataques, si no tienes ninguna otra nave aliada a alcance 1-2, tira 1 dado de ataque adicional."""
             ship: "Z-95 Cazacabezas"
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             text: """Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave."""
             ship: "Z-95 Cazacabezas"
         "Commander Alozen":

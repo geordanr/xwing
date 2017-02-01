@@ -300,7 +300,7 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: """Aktivasyon safhasının başında 1-2 menzilde bir düşman gemisi seçiniz. Savaş safhasının sonuna kadar bu geminin pilot yetenek değerini "0" olarak ele alınız."""
         "N'Dru Suhlak":
             text: """Saldırırken 1-2 menzilde başka bir dost gemi yoksa fazladan 1 saldırı zarı atınız."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             text: """Savaş safhasının başında 1-2 menzildeki bir dost gemiden 1 %FOCUS% veya %EVADE% fişini kaldırıp kendinize atayabilirsiniz."""
         "Commander Alozen":
             text: """Savaş safhasının başında 1 menzildeki bir düşman gemisine Hedefe Kilitlenme (Target Lock) atayabilirsiniz."""

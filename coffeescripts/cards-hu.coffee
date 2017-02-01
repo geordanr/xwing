@@ -310,7 +310,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: """Az aktivációs fázis végén válassz egy ellenséges hajót 1-2 távolságban. A támadás fázis végéig azt a pilótát 0-ás pilóta képességűnek kell kezelni."""
         "N'Dru Suhlak":
             text: """Mikor támadsz és nincs másik baráti hajó 1-2 távolságban, plusz egy támadó kockával dobhatsz."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             text: """A támadás fázis elején, elvehetsz egy %FOCUS% vagy %EVADE% jelzőt egy baráti hajótól 1-2 távolságban és magadra rakhatod."""
         "Commander Alozen":
             text: """A támadás fázis elején, feltehetsz egy célpontbemérőt 1-es távolságban lévő ellenséges hajóra."""

@@ -310,7 +310,7 @@ exportObj.cardLoaders.English = () ->
             text: """At the end of the Activation phase, choose 1 enemy ship at Range 1-2. Until the end of the Combat phase, treat that ship's pilot skill value as "0"."""
         "N'Dru Suhlak":
             text: """When attacking, if there are no other friendly ships at Range 1-2, roll 1 additional attack die."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             text: """At the start of the Combat phase, you may remove 1 focus or evade token from another friendly ship at Range 1-2 and assign it to yourself."""
         "Commander Alozen":
             text: """At the start of the Combat phase, you may acquire a target lock on an enemy ship at Range 1."""
