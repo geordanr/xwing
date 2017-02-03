@@ -29,8 +29,10 @@ casper.test.begin "Validate Expansions", (test) ->
         "Most Wanted Expansion Pack"
         "Protectorate Starfighter Expansion Pack"
         'Punishing One Expansion Pack'
+        'Quadjumper Expansion Pack'
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
+        "Sabine's TIE Fighter Expansion Pack"
         "Shadow Caster Expansion Pack"
         "Slave I Expansion Pack"
         "Special Forces TIE Expansion Pack"
@@ -48,6 +50,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "TIE Punisher Expansion Pack"
         "TIE Striker Expansion Pack"
         "U-Wing Expansion Pack"
+        "Upsilon-class Shuttle Expansion Pack"
         "VT-49 Decimator Expansion Pack"
         "X-Wing Expansion Pack"
         "YT-2400 Freighter Expansion Pack"
