@@ -24443,6 +24443,155 @@ exportObj.manifestByExpansion = {
       type: 'title',
       count: 1
     }
+  ],
+  "Sabine's TIE Fighter Expansion Pack": [
+    {
+      name: 'TIE Fighter',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Ahsoka Tano',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Sabine Wren (TIE Fighter)',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Captain Rex',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: '"Zeb" Orrelios (TIE Fighter)',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Veteran Instincts',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Captain Rex',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'EMP Device',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Sabine\'s Masterpiece',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Captured TIE',
+      type: 'modification',
+      count: 1
+    }
+  ],
+  "Upsilon-class Shuttle Expansion Pack": [
+    {
+      name: 'Upsilon-class Shuttle',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Kylo Ren',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Major Stridan',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Lieutenant Dormitz',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Starkiller Base Pilot',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Snap Shot',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Kylo Ren',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'General Hux',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Operations Specialist',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Targeting Synchronizer',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Hyperwave Comm Scanner',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Ion Projector',
+      type: 'modification',
+      count: 2
+    }, {
+      name: 'Kylo Ren\'s Shuttle',
+      type: 'title',
+      count: 1
+    }
+  ],
+  "Quadjumper Expansion Pack": [
+    {
+      name: 'Quadjumper',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'Constable Zuvio',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Sarco Plank',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Unkar Plutt',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Jakku Gunrunner',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'A Score to Settle',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Unkar Plutt',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'BoShek',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Thermal Detonators',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Hyperwave Comm Scanner',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Scavenger Crane',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Spacetug Tractor Array',
+      type: 'modification',
+      count: 1
+    }
   ]
 };
 
@@ -24857,7 +25006,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23187
+                    lineno: 23365
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25426,7 +25575,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23763
+              lineno: 23941
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26064,7 +26213,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24330
+          lineno: 24508
         }));
         __iced_deferrals._fulfill();
       });
@@ -26076,7 +26225,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24331
+            lineno: 24509
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27612,7 +27761,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25201
+                      lineno: 25379
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27681,7 +27830,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25225
+                lineno: 25403
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27733,7 +27882,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25247
+            lineno: 25425
           }));
         }
         _ref = _this.upgrades;
@@ -27741,7 +27890,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25249
+              lineno: 25427
             }));
           }
         }
@@ -27750,7 +27899,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25251
+              lineno: 25429
             }));
           }
         }
@@ -28667,7 +28816,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25899
+                lineno: 26077
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28786,7 +28935,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25958
+                  lineno: 26136
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28808,7 +28957,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25962
+                    lineno: 26140
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28893,7 +29042,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26002
+            lineno: 26180
           }));
         }
         __iced_deferrals._fulfill();
