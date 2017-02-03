@@ -942,6 +942,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''A efectos de tus acciones y cartas de Mejora, puedes considerar las naves aliadas que tengas a alcance 2-3 como si estuvieran a alcance 1.'''
         'Lieutenant Dormitz':
             ship: "Lanzadera clase Ípsilon"
+            name: "Teniente Dormitz"
             text: '''Durante la preparación de la partida, las naves aliadas pueden ser colocadas en cualquier lugar de la zona de juego que esté situado a alcance 1-2 de ti.'''
         'Constable Zuvio':
             ship: "Saltador Quad"
