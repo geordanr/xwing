@@ -81,6 +81,9 @@ exportObj.translations['Español'] =
         "ARC-170 Expansion Pack": "Pack de Expansión ARC-170"
         "U-Wing Expansion Pack": "Pack de Expansión Ala-U"
         "TIE Striker Expansion Pack": "Pack de Expansión Fustigador TIE"
+        "Upsilon-class Shuttle Expansion Pack": "Pack de Expansión Lanzadera clase Ípsilon"
+        "Sabine's TIE Fighter Expansion Pack": "Pack de Expansión Caza TIE de Sabine"
+        "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -193,6 +196,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE/fo Fighter', 'Caza TIE/fo'
     exportObj.renameShip 'TIE/sf Fighter', 'Caza TIE/sf'
     exportObj.renameShip 'TIE Striker', 'Fustigador TIE'
+    exportObj.renameShip 'Upsilon-class Shuttle', 'Lanzadera clase Ípsilon'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -214,6 +218,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'JumpMaster 5000', 'Saltador Maestro 5000'
     exportObj.renameShip 'Protectorate Starfighter', 'Caza Estelar del Protectorado'
     exportObj.renameShip 'Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero'
+    exportObj.renameShip 'Quadjumper', 'Saltador Quad'
 
     pilot_translations =
         "Wedge Antilles":
@@ -517,6 +522,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "VT-49 Diezmador"
         "Commander Kenkirk":
             ship: "VT-49 Diezmador"
+            ship: "Comandante Kenkirk"
             text: """Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."""
         "Captain Oicunn":
             name: "Capitán Oicunn"
@@ -884,14 +890,16 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Nave de persecución clase Lancero"
         'Sabine Wren (TIE Fighter)':
             ship: "Caza TIE"
-            text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
+            text: '''Inmediatametne antes de revelar tu maniobra, puedes realizar una acción gratuita de impulso o tonel volado.'''
         '"Zeb" Orrelios (TIE Fighter)':
             ship: "Caza TIE"
-            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+            text: '''Cuando te defiendas, puedes anular resultados %CRIT% antes de anular resultados %HIT%.'''
         'Kylo Ren':
-            text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
+            ship: "Lanzadera clase Ípsilon"
+            text: '''La primera vez que seas impactado por un ataque en cada ronda, asigna la carta de Estad "Yo te mostraré el Lado Oscuro" al atacante.'''
         'Unkar Plutt':
-            text: '''At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'''
+            ship: "Saltador Quad"
+            text: '''Al final de la fase de Activación, <strong>debes</strong> asignar una ficha de Campo de tracción a toda nave con la que estés en contacto.'''
         'Cassian Andor':
             ship: "Ala-U"
             text: '''Al comienzo de la fase de Activación, puedes quitar 1 ficha de Tensión de 1 otra nave aliada que tengas a alcance 1-2.'''
@@ -924,18 +932,24 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Cuando ataques o te defiendas, puedes volver a tirar 1 de tus dados por cada otra nave aliada que tengas a Alcance 1.'''
         'Ahsoka Tano':
             ship: "Caza TIE"
-            text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
+            text: '''Al comienzo de la fase de Combate, puedes gastar 1 ficha de Concentración para elegir una nave aliada que tengas a alcance 1. Esa nave puede realizar 1 acción gratuita.'''
         'Captain Rex':
             ship: "Caza TIE"
-            text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
+            name: "Capitán Rex"
+            text: '''Después de que efectúes un ataque, asigna la carta de Estado "Fuego de supresión" al defensor.'''
         'Major Stridan':
-            text: '''For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'''
+            ship: "Lanzadera clase Ípsilon"
+            text: '''A efectos de tus acciones y cartas de Mejora, puedes considerar las naves aliadas que tengas a alcance 2-3 como si estuvieran a alcance 1.'''
         'Lieutenant Dormitz':
-            text: '''During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'''
+            ship: "Lanzadera clase Ípsilon"
+            text: '''Durante la preparación de la partida, las naves aliadas pueden ser colocadas en cualquier lugar de la zona de juego que esté situado a alcance 1-2 de ti.'''
         'Constable Zuvio':
-            text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
+            ship: "Saltador Quad"
+            name: "Alguacil Zuvio"
+            text: '''Cuando reveles una maniobra de retroceso, puedes soltar una bomba usando los salientes de la parte frontal de tu peana (incluso una bomba con el encabezado "<strong>Acción:</strong>").'''
         'Sarco Plank':
-            text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+            ship: "Saltador Quad"
+            text: '''Cuando te defiendas, en vez de usar tu valor de Agilidad, puedes tirar tantos dados de defensa como la velocidad de la maniobra que has ejecutado en esta ronda.'''
         "Blue Squadron Pathfinder":
             name: "Infiltrador del Escuadrón Azul"
             ship: "Ala-U"
@@ -948,6 +962,12 @@ exportObj.cardLoaders['Español'] = () ->
         "Imperial Trainee":
             name: "Cadete Imperial"
             ship: "Fustigador TIE"
+        "Starkiller Base Pilot":
+            ship: "Lanzadera clase Ípsilon"
+            name: "Piloto de la base Starkiller"
+        "Jakku Gunrunner":
+            ship: "Saltador Quad"
+            name: "Traficante de armas de  Jakku"
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1494,11 +1514,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<strong>Acción:</strong> Elige una nave enemiga bajo tensión que tengas a alcance 1-2 y tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, quítale 1 ficha de Tensión e inflíngele 1 carta de Daño boca abajo.'''
         # Wave X
         'Kylo Ren':
-            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I'll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'''
+            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Acción:</strong> Asigna la carta de Estado "Yo re mostraré el Lado Oscuro" a una nave enemiga que tengas a alcance 1-3.'''
         'Unkar Plutt':
-            text: '''%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'''
+            text: '''%SCUMONLY%%LINEBREAK%Después de que ejecutes una maniobra que te haga solaparte con una nave enemiga, puedes sufrir 1 de daño para realizar 1 acción gratuita.'''
         'A Score to Settle':
-            text: '''During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            name: "Una cuenta pendiente"
+            text: '''Durante la preparación de la partida, antes del paso "Desplegar fuerzas", elige 1 nave enemiga y asígnale la carta de Estado "Una deuda por saldar"%LINEBREAK%Cuando ataques a una nave que tiene asignada la carta de Estado "Una deuda por saldar", puedes cambair 1 resultado %FOCUS% por un resultado %CRIT%.'''
         'Jyn Erso':
             text: '''%REBELONLY%%LINEBREAK%<strong>Acción:</strong> Elige 1 nave aliada que tengas a alcance 1-2. Asigna 1 ficha de Concentración a esa nave por cada nave enemiga que tengas dentro de tu arco de fuego a alcance 1-3. No puedes asignar más de 3 fichas de esta forma.'''
         'Cassian Andor':
@@ -1522,17 +1543,22 @@ exportObj.cardLoaders['Español'] = () ->
         'M9-G8':
             text: '''%REBELONLY%%LINEBREAK%Cuando una nave que tengas fijada como blanco esté atacando, puedes elegir 1 dado de ataque. El atacante debe volver a tirar ese dado.%LINEBREAK%Puedes fijar como blanco otras naves aliadas.'''
         'EMP Device':
-            text: '''During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'''
+            name: "Dispositivo de pulso electromagnético"
+            text: '''Durante la fase de Combate, en vez de efecturas ningún ataque, puedes descartar esta carta para asignar 2 fichas de Iones a toda nave que tengas a alcance 1.'''
         'Captain Rex':
-            text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'''
+            name: "Capitán Rex"
+            text: '''%REBELONLY%%LINEBREAK%Después de que efectúes un ataque no impacte, puedes asignar 1 ficha de Concentración a tu nave.'''
         'General Hux':
-            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'''
+            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Acción:</strong> Elige hasta 3 naves aliadas que tengas a alcance 1-2. Asigna 1 ficha de Concentración a cada una de esas naves y asigna la carta de Estado "Lealtad fanática" a 1 de ellas. Luego recibes 1 ficha de Tensión.'''
         'Operations Specialist':
-            text: '''%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'''
+            name: "Especialista en operaciones"
+            text: '''%LIMITED%%LINEBREAK%Después de que una nave aliada que tengas a alcance 1-2 efectúe un ataque que no impacte, puedes asignar 1 ficha de Concentración a una nave aliada situada a alcance 1-3 del atacante.'''
         'Targeting Synchronizer':
-            text: '''When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'''
+            name: "Sincronizador de disparos"
+            text: '''Cuando una nave aliada que tengas a alcance 1-2 ataque a una nave que tienes fijada como blanco, esa nave aliada considera el encabezado "<strong>Ataque (Blanco fijado):</strong> como si fuera "<strong>Ataque:</strong>." Si un efecto de juego indica a esa nave que gaste una ficha de Blanco fijada, en vez de eso puede gastar tu ficha de Blanco fijado.'''
         'Hyperwave Comm Scanner':
-            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'''
+            name: "Escáner de frecuencias hiperlumínicas"
+            text: '''Al comienzo del paso "Desplegar fuerzas", puedes elegir considerar la Habilidad de tu piloto como si fuera 0, 6 o 12 hasta el final del paso. Durante la preparación de la partida, después de que otra nave aliada sea colocada a alcance 1-2 de ti, puedes asignar 1 ficha de Concentración o Evasión a esa nave.'''
         'Trick Shot':
             name: "Disparo inverosímil"
             text: '''Cuando ataques, si el ataque se considera obstruido, puedes tirar 1 dado de ataque adicional.'''
@@ -1540,7 +1566,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Copiloto extraordinario"
             text: '''Cuando ataques con un armamento princnipal, el defensor debe gastar 1 ficha de Concentración si le es posible.%LINEBREAK%Cuando te defiendas, el atacante debe gastar 1 ficha de Concentración si le es posible.'''
         '''Scavenger Crane''':
-            text: '''After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'''
+            name: "Grúa de salvamento"
+            text: '''Después de que una nave que tengas a alcance 1-2 sea destruida, puedes elegir una carta de Mejora %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, o Modificación que estuviera equipada en tu nave y ponerla boca arriba. Luego tira 1 dado de ataque. Si sacas una cara vacía, descarta tu "Grúa de salvamento".'''
         'Bodhi Rook':
             text: '''%REBELONLY%%LINEBREAK%Cuando fijes un blanco, puedes fijarlo sobre una nave enemiga que esté situada a alcance 1-3 de cualquier nave aliada.'''
         'Baze Malbus':
@@ -1557,7 +1584,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Maestría"
             text: '''Cuando ataques, si no estás bajo tensión, puedes cambair todos tus resultados %FOCUS% por resultados %HIT%.'''
         'BoShek':
-            text: '''When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'''
+            text: '''Cuando una nave con la que estás en contacto se activa, puedes mirar la maniobra que ha elegido. Si lo haces, el jugador que controla esa nave <strong>debe</strong> elegir en el selector una maniobra adyacente. La nave puede revelar y efectuar esa maniobra incluso aunque esté bajo tensión.'''
         # C-ROC
         'Heavy Laser Turret':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'''
@@ -1653,9 +1680,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">Sólo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'''
         'Captured TIE':
             ship: "Caza TIE"
-            text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'''
+            name: "TIE capturado"
+            text: '''<span class="card-restriction">Sólo Caza TIE.</span>%REBELONLY%%LINEBREAK%Las naves enemigas cuyos pilotos tengan una Habilidad más baja que la tuya no pueden declararte como blanco de un ataque. Después de que efectúes un ataque o cuando seas la única nave aliada que queda en juego, descarta esta carta.'''
         'Spacetug Tractor Array':
-            text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
+            name: "Campos de tracción de remolque"
+            ship: "Saltador Quad"
+            text: '''<span class="card-restriction">Sólo Saltador Quad.</span>%LINEBREAK%<strong>Acción:</strong> Elige una nave que tengas dentro de tu arco de fuego a distancia 1 y asígnale una ficha de Campo de tracción. Si es una nave aliada, resuelve el efecto de la ficha de Campo de tracción como si se tratara de una nave enemiga.'''
         'Lightweight Frame':
             name: "Fuselaje ultraligero"
             text: '''<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'''
@@ -1811,9 +1841,12 @@ exportObj.cardLoaders['Español'] = () ->
         # Wave X
         '''Sabine's Masterpiece''':
             ship: "Caza TIE"
-            text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'''
+            name: "Obra maestra de Sabine"
+            text: '''<span class="card-restriction">Sólo Caza TIE.</span>%REBELONLY%%LINEBREAK%Tu barra de mejoras gana los iconos %CREW% y %ILLICIT%.'''
         '''Kylo Ren's Shuttle''':
-            text: '''<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'''
+            ship: "Lanzadera clase Ípsilon"
+            name: "Lanzadera de Kylo Ren"
+            text: '''<span class="card-restriction">Sólo Lanzadera clase Ípsilon.</span>%LINEBREAK%Al final de la fase de Combate, elige una nave enemiga que tengas a alcance 1-2 y no esté bajo tensión. El jugador que la controla debe asignarle una ficha de Tensión o asignar una ficha de Tensión a otra d esus naves que esté situada a alcance 1-2 de ti.'''
         '''Pivot Wing''':
             name: "Ala pivotante"
             ship: "Ala-U"
@@ -1830,12 +1863,16 @@ exportObj.cardLoaders['Español'] = () ->
 
     condition_translations =
         '''I'll Show You the Dark Side''':
-            text: '''When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
+            name: "Yo te mostraré el Lado Oscuro"
+            text: '''Cuando esta carta es asignada, si no está ya en juego, el jugador que la ha asignado busca en el mazo de Daño 1 carta de Daño que tenga el atributo <strong><em>Piloto</em></strong> y puede colocarla boca arriba sobre esta carta de Estado. Luego vuelve a barajar el mazo de Daño.%LINEBREAKCuando sufras daño crítico durante un ataque, en vez de eso recibes la carta de Daño boca arriba que has elegido.%LINEBREAK%Cuando no haya ninguna carta de Daño sobre esta carta de Estado, retírala.'''
         'Suppressive Fire':
-            text: '''When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'''
+            name: "Fuego de supresión"
+            text: '''Cuando ataques a una nave que no sea el "Capitán Rex", tira 1 dado de ataque menos.%LINEBREAK% Cuando declares un ataque que tenga como blanco al "Capitán Rex" o cuando el "Capitán Rex" sea destruido, retira esta carta.%LINEBREAK%Al final de la fase de Combate, si el "Capitán Rex" no ha efectuado un ataque en esta fase, retira esta carta.'''
         'Fanatical Devotion':
-            text: '''When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'''
+            name: "Lealtad Fanática"
+            text: '''Cuando te defiendas, no pudes gastar fichas de Concentración.%LINEBREAK%Cuando ataques, si gastas una ficha de Concentración parar cambiar todos los resultados %FOCUS% por resultados %HIT%, deja aparte el primer resultado %FOCUS% que has cambiado. El resultado %HIT% que has dejado aparte no puede ser anulado por dados de defensa, pero el defensor puede anular resultados %CRIT% antes que él.%LINEBREAK%Durante la fase Final, retira esta carta.'''
         'A Debt to Pay':
-            text: '''When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            name: "Una deuda por saldar"
+            text: '''Cuando ataques a una nave que tiene la carta de Mejora "Una cuenta pendiente", puedes cambiar 1 resultado %FOCUS% por un resultado %CRIT%.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
