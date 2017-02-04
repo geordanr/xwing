@@ -122,6 +122,15 @@ i.xwing-miniatures-font-hardpoint:before {
 i.xwing-miniatures-font-illicit:before {
   content: "\0049"; }
 
+i.xwing-miniatures-font-reversebankleft:before {
+  content: "\004a"; }
+
+i.xwing-miniatures-font-reversestraight:before {
+  content: "\004b"; }
+
+i.xwing-miniatures-font-reversebankright:before {
+  content: "\004c"; }
+
 i.xwing-miniatures-font-missile:before {
   content: "\004d"; }
 
@@ -209,11 +218,17 @@ i.xwing-miniatures-font-helmet-imperial:before {
 i.xwing-miniatures-font-helmet-scum:before {
   content: "\007a"; }
 
+i.xwing-miniatures-font-condition:before {
+  content: "\00b0"; }
+
 i.xwing-miniatures-font-token-focus:before {
   content: "\00c4"; }
 
 i.xwing-miniatures-font-token-evade:before {
   content: "\00c5"; }
+
+i.xwing-miniatures-font-condition-outline:before {
+  content: "\00c6"; }
 
 i.xwing-miniatures-font-token-crit:before {
   content: "\00c7"; }
@@ -346,6 +361,9 @@ i.xwing-miniatures-ship-tiesffighter:before {
 i.xwing-miniatures-ship-tiestriker:before {
   content: "T"; }
 
+i.xwing-miniatures-ship-upsilonclassshuttle:before {
+  content: "U"; }
+
 i.xwing-miniatures-ship-awing:before {
   content: "a"; }
 
@@ -393,6 +411,9 @@ i.xwing-miniatures-ship-yt2400freighter:before {
 
 i.xwing-miniatures-ship-jumpmaster5000:before {
   content: "p"; }
+
+i.xwing-miniatures-ship-quadjumper:before {
+  content: "q"; }
 
 i.xwing-miniatures-ship-kihraxzfighter:before {
   content: "r"; }
