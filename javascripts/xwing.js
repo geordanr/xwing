@@ -7680,7 +7680,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Sobald du angreifst oder verteidigst, darfst du bis zu 2 deiner Leerseiten neu würfeln, falls das feindliche Schiff innerhalb deines Feuerwinkels ist."
     },
     'Han Solo (TFA)': {
-      text: 'Sobald du beim Spielaufbau platziert wirst, kannst du irgendwo auf der Spielfläche von Reichweite 1-3 zu feindlichen Schiffen platziert werden.'
+      text: 'Sobald du beim Spielaufbau platziert wirst, kannst du irgendwo auf der Spielfläche jenseits von Reichweite 1-3 zu feindlichen Schiffen platziert werden.'
     },
     'Chewbacca (TFA)': {
       text: 'Nachdem ein anderes freundliches Schiff in Reichweite 1-3 zerstört worden (aber nicht geflohen) ist, darfst du einen Angriff durchführen.'
