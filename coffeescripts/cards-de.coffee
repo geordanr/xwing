@@ -879,9 +879,17 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Stürmer"
             name: "Scout der Schwarzen Staffel"
         'Ahsoka Tano':
+            ship: "TIE-Jäger"
             text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
         'Captain Rex':
+            ship: "TIE-Jäger"
             text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
+        'Sabine Wren (TIE Fighter)':
+            ship: "TIE-Jäger"
+            text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
+        '"Zeb" Orrelios (TIE Fighter)':
+            ship: "TIE-Jäger"
+            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
         'Major Stridan':
             text: '''For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'''
         'Lieutenant Dormitz':
