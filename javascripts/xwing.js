@@ -5492,6 +5492,21 @@ exportObj.basicCardData = function() {
           var _ref;
           return (_ref = ship.data.huge) != null ? _ref : false;
         }
+      }, {
+        name: 'Quick-release Cargo Locks',
+        id: 226,
+        slot: 'Hardpoint',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref;
+          return (_ref = ship.canonical_name) === 'C-ROC Cruiser'.canonicalize() || _ref === 'GR-75 Medium Transport'.canonicalize();
+        }
+      }, {
+        name: 'Supercharged Power Cells',
+        id: 227,
+        limited: true,
+        slot: 'Cargo',
+        points: 3
       }
     ],
     modificationsById: [
@@ -6294,6 +6309,18 @@ exportObj.basicCardData = function() {
           }
           return _results;
         }
+      }, {
+        name: 'Insatiable Worrt',
+        id: 51,
+        ship: 'C-ROC Cruiser',
+        points: 1,
+        energy: '-1'
+      }, {
+        name: 'Broken Horn',
+        id: 52,
+        ship: 'C-ROC Cruiser',
+        points: 5,
+        energy: '+2'
       }
     ],
     conditionsById: [
@@ -8707,6 +8734,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -9044,6 +9077,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -10382,6 +10421,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -10626,6 +10671,12 @@ exportObj.cardLoaders.English = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -12698,6 +12749,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -13044,6 +13101,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -14663,6 +14726,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -14936,6 +15005,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -16299,6 +16374,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Azmorigan': {
       text: '<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -16552,6 +16633,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">Csak M3-A Interceptor.</span>%LINEBREAK%Minden sérülés kártyát felfordítva kapsz. A (%BANKLEFT% és %BANKRIGHT%) manőverek zöldnek számítanak. Nem kaphatsz módosítás fejlesztést.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -18161,6 +18248,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -18433,6 +18526,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -19721,6 +19820,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+    },
+    'Quick-release Cargo Locks': {
+      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+    },
+    'Supercharged Power Cells': {
+      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
     }
   };
   modification_translations = {
@@ -19941,6 +20046,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+    },
+    'Insatiable Worrt': {
+      text: 'After you perform the recover action, gain 3 energy.'
+    },
+    'Broken Horn': {
+      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
     }
   };
   condition_translations = {
@@ -23529,7 +23640,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22328
+                    lineno: 22413
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24098,7 +24209,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 22904
+              lineno: 22989
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -24736,7 +24847,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 23471
+          lineno: 23556
         }));
         __iced_deferrals._fulfill();
       });
@@ -24748,7 +24859,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 23472
+            lineno: 23557
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -26284,7 +26395,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24342
+                      lineno: 24427
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -26353,7 +26464,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24366
+                lineno: 24451
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26405,7 +26516,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24388
+            lineno: 24473
           }));
         }
         _ref = _this.upgrades;
@@ -26413,7 +26524,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24390
+              lineno: 24475
             }));
           }
         }
@@ -26422,7 +26533,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24392
+              lineno: 24477
             }));
           }
         }
@@ -27339,7 +27450,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25040
+                lineno: 25125
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27458,7 +27569,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25099
+                  lineno: 25184
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -27480,7 +27591,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25103
+                    lineno: 25188
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -27565,7 +27676,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25143
+            lineno: 25228
           }));
         }
         __iced_deferrals._fulfill();
