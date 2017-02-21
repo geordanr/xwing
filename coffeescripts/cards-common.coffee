@@ -6104,7 +6104,7 @@ exportObj.basicCardData = ->
         {
             name: 'Quick-release Cargo Locks'
             id: 226
-            slot: 'Hardpoint'
+            slot: 'Cargo'
             points: 2
             restriction_func: (ship) ->
                 ship.data.canonical_name in [ 'C-ROC Cruiser'.canonicalize(), 'GR-75 Medium Transport'.canonicalize() ]

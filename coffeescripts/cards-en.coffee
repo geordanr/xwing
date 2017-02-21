@@ -935,7 +935,7 @@ exportObj.cardLoaders.English = () ->
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Quick-release Cargo Locks':
-            text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+            text: '''<span class="card-restriction">C-ROC Cruiser and GR-75 Medium Transport only.</span>%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
         'Supercharged Power Cells':
             text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
 
