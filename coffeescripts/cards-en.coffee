@@ -934,6 +934,10 @@ exportObj.cardLoaders.English = () ->
             text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+        'Quick-release Cargo Locks':
+            text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+        'Supercharged Power Cells':
+            text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
 
     modification_translations =
         "Stealth Device":
@@ -1100,6 +1104,10 @@ exportObj.cardLoaders.English = () ->
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
+        '''Insatiable Worrt''':
+            text: '''After you perform the recover action, gain 3 energy.'''
+        '''Broken Horn''':
+            text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

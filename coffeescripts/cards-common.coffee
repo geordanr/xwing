@@ -6101,6 +6101,21 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.huge ? false
         }
+        {
+            name: 'Quick-release Cargo Locks'
+            id: 226
+            slot: 'Hardpoint'
+            points: 2
+            restriction_func: (ship) ->
+                ship.canonical_name in [ 'C-ROC Cruiser'.canonicalize(), 'GR-75 Medium Transport'.canonicalize() ]
+        }
+        {
+            name: 'Supercharged Power Cells'
+            id: 227
+            limited: true
+            slot: 'Cargo'
+            points: 3
+        }
     ]
 
     modificationsById: [
@@ -6876,6 +6891,8 @@ exportObj.basicCardData = ->
             ]
             unequips_upgrades: [ "Cargo" ]
             also_occupies_upgrades: [ "Cargo" ]
+            modifier_func: (stats) ->
+                stats.energy += 2
         }
         {
             name: '''"Light Scyk" Interceptor'''
@@ -6888,6 +6905,24 @@ exportObj.basicCardData = ->
                 for s in (stats.maneuvers ? [])
                     s[1] = 2 if s[1] != 0
                     s[3] = 2 if s[3] != 0
+        }
+        {
+            name: '''Insatiable Worrt'''
+            id: 51
+            ship: 'C-ROC Cruiser'
+            points: 1
+            energy: '-1'
+            modifier_func: (stats) ->
+                stats.energy -= 1
+        }
+        {
+            name: '''Broken Horn'''
+            id: 52
+            ship: 'C-ROC Cruiser'
+            points: 5
+            energy: '+2'
+            modifier_func: (stats) ->
+                stats.energy += 2
         }
     ]
 

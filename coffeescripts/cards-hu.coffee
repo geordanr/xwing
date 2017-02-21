@@ -958,6 +958,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A befejező fázis kezdetén eldobhatod ezt a kártyát, hogy kicseréld egy felszerelt és még felfordított %ILLICIT% vagy %CARGO% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'''
         'Azmorigan':
             text: '''<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'''
+        'Quick-release Cargo Locks':
+            text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+        'Supercharged Power Cells':
+            text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
 
     modification_translations =
         "Stealth Device":
@@ -1133,6 +1137,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak C-ROC Cruiser.</span>%LINEBREAK%A fejlesztés sávod kap egy plusz %CREW% és %TEAM% ikont, de elveszti a %CARGO% ikont.'''
         '''"Light Scyk" Interceptor''':
             text: '''<span class="card-restriction">Csak M3-A Interceptor.</span>%LINEBREAK%Minden sérülés kártyát felfordítva kapsz. A (%BANKLEFT% és %BANKRIGHT%) manőverek zöldnek számítanak. Nem kaphatsz módosítás fejlesztést.'''
+        '''Insatiable Worrt''':
+            text: '''After you perform the recover action, gain 3 energy.'''
+        '''Broken Horn''':
+            text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
