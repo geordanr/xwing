@@ -6107,7 +6107,7 @@ exportObj.basicCardData = ->
             slot: 'Hardpoint'
             points: 2
             restriction_func: (ship) ->
-                ship.canonical_name in [ 'C-ROC Cruiser'.canonicalize(), 'GR-75 Medium Transport'.canonicalize() ]
+                ship.data.canonical_name in [ 'C-ROC Cruiser'.canonicalize(), 'GR-75 Medium Transport'.canonicalize() ]
         }
         {
             name: 'Supercharged Power Cells'
