@@ -5499,7 +5499,7 @@ exportObj.basicCardData = function() {
         points: 2,
         restriction_func: function(ship) {
           var _ref;
-          return (_ref = ship.canonical_name) === 'C-ROC Cruiser'.canonicalize() || _ref === 'GR-75 Medium Transport'.canonicalize();
+          return (_ref = ship.data.canonical_name) === 'C-ROC Cruiser'.canonicalize() || _ref === 'GR-75 Medium Transport'.canonicalize();
         }
       }, {
         name: 'Supercharged Power Cells',
