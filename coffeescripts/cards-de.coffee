@@ -856,6 +856,8 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Zeb" Orrelios (TIE Fighter)':
             ship: "TIE-Jäger"
             text: '''Sobald du verteidigst, darfst du %CRIT% vor %HIT% negieren.'''
+        'Starkiller Base Pilot':
+            ship: "Shuttle der Ypsilon-Klasse"
         'Major Stridan':
             ship: "Shuttle der Ypsilon-Klasse"
             text: '''Was deine Aktionen und Aufwertungskarten betrifft, darfst du freundliche Schiffe in Reichweite 2-3 behandeln, als wären sie in Reichweite 1.'''
