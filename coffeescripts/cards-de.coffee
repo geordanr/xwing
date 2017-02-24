@@ -1800,6 +1800,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%REBELONLY%%LINEBREAK%Füge deiner Aufwertungsleiste die Symbole %CREW% und %ILLICIT% hinzu.'''
         '''Kylo Ren's Shuttle''':
             name: "Kylo Rens Shuttle"
+            ship: "Shuttle der Ypsilon-Klasse"
             text: '''<span class="card-restriction">Nur für Shuttle der Ypsilon-Klasse.</span>%LINEBREAK%Wähle am Ende der Kampfphase ein nicht-gestresstes feindliches Schiff in Reichweite 1-2. Sein Besitzer muss ihm einen Stressmarker zuordnen oder er muss einem anderen Schiff in Reichweite 1-2 zu dir, das er kontrolliert, einen Stressmarker zuordnen.'''
         '''Pivot Wing''':
             name: "Schwenkflügel"
