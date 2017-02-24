@@ -542,7 +542,7 @@ class exportObj.SquadBuilder
         @container.append @choose_obstacles_modal
         @choose_obstacles_modal.append $.trim """
             <div class="modal-header">
-                <label class='choose-obstacles-description'>Choose up to three obstacles</label>
+                <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
             </div>
             <div class="modal-body">
                 <select multiple class='obstacle-select' size="18">
@@ -1070,8 +1070,6 @@ class exportObj.SquadBuilder
         @list_modal.modal 'show'
 
     showChooseObstaclesModal: ->
-        console.log("showChooseObstaclesModal")
-        console.log(@current_squad.additional_data.obstacles)
         @obstacles_select.val(@current_squad.additional_data.obstacles)
         @choose_obstacles_modal.modal 'show'
 
