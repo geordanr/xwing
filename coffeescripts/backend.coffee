@@ -475,6 +475,7 @@ class exportObj.SquadBuilderBackend
                     description: builder.describeSquad()
                     cards: builder.listCards()
                     notes: builder.getNotes()
+                    obstacles: builder.getObstacles()
                 builder.backend_save_list_as_button.addClass 'disabled'
                 builder.backend_status.html $.trim """
                     <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
