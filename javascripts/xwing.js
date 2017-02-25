@@ -536,7 +536,8 @@ exportObj.SquadBuilderBackend = (function() {
             points: builder.total_points,
             description: builder.describeSquad(),
             cards: builder.listCards(),
-            notes: builder.getNotes()
+            notes: builder.getNotes(),
+            obstacles: builder.getObstacles()
           };
           builder.backend_save_list_as_button.addClass('disabled');
           builder.backend_status.html($.trim("<i class=\"fa fa-refresh fa-spin\"></i>&nbsp;Saving squad..."));
@@ -748,7 +749,7 @@ exportObj.SquadBuilderBackend = (function() {
                 return headers = arguments[0];
               };
             })(),
-            lineno: 641
+            lineno: 642
           }));
           __iced_deferrals._fulfill();
         });
@@ -9247,7 +9248,27 @@ exportObj.translations.English = {
     '#rebelTab': 'Rebel Alliance',
     '#scumTab': 'Scum and Villainy',
     '#browserTab': 'Card Browser',
-    '#aboutTab': 'About'
+    '#aboutTab': 'About',
+    '.choose-obstacles': 'Choose Obstacles',
+    '.choose-obstacles-description': 'Choose up to three obstacles to include in the permalink for use in external programs. (This feature is in BETA; support for displaying which obstacles were selected in the printout is not yet supported.)',
+    '.coreasteroid0-select': 'Core Asteroid 0',
+    '.coreasteroid1-select': 'Core Asteroid 1',
+    '.coreasteroid2-select': 'Core Asteroid 2',
+    '.coreasteroid3-select': 'Core Asteroid 3',
+    '.coreasteroid4-select': 'Core Asteroid 4',
+    '.coreasteroid5-select': 'Core Asteroid 5',
+    '.yt2400debris0-select': 'YT2400 Debris 0',
+    '.yt2400debris1-select': 'YT2400 Debris 1',
+    '.yt2400debris2-select': 'YT2400 Debris 2',
+    '.vt49decimatordebris0-select': 'VT49 Debris 0',
+    '.vt49decimatordebris1-select': 'VT49 Debris 1',
+    '.vt49decimatordebris2-select': 'VT49 Debris 2',
+    '.core2asteroid0-select': 'Force Awakens Asteroid 0',
+    '.core2asteroid1-select': 'Force Awakens Asteroid 1',
+    '.core2asteroid2-select': 'Force Awakens Asteroid 2',
+    '.core2asteroid3-select': 'Force Awakens Asteroid 3',
+    '.core2asteroid4-select': 'Force Awakens Asteroid 4',
+    '.core2asteroid5-select': 'Force Awakens Asteroid 5'
   },
   singular: {
     'pilots': 'Pilot',
@@ -23653,7 +23674,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22422
+                    lineno: 22445
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -23860,6 +23881,7 @@ exportObj.SquadBuilder = (function() {
     this.current_squad = {};
     this.language = 'English';
     this.collection = null;
+    this.current_obstacles = null;
     this.setupUI();
     this.setupEventHandlers();
     this.isUpdatingPoints = false;
@@ -23873,7 +23895,7 @@ exportObj.SquadBuilder = (function() {
   }
 
   SquadBuilder.prototype.resetCurrentSquad = function(initial_load) {
-    var default_squad_name, squad_name;
+    var default_squad_name, squad_name, squad_obstacles;
     if (initial_load == null) {
       initial_load = false;
     }
@@ -23881,6 +23903,13 @@ exportObj.SquadBuilder = (function() {
     squad_name = $.trim(this.squad_name_input.val()) || default_squad_name;
     if (initial_load && $.trim($.getParameterByName('sn'))) {
       squad_name = $.trim($.getParameterByName('sn'));
+    }
+    squad_obstacles = [];
+    if (initial_load && $.trim($.getParameterByName('obs'))) {
+      squad_obstacles = ($.trim($.getParameterByName('obs'))).split(",").slice(0, 3);
+      this.current_obstacles = squad_obstacles;
+    } else if (this.current_obstacles) {
+      squad_obstacles = this.current_obstacles;
     }
     this.current_squad = {
       id: null,
@@ -23890,7 +23919,8 @@ exportObj.SquadBuilder = (function() {
         points: this.total_points,
         description: '',
         cards: [],
-        notes: ''
+        notes: '',
+        obstacles: squad_obstacles
       },
       faction: this.faction
     };
@@ -23909,6 +23939,7 @@ exportObj.SquadBuilder = (function() {
     this.squad_name_input.val('New Squadron');
     this.removeAllShips();
     this.addShip();
+    this.current_obstacles = null;
     this.resetCurrentSquad();
     return this.notes.val('');
   };
@@ -24186,6 +24217,11 @@ exportObj.SquadBuilder = (function() {
         return _this.randomizer_options_modal.modal();
       };
     })(this));
+    this.choose_obstacles_modal = $(document.createElement('DIV'));
+    this.choose_obstacles_modal.addClass('modal hide fade choose-obstacles-modal');
+    this.container.append(this.choose_obstacles_modal);
+    this.choose_obstacles_modal.append($.trim("<div class=\"modal-header\">\n    <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>\n</div>\n<div class=\"modal-body\">\n    <select multiple class='obstacle-select' size=\"18\">\n        <option class=\"coreasteroid0-select\" value=\"coreasteroid0\">Core Asteroid 0</option>\n        <option class=\"coreasteroid1-select\" value=\"coreasteroid1\">Core Asteroid 1</option>\n        <option class=\"coreasteroid2-select\" value=\"coreasteroid2\">Core Asteroid 2</option>\n        <option class=\"coreasteroid3-select\" value=\"coreasteroid3\">Core Asteroid 3</option>\n        <option class=\"coreasteroid4-select\" value=\"coreasteroid4\">Core Asteroid 4</option>\n        <option class=\"coreasteroid5-select\" value=\"coreasteroid5\">Core Asteroid 5</option>\n        <option class=\"yt2400debris0-select\" value=\"yt2400debris0\">YT2400 Debris 0</option>\n        <option class=\"yt2400debris1-select\" value=\"yt2400debris1\">YT2400 Debris 1</option>\n        <option class=\"yt2400debris2-select\" value=\"yt2400debris2\">YT2400 Debris 2</option>\n        <option class=\"vt49decimatordebris0-select\" value=\"vt49decimatordebris0\">VT49 Debris 0</option>\n        <option class=\"vt49decimatordebris1-select\" value=\"vt49decimatordebris1\">VT49 Debris 1</option>\n        <option class=\"vt49decimatordebris2-select\" value=\"vt49decimatordebris2\">VT49 Debris 2</option>\n        <option class=\"core2asteroid0-select\" value=\"core2asteroid0\">Force Awakens Asteroid 0</option>\n        <option class=\"core2asteroid1-select\" value=\"core2asteroid1\">Force Awakens Asteroid 1</option>\n        <option class=\"core2asteroid2-select\" value=\"core2asteroid2\">Force Awakens Asteroid 2</option>\n        <option class=\"core2asteroid3-select\" value=\"core2asteroid3\">Force Awakens Asteroid 3</option>\n        <option class=\"core2asteroid4-select\" value=\"core2asteroid4\">Force Awakens Asteroid 4</option>\n        <option class=\"core2asteroid5-select\" value=\"core2asteroid5\">Force Awakens Asteroid 5</option>\n    </select>\n</div>\n<div class=\"modal-footer hidden-print\">\n    <button class=\"btn close-print-dialog\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>\n</div>"));
+    this.obstacles_select = this.choose_obstacles_modal.find('.obstacle-select');
     this.backend_list_squads_button = $(this.container.find('button.backend-list-my-squads'));
     this.backend_list_squads_button.click((function(_this) {
       return function(e) {
@@ -24207,7 +24243,8 @@ exportObj.SquadBuilder = (function() {
             points: _this.total_points,
             description: _this.describeSquad(),
             cards: _this.listCards(),
-            notes: _this.notes.val().substr(0, 1024)
+            notes: _this.notes.val().substr(0, 1024),
+            obstacles: _this.getObstacles()
           };
           _this.backend_status.html($.trim("<i class=\"fa fa-refresh fa-spin\"></i>&nbsp;Saving squad..."));
           _this.backend_status.show();
@@ -24222,7 +24259,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 22998
+              lineno: 23069
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -24255,15 +24292,23 @@ exportObj.SquadBuilder = (function() {
     content_container = $(document.createElement('DIV'));
     content_container.addClass('container-fluid');
     this.container.append(content_container);
-    content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n                <label class=\"notes-container show-authenticated\">\n                    <span>Squad Notes:</span>\n                    <br />\n                    <textarea class=\"squad-notes\"></textarea>\n                </label>\n    </div>\n    <div class=\"span3 info-container\" />\n</div>"));
+    content_container.append($.trim("<div class=\"row-fluid\">\n    <div class=\"span9 ship-container\">\n        <label class=\"notes-container show-authenticated\">\n            <span>Squad Notes:</span>\n            <br />\n            <textarea class=\"squad-notes\"></textarea>\n        </label>\n        <label class=\"obstacles-container\">\n            <button class=\"btn btn-primary choose-obstacles\">Choose Obstacles</button>\n        </label>\n     </div>\n   <div class=\"span3 info-container\" />\n</div>"));
     this.ship_container = $(content_container.find('div.ship-container'));
     this.info_container = $(content_container.find('div.info-container'));
+    this.obstacles_container = content_container.find('.obstacles-container');
     this.notes_container = $(content_container.find('.notes-container'));
     this.notes = $(this.notes_container.find('textarea.squad-notes'));
     this.info_container.append($.trim("<div class=\"well well-small info-well\">\n    <span class=\"info-name\"></span>\n    <br />\n    <span class=\"info-sources\"></span>\n    <br />\n    <span class=\"info-collection\"></span>\n    <table>\n        <tbody>\n            <tr class=\"info-ship\">\n                <td class=\"info-header\">Ship</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-skill\">\n                <td class=\"info-header\">Skill</td>\n                <td class=\"info-data info-skill\"></td>\n            </tr>\n            <tr class=\"info-energy\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-energy\"></i></td>\n                <td class=\"info-data info-energy\"></td>\n            </tr>\n            <tr class=\"info-attack\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-attack\"></i></td>\n                <td class=\"info-data info-attack\"></td>\n            </tr>\n            <tr class=\"info-range\">\n                <td class=\"info-header\">Range</td>\n                <td class=\"info-data info-range\"></td>\n            </tr>\n            <tr class=\"info-agility\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-agility\"></i></td>\n                <td class=\"info-data info-agility\"></td>\n            </tr>\n            <tr class=\"info-hull\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-hull\"></i></td>\n                <td class=\"info-data info-hull\"></td>\n            </tr>\n            <tr class=\"info-shields\">\n                <td class=\"info-header\"><i class=\"xwing-miniatures-font xwing-miniatures-font-shield\"></i></td>\n                <td class=\"info-data info-shields\"></td>\n            </tr>\n            <tr class=\"info-actions\">\n                <td class=\"info-header\">Actions</td>\n                <td class=\"info-data\"></td>\n            </tr>\n            <tr class=\"info-upgrades\">\n                <td class=\"info-header\">Upgrades</td>\n                <td class=\"info-data\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <p class=\"info-text\" />\n    <p class=\"info-maneuvers\" />\n</div>"));
     this.info_container.hide();
     this.print_list_button = $(this.container.find('button.print-list'));
     this.container.find('[rel=tooltip]').tooltip();
+    this.obstacles_button = $(this.container.find('button.choose-obstacles'));
+    this.obstacles_button.click((function(_this) {
+      return function(e) {
+        e.preventDefault();
+        return _this.showChooseObstaclesModal();
+      };
+    })(this));
     this.condition_container = $(document.createElement('div'));
     this.condition_container.addClass('conditions-container');
     return this.container.append(this.condition_container);
@@ -24389,6 +24434,27 @@ exportObj.SquadBuilder = (function() {
         }
       };
     })(this));
+    this.obstacles_select.change((function(_this) {
+      return function(e) {
+        var o;
+        if (_this.obstacles_select.val().length > 3) {
+          return _this.obstacles_select.val(_this.current_squad.additional_data.obstacles);
+        } else {
+          _this.current_obstacles = (function() {
+            var _i, _len, _ref, _results;
+            _ref = this.obstacles_select.val();
+            _results = [];
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              o = _ref[_i];
+              _results.push(o);
+            }
+            return _results;
+          }).call(_this);
+          _this.current_squad.additional_data.obstacles = _this.current_obstacles;
+          return _this.updatePermaLink();
+        }
+      };
+    })(this));
     this.view_list_button.click((function(_this) {
       return function(e) {
         e.preventDefault();
@@ -24464,6 +24530,9 @@ exportObj.SquadBuilder = (function() {
   SquadBuilder.prototype.updatePermaLink = function() {
     var squad_link;
     squad_link = "" + window.location.protocol + "//" + window.location.host + window.location.pathname + "?f=" + (encodeURI(this.faction)) + "&d=" + (encodeURI(this.serialize())) + "&sn=" + (encodeURIComponent(this.current_squad.name));
+    if (this.current_squad.additional_data.obstacles && this.current_squad.additional_data.obstacles.length > 0) {
+      squad_link = squad_link + ("&obs=" + this.current_squad.additional_data.obstacles);
+    }
     return this.permalink.attr('href', squad_link);
   };
 
@@ -24643,10 +24712,13 @@ exportObj.SquadBuilder = (function() {
 
   SquadBuilder.prototype.onSquadLoadRequested = function(squad) {
     var _ref;
+    console.log(squad.additional_data.obstacles);
     this.current_squad = squad;
     this.backend_delete_list_button.removeClass('disabled');
     this.squad_name_input.val(this.current_squad.name);
     this.squad_name_placeholder.text(this.current_squad.name);
+    this.current_obstacles = this.current_squad.additional_data.obstacles;
+    this.updateObstacleSelect(this.current_squad.additional_data.obstacles);
     this.loadFromSerialized(squad.serialized);
     this.notes.val((_ref = squad.additional_data.notes) != null ? _ref : '');
     this.backend_status.fadeOut('slow');
@@ -24684,6 +24756,16 @@ exportObj.SquadBuilder = (function() {
 
   SquadBuilder.prototype.showTextListModal = function() {
     return this.list_modal.modal('show');
+  };
+
+  SquadBuilder.prototype.showChooseObstaclesModal = function() {
+    this.obstacles_select.val(this.current_squad.additional_data.obstacles);
+    return this.choose_obstacles_modal.modal('show');
+  };
+
+  SquadBuilder.prototype.updateObstacleSelect = function(obstacles) {
+    this.current_obstacles = obstacles;
+    return this.obstacles_select.val(obstacles);
   };
 
   SquadBuilder.prototype.serialize = function() {
@@ -24860,7 +24942,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 23565
+          lineno: 23667
         }));
         __iced_deferrals._fulfill();
       });
@@ -24872,7 +24954,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 23566
+            lineno: 23668
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25856,6 +25938,10 @@ exportObj.SquadBuilder = (function() {
     return this.notes.val();
   };
 
+  SquadBuilder.prototype.getObstacles = function() {
+    return this.current_obstacles;
+  };
+
   SquadBuilder.prototype.isSquadPossibleWithCollection = function() {
     var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, validity, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     if (Object.keys((_ref = (_ref1 = this.collection) != null ? _ref1.expansions : void 0) != null ? _ref : {}).length === 0) {
@@ -26038,6 +26124,9 @@ exportObj.SquadBuilder = (function() {
         }
         if (xws.description != null) {
           this.notes.val(xws.description);
+        }
+        if (xws.obstacles != null) {
+          this.current_squad.additional_data.obstacles = xws.obstacles;
         }
         this.suppress_automatic_new_ship = true;
         this.removeAllShips();
@@ -26408,7 +26497,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24436
+                      lineno: 24544
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -26477,7 +26566,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24460
+                lineno: 24568
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26529,7 +26618,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24482
+            lineno: 24590
           }));
         }
         _ref = _this.upgrades;
@@ -26537,7 +26626,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24484
+              lineno: 24592
             }));
           }
         }
@@ -26546,7 +26635,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24486
+              lineno: 24594
             }));
           }
         }
@@ -27463,7 +27552,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25134
+                lineno: 25242
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27582,7 +27671,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25193
+                  lineno: 25301
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -27604,7 +27693,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25197
+                    lineno: 25305
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -27689,7 +27778,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25237
+            lineno: 25345
           }));
         }
         __iced_deferrals._fulfill();
