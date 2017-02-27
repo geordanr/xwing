@@ -409,7 +409,6 @@ exportObj.basicCardData = ->
             canonical_name: "CR90 Corvette".canonicalize()
         "YT-2400":
             name: "YT-2400"
-            canonical_name: "YT-2400 Freighter".canonicalize()
             factions: [ "Rebel Alliance", ]
             attack: 2
             agility: 2
