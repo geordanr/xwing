@@ -1644,6 +1644,7 @@ exportObj.cardLoaders.Deutsch = () ->
         # Wave X
         'Captured TIE':
             name: "Gekaperter TIE"
+            ship: "TIE-Jäger"
             text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%REBELONLY%%LINEBREAK%Feindliche Schiffe mit einem Pilotenwert, der niedriger ist als deiner, können dich nicht zum Ziel eines Angriffs deklarieren. Nachdem du einen Angriff durchgeführt hast oder sobald du das einzige freundliche Schiff im Spiel bist, lege diese Karte ab.'''
         'Spacetug Tractor Array':
             name: "Schleppertraktorstrahl"
