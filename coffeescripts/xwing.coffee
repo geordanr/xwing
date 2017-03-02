@@ -1778,6 +1778,10 @@ class exportObj.SquadBuilder
         for pilot in xws.pilots
             delete pilot.multisection if pilot.multisection?
 
+        obstacles = @getObstacles()
+        if obstacles? and obstacles.length > 0
+            xws.obstacles = obstacles
+
         xws
 
     toMinimalXWS: ->
