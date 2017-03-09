@@ -522,7 +522,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "VT-49 Diezmador"
         "Commander Kenkirk":
             ship: "VT-49 Diezmador"
-            ship: "Comandante Kenkirk"
+            name: "Comandante Kenkirk"
             text: """Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."""
         "Captain Oicunn":
             name: "Capitán Oicunn"
