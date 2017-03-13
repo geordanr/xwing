@@ -454,6 +454,14 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
         'Sarco Plank':
             text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+        'Genesis Red':
+            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+        'Quinn Jast':
+            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+        'Inaldra':
+            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+        'Sunny Bounder':
+            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -896,6 +904,8 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
         'Supercharged Power Cells':
             text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
+        'ARC Caster':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
 
     modification_translations =
         "Stealth Device":
@@ -958,6 +968,8 @@ exportObj.cardLoaders['Türkçe'] = () ->
             text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
         'Lightweight Frame':
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'''
+        'Pulsed Ray Shield':
+            text: '''During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":

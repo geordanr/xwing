@@ -488,6 +488,14 @@ exportObj.cardLoaders.Magyar = () ->
             name: '''Zealous Recruit (Lelkes újonc)'''
         'Shadowport Hunter':
             name: '''Shadowport Hunter (Árnyékrév vadász)'''
+        'Genesis Red':
+            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+        'Quinn Jast':
+            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+        'Inaldra':
+            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+        'Sunny Bounder':
+            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
 
 
     upgrade_translations =
@@ -962,6 +970,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
         'Supercharged Power Cells':
             text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
+        'ARC Caster':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
 
     modification_translations =
         "Stealth Device":
@@ -1031,6 +1041,8 @@ exportObj.cardLoaders.Magyar = () ->
         'Lightweight Frame':
             name: "Lightweight Frame (Könnyített szerkezet)"
             text: '''<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'''
+        'Pulsed Ray Shield':
+            text: '''During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":

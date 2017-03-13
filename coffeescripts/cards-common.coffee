@@ -4400,6 +4400,52 @@ exportObj.basicCardData = ->
             ]
             points: 35
         }
+        {
+            name: 'Genesis Red'
+            id: 245
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 7
+            slots: [
+                'Elite'
+            ]
+            points: 19
+        }
+        {
+            name: 'Quinn Jast'
+            id: 246
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 6
+            slots: [
+                'Elite'
+            ]
+            points: 18
+        }
+        {
+            name: 'Inaldra'
+            id: 247
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 3
+            slots: [
+                'Elite'
+            ]
+            points: 15
+        }
+        {
+            name: 'Sunny Bounder'
+            id: 248
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 1
+            slots: [ ]
+            points: 14
+        }
     ]
 
     upgradesById: [
@@ -6115,6 +6161,15 @@ exportObj.basicCardData = ->
             slot: 'Cargo'
             points: 3
         }
+        {
+            name: 'ARC Caster'
+            id: 228
+            faction: [ 'Rebel Alliance', 'Scum and Villainy' ]
+            slot: 'Cannon'
+            points: 2
+            attack: 4
+            range: '1'
+        }
     ]
 
     modificationsById: [
@@ -6354,6 +6409,14 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 ship.data.name.indexOf('TIE') != -1 and ship.effectiveStats().agility < 3
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            id: 32
+            faction: ['Rebel Alliance', 'Scum and Villainy']
+            points: 2
+            restriction_func: (ship) ->
+                ship.effectiveStats().shields == 1
         }
     ]
 
