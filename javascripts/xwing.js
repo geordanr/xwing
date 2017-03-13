@@ -3935,6 +3935,42 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: ['Crew', 'Crew', 'Hardpoint', 'Team', 'Cargo', 'Cargo', 'Cargo'],
         points: 35
+      }, {
+        name: 'Genesis Red',
+        id: 245,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M3-A Interceptor',
+        skill: 7,
+        slots: ['Elite'],
+        points: 19
+      }, {
+        name: 'Quinn Jast',
+        id: 246,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M3-A Interceptor',
+        skill: 6,
+        slots: ['Elite'],
+        points: 18
+      }, {
+        name: 'Inaldra',
+        id: 247,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M3-A Interceptor',
+        skill: 3,
+        slots: ['Elite'],
+        points: 15
+      }, {
+        name: 'Sunny Bounder',
+        id: 248,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M3-A Interceptor',
+        skill: 1,
+        slots: [],
+        points: 14
       }
     ],
     upgradesById: [
@@ -5507,6 +5543,14 @@ exportObj.basicCardData = function() {
         limited: true,
         slot: 'Cargo',
         points: 3
+      }, {
+        name: 'ARC Caster',
+        id: 228,
+        faction: ['Rebel Alliance', 'Scum and Villainy'],
+        slot: 'Cannon',
+        points: 2,
+        attack: 4,
+        range: '1'
       }
     ],
     modificationsById: [
@@ -5786,6 +5830,14 @@ exportObj.basicCardData = function() {
         points: 2,
         restriction_func: function(ship) {
           return ship.data.name.indexOf('TIE') !== -1 && ship.effectiveStats().agility < 3;
+        }
+      }, {
+        name: 'Pulsed Ray Shield',
+        id: 32,
+        faction: ['Rebel Alliance', 'Scum and Villainy'],
+        points: 2,
+        restriction_func: function(ship) {
+          return ship.effectiveStats().shields === 1;
         }
       }
     ],
@@ -7881,6 +7933,22 @@ exportObj.cardLoaders.Deutsch = function() {
     'Black Squadron Scout': {
       ship: "TIE-Stürmer",
       name: "Scout der Schwarzen Staffel"
+    },
+    'Genesis Red': {
+      ship: "M3-A Abfangjäger",
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      ship: "M3-A Abfangjäger",
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      ship: "M3-A Abfangjäger",
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      ship: "M3-A Abfangjäger",
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -7958,7 +8026,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Deadeye": {
       name: "Meisterschütze",
-      text: "Du darfst die Bedingung \"Angriff (Zielerfassung):\" in \"Angriff (Fokussierung):\" ändern.<br /><br />Wenn ein Angriff das Ausgeben von Zielerfassungsmarkern erfordert, darfst du stattdessen auch einen Fokusmarker ausgeben."
+      text: "%DE_SMALLSHIPONLY%%LINEBREAK%Du darfst die Bedingung \"Angriff (Zielerfassung):\" in \"Angriff (Fokussierung):\" ändern.<br /><br />Wenn ein Angriff das Ausgeben von Zielerfassungsmarkern erfordert, darfst du stattdessen auch einen Fokusmarker ausgeben."
     },
     "Expose": {
       name: "Aggressiv",
@@ -8712,7 +8780,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Scavenger Crane': {
       name: "Schrottsammler-Kran",
-      text: 'Nachdem ein SChiff in Reichweite 1-2 zerstört worden ist, darfst du eine abgelegte %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%-, oder Modifikations-Aufwertungskarte, die dein Schiff ausgerüstet hatte, wählen und aufdecken. DAnn wirfst du 1 Angriffswürfel. Bei einer Leerseite wird Schrottsammler-Kran abgelegt.'
+      text: 'Nachdem ein Schiff in Reichweite 1-2 zerstört worden ist, darfst du eine abgelegte %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%-, oder Modifikations-Aufwertungskarte, die dein Schiff ausgerüstet hatte, wählen und aufdecken. Dann wirfst du 1 Angriffswürfel. Bei einer Leerseite wird Schrottsammler-Kran abgelegt.'
     },
     'Bodhi Rook': {
       text: '%REBELONLY%%LINEBREAK%Sobald du eine Zielerfassung durchführst, kannst du ein feindliches Schiff in Reichweite 1-3 zu einem freundlichen Schiff in die Zielerfassung nehmen.'
@@ -8752,6 +8820,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -8876,11 +8947,14 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Spacetug Tractor Array': {
       name: "Schleppertraktorstrahl",
-      text: '<span class="card-restriction">Nur für Quadjumper.</span>%LINEBREAK%<strong>Aktion:</strong> Wähle ein SChiff innerhalb deines Feuerwinkels und in Reichweite 1 und ordne ihm einen Traktorstrahlmarker zu. Falls es ein freundliches Schiff ist, handle den Effekt des Traktorstrahlmarkers ab, als wäre es ein feindliches Schiff.'
+      text: '<span class="card-restriction">Nur für Quadjumper.</span>%LINEBREAK%<strong>Aktion:</strong> Wähle ein Schiff innerhalb deines Feuerwinkels und in Reichweite 1 und ordne ihm einen Traktorstrahlmarker zu. Falls es ein freundliches Schiff ist, handle den Effekt des Traktorstrahlmarkers ab, als wäre es ein feindliches Schiff.'
     },
     'Lightweight Frame': {
       name: "Leichtgewichtrahmen",
       text: '<span class="card-restriction">Nur für TIE.</span>%LINEBREAK%Sobald du verteidigst, falls es nach dem Würfeln der Verteidigungswürfel, mehr Angriffswürfel als Verteidigungswürfel gibt, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, falls dein Wendigkeitswert 3 oder höher ist.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -8947,17 +9021,17 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Heavy Scyk" Interceptor (Cannon)': {
       ship: "M3-A Abfangjäger",
       name: '"Schwerer Scyk"-Abfangjäger (Kanone)',
-      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.'
+      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.%LINEBREAK%Erhöhe deinen Hüllenwert um 1.'
     },
     '"Heavy Scyk" Interceptor (Torpedo)': {
       ship: "M3-A Abfangjäger",
       name: '"Schwerer Scyk"-Abfangjäger (Torpedo)',
-      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.'
+      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.%LINEBREAK%Erhöhe deinen Hüllenwert um 1.'
     },
     '"Heavy Scyk" Interceptor (Missile)': {
       ship: "M3-A Abfangjäger",
       name: '"Schwerer Scyk"-Abfangjäger (Rakete)',
-      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.'
+      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste eines der folgenden Symbole hinzu: %CANNON%, %TORPEDO%, oder %MISSILE%.%LINEBREAK%Erhöhe deinen Hüllenwert um 1.'
     },
     "IG-2000": {
       text: '<span class="card-restriction">Nur für Aggressor.</span>%LINEBREAK%Du bekommst die Pilotenfähigkeiten aller anderen freundlichen Schiffe mit der Aufwertungskarte <em>IG-2000</em> (zusätzlich zu deiner eigenen Pilotenfähigkeit).'
@@ -9663,7 +9737,7 @@ exportObj.cardLoaders.English = function() {
       text: "The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."
     },
     "Manaroo": {
-      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."
+      text: "At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship at Range 1."
     },
     '"Deathfire"': {
       text: 'When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'
@@ -9778,6 +9852,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Sarco Plank': {
       text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
+    },
+    'Genesis Red': {
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -10178,7 +10264,7 @@ exportObj.cardLoaders.English = function() {
       text: "%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."
     },
     "Emperor Palpatine": {
-      text: "%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."
+      text: "%IMPERIALONLY%%LINEBREAK%Once per round, before a friendly ship rolls dice, you may name a die result. After rolling, you must change 1 of your dice results to the named result. That die result cannot be modified again."
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."
@@ -10301,7 +10387,7 @@ exportObj.cardLoaders.English = function() {
       text: "%SCUMONLY%%LINEBREAK%When attacking, during the \"Modify Attack Dice\" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."
     },
     "Zuckuss": {
-      text: "%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
+      text: "%SCUMONLY%%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."
     },
     'Rage': {
       text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
@@ -10461,6 +10547,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -10556,6 +10645,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Lightweight Frame': {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -10653,7 +10745,7 @@ exportObj.cardLoaders.English = function() {
       text: "<span class=\"card-restriction\"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."
     },
     'TIE/x7': {
-      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'
+      text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, if you did not overlap an obstacle or ship, you may perform a free evade action.'
     },
     'TIE/D': {
       text: '<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'
@@ -11351,7 +11443,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Commander Kenkirk": {
       ship: "VT-49 Diezmador",
-      ship: "Comandante Kenkirk",
+      name: "Comandante Kenkirk",
       text: "Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."
     },
     "Captain Oicunn": {
@@ -11642,7 +11734,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Wampa"': {
       ship: "Caza TIE",
-      text: "Cuando ataques, puedes anular todos los resultados de los dados. Si anulas al menos un resultado %CRIT%, inflinge 1 carta de Daño boca abajo al defensor."
+      text: "Cuando ataques, al comienzo del paso \"Comparar los resultados\", puedes anular todos los resultados de los dados. Si anulas al menos un resultado %CRIT%, inflinge 1 carta de Daño boca abajo al defensor."
     },
     '"Chaser"': {
       name: "Perseguidor",
@@ -11708,7 +11800,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Manaroo": {
       ship: "Saltador Maestro 5000",
-      text: "Al comienzo de la fase de Combate, puedes asignar a otra nave aliada todas las fichas de Concentración, Evasión y Blanco Fijado que tengas asignadas."
+      text: "Al comienzo de la fase de Combate, puedes asignar a otra nave aliada a alcance 1 todas las fichas de Concentración, Evasión y Blanco Fijado que tengas asignadas."
     },
     "Contracted Scout": {
       name: "Explorador Contratado",
@@ -11938,6 +12030,22 @@ exportObj.cardLoaders['Español'] = function() {
     "Jakku Gunrunner": {
       ship: "Saltador Quad",
       name: "Traficante de armas de  Jakku"
+    },
+    'Genesis Red': {
+      ship: "Interceptor M3-A",
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      ship: "Interceptor M3-A",
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      ship: "Interceptor M3-A",
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      ship: "Interceptor M3-A",
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -11983,7 +12091,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Expert Handling": {
       name: "Pericia",
-      text: "<strong>Acción:</strong> Realiza una acción gratuita de tonel volado. Si no tienes el icono de acción %BARRELROLL%, recibes una ficha de Tensión.<br /><br />Después puedes descartar una ficha enemiga de Blanco Fijado que esté asignada a tu nave."
+      text: "<strong>Acción:</strong> Realiza una acción gratuita de tonel volado. Si no tienes el icono de acción %BARRELROLL%, recibes una ficha de Tensión.<br /><br />Después puedes descartar 1 ficha enemiga de Blanco Fijado que esté asignada a tu nave."
     },
     "Marksmanship": {
       name: "Puntería",
@@ -12015,7 +12123,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Deadeye": {
       name: "Certero",
-      text: "Puedes tratar la expresión <strong>\"Ataque (blanco fijado)\"</strong> como si dijera <strong>\"Ataque (concentración)\"</strong>.<br /><br />Cuando un ataque te obligue a gastar una ficha de Blanco Fijado, puedes gastar una ficha de Concentración en su lugar."
+      text: "%SMALLSHIPONLY%%LINEBREAK%Puedes tratar la expresión <strong>\"Ataque (blanco fijado)\"</strong> como si dijera <strong>\"Ataque (concentración)\"</strong>.<br /><br />Cuando un ataque te obligue a gastar una ficha de Blanco Fijado, puedes gastar una ficha de Concentración en su lugar."
     },
     "Expose": {
       name: "Expuesto",
@@ -12051,7 +12159,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Proximity Mines": {
       name: "Minas de Proximidad",
-      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Mina de Proximidad.<br /><br />Cuando la peana o la plantilla de maniobra de una nave se solape con esta ficha, ésta se <strong>detona</strong>."
+      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Mina de Proximidad.<br /><br />Cuando la peana o la plantilla de maniobra de una nave se solape con esta ficha, ésta se <strong>detona</strong>.<br /><br /><strong>Ficha de Mina de proximidad:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 3 dados de ataque y sufre todo el daño (%HIT%) y daño crítico (%CRIT%) obtenido en la tirada. Después se descarta esta ficha."
     },
     "Weapons Engineer": {
       name: "Ingeniero de Armamento",
@@ -12062,7 +12170,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando una nave aliada que tengas a alcance 1 sea alcanzada por un ataque, puedes sufrir tú 1 de sus resultados %CRIT% no anulados en vez de la nave objetivo."
     },
     "Luke Skywalker": {
-      text: "Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal. Puedes cambiar 1 resultado %FOCUS% por 1 resultado %HIT%. No podrás realizar ningún otro ataque en esta misma ronda."
+      text: "Después de que efectúes un ataque y lo falles, puedes realizar inmediatamente un ataque con tu armamento principal. Puedes cambiar 1 resultado %FOCUS% por 1 resultado %HIT%. No podrás realizar ningún otro ataque en esta misma ronda."
     },
     "Nien Nunb": {
       text: "Todas las maniobras %STRAIGHT% se consideran verdes para ti."
@@ -12179,7 +12287,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Tactician": {
       name: "Estratega",
-      text: "Después de que efectúes un ataque contra una nave que esté situada dentro de tu arco de fuego a alcance 2, esa nave recibe 1 ficha de Tensión."
+      text: "%LIMITED%%LINEBREAK%Después de que efectúes un ataque contra una nave que esté situada dentro de tu arco de fuego a alcance 2, esa nave recibe 1 ficha de Tensión."
     },
     "R2-D2 (Crew)": {
       name: "R2-D2 (Tripulante)",
@@ -12314,11 +12422,11 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Lone Wolf": {
       name: "Lobo solitario",
-      text: "Cuando ataques o defiendas, si no tienes ninguna nave aliada a alcance 1-2, pues volver a tirar 1 dado en el que hayas sacado una cara vacía."
+      text: "Cuando ataques o defiendas, si no tienes ninguna otra nave aliada a alcance 1-2, pues volver a tirar 1 dado en el que hayas sacado una cara vacía."
     },
     "Stay On Target": {
-      name: "Seguir el Objetivo",
-      text: "Cuando reveles una maniobra, puedes girar tu selector para escoger otra maniobra que tenga la misma velocidad.<br /><br />Esa maniobra se considera roja."
+      name: "Seguir al Objetivo",
+      text: "Cuando reveles una maniobra, puedes girar tu selector para escoger otra maniobra que tenga la misma velocidad.<br /><br />Tu maniobra se considera roja."
     },
     "Dash Rendar": {
       text: "Puedes efectuar ataques mientras estés solapado con un obstáculo.<br /><br />Tus ataques no pueden ser obstruidos."
@@ -12359,7 +12467,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Accuracy Corrector": {
       name: "Corrector de Puntería",
-      text: "Cuando ataques, puedes anular los resultados de todos tus dados. Después puedes añadir 2 resultados %HIT%.<br /><br />Si decides hacerlo, no podrás volver a modificar tus dados durante este ataque."
+      text: "Cuando ataques, durante el paso \"Modificar la tirada de ataque\", puedes anular los resultados de todos tus dados. Después puedes añadir 2 resultados %HIT% a tu tirada.<br /><br />Si decides hacerlo, no podrás volver a modificar tus dados durante este ataque."
     },
     "Inertial Dampeners": {
       name: "Amortiguadores de Inercia",
@@ -12398,11 +12506,11 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Salvaged Astromech": {
       name: "Droide Astromecánico Remendado",
-      text: "Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."
+      text: "Cuando recibas una carta de Daño boca arriba con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."
     },
     '"Genius"': {
       name: '"Genio"',
-      text: "Si estás equipado con una bomba que puede soltarse antes de revelar tu selector de maniobras, puedes elegir soltar la bomba <strong>después</strong> de ejecutar tu maniobra."
+      text: "Si estás equipado con una bomba que puede soltarse cuando revelas tu selector de maniobras, puedes elegir soltar la bomba <strong>después</strong> de ejecutar tu maniobra."
     },
     "Unhinged Astromech": {
       name: "Droide Astromecánico Desquiciado",
@@ -12430,7 +12538,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Emperor Palpatine": {
       name: "Emperador Palpatine",
-      text: "%IMPERIALONLY%%LINEBREAK%Una vez por ronda, puedes cambiar el resultado de una tirada de dado efectuada por cualquier nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."
+      text: "%IMPERIALONLY%%LINEBREAK%Una vez por ronda, antes de que una nave aliada vaya a tirar dados, puedes decir un resultado de dado. Tras tirarlos, se debe cambiar 1 de los resultados obtenidos por el resultado elegido antes. El resultado de ese dado no podrá volver a ser modificado."
     },
     "Bossk": {
       text: "%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."
@@ -12461,11 +12569,11 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Cluster Mines": {
       name: "Minas de Racimo",
-      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre todo el daño (%HIT%) obtenido en la tirada. Después se descarta esta ficha."
+      text: "<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre 1 punto de daño por cada %HIT% o %CRIT% obtenido en la tirada. Después se descarta esta ficha."
     },
     'Crack Shot': {
       name: "Tiro Certero",
-      text: 'Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'
+      text: 'Cuando ataques a una nave situada dentro de tu arco de fuego, al comienzo del paso "Comparar los resultados", puedes descartar esta carta para anular 1 resultado %EVADE% del defensor.'
     },
     "Advanced Homing Missiles": {
       name: "Misiles Rastreadores Avanzados",
@@ -12559,7 +12667,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Reinforced Deflectors': {
       name: "Deflectores Reforzados",
-      text: "%LARGESHIPONLY%%LINEBREAK%Después de que sufras 3 o más de daño debido a un mismo ataque, recuperas 1 ficha de Escudos (hasta un máximo igual a tu valor de Escudos)."
+      text: "%LARGESHIPONLY%%LINEBREAK%Tras defenderte, su durante el ataque has sufrido una combinación de 3 o más puntos de daño normal y crítico, recuperas 1 ficha de Escudos (hast aun máximo igual a tu valor de Escudos)."
     },
     'Dorsal Turret': {
       name: "Torreta Dorsal",
@@ -12599,7 +12707,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "%SCUMONLY%%LINEBREAK%Cuando ataques, durante el paso \"Modificar la tirada de ataque\" puedes recibir 1 ficha de Iones para elegir 1 de las fichas de Concentración o Evasión del defensor. Esa ficha no se puede gastar durante este ataque."
     },
     "Zuckuss": {
-      text: "%SCUMONLY%%LINEBREAK%Cuando ataques, puedes recibir tantas fichas de Tensión como quieras para elegir una cantidad igual de dados de defensa. El defensor debe volver a tirar esos dados."
+      text: "%SCUMONLY%%LINEBREAK%Cuando ataques, si no estás tensionado, puedes recibir tantas fichas de Tensión como quieras para elegir una cantidad igual de dados de defensa. El defensor debe volver a tirar esos dados."
     },
     'Rage': {
       name: "Furia",
@@ -12789,6 +12897,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -12852,7 +12963,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Autothrusters": {
       name: "Propulsores Automatizados",
-      text: "Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."
+      text: "Cuando te defiendas, si estás fuera del arco de fuego del atacante, o dentro de su arco de fuego pero más allá de alcance 2, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."
     },
     "Twin Ion Engine Mk. II": {
       name: "Motor Iónico Doble Modelo II",
@@ -12917,6 +13028,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Lightweight Frame': {
       name: "Fuselaje ultraligero",
       text: '<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -12939,7 +13053,7 @@ exportObj.cardLoaders['Español'] = function() {
     "Royal Guard TIE": {
       name: "TIE de la Guardia Real",
       ship: "Interceptor TIE",
-      text: "<span class=\"card-restriction\">Solo TIE Interceptor.</span><br /><br />Puedes equipar un máximo de 2 mejoras de Modificación (en vez de 1).<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 4 o inferior."
+      text: "<span class=\"card-restriction\">Solo TIE Interceptor.</span><br /><br />Puedes equipar un máximo de 2 mejoras  distintas de Modificación (en vez de 1).<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 4 o inferior."
     },
     "Dodonna's Pride": {
       name: "Orgullo de Donna",
@@ -13004,17 +13118,17 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Heavy Scyk" Interceptor (Cannon)': {
       name: 'Interceptor "Scyk Pesado" (Cañón)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%.",
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%. Tu valor de Casco se incrementa en 1.",
       ship: 'Interceptor M3-A'
     },
     '"Heavy Scyk" Interceptor (Missile)': {
       name: 'Interceptor "Scyk Pesado" (Misil)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%.",
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%. Tu valor de Casco se incrementa en 1.",
       ship: 'Interceptor M3-A'
     },
     '"Heavy Scyk" Interceptor (Torpedo)': {
       name: 'Interceptor "Scyk Pesado" (Torpedo)',
-      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%.",
+      text: "<span class=\"card-restriction\">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%. Tu valor de Casco se incrementa en 1.",
       ship: 'Interceptor M3-A'
     },
     "Dauntless": {
@@ -13062,7 +13176,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "<span class=\"card-restriction\">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."
     },
     'TIE/x7': {
-      text: '<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, puedes asignar 1 ficha de Evasión a tu nave.',
+      text: '<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, si no te solapaste con un obstáculo o nave, puedes realizar una acción gratuita de evasión.',
       ship: 'Defensor TIE'
     },
     'TIE/D': {
@@ -14004,6 +14118,22 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Sarco Plank': {
       text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
+    },
+    'Genesis Red': {
+      ship: "Intercepteur M3-A",
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      ship: "Intercepteur M3-A",
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      ship: "Intercepteur M3-A",
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      ship: "Intercepteur M3-A",
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -14766,6 +14896,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -14874,6 +15007,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Lightweight Frame': {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -15716,6 +15852,18 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Shadowport Hunter': {
       name: 'Shadowport Hunter (Árnyékrév vadász)'
+    },
+    'Genesis Red': {
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -16414,6 +16562,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -16514,6 +16665,9 @@ exportObj.cardLoaders.Magyar = function() {
     'Lightweight Frame': {
       name: "Lightweight Frame (Könnyített szerkezet)",
       text: '<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -17524,6 +17678,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     "Talonbane Cobra": {
       text: "When attacking or defending, double the effect of your range combat bonuses."
+    },
+    'Genesis Red': {
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -18288,6 +18454,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -18396,6 +18565,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Lightweight Frame': {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -19201,6 +19373,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Sarco Plank': {
       text: 'When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'
+    },
+    'Genesis Red': {
+      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+    },
+    'Quinn Jast': {
+      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+    },
+    'Inaldra': {
+      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+    },
+    'Sunny Bounder': {
+      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
     }
   };
   upgrade_translations = {
@@ -19860,6 +20044,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Supercharged Power Cells': {
       text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+    },
+    'ARC Caster': {
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
     }
   };
   modification_translations = {
@@ -19952,6 +20139,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Lightweight Frame': {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
+    },
+    'Pulsed Ray Shield': {
+      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -23674,7 +23864,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22445
+                    lineno: 22604
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24259,7 +24449,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23069
+              lineno: 23228
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -24942,7 +25132,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 23667
+          lineno: 23826
         }));
         __iced_deferrals._fulfill();
       });
@@ -24954,7 +25144,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 23668
+            lineno: 23827
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -26501,7 +26691,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24548
+                      lineno: 24707
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -26570,7 +26760,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24572
+                lineno: 24731
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26622,7 +26812,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24594
+            lineno: 24753
           }));
         }
         _ref = _this.upgrades;
@@ -26630,7 +26820,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24596
+              lineno: 24755
             }));
           }
         }
@@ -26639,7 +26829,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24598
+              lineno: 24757
             }));
           }
         }
@@ -27556,7 +27746,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25246
+                lineno: 25405
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27675,7 +27865,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25305
+                  lineno: 25464
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -27697,7 +27887,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25309
+                    lineno: 25468
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -27782,7 +27972,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25349
+            lineno: 25508
           }));
         }
         __iced_deferrals._fulfill();
