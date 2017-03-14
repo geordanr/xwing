@@ -545,32 +545,38 @@ class exportObj.SquadBuilder
                 <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
             </div>
             <div class="modal-body">
-                <select multiple class='obstacle-select' size="18">
-                    <option class="coreasteroid0-select" value="coreasteroid0">Core Asteroid 0</option>
-                    <option class="coreasteroid1-select" value="coreasteroid1">Core Asteroid 1</option>
-                    <option class="coreasteroid2-select" value="coreasteroid2">Core Asteroid 2</option>
-                    <option class="coreasteroid3-select" value="coreasteroid3">Core Asteroid 3</option>
-                    <option class="coreasteroid4-select" value="coreasteroid4">Core Asteroid 4</option>
-                    <option class="coreasteroid5-select" value="coreasteroid5">Core Asteroid 5</option>
-                    <option class="yt2400debris0-select" value="yt2400debris0">YT2400 Debris 0</option>
-                    <option class="yt2400debris1-select" value="yt2400debris1">YT2400 Debris 1</option>
-                    <option class="yt2400debris2-select" value="yt2400debris2">YT2400 Debris 2</option>
-                    <option class="vt49decimatordebris0-select" value="vt49decimatordebris0">VT49 Debris 0</option>
-                    <option class="vt49decimatordebris1-select" value="vt49decimatordebris1">VT49 Debris 1</option>
-                    <option class="vt49decimatordebris2-select" value="vt49decimatordebris2">VT49 Debris 2</option>
-                    <option class="core2asteroid0-select" value="core2asteroid0">Force Awakens Asteroid 0</option>
-                    <option class="core2asteroid1-select" value="core2asteroid1">Force Awakens Asteroid 1</option>
-                    <option class="core2asteroid2-select" value="core2asteroid2">Force Awakens Asteroid 2</option>
-                    <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
-                    <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
-                    <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
-                </select>
+                <div class="obstacle-select-container" style="float:left">
+                    <select multiple class='obstacle-select' size="18">
+                        <option class="coreasteroid0-select" value="coreasteroid0">Core Asteroid 0</option>
+                        <option class="coreasteroid1-select" value="coreasteroid1">Core Asteroid 1</option>
+                        <option class="coreasteroid2-select" value="coreasteroid2">Core Asteroid 2</option>
+                        <option class="coreasteroid3-select" value="coreasteroid3">Core Asteroid 3</option>
+                        <option class="coreasteroid4-select" value="coreasteroid4">Core Asteroid 4</option>
+                        <option class="coreasteroid5-select" value="coreasteroid5">Core Asteroid 5</option>
+                        <option class="yt2400debris0-select" value="yt2400debris0">YT2400 Debris 0</option>
+                        <option class="yt2400debris1-select" value="yt2400debris1">YT2400 Debris 1</option>
+                        <option class="yt2400debris2-select" value="yt2400debris2">YT2400 Debris 2</option>
+                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0">VT49 Debris 0</option>
+                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1">VT49 Debris 1</option>
+                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2">VT49 Debris 2</option>
+                        <option class="core2asteroid0-select" value="core2asteroid0">Force Awakens Asteroid 0</option>
+                        <option class="core2asteroid1-select" value="core2asteroid1">Force Awakens Asteroid 1</option>
+                        <option class="core2asteroid2-select" value="core2asteroid2">Force Awakens Asteroid 2</option>
+                        <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
+                        <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
+                        <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
+                    </select>
+                </div>
+                <div class="obstacle-image-container" style="display:none;">
+                    <img class="obstacle-image" src="images/core2asteroid0.png" />
+                </div>
             </div>
             <div class="modal-footer hidden-print">
                 <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
+        @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
 
         # Backend
 
@@ -803,7 +809,11 @@ class exportObj.SquadBuilder
             if @obstacles_select.val().length > 3
                 @obstacles_select.val(@current_squad.additional_data.obstacles)
             else
+                @previous_obstacles = @current_squad.additional_data.obstacles
                 @current_obstacles = (o for o in @obstacles_select.val())
+                @new_selection = @current_obstacles.filter((element) => return @previous_obstacles.indexOf(element) == -1)
+                if @new_selection.length > 0
+                    @showChooseObstaclesSelectImage(@new_selection[0])
                 @current_squad.additional_data.obstacles = @current_obstacles
                 @updatePermaLink()
 
@@ -1072,6 +1082,11 @@ class exportObj.SquadBuilder
     showChooseObstaclesModal: ->
         @obstacles_select.val(@current_squad.additional_data.obstacles)
         @choose_obstacles_modal.modal 'show'
+
+    showChooseObstaclesSelectImage: (obstacle) ->
+        @image_name = 'images/' + obstacle + '.png'
+        @obstacles_select_image.find('.obstacle-image').attr 'src', @image_name
+        @obstacles_select_image.show()
 
     updateObstacleSelect: (obstacles) ->
         @current_obstacles = obstacles
