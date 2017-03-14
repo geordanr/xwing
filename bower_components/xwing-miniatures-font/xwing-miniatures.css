@@ -352,6 +352,9 @@ i.xwing-miniatures-ship-tiefofighter:before {
 i.xwing-miniatures-ship-tiephantom:before {
   content: "P"; }
 
+i.xwing-miniatures-ship-tieadvprototype:before {
+  content: "R"; }
+
 i.xwing-miniatures-ship-tieadvancedprototype:before {
   content: "R"; }
 
@@ -405,6 +408,9 @@ i.xwing-miniatures-ship-yt1300:before {
 
 i.xwing-miniatures-ship-g1astarfighter:before {
   content: "n"; }
+
+i.xwing-miniatures-ship-yt2400:before {
+  content: "o"; }
 
 i.xwing-miniatures-ship-yt2400freighter:before {
   content: "o"; }

@@ -213,3 +213,11 @@
     font-family: EurostileStandardBold;
     font-weight: 100;
     font-style: italic; }
+
+.obstacle-select-container {
+  float: left; }
+
+.obstacle-image-container {
+  float: left;
+  margin-left: 10px;
+  background-repeat: no-repeat; }
