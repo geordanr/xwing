@@ -111,7 +111,7 @@ class exportObj.SquadBuilder
 
         @collection = null
 
-        @current_obstacles = null
+        @current_obstacles = []
 
         @setupUI()
         @setupEventHandlers()
@@ -163,7 +163,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val 'New Squadron'
         @removeAllShips()
         @addShip()
-        @current_obstacles = null
+        @current_obstacles = []
         @resetCurrentSquad()
         @notes.val ''
 
@@ -809,13 +809,18 @@ class exportObj.SquadBuilder
             if @obstacles_select.val().length > 3
                 @obstacles_select.val(@current_squad.additional_data.obstacles)
             else
-                @previous_obstacles = @current_squad.additional_data.obstacles
+                previous_obstacles = @current_squad.additional_data.obstacles
                 @current_obstacles = (o for o in @obstacles_select.val())
-                @new_selection = @current_obstacles.filter((element) => return @previous_obstacles.indexOf(element) == -1)
-                if @new_selection.length > 0
-                    @showChooseObstaclesSelectImage(@new_selection[0])
+                if (previous_obstacles?)
+                    new_selection = @current_obstacles.filter((element) => return previous_obstacles.indexOf(element) == -1)
+                else
+                    new_selection = @current_obstacles
+                if new_selection.length > 0
+                    @showChooseObstaclesSelectImage(new_selection[0])
                 @current_squad.additional_data.obstacles = @current_obstacles
                 @updatePermaLink()
+                @current_squad.dirty = true
+                @container.trigger 'xwing-backend:squadDirtinessChanged'
 
         @view_list_button.click (e) =>
             e.preventDefault()
