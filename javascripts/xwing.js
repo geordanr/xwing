@@ -1197,7 +1197,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["C-ROC Cruiser Expansion Pack"];
+exportObj.unreleasedExpansions = ["C-ROC Cruiser Expansion Pack", "Auzituck Gunship Expansion Pack", "Scurrg H-6 Bomber Expansion Pack", "TIE Aggressor Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1731,6 +1731,34 @@ exportObj.basicCardData = function() {
         shields: 4,
         huge: true,
         actions: ["Recover", "Reinforce", "Target Lock", "Jam"]
+      },
+      'Auzituck Gunship': {
+        name: 'Auzituck Gunship',
+        factions: ["Rebel Alliance"],
+        attack: 3,
+        agility: 1,
+        hull: 6,
+        shields: 3,
+        actions: ['Focus', 'Reinforce'],
+        attack_icon: 'xwing-miniatures-font-attack-180'
+      },
+      'Scurrg H-6 Bomber': {
+        name: 'Scurrg H-6 Bomber',
+        factions: ["Rebel Alliance", "Scum and Villainy"],
+        attack: 3,
+        agility: 1,
+        hull: 5,
+        shields: 5,
+        actions: ['Focus', 'Target Lock', 'Barrel Roll']
+      },
+      'TIE Aggressor': {
+        name: 'TIE Aggressor',
+        factions: ["Galactic Empire"],
+        attack: 2,
+        agility: 2,
+        hull: 4,
+        shields: 1,
+        actions: ['Focus', 'Target Lock', 'Barrel Roll']
       }
     },
     pilotsById: [
@@ -3971,6 +3999,119 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: [],
         points: 14
+      }, {
+        name: 'Kashyyyk Defender',
+        id: 249,
+        faction: 'Rebel Alliance',
+        ship: 'Auzituck Gunship',
+        skill: 1,
+        slots: ['Crew', 'Crew'],
+        points: 24
+      }, {
+        name: 'Wookiee ???',
+        id: 250,
+        faction: 'Rebel Alliance',
+        ship: 'Auzituck Gunship',
+        skill: 3,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Lo???',
+        id: 251,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'Auzituck Gunship',
+        skill: 5,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Wull???',
+        id: 252,
+        faction: 'Rebel Alliance',
+        unique: true,
+        ship: 'Auzituck Gunship',
+        skill: 7,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Captain Nym (Scum)',
+        id: 253,
+        canonical_name: 'Captain Nym'.canonicalize(),
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'Scurrg H-6 Bomber',
+        skill: 8,
+        slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
+        points: 100
+      }, {
+        name: 'Captain Nym (Rebel)',
+        id: 254,
+        canonical_name: 'Captain Nym'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'Scurrg H-6 Bomber',
+        skill: 8,
+        slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
+        points: 100
+      }, {
+        name: 'So???',
+        id: 255,
+        faction: 'Scum and Villainy',
+        unique: true,
+        ship: 'Scurrg H-6 Bomber',
+        skill: 6,
+        slots: ['Elite', 'Turret', 'Crew', 'Torpedo', 'Missile', 'Bomb', 'Bomb'],
+        points: 100
+      }, {
+        name: 'Lok R???',
+        id: 256,
+        faction: 'Scum and Villainy',
+        ship: 'Scurrg H-6 Bomber',
+        skill: 3,
+        slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
+        points: 100
+      }, {
+        name: 'Karthakk Pirate',
+        id: 257,
+        faction: 'Scum and Villainy',
+        ship: 'Scurrg H-6 Bomber',
+        skill: 1,
+        slots: ['Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
+        points: 24
+      }, {
+        name: 'Sienar Specialist',
+        id: 258,
+        faction: 'Galactic Empire',
+        ship: 'TIE Aggressor',
+        skill: 2,
+        slots: ['Turret', 'Missile', 'Missile'],
+        points: 17
+      }, {
+        name: 'Onyx Squad???',
+        id: 259,
+        faction: 'Galactic Empire',
+        ship: 'TIE Aggressor',
+        skill: 5,
+        slots: ['Turret', 'Missile', 'Missile'],
+        points: 100
+      }, {
+        name: '"Dou???',
+        id: 260,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Aggressor',
+        skill: 4,
+        slots: ['Turret', 'Missile', 'Missile'],
+        points: 100
+      }, {
+        name: 'Lieuten???',
+        id: 261,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Aggressor',
+        skill: 7,
+        slots: ['Turret', 'Missile', 'Missile'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -5551,6 +5692,49 @@ exportObj.basicCardData = function() {
         points: 2,
         attack: 4,
         range: '1'
+      }, {
+        name: 'Wookiee Commandos',
+        id: 229,
+        slot: 'Crew',
+        faction: 'Rebel Alliance',
+        points: 1,
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ["Crew"]
+      }, {
+        name: 'Synced Turret',
+        id: 230,
+        slot: 'Turret',
+        points: 4,
+        attack: 3,
+        range: '1-2'
+      }, {
+        name: 'Unguided Rockets',
+        id: 231,
+        slot: 'Missile',
+        points: 2,
+        attack: 3,
+        range: '1-3',
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ['Missile']
+      }, {
+        name: 'Intensity',
+        id: 232,
+        slot: 'Elite',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
       }
     ],
     modificationsById: [
@@ -6382,6 +6566,26 @@ exportObj.basicCardData = function() {
         modifier_func: function(stats) {
           return stats.energy += 2;
         }
+      }, {
+        name: 'Havoc',
+        id: 53,
+        ship: 'Scurrg H-6 Bomber',
+        unique: true,
+        points: 0,
+        unequips_upgrades: ['Crew'],
+        also_occupies_upgrades: ['Crew'],
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: 'System'
+          }, {
+            type: exportObj.RestrictedUpgrade,
+            slot: 'Salvaged Astromech',
+            filter_func: function(upgrade) {
+              return upgrade.unique;
+            }
+          }
+        ]
       }
     ],
     conditionsById: [
@@ -8823,6 +9027,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -9171,6 +9387,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -10550,6 +10769,18 @@ exportObj.cardLoaders.English = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -10803,6 +11034,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -12900,6 +13134,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -13255,6 +13501,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -14899,6 +15148,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -15181,6 +15442,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -16565,6 +16829,18 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -16827,6 +17103,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -18457,6 +18736,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -18738,6 +19029,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -20047,6 +20341,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'ARC Caster': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+    },
+    'Wookiee Commandos': {
+      text: 'When attacking, you may reroll your %FOCUS% results.'
+    },
+    'Synced Turret': {
+      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+    },
+    'Unguided Rockets': {
+      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+    },
+    'Intensity': {
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -20276,6 +20582,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Broken Horn': {
       text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+    },
+    'Havoc': {
+      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
     }
   };
   condition_translations = {
@@ -23864,7 +24173,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22604
+                    lineno: 22972
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24450,7 +24759,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23234
+              lineno: 23602
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25152,7 +25461,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 23846
+          lineno: 24214
         }));
         __iced_deferrals._fulfill();
       });
@@ -25164,7 +25473,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 23847
+            lineno: 24215
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -26711,7 +27020,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 24727
+                      lineno: 25095
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -26780,7 +27089,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 24751
+                lineno: 25119
               })
             ]);
             __iced_deferrals._fulfill();
@@ -26832,7 +27141,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 24773
+            lineno: 25141
           }));
         }
         _ref = _this.upgrades;
@@ -26840,7 +27149,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 24775
+              lineno: 25143
             }));
           }
         }
@@ -26849,7 +27158,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 24777
+              lineno: 25145
             }));
           }
         }
@@ -27766,7 +28075,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25425
+                lineno: 25793
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27885,7 +28194,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25484
+                  lineno: 25852
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -27907,7 +28216,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25488
+                    lineno: 25856
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -27992,7 +28301,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25528
+            lineno: 25896
           }));
         }
         __iced_deferrals._fulfill();
