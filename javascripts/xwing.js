@@ -9038,7 +9038,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -10780,7 +10780,7 @@ exportObj.cardLoaders.English = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -13145,7 +13145,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -15159,7 +15159,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -16840,7 +16840,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -18747,7 +18747,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
@@ -20352,7 +20352,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend a focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     }
   };
   modification_translations = {
