@@ -9170,7 +9170,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für TIE.</span>%LINEBREAK%Sobald du verteidigst, falls es nach dem Würfeln der Verteidigungswürfel, mehr Angriffswürfel als Verteidigungswürfel gibt, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, falls dein Wendigkeitswert 3 oder höher ist.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -10878,7 +10878,7 @@ exportObj.cardLoaders.English = function() {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -13276,7 +13276,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -15270,7 +15270,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -16943,7 +16943,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -18858,7 +18858,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
@@ -20447,7 +20447,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: '<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'
     },
     'Pulsed Ray Shield': {
-      text: 'During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
     }
   };
   title_translations = {
