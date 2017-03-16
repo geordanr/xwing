@@ -1050,7 +1050,7 @@ exportObj.cardLoaders.Magyar = () ->
             name: "Lightweight Frame (Könnyített szerkezet)"
             text: '''<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'''
         'Pulsed Ray Shield':
-            text: '''During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":

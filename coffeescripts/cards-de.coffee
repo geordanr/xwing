@@ -1675,7 +1675,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Leichtgewichtrahmen"
             text: '''<span class="card-restriction">Nur für TIE.</span>%LINEBREAK%Sobald du verteidigst, falls es nach dem Würfeln der Verteidigungswürfel, mehr Angriffswürfel als Verteidigungswürfel gibt, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, falls dein Wendigkeitswert 3 oder höher ist.'''
         'Pulsed Ray Shield':
-            text: '''During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":
