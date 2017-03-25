@@ -647,9 +647,9 @@ class exportObj.SquadBuilder
                         <br />
                         <textarea class="squad-notes"></textarea>
                     </label>
-                    <label class="obstacles-container">
+                    <span class="obstacles-container">
                         <button class="btn btn-primary choose-obstacles">Choose Obstacles</button>
-                    </label>
+                    </span>
                  </div>
                <div class="span3 info-container" />
             </div>
