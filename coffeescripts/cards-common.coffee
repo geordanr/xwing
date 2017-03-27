@@ -6443,6 +6443,19 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
+        {
+            name: 'Jabba the Hutt'
+            id: 233
+            unique: true
+            slot: 'Crew'
+            points: 5
+            faction: 'Scum and Villainy'
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+        }
     ]
 
     modificationsById: [
