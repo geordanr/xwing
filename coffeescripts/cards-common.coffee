@@ -2,10 +2,10 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "Sabine's TIE Fighter Expansion Pack"
-    "Upsilon-class Shuttle Expansion Pack"
-    "Quadjumper Expansion Pack"
     "C-ROC Cruiser Expansion Pack"
+    "Auzituck Gunship Expansion Pack"
+    "Scurrg H-6 Bomber Expansion Pack"
+    "TIE Aggressor Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
@@ -412,7 +412,6 @@ exportObj.basicCardData = ->
             canonical_name: "CR90 Corvette".canonicalize()
         "YT-2400":
             name: "YT-2400"
-            canonical_name: "YT-2400 Freighter".canonicalize()
             factions: [ "Rebel Alliance", ]
             attack: 2
             agility: 2
@@ -963,6 +962,42 @@ exportObj.basicCardData = ->
                 "Reinforce"
                 "Target Lock"
                 "Jam"
+            ]
+        'Auzituck Gunship':
+            name: 'Auzituck Gunship'
+            factions: ["Rebel Alliance"]
+            attack: 3
+            agility: 1
+            hull: 6
+            shields: 3
+            actions: [
+                'Focus'
+                'Reinforce'
+            ]
+            attack_icon: 'xwing-miniatures-font-attack-180'
+        'Scurrg H-6 Bomber':
+            name: 'Scurrg H-6 Bomber'
+            factions: ["Rebel Alliance", "Scum and Villainy"]
+            attack: 3
+            agility: 1
+            hull: 5
+            shields: 5
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Barrel Roll'
+            ]
+        'TIE Aggressor':
+            name: 'TIE Aggressor'
+            factions: ["Galactic Empire"]
+            attack: 2
+            agility: 2
+            hull: 4
+            shields: 1
+            actions: [
+                'Focus'
+                'Target Lock'
+                'Barrel Roll'
             ]
 
     # name field is for convenience only
@@ -2492,7 +2527,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Kaa'To Leeachos"
+            name: "Kaa'to Leeachos"
             unique: true
             faction: "Scum and Villainy"
             id: 113
@@ -4404,6 +4439,245 @@ exportObj.basicCardData = ->
             ]
             points: 35
         }
+        {
+            name: 'Genesis Red'
+            id: 245
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 7
+            slots: [
+                'Elite'
+            ]
+            points: 19
+        }
+        {
+            name: 'Quinn Jast'
+            id: 246
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 6
+            slots: [
+                'Elite'
+            ]
+            points: 18
+        }
+        {
+            name: 'Inaldra'
+            id: 247
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 3
+            slots: [
+                'Elite'
+            ]
+            points: 15
+        }
+        {
+            name: 'Sunny Bounder'
+            id: 248
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'M3-A Interceptor'
+            skill: 1
+            slots: [ ]
+            points: 14
+        }
+        {
+            name: 'Kashyyyk Defender'
+            id: 249
+            faction: 'Rebel Alliance'
+            ship: 'Auzituck Gunship'
+            skill: 1
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 24
+        }
+        {
+            name: 'Wookiee ???'
+            id: 250
+            faction: 'Rebel Alliance'
+            ship: 'Auzituck Gunship'
+            skill: 3
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Lo???'
+            id: 251
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'Auzituck Gunship'
+            skill: 5
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Wull???'
+            id: 252
+            faction: 'Rebel Alliance'
+            unique: true
+            ship: 'Auzituck Gunship'
+            skill: 7
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Captain Nym (Scum)'
+            id: 253
+            canonical_name: 'Captain Nym'.canonicalize()
+            unique: true
+            faction: 'Scum and Villainy'
+            ship: 'Scurrg H-6 Bomber'
+            skill: 8
+            slots: [
+                'Elite'
+                'Turret'
+                'Torpedo'
+                'Missile'
+                'Crew'
+                'Bomb'
+                'Bomb'
+            ]
+            points: 100
+        }
+        {
+            name: 'Captain Nym (Rebel)'
+            id: 254
+            canonical_name: 'Captain Nym'.canonicalize()
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'Scurrg H-6 Bomber'
+            skill: 8
+            slots: [
+                'Elite'
+                'Turret'
+                'Torpedo'
+                'Missile'
+                'Crew'
+                'Bomb'
+                'Bomb'
+            ]
+            points: 100
+        }
+        {
+            name: 'So???'
+            id: 255
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'Scurrg H-6 Bomber'
+            skill: 6
+            slots: [
+                'Elite'
+                'Turret'
+                'Crew'
+                'Torpedo'
+                'Missile'
+                'Bomb'
+                'Bomb'
+            ]
+            points: 100
+        }
+        {
+            name: 'Lok R???'
+            id: 256
+            faction: 'Scum and Villainy'
+            ship: 'Scurrg H-6 Bomber'
+            skill: 3
+            slots: [
+                'Elite'
+                'Turret'
+                'Torpedo'
+                'Missile'
+                'Crew'
+                'Bomb'
+                'Bomb'
+            ]
+            points: 100
+        }
+        {
+            name: 'Karthakk Pirate'
+            id: 257
+            faction: 'Scum and Villainy'
+            ship: 'Scurrg H-6 Bomber'
+            skill: 1
+            slots: [
+                'Turret'
+                'Torpedo'
+                'Missile'
+                'Crew'
+                'Bomb'
+                'Bomb'
+            ]
+            points: 24
+        }
+        {
+            name: 'Sienar Specialist'
+            id: 258
+            faction: 'Galactic Empire'
+            ship: 'TIE Aggressor'
+            skill: 2
+            slots: [
+                'Turret'
+                'Missile'
+                'Missile'
+            ]
+            points: 17
+        }
+        {
+            name: 'Onyx Squad???'
+            id: 259
+            faction: 'Galactic Empire'
+            ship: 'TIE Aggressor'
+            skill: 5
+            slots: [
+                'Turret'
+                'Missile'
+                'Missile'
+            ]
+            points: 100
+        }
+        {
+            name: '"Dou???'
+            id: 260
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Aggressor'
+            skill: 4
+            slots: [
+                'Turret'
+                'Missile'
+                'Missile'
+            ]
+            points: 100
+        }
+        {
+            name: 'Lieuten???'
+            id: 261
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Aggressor'
+            skill: 7
+            slots: [
+                'Turret'
+                'Missile'
+                'Missile'
+            ]
+            points: 100
+        }
     ]
 
     upgradesById: [
@@ -6104,6 +6378,84 @@ exportObj.basicCardData = ->
             restriction_func: (ship) ->
                 ship.data.huge ? false
         }
+        {
+            name: 'Quick-release Cargo Locks'
+            id: 226
+            slot: 'Cargo'
+            points: 2
+            restriction_func: (ship) ->
+                ship.data.canonical_name in [ 'C-ROC Cruiser'.canonicalize(), 'GR-75 Medium Transport'.canonicalize() ]
+        }
+        {
+            name: 'Supercharged Power Cells'
+            id: 227
+            limited: true
+            slot: 'Cargo'
+            points: 3
+        }
+        {
+            name: 'ARC Caster'
+            id: 228
+            faction: [ 'Rebel Alliance', 'Scum and Villainy' ]
+            slot: 'Cannon'
+            points: 2
+            attack: 4
+            range: '1'
+        }
+        {
+            name: 'Wookiee Commandos'
+            id: 229
+            slot: 'Crew'
+            faction: 'Rebel Alliance'
+            points: 1
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: 'Synced Turret'
+            id: 230
+            slot: 'Turret'
+            points: 4
+            attack: 3
+            range: '1-2'
+        }
+        {
+            name: 'Unguided Rockets'
+            id: 231
+            slot: 'Missile'
+            points: 2
+            attack: 3
+            range: '1-3'
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ 'Missile' ]
+        }
+        {
+            name: 'Intensity'
+            id: 232
+            slot: 'Elite'
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Jabba the Hutt'
+            id: 233
+            unique: true
+            slot: 'Crew'
+            points: 5
+            faction: 'Scum and Villainy'
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+        }
     ]
 
     modificationsById: [
@@ -6343,6 +6695,14 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 ship.data.name.indexOf('TIE') != -1 and ship.effectiveStats().agility < 3
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            id: 32
+            faction: ['Rebel Alliance', 'Scum and Villainy']
+            points: 2
+            restriction_func: (ship) ->
+                ship.effectiveStats().shields == 1
         }
     ]
 
@@ -6879,6 +7239,8 @@ exportObj.basicCardData = ->
             ]
             unequips_upgrades: [ "Cargo" ]
             also_occupies_upgrades: [ "Cargo" ]
+            modifier_func: (stats) ->
+                stats.energy += 2
         }
         {
             name: '''"Light Scyk" Interceptor'''
@@ -6891,6 +7253,49 @@ exportObj.basicCardData = ->
                 for s in (stats.maneuvers ? [])
                     s[1] = 2 if s[1] != 0
                     s[3] = 2 if s[3] != 0
+        }
+        {
+            name: '''Insatiable Worrt'''
+            id: 51
+            ship: 'C-ROC Cruiser'
+            points: 1
+            energy: '-1'
+            modifier_func: (stats) ->
+                stats.energy -= 1
+        }
+        {
+            name: '''Broken Horn'''
+            id: 52
+            ship: 'C-ROC Cruiser'
+            points: 5
+            energy: '+2'
+            modifier_func: (stats) ->
+                stats.energy += 2
+        }
+        {
+            name: 'Havoc'
+            id: 53
+            ship: 'Scurrg H-6 Bomber'
+            unique: true
+            points: 0
+            unequips_upgrades: [
+                'Crew'
+            ]
+            also_occupies_upgrades: [
+                'Crew'
+            ]
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: 'System'
+                }
+                {
+                    type: exportObj.RestrictedUpgrade
+                    slot: 'Salvaged Astromech'
+                    filter_func: (upgrade) ->
+                        upgrade.unique
+                }
+            ]
         }
     ]
 

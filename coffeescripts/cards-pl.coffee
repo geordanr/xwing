@@ -499,7 +499,7 @@ exportObj.cardLoaders['Polski'] = () ->
         "N'Dru Suhlak":
             ship: "Z-95 Łowca głów"
             text: """Kiedy atakujesz rzucasz 1 dodatkową kością ataku, jeśli w Zasięgu 1-2 nie ma żadnych innych przyjaznych statków."""
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             ship: "Z-95 Łowca głów"
             text: """Na początku fazy walki możesz usunąć 1 żeton skupienia lub uników z innego przyjaznego statku w Zasięgu 1-2 i przypisać go do siebie."""
         "Latts Razzi":
@@ -660,6 +660,14 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
         "Talonbane Cobra":
             text: """When attacking or defending, double the effect of your range combat bonuses."""
+        'Genesis Red':
+            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+        'Quinn Jast':
+            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+        'Inaldra':
+            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+        'Sunny Bounder':
+            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1214,6 +1222,22 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+        'Quick-release Cargo Locks':
+            text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+        'Supercharged Power Cells':
+            text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
+        'ARC Caster':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
+        'Wookiee Commandos':
+            text: '''When attacking, you may reroll your %FOCUS% results.'''
+        'Synced Turret':
+            text: '''<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'''
+        'Unguided Rockets':
+            text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
+        'Intensity':
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+        'Jabba the Hutt':
+            text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1292,6 +1316,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
         'Lightweight Frame':
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'''
+        'Pulsed Ray Shield':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":
@@ -1410,6 +1436,12 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
+        '''Insatiable Worrt''':
+            text: '''After you perform the recover action, gain 3 energy.'''
+        '''Broken Horn''':
+            text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
+        'Havoc':
+            text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

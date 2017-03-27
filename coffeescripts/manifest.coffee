@@ -1854,7 +1854,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: "Kaa'To Leeachos"
+            name: "Kaa'to Leeachos"
             type: 'pilot'
             count: 1
         }
@@ -3182,14 +3182,12 @@ exportObj.manifestByExpansion =
             count: 2
         }
     ]
-
     'ARC-170 Expansion Pack': [
         {
             name: 'ARC-170'
             type: 'ship'
             count: 1
         }
-
         {
             name: 'Norra Wexley'
             type: 'pilot'
@@ -3252,7 +3250,6 @@ exportObj.manifestByExpansion =
             type: 'ship'
             count: 1
         }
-
         {
             name: '"Quickdraw"'
             type: 'pilot'
@@ -3671,6 +3668,187 @@ exportObj.manifestByExpansion =
         {
             name: 'Adaptive Ailerons'
             type: 'title'
+            count: 1
+        }
+    ]
+    "Sabine's TIE Fighter Expansion Pack": [
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Ahsoka Tano'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sabine Wren (TIE Fighter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Rex'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios (TIE Fighter)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Veteran Instincts'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Captain Rex'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'EMP Device'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '''Sabine's Masterpiece'''
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Captured TIE'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    "Upsilon-class Shuttle Expansion Pack": [
+        {
+            name: 'Upsilon-class Shuttle'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Kylo Ren'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Major Stridan'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Dormitz'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Starkiller Base Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Snap Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Kylo Ren'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'General Hux'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Operations Specialist'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hyperwave Comm Scanner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Projector'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: '''Kylo Ren's Shuttle'''
+            type: 'title'
+            count: 1
+        }
+    ]
+    "Quadjumper Expansion Pack": [
+        {
+            name: 'Quadjumper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Constable Zuvio'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sarco Plank'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Unkar Plutt'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jakku Gunrunner'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'A Score to Settle'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Unkar Plutt'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BoShek'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hyperwave Comm Scanner'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Scavenger Crane'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Spacetug Tractor Array'
+            type: 'modification'
             count: 1
         }
     ]

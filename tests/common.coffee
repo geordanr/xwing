@@ -264,6 +264,8 @@ exports.assertGameTypeIs = (test, builder_selector, gametype) ->
 exports.selectorForShipIndex = (ship_idx) ->
     ".ship:nth-of-type(#{ship_idx})"
 
+# WARNING: Because of how last-of-type works, having a DIV after the ship rows breaks this. :(
+#          What we really want is nth-last-match(0): https://www.w3.org/TR/selectors4/#nth-last-match-pseudo
 exports.selectorForLastShip = ".ship:last-of-type"
 
 exports.selectorForSecondToLastShip = ".ship:nth-last-of-type(2)"

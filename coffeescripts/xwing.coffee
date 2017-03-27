@@ -111,6 +111,8 @@ class exportObj.SquadBuilder
 
         @collection = null
 
+        @current_obstacles = []
+
         @setupUI()
         @setupEventHandlers()
 
@@ -130,6 +132,13 @@ class exportObj.SquadBuilder
         if initial_load and $.trim $.getParameterByName('sn')
             squad_name = $.trim $.getParameterByName('sn')
         
+        squad_obstacles = []
+        if initial_load and $.trim $.getParameterByName('obs')
+            squad_obstacles = ($.trim $.getParameterByName('obs')).split(",").slice(0, 3)
+            @current_obstacles = squad_obstacles
+        else if @current_obstacles
+            squad_obstacles = @current_obstacles
+
         @current_squad =
             id: null
             name: squad_name
@@ -139,7 +148,9 @@ class exportObj.SquadBuilder
                 description: ''
                 cards: []
                 notes: ''
+                obstacles: squad_obstacles
             faction: @faction
+
         if @total_points > 0
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
@@ -152,6 +163,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val 'New Squadron'
         @removeAllShips()
         @addShip()
+        @current_obstacles = []
         @resetCurrentSquad()
         @notes.val ''
 
@@ -525,6 +537,47 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @randomizer_options_modal.modal()
 
+        @choose_obstacles_modal = $ document.createElement 'DIV'
+        @choose_obstacles_modal.addClass 'modal hide fade choose-obstacles-modal'
+        @container.append @choose_obstacles_modal
+        @choose_obstacles_modal.append $.trim """
+            <div class="modal-header">
+                <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
+            </div>
+            <div class="modal-body">
+                <div class="obstacle-select-container" style="float:left">
+                    <select multiple class='obstacle-select' size="18">
+                        <option class="coreasteroid0-select" value="coreasteroid0">Core Asteroid 0</option>
+                        <option class="coreasteroid1-select" value="coreasteroid1">Core Asteroid 1</option>
+                        <option class="coreasteroid2-select" value="coreasteroid2">Core Asteroid 2</option>
+                        <option class="coreasteroid3-select" value="coreasteroid3">Core Asteroid 3</option>
+                        <option class="coreasteroid4-select" value="coreasteroid4">Core Asteroid 4</option>
+                        <option class="coreasteroid5-select" value="coreasteroid5">Core Asteroid 5</option>
+                        <option class="yt2400debris0-select" value="yt2400debris0">YT2400 Debris 0</option>
+                        <option class="yt2400debris1-select" value="yt2400debris1">YT2400 Debris 1</option>
+                        <option class="yt2400debris2-select" value="yt2400debris2">YT2400 Debris 2</option>
+                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0">VT49 Debris 0</option>
+                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1">VT49 Debris 1</option>
+                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2">VT49 Debris 2</option>
+                        <option class="core2asteroid0-select" value="core2asteroid0">Force Awakens Asteroid 0</option>
+                        <option class="core2asteroid1-select" value="core2asteroid1">Force Awakens Asteroid 1</option>
+                        <option class="core2asteroid2-select" value="core2asteroid2">Force Awakens Asteroid 2</option>
+                        <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
+                        <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
+                        <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
+                    </select>
+                </div>
+                <div class="obstacle-image-container" style="display:none;">
+                    <img class="obstacle-image" src="images/core2asteroid0.png" />
+                </div>
+            </div>
+            <div class="modal-footer hidden-print">
+                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
+        @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
+
         # Backend
 
         @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
@@ -546,6 +599,7 @@ class exportObj.SquadBuilder
                     description: @describeSquad()
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
+                    obstacles: @getObstacles()
                 @backend_status.html $.trim """
                     <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
                 """
@@ -588,18 +642,22 @@ class exportObj.SquadBuilder
         content_container.append $.trim """
             <div class="row-fluid">
                 <div class="span9 ship-container">
-                            <label class="notes-container show-authenticated">
-                                <span>Squad Notes:</span>
-                                <br />
-                                <textarea class="squad-notes"></textarea>
-                            </label>
-                </div>
-                <div class="span3 info-container" />
+                    <label class="notes-container show-authenticated">
+                        <span>Squad Notes:</span>
+                        <br />
+                        <textarea class="squad-notes"></textarea>
+                    </label>
+                    <span class="obstacles-container">
+                        <button class="btn btn-primary choose-obstacles">Choose Obstacles</button>
+                    </span>
+                 </div>
+               <div class="span3 info-container" />
             </div>
         """
 
         @ship_container = $ content_container.find('div.ship-container')
         @info_container = $ content_container.find('div.info-container')
+        @obstacles_container = content_container.find('.obstacles-container')
         @notes_container = $ content_container.find('.notes-container')
         @notes = $ @notes_container.find('textarea.squad-notes')
 
@@ -663,6 +721,12 @@ class exportObj.SquadBuilder
         @print_list_button = $ @container.find('button.print-list')
 
         @container.find('[rel=tooltip]').tooltip()
+
+        # obstacles
+        @obstacles_button = $ @container.find('button.choose-obstacles')
+        @obstacles_button.click (e) =>
+            e.preventDefault()
+            @showChooseObstaclesModal()
 
         # conditions
         @condition_container = $ document.createElement('div')
@@ -740,6 +804,23 @@ class exportObj.SquadBuilder
             if faction == @faction
                 @tab.tab('show')
                 cb this
+
+        @obstacles_select.change (e) =>
+            if @obstacles_select.val().length > 3
+                @obstacles_select.val(@current_squad.additional_data.obstacles)
+            else
+                previous_obstacles = @current_squad.additional_data.obstacles
+                @current_obstacles = (o for o in @obstacles_select.val())
+                if (previous_obstacles?)
+                    new_selection = @current_obstacles.filter((element) => return previous_obstacles.indexOf(element) == -1)
+                else
+                    new_selection = @current_obstacles
+                if new_selection.length > 0
+                    @showChooseObstaclesSelectImage(new_selection[0])
+                @current_squad.additional_data.obstacles = @current_obstacles
+                @updatePermaLink()
+                @current_squad.dirty = true
+                @container.trigger 'xwing-backend:squadDirtinessChanged'
 
         @view_list_button.click (e) =>
             e.preventDefault()
@@ -821,6 +902,8 @@ class exportObj.SquadBuilder
 
     updatePermaLink: () =>
         squad_link = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
+        if (@current_squad.additional_data.obstacles and @current_squad.additional_data.obstacles.length > 0)
+            squad_link = squad_link + "&obs=#{@current_squad.additional_data.obstacles}"
         @permalink.attr 'href', squad_link
 
     onNotesUpdated: =>
@@ -964,10 +1047,13 @@ class exportObj.SquadBuilder
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
+        console.log(squad.additional_data.obstacles)
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
         @squad_name_input.val @current_squad.name
         @squad_name_placeholder.text @current_squad.name
+        @current_obstacles = @current_squad.additional_data.obstacles
+        @updateObstacleSelect(@current_squad.additional_data.obstacles)
         @loadFromSerialized squad.serialized
         @notes.val(squad.additional_data.notes ? '')
         @backend_status.fadeOut 'slow'
@@ -997,6 +1083,19 @@ class exportObj.SquadBuilder
     showTextListModal: ->
         # Display modal
         @list_modal.modal 'show'
+
+    showChooseObstaclesModal: ->
+        @obstacles_select.val(@current_squad.additional_data.obstacles)
+        @choose_obstacles_modal.modal 'show'
+
+    showChooseObstaclesSelectImage: (obstacle) ->
+        @image_name = 'images/' + obstacle + '.png'
+        @obstacles_select_image.find('.obstacle-image').attr 'src', @image_name
+        @obstacles_select_image.show()
+
+    updateObstacleSelect: (obstacles) ->
+        @current_obstacles = obstacles
+        @obstacles_select.val(obstacles)
 
     serialize: ->
         #( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
@@ -1606,6 +1705,9 @@ class exportObj.SquadBuilder
     getNotes: ->
         @notes.val()
 
+    getObstacles: ->
+        @current_obstacles
+
     isSquadPossibleWithCollection: ->
         # console.log "#{@faction}: isSquadPossibleWithCollection()"
         # If the collection is uninitialized or empty, don't actually check it.
@@ -1696,6 +1798,10 @@ class exportObj.SquadBuilder
         for pilot in xws.pilots
             delete pilot.multisection if pilot.multisection?
 
+        obstacles = @getObstacles()
+        if obstacles? and obstacles.length > 0
+            xws.obstacles = obstacles
+
         xws
 
     toMinimalXWS: ->
@@ -1729,6 +1835,9 @@ class exportObj.SquadBuilder
                     @current_squad.name = xws.name
                 if xws.description?
                     @notes.val xws.description
+
+                if xws.obstacles?
+                    @current_squad.additional_data.obstacles = xws.obstacles
 
                 @suppress_automatic_new_ship = true
                 @removeAllShips()

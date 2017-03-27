@@ -86,6 +86,24 @@ casper.test.begin "XWS Import: 0.3.0", (test) ->
         test.done()
 
 
+casper.test.begin "YT-2400 canonicalization fix", (test) ->
+    common.waitForStartup('#rebel-builder')
+
+    xws = '''{"description":"","faction":"rebel","name":"Unnamed Squadron","pilots":[{"name":"wildspacefringer","points":30,"ship":"yt2400"}],"points":30,"vendor":{"yasb":{"builder":"(Yet Another) X-Wing Miniatures Squad Builder","builder_url":"https://localhost/apps/xwing/","link":"https://localhost/apps/xwing/?f=Rebel%20Alliance&d=v4!s!92:-1,-1,-1:-1:-1:&sn=Unnamed%20Squadron"}},"version":"0.3.0"}'''
+
+    casper.then ->
+        @evaluate ->
+            window.rebel_sb.loadFromXWS JSON.parse(arguments[0]), $.noop
+        , xws
+    .then ->
+        @wait 1000
+
+    common.assertShipTypeIs(test, '#rebel-builder', 1, 'YT-2400')
+
+    .run ->
+        test.done()
+
+
 casper.test.begin "Canonicalization update for R2-D2", (test) ->
     common.waitForStartup('#rebel-builder')
 

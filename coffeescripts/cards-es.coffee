@@ -79,6 +79,11 @@ exportObj.translations['Español'] =
         "Shadow Caster Expansion Pack": "Pack de Expansión Sombra Alargada"
         "Special Forces TIE Expansion Pack": "Pack de Expansión TIE de las Fuerzas Especiales"
         "ARC-170 Expansion Pack": "Pack de Expansión ARC-170"
+        "U-Wing Expansion Pack": "Pack de Expansión Ala-U"
+        "TIE Striker Expansion Pack": "Pack de Expansión Fustigador TIE"
+        "Upsilon-class Shuttle Expansion Pack": "Pack de Expansión Lanzadera clase Ípsilon"
+        "Sabine's TIE Fighter Expansion Pack": "Pack de Expansión Caza TIE de Sabine"
+        "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -190,6 +195,8 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Diezmador'
     exportObj.renameShip 'TIE/fo Fighter', 'Caza TIE/fo'
     exportObj.renameShip 'TIE/sf Fighter', 'Caza TIE/sf'
+    exportObj.renameShip 'TIE Striker', 'Fustigador TIE'
+    exportObj.renameShip 'Upsilon-class Shuttle', 'Lanzadera clase Ípsilon'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -202,6 +209,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'CR90 Corvette (Fore)', 'Corbeta CR90 (Proa)'
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
     exportObj.renameShip 'T-70 X-Wing', 'T-70 Ala-X'
+    exportObj.renameShip 'U-Wing', 'Ala-U'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
@@ -210,6 +218,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'JumpMaster 5000', 'Saltador Maestro 5000'
     exportObj.renameShip 'Protectorate Starfighter', 'Caza Estelar del Protectorado'
     exportObj.renameShip 'Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero'
+    exportObj.renameShip 'Quadjumper', 'Saltador Quad'
 
     pilot_translations =
         "Wedge Antilles":
@@ -513,6 +522,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "VT-49 Diezmador"
         "Commander Kenkirk":
             ship: "VT-49 Diezmador"
+            name: "Comandante Kenkirk"
             text: """Si no te quedan escudos y tienes asignada al menos 1 carta de Daño, tu Agilidad aumenta en 1."""
         "Captain Oicunn":
             name: "Capitán Oicunn"
@@ -594,7 +604,7 @@ exportObj.cardLoaders['Español'] = () ->
         "N'Dru Suhlak":
             text: """Cuando ataques, si no tienes ninguna otra nave aliada a alcance 1-2, tira 1 dado de ataque adicional."""
             ship: "Z-95 Cazacabezas"
-        "Kaa'To Leeachos":
+        "Kaa'to Leeachos":
             text: """Al comienzo de la fase de Combate, puedes quitar 1 ficha de Concentración o Evasión de otra nave aliada que tengas a alcance 1-2 y asignar esa ficha a tu nave."""
             ship: "Z-95 Cazacabezas"
         "Commander Alozen":
@@ -734,7 +744,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Los Cazas TIE aliados que tengas a alcance 1-3 pueden realizar la acción de tu carta de Mejora %ELITE% equipada."""
         '"Wampa"':
             ship: "Caza TIE"
-            text: """Cuando ataques, puedes anular todos los resultados de los dados. Si anulas al menos un resultado %CRIT%, inflinge 1 carta de Daño boca abajo al defensor."""
+            text: """Cuando ataques, al comienzo del paso "Comparar los resultados", puedes anular todos los resultados de los dados. Si anulas al menos un resultado %CRIT%, inflinge 1 carta de Daño boca abajo al defensor."""
         '"Chaser"':
             name: "Perseguidor"
             ship: "Caza TIE"
@@ -784,7 +794,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """La primrea vez que seas destruido, en vez de eso anula todo el daño restante, descarta todas tus cartas de Daño e inflinge 4 cartas de Daño boca abajo a esta nave."""
         "Manaroo":
             ship: "Saltador Maestro 5000"
-            text: """Al comienzo de la fase de Combate, puedes asignar a otra nave aliada todas las fichas de Concentración, Evasión y Blanco Fijado que tengas asignadas."""
+            text: """Al comienzo de la fase de Combate, puedes asignar a otra nave aliada a alcance 1 todas las fichas de Concentración, Evasión y Blanco Fijado que tengas asignadas."""
         "Contracted Scout":
             name: "Explorador Contratado"
             ship: "Saltador Maestro 5000"
@@ -880,26 +890,37 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Nave de persecución clase Lancero"
         'Sabine Wren (TIE Fighter)':
             ship: "Caza TIE"
-            text: '''Immediately before you reveal your maneuver, you may perform a free boost or barrel roll action.'''
+            text: '''Inmediatametne antes de revelar tu maniobra, puedes realizar una acción gratuita de impulso o tonel volado.'''
         '"Zeb" Orrelios (TIE Fighter)':
             ship: "Caza TIE"
-            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+            text: '''Cuando te defiendas, puedes anular resultados %CRIT% antes de anular resultados %HIT%.'''
         'Kylo Ren':
-            text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
+            ship: "Lanzadera clase Ípsilon"
+            text: '''La primera vez que seas impactado por un ataque en cada ronda, asigna la carta de Estad "Yo te mostraré el Lado Oscuro" al atacante.'''
         'Unkar Plutt':
-            text: '''At the end of the Activation phase, you <strong>must</strong> assign a tractor beam token to each ship you are touching.'''
+            ship: "Saltador Quad"
+            text: '''Al final de la fase de Activación, <strong>debes</strong> asignar una ficha de Campo de tracción a toda nave con la que estés en contacto.'''
         'Cassian Andor':
-            text: '''At the start of the Activation phase, you may remove 1 stress token from 1 other friendly ship at Range 1-2.'''
+            ship: "Ala-U"
+            text: '''Al comienzo de la fase de Activación, puedes quitar 1 ficha de Tensión de 1 otra nave aliada que tengas a alcance 1-2.'''
         'Bodhi Rook':
-            text: '''When a friendly ship acquires a target lock, that ship can lock onto an enemy ship at Range 1-3 of any friendly ship.'''
+            ship: "Ala-U"
+            text: '''Cuando una nave aliada fije un blanco, esa nave puede fijarlo sobre una nave enemiga que esté situada a alcance 1-3 de cualquier nave aliada.'''
         'Heff Tobber':
-            text: '''After an enemy ship executes a maneuver that causes it to overlap your ship, you may perform a free action.'''
+            ship: "Ala-U"
+            text: '''Después de que una nave enemiga ejecute una maniobra que la haga solaparse con tu nave, puedes realizar una acción gratuita.'''
         '''"Duchess"''':
-            text: '''While you have the "Adaptive Ailerons" Upgrade card equipped, you may choose to ignore its card ability.'''
+            ship: "Fustigador TIE"
+            name: '"Duquesa"'
+            text: '''Cuando tengas equipada la carta de Mejora "Alreones adaptativos", puedes elegir ignorar su capacidad de carta.'''
         '''"Pure Sabacc"''':
-            text: '''When attacking, if you have 1 or fewer Damage cards, roll 1 additional attack die.'''
+            ship: "Fustigador TIE"
+            name: '"Sabacc Puro"'
+            text: '''Cuando ataques, si tienes 1 o menos cartas de Daño, tira 1 dado de ataque adicional.'''
         '''"Countdown"''':
-            text: '''When defending, if you are not stressed, during the "Compare Results" step, you may suffer 1 damage to cancel all dice results.  If you do, receive 1 stress token.'''
+            ship: "Fustigador TIE"
+            name: '"Cuenta Atrás"'
+            text: '''Cuando te defiendas, si no estás bajo tensión, durante el paso "Comparar los resultados", puedes sufrir 1 punto de daño para anular <strong>todos</strong> los resultados de los dados. Si lo haces, recibes 1 ficha de Tensión.'''
         'Nien Nunb':
             ship: "T-70 Ala-X"
             text: '''Cuando recibas una ficha de Tensión, si hay alguna nave enemiga dentro de tu arco de fuego a alcance 1, puedes descartar esa ficha de Tensión.'''
@@ -911,18 +932,55 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Cuando ataques o te defiendas, puedes volver a tirar 1 de tus dados por cada otra nave aliada que tengas a Alcance 1.'''
         'Ahsoka Tano':
             ship: "Caza TIE"
-            text: '''At the start of the Combat phase, you may spend 1 focus token to choose a friendly ship at Range 1.  It may perform 1 free action.'''
+            text: '''Al comienzo de la fase de Combate, puedes gastar 1 ficha de Concentración para elegir una nave aliada que tengas a alcance 1. Esa nave puede realizar 1 acción gratuita.'''
         'Captain Rex':
             ship: "Caza TIE"
-            text: '''After you perform an attack, assign the "Suppressive Fire" Condition card to the defender.'''
+            name: "Capitán Rex"
+            text: '''Después de que efectúes un ataque, asigna la carta de Estado "Fuego de supresión" al defensor.'''
         'Major Stridan':
-            text: '''For the purpose of your actions and Upgrade cards, you may treat friendly ships at Range 2-3 as being at Range 1.'''
+            ship: "Lanzadera clase Ípsilon"
+            text: '''A efectos de tus acciones y cartas de Mejora, puedes considerar las naves aliadas que tengas a alcance 2-3 como si estuvieran a alcance 1.'''
         'Lieutenant Dormitz':
-            text: '''During setup, friendly ships may placed anywhere in the play area at Range 1-2 of you.'''
+            ship: "Lanzadera clase Ípsilon"
+            name: "Teniente Dormitz"
+            text: '''Durante la preparación de la partida, las naves aliadas pueden ser colocadas en cualquier lugar de la zona de juego que esté situado a alcance 1-2 de ti.'''
         'Constable Zuvio':
-            text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
+            ship: "Saltador Quad"
+            name: "Alguacil Zuvio"
+            text: '''Cuando reveles una maniobra de retroceso, puedes soltar una bomba usando los salientes de la parte frontal de tu peana (incluso una bomba con el encabezado "<strong>Acción:</strong>").'''
         'Sarco Plank':
-            text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+            ship: "Saltador Quad"
+            text: '''Cuando te defiendas, en vez de usar tu valor de Agilidad, puedes tirar tantos dados de defensa como la velocidad de la maniobra que has ejecutado en esta ronda.'''
+        "Blue Squadron Pathfinder":
+            name: "Infiltrador del Escuadrón Azul"
+            ship: "Ala-U"
+        "Black Squadron Scout":
+            name: "Explorador del Escuadrón Negro"
+            ship: "Fustigador TIE"
+        "Scarif Defender":
+            name: "Defensor de Scarif"
+            ship: "Fustigador TIE"
+        "Imperial Trainee":
+            name: "Cadete Imperial"
+            ship: "Fustigador TIE"
+        "Starkiller Base Pilot":
+            ship: "Lanzadera clase Ípsilon"
+            name: "Piloto de la base Starkiller"
+        "Jakku Gunrunner":
+            ship: "Saltador Quad"
+            name: "Traficante de armas de  Jakku"
+        'Genesis Red':
+            ship: "Interceptor M3-A"
+            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+        'Quinn Jast':
+            ship: "Interceptor M3-A"
+            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+        'Inaldra':
+            ship: "Interceptor M3-A"
+            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+        'Sunny Bounder':
+            ship: "Interceptor M3-A"
+            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -956,7 +1014,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Acción:</strong> Elije una nave a alcance 1-2 cuyo pilioto tenga una Habilidad más baja que la tuya.<br /><br />La nave elegida puede llevar a cabo 1 acción gratuita de inmediato."""
         "Expert Handling":
             name: "Pericia"
-            text: """<strong>Acción:</strong> Realiza una acción gratuita de tonel volado. Si no tienes el icono de acción %BARRELROLL%, recibes una ficha de Tensión.<br /><br />Después puedes descartar una ficha enemiga de Blanco Fijado que esté asignada a tu nave."""
+            text: """<strong>Acción:</strong> Realiza una acción gratuita de tonel volado. Si no tienes el icono de acción %BARRELROLL%, recibes una ficha de Tensión.<br /><br />Después puedes descartar 1 ficha enemiga de Blanco Fijado que esté asignada a tu nave."""
         "Marksmanship":
             name: "Puntería"
             text: """<strong>Acción:</strong> Cuando ataques en esta ronda puedes cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT% y tus demás resultados %FOCUS% por resultados %HIT%."""
@@ -980,7 +1038,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Una vez por ronda, después de que realices una acción podras realizar a cabo 1 acción gratuita de entre las que figuren en tu barra de acciones.<br /><br />Después recibes 1 ficha de Tensión."""
         "Deadeye":
             name: "Certero"
-            text: """Puedes tratar la expresión <strong>"Ataque (blanco fijado)"</strong> como si dijera <strong>"Ataque (concentración)"</strong>.<br /><br />Cuando un ataque te obligue a gastar una ficha de Blanco Fijado, puedes gastar una ficha de Concentración en su lugar."""
+            text: """%SMALLSHIPONLY%%LINEBREAK%Puedes tratar la expresión <strong>"Ataque (blanco fijado)"</strong> como si dijera <strong>"Ataque (concentración)"</strong>.<br /><br />Cuando un ataque te obligue a gastar una ficha de Blanco Fijado, puedes gastar una ficha de Concentración en su lugar."""
         "Expose":
             name: "Expuesto"
             text: """<strong>Acción:</strong> Hasta el final de la ronda, el valor de tu armamento principal se incrementa en 1 y tu Agilidad se reduce en 1."""
@@ -1007,7 +1065,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """La Habilidad de tu piloto se incrementa en 2."""
         "Proximity Mines":
             name: "Minas de Proximidad"
-            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Mina de Proximidad.<br /><br />Cuando la peana o la plantilla de maniobra de una nave se solape con esta ficha, ésta se <strong>detona</strong>."""
+            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 ficha de Mina de Proximidad.<br /><br />Cuando la peana o la plantilla de maniobra de una nave se solape con esta ficha, ésta se <strong>detona</strong>.<br /><br /><strong>Ficha de Mina de proximidad:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 3 dados de ataque y sufre todo el daño (%HIT%) y daño crítico (%CRIT%) obtenido en la tirada. Después se descarta esta ficha."""
         "Weapons Engineer":
             name: "Ingeniero de Armamento"
             text: """Puedes tener 2 Blancos Fijados a la vez (pero sólo 1 para cada nave enemiga).<br /><br />Cuando fijes un blanco, puedes fijar como blanco a dos naves distintas."""
@@ -1015,7 +1073,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Atraer su fuego"
             text: """Cuando una nave aliada que tengas a alcance 1 sea alcanzada por un ataque, puedes sufrir tú 1 de sus resultados %CRIT% no anulados en vez de la nave objetivo."""
         "Luke Skywalker":
-            text: """Después de que efectúes un ataque y lo falles, realiza inmediatamente un ataque con tu armamento principal. Puedes cambiar 1 resultado %FOCUS% por 1 resultado %HIT%. No podrás realizar ningún otro ataque en esta misma ronda."""
+            text: """Después de que efectúes un ataque y lo falles, puedes realizar inmediatamente un ataque con tu armamento principal. Puedes cambiar 1 resultado %FOCUS% por 1 resultado %HIT%. No podrás realizar ningún otro ataque en esta misma ronda."""
         "Nien Nunb":
             text: """Todas las maniobras %STRAIGHT% se consideran verdes para ti."""
         "Chewbacca":
@@ -1102,7 +1160,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Acción:</strong> Elije 1 nave enemiga a alcance 1-2. Si te encuentras dentro de su arco de fuego, puedes fijarla como blanco. Después puedes realizar una acción gratuita de impulso."""
         "Tactician":
             name: "Estratega"
-            text: """Después de que efectúes un ataque contra una nave que esté situada dentro de tu arco de fuego a alcance 2, esa nave recibe 1 ficha de Tensión."""
+            text: """%LIMITED%%LINEBREAK%Después de que efectúes un ataque contra una nave que esté situada dentro de tu arco de fuego a alcance 2, esa nave recibe 1 ficha de Tensión."""
         "R2-D2 (Crew)":
             name: "R2-D2 (Tripulante)"
             text: """Al final de la fase Final, si no tienes Escudos, puedes recuperar 1 de Escudos y tirar 1 dado de ataque. Si sacas %HIT%, pon boca arriba 1 de las cartas de Daño que tengas boca abajo (elegida al azar) y resuélvela."""
@@ -1204,10 +1262,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Acción:</strong> Elige un máximo de 2 naves aliadas que tengas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Luego recibes 1 ficha de Tensión."""
         "Lone Wolf":
             name: "Lobo solitario"
-            text: """Cuando ataques o defiendas, si no tienes ninguna nave aliada a alcance 1-2, pues volver a tirar 1 dado en el que hayas sacado una cara vacía."""
+            text: """Cuando ataques o defiendas, si no tienes ninguna otra nave aliada a alcance 1-2, pues volver a tirar 1 dado en el que hayas sacado una cara vacía."""
         "Stay On Target":
-            name: "Seguir el Objetivo"
-            text: """Cuando reveles una maniobra, puedes girar tu selector para escoger otra maniobra que tenga la misma velocidad.<br /><br />Esa maniobra se considera roja."""
+            name: "Seguir al Objetivo"
+            text: """Cuando reveles una maniobra, puedes girar tu selector para escoger otra maniobra que tenga la misma velocidad.<br /><br />Tu maniobra se considera roja."""
         "Dash Rendar":
             text: """Puedes efectuar ataques mientras estés solapado con un obstáculo.<br /><br />Tus ataques no pueden ser obstruidos."""
         '"Leebo"':
@@ -1237,7 +1295,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando ataques, puedes gastar 1 ficha de Concentración para cambiar 1 de tus resultados %FOCUS% por un resultado %CRIT%."""
         "Accuracy Corrector":
             name: "Corrector de Puntería"
-            text: """Cuando ataques, puedes anular los resultados de todos tus dados. Después puedes añadir 2 resultados %HIT%.<br /><br />Si decides hacerlo, no podrás volver a modificar tus dados durante este ataque."""
+            text: """Cuando ataques, durante el paso "Modificar la tirada de ataque", puedes anular los resultados de todos tus dados. Después puedes añadir 2 resultados %HIT% a tu tirada.<br /><br />Si decides hacerlo, no podrás volver a modificar tus dados durante este ataque."""
         "Inertial Dampeners":
             name: "Amortiguadores de Inercia"
             text: """Cuando reveles tu maniobra, puedes descartar esta carta para ejecutar en su lugar una maniobra blanca [0%STOP%]. Después recibes 1 ficha de Tensión."""
@@ -1266,10 +1324,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: """%SCUMONLY%<br /><br />Después de que ejecutes una maniobra verde, puedes fijar un blanco."""
         "Salvaged Astromech":
             name: "Droide Astromecánico Remendado"
-            text: """Cuando recibas una carta de Daño con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."""
+            text: """Cuando recibas una carta de Daño boca arriba con el atributo <strong>Nave</strong>, puedes descartarla de inmediato (antes de resolver sus efectos).<br /><br />Luego descarta esta carta de Mejora."""
         '"Genius"':
             name: '"Genio"'
-            text: """Si estás equipado con una bomba que puede soltarse antes de revelar tu selector de maniobras, puedes elegir soltar la bomba <strong>después</strong> de ejecutar tu maniobra."""
+            text: """Si estás equipado con una bomba que puede soltarse cuando revelas tu selector de maniobras, puedes elegir soltar la bomba <strong>después</strong> de ejecutar tu maniobra."""
         "Unhinged Astromech":
             name: "Droide Astromecánico Desquiciado"
             text: """Puedes ejecutar todas las maniobras de velocidad 3 como maniobras verdes."""
@@ -1290,7 +1348,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """<strong>Ataque (Energía):</strong> Gasta 2 de Energía de esta carta para efectuar este ataque. Si este ataque impacta, el defensor sufre 1 de daño crítico y recibe 1 ficha de Iones. Después se anulan <strong>todos<strong> los resultados de los dados."""
         "Emperor Palpatine":
             name: "Emperador Palpatine"
-            text: """%IMPERIALONLY%%LINEBREAK%Una vez por ronda, puedes cambiar el resultado de una tirada de dado efectuada por cualquier nave aliada por el de cualquier otro resultado posible para ese dado. El resultado de ese dado no podrá volver a ser modificado."""
+            text: """%IMPERIALONLY%%LINEBREAK%Una vez por ronda, antes de que una nave aliada vaya a tirar dados, puedes decir un resultado de dado. Tras tirarlos, se debe cambiar 1 de los resultados obtenidos por el resultado elegido antes. El resultado de ese dado no podrá volver a ser modificado."""
         "Bossk":
             text: """%SCUMONLY%%LINEBREAK%Después de que realices un ataque y falles, si no tienes fichas de Tensión <strong>debes</strong> recibir 1 ficha de Tensión. Después asigna 1 ficha de Concentración a tu nave y fija al defensor como blanco."""
         "Lightning Reflexes":
@@ -1313,10 +1371,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Cuando sueltes una bomba, puedes usar la plantilla (%STRAIGHT% 2) en lugar de la plantilla (%STRAIGHT% 1)."""
         "Cluster Mines":
             name: "Minas de Racimo"
-            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre todo el daño (%HIT%) obtenido en la tirada. Después se descarta esta ficha."""
+            text: """<strong>Acción:</strong> Descarta esta carta para <strong>soltar</strong> 1 conjunto de Minas de racimo.<br /><br />Cada ficha de Mina de racimo se <strong>detona</strong> cuando la peana o plantilla de maniobra de una nave se solapa con ella.<br /><br /><strong>Ficha de Mina de racimo:</strong> Cuando se detona una de estas fichas de Bomba, la nave que la haya atravesado o solapado tira 2 dados de ataque y sufre 1 punto de daño por cada %HIT% o %CRIT% obtenido en la tirada. Después se descarta esta ficha."""
         'Crack Shot':
             name: "Tiro Certero"
-            text: '''Cuando ataques a una nave situada dentro de tu arco de fuego, puedes descartar esta carta para anular 1 resultad %EVADE% del defensor.'''
+            text: '''Cuando ataques a una nave situada dentro de tu arco de fuego, al comienzo del paso "Comparar los resultados", puedes descartar esta carta para anular 1 resultado %EVADE% del defensor.'''
         "Advanced Homing Missiles":
             name: "Misiles Rastreadores Avanzados"
             text: """<strong>Ataque (Blanco fijado):</strong> Descarta esta carta para efectuar este ataque.%LINEBREAK%Si el ataque impacta, inflinge 1 carta de Daño boca arriba al defensor. Luego se anulan <strong>todos</strong> los resultados de los dados."""
@@ -1384,7 +1442,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """%REBELONLY%%LINEBREAK%Una vez por ronda, después de que una nave aliada que tengas a alcance 1-2 ejecute una maniobra blanca, puedes quitar 1 ficha de Tensión de esa nave."""
         'Reinforced Deflectors':
             name: "Deflectores Reforzados"
-            text: """%LARGESHIPONLY%%LINEBREAK%Después de que sufras 3 o más de daño debido a un mismo ataque, recuperas 1 ficha de Escudos (hasta un máximo igual a tu valor de Escudos)."""
+            text: """%LARGESHIPONLY%%LINEBREAK%Tras defenderte, su durante el ataque has sufrido una combinación de 3 o más puntos de daño normal y crítico, recuperas 1 ficha de Escudos (hast aun máximo igual a tu valor de Escudos)."""
         'Dorsal Turret':
             name: "Torreta Dorsal"
             text: """<strong>Ataque:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).%LINEBREAK%Si el objetivo de este ataque está a alcance 1, tiras 1 dado de ataque adicional."""
@@ -1412,7 +1470,7 @@ exportObj.cardLoaders['Español'] = () ->
         "4-LOM":
             text: """%SCUMONLY%%LINEBREAK%Cuando ataques, durante el paso "Modificar la tirada de ataque" puedes recibir 1 ficha de Iones para elegir 1 de las fichas de Concentración o Evasión del defensor. Esa ficha no se puede gastar durante este ataque."""
         "Zuckuss":
-            text: """%SCUMONLY%%LINEBREAK%Cuando ataques, puedes recibir tantas fichas de Tensión como quieras para elegir una cantidad igual de dados de defensa. El defensor debe volver a tirar esos dados."""
+            text: """%SCUMONLY%%LINEBREAK%Cuando ataques, si no estás tensionado, puedes recibir tantas fichas de Tensión como quieras para elegir una cantidad igual de dados de defensa. El defensor debe volver a tirar esos dados."""
         'Rage':
             name: "Furia"
             text: """<strong>Acción:</strong> Asigna 1 ficha de Concentración a tu nave y recibe 2 fichas de Tensión. Hasta el final de la ronda, cuando ataques puedes volver a tirar hasta 3 dados de ataque."""
@@ -1469,15 +1527,16 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<strong>Acción:</strong> Elige una nave enemiga bajo tensión que tengas a alcance 1-2 y tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, quítale 1 ficha de Tensión e inflíngele 1 carta de Daño boca abajo.'''
         # Wave X
         'Kylo Ren':
-            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Assign the "I'll Show You the Dark Side" Condition card to an enemy ship at Range 1-3.'''
+            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Acción:</strong> Asigna la carta de Estado "Yo re mostraré el Lado Oscuro" a una nave enemiga que tengas a alcance 1-3.'''
         'Unkar Plutt':
-            text: '''%SCUMONLY%%LINEBREAK%After executing a maneuver that causes you to overlap an enemy ship, you may suffer 1 damage to perform 1 free action.'''
+            text: '''%SCUMONLY%%LINEBREAK%Después de que ejecutes una maniobra que te haga solaparte con una nave enemiga, puedes sufrir 1 de daño para realizar 1 acción gratuita.'''
         'A Score to Settle':
-            text: '''During setup, before the "Place Forces" step, choose 1 enemy ship and deal the "A Debt to Pay" Condition card to it.%LINEBREAK%Wehn attacking a ship that has the "A Debt to Pay" Condition card, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            name: "Una cuenta pendiente"
+            text: '''Durante la preparación de la partida, antes del paso "Desplegar fuerzas", elige 1 nave enemiga y asígnale la carta de Estado "Una deuda por saldar"%LINEBREAK%Cuando ataques a una nave que tiene asignada la carta de Estado "Una deuda por saldar", puedes cambair 1 resultado %FOCUS% por un resultado %CRIT%.'''
         'Jyn Erso':
-            text: '''%REBELONLY%%LINEBREAK%<strong>Action:</strong> Choose 1 friendly ship at Range 1-2. Assign 1 focus token to that ship for each enemy ship inside your firing arc at Range 1-3.  You cannot assign more than 3 focus tokens in this way.'''
+            text: '''%REBELONLY%%LINEBREAK%<strong>Acción:</strong> Elige 1 nave aliada que tengas a alcance 1-2. Asigna 1 ficha de Concentración a esa nave por cada nave enemiga que tengas dentro de tu arco de fuego a alcance 1-3. No puedes asignar más de 3 fichas de esta forma.'''
         'Cassian Andor':
-            text: '''%REBELONLY%%LINEBREAK%At the end of the Planning phase, you may choose an enemy ship at Range 1-2.  Guess aloud that ship's bearing and speed, then look at its dial.  If you are correct, you may rotate your dial to another maneuver.'''
+            text: '''%REBELONLY%%LINEBREAK%Al final de la fase de Planificación, puedes elegir una nave enemiga que tengas a alcance 1-2. Di en voz alta la dirección y velocidad que crees que va a tener esa nave, y luego mira su selector d emaniobras. Si aciertas, puedes girar la rueda de tu selector para asignarle otra maniobra.'''
         'Finn':
             text: '''%REBELONLY%%LINEBREAK%Cuando ataques con un armamento principal o te defiendas, si la nave enemiga está dentro de tu arco de fuego, puedes añadir 1 resultado de cara vacía a tu tirada.'''
         'Rey':
@@ -1497,17 +1556,22 @@ exportObj.cardLoaders['Español'] = () ->
         'M9-G8':
             text: '''%REBELONLY%%LINEBREAK%Cuando una nave que tengas fijada como blanco esté atacando, puedes elegir 1 dado de ataque. El atacante debe volver a tirar ese dado.%LINEBREAK%Puedes fijar como blanco otras naves aliadas.'''
         'EMP Device':
-            text: '''During the Combat phase, instead of performing any attacks, you may discard this card to assign 2 ion tokens to each ship at Range 1.'''
+            name: "Dispositivo de pulso electromagnético"
+            text: '''Durante la fase de Combate, en vez de efecturas ningún ataque, puedes descartar esta carta para asignar 2 fichas de Iones a toda nave que tengas a alcance 1.'''
         'Captain Rex':
-            text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may assign 1 focus token to your ship.'''
+            name: "Capitán Rex"
+            text: '''%REBELONLY%%LINEBREAK%Después de que efectúes un ataque no impacte, puedes asignar 1 ficha de Concentración a tu nave.'''
         'General Hux':
-            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Action:</strong> Choose up to 3 friendly ships at Range 1-2.  Assign 1 focus token to each and assign the "Fanatical Devotion" Condition card to 1 of them.  Then receive 1 stress token.'''
+            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Acción:</strong> Elige hasta 3 naves aliadas que tengas a alcance 1-2. Asigna 1 ficha de Concentración a cada una de esas naves y asigna la carta de Estado "Lealtad fanática" a 1 de ellas. Luego recibes 1 ficha de Tensión.'''
         'Operations Specialist':
-            text: '''%LIMITED%%LINEBREAK%After a friendly ship at Range 1-2 performs an attack that does not hit, you may assign 1 focus token to a friendly ship at Range 1-3 of the attacker.'''
+            name: "Especialista en operaciones"
+            text: '''%LIMITED%%LINEBREAK%Después de que una nave aliada que tengas a alcance 1-2 efectúe un ataque que no impacte, puedes asignar 1 ficha de Concentración a una nave aliada situada a alcance 1-3 del atacante.'''
         'Targeting Synchronizer':
-            text: '''When a friendly ship at Range 1-2 is attacking a ship you have locked, the friendly ship treats the "<strong>Attack (target lock):</strong> header as "<strong>Attack:</strong>."  If a game effect instructs you to spend a target lock, it may spend your target lock instead.'''
+            name: "Sincronizador de disparos"
+            text: '''Cuando una nave aliada que tengas a alcance 1-2 ataque a una nave que tienes fijada como blanco, esa nave aliada considera el encabezado "<strong>Ataque (Blanco fijado):</strong> como si fuera "<strong>Ataque:</strong>." Si un efecto de juego indica a esa nave que gaste una ficha de Blanco fijada, en vez de eso puede gastar tu ficha de Blanco fijado.'''
         'Hyperwave Comm Scanner':
-            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0," "6," or "12" until the end of the step.%LINEBREAK%During setup, after another friendly ship is placed at Range 1-2, you may assign 1 focus or evade token to it.'''
+            name: "Escáner de frecuencias hiperlumínicas"
+            text: '''Al comienzo del paso "Desplegar fuerzas", puedes elegir considerar la Habilidad de tu piloto como si fuera 0, 6 o 12 hasta el final del paso. Durante la preparación de la partida, después de que otra nave aliada sea colocada a alcance 1-2 de ti, puedes asignar 1 ficha de Concentración o Evasión a esa nave.'''
         'Trick Shot':
             name: "Disparo inverosímil"
             text: '''Cuando ataques, si el ataque se considera obstruido, puedes tirar 1 dado de ataque adicional.'''
@@ -1515,21 +1579,25 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Copiloto extraordinario"
             text: '''Cuando ataques con un armamento princnipal, el defensor debe gastar 1 ficha de Concentración si le es posible.%LINEBREAK%Cuando te defiendas, el atacante debe gastar 1 ficha de Concentración si le es posible.'''
         '''Scavenger Crane''':
-            text: '''After a ship at Range 1-2 is destroyed, you may choose a discarded %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or Modification Upgrade card that was equipped to your ship and flip it faceup.  Then roll 1 attack die.  On a blank result, discard Scavenger Crane.'''
+            name: "Grúa de salvamento"
+            text: '''Después de que una nave que tengas a alcance 1-2 sea destruida, puedes elegir una carta de Mejora %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, o Modificación que estuviera equipada en tu nave y ponerla boca arriba. Luego tira 1 dado de ataque. Si sacas una cara vacía, descarta tu "Grúa de salvamento".'''
         'Bodhi Rook':
-            text: '''%REBELONLY%%LINEBREAK%When you acquire a target lock, you can lock onto an enemy ship at Range 1-3 of any friendly ship.'''
+            text: '''%REBELONLY%%LINEBREAK%Cuando fijes un blanco, puedes fijarlo sobre una nave enemiga que esté situada a alcance 1-3 de cualquier nave aliada.'''
         'Baze Malbus':
-            text: '''%REBELONLY%%LINEBREAK%After you perform an attack that does not hit, you may immediately perform a primary weapon attack against a different ship.  You cannot perform another attack this round.'''
+            text: '''%REBELONLY%%LINEBREAK%Después de que efectúes un ataque que no impacte, puedes realizar inmediatamente un ataque con tu armamento principal contra una nave diferente. No podrás realizar ningún otro ataque en esta misma ronda.'''
         'Inspiring Recruit':
-            text: '''Once per round, when a friendly ship at Range 1-2 removes a stress token, it may remove 1 additional stress token.'''
+            name: "Recluta inspirador"
+            text: '''Una vez por ronda, cuando una nave aliada que tengas a alcance 1-2 se quite una ficha de Tensión, puede quitarse 1 ficha de Tensión adicional.'''
         'Swarm Leader':
-            text: '''When performing a primary weapon attack, choose up to 2 other friendly ships that have the defender inside their firing arcs at Range 1-3. Remove 1 evade token from each chosen ship to roll 1 additional attack die for each token removed.'''
+            name: "Jefe de enjambre"
+            text: '''Cuando ataques con un armamento principal, elige hasta 2 ortas naves aliadas que tengan al defensor dentro de sus arcos de fuego a alcance 1-3. Quita 1 ficha de Evasión de cada nave elegida para tirar 1 dado de ataque adicional por cada ficha quitada.'''
         'Bistan':
-            text: '''%REBELONLY%%LINEBREAK%When attacking Range 1-2, you may change 1 of your %HIT% results to a %CRIT% result.'''
+            text: '''%REBELONLY%%LINEBREAK%Cuando ataques a alcance 1-2, puedes cambiar 1 de tus resultados %HIT% por un resultado %CRIT%.'''
         'Expertise':
-            text: '''When attacking, if you are not stressed, you may change all of your %FOCUS% results to %HIT% results.'''
+            name: "Maestría"
+            text: '''Cuando ataques, si no estás bajo tensión, puedes cambair todos tus resultados %FOCUS% por resultados %HIT%.'''
         'BoShek':
-            text: '''When a ship you are touching activates, you may look at its chosen maneuver.  If you do, its owner <strong>must</strong> rotate the dial to an adjacent maneuver.  The ship can reveal and execute that maneuver even while stressed.'''
+            text: '''Cuando una nave con la que estás en contacto se activa, puedes mirar la maniobra que ha elegido. Si lo haces, el jugador que controla esa nave <strong>debe</strong> elegir en el selector una maniobra adyacente. La nave puede revelar y efectuar esa maniobra incluso aunque esté bajo tensión.'''
         # C-ROC
         'Heavy Laser Turret':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'''
@@ -1537,6 +1605,22 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+        'Quick-release Cargo Locks':
+            text: '''%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+        'Supercharged Power Cells':
+            text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
+        'ARC Caster':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
+        'Wookiee Commandos':
+            text: '''When attacking, you may reroll your %FOCUS% results.'''
+        'Synced Turret':
+            text: '''<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'''
+        'Unguided Rockets':
+            text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
+        'Intensity':
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+        'Jabba the Hutt':
+            text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
 
     modification_translations =
         "Stealth Device":
@@ -1585,7 +1669,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: """Tu nave puede obstruir ataques enemigos."""
         "Autothrusters":
             name: "Propulsores Automatizados"
-            text: """Cuando te defiendas, si estás más allá de alcance 2 o fuera del arco de fuego del atacante, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."""
+            text: """Cuando te defiendas, si estás fuera del arco de fuego del atacante, o dentro de su arco de fuego pero más allá de alcance 2, puedes cambiar 1 de tus resultados de cara vacía por un resultado %EVADE%. Sólo puedes equiparte con esta carta si tienes el icono de acción %BOOST%."""
         "Twin Ion Engine Mk. II":
             name: "Motor Iónico Doble Modelo II"
             text: """<span class="card-restriction">Solo TIE.</span>%LINEBREAK%Puedes tratar todas las maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%) como si fueran maniobras verdes."""
@@ -1624,11 +1708,18 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Nave de persecución clase Lancero"
             text: '''<span class="card-restriction">Sólo Nave de persecución clase Lancero.</span>%LINEBREAK%Al final de la fase de Combate, si en esta ronda ejecutaste una maniobra de velocidad 3, 4 o 5, puedes reorientar tu arco de fuego móvil.'''
         'Captured TIE':
-            text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Enemy ships with a pilot skill value lower than yours cannot declare you as the target of an attack.  After you perform an attack or when you are the only remaining friendly ship, discard this card.'''
+            ship: "Caza TIE"
+            name: "TIE capturado"
+            text: '''<span class="card-restriction">Sólo Caza TIE.</span>%REBELONLY%%LINEBREAK%Las naves enemigas cuyos pilotos tengan una Habilidad más baja que la tuya no pueden declararte como blanco de un ataque. Después de que efectúes un ataque o cuando seas la única nave aliada que queda en juego, descarta esta carta.'''
         'Spacetug Tractor Array':
-            text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
+            name: "Campos de tracción de remolque"
+            ship: "Saltador Quad"
+            text: '''<span class="card-restriction">Sólo Saltador Quad.</span>%LINEBREAK%<strong>Acción:</strong> Elige una nave que tengas dentro de tu arco de fuego a distancia 1 y asígnale una ficha de Campo de tracción. Si es una nave aliada, resuelve el efecto de la ficha de Campo de tracción como si se tratara de una nave enemiga.'''
         'Lightweight Frame':
-            text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'''
+            name: "Fuselaje ultraligero"
+            text: '''<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'''
+        'Pulsed Ray Shield':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":
@@ -1646,7 +1737,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Royal Guard TIE":
             name: "TIE de la Guardia Real"
             ship: "Interceptor TIE"
-            text: """<span class="card-restriction">Solo TIE Interceptor.</span><br /><br />Puedes equipar un máximo de 2 mejoras de Modificación (en vez de 1).<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 4 o inferior."""
+            text: """<span class="card-restriction">Solo TIE Interceptor.</span><br /><br />Puedes equipar un máximo de 2 mejoras  distintas de Modificación (en vez de 1).<br /><br />Esta mejora no puede equiparse en naves con pilotos de Habilidad 4 o inferior."""
         "Dodonna's Pride":
             name: "Orgullo de Donna"
             text: """<span class="card-restriction">Solo sección de proa de CR90.</span><br /><br />Cuando realices una accion de Coordinación, puedes elegir 2 naves aliadas en vez de 1. Cada una de estas naves pueden realizar 1 accion gratuita."""
@@ -1697,15 +1788,15 @@ exportObj.cardLoaders['Español'] = () ->
             ship: 'Víbora Estelar'
         '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Interceptor "Scyk Pesado" (Cañón)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%."""
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %CANNON%. Tu valor de Casco se incrementa en 1."""
             ship: 'Interceptor M3-A'
         '"Heavy Scyk" Interceptor (Missile)':
             name: 'Interceptor "Scyk Pesado" (Misil)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%."""
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %MISSILE%. Tu valor de Casco se incrementa en 1."""
             ship: 'Interceptor M3-A'
         '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Interceptor "Scyk Pesado" (Torpedo)'
-            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%."""
+            text: """<span class="card-restriction">Solo Interceptor M3-A.</span><br /><br />Tu barra de mejoras gana el icono %TORPEDO%. Tu valor de Casco se incrementa en 1."""
             ship: 'Interceptor M3-A'
         "Dauntless":
             name: "Intrépido"
@@ -1742,7 +1833,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Impetuoso"
             text: """<span class="card-restriction">Sólo sección de popa de corbeta clase <em>Incursor</em>.</span>%LINEBREAK%Después de que hayas efectuado un ataque que destruya una nave enemiga, puedes fijar un blanco."""
         'TIE/x7':
-            text: '''<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, puedes asignar 1 ficha de Evasión a tu nave.'''
+            text: '''<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Tu barra de mejoras pierde los iconos de mejora %CANNON% y %MISSILE%.%LINEBREAK%Después de que ejecutes una maniobra de velocidad 3, 4 o 5, si no te solapaste con un obstáculo o nave, puedes realizar una acción gratuita de evasión.'''
             ship: 'Defensor TIE'
         'TIE/D':
             text: '''<span class="card-restriction">Sólo TIE Defensor.</span>%LINEBREAK%Una vez por ronda, después de que efectúes un ataque con un armamento secundario %CANNON% con un coste en puntos de escuadrón inferior a 4, puedes efcetuar un ataque con tu armamento principal.'''
@@ -1781,27 +1872,44 @@ exportObj.cardLoaders['Español'] = () ->
         # Wave X
         '''Sabine's Masterpiece''':
             ship: "Caza TIE"
-            text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Your upgrade bar gains the %CREW% and %ILLICIT% upgrade icons.'''
+            name: "Obra maestra de Sabine"
+            text: '''<span class="card-restriction">Sólo Caza TIE.</span>%REBELONLY%%LINEBREAK%Tu barra de mejoras gana los iconos %CREW% y %ILLICIT%.'''
         '''Kylo Ren's Shuttle''':
-            text: '''<span class="card-restriction">Upsilon-class Shuttle only.</span>%LINEBREAK%At the end of the Combat phase, choose an unstressed enemy ship at Range 1-2.  Its owner must assign a stress token to it or assign a stress token to another ship at Range 1-2 of you that that player controls.'''
+            ship: "Lanzadera clase Ípsilon"
+            name: "Lanzadera de Kylo Ren"
+            text: '''<span class="card-restriction">Sólo Lanzadera clase Ípsilon.</span>%LINEBREAK%Al final de la fase de Combate, elige una nave enemiga que tengas a alcance 1-2 y no esté bajo tensión. El jugador que la controla debe asignarle una ficha de Tensión o asignar una ficha de Tensión a otra d esus naves que esté situada a alcance 1-2 de ti.'''
         '''Pivot Wing''':
-            text: '''<span class="card-restriction">U-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong> Increase your agility by 1.%LINEBREAK%After you execute a maneuver, you may flip this card.%LINEBREAK%<strong>Side B (Landing):</strong> When you reveal a (0 %STOP%) maneuver, you may rotate your ship 180&deg;.%LINEBREAK%After you execute a maneuver, you may flip this card.'''
+            name: "Ala pivotante"
+            ship: "Ala-U"
+            text: '''<span class="card-restriction">Sólo Ala-U.</span> %DUALCARD%%LINEBREAK%<strong>Cara A (Ataque):</strong> Tu Agilidad se incrementa en 1.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Aterrizaje):</strong> Cuando reveles una maniobra (%STOP% 0), puedes cambiar la orientación de tu nave en 180&deg;.%LINEBREAK%Después de que ejecutes una maniobra, puedes darle la vuelta a esta carta.'''
         '''Adaptive Ailerons''':
-            text: '''<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
+            name: "Alerones adaptativos"
+            ship: "Fustigador TIE"
+            text: '''<span class="card-restriction">Sólo Fustigador TIE.</span>%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'''
         # C-ROC
         '''Merchant One''':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
+        '''Insatiable Worrt''':
+            text: '''After you perform the recover action, gain 3 energy.'''
+        '''Broken Horn''':
+            text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
+        'Havoc':
+            text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
-            text: '''When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
+            name: "Yo te mostraré el Lado Oscuro"
+            text: '''Cuando esta carta es asignada, si no está ya en juego, el jugador que la ha asignado busca en el mazo de Daño 1 carta de Daño que tenga el atributo <strong><em>Piloto</em></strong> y puede colocarla boca arriba sobre esta carta de Estado. Luego vuelve a barajar el mazo de Daño.%LINEBREAKCuando sufras daño crítico durante un ataque, en vez de eso recibes la carta de Daño boca arriba que has elegido.%LINEBREAK%Cuando no haya ninguna carta de Daño sobre esta carta de Estado, retírala.'''
         'Suppressive Fire':
-            text: '''When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'''
+            name: "Fuego de supresión"
+            text: '''Cuando ataques a una nave que no sea el "Capitán Rex", tira 1 dado de ataque menos.%LINEBREAK% Cuando declares un ataque que tenga como blanco al "Capitán Rex" o cuando el "Capitán Rex" sea destruido, retira esta carta.%LINEBREAK%Al final de la fase de Combate, si el "Capitán Rex" no ha efectuado un ataque en esta fase, retira esta carta.'''
         'Fanatical Devotion':
-            text: '''When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'''
+            name: "Lealtad Fanática"
+            text: '''Cuando te defiendas, no pudes gastar fichas de Concentración.%LINEBREAK%Cuando ataques, si gastas una ficha de Concentración parar cambiar todos los resultados %FOCUS% por resultados %HIT%, deja aparte el primer resultado %FOCUS% que has cambiado. El resultado %HIT% que has dejado aparte no puede ser anulado por dados de defensa, pero el defensor puede anular resultados %CRIT% antes que él.%LINEBREAK%Durante la fase Final, retira esta carta.'''
         'A Debt to Pay':
-            text: '''When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            name: "Una deuda por saldar"
+            text: '''Cuando ataques a una nave que tiene la carta de Mejora "Una cuenta pendiente", puedes cambiar 1 resultado %FOCUS% por un resultado %CRIT%.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
