@@ -5735,6 +5735,20 @@ exportObj.basicCardData = function() {
           var _ref, _ref1;
           return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
         }
+      }, {
+        name: 'Jabba the Hutt',
+        id: 233,
+        unique: true,
+        slot: 'Crew',
+        points: 5,
+        faction: 'Scum and Villainy',
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ["Crew"]
       }
     ],
     modificationsById: [
@@ -9039,6 +9053,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -10781,6 +10798,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -13146,6 +13166,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -15160,6 +15183,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -16841,6 +16867,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -18748,6 +18777,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -20353,6 +20385,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Intensity': {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+    },
+    'Jabba the Hutt': {
+      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
     }
   };
   modification_translations = {
@@ -24173,7 +24208,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22972
+                    lineno: 22999
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24759,7 +24794,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23602
+              lineno: 23629
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25461,7 +25496,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24214
+          lineno: 24241
         }));
         __iced_deferrals._fulfill();
       });
@@ -25473,7 +25508,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24215
+            lineno: 24242
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27020,7 +27055,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25095
+                      lineno: 25122
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27089,7 +27124,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25119
+                lineno: 25146
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27141,7 +27176,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25141
+            lineno: 25168
           }));
         }
         _ref = _this.upgrades;
@@ -27149,7 +27184,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25143
+              lineno: 25170
             }));
           }
         }
@@ -27158,7 +27193,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25145
+              lineno: 25172
             }));
           }
         }
@@ -28075,7 +28110,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25793
+                lineno: 25820
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28194,7 +28229,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25852
+                  lineno: 25879
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28216,7 +28251,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25856
+                    lineno: 25883
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28301,7 +28336,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25896
+            lineno: 25923
           }));
         }
         __iced_deferrals._fulfill();
