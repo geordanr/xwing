@@ -16021,7 +16021,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Első alkalommal, mikor megsemmisülnél, dobj el minden addigi sérülés kártyád, és osszál 4 sérülés lapot lefordítva a hajódhoz. [FAQ]"
     },
     "Manaroo": {
-      text: "A harci fázis kezdetén hozzárendelheted az összes fókuszt, kitérés és kék célpontbemérő jelződet egy baráti hajónak."
+      text: "A harci fázis kezdetén hozzárendelheted az összes fókuszt, kitérés és kék célpontbemérő jelződet egy baráti hajónak 1-es távolságban. [FAQ]"
     },
     '"Deathfire"': {
       text: 'Mikor felfeded a manőver tárcsád vagy miután végrehajtasz egy akciót, végrehajthatsz egy %BOMB% fejlesztés kártya akciót ingyen.'
@@ -16039,7 +16039,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Támadáskor vagy védekezéskor, ha az ellenséges hajó benne van a tüzelési szögedben, újradobhatsz akár 2 üres kockát is."
     },
     'Han Solo (TFA)': {
-      text: 'A hajók felhelyezésénél, bárhova elhelyezheted a hajót az ellenséges hajóktól legalább 3-as távolságra.'
+      text: 'A hajók felhelyezésénél, bárhova elhelyezheted a hajót az ellenséges hajóktól legalább 3-as távolságra. [FAQ]'
     },
     'Chewbacca (TFA)': {
       text: 'Miután egy baráti hajó 1-3-as távolságban megsemmisül (de nem leesik a pályáról), végrehajthatsz egy támadást.'
@@ -16108,7 +16108,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Támadáskor, ha 1 vagy kevesebb sérülés kártyád van, plusz egy támadókockával dobhatsz.'
     },
     '"Countdown"': {
-      text: 'Védekezéskor, ha nem vagy stresszelve - az eredmény összehasonlítás lépésben -, elszenvedhetsz egy sérülést, hogy töröld az összes kockadobást. Ha így teszel, kapsz egy stressz jelzőt.'
+      text: 'Védekezéskor, ha nem vagy stresszelve - az eredmény összehasonlítás lépésben -, elszenvedhetsz egy sérülést, hogy töröld az összes kockadobást. Ha így teszel, kapsz egy stressz jelzőt. [FAQ]'
     },
     'Nien Nunb': {
       text: 'Ha kapsz egy stressz jelzőt és van egy ellenséges hajó a tüzelési szögedben 1-es távolságban, eldobhatod a stressz jelzőt.'
@@ -16144,16 +16144,16 @@ exportObj.cardLoaders.Magyar = function() {
       name: 'Shadowport Hunter (Árnyékrév vadász)'
     },
     'Genesis Red': {
-      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+      text: 'Miután feltettél egy célpontbemérőt adjál a hajódnak annyi %FOCUS% és %EVADE% jelzőt, amennyi a bemért hajónak is van.'
     },
     'Quinn Jast': {
-      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+      text: 'A harci fázis kezdetekor kaphatsz egy "inaktív fegyver" jelzőt, hogy felfordíts egy már elhasznált %TORPEDO% vagy %MISSILE% fejlesztést.'
     },
     'Inaldra': {
-      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+      text: 'Támadáskor vagy védekezéskor elkölthetsz egy pajzsot, hogy újradobj bármennyi kockát.'
     },
     'Sunny Bounder': {
-      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+      text: 'Körönként egyszer, miután dobtál vagy újradobtál kockákat és az összes kockán ugyanaz az eredmény van, adj hozzájuk még egy ugyanolyan eredményt.'
     }
   };
   upgrade_translations = {
@@ -16559,7 +16559,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%<strong>Energia:</strong> Maximum 3 pajzsot levehetsz a hajódról. Minden levett pajzs után kapsz 1 energiát."
     },
     "Emperor Palpatine": {
-      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%Körönként egyszer egy baráti hajó egyik kockájának eredményét megváltoztathatod bármely másra. Ezt az eredményt már nem lehet ismét módosítani. [FAQ]"
+      text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%örönként egyszer, mielőtt egy baráti hajó gurít, válassz egy dobás eredményt. Dobás után meg kell változtatnod egy kockát a választott eredményre. Ez a kocka nem változtatható a továbbiakban. [FAQ]"
     },
     "Bossk": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK% Ha egy támadásod nem talál és nincs rajtad stressz jelző, mindenképpen kapsz egy stressz jelzőt. Ezután tégy egy fókusz jelzőt a hajód mellé, majd alkalmazd a célpontbemérő akciót a védőn."
@@ -16684,10 +16684,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Támadáskor a támadókockák módosítása lépésben kaphatsz egy ion jelzőt, hogy kiválassz a támadó egy %FOCUS% vagy %EVADE% jelzőjét. Ez a jelző nem költhető el ebben a támadásban."
     },
     "Zuckuss": {
-      text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Támadáskor, annyi stressz jelzőt kaphatsz, ahány védekező kockát kiválasztasz. A védekezőnek újra kell dobnia azokat a kockákat."
+      text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Támadáskor, ha nem vagy stresszes, annyi stressz jelzőt kaphatsz, ahány védekező kockát kiválasztasz. A védekezőnek újra kell dobnia azokat a kockákat."
     },
     'Rage': {
-      text: "<strong>Akció:</strong> Adj egy %FOCUS% jelzőt a hajódhoz és kapsz 2 stressz jelzőt. A kör végéig támadáskor újradobhatsz akár 3 kockát."
+      text: "<strong>Akció:</strong> Adj egy %FOCUS% jelzőt a hajódhoz és kapsz 2 stressz jelzőt. A kör végéig támadáskor újradobhatsz akár 3 kockát. [FAQ]"
     },
     "Attanni Mindlink": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Minden esetben mikor fókusz vagy stressz jelzőt kapsz, az összes többi baráti hajó, amely fel van szerelve Attanni Mindlink fejlesztéssel szintén megkapja ezt a fajta jelzőt, ha még nincs neki. [FAQ]"
@@ -16785,7 +16785,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Miután egy ellenséges hajó végrehajt egy manővert, végrehajthatsz egy támadást e hajó ellen.  <strong>Támadás:</strong> Támadj egy hajót. Nem módosíthatod a dobásodat és nem támadhatsz újra ebben a fázisban.'
     },
     'M9-G8': {
-      text: '<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Mikor a hajó, amin célpontbemérőd van támad, kiválaszthatsz egy támadó kockát. A támadónak újra kell dobnia azt a kockát.%LINEBREAK%Feltehetsz egy célpontbemérőt egy másik baráti hajóra.'
+      text: '<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Mikor a hajó, amin célpontbemérőd van támad, kiválaszthatsz egy támadó kockát. A támadónak újra kell dobnia azt a kockát.%LINEBREAK%Feltehetsz egy célpontbemérőt egy másik baráti hajóra. [FAQ]'
     },
     'EMP Device': {
       text: 'A harci fázis alatt, ahelyett, hogy támadnál, eldobdhatod ezt a lapo, hogy kiossz 2 ion jelzőt minden hajónak 1 távolságban.'
@@ -16809,7 +16809,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Támadáskor, ha a támadás akadályon át történik, plusz 1 támadó kockával dobhatsz.'
     },
     'Hotshot Co-pilot': {
-      text: 'Mikor támadsz egy elsődleges fegyverrel, a védekezőnek egy kell költenie 1 %FOCUS% jelzőt, ha tud. Védekezéskor egy kell költenie 1 %FOCUS% jelzőt, ha tud.'
+      text: 'Mikor támadsz egy elsődleges fegyverrel, a védekezőnek egy kell költenie 1 %FOCUS% jelzőt, ha tud. Védekezéskor egy kell költenie 1 %FOCUS% jelzőt, ha tud. [FAQ]'
     },
     'Scavenger Crane': {
       text: 'Miután egy hajó 1-2 távolságban megsemmisül kiválasthatsz egy már eldobott %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or módosítás fejlesztés kártyát és felszrelheted vele a hajódat. Aztán dobj egy támadó kockával. Üres dobásnál dobd el ezt a kártyát.'
@@ -16848,28 +16848,28 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
     },
     'Quick-release Cargo Locks': {
-      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+      text: '<span class="card-restriction">Csak C-ROC Cruiser és GR-75 Medium Transport.</span>%LINEBREAK%Az aktivációs fázis végén eldobhatod ezt a kártyát, hogy lehelyezz egy konténer jelzőt.'
     },
     'Supercharged Power Cells': {
-      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+      text: 'Támadáskor eldobhatod ezt a kártyát, hogy további 2 kockával dobhass.'
     },
     'ARC Caster': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+      text: '<span class="card-restriction">Csak lázadó és söpredék. Kettős kártya.</span>%LINEBREAK%<strong>A oldal:</strong>%LINEBREAK%<strong>Támadás:</strong> Támadj egy hajót. Ha a támadás talált választanod kell másik hajót 1-es távolságban a védekezőtől, ami elszenved egy sérülést. Eztán fordítsd le ezt a lapot.%LINEBREAK%<strong>B oldal:</strong>%LINEBREAK%(Újratöltés) A harci fázis kezdetén kaphatsz egy "inaktív fegyver" jelzőt, hogy átfordítsd ezt a kártyát.'
     },
     'Wookiee Commandos': {
-      text: 'When attacking, you may reroll your %FOCUS% results.'
+      text: 'Támadáskor újradobhatod a %FOCUS% eredményeidet.'
     },
     'Synced Turret': {
-      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+      text: '<strong>Támadás (célpontbemérő):</strong> támadj meg egy hajót (akkor is, ha a hajó kívül esik a tüzelési szögeden).%LINEBREAK% Ha támadó az elsődleges tüzelési szögedben van, újradobhatsz annyi kockát, amennyi az elsődleges fegyver értéked.'
     },
     'Unguided Rockets': {
-      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+      text: '<strong>Támadás (fókusz):</strong> támadj meg egy hajót. A támadásod standard hatását csak a %FOCUS% jelző elköltésével módosíthatod.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '<span class="card-restriction">Csak kis hajók. Kettős kártya.</span>%LINEBREAK%<strong>A oldal:</strong> még nem tudni :).%LINEBREAK%<strong>B oldal:</strong> (Kimerült) A harci fázis végén elkölthetsz 1 %FOCUS% vagy %EVADE% jelzőt, hogy átfordítsd ezt a kártyát.'
     },
     'Jabba the Hutt': {
-      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+      text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobd el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'
     }
   };
   modification_translations = {
@@ -16972,7 +16972,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'
     },
     'Pulsed Ray Shield': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      text: '<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'
     }
   };
   title_translations = {
@@ -17070,7 +17070,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak Raider-osztályú korvett tat része.</span>%LINEBREAK%Ha egy támadásod során egy ellenséges hajó megsemmisül, utána végrehajthatsz egy célpont bemérése akciót."
     },
     'TIE/x7': {
-      text: '<span class="card-restriction">Csak TIE Defender.</span>%LINEBREAK%A fejlesztés sávod elveszti a %CANNON% és %MISSILE% ikonokat.%LINEBREAK%Miután végrehajtottál egy 3, 4 vagy 5 sebességű manővert, egy %EVADE% jelződ kaphatsz.'
+      text: '<span class="card-restriction">Csak TIE Defender.</span>%LINEBREAK%A fejlesztés sávod elveszti a %CANNON% és %MISSILE% ikonokat.%LINEBREAK%Miután végrehajtottál egy 3, 4 vagy 5 sebességű manővert és nem kerülsz átfedésbe akadállyal vagy hajóval, kaphatsz egy %EVADE% jelzőt.'
     },
     'TIE/D': {
       text: '<span class="card-restriction">Csak TIE Defender.</span>%LINEBREAK%Körönként egyszer, miután végrehajtottál egy támadást a %CANNON% másodlagos fegyvereddel ami 3 vagy kevesebb pontba került, végrehajthatsz egy elsődleges fegyver támadást.'
@@ -17119,7 +17119,7 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Adaptive Ailerons': {
       name: "Adaptive Ailerons (Adaptív csűrőlapok)",
-      text: '<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajtanod egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'
+      text: '<span class="card-restriction">Csak TIE Striker.</span>%LINEBREAK%Közvetlenül a tárcsád felfedése előtt, ha nem vagy stresszelve, végre <strong>kell</strong> hajtanod egy fehér (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert. [FAQ]'
     },
     'Merchant One': {
       text: '<span class="card-restriction">Csak C-ROC Cruiser.</span>%LINEBREAK%A fejlesztés sávod kap egy plusz %CREW% és %TEAM% ikont, de elveszti a %CARGO% ikont.'
@@ -17128,13 +17128,13 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak M3-A Interceptor.</span>%LINEBREAK%Minden sérülés kártyát felfordítva kapsz. A (%BANKLEFT% és %BANKRIGHT%) manőverek zöldnek számítanak. Nem kaphatsz módosítás fejlesztést.'
     },
     'Insatiable Worrt': {
-      text: 'After you perform the recover action, gain 3 energy.'
+      text: 'Miután végrehajtottad a recover akciót, szerzel 3 energiát.'
     },
     'Broken Horn': {
-      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+      text: 'Védekezéskor, ha van reinforce jelződ, kaphatsz egy további %EVADE% eredményt. Ha így teszel, védekezés után dobd el a reinforce jelzőt.'
     },
     'Havoc': {
-      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+      text: '<span class="card-restriction">Csak Scurrg H-6 Bomber.</span>%LINEBREAK%A fejlesztés sávod megkapja a %SYSTEM% és %SALVAGEDASTROMECH% ikont, de elveszti a %CREW% ikont. Csak egyedi %SALVAGEDASTROMECH% fejlesztés kártyákat használhatsz.'
     }
   };
   condition_translations = {
@@ -24208,7 +24208,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22999
+                    lineno: 22998
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24794,7 +24794,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23629
+              lineno: 23628
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25496,7 +25496,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24241
+          lineno: 24240
         }));
         __iced_deferrals._fulfill();
       });
@@ -25508,7 +25508,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24242
+            lineno: 24241
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27055,7 +27055,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25122
+                      lineno: 25121
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27124,7 +27124,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25146
+                lineno: 25145
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27176,7 +27176,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25168
+            lineno: 25167
           }));
         }
         _ref = _this.upgrades;
@@ -27184,7 +27184,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25170
+              lineno: 25169
             }));
           }
         }
@@ -27193,7 +27193,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25172
+              lineno: 25171
             }));
           }
         }
@@ -28110,7 +28110,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25820
+                lineno: 25819
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28229,7 +28229,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25879
+                  lineno: 25878
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28251,7 +28251,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25883
+                    lineno: 25882
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28336,7 +28336,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25923
+            lineno: 25922
           }));
         }
         __iced_deferrals._fulfill();
