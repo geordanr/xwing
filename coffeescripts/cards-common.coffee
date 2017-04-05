@@ -7424,6 +7424,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name ?= ship_name
+        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
