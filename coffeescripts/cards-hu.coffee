@@ -368,7 +368,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: """Mikor végrehajtasz egy %BARRELROLL% akciót, használhatod a (%STRAIGHT% 2) sablont a (%STRAIGHT% 1) helyett."""
 
         '"Red Ace"':
-            text: '''Miután először elvesztesz egy pajzsot, utána minden körben kapsz egy %EVADE% jelzőt.'''
+            text: '''Minden körben az első alkalommal, mikor elvesztesz egy pajzs jelzőt, kapsz egy %EVADE% jelzőt.'''
         '"Omega Leader"':
             text: '''Az a hajó amin célpontbemérőed van, nem módosíthat kockát veled szemben támadáskor vagy védekezéskor. [FAQ!]'''
         'Hera Syndulla':
