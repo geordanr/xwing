@@ -6612,7 +6612,8 @@ exportObj.basicCardData = function() {
         unique: true
       }, {
         name: 'A Debt to Pay',
-        id: 2
+        id: 2,
+        unique: true
       }, {
         name: 'Suppressive Fire',
         id: 3,
@@ -8634,7 +8635,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Du darfst alle Manöver mit Geschwindigkeit 3 wie grüne Manöver behandeln."
     },
     "R4-B11": {
-      text: "Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um beliebig viele Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."
+      text: "Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um einen oder alle Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."
     },
     "Autoblaster Turret": {
       name: "Autoblastergeschütz",
@@ -11489,16 +11490,20 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Ala-B"
     },
     "Rebel Operative": {
-      name: "Operador Rebelde"
+      name: "Agente Rebelde",
+      ship: "HWK-290"
     },
     "Roark Garnet": {
-      text: "Al comienzo de la fase de Combate, elige otra nave aliada que tengas a alcance 1-3. Hasta el final de la fase, se considera que el piloto de esa nave tiene habilidad 12."
+      text: "Al comienzo de la fase de Combate, elige otra nave aliada que tengas a alcance 1-3. Hasta el final de la fase, se considera que el piloto de esa nave tiene habilidad 12.",
+      ship: "HWK-290"
     },
     "Kyle Katarn": {
-      text: "Al comienzo de la fase de Combate, puedes asignar 1 de tus fichas de Concentración a otra nave aliada que tengas a alcance 1-3."
+      text: "Al comienzo de la fase de Combate, puedes asignar 1 de tus fichas de Concentración a otra nave aliada que tengas a alcance 1-3.",
+      ship: "HWK-290"
     },
     "Jan Ors": {
-      text: "Cuando otra nave aliada que tengas a alcance 1-3 efectúe un ataque, si no tienes fichas de Tensión puedes recibir 1 ficha de Tensión para que esa nave tire 1 dado de ataque adicional."
+      text: "Cuando otra nave aliada que tengas a alcance 1-3 efectúe un ataque, si no tienes fichas de Tensión puedes recibir 1 ficha de Tensión para que esa nave tire 1 dado de ataque adicional.",
+      ship: "HWK-290"
     },
     "Scimitar Squadron Pilot": {
       name: "Piloto del escuadrón Cimitarra",
@@ -11523,7 +11528,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: "Cuando atacas con un sistema de armamento secundario, puedes incrementar o reducir en 1 el alcance del arma (hasta un límite de alcance comprendido entre 1 y 3)."
     },
     "Omicron Group Pilot": {
-      name: "Piloto del grupo Omicrón",
+      name: "Piloto del grupo Ómicron",
       ship: "Lanzadera clase Lambda"
     },
     "Captain Kagi": {
@@ -11915,7 +11920,7 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Caza Kihraxz"
     },
     "Cartel Marauder": {
-      name: "Salteador del Cartel",
+      name: "Salteador del Cártel",
       ship: "Caza Kihraxz"
     },
     "Trandoshan Slaver": {
@@ -12065,7 +12070,7 @@ exportObj.cardLoaders['Español'] = function() {
     '"Deathfire"': {
       name: "Muerte Ígnea",
       text: 'Cuando reveles tu selector de maniobras o después de que realices una acción, puedes realizar una acción de carta de Mejora %BOMB% como acción gratuita.',
-      ship: "TIE Bombardero"
+      ship: "Bombardero TIE"
     },
     "Sienar Test Pilot": {
       name: "Piloto de pruebas de Sienar",
@@ -12285,7 +12290,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     "Jakku Gunrunner": {
       ship: "Saltador Quad",
-      name: "Traficante de armas de  Jakku"
+      name: "Traficante de armas de Jakku"
     },
     'Genesis Red': {
       ship: "Interceptor M3-A",
@@ -24210,7 +24215,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 22998
+                    lineno: 23003
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24796,7 +24801,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23628
+              lineno: 23633
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25498,7 +25503,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24240
+          lineno: 24245
         }));
         __iced_deferrals._fulfill();
       });
@@ -25510,7 +25515,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24241
+            lineno: 24246
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27057,7 +27062,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25121
+                      lineno: 25126
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27126,7 +27131,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25145
+                lineno: 25150
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27178,7 +27183,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25167
+            lineno: 25172
           }));
         }
         _ref = _this.upgrades;
@@ -27186,7 +27191,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25169
+              lineno: 25174
             }));
           }
         }
@@ -27195,7 +27200,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25171
+              lineno: 25176
             }));
           }
         }
@@ -28112,7 +28117,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25819
+                lineno: 25824
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28231,7 +28236,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25878
+                  lineno: 25883
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28253,7 +28258,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 25882
+                    lineno: 25887
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28338,7 +28343,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 25922
+            lineno: 25927
           }));
         }
         __iced_deferrals._fulfill();
