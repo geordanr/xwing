@@ -356,13 +356,17 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto del escuadrón Azul"
             ship: "Ala-B"
         "Rebel Operative":
-            name: "Operador Rebelde"
+            name: "Agente Rebelde"
+            ship: "HWK-290"
         "Roark Garnet":
             text: """Al comienzo de la fase de Combate, elige otra nave aliada que tengas a alcance 1-3. Hasta el final de la fase, se considera que el piloto de esa nave tiene habilidad 12."""
+            ship: "HWK-290"
         "Kyle Katarn":
             text: """Al comienzo de la fase de Combate, puedes asignar 1 de tus fichas de Concentración a otra nave aliada que tengas a alcance 1-3."""
+            ship: "HWK-290"
         "Jan Ors":
             text: """Cuando otra nave aliada que tengas a alcance 1-3 efectúe un ataque, si no tienes fichas de Tensión puedes recibir 1 ficha de Tensión para que esa nave tire 1 dado de ataque adicional."""
+            ship: "HWK-290"
         "Scimitar Squadron Pilot":
             name: "Piloto del escuadrón Cimitarra"
             ship: "Bombardero TIE"
@@ -381,7 +385,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Bombardero TIE"
             text: """Cuando atacas con un sistema de armamento secundario, puedes incrementar o reducir en 1 el alcance del arma (hasta un límite de alcance comprendido entre 1 y 3)."""
         "Omicron Group Pilot":
-            name: "Piloto del grupo Omicrón"
+            name: "Piloto del grupo Ómicron"
             ship: "Lanzadera clase Lambda"
         "Captain Kagi":
             name: "Capitán Kagi"
@@ -684,7 +688,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "As del Sol Negro"
             ship: "Caza Kihraxz"
         "Cartel Marauder":
-            name: "Salteador del Cartel"
+            name: "Salteador del Cártel"
             ship: "Caza Kihraxz"
         "Trandoshan Slaver":
             name: "Esclavista Trandoshano"
@@ -801,7 +805,7 @@ exportObj.cardLoaders['Español'] = () ->
         '"Deathfire"':
             name: "Muerte Ígnea"
             text: '''Cuando reveles tu selector de maniobras o después de que realices una acción, puedes realizar una acción de carta de Mejora %BOMB% como acción gratuita.'''
-            ship: "TIE Bombardero"
+            ship: "Bombardero TIE"
         "Sienar Test Pilot":
             name: "Piloto de pruebas de Sienar"
             ship: "Prototipo de TIE Avanzado"
@@ -968,7 +972,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto de la base Starkiller"
         "Jakku Gunrunner":
             ship: "Saltador Quad"
-            name: "Traficante de armas de  Jakku"
+            name: "Traficante de armas de Jakku"
         'Genesis Red':
             ship: "Interceptor M3-A"
             text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
