@@ -1262,7 +1262,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Ausgeklinkter Astromech-Droide"
             text: """Du darfst alle Manöver mit Geschwindigkeit 3 wie grüne Manöver behandeln."""
         "R4-B11":
-            text: """Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um beliebig viele Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."""
+            text: """Sobald du angreifst, darfst du, falls du den Verteidiger in der Zielerfassung hast, den Zielerfassungsmarker ausgeben, um einen oder alle Verteidigungswürfel zu wählen. Diese muss der Verteidiger neu würfeln."""
         "Autoblaster Turret":
             name: "Autoblastergeschütz"
             text: """<strong>Angriff:</strong> Greife 1 Schiff (auch außerhalb deines Feuerwinkels) an. %LINEBREAK%Deine %HIT% können von Verteidigungswürfeln nicht negiert werden. Der Verteidiger darf %CRIT% vor %HIT% negieren."""
