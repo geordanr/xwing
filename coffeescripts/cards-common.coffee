@@ -7312,6 +7312,7 @@ exportObj.basicCardData = ->
         {
             name: 'A Debt to Pay'
             id: 2
+            unique: true
         }
         {
             name: 'Suppressive Fire'
