@@ -588,6 +588,7 @@ exportObj.cardLoaders['Français'] = () ->
         '"Zeb" Orrelios':
             text: '''Quand vous défendez, vous pouvez annuler les résultats %CRIT% avant les résultats %HIT% .'''
         'Tomax Bren':
+            ship: "Bombardier TIE"
             text: '''Une fois par tour, après avoir défaussé une carte d'amélioration , retournez cette dernière face visible.'''
         'Ello Asty':
             text: ''' Tant que vous n'êtes pas stressé, vous pouvez considérer vos manoeuvres %TROLLLEFT% et %TROLLRIGHT% comme des manoeuvres blanches.'''
@@ -601,12 +602,19 @@ exportObj.cardLoaders['Français'] = () ->
             text: """ Au début de la phase de combat, vous pouvez assigner tous les marqueurs de concentration, d'évasion et d'acquisition de cible qui vous sont assignés à un autre vaisseau allié."""
         '"Deathfire"':
             text: '''Quand vous révélez votre cadran de manoeuvre ou après avoir effectué une action, vous pouvez effectuer une action de carte d'amélioration %BOMB% en tant qu'action gratuite.'''
+            ship: "Bombardier TIE"
         "Maarek Stele (TIE Defender)":
             text: """Quand votre attaque assigne une carte de dégât face visible au défenseur, piochez 3 cartes de dégât à la place, choisissez-en 1 que vous assignez et défaussez les autres."""
             ship: "Défenseur TIE"
         "Countess Ryad":
             text: """Quand vous révélez une manoeuvre %STRAIGHT% vous pouvez la traiter comme une manoeuvre %KTURN% ."""
             ship: "Défenseur TIE"
+        "Glaive Squadron Pilot":
+            ship: "Défenseur TIE"
+            name: "Pilote de l'escadron Glaive"
+        "Gamma Squadron Veteran":
+            ship: "Bombardier TIE"
+            name: "Vétéran de l'escadron Gamma"
         "Poe Dameron (PS9)":
             text: """Tant que vous défendez ou que vous attaquez, si vous avez un marqueur de concentration, vous pouvez changer un de vos résutats %FOCUS% pour un résultat %HIT% ou %EVADE% ."""
         "Rey":
@@ -1006,6 +1014,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: """Quand vous gênez une attaque, le défenseur lance 3 dés de défense supplémentaires (au lieu de 1)."""
         "Ion Cannon Battery": # Traduit de l'anglais
             text: """<strong>Attaque (énergie):</strong> Dépensez 2 énergie de cette carte pour effectuer une attaque. Si cette attaque touche, le défenseur subit 1 dégât critique et reçoit 1 marqueur inioque. Puis annulez <strong>tous</strong> les résultats des dés."""
+        "Extra Munitions":
+            name: "Munitions supplémentaires"
+            text: """Quand vous êtes équipé de cette carte, placez un marqueur "ordonnance" sur chaque carte d'amélioration %TORPEDO%, %MISSILE% ou %BOMB% équipé. Quand on vous demande de défausser une carte d'amélioration, vous pouvez défausser 1 marqueur ordonnance sur cette carte à la place."""
         # Point d'Attache
         "Single Turbolasers":
             name: "Turbolaser"
