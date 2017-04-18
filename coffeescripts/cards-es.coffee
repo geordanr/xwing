@@ -1846,6 +1846,9 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Lanzadera TIE"
             text: '''<span class="card-restriction">Sólo TIE Bombardero.</span>%LINEBREAK%Tu barra de mejoras pierde todos los iconos de mejora %TORPEDO%, %MISSILE% y %BOMB% y gana 2 iconos de mejora %CREW%.  No puedes equipar ninguna carta de Mejora %CREW% con un coste en puntos de escuadrón superior a 4.'''
             ship: 'Bombardero TIE'
+        'Black One':
+            text: '''After you perform a boost or barrel roll action, you may remove 1 enemy target lock from a friendly ship at Range 1. You cannot equip this card if your pilot skill is "6" or lower.'''
+            ship: "T-70 Ala-X"
         'Requiem':
             text: '''%GOZANTIONLY%%LINEBREAK%When you deploy a ship, treat its pilot skill value as "8" until the end of the round.'''
         'Vector':
