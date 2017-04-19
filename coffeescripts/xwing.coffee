@@ -1243,6 +1243,7 @@ class exportObj.SquadBuilder
                         id: ship_data.name
                         text: ship_data.name
                         english_name: ship_data.english_name
+                        canonical_name: ship_data.canonical_name
         ships.sort exportObj.sortHelper
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
@@ -2175,6 +2176,7 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
+                canonical_name: exportObj.ships[@pilot.ship].canonical_name
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{@pilot.name} (#{@pilot.points})"
@@ -2213,6 +2215,12 @@ class Ship
         @ship_selector = $ @row.find('input.ship-selector-container')
         @pilot_selector = $ @row.find('input.pilot-selector-container')
 
+        shipResultFormatter = (object, container, query) ->
+            # Append directly so we don't have to disable markup escaping
+            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.canonical_name}"></i> #{object.text}"""
+            # If you return a string, Select2 will render it
+            undefined
+
         @ship_selector.select2
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
@@ -2236,6 +2244,8 @@ class Ship
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
+            formatResult: shipResultFormatter
+            formatSelection: shipResultFormatter
 
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
