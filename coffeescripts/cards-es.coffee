@@ -1053,7 +1053,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Cañón de Iones"
             text: """<strong>Ataque:</strong> Ataca a 1 nave.<br /><br />Si este ataque impacta, el defensor sufre 1 de daño y recibe 1 ficha de Iones. Después se anulan <b>todos</b> los resultados de los dados."""
         "Heavy Laser Cannon":
-            name: "Cañón Laser Pesado"
+            name: "Cañón Láser Pesado"
             text: """<strong>Ataque:</strong> Ataca a 1 nave.<br /><br />Inmediatamente después de lanzar los dados de ataque, debes cambiar todos tus resultados %CRIT% por resultados %HIT%."""
         "Seismic Charges":
             name: "Cargas Sísmicas"
