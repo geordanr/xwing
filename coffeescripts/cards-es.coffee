@@ -1263,7 +1263,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Mara Jade"
             text: """Al final de la fase de Combate, toda nave enemiga situada a alcance 1 que no tenga 1 ficha de Tensión recibe 1 ficha de Tensión."""
         "Fleet Officer":
-            name: "Oficial de Flota"
+            name: "Oficial de la Flota"
             text: """<strong>Acción:</strong> Elige un máximo de 2 naves aliadas que tengas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Luego recibes 1 ficha de Tensión."""
         "Lone Wolf":
             name: "Lobo solitario"
