@@ -1895,6 +1895,7 @@ exportObj.cardLoaders['Español'] = () ->
         '''Merchant One''':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
+            ship: "Interceptor M3-A"
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
         '''Insatiable Worrt''':
             text: '''After you perform the recover action, gain 3 energy.'''
