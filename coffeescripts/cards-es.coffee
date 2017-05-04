@@ -943,6 +943,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Después de que efectúes un ataque, asigna la carta de Estado "Fuego de supresión" al defensor.'''
         'Major Stridan':
             ship: "Lanzadera clase Ípsilon"
+            name: "Mayor Stridan"
             text: '''A efectos de tus acciones y cartas de Mejora, puedes considerar las naves aliadas que tengas a alcance 2-3 como si estuvieran a alcance 1.'''
         'Lieutenant Dormitz':
             ship: "Lanzadera clase Ípsilon"
