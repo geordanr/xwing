@@ -943,6 +943,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Después de que efectúes un ataque, asigna la carta de Estado "Fuego de supresión" al defensor.'''
         'Major Stridan':
             ship: "Lanzadera clase Ípsilon"
+            name: "Mayor Stridan"
             text: '''A efectos de tus acciones y cartas de Mejora, puedes considerar las naves aliadas que tengas a alcance 2-3 como si estuvieran a alcance 1.'''
         'Lieutenant Dormitz':
             ship: "Lanzadera clase Ípsilon"
@@ -1262,7 +1263,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Mara Jade"
             text: """Al final de la fase de Combate, toda nave enemiga situada a alcance 1 que no tenga 1 ficha de Tensión recibe 1 ficha de Tensión."""
         "Fleet Officer":
-            name: "Oficial de Flota"
+            name: "Oficial de la Flota"
             text: """<strong>Acción:</strong> Elige un máximo de 2 naves aliadas que tengas a alcance 1-2 y asigna 1 ficha de Concentración a cada una de ellas. Luego recibes 1 ficha de Tensión."""
         "Lone Wolf":
             name: "Lobo solitario"
@@ -1895,6 +1896,7 @@ exportObj.cardLoaders['Español'] = () ->
         '''Merchant One''':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
+            ship: "Interceptor M3-A"
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
         '''Insatiable Worrt''':
             text: '''After you perform the recover action, gain 3 energy.'''
