@@ -12168,7 +12168,7 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Zealous Recruit': {
       name: "Recluta entusiasta",
-      ship: "Caza estelar del Protectorado"
+      ship: "Caza Estelar del Protectorado"
     },
     'Ketsu Onyo': {
       ship: "Nave de persecución clase Lancero",
@@ -15782,7 +15782,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Miután végrehajtottál egy zöld manővert, végrehajthatsz egy ingyenes fókusz akciót. [FAQ]"
     },
     '"Backstabber"': {
-      text: "Mikor a védekező tüzelési szögén kívülről támadsz, 1 plusz támadó kockával guríthatsz. [FAQ]"
+      text: "Mikor a védekező tüzelési szögén kívülről támadsz, plusz 1 támadó kockával guríthatsz. [FAQ]"
     },
     '"Dark Curse"': {
       text: "Mikor védekezel, a téged támadó hajó nem használhatja a fókusz jelzőjét vagy dobhatja újra a támadó kockáit. [FAQ]"
@@ -16889,7 +16889,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%A stressz jelző nem akadályoz meg abban, hogy végrehajts egy %BOOST% vagy %BARRELROLL% akciót, hacsak nincs 3 vagy több stressz jelződ.'
     },
     'Pattern Analyzer': {
-      text: 'When executing a maneuver, you may resolve the "Check Pilot Stress" step after the "Perform Action" step (instead of before that step).'
+      text: 'Mikor végrehajtasz egy manővert, az "Akció végrehajtást" előbb megteheted, mint a "Stressz ellenőrzést".'
     },
     'Snap Shot': {
       text: 'Miután egy ellenséges hajó végrehajt egy manővert, végrehajthatsz egy támadást e hajó ellen.  <strong>Támadás:</strong> Támadj egy hajót. Nem módosíthatod a dobásodat és nem támadhatsz újra ebben a fázisban.'
@@ -16898,7 +16898,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Mikor a hajó, amin célpontbemérőd van támad, kiválaszthatsz egy támadó kockát. A támadónak újra kell dobnia azt a kockát.%LINEBREAK%Feltehetsz egy célpontbemérőt egy másik baráti hajóra. [FAQ]'
     },
     'EMP Device': {
-      text: 'A harci fázis alatt, ahelyett, hogy támadnál, eldobdhatod ezt a lapo, hogy kiossz 2 ion jelzőt minden hajónak 1 távolságban.'
+      text: 'A harci fázis alatt, ahelyett, hogy támadnál, eldobdhatod ezt a lapot, hogy kiossz 2 ion jelzőt minden hajónak 1 távolságban.'
     },
     'Captain Rex': {
       text: '<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Miután végrehajtottál egy  támadást ami nem talált, adj egy %FOCUS% jelzőt a hajódhoz.'
@@ -16913,16 +16913,16 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Mikor egy baráti hajó 1-2 távolságban támad egy hajót amin célpontbemérőd van, a baráti hajó kezelje a <strong>Támadás (célpontbemérő):</strong> fejlécet mint as <strong>Támadás:</strong>. Ha az instrukció célpontbemérő költést ír elő a hajónak, elköltheti a te célbepombemérésedet.'
     },
     'Hyperwave Comm Scanner': {
-      text: 'A hajók lehelyezése lépés kezdetén kezelheted a pilóta képzettséged minr 0, 6 vagy 12 a lehelyezés végéig.%LINEBREAK%Az előkészítés alatt, miután egy baráti hajót leteszel 1-2 távolságban, adhatsz neki egy %FOCUS% vagy %EVADE% jelzőt.'
+      text: 'A hajók lehelyezése lépés kezdetén kezelheted a pilóta képzettséged mint 0, 6 vagy 12 a lehelyezés végéig.%LINEBREAK%Az előkészítés alatt, miután egy baráti hajót leteszel 1-2 távolságban, adhatsz neki egy %FOCUS% vagy %EVADE% jelzőt.'
     },
     'Trick Shot': {
       text: 'Támadáskor, ha a támadás akadályon át történik, plusz 1 támadó kockával dobhatsz.'
     },
     'Hotshot Co-pilot': {
-      text: 'Mikor támadsz egy elsődleges fegyverrel, a védekezőnek egy kell költenie 1 %FOCUS% jelzőt, ha tud. Védekezéskor egy kell költenie 1 %FOCUS% jelzőt, ha tud. [FAQ]'
+      text: 'Mikor támadsz egy elsődleges fegyverrel, a védekezőnek el kell költenie 1 %FOCUS% jelzőt, ha tud. Védekezéskor el kell költenie 1 %FOCUS% jelzőt, ha tud. [FAQ]'
     },
     'Scavenger Crane': {
-      text: 'Miután egy hajó 1-2 távolságban megsemmisül kiválasthatsz egy már eldobott %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%, or módosítás fejlesztés kártyát és felszrelheted vele a hajódat. Aztán dobj egy támadó kockával. Üres dobásnál dobd el ezt a kártyát.'
+      text: 'Miután egy hajó 1-2 távolságban megsemmisül kiválasthatsz egy már eldobott %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET% vagy módosítás fejlesztés kártyát és felszerelheted vele a hajódat. Aztán dobj egy támadó kockával. Üres dobásnál dobd el ezt a kártyát.'
     },
     'Bodhi Rook': {
       text: '<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Mikor felteszel egy célpontbemérőt, bemérhetsz bármely baráti hajótól 1-3 távolságban lévő ellenséget.'
@@ -16943,10 +16943,10 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Expertise': {
       name: "Expertise (Szaktudás)",
-      text: 'Támadáskor, ha nem vagy stresszes, átfogathatod az osszes %FOCUS% dobásod %HIT%-re.'
+      text: 'Támadáskor, ha nem vagy stresszes, átfogathatod az összes %FOCUS% dobásod %HIT%-re.'
     },
     'BoShek': {
-      text: 'Mikor a hajó amivel érintkezel aktiválódik, megnézheted a kiválasztott menőverét. Ha így teszel, az gazdájának át kell forgatni a tárcsát egy szomszédos manőverre. A hajó ezt a manővert fedi fel és hajtja végre, még ha stresszes is.'
+      text: 'Mikor a hajó amivel érintkezel aktiválódik, megnézheted a kiválasztott manőverét. Ha így teszel, a gazdájának át kell forgatni a tárcsát egy szomszédos manőverre. A hajó ezt a manővert fedi fel és hajtja végre, még ha stresszes is.'
     },
     'Heavy Laser Turret': {
       text: '<span class="card-restriction">Csak C-ROC Cruiser.</span>%LINEBREAK%<strong>Támadás (energia):</strong> Költs el 2 energiát erről a kártyáról, hogy végrehajtsd ezt a támadást egy hajó ellen (akkor is, ha a hajó kívül esik a tüzelési szögeden).'
@@ -16979,7 +16979,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak kis hajók. Kettős kártya.</span>%LINEBREAK%<strong>A oldal:</strong> még nem tudni :).%LINEBREAK%<strong>B oldal:</strong> (Kimerült) A harci fázis végén elkölthetsz 1 %FOCUS% vagy %EVADE% jelzőt, hogy átfordítsd ezt a kártyát.'
     },
     'Jabba the Hutt': {
-      text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobd el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'
+      text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobj el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'
     }
   };
   modification_translations = {
