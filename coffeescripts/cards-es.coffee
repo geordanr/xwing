@@ -875,11 +875,11 @@ exportObj.cardLoaders['Español'] = () ->
             name: "As de Concord Dawn"
             ship: "Caza Estelar del Protectorado"
         'Concord Dawn Veteran':
-            name: "Veterano de Concord Dawn"
+            name: "Veterano de Concord Dawn"dd
             ship: "Caza Estelar del Protectorado"
         'Zealous Recruit':
             name: "Recluta entusiasta"
-            ship: "Caza estelar del Protectorado"
+            ship: "Caza Estelar del Protectorado"
         'Ketsu Onyo':
             ship: "Nave de persecución clase Lancero"
             text: '''Al comienzo de la fase de Combate, puedes elegir una nave que tengas a alcance 1. Si esa nave está dentro de tus arcos de fuego normal <strong>y</strong> móvil, asígnale 1 ficha de Campo de tracción.'''
