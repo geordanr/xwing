@@ -875,7 +875,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "As de Concord Dawn"
             ship: "Caza Estelar del Protectorado"
         'Concord Dawn Veteran':
-            name: "Veterano de Concord Dawn"dd
+            name: "Veterano de Concord Dawn"
             ship: "Caza Estelar del Protectorado"
         'Zealous Recruit':
             name: "Recluta entusiasta"
