@@ -53,7 +53,6 @@ casper.test.begin "Permalink", (test) ->
     ])
 
     .then ->
-        @click '#rebel-builder .permalink'
         @waitForUrl(/d=/)
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
@@ -82,7 +81,6 @@ casper.test.begin "Unused conferred addons permalink correctly", (test) ->
     ])
 
     .then ->
-        @click '#rebel-builder .permalink'
         @waitForUrl(/d=/)
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
@@ -99,12 +97,6 @@ casper.test.begin "Unused conferred addons permalink correctly", (test) ->
 
     .run ->
         test.done()
-
-
-
-
-
-
 
 
 casper.test.begin "Weird Rebel permalink v2", (test) ->
@@ -230,7 +222,6 @@ casper.test.begin "Sabine on B/Wing (bug #285)", (test) ->
     common.addUpgrade('#rebel-builder', 1, 7, 'Seismic Charges')
 
     .then ->
-        @click '#rebel-builder .permalink'
         @waitForUrl(/d=/)
     .then ->
         @waitUntilVisible '#rebel-builder .total-points'
@@ -333,4 +324,3 @@ casper.test.begin "Weird Empire standard permalink v4 missing trailing colon", (
 
     .run ->
         test.done()
-
