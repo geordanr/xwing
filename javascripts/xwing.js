@@ -24459,7 +24459,7 @@ String.prototype.getXWSBaseName = function() {
   return this.split('-')[0];
 };
 
-URL_BASE = "" + window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+URL_BASE = "" + window.location.protocol + "//" + window.location.host + window.location.pathname;
 
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24;
 
