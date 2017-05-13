@@ -50,6 +50,7 @@ String::capitalize = ->
 String::getXWSBaseName = ->
     @split('-')[0]
 
+URL_BASE = "#{window.location.protocol}//#{window.location.host}/#{window.location.pathname}"
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -116,6 +117,8 @@ class exportObj.SquadBuilder
         @setupUI()
         @setupEventHandlers()
 
+        window.setInterval @updatePermaLink, 250
+
         @isUpdatingPoints = false
 
         if $.getParameterByName('f') == @faction
@@ -131,7 +134,7 @@ class exportObj.SquadBuilder
         squad_name = $.trim(@squad_name_input.val()) or default_squad_name
         if initial_load and $.trim $.getParameterByName('sn')
             squad_name = $.trim $.getParameterByName('sn')
-        
+
         squad_obstacles = []
         if initial_load and $.trim $.getParameterByName('obs')
             squad_obstacles = ($.trim $.getParameterByName('obs')).split(",").slice(0, 3)
@@ -155,7 +158,6 @@ class exportObj.SquadBuilder
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
-        @updatePermaLink()
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -209,7 +211,6 @@ class exportObj.SquadBuilder
                         <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
                         <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
-                        <a class="btn btn-primary permalink"><i class="fa fa-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <!--
                         <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
@@ -425,7 +426,6 @@ class exportObj.SquadBuilder
         @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
         @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
         @max_epic_points_span = $ @points_container.find('.max-epic-points')
-        @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
@@ -818,7 +818,6 @@ class exportObj.SquadBuilder
                 if new_selection.length > 0
                     @showChooseObstaclesSelectImage(new_selection[0])
                 @current_squad.additional_data.obstacles = @current_obstacles
-                @updatePermaLink()
                 @current_squad.dirty = true
                 @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -876,7 +875,7 @@ class exportObj.SquadBuilder
                 """
 
             # Add List Juggler QR code
-            query = @permalink.attr('href').split(/\?/)[1].replace(/&sn=.*/, '')
+            query = @getPermaLinkParams(['sn', 'obs'])
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
                     <div class="juggler-qrcode-container">
@@ -884,7 +883,7 @@ class exportObj.SquadBuilder
                         <div class="juggler-qrcode"></div>
                     </div>
                 """
-                text = "https://yasb-xws.herokuapp.com/juggler?#{query}"
+                text = "https://yasb-xws.herokuapp.com/juggler#{query}"
                 @printable_container.find('.juggler-qrcode').qrcode
                     render: 'div'
                     ec: 'M'
@@ -900,11 +899,21 @@ class exportObj.SquadBuilder
 
          @notes.on 'keyup', @onNotesUpdated
 
+    getPermaLinkParams: (ignored_params=[]) =>
+        params = {}
+        params.f = encodeURI(@faction) unless 'f' in ignored_params
+        params.d = encodeURI(@serialize()) unless 'd' in ignored_params
+        params.sn = encodeURIComponent(@current_squad.name) unless 'sn' in ignored_params
+        params.obs = encodeURI(@current_squad.additional_data.obstacles || '') unless 'obs' in ignored_params
+        return "?" + ("#{k}=#{v}" for k, v of params).join("&")
+
+    getPermaLink: (params=@getPermaLinkParams()) => "#{URL_BASE}#{params}"
+
     updatePermaLink: () =>
-        squad_link = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
-        if (@current_squad.additional_data.obstacles and @current_squad.additional_data.obstacles.length > 0)
-            squad_link = squad_link + "&obs=#{@current_squad.additional_data.obstacles}"
-        @permalink.attr 'href', squad_link
+        return unless @container.is(':visible') # gross but couldn't make clearInterval work
+        next_params = @getPermaLinkParams()
+        if window.location.search != next_params
+          window.history.replaceState(next_params, '', @getPermaLink(next_params))
 
     onNotesUpdated: =>
         if @total_points > 0
@@ -993,10 +1002,8 @@ class exportObj.SquadBuilder
                         @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
-        # update permalink while we're at it
-        @updatePermaLink()
-        # @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURI @current_squad.name}&sno=#{encodeURI @notes.val()}"
-        # and text list
+
+        # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
         bbcode_ships = []
@@ -1011,13 +1018,13 @@ class exportObj.SquadBuilder
 <br />
 <b><i>Total: #{@total_points}</i></b>
 <br />
-<a href="#{@permalink.attr 'href'}">View in Yet Another Squad Builder</a>
+<a href="#{@getPermaLink()}">View in Yet Another Squad Builder</a>
         """
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
 
 [b][i]Total: #{@total_points}[/i][/b]
 
-[url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
+[url=#{@getPermaLink()}]View in Yet Another Squad Builder[/url]
 """
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
@@ -1073,7 +1080,6 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text ''
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
-        @updatePermaLink()
 
     removeAllShips: ->
         while @ships.length > 0
@@ -1758,7 +1764,7 @@ class exportObj.SquadBuilder
                 yasb:
                     builder: '(Yet Another) X-Wing Miniatures Squad Builder'
                     builder_url: window.location.href.split('?')[0]
-                    link: @permalink.attr 'href'
+                    link: @getPermaLink()
             version: '0.3.0'
 
         for ship in @ships
