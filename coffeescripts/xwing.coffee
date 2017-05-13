@@ -50,7 +50,7 @@ String::capitalize = ->
 String::getXWSBaseName = ->
     @split('-')[0]
 
-URL_BASE = "#{window.location.protocol}//#{window.location.host}/#{window.location.pathname}"
+URL_BASE = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}"
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
