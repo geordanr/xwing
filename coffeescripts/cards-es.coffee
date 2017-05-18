@@ -1647,7 +1647,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Blindaje mejorado"
             text: """Tu valor de Casco se incrementa en 1."""
         "Munitions Failsafe":
-            name: "Sistema de Munición a Prueba de Fallas"
+            name: "Sistema de Munición a Prueba de Fallos"
             text: """Cuando ataques con un armamento secundario que requiera descartarlo para efectuar el ataque, no se descarta a menos que el ataque impacte al objetivo."""
         "Stygium Particle Accelerator":
             name: "Acelerador de Partículas de Estigio"
