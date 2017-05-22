@@ -982,7 +982,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Unguided Rockets':
             text: '''<strong>Támadás (fókusz):</strong> támadj meg egy hajót. A támadásod standard hatását csak a %FOCUS% jelző elköltésével módosíthatod.'''
         'Intensity':
-            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
         'Jabba the Hutt':
             text: '''<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobj el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'''
 
