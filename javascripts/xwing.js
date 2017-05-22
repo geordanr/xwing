@@ -4087,31 +4087,31 @@ exportObj.basicCardData = function() {
         slots: ['Turret', 'Missile', 'Missile'],
         points: 17
       }, {
-        name: 'Onyx Squad???',
+        name: 'Onyx Squadron Escort',
         id: 259,
         faction: 'Galactic Empire',
         ship: 'TIE Aggressor',
         skill: 5,
         slots: ['Turret', 'Missile', 'Missile'],
-        points: 100
+        points: 19
       }, {
-        name: '"Dou???',
+        name: '"Double Edge"',
         id: 260,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'TIE Aggressor',
         skill: 4,
-        slots: ['Turret', 'Missile', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Turret', 'Missile', 'Missile'],
+        points: 19
       }, {
-        name: 'Lieuten???',
+        name: 'Lieutenant Kestal',
         id: 261,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'TIE Aggressor',
         skill: 7,
-        slots: ['Turret', 'Missile', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Turret', 'Missile', 'Missile'],
+        points: 22
       }
     ],
     upgradesById: [
@@ -8170,6 +8170,12 @@ exportObj.cardLoaders.Deutsch = function() {
     'Sunny Bounder': {
       ship: "M3-A Abfangjäger",
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -9055,7 +9061,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -10104,6 +10110,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Sunny Bounder': {
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -10801,7 +10813,7 @@ exportObj.cardLoaders.English = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -12309,6 +12321,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Sunny Bounder': {
       ship: "Interceptor M3-A",
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -13174,7 +13192,7 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -14440,6 +14458,12 @@ exportObj.cardLoaders['Français'] = function() {
     'Sunny Bounder': {
       ship: "Intercepteur M3-A",
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -15269,7 +15293,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -16265,6 +16289,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Sunny Bounder': {
       text: 'Körönként egyszer, miután dobtál vagy újradobtál kockákat és az összes kockán ugyanaz az eredmény van, adj hozzájuk még egy ugyanolyan eredményt.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -16977,7 +17007,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<strong>Támadás (fókusz):</strong> támadj meg egy hajót. A támadásod standard hatását csak a %FOCUS% jelző elköltésével módosíthatod.'
     },
     'Intensity': {
-      text: '<span class="card-restriction">Csak kis hajók. Kettős kártya.</span>%LINEBREAK%<strong>A oldal:</strong> még nem tudni :).%LINEBREAK%<strong>B oldal:</strong> (Kimerült) A harci fázis végén elkölthetsz 1 %FOCUS% vagy %EVADE% jelzőt, hogy átfordítsd ezt a kártyát.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobj el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'
@@ -18109,6 +18139,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Sunny Bounder': {
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -18887,7 +18923,7 @@ exportObj.cardLoaders['Polski'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -19822,6 +19858,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Sunny Bounder': {
       text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+    },
+    'Lieutenant Kestal': {
+      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+    },
+    '"Double Edge"': {
+      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
     }
   };
   upgrade_translations = {
@@ -20495,7 +20537,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
       text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
@@ -24319,7 +24361,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23103
+                    lineno: 23133
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24908,7 +24950,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23733
+              lineno: 23763
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25645,7 +25687,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24351
+          lineno: 24381
         }));
         __iced_deferrals._fulfill();
       });
@@ -25657,7 +25699,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24352
+            lineno: 24382
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27205,7 +27247,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25233
+                      lineno: 25263
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27274,7 +27316,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25257
+                lineno: 25287
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27326,7 +27368,7 @@ Ship = (function() {
         });
         if (_this.title != null) {
           _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25279
+            lineno: 25309
           }));
         }
         _ref = _this.upgrades;
@@ -27334,7 +27376,7 @@ Ship = (function() {
           upgrade = _ref[_i];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25281
+              lineno: 25311
             }));
           }
         }
@@ -27343,7 +27385,7 @@ Ship = (function() {
           modification = _ref1[_j];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25283
+              lineno: 25313
             }));
           }
         }
@@ -28268,7 +28310,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25940
+                lineno: 25970
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28387,7 +28429,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 25999
+                  lineno: 26029
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28409,7 +28451,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26003
+                    lineno: 26033
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28494,7 +28536,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26043
+            lineno: 26073
           }));
         }
         __iced_deferrals._fulfill();
