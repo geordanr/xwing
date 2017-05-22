@@ -917,6 +917,10 @@ exportObj.cardLoaders.Deutsch = () ->
         'Sunny Bounder':
             ship: "M3-A Abfangjäger"
             text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
+        'Lieutenant Kestal':
+            text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
+        '"Double Edge"':
+            text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1573,7 +1577,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'Unguided Rockets':
             text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
         'Intensity':
-            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> This side has not been revealed.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
         'Jabba the Hutt':
             text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
 

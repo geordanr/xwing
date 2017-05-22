@@ -4638,7 +4638,7 @@ exportObj.basicCardData = ->
             points: 17
         }
         {
-            name: 'Onyx Squad???'
+            name: 'Onyx Squadron Escort'
             id: 259
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
@@ -4648,35 +4648,37 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Missile'
             ]
-            points: 100
+            points: 19
         }
         {
-            name: '"Dou???'
+            name: '"Double Edge"'
             id: 260
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
             skill: 4
             slots: [
+                'Elite'
                 'Turret'
                 'Missile'
                 'Missile'
             ]
-            points: 100
+            points: 19
         }
         {
-            name: 'Lieuten???'
+            name: 'Lieutenant Kestal'
             id: 261
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
             skill: 7
             slots: [
+                'Elite'
                 'Turret'
                 'Missile'
                 'Missile'
             ]
-            points: 100
+            points: 22
         }
     ]
 

@@ -496,6 +496,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Támadáskor vagy védekezéskor elkölthetsz egy pajzsot, hogy újradobj bármennyi kockát.'''
         'Sunny Bounder':
             text: '''Körönként egyszer, miután dobtál vagy újradobtál kockákat és az összes kockán ugyanaz az eredmény van, adj hozzájuk még egy ugyanolyan eredményt.'''
+        'Lieutenant Kestal':
+            text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
+        '"Double Edge"':
+            text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -978,7 +982,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Unguided Rockets':
             text: '''<strong>Támadás (fókusz):</strong> támadj meg egy hajót. A támadásod standard hatását csak a %FOCUS% jelző elköltésével módosíthatod.'''
         'Intensity':
-            text: '''<span class="card-restriction">Csak kis hajók. Kettős kártya.</span>%LINEBREAK%<strong>A oldal:</strong> még nem tudni :).%LINEBREAK%<strong>B oldal:</strong> (Kimerült) A harci fázis végén elkölthetsz 1 %FOCUS% vagy %EVADE% jelzőt, hogy átfordítsd ezt a kártyát.'''
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or boost action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
         'Jabba the Hutt':
             text: '''<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobj el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'''
 
