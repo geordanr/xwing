@@ -289,7 +289,7 @@ class exportObj.SquadBuilder
                     Print color <input type="checkbox" class="toggle-color-print" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
-                    Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
+                    Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include obstacle/damage deck choices <input type="checkbox" class="toggle-obstacles" />
@@ -878,13 +878,25 @@ class exportObj.SquadBuilder
             query = @getPermaLinkParams(['sn', 'obs'])
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
-                    <div class="juggler-qrcode-container">
-                        <div class="juggler-qrcode-text">Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>
-                        <div class="juggler-qrcode"></div>
+                <div class="qrcode-container">
+                    <div class="permalink-container">
+                        <div class="qrcode"></div>
+                        <div class="qrcode-text">Scan to open this list in the builder</div>
                     </div>
+                    <div class="juggler-container">
+                        <div class="qrcode"></div>
+                        <div class="qrcode-text">TOs: Scan to load this squad into List Juggler</div>
+                    </div>
+                </div>
                 """
                 text = "https://yasb-xws.herokuapp.com/juggler#{query}"
-                @printable_container.find('.juggler-qrcode').qrcode
+                @printable_container.find('.juggler-container .qrcode').qrcode
+                    render: 'div'
+                    ec: 'M'
+                    size: if text.length < 144 then 144 else 160
+                    text: text
+                text = "https://geordanr.github.io/xwing/#{query}"
+                @printable_container.find('.permalink-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
                     size: if text.length < 144 then 144 else 160
