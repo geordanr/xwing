@@ -4112,6 +4112,50 @@ exportObj.basicCardData = function() {
         skill: 7,
         slots: ['Elite', 'Turret', 'Missile', 'Missile'],
         points: 22
+      }, {
+        name: 'Viktor Hel',
+        id: 262,
+        faction: 'Scum and Villainy',
+        unique: true,
+        ship: 'Kihraxz Fighter',
+        skill: 7,
+        slots: ['Elite', 'Missile', 'Illicit'],
+        points: 25
+      }, {
+        name: 'Captain ???',
+        id: 263,
+        skill: 4,
+        faction: 'Scum and Villainy',
+        unique: true,
+        ship: 'Kihraxz Fighter',
+        slots: ['Missile', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Dalan Oberos',
+        id: 264,
+        faction: 'Scum and Villainy',
+        unique: true,
+        ship: 'StarViper',
+        skill: 6,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Th???',
+        id: 265,
+        faction: 'Scum and Villainy',
+        unique: true,
+        ship: 'StarViper',
+        skill: 4,
+        slots: ['Torpedo'],
+        points: 100
+      }, {
+        name: 'Black ???',
+        id: 266,
+        faction: 'Scum and Villainy',
+        ship: 'StarViper',
+        skill: 5,
+        slots: ['Torpedo'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -6600,6 +6644,30 @@ exportObj.basicCardData = function() {
             }
           }
         ]
+      }, {
+        name: 'Vaksai',
+        id: 54,
+        points: 0,
+        ship: 'Kihraxz Fighter',
+        confersAddons: [
+          {
+            type: exportObj.Modification
+          }, {
+            type: exportObj.Modification
+          }
+        ],
+        special_case: 'Royal Guard TIE'
+      }, {
+        name: 'StarViper Mk. II',
+        id: 55,
+        limited: true,
+        points: -3,
+        ship: 'StarViper',
+        confersAddons: [
+          {
+            type: exportObj.Title
+          }
+        ]
       }
     ],
     conditionsById: [
@@ -8176,6 +8244,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -9417,6 +9488,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -10116,6 +10193,9 @@ exportObj.cardLoaders.English = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -11073,6 +11153,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -12327,6 +12413,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -13556,6 +13645,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -14464,6 +14559,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -15606,6 +15704,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -16295,6 +16399,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -17276,6 +17383,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Csak Scurrg H-6 Bomber.</span>%LINEBREAK%A fejlesztés sávod megkapja a %SYSTEM% és %SALVAGEDASTROMECH% ikont, de elveszti a %CREW% ikont. Csak egyedi %SALVAGEDASTROMECH% fejlesztés kártyákat használhatsz.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -18145,6 +18258,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -19211,6 +19327,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -19864,6 +19986,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Double Edge"': {
       text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+    },
+    'Viktor Hel': {
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     }
   };
   upgrade_translations = {
@@ -20773,6 +20898,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+    },
+    'Vaksai': {
+      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+    },
+    'StarViper Mk. II': {
+      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   condition_translations = {
@@ -24361,7 +24492,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23133
+                    lineno: 23265
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -24950,7 +25081,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23763
+              lineno: 23895
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25694,7 +25825,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24393
+          lineno: 24525
         }));
         __iced_deferrals._fulfill();
       });
@@ -25706,7 +25837,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24394
+            lineno: 24526
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -25813,7 +25944,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term, filter_func) {
-    var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, m, retval, upgrade, upgrade_name, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _results;
+    var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, m, retval, title, upgrade, upgrade_name, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _results;
     if (term == null) {
       term = '';
     }
@@ -25893,32 +26024,36 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
-    if ((ship != null ? (_ref1 = ship.title) != null ? (_ref2 = _ref1.data) != null ? _ref2.special_case : void 0 : void 0 : void 0) === 'A-Wing Test Pilot') {
-      _ref3 = (function() {
-        var _j, _len, _ref3, _results;
-        _ref3 = ship.upgrades;
-        _results = [];
-        for (_j = 0, _len = _ref3.length; _j < _len; _j++) {
-          upgrade = _ref3[_j];
-          if ((upgrade != null ? upgrade.data : void 0) != null) {
-            _results.push(upgrade.data);
+    _ref2 = (_ref1 = ship != null ? ship.titles : void 0) != null ? _ref1 : [];
+    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+      title = _ref2[_i];
+      if ((title != null ? (_ref3 = title.data) != null ? _ref3.special_case : void 0 : void 0) === 'A-Wing Test Pilot') {
+        _ref4 = (function() {
+          var _k, _len1, _ref4, _results;
+          _ref4 = ship.upgrades;
+          _results = [];
+          for (_k = 0, _len1 = _ref4.length; _k < _len1; _k++) {
+            upgrade = _ref4[_k];
+            if ((upgrade != null ? upgrade.data : void 0) != null) {
+              _results.push(upgrade.data);
+            }
           }
+          return _results;
+        })();
+        for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
+          equipped_upgrade = _ref4[_j];
+          eligible_upgrades.removeItem(equipped_upgrade);
         }
-        return _results;
-      })();
-      for (_i = 0, _len = _ref3.length; _i < _len; _i++) {
-        equipped_upgrade = _ref3[_i];
-        eligible_upgrades.removeItem(equipped_upgrade);
       }
     }
     if ((include_upgrade != null) && (((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term))) {
       eligible_upgrades.push(include_upgrade);
     }
     retval = ((function() {
-      var _j, _len1, _results;
+      var _k, _len2, _results;
       _results = [];
-      for (_j = 0, _len1 = available_upgrades.length; _j < _len1; _j++) {
-        upgrade = available_upgrades[_j];
+      for (_k = 0, _len2 = available_upgrades.length; _k < _len2; _k++) {
+        upgrade = available_upgrades[_k];
         _results.push({
           id: upgrade.id,
           text: "" + upgrade.name + " (" + upgrade.points + ")",
@@ -25931,8 +26066,8 @@ exportObj.SquadBuilder = (function() {
     })()).sort(exportObj.sortHelper);
     if (this_upgrade_obj.adjustment_func != null) {
       _results = [];
-      for (_j = 0, _len1 = retval.length; _j < _len1; _j++) {
-        upgrade = retval[_j];
+      for (_k = 0, _len2 = retval.length; _k < _len2; _k++) {
+        upgrade = retval[_k];
         _results.push(this_upgrade_obj.adjustment_func(upgrade));
       }
       return _results;
@@ -25942,7 +26077,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term, filter_func) {
-    var available_modifications, eligible_modifications, equipped_modification, limited_modifications_in_use, modification, modification_name, _i, _len, _ref, _ref1, _ref2;
+    var available_modifications, eligible_modifications, equipped_modification, limited_modifications_in_use, modification, modification_name, title, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3;
     if (term == null) {
       term = '';
     }
@@ -26010,32 +26145,36 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
-    if ((ship != null ? (_ref = ship.title) != null ? (_ref1 = _ref.data) != null ? _ref1.special_case : void 0 : void 0 : void 0) === 'Royal Guard TIE') {
-      _ref2 = (function() {
-        var _j, _len, _ref2, _results;
-        _ref2 = ship.modifications;
-        _results = [];
-        for (_j = 0, _len = _ref2.length; _j < _len; _j++) {
-          modification = _ref2[_j];
-          if ((modification != null ? modification.data : void 0) != null) {
-            _results.push(modification.data);
+    _ref1 = (_ref = ship != null ? ship.titles : void 0) != null ? _ref : [];
+    for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+      title = _ref1[_i];
+      if ((title != null ? (_ref2 = title.data) != null ? _ref2.special_case : void 0 : void 0) === 'Royal Guard TIE') {
+        _ref3 = (function() {
+          var _k, _len1, _ref3, _results;
+          _ref3 = ship.modifications;
+          _results = [];
+          for (_k = 0, _len1 = _ref3.length; _k < _len1; _k++) {
+            modification = _ref3[_k];
+            if ((modification != null ? modification.data : void 0) != null) {
+              _results.push(modificationsById[modification.data.id]);
+            }
           }
+          return _results;
+        })();
+        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
+          equipped_modification = _ref3[_j];
+          eligible_modifications.removeItem(equipped_modification);
         }
-        return _results;
-      })();
-      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
-        equipped_modification = _ref2[_i];
-        eligible_modifications.removeItem(equipped_modification);
       }
     }
     if ((include_modification != null) && (((include_modification.unique != null) || (include_modification.limited != null)) && this.matcher(include_modification.name, term))) {
       eligible_modifications.push(include_modification);
     }
     return ((function() {
-      var _j, _len1, _results;
+      var _k, _len2, _results;
       _results = [];
-      for (_j = 0, _len1 = available_modifications.length; _j < _len1; _j++) {
-        modification = available_modifications[_j];
+      for (_k = 0, _len2 = available_modifications.length; _k < _len2; _k++) {
+        modification = available_modifications[_k];
         _results.push({
           id: modification.id,
           text: "" + modification.name + " (" + modification.points + ")",
@@ -26049,17 +26188,29 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableTitlesIncluding = function(ship, include_title, term) {
-    var available_titles, eligible_titles, t, title, title_name;
+    var available_titles, eligible_titles, limited_titles_in_use, t, title, title_name;
     if (term == null) {
       term = '';
     }
+    limited_titles_in_use = (function() {
+      var _i, _len, _ref, _ref1, _results;
+      _ref = ship.titles;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        title = _ref[_i];
+        if ((title != null ? (_ref1 = title.data) != null ? _ref1.limited : void 0 : void 0) != null) {
+          _results.push(title.data);
+        }
+      }
+      return _results;
+    })();
     available_titles = (function() {
       var _ref, _results;
       _ref = exportObj.titlesByLocalizedName;
       _results = [];
       for (title_name in _ref) {
         title = _ref[title_name];
-        if (title.ship === ship.data.name && this.matcher(title_name, term)) {
+        if (((title.ship == null) || title.ship === ship.data.name) && this.matcher(title_name, term)) {
           _results.push(title);
         }
       }
@@ -26079,13 +26230,13 @@ exportObj.SquadBuilder = (function() {
             _results1.push(t.canonical_name.getXWSBaseName());
           }
           return _results1;
-        }).call(this), _ref) < 0)) || title.canonical_name.getXWSBaseName() === (include_title != null ? include_title.canonical_name.getXWSBaseName() : void 0)) && ((title.faction == null) || this.isOurFaction(title.faction)) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship))) {
+        }).call(this), _ref) < 0)) || title.canonical_name.getXWSBaseName() === (include_title != null ? include_title.canonical_name.getXWSBaseName() : void 0)) && ((title.faction == null) || this.isOurFaction(title.faction)) && (!((ship != null) && (title.restriction_func != null)) || title.restriction_func(ship)) && __indexOf.call(limited_titles_in_use, title) < 0) {
           _results.push(title);
         }
       }
       return _results;
     }).call(this);
-    if ((include_title != null) && (include_title.unique != null) && this.matcher(include_title.name, term)) {
+    if ((include_title != null) && (((include_title.unique != null) || (include_title.limited != null)) && this.matcher(include_title.name, term))) {
       eligible_titles.push(include_title);
     }
     return ((function() {
@@ -26696,7 +26847,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.isSquadPossibleWithCollection = function() {
-    var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title_is_available, upgrade, upgrade_is_available, validity, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+    var modification, modification_is_available, pilot_is_available, ship, ship_is_available, title, title_is_available, upgrade, upgrade_is_available, validity, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     if (Object.keys((_ref = (_ref1 = this.collection) != null ? _ref1.expansions : void 0) != null ? _ref : {}).length === 0) {
       return true;
     }
@@ -26731,10 +26882,14 @@ exportObj.SquadBuilder = (function() {
             }
           }
         }
-        if (((_ref5 = ship.title) != null ? _ref5.data : void 0) != null) {
-          title_is_available = this.collection.use('title', ship.title.data.english_name);
-          if (!title_is_available) {
-            validity = false;
+        _ref5 = ship.titles;
+        for (_l = 0, _len3 = _ref5.length; _l < _len3; _l++) {
+          title = _ref5[_l];
+          if ((title != null ? title.data : void 0) != null) {
+            title_is_available = this.collection.use('title', title.data.english_name);
+            if (!title_is_available) {
+              validity = false;
+            }
           }
         }
       }
@@ -26857,7 +27012,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.loadFromXWS = function(xws, cb) {
-    var a, addon, addon_added, addons, err, error, i, modification, new_ship, p, pilot, slot, slot_guesses, success, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, version_list, x, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _m, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+    var a, addon, addon_added, addons, err, error, i, modification, new_ship, p, pilot, slot, slot_guesses, success, title, upgrade, upgrade_canonical, upgrade_canonicals, upgrade_type, version_list, x, xws_faction, yasb_upgrade_type, _, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _m, _n, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
     success = null;
     error = null;
     version_list = (function() {
@@ -26954,34 +27109,39 @@ exportObj.SquadBuilder = (function() {
                   }
                   break;
                 case 'Title':
-                  if (new_ship.title.data == null) {
+                  _ref5 = new_ship.titles;
+                  for (_m = 0, _len3 = _ref5.length; _m < _len3; _m++) {
+                    title = _ref5[_m];
+                    if (title.data != null) {
+                      continue;
+                    }
                     if (addon.data instanceof Array) {
                       slot_guesses = (function() {
-                        var _len3, _m, _ref5, _results;
+                        var _len4, _n, _ref6, _results;
                         _results = [];
-                        for (_m = 0, _len3 = addons.length; _m < _len3; _m++) {
-                          a = addons[_m];
-                          if ((_ref5 = a.data.slot) === 'Cannon' || _ref5 === 'Missile' || _ref5 === 'Torpedo') {
+                        for (_n = 0, _len4 = addons.length; _n < _len4; _n++) {
+                          a = addons[_n];
+                          if ((_ref6 = a.data.slot) === 'Cannon' || _ref6 === 'Missile' || _ref6 === 'Torpedo') {
                             _results.push(a.data.slot);
                           }
                         }
                         return _results;
                       })();
                       if (slot_guesses.length > 0) {
-                        new_ship.title.setData(exportObj.titlesByLocalizedName["\"Heavy Scyk\" Interceptor (" + slot_guesses[0] + ")"]);
+                        title.setData(exportObj.titlesByLocalizedName["\"Heavy Scyk\" Interceptor (" + slot_guesses[0] + ")"]);
                       } else {
-                        new_ship.title.setData(addon.data[0]);
+                        title.setData(addon.data[0]);
                       }
                     } else {
-                      new_ship.title.setData(addon.data);
+                      title.setData(addon.data);
                     }
                     addon_added = true;
                   }
                   break;
                 default:
-                  _ref5 = new_ship.upgrades;
-                  for (i = _m = 0, _len3 = _ref5.length; _m < _len3; i = ++_m) {
-                    upgrade = _ref5[i];
+                  _ref6 = new_ship.upgrades;
+                  for (i = _n = 0, _len4 = _ref6.length; _n < _len4; i = ++_n) {
+                    upgrade = _ref6[i];
                     if (upgrade.slot !== addon.slot || (upgrade.data != null)) {
                       continue;
                     }
@@ -27042,7 +27202,7 @@ Ship = (function() {
     this.data = null;
     this.upgrades = [];
     this.modifications = [];
-    this.title = null;
+    this.titles = [];
     this.setupUI();
   }
 
@@ -27060,7 +27220,7 @@ Ship = (function() {
   };
 
   Ship.prototype.copyFrom = function(other) {
-    var available_pilots, i, modification, other_conferred_addon, other_conferred_addons, other_modification, other_modifications, other_upgrade, other_upgrades, pilot_data, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _m, _n, _name, _o, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var available_pilots, i, modification, other_conferred_addon, other_conferred_addons, other_modification, other_modifications, other_title, other_titles, other_upgrade, other_upgrades, pilot_data, title, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _m, _n, _name, _o, _p, _q, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     if (other === this) {
       throw new Error("Cannot copy from self");
     }
@@ -27101,21 +27261,34 @@ Ship = (function() {
             other_modifications.push(modification);
           }
         }
-        if ((((_ref2 = other.title) != null ? _ref2.data : void 0) != null) && !other.title.data.unique) {
-          this.title.setById(other.title.data.id);
+        other_titles = [];
+        _ref2 = other.titles;
+        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+          title = _ref2[_k];
+          if (((title != null ? title.data : void 0) != null) && !title.data.unique) {
+            other_titles.push(title);
+          }
         }
-        _ref3 = this.modifications;
-        for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
-          modification = _ref3[_k];
+        _ref3 = this.titles;
+        for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+          title = _ref3[_l];
+          other_title = other_titles.shift();
+          if (other_title != null) {
+            title.setById(other_title.data.id);
+          }
+        }
+        _ref4 = this.modifications;
+        for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
+          modification = _ref4[_m];
           other_modification = other_modifications.shift();
           if (other_modification != null) {
             modification.setById(other_modification.data.id);
           }
         }
-        _ref4 = this.upgrades;
-        for (_l = 0, _len3 = _ref4.length; _l < _len3; _l++) {
-          upgrade = _ref4[_l];
-          other_upgrade = ((_ref5 = other_upgrades[upgrade.slot]) != null ? _ref5 : []).shift();
+        _ref5 = this.upgrades;
+        for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
+          upgrade = _ref5[_n];
+          other_upgrade = ((_ref6 = other_upgrades[upgrade.slot]) != null ? _ref6 : []).shift();
           if (other_upgrade != null) {
             upgrade.setById(other_upgrade.data.id);
           }
@@ -27126,39 +27299,39 @@ Ship = (function() {
     } else {
       this.setPilotById(other.pilot.id);
       other_conferred_addons = [];
-      if ((other.title != null) && other.title.conferredAddons.length > 0) {
-        other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons);
+      if (((_ref7 = other.titles[0]) != null ? _ref7.data : void 0) != null) {
+        other_conferred_addons = other_conferred_addons.concat(other.titles[0].conferredAddons);
       }
-      if (((_ref6 = other.modifications[0]) != null ? _ref6.data : void 0) != null) {
+      if (((_ref8 = other.modifications[0]) != null ? _ref8.data : void 0) != null) {
         other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons);
       }
-      _ref7 = other.upgrades;
-      for (i = _m = 0, _len4 = _ref7.length; _m < _len4; i = ++_m) {
-        other_upgrade = _ref7[i];
-        if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique) {
+      _ref9 = other.upgrades;
+      for (i = _o = 0, _len6 = _ref9.length; _o < _len6; i = ++_o) {
+        other_upgrade = _ref9[i];
+        if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique && i < this.upgrades.length) {
           this.upgrades[i].setById(other_upgrade.data.id);
         }
       }
-      if ((((_ref8 = other.title) != null ? _ref8.data : void 0) != null) && !other.title.data.unique) {
-        this.title.setById(other.title.data.id);
+      if ((((_ref10 = other.titles[0]) != null ? _ref10.data : void 0) != null) && !other.titles[0].data.unique) {
+        this.titles[0].setById(other.titles[0].data.id);
       }
-      if (((_ref9 = other.modifications[0]) != null ? _ref9.data : void 0) && !other.modifications[0].data.unique) {
+      if (((_ref11 = other.modifications[0]) != null ? _ref11.data : void 0) && !other.modifications[0].data.unique) {
         this.modifications[0].setById(other.modifications[0].data.id);
       }
-      if ((other.title != null) && other.title.conferredAddons.length > 0) {
-        _ref10 = other.title.conferredAddons;
-        for (i = _n = 0, _len5 = _ref10.length; _n < _len5; i = ++_n) {
-          other_conferred_addon = _ref10[i];
-          if ((other_conferred_addon.data != null) && !((_ref11 = other_conferred_addon.data) != null ? _ref11.unique : void 0)) {
-            this.title.conferredAddons[i].setById(other_conferred_addon.data.id);
+      if ((other.titles[0] != null) && other.titles[0].conferredAddons.length > 0) {
+        _ref12 = other.titles[0].conferredAddons;
+        for (i = _p = 0, _len7 = _ref12.length; _p < _len7; i = ++_p) {
+          other_conferred_addon = _ref12[i];
+          if ((other_conferred_addon.data != null) && !((_ref13 = other_conferred_addon.data) != null ? _ref13.unique : void 0)) {
+            this.titles[0].conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }
       }
       if ((other.modifications[0] != null) && other.modifications[0].conferredAddons.length > 0) {
-        _ref12 = other.modifications[0].conferredAddons;
-        for (i = _o = 0, _len6 = _ref12.length; _o < _len6; i = ++_o) {
-          other_conferred_addon = _ref12[i];
-          if ((other_conferred_addon.data != null) && !((_ref13 = other_conferred_addon.data) != null ? _ref13.unique : void 0)) {
+        _ref14 = other.modifications[0].conferredAddons;
+        for (i = _q = 0, _len8 = _ref14.length; _q < _len8; i = ++_q) {
+          other_conferred_addon = _ref14[i];
+          if ((other_conferred_addon.data != null) && !((_ref15 = other_conferred_addon.data) != null ? _ref15.unique : void 0)) {
             this.modifications[0].conferredAddons[i].setById(other_conferred_addon.data.id);
           }
         }
@@ -27208,14 +27381,14 @@ Ship = (function() {
   };
 
   Ship.prototype.setPilot = function(new_pilot) {
-    var modification, old_modification, old_modifications, old_title, old_upgrade, old_upgrades, same_ship, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k, _i, _j, _len, _len1, _name, _ref, _ref1;
+    var modification, old_modification, old_modifications, old_title, old_titles, old_upgrade, old_upgrades, same_ship, title, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k, _i, _j, _k, _len, _len1, _len2, _name, _ref, _ref1, _ref2;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
     if (new_pilot !== this.pilot) {
       this.builder.current_squad.dirty = true;
       same_ship = (this.pilot != null) && (new_pilot != null ? new_pilot.ship : void 0) === this.pilot.ship;
       old_upgrades = {};
-      old_title = null;
+      old_titles = [];
       old_modifications = [];
       if (same_ship) {
         _ref = this.upgrades;
@@ -27228,12 +27401,16 @@ Ship = (function() {
             old_upgrades[upgrade.slot].push(upgrade);
           }
         }
-        if (this.title != null) {
-          old_title = this.title;
-        }
-        _ref1 = this.modifications;
+        _ref1 = this.titles;
         for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-          modification = _ref1[_j];
+          title = _ref1[_j];
+          if ((title != null ? title.data : void 0) != null) {
+            old_titles.push(title);
+          }
+        }
+        _ref2 = this.modifications;
+        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+          modification = _ref2[_k];
           if ((modification != null ? modification.data : void 0) != null) {
             old_modifications.push(modification);
           }
@@ -27254,7 +27431,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25275
+                      lineno: 25422
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27263,7 +27440,7 @@ Ship = (function() {
                 return __iced_k();
               }
             })(function() {
-              var _k, _l, _len2, _len3, _ref2, _ref3, _ref4;
+              var _l, _len3, _len4, _len5, _m, _n, _ref3, _ref4, _ref5, _ref6;
               _this.pilot = new_pilot;
               if (_this.pilot != null) {
                 _this.setupAddons();
@@ -27271,21 +27448,26 @@ Ship = (function() {
               _this.copy_button.show();
               _this.setShipType(_this.pilot.ship);
               if (same_ship) {
-                if ((old_title != null ? old_title.data : void 0) != null) {
-                  _this.title.setById(old_title.data.id);
+                _ref3 = _this.titles;
+                for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
+                  title = _ref3[_l];
+                  old_title = old_titles.shift();
+                  if (old_title != null) {
+                    title.setById(old_title.data.id);
+                  }
                 }
-                _ref2 = _this.modifications;
-                for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-                  modification = _ref2[_k];
+                _ref4 = _this.modifications;
+                for (_m = 0, _len4 = _ref4.length; _m < _len4; _m++) {
+                  modification = _ref4[_m];
                   old_modification = old_modifications.shift();
                   if (old_modification != null) {
                     modification.setById(old_modification.data.id);
                   }
                 }
-                _ref3 = _this.upgrades;
-                for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
-                  upgrade = _ref3[_l];
-                  old_upgrade = ((_ref4 = old_upgrades[upgrade.slot]) != null ? _ref4 : []).shift();
+                _ref5 = _this.upgrades;
+                for (_n = 0, _len5 = _ref5.length; _n < _len5; _n++) {
+                  upgrade = _ref5[_n];
+                  old_upgrade = ((_ref6 = old_upgrades[upgrade.slot]) != null ? _ref6 : []).shift();
                   if (old_upgrade != null) {
                     upgrade.setById(old_upgrade.data.id);
                   }
@@ -27323,7 +27505,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25299
+                lineno: 25448
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27351,10 +27533,10 @@ Ship = (function() {
       }));
     }
     if (this.pilot.ship in exportObj.titlesByShip) {
-      this.title = new exportObj.Title({
+      this.titles.push(new exportObj.Title({
         ship: this,
         container: this.addon_container
-      });
+      }));
     }
     return this.modifications.push(new exportObj.Modification({
       ship: this,
@@ -27363,36 +27545,40 @@ Ship = (function() {
   };
 
   Ship.prototype.resetAddons = function() {
-    var modification, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k;
+    var modification, title, upgrade, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
     (function(_this) {
       return (function(__iced_k) {
-        var _i, _j, _len, _len1, _ref, _ref1;
+        var _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2;
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
           funcname: "Ship.resetAddons"
         });
-        if (_this.title != null) {
-          _this.title.destroy(__iced_deferrals.defer({
-            lineno: 25321
-          }));
-        }
-        _ref = _this.upgrades;
+        _ref = _this.titles;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          upgrade = _ref[_i];
-          if (upgrade != null) {
-            upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25323
+          title = _ref[_i];
+          if (title != null) {
+            title.destroy(__iced_deferrals.defer({
+              lineno: 25471
             }));
           }
         }
-        _ref1 = _this.modifications;
+        _ref1 = _this.upgrades;
         for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-          modification = _ref1[_j];
+          upgrade = _ref1[_j];
+          if (upgrade != null) {
+            upgrade.destroy(__iced_deferrals.defer({
+              lineno: 25473
+            }));
+          }
+        }
+        _ref2 = _this.modifications;
+        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+          modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25325
+              lineno: 25475
             }));
           }
         }
@@ -27402,22 +27588,27 @@ Ship = (function() {
       return function() {
         _this.upgrades = [];
         _this.modifications = [];
-        return _this.title = null;
+        return _this.titles = [];
       };
     })(this));
   };
 
   Ship.prototype.getPoints = function() {
-    var modification, points, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
-    points = ((_ref = (_ref1 = this.pilot) != null ? _ref1.points : void 0) != null ? _ref : 0) + ((_ref2 = (_ref3 = this.title) != null ? _ref3.getPoints() : void 0) != null ? _ref2 : 0);
+    var modification, points, title, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5, _ref6;
+    points = (_ref = (_ref1 = this.pilot) != null ? _ref1.points : void 0) != null ? _ref : 0;
+    _ref2 = this.titles;
+    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+      title = _ref2[_i];
+      points += (_ref3 = title != null ? title.getPoints() : void 0) != null ? _ref3 : 0;
+    }
     _ref4 = this.upgrades;
-    for (_i = 0, _len = _ref4.length; _i < _len; _i++) {
-      upgrade = _ref4[_i];
+    for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
+      upgrade = _ref4[_j];
       points += upgrade.getPoints();
     }
     _ref5 = this.modifications;
-    for (_j = 0, _len1 = _ref5.length; _j < _len1; _j++) {
-      modification = _ref5[_j];
+    for (_k = 0, _len2 = _ref5.length; _k < _len2; _k++) {
+      modification = _ref5[_k];
       points += (_ref6 = modification != null ? modification.getPoints() : void 0) != null ? _ref6 : 0;
     }
     this.points_container.find('span').text(points);
@@ -27435,7 +27626,7 @@ Ship = (function() {
   };
 
   Ship.prototype.updateSelections = function() {
-    var modification, upgrade, _i, _j, _len, _len1, _ref, _ref1, _results;
+    var modification, title, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _results;
     if (this.pilot != null) {
       this.ship_selector.select2('data', {
         id: this.pilot.ship,
@@ -27452,13 +27643,17 @@ Ship = (function() {
         upgrade = _ref[_i];
         upgrade.updateSelection();
       }
-      if (this.title != null) {
-        this.title.updateSelection();
-      }
-      _ref1 = this.modifications;
-      _results = [];
+      _ref1 = this.titles;
       for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-        modification = _ref1[_j];
+        title = _ref1[_j];
+        if (title != null) {
+          title.updateSelection();
+        }
+      }
+      _ref2 = this.modifications;
+      _results = [];
+      for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+        modification = _ref2[_k];
         if (modification != null) {
           _results.push(modification.updateSelection());
         } else {
@@ -27632,7 +27827,7 @@ Ship = (function() {
   };
 
   Ship.prototype.toHTML = function() {
-    var action, action_bar, action_icons, attackHTML, attack_icon, effective_stats, energyHTML, html, modification, slotted_upgrades, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var action, action_bar, action_icons, attackHTML, attack_icon, effective_stats, energyHTML, html, modification, slotted_upgrades, title, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     effective_stats = this.effectiveStats();
     action_icons = [];
     _ref = effective_stats.actions;
@@ -27699,10 +27894,18 @@ Ship = (function() {
         }
       }
       return _results;
+    }).call(this)).concat((function() {
+      var _j, _len1, _ref14, _results;
+      _ref14 = this.titles;
+      _results = [];
+      for (_j = 0, _len1 = _ref14.length; _j < _len1; _j++) {
+        title = _ref14[_j];
+        if (title.data != null) {
+          _results.push(title);
+        }
+      }
+      return _results;
     }).call(this));
-    if (((_ref14 = this.title) != null ? _ref14.data : void 0) != null) {
-      slotted_upgrades.push(this.title);
-    }
     if (slotted_upgrades.length > 0) {
       html += $.trim("<div class=\"fancy-upgrade-container\">");
       for (_j = 0, _len1 = slotted_upgrades.length; _j < _len1; _j++) {
@@ -27716,7 +27919,7 @@ Ship = (function() {
   };
 
   Ship.prototype.toTableRow = function() {
-    var modification, slotted_upgrades, table_html, upgrade, _i, _len, _ref;
+    var modification, slotted_upgrades, table_html, title, upgrade, _i, _len;
     table_html = $.trim("<tr class=\"simple-pilot\">\n    <td class=\"name\">" + this.pilot.name + " &mdash; " + this.data.name + "</td>\n    <td class=\"points\">" + this.pilot.points + "</td>\n</tr>");
     slotted_upgrades = ((function() {
       var _i, _len, _ref, _results;
@@ -27740,10 +27943,18 @@ Ship = (function() {
         }
       }
       return _results;
+    }).call(this)).concat((function() {
+      var _i, _len, _ref, _results;
+      _ref = this.titles;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        title = _ref[_i];
+        if (title.data != null) {
+          _results.push(title);
+        }
+      }
+      return _results;
     }).call(this));
-    if (((_ref = this.title) != null ? _ref.data : void 0) != null) {
-      slotted_upgrades.push(this.title);
-    }
     if (slotted_upgrades.length > 0) {
       for (_i = 0, _len = slotted_upgrades.length; _i < _len; _i++) {
         upgrade = slotted_upgrades[_i];
@@ -27756,7 +27967,7 @@ Ship = (function() {
   };
 
   Ship.prototype.toBBCode = function() {
-    var bbcode, bbcode_upgrades, modification, slotted_upgrades, upgrade, upgrade_bbcode, _i, _len, _ref;
+    var bbcode, bbcode_upgrades, modification, slotted_upgrades, title, upgrade, upgrade_bbcode, _i, _len;
     bbcode = "[b]" + this.pilot.name + " (" + this.pilot.points + ")[/b]";
     slotted_upgrades = ((function() {
       var _i, _len, _ref, _results;
@@ -27780,10 +27991,18 @@ Ship = (function() {
         }
       }
       return _results;
+    }).call(this)).concat((function() {
+      var _i, _len, _ref, _results;
+      _ref = this.titles;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        title = _ref[_i];
+        if (title.data != null) {
+          _results.push(title);
+        }
+      }
+      return _results;
     }).call(this));
-    if (((_ref = this.title) != null ? _ref.data : void 0) != null) {
-      slotted_upgrades.push(this.title);
-    }
     if (slotted_upgrades.length > 0) {
       bbcode += "\n";
       bbcode_upgrades = [];
@@ -27800,7 +28019,7 @@ Ship = (function() {
   };
 
   Ship.prototype.toSimpleHTML = function() {
-    var html, modification, slotted_upgrades, upgrade, upgrade_html, _i, _len, _ref;
+    var html, modification, slotted_upgrades, title, upgrade, upgrade_html, _i, _len;
     html = "<b>" + this.pilot.name + " (" + this.pilot.points + ")</b><br />";
     slotted_upgrades = ((function() {
       var _i, _len, _ref, _results;
@@ -27824,10 +28043,18 @@ Ship = (function() {
         }
       }
       return _results;
+    }).call(this)).concat((function() {
+      var _i, _len, _ref, _results;
+      _ref = this.titles;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        title = _ref[_i];
+        if (title.data != null) {
+          _results.push(title);
+        }
+      }
+      return _results;
     }).call(this));
-    if (((_ref = this.title) != null ? _ref.data : void 0) != null) {
-      slotted_upgrades.push(this.title);
-    }
     if (slotted_upgrades.length > 0) {
       for (_i = 0, _len = slotted_upgrades.length; _i < _len; _i++) {
         upgrade = slotted_upgrades[_i];
@@ -27841,23 +28068,28 @@ Ship = (function() {
   };
 
   Ship.prototype.toSerialized = function() {
-    var addon, conferred_addons, i, modification, serialized_conferred_addons, upgrade, upgrades, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref10, _ref11, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
-    conferred_addons = (_ref = (_ref1 = this.title) != null ? _ref1.conferredAddons : void 0) != null ? _ref : [];
+    var addon, conferred_addons, i, modification, serialized_conferred_addons, title, upgrade, upgrades, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref10, _ref11, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    conferred_addons = [];
+    _ref = this.titles;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      title = _ref[_i];
+      conferred_addons = conferred_addons.concat((_ref1 = title != null ? title.conferredAddons : void 0) != null ? _ref1 : []);
+    }
     _ref2 = this.modifications;
-    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
-      modification = _ref2[_i];
+    for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+      modification = _ref2[_j];
       conferred_addons = conferred_addons.concat((_ref3 = modification != null ? modification.conferredAddons : void 0) != null ? _ref3 : []);
     }
     _ref4 = this.upgrades;
-    for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
-      upgrade = _ref4[_j];
+    for (_k = 0, _len2 = _ref4.length; _k < _len2; _k++) {
+      upgrade = _ref4[_k];
       conferred_addons = conferred_addons.concat((_ref5 = upgrade != null ? upgrade.conferredAddons : void 0) != null ? _ref5 : []);
     }
     upgrades = "" + ((function() {
-      var _k, _len2, _ref6, _ref7, _ref8, _results;
+      var _l, _len3, _ref6, _ref7, _ref8, _results;
       _ref6 = this.upgrades;
       _results = [];
-      for (i = _k = 0, _len2 = _ref6.length; _k < _len2; i = ++_k) {
+      for (i = _l = 0, _len3 = _ref6.length; _l < _len3; i = ++_l) {
         upgrade = _ref6[i];
         if (__indexOf.call(conferred_addons, upgrade) < 0) {
           _results.push((_ref7 = upgrade != null ? (_ref8 = upgrade.data) != null ? _ref8.id : void 0 : void 0) != null ? _ref7 : -1);
@@ -27866,15 +28098,15 @@ Ship = (function() {
       return _results;
     }).call(this));
     serialized_conferred_addons = [];
-    for (_k = 0, _len2 = conferred_addons.length; _k < _len2; _k++) {
-      addon = conferred_addons[_k];
+    for (_l = 0, _len3 = conferred_addons.length; _l < _len3; _l++) {
+      addon = conferred_addons[_l];
       serialized_conferred_addons.push(addon.toSerialized());
     }
-    return [this.pilot.id, upgrades, (_ref6 = (_ref7 = this.title) != null ? (_ref8 = _ref7.data) != null ? _ref8.id : void 0 : void 0) != null ? _ref6 : -1, (_ref9 = (_ref10 = this.modifications[0]) != null ? (_ref11 = _ref10.data) != null ? _ref11.id : void 0 : void 0) != null ? _ref9 : -1, serialized_conferred_addons.join(',')].join(':');
+    return [this.pilot.id, upgrades, (_ref6 = (_ref7 = this.titles[0]) != null ? (_ref8 = _ref7.data) != null ? _ref8.id : void 0 : void 0) != null ? _ref6 : -1, (_ref9 = (_ref10 = this.modifications[0]) != null ? (_ref11 = _ref10.data) != null ? _ref11.id : void 0 : void 0) != null ? _ref9 : -1, serialized_conferred_addons.join(',')].join(':');
   };
 
   Ship.prototype.fromSerialized = function(version, serialized) {
-    var addon_cls, addon_id, addon_type_serialized, conferred_addon, conferredaddon_pair, conferredaddon_pairs, deferred_id, deferred_ids, i, modification, modification_conferred_addon_pairs, modification_id, pilot_id, title_conferred_addon_pairs, title_conferred_upgrade_ids, title_id, upgrade, upgrade_conferred_addon_pairs, upgrade_id, upgrade_ids, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len13, _len14, _len15, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u, _v, _w, _x;
+    var addon_cls, addon_id, addon_type_serialized, conferred_addon, conferredaddon_pair, conferredaddon_pairs, deferred_id, deferred_ids, i, modification, modification_conferred_addon_pairs, modification_id, pilot_id, title, title_conferred_addon_pairs, title_conferred_upgrade_ids, title_id, upgrade, upgrade_conferred_addon_pairs, upgrade_id, upgrade_ids, _i, _j, _k, _l, _len, _len1, _len10, _len11, _len12, _len13, _len14, _len15, _len16, _len2, _len3, _len4, _len5, _len6, _len7, _len8, _len9, _m, _n, _o, _p, _q, _r, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _s, _t, _u, _v, _w, _x, _y;
     switch (version) {
       case 1:
         _ref = serialized.split(':'), pilot_id = _ref[0], upgrade_ids = _ref[1], title_id = _ref[2], title_conferred_upgrade_ids = _ref[3], modification_id = _ref[4];
@@ -27889,15 +28121,15 @@ Ship = (function() {
         }
         title_id = parseInt(title_id);
         if (title_id >= 0) {
-          this.title.setById(title_id);
+          this.titles[0].setById(title_id);
         }
-        if ((this.title != null) && this.title.conferredAddons.length > 0) {
+        if ((this.titles[0] != null) && this.titles[0].conferredAddons.length > 0) {
           _ref2 = title_conferred_upgrade_ids.split(',');
           for (i = _j = 0, _len1 = _ref2.length; _j < _len1; i = ++_j) {
             upgrade_id = _ref2[i];
             upgrade_id = parseInt(upgrade_id);
             if (upgrade_id >= 0) {
-              this.title.conferredAddons[i].setById(upgrade_id);
+              this.titles[0].conferredAddons[i].setById(upgrade_id);
             }
           }
         }
@@ -27938,7 +28170,7 @@ Ship = (function() {
         }
         title_id = parseInt(title_id);
         if (title_id >= 0) {
-          this.title.setById(title_id);
+          this.titles[0].setById(title_id);
         }
         modification_id = parseInt(modification_id);
         if (modification_id >= 0) {
@@ -27949,14 +28181,14 @@ Ship = (function() {
         } else {
           conferredaddon_pairs = [];
         }
-        if ((this.title != null) && this.title.conferredAddons.length > 0) {
-          title_conferred_addon_pairs = conferredaddon_pairs.splice(0, this.title.conferredAddons.length);
+        if ((this.titles[0] != null) && this.titles[0].conferredAddons.length > 0) {
+          title_conferred_addon_pairs = conferredaddon_pairs.splice(0, this.titles[0].conferredAddons.length);
           for (i = _n = 0, _len5 = title_conferred_addon_pairs.length; _n < _len5; i = ++_n) {
             conferredaddon_pair = title_conferred_addon_pairs[i];
             _ref6 = conferredaddon_pair.split('.'), addon_type_serialized = _ref6[0], addon_id = _ref6[1];
             addon_id = parseInt(addon_id);
             addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
-            conferred_addon = this.title.conferredAddons[i];
+            conferred_addon = this.titles[0].conferredAddons[i];
             if (conferred_addon instanceof addon_cls) {
               conferred_addon.setById(addon_id);
             } else {
@@ -28015,7 +28247,7 @@ Ship = (function() {
         }
         title_id = parseInt(title_id);
         if (title_id >= 0) {
-          this.title.setById(title_id);
+          this.titles[0].setById(title_id);
         }
         modification_id = parseInt(modification_id);
         if (modification_id >= 0) {
@@ -28026,29 +28258,33 @@ Ship = (function() {
         } else {
           conferredaddon_pairs = [];
         }
-        if ((this.title != null) && this.title.conferredAddons.length > 0) {
-          title_conferred_addon_pairs = conferredaddon_pairs.splice(0, this.title.conferredAddons.length);
-          for (i = _t = 0, _len11 = title_conferred_addon_pairs.length; _t < _len11; i = ++_t) {
-            conferredaddon_pair = title_conferred_addon_pairs[i];
-            _ref12 = conferredaddon_pair.split('.'), addon_type_serialized = _ref12[0], addon_id = _ref12[1];
-            addon_id = parseInt(addon_id);
-            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
-            conferred_addon = this.title.conferredAddons[i];
-            if (conferred_addon instanceof addon_cls) {
-              conferred_addon.setById(addon_id);
-            } else {
-              throw new Error("Expected addon class " + addon_cls.constructor.name + " for conferred addon at index " + i + " but " + conferred_addon.constructor.name + " is there");
+        _ref12 = this.titles;
+        for (i = _t = 0, _len11 = _ref12.length; _t < _len11; i = ++_t) {
+          title = _ref12[i];
+          if (((title != null ? title.data : void 0) != null) && title.conferredAddons.length > 0) {
+            title_conferred_addon_pairs = conferredaddon_pairs.splice(0, title.conferredAddons.length);
+            for (i = _u = 0, _len12 = title_conferred_addon_pairs.length; _u < _len12; i = ++_u) {
+              conferredaddon_pair = title_conferred_addon_pairs[i];
+              _ref13 = conferredaddon_pair.split('.'), addon_type_serialized = _ref13[0], addon_id = _ref13[1];
+              addon_id = parseInt(addon_id);
+              addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
+              conferred_addon = title.conferredAddons[i];
+              if (conferred_addon instanceof addon_cls) {
+                conferred_addon.setById(addon_id);
+              } else {
+                throw new Error("Expected addon class " + addon_cls.constructor.name + " for conferred addon at index " + i + " but " + conferred_addon.constructor.name + " is there");
+              }
             }
           }
         }
-        _ref13 = this.modifications;
-        for (_u = 0, _len12 = _ref13.length; _u < _len12; _u++) {
-          modification = _ref13[_u];
+        _ref14 = this.modifications;
+        for (_v = 0, _len13 = _ref14.length; _v < _len13; _v++) {
+          modification = _ref14[_v];
           if (((modification != null ? modification.data : void 0) != null) && modification.conferredAddons.length > 0) {
             modification_conferred_addon_pairs = conferredaddon_pairs.splice(0, modification.conferredAddons.length);
-            for (i = _v = 0, _len13 = modification_conferred_addon_pairs.length; _v < _len13; i = ++_v) {
+            for (i = _w = 0, _len14 = modification_conferred_addon_pairs.length; _w < _len14; i = ++_w) {
               conferredaddon_pair = modification_conferred_addon_pairs[i];
-              _ref14 = conferredaddon_pair.split('.'), addon_type_serialized = _ref14[0], addon_id = _ref14[1];
+              _ref15 = conferredaddon_pair.split('.'), addon_type_serialized = _ref15[0], addon_id = _ref15[1];
               addon_id = parseInt(addon_id);
               addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
               conferred_addon = modification.conferredAddons[i];
@@ -28060,14 +28296,14 @@ Ship = (function() {
             }
           }
         }
-        _ref15 = this.upgrades;
-        for (_w = 0, _len14 = _ref15.length; _w < _len14; _w++) {
-          upgrade = _ref15[_w];
+        _ref16 = this.upgrades;
+        for (_x = 0, _len15 = _ref16.length; _x < _len15; _x++) {
+          upgrade = _ref16[_x];
           if (((upgrade != null ? upgrade.data : void 0) != null) && upgrade.conferredAddons.length > 0) {
             upgrade_conferred_addon_pairs = conferredaddon_pairs.splice(0, upgrade.conferredAddons.length);
-            for (i = _x = 0, _len15 = upgrade_conferred_addon_pairs.length; _x < _len15; i = ++_x) {
+            for (i = _y = 0, _len16 = upgrade_conferred_addon_pairs.length; _y < _len16; i = ++_y) {
               conferredaddon_pair = upgrade_conferred_addon_pairs[i];
-              _ref16 = conferredaddon_pair.split('.'), addon_type_serialized = _ref16[0], addon_id = _ref16[1];
+              _ref17 = conferredaddon_pair.split('.'), addon_type_serialized = _ref17[0], addon_id = _ref17[1];
               addon_id = parseInt(addon_id);
               addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized];
               conferred_addon = upgrade.conferredAddons[i];
@@ -28084,7 +28320,7 @@ Ship = (function() {
   };
 
   Ship.prototype.effectiveStats = function() {
-    var modification, s, stats, upgrade, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var modification, s, stats, title, upgrade, _i, _j, _k, _l, _len, _len1, _len2, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref2, _ref20, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     stats = {
       skill: this.pilot.skill,
       attack: (_ref = (_ref1 = this.pilot.ship_override) != null ? _ref1.attack : void 0) != null ? _ref : this.data.attack,
@@ -28105,12 +28341,16 @@ Ship = (function() {
         upgrade.data.modifier_func(stats);
       }
     }
-    if (((_ref16 = this.title) != null ? (_ref17 = _ref16.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
-      this.title.data.modifier_func(stats);
+    _ref16 = this.titles;
+    for (_k = 0, _len1 = _ref16.length; _k < _len1; _k++) {
+      title = _ref16[_k];
+      if ((title != null ? (_ref17 = title.data) != null ? _ref17.modifier_func : void 0 : void 0) != null) {
+        title.data.modifier_func(stats);
+      }
     }
     _ref18 = this.modifications;
-    for (_k = 0, _len1 = _ref18.length; _k < _len1; _k++) {
-      modification = _ref18[_k];
+    for (_l = 0, _len2 = _ref18.length; _l < _len2; _l++) {
+      modification = _ref18[_l];
       if ((modification != null ? (_ref19 = modification.data) != null ? _ref19.modifier_func : void 0 : void 0) != null) {
         modification.data.modifier_func(stats);
       }
@@ -28122,7 +28362,7 @@ Ship = (function() {
   };
 
   Ship.prototype.validate = function() {
-    var func, i, max_checks, modification, upgrade, valid, _i, _j, _k, _len, _len1, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
+    var func, i, max_checks, modification, title, upgrade, valid, _i, _j, _k, _l, _len, _len1, _len2, _ref, _ref1, _ref10, _ref11, _ref12, _ref13, _ref14, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     max_checks = 128;
     for (i = _i = 0; 0 <= max_checks ? _i < max_checks : _i > max_checks; i = 0 <= max_checks ? ++_i : --_i) {
       valid = true;
@@ -28136,15 +28376,20 @@ Ship = (function() {
           break;
         }
       }
-      func = (_ref5 = (_ref6 = (_ref7 = this.title) != null ? (_ref8 = _ref7.data) != null ? _ref8.validation_func : void 0 : void 0) != null ? _ref6 : (_ref9 = this.title) != null ? (_ref10 = _ref9.data) != null ? _ref10.restriction_func : void 0 : void 0) != null ? _ref5 : void 0;
-      if ((func != null) && !func(this)) {
-        this.title.setById(null);
-        continue;
+      _ref5 = this.titles;
+      for (_k = 0, _len1 = _ref5.length; _k < _len1; _k++) {
+        title = _ref5[_k];
+        func = (_ref6 = (_ref7 = title != null ? (_ref8 = title.data) != null ? _ref8.validation_func : void 0 : void 0) != null ? _ref7 : title != null ? (_ref9 = title.data) != null ? _ref9.restriction_func : void 0 : void 0) != null ? _ref6 : void 0;
+        if ((func != null) && !func(this)) {
+          title.setById(null);
+          valid = false;
+          break;
+        }
       }
-      _ref11 = this.modifications;
-      for (_k = 0, _len1 = _ref11.length; _k < _len1; _k++) {
-        modification = _ref11[_k];
-        func = (_ref12 = (_ref13 = modification != null ? (_ref14 = modification.data) != null ? _ref14.validation_func : void 0 : void 0) != null ? _ref13 : modification != null ? (_ref15 = modification.data) != null ? _ref15.restriction_func : void 0 : void 0) != null ? _ref12 : void 0;
+      _ref10 = this.modifications;
+      for (_l = 0, _len2 = _ref10.length; _l < _len2; _l++) {
+        modification = _ref10[_l];
+        func = (_ref11 = (_ref12 = modification != null ? (_ref13 = modification.data) != null ? _ref13.validation_func : void 0 : void 0) != null ? _ref12 : modification != null ? (_ref14 = modification.data) != null ? _ref14.restriction_func : void 0 : void 0) != null ? _ref11 : void 0;
         if ((func != null) && !func(this, modification)) {
           modification.setById(null);
           valid = false;
@@ -28159,23 +28404,27 @@ Ship = (function() {
   };
 
   Ship.prototype.checkUnreleasedContent = function() {
-    var modification, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+    var modification, title, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2;
     if ((this.pilot != null) && !exportObj.isReleased(this.pilot)) {
       return true;
     }
-    if ((((_ref = this.title) != null ? _ref.data : void 0) != null) && !exportObj.isReleased(this.title.data)) {
-      return true;
+    _ref = this.titles;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      title = _ref[_i];
+      if (((title != null ? title.data : void 0) != null) && !exportObj.isReleased(title.data)) {
+        return true;
+      }
     }
     _ref1 = this.modifications;
-    for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-      modification = _ref1[_i];
+    for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+      modification = _ref1[_j];
       if (((modification != null ? modification.data : void 0) != null) && !exportObj.isReleased(modification.data)) {
         return true;
       }
     }
     _ref2 = this.upgrades;
-    for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
-      upgrade = _ref2[_j];
+    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+      upgrade = _ref2[_k];
       if (((upgrade != null ? upgrade.data : void 0) != null) && !exportObj.isReleased(upgrade.data)) {
         return true;
       }
@@ -28184,23 +28433,27 @@ Ship = (function() {
   };
 
   Ship.prototype.checkEpicContent = function() {
-    var modification, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
+    var modification, title, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _ref5;
     if ((this.pilot != null) && (this.pilot.epic != null)) {
       return true;
     }
-    if (((_ref = this.title) != null ? (_ref1 = _ref.data) != null ? _ref1.epic : void 0 : void 0) != null) {
-      return true;
+    _ref = this.titles;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      title = _ref[_i];
+      if ((title != null ? (_ref1 = title.data) != null ? _ref1.epic : void 0 : void 0) != null) {
+        return true;
+      }
     }
     _ref2 = this.modifications;
-    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
-      modification = _ref2[_i];
+    for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+      modification = _ref2[_j];
       if ((modification != null ? (_ref3 = modification.data) != null ? _ref3.epic : void 0 : void 0) != null) {
         return true;
       }
     }
     _ref4 = this.upgrades;
-    for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
-      upgrade = _ref4[_j];
+    for (_k = 0, _len2 = _ref4.length; _k < _len2; _k++) {
+      upgrade = _ref4[_k];
       if ((upgrade != null ? (_ref5 = upgrade.data) != null ? _ref5.epic : void 0 : void 0) != null) {
         return true;
       }
@@ -28224,7 +28477,7 @@ Ship = (function() {
   };
 
   Ship.prototype.toXWS = function() {
-    var modification, upgrade, upgrade_obj, xws, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+    var modification, title, upgrade, upgrade_obj, xws, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2;
     xws = {
       name: this.pilot.canonical_name,
       points: this.getPoints(),
@@ -28248,8 +28501,12 @@ Ship = (function() {
         modification.toXWS(upgrade_obj);
       }
     }
-    if (((_ref2 = this.title) != null ? _ref2.data : void 0) != null) {
-      this.title.toXWS(upgrade_obj);
+    _ref2 = this.titles;
+    for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
+      title = _ref2[_k];
+      if ((title != null ? title.data : void 0) != null) {
+        title.toXWS(upgrade_obj);
+      }
     }
     if (Object.keys(upgrade_obj).length > 0) {
       xws.upgrades = upgrade_obj;
@@ -28258,17 +28515,33 @@ Ship = (function() {
   };
 
   Ship.prototype.getConditions = function() {
-    var conditions, upgrade, _i, _len, _ref, _ref1, _ref2;
+    var condition, conditions, upgrade, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4;
     if (typeof Set !== "undefined" && Set !== null) {
       conditions = new Set();
       if (((_ref = this.pilot) != null ? _ref.applies_condition : void 0) != null) {
-        conditions.add(exportObj.conditionsByCanonicalName[this.pilot.applies_condition]);
+        if (this.pilot.applies_condition instanceof Array) {
+          _ref1 = this.pilot.applies_condition;
+          for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
+            condition = _ref1[_i];
+            conditions.add(exportObj.conditionsByCanonicalName[condition]);
+          }
+        } else {
+          conditions.add(exportObj.conditionsByCanonicalName[this.pilot.applies_condition]);
+        }
       }
-      _ref1 = this.upgrades;
-      for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-        upgrade = _ref1[_i];
-        if ((upgrade != null ? (_ref2 = upgrade.data) != null ? _ref2.applies_condition : void 0 : void 0) != null) {
-          conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition]);
+      _ref2 = this.upgrades;
+      for (_j = 0, _len1 = _ref2.length; _j < _len1; _j++) {
+        upgrade = _ref2[_j];
+        if ((upgrade != null ? (_ref3 = upgrade.data) != null ? _ref3.applies_condition : void 0 : void 0) != null) {
+          if (upgrade.data.applies_condition instanceof Array) {
+            _ref4 = upgrade.data.applies_condition;
+            for (_k = 0, _len2 = _ref4.length; _k < _len2; _k++) {
+              condition = _ref4[_k];
+              conditions.add(exportObj.conditionsByCanonicalName[condition]);
+            }
+          } else {
+            conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition]);
+          }
         }
       }
       return conditions;
@@ -28296,6 +28569,17 @@ GenericAddon = (function() {
     this.type = null;
     this.dataByName = null;
     this.dataById = null;
+    if (args.adjustment_func != null) {
+      this.adjustment_func = args.adjustment_func;
+    }
+    if (args.filter_func != null) {
+      this.filter_func = args.filter_func;
+    }
+    this.placeholderMod_func = args.placeholderMod_func != null ? args.placeholderMod_func : (function(_this) {
+      return function(x) {
+        return x;
+      };
+    })(this);
   }
 
   GenericAddon.prototype.destroy = function() {
@@ -28317,7 +28601,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 25982
+                lineno: 26158
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28436,7 +28720,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26041
+                  lineno: 26217
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28458,7 +28742,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26045
+                    lineno: 26221
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28514,11 +28798,16 @@ GenericAddon = (function() {
         if (addon.auto_equip != null) {
           args.auto_equip = addon.auto_equip;
         }
+        if (addon.placeholderMod_func != null) {
+          args.placeholderMod_func = addon.placeholderMod_func;
+        }
         addon = new cls(args);
         if (addon instanceof exportObj.Upgrade) {
           this.ship.upgrades.push(addon);
         } else if (addon instanceof exportObj.Modification) {
           this.ship.modifications.push(addon);
+        } else if (addon instanceof exportObj.Title) {
+          this.ship.titles.push(addon);
         } else {
           throw new Error("Unexpected addon type for addon " + addon);
         }
@@ -28543,7 +28832,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26085
+            lineno: 26264
           }));
         }
         __iced_deferrals._fulfill();
@@ -28558,6 +28847,8 @@ GenericAddon = (function() {
             _this.ship.upgrades.removeItem(addon);
           } else if (addon instanceof exportObj.Modification) {
             _this.ship.modifications.removeItem(addon);
+          } else if (addon instanceof exportObj.Title) {
+            _this.ship.titles.removeItem(addon);
           } else {
             throw new Error("Unexpected addon type for addon " + addon);
           }
@@ -28568,8 +28859,21 @@ GenericAddon = (function() {
   };
 
   GenericAddon.prototype.getPoints = function() {
-    var _ref, _ref1;
-    return (_ref = (_ref1 = this.data) != null ? _ref1.points : void 0) != null ? _ref : 0;
+    var title, _ref, _ref1, _ref2, _ref3, _ref4;
+    if (__indexOf.call((function() {
+      var _i, _len, _ref, _ref1, _ref2, _ref3, _results;
+      _ref2 = (_ref = (_ref1 = this.ship) != null ? _ref1.titles : void 0) != null ? _ref : [];
+      _results = [];
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        title = _ref2[_i];
+        _results.push((_ref3 = title.data) != null ? _ref3.canonical_name : void 0);
+      }
+      return _results;
+    }).call(this), 'vaksai') >= 0 && ((_ref = this.data) != null ? _ref.canonical_name : void 0) !== 'vaksai') {
+      return Math.max(0, ((_ref1 = (_ref2 = this.data) != null ? _ref2.points : void 0) != null ? _ref1 : 0) - 1);
+    } else {
+      return (_ref3 = (_ref4 = this.data) != null ? _ref4.points : void 0) != null ? _ref3 : 0;
+    }
   };
 
   GenericAddon.prototype.updateSelection = function() {
@@ -28767,19 +29071,13 @@ exportObj.Upgrade = (function(_super) {
     this.dataById = exportObj.upgradesById;
     this.dataByName = exportObj.upgradesByLocalizedName;
     this.serialization_code = 'U';
-    if (args.adjustment_func != null) {
-      this.adjustment_func = args.adjustment_func;
-    }
-    if (args.filter_func != null) {
-      this.filter_func = args.filter_func;
-    }
     this.setupSelector();
   }
 
   Upgrade.prototype.setupSelector = function() {
     return Upgrade.__super__.setupSelector.call(this, {
       width: '50%',
-      placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'upgradePlaceholder', this.slot),
+      placeholder: this.placeholderMod_func(exportObj.translate(this.ship.builder.language, 'ui', 'upgradePlaceholder', this.slot)),
       allowClear: true,
       query: (function(_this) {
         return function(query) {
@@ -28806,16 +29104,13 @@ exportObj.Modification = (function(_super) {
     this.dataById = exportObj.modificationsById;
     this.dataByName = exportObj.modificationsByLocalizedName;
     this.serialization_code = 'M';
-    if (args.filter_func != null) {
-      this.filter_func = args.filter_func;
-    }
     this.setupSelector();
   }
 
   Modification.prototype.setupSelector = function() {
     return Modification.__super__.setupSelector.call(this, {
       width: '50%',
-      placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'modificationPlaceholder'),
+      placeholder: this.placeholderMod_func(exportObj.translate(this.ship.builder.language, 'ui', 'modificationPlaceholder')),
       allowClear: true,
       query: (function(_this) {
         return function(query) {
@@ -28848,7 +29143,7 @@ exportObj.Title = (function(_super) {
   Title.prototype.setupSelector = function() {
     return Title.__super__.setupSelector.call(this, {
       width: '50%',
-      placeholder: exportObj.translate(this.ship.builder.language, 'ui', 'titlePlaceholder'),
+      placeholder: this.placeholderMod_func(exportObj.translate(this.ship.builder.language, 'ui', 'titlePlaceholder')),
       allowClear: true,
       query: (function(_this) {
         return function(query) {
