@@ -264,9 +264,9 @@ body {
       text-align: right; }
   #printable .print-notes {
     color: black; }
-  #printable .juggler-qrcode-container {
+  #printable .qrcode-container {
     color: black;
-    width: 6in;
+    width: 7in;
     margin-left: auto;
     margin-right: auto;
     page-break-inside: avoid;
@@ -274,17 +274,18 @@ body {
     bottom: 0;
     left: 0;
     right: 0; }
-  #printable .juggler-qrcode-container:before {
+  #printable .qrcode-container:before {
     content: '';
     display: inline-block;
     vertical-align: middle;
     height: 100%; }
-  #printable .juggler-qrcode-container > div {
+  #printable .qrcode-container > div {
     display: inline-block;
     vertical-align: middle; }
-  #printable .juggler-qrcode-text {
-    width: 4.25in; }
-  #printable .juggler-qrcode {
+  #printable .qrcode-text {
+    width: 3.25in;
+    text-align: center; }
+  #printable .qrcode {
     width: 144px;
     margin-left: auto;
     margin-right: auto; }
