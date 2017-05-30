@@ -500,6 +500,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
         '"Double Edge"':
             text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
+        'Viktor Hel':
+            text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1168,6 +1170,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Védekezéskor, ha van reinforce jelződ, kaphatsz egy további %EVADE% eredményt. Ha így teszel, védekezés után dobd el a reinforce jelzőt.'''
         'Havoc':
             text: '''<span class="card-restriction">Csak Scurrg H-6 Bomber.</span>%LINEBREAK%A fejlesztés sávod megkapja a %SYSTEM% és %SALVAGEDASTROMECH% ikont, de elveszti a %CREW% ikont. Csak egyedi %SALVAGEDASTROMECH% fejlesztés kártyákat használhatsz.'''
+        'Vaksai':
+            text: '''<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'''
+        'StarViper Mk. II':
+            text: '''<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

@@ -4680,6 +4680,69 @@ exportObj.basicCardData = ->
             ]
             points: 22
         }
+        {
+            name: 'Viktor Hel'
+            id: 262
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'Kihraxz Fighter'
+            skill: 7
+            slots: [
+                'Elite'
+                'Missile'
+                'Illicit'
+            ]
+            points: 25
+        }
+        {
+            name: 'Captain ???'
+            id: 263
+            skill: 4
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'Kihraxz Fighter'
+            slots: [
+                'Missile'
+                'Illicit'
+            ]
+            points: 100
+        }
+        {
+            name: 'Dalan Oberos'
+            id: 264
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'StarViper'
+            skill: 6
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Th???'
+            id: 265
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'StarViper'
+            skill: 4
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Black ???'
+            id: 266
+            faction: 'Scum and Villainy'
+            ship: 'StarViper'
+            skill: 5
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+
     ]
 
     upgradesById: [
@@ -7296,6 +7359,33 @@ exportObj.basicCardData = ->
                     slot: 'Salvaged Astromech'
                     filter_func: (upgrade) ->
                         upgrade.unique
+                }
+            ]
+        }
+        {
+            name: 'Vaksai'
+            id: 54
+            points: 0
+            ship: 'Kihraxz Fighter'
+            confersAddons: [
+                {
+                    type: exportObj.Modification
+                }
+                {
+                    type: exportObj.Modification
+                }
+            ]
+            special_case: 'Royal Guard TIE'
+        }
+        {
+            name: 'StarViper Mk. II'
+            id: 55
+            limited: true
+            points: -3
+            ship: 'StarViper'
+            confersAddons: [
+                {
+                    type: exportObj.Title
                 }
             ]
         }
