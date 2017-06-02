@@ -963,6 +963,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Jam"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         'Auzituck Gunship':
             name: 'Auzituck Gunship'
             factions: ["Rebel Alliance"]
@@ -6520,6 +6527,12 @@ exportObj.basicCardData = ->
             validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnotherUpgradeSlot()
             also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: 'IG-RM Thug Droids'
+            id: 234
+            slot: 'Team'
+            points: 1
         }
     ]
 

@@ -1328,6 +1328,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
         'Jabba the Hutt':
             text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
+        'IG-RM Thug Droids':
+            text: '''When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'''
 
     modification_translations =
         "Shield Upgrade":
