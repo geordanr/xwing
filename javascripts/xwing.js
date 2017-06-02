@@ -1730,7 +1730,8 @@ exportObj.basicCardData = function() {
         hull: 10,
         shields: 4,
         huge: true,
-        actions: ["Recover", "Reinforce", "Target Lock", "Jam"]
+        actions: ["Recover", "Reinforce", "Target Lock", "Jam"],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0]]
       },
       'Auzituck Gunship': {
         name: 'Auzituck Gunship',
@@ -5793,6 +5794,11 @@ exportObj.basicCardData = function() {
           return upgrade_obj.occupiesAnotherUpgradeSlot();
         },
         also_occupies_upgrades: ["Crew"]
+      }, {
+        name: 'IG-RM Thug Droids',
+        id: 234,
+        slot: 'Team',
+        points: 1
       }
     ],
     modificationsById: [
@@ -9136,6 +9142,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -10897,6 +10906,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -13285,6 +13297,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -15395,6 +15410,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -17118,6 +17136,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Jabba the Hutt': {
       text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Mikor felszereled ezt a kártyát, helyezz 1 illicit jelzőt a rajod minden %ILLICIT% fejlesztés kártyájára. Mikor azt az utasítást kapod, hogy dobj el egy ilyen kártyát, helyette eldobhatod az rajta lévő illicit jelzőt.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -19043,6 +19064,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -20666,6 +20690,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Jabba the Hutt': {
       text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+    },
+    'IG-RM Thug Droids': {
+      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
     }
   };
   modification_translations = {
@@ -24492,7 +24519,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23265
+                    lineno: 23292
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25081,7 +25108,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23895
+              lineno: 23922
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25825,7 +25852,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24525
+          lineno: 24552
         }));
         __iced_deferrals._fulfill();
       });
@@ -25837,7 +25864,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24526
+            lineno: 24553
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27431,7 +27458,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25422
+                      lineno: 25449
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27505,7 +27532,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25448
+                lineno: 25475
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27560,7 +27587,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25471
+              lineno: 25498
             }));
           }
         }
@@ -27569,7 +27596,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25473
+              lineno: 25500
             }));
           }
         }
@@ -27578,7 +27605,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25475
+              lineno: 25502
             }));
           }
         }
@@ -28601,7 +28628,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26158
+                lineno: 26185
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28720,7 +28747,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26217
+                  lineno: 26244
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28742,7 +28769,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26221
+                    lineno: 26248
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28832,7 +28859,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26264
+            lineno: 26291
           }));
         }
         __iced_deferrals._fulfill();
