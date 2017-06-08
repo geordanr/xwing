@@ -1197,7 +1197,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = ["C-ROC Cruiser Expansion Pack", "Auzituck Gunship Expansion Pack", "Scurrg H-6 Bomber Expansion Pack", "TIE Aggressor Expansion Pack"];
+exportObj.unreleasedExpansions = ["Auzituck Gunship Expansion Pack", "Scurrg H-6 Bomber Expansion Pack", "TIE Aggressor Expansion Pack"];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -6327,6 +6327,7 @@ exportObj.basicCardData = function() {
         }
       }, {
         name: 'IG-2000',
+        faction: 'Scum and Villainy',
         id: 20,
         points: 0,
         ship: "Aggressor"
@@ -11065,7 +11066,7 @@ exportObj.cardLoaders.English = function() {
       text: "<span class=\"card-restriction\">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon.%LINEBREAK%Increase your hull value by 1."
     },
     "IG-2000": {
-      text: "<span class=\"card-restriction\">Aggressor only.</span>%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."
+      text: "<span class=\"card-restriction\">Aggressor only.</span> %SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."
     },
     "BTL-A4 Y-Wing": {
       text: "<span class=\"card-restriction\">Y-Wing only.</span>%LINEBREAK%You cannot attack ships outside your firing arc. After you perform a primary weapon attack, you may immediately perform an attack with a %TURRET% secondary weapon."
@@ -24105,6 +24106,109 @@ exportObj.manifestByExpansion = {
       type: 'modification',
       count: 1
     }
+  ],
+  'C-ROC Cruiser Expansion Pack': [
+    {
+      name: 'C-ROC Cruiser',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'M3-A Interceptor',
+      type: 'ship',
+      count: 1
+    }, {
+      name: 'C-ROC Cruiser',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Genesis Red',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Quinn Jast',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Inaldra',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Sunny Bounder',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Tansarii Point Veteran',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Cartel Spacer',
+      type: 'pilot',
+      count: 1
+    }, {
+      name: 'Azmorigan',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Cikatro Vizago',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Jabba the Hutt',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'IG-RM Thug Droids',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'ARC Caster',
+      type: 'upgrade',
+      count: 5
+    }, {
+      name: 'Heavy Laser Turret',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Supercharged Power Cells',
+      type: 'upgrade',
+      count: 2
+    }, {
+      name: 'Quick-Release Cargo Locks',
+      type: 'upgrade',
+      count: 1
+    }, {
+      name: 'Merchant One',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Broken Horn',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Insatiable Worrt',
+      type: 'title',
+      count: 1
+    }, {
+      name: '"Light Scyk" Interceptor',
+      type: 'title',
+      count: 6
+    }, {
+      name: '"Heavy Scyk" Interceptor',
+      type: 'title',
+      count: 1
+    }, {
+      name: 'Automated Protocols',
+      type: 'modification',
+      count: 1
+    }, {
+      name: 'Optimized Generators',
+      type: 'modification',
+      count: 1
+    }, {
+      name: 'Pulsed Ray Shield',
+      type: 'modification',
+      count: 5
+    }
   ]
 };
 
@@ -24519,7 +24623,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23292
+                    lineno: 23419
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25108,7 +25212,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 23922
+              lineno: 24049
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25852,7 +25956,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24552
+          lineno: 24679
         }));
         __iced_deferrals._fulfill();
       });
@@ -25864,7 +25968,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24553
+            lineno: 24680
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27458,7 +27562,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25449
+                      lineno: 25576
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27532,7 +27636,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25475
+                lineno: 25602
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27587,7 +27691,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25498
+              lineno: 25625
             }));
           }
         }
@@ -27596,7 +27700,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25500
+              lineno: 25627
             }));
           }
         }
@@ -27605,7 +27709,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25502
+              lineno: 25629
             }));
           }
         }
@@ -28628,7 +28732,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26185
+                lineno: 26312
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28747,7 +28851,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26244
+                  lineno: 26371
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28769,7 +28873,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26248
+                    lineno: 26375
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28859,7 +28963,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26291
+            lineno: 26418
           }));
         }
         __iced_deferrals._fulfill();
