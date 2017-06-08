@@ -7019,6 +7019,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'IG-2000'
+            faction: 'Scum and Villainy'
             id: 20
             points: 0
             ship: "Aggressor"
