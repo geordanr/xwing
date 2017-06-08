@@ -2,7 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "C-ROC Cruiser Expansion Pack"
     "Auzituck Gunship Expansion Pack"
     "Scurrg H-6 Bomber Expansion Pack"
     "TIE Aggressor Expansion Pack"

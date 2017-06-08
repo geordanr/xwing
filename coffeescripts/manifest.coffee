@@ -3852,6 +3852,133 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'C-ROC Cruiser Expansion Pack': [
+        {
+            name: 'C-ROC Cruiser'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'M3-A Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'C-ROC Cruiser'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Genesis Red'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Quinn Jast'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Inaldra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sunny Bounder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tansarii Point Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Spacer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Azmorigan'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cikatro Vizago'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jabba the Hutt'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'IG-RM Thug Droids'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'ARC Caster'
+            type: 'upgrade'
+            count: 5
+        }
+        {
+            name: 'Heavy Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Supercharged Power Cells'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Quick-Release Cargo Locks'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Merchant One'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Broken Horn'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Insatiable Worrt'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: '"Light Scyk" Interceptor'
+            type: 'title'
+            count: 6
+        }
+        {
+            name: '"Heavy Scyk" Interceptor'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Automated Protocols'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Optimized Generators'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            type: 'modification'
+            count: 5
+        }
+    ]
 
 
 class exportObj.Collection
