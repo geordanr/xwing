@@ -4538,7 +4538,7 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: 'Wullfwarro'
+            name: 'Wullffwarro'
             id: 252
             faction: 'Rebel Alliance'
             unique: true

@@ -504,7 +504,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
         'Lowhhrick':
             text: '''When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'''
-        'Wullfwarro':
+        'Wullffwarro':
             text: '''When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'''
 
     upgrade_translations =
