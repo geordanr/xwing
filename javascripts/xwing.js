@@ -1741,7 +1741,8 @@ exportObj.basicCardData = function() {
         hull: 6,
         shields: 3,
         actions: ['Focus', 'Reinforce'],
-        attack_icon: 'xwing-miniatures-font-attack-180'
+        attack_icon: 'xwing-miniatures-font-attack-180',
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [0, 2, 2, 2, 0, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 3, 0, 0, 0, 0, 0]]
       },
       'Scurrg H-6 Bomber': {
         name: 'Scurrg H-6 Bomber',
@@ -4017,23 +4018,23 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Crew'],
         points: 100
       }, {
-        name: 'Lo???',
+        name: 'Lowhhrick',
         id: 251,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'Auzituck Gunship',
         skill: 5,
-        slots: ['Crew', 'Crew'],
-        points: 100
+        slots: ['Elite', 'Crew', 'Crew'],
+        points: 28
       }, {
-        name: 'Wull???',
+        name: 'Wullfwarro',
         id: 252,
         faction: 'Rebel Alliance',
         unique: true,
         ship: 'Auzituck Gunship',
         skill: 7,
-        slots: ['Crew', 'Crew'],
-        points: 100
+        slots: ['Elite', 'Crew', 'Crew'],
+        points: 30
       }, {
         name: 'Captain Nym (Scum)',
         id: 253,
@@ -5798,6 +5799,22 @@ exportObj.basicCardData = function() {
         name: 'IG-RM Thug Droids',
         id: 234,
         slot: 'Team',
+        points: 1
+      }, {
+        name: 'Selflessness',
+        id: 235,
+        slot: 'Elite',
+        unique: true,
+        faction: 'Rebel Alliance',
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
+      }, {
+        name: 'Breach Specialist',
+        id: 236,
+        slot: 'Crew',
         points: 1
       }
     ],
@@ -8254,6 +8271,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -9146,6 +9169,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -10206,6 +10235,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -10910,6 +10945,12 @@ exportObj.cardLoaders.English = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -12429,6 +12470,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -13301,6 +13348,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -14578,6 +14631,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -15414,6 +15473,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -16421,6 +16486,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -17140,6 +17211,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -18283,6 +18360,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -19068,6 +19151,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -20014,6 +20103,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Viktor Hel': {
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
+    'Lowhhrick': {
+      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+    },
+    'Wullfwarro': {
+      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
     }
   };
   upgrade_translations = {
@@ -20694,6 +20789,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'IG-RM Thug Droids': {
       text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+    },
+    'Selflessness': {
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+    },
+    'Breach Specialist': {
+      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
     }
   };
   modification_translations = {
@@ -24623,7 +24724,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23419
+                    lineno: 23501
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25212,7 +25313,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24049
+              lineno: 24131
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -25956,7 +26057,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24679
+          lineno: 24761
         }));
         __iced_deferrals._fulfill();
       });
@@ -25968,7 +26069,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24680
+            lineno: 24762
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27562,7 +27663,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25576
+                      lineno: 25658
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27636,7 +27737,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25602
+                lineno: 25684
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27691,7 +27792,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25625
+              lineno: 25707
             }));
           }
         }
@@ -27700,7 +27801,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25627
+              lineno: 25709
             }));
           }
         }
@@ -27709,7 +27810,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25629
+              lineno: 25711
             }));
           }
         }
@@ -28732,7 +28833,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26312
+                lineno: 26394
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28851,7 +28952,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26371
+                  lineno: 26453
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28873,7 +28974,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26375
+                    lineno: 26457
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -28963,7 +29064,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26418
+            lineno: 26500
           }));
         }
         __iced_deferrals._fulfill();
