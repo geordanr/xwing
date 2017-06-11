@@ -1921,8 +1921,10 @@ exportObj.cardLoaders['Español'] = () ->
         'Havoc':
             text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'''
         'Vaksai':
+            ship: "Caza Kihraxz"
             text: '''<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'''
         'StarViper Mk. II':
+            ship: "Víbora Estelar"
             text: '''<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
 
     condition_translations =
