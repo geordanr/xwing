@@ -824,7 +824,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto del escuadrón Guja"
             ship: "Defensor TIE"
         "Poe Dameron (PS9)":
-            text: """When attacking or defending, if you have a focus token, you may change 1 of your %FOCUS% results to a %HIT% or %EVADE% result."""
+            text: """Cuando ataques o te defiendas, si tienes una ficha de Concentración, puedes cambiar 1 de tus resultados %FOCUS% por un resultado %HIT% o %EVADE%."""
             ship: "T-70 Ala-X"
         "Resistance Sympathizer":
             name: "Simpatizante de la Resistencia"
