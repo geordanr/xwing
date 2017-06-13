@@ -532,6 +532,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0 ]
             ]
+            multisection: [
+                "Raider-class Corvette (Aft)".canonicalize()
+            ]
+            canonical_name: "Raider-class Corvette".canonicalize()
         "Raider-class Corvette (Aft)":
             name: "Raider-class Corvette (Aft)"
             factions: [ "Galactic Empire" ]
@@ -552,6 +556,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0 ]
             ]
+            multisection: [
+                "Raider-class Corvette (Fore)".canonicalize()
+            ]
+            canonical_name: "Raider-class Corvette".canonicalize()
         "YV-666":
             name: "YV-666"
             factions: [ "Scum and Villainy" ]
