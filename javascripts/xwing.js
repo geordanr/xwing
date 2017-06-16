@@ -1755,7 +1755,8 @@ exportObj.basicCardData = function() {
         agility: 1,
         hull: 5,
         shields: 5,
-        actions: ['Focus', 'Target Lock', 'Barrel Roll']
+        actions: ['Focus', 'Target Lock', 'Barrel Roll'],
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0, 0, 0], [3, 1, 2, 1, 3, 0, 0, 0, 3, 3], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 0, 0, 0, 0, 0, 0, 0]]
       },
       'TIE Aggressor': {
         name: 'TIE Aggressor',
@@ -4048,7 +4049,7 @@ exportObj.basicCardData = function() {
         ship: 'Scurrg H-6 Bomber',
         skill: 8,
         slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
-        points: 100
+        points: 30
       }, {
         name: 'Captain Nym (Rebel)',
         id: 254,
@@ -4058,16 +4059,16 @@ exportObj.basicCardData = function() {
         ship: 'Scurrg H-6 Bomber',
         skill: 8,
         slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
-        points: 100
+        points: 30
       }, {
-        name: 'So???',
+        name: 'Sol Sixxa',
         id: 255,
         faction: 'Scum and Villainy',
         unique: true,
         ship: 'Scurrg H-6 Bomber',
         skill: 6,
         slots: ['Elite', 'Turret', 'Crew', 'Torpedo', 'Missile', 'Bomb', 'Bomb'],
-        points: 100
+        points: 28
       }, {
         name: 'Lok R???',
         id: 256,
@@ -5820,6 +5821,37 @@ exportObj.basicCardData = function() {
         id: 236,
         slot: 'Crew',
         points: 1
+      }, {
+        name: 'Bomblet Generator',
+        id: 237,
+        slot: 'Bomb',
+        unique: true,
+        points: 3,
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ["Bomb"]
+      }, {
+        name: 'Cad Bane',
+        id: 238,
+        slot: 'Crew',
+        faction: 'Scum and Villainy',
+        unique: true,
+        points: 2,
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Bomb"
+          }
+        ]
+      }, {
+        name: 'Minefield Mapper',
+        id: 239,
+        slot: 'System',
+        points: 0
       }
     ],
     modificationsById: [
@@ -8281,6 +8313,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -9179,6 +9220,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -10245,6 +10295,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -10955,6 +11014,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -12480,6 +12548,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -13358,6 +13435,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -14643,6 +14729,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -15485,6 +15580,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -16498,6 +16602,15 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -17223,6 +17336,15 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -20115,6 +20237,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Captain Nym (Scum)': {
+      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+    },
+    'Captain Nym (Rebel)': {
+      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+    },
+    'Sol Sixxa': {
+      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     }
   };
   upgrade_translations = {
@@ -20801,6 +20932,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'Bomblet Generator': {
+      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+    },
+    'Cad Bane': {
+      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+    },
+    'Minefield Mapper': {
+      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
     }
   };
   modification_translations = {
@@ -24730,7 +24870,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23511
+                    lineno: 23623
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25319,7 +25459,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24141
+              lineno: 24253
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26063,7 +26203,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24771
+          lineno: 24883
         }));
         __iced_deferrals._fulfill();
       });
@@ -26075,7 +26215,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24772
+            lineno: 24884
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27669,7 +27809,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25668
+                      lineno: 25780
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27743,7 +27883,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25694
+                lineno: 25806
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27798,7 +27938,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25717
+              lineno: 25829
             }));
           }
         }
@@ -27807,7 +27947,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25719
+              lineno: 25831
             }));
           }
         }
@@ -27816,7 +27956,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25721
+              lineno: 25833
             }));
           }
         }
@@ -28839,7 +28979,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26404
+                lineno: 26516
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28958,7 +29098,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26463
+                  lineno: 26575
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -28980,7 +29120,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26467
+                    lineno: 26579
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29070,7 +29210,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26510
+            lineno: 26622
           }));
         }
         __iced_deferrals._fulfill();
