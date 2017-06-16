@@ -1009,6 +1009,14 @@ exportObj.basicCardData = ->
                 'Target Lock'
                 'Barrel Roll'
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
         'TIE Aggressor':
             name: 'TIE Aggressor'
             factions: ["Galactic Empire"]
@@ -4576,7 +4584,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 30
         }
         {
             name: 'Captain Nym (Rebel)'
@@ -4595,10 +4603,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 30
         }
         {
-            name: 'So???'
+            name: 'Sol Sixxa'
             id: 255
             faction: 'Scum and Villainy'
             unique: true
@@ -4613,7 +4621,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 28
         }
         {
             name: 'Lok R???'
@@ -6566,6 +6574,38 @@ exportObj.basicCardData = ->
             id: 236
             slot: 'Crew'
             points: 1
+        }
+        {
+            name: 'Bomblet Generator'
+            id: 237
+            slot: 'Bomb'
+            unique: true
+            points: 3
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Bomb" ]
+        }
+        {
+            name: 'Cad Bane'
+            id: 238
+            slot: 'Crew'
+            faction: 'Scum and Villainy'
+            unique: true
+            points: 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Bomb"
+                }
+            ]
+        }
+        {
+            name: 'Minefield Mapper'
+            id: 239
+            slot: 'System'
+            points: 0
         }
     ]
 
