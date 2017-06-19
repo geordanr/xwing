@@ -47,7 +47,7 @@ exports.selectExactMatch = (select2_selector, search_text) =>
     .then ->
         matchIndices = @evaluate (q) ->
             $('.select2-result').map (idx,elem) ->
-                if $(elem).text() == q
+                if $(elem).text().trim() == q
                     idx
         , search_text
         if matchIndices.length == 1

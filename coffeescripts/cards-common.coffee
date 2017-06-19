@@ -2,7 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "C-ROC Cruiser Expansion Pack"
     "Auzituck Gunship Expansion Pack"
     "Scurrg H-6 Bomber Expansion Pack"
     "TIE Aggressor Expansion Pack"
@@ -533,6 +532,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0 ]
             ]
+            multisection: [
+                "Raider-class Corvette (Aft)".canonicalize()
+            ]
+            canonical_name: "Raider-class Corvette".canonicalize()
         "Raider-class Corvette (Aft)":
             name: "Raider-class Corvette (Aft)"
             factions: [ "Galactic Empire" ]
@@ -553,6 +556,10 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0 ]
             ]
+            multisection: [
+                "Raider-class Corvette (Fore)".canonicalize()
+            ]
+            canonical_name: "Raider-class Corvette".canonicalize()
         "YV-666":
             name: "YV-666"
             factions: [ "Scum and Villainy" ]
@@ -963,6 +970,13 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Jam"
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 1, 1, 1, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0 ]
+            ]
         'Auzituck Gunship':
             name: 'Auzituck Gunship'
             factions: ["Rebel Alliance"]
@@ -975,6 +989,14 @@ exportObj.basicCardData = ->
                 'Reinforce'
             ]
             attack_icon: 'xwing-miniatures-font-attack-180'
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
+            ]
         'Scurrg H-6 Bomber':
             name: 'Scurrg H-6 Bomber'
             factions: ["Rebel Alliance", "Scum and Villainy"]
@@ -986,6 +1008,14 @@ exportObj.basicCardData = ->
                 'Focus'
                 'Target Lock'
                 'Barrel Roll'
+            ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 2, 1, 3, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
             ]
         'TIE Aggressor':
             name: 'TIE Aggressor'
@@ -4510,30 +4540,32 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Lo???'
+            name: 'Lowhhrick'
             id: 251
             unique: true
             faction: 'Rebel Alliance'
             ship: 'Auzituck Gunship'
             skill: 5
             slots: [
+                'Elite'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 28
         }
         {
-            name: 'Wull???'
+            name: 'Wullffwarro'
             id: 252
             faction: 'Rebel Alliance'
             unique: true
             ship: 'Auzituck Gunship'
             skill: 7
             slots: [
+                'Elite'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 30
         }
         {
             name: 'Captain Nym (Scum)'
@@ -4552,7 +4584,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 30
         }
         {
             name: 'Captain Nym (Rebel)'
@@ -4571,10 +4603,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 30
         }
         {
-            name: 'So???'
+            name: 'Sol Sixxa'
             id: 255
             faction: 'Scum and Villainy'
             unique: true
@@ -4589,7 +4621,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 28
         }
         {
             name: 'Lok R???'
@@ -4638,7 +4670,7 @@ exportObj.basicCardData = ->
             points: 17
         }
         {
-            name: 'Onyx Squad???'
+            name: 'Onyx Squadron Escort'
             id: 259
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
@@ -4648,36 +4680,101 @@ exportObj.basicCardData = ->
                 'Missile'
                 'Missile'
             ]
-            points: 100
+            points: 19
         }
         {
-            name: '"Dou???'
+            name: '"Double Edge"'
             id: 260
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
             skill: 4
             slots: [
+                'Elite'
                 'Turret'
                 'Missile'
                 'Missile'
             ]
-            points: 100
+            points: 19
         }
         {
-            name: 'Lieuten???'
+            name: 'Lieutenant Kestal'
             id: 261
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Aggressor'
             skill: 7
             slots: [
+                'Elite'
                 'Turret'
                 'Missile'
                 'Missile'
             ]
+            points: 22
+        }
+        {
+            name: 'Viktor Hel'
+            id: 262
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'Kihraxz Fighter'
+            skill: 7
+            slots: [
+                'Elite'
+                'Missile'
+                'Illicit'
+            ]
+            points: 25
+        }
+        {
+            name: 'Captain ???'
+            id: 263
+            skill: 4
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'Kihraxz Fighter'
+            slots: [
+                'Missile'
+                'Illicit'
+            ]
             points: 100
         }
+        {
+            name: 'Dalan Oberos'
+            id: 264
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'StarViper'
+            skill: 6
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Th???'
+            id: 265
+            faction: 'Scum and Villainy'
+            unique: true
+            ship: 'StarViper'
+            skill: 4
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+        {
+            name: 'Black ???'
+            id: 266
+            faction: 'Scum and Villainy'
+            ship: 'StarViper'
+            skill: 5
+            slots: [
+                'Torpedo'
+            ]
+            points: 100
+        }
+
     ]
 
     upgradesById: [
@@ -6456,6 +6553,60 @@ exportObj.basicCardData = ->
                 upgrade_obj.occupiesAnotherUpgradeSlot()
             also_occupies_upgrades: [ "Crew" ]
         }
+        {
+            name: 'IG-RM Thug Droids'
+            id: 234
+            slot: 'Team'
+            points: 1
+        }
+        {
+            name: 'Selflessness'
+            id: 235
+            slot: 'Elite'
+            unique: true
+            faction: 'Rebel Alliance'
+            points: 1
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Breach Specialist'
+            id: 236
+            slot: 'Crew'
+            points: 1
+        }
+        {
+            name: 'Bomblet Generator'
+            id: 237
+            slot: 'Bomb'
+            unique: true
+            points: 3
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Bomb" ]
+        }
+        {
+            name: 'Cad Bane'
+            id: 238
+            slot: 'Crew'
+            faction: 'Scum and Villainy'
+            unique: true
+            points: 2
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Bomb"
+                }
+            ]
+        }
+        {
+            name: 'Minefield Mapper'
+            id: 239
+            slot: 'System'
+            points: 0
+        }
     ]
 
     modificationsById: [
@@ -6942,6 +7093,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'IG-2000'
+            faction: 'Scum and Villainy'
             id: 20
             points: 0
             ship: "Aggressor"
@@ -7297,6 +7449,33 @@ exportObj.basicCardData = ->
                 }
             ]
         }
+        {
+            name: 'Vaksai'
+            id: 54
+            points: 0
+            ship: 'Kihraxz Fighter'
+            confersAddons: [
+                {
+                    type: exportObj.Modification
+                }
+                {
+                    type: exportObj.Modification
+                }
+            ]
+            special_case: 'Royal Guard TIE'
+        }
+        {
+            name: 'StarViper Mk. II'
+            id: 55
+            limited: true
+            points: -3
+            ship: 'StarViper'
+            confersAddons: [
+                {
+                    type: exportObj.Title
+                }
+            ]
+        }
     ]
 
     conditionsById: [
@@ -7312,6 +7491,7 @@ exportObj.basicCardData = ->
         {
             name: 'A Debt to Pay'
             id: 2
+            unique: true
         }
         {
             name: 'Suppressive Fire'
@@ -7424,7 +7604,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name ?= ship_name
-        ship_data.canonical_name = ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
