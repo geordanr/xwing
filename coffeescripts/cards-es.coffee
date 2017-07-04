@@ -991,6 +991,7 @@ exportObj.cardLoaders['Español'] = () ->
         '"Double Edge"':
             text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
         'Viktor Hel':
+            ship: "Caza Kihraxz"
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
         'Lowhhrick':
             text: '''When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'''
