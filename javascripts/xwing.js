@@ -23373,7 +23373,7 @@ exportObj.manifestByExpansion = {
     }, {
       name: 'Ordnance Tubes',
       type: 'modification',
-      count: 3
+      count: 2
     }, {
       name: 'Requiem',
       type: 'title',
