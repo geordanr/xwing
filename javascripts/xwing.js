@@ -1765,7 +1765,8 @@ exportObj.basicCardData = function() {
         agility: 2,
         hull: 4,
         shields: 1,
-        actions: ['Focus', 'Target Lock', 'Barrel Roll']
+        actions: ['Focus', 'Target Lock', 'Barrel Roll'],
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0, 0, 0]]
       }
     },
     pilotsById: [
@@ -4015,13 +4016,13 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Crew'],
         points: 24
       }, {
-        name: 'Wookiee ???',
+        name: 'Wookiee Liberator',
         id: 250,
         faction: 'Rebel Alliance',
         ship: 'Auzituck Gunship',
         skill: 3,
-        slots: ['Crew', 'Crew'],
-        points: 100
+        slots: ['Elite', 'Crew', 'Crew'],
+        points: 26
       }, {
         name: 'Lowhhrick',
         id: 251,
@@ -4070,13 +4071,13 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Turret', 'Crew', 'Torpedo', 'Missile', 'Bomb', 'Bomb'],
         points: 28
       }, {
-        name: 'Lok R???',
+        name: 'Lok Revenant',
         id: 256,
         faction: 'Scum and Villainy',
         ship: 'Scurrg H-6 Bomber',
         skill: 3,
         slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
-        points: 100
+        points: 26
       }, {
         name: 'Karthakk Pirate',
         id: 257,
@@ -5852,6 +5853,19 @@ exportObj.basicCardData = function() {
         id: 239,
         slot: 'System',
         points: 0
+      }, {
+        name: 'R4-E1',
+        id: 240,
+        slot: 'Salvaged Astromech',
+        unique: true,
+        points: 1
+      }, {
+        name: 'Cruise Missiles',
+        id: 241,
+        slot: 'Missile',
+        points: 3,
+        attack: 1,
+        range: '2-3'
       }
     ],
     modificationsById: [
@@ -9229,6 +9243,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Minefield Mapper': {
       text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -11023,6 +11043,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Minefield Mapper': {
       text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -13445,6 +13471,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Minefield Mapper': {
       text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -15590,6 +15622,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Minefield Mapper': {
       text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -17346,6 +17384,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Minefield Mapper': {
       text: 'Az előkészítő fázisban, a hajók felhelyezése után eldobhatsz bármennyi %BOMB% fejlesztést. Helyezzd el az összes hozzájuk tartozó bomba jelzőt a játéktéren 3-as távolságon túl az ellenséges hajóktól.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -19286,6 +19330,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Breach Specialist': {
       text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -20942,6 +20992,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Minefield Mapper': {
       text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+    },
+    'R4-E1': {
+      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+    },
+    'Cruise Missiles': {
+      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
     }
   };
   modification_translations = {
@@ -24871,7 +24927,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23624
+                    lineno: 23675
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25460,7 +25516,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24254
+              lineno: 24305
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26204,7 +26260,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24884
+          lineno: 24935
         }));
         __iced_deferrals._fulfill();
       });
@@ -26216,7 +26272,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24885
+            lineno: 24936
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27810,7 +27866,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25781
+                      lineno: 25832
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27884,7 +27940,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25807
+                lineno: 25858
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27939,7 +27995,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25830
+              lineno: 25881
             }));
           }
         }
@@ -27948,7 +28004,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25832
+              lineno: 25883
             }));
           }
         }
@@ -27957,7 +28013,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25834
+              lineno: 25885
             }));
           }
         }
@@ -28980,7 +29036,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26517
+                lineno: 26568
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29099,7 +29155,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26576
+                  lineno: 26627
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29121,7 +29177,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26580
+                    lineno: 26631
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29211,7 +29267,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26623
+            lineno: 26674
           }));
         }
         __iced_deferrals._fulfill();
