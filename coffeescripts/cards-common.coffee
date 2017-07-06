@@ -1029,6 +1029,13 @@ exportObj.basicCardData = ->
                 'Target Lock'
                 'Barrel Roll'
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 1, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -4528,16 +4535,17 @@ exportObj.basicCardData = ->
             points: 24
         }
         {
-            name: 'Wookiee ???'
+            name: 'Wookiee Liberator'
             id: 250
             faction: 'Rebel Alliance'
             ship: 'Auzituck Gunship'
             skill: 3
             slots: [
+                'Elite'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 26
         }
         {
             name: 'Lowhhrick'
@@ -4624,7 +4632,7 @@ exportObj.basicCardData = ->
             points: 28
         }
         {
-            name: 'Lok R???'
+            name: 'Lok Revenant'
             id: 256
             faction: 'Scum and Villainy'
             ship: 'Scurrg H-6 Bomber'
@@ -4638,7 +4646,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Bomb'
             ]
-            points: 100
+            points: 26
         }
         {
             name: 'Karthakk Pirate'
@@ -6606,6 +6614,21 @@ exportObj.basicCardData = ->
             id: 239
             slot: 'System'
             points: 0
+        }
+        {
+            name: 'R4-E1'
+            id: 240
+            slot: 'Salvaged Astromech'
+            unique: true
+            points: 1
+        }
+        {
+            name: 'Cruise Missiles'
+            id: 241
+            slot: 'Missile'
+            points: 3
+            attack: 1
+            range: '2-3'
         }
     ]
 

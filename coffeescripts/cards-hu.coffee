@@ -1009,6 +1009,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A fejlesztés sávod megkapja a %BOMB% ikont. Körönként egyszer, mikor egy ellenséges hajó kockát dob egy bomba robbanás miatt, kiválaszthatsz bármennyi %FOCUS% vagy üres eredeményt. Ezeket újra kell dobni.'''
         'Minefield Mapper':
             text: '''Az előkészítő fázisban, a hajók felhelyezése után eldobhatsz bármennyi %BOMB% fejlesztést. Helyezzd el az összes hozzájuk tartozó bomba jelzőt a játéktéren 3-as távolságon túl az ellenséges hajóktól.'''
+        'R4-E1':
+            text: '''You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'''
+        'Cruise Missiles':
+            text: '''<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'''
 
     modification_translations =
         "Stealth Device":
