@@ -28662,7 +28662,7 @@ Ship = (function() {
           if (upgrade_id < 0 || isNaN(upgrade_id)) {
             continue;
           }
-          if (this.upgrades[i].isOccupied()) {
+          if (this.upgrades[i].isOccupied() || (this.upgrades[i].dataById[upgrade_id].also_occupies_upgrades != null)) {
             deferred_ids.push(upgrade_id);
           } else {
             this.upgrades[i].setById(upgrade_id);
@@ -29036,7 +29036,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26568
+                lineno: 26569
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29155,7 +29155,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26627
+                  lineno: 26628
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29177,7 +29177,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26631
+                    lineno: 26632
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29267,7 +29267,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26674
+            lineno: 26675
           }));
         }
         __iced_deferrals._fulfill();
