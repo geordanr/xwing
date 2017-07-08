@@ -11422,7 +11422,8 @@ exportObj.translations['Español'] = {
     "TIE Striker Expansion Pack": "Pack de Expansión Fustigador TIE",
     "Upsilon-class Shuttle Expansion Pack": "Pack de Expansión Lanzadera clase Ípsilon",
     "Sabine's TIE Fighter Expansion Pack": "Pack de Expansión Caza TIE de Sabine",
-    "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad"
+    "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad",
+    "C-ROC Cruiser Expansion Pack": "Pack de Expansión Crucero C-ROC"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -11560,6 +11561,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('Protectorate Starfighter', 'Caza Estelar del Protectorado');
   exportObj.renameShip('Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero');
   exportObj.renameShip('Quadjumper', 'Saltador Quad');
+  exportObj.renameShip('C-ROC Cruiser', 'Crucero C-ROC');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Cuando ataques, la Agilidad del piloto se reduce en 1 (hasta un mínimo de 0).",
@@ -11981,7 +11983,7 @@ exportObj.cardLoaders['Español'] = function() {
       ship: "Víbora Estelar"
     },
     "Cartel Spacer": {
-      name: "Agente del Cartel",
+      name: "Agente del Cártel",
       ship: "Interceptor M3-A"
     },
     "Tansarii Point Veteran": {
@@ -12546,19 +12548,23 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Genesis Red': {
       ship: "Interceptor M3-A",
-      text: 'After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'
+      text: 'Después de que fijes un blanco, asigna fichas de Concentración y fichas de Evasión a tu nave hasta que tengas tantas fichas de cada tipo como la nave que has fijado.'
     },
     'Quinn Jast': {
       ship: "Interceptor M3-A",
-      text: 'At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'
+      text: 'Al comienzo de la fase de Combate, puedes recibir una ficha de Armas inutilizadas para poner boca arriba una de tus cartas de Mejora %TORPEDO% o %MISSILE% descartadas.'
     },
     'Inaldra': {
       ship: "Interceptor M3-A",
-      text: 'When attacking or defending, you may spend 1 shield to reroll any number of your dice.'
+      text: 'Cuando ataques o te defiendas, puedes gastar 1 ficha de Escudos para volver a tirar cualquier cantidad de tus dados.'
     },
     'Sunny Bounder': {
       ship: "Interceptor M3-A",
-      text: 'Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'
+      text: 'Una vez por ronda, después de que tires o vuelvas a tirar los dados, si has sacado el mismo resultado en cada uno de tus dados, puedes añadir 1 más de esos resultados a la tirada.'
+    },
+    'C-ROC Cruiser': {
+      ship: "Crucero C-ROC",
+      name: "Crucero C-ROC"
     },
     'Lieutenant Kestal': {
       text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
@@ -13422,22 +13428,27 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'Cuando una nave con la que estás en contacto se activa, puedes mirar la maniobra que ha elegido. Si lo haces, el jugador que controla esa nave <strong>debe</strong> elegir en el selector una maniobra adyacente. La nave puede revelar y efectuar esa maniobra incluso aunque esté bajo tensión.'
     },
     'Heavy Laser Turret': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+      ship: "Crucero C-ROC",
+      name: "Torreta de láser pesado",
+      text: '<span class="card-restriction">Sólo crucero C-ROC</span>%LINEBREAK%<strong>Ataque (energía):</strong> Gasta 2 de Energía de esta carta para efectuar este ataque contra 1 nave (incluso contra una nave fuera de tu arco de fuego).'
     },
     'Cikatro Vizago': {
-      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '%SCUMONLY%%LINEBREAK%Al comienzo de la fase Final, puedes descartar esta carta pare reemplazar una carta de Mejora %ILLICIT% o %CARGO% que tengas equipada boca arriba por otra carta de Mejora de ese mismo tipo con un coste en puntos de escuadrón igual o inferior.'
     },
     'Azmorigan': {
-      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%Al comienzo de la fase Final, puedes gastar 1 de Energía para reemplazar una carta de Mejora %CREW% o %TEAM% que tengas equipada boca arriba por otra carta de Mejora de ese mismo tipo con un coste en puntos de escuadrón igual o inferior.'
     },
     'Quick-release Cargo Locks': {
-      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+      name: "Enganches de carga de apertura rápida",
+      text: '%LINEBREAK%Al final de la fase de Activación puedes descartar esta carta para <strong>colocar</strong> 1 indicador de Contenedores.'
     },
     'Supercharged Power Cells': {
-      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+      name: "Células de energía sobrealimentadas",
+      text: 'Cuando ataques, puedes descartar esta carta para tirar 2 dados de ataque adicionales.'
     },
     'ARC Caster': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+      name: "Proyector ARC",
+      text: '<span class="card-restriction">Sólo Escoria y Rebelde.</span>%DUALCARD%%LINEBREAK%<strong>Cara A:</strong>%LINEBREAK%<strong>Ataque:</strong> Ataca a 1 nave. Si este ataque impacta, debes elegir 1 otra nave a alcance 1 del defensor para que sufra 1 punto de daño.%LINEBREAK%Luego dale la vuelta a esta carta.%LINEBREAK%<strong>Cara B:</strong>%LINEBREAK%(Recargándose) Al comienzo de la fase de Combate, puedes recibir una ficha de Armas inutilizadas para darle la vuelta a esta carta.'
     },
     'Wookiee Commandos': {
       text: 'When attacking, you may reroll your %FOCUS% results.'
@@ -13452,10 +13463,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
-      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+      name: "Jabba el Hutt",
+      text: '%SCUMONLY%%LINEBREAK%Cuando equipes esta carta, coloca 1 ficha de Material Ilícito encima de cada carta de Mejora %ILLICIT% en tu escuadrón. Cuando debas descartar una carta de Mejora, en vez de eso puedes descartar 1 ficha de Material ilícito que esté encima de esa carta.'
     },
     'IG-RM Thug Droids': {
-      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+      name: "Droides matones IG-RM",
+      text: 'Cuando ataques, puedes cambiar 1 de tus resultados %HIT% por un resultado %CRIT%.'
     },
     'Selflessness': {
       text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
@@ -13563,10 +13576,12 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Solo X-wing.</span>%LINEBREAK%Cuando recibas una carta de Daño, puedes descartar 1 de tus cartas de Mejora %ASTROMECH% para descartar esa carta de Daño (sin resolver su efecto).'
     },
     'Optimized Generators': {
-      text: '%HUGESHIPONLY%%LINEBREAK%Once per round, when you assign energy to an equipped Upgrade card, gain 2 energy.'
+      name: "Generadores optimizados",
+      text: '%HUGESHIPONLY%%LINEBREAK%Una vez por ronda, cuando asignes Energía a una carta de Mejora equipada, obtienes 2 de Energía.'
     },
     'Automated Protocols': {
-      text: '%HUGESHIPONLY%%LINEBREAK%Once per round, after you perform an action that is not a recover or reinforce action, you may spend 1 energy to perform a free recover or reinforce action.'
+      name: "Procedimientos automatizados",
+      text: '%HUGESHIPONLY%%LINEBREAK%OUna vez por ronda, después de que realices una acción que no sea una acción de recuperación o de refuerzo, puedes gastar 1 de Energía para realizar una acción gratuita de recuperación o de refuerzo.'
     },
     'Ordnance Tubes': {
       text: '%HUGESHIPONLY%%LINEBREAK%You may treat each of your %HARDPOINT% upgrade icons as a %TORPEDO% or %MISSILE% icon.%LINEBREAK%When you are instructed to discard a %TORPEDO% or %MISSILE% Upgrade card, do not discard it.'
@@ -13607,7 +13622,8 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo TIE.</span>%LINEBREAK%Cuando te defiendas, tras tirar los dados de defensa, si hay más dados de ataque que dados de defensa, tira 1 dado de defensa adicional.%LINEBREAK%Esta mejora no puede equiparse en naves con puntuación de Agilidad 3 o superior.'
     },
     'Pulsed Ray Shield': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      name: "Escudo de rayos pulsátil",
+      text: '<span class="card-restriction">Sólo Escoria y Rebelde.</span>%LINEBREAK%Durante la fase Final, puedes recibir 1 ficha de Iones para recuperar 1 ficha de Escudos (pero no puedes exceder tu valor de Escudos). Sólo puedes equipar esta carta si tu valor de Escudos es 1.'
     }
   };
   title_translations = {
@@ -13823,17 +13839,24 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo Fustigador TIE.</span>%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'
     },
     'Merchant One': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+      name: "Mercader Uno",
+      ship: "Crucero C-ROC",
+      text: '<span class="card-restriction">Sólo C-ROC Cruiser.</span>%LINEBREAK%Tu barra de mejoras gana 1 icono %CREW% adicional y 1 icono %TEAM% adicional y pierde 1 icono %CARGO%.'
     },
     '"Light Scyk" Interceptor': {
+      name: 'Interceptor "Scyk Ligero"',
       ship: "Interceptor M3-A",
-      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+      text: '<span class="card-restriction">Sólo Interceptor M3-A.</span>%LINEBREAK%Toda slas cartas de Daño que te inflijan se te asignan boca arriba. Puedes ejecutar todas las maniobras de inclinación (%BANKLEFT% o %BANKRIGHT%) como maniobras verdes. No puedes equiparte con mejoras de Modificación.s.'
     },
     'Insatiable Worrt': {
-      text: 'After you perform the recover action, gain 3 energy.'
+      name: "Worrt insaciable",
+      ship: "Crucero C-ROC",
+      text: 'Después de que realices la acción de recuperación, ganas 3 de energía.'
     },
     'Broken Horn': {
-      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+      name: "Cuerno Roto",
+      ship: "Crucero C-ROC",
+      text: 'Cuando te defiendas, si tienes asignada una ficha de Refuerzo, puedes añadir 1 resultado %EVADE% adicional.  Si lo haces, tras defenderte, descarta tu ficha de Refuerzo.'
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
@@ -24927,7 +24950,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23675
+                    lineno: 23697
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25516,7 +25539,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24305
+              lineno: 24327
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26260,7 +26283,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 24935
+          lineno: 24957
         }));
         __iced_deferrals._fulfill();
       });
@@ -26272,7 +26295,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 24936
+            lineno: 24958
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27866,7 +27889,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 25832
+                      lineno: 25854
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -27940,7 +27963,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 25858
+                lineno: 25880
               })
             ]);
             __iced_deferrals._fulfill();
@@ -27995,7 +28018,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 25881
+              lineno: 25903
             }));
           }
         }
@@ -28004,7 +28027,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 25883
+              lineno: 25905
             }));
           }
         }
@@ -28013,7 +28036,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 25885
+              lineno: 25907
             }));
           }
         }
@@ -29036,7 +29059,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26569
+                lineno: 26591
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29155,7 +29178,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26628
+                  lineno: 26650
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29177,7 +29200,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26632
+                    lineno: 26654
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29267,7 +29290,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26675
+            lineno: 26697
           }));
         }
         __iced_deferrals._fulfill();
