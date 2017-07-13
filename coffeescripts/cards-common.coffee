@@ -2,9 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    "Auzituck Gunship Expansion Pack"
-    "Scurrg H-6 Bomber Expansion Pack"
-    "TIE Aggressor Expansion Pack"
 ]
 
 exportObj.isReleased = (data) ->
