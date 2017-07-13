@@ -3979,6 +3979,192 @@ exportObj.manifestByExpansion =
             count: 5
         }
     ]
+    "Auzituck Gunship Expansion Pack": [
+        {
+            name: 'Auzituck Gunship'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Wullffwarro'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lowhhrick'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wookiee Liberator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kashyyyk Defender'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Selflessness'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Wookiee Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactician'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Breach Specialist'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    "Scurrg H-6 Bomber Expansion Pack": [
+        {
+            name: 'Scurrg H-6 Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Captain Nym (Rebel)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Nym (Scum)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sol Sixxa'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lok Revenant'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Karthakk Pirate'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lightning Reflexes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Torpedo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cruise Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Minefield Mapper'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Synced Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cad Bane'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R4-E1'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Havoc'
+            type: 'title'
+            count: 1
+        }
+    ]
+    "TIE Aggressor Expansion Pack": [
+        {
+            name: 'TIE Aggressor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Kestal'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Double Edge"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Onyx Squadron Escort'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sienar Specialist'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Intensity'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Unguided Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Twin Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Synced Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lightweight Frame'
+            type: 'modification'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
