@@ -16840,7 +16840,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor egy ellenséges hajó eldönti, hogy vagy egy kis vagy egy nagy méretű hajót megtámad, elkölthetsz 3 energiát annak érdekében, rákényszerítsd azt a hajót (ha lehetséges) arra, hogy téged támadjon meg."
     },
     "Ion Pulse Missiles": {
-      text: "<strong>Támadás (célpontbemérő)</strong>: Dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás eltalálja a célpont hajót, az 1 sérülést szenved és kap 2 ion jelzőt. Ezután az <strong>összes</strong> kocka eredményét érvényteleníteni kell."
+      text: "<strong>Támadás (célpontbemérő)</strong>: dobd el ezt a kártyát, hogy végrehajtsd a támadást. Ha ez a támadás eltalálja a célpont hajót, az 1 sérülést szenved és kap 2 ion jelzőt. Ezután az <strong>összes</strong> kocka eredményét érvényteleníteni kell."
     },
     "Wingman": {
       text: "A harc fázis elején távolíts el 1 stressz jelzőt egy 1-es távolságon belül lévő másik baráti hajóról. [FAQ]"
@@ -16901,7 +16901,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak A-Wing.</span>%LINEBREAK%Ennek a kártyának negatív osztag módosító értéke van."
     },
     "Proton Rockets": {
-      text: "<strong>Támadás (fókusz)</strong>. Dobd el ezt a kártyát, hogy végrehajthasd a támadást. Annyi plusz kockával dobhatsz, mint amennyi a mozgékonyságod értéke, de maximum 3-mal."
+      text: "<strong>Támadás (fókusz):</strong> dobd el ezt a kártyát, hogy végrehajthasd a támadást. Annyi plusz kockával dobhatsz, mint amennyi a mozgékonyságod értéke, de maximum 3-mal."
     },
     "Kyle Katarn": {
       text: "<span class=\"card-restriction\">Csak lázadók.</span>%LINEBREAK%Miután levettél egy stressz jelzőt a hajódról, rárakhatsz egy fókusz jelzőt."
@@ -17021,7 +17021,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "A harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést. [FAQ: nem számít támadásnak]"
     },
     '"Hot Shot" Blaster': {
-      text: "<strong>Támadás:</strong>: Dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."
+      text: "<strong>Támadás:</strong>: dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."
     },
     "Greedo": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Minden körben, amikor először támadsz, illetve minden körben, amikor először védekezel, az első sérülés kártyát fel kell fordítani."
@@ -17063,19 +17063,19 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Limitált.</span>%LINEBREAK%Amikor hozzárendeled ezt a kártyád a hajódhoz, tégy 1 hadianyag jelzőt minden a hajóra felszerelt %TORPEDO%, %MISSILE% és %BOMB% fejlesztés kártyára. Amikor azt az utasítást kapod, hogy dobd el a fejlesztés kártyádat, ahelyett az azon a kártyán található hadianyag jelzőt is eldobhatod."
     },
     "Cluster Mines": {
-      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 3 Cluster Mine jelzőt.<br />Amikor egy hajó talpa vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán az akna jelzőt le kell venni."
+      text: "<strong>Akció:</strong> dobd el ezt a kártyát, hogy letehess 3 Cluster Mine jelzőt.<br />Amikor egy hajó talpa vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban. <br />Az érintett hajó dob 2 kockával és minden %HIT% és %CRIT% után sérülést szenved. Aztán az akna jelzőt le kell venni."
     },
     "Glitterstim": {
       text: "A harci fázis elején eldobhatod ezt a kártyát és kaphatsz 1 stressz jelzőt. Ha megteszed, a kör végéig mind támadásnál, mind védekezésnél minden %FOCUS% dobásod %HIT%-ra vagy %EVADE%-re módosíthatod."
     },
     "Grand Moff Tarkin": {
-      text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriási hajók. Csak birodalmiak. A harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."
+      text: "<span class=\"card-restriction\">Csak óriás hajók. Csak birodalmiak.</span> %LINEBREAK%Csak óriás hajók. Csak birodalmiak. A harci fázis elején kiválaszthatsz egy 1-4 távolságra lévő másik hajót. Vagy leveszel róla 1 fókusz jelzőt, vagy adsz neki egyet."
     },
     "Captain Needa": {
-      text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%Ha az Aktivációs fázis során átfedésbe kerülnél egy akadállyal, nem kapsz 1 felfordított sérülés kártyát. Helyette dobj 1 támadó kockával. %HIT% vagy %CRIT% találat esetén 1 sérülést szenvedsz el."
+      text: "<span class=\"card-restriction\">Csak óriás hajók. Csak birodalmiak.</span> %LINEBREAK%Ha az Aktivációs fázis során átfedésbe kerülnél egy akadállyal, nem kapsz 1 felfordított sérülés kártyát. Helyette dobj 1 támadó kockával. %HIT% vagy %CRIT% találat esetén 1 sérülést szenvedsz el."
     },
     "Admiral Ozzel": {
-      text: "<span class=\"card-restriction\">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%<strong>Energia:</strong> Maximum 3 pajzsot levehetsz a hajódról. Minden levett pajzs után kapsz 1 energiát."
+      text: "<span class=\"card-restriction\">Csak óriás hajók. Csak birodalmiak.</span> %LINEBREAK%<strong>Energia:</strong> Maximum 3 pajzsot levehetsz a hajódról. Minden levett pajzs után kapsz 1 energiát."
     },
     "Emperor Palpatine": {
       text: "<span class=\"card-restriction\">Csak birodalmiak.</span>%LINEBREAK%örönként egyszer, mielőtt egy baráti hajó gurít, válassz egy dobás eredményt. Dobás után meg kell változtatnod egy kockát a választott eredményre. Ez a kocka nem változtatható a továbbiakban. [FAQ]"
@@ -17096,7 +17096,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess egy 1 ion bomba jelzőt.<br />Ez a bomba az aktivációs fázis végén felrobban.<br />A bombától mért 1 távolságra minden hajó kap 2 ion jelzőt. Aztán a jelzőt le kell venni."
     },
     "Conner Net": {
-      text: "<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess 1 Conner Net jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni. [FAQ]"
+      text: "<strong>Akció:</strong> dobd el ezt a kártyát, hogy letehess 1 Conner Net jelzőt.<br />Amikor egy hajó alapja vagy manőver sablonja érinti ezt a jelzőt, a bomba felrobban.<br />Az érintett hajó elszenved 1 sérülést és kap 2 ion jelzőt, valamint a kihagyja az akció végrehajtása lépést.  Aztán a jelzőt le kell venni. [FAQ]"
     },
     "Bombardier": {
       text: "Amikor ledobsz egy bombát, használhatod a (%STRAIGHT% 2) sablont a (%STRAIGHT% 1) helyett."
@@ -17120,7 +17120,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Hajts végre egy ingyenes álcázás akciót.<br>A kör végén, ha álcázva vagy, dobj egy támadó kockával. %FOCUS% eredménynél dobd el ezt a kártyát, majd fedd fel magad vagy dobd el az álcázás jelzőt."
     },
     "Shield Technician": {
-      text: "<span class=\"card-restriction\">Csak óriási hajók.</span>%LINEBREAK%Amikor végrehajtasz egy visszanyerés akciót, ahelyett, hogy elköltenéd az összes energiádat, te döntheted el, mennyi energiát használsz fel."
+      text: "<span class=\"card-restriction\">Csak óriás hajók.</span>%LINEBREAK%Amikor végrehajtasz egy visszanyerés akciót, ahelyett, hogy elköltenéd az összes energiádat, te döntheted el, mennyi energiát használsz fel."
     },
     "Weapons Guidance": {
       name: "Weapons Guidance (Fegyvervezérlés)",
@@ -17152,7 +17152,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Az akciósávod megkapja a %JAM% akció ikont.'
     },
     'Rear Admiral Chiraneau': {
-      text: '<span class="card-restriction">Csak óriási hajók. Csak birodalmiak.</span> %LINEBREAK%<strong>Akció:</strong> Hajts végre egy fehér (%STRAIGHT% 1) manővert.'
+      text: '<span class="card-restriction">Csak óriás hajók. Csak birodalmiak.</span> %LINEBREAK%<strong>Akció:</strong> Hajts végre egy fehér (%STRAIGHT% 1) manővert.'
     },
     'Ordnance Experts': {
       text: 'Egy körben egyszer, mikor egy baráti hajó 1-3 távolságban végrehajt egy támadást %TORPEDO% vagy %MISSILE% másodlagos fegyverrel, egy üres dobását %HIT%-re forgathatja.'
@@ -17260,7 +17260,7 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Rigged Cargo Chute': {
       name: "Rigged Cargo Chute (Módosított rakománykatapult)",
-      text: '<span class="card-restriction">Csak nagy hajók.</span>%LINEBREAK%<strong>Akció:</strong> Dobd el ezt a kártyát, hogy letehess egy rakomány jelzőt.'
+      text: '<span class="card-restriction">Csak nagy hajók.</span>%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát, hogy letehess egy rakomány jelzőt.'
     },
     'Seismic Torpedo': {
       name: "Seismic Torpedo (Szeizmikus torpedó)",
@@ -17364,7 +17364,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%A befejező fázis kezdetén eldobhatod ezt a kártyát, hogy kicseréld egy felszerelt és még felfordított %ILLICIT% vagy %CARGO% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
     },
     'Azmorigan': {
-      text: '<span class="card-restriction">Csak söpredék. Csak óriási hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
+      text: '<span class="card-restriction">Csak söpredék. Csak óriás hajók.</span>%LINEBREAK%A befejező fázis kezdetén elkölthetsz egy energiát, hogy kicseréld egy felszerelt és még felfordított %CREW% vagy %TEAM% kártyádat és másik hasonló típusú, ugyanannyi vagy kevesebb pontú kártyával.'
     },
     'Quick-release Cargo Locks': {
       text: '<span class="card-restriction">Csak C-ROC Cruiser és GR-75 Medium Transport.</span>%LINEBREAK%Az aktivációs fázis végén eldobhatod ezt a kártyát, hogy lehelyezz egy konténer jelzőt.'
@@ -17409,10 +17409,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Az előkészítő fázisban, a hajók felhelyezése után eldobhatsz bármennyi %BOMB% fejlesztést. Helyezzd el az összes hozzájuk tartozó bomba jelzőt a játéktéren 3-as távolságon túl az ellenséges hajóktól.'
     },
     'R4-E1': {
-      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+      text: 'Végrehajthatod a %TORPEDO% és %BOMB% kártyádon lévő akciót, még ha stresszes is vagy. Miután így tettél, eldobhatod ezt a kártyát, hogy levegyél egy stressz jelzőt a hajódról.'
     },
     'Cruise Missiles': {
-      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+      text: '<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'
     }
   };
   modification_translations = {
@@ -17445,7 +17445,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak TIE Phantom.</span>%LINEBREAK%Miután végrehajtottál egy támadást, végrehajthatsz egy szabad álcázás akciót. [FAQ]"
     },
     "Combat Retrofit": {
-      text: "<span class=\"card-restriction\">Csak GR-75. Csak óriási hajók.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."
+      text: "<span class=\"card-restriction\">Csak GR-75. Csak óriás hajók.</span>%LINEBREAK%Növeld a hajód szerkezeti értékét kettővel, a pajzsát meg eggyel."
     },
     "B-Wing/E2": {
       text: "<span class=\"card-restriction\">Csak B-Wing.</span>%LINEBREAK%Csak B-Wing. Módosítás. A fejlesztés sávod megkapja a %CREW% fejlesztés ikont."
