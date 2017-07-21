@@ -323,6 +323,9 @@ i.xwing-miniatures-ship-arc170:before {
 i.xwing-miniatures-ship-attackshuttle:before {
   content: "g"; }
 
+i.xwing-miniatures-ship-auzituckgunship:before {
+  content: "@"; }
+
 i.xwing-miniatures-ship-awing:before {
   content: "a"; }
 
@@ -331,6 +334,9 @@ i.xwing-miniatures-ship-bwing:before {
 
 i.xwing-miniatures-ship-cr90corvette:before {
   content: "2"; }
+
+i.xwing-miniatures-ship-croccruiser:before {
+  content: "C"; }
 
 i.xwing-miniatures-ship-ewing:before {
   content: "e"; }
@@ -380,6 +386,9 @@ i.xwing-miniatures-ship-quadjumper:before {
 i.xwing-miniatures-ship-raiderclasscorvette:before {
   content: "3"; }
 
+i.xwing-miniatures-ship-scurrgh6bomber:before {
+  content: "H"; }
+
 i.xwing-miniatures-ship-starviper:before {
   content: "v"; }
 
@@ -394,6 +403,9 @@ i.xwing-miniatures-ship-tieadvancedprototype:before {
 
 i.xwing-miniatures-ship-tieadvprototype:before {
   content: "R"; }
+
+i.xwing-miniatures-ship-tieaggressor:before {
+  content: "`"; }
 
 i.xwing-miniatures-ship-tiebomber:before {
   content: "B"; }
