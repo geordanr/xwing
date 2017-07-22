@@ -24532,7 +24532,7 @@ exportObj.manifestByExpansion = {
       type: 'upgrade',
       count: 2
     }, {
-      name: 'Quick-Release Cargo Locks',
+      name: 'Quick-release Cargo Locks',
       type: 'upgrade',
       count: 1
     }, {
