@@ -4145,25 +4145,26 @@ exportObj.basicCardData = function() {
         unique: true,
         ship: 'StarViper',
         skill: 6,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 30
       }, {
-        name: 'Th???',
+        name: 'Thweek',
         id: 265,
         faction: 'Scum and Villainy',
         unique: true,
         ship: 'StarViper',
         skill: 4,
         slots: ['Torpedo'],
-        points: 100
+        points: 28,
+        applies_condition: ['Shadowed'.canonicalize(), 'Mimicked'.canonicalize()]
       }, {
-        name: 'Black ???',
+        name: 'Black Sun Assassin',
         id: 266,
         faction: 'Scum and Villainy',
         ship: 'StarViper',
         skill: 5,
-        slots: ['Torpedo'],
-        points: 100
+        slots: ['Elite', 'Torpedo'],
+        points: 28
       }
     ],
     upgradesById: [
@@ -5866,6 +5867,11 @@ exportObj.basicCardData = function() {
         points: 3,
         attack: 1,
         range: '2-3'
+      }, {
+        name: 'Ion Dischargers',
+        id: 242,
+        slot: 'Illicit',
+        points: 2
       }
     ],
     modificationsById: [
@@ -6763,6 +6769,14 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Fanatical Devotion',
         id: 4,
+        unique: true
+      }, {
+        name: 'Shadowed',
+        id: 5,
+        unique: true
+      }, {
+        name: 'Mimicked',
+        id: 6,
         unique: true
       }
     ]
@@ -8336,6 +8350,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Sol Sixxa': {
       text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -9249,6 +9269,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -9621,6 +9644,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'A Debt to Pay': {
       text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -10324,6 +10353,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Sol Sixxa': {
       text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -11049,6 +11084,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -11325,6 +11363,12 @@ exportObj.cardLoaders.English = function() {
     },
     'A Debt to Pay': {
       text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -12590,6 +12634,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Sol Sixxa': {
       text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -13490,6 +13540,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -13886,6 +13939,12 @@ exportObj.cardLoaders['Español'] = function() {
     'A Debt to Pay': {
       name: "Una deuda por saldar",
       text: 'Cuando ataques a una nave que tiene la carta de Mejora "Una cuenta pendiente", puedes cambiar 1 resultado %FOCUS% por un resultado %CRIT%.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -14812,6 +14871,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Lok Revenant': {
       name: "Revenant de Lok"
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -15678,6 +15743,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Cruise Missiles': {
       name: "Missile de croisière",
       text: '<strong>Attaque (Acquisition de cible):</strong> Défaussez cette carte pour effectuer cette attque.%LINEBREAK%Vous pouvez lancer un nombre de dés d\'attaque supplémentaires égal à la vitesse de la manoeuvre que vous avez effectuée à ce tour, jusqu\'a un maximum de 4 dés supplémentaires'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -16012,6 +16080,12 @@ exportObj.cardLoaders['Français'] = function() {
     'A Debt to Pay': {
       name: "Une dette a payer",
       text: 'Quand vous attaquez un vaisseau qui a la carte d\'amélioration "Un compte a régler", vous pouvez chancger 1 résultat %FOCUS% en résultat %CRIT% .'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16705,6 +16779,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Sol Sixxa': {
       text: 'Bomba ledobásakor, használhatod a (%TURNLEFT% 1) vagy (%TURNRIGHT% 1) sablonokat a (%STRAIGHT% 1) helyett.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -17445,6 +17525,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -17730,6 +17813,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'A Debt to Pay': {
       text: 'Az "A Score to Settle" fejlesztés kártyával rendelkező hajót támadva, átforgathatsz egy %FOCUS% dobást %CRIT%-re.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -18594,6 +18683,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Wullffwarro': {
       text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -19391,6 +19486,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -19695,6 +19793,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'A Debt to Pay': {
       text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -20352,6 +20456,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Sol Sixxa': {
       text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'Dalan Oberos': {
+      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+    },
+    'Thweek': {
+      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     }
   };
   upgrade_translations = {
@@ -21053,6 +21163,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Cruise Missiles': {
       text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+    },
+    'Ion Dischargers': {
+      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     }
   };
   modification_translations = {
@@ -21305,6 +21418,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'A Debt to Pay': {
       text: 'When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'
+    },
+    'Shadowed': {
+      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+    },
+    'Mimicked': {
+      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -25135,7 +25254,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23906
+                    lineno: 23995
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25724,7 +25843,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24536
+              lineno: 24625
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26468,7 +26587,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25166
+          lineno: 25255
         }));
         __iced_deferrals._fulfill();
       });
@@ -26480,7 +26599,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25167
+            lineno: 25256
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28074,7 +28193,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26063
+                      lineno: 26152
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28148,7 +28267,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26089
+                lineno: 26178
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28203,7 +28322,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26112
+              lineno: 26201
             }));
           }
         }
@@ -28212,7 +28331,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26114
+              lineno: 26203
             }));
           }
         }
@@ -28221,7 +28340,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26116
+              lineno: 26205
             }));
           }
         }
@@ -29244,7 +29363,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26800
+                lineno: 26889
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29363,7 +29482,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26859
+                  lineno: 26948
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29385,7 +29504,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26863
+                    lineno: 26952
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29475,7 +29594,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26906
+            lineno: 26995
           }));
         }
         __iced_deferrals._fulfill();
