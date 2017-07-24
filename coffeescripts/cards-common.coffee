@@ -4752,12 +4752,13 @@ exportObj.basicCardData = ->
             ship: 'StarViper'
             skill: 6
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 30
         }
         {
-            name: 'Th???'
+            name: 'Thweek'
             id: 265
             faction: 'Scum and Villainy'
             unique: true
@@ -4766,18 +4767,20 @@ exportObj.basicCardData = ->
             slots: [
                 'Torpedo'
             ]
-            points: 100
+            points: 28
+            applies_condition: ['Shadowed'.canonicalize(), 'Mimicked'.canonicalize()]
         }
         {
-            name: 'Black ???'
+            name: 'Black Sun Assassin'
             id: 266
             faction: 'Scum and Villainy'
             ship: 'StarViper'
             skill: 5
             slots: [
+                'Elite'
                 'Torpedo'
             ]
-            points: 100
+            points: 28
         }
 
     ]
@@ -6627,6 +6630,12 @@ exportObj.basicCardData = ->
             attack: 1
             range: '2-3'
         }
+        {
+            name: 'Ion Dischargers'
+            id: 242
+            slot: 'Illicit'
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -7521,6 +7530,16 @@ exportObj.basicCardData = ->
         {
             name: '''Fanatical Devotion'''
             id: 4
+            unique: true
+        }
+        {
+            name: 'Shadowed'
+            id: 5
+            unique: true
+        }
+        {
+            name: 'Mimicked'
+            id: 6
             unique: true
         }
     ]

@@ -730,6 +730,10 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Pirate de Karthakk"
         'Lok Revenant':
             name: "Revenant de Lok"
+        'Dalan Oberos':
+            text: '''If you are not stressed, when you reveal a turn, bank, or Segnor's Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'''
+        'Thweek':
+            text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
 
     upgrade_translations =
         #Traits de pilotes
@@ -1375,6 +1379,8 @@ exportObj.cardLoaders['Français'] = () ->
         'Cruise Missiles':
             name: "Missile de croisière"
             text: '''<strong>Attaque (Acquisition de cible):</strong> Défaussez cette carte pour effectuer cette attque.%LINEBREAK%Vous pouvez lancer un nombre de dés d'attaque supplémentaires égal à la vitesse de la manoeuvre que vous avez effectuée à ce tour, jusqu'a un maximum de 4 dés supplémentaires'''
+        'Ion Dischargers':
+            text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1623,5 +1629,9 @@ exportObj.cardLoaders['Français'] = () ->
         'A Debt to Pay':
             name: "Une dette a payer"
             text: '''Quand vous attaquez un vaisseau qui a la carte d'amélioration "Un compte a régler", vous pouvez chancger 1 résultat %FOCUS% en résultat %CRIT% .'''
+        'Shadowed':
+            text: '''"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'''
+        'Mimicked':
+            text: '''"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
