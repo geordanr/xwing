@@ -1124,6 +1124,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Cluster Mines":
             name: "Mines groupées"
             text: """<strong>Action :</strong> défaussez cette carte pour <strong>larger</strong> 1 ensemble de Mines groupées.<br /><br />Quand le socle ou le gabarit de manoeuvre d'un vaisseau chevauche un marqueur de Mines groupées, ce marqueur <strong>explose</strong>.<br /><br /><strong>Marqueur de mines groupées :</strong>quand un de ces marqueurs explose, le vaisseau qui l'a traversé ou chevauché lance 2 dés d'attaque et subit un dégats pour chaques %HIT% et %CRIT% obtenus. Ensuite, défaussez ce marqueur.  """
+        'Glitterstim':
+            text: '''Au début de votre phase de combat, vous pouvez défausser cette carte et recevoir 1 marqueur stress. Dans ce cas, jusqu'a la fin du tour, quand vous attaquez ou défendez, vous pouvez changer tous vos résultats %FOCUS% en résultat %EVADE% ou %HIT% .'''
         'Crack Shot':
             name: "Tireur hors pair"
             text: '''Quand vous attaquez un vaisseau situé dans votre arc de tir, vous pouvez défausser cette carte pour annuler 1 des résultats %EVADE% du défenseur.'''
