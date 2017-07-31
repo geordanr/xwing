@@ -1605,6 +1605,7 @@ exportObj.cardLoaders['Français'] = () ->
         '''Merchant One''':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
+            ship: "Intercepteur M3-A"
             name: 'Intercepteur "Scyk Léger"'
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%Toutes les cartes de dégâts qui vous sont assignées le sont face visible. vous pouvez considérer toutes les manoeuvres de virage sur l'aile (%BANKLEFT% ou %BANKRIGHT%) comme des manoeuvres vertes. Vous ne pouvez pas vous equiper d'améliorations Modification.'''
         '''Insatiable Worrt''':
