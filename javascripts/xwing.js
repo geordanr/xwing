@@ -11330,7 +11330,7 @@ exportObj.cardLoaders.English = function() {
       text: '<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'
     },
     'Merchant One': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 gains additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
     },
     '"Light Scyk" Interceptor': {
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
@@ -15390,6 +15390,9 @@ exportObj.cardLoaders['Français'] = function() {
       name: "Mines groupées",
       text: "<strong>Action :</strong> défaussez cette carte pour <strong>larger</strong> 1 ensemble de Mines groupées.<br /><br />Quand le socle ou le gabarit de manoeuvre d'un vaisseau chevauche un marqueur de Mines groupées, ce marqueur <strong>explose</strong>.<br /><br /><strong>Marqueur de mines groupées :</strong>quand un de ces marqueurs explose, le vaisseau qui l'a traversé ou chevauché lance 2 dés d'attaque et subit un dégats pour chaques %HIT% et %CRIT% obtenus. Ensuite, défaussez ce marqueur.  "
     },
+    'Glitterstim': {
+      text: 'Au début de votre phase de combat, vous pouvez défausser cette carte et recevoir 1 marqueur stress. Dans ce cas, jusqu\'a la fin du tour, quand vous attaquez ou défendez, vous pouvez changer tous vos résultats %FOCUS% en résultat %EVADE% ou %HIT% .'
+    },
     'Crack Shot': {
       name: "Tireur hors pair",
       text: 'Quand vous attaquez un vaisseau situé dans votre arc de tir, vous pouvez défausser cette carte pour annuler 1 des résultats %EVADE% du défenseur.'
@@ -16045,6 +16048,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
     },
     '"Light Scyk" Interceptor': {
+      ship: "Intercepteur M3-A",
       name: 'Intercepteur "Scyk Léger"',
       text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%Toutes les cartes de dégâts qui vous sont assignées le sont face visible. vous pouvez considérer toutes les manoeuvres de virage sur l\'aile (%BANKLEFT% ou %BANKRIGHT%) comme des manoeuvres vertes. Vous ne pouvez pas vous equiper d\'améliorations Modification.'
     },
@@ -25254,7 +25258,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23995
+                    lineno: 23998
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25843,7 +25847,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24625
+              lineno: 24628
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26587,7 +26591,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25255
+          lineno: 25258
         }));
         __iced_deferrals._fulfill();
       });
@@ -26599,7 +26603,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25256
+            lineno: 25259
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28193,7 +28197,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26152
+                      lineno: 26155
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28267,7 +28271,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26178
+                lineno: 26181
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28322,7 +28326,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26201
+              lineno: 26204
             }));
           }
         }
@@ -28331,7 +28335,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26203
+              lineno: 26206
             }));
           }
         }
@@ -28340,7 +28344,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26205
+              lineno: 26208
             }));
           }
         }
@@ -29363,7 +29367,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26889
+                lineno: 26892
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29482,7 +29486,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26948
+                  lineno: 26951
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29504,7 +29508,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26952
+                    lineno: 26955
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29594,7 +29598,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26995
+            lineno: 26998
           }));
         }
         __iced_deferrals._fulfill();
