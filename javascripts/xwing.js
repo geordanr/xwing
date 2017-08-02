@@ -7300,7 +7300,8 @@ exportObj.translations.Deutsch = {
     "TIE Striker Expansion Pack": "TIE-Stürmer Erweiterung",
     "Quadjumper Expansion Pack": "Quadjumper Erweiterung",
     "Sabine's TIE Fighter Expansion Pack": "Sabines TIE-Jäger Erweiterung",
-    "Upsilon-class Shuttle Expansion Pack": "Shuttle der Ypsilon-Klasse Erweiterung"
+    "Upsilon-class Shuttle Expansion Pack": "Shuttle der Ypsilon-Klasse Erweiterung",
+    "C-ROC Cruiser Expansion Pack": "C-ROC Kreuzer Erweiterung"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -7411,6 +7412,7 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('U-Wing', 'U-Flügler');
   exportObj.renameShip('TIE Striker', 'TIE-Stürmer');
   exportObj.renameShip('Upsilon-class Shuttle', 'Shuttle der Ypsilon-Klasse');
+  exportObj.renameShip('C-ROC Cruiser', 'C-ROC Kreuzer');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."
@@ -8310,6 +8312,10 @@ exportObj.cardLoaders.Deutsch = function() {
     'Black Squadron Scout': {
       ship: "TIE-Stürmer",
       name: "Scout der Schwarzen Staffel"
+    },
+    'C-ROC Cruiser': {
+      ship: "C-ROC Kreuzer",
+      name: "C-ROC Kreuzer"
     },
     'Genesis Red': {
       ship: "M3-A Abfangjäger",
@@ -9214,22 +9220,26 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'Sobald ein Schiff, das du berührst, aktiviert wird, darfst du dir sein gewähltes Manöver ansehen. Falls du das tust, <strong>muss</strong> sein Besitzer das Rad auf ein nebenstehendes Manöver drehen. Das Schiff kann dieses Manöver aufdecken und ausführen, selbst wenn es gestresst ist.'
     },
     'Heavy Laser Turret': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'
+      name: "Schweres Lasergeschütz",
+      text: '<span class="card-restriction">Nur für C-ROC Kreuzer.</span>%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff auf 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'
     },
     'Cikatro Vizago': {
-      text: '%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die osten der neuen Aufwertung müssen gleich oder niedriger sein.'
     },
     'Azmorigan': {
-      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'
+      text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 Energie ausgeben, um eine von dir ausgerüstete offene %CREW%- oder %TEAM%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'
     },
     'Quick-release Cargo Locks': {
-      text: '%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'
+      name: "Frachtcontainer mit Schnellverschluss",
+      text: '%LINEBREAK%Am Ende der Aktivierungsphase darfst du diese Karte ablegen, um 1 Containermarker zu <strong>platzieren</strong>.'
     },
     'Supercharged Power Cells': {
-      text: 'When attacking, you may discard this card to roll 2 additional attack dice.'
+      name: "Hochaufgeladene Energiezellen",
+      text: 'Sobald du angreifst, darfst du diese Karte ablegen, um 2 zusätzliche Angriffswürfel zu werfen.'
     },
     'ARC Caster': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'
+      name: "ARC-Werfer",
+      text: '<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%DUALCARD%%LINEBREAK%<strong>Seite A:</strong>%LINEBREAK%<strong>Angriff:</strong> Greife 1 Schiff an. Falls der Angriff trifft, musst du 1 anderes Schiff in Reichweite 1 des Verteidigers wählen, das 1 Schaden nimmt.%LINEBREAK%Dann wird diese Karte umgedreht.%LINEBREAK%<strong>Seite B:</strong>%LINEBREAK%(wird aufgeladen) Zu Beginn der Kampfphase darfst du einen Waffen-deaktiviert-Marker erhalten, um diese Karte umzudrehen.'
     },
     'Wookiee Commandos': {
       text: 'When attacking, you may reroll your %FOCUS% results.'
@@ -9244,10 +9254,12 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
     },
     'Jabba the Hutt': {
-      text: '%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'
+      name: "Jabba der Hutt",
+      text: '%SCUMONLY%%LINEBREAK%Sobald du diese Karten ausrüstest, lege 1 Schmugglermarker auf jede %ILLICIT%-Aufwertung deiner Staffel. Sobald du angewiesen wirst eine Aufwertung abzulegen, darfst du stattdessen 1 Schmugglermarker von ihr ablegen.'
     },
     'IG-RM Thug Droids': {
-      text: 'When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'
+      name: "IG-RM-Schlägerdroiden",
+      text: 'Sobald du angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'
     },
     'Selflessness': {
       text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
@@ -9403,7 +9415,8 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für TIE.</span>%LINEBREAK%Sobald du verteidigst, falls es nach dem Würfeln der Verteidigungswürfel, mehr Angriffswürfel als Verteidigungswürfel gibt, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Du kannst diese Karte nicht ausrüsten, falls dein Wendigkeitswert 3 oder höher ist.'
     },
     'Pulsed Ray Shield': {
-      text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+      name: "Pulsstrahlenschild",
+      text: '<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%LINEBREAK%Während der Endphase darfst du 1 Ionenmarker erhalten, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert). Du kannst diese Karte nur dann ausrüsten, wenn dein Schildwert 1 ist.'
     }
   };
   title_translations = {
@@ -9610,17 +9623,23 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für TIE-Stürmer.</span>%LINEBREAK%Unmittelbar bevor du dein Rad aufdeckst, <strong>musst</strong> du ein weißes (%BANKLEFT% 1)-, (%STRAIGHT% 1)- oder (%BANKRIGHT% 1)-Manöver ausführen, falls du nicht gestresst bist.'
     },
     'Merchant One': {
-      text: '<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'
+      name: "Händler Eins",
+      ship: "C-ROC Kreuzer",
+      text: '<span class="card-restriction">Nur für C-ROC Kreuzer.</span>%LINEBREAK%Füge deiner Aufwertungsleiste 1 zusätzliches %CREW%-Symbol und 1 zusätzliches %TEAM%-Symbol hinzu und entferne 1 %CARGO%-Symbol aus deiner Aufwertungsleiste.'
     },
     '"Light Scyk" Interceptor': {
+      name: '"Leichter Scyk"-Abfangjäger',
       ship: "M3-A Abfangjäger",
-      text: '<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'
+      text: '<span class="card-restriction">Nur für M3-A-Abfangjäger.</span>%LINEBREAK%Alle dir zugeteilten Schadenskarten werden offen zugeteilt. Du darfst alle Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) wie grüne Manöver behandeln. Du kannst keine Modifikationen ausrüsten.'
     },
     'Insatiable Worrt': {
-      text: 'After you perform the recover action, gain 3 energy.'
+      name: "Gefrässiger Worrt",
+      ship: "C-ROC Kreuzer",
+      text: 'Nachdem du die Aktion Aufladen durchgeführt hast, erhälst du 3 Energie.'
     },
     'Broken Horn': {
-      text: 'When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'
+      ship: "C-ROC Kreuzer",
+      text: 'Sobald du verteidigst, darfst du, falls du einen Verstärkungsmarker hast, 1 zusätzliches %EVADE% hinzufügen. Falls du das tust, musst du nach dem Verteidigen deinen Verstärkungsmarker ablegen.'
     },
     'Havoc': {
       text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
@@ -25258,7 +25277,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 23998
+                    lineno: 24017
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25847,7 +25866,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24628
+              lineno: 24647
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26591,7 +26610,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25258
+          lineno: 25277
         }));
         __iced_deferrals._fulfill();
       });
@@ -26603,7 +26622,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25259
+            lineno: 25278
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28197,7 +28216,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26155
+                      lineno: 26174
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28271,7 +28290,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26181
+                lineno: 26200
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28326,7 +28345,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26204
+              lineno: 26223
             }));
           }
         }
@@ -28335,7 +28354,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26206
+              lineno: 26225
             }));
           }
         }
@@ -28344,7 +28363,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26208
+              lineno: 26227
             }));
           }
         }
@@ -29367,7 +29386,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26892
+                lineno: 26911
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29486,7 +29505,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26951
+                  lineno: 26970
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29508,7 +29527,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26955
+                    lineno: 26974
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29598,7 +29617,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 26998
+            lineno: 27017
           }));
         }
         __iced_deferrals._fulfill();
