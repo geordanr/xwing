@@ -692,32 +692,48 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''Quand vous défendez, au lieu d'utiliser votre valeur d'agilité, vous pouvez lancer un nombre de dés de défense égal à la vitesse de la manoeuvre que vous avez exécuté ce tour.'''
         'Genesis Red':
             ship: "Intercepteur M3-A"
-            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+            text: '''Après avoir verrouillé une cible, assignez des marqueurs de concentration et d'evasion à votre vaisseau jusqu'a ce que vous ayez le même nombre de chacun de ces marqueurs que le vaisseau verrouillé '''
         'Quinn Jast':
             ship: "Intercepteur M3-A"
-            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+            text: '''Au début de la phase de combat, vous pouvez recevoir un marqueur d'armement neutralisé pour retourner face visible une de vos cartes %TORPEDO% ou %MISSILE% défaussée.'''
         'Inaldra':
             ship: "Intercepteur M3-A"
-            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+            text: '''Quand vous attaquez ou défendez, vous pouvez dépenser 1 bouclier pour relancer n'importe quel nombre de vos dés'''
         'Sunny Bounder':
             ship: "Intercepteur M3-A"
-            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
+            text: '''Une fois par round, après avoir lancé ou relancé des dés, si vous avez le même résultat sur chacun de vos dés, vous pouvez ajouter 1 résultat correspondant'''
+        'Kashyyyk Defender':
+            name: "Défenseur de Kashyyyk"
+        'Wookiee Liberator':
+            name: "Libérateur Wookie"
+        'Sienar Specialist':
+            name: "Spécialiste Sienar"
+        'Onyx Squadron Escort':
+            name: "Escorte de l'escadron Onyx"
         'Lieutenant Kestal':
-            text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
+            text: '''Quand vous attaquez, vous pouvez dépenser 1 marqueur de concentration pour annuler tous les résultats vierges et %FOCUS% du défenseur.'''
         '"Double Edge"':
-            text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
+            text: '''Une fois par tour, après avoir effectué une attaque d'arme secondaire qui ne touche pas, vous pouvez effectuer une attaque avec une arme différente.'''
         'Viktor Hel':
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
         'Lowhhrick':
-            text: '''When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'''
+            text: '''Quand un autre vaisseau allié a portée 1 défend, vous pouvez dépenser 1 marqueur de renforcement, dans ce cas, le défenseur ajoute 1 résultat %EVADE%.'''
         'Wullffwarro':
-            text: '''When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'''
+            text: '''Quand vous attaquez, si vous n'avez pas de bouclier et qu'au moins 1 carte de dégâts vous est assignée, lancez 1 dé d'attaque supplémentaire.'''
         'Captain Nym (Scum)':
-            text: '''You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'''
+            text: '''Vous pouvez ignorer les bombes alliées. Quand un vaisseau allié défend, si l'attaquant mesure la portée au travers d'un marqueur de bombe allié, le défenseur peut ajouter 1 résultat %EVADE%.'''
         'Captain Nym (Rebel)':
-            text: '''Once per round, you may prevent a friendly bomb from detonating.'''
+            text: '''Une fois par tour, vous pouvez empêcher une bombe alliée d'exploser.'''
         'Sol Sixxa':
-            text: '''When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
+            text: '''Quand vous larguez une bombe, vous pouvez utiliser le gabarit (%TURNLEFT% 1) ou (%TURNRIGHT% 1) au lieu du gabarit (%STRAIGHT% 1) .'''
+        'Karthakk Pirate':
+            name: "Pirate de Karthakk"
+        'Lok Revenant':
+            name: "Revenant de Lok"
+        'Dalan Oberos':
+            text: '''If you are not stressed, when you reveal a turn, bank, or Segnor's Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'''
+        'Thweek':
+            text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
 
     upgrade_translations =
         #Traits de pilotes
@@ -1108,6 +1124,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Cluster Mines":
             name: "Mines groupées"
             text: """<strong>Action :</strong> défaussez cette carte pour <strong>larger</strong> 1 ensemble de Mines groupées.<br /><br />Quand le socle ou le gabarit de manoeuvre d'un vaisseau chevauche un marqueur de Mines groupées, ce marqueur <strong>explose</strong>.<br /><br /><strong>Marqueur de mines groupées :</strong>quand un de ces marqueurs explose, le vaisseau qui l'a traversé ou chevauché lance 2 dés d'attaque et subit un dégats pour chaques %HIT% et %CRIT% obtenus. Ensuite, défaussez ce marqueur.  """
+        'Glitterstim':
+            text: '''Au début de votre phase de combat, vous pouvez défausser cette carte et recevoir 1 marqueur stress. Dans ce cas, jusqu'a la fin du tour, quand vous attaquez ou défendez, vous pouvez changer tous vos résultats %FOCUS% en résultat %EVADE% ou %HIT% .'''
         'Crack Shot':
             name: "Tireur hors pair"
             text: '''Quand vous attaquez un vaisseau situé dans votre arc de tir, vous pouvez défausser cette carte pour annuler 1 des résultats %EVADE% du défenseur.'''
@@ -1319,7 +1337,7 @@ exportObj.cardLoaders['Français'] = () ->
         'Heavy Laser Turret':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%<strong>Attack (energy):</strong> Spend 2 energy from this card to perform this attack against 1 ship (even a ship outside of your firing arc).'''
         'Cikatro Vizago':
-            text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+            text: '''%SCUMONLY%%LINEBREAK%Au début de la phase de dénouement, vous pouvez défausser cette carte pour remplacer une carte d'amélioration %ILLICIT% ou %CARGO% face visible dont vous êtes equipé par une autre carte d'améiloration du même type ayant un nombre de points d'escadron inférieur ou égal.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Quick-release Cargo Locks':
@@ -1327,33 +1345,44 @@ exportObj.cardLoaders['Français'] = () ->
         'Supercharged Power Cells':
             text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
         'ARC Caster':
-            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
+            name: "Arc foudroyant"
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attaque:</strong> Attaquez un vaisseau.  Si cette attaque touche, vous devez choisir 1 autre vaisseau à portée 1 du défenseur qui subit 1 dégât.%LINEBREAK%Puis retournez cette carte.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(En charge) Au début de la phase de combat, vous pouvez recevoir un marqueur d'armement neutralisé pour retourner cette carte.'''
         'Wookiee Commandos':
-            text: '''When attacking, you may reroll your %FOCUS% results.'''
+            name: "Commandos Wookies"
+            text: '''Quand vous attaquez, vous pouvez relancer vos résultats %FOCUS%.'''
         'Synced Turret':
-            text: '''<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'''
+            name: "Tourelle synchronisée"
+            text: '''<strong>Attaque (Acquisition de cible):</strong> Attaquez 1 vaisseau (même un vaisseau situé en dehors de votre arc de tir).%LINEBREAK%Si le défenseur se situe dans votre arc de tir principal, vous pouvez relancer un nombre de dés d'attaque pouvant aller jusqu'à votre valeur d'arme principale.'''
         'Unguided Rockets':
-            text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
+            name: "Roquettes non guidées"
+            text: '''<strong>Attaque (focus):</strong> Attaquez 1 vaisseau.%LINEBREAK%Vos dés d'attaque ne peuvent être modifié qu'en dépensant un marqueur concentration pour son effet normal.'''
         'Intensity':
-            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> Après avoir affectué une action d'accélération ou de tonneau, vous pouvez assigner 1 marqueur concentration ou evasion à votre vaisseau. Dans ce cas retournez cette carte.%LINEBREAK%<strong>Side B:</strong> (Epuisée) A la fin de la phase de combat, vous pouvez dépenser 1 marqueur de concentration ou d'evasion pour retourner cette carte'''
         'Jabba the Hutt':
-            text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
+            text: '''%SCUMONLY%%LINEBREAK%Quand vous vous equipez de cette carte placez 1 marqueur illicite sur chaque carte d'amélioration %ILLICIT% dans votre escadron. Quand il vous est demandé de défausser une carte d'amélioration, vous pouvez défausser 1 marqueur illicite de la carte à la place.'''
         'IG-RM Thug Droids':
             text: '''When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'''
         'Selflessness':
-            text: '''%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'''
+            name: "Altruisme"
+            text: '''%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%Quand un vaisseau allié situé à portée 1 est touché par une attaque, vous pouvez défausser cette carte pour subir tous les résultats %HIT% non annulé à la place du vaisseau ciblé.'''
         'Breach Specialist':
-            text: '''When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'''
+            name: "Spécialiste des brèches"
+            text: '''Quand vous recevez une carte de dégâts face visible, vous pouvez dépenser 1 marqueur de renforcement pour la retourner face cachée (sans résoudre son effet). Dans ce cas, jusqu'à la fin du tour, quand vous recevez une carte de dégâts face visible, retournez-la face cachée (sans résoudre son effet).'''
         'Bomblet Generator':
-            text: '''When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'''
+            name: "Générateur de sous-munitions"
+            text: '''Quand vous révélez votre manoeuvre, vous pouvez <strong>larger</strong> 1 marqueur de sous-munitions.%LINEBREAK%Ce marqueur <strong>explose</strong> à la fin de la phase d'activation.%LINEBREAK%<strong>Marqueur sous-munitions:</strong> Quand ce marqueur de bombe explose, chaque vaisseau situé a portée 1 du marqueur lance 2 dés d'attaque et subit tous les dégâts (%HIT%) et (%CRIT%) obtenu. Ensuite, défaussez ce marqueur.'''
         'Cad Bane':
-            text: '''%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'''
+            text: '''%SCUMONLY%%LINEBREAK%Votre bandeau d'améliorations gagne l'icone %BOMB% . une fois par tour, quand un vaisseau ennemi lance des dés d'attaque en raison d'une bombe alliée qui explose, vous pouvez choisir n'importe quel nombre de résultats %FOCUS% et vierge, il doit relancer ces résultats.'''
         'Minefield Mapper':
-            text: '''During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'''
+            name: "Traceur de chanp de mines"
+            text: '''Durant la mise en place, après l'étape "placer les forces" vous pouvez défausser n'importe quel nombre de vos cartes d'amélioration %BOMB% équipées. Placez tous les marqueurs de bombes correspondants dans la zone de jeu à portée 4+ de vaisseaux ennemis '''
         'R4-E1':
-            text: '''You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'''
+            text: '''Vous pouvez effectuer des actions de vos cartes d'amélioration %TORPEDO% et %BOMB% même si vous êtes stressé. Après avoir effectué une action de la sorte, vous pouvez défausser cette carte pour retirer 1 marqueur de stress de votre vaisseau'''
         'Cruise Missiles':
-            text: '''<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'''
+            name: "Missile de croisière"
+            text: '''<strong>Attaque (Acquisition de cible):</strong> Défaussez cette carte pour effectuer cette attque.%LINEBREAK%Vous pouvez lancer un nombre de dés d'attaque supplémentaires égal à la vitesse de la manoeuvre que vous avez effectuée à ce tour, jusqu'a un maximum de 4 dés supplémentaires'''
+        'Ion Dischargers':
+            text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1445,7 +1474,7 @@ exportObj.cardLoaders['Français'] = () ->
             name: "Châssis allégé"
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%Quand vous défendez, après avoir lancé les dés de défense, s'il y a plus de dés d'attaque que de défense, lancez 1 dé de défense supplémentaire.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur d'agilité est de "3" ou plus.'''
         'Pulsed Ray Shield':
-            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%Durant la phase de dénouement, vous pouvez recevoir 1 marqueur ionique pour récupérer 1 bouclier (à hauteur de votre valeur de boucliers). Vous ne pouvez vous equiper de cette carte que si votre valeur de boucliers est de "1". '''
 
     title_translations =
         "Slave I":
@@ -1493,15 +1522,15 @@ exportObj.cardLoaders['Français'] = () ->
         '"Heavy Scyk" Interceptor (Cannon)':
             name: 'Intercepteur "Scyk Lourd" (Cannon)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% ."""
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% .%LINEBREAK%Augmentez de 1 votre valeur de coque"""
         '"Heavy Scyk" Interceptor (Torpedo)':
             name: 'Intercepteur "Scyk Lourd" (Torpille)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% ."""
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% .%LINEBREAK%Augmentez de 1 votre valeur de coque"""
         '"Heavy Scyk" Interceptor (Missile)':
             name: 'Intercepteur "Scyk Lourd" (Missile)'
             ship: "Intercepteur M3-A"
-            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% ."""
+            text: """<span class="card-restriction">Intercepteur M3-A uniquement. Titre.</span>%LINEBREAK%Votre bandeau d'amélioration gagne l'icône d'amélioration %CANNON%, %TORPEDO%, ou %MISSILE% .%LINEBREAK%Augmentez de 1 votre valeur de coque"""
         "IG-2000":
             text: """<span class="card-restriction">Aggressor uniquement.</span>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié avec la carte d'amélioration <em>IG-2000</em> (en plus de votre capacité de pilote)."""
         "BTL-A4 Y-Wing":
@@ -1576,13 +1605,15 @@ exportObj.cardLoaders['Français'] = () ->
         '''Merchant One''':
             text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
-            text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
+            ship: "Intercepteur M3-A"
+            name: 'Intercepteur "Scyk Léger"'
+            text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%Toutes les cartes de dégâts qui vous sont assignées le sont face visible. vous pouvez considérer toutes les manoeuvres de virage sur l'aile (%BANKLEFT% ou %BANKRIGHT%) comme des manoeuvres vertes. Vous ne pouvez pas vous equiper d'améliorations Modification.'''
         '''Insatiable Worrt''':
             text: '''After you perform the recover action, gain 3 energy.'''
         '''Broken Horn''':
             text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
         'Havoc':
-            text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'''
+            text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Votre bandeau d'amélioration gagne les icones %SYSTEM% et %SALVAGEDASTROMECH% et perd l'icone d'amélioration %CREW% .%LINEBREAK%Vous ne pouvez pas vous equiper de cartes d'amélioration %SALVAGEDASTROMECH% non uniques.'''
         'Vaksai':
             text: '''<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'''
         'StarViper Mk. II':
@@ -1590,12 +1621,20 @@ exportObj.cardLoaders['Français'] = () ->
 
     condition_translations =
         '''I'll Show You the Dark Side''':
-            text: '''When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
+            name: "Je vous montrerai le coté obscur"
+            text: '''Quand cette carte est assignée, si elle n'est pas déjà en jeu, le joueur qui l'a assignée cherche 1 carte de dégats avec le trait <strong><em>Pilote</em></strong> dans le paquet de dégâts et peut la placer face visible sur cette carte. puis melangez le paquet de dégâts%LINEBREAK%Quand vous subissez une dégat critique durant une attaque, vous vous voyez assigner ca carte de dégât face visible choisie. %LINEBREAK%quand il n'y a aucune carte de dégâts sur cette carte, retirez la'''
         'Suppressive Fire':
-            text: '''When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'''
+            name: "Tir de suppression"
+            text: '''Quand vous attaquez un vaisseau autre que "Capitaine Rex", lancez 1 dé d'attaque de moins.%LINEBREAK% Quand vous déclarez une attaque ciblant "Capitaine Rex" ou quand "Capitaine Rex" est détruit, retirez cette carte.%LINEBREAK%A la fin de la phase de combat, si "Capitaine Rex" n'a pas effectué d'attaque au cours de cette phase, retirez cette carte'''
         'Fanatical Devotion':
-            text: '''When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'''
+            name: "Dévouement fanatique"
+            text: '''Quand vous défendez, vous ne pouvez pas dépenser de marqueurs concentration%LINEBREAK%Quand vous attaquez, si vous dépensez un marqueur de concentration pour changer tous vos résultats %FOCUS% en résultats %HIT%,mettez de coté le premier résultat %FOCUS% que vous changez. Le résultat %HIT% mis de coté ne peut pas être annulé par des dés de défense, mais le défenseur peut annuler des résultats %CRIT% avant lui.%LINEBREAK%Durant la phase de dénouement, retirez cette carte.'''
         'A Debt to Pay':
-            text: '''When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'''
+            name: "Une dette a payer"
+            text: '''Quand vous attaquez un vaisseau qui a la carte d'amélioration "Un compte a régler", vous pouvez chancger 1 résultat %FOCUS% en résultat %CRIT% .'''
+        'Shadowed':
+            text: '''"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'''
+        'Mimicked':
+            text: '''"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
