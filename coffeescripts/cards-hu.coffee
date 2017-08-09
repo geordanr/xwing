@@ -512,6 +512,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Körönként egyszer, megakadályozhatod egy baráti bomba robbanását.'''
         'Sol Sixxa':
             text: '''Bomba ledobásakor, használhatod a (%TURNLEFT% 1) vagy (%TURNRIGHT% 1) sablonokat a (%STRAIGHT% 1) helyett.'''
+        'Dalan Oberos':
+            text: '''Ha nem vagy stresszes és forduló, bedöntés vagy Segnor csavar manővert fedsz fel, kezelheted úgy, mintha piros Tallon orsó manővert hajtanál végre az eredetileg forgatott manőver sablonjával.'''
+        'Thweek':
+            text: '''A játék kezdetén még a hajók felhelyezése előtt választhatsz 1 ellenséges hajót és hozzárendelheted a "Shadowed" vagy "Mimicked" kondíciós kártyát.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1013,6 +1017,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Végrehajthatod a %TORPEDO% és %BOMB% kártyádon lévő akciót, még ha stresszes is vagy. Miután így tettél, eldobhatod ezt a kártyát, hogy levegyél egy stressz jelzőt a hajódról.'''
         'Cruise Missiles':
             text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'''
+        'Ion Dischargers':
+            text: '''Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'''
 
     modification_translations =
         "Stealth Device":
@@ -1210,5 +1216,9 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Védekezéskor nem tudsz %FOCUS% jelzőt elkölteni.%LINEBREAK%Támadáskor, ha %FOCUS% jelzőt költenél, hogy az összes %FOCUS% dobást átfogasd %HIT%-re, tedd az első %FOCUS% dobásod félre. A félretett immár %HIT% dobás nem semlegesíthető védő kockával, de a védekező a %CRIT% dobásokat semlegesíthető elébb.%LINEBREAK%A befejező fázis alatt vedd le ezt a kártyát.'''
         'A Debt to Pay':
             text: '''Az "A Score to Settle" fejlesztés kártyával rendelkező hajót támadva, átforgathatsz egy %FOCUS% dobást %CRIT%-re.'''
+        'Shadowed':
+            text: '''"Thweek" úgy kezelendő, mintha rendelkezne a felrakás után pilóta erősségeddel. Az átvett PS érték nem változik, ha a hajónak változna a PS-e vagy megsemmisülne.'''
+        'Mimicked':
+            text: '''"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
