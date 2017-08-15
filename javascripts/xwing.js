@@ -4130,14 +4130,14 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Missile', 'Illicit'],
         points: 25
       }, {
-        name: 'Captain ???',
+        name: 'Captain Jostero',
         id: 263,
         skill: 4,
         faction: 'Scum and Villainy',
         unique: true,
         ship: 'Kihraxz Fighter',
-        slots: ['Missile', 'Illicit'],
-        points: 100
+        slots: ['Elite', 'Missile', 'Illicit'],
+        points: 24
       }, {
         name: 'Dalan Oberos',
         id: 264,
@@ -5872,6 +5872,14 @@ exportObj.basicCardData = function() {
         id: 242,
         slot: 'Illicit',
         points: 2
+      }, {
+        name: 'Harpoon Missile',
+        id: 243,
+        slot: 'Missile',
+        points: 4,
+        attack: 4,
+        range: '2-3',
+        applies_condition: 'Harpooned!'.canonicalize()
       }
     ],
     modificationsById: [
@@ -6778,6 +6786,9 @@ exportObj.basicCardData = function() {
         name: 'Mimicked',
         id: 6,
         unique: true
+      }, {
+        name: 'Harpooned!',
+        id: 7
       }
     ]
   };
@@ -8362,6 +8373,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -9284,6 +9298,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -9669,6 +9686,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -10378,6 +10398,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -11106,6 +11129,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -11388,6 +11414,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -12659,6 +12688,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -13562,6 +13594,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -13964,6 +13999,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -14896,6 +14934,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -15768,6 +15809,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -16109,6 +16153,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16808,6 +16855,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Thweek': {
       text: 'A játék kezdetén még a hajók felhelyezése előtt választhatsz 1 ellenséges hajót és hozzárendelheted a "Shadowed" vagy "Mimicked" kondíciós kártyát.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -17551,6 +17601,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Ion Dischargers': {
       text: 'Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -17842,6 +17895,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Mimicked': {
       text: '"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -18712,6 +18768,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -19512,6 +19571,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -19822,6 +19884,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -20485,6 +20550,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Thweek': {
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
+    },
+    'Captain Jostero': {
+      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
   upgrade_translations = {
@@ -21189,6 +21257,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+    },
+    'Harpoon Missile': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
   modification_translations = {
@@ -21447,6 +21518,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Mimicked': {
       text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+    },
+    'Harpooned!': {
+      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -25277,7 +25351,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24017
+                    lineno: 24073
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25866,7 +25940,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24647
+              lineno: 24703
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26610,7 +26684,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25277
+          lineno: 25333
         }));
         __iced_deferrals._fulfill();
       });
@@ -26622,7 +26696,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25278
+            lineno: 25334
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28216,7 +28290,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26174
+                      lineno: 26230
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28290,7 +28364,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26200
+                lineno: 26256
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28345,7 +28419,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26223
+              lineno: 26279
             }));
           }
         }
@@ -28354,7 +28428,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26225
+              lineno: 26281
             }));
           }
         }
@@ -28363,7 +28437,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26227
+              lineno: 26283
             }));
           }
         }
@@ -29386,7 +29460,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26911
+                lineno: 26967
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29505,7 +29579,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 26970
+                  lineno: 27026
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29527,7 +29601,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 26974
+                    lineno: 27030
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29617,7 +29691,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27017
+            lineno: 27073
           }));
         }
         __iced_deferrals._fulfill();
