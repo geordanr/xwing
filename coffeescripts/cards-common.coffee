@@ -6638,7 +6638,7 @@ exportObj.basicCardData = ->
             points: 2
         }
         {
-            name: 'Harpoon Missile'
+            name: 'Harpoon Missiles'
             id: 243
             slot: 'Missile'
             points: 4

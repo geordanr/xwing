@@ -1021,7 +1021,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'''
         'Ion Dischargers':
             text: '''Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'''
-        'Harpoon Missile':
+        'Harpoon Missiles':
             text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
 
     modification_translations =

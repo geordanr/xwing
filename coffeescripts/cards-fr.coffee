@@ -1385,7 +1385,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<strong>Attaque (Acquisition de cible):</strong> Défaussez cette carte pour effectuer cette attque.%LINEBREAK%Vous pouvez lancer un nombre de dés d'attaque supplémentaires égal à la vitesse de la manoeuvre que vous avez effectuée à ce tour, jusqu'a un maximum de 4 dés supplémentaires'''
         'Ion Dischargers':
             text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
-        'Harpoon Missile':
+        'Harpoon Missiles':
             text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
 
     modification_translations =
