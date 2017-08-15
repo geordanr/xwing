@@ -4732,17 +4732,18 @@ exportObj.basicCardData = ->
             points: 25
         }
         {
-            name: 'Captain ???'
+            name: 'Captain Jostero'
             id: 263
             skill: 4
             faction: 'Scum and Villainy'
             unique: true
             ship: 'Kihraxz Fighter'
             slots: [
+                'Elite'
                 'Missile'
                 'Illicit'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Dalan Oberos'
@@ -6636,6 +6637,15 @@ exportObj.basicCardData = ->
             slot: 'Illicit'
             points: 2
         }
+        {
+            name: 'Harpoon Missile'
+            id: 243
+            slot: 'Missile'
+            points: 4
+            attack: 4
+            range: '2-3'
+            applies_condition: 'Harpooned!'.canonicalize()
+        }
     ]
 
     modificationsById: [
@@ -7541,6 +7551,10 @@ exportObj.basicCardData = ->
             name: 'Mimicked'
             id: 6
             unique: true
+        }
+        {
+            name: 'Harpooned!'
+            id: 7
         }
     ]
 

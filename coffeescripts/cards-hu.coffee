@@ -516,6 +516,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Ha nem vagy stresszes és forduló, bedöntés vagy Segnor csavar manővert fedsz fel, kezelheted úgy, mintha piros Tallon orsó manővert hajtanál végre az eredetileg forgatott manőver sablonjával.'''
         'Thweek':
             text: '''A játék kezdetén még a hajók felhelyezése előtt választhatsz 1 ellenséges hajót és hozzárendelheted a "Shadowed" vagy "Mimicked" kondíciós kártyát.'''
+        'Captain Jostero':
+            text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1019,6 +1021,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'''
         'Ion Dischargers':
             text: '''Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'''
+        'Harpoon Missile':
+            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
 
     modification_translations =
         "Stealth Device":
@@ -1220,5 +1224,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''"Thweek" úgy kezelendő, mintha rendelkezne a felrakás után pilóta erősségeddel. Az átvett PS érték nem változik, ha a hajónak változna a PS-e vagy megsemmisülne.'''
         'Mimicked':
             text: '''"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'''
+        'Harpooned!':
+            text: '''When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
