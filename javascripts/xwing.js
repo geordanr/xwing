@@ -5873,7 +5873,7 @@ exportObj.basicCardData = function() {
         slot: 'Illicit',
         points: 2
       }, {
-        name: 'Harpoon Missile',
+        name: 'Harpoon Missiles',
         id: 243,
         slot: 'Missile',
         points: 4,
@@ -9299,7 +9299,7 @@ exportObj.cardLoaders.Deutsch = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -11130,7 +11130,7 @@ exportObj.cardLoaders.English = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -13595,7 +13595,7 @@ exportObj.cardLoaders['Español'] = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -15810,7 +15810,7 @@ exportObj.cardLoaders['Français'] = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -17602,7 +17602,7 @@ exportObj.cardLoaders.Magyar = function() {
     'Ion Dischargers': {
       text: 'Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -19572,7 +19572,7 @@ exportObj.cardLoaders['Polski'] = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
@@ -21258,7 +21258,7 @@ exportObj.cardLoaders['Türkçe'] = function() {
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
-    'Harpoon Missile': {
+    'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
     }
   };
