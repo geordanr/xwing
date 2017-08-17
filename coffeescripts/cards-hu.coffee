@@ -223,7 +223,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Lieutenant Lorrir":
             text: """%BARRELROLL% akció végrehajtásakor, kaphatsz egy stressz jelzőt, hogy az (%STRAIGHT% 1) helyett a (%BANKLEFT% 1) vagy (%BANKRIGHT% 1) sablont használd. [FAQ]"""
         "Tetran Cowall":
-            text: """Ha felfordítasz egy (%UTURN%) manővert, választhetsz 1-es, 3-as vagy 5-ös sebességet. [FAQ]"""
+            text: """Ha felfedsz egy (%UTURN%) manővert, választhatsz 1-es, 3-as vagy 5-ös sebességet. [FAQ]"""
         "Kir Kanos":
             text: """ Ha 2-3-as távolságba támadsz, elkölthetsz egy kitérés jelzőt, hogy hozzáadj egy 1 %HIT%-ot a dobásodhoz."""
         "Carnor Jax":
@@ -516,6 +516,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Ha nem vagy stresszes és forduló, bedöntés vagy Segnor csavar manővert fedsz fel, kezelheted úgy, mintha piros Tallon orsó manővert hajtanál végre az eredetileg forgatott manőver sablonjával.'''
         'Thweek':
             text: '''A játék kezdetén még a hajók felhelyezése előtt választhatsz 1 ellenséges hajót és hozzárendelheted a "Shadowed" vagy "Mimicked" kondíciós kártyát.'''
+        'Captain Jostero':
+            text: '''Körönként egyszer, mikor egy ellenséges hajó védekezés nélkül szenved sérülést vagy kritikus sérülést, végrehajthatsz egy támadást ellene.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -567,7 +569,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Heavy Laser Cannon":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. [FAQ!!!]"""
         "Seismic Charges":
-            text: """Amikor felfeded a manőveretárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."""
+            text: """Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."""
         "Mercenary Copilot":
             text: """Amikor 3-as távolságra támadsz, egy %HIT% eredményt %CRIT% eredményre változtathatsz."""
         "Assault Missiles":
@@ -740,7 +742,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Accuracy Corrector":
             text: """Amikor támadsz, a "Támadó kocka módosítás" lépésben, törölheted az összes kockád eredményét. Ezután a dobásodhoz hozzáadhatsz 2 %HIT%-t. E támadás során a kockáid eredményét nem módosíthatod még egyszer. [FAQ]"""
         "Inertial Dampeners":
-            text: """Amikor felfeded a manővertárcsád eredményét, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."""
+            text: """Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."""
         "Flechette Cannon":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3."""
         '"Mangler" Cannon':
@@ -886,7 +888,7 @@ exportObj.cardLoaders.Magyar = () ->
         "R5-P8":
             text: """Körönként egyszer, védekezés után dobhatsz egy támadó kockával. %HIT% dobáskor a támadó leszenved egy sérülést. %CRIT% dobáskor mindketten elszenvedtek egy séerülést."""
         'Thermal Detonators':
-            text: """Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy thermal detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."""
+            text: """Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy Thermal Detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."""
         "Overclocked R4":
             text: """A harci fázis alatt, mikor elköltesz egy %FOCUS% jelzőt, egy stressz jelzővel együtt kaphatsz egy újabb %FOCUS% jelzőt."""
         'Systems Officer':
@@ -1019,6 +1021,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Annyival több támadó kockával dobhatsz, amekkora sebességű manővert hajtottál végre ebben a körben (de maximum 4).'''
         'Ion Dischargers':
             text: '''Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'''
+        'Harpoon Missiles':
+            text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK%Ha a támadás talált, rendeld a "Harpooned!" kondíciós kártyát a védekezőhöz.'''
 
     modification_translations =
         "Stealth Device":
@@ -1058,7 +1062,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Twin Ion Engine Mk. II":
             text: """<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Minden enyhe fordulód (%BANKLEFT% vagy %BANKRIGHT%) zöld manővernek számít."""
         "Maneuvering Fins":
-            text: """<span class="card-restriction">Csak YV-666.</span>%LINEBREAK%A manővertárcsád felfedésekor, ha egy %TURNLEFT% vagy %TURNRIGHT% fordulót hajtanál végre, a tárcsád átforgathatod egy annak megfelelő sebességű és irányú %BANKLEFT% vagy %BANKRIGHT% manőverre."""
+            text: """<span class="card-restriction">Csak YV-666.</span>%LINEBREAK%A manővertárcsád felfedésekor, ha egy %TURNLEFT% vagy %TURNRIGHT% fordulót hajtanál végre, a tárcsád átforgathatod egy annak megfelelő sebességű %BANKLEFT% vagy %BANKRIGHT% manőverre."""
         "Ion Projector":
             text: """<span class="card-restriction">Csak nagy hajók.</span>%LINEBREAK%Ha egy ellenséges hajó olyan manővert hajt végre, ami miatt átfedésbe kerül a hajóddal, dobj 1 támadó kockával. %HIT% vagy %CRIT% dobás esetén az ellenséges hajó 1 ion jelzőt kap."""
         'Integrated Astromech':
@@ -1220,5 +1224,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''"Thweek" úgy kezelendő, mintha rendelkezne a felrakás után pilóta erősségeddel. Az átvett PS érték nem változik, ha a hajónak változna a PS-e vagy megsemmisülne.'''
         'Mimicked':
             text: '''"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'''
+        'Harpooned!':
+            text: '''Mikor egy támadásból találat ér, amiben legalább 1 kivédetlen %CRIT% van, minden 1-es távolságban lévő hajó elszenved 1 sérülést. Aztán dobd el ezt a lapot és kapsz egy lefordított sérülés kártyát.%LINEBREAK%Mikor megsemmisülsz, minden 1-es távolságban lévő hajó elszenved 1 sérülést%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát. Dobj egy támadás kockával, %HIT% vagy %CRIT% esetén elszenvedsz egy sérülést.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
