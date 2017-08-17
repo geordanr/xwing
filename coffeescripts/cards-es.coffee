@@ -1015,15 +1015,15 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
         'Lowhhrick':
             ship: "Cañonera Auzituck"
-            text: '''Cuando otr anave aliada que tengas a alcance 1 se esté defendiendo, puedes gastar 1 ficha de Refuerzo. Si lo haces, el defensor añade 1 resultado %EVADE%.'''
+            text: '''Cuando otra nave aliada que tengas a alcance 1 se esté defendiendo, puedes gastar 1 ficha de Refuerzo. Si lo haces, el defensor añade 1 resultado %EVADE%.'''
         'Wullffwarro':
             ship: "Cañonera Auzituck"
             text: '''Cuando ataques, si no tienes ninguna ficha de Escudos y tienes asignada como mínimo 1 carta de Daño, tira 1 dado de ataque adicional.'''
         'Wookiee Liberator':
             name: "Libertador wookie"
             ship: "Cañonera Auzituck"
-        'Kashyyyk Defender ':
-            name: "Defensor de KAshyyyk"
+        'Kashyyyk Defender':
+            name: "Defensor de Kashyyyk"
             ship: "Cañonera Auzituck"
         'Captain Nym (Scum)':
             name: "Capitán Nym (Scum)"
