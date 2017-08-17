@@ -85,6 +85,9 @@ exportObj.translations['Español'] =
         "Sabine's TIE Fighter Expansion Pack": "Pack de Expansión Caza TIE de Sabine"
         "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad"
         "C-ROC Cruiser Expansion Pack": "Pack de Expansión Crucero C-ROC"
+        "TIE Aggressor Expansion Pack": "Pack de Expansión Tie Agresor"
+        "Scurrg H-6 Bomber Expansion Pack": "Pack de Expansión Bombardero Scurrg H-6"
+        "Auzituck Gunship Expansion Pack": "Pack de Expansión Cañonera Auzituck"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -198,6 +201,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE/sf Fighter', 'Caza TIE/sf'
     exportObj.renameShip 'TIE Striker', 'Fustigador TIE'
     exportObj.renameShip 'Upsilon-class Shuttle', 'Lanzadera clase Ípsilon'
+    exportObj.renameShip 'TIE Aggressor', 'TIE Agresor'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -211,6 +215,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'GR-75 Medium Transport', 'Transporte mediano GR-75'
     exportObj.renameShip 'T-70 X-Wing', 'T-70 Ala-X'
     exportObj.renameShip 'U-Wing', 'Ala-U'
+    exportObj.renameShip 'Auzituck Gunship', 'Cañonera Auzituck'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
@@ -221,6 +226,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero'
     exportObj.renameShip 'Quadjumper', 'Saltador Quad'
     exportObj.renameShip 'C-ROC Cruiser', 'Crucero C-ROC'
+    exportObj.renameShip 'Scurrg H-6 Bomber', 'Bombardero Scurrg H-6'
 
     pilot_translations =
         "Wedge Antilles":
@@ -992,9 +998,18 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Crucero C-ROC"
             name: "Crucero C-ROC"
         'Lieutenant Kestal':
-            text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
+            ship: "TIE Agresor"
+            text: '''Cuando ataques, puedes gastar 1 ficha de Concentración para anular todos los resultados %FOCUS% y de cara vacía del defensor.'''
         '"Double Edge"':
-            text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
+            ship: "TIE Agresor"
+            name: "Doble Filo"
+            text: '''Una vez por ronda, después de que efectúes un ataque con un armamento secundario que no impacte, puedes efectuar un ataque con un arma diferente.'''
+        'Onyx Squadron Escort':
+            ship: "TIE Agresor"
+            name: "Escolta del Escuadrón Ónice"
+        'Sienar Specialist':
+            ship: "TIE Agresor"
+            name: "Especialista de Sienar"
         'Viktor Hel':
             ship: "Caza Kihraxz"
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
@@ -1003,16 +1018,30 @@ exportObj.cardLoaders['Español'] = () ->
         'Wullffwarro':
             text: '''When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'''
         'Captain Nym (Scum)':
-            text: '''You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'''
+            name: "Capitán Nym (Scum)"
+            ship: "Bombardero Scurrg H-6"
+            text: '''Puedes ignorar las bombas aliadas. Cuando una nave aliada se está defendiendo, si el atacante mide el alcance a través de una ficha de Bomba aliada, el defensor puede añadir 1 resultado%EVADE%.'''
         'Captain Nym (Rebel)':
-            text: '''Once per round, you may prevent a friendly bomb from detonating.'''
+            name: "Capitán Nym (Rebelde)"
+            ship: "Bombardero Scurrg H-6"
+            text: '''Una vez por ronda, puedes impedir que una bomba aliada detone.'''
+        'Lok Revenant':
+            name: "Aparecido de Lok"
+            ship: "Bombardero Scurrg H-6"
+        'Karthakk Pirate ':
+            name: "Pirata de Karthakk"
+            ship: "Bombardero Scurrg H-6"
         'Sol Sixxa':
-            text: '''When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
+            ship: "Bombardero Scurrg H-6"
+            text: '''Cuando sueltes una bomba, puedes utilizar la plantilla de maniobra (%TURNLEFT% 1) o (%TURNRIGHT% 1) en vez de la plantilla de (%STRAIGHT% 1).'''
         'Dalan Oberos':
+            ship: 'Víbora Estelar'
             text: '''If you are not stressed, when you reveal a turn, bank, or Segnor's Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'''
         'Thweek':
+            ship: 'Víbora Estelar'
             text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
         'Captain Jostero':
+            ship: "Caza Kihraxz"
             text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
 
     upgrade_translations =
@@ -1652,11 +1681,14 @@ exportObj.cardLoaders['Español'] = () ->
         'Wookiee Commandos':
             text: '''When attacking, you may reroll your %FOCUS% results.'''
         'Synced Turret':
-            text: '''<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'''
+            name: "Torreta sincronizada"
+            text: '''<strong>Ataque (Blanco fijado:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).%LINEBREAK%Si el defensor está dentro de tu arco de fuego principal, puedes volver a tirar tantos dados de ataque como tu valor de Armamento principal.'''
         'Unguided Rockets':
-            text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
+            name: "Cohetes no guiados"
+            text: '''<strong>Ataque (Concentración):</strong> Ataca a 1 nave.%LINEBREAK%Tus dados de ataque solo pueden ser modificados mediante el gasto de una ficha de Concentración para su efecto normal.'''
         'Intensity':
-            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+            name: "Ímpetu"
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Cara A:</strong> Después de que realices una acción de impulso o de tonel volado, puedes asignar 1 ficha de Concentración o de Evasión a tu nave. Si lo haces, dale la vuelta a esta carta.%LINEBREAK%<strong>Cara B:</strong> (Agotada) Al final de la fase de Combate, puedes gasta 1 ficha de Concentración o de Evasión para darle la vuelta a esta carta.'''
         'Jabba the Hutt':
             name: "Jabba el Hutt"
             text: '''%SCUMONLY%%LINEBREAK%Cuando equipes esta carta, coloca 1 ficha de Material Ilícito encima de cada carta de Mejora %ILLICIT% en tu escuadrón. Cuando debas descartar una carta de Mejora, en vez de eso puedes descartar 1 ficha de Material ilícito que esté encima de esa carta.'''
