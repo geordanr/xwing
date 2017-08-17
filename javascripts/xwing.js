@@ -11515,7 +11515,10 @@ exportObj.translations['Español'] = {
     "Upsilon-class Shuttle Expansion Pack": "Pack de Expansión Lanzadera clase Ípsilon",
     "Sabine's TIE Fighter Expansion Pack": "Pack de Expansión Caza TIE de Sabine",
     "Quadjumper Expansion Pack": "Pack de Expansión Saltador Quad",
-    "C-ROC Cruiser Expansion Pack": "Pack de Expansión Crucero C-ROC"
+    "C-ROC Cruiser Expansion Pack": "Pack de Expansión Crucero C-ROC",
+    "TIE Aggressor Expansion Pack": "Pack de Expansión Tie Agresor",
+    "Scurrg H-6 Bomber Expansion Pack": "Pack de Expansión Bombardero Scurrg H-6",
+    "Auzituck Gunship Expansion Pack": "Pack de Expansión Cañonera Auzituck"
   },
   ui: {
     shipSelectorPlaceholder: "Selecciona una nave",
@@ -11631,6 +11634,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('TIE/sf Fighter', 'Caza TIE/sf');
   exportObj.renameShip('TIE Striker', 'Fustigador TIE');
   exportObj.renameShip('Upsilon-class Shuttle', 'Lanzadera clase Ípsilon');
+  exportObj.renameShip('TIE Aggressor', 'TIE Agresor');
   exportObj.renameShip('A-Wing', 'Ala-A');
   exportObj.renameShip('B-Wing', 'Ala-B');
   exportObj.renameShip('E-Wing', 'Ala-E');
@@ -11644,6 +11648,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('GR-75 Medium Transport', 'Transporte mediano GR-75');
   exportObj.renameShip('T-70 X-Wing', 'T-70 Ala-X');
   exportObj.renameShip('U-Wing', 'Ala-U');
+  exportObj.renameShip('Auzituck Gunship', 'Cañonera Auzituck');
   exportObj.renameShip('M3-A Interceptor', 'Interceptor M3-A');
   exportObj.renameShip('StarViper', 'Víbora Estelar');
   exportObj.renameShip('Aggressor', 'Agresor');
@@ -11654,6 +11659,7 @@ exportObj.cardLoaders['Español'] = function() {
   exportObj.renameShip('Lancer-class Pursuit Craft', 'Nave de persecución clase Lancero');
   exportObj.renameShip('Quadjumper', 'Saltador Quad');
   exportObj.renameShip('C-ROC Cruiser', 'Crucero C-ROC');
+  exportObj.renameShip('Scurrg H-6 Bomber', 'Bombardero Scurrg H-6');
   pilot_translations = {
     "Wedge Antilles": {
       text: "Cuando ataques, la Agilidad del piloto se reduce en 1 (hasta un mínimo de 0).",
@@ -12659,37 +12665,74 @@ exportObj.cardLoaders['Español'] = function() {
       name: "Crucero C-ROC"
     },
     'Lieutenant Kestal': {
-      text: 'When attacking, you may spend 1 focus token to cancel all of the defender\'s blank and %FOCUS% results.'
+      ship: "TIE Agresor",
+      text: 'Cuando ataques, puedes gastar 1 ficha de Concentración para anular todos los resultados %FOCUS% y de cara vacía del defensor.'
     },
     '"Double Edge"': {
-      text: 'Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'
+      ship: "TIE Agresor",
+      name: "Doble Filo",
+      text: 'Una vez por ronda, después de que efectúes un ataque con un armamento secundario que no impacte, puedes efectuar un ataque con un arma diferente.'
+    },
+    'Onyx Squadron Escort': {
+      ship: "TIE Agresor",
+      name: "Escolta del Escuadrón Ónice"
+    },
+    'Sienar Specialist': {
+      ship: "TIE Agresor",
+      name: "Especialista de Sienar"
     },
     'Viktor Hel': {
       ship: "Caza Kihraxz",
       text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
     },
     'Lowhhrick': {
-      text: 'When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'
+      ship: "Cañonera Auzituck",
+      text: 'Cuando otra nave aliada que tengas a alcance 1 se esté defendiendo, puedes gastar 1 ficha de Refuerzo. Si lo haces, el defensor añade 1 resultado %EVADE%.'
     },
     'Wullffwarro': {
-      text: 'When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'
+      ship: "Cañonera Auzituck",
+      text: 'Cuando ataques, si no tienes ninguna ficha de Escudos y tienes asignada como mínimo 1 carta de Daño, tira 1 dado de ataque adicional.'
+    },
+    'Wookiee Liberator': {
+      name: "Libertador wookie",
+      ship: "Cañonera Auzituck"
+    },
+    'Kashyyyk Defender': {
+      name: "Defensor de Kashyyyk",
+      ship: "Cañonera Auzituck"
     },
     'Captain Nym (Scum)': {
-      text: 'You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'
+      name: "Capitán Nym (Scum)",
+      ship: "Bombardero Scurrg H-6",
+      text: 'Puedes ignorar las bombas aliadas. Cuando una nave aliada se está defendiendo, si el atacante mide el alcance a través de una ficha de Bomba aliada, el defensor puede añadir 1 resultado%EVADE%.'
     },
     'Captain Nym (Rebel)': {
-      text: 'Once per round, you may prevent a friendly bomb from detonating.'
+      name: "Capitán Nym (Rebelde)",
+      ship: "Bombardero Scurrg H-6",
+      text: 'Una vez por ronda, puedes impedir que una bomba aliada detone.'
+    },
+    'Lok Revenant': {
+      name: "Aparecido de Lok",
+      ship: "Bombardero Scurrg H-6"
+    },
+    'Karthakk Pirate': {
+      name: "Pirata de Karthakk",
+      ship: "Bombardero Scurrg H-6"
     },
     'Sol Sixxa': {
-      text: 'When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+      ship: "Bombardero Scurrg H-6",
+      text: 'Cuando sueltes una bomba, puedes utilizar la plantilla de maniobra (%TURNLEFT% 1) o (%TURNRIGHT% 1) en vez de la plantilla de (%STRAIGHT% 1).'
     },
     'Dalan Oberos': {
+      ship: 'Víbora Estelar',
       text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
     },
     'Thweek': {
+      ship: 'Víbora Estelar',
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     },
     'Captain Jostero': {
+      ship: "Caza Kihraxz",
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     }
   };
@@ -13552,16 +13595,20 @@ exportObj.cardLoaders['Español'] = function() {
       text: '<span class="card-restriction">Sólo Escoria y Rebelde.</span>%DUALCARD%%LINEBREAK%<strong>Cara A:</strong>%LINEBREAK%<strong>Ataque:</strong> Ataca a 1 nave. Si este ataque impacta, debes elegir 1 otra nave a alcance 1 del defensor para que sufra 1 punto de daño.%LINEBREAK%Luego dale la vuelta a esta carta.%LINEBREAK%<strong>Cara B:</strong>%LINEBREAK%(Recargándose) Al comienzo de la fase de Combate, puedes recibir una ficha de Armas inutilizadas para darle la vuelta a esta carta.'
     },
     'Wookiee Commandos': {
-      text: 'When attacking, you may reroll your %FOCUS% results.'
+      name: "Comandos wookiees",
+      text: 'Cuando ataques, puedes volver a tirar tus resultados %FOCUS%.'
     },
     'Synced Turret': {
-      text: '<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'
+      name: "Torreta sincronizada",
+      text: '<strong>Ataque (Blanco fijado:</strong> Ataca a 1 nave (aunque esté fuera de tu arco de fuego).%LINEBREAK%Si el defensor está dentro de tu arco de fuego principal, puedes volver a tirar tantos dados de ataque como tu valor de Armamento principal.'
     },
     'Unguided Rockets': {
-      text: '<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'
+      name: "Cohetes no guiados",
+      text: '<strong>Ataque (Concentración):</strong> Ataca a 1 nave.%LINEBREAK%Tus dados de ataque solo pueden ser modificados mediante el gasto de una ficha de Concentración para su efecto normal.'
     },
     'Intensity': {
-      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'
+      name: "Ímpetu",
+      text: '%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Cara A:</strong> Después de que realices una acción de impulso o de tonel volado, puedes asignar 1 ficha de Concentración o de Evasión a tu nave. Si lo haces, dale la vuelta a esta carta.%LINEBREAK%<strong>Cara B:</strong> (Agotada) Al final de la fase de Combate, puedes gasta 1 ficha de Concentración o de Evasión para darle la vuelta a esta carta.'
     },
     'Jabba the Hutt': {
       name: "Jabba el Hutt",
@@ -13572,25 +13619,30 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'Cuando ataques, puedes cambiar 1 de tus resultados %HIT% por un resultado %CRIT%.'
     },
     'Selflessness': {
-      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'
+      name: "Autosacrificio",
+      text: '%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%Cuando una nave aliada que tengas a alcance 1 sea impactada por un ataque, puedes descartar esta carta para sufrir todos los resultados %HIT% no anulados en vez de la nave objetivo.'
     },
     'Breach Specialist': {
-      text: 'When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'
+      name: "Especialista en brechas",
+      text: 'Cuando recibas una carta de Daño boca arriba, puedes gastar 1 ficha de Refuerzo para darle la vuelta y ponerla boca abajo (sin resolver su efecto). Si lo haces, hasta el final de la ronda, cuando recibas una carta de Daño boca arriba, dale la vuelta par aponerla boca abajo (sin resolver su efecto).'
     },
     'Bomblet Generator': {
-      text: 'When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'
+      name: "Generador de minibombas",
+      text: 'Cuando reveles tu maniobra, puedes <strong>soltar</strong> 1 ficha de Minibomba%LINEBREAK%Esta ficha se <strong>detona</strong> al final de la fase de Activación.%LINEBREAK%<strong>Ficha de Minibomba:</strong> Cuando esta ficha detone, cada nave a Alcance 1 tira 2 dados de ataque y sufre todo el daño (%HIT%) y daño crítico (%CRIT%) obtenido en la tirada. Después se descarta esta ficha.'
     },
     'Cad Bane': {
-      text: '%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'
+      text: '%SCUMONLY%%LINEBREAK%Tu barra de mejoras gana el icono %BOMB%. Una vez por ronda, cuando una nave enemiga tire dados de ataque debido a la detonación de una bomba aliada, puedes elegir cualquier cantidad de resultados %FOCUS% y de cara vacía. La nave enemiga debe volver a tirar esos resultados.'
     },
     'Minefield Mapper': {
-      text: 'During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'
+      name: "Trazador de campos de minas",
+      text: 'Durante la preparación de la partida, después del paso "Desplegar fuerzas", puedes descartar cualquier cantidad de tus cartas de Mejora %BOMB% equipadas. Coloca las correspondientes fichas de Bomba en la zona de juego más allá de alcance 3 de las naves enemigas.'
     },
     'R4-E1': {
-      text: 'You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'
+      text: 'Puedes realizar acciones que figuren en tus cartas de Mejora %TORPEDO% y %BOMB% incluso aunque estés bajo tensión. Después de que realices una acción de esta manera, puedes descartar esta carta para retirar 1 ficha de Tensión de tu nave.'
     },
     'Cruise Missiles': {
-      text: '<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'
+      name: "Misiles de crucero",
+      text: '<strong>Ataque (Blanco Fijado):</strong> Descarta esta carta para efectuar este ataque. %LINEBREAK%Puedes tirar tantos dados de ataque adicionales como la velocidad de la maniobra que has ejecutado en esta ronda, hasta un máximo de 4 dados adicionales.'
     },
     'Ion Dischargers': {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
@@ -13966,7 +14018,9 @@ exportObj.cardLoaders['Español'] = function() {
       text: 'Cuando te defiendas, si tienes asignada una ficha de Refuerzo, puedes añadir 1 resultado %EVADE% adicional.  Si lo haces, tras defenderte, descarta tu ficha de Refuerzo.'
     },
     'Havoc': {
-      text: '<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'
+      name: "Estrago",
+      ship: "Bombardero Scurrg H-6",
+      text: '<span class="card-restriction">Sólo Bombarder Scurrg H-6.</span>%LINEBREAK%Tu barra de mejoras gana los iconos %SYSTEM% y %SALVAGEDASTROMECH% y pierde el icono %CREW%.%LINEBREAK%No puedes equiparte con cartas de mejora %SALVAGEDASTROMECH% que no sean únicas.'
     },
     'Vaksai': {
       ship: "Caza Kihraxz",
@@ -16427,7 +16481,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "%BARRELROLL% akció végrehajtásakor, kaphatsz egy stressz jelzőt, hogy az (%STRAIGHT% 1) helyett a (%BANKLEFT% 1) vagy (%BANKRIGHT% 1) sablont használd. [FAQ]"
     },
     "Tetran Cowall": {
-      text: "Ha felfordítasz egy (%UTURN%) manővert, választhetsz 1-es, 3-as vagy 5-ös sebességet. [FAQ]"
+      text: "Ha felfedsz egy (%UTURN%) manővert, választhatsz 1-es, 3-as vagy 5-ös sebességet. [FAQ]"
     },
     "Kir Kanos": {
       text: " Ha 2-3-as távolságba támadsz, elkölthetsz egy kitérés jelzőt, hogy hozzáadj egy 1 %HIT%-ot a dobásodhoz."
@@ -16857,7 +16911,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'A játék kezdetén még a hajók felhelyezése előtt választhatsz 1 ellenséges hajót és hozzárendelheted a "Shadowed" vagy "Mimicked" kondíciós kártyát.'
     },
     'Captain Jostero': {
-      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+      text: 'Körönként egyszer, mikor egy ellenséges hajó védekezés nélkül szenved sérülést vagy kritikus sérülést, végrehajthatsz egy támadást ellene.'
     }
   };
   upgrade_translations = {
@@ -16934,7 +16988,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. [FAQ!!!]"
     },
     "Seismic Charges": {
-      text: "Amikor felfeded a manőveretárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."
+      text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy letehess 1 Seismic Charges jelzőt.<br />Ez a jelző az aktivációs fázis végén felrobban.<br />Minden hajó 1-es távolságban elszenved 1 sérülést. Aztán a jelzőt le kell venni."
     },
     "Mercenary Copilot": {
       text: "Amikor 3-as távolságra támadsz, egy %HIT% eredményt %CRIT% eredményre változtathatsz."
@@ -17191,7 +17245,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor támadsz, a \"Támadó kocka módosítás\" lépésben, törölheted az összes kockád eredményét. Ezután a dobásodhoz hozzáadhatsz 2 %HIT%-t. E támadás során a kockáid eredményét nem módosíthatod még egyszer. [FAQ]"
     },
     "Inertial Dampeners": {
-      text: "Amikor felfeded a manővertárcsád eredményét, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."
+      text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."
     },
     "Flechette Cannon": {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3."
@@ -17409,7 +17463,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Körönként egyszer, védekezés után dobhatsz egy támadó kockával. %HIT% dobáskor a támadó leszenved egy sérülést. %CRIT% dobáskor mindketten elszenvedtek egy séerülést."
     },
     'Thermal Detonators': {
-      text: "Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy thermal detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."
+      text: "Mikor felfeded manővertárcsád eldobhatod ezt a kártyát, hogy letehess egy Thermal Detonator jelzőt.<br>Ez a jelző felrobban az aktiválási fázis végén.<br> Mikor felrobban, minden hajó 1 távolságban elszenved 1 sérülést és kap egy stressz jelzőt. Aztán dobd el ezt a jelzőt."
     },
     "Overclocked R4": {
       text: "A harci fázis alatt, mikor elköltesz egy %FOCUS% jelzőt, egy stressz jelzővel együtt kaphatsz egy újabb %FOCUS% jelzőt."
@@ -17603,7 +17657,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'
     },
     'Harpoon Missiles': {
-      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+      text: '<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK%Ha a támadás talált, rendeld a "Harpooned!" kondíciós kártyát a védekezőhöz.'
     }
   };
   modification_translations = {
@@ -17661,7 +17715,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak TIE.</span>%LINEBREAK%Minden enyhe fordulód (%BANKLEFT% vagy %BANKRIGHT%) zöld manővernek számít."
     },
     "Maneuvering Fins": {
-      text: "<span class=\"card-restriction\">Csak YV-666.</span>%LINEBREAK%A manővertárcsád felfedésekor, ha egy %TURNLEFT% vagy %TURNRIGHT% fordulót hajtanál végre, a tárcsád átforgathatod egy annak megfelelő sebességű és irányú %BANKLEFT% vagy %BANKRIGHT% manőverre."
+      text: "<span class=\"card-restriction\">Csak YV-666.</span>%LINEBREAK%A manővertárcsád felfedésekor, ha egy %TURNLEFT% vagy %TURNRIGHT% fordulót hajtanál végre, a tárcsád átforgathatod egy annak megfelelő sebességű %BANKLEFT% vagy %BANKRIGHT% manőverre."
     },
     "Ion Projector": {
       text: "<span class=\"card-restriction\">Csak nagy hajók.</span>%LINEBREAK%Ha egy ellenséges hajó olyan manővert hajt végre, ami miatt átfedésbe kerül a hajóddal, dobj 1 támadó kockával. %HIT% vagy %CRIT% dobás esetén az ellenséges hajó 1 ion jelzőt kap."
@@ -17897,7 +17951,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'
     },
     'Harpooned!': {
-      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+      text: 'Mikor egy támadásból találat ér, amiben legalább 1 kivédetlen %CRIT% van, minden 1-es távolságban lévő hajó elszenved 1 sérülést. Aztán dobd el ezt a lapot és kapsz egy lefordított sérülés kártyát.%LINEBREAK%Mikor megsemmisülsz, minden 1-es távolságban lévő hajó elszenved 1 sérülést%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát. Dobj egy támadás kockával, %HIT% vagy %CRIT% esetén elszenvedsz egy sérülést.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -25351,7 +25405,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24073
+                    lineno: 24121
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25940,7 +25994,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24703
+              lineno: 24751
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26684,7 +26738,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25333
+          lineno: 25381
         }));
         __iced_deferrals._fulfill();
       });
@@ -26696,7 +26750,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25334
+            lineno: 25382
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28290,7 +28344,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26230
+                      lineno: 26278
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28364,7 +28418,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26256
+                lineno: 26304
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28419,7 +28473,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26279
+              lineno: 26327
             }));
           }
         }
@@ -28428,7 +28482,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26281
+              lineno: 26329
             }));
           }
         }
@@ -28437,7 +28491,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26283
+              lineno: 26331
             }));
           }
         }
@@ -29460,7 +29514,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 26967
+                lineno: 27015
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29579,7 +29633,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 27026
+                  lineno: 27074
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29601,7 +29655,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 27030
+                    lineno: 27078
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29691,7 +29745,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27073
+            lineno: 27121
           }));
         }
         __iced_deferrals._fulfill();
