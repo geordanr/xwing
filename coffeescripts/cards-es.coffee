@@ -1036,7 +1036,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Lok Revenant':
             name: "Aparecido de Lok"
             ship: "Bombardero Scurrg H-6"
-        'Karthakk Pirate ':
+        'Karthakk Pirate':
             name: "Pirata de Karthakk"
             ship: "Bombardero Scurrg H-6"
         'Sol Sixxa':
