@@ -534,6 +534,7 @@ exportObj.cardLoaders['Français'] = () ->
         'Gozanti-class Cruiser':
             text: """Après avoir exécuté une manoeuvre, vous pouvez déployer jusqu'à 2 vaisseaux arrimés."""
         '"Scourge"':
+            ship: "Chasseur TIE"
             text: """Quand vous attaquez un défenseur qui a au moins 1 carte de dégâts, lancez 1 dé d'attaque supplémentaire."""
         "The Inquisitor":
             text: """Quand vous attaquez avec votre arme principale à portée 2-3, considérez que votre attaque se fait à portée 1."""
@@ -565,10 +566,13 @@ exportObj.cardLoaders['Français'] = () ->
         'Hera Syndulla':
             text: '''Quand vous révélez une manoeuvre verte ou rouge, vous pouvez tourner votre cadran sur une autre manoeuvre de même difficulté.'''
         '"Youngster"':
+            ship: "Chasseur TIE"
             text: """Les chasseurs TIE alliés situés à portée 1-3 peuvent effectuer l'action de votre carte d'amélioration %ELITE% dont vous êtes équipé."""
         '"Wampa"':
+            ship: "Chasseur TIE"
             text: """Quand vous attaquez, vous pouvez annuler le résultat de tous les dés. Si vous annulez au moins un résultat, assignez 1 carte dégâts face cachée au défenseur."""
         '"Chaser"':
+            ship: "Chasseur TIE"
             text: """Quand un autre vaisseau allié situé à portée 1 dépense un marqueur de concentration, assignez un marqueur de concentration à votre vaisseau."""
         'Ezra Bridger':
             text: """Quand vous défendez, si vous êtes sous l'effet du stress, vous pouvez changer jusqu'à 2 de vos résultats %FOCUS% en résultats %EVADE% ."""
@@ -618,7 +622,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Poe Dameron (PS9)":
             text: """Tant que vous défendez ou que vous attaquez, si vous avez un marqueur de concentration, vous pouvez changer un de vos résutats %FOCUS% pour un résultat %HIT% ou %EVADE% ."""
         "Rey":
-            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+            text: """Quand vous attquez ou défendez, si le vaisseau ennemi est dans votre arc de tir, Vous pouvez relancer jusqu'a 2 de vos resultats blanc."""
         'Han Solo (TFA)':
             text: ''' Quand vous vous positionnez pendant la phase de préparation, vous pouvez vous placer n'importe où dans la zone de jeu au-delà de portée 3 des vaisseaux ennemis.'''
         'Chewbacca (TFA)':
@@ -1479,6 +1483,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%Quand vous défendez, après avoir lancé les dés de défense, s'il y a plus de dés d'attaque que de défense, lancez 1 dé de défense supplémentaire.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur d'agilité est de "3" ou plus.'''
         'Pulsed Ray Shield':
             text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%Durant la phase de dénouement, vous pouvez recevoir 1 marqueur ionique pour récupérer 1 bouclier (à hauteur de votre valeur de boucliers). Vous ne pouvez vous equiper de cette carte que si votre valeur de boucliers est de "1". '''
+        'Advanced SLAM' :
+            name: "MASL avancé"
+            text: '''Après avoir effectué une action MASL, si vous n'avez pas chevauché un obstacle ou un autre vaisseau, vous pouvez effecteur une action gratuite.'''
 
     title_translations =
         "Slave I":
