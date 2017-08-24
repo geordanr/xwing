@@ -1767,6 +1767,34 @@ exportObj.basicCardData = function() {
         shields: 1,
         actions: ['Focus', 'Target Lock', 'Barrel Roll'],
         maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0, 0, 0], [1, 1, 2, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 3, 0, 0, 0, 0]]
+      },
+      'Alpha-class Star Wing': {
+        name: 'Alpha-class Star Wing',
+        factions: ["Galactic Empire"],
+        attack: 2,
+        agility: 2,
+        hull: 4,
+        shields: 3,
+        actions: ['Target Lock', 'Focus', 'SLAM', 'Reload']
+      },
+      'M12-L Kimogila Fighter': {
+        name: 'M12-L Kimogila Fighter',
+        factions: ["Scum and Villainy"],
+        attack: 3,
+        agility: 1,
+        hull: 6,
+        shields: 2,
+        actions: ['Target Lock', 'Focus', 'Barrel Roll', 'Reload']
+      },
+      'Sheathipede-class Shuttle': {
+        name: 'Sheathipede-class Shuttle',
+        factions: ["Rebel Alliance"],
+        attack: 2,
+        agility: 2,
+        hull: 4,
+        shields: 1,
+        actions: ['Focus', 'Target Lock', 'Coordinate'],
+        attack_icon: 'xwing-miniatures-font-attack-frontback'
       }
     },
     pilotsById: [
@@ -4165,6 +4193,113 @@ exportObj.basicCardData = function() {
         skill: 5,
         slots: ['Elite', 'Torpedo'],
         points: 28
+      }, {
+        name: 'Major Vynder',
+        id: 267,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'Alpha-class Star Wing',
+        skill: 7,
+        slots: ['Elite', 'Torpedo', 'Missile'],
+        points: 26
+      }, {
+        name: 'Lieuten???',
+        id: 268,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'Alpha-class Star Wing',
+        skill: 5,
+        slots: ['Torpedo', 'Missile'],
+        points: 100
+      }, {
+        name: 'Rho Squad???',
+        id: 269,
+        faction: 'Galactic Empire',
+        ship: 'Alpha-class Star Wing',
+        skill: 4,
+        slots: ['Torpedo', 'Missile'],
+        points: 100
+      }, {
+        name: 'Nu Squa???',
+        id: 270,
+        faction: 'Galactic Empire',
+        ship: 'Alpha-class Star Wing',
+        skill: 2,
+        slots: ['Torpedo', 'Missile'],
+        points: 100
+      }, {
+        name: 'Torani Kulda',
+        id: 271,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M12-L Kimogila Fighter',
+        skill: 8,
+        slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
+        points: 27
+      }, {
+        name: 'Dal???',
+        id: 272,
+        unique: true,
+        faction: 'Scum and Villainy',
+        ship: 'M12-L Kimogila Fighter',
+        skill: 7,
+        slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Cartel E???',
+        id: 273,
+        faction: 'Scum and Villainy',
+        ship: 'M12-L Kimogila Fighter',
+        skill: 5,
+        slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Carte???',
+        id: 274,
+        faction: 'Scum and Villainy',
+        ship: 'M12-L Kimogila Fighter',
+        skill: 3,
+        slots: ['Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
+        points: 100
+      }, {
+        name: 'Fenn Rau (Sheathipede)',
+        id: 275,
+        canonical_name: 'Fenn Rau'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'Sheathipede-class Shuttle',
+        skill: 9,
+        slots: ['Elite', 'Crew', 'Astromech'],
+        points: 20
+      }, {
+        name: '"Zeb" Orrelios (Sheathipede)',
+        id: 276,
+        canonical_name: '"Zeb" Orrelios'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'Sheathipede-class Shuttle',
+        skill: 3,
+        slots: ['Crew', 'Astromech'],
+        points: 100
+      }, {
+        name: 'Ezra Bridger (Sheathipede)',
+        id: 277,
+        canonical_name: 'Ezra Bridger'.canonicalize(),
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'Sheathipede-class Shuttle',
+        skill: 5,
+        slots: ['Crew', 'Astromech'],
+        points: 100
+      }, {
+        name: 'A???',
+        id: 278,
+        faction: 'Rebel Alliance',
+        unique: true,
+        ship: 'Sheathipede-class Shuttle',
+        skill: 1,
+        slots: ['Crew', 'Astromech'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -6756,6 +6891,37 @@ exportObj.basicCardData = function() {
             type: exportObj.Title
           }
         ]
+      }, {
+        name: 'XG-1 Assault Configuration',
+        id: 56,
+        points: 1,
+        ship: 'Alpha-class Star Wing',
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Cannon"
+          }, {
+            type: exportObj.Upgrade,
+            slot: "Cannon"
+          }
+        ]
+      }, {
+        name: 'Enforcer',
+        id: 57,
+        unique: true,
+        ship: 'M12-L Kimogila Fighter',
+        points: 1
+      }, {
+        name: 'Ghost (Phantom II)',
+        id: 58,
+        canonical_name: 'ghost-swx72',
+        ship: 'VCX-100',
+        points: 0
+      }, {
+        name: 'Phantom II',
+        id: 59,
+        ship: 'Sheathipede-class Shuttle',
+        points: 0
       }
     ],
     conditionsById: [
@@ -8376,6 +8542,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Captain Jostero': {
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -9666,6 +9841,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -10401,6 +10588,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Captain Jostero': {
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -11394,6 +11590,18 @@ exportObj.cardLoaders.English = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -12734,6 +12942,15 @@ exportObj.cardLoaders['Español'] = function() {
     'Captain Jostero': {
       ship: "Caza Kihraxz",
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -14029,6 +14246,18 @@ exportObj.cardLoaders['Español'] = function() {
     'StarViper Mk. II': {
       ship: "Víbora Estelar",
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -14702,6 +14931,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: "Après avoir exécuté une manoeuvre, vous pouvez déployer jusqu'à 2 vaisseaux arrimés."
     },
     '"Scourge"': {
+      ship: "Chasseur TIE",
       text: "Quand vous attaquez un défenseur qui a au moins 1 carte de dégâts, lancez 1 dé d'attaque supplémentaire."
     },
     "The Inquisitor": {
@@ -14743,12 +14973,15 @@ exportObj.cardLoaders['Français'] = function() {
       text: 'Quand vous révélez une manoeuvre verte ou rouge, vous pouvez tourner votre cadran sur une autre manoeuvre de même difficulté.'
     },
     '"Youngster"': {
+      ship: "Chasseur TIE",
       text: "Les chasseurs TIE alliés situés à portée 1-3 peuvent effectuer l'action de votre carte d'amélioration %ELITE% dont vous êtes équipé."
     },
     '"Wampa"': {
+      ship: "Chasseur TIE",
       text: "Quand vous attaquez, vous pouvez annuler le résultat de tous les dés. Si vous annulez au moins un résultat, assignez 1 carte dégâts face cachée au défenseur."
     },
     '"Chaser"': {
+      ship: "Chasseur TIE",
       text: "Quand un autre vaisseau allié situé à portée 1 dépense un marqueur de concentration, assignez un marqueur de concentration à votre vaisseau."
     },
     'Ezra Bridger': {
@@ -14819,7 +15052,7 @@ exportObj.cardLoaders['Français'] = function() {
       text: "Tant que vous défendez ou que vous attaquez, si vous avez un marqueur de concentration, vous pouvez changer un de vos résutats %FOCUS% pour un résultat %HIT% ou %EVADE% ."
     },
     "Rey": {
-      text: "When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."
+      text: "Quand vous attquez ou défendez, si le vaisseau ennemi est dans votre arc de tir, Vous pouvez relancer jusqu'a 2 de vos resultats blanc."
     },
     'Han Solo (TFA)': {
       text: ' Quand vous vous positionnez pendant la phase de préparation, vous pouvez vous placer n\'importe où dans la zone de jeu au-delà de portée 3 des vaisseaux ennemis.'
@@ -14991,6 +15224,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Captain Jostero': {
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -15989,6 +16231,10 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Pulsed Ray Shield': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%Durant la phase de dénouement, vous pouvez recevoir 1 marqueur ionique pour récupérer 1 bouclier (à hauteur de votre valeur de boucliers). Vous ne pouvez vous equiper de cette carte que si votre valeur de boucliers est de "1". '
+    },
+    'Advanced SLAM': {
+      name: "MASL avancé",
+      text: 'Après avoir effectué une action MASL, si vous n\'avez pas chevauché un obstacle ou un autre vaisseau, vous pouvez effecteur une action gratuite.'
     }
   };
   title_translations = {
@@ -16183,6 +16429,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -16376,7 +16634,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Támadáskor eggyel csökkenti a védekező mozgékonyságát (nem mehet 0 alá)."
     },
     "Garven Dreis": {
-      text: "Fókusz felhasználás után áthelyezheted azt egy 1-2 hatótávban lévő másik baráti hajóra (ahelyett, hogy eldobnád). [FAQ]"
+      text: "Fókusz felhasználás után áthelyezheted azt egy 1-2 távolságban lévő másik baráti hajóra (ahelyett, hogy eldobnád). [FAQ]"
     },
     "Biggs Darklighter": {
       text: "Biggs-től 1-es távolságban lévő másik baráti hajó támadásakor, Biggs-et kell támadni, ha támadható. [FAQ]"
@@ -16912,6 +17170,15 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Captain Jostero': {
       text: 'Körönként egyszer, mikor egy ellenséges hajó védekezés nélkül szenved sérülést vagy kritikus sérülést, végrehajthatsz egy támadást ellene.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -16982,7 +17249,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Miután végrehajtottál egy támadást, ami nem talált, azonnal végrehajthatsz egy támadást az elsődleges fegyverrel. Nem hajthatsz végre másik támadást ebben a körben. [FAQ]"
     },
     "Ion Cannon": {
-      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Ha ez a támadás eltalálja a célpont hajót, az kap egy sérülést és egy ion jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3"
+      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Ha ez a támadás eltalálja a célpont hajót, az kap egy sérülést és egy ion jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell."
     },
     "Heavy Laser Cannon": {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. [FAQ!!!]"
@@ -17137,7 +17404,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Az Aktiválási fázis során, vedd úgy, hogy a pilótaképzettséged \"0\"."
     },
     "Chardaan Refit": {
-      text: "<span class=\"card-restriction\">Csak A-Wing.</span>%LINEBREAK%Ennek a kártyának negatív osztag módosító értéke van."
+      text: "<span class=\"card-restriction\">Csak A-Wing.</span>%LINEBREAK%Ennek a kártyának negatív csapat módosító értéke van."
     },
     "Proton Rockets": {
       text: "<strong>Támadás (fókusz):</strong> dobd el ezt a kártyát, hogy végrehajthasd a támadást. Annyi plusz kockával dobhatsz, mint amennyi a mozgékonyságod értéke, de maximum 3-mal."
@@ -17248,10 +17515,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."
     },
     "Flechette Cannon": {
-      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3."
+      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell."
     },
     '"Mangler" Cannon': {
-      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Támadáskor egyik %HIT% találatod %CRIT%-re módosíthatod. Támadó kockák: 3; Hatótáv: 1-3."
+      text: "<strong>Támadás:</strong> Támadj meg egy hajót. Támadáskor egyik %HIT% találatod %CRIT%-re módosíthatod."
     },
     "Dead Man's Switch": {
       text: "Amikor megsemmisülsz, minden, tőled 1-es távolságra lévő hajó elszenved 1 sérülést. [FAQ]"
@@ -17260,7 +17527,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "A harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést. [FAQ: nem számít támadásnak]"
     },
     '"Hot Shot" Blaster': {
-      text: "<strong>Támadás:</strong>: dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."
+      text: "<strong>Támadás:</strong>: dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik)."
     },
     "Greedo": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Minden körben, amikor először támadsz, illetve minden körben, amikor először védekezel, az első sérülés kártyát fel kell fordítani."
@@ -17284,7 +17551,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Támadás:</strong> Támadj meg egy hajót. A %HIT% dobásaid nem lehet a védekező kockákkal érvényteleníteni. A védő a %CRIT% dobásokat a %HIT%-ok előtt semlegesítheti."
     },
     "R4 Agromech": {
-      text: "Amikor támadsz, a fókusz jelző felhasználásával egy célpontbemérő jelzőt helyezhetsz el a célponton. [FAQ]"
+      text: "Támadáskor, miután felhasználtál egy fókusz jelzőt, célpontbemérőt helyezhetsz el a védekezőn. [FAQ]"
     },
     "K4 Security Droid": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Egy zöld manőver végrehajtása után végrehajthatsz egy célpont bemérése akciót."
@@ -17929,6 +18196,18 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">Csak StarViper.</span>%LINEBREAK%Felszerelhetsz akár 2 különböző nevesítés fejlesztést. Mikor végrehajtasz egy orsózás akciót, a (%BANKLEFT% 1) vagy (%BANKRIGHT% 1) sablonokat <strong>kell</strong> használnod a (%STRAIGHT% 1) helyett.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -18825,6 +19104,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Captain Jostero': {
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -19918,6 +20206,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -20607,6 +20907,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Captain Jostero': {
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+    },
+    'Major Vynder': {
+      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Torani Kulda': {
+      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+    },
+    'Fenn Rau (Sheathipede)': {
+      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     }
   };
   upgrade_translations = {
@@ -21552,6 +21861,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'StarViper Mk. II': {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+    },
+    'XG-1 Assault Configuration': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+    },
+    'Enforcer': {
+      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+    },
+    'Ghost (Phantom II)': {
+      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+    },
+    'Phantom II': {
+      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
     }
   };
   condition_translations = {
@@ -25405,7 +25726,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24121
+                    lineno: 24467
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -25994,7 +26315,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 24751
+              lineno: 25097
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -26738,7 +27059,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25381
+          lineno: 25727
         }));
         __iced_deferrals._fulfill();
       });
@@ -26750,7 +27071,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25382
+            lineno: 25728
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28344,7 +28665,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26278
+                      lineno: 26624
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28418,7 +28739,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26304
+                lineno: 26650
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28473,7 +28794,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26327
+              lineno: 26673
             }));
           }
         }
@@ -28482,7 +28803,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26329
+              lineno: 26675
             }));
           }
         }
@@ -28491,7 +28812,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26331
+              lineno: 26677
             }));
           }
         }
@@ -29514,7 +29835,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27015
+                lineno: 27361
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29633,7 +29954,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 27074
+                  lineno: 27420
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -29655,7 +29976,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 27078
+                    lineno: 27424
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -29745,7 +30066,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27121
+            lineno: 27467
           }));
         }
         __iced_deferrals._fulfill();
