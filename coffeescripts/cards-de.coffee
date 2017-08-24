@@ -155,7 +155,7 @@ exportObj.translations.Deutsch =
         '.to-xws' : 'Export nach XWS (beta)'
         # Obstacles
         '.choose-obstacles' : 'Wähle Hindernisse'
-        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Permalink für externe Programmen eingefügt werden. (beta; Die Anzeige im Ausdruck, welche Hindernisse ausgewählt wurden, wird noch nicht unterstützt.)'
+        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Permalink für externe Programme eingefügt werden. (beta; Die Anzeige im Ausdruck, welche Hindernisse ausgewählt wurden, wird noch nicht unterstützt.)'
         '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
         '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
         '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
@@ -1036,7 +1036,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Attack:</strong> Greife 1 Schiff mit dieser Sekundärwaffe an.<br /><br />Unmittelbar nach dem Angriffswurf musst du alle %CRIT% in %HIT% ändern."""
         "Seismic Charges":
             name: "Seismische Bomben"
-            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Seismischen Bomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Seismischen Bomben-Marker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase.%LINEBREAK%<strong>Seismische Bomben-Marker:</strong> Wenn dieser Bombenmarker detoniert, nimmt jedes Schiff in Reichweite 1 des Markers 1 Schaden. Dann wird der Marker abgelegt."""
         "Mercenary Copilot":
             name: "Angeheuerter Kopilot"
             text: """Wenn du ein Ziel in Reichweite 3 angreifst, darfst du eines deiner %HIT%  in ein %CRIT% ändern."""
@@ -1048,7 +1048,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Dein Pilotenwert steigt um 2."""
         "Proximity Mines":
             name: "Annäherungsminen"
-            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annäherungsminen-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet."""
+            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Annäherungsminen-Marker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong>, sobald sich die Basis eines Schiffs oder die Manöverschablone mit dem Marker überschneidet.%LINEBREAK%<strong>Annährungsminen-Marker:</strong> Wenn dieser Bombenmarker detoniert, würfelt der kommandierende Spieler des Schiffs, das sich über den Marker hinwegbewegt oder mit ihm überschnitten hat, drei Angriffswürfel. Das Schiff nimmt allen gewürfelten Schaden (%HIT%) und kritischen Schaden (%CRIT%). Dann wird der Marker abgelegt."""
         "Weapons Engineer":
             name: "Waffentechniker"
             text: """Du darfst 2 verschiedene Schiffe gleichzeitig in der Zielerfassung haben (maximal 1 Zielerfassung pro feindlichem Schiff).<br /><br />Sobald du eine Zielerfassung durchführst, darfst du zwei verschiedene Schiffe als Ziele erfassen."""
@@ -1084,7 +1084,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Wähle zu Beginn der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Du darfst dir das ausgewählte Manöver dieses Schiffs ansehen."""
         "Proton Bombs":
             name: "Protonenbomben"
-            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.<br /><br />Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            text: """Nach dem Aufdecken deines Manöverrads darfst du diese Karte ablegen um 1 Protonenbomben-Marker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase.%LINEBREAK%<strong>Protonenbombe:</strong> Wenn dieser Bombenmarker detoniert, erhält jedes Schiff in Reichweite 1 des Markers 1 <strong>offene</strong> Schadenskarte. Dann wird der Marker abgelegt."""
         "Adrenaline Rush":
             name: "Adrenalinschub"
             text: """Wenn du ein rotes Manöver aufdeckst, darfst du diese Karte ablegen, um das Manöver bis zum Ende der Aktivierungsphase wie ein weißes Manöver zu behandeln."""
@@ -1333,7 +1333,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du diese Karte ausrüstest, lege 1 Munitionsmarker auf jede ausgerüstete %TORPEDO%, %MISSILE% oder %BOMB% Aufwertungskarte. Sobald du angewiesen wirst eine Aufwertungskarte abzulegen, darfst du stattdessen 1 Munitionsmarker von der entsprechenden Karte ablegen."""
         "Cluster Mines":
             name: "Clusterminen"
-            text: """<strong>Aktion</strong>: Lege diese Karte ab, um 1 Satz Clusterminenmarker zu <strong>legen</strong>.<br /><br />Ein Clusterminenmarker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit diesem Marker überschneidet."""
+            text: """<strong>Aktion</strong>: Lege diese Karte ab, um 1 Satz Clusterminenmarker zu <strong>legen</strong>.%LINEBREAK%Ein Clusterminenmarker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit diesem Marker überschneidet.%LINEBREAK%<strong>Clusterminen:</strong> Sobald einer dieser Bombenmarkerdetoniert, wirft das Schiff, das sich über den marker hinwegbewegt oder mit ihm überschnitten hat, 2 Angriffswürfel und nimmt 1 Schaden für alle gewürfelten %HIT% und %CRIT%. Dann wird der Bombenmarker abgelegt."""
         "Glitterstim":
             name: "Glitzerstim"
             text: """Zu Beginn der Kampfphase darfst du diese Karte ablegen und bekommst 1 Stressmarker. Tust du das , darfst du bis zum Ende der Runde, sobald du angreifst oder verteidigst, alle deine %FOCUS% in %HIT% oder %EVADE% ändern."""
@@ -1361,10 +1361,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Angriff (Zielerfassung):</strong> Gib deine Zielerfassung aus und lege diese Karte ab, um diesen Angriff durchzuführen.<br /><br />Falls dieser Angriff trifft, entfernst du nach dem Verursachen von Schaden 1 Schildmarker vom Verteidiger."""
         "Ion Bombs":
             name: "Ionenbomben"
-            text: """Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um 1 Ionenbombenmarker zu <strong>legen</strong>.<br /><br /> Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            text: """Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um 1 Ionenbombenmarker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase.%LINEBREAK%<Strong>Ionenbomben:</strong> Sobald dieser Bombenmarker detoniert, erhält jedes Schiff in Reichweite 1 des Markers 2 Ionenmarker. Dann wird der Bombenmarker abgelegt."""
         "Conner Net":
             name: "Connernetz"
-            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Connernetzmarker zu <strong>legen</strong>.<br /><br /> Der Marker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit dem Marker überschneidet."""
+            text: """<strong>Aktion:</strong> Lege diese Karte ab, um 1 Connernetzmarker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong>, sobald sich eine Schiffsbasis oder Manöverschablone mit dem Marker überschneidet.%LINEBREAK%<strong>Connernetz:</strong> Sobald dieser Bombenmarker detoniert, nimmt das Schiff, das sich über den Marker hinwegbewegt oder mit ihm überschnitten hat, 1 Schaden, erhält 2 Ionenmarker und überspringt den Schritt "Aktion durchführen". Dann wird der Bombenmarker abgelegt."""
         "Bombardier":
             name: "Bombenschütze"
             text: """Sobald du eine Bombe legst, darfst du die (%STRAIGHT% 2)-Schablone anstatt der (%STRAIGHT% 1)-Schablone verwenden."""
@@ -1489,7 +1489,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Ein Mal pro Runde darfst du nach dem Verteidigen 1 Angriffswürfel werfen. Bei %HIT% nimmt der Angreifer 1 Schaden. Bei %CRIT% nehmen du und der Angreifer je 1 Schaden."""
         'Thermal Detonators':
             name: "Thermaldetonatoren"
-            text: """Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um 1 Thermaldetonatormarker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase."""
+            text: """Sobald du dein Manöverrad aufdeckst, darfst du diese Karte ablegen, um 1 Thermaldetonatormarker zu <strong>legen</strong>.%LINEBREAK%Der Marker <strong>detoniert</strong> am Ende der Aktivierungsphase.%LINEBREAK%<strong>Thermaldetonatoren:</strong> Sobald dieser Bombenmarker detoniert, nimmt jedes Schiff in Reichweite 1 des Markers 1 Schaden und erhält 1 Stressmarker. Dann wird der Bombenmarker abgelegt."""
         "Overclocked R4":
             name: "Übertakteter R4"
             text: """Sobald du in der Kampfphase einen Fokusmarker ausgibst, darfst du 1 Stressmarker erhalten, um deinem Schiff 1 Fokusmarker zuzuordnen."""
