@@ -153,7 +153,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Wedge Antilles":
             text: """Támadáskor eggyel csökkenti a védekező mozgékonyságát (nem mehet 0 alá)."""
         "Garven Dreis":
-            text: """Fókusz felhasználás után áthelyezheted azt egy 1-2 hatótávban lévő másik baráti hajóra (ahelyett, hogy eldobnád). [FAQ]"""
+            text: """Fókusz felhasználás után áthelyezheted azt egy 1-2 távolságban lévő másik baráti hajóra (ahelyett, hogy eldobnád). [FAQ]"""
         "Biggs Darklighter":
             text: """Biggs-től 1-es távolságban lévő másik baráti hajó támadásakor, Biggs-et kell támadni, ha támadható. [FAQ]"""
         "Luke Skywalker":
@@ -565,7 +565,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Gunner":
             text: """Miután végrehajtottál egy támadást, ami nem talált, azonnal végrehajthatsz egy támadást az elsődleges fegyverrel. Nem hajthatsz végre másik támadást ebben a körben. [FAQ]"""
         "Ion Cannon":
-            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Ha ez a támadás eltalálja a célpont hajót, az kap egy sérülést és egy ion jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3"""
+            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Ha ez a támadás eltalálja a célpont hajót, az kap egy sérülést és egy ion jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell."""
         "Heavy Laser Cannon":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. Közvetlenül a dobás után minden %CRIT% eredményt át kell fordítani %HIT% eredményre. [FAQ!!!]"""
         "Seismic Charges":
@@ -670,7 +670,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Enhanced Scopes":
             text: """Az Aktiválási fázis során, vedd úgy, hogy a pilótaképzettséged "0"."""
         "Chardaan Refit":
-            text: """<span class="card-restriction">Csak A-Wing.</span>%LINEBREAK%Ennek a kártyának negatív osztag módosító értéke van."""
+            text: """<span class="card-restriction">Csak A-Wing.</span>%LINEBREAK%Ennek a kártyának negatív csapat módosító értéke van."""
         "Proton Rockets":
             text: """<strong>Támadás (fókusz):</strong> dobd el ezt a kártyát, hogy végrehajthasd a támadást. Annyi plusz kockával dobhatsz, mint amennyi a mozgékonyságod értéke, de maximum 3-mal."""
         "Kyle Katarn":
@@ -744,15 +744,15 @@ exportObj.cardLoaders.Magyar = () ->
         "Inertial Dampeners":
             text: """Amikor felfeded a manővertárcsád, eldobhatod ezt a kártyát, hogy végrehajts egy fehér (0 %STOP%) manővert. Ezután kapsz egy stressz jelzőt."""
         "Flechette Cannon":
-            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell. Támadó kockák: 3; Hatótáv: 1-3."""
+            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Ha a támadás során a védő találatot kap, akkor 1 sérülést szenved, valamint, ha nincs rajta stressz jelző, akkor kap egyet. Ezután a többi kocka eredményét érvényteleníteni kell."""
         '"Mangler" Cannon':
-            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Támadáskor egyik %HIT% találatod %CRIT%-re módosíthatod. Támadó kockák: 3; Hatótáv: 1-3."""
+            text: """<strong>Támadás:</strong> Támadj meg egy hajót. Támadáskor egyik %HIT% találatod %CRIT%-re módosíthatod."""
         "Dead Man's Switch":
             text: """Amikor megsemmisülsz, minden, tőled 1-es távolságra lévő hajó elszenved 1 sérülést. [FAQ]"""
         "Feedback Array":
             text: """A harci fázis alatt, ahelyett, hogy támadnál, kaphatsz egy ion jelzőt és elszenvedhetsz 1 sérülést, hogy kiválaszthass egy 1-es távolságra lévő ellenséges hajót. Az a hajó elszenved 1 sérülést. [FAQ: nem számít támadásnak]"""
         '"Hot Shot" Blaster':
-            text: """<strong>Támadás:</strong>: dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik). Támadó kockák: 3; Hatótáv: 1-2."""
+            text: """<strong>Támadás:</strong>: dobd el ezt a kártyát, hogy megtámadhass 1 hajót (akkor is, ha a tüzelési szögeden kívülre esik)."""
         "Greedo":
             text: """<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Minden körben, amikor először támadsz, illetve minden körben, amikor először védekezel, az első sérülés kártyát fel kell fordítani."""
         "Salvaged Astromech":
@@ -768,7 +768,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Autoblaster Turret":
             text: """<strong>Támadás:</strong> Támadj meg egy hajót. A %HIT% dobásaid nem lehet a védekező kockákkal érvényteleníteni. A védő a %CRIT% dobásokat a %HIT%-ok előtt semlegesítheti."""
         "R4 Agromech":
-            text: """Amikor támadsz, a fókusz jelző felhasználásával egy célpontbemérő jelzőt helyezhetsz el a célponton. [FAQ]"""
+            text: """Támadáskor, miután felhasználtál egy fókusz jelzőt, célpontbemérőt helyezhetsz el a védekezőn. [FAQ]"""
         "K4 Security Droid":
             text: """<span class="card-restriction">Csak söpredék.</span>%LINEBREAK%Egy zöld manőver végrehajtása után végrehajthatsz egy célpont bemérése akciót."""
         "Outlaw Tech":
