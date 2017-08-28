@@ -135,19 +135,19 @@ casper.test.begin "A-Wing Test Pilot (German)", (test) ->
 
     common.createList('#rebel-builder', [
         {
-            ship: 'A-Wing'
+            ship: 'A-Flügler'
             pilot: 'Testpilot'
             upgrades: [
             ]
         }
         {
-            ship: 'A-Wing'
+            ship: 'A-Flügler'
             pilot: 'Pilot der Grün-Staffel'
             upgrades: [
             ]
         }
         {
-            ship: 'X-Wing'
+            ship: 'X-Flügler'
             pilot: 'Pilot der Rot-Staffel'
             upgrades: [
             ]
