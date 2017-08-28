@@ -36,10 +36,10 @@ exportObj.translations.Deutsch =
         "Tech": "Technik"
     sources: # needed?
         "Core": "Grundspiel"
-        "A-Wing Expansion Pack": "A-Wing Erweiterung"
-        "B-Wing Expansion Pack": "B-Wing Erweiterung"
-        "X-Wing Expansion Pack": "X-Wing Erweiterung"
-        "Y-Wing Expansion Pack": "Y-Wing Erweiterung"
+        "A-Wing Expansion Pack": "A-Flügler Erweiterung"
+        "B-Wing Expansion Pack": "B-Flügler Erweiterung"
+        "X-Wing Expansion Pack": "X-Flügler Erweiterung"
+        "Y-Wing Expansion Pack": "Y-Flügler Erweiterung"
         "Millennium Falcon Expansion Pack": "Millenium Falke Erweiterung"
         "HWK-290 Expansion Pack": "HWK-290 Erweiterung"
         "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung"
@@ -52,7 +52,7 @@ exportObj.translations.Deutsch =
         "Rebel Transport Expansion Pack": "Rebellentransporter Erweiterung"
         "Z-95 Headhunter Expansion Pack": "Z-95-Kopfjäger Erweiterung"
         "TIE Defender Expansion Pack": "TIE-Jagdbomber Erweiterung"
-        "E-Wing Expansion Pack": "E-Wing Erweiterung"
+        "E-Wing Expansion Pack": "E-Flügler Erweiterung"
         "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung"
         "Tantive IV Expansion Pack": "Tantive IV Erweiterung"
         "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung"
@@ -65,7 +65,7 @@ exportObj.translations.Deutsch =
         "Imperial Raider Expansion Pack": "Imperiale Sturm-Korvette Erweiterung"
         "Hound's Tooth Expansion Pack": "Reisszahn Erweiterung"
         "Kihraxz Fighter Expansion Pack": "Kihraxz-Jäger Erweiterung"
-        "K-Wing Expansion Pack": "K-Wing Erweiterung"
+        "K-Wing Expansion Pack": "K-Flügler Erweiterung"
         "TIE Punisher Expansion Pack": "TIE-Vergelter Erweiterung"
         "The Force Awakens Core Set": "Das Erwachen der Macht Grundspiel"
         "Imperial Assault Carrier Expansion Pack": "Imperialer Angriffsträger Erweiterung"
@@ -194,6 +194,12 @@ exportObj.cardLoaders.Deutsch = () ->
 
     exportObj.ships = basic_cards.ships
 
+    exportObj.renameShip 'A-Wing', 'A-Flügler'
+    exportObj.renameShip 'B-Wing', 'B-Flügler'
+    exportObj.renameShip 'E-Wing', 'E-Flügler'
+    exportObj.renameShip 'K-Wing', 'K-Flügler'
+    exportObj.renameShip 'X-Wing', 'X-Flügler'
+    exportObj.renameShip 'Y-Wing', 'Y-Flügler'
     exportObj.renameShip 'TIE Fighter', 'TIE-Jäger'
     exportObj.renameShip 'TIE Interceptor', 'TIE-Abfangjäger'
     exportObj.renameShip 'TIE Bomber', 'TIE-Bomber'
@@ -227,24 +233,34 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'TIE Aggressor', 'TIE-Aggressor'
     pilot_translations =
         "Wedge Antilles":
+            ship: "X-Flügler"
             text: """Wenn du angreifst, sinkt der Wendigkeitswert des Verteidigers um 1 (Minimum 0)."""
         "Garven Dreis":
+            ship: "X-Flügler"
             text: """Wenn du einen Fokusmarker ausgibst, darfst du ihn auf ein anderes freundliches Schiff in Reichweite 1-2 legen (anstatt ihn abzulegen)."""
         "Red Squadron Pilot":
+            ship: "X-Flügler"
             name: "Pilot der Rot-Staffel"
         "Rookie Pilot":
+            ship: "X-Flügler"
             name: "Anfängerpilot"
         "Biggs Darklighter":
+            ship: "X-Flügler"
             text: """Andere freundliche Schiffe in Reichweite 1 dürfen nur dann angegriffen werden, wenn der Angreifer dich nicht zum Ziel bestimmen kann."""
         "Luke Skywalker":
+            ship: "X-Flügler"
             text: """Wenn du verteidigst, kannst du 1 deiner %FOCUS% in ein %EVADE% ändern."""
         "Gray Squadron Pilot":
+            ship: "Y-Flügler"
             name: "Pilot der Grau-Staffel"
         '"Dutch" Vander':
+            ship: "Y-Flügler"
             text: """Wähle ein anderes freundliches Schiff in Reichweite 1-2, nachdem du eine Zielerfassung durchgeführt hast. Das gewählte Schiff darf sofort ebenfalls eine Zielerfassung durchführen."""
         "Horton Salm":
+            ship: "Y-Flügler"
             text: """Wenn du ein Ziel in Reichweite 2-3 angreifst, darfst du beliebig viele Leerseiten neu würfeln."""
         "Gold Squadron Pilot":
+            ship: "Y-Flügler"
             name: "Pilot der Gold-Staffel"
         "Academy Pilot":
             ship: "TIE-Jäger"
@@ -277,12 +293,16 @@ exportObj.cardLoaders.Deutsch = () ->
             name: '"Kreischläufer"'
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
+            ship: "TIE Advanced"
             text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
         "Tempest Squadron Pilot":
+            ship: "TIE Advanced"
             name: "Pilot der Tornado-Staffel"
         "Storm Squadron Pilot":
+            ship: "TIE Advanced"
             name: "Pilot der Storm-Staffel"
         "Darth Vader":
+            ship: "TIE Advanced"
             text: """Im Schritt "Aktionen durchführen" darfst du 2 Aktionen durchführen."""
         "Alpha Squadron Pilot":
             name: "Pilot der Alpha-Staffel"
@@ -303,44 +323,64 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Abfangjäger"
             text: """Immer wenn du einen Stressmarker erhältst, darfst du deinem Schiff auch einen Fokusmarker geben."""
         "Tycho Celchu":
+            ship: "A-Flügler"
             text: """Du darfst auch dann Aktionen durchführen, wenn du Stressmarker hast."""
         "Arvel Crynyd":
+            ship: "A-Flügler"
             text: """Wenn du angreifst, darfst du auch auf feindliche Schiffe zielen, deren Basen du berührst (vorausgesetzt sie sind innerhalb deines Feuerwinkels)."""
         "Green Squadron Pilot":
+            ship: "A-Flügler"
             name: "Pilot der Grün-Staffel"
         "Prototype Pilot":
+            ship: "A-Flügler"
             name: "Testpilot"
         "Outer Rim Smuggler":
+            ship: "YT-1300"
             name: "Schmuggler aus dem Outer Rim"
         "Chewbacca":
+            ship: "YT-1300"
             text: """Wenn du eine offene Schadenskarte erhältst, wird sie sofort umgedreht (ohne dass ihr Kartentext in Kraft tritt)."""
         "Lando Calrissian":
+            ship: "YT-1300"
             text: """Wähle nach dem Ausführen eines grünen Manövers ein anderes freundliches Schiff in Reichweite 1. Dieses Schiff darf eine freie Aktion aus seiner Aktionsleiste durchführen."""
         "Han Solo":
+            ship: "YT-1300"
             text: """Wenn du angreifst, darfst du all deine Würfel neu würfeln. Tust du dies, musst du so viele Würfel wie möglich neu würfeln."""
         "Kath Scarlet":
+            ship: "Firespray-31"
             text: """Wenn du angreifst und der Verteidiger mindestens 1 %CRIT% negiert, erhält er 1 Stressmarker."""
         "Boba Fett":
+            ship: "Firespray-31"
             text: """Sobald du ein Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufdeckst, darfst du das Drehmanöver mit gleicher Geschwindigkeit aber anderer Richtung auf deinem Rad nachträglich einstellen."""
         "Krassis Trelix":
+            ship: "Firespray-31"
             text: """Wenn du mit einer Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln."""
         "Bounty Hunter":
+            ship: "Firespray-31"
             name: "Kopfgeldjäger"
         "Ten Numb":
+            ship: "B-Flügler"
             text: """Wenn du angreifst, kann 1 deiner %CRIT% von Verteidigungswürfeln nicht negiert werden."""
         "Ibtisam":
+            ship: "B-Flügler"
             text: """Beim Angreifen oder Verteidigen darfst du 1 deiner Würfel neu würfeln, sofern du mindestens 1 Stressmarker hast."""
         "Dagger Squadron Pilot":
+            ship: "B-Flügler"
             name: "Pilot der Dagger-Staffel"
         "Blue Squadron Pilot":
+            ship: "B-Flügler"
             name: "Pilot der Blauen Staffel"
         "Rebel Operative":
+            ship: "HWK-290"
             name: "Rebellenagent"
         "Roark Garnet":
+            ship: "HWK-290"
             text: '''Wähle zu Beginn der Kampfphase 1 anderes freundliches Schiff in Reichweite 1-3. Bis zum Ende der Phase wird dieses Schiff behandelt, als hätte es einen Pilotenwert von 12.'''
         "Kyle Katarn":
+            ship: "HWK-290"
             text: """Zu Beginn der Kampfphase darfst du einem anderen freundlichen Schiff in Reichweite 1-3 einen deiner Fokusmarker geben."""
         "Jan Ors":
+            ship: "HWK-290"
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1-3 angreift und du keine Stressmarker hast, darfst du 1 Stressmarker nehmen, damit dieses Schiff 1 zusätzlichen Angriffswürfel erhält."""
         "Scimitar Squadron Pilot":
             ship: "TIE-Bomber"
@@ -411,12 +451,16 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Jagdbomber"
             text: """Nachdem du angegriffen und damit dem Verteidiger mindestens 1 Schadenskarte zugeteilt hast, kannst du einen Fokusmarker ausgeben, um die soeben zugeteilten Schadenskarten aufzudecken."""
         "Knave Squadron Pilot":
+            ship: "E-Flügler"
             name: "Pilot der Schurken-Staffel"
         "Blackmoon Squadron Pilot":
+            ship: "E-Flügler"
             name: "Pilot der Schwarzmond-Staffel"
         "Etahn A'baht":
+            ship: "E-Flügler"
             text: """Sobald ein feindliches Schiff in Reichweite 1–3 und innerhalb deines Feuerwinkels verteidigt, darf der Angreifer 1 seiner %HIT% in ein %CRIT% ändern."""
         "Corran Horn":
+            ship: "E-Flügler"
             text: """Zu Beginn der Endphase kannst du einen Angriff durchführen. Tust du das, darfst du in der nächsten Runde nicht angreifen."""
         "Sigma Squadron Pilot":
             ship: "TIE-Phantom"
@@ -440,21 +484,29 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "CR90-Korvette (Heck)"
             ship: "CR90-Korvette (Heck)"
         "Wes Janson":
+            ship: "X-Flügler"
             text: """Nachdem du einen Angriff durchgeführt hast, darfst du 1 Fokus-, Ausweich- oder blauen Zielerfassungsmarker vom Verteidiger entfernen."""
         "Jek Porkins":
+            ship: "X-Flügler"
             text: """Wenn du einen Stressmarker erhältst, darfst du ihn entfernen und 1 Angriffswürfel werfen. Bei %HIT% bekommt dein Schiff 1 verdeckte Schadenskarte."""
         '"Hobbie" Klivian':
+            ship: "X-Flügler"
             text: """Wenn du ein Schiff in die Zielerfassung nimmst oder einen Zielerfassungsmarker ausgibst, kannst du 1 Stressmarker von deinem Schiff entfernen."""
         "Tarn Mison":
+            ship: "X-Flügler"
             text: """Wenn ein feindliches Schiff einen Angriff gegen dich ansagt, kannst du dieses Schiff in die Zielerfassung nehmen."""
         "Jake Farrell":
+            ship: "A-Flügler"
             text: """Nachdem du die Aktion Fokussierung durchgeführt oder einen Fokusmarker erhalten hast, darfst du als freie Aktion einen Schub oder eine Fassrolle durchführen."""
         "Gemmer Sojan":
+            ship: "A-Flügler"
             name: "Gemmer Sojan"
             text: """Solange du in Reichweite 1 zu mindestens einem feindlichen Schiff bist, steigt dein Wendigkeitswert um 1."""
         "Keyan Farlander":
+            ship: "B-Flügler"
             text: """Beim Angreifen darfst du 1 Stressmarker entfernen, um alle deine %FOCUS% in %HIT% zu ändern."""
         "Nera Dantels":
+            ship: "B-Flügler"
             text: """Mit %TORPEDO%-Sekundärwaffen kannst du auch feindliche Schiffe außerhalb deines Feuerwinkels angreifen."""
         # "CR90 Corvette (Crippled Aft)":
         #     name: "CR90-Korvette (Heck-Lahmgelegt)"
@@ -464,21 +516,29 @@ exportObj.cardLoaders.Deutsch = () ->
         #     name: "CR90-Korvette (Bug-Lahmgelegt)"
         #     ship: "CR90-Korvette (Bug)"
         "Wild Space Fringer":
+            ship: "YT-2400"
             name: "Grenzgänger aus dem Wilden Raum"
         "Dash Rendar":
+            ship: "YT-2400"
             text: """Du darfst in der Aktivierungsphase und beim Durchführen von Aktionen Hindernisse ignorieren."""
         '"Leebo"':
+            ship: "YT-2400"
             text: """Immer wenn du eine offene Schadenskarte erhältst, ziehst du 1 weitere Schadenskarte. Wähle 1, die abgehandelt wird, und lege die andere ab."""
         "Eaden Vrill":
+            ship: "YT-2400"
             text: """Wirf 1 zusätzlichen Angriffswürfel, wenn du mit den Primärwaffen auf ein Schiff mit Stressmarker schießt."""
         "Patrol Leader":
+            ship: "VT-49 Decimator"
             name: "Patrouillenführer"
         "Rear Admiral Chiraneau":
+            ship: "VT-49 Decimator"
             name: "Konteradmiral Chiraneau"
             text: """Wenn du ein Ziel in Reichweite 1-2 angreifst, kannst du ein %FOCUS% in ein %CRIT% ändern."""
         "Commander Kenkirk":
+            ship: "VT-49 Decimator"
             text: """Wenn du keine Schilde und mindestens 1 Schadenskarte hast, steigt deine Wendigkeit um 1."""
         "Captain Oicunn":
+            ship: "VT-49 Decimator"
             text: """Nach dem Ausführen eines Manövers nimmt jedes feindliche Schiff, das du berührst, 1 Schaden."""
         "Prince Xizor":
             ship: "SternenViper"
@@ -506,38 +566,54 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "M3-A Abfangjäger"
             name: "Raumfahrer des Kartells"
         "IG-88A":
+            ship: "Aggressor"
             text: """Nachdem du einen Angriff durchgeführt hast, der den Verteidiger zerstört, darfst du 1 Schild wiederaufladen."""
         "IG-88B":
+            ship: "Aggressor"
             text: """Ein Mal pro Runde darfst du, nachdem du mit einem Angriff verfehlt hast, einen weiteren Angriff mit einer ausgerüsteten %CANNON%-Sekundärwaffe durchführen."""
         "IG-88C":
+            ship: "Aggressor"
             text: """Nachdem du die Aktion Schub durchgeführt hast, darfst du eine freie Aktion Ausweichen durchführen."""
         "IG-88D":
+            ship: "Aggressor"
             text: """Du darfst die Manöver (%SLOOPLEFT% 3) oder (%SLOOPRIGHT% 3) auch mit den entsprechenden Schablonen für Wendemanöver (%TURNLEFT% 3) bzw. (%TURNRIGHT% 3) ausführen."""
         "Boba Fett (Scum)":
+            ship: "Firespray-31"
             name: "Boba Fett (Abschaum)"
             text: """Sobald du angreifst oder verteidigst, darfst du für jedes feindliche Schiff in Reichweite 1 einen deiner Würfel neu würfeln."""
         "Kath Scarlet (Scum)":
+            ship: "Firespray-31"
             name: "Kath Scarlet (Abschaum)"
             text: """Sobald du ein Schiff innerhalb deines Zusatz-Feuerwinkels angreifst, erhältst du 1 zusätzlichen Angriffswürfel."""
         "Emon Azzameen":
+            ship: "Firespray-31"
             text: """Sobald du eine Bombe legst, darfst du auch die Schablone [%TURNLEFT% 3], [%STRAIGHT% 3] oder [%TURNRIGHT% 3] anstatt der [%STRAIGHT% 1]-Schablone verwenden."""
         "Mandalorian Mercenary":
+            ship: "Firespray-31"
             name: "Mandalorianischer Söldner"
         "Kavil":
+            ship: "Y-Flügler"
             text: """Sobald du ein Schiff außerhalb deines Feuerwinkels angreifst, erhältst du 1 zusätzlichen Angriffswürfel."""
         "Drea Renthal":
+            ship: "Y-Flügler"
             text: """Nachdem du einen Zielerfassungsmarker ausgegeben hast, darfst du 1 Stressmarker nehmen, um ein Schiff in die Zielerfassung zu nehmen."""
         "Syndicate Thug":
+            ship: "Y-Flügler"
             name: "Verbrecher des Syndikats"
         "Hired Gun":
+            ship: "Y-Flügler"
             name: "Söldner"
         "Dace Bonearm":
+            ship: "HWK-290"
             text: """Sobald ein feindliches Schiff in Reichweite 1-3 mindestens 1 Ionenmarker erhält und falls du keinen Stressmarker hast, darfst du 1 Stressmarker nehmen, damit das Schiff 1 Schaden nimmt."""
         "Palob Godalhi":
+            ship: "HWK-290"
             text: """Zu Beginn der Kampfphase darfst du 1 Fokus- oder Ausweichmarker von einem feindlichen Schiff in Reichweite 1-2 entfernen und dir selbst zuordnen."""
         "Torkil Mux":
+            ship: "HWK-290"
             text: """Wähle am Ende der Aktivierungsphase 1 feindliches Schiff in Reichweite 1-2. Bis zum Ende der Kampfphase wird der Pilotenwert des Schiffs als "0" behandelt."""
         "Spice Runner":
+            ship: "HWK-290"
             name: "Spiceschmuggler"
         "N'Dru Suhlak":
             ship: "Z-95-Kopfjäger"
@@ -561,11 +637,13 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Korv. der Sturm-Klasse (Heck)"
             name: "Korv. der Sturm-Klasse (Heck)"
         "Bossk":
+            ship: "YV-666"
             text: """Sobald du einen Angriff durchführst und triffst, kannst du , bevor du Schaden verursachst, 1 deiner %CRIT% negieren, um 2 %HIT% hinzuzufügen."""
         "Talonbane Cobra":
             ship: "Kihraxz-Jäger"
             text: """Sobald du angreifst oder verteidigst, wird der Effekt deiner Kampfvorteile durch Reichweite verdoppelt."""
         "Miranda Doni":
+            ship: "K-Flügler"
             text: """Ein Mal pro Runde darfst du, sobald du angreifst, entweder 1 Schild ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen, <strong>oder</strong> 1 Angriffswürfel weniger werfen, um 1 Schild wiederaufzuladen."""
         '"Redline"':
             name: '"Rote Linie"'
@@ -576,26 +654,32 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Vergelter"
             text: """Sobald du eine Bombe legst, darfst du die Stopper am Bug deines Schiffs benutzen. Nachdem du eine Bombe gelegt hast, darfst du als freie Aktion eine Fassrolle durchführen."""
         "Juno Eclipse":
+            ship: "TIE Advanced"
             text: """Sobald du dein Manöver aufdeckst, darfst du die Geschwindigkeit um 1 erhöhen oder reduzieren (bis zu einem Minimum von 1)."""
         "Zertik Strom":
+            ship: "TIE Advanced"
             text: """Sobald feindliche Schiffe in Reichweite 1 angreifen, können sie ihren Kampfvorteil durch Reichweite nicht hinzufügen."""
         "Lieutenant Colzet":
+            ship: "TIE Advanced"
             text: """Zu Beginn der Endphase darfst du einen Zielerfassungsmarker , den du auf einem feindlichen Schiff liegen hast, ausgeben, um 1 seiner verdeckten Schadenskarten (zufällig bestimmt) aufzudecken."""
         "Latts Razzi":
+            ship: "YV-666"
             text: """Sobald ein freundliches Schiff einen Angriff deklariert und du den Verteidiger in der Zielerfassung hast, kannst du einen Zielerfassungsmarker ausgeben, um die Wendigkeit des Verteidigers für diesen Angriff um 1 zu senken."""
         "Graz the Hunter":
             ship: "Kihraxz-Jäger"
             name: "Graz der Jäger"
             text: """Wirf 1 zusätzlichen Verteidigungswürfel, wenn der Angreifer in deinem Feuerwinkel ist, sobald du verteidigst."""
         "Esege Tuketu":
+            ship: "K-Flügler"
             text: """Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreift, darf es deine Fokusmarker wie seine eigenen behandeln."""
         "Moralo Eval":
+            ship: "YV-666"
             text: """Du darfst Angriffe mit %CANNON%-Sekundärwaffen gegen Schiffe in deinem Zusatz-Feuerwinkel durchführen."""
         "Warden Squadron Pilot":
-            ship: "K-Wing"
+            ship: "K-Flügler"
             name: "Pilot der Beschützer-Staffel"
         "Guardian Squadron Pilot":
-            ship: "K-Wing"
+            ship: "K-Flügler"
             name: "Pilot der Wächter-Staffel"
         "Cutlass Squadron Pilot":
             ship: "TIE-Vergelter"
@@ -612,7 +696,6 @@ exportObj.cardLoaders.Deutsch = () ->
         "Trandoshan Slaver":
             ship: "YV-666"
             name: "Trandoshanischer Sklavenjäger"
-        # T-70
         "Poe Dameron":
             ship: "T-70-X-Flügler"
             text: """Solange du angreifst oder verteidigst, und wenn du einen Fokusmarker hast, darfst du 1 deiner %FOCUS% in %HIT% oder %EVADE% ändern."""
@@ -633,7 +716,6 @@ exportObj.cardLoaders.Deutsch = () ->
         'Ello Asty':
             ship: "T-70-X-Flügler"
             text: '''Solange du nicht gestresst bist, darfst du deine %TROLLLEFT% und %TROLLRIGHT% Manöver als weiße Manöver behandeln.'''
-        # TIE/fo
         '"Omega Ace"':
             ship: "TIE/EO-Jäger"
             name: '"Ass Omega"'
@@ -685,16 +767,18 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Chaser"':
             ship: "TIE-Jäger"
             text: """Sobald ein anderes freundliches Schiff in Reichweite 1 einen Fokusmarker ausgibt, wird deinem Schiff ein Fokusmarker zugeteilt."""
-        # VCX-100
         'Hera Syndulla':
+            ship: "VCX-100"
             text: '''Sobald du ein grünes oder rotes Manöver aufdeckst, darfst du dein Rad auf ein anderes Manöver mit gleicher Schwierigkeit drehen.'''
         "Kanan Jarrus":
+            ship: "VCX-100"
             text: """Sobald ein feindliches Schiff in Reichweite 1-2 angreift, darfst du einen Fokusmarker ausgeben. Tust du das, wirft der Angreifer 1 Angriffswürfel weniger."""
         '"Chopper"':
+            ship: "VCX-100"
             text: """Zu Beginn der Kampfphase erhält jedes feindliche Schiff, das du berührst, 1 Stressmarker."""
         "Lothal Rebel":
+            ship: "VCX-100"
             name: "Rebell von Lothal"
-        # Attack Shuttle
         'Ezra Bridger':
             ship: "Jagdshuttle"
             text: """Falls du Stressmarker hast, darfst du, sobald du dich verteidigst, bis zu 2 deiner %FOCUS% in %EVADE% ändern."""
@@ -708,16 +792,18 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Zeb" Orrelios':
             ship: "Jagdshuttle"
             text: '''Sobald du dich verteidigst, darfst du %CRIT% vor %HIT% negieren.'''
-        # JumpMaster 5000
         "Contracted Scout":
+            ship: "JumpMaster 5000"
             name: "Angeheuerter Kundschafter"
         "Dengar":
+            ship: "JumpMaster 5000"
             text: """Ein Mal pro Runde darfst du nach dem Verteidigen einen Angriff auf den Angreifer durchführen, falls er sich in deinem Feuerwinkel befindet."""
         "Tel Trevura":
+            ship: "JumpMaster 5000"
             text: """Wenn du zum ersten Mal zerstörst werden würdest, negiere stattdessen alle restlichen Schaden, lege alle Schadenskarten ab und teile diesem Schiff 4 verdeckte Schadenskarten zu."""
         "Manaroo":
+            ship: "JumpMaster 5000"
             text: """Zu Beginn der Kampfphase darfst du alle dir zugeordneten Fokus-, Ausweich- und Zielerfassungsmarker einem anderen freundlichen Schiff in Reichweite 1 zuordnen."""
-        # TIE Advanced Prototype
         "Sienar Test Pilot":
             ship: "TIE-Turbojäger-Prototyp"
             name: "Sienar-Testpilot"
@@ -731,7 +817,6 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Turbojäger-Prototyp"
             name: "Der Inquisitor"
             text: """Sobald du mit deinen Primärwaffen in Reichweite 2-3 angreifst, behandle die Reichweite des Angriffs als Reichweite 1."""
-        # G-1A Starfighter
         "4-LOM":
             ship: "G-1A-Sternenjäger"
             text: """Zu Beginn der Endphase darfst du 1 deiner Stressmarker einem anderen Schiff in Reichweite 1 zuordnen."""
@@ -744,7 +829,6 @@ exportObj.cardLoaders.Deutsch = () ->
         "Zuckuss":
             ship: "G-1A-Sternenjäger"
             text: """Sobald du angreifst, darfst du 1 zusätzlichen Angriffswürfel werfen. Falls du das tust, wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."""
-        # Imperial Aces 2
         'Tomax Bren':
             ship: "TIE-Bomber"
             text: '''Ein Mal pro Runde, nachdem du eine %ELITE%-Aufwertung abgelegt hast, decke die abgelegte Karte auf.'''
@@ -780,23 +864,29 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du einen Stressmarker erhältst, darfst du ihn ablegen, falls ein feindliches Schiff in Reichweite 1 innerhalb deines Feuerwinkels ist."""
             ship: "T-70-X-Flügler"
         "Rey":
+            ship: "YT-1300"
             text: """Sobald du angreifst oder verteidigst, darfst du bis zu 2 deiner Leerseiten neu würfeln, falls das feindliche Schiff innerhalb deines Feuerwinkels ist."""
         'Han Solo (TFA)':
+            ship: "YT-1300"
             text: '''Sobald du beim Spielaufbau platziert wirst, kannst du irgendwo auf der Spielfläche jenseits von Reichweite 1-3 zu feindlichen Schiffen platziert werden.'''
         'Chewbacca (TFA)':
+            ship: "YT-1300"
             text: '''Nachdem ein anderes freundliches Schiff in Reichweite 1-3 zerstört worden (aber nicht geflohen) ist, darfst du einen Angriff durchführen.'''
         'Resistance Sympathizer':
+            ship: "YT-1300"
             name: "Sympathisant des Widerstands"
-        # ARC-170
         'Norra Wexley':
+            ship: "ARC-170"
             text: '''Sobald du angreifst oder du verteidigst, darfst du einen Zielerfassungsmarker, den du auf dem feindlichen Schiff hast, ausgeben, um 1 %FOCUS% zu deinem Wurf hinzuzufügen.'''
         'Shara Bey':
+            ship: "ARC-170"
             text: '''Sobald ein anderes freundliches Schiff in Reichweite 1-2 angreift, darf es deine blauen Zielerfassungsmarker wie seine eigenen behandeln.'''
         'Thane Kyrell':
+            ship: "ARC-170"
             text: '''Nachdem ein feindliches Schiff innerhalb deines Feuerwinkels und in Reichweite 1-3 ein anderes freundliches Schiff angegriffen hat, darfst du eine freie Aktion durchführen.'''
         'Braylen Stramm':
+            ship: "ARC-170"
             text: '''Nachdem du ein Manöver ausgeführt hast, darfst du einen Angriffswürfel werfen. Bei %HIT% oder %CRIT% entferne 1 Stressmarker von deinem Schiff.'''
-        # TIE/sf Fighter
         '"Quickdraw"':
             ship: "TIE/SE-Jäger"
             name: '"Schnellschuss"'
@@ -811,7 +901,6 @@ exportObj.cardLoaders.Deutsch = () ->
         'Zeta Specialist':
             ship: "TIE/SE-Jäger"
             name: "Elitepilot der Zeta-Staffel"
-        # Protectorate Starfighter
         'Fenn Rau':
             ship: "Sternenjäger des Protektors"
             text: '''Sobald du angreifst oder verteidigst, darfst du 1 zusätzliche Würfel werfen, falls das feindliche Schiff in Reichweite 1 ist.'''
@@ -831,7 +920,6 @@ exportObj.cardLoaders.Deutsch = () ->
         'Zealous Recruit':
             ship: "Sternenjäger des Protektors"
             name: "Fanatischer Rekrut"
-        # Lancer-class Pursuit Craft
         'Shadowport Hunter':
             ship: "Jagdschiff der Lanzen-Klasse"
             name: "Schattenhafen-Jäger"
@@ -867,13 +955,16 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Shuttle der Ypsilon-Klasse"
             text: '''Während des Spielaufbaus dürfen freundliche Schiffe überall auf der Spielfläche in Reichweite 1-2 zu dir platziert werden.'''
         'Constable Zuvio':
+            ship: "Quadjumper"
             text: '''Sobald du ein Rückwärtsmanöver aufdeckst, darfst du über die Stopper an deinem Bug eine Bombe legen (auch eine Bombe mit dem Stichwort "<strong>Aktion:</strong>").'''
         'Sarco Plank':
+            ship: "Quadjumper"
             text: '''Sobald du dich verteidigst, darfst du, anstatt deinen Wendigkeitswert zu verwenden, Würfel in Höhe der Geschwindigkeit des Manövers, das du in dieser Runde ausgeführt hast, verwenden.'''
         'Kylo Ren':
             ship: "Shuttle der Ypsilon-Klasse"
             text: '''Das erste Mal wenn du in jeder Runde von einem Angriff getroffen wirst, ordnest du dem Angreifer die Zustandskarte "Ich zeige dir die Dunkle Seite" zu.'''
         'Unkar Plutt':
+            ship: "Quadjumper"
             text: '''Am Ende der Aktivierungsphase <strong>musst</strong> du jedem Schiff, das du berührst, einen Traktorstrahlmarker zuordnen.'''
         'Blue Squadron Pathfinder':
             ship: "U-Flügler"
@@ -924,15 +1015,17 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "M3-A Abfangjäger"
             text: '''Ein Mal pro Runde darfst du, nachdem du gewürfelt oder neu gewürfelt hast, falls alle Würfel dasselbe Ergebnis zeigen, 1 weiteres Ergebnis dieser Art hinzufügen.'''
         'Lieutenant Kestal':
+            ship: "TIE-Aggressor"
             text: '''Sobald du angreifst, darfst du 1 Fokusmarker ausgeben, um alle Leerseiten und %FOCUS% des Verteidigers zu negieren.'''
         '"Double Edge"':
+            ship: "TIE-Aggressor"
             name: "Doppelklinge"
             text: '''Ein Mal pro Runde, nachdem du einen Angriff mit einer Sekundärwaffe durchgeführt und nicht getroffen hast, darfst du einen Angriff mit einer anderen Waffe durchführen.'''
         'Onyx Squadron Escort':
-            ship: "TIE Aggressor"
+            ship: "TIE-Aggressor"
             name: "Eskorte der Onyx-Staffel"
         'Sienar Specialist':
-            ship: "TIE Aggressor"
+            ship: "TIE-Aggressor"
             name: "Experte von Sienar"
         'Viktor Hel':
             text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
@@ -949,21 +1042,32 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Verteidiger von Kashyyyk"
             ship: "Auzituck-Kanonenboot"
         'Captain Nym (Scum)':
+            ship: "Scurrg H-6 Bomber"
             text: '''Du darfst freundliche Bomben ignorieren. Sobald ein freundliches Schiff verteidigt, darf der Verteidiger 1 %EVADE% hinzufügen, falls der Angreifer die Reichweite durch einen freundlichen Bombenmarker misst.'''
         'Captain Nym (Rebel)':
+            ship: "Scurrg H-6 Bomber"
             text: '''Ein Mal pro Runde darfst du die Detonation eines freundliche Bombenmarkers verhindern.'''
         'Sol Sixxa':
+            ship: "Scurrg H-6 Bomber"
             text: '''Sobald du eine Bombe legst, darfst du die [%TURNLEFT%1]- oder [%TURNRIGHT%1]-Schablone statt der [%STRAIGHT%1]-Schablone verwenden.'''
         'Lok Revenant':
+            ship: "Scurrg H-6 Bomber"
             name: "Lok-Pirat"
         'Karthakk Pirate':
+            ship: "Scurrg H-6 Bomber"
             name: "Pirat aus dem Karthakk-Sektor"
+# TODO unveröffentliche Piloten
         'Dalan Oberos':
+            ship: "StarViper"
             text: '''If you are not stressed, when you reveal a turn, bank, or Segnor's Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'''
         'Thweek':
+            ship: "StarViper"
             text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
         'Captain Jostero':
+            ship: "StarViper"
             text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
+        'Black Sun Assassin':
+            ship: "StarViper"
         'Major Vynder':
             text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
         'Torani Kulda':
@@ -1183,7 +1287,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Behandle in der Aktivierungsphase deinen Pilotenwert als "0"."""
         "Chardaan Refit":
             name: "Chardaan-Nachrüstung"
-            text: """<span class="card-restriction">Nur für A-Wing</span>%LINEBREAK%Diese Karte hat negative Kommandopunktekosten."""
+            text: """<span class="card-restriction">Nur für A-Flügler</span>%LINEBREAK%Diese Karte hat negative Kommandopunktekosten."""
+            ship: "A-Flügler"
         "Proton Rockets":
             name: "Protonenraketen"
             text: """<strong>Angriff (Fokussierung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst so viele zusätzliche Angriffswürfel werfen, wie du Wendigkeit hast (maximal 3 zusätzliche Würfel)."""
@@ -1307,7 +1412,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du eine offene Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."""
         "Bomb Loadout":
             name: "Bombenladung"
-            text: """<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
+            text: """<span class="card-restriction">Nur für Y-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
+            ship: "Y-Flügler"
         '"Genius"':
             name: '"Genie"'
             text: """Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."""
@@ -1699,7 +1805,8 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Medium-Transporter GR-75"
             text: """Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."""
         "B-Wing/E2":
-            text: """Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."""
+            text: """<span class="card-restriction">Nur für B-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."""
+            ship: "B-Flügler"
         "Countermeasures":
             name: "Gegenmassnahmen"
             text: """%DE_LARGESHIPONLY%%LINEBREAK%Zu Beginn der Kampfphase kannst du diese Karte ablegen, um deine Wendigkeit bis zum Ende der Runde um 1 zu erhöhen. Dann darfst du 1 feindliche Zielerfassung von deinem Schiff entfernen."""
@@ -1790,7 +1897,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für CR90-Korvette (Bug).</span>%LINEBREAK%Wenn du die Aktion Koordination durchführst, kannst du 2 freundliche Schiffe wählen (anstatt 1). Jedes dieser Schiffe darf 1 freie Aktion durchführen.'''
         "A-Wing Test Pilot":
             name: "Erfahrener Testpilot"
-            text: '''<span class="card-restriction">Nur für A-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert "1" oder niedriger ist.'''
+            text: '''<span class="card-restriction">Nur für A-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert "1" oder niedriger ist.'''
+            ship: "A-Flügler"
         "Tantive IV":
             ship: "CR90-Korvette (Bug)"
             text: '''<span class="card-restriction">Nur für CR90-Korvette (Bug).</span>%LINEBREAK%Die Aufwertungsleiste deiner Bugsektion erhält 1 zusätzliches %CREW% und 1 zusätzliches %TEAM% .'''
@@ -1830,7 +1938,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für Aggressor.</span>%LINEBREAK%Du bekommst die Pilotenfähigkeiten aller anderen freundlichen Schiffe mit der Aufwertungskarte <em>IG-2000</em> (zusätzlich zu deiner eigenen Pilotenfähigkeit).'''
         "BTL-A4 Y-Wing":
             name: "BTL-A4-Y-Wing"
-            text: '''<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Du darfst Schiffe außerhalb deines Feuerwinkels nicht angreifen. Nachdem du einen Angriff mit deinen Primärwaffen durchgeführt hast, darfst du sofort einen weiteren Angriff mit einer %TURRET%-Sekundärwaffe durchführen.'''
+            text: '''<span class="card-restriction">Nur für Y-Flügler.</span>%LINEBREAK%Du darfst Schiffe außerhalb deines Feuerwinkels nicht angreifen. Nachdem du einen Angriff mit deinen Primärwaffen durchgeführt hast, darfst du sofort einen weiteren Angriff mit einer %TURRET%-Sekundärwaffe durchführen.'''
+            ship: "Y-Flügler"
         "Andrasta":
             text: '''<span class="card-restriction">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu.'''
         "TIE/x1":
@@ -1970,6 +2079,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'A Debt to Pay':
             name: "Unbezahlte Schulden"
             text: '''Sobald du ein Schiff mit der Aufwertungskarte "Eine offene Rechnung" angreifst, darfst du 1 %FOCUS% in ein %CRIT% ändern.'''
+# TODO unveröffentliche Karten
         'Shadowed':
             text: '''"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'''
         'Mimicked':

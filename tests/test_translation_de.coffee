@@ -12,7 +12,7 @@ casper.test.begin "German translations: Rebel", (test) ->
 
     common.createList('#rebel-builder', [
         {
-            ship: 'X-Wing'
+            ship: 'X-Flügler'
             pilot: "Anfängerpilot"
             upgrades: [
                 "Protonen-Torpedos"
@@ -21,7 +21,7 @@ casper.test.begin "German translations: Rebel", (test) ->
             ]
         }
         {
-            ship: 'X-Wing'
+            ship: 'X-Flügler'
             pilot: "Luke Skywalker"
             upgrades: [
                 "Treffsicherheit"
