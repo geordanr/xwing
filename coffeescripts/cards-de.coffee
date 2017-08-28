@@ -36,10 +36,10 @@ exportObj.translations.Deutsch =
         "Tech": "Technik"
     sources: # needed?
         "Core": "Grundspiel"
-        "A-Wing Expansion Pack": "A-Wing Erweiterung"
-        "B-Wing Expansion Pack": "B-Wing Erweiterung"
-        "X-Wing Expansion Pack": "X-Wing Erweiterung"
-        "Y-Wing Expansion Pack": "Y-Wing Erweiterung"
+        "A-Wing Expansion Pack": "A-Flügler Erweiterung"
+        "B-Wing Expansion Pack": "B-Flügler Erweiterung"
+        "X-Wing Expansion Pack": "X-Flügler Erweiterung"
+        "Y-Wing Expansion Pack": "Y-Flügler Erweiterung"
         "Millennium Falcon Expansion Pack": "Millenium Falke Erweiterung"
         "HWK-290 Expansion Pack": "HWK-290 Erweiterung"
         "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung"
@@ -52,7 +52,7 @@ exportObj.translations.Deutsch =
         "Rebel Transport Expansion Pack": "Rebellentransporter Erweiterung"
         "Z-95 Headhunter Expansion Pack": "Z-95-Kopfjäger Erweiterung"
         "TIE Defender Expansion Pack": "TIE-Jagdbomber Erweiterung"
-        "E-Wing Expansion Pack": "E-Wing Erweiterung"
+        "E-Wing Expansion Pack": "E-Flügler Erweiterung"
         "TIE Phantom Expansion Pack": "TIE-Phantom Erweiterung"
         "Tantive IV Expansion Pack": "Tantive IV Erweiterung"
         "Rebel Aces Expansion Pack": "Fliegerasse der Rebellenallianz Erweiterung"
@@ -65,7 +65,7 @@ exportObj.translations.Deutsch =
         "Imperial Raider Expansion Pack": "Imperiale Sturm-Korvette Erweiterung"
         "Hound's Tooth Expansion Pack": "Reisszahn Erweiterung"
         "Kihraxz Fighter Expansion Pack": "Kihraxz-Jäger Erweiterung"
-        "K-Wing Expansion Pack": "K-Wing Erweiterung"
+        "K-Wing Expansion Pack": "K-Flügler Erweiterung"
         "TIE Punisher Expansion Pack": "TIE-Vergelter Erweiterung"
         "The Force Awakens Core Set": "Das Erwachen der Macht Grundspiel"
         "Imperial Assault Carrier Expansion Pack": "Imperialer Angriffsträger Erweiterung"
@@ -1287,7 +1287,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Behandle in der Aktivierungsphase deinen Pilotenwert als "0"."""
         "Chardaan Refit":
             name: "Chardaan-Nachrüstung"
-            text: """<span class="card-restriction">Nur für A-Wing</span>%LINEBREAK%Diese Karte hat negative Kommandopunktekosten."""
+            text: """<span class="card-restriction">Nur für A-Flügler</span>%LINEBREAK%Diese Karte hat negative Kommandopunktekosten."""
+            ship: "A-Flügler"
         "Proton Rockets":
             name: "Protonenraketen"
             text: """<strong>Angriff (Fokussierung):</strong> Lege diese Karte ab, um mit dieser Sekundärwaffe anzugreifen.<br /><br />Du darfst so viele zusätzliche Angriffswürfel werfen, wie du Wendigkeit hast (maximal 3 zusätzliche Würfel)."""
@@ -1411,7 +1412,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du eine offene Schadenskarte mit dem Attribut <strong>Schiff</strong> erhältst, darfst du sie sofort ablegen (bevor ihr Effekt abgehandelt wird).%LINEBREAK%Danach wird diese Aufwertungskarte abgelegt."""
         "Bomb Loadout":
             name: "Bombenladung"
-            text: """<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
+            text: """<span class="card-restriction">Nur für Y-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu."""
+            ship: "Y-Flügler"
         '"Genius"':
             name: '"Genie"'
             text: """Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."""
@@ -1803,7 +1805,8 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Medium-Transporter GR-75"
             text: """Erhöhe deinen Hüllenwert um 2 und deinen Schildwert um 1."""
         "B-Wing/E2":
-            text: """Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."""
+            text: """<span class="card-restriction">Nur für B-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste das %CREW%-Symbol hinzu."""
+            ship: "B-Flügler"
         "Countermeasures":
             name: "Gegenmassnahmen"
             text: """%DE_LARGESHIPONLY%%LINEBREAK%Zu Beginn der Kampfphase kannst du diese Karte ablegen, um deine Wendigkeit bis zum Ende der Runde um 1 zu erhöhen. Dann darfst du 1 feindliche Zielerfassung von deinem Schiff entfernen."""
@@ -1894,7 +1897,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für CR90-Korvette (Bug).</span>%LINEBREAK%Wenn du die Aktion Koordination durchführst, kannst du 2 freundliche Schiffe wählen (anstatt 1). Jedes dieser Schiffe darf 1 freie Aktion durchführen.'''
         "A-Wing Test Pilot":
             name: "Erfahrener Testpilot"
-            text: '''<span class="card-restriction">Nur für A-Wing.</span>%LINEBREAK%Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert "1" oder niedriger ist.'''
+            text: '''<span class="card-restriction">Nur für A-Flügler.</span>%LINEBREAK%Füge deiner Aufwertungsleiste 1 %ELITE%-Symbol hinzu.<br /><br />Du darfst jede %ELITE%-Aufwertung nur ein Mal ausrüsten. Du kannst diese Karte nicht verwenden, wenn dein Pilotenwert "1" oder niedriger ist.'''
+            ship: "A-Flügler"
         "Tantive IV":
             ship: "CR90-Korvette (Bug)"
             text: '''<span class="card-restriction">Nur für CR90-Korvette (Bug).</span>%LINEBREAK%Die Aufwertungsleiste deiner Bugsektion erhält 1 zusätzliches %CREW% und 1 zusätzliches %TEAM% .'''
@@ -1934,7 +1938,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für Aggressor.</span>%LINEBREAK%Du bekommst die Pilotenfähigkeiten aller anderen freundlichen Schiffe mit der Aufwertungskarte <em>IG-2000</em> (zusätzlich zu deiner eigenen Pilotenfähigkeit).'''
         "BTL-A4 Y-Wing":
             name: "BTL-A4-Y-Wing"
-            text: '''<span class="card-restriction">Nur für Y-Wing.</span>%LINEBREAK%Du darfst Schiffe außerhalb deines Feuerwinkels nicht angreifen. Nachdem du einen Angriff mit deinen Primärwaffen durchgeführt hast, darfst du sofort einen weiteren Angriff mit einer %TURRET%-Sekundärwaffe durchführen.'''
+            text: '''<span class="card-restriction">Nur für Y-Flügler.</span>%LINEBREAK%Du darfst Schiffe außerhalb deines Feuerwinkels nicht angreifen. Nachdem du einen Angriff mit deinen Primärwaffen durchgeführt hast, darfst du sofort einen weiteren Angriff mit einer %TURRET%-Sekundärwaffe durchführen.'''
+            ship: "Y-Flügler"
         "Andrasta":
             text: '''<span class="card-restriction">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu.'''
         "TIE/x1":
