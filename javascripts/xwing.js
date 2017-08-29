@@ -4096,7 +4096,7 @@ exportObj.basicCardData = function() {
         unique: true,
         ship: 'Scurrg H-6 Bomber',
         skill: 6,
-        slots: ['Elite', 'Turret', 'Crew', 'Torpedo', 'Missile', 'Bomb', 'Bomb'],
+        slots: ['Elite', 'Turret', 'Torpedo', 'Missile', 'Crew', 'Bomb', 'Bomb'],
         points: 28
       }, {
         name: 'Lok Revenant',
