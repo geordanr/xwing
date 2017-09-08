@@ -1197,7 +1197,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = [];
+exportObj.unreleasedExpansions = ['Alpha-class Star Wing Expansion Pack', 'M12-L Kimogila Fighter Expansion Pack', 'Phantom II Expansion Pack', 'Resistance Bomber Expansion Pack', 'TIE Silencer Expansion Pack'];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1795,6 +1795,26 @@ exportObj.basicCardData = function() {
         shields: 1,
         actions: ['Focus', 'Target Lock', 'Coordinate'],
         attack_icon: 'xwing-miniatures-font-attack-frontback'
+      },
+      'B/SF-17 Bomber': {
+        name: 'B/SF-17 Bomber',
+        factions: ["Resistance"],
+        large: true,
+        attack: 2,
+        agility: 1,
+        hull: 9,
+        shields: 3,
+        actions: ['Focus', 'Target Lock'],
+        attack_icon: 'xwing-miniatures-font-attack-turret'
+      },
+      'TIE Silencer': {
+        name: 'TIE Silencer',
+        factions: ["First Order"],
+        attack: 3,
+        agility: 3,
+        hull: 4,
+        shields: 2,
+        actions: ['Focus', 'Barrel Roll', 'Boost', 'Target Lock']
       }
     },
     pilotsById: [
@@ -4300,6 +4320,78 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: ['Crew', 'Astromech'],
         points: 100
+      }, {
+        name: 'Crimson Sq???',
+        id: 279,
+        faction: 'Resistance',
+        ship: 'B/SF-17 Bomber',
+        skill: 1,
+        slots: ['System', 'Bomb', 'Bomb', 'Tech'],
+        points: 100
+      }, {
+        name: '"Crimson ???',
+        id: 280,
+        faction: 'Resistance',
+        unique: true,
+        ship: 'B/SF-17 Bomber',
+        skill: 4,
+        slots: ['System', 'Bomb', 'Bomb', 'Tech'],
+        points: 100
+      }, {
+        name: '"Cobal???',
+        id: 281,
+        faction: 'Resistance',
+        unique: true,
+        ship: 'B/SF-17 Bomber',
+        skill: 6,
+        slots: ['System', 'Bomb', 'Bomb', 'Tech'],
+        points: 100
+      }, {
+        name: '"Crimson Leader"',
+        id: 282,
+        faction: 'Resistance',
+        unique: true,
+        ship: 'B/SF-17 Bomber',
+        skill: 7,
+        slots: ['System', 'Bomb', 'Bomb', 'Tech'],
+        points: 29,
+        applies_condition: 'Rattled'.canonicalize()
+      }, {
+        name: 'Sienar-Jae???',
+        id: 283,
+        faction: 'First Order',
+        ship: 'TIE Silencer',
+        skill: 4,
+        slots: ['System', 'Tech'],
+        points: 100
+      }, {
+        name: 'First Orde???',
+        id: 284,
+        faction: 'First Order',
+        ship: 'TIE Silencer',
+        skill: 6,
+        slots: ['System', 'Tech'],
+        points: 100
+      }, {
+        name: 'Test Pilo???',
+        id: 285,
+        faction: 'First Order',
+        unique: true,
+        ship: 'TIE Silencer',
+        skill: 6,
+        slots: ['System', 'Tech'],
+        points: 100
+      }, {
+        name: 'Kylo Ren (TIE Silencer)',
+        id: 286,
+        canonical_name: 'Kylo Ren'.canonicalize(),
+        faction: 'First Order',
+        unique: true,
+        ship: 'TIE Silencer',
+        skill: 9,
+        slots: ['Elite', 'System', 'Tech'],
+        points: 35,
+        applies_condition: 'I\'ll Show You the Dark Side'.canonicalize()
       }
     ],
     upgradesById: [
@@ -6015,6 +6107,17 @@ exportObj.basicCardData = function() {
         attack: 4,
         range: '2-3',
         applies_condition: 'Harpooned!'.canonicalize()
+      }, {
+        name: 'Ordnance Silos',
+        id: 244,
+        slot: 'Bomb',
+        points: 2,
+        ship: 'B/SF-17 Bomber'
+      }, {
+        name: 'Trajectory Simulator',
+        id: 245,
+        slot: 'System',
+        points: 1
       }
     ],
     modificationsById: [
@@ -6922,6 +7025,12 @@ exportObj.basicCardData = function() {
         id: 59,
         ship: 'Sheathipede-class Shuttle',
         points: 0
+      }, {
+        name: 'First Order Vanguard',
+        id: 60,
+        ship: 'TIE Silencer',
+        unique: true,
+        points: 2
       }
     ],
     conditionsById: [
@@ -6955,6 +7064,10 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Harpooned!',
         id: 7
+      }, {
+        name: 'Rattled',
+        id: 8,
+        unique: true
       }
     ]
   };
@@ -8718,6 +8831,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -9654,6 +9773,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -10034,6 +10159,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -10061,6 +10189,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -10782,6 +10913,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -11513,6 +11650,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -11787,6 +11930,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -11810,6 +11956,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -13136,6 +13285,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -14051,6 +14206,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -14443,6 +14604,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -14470,6 +14634,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -15418,6 +15585,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -16293,6 +16466,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -16626,6 +16805,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -16653,6 +16835,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -17364,6 +17549,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -18110,6 +18301,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK%Ha a támadás talált, rendeld a "Harpooned!" kondíciós kártyát a védekezőhöz.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -18393,6 +18590,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -18416,6 +18616,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Harpooned!': {
       text: 'Mikor egy támadásból találat ér, amiben legalább 1 kivédetlen %CRIT% van, minden 1-es távolságban lévő hajó elszenved 1 sérülést. Aztán dobd el ezt a lapot és kapsz egy lefordított sérülés kártyát.%LINEBREAK%Mikor megsemmisülsz, minden 1-es távolságban lévő hajó elszenved 1 sérülést%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát. Dobj egy támadás kockával, %HIT% vagy %CRIT% esetén elszenvedsz egy sérülést.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -19298,6 +19501,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -20101,6 +20310,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -20403,6 +20618,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -20426,6 +20644,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -21101,6 +21322,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+    },
+    '"Crimson Leader"': {
+      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    'Kylo Ren (TIE Silencer)': {
+      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
   };
   upgrade_translations = {
@@ -21808,6 +22035,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Harpoon Missiles': {
       text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+    },
+    'Ordnance Silos': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+    },
+    'Trajectory Simulator': {
+      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
     }
   };
   modification_translations = {
@@ -22058,6 +22291,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Phantom II': {
       text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+    },
+    'First Order Vanguard': {
+      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     }
   };
   condition_translations = {
@@ -22081,6 +22317,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Harpooned!': {
       text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+    },
+    'Rattled': {
+      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -25911,7 +26150,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24609
+                    lineno: 24862
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -26500,7 +26739,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25239
+              lineno: 25492
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27244,7 +27483,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 25869
+          lineno: 26122
         }));
         __iced_deferrals._fulfill();
       });
@@ -27256,7 +27495,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 25870
+            lineno: 26123
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -28850,7 +29089,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 26766
+                      lineno: 27019
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -28924,7 +29163,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 26792
+                lineno: 27045
               })
             ]);
             __iced_deferrals._fulfill();
@@ -28979,7 +29218,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 26815
+              lineno: 27068
             }));
           }
         }
@@ -28988,7 +29227,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 26817
+              lineno: 27070
             }));
           }
         }
@@ -28997,7 +29236,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 26819
+              lineno: 27072
             }));
           }
         }
@@ -30020,7 +30259,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27503
+                lineno: 27756
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30139,7 +30378,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 27562
+                  lineno: 27815
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30161,7 +30400,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 27566
+                    lineno: 27819
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30251,7 +30490,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27609
+            lineno: 27862
           }));
         }
         __iced_deferrals._fulfill();
