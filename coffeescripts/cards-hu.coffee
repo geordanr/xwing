@@ -524,6 +524,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
         'Fenn Rau (Sheathipede)':
             text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
+        '"Crimson Leader"':
+            text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+        'Kylo Ren (TIE Silencer)':
+            text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1029,6 +1033,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Miután kaptál egy ion tokent, választhatsz egy ellenséges hajót 1-es távolságban. Ha így teszel, leveheted azt az ion jelzőt. Ekkor a választott ellenséges hajó eldöntheti, hogy átveszi-e tőled az iont. Ha így tesz, dobd el ezt a kártyát.'''
         'Harpoon Missiles':
             text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK%Ha a támadás talált, rendeld a "Harpooned!" kondíciós kártyát a védekezőhöz.'''
+        'Ordnance Silos':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
+        'Trajectory Simulator':
+            text: '''You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'''
 
     modification_translations =
         "Stealth Device":
@@ -1224,6 +1232,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
         'Phantom II':
             text: '''While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'''
+        'First Order Vanguard':
+            text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -1240,5 +1250,7 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''"Thweek" úgy kezelendő, mintha rendelkezne a pilóta képességeddel. "Thweek" nem használhat kondíciós kártyát a szerzett pilóta képessége által. Valamint nem veszíti el ezt a képességet, ha a hajó megsemmisül.'''
         'Harpooned!':
             text: '''Mikor egy támadásból találat ér, amiben legalább 1 kivédetlen %CRIT% van, minden 1-es távolságban lévő hajó elszenved 1 sérülést. Aztán dobd el ezt a lapot és kapsz egy lefordított sérülés kártyát.%LINEBREAK%Mikor megsemmisülsz, minden 1-es távolságban lévő hajó elszenved 1 sérülést%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát. Dobj egy támadás kockával, %HIT% vagy %CRIT% esetén elszenvedsz egy sérülést.'''
+        'Rattled':
+            text: '''When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

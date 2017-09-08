@@ -2,6 +2,11 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
+    'Alpha-class Star Wing Expansion Pack',
+    'M12-L Kimogila Fighter Expansion Pack',
+    'Phantom II Expansion Pack',
+    'Resistance Bomber Expansion Pack',
+    'TIE Silencer Expansion Pack',
 ]
 
 exportObj.isReleased = (data) ->
@@ -1072,6 +1077,32 @@ exportObj.basicCardData = ->
                 'Coordinate'
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
+        'B/SF-17 Bomber':
+            name: 'B/SF-17 Bomber'
+            factions: ["Resistance"]
+            large: true
+            attack: 2
+            agility: 1
+            hull: 9
+            shields: 3
+            actions: [
+                'Focus'
+                'Target Lock'
+            ]
+            attack_icon: 'xwing-miniatures-font-attack-turret'
+        'TIE Silencer':
+            name: 'TIE Silencer'
+            factions: ["First Order"]
+            attack: 3
+            agility: 3
+            hull: 4
+            shields: 2
+            actions: [
+                'Focus'
+                'Barrel Roll'
+                'Boost'
+                'Target Lock'
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -4990,6 +5021,119 @@ exportObj.basicCardData = ->
             ]
             points: 100
         }
+        {
+            name: 'Crimson Sq???'
+            id: 279
+            faction: 'Resistance'
+            ship: 'B/SF-17 Bomber'
+            skill: 1
+            slots: [
+                'System'
+                'Bomb'
+                'Bomb'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: '"Crimson ???'
+            id: 280
+            faction: 'Resistance'
+            unique: true
+            ship: 'B/SF-17 Bomber'
+            skill: 4
+            slots: [
+                'System'
+                'Bomb'
+                'Bomb'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: '"Cobal???'
+            id: 281
+            faction: 'Resistance'
+            unique: true
+            ship: 'B/SF-17 Bomber'
+            skill: 6
+            slots: [
+                'System'
+                'Bomb'
+                'Bomb'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: '"Crimson Leader"'
+            id: 282
+            faction: 'Resistance'
+            unique: true
+            ship: 'B/SF-17 Bomber'
+            skill: 7
+            slots: [
+                'System'
+                'Bomb'
+                'Bomb'
+                'Tech'
+            ]
+            points: 29
+            applies_condition: 'Rattled'.canonicalize()
+        }
+        {
+            name: 'Sienar-Jae???'
+            id: 283
+            faction: 'First Order'
+            ship: 'TIE Silencer'
+            skill: 4
+            slots: [
+                'System'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'First Orde???'
+            id: 284
+            faction: 'First Order'
+            ship: 'TIE Silencer'
+            skill: 6
+            slots: [
+                'System'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Test Pilo???'
+            id: 285
+            faction: 'First Order'
+            unique: true
+            ship: 'TIE Silencer'
+            skill: 6
+            slots: [
+                'System'
+                'Tech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Kylo Ren (TIE Silencer)'
+            id: 286
+            canonical_name: 'Kylo Ren'.canonicalize()
+            faction: 'First Order'
+            unique: true
+            ship: 'TIE Silencer'
+            skill: 9
+            slots: [
+                'Elite'
+                'System'
+                'Tech'
+            ]
+            points: 35
+            applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
+        }
     ]
 
     upgradesById: [
@@ -6852,6 +6996,19 @@ exportObj.basicCardData = ->
             range: '2-3'
             applies_condition: 'Harpooned!'.canonicalize()
         }
+        {
+            name: 'Ordnance Silos'
+            id: 244
+            slot: 'Bomb'
+            points: 2
+            ship: 'B/SF-17 Bomber'
+        }
+        {
+            name: 'Trajectory Simulator'
+            id: 245
+            slot: 'System'
+            points: 1
+        }
     ]
 
     modificationsById: [
@@ -7757,6 +7914,13 @@ exportObj.basicCardData = ->
             ship: 'Sheathipede-class Shuttle'
             points: 0
         }
+        {
+            name: 'First Order Vanguard'
+            id: 60
+            ship: 'TIE Silencer'
+            unique: true
+            points: 2
+        }
     ]
 
     conditionsById: [
@@ -7797,6 +7961,11 @@ exportObj.basicCardData = ->
         {
             name: 'Harpooned!'
             id: 7
+        }
+        {
+            name: 'Rattled'
+            id: 8
+            unique: true
         }
     ]
 
