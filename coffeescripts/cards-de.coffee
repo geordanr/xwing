@@ -45,7 +45,7 @@ exportObj.translations.Deutsch =
         "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung"
         "TIE Interceptor Expansion Pack": "TIE-Abfangjäger Erweiterung"
         "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung"
-        "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung"
+        "TIE Advanced Expansion Pack": "TIE-Turbojäger Erweiterung"
         "Lambda-Class Shuttle Expansion Pack": "Raumfähre der Lambda-Klasse Erweiterung"
         "Slave I Expansion Pack": "Sklave I Erweiterung"
         "Imperial Aces Expansion Pack": "Fliegerasse des Imperiums Erweiterung"
@@ -231,6 +231,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'C-ROC Cruiser', 'C-ROC Kreuzer'
     exportObj.renameShip 'Auzituck Gunship', 'Auzituck-Kanonenboot'
     exportObj.renameShip 'TIE Aggressor', 'TIE-Aggressor'
+    exportObj.renameShip 'TIE Advanced', 'TIE-Turbojäger'
     pilot_translations =
         "Wedge Antilles":
             ship: "X-Flügler"
@@ -293,16 +294,16 @@ exportObj.cardLoaders.Deutsch = () ->
             name: '"Kreischläufer"'
             text: """Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."""
         "Maarek Stele":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             text: """Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."""
         "Tempest Squadron Pilot":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             name: "Pilot der Tornado-Staffel"
         "Storm Squadron Pilot":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             name: "Pilot der Storm-Staffel"
         "Darth Vader":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             text: """Im Schritt "Aktionen durchführen" darfst du 2 Aktionen durchführen."""
         "Alpha Squadron Pilot":
             name: "Pilot der Alpha-Staffel"
@@ -654,13 +655,13 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "TIE-Vergelter"
             text: """Sobald du eine Bombe legst, darfst du die Stopper am Bug deines Schiffs benutzen. Nachdem du eine Bombe gelegt hast, darfst du als freie Aktion eine Fassrolle durchführen."""
         "Juno Eclipse":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             text: """Sobald du dein Manöver aufdeckst, darfst du die Geschwindigkeit um 1 erhöhen oder reduzieren (bis zu einem Minimum von 1)."""
         "Zertik Strom":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             text: """Sobald feindliche Schiffe in Reichweite 1 angreifen, können sie ihren Kampfvorteil durch Reichweite nicht hinzufügen."""
         "Lieutenant Colzet":
-            ship: "TIE Advanced"
+            ship: "TIE-Turbojäger"
             text: """Zu Beginn der Endphase darfst du einen Zielerfassungsmarker , den du auf einem feindlichen Schiff liegen hast, ausgeben, um 1 seiner verdeckten Schadenskarten (zufällig bestimmt) aufzudecken."""
         "Latts Razzi":
             ship: "YV-666"
@@ -1440,7 +1441,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_SCUMONLY%%LINEBREAK%Nachdem du ein rotes Manöver ausgeführt hast, darfst du deinem Schiff 1 Fokusmarker zuweisen."""
         "Advanced Targeting Computer":
             name: "Verbesserter Zielcomputer"
-            text: """<span class="card-restriction">Nur für TIE Advanced</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."""
+            text: """<span class="card-restriction">Nur für TIE-Turbojäger</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."""
         "Ion Cannon Battery":
             name: "Ionengeschützbatterie"
             text: """<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff durchzuführen. Wenn dieser Angriff trifft, nimmt der Verteidiger 1 kritischen Schaden und erhält 1 Ionenmarker. Dann werden <strong>alle</strong> Würfelergebnisse negiert."""
@@ -1951,7 +1952,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Andrasta":
             text: '''<span class="card-restriction">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu.'''
         "TIE/x1":
-            text: '''<span class="card-restriction">Nur für TIE Advanced.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0).'''
+            text: '''<span class="card-restriction">Nur für TIE-Turbojäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0).'''
         "Hound's Tooth":
             name: "Reisszahn"
             text: '''<span class="card-restriction">Nur für YV-666.</span>%LINEBREAK%Nachdem du zerstörst worden bist, darfst du das Schiff <em>Nashtahwelpe</em> <strong>absetzen</strong>, bevor du von der Spielfläche entfernt wirst.%LINEBREAK%Es darf diese Runde nicht angreifen.'''
