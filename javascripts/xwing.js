@@ -7550,7 +7550,7 @@ exportObj.translations.Deutsch = {
     "TIE Fighter Expansion Pack": "TIE-Jäger Erweiterung",
     "TIE Interceptor Expansion Pack": "TIE-Abfangjäger Erweiterung",
     "TIE Bomber Expansion Pack": "TIE-Bomber Erweiterung",
-    "TIE Advanced Expansion Pack": "TIE-Advanced Erweiterung",
+    "TIE Advanced Expansion Pack": "TIE-Turbojäger Erweiterung",
     "Lambda-Class Shuttle Expansion Pack": "Raumfähre der Lambda-Klasse Erweiterung",
     "Slave I Expansion Pack": "Sklave I Erweiterung",
     "Imperial Aces Expansion Pack": "Fliegerasse des Imperiums Erweiterung",
@@ -7735,6 +7735,7 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('C-ROC Cruiser', 'C-ROC Kreuzer');
   exportObj.renameShip('Auzituck Gunship', 'Auzituck-Kanonenboot');
   exportObj.renameShip('TIE Aggressor', 'TIE-Aggressor');
+  exportObj.renameShip('TIE Advanced', 'TIE-Turbojäger');
   pilot_translations = {
     "Wedge Antilles": {
       ship: "X-Flügler",
@@ -7816,19 +7817,19 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Wenn ein anderes freundliches Schiff in Reichweite 1 mit seinen Primärwaffen angreift, darf es 1 Angriffswürfel neu würfeln."
     },
     "Maarek Stele": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       text: "Wenn ein Verteidiger durch deinen Angriff eine offene Schadenskarte erhalten würde, ziehst du stattdessen 3 Schadenskarten, wählst eine davon zum Austeilen und legst die restlichen ab."
     },
     "Tempest Squadron Pilot": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       name: "Pilot der Tornado-Staffel"
     },
     "Storm Squadron Pilot": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       name: "Pilot der Storm-Staffel"
     },
     "Darth Vader": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       text: "Im Schritt \"Aktionen durchführen\" darfst du 2 Aktionen durchführen."
     },
     "Alpha Squadron Pilot": {
@@ -8284,15 +8285,15 @@ exportObj.cardLoaders.Deutsch = function() {
       text: "Sobald du eine Bombe legst, darfst du die Stopper am Bug deines Schiffs benutzen. Nachdem du eine Bombe gelegt hast, darfst du als freie Aktion eine Fassrolle durchführen."
     },
     "Juno Eclipse": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       text: "Sobald du dein Manöver aufdeckst, darfst du die Geschwindigkeit um 1 erhöhen oder reduzieren (bis zu einem Minimum von 1)."
     },
     "Zertik Strom": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       text: "Sobald feindliche Schiffe in Reichweite 1 angreifen, können sie ihren Kampfvorteil durch Reichweite nicht hinzufügen."
     },
     "Lieutenant Colzet": {
-      ship: "TIE Advanced",
+      ship: "TIE-Turbojäger",
       text: "Zu Beginn der Endphase darfst du einen Zielerfassungsmarker , den du auf einem feindlichen Schiff liegen hast, ausgeben, um 1 seiner verdeckten Schadenskarten (zufällig bestimmt) aufzudecken."
     },
     "Latts Razzi": {
@@ -9324,7 +9325,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Advanced Targeting Computer": {
       name: "Verbesserter Zielcomputer",
-      text: "<span class=\"card-restriction\">Nur für TIE Advanced</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."
+      text: "<span class=\"card-restriction\">Nur für TIE-Turbojäger</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."
     },
     "Ion Cannon Battery": {
       name: "Ionengeschützbatterie",
@@ -10004,7 +10005,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu.'
     },
     "TIE/x1": {
-      text: '<span class="card-restriction">Nur für TIE Advanced.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0).'
+      text: '<span class="card-restriction">Nur für TIE-Turbojäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0).'
     },
     "Hound's Tooth": {
       name: "Reisszahn",
@@ -26150,7 +26151,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24862
+                    lineno: 24863
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -26739,7 +26740,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25492
+              lineno: 25493
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27483,7 +27484,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26122
+          lineno: 26123
         }));
         __iced_deferrals._fulfill();
       });
@@ -27495,7 +27496,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26123
+            lineno: 26124
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29089,7 +29090,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27019
+                      lineno: 27020
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29163,7 +29164,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27045
+                lineno: 27046
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29218,7 +29219,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27068
+              lineno: 27069
             }));
           }
         }
@@ -29227,7 +29228,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27070
+              lineno: 27071
             }));
           }
         }
@@ -29236,7 +29237,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27072
+              lineno: 27073
             }));
           }
         }
@@ -30259,7 +30260,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27756
+                lineno: 27757
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30378,7 +30379,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 27815
+                  lineno: 27816
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30400,7 +30401,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 27819
+                    lineno: 27820
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30490,7 +30491,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27862
+            lineno: 27863
           }));
         }
         __iced_deferrals._fulfill();
