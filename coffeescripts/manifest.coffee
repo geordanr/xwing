@@ -4165,6 +4165,88 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Guns for Hire Expansion Pack': [
+        {
+            name: 'Kihraxz Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'StarViper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Viktor Hel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jostero'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Marauder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dalan Oberos'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Thweek'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Assassin'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Harpoon Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Dischargers'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'StarViper Mk. II'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'Vaksai'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Vectored Thrusters'
+            type: 'modification'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
