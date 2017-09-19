@@ -1488,6 +1488,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%A la fin de la phase de combat, si vous avez exécuté une manoeuvre à vitesse 3,4 ou 5 durant ce tour, vous pouvez pivoter votre arc de tir mobile.'''
         'Captured TIE':
             name: "TIE capturé"
+            ship: 'Chasseur TIE'
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Les vaisseaux ennemis avec une valeur de pilotage inférieur à la vôtre ne peuvent pas vous déclarer comme cible d'une attaque. Après avoir effectué une attaque ou quand vous êtes le seul vaisseau allié restant en jeu, défaussez cette carte.'''
         'Spacetug Tractor Array':
             name: "Dispositif tracteur de remorqueur spatial"
