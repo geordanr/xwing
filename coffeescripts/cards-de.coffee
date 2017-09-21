@@ -1441,6 +1441,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """%DE_SCUMONLY%%LINEBREAK%Nachdem du ein rotes Manöver ausgeführt hast, darfst du deinem Schiff 1 Fokusmarker zuweisen."""
         "Advanced Targeting Computer":
             name: "Verbesserter Zielcomputer"
+            ship: "TIE-Turbojäger"
             text: """<span class="card-restriction">Nur für TIE-Turbojäger</span>%LINEBREAK%Sobald du mit deiner Primärwaffe angreifst, darfst du deinem Würfelwurf 1 %CRIT% hinzufügen, wenn du den Verteidiger in der Zielerfassung hast. Wenn du das tust, kannst du während dieses Angriffs keine Zielerfassungen ausgeben."""
         "Ion Cannon Battery":
             name: "Ionengeschützbatterie"
@@ -1952,6 +1953,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Andrasta":
             text: '''<span class="card-restriction">Nur für Firespray-31.</span>%LINEBREAK%Füge deiner Aufwertungsleiste zwei weitere %BOMB%-Symbole hinzu.'''
         "TIE/x1":
+            ship: "TIE-Turbojäger"
             text: '''<span class="card-restriction">Nur für TIE-Turbojäger.</span>%LINEBREAK%Füge deiner Aufwertungsleiste ein %SYSTEM%-Symbol hinzu.%LINEBREAK%Wenn du eine %SYSTEM%-Aufwertung ausrüstest, sinken deren Kommandopunkte um 4 (Minimum 0).'''
         "Hound's Tooth":
             name: "Reisszahn"
