@@ -1030,7 +1030,7 @@ exportObj.cardLoaders.English = () ->
         'Ion Dischargers':
             text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
         'Harpoon Missiles':
-            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
+            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, after the attack resolves, assign the "Harpooned!" Condition to the defender.'''
         'Ordnance Silos':
             text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
         'Trajectory Simulator':
