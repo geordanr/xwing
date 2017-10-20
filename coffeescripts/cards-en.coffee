@@ -533,6 +533,8 @@ exportObj.cardLoaders.English = () ->
             text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
         'Major Vynder':
             text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
+        'Lieutenant Karsabi':
+            text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
         'Torani Kulda':
             text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
         'Fenn Rau (Sheathipede)':
@@ -872,7 +874,7 @@ exportObj.cardLoaders.English = () ->
         'Targeting Astromech':
             text: '''After you execute a red maneuver, you may acquire a target lock.'''
         'Hera Syndulla':
-            text: """%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."""
+            text: """%REBELONLY%%LINEBREAK%You can reveal and execute red maneuvers even while you are stressed."""
         'Ezra Bridger':
             text: """%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."""
         'Sabine Wren':
@@ -1035,6 +1037,12 @@ exportObj.cardLoaders.English = () ->
             text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
         'Trajectory Simulator':
             text: '''You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'''
+        'Jamming Beam':
+            text: '''<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'''
+        'Linked Battery':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'''
+        'Saturation Salvo':
+            text: '''After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'''
 
     modification_translations =
         "Stealth Device":
@@ -1068,7 +1076,7 @@ exportObj.cardLoaders.English = () ->
         "Autothrusters":
             text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
         "Advanced SLAM":
-            text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."""
+            text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action on your action bar."""
         "Twin Ion Engine Mk. II":
             text: """<span class="card-restriction">TIE only.</span>%LINEBREAK%You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
         "Maneuvering Fins":
@@ -1223,6 +1231,8 @@ exportObj.cardLoaders.English = () ->
             text: '''While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'''
         'First Order Vanguard':
             text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
+        'Os-1 Arsenal Loadout':
+            text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

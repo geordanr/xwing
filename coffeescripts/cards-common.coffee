@@ -1052,6 +1052,13 @@ exportObj.basicCardData = ->
                 'SLAM'
                 'Reload'
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0 ]
+                [ 1, 1, 1, 1, 1, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
+            ]
         'M12-L Kimogila Fighter':
             name: 'M12-L Kimogila Fighter'
             factions: ["Scum and Villainy"]
@@ -4869,32 +4876,34 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Lieuten???'
+            name: 'Lieutenant Karsabi'
             id: 268
             unique: true
             faction: 'Galactic Empire'
             ship: 'Alpha-class Star Wing'
             skill: 5
             slots: [
+                'Elite'
                 'Torpedo'
                 'Missile'
             ]
-            points: 100
+            points: 24
         }
         {
-            name: 'Rho Squad???'
+            name: 'Rho Squadron Veteran'
             id: 269
             faction: 'Galactic Empire'
             ship: 'Alpha-class Star Wing'
             skill: 4
             slots: [
+                'Elite'
                 'Torpedo'
                 'Missile'
             ]
-            points: 100
+            points: 21
         }
         {
-            name: 'Nu Squa???'
+            name: 'Nu Squadron Pilot'
             id: 270
             faction: 'Galactic Empire'
             ship: 'Alpha-class Star Wing'
@@ -4903,7 +4912,7 @@ exportObj.basicCardData = ->
                 'Torpedo'
                 'Missile'
             ]
-            points: 100
+            points: 18
         }
         {
             name: 'Torani Kulda'
@@ -7010,6 +7019,29 @@ exportObj.basicCardData = ->
             slot: 'System'
             points: 1
         }
+        {
+            name: 'Jamming Beam'
+            id: 246
+            slot: 'Cannon'
+            points: 1
+            attack: 3
+            range: '1-2'
+        }
+        {
+            name: 'Linked Battery'
+            id: 247
+            limited: true
+            slot: 'Cannon'
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Saturation Salvo'
+            id: 248
+            slot: 'Elite'
+            points: 1
+        }
     ]
 
     modificationsById: [
@@ -7921,6 +7953,22 @@ exportObj.basicCardData = ->
             ship: 'TIE Silencer'
             unique: true
             points: 2
+        }
+        {
+            name: 'Os-1 Arsenal Loadout'
+            id: 61
+            points: 2
+            ship: 'Alpha-class Star Wing'
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missile"
+                }
+            ]
         }
     ]
 
