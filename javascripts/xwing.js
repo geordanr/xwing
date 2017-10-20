@@ -1775,7 +1775,8 @@ exportObj.basicCardData = function() {
         agility: 2,
         hull: 4,
         shields: 3,
-        actions: ['Target Lock', 'Focus', 'SLAM', 'Reload']
+        actions: ['Target Lock', 'Focus', 'SLAM', 'Reload'],
+        maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0], [1, 1, 1, 1, 1, 0, 0, 0], [0, 0, 3, 0, 0, 0, 0, 0]]
       },
       'M12-L Kimogila Fighter': {
         name: 'M12-L Kimogila Fighter',
@@ -4223,30 +4224,30 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Missile'],
         points: 26
       }, {
-        name: 'Lieuten???',
+        name: 'Lieutenant Karsabi',
         id: 268,
         unique: true,
         faction: 'Galactic Empire',
         ship: 'Alpha-class Star Wing',
         skill: 5,
-        slots: ['Torpedo', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Torpedo', 'Missile'],
+        points: 24
       }, {
-        name: 'Rho Squad???',
+        name: 'Rho Squadron Veteran',
         id: 269,
         faction: 'Galactic Empire',
         ship: 'Alpha-class Star Wing',
         skill: 4,
-        slots: ['Torpedo', 'Missile'],
-        points: 100
+        slots: ['Elite', 'Torpedo', 'Missile'],
+        points: 21
       }, {
-        name: 'Nu Squa???',
+        name: 'Nu Squadron Pilot',
         id: 270,
         faction: 'Galactic Empire',
         ship: 'Alpha-class Star Wing',
         skill: 2,
         slots: ['Torpedo', 'Missile'],
-        points: 100
+        points: 18
       }, {
         name: 'Torani Kulda',
         id: 271,
@@ -6118,6 +6119,28 @@ exportObj.basicCardData = function() {
         id: 245,
         slot: 'System',
         points: 1
+      }, {
+        name: 'Jamming Beam',
+        id: 246,
+        slot: 'Cannon',
+        points: 1,
+        attack: 3,
+        range: '1-2'
+      }, {
+        name: 'Linked Battery',
+        id: 247,
+        limited: true,
+        slot: 'Cannon',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
+      }, {
+        name: 'Saturation Salvo',
+        id: 248,
+        slot: 'Elite',
+        points: 1
       }
     ],
     modificationsById: [
@@ -7031,6 +7054,20 @@ exportObj.basicCardData = function() {
         ship: 'TIE Silencer',
         unique: true,
         points: 2
+      }, {
+        name: 'Os-1 Arsenal Loadout',
+        id: 61,
+        points: 2,
+        ship: 'Alpha-class Star Wing',
+        confersAddons: [
+          {
+            type: exportObj.Upgrade,
+            slot: "Torpedo"
+          }, {
+            type: exportObj.Upgrade,
+            slot: "Missile"
+          }
+        ]
       }
     ],
     conditionsById: [
@@ -8827,6 +8864,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+    },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
@@ -9781,6 +9821,15 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -10165,6 +10214,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -10911,6 +10963,9 @@ exportObj.cardLoaders.English = function() {
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+    },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
@@ -11418,7 +11473,7 @@ exportObj.cardLoaders.English = function() {
       text: 'After you execute a red maneuver, you may acquire a target lock.'
     },
     'Hera Syndulla': {
-      text: "%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."
+      text: "%REBELONLY%%LINEBREAK%You can reveal and execute red maneuvers even while you are stressed."
     },
     'Ezra Bridger': {
       text: "%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."
@@ -11659,6 +11714,15 @@ exportObj.cardLoaders.English = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -11708,7 +11772,7 @@ exportObj.cardLoaders.English = function() {
       text: "When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."
     },
     "Advanced SLAM": {
-      text: "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."
+      text: "After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action on your action bar."
     },
     "Twin Ion Engine Mk. II": {
       text: "<span class=\"card-restriction\">TIE only.</span>%LINEBREAK%You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."
@@ -11936,6 +12000,9 @@ exportObj.cardLoaders.English = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -13283,6 +13350,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+    },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
@@ -14215,6 +14285,15 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -14610,6 +14689,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -15583,6 +15665,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+    },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
@@ -16475,6 +16560,15 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -16812,6 +16906,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -17547,6 +17644,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
     },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
@@ -18311,6 +18411,15 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -18597,6 +18706,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -19500,6 +19612,9 @@ exportObj.cardLoaders['Polski'] = function() {
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+    },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
@@ -20320,6 +20435,15 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -20625,6 +20749,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -21320,6 +21447,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Major Vynder': {
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+    },
+    'Lieutenant Karsabi': {
+      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
     },
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
@@ -22045,6 +22175,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Trajectory Simulator': {
       text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+    },
+    'Jamming Beam': {
+      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+    },
+    'Linked Battery': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+    },
+    'Saturation Salvo': {
+      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
     }
   };
   modification_translations = {
@@ -22298,6 +22437,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'First Order Vanguard': {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+    },
+    'Os-1 Arsenal Loadout': {
+      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
   condition_translations = {
@@ -26221,7 +26363,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 24949
+                    lineno: 25067
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -26810,7 +26952,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25579
+              lineno: 25697
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27554,7 +27696,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26209
+          lineno: 26327
         }));
         __iced_deferrals._fulfill();
       });
@@ -27566,7 +27708,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26210
+            lineno: 26328
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29160,7 +29302,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27106
+                      lineno: 27224
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29234,7 +29376,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27132
+                lineno: 27250
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29289,7 +29431,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27155
+              lineno: 27273
             }));
           }
         }
@@ -29298,7 +29440,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27157
+              lineno: 27275
             }));
           }
         }
@@ -29307,7 +29449,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27159
+              lineno: 27277
             }));
           }
         }
@@ -30330,7 +30472,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27843
+                lineno: 27961
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30449,7 +30591,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 27902
+                  lineno: 28020
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30471,7 +30613,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 27906
+                    lineno: 28024
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30561,7 +30703,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 27949
+            lineno: 28067
           }));
         }
         __iced_deferrals._fulfill();
