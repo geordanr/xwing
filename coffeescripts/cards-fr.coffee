@@ -534,6 +534,7 @@ exportObj.cardLoaders['Français'] = () ->
         'Gozanti-class Cruiser':
             text: """Après avoir exécuté une manoeuvre, vous pouvez déployer jusqu'à 2 vaisseaux arrimés."""
         '"Scourge"':
+            ship: "Chasseur TIE"
             text: """Quand vous attaquez un défenseur qui a au moins 1 carte de dégâts, lancez 1 dé d'attaque supplémentaire."""
         "The Inquisitor":
             text: """Quand vous attaquez avec votre arme principale à portée 2-3, considérez que votre attaque se fait à portée 1."""
@@ -565,10 +566,13 @@ exportObj.cardLoaders['Français'] = () ->
         'Hera Syndulla':
             text: '''Quand vous révélez une manoeuvre verte ou rouge, vous pouvez tourner votre cadran sur une autre manoeuvre de même difficulté.'''
         '"Youngster"':
+            ship: "Chasseur TIE"
             text: """Les chasseurs TIE alliés situés à portée 1-3 peuvent effectuer l'action de votre carte d'amélioration %ELITE% dont vous êtes équipé."""
         '"Wampa"':
+            ship: "Chasseur TIE"
             text: """Quand vous attaquez, vous pouvez annuler le résultat de tous les dés. Si vous annulez au moins un résultat, assignez 1 carte dégâts face cachée au défenseur."""
         '"Chaser"':
+            ship: "Chasseur TIE"
             text: """Quand un autre vaisseau allié situé à portée 1 dépense un marqueur de concentration, assignez un marqueur de concentration à votre vaisseau."""
         'Ezra Bridger':
             text: """Quand vous défendez, si vous êtes sous l'effet du stress, vous pouvez changer jusqu'à 2 de vos résultats %FOCUS% en résultats %EVADE% ."""
@@ -618,7 +622,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Poe Dameron (PS9)":
             text: """Tant que vous défendez ou que vous attaquez, si vous avez un marqueur de concentration, vous pouvez changer un de vos résutats %FOCUS% pour un résultat %HIT% ou %EVADE% ."""
         "Rey":
-            text: """When attacking or defending, if the enemy ship is inside of your firing arc, you may reroll up to 2 of your blank results."""
+            text: """Quand vous attquez ou défendez, si le vaisseau ennemi est dans votre arc de tir, Vous pouvez relancer jusqu'a 2 de vos resultats blanc."""
         'Han Solo (TFA)':
             text: ''' Quand vous vous positionnez pendant la phase de préparation, vous pouvez vous placer n'importe où dans la zone de jeu au-delà de portée 3 des vaisseaux ennemis.'''
         'Chewbacca (TFA)':
@@ -736,6 +740,18 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
         'Captain Jostero':
             text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
+        'Major Vynder':
+            text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
+        'Lieutenant Karsabi':
+            text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
+        'Torani Kulda':
+            text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
+        'Fenn Rau (Sheathipede)':
+            text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
+        '"Crimson Leader"':
+            text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+        'Kylo Ren (TIE Silencer)':
+            text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
 
     upgrade_translations =
         #Traits de pilotes
@@ -1387,6 +1403,16 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
         'Harpoon Missiles':
             text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
+        'Ordnance Silos':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
+        'Trajectory Simulator':
+            text: '''You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'''
+        'Jamming Beam':
+            text: '''<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'''
+        'Linked Battery':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'''
+        'Saturation Salvo':
+            text: '''After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1470,6 +1496,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<span class="card-restriction">Lancer-class Pursuit Craft only.</span>%LINEBREAK%A la fin de la phase de combat, si vous avez exécuté une manoeuvre à vitesse 3,4 ou 5 durant ce tour, vous pouvez pivoter votre arc de tir mobile.'''
         'Captured TIE':
             name: "TIE capturé"
+            ship: 'Chasseur TIE'
             text: '''<span class="card-restriction">TIE Fighter only.</span>%REBELONLY%%LINEBREAK%Les vaisseaux ennemis avec une valeur de pilotage inférieur à la vôtre ne peuvent pas vous déclarer comme cible d'une attaque. Après avoir effectué une attaque ou quand vous êtes le seul vaisseau allié restant en jeu, défaussez cette carte.'''
         'Spacetug Tractor Array':
             name: "Dispositif tracteur de remorqueur spatial"
@@ -1479,6 +1506,9 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%Quand vous défendez, après avoir lancé les dés de défense, s'il y a plus de dés d'attaque que de défense, lancez 1 dé de défense supplémentaire.%LINEBREAK%Vous ne pouvez pas vous équiper de cette carte si votre valeur d'agilité est de "3" ou plus.'''
         'Pulsed Ray Shield':
             text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%Durant la phase de dénouement, vous pouvez recevoir 1 marqueur ionique pour récupérer 1 bouclier (à hauteur de votre valeur de boucliers). Vous ne pouvez vous equiper de cette carte que si votre valeur de boucliers est de "1". '''
+        'Advanced SLAM' :
+            name: "MASL avancé"
+            text: '''Après avoir effectué une action MASL, si vous n'avez pas chevauché un obstacle ou un autre vaisseau, vous pouvez effecteur une action gratuite.'''
 
     title_translations =
         "Slave I":
@@ -1622,6 +1652,18 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'''
         'StarViper Mk. II':
             text: '''<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
+        'XG-1 Assault Configuration':
+            text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'''
+        'Enforcer':
+            text: '''<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'''
+        'Ghost (Phantom II)':
+            text: '''<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
+        'Phantom II':
+            text: '''While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'''
+        'First Order Vanguard':
+            text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
+        'Os-1 Arsenal Loadout':
+            text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -1642,5 +1684,7 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'''
         'Harpooned!':
             text: '''When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'''
+        'Rattled':
+            text: '''When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

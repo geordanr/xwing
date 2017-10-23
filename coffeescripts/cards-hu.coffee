@@ -1187,9 +1187,9 @@ exportObj.cardLoaders.Magyar = () ->
         'TIE Shuttle':
             text: '''<span class="card-restriction">Csak TIE Bomber.</span>%LINEBREAK%A fejlesztés sávod elveszti az összes %TORPEDO%, %MISSILE% és %BOMB% ikont és kap 2 %CREW% ikont. Nem használhatsz 4 pontnál drágább %CREW% fejlesztést kártyát.'''
         'Requiem':
-            text: '''<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Mikor harca küldesz egy hajót, kezeld a pilóta képzettségét 8-asnak a kör végéig.'''
+            text: '''<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Mikor harcba küldesz egy hajót, kezeld a pilóta képzettségét 8-asnak a kör végéig.'''
         'Vector':
-            text: '''<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Miután végrehajtottál egy manővert, harba indíthatod mind a 4 hajód, (nem csak 2-t).'''
+            text: '''<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Miután végrehajtottál egy manővert, harcba indíthatod mind a 4 hajód, (nem csak 2-t).'''
         'Suppressor':
             text: '''<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Körönként egyszer, miután kiosztottál egy célpontbemérőt, levehetsz 1 %FOCUS%, %EVADE% vagy kék célpontbemérő jelzőt arról a hajóról.'''
         'Black One':
@@ -1237,7 +1237,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Enforcer':
             text: '''<span class="card-restriction">Csak M12-L Kimogila Fighter.</span>%LINEBREAK%Védekezéskor, ha a támadó a bullseye tűzívedben van, kap egy stressz jelzőt.'''
         'Ghost (Phantom II)':
-            text: '''<span class="card-restriction">Csak VCX-100.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
+            text: '''<span class="card-restriction">Csak VCX-100.</span>%LINEBREAK%Szereld fel a <em>Phantom II</em> nevesítés kártyával egy baráti <em>Sheathipede</em> hajót és dokkold ehhez a hajóhoz. Miután végrehajtottál egy manővert, harcba küldheted, a hátsó bütykeidtől indítva.'''
         'Phantom II':
             text: '''Míg dokkolva vagy, a <em>Ghost</em> végrehajthat elsődleges fegyver támadást a speciális tűzívéből. Míg dokkolva vagy, az aktivációs fázis végén a <em>Ghost</em> végrehajthat egy ingyenes koordinálás akciót.'''
         'First Order Vanguard':

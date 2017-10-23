@@ -12,6 +12,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "C-ROC Cruiser Expansion Pack"
         "E-Wing Expansion Pack"
         'Ghost Expansion Pack'
+        'Guns for Hire Expansion Pack'
         'Heroes of the Resistance Expansion Pack'
         "Hound's Tooth Expansion Pack"
         "HWK-290 Expansion Pack"
