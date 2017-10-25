@@ -177,7 +177,7 @@ exportObj.cardLoaders.English = () ->
         "Garven Dreis":
             text: """After spending a focus token, you may place that token on any other friendly ship at Range 1-2 (instead of discarding it)."""
         "Biggs Darklighter":
-            text: """Other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."""
+            text: """Once per game, at the start of the Combat phase, you may choose that until the end of the round, other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."""
         "Luke Skywalker":
             text: """When defending, you may change 1 of your %FOCUS% results to a %EVADE% result."""
         '"Dutch" Vander':
@@ -780,7 +780,7 @@ exportObj.cardLoaders.English = () ->
         "Bomb Loadout":
             text: """<span class="card-restriction">Y-Wing only.</span>%LINEBREAK%Your upgrade bar gains the %BOMB% icon."""
         '"Genius"':
-            text: """If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
+            text: """After you reveal and execute a maneuver, if you did not overlap a ship, you may discard 1 of your equipped %BOMB% Upgrade cards without the "<strong>Action:</strong>" header to drop the corresponding bomb token."""
         "Unhinged Astromech":
             text: """You may treat all 3-speed maneuvers as green maneuvers."""
         "R4-B11":
@@ -896,7 +896,7 @@ exportObj.cardLoaders.English = () ->
         'Rage':
             text: """<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."""
         "Attanni Mindlink":
-            text: """%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
+            text: """<span class="card-restriction">Limit 2 per quad.</span> %SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
         "Boba Fett":
             text: """%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."""
         "Dengar":

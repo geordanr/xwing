@@ -3502,10 +3502,7 @@ exportObj.basicCardData = ->
             skill: 9
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 33
@@ -3519,10 +3516,7 @@ exportObj.basicCardData = ->
             skill: 7
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 30
@@ -3536,10 +3530,7 @@ exportObj.basicCardData = ->
             skill: 4
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 27
@@ -3552,10 +3543,7 @@ exportObj.basicCardData = ->
             skill: 3
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 25
@@ -6482,6 +6470,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             slot: "Elite"
             points: 1
+            max_per_squad: 2
         }
         {
             name: "Boba Fett"
