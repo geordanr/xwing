@@ -3350,7 +3350,7 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         ship: "JumpMaster 5000",
         skill: 9,
-        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        slots: ['Elite', 'Crew', 'Illicit'],
         points: 33
       }, {
         name: "Tel Trevura",
@@ -3359,7 +3359,7 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         ship: "JumpMaster 5000",
         skill: 7,
-        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        slots: ['Elite', 'Crew', 'Illicit'],
         points: 30
       }, {
         name: "Manaroo",
@@ -3368,7 +3368,7 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         ship: "JumpMaster 5000",
         skill: 4,
-        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        slots: ['Elite', 'Crew', 'Illicit'],
         points: 27
       }, {
         name: "Contracted Scout",
@@ -3376,7 +3376,7 @@ exportObj.basicCardData = function() {
         faction: "Scum and Villainy",
         ship: "JumpMaster 5000",
         skill: 3,
-        slots: ['Elite', 'Torpedo', 'Torpedo', 'Crew', 'Salvaged Astromech', 'Illicit'],
+        slots: ['Elite', 'Crew', 'Illicit'],
         points: 25
       }, {
         name: "Poe Dameron",
@@ -5626,7 +5626,8 @@ exportObj.basicCardData = function() {
         id: 176,
         faction: "Scum and Villainy",
         slot: "Elite",
-        points: 1
+        points: 1,
+        max_per_squad: 2
       }, {
         name: "Boba Fett",
         id: 177,
@@ -10436,7 +10437,7 @@ exportObj.cardLoaders.English = function() {
       text: "After spending a focus token, you may place that token on any other friendly ship at Range 1-2 (instead of discarding it)."
     },
     "Biggs Darklighter": {
-      text: "Other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."
+      text: "Once per game, at the start of the Combat phase, you may choose that until the end of the round, other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."
     },
     "Luke Skywalker": {
       text: "When defending, you may change 1 of your %FOCUS% results to a %EVADE% result."
@@ -11332,7 +11333,7 @@ exportObj.cardLoaders.English = function() {
       text: "<span class=\"card-restriction\">Y-Wing only.</span>%LINEBREAK%Your upgrade bar gains the %BOMB% icon."
     },
     '"Genius"': {
-      text: "If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."
+      text: "After you reveal and execute a maneuver, if you did not overlap a ship, you may discard 1 of your equipped %BOMB% Upgrade cards without the \"<strong>Action:</strong>\" header to drop the corresponding bomb token."
     },
     "Unhinged Astromech": {
       text: "You may treat all 3-speed maneuvers as green maneuvers."
@@ -11506,7 +11507,7 @@ exportObj.cardLoaders.English = function() {
       text: "<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."
     },
     "Attanni Mindlink": {
-      text: "%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
+      text: "<span class=\"card-restriction\">Limit 2 per quad.</span> %SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."
     },
     "Boba Fett": {
       text: "%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."
@@ -26363,7 +26364,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25067
+                    lineno: 25056
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -26952,7 +26953,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25697
+              lineno: 25686
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27696,7 +27697,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26327
+          lineno: 26316
         }));
         __iced_deferrals._fulfill();
       });
@@ -27708,7 +27709,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26328
+            lineno: 26317
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -27814,6 +27815,23 @@ exportObj.SquadBuilder = (function() {
     return true;
   };
 
+  SquadBuilder.prototype.countUpgrades = function(canonical_name) {
+    var count, ship, upgrade, _i, _j, _len, _len1, _ref, _ref1, _ref2;
+    count = 0;
+    _ref = this.ships;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      ship = _ref[_i];
+      _ref1 = ship.upgrades;
+      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+        upgrade = _ref1[_j];
+        if ((upgrade != null ? (_ref2 = upgrade.data) != null ? _ref2.canonical_name : void 0 : void 0) === canonical_name) {
+          count++;
+        }
+      }
+    }
+    return count;
+  };
+
   SquadBuilder.prototype.getAvailableUpgradesIncluding = function(slot, include_upgrade, ship, this_upgrade_obj, term, filter_func) {
     var available_upgrades, eligible_upgrades, equipped_upgrade, limited_upgrades_in_use, m, retval, title, upgrade, upgrade_name, _i, _j, _k, _len, _len1, _len2, _ref, _ref1, _ref2, _ref3, _ref4, _results;
     if (term == null) {
@@ -27889,7 +27907,7 @@ exportObj.SquadBuilder = (function() {
       _results = [];
       for (upgrade_name in available_upgrades) {
         upgrade = available_upgrades[upgrade_name];
-        if (((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj)) && __indexOf.call(limited_upgrades_in_use, upgrade) < 0) {
+        if (((upgrade.unique == null) || __indexOf.call(this.uniques_in_use['Upgrade'], upgrade) < 0) && (!((ship != null) && (upgrade.restriction_func != null)) || upgrade.restriction_func(ship, this_upgrade_obj)) && __indexOf.call(limited_upgrades_in_use, upgrade) < 0 && ((upgrade.max_per_squad == null) || ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad)) {
           _results.push(upgrade);
         }
       }
@@ -27917,7 +27935,7 @@ exportObj.SquadBuilder = (function() {
         }
       }
     }
-    if ((include_upgrade != null) && (((include_upgrade.unique != null) || (include_upgrade.limited != null)) && this.matcher(include_upgrade.name, term))) {
+    if ((include_upgrade != null) && (((include_upgrade.unique != null) || (include_upgrade.limited != null) || (include_upgrade.max_per_squad != null)) && this.matcher(include_upgrade.name, term))) {
       eligible_upgrades.push(include_upgrade);
     }
     retval = ((function() {
@@ -27948,7 +27966,7 @@ exportObj.SquadBuilder = (function() {
   };
 
   SquadBuilder.prototype.getAvailableModificationsIncluding = function(include_modification, ship, term, filter_func) {
-    var available_modifications, eligible_modifications, equipped_modification, limited_modifications_in_use, modification, modification_name, title, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3;
+    var available_modifications, eligible_modifications, equipped_modification, limited_modifications_in_use, modification, modification_name, thing, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3, _ref4;
     if (term == null) {
       term = '';
     }
@@ -28016,24 +28034,24 @@ exportObj.SquadBuilder = (function() {
       }
       return _results;
     }).call(this);
-    _ref1 = (_ref = ship != null ? ship.titles : void 0) != null ? _ref : [];
-    for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-      title = _ref1[_i];
-      if ((title != null ? (_ref2 = title.data) != null ? _ref2.special_case : void 0 : void 0) === 'Royal Guard TIE') {
-        _ref3 = (function() {
-          var _k, _len1, _ref3, _results;
-          _ref3 = ship.modifications;
+    _ref2 = ((_ref1 = ship != null ? ship.titles : void 0) != null ? _ref1 : []).concat((_ref = ship != null ? ship.upgrades : void 0) != null ? _ref : []);
+    for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+      thing = _ref2[_i];
+      if ((thing != null ? (_ref3 = thing.data) != null ? _ref3.special_case : void 0 : void 0) === 'Royal Guard TIE') {
+        _ref4 = (function() {
+          var _k, _len1, _ref4, _results;
+          _ref4 = ship.modifications;
           _results = [];
-          for (_k = 0, _len1 = _ref3.length; _k < _len1; _k++) {
-            modification = _ref3[_k];
+          for (_k = 0, _len1 = _ref4.length; _k < _len1; _k++) {
+            modification = _ref4[_k];
             if ((modification != null ? modification.data : void 0) != null) {
               _results.push(modificationsById[modification.data.id]);
             }
           }
           return _results;
         })();
-        for (_j = 0, _len1 = _ref3.length; _j < _len1; _j++) {
-          equipped_modification = _ref3[_j];
+        for (_j = 0, _len1 = _ref4.length; _j < _len1; _j++) {
+          equipped_modification = _ref4[_j];
           eligible_modifications.removeItem(equipped_modification);
         }
       }
@@ -29117,7 +29135,7 @@ Ship = (function() {
         _ref = other.upgrades;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           upgrade = _ref[_i];
-          if (((upgrade != null ? upgrade.data : void 0) != null) && !upgrade.data.unique) {
+          if (((upgrade != null ? upgrade.data : void 0) != null) && !upgrade.data.unique && ((upgrade.data.max_per_squad == null) || this.builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)) {
             if (other_upgrades[_name = upgrade.slot] == null) {
               other_upgrades[_name] = [];
             }
@@ -29179,7 +29197,7 @@ Ship = (function() {
       _ref9 = other.upgrades;
       for (i = _o = 0, _len6 = _ref9.length; _o < _len6; i = ++_o) {
         other_upgrade = _ref9[i];
-        if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique && i < this.upgrades.length) {
+        if ((other_upgrade.data != null) && __indexOf.call(other_conferred_addons, other_upgrade) < 0 && !other_upgrade.data.unique && i < this.upgrades.length && ((other_upgrade.data.max_per_squad == null) || this.builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)) {
           this.upgrades[i].setById(other_upgrade.data.id);
         }
       }
@@ -29302,7 +29320,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27224
+                      lineno: 27222
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29376,7 +29394,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27250
+                lineno: 27248
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29431,7 +29449,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27273
+              lineno: 27271
             }));
           }
         }
@@ -29440,7 +29458,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27275
+              lineno: 27273
             }));
           }
         }
@@ -29449,7 +29467,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27277
+              lineno: 27275
             }));
           }
         }
@@ -30472,7 +30490,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27961
+                lineno: 27959
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30591,7 +30609,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28020
+                  lineno: 28018
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30613,7 +30631,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28024
+                    lineno: 28022
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30703,7 +30721,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28067
+            lineno: 28065
           }));
         }
         __iced_deferrals._fulfill();
