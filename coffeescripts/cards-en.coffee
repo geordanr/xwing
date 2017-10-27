@@ -896,7 +896,7 @@ exportObj.cardLoaders.English = () ->
         'Rage':
             text: """<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."""
         "Attanni Mindlink":
-            text: """<span class="card-restriction">Limit 2 per quad.</span> %SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
+            text: """<span class="card-restriction">Limit 2 per squad.</span> %SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
         "Boba Fett":
             text: """%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."""
         "Dengar":
