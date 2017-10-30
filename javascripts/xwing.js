@@ -17109,7 +17109,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "Fókusz felhasználás után áthelyezheted azt egy 1-2 távolságban lévő másik baráti hajóra (ahelyett, hogy eldobnád). [FAQ]"
     },
     "Biggs Darklighter": {
-      text: "Biggs-től 1-es távolságban lévő másik baráti hajó támadásakor, Biggs-et kell támadni, ha támadható. [FAQ]"
+      text: "A játék során egyszer, a harci fázis elején választhatsz egy másik baráti hajót 1-es távolságban. A kör végéig nem támadható a kiválasztott hajó, ha Biggs is támadható helyette. [FAQ]"
     },
     "Luke Skywalker": {
       text: "Védekezéskor egy %FOCUS%-odat átforgathatsz %EVADE%-re."
@@ -17581,7 +17581,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Miután végrehajtasz egy támadást, add a "Suppressive Fire" feltétel kártyát a védekezőhöz.'
     },
     'Major Stridan': {
-      text: 'Az akciók és fejlesztés kártyák 2-3 távolságban lévő baráti hajóra hivatkoznak, kezeld úgy mintha 1 távolságra hivatkoznának.'
+      text: 'Az akciók és fejlesztés kártyáknál a 2-3 távolságban lévő baráti hajókat kezelheted úgy, mintha 1-es távolságban lennének.'
     },
     'Lieutenant Dormitz': {
       text: 'A felrakás fázisban, a baráti hajókat bárhova rakhatod tőled 1-2 távolságra.'
@@ -18020,7 +18020,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<span class=\"card-restriction\">Csak Y-wing. Limitált.</span>%LINEBREAK%A fejlesztés sávod megkapja a %BOMB% fejlesztés ikont."
     },
     '"Genius"': {
-      text: "Ha olyan bombával vagy felszerelve, amit a manővertárcsád felfedésekor kell ledobni, azt a bombát a mozgásod <strong>után</strong> is ledobhatod. [FAQ]"
+      text: "Miután felfedted a tárcsád, végrehajtottad a manővert és nem ütköztél hajónak, eldobhatsz egy felszerelt <strong>Action:</strong> fejléc nélküli %BOMB% fejlesztés kártyát, hogy letehesd a hozzá tartozó bomba jelzőt. [FAQ]"
     },
     "Unhinged Astromech": {
       text: "Az összes 3-as sebességű manővert vedd zöld színűnek."
@@ -18196,7 +18196,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: "<strong>Akció:</strong> Adj egy %FOCUS% jelzőt a hajódhoz és kapsz 2 stressz jelzőt. A kör végéig támadáskor újradobhatsz akár 3 kockát. [FAQ]"
     },
     "Attanni Mindlink": {
-      text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Minden esetben mikor fókusz vagy stressz jelzőt kapsz, az összes többi baráti hajó, amely fel van szerelve Attanni Mindlink fejlesztéssel szintén megkapja ezt a fajta jelzőt, ha még nincs neki. [FAQ]"
+      text: "<span class=\"card-restriction\">Csak söpredék. Csak 2 rajonként.</span>%LINEBREAK%Minden esetben mikor fókusz vagy stressz jelzőt kapsz, az összes többi baráti hajó, amely fel van szerelve Attanni Mindlink fejlesztéssel szintén megkapja ezt a fajta jelzőt, ha még nincs neki. [FAQ]"
     },
     "Boba Fett": {
       text: "<span class=\"card-restriction\">Csak söpredék.</span>%LINEBREAK%Miután végrehajtottál egy támadást, és a védekező kapott egy felfordított sérülés kártyát, eldobhatod azt, hogy helyette kiválassz és eldobj egy fejlesztés kártyát."
@@ -18630,10 +18630,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak TIE Bomber.</span>%LINEBREAK%A fejlesztés sávod elveszti az összes %TORPEDO%, %MISSILE% és %BOMB% ikont és kap 2 %CREW% ikont. Nem használhatsz 4 pontnál drágább %CREW% fejlesztést kártyát.'
     },
     'Requiem': {
-      text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Mikor harcba küldesz egy hajót, kezeld a pilóta képzettségét 8-asnak a kör végéig.'
+      text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Mikor harca küldesz egy hajót, kezeld a pilóta képzettségét 8-asnak a kör végéig.'
     },
     'Vector': {
-      text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Miután végrehajtottál egy manővert, harcba indíthatod mind a 4 hajód, (nem csak 2-t).'
+      text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Miután végrehajtottál egy manővert, harba indíthatod mind a 4 hajód, (nem csak 2-t).'
     },
     'Suppressor': {
       text: '<span class="card-restriction">Csak Gozanti.</span>%LINEBREAK%Körönként egyszer, miután kiosztottál egy célpontbemérőt, levehetsz 1 %FOCUS%, %EVADE% vagy kék célpontbemérő jelzőt arról a hajóról.'
@@ -18700,7 +18700,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak M12-L Kimogila Fighter.</span>%LINEBREAK%Védekezéskor, ha a támadó a bullseye tűzívedben van, kap egy stressz jelzőt.'
     },
     'Ghost (Phantom II)': {
-      text: '<span class="card-restriction">Csak VCX-100.</span>%LINEBREAK%Szereld fel a <em>Phantom II</em> nevesítés kártyával egy baráti <em>Sheathipede</em> hajót és dokkold ehhez a hajóhoz. Miután végrehajtottál egy manővert, harcba küldheted, a hátsó bütykeidtől indítva.'
+      text: '<span class="card-restriction">Csak VCX-100.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
     },
     'Phantom II': {
       text: 'Míg dokkolva vagy, a <em>Ghost</em> végrehajthat elsődleges fegyver támadást a speciális tűzívéből. Míg dokkolva vagy, az aktivációs fázis végén a <em>Ghost</em> végrehajthat egy ingyenes koordinálás akciót.'
