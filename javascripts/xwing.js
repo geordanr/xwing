@@ -4258,14 +4258,15 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
         points: 27
       }, {
-        name: 'Dal???',
+        name: 'Dalan Oberos (Kimogila)',
+        canonical_name: "" + ('Dalan Oberos'.canonicalize()) + "-swx70",
         id: 272,
         unique: true,
         faction: 'Scum and Villainy',
         ship: 'M12-L Kimogila Fighter',
         skill: 7,
         slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 25
       }, {
         name: 'Cartel E???',
         id: 273,
@@ -4275,13 +4276,13 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
         points: 100
       }, {
-        name: 'Carte???',
+        name: 'Cartel Brute',
         id: 274,
         faction: 'Scum and Villainy',
         ship: 'M12-L Kimogila Fighter',
         skill: 3,
         slots: ['Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 22
       }, {
         name: 'Fenn Rau (Sheathipede)',
         id: 275,
@@ -6141,6 +6142,11 @@ exportObj.basicCardData = function() {
         name: 'Saturation Salvo',
         id: 248,
         slot: 'Elite',
+        points: 1
+      }, {
+        name: 'Contraband Cybernetics',
+        id: 249,
+        slot: 'Illicit',
         points: 1
       }
     ],
@@ -8871,6 +8877,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -9831,6 +9840,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -10970,6 +10982,9 @@ exportObj.cardLoaders.English = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -11724,6 +11739,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -13357,6 +13375,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -14295,6 +14316,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -15672,6 +15696,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -16570,6 +16597,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -17652,6 +17682,9 @@ exportObj.cardLoaders.Magyar = function() {
     'Torani Kulda': {
       text: 'Miután végrehajtottál egy támadást, minden hajó amelyik benne van a bulleye tűzívedben 1-3 távolságban választhat, hogy elszenved egy sérülést vagy eldobja az összes %FOCUS% és %EVADE% jelzőjét.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'
     },
@@ -18421,6 +18454,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Saturation Salvo': {
       text: 'Miután végrehajtottál egy támadást egy %TORPEDO% vagy %MISSILE% másodlagos fegyvereddel ami nem tálált, a védekezőtől 1-es távolságban lévő összes hajó, aminek mozgékonyság értéke kisebb, mint a %TORPEDO% vagy %MISSILE% kártya pontértéke, dob egy támadó kockával és elszenvedi a dobott %HIT% vagy %CRIT% sérülést.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -19619,6 +19655,9 @@ exportObj.cardLoaders['Polski'] = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -20445,6 +20484,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -21455,6 +21497,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     'Torani Kulda': {
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
+    'Dalan Oberos (Kimogila)': {
+      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
@@ -22185,6 +22230,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Saturation Salvo': {
       text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+    },
+    'Contraband Cybernetics': {
+      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
     }
   };
   modification_translations = {
@@ -26364,7 +26412,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25055
+                    lineno: 25090
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -26953,7 +27001,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25685
+              lineno: 25720
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27697,7 +27745,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26315
+          lineno: 26350
         }));
         __iced_deferrals._fulfill();
       });
@@ -27709,7 +27757,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26316
+            lineno: 26351
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29320,7 +29368,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27221
+                      lineno: 27256
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29394,7 +29442,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27247
+                lineno: 27282
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29449,7 +29497,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27270
+              lineno: 27305
             }));
           }
         }
@@ -29458,7 +29506,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27272
+              lineno: 27307
             }));
           }
         }
@@ -29467,7 +29515,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27274
+              lineno: 27309
             }));
           }
         }
@@ -30490,7 +30538,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27958
+                lineno: 27993
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30609,7 +30657,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28017
+                  lineno: 28052
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30631,7 +30679,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28021
+                    lineno: 28056
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30721,7 +30769,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28064
+            lineno: 28099
           }));
         }
         __iced_deferrals._fulfill();
