@@ -746,6 +746,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
         'Torani Kulda':
             text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
+        'Dalan Oberos (Kimogila)':
+            text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
         'Fenn Rau (Sheathipede)':
             text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
         '"Crimson Leader"':
@@ -1413,6 +1415,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'''
         'Saturation Salvo':
             text: '''After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'''
+        'Contraband Cybernetics':
+            text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
 
     modification_translations =
         "Shield Upgrade":

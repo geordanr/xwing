@@ -524,6 +524,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Mikor "inaktív fegyver" jelzőt kapsz és nem vagy stresszes, kaphatsz egy stressz jelzőt hogy levehesd azt.'''
         'Torani Kulda':
             text: '''Miután végrehajtottál egy támadást, minden hajó amelyik benne van a bulleye tűzívedben 1-3 távolságban választhat, hogy elszenved egy sérülést vagy eldobja az összes %FOCUS% és %EVADE% jelzőjét.'''
+        'Dalan Oberos (Kimogila)':
+            text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
         'Fenn Rau (Sheathipede)':
             text: '''Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'''
         '"Crimson Leader"':
@@ -1045,6 +1047,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Mikor az elsődleges vagy %CANNON% másodlagos fegyvereddel támadsz, újradobhatsz egy támadó kockádat.'''
         'Saturation Salvo':
             text: '''Miután végrehajtottál egy támadást egy %TORPEDO% vagy %MISSILE% másodlagos fegyvereddel ami nem tálált, a védekezőtől 1-es távolságban lévő összes hajó, aminek mozgékonyság értéke kisebb, mint a %TORPEDO% vagy %MISSILE% kártya pontértéke, dob egy támadó kockával és elszenvedi a dobott %HIT% vagy %CRIT% sérülést.'''
+        'Contraband Cybernetics':
+            text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
 
     modification_translations =
         "Stealth Device":

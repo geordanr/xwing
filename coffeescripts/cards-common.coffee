@@ -4918,7 +4918,8 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: 'Dal???'
+            name: 'Dalan Oberos (Kimogila)'
+            canonical_name: "#{'Dalan Oberos'.canonicalize()}-swx70"
             id: 272
             unique: true
             faction: 'Scum and Villainy'
@@ -4931,7 +4932,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 25
         }
         {
             name: 'Cartel E???'
@@ -4949,7 +4950,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Carte???'
+            name: 'Cartel Brute'
             id: 274
             faction: 'Scum and Villainy'
             ship: 'M12-L Kimogila Fighter'
@@ -4960,7 +4961,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 22
         }
         {
             name: 'Fenn Rau (Sheathipede)'
@@ -7028,6 +7029,12 @@ exportObj.basicCardData = ->
             name: 'Saturation Salvo'
             id: 248
             slot: 'Elite'
+            points: 1
+        }
+        {
+            name: 'Contraband Cybernetics'
+            id: 249
+            slot: 'Illicit'
             points: 1
         }
     ]
