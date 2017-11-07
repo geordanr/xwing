@@ -128,6 +128,28 @@ exportObj.translations.English =
         '#scumTab' : 'Scum and Villainy'
         '#browserTab' : 'Card Browser'
         '#aboutTab' : 'About'
+        # Obstacles
+        '.choose-obstacles' : 'Choose Obstacles'
+        '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (This feature is in BETA; support for displaying which obstacles were selected in the printout is not yet supported.)'
+        '.coreasteroid0-select' : 'Core Asteroid 0'
+        '.coreasteroid1-select' : 'Core Asteroid 1'
+        '.coreasteroid2-select' : 'Core Asteroid 2'
+        '.coreasteroid3-select' : 'Core Asteroid 3'
+        '.coreasteroid4-select' : 'Core Asteroid 4'
+        '.coreasteroid5-select' : 'Core Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Debris 0'
+        '.yt2400debris1-select' : 'YT2400 Debris 1'
+        '.yt2400debris2-select' : 'YT2400 Debris 2'
+        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
+        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
+        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
+        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
+        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
+        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
+        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
+        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
+        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+
     singular:
         'pilots': 'Pilot'
         'modifications': 'Modification'
@@ -155,7 +177,7 @@ exportObj.cardLoaders.English = () ->
         "Garven Dreis":
             text: """After spending a focus token, you may place that token on any other friendly ship at Range 1-2 (instead of discarding it)."""
         "Biggs Darklighter":
-            text: """Other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."""
+            text: """Once per game, at the start of the Combat phase, you may choose that until the end of the round, other friendly ships at Range 1 cannot be targeted by attacks if the attacker could target you instead."""
         "Luke Skywalker":
             text: """When defending, you may change 1 of your %FOCUS% results to a %EVADE% result."""
         '"Dutch" Vander':
@@ -362,7 +384,6 @@ exportObj.cardLoaders.English = () ->
             text: """At the start of the Combat phase, remove 1 stress token from each friendly ship at Range 1."""
         '"Zeta Ace"':
             text: """When performing a barrel roll you may use the (%STRAIGHT% 2) template instead of the (%STRAIGHT% 1) template."""
-
         '"Red Ace"':
             text: '''The first time you remove a shield token from your ship each round, assign 1 evade token to your ship.'''
         '"Omega Leader"':
@@ -402,7 +423,7 @@ exportObj.cardLoaders.English = () ->
         "Tel Trevura":
             text: """The first time you would be destroyed, instead cancel any remaining damage, discard all Damage cards, and deal 4 facedown Damage cards to this ship."""
         "Manaroo":
-            text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship."""
+            text: """At the start of the Combat phase, you may assign all focus, evade, and target lock tokens assigned to you to another friendly ship at Range 1."""
         '"Deathfire"':
             text: '''When you reveal your maneuver dial or after you perform an action, you may perform a %BOMB% Upgrade card action as a free action.'''
         "Maarek Stele (TIE Defender)":
@@ -480,6 +501,50 @@ exportObj.cardLoaders.English = () ->
             text: '''When you reveal a reverse maneuver, you may drop a bomb using your front guides (including a bomb with the "<strong>Action:</strong>" header).'''
         'Sarco Plank':
             text: '''When defending, instead of using your agility value, you may roll a number of defense dice equal to the speed of the maneuver you executed this round.'''
+        'Genesis Red':
+            text: '''After you acquire a target lock, assign focus and evade tokens to your ship until you have the same number of each token as the locked ship.'''
+        'Quinn Jast':
+            text: '''At the start of the Combat phase, you may receive a weapons disabled token to flip one of your discarded %TORPEDO% or %MISSILE% Upgrade cards faceup.'''
+        'Inaldra':
+            text: '''When attacking or defending, you may spend 1 shield to reroll any number of your dice.'''
+        'Sunny Bounder':
+            text: '''Once per round, after you roll or reroll dice, if you have the same result on each of your dice, add 1 matching result.'''
+        'Lieutenant Kestal':
+            text: '''When attacking, you may spend 1 focus token to cancel all of the defender's blank and %FOCUS% results.'''
+        '"Double Edge"':
+            text: '''Once per round, after you perform a secondary weapon attack that does not hit, you may perform an attack with a different weapon.'''
+        'Viktor Hel':
+            text: '''After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'''
+        'Lowhhrick':
+            text: '''When another friendly ship at Range 1 is defending, you may spend 1 reinforce token. If you do, the defender adds 1 %EVADE% result.'''
+        'Wullffwarro':
+            text: '''When attacking, if you have no shields and at least 1 Damage card assigned to you, roll 1 additional attack die.'''
+        'Captain Nym (Scum)':
+            text: '''You may ignore friendly bombs. When a friendly ship is defending, if the attacker measures range through a friendly bomb token, the defender may add 1 %EVADE% result.'''
+        'Captain Nym (Rebel)':
+            text: '''Once per round, you may prevent a friendly bomb from detonating.'''
+        'Sol Sixxa':
+            text: '''When dropping a bomb, you may use the (%TURNLEFT% 1) or (%TURNRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
+        'Dalan Oberos':
+            text: '''If you are not stressed, when you reveal a turn, bank, or Segnor's Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'''
+        'Thweek':
+            text: '''During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'''
+        'Captain Jostero':
+            text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
+        'Major Vynder':
+            text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
+        'Lieutenant Karsabi':
+            text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
+        'Torani Kulda':
+            text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
+        'Dalan Oberos (Kimogila)':
+            text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
+        'Fenn Rau (Sheathipede)':
+            text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
+        '"Crimson Leader"':
+            text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+        'Kylo Ren (TIE Silencer)':
+            text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -717,7 +782,7 @@ exportObj.cardLoaders.English = () ->
         "Bomb Loadout":
             text: """<span class="card-restriction">Y-Wing only.</span>%LINEBREAK%Your upgrade bar gains the %BOMB% icon."""
         '"Genius"':
-            text: """If you are equipped with a bomb that can be dropped when you reveal your maneuver, you may drop the bomb <strong>after</strong> you execute your maneuver instead."""
+            text: """After you reveal and execute a maneuver, if you did not overlap a ship, you may discard 1 of your equipped %BOMB% Upgrade cards without the "<strong>Action:</strong>" header to drop the corresponding bomb token."""
         "Unhinged Astromech":
             text: """You may treat all 3-speed maneuvers as green maneuvers."""
         "R4-B11":
@@ -747,7 +812,7 @@ exportObj.cardLoaders.English = () ->
         "Admiral Ozzel":
             text: """%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Energy:</strong> You may remove up to 3 shields from your ship.  For each shield removed, gain 1 energy."""
         "Emperor Palpatine":
-            text: """%IMPERIALONLY%%LINEBREAK%Once per round, you may change a friendly ship's die result to any other die result.  That die result cannot be modified again."""
+            text: """%IMPERIALONLY%%LINEBREAK%Once per round, before a friendly ship rolls dice, you may name a die result. After rolling, you must change 1 of your dice results to the named result. That die result cannot be modified again."""
         "Bossk":
             text: """%SCUMONLY%%LINEBREAK%After you perform an attack that does not hit, if you are not stressed, you <strong>must</strong> receive 1 stress token. Then assign 1 focus token to your ship and acquire a target lock on the defender."""
         "Lightning Reflexes":
@@ -811,7 +876,7 @@ exportObj.cardLoaders.English = () ->
         'Targeting Astromech':
             text: '''After you execute a red maneuver, you may acquire a target lock.'''
         'Hera Syndulla':
-            text: """%REBELONLY%%LINEBREAK%You may reveal and execute red maneuvers even while you are stressed."""
+            text: """%REBELONLY%%LINEBREAK%You can reveal and execute red maneuvers even while you are stressed."""
         'Ezra Bridger':
             text: """%REBELONLY%%LINEBREAK%When attacking, if you are stressed, you may change 1 of your %FOCUS% results to a %CRIT% result."""
         'Sabine Wren':
@@ -829,11 +894,11 @@ exportObj.cardLoaders.English = () ->
         "4-LOM":
             text: """%SCUMONLY%%LINEBREAK%When attacking, during the "Modify Attack Dice" step, you may receive 1 ion token to choose 1 of the defender's focus or evade tokens.  That token cannot be spent during this attack."""
         "Zuckuss":
-            text: """%SCUMONLY%%LINEBREAK%When attacking, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."""
+            text: """%SCUMONLY%%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to choose an equal number of defense dice.  The defender must reroll those dice."""
         'Rage':
             text: """<strong>Action:</strong> Assign 1 focus token to your ship and receive 2 stress tokens.  Until the end of the round, when attacking, you may reroll up to 3 attack dice."""
         "Attanni Mindlink":
-            text: """%SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
+            text: """<span class="card-restriction">Limit 2 per squad.</span> %SCUMONLY%%LINEBREAK%Each time you are assigned a focus or stress token, each other friendly ship with Attanni Mindlink must also be assigned the same type of token if it does not already have one."""
         "Boba Fett":
             text: """%SCUMONLY%%LINEBREAK%After performing an attack, if the defender was dealt a faceup Damage card, you may discard this card to choose and discard 1 of the defender's Upgrade cards."""
         "Dengar":
@@ -934,6 +999,54 @@ exportObj.cardLoaders.English = () ->
             text: '''%SCUMONLY%%LINEBREAK%At the start of the End phase, you may discard this card to replace a faceup %ILLICIT% or %CARGO% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%At the start of the End phase, you may spend 1 energy to replace a faceup %CREW% or %TEAM% Upgrade card you have equipped with another Upgrade card of the same type of equal or fewer squad points.'''
+        'Quick-release Cargo Locks':
+            text: '''<span class="card-restriction">C-ROC Cruiser and GR-75 Medium Transport only.</span>%LINEBREAK%At the end of the Activation phase, you may discard this card to <strong>place</strong> 1 container token.'''
+        'Supercharged Power Cells':
+            text: '''When attacking, you may discard this card to roll 2 additional attack dice.'''
+        'ARC Caster':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%DUALCARD%%LINEBREAK%<strong>Side A:</strong>%LINEBREAK%<strong>Attack:</strong> Attack 1 ship.  If this attack hits, you must choose 1 other ship at Range 1 of the defender to suffer 1 damage.%LINEBREAK%Then flip this card.%LINEBREAK%<strong>Side B:</strong>%LINEBREAK%(Recharging) At the start of the Combat phase, you may receive a weapons disabled token to flip this card.'''
+        'Wookiee Commandos':
+            text: '''When attacking, you may reroll your %FOCUS% results.'''
+        'Synced Turret':
+            text: '''<strong>Attack (Target Lock):</strong> Attack 1 ship (even a ship outside your firing arc).%LINEBREAK%If the defender is inside your primary firing arc, you may reroll a number of attack dice up to your primary weapon value.'''
+        'Unguided Rockets':
+            text: '''<strong>Attack (focus):</strong> Attack 1 Ship.%LINEBREAK%Your attack dice can be modified only by spending a focus token for its standard effect.'''
+        'Intensity':
+            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Side A:</strong> After you perform a boost or barrel roll action, you may assign 1 focus or evade token to your ship. If you do, flip this card.%LINEBREAK%<strong>Side B:</strong> (Exhausted) At the end of the Combat phase, you may spend 1 focus or evade token to flip this card.'''
+        'Jabba the Hutt':
+            text: '''%SCUMONLY%%LINEBREAK%When you equip this card, place 1 illicit token on each %ILLICIT% Upgrade card in your squad.  When you are instructed to discard an Upgrade card, you may discard 1 illicit token on that card instead.'''
+        'IG-RM Thug Droids':
+            text: '''When attacking, you may change 1 of your %HIT% results to a %CRIT% result.'''
+        'Selflessness':
+            text: '''%SMALLSHIPONLY% %REBELONLY%%LINEBREAK%When a friendly ship at Range 1 is hit by an attack, you may discard this card to suffer all uncanceled %HIT% results instead of the target ship.'''
+        'Breach Specialist':
+            text: '''When you are dealt a faceup Damage card, you may spend 1 reinforce token to flip it facedown (without resolving its effect).  If you do, until the end of the round, when you are dealt a faceup Damage card, flip it facedown (without resolving its effect).'''
+        'Bomblet Generator':
+            text: '''When you reveal your maneuver, you may drop 1 Bomblet token.%LINEBREAK%This token <strong>detonates</strong> at the end of the Activation phase.%LINEBREAK%<strong>Bomblet Token:</strong> When this token detonates, each ship at Range 1 rolls 2 attack dice and suffers all damage (%HIT%) and critical damage (%CRIT%) rolled. Then discard this token.'''
+        'Cad Bane':
+            text: '''%SCUMONLY%%LINEBREAK%Your upgrade bar gains the %BOMB% icon. Once per round, when an enemy ship rolls attack dice due to a friendly bomb detonating, you may choose any number of %FOCUS% and blank results.  It must reroll those results.'''
+        'Minefield Mapper':
+            text: '''During Setup, after the "Place Forces" step, you may discard any number of your equipped %BOMB% Upgrade cards.  Place all corresponding bomb tokens in the play area beyond Range 3 of enemy ships.'''
+        'R4-E1':
+            text: '''You can perform actions on your %TORPEDO% and %BOMB% Upgrade cards even if you are stressed. After you perform an action in this way, you may discard this card to remove 1 stress token from your ship.'''
+        'Cruise Missiles':
+            text: '''<strong>Attack (Target Lock):</strong> Discard this card to perform this attack.%LINEBREAK%You may roll additional attack dice equal to the speed of the manuever you performed this round, to a maximum of 4 additional dice.'''
+        'Ion Dischargers':
+            text: '''After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'''
+        'Harpoon Missiles':
+            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, after the attack resolves, assign the "Harpooned!" Condition to the defender.'''
+        'Ordnance Silos':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
+        'Trajectory Simulator':
+            text: '''You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'''
+        'Jamming Beam':
+            text: '''<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'''
+        'Linked Battery':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'''
+        'Saturation Salvo':
+            text: '''After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'''
+        'Contraband Cybernetics':
+            text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
 
     modification_translations =
         "Stealth Device":
@@ -967,7 +1080,7 @@ exportObj.cardLoaders.English = () ->
         "Autothrusters":
             text: """When defending, if you are beyond Range 2 or outside the attacker's firing arc, you may change 1 of your blank results to a %EVADE% result. You can equip this card only if you have the %BOOST% action icon."""
         "Advanced SLAM":
-            text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action."""
+            text: """After performing a SLAM action, if you did not overlap an obstacle or another ship, you may perform a free action on your action bar."""
         "Twin Ion Engine Mk. II":
             text: """<span class="card-restriction">TIE only.</span>%LINEBREAK%You may treat all bank maneuvers (%BANKLEFT% and %BANKRIGHT%) as green maneuvers."""
         "Maneuvering Fins":
@@ -998,6 +1111,8 @@ exportObj.cardLoaders.English = () ->
             text: '''<span class="card-restriction">Quadjumper only.</span>%LINEBREAK%<strong>Action:</strong> Choose a ship inside your firing arc at Range 1 and assign a tractor beam token to it.  If it is a friendly ship, resolve the effect of the tractor beam token as though it were an enemy ship.'''
         'Lightweight Frame':
             text: '''<span class="card-restriction">TIE only.</span>%LINEBREAK%When defending, after rolling defense dice, if there are more attack dice than defense dice, roll 1 additional defense die.%LINEBREAK%You cannot equip this card if your agility value is "3" or higher.'''
+        'Pulsed Ray Shield':
+            text: '''<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'''
 
     title_translations =
         "Slave I":
@@ -1037,7 +1152,7 @@ exportObj.cardLoaders.English = () ->
         '"Heavy Scyk" Interceptor (Missile)':
             text: """<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%Your upgrade bar gains the %CANNON%, %TORPEDO%, or %MISSILE% upgrade icon.%LINEBREAK%Increase your hull value by 1."""
         "IG-2000":
-            text: """<span class="card-restriction">Aggressor only.</span>%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
+            text: """<span class="card-restriction">Aggressor only.</span> %SCUMONLY%%LINEBREAK%You have the pilot ability of each other friendly ship with the <em>IG-2000</em> Upgrade card (in addition to your own pilot ability)."""
         "BTL-A4 Y-Wing":
             text: """<span class="card-restriction">Y-Wing only.</span>%LINEBREAK%You cannot attack ships outside your firing arc. After you perform a primary weapon attack, you may immediately perform an attack with a %TURRET% secondary weapon."""
         "Andrasta":
@@ -1063,7 +1178,7 @@ exportObj.cardLoaders.English = () ->
         "Impetuous":
             text: """<span class="card-restriction"><em>Raider</em>-class corvette aft section only.</span>%LINEBREAK%After you perform an attack that destroys an enemy ship, you may acquire a target lock."""
         'TIE/x7':
-            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, you may assign 1 evade token to your ship.'''
+            text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Your upgrade bar loses the %CANNON% and %MISSILE% upgrade icons.%LINEBREAK%After executing a 3-, 4-, or 5-speed maneuver, if you did not overlap an obstacle or ship, you may perform a free evade action.'''
         'TIE/D':
             text: '''<span class="card-restriction">TIE Defender only.</span>%LINEBREAK%Once per round, after you perform an attack with a %CANNON% secondary weapon that costs 3 or fewer squad points, you may perform a primary weapon attack.'''
         'TIE Shuttle':
@@ -1097,18 +1212,48 @@ exportObj.cardLoaders.English = () ->
             text: '''<span class="card-restriction">TIE Striker only.</span>%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you <strong>must</strong> execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
         # C-ROC
         '''Merchant One''':
-            text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
+            text: '''<span class="card-restriction">C-ROC Cruiser only.</span>%LINEBREAK%Your upgrade bar 1 gains additional %CREW% upgrade icon and 1 additional %TEAM% upgrade icon and loses 1 %CARGO% upgrade icon.'''
         '''"Light Scyk" Interceptor''':
             text: '''<span class="card-restriction">M3-A Interceptor only.</span>%LINEBREAK%All Damage cards dealt to you are dealt faceup.  You may treat all bank maneuvers (%BANKLEFT% or %BANKRIGHT%) as green maneuvers.  You cannot equip Modification upgrades.'''
+        '''Insatiable Worrt''':
+            text: '''After you perform the recover action, gain 3 energy.'''
+        '''Broken Horn''':
+            text: '''When defending, if you have a reinforce token, you may add 1 additional %EVADE% result.  If you do, after defending, discard your reinforce token.'''
+        'Havoc':
+            text: '''<span class="card-restriction">Scurrg H-6 Bomber only.</span>%LINEBREAK%Your upgrade bar gains the %SYSTEM% and %SALVAGEDASTROMECH% icons and loses the %CREW% upgrade icon.%LINEBREAK%You cannot equip non-unique %SALVAGEDASTROMECH% Upgrade cards.'''
+        'Vaksai':
+            text: '''<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'''
+        'StarViper Mk. II':
+            text: '''<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'''
+        'XG-1 Assault Configuration':
+            text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'''
+        'Enforcer':
+            text: '''<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'''
+        'Ghost (Phantom II)':
+            text: '''<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
+        'Phantom II':
+            text: '''While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'''
+        'First Order Vanguard':
+            text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
+        'Os-1 Arsenal Loadout':
+            text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
-            text: '''When this card is assigned, if it is not already in play, the player who dealt it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage from an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
+            text: '''When this card is assigned, if it is not already in play, the player who assigned it searches the Damage deck for 1 Damage card with the <strong><em>Pilot</em></strong> trait and may place it faceup on this card. Then shuffle the damage deck.%LINEBREAK%When you suffer critical damage during an attack, you are instead dealt the chosen faceup Damage card.%LINEBREAK%When there is no Damage card on this card, remove it.'''
         'Suppressive Fire':
             text: '''When attacking a ship other than "Captain Rex," roll 1 fewer attack die.%LINEBREAK% When you declare an attack targeting "Captain Rex" or when "Captain Rex" is destroyed, remove this card.%LINEBREAK%At the end of the Combat phase, if "Captain Rex" did not perform an attack this phase, remove this card.'''
         'Fanatical Devotion':
             text: '''When defending, you cannot spend focus tokens.%LINEBREAK%When attacking, if you spend a focus token to change all %FOCUS% results to %HIT% results, set aside the first %FOCUS% result that you change. The set-aside %HIT% result cannot be canceled by defense dice, but the defender may cancel %CRIT% results before it.%LINEBREAK%During the End phase, remove this card.'''
         'A Debt to Pay':
             text: '''When attacking a ship that has the "A Score to Settle" Upgrade card equipped, you may change 1 %FOCUS% result to a %CRIT% result.'''
+        'Shadowed':
+            text: '''"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'''
+        'Mimicked':
+            text: '''"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'''
+        'Harpooned!':
+            text: '''When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'''
+        'Rattled':
+            text: '''When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

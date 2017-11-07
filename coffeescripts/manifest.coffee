@@ -2655,7 +2655,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Ordnance Tubes'
             type: 'modification'
-            count: 3
+            count: 2
         }
         {
             name: 'Requiem'
@@ -3848,6 +3848,401 @@ exportObj.manifestByExpansion =
         }
         {
             name: 'Spacetug Tractor Array'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    'C-ROC Cruiser Expansion Pack': [
+        {
+            name: 'C-ROC Cruiser'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'M3-A Interceptor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'C-ROC Cruiser'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Genesis Red'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Quinn Jast'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Inaldra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sunny Bounder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tansarii Point Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Spacer'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Azmorigan'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cikatro Vizago'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jabba the Hutt'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'IG-RM Thug Droids'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'ARC Caster'
+            type: 'upgrade'
+            count: 5
+        }
+        {
+            name: 'Heavy Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Supercharged Power Cells'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Quick-release Cargo Locks'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Merchant One'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Broken Horn'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Insatiable Worrt'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: '"Light Scyk" Interceptor'
+            type: 'title'
+            count: 6
+        }
+        {
+            name: '"Heavy Scyk" Interceptor'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Automated Protocols'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Optimized Generators'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            type: 'modification'
+            count: 5
+        }
+    ]
+    "Auzituck Gunship Expansion Pack": [
+        {
+            name: 'Auzituck Gunship'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Wullffwarro'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lowhhrick'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Wookiee Liberator'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kashyyyk Defender'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Selflessness'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Wookiee Commandos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactician'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Breach Specialist'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    "Scurrg H-6 Bomber Expansion Pack": [
+        {
+            name: 'Scurrg H-6 Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Captain Nym (Rebel)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Nym (Scum)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sol Sixxa'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lok Revenant'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Karthakk Pirate'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lightning Reflexes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Torpedo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cruise Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Minefield Mapper'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Synced Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cad Bane'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R4-E1'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Havoc'
+            type: 'title'
+            count: 1
+        }
+    ]
+    "TIE Aggressor Expansion Pack": [
+        {
+            name: 'TIE Aggressor'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Kestal'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Double Edge"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Onyx Squadron Escort'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sienar Specialist'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Intensity'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Unguided Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Twin Laser Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Synced Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Lightweight Frame'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    'Guns for Hire Expansion Pack': [
+        {
+            name: 'Kihraxz Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'StarViper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Viktor Hel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Jostero'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Marauder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dalan Oberos'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Thweek'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Sun Assassin'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Harpoon Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Dischargers'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'StarViper Mk. II'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'Vaksai'
+            type: 'title'
+            count: 2
+        }
+        {
+            name: 'Pulsed Ray Shield'
+            type: 'modification'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'modification'
+            count: 1
+        }
+        {
+            name: 'Vectored Thrusters'
             type: 'modification'
             count: 1
         }

@@ -54,6 +54,7 @@ Spanish translation by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox
 French translation by [pejuaxel](https://github.com/pejuaxel).
 Polish translation by [Bober9000](https://github.com/Bober9000).
 Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
+Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
 
 I'm bad at keeping this up to date; see the About section of the builder.
 

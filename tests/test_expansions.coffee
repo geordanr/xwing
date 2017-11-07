@@ -5,12 +5,14 @@ common.setup()
 casper.test.begin "Validate Expansions", (test) ->
     valid_expansions = [
         "ARC-170 Expansion Pack"
+        "Auzituck Gunship Expansion Pack"
         "A-Wing Expansion Pack"
         "B-Wing Expansion Pack"
         "Core"
         "C-ROC Cruiser Expansion Pack"
         "E-Wing Expansion Pack"
         'Ghost Expansion Pack'
+        'Guns for Hire Expansion Pack'
         'Heroes of the Resistance Expansion Pack'
         "Hound's Tooth Expansion Pack"
         "HWK-290 Expansion Pack"
@@ -33,6 +35,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
         "Sabine's TIE Fighter Expansion Pack"
+        "Scurrg H-6 Bomber Expansion Pack"
         "Shadow Caster Expansion Pack"
         "Slave I Expansion Pack"
         "Special Forces TIE Expansion Pack"
@@ -41,6 +44,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Tantive IV Expansion Pack"
         "The Force Awakens Core Set"
         "TIE Advanced Expansion Pack"
+        "TIE Aggressor Expansion Pack"
         "TIE Bomber Expansion Pack"
         "TIE Defender Expansion Pack"
         "TIE Fighter Expansion Pack"
@@ -49,8 +53,8 @@ casper.test.begin "Validate Expansions", (test) ->
         "TIE Phantom Expansion Pack"
         "TIE Punisher Expansion Pack"
         "TIE Striker Expansion Pack"
-        "U-Wing Expansion Pack"
         "Upsilon-class Shuttle Expansion Pack"
+        "U-Wing Expansion Pack"
         "VT-49 Decimator Expansion Pack"
         "X-Wing Expansion Pack"
         "YT-2400 Freighter Expansion Pack"

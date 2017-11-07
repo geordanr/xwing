@@ -50,6 +50,7 @@ String::capitalize = ->
 String::getXWSBaseName = ->
     @split('-')[0]
 
+URL_BASE = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}"
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
@@ -111,8 +112,12 @@ class exportObj.SquadBuilder
 
         @collection = null
 
+        @current_obstacles = []
+
         @setupUI()
         @setupEventHandlers()
+
+        window.setInterval @updatePermaLink, 250
 
         @isUpdatingPoints = false
 
@@ -129,7 +134,14 @@ class exportObj.SquadBuilder
         squad_name = $.trim(@squad_name_input.val()) or default_squad_name
         if initial_load and $.trim $.getParameterByName('sn')
             squad_name = $.trim $.getParameterByName('sn')
-        
+
+        squad_obstacles = []
+        if initial_load and $.trim $.getParameterByName('obs')
+            squad_obstacles = ($.trim $.getParameterByName('obs')).split(",").slice(0, 3)
+            @current_obstacles = squad_obstacles
+        else if @current_obstacles
+            squad_obstacles = @current_obstacles
+
         @current_squad =
             id: null
             name: squad_name
@@ -139,12 +151,13 @@ class exportObj.SquadBuilder
                 description: ''
                 cards: []
                 notes: ''
+                obstacles: squad_obstacles
             faction: @faction
+
         if @total_points > 0
             if squad_name == default_squad_name
                 @current_squad.name = 'Unsaved Squadron'
             @current_squad.dirty = true
-        @updatePermaLink()
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
@@ -152,6 +165,7 @@ class exportObj.SquadBuilder
         @squad_name_input.val 'New Squadron'
         @removeAllShips()
         @addShip()
+        @current_obstacles = []
         @resetCurrentSquad()
         @notes.val ''
 
@@ -197,7 +211,6 @@ class exportObj.SquadBuilder
                         <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
                         <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
-                        <a class="btn btn-primary permalink"><i class="fa fa-link hidden-phone hidden-tablet"></i>&nbsp;Permalink</a>
 
                         <!--
                         <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
@@ -276,7 +289,7 @@ class exportObj.SquadBuilder
                     Print color <input type="checkbox" class="toggle-color-print" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
-                    Include List Juggler QR code <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
+                    Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include obstacle/damage deck choices <input type="checkbox" class="toggle-obstacles" />
@@ -413,7 +426,6 @@ class exportObj.SquadBuilder
         @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
         @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
         @max_epic_points_span = $ @points_container.find('.max-epic-points')
-        @permalink = $ @status_container.find('div.button-container a.permalink')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
@@ -525,6 +537,47 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @randomizer_options_modal.modal()
 
+        @choose_obstacles_modal = $ document.createElement 'DIV'
+        @choose_obstacles_modal.addClass 'modal hide fade choose-obstacles-modal'
+        @container.append @choose_obstacles_modal
+        @choose_obstacles_modal.append $.trim """
+            <div class="modal-header">
+                <label class='choose-obstacles-description'>Choose up to three obstacles, to include in the permalink for use in external programs</label>
+            </div>
+            <div class="modal-body">
+                <div class="obstacle-select-container" style="float:left">
+                    <select multiple class='obstacle-select' size="18">
+                        <option class="coreasteroid0-select" value="coreasteroid0">Core Asteroid 0</option>
+                        <option class="coreasteroid1-select" value="coreasteroid1">Core Asteroid 1</option>
+                        <option class="coreasteroid2-select" value="coreasteroid2">Core Asteroid 2</option>
+                        <option class="coreasteroid3-select" value="coreasteroid3">Core Asteroid 3</option>
+                        <option class="coreasteroid4-select" value="coreasteroid4">Core Asteroid 4</option>
+                        <option class="coreasteroid5-select" value="coreasteroid5">Core Asteroid 5</option>
+                        <option class="yt2400debris0-select" value="yt2400debris0">YT2400 Debris 0</option>
+                        <option class="yt2400debris1-select" value="yt2400debris1">YT2400 Debris 1</option>
+                        <option class="yt2400debris2-select" value="yt2400debris2">YT2400 Debris 2</option>
+                        <option class="vt49decimatordebris0-select" value="vt49decimatordebris0">VT49 Debris 0</option>
+                        <option class="vt49decimatordebris1-select" value="vt49decimatordebris1">VT49 Debris 1</option>
+                        <option class="vt49decimatordebris2-select" value="vt49decimatordebris2">VT49 Debris 2</option>
+                        <option class="core2asteroid0-select" value="core2asteroid0">Force Awakens Asteroid 0</option>
+                        <option class="core2asteroid1-select" value="core2asteroid1">Force Awakens Asteroid 1</option>
+                        <option class="core2asteroid2-select" value="core2asteroid2">Force Awakens Asteroid 2</option>
+                        <option class="core2asteroid3-select" value="core2asteroid3">Force Awakens Asteroid 3</option>
+                        <option class="core2asteroid4-select" value="core2asteroid4">Force Awakens Asteroid 4</option>
+                        <option class="core2asteroid5-select" value="core2asteroid5">Force Awakens Asteroid 5</option>
+                    </select>
+                </div>
+                <div class="obstacle-image-container" style="display:none;">
+                    <img class="obstacle-image" src="images/core2asteroid0.png" />
+                </div>
+            </div>
+            <div class="modal-footer hidden-print">
+                <button class="btn close-print-dialog" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @obstacles_select = @choose_obstacles_modal.find('.obstacle-select')
+        @obstacles_select_image = @choose_obstacles_modal.find('.obstacle-image-container')
+
         # Backend
 
         @backend_list_squads_button = $ @container.find('button.backend-list-my-squads')
@@ -546,6 +599,7 @@ class exportObj.SquadBuilder
                     description: @describeSquad()
                     cards: @listCards()
                     notes: @notes.val().substr(0, 1024)
+                    obstacles: @getObstacles()
                 @backend_status.html $.trim """
                     <i class="fa fa-refresh fa-spin"></i>&nbsp;Saving squad...
                 """
@@ -588,18 +642,22 @@ class exportObj.SquadBuilder
         content_container.append $.trim """
             <div class="row-fluid">
                 <div class="span9 ship-container">
-                            <label class="notes-container show-authenticated">
-                                <span>Squad Notes:</span>
-                                <br />
-                                <textarea class="squad-notes"></textarea>
-                            </label>
-                </div>
-                <div class="span3 info-container" />
+                    <label class="notes-container show-authenticated">
+                        <span>Squad Notes:</span>
+                        <br />
+                        <textarea class="squad-notes"></textarea>
+                    </label>
+                    <span class="obstacles-container">
+                        <button class="btn btn-primary choose-obstacles">Choose Obstacles</button>
+                    </span>
+                 </div>
+               <div class="span3 info-container" />
             </div>
         """
 
         @ship_container = $ content_container.find('div.ship-container')
         @info_container = $ content_container.find('div.info-container')
+        @obstacles_container = content_container.find('.obstacles-container')
         @notes_container = $ content_container.find('.notes-container')
         @notes = $ @notes_container.find('textarea.squad-notes')
 
@@ -663,6 +721,12 @@ class exportObj.SquadBuilder
         @print_list_button = $ @container.find('button.print-list')
 
         @container.find('[rel=tooltip]').tooltip()
+
+        # obstacles
+        @obstacles_button = $ @container.find('button.choose-obstacles')
+        @obstacles_button.click (e) =>
+            e.preventDefault()
+            @showChooseObstaclesModal()
 
         # conditions
         @condition_container = $ document.createElement('div')
@@ -741,6 +805,22 @@ class exportObj.SquadBuilder
                 @tab.tab('show')
                 cb this
 
+        @obstacles_select.change (e) =>
+            if @obstacles_select.val().length > 3
+                @obstacles_select.val(@current_squad.additional_data.obstacles)
+            else
+                previous_obstacles = @current_squad.additional_data.obstacles
+                @current_obstacles = (o for o in @obstacles_select.val())
+                if (previous_obstacles?)
+                    new_selection = @current_obstacles.filter((element) => return previous_obstacles.indexOf(element) == -1)
+                else
+                    new_selection = @current_obstacles
+                if new_selection.length > 0
+                    @showChooseObstaclesSelectImage(new_selection[0])
+                @current_squad.additional_data.obstacles = @current_obstacles
+                @current_squad.dirty = true
+                @container.trigger 'xwing-backend:squadDirtinessChanged'
+
         @view_list_button.click (e) =>
             e.preventDefault()
             @showTextListModal()
@@ -795,16 +875,28 @@ class exportObj.SquadBuilder
                 """
 
             # Add List Juggler QR code
-            query = @permalink.attr('href').split(/\?/)[1].replace(/&sn=.*/, '')
+            query = @getPermaLinkParams(['sn', 'obs'])
             if query? and @list_modal.find('.toggle-juggler-qrcode').prop('checked')
                 @printable_container.find('.printable-body').append $.trim """
-                    <div class="juggler-qrcode-container">
-                        <div class="juggler-qrcode-text">Bringing this list to a tournament?  Have the TO scan this QR code to register this list with List Juggler!</div>
-                        <div class="juggler-qrcode"></div>
+                <div class="qrcode-container">
+                    <div class="permalink-container">
+                        <div class="qrcode"></div>
+                        <div class="qrcode-text">Scan to open this list in the builder</div>
                     </div>
+                    <div class="juggler-container">
+                        <div class="qrcode"></div>
+                        <div class="qrcode-text">TOs: Scan to load this squad into List Juggler</div>
+                    </div>
+                </div>
                 """
-                text = "https://yasb-xws.herokuapp.com/juggler?#{query}"
-                @printable_container.find('.juggler-qrcode').qrcode
+                text = "https://yasb-xws.herokuapp.com/juggler#{query}"
+                @printable_container.find('.juggler-container .qrcode').qrcode
+                    render: 'div'
+                    ec: 'M'
+                    size: if text.length < 144 then 144 else 160
+                    text: text
+                text = "https://geordanr.github.io/xwing/#{query}"
+                @printable_container.find('.permalink-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
                     size: if text.length < 144 then 144 else 160
@@ -819,9 +911,21 @@ class exportObj.SquadBuilder
 
          @notes.on 'keyup', @onNotesUpdated
 
+    getPermaLinkParams: (ignored_params=[]) =>
+        params = {}
+        params.f = encodeURI(@faction) unless 'f' in ignored_params
+        params.d = encodeURI(@serialize()) unless 'd' in ignored_params
+        params.sn = encodeURIComponent(@current_squad.name) unless 'sn' in ignored_params
+        params.obs = encodeURI(@current_squad.additional_data.obstacles || '') unless 'obs' in ignored_params
+        return "?" + ("#{k}=#{v}" for k, v of params).join("&")
+
+    getPermaLink: (params=@getPermaLinkParams()) => "#{URL_BASE}#{params}"
+
     updatePermaLink: () =>
-        squad_link = "#{window.location.protocol}//#{window.location.host}#{window.location.pathname}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURIComponent @current_squad.name}"
-        @permalink.attr 'href', squad_link
+        return unless @container.is(':visible') # gross but couldn't make clearInterval work
+        next_params = @getPermaLinkParams()
+        if window.location.search != next_params
+          window.history.replaceState(next_params, '', @getPermaLink(next_params))
 
     onNotesUpdated: =>
         if @total_points > 0
@@ -910,10 +1014,8 @@ class exportObj.SquadBuilder
                         @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
-        # update permalink while we're at it
-        @updatePermaLink()
-        # @permalink.attr 'href', "#{window.location.href.split('?')[0]}?f=#{encodeURI @faction}&d=#{encodeURI @serialize()}&sn=#{encodeURI @current_squad.name}&sno=#{encodeURI @notes.val()}"
-        # and text list
+
+        # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
         bbcode_ships = []
@@ -928,13 +1030,13 @@ class exportObj.SquadBuilder
 <br />
 <b><i>Total: #{@total_points}</i></b>
 <br />
-<a href="#{@permalink.attr 'href'}">View in Yet Another Squad Builder</a>
+<a href="#{@getPermaLink()}">View in Yet Another Squad Builder</a>
         """
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
 
 [b][i]Total: #{@total_points}[/i][/b]
 
-[url=#{@permalink.attr 'href'}]View in Yet Another Squad Builder[/url]
+[url=#{@getPermaLink()}]View in Yet Another Squad Builder[/url]
 """
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()
@@ -964,10 +1066,13 @@ class exportObj.SquadBuilder
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
+        console.log(squad.additional_data.obstacles)
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
         @squad_name_input.val @current_squad.name
         @squad_name_placeholder.text @current_squad.name
+        @current_obstacles = @current_squad.additional_data.obstacles
+        @updateObstacleSelect(@current_squad.additional_data.obstacles)
         @loadFromSerialized squad.serialized
         @notes.val(squad.additional_data.notes ? '')
         @backend_status.fadeOut 'slow'
@@ -987,7 +1092,6 @@ class exportObj.SquadBuilder
         @squad_name_placeholder.text ''
         @squad_name_placeholder.append short_name
         @squad_name_input.val @current_squad.name
-        @updatePermaLink()
 
     removeAllShips: ->
         while @ships.length > 0
@@ -997,6 +1101,19 @@ class exportObj.SquadBuilder
     showTextListModal: ->
         # Display modal
         @list_modal.modal 'show'
+
+    showChooseObstaclesModal: ->
+        @obstacles_select.val(@current_squad.additional_data.obstacles)
+        @choose_obstacles_modal.modal 'show'
+
+    showChooseObstaclesSelectImage: (obstacle) ->
+        @image_name = 'images/' + obstacle + '.png'
+        @obstacles_select_image.find('.obstacle-image').attr 'src', @image_name
+        @obstacles_select_image.show()
+
+    updateObstacleSelect: (obstacles) ->
+        @current_obstacles = obstacles
+        @obstacles_select.val(obstacles)
 
     serialize: ->
         #( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
@@ -1144,6 +1261,7 @@ class exportObj.SquadBuilder
                         id: ship_data.name
                         text: ship_data.name
                         english_name: ship_data.english_name
+                        canonical_name: ship_data.canonical_name
         ships.sort exportObj.sortHelper
 
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
@@ -1160,6 +1278,15 @@ class exportObj.SquadBuilder
     dfl_filter_func = ->
         true
 
+    countUpgrades: (canonical_name) ->
+        # returns number of upgrades with given canonical name equipped
+        count = 0
+        for ship in @ships
+            for upgrade in ship.upgrades
+                if upgrade?.data?.canonical_name == canonical_name
+                    count++
+        count
+
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func) ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
@@ -1174,17 +1301,18 @@ class exportObj.SquadBuilder
         if (@isEpic or @isCustom) and slot == 'Hardpoint' and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name.getXWSBaseName() for m in ship.modifications when m.data?)
             available_upgrades = available_upgrades.concat (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot in ['Missile', 'Torpedo'] and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
 
         # Special case #2 :(
         # current_upgrade_forcibly_removed = false
-        if ship?.title?.data?.special_case == 'A-Wing Test Pilot'
-            for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
-                eligible_upgrades.removeItem equipped_upgrade
-                # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
+        for title in ship?.titles ? []
+            if title?.data?.special_case == 'A-Wing Test Pilot'
+                for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
+                    eligible_upgrades.removeItem equipped_upgrade
+                    # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
 
         # Re-enable selected upgrade
-        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
+        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited? or include_upgrade.max_per_squad?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
         retval = ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
@@ -1213,10 +1341,12 @@ class exportObj.SquadBuilder
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
         # current_mod_forcibly_removed = false
-        if ship?.title?.data?.special_case == 'Royal Guard TIE'
-            for equipped_modification in (modification.data for modification in ship.modifications when modification?.data?)
-                eligible_modifications.removeItem equipped_modification
-                # current_mod_forcibly_removed = true if equipped_modification == include_modification
+        for thing in (ship?.titles ? []).concat(ship?.upgrades ? [])
+            if thing?.data?.special_case == 'Royal Guard TIE'
+                # Need to refetch by ID because Vaksai may have modified its cost
+                for equipped_modification in (modificationsById[modification.data.id] for modification in ship.modifications when modification?.data?)
+                    eligible_modifications.removeItem equipped_modification
+                    # current_mod_forcibly_removed = true if equipped_modification == include_modification
 
         # Re-add selected modification
         if include_modification? and (((include_modification.unique? or include_modification.limited?) and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
@@ -1226,12 +1356,13 @@ class exportObj.SquadBuilder
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
         # Titles are no longer unique!
-        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when title.ship == ship.data.name and @matcher(title_name, term))
+        limited_titles_in_use = (title.data for title in ship.titles when title?.data?.limited?)
+        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when (not title.ship? or title.ship == ship.data.name) and @matcher(title_name, term))
 
-        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or (title not in @uniques_in_use['Title'] and title.canonical_name.getXWSBaseName() not in (t.canonical_name.getXWSBaseName() for t in @uniques_in_use['Title'])) or title.canonical_name.getXWSBaseName() == include_title?.canonical_name.getXWSBaseName()) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship))
+        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or (title not in @uniques_in_use['Title'] and title.canonical_name.getXWSBaseName() not in (t.canonical_name.getXWSBaseName() for t in @uniques_in_use['Title'])) or title.canonical_name.getXWSBaseName() == include_title?.canonical_name.getXWSBaseName()) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship) and title not in limited_titles_in_use)
 
         # Re-add selected title
-        if include_title? and include_title.unique? and @matcher(include_title.name, term)
+        if include_title? and (((include_title.unique? or include_title.limited?) and @matcher(include_title.name, term)))
             eligible_titles.push include_title
         ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
@@ -1606,6 +1737,9 @@ class exportObj.SquadBuilder
     getNotes: ->
         @notes.val()
 
+    getObstacles: ->
+        @current_obstacles
+
     isSquadPossibleWithCollection: ->
         # console.log "#{@faction}: isSquadPossibleWithCollection()"
         # If the collection is uninitialized or empty, don't actually check it.
@@ -1632,10 +1766,11 @@ class exportObj.SquadBuilder
                         modification_is_available = @collection.use('modification', modification.data.english_name)
                         # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
                         validity = false unless modification_is_available
-                if ship.title?.data?
-                    title_is_available = @collection.use('title', ship.title.data.english_name)
-                    # console.log "#{@faction}: Title #{ship.title.data.english_name} available: #{title_is_available}"
-                    validity = false unless title_is_available
+                for title in ship.titles
+                    if title?.data?
+                        title_is_available = @collection.use('title', title.data.english_name)
+                        # console.log "#{@faction}: Title #{title.data.english_name} available: #{title_is_available}"
+                        validity = false unless title_is_available
         validity
 
     checkCollection: ->
@@ -1655,7 +1790,7 @@ class exportObj.SquadBuilder
                 yasb:
                     builder: '(Yet Another) X-Wing Miniatures Squad Builder'
                     builder_url: window.location.href.split('?')[0]
-                    link: @permalink.attr 'href'
+                    link: @getPermaLink()
             version: '0.3.0'
 
         for ship in @ships
@@ -1696,6 +1831,10 @@ class exportObj.SquadBuilder
         for pilot in xws.pilots
             delete pilot.multisection if pilot.multisection?
 
+        obstacles = @getObstacles()
+        if obstacles? and obstacles.length > 0
+            xws.obstacles = obstacles
+
         xws
 
     toMinimalXWS: ->
@@ -1729,6 +1868,9 @@ class exportObj.SquadBuilder
                     @current_squad.name = xws.name
                 if xws.description?
                     @notes.val xws.description
+
+                if xws.obstacles?
+                    @current_squad.additional_data.obstacles = xws.obstacles
 
                 @suppress_automatic_new_ship = true
                 @removeAllShips()
@@ -1778,7 +1920,8 @@ class exportObj.SquadBuilder
                                         addon_added = true
                                         break
                                 when 'Title'
-                                    unless new_ship.title.data?
+                                    for title in new_ship.titles
+                                        continue if title.data?
                                         # Special cases :(
                                         if addon.data instanceof Array
                                             # Right now, the only time this happens is because of
@@ -1788,12 +1931,12 @@ class exportObj.SquadBuilder
                                             # console.log slot_guesses
                                             if slot_guesses.length > 0
                                                 # console.log "Guessing #{slot_guesses[0]}"
-                                                new_ship.title.setData exportObj.titlesByLocalizedName[""""Heavy Scyk" Interceptor (#{slot_guesses[0]})"""]
+                                                title.setData exportObj.titlesByLocalizedName[""""Heavy Scyk" Interceptor (#{slot_guesses[0]})"""]
                                             else
                                                 # console.log "No idea, setting to #{addon.data[0].name}"
-                                                new_ship.title.setData addon.data[0]
+                                                title.setData addon.data[0]
                                         else
-                                            new_ship.title.setData addon.data
+                                            title.setData addon.data
                                         addon_added = true
                                 else
                                     # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
@@ -1855,7 +1998,7 @@ class Ship
         @data = null # ship data
         @upgrades = []
         @modifications = []
-        @title = null
+        @titles = []
 
         @setupUI()
 
@@ -1884,7 +2027,7 @@ class Ship
 
                 other_upgrades = {}
                 for upgrade in other.upgrades
-                    if upgrade?.data? and not upgrade.data.unique
+                    if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                         other_upgrades[upgrade.slot] ?= []
                         other_upgrades[upgrade.slot].push upgrade
 
@@ -1893,8 +2036,15 @@ class Ship
                     if modification?.data? and not modification.data.unique
                         other_modifications.push modification
 
-                if other.title?.data? and not other.title.data.unique
-                    @title.setById other.title.data.id
+                other_titles = []
+                for title in other.titles
+                    if title?.data? and not title.data.unique
+                        other_titles.push title
+
+                for title in @titles
+                    other_title = other_titles.shift()
+                    if other_title?
+                        title.setById other_title.data.id
 
                 for modification in @modifications
                     other_modification = other_modifications.shift()
@@ -1913,27 +2063,27 @@ class Ship
 
             # set up non-conferred addons
             other_conferred_addons = []
-            other_conferred_addons = other_conferred_addons.concat(other.title.conferredAddons) if other.title? and other.title.conferredAddons.length > 0
+            other_conferred_addons = other_conferred_addons.concat(other.titles[0].conferredAddons) if other.titles[0]?.data? # and other.titles.conferredAddons.length > 0
             other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
             #console.log "Looking for conferred upgrades..."
             for other_upgrade, i in other.upgrades
-                #console.log "Examining upgrade #{other_upgrade}"
-                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique
+                # console.log "Examining upgrade #{other_upgrade}"
+                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
                     #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
                     @upgrades[i].setById other_upgrade.data.id
-            #console.log "Checking other ship title #{other.title ? null}"
-            @title.setById other.title.data.id if other.title?.data? and not other.title.data.unique
+            #console.log "Checking other ship base title #{other.title ? null}"
+            @titles[0].setById other.titles[0].data.id if other.titles[0]?.data? and not other.titles[0].data.unique
             #console.log "Checking other ship base modification #{other.modifications[0] ? null}"
             @modifications[0].setById other.modifications[0].data.id if other.modifications[0]?.data and not other.modifications[0].data.unique
 
             # set up conferred non-unique addons
             #console.log "Attempt to copy conferred addons..."
-            if other.title? and other.title.conferredAddons.length > 0
-                #console.log "Other ship title #{other.title} conferrs addons"
-                for other_conferred_addon, i in other.title.conferredAddons
-                    @title.conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
+            if other.titles[0]? and other.titles[0].conferredAddons.length > 0
+                #console.log "Other ship title #{other.titles[0]} confers addons"
+                for other_conferred_addon, i in other.titles[0].conferredAddons
+                    @titles[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
             if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
-                #console.log "Other ship base modification #{other.modifications[0]} conferrs addons"
+                #console.log "Other ship base modification #{other.modifications[0]} confers addons"
                 for other_conferred_addon, i in other.modifications[0].conferredAddons
                     @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
 
@@ -1972,7 +2122,7 @@ class Ship
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
-            old_title = null
+            old_titles = []
             old_modifications = []
             if same_ship
                 # track addons and try to reassign them
@@ -1980,7 +2130,9 @@ class Ship
                     if upgrade?.data?
                         old_upgrades[upgrade.slot] ?= []
                         old_upgrades[upgrade.slot].push upgrade
-                old_title = @title if @title?
+                for title in @titles
+                    if title?.data?
+                        old_titles.push title
                 for modification in @modifications
                     if modification?.data?
                         old_modifications.push modification
@@ -1996,8 +2148,10 @@ class Ship
                 @setShipType @pilot.ship
                 if same_ship
                     # Hopefully this order is correct
-                    if old_title?.data?
-                        @title.setById old_title.data.id
+                    for title in @titles
+                        old_title = old_titles.shift()
+                        if old_title?
+                            title.setById old_title.data.id
                     for modification in @modifications
                         old_modification = old_modifications.shift()
                         if old_modification?
@@ -2025,7 +2179,7 @@ class Ship
                 slot: slot
         # Title
         if @pilot.ship of exportObj.titlesByShip
-            @title = new exportObj.Title
+            @titles.push new exportObj.Title
                 ship: this
                 container: @addon_container
         # Modifications
@@ -2035,18 +2189,20 @@ class Ship
 
     resetAddons: ->
         await
-            @title.destroy defer() if @title?
+            for title in @titles
+                title.destroy defer() if title?
             for upgrade in @upgrades
                 upgrade.destroy defer() if upgrade?
             for modification in @modifications
                 modification.destroy defer() if modification?
         @upgrades = []
         @modifications = []
-        @title = null
+        @titles = []
 
     getPoints: ->
-        points = (@pilot?.points ? 0) +
-                    (@title?.getPoints() ? 0)
+        points = @pilot?.points ? 0
+        for title in @titles
+            points += (title?.getPoints() ? 0)
         for upgrade in @upgrades
             points += upgrade.getPoints()
         for modification in @modifications
@@ -2066,13 +2222,15 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
+                canonical_name: exportObj.ships[@pilot.ship].canonical_name
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{@pilot.name} (#{@pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 upgrade.updateSelection()
-            @title.updateSelection() if @title?
+            for title in @titles
+                title.updateSelection() if title?
             for modification in @modifications
                 modification.updateSelection() if modification?
         else
@@ -2104,6 +2262,12 @@ class Ship
         @ship_selector = $ @row.find('input.ship-selector-container')
         @pilot_selector = $ @row.find('input.pilot-selector-container')
 
+        shipResultFormatter = (object, container, query) ->
+            # Append directly so we don't have to disable markup escaping
+            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.canonical_name}"></i> #{object.text}"""
+            # If you return a string, Select2 will render it
+            undefined
+
         @ship_selector.select2
             width: '100%'
             placeholder: exportObj.translate @builder.language, 'ui', 'shipSelectorPlaceholder'
@@ -2127,6 +2291,8 @@ class Ship
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
+            formatResult: shipResultFormatter
+            formatSelection: shipResultFormatter
 
         @ship_selector.on 'change', (e) =>
             @setShipType @ship_selector.val()
@@ -2276,7 +2442,7 @@ class Ship
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
-        slotted_upgrades.push @title if @title?.data?
+            .concat (title for title in @titles when title.data?)
 
         if slotted_upgrades.length > 0
             html += $.trim """
@@ -2309,7 +2475,7 @@ class Ship
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
-        slotted_upgrades.push @title if @title?.data?
+            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
                 table_html += upgrade.toTableRow()
@@ -2325,7 +2491,7 @@ class Ship
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
-        slotted_upgrades.push @title if @title?.data?
+            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             bbcode +="\n"
             bbcode_upgrades= []
@@ -2341,7 +2507,7 @@ class Ship
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
-        slotted_upgrades.push @title if @title?.data?
+            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
                 upgrade_html = upgrade.toSimpleHTML()
@@ -2353,7 +2519,9 @@ class Ship
         # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
 
         # Skip conferred upgrades
-        conferred_addons = @title?.conferredAddons ? []
+        conferred_addons = []
+        for title in @titles
+            conferred_addons = conferred_addons.concat(title?.conferredAddons ? [])
         for modification in @modifications
             conferred_addons = conferred_addons.concat(modification?.conferredAddons ? [])
         for upgrade in @upgrades
@@ -2367,7 +2535,7 @@ class Ship
         [
             @pilot.id,
             upgrades,
-            @title?.data?.id ? -1,
+            @titles[0]?.data?.id ? -1,
             @modifications[0]?.data?.id ? -1,
             serialized_conferred_addons.join(','),
         ].join ':'
@@ -2386,12 +2554,12 @@ class Ship
                     @upgrades[i].setById upgrade_id if upgrade_id >= 0
 
                 title_id = parseInt title_id
-                @title.setById title_id if title_id >= 0
+                @titles[0].setById title_id if title_id >= 0
 
-                if @title? and @title.conferredAddons.length > 0
+                if @titles[0]? and @titles[0].conferredAddons.length > 0
                     for upgrade_id, i in title_conferred_upgrade_ids.split ','
                         upgrade_id = parseInt upgrade_id
-                        @title.conferredAddons[i].setById upgrade_id if upgrade_id >= 0
+                        @titles[0].conferredAddons[i].setById upgrade_id if upgrade_id >= 0
 
                 modification_id = parseInt modification_id
                 @modifications[0].setById modification_id if modification_id >= 0
@@ -2418,7 +2586,7 @@ class Ship
 
 
                 title_id = parseInt title_id
-                @title.setById title_id if title_id >= 0
+                @titles[0].setById title_id if title_id >= 0
 
                 modification_id = parseInt modification_id
                 @modifications[0].setById modification_id if modification_id >= 0
@@ -2429,13 +2597,13 @@ class Ship
                 else
                     conferredaddon_pairs = []
 
-                if @title? and @title.conferredAddons.length > 0
-                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @title.conferredAddons.length
+                if @titles[0]? and @titles[0].conferredAddons.length > 0
+                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @titles[0].conferredAddons.length
                     for conferredaddon_pair, i in title_conferred_addon_pairs
                         [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
                         addon_id = parseInt addon_id
                         addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                        conferred_addon = @title.conferredAddons[i]
+                        conferred_addon = @titles[0].conferredAddons[i]
                         if conferred_addon instanceof addon_cls
                             conferred_addon.setById addon_id
                         else
@@ -2463,7 +2631,8 @@ class Ship
                 for upgrade_id, i in upgrade_ids.split ','
                     upgrade_id = parseInt upgrade_id
                     continue if upgrade_id < 0 or isNaN(upgrade_id)
-                    if @upgrades[i].isOccupied()
+                    # Defer fat upgrades
+                    if @upgrades[i].isOccupied() or @upgrades[i].dataById[upgrade_id].also_occupies_upgrades?
                         deferred_ids.push upgrade_id
                     else
                         @upgrades[i].setById upgrade_id
@@ -2476,7 +2645,7 @@ class Ship
 
 
                 title_id = parseInt title_id
-                @title.setById title_id if title_id >= 0
+                @titles[0].setById title_id if title_id >= 0
 
                 modification_id = parseInt modification_id
                 @modifications[0].setById modification_id if modification_id >= 0
@@ -2487,17 +2656,19 @@ class Ship
                 else
                     conferredaddon_pairs = []
 
-                if @title? and @title.conferredAddons.length > 0
-                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @title.conferredAddons.length
-                    for conferredaddon_pair, i in title_conferred_addon_pairs
-                        [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
-                        addon_id = parseInt addon_id
-                        addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                        conferred_addon = @title.conferredAddons[i]
-                        if conferred_addon instanceof addon_cls
-                            conferred_addon.setById addon_id
-                        else
-                            throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
+                for title, i in @titles
+                    if title?.data? and title.conferredAddons.length > 0
+                        # console.log "Confer title #{title.data.name} at #{i}"
+                        title_conferred_addon_pairs = conferredaddon_pairs.splice 0, title.conferredAddons.length
+                        for conferredaddon_pair, i in title_conferred_addon_pairs
+                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
+                            addon_id = parseInt addon_id
+                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                            conferred_addon = title.conferredAddons[i]
+                            if conferred_addon instanceof addon_cls
+                                conferred_addon.setById addon_id
+                            else
+                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
 
                 for modification in @modifications
                     if modification?.data? and modification.conferredAddons.length > 0
@@ -2545,7 +2716,8 @@ class Ship
 
         for upgrade in @upgrades
             upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
-        @title.data.modifier_func(stats) if @title?.data?.modifier_func?
+        for title in @titles
+            title.data.modifier_func(stats) if title?.data?.modifier_func?
         for modification in @modifications
             modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
@@ -2566,11 +2738,13 @@ class Ship
                     valid = false
                     break
 
-            func = @title?.data?.validation_func ? @title?.data?.restriction_func ? undefined
-            if func? and not func this
-                #console.log "Invalid title: #{@title?.data?.name}"
-                @title.setById null
-                continue
+            for title in @titles
+                func = title?.data?.validation_func ? title?.data?.restriction_func ? undefined
+                if func? and not func this
+                    #console.log "Invalid title: #{title?.data?.name}"
+                    title.setById null
+                    valid = false
+                    break
 
             for modification in @modifications
                 func = modification?.data?.validation_func ? modification?.data?.restriction_func ? undefined
@@ -2587,9 +2761,10 @@ class Ship
             #console.log "#{@pilot.name} is unreleased"
             return true
 
-        if @title?.data? and not exportObj.isReleased @title.data
-            #console.log "#{@title.data.name} is unreleased"
-            return true
+        for title in @titles
+            if title?.data? and not exportObj.isReleased title.data
+                #console.log "#{title.data.name} is unreleased"
+                return true
 
         for modification in @modifications
             if modification?.data? and not exportObj.isReleased modification.data
@@ -2607,8 +2782,9 @@ class Ship
         if @pilot? and @pilot.epic?
             return true
 
-        if @title?.data?.epic?
-            return true
+        for title in @titles
+            if title?.data?.epic?
+                return true
 
         for modification in @modifications
             if modification?.data?.epic?
@@ -2645,8 +2821,9 @@ class Ship
             if modification?.data?
                 modification.toXWS upgrade_obj
 
-        if @title?.data?
-            @title.toXWS upgrade_obj
+        for title in @titles
+            if title?.data?
+                title.toXWS upgrade_obj
 
         if Object.keys(upgrade_obj).length > 0
             xws.upgrades = upgrade_obj
@@ -2656,9 +2833,19 @@ class Ship
     getConditions: ->
         if Set?
             conditions = new Set()
-            conditions.add(exportObj.conditionsByCanonicalName[@pilot.applies_condition]) if @pilot?.applies_condition?
+            if @pilot?.applies_condition?
+                if @pilot.applies_condition instanceof Array
+                    for condition in @pilot.applies_condition
+                        conditions.add(exportObj.conditionsByCanonicalName[condition])
+                else
+                    conditions.add(exportObj.conditionsByCanonicalName[@pilot.applies_condition])
             for upgrade in @upgrades
-                conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition]) if upgrade?.data?.applies_condition?
+                if upgrade?.data?.applies_condition?
+                    if upgrade.data.applies_condition instanceof Array
+                        for condition in upgrade.data.applies_condition
+                            conditions.add(exportObj.conditionsByCanonicalName[condition])
+                    else
+                        conditions.add(exportObj.conditionsByCanonicalName[upgrade.data.applies_condition])
             conditions
         else
             console.warn 'Set not supported in this JS implementation, not implementing conditions'
@@ -2683,6 +2870,10 @@ class GenericAddon
         @type = null
         @dataByName = null
         @dataById = null
+
+        @adjustment_func = args.adjustment_func if args.adjustment_func?
+        @filter_func = args.filter_func if args.filter_func?
+        @placeholderMod_func = if args.placeholderMod_func? then args.placeholderMod_func else (x) => x
 
     destroy: (cb, args...) ->
         return cb(args) if @destroyed
@@ -2778,11 +2969,14 @@ class GenericAddon
                 args.adjustment_func = addon.adjustment_func if addon.adjustment_func?
                 args.filter_func = addon.filter_func if addon.filter_func?
                 args.auto_equip = addon.auto_equip if addon.auto_equip?
+                args.placeholderMod_func = addon.placeholderMod_func if addon.placeholderMod_func?
                 addon = new cls args
                 if addon instanceof exportObj.Upgrade
                     @ship.upgrades.push addon
                 else if addon instanceof exportObj.Modification
                     @ship.modifications.push addon
+                else if addon instanceof exportObj.Title
+                    @ship.titles.push addon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
@@ -2796,12 +2990,18 @@ class GenericAddon
                 @ship.upgrades.removeItem addon
             else if addon instanceof exportObj.Modification
                 @ship.modifications.removeItem addon
+            else if addon instanceof exportObj.Title
+                @ship.titles.removeItem addon
             else
                 throw new Error("Unexpected addon type for addon #{addon}")
         @conferredAddons = []
 
     getPoints: ->
-        @data?.points ? 0
+        # Moar special case jankiness
+        if 'vaksai' in (title.data?.canonical_name for title in @ship?.titles ? []) and @data?.canonical_name != 'vaksai'
+            Math.max(0, (@data?.points ? 0) - 1)
+        else
+            @data?.points ? 0
 
     updateSelection: ->
         if @data?
@@ -2953,15 +3153,13 @@ class exportObj.Upgrade extends GenericAddon
         @dataById = exportObj.upgradesById
         @dataByName = exportObj.upgradesByLocalizedName
         @serialization_code = 'U'
-        @adjustment_func = args.adjustment_func if args.adjustment_func?
-        @filter_func = args.filter_func if args.filter_func?
 
         @setupSelector()
 
     setupSelector: ->
         super
             width: '50%'
-            placeholder: exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot
+            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'upgradePlaceholder', @slot)
             allowClear: true
             query: (query) =>
                 @ship.builder.checkCollection()
@@ -2976,14 +3174,13 @@ class exportObj.Modification extends GenericAddon
         @dataById = exportObj.modificationsById
         @dataByName = exportObj.modificationsByLocalizedName
         @serialization_code = 'M'
-        @filter_func = args.filter_func if args.filter_func?
 
         @setupSelector()
 
     setupSelector: ->
         super
             width: '50%'
-            placeholder: exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder'
+            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder')
             allowClear: true
             query: (query) =>
                 @ship.builder.checkCollection()
@@ -3004,14 +3201,13 @@ class exportObj.Title extends GenericAddon
     setupSelector: ->
         super
             width: '50%'
-            placeholder: exportObj.translate @ship.builder.language, 'ui', 'titlePlaceholder'
+            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'titlePlaceholder')
             allowClear: true
             query: (query) =>
                 @ship.builder.checkCollection()
                 query.callback
                     more: false
                     results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)
-
 
 class exportObj.RestrictedUpgrade extends exportObj.Upgrade
     constructor: (args) ->
