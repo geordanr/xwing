@@ -7638,7 +7638,12 @@ exportObj.translations.Deutsch = {
     "C-ROC Cruiser Expansion Pack": "C-ROC Kreuzer Erweiterung",
     "TIE Aggressor Expansion Pack": "Tie Aggressor Erweiterung",
     "Scurrg H-6 Bomber Expansion Pack": "Scurrg H-6 Bomber Erweiterung",
-    "Auzituck Gunship Expansion Pack": "Auzituck-Kanonenboot Erweiterung"
+    "Auzituck Gunship Expansion Pack": "Auzituck-Kanonenboot Erweiterung",
+    "Guns for Hire Expansion Pack": "Söldnerseelen Erweiterung",
+    "M12-L Kimogila Fighter Expansion Pack": "M12-L Kimogila Fighter Expansion Pack",
+    "Phantom II Expansion Pack": "Phantom II Expansion Pack",
+    "Resistance Bomber Expansion Pack": "Resistance Bomber Expansion Pack",
+    "TIE Silencer Expansion Pack": "TIE Silencer Expansion Pack"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -7780,6 +7785,9 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('Auzituck Gunship', 'Auzituck-Kanonenboot');
   exportObj.renameShip('TIE Aggressor', 'TIE-Aggressor');
   exportObj.renameShip('TIE Advanced', 'TIE-Turbojäger');
+  exportObj.renameShip('Alpha-class Star Wing', 'Alpha-class Star Wing');
+  exportObj.renameShip('M12-L Kimogila Fighter', 'M12-L Kimogila Fighter');
+  exportObj.renameShip('Sheathipede-class Shuttle', 'Sheathipede-class Shuttle');
   pilot_translations = {
     "Wedge Antilles": {
       ship: "X-Flügler",
@@ -7799,7 +7807,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Biggs Darklighter": {
       ship: "X-Flügler",
-      text: "Andere freundliche Schiffe in Reichweite 1 dürfen nur dann angegriffen werden, wenn der Angreifer dich nicht zum Ziel bestimmen kann."
+      text: "Einmal pro Spiel, zu Beginn der Kampfphase, darfst du wählen, dass andere freundliche Schiffe in Reichweite 1 nur dann angegriffen werden dürfen, wenn der Angreifer dich nicht zum Ziel bestimmen kann."
     },
     "Luke Skywalker": {
       ship: "X-Flügler",
@@ -8814,9 +8822,6 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "TIE-Aggressor",
       name: "Experte von Sienar"
     },
-    'Viktor Hel': {
-      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
-    },
     'Lowhhrick': {
       ship: "Auzituck-Kanonenboot",
       text: 'Sobald ein anderes freundliches Schiff in Reichweite 1 verteidigt, darfst du 1 Verstärkungsmarker ausgeben. Falls du das tust, fügt der Verteidiger 1 %EVADE% hinzu.'
@@ -8854,31 +8859,51 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Pirat aus dem Karthakk-Sektor"
     },
     'Dalan Oberos': {
-      ship: "StarViper",
+      ship: "SternenViper",
       text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
     },
     'Thweek': {
-      ship: "StarViper",
+      ship: "SternenViper",
       text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
     },
+    'Black Sun Assassin': {
+      ship: "SternenViper"
+    },
+    'Viktor Hel': {
+      ship: "Kihraxz-Jäger",
+      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+    },
     'Captain Jostero': {
-      ship: "StarViper",
+      ship: "Kihraxz-Jäger",
       text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
     },
-    'Black Sun Assassin': {
-      ship: "StarViper"
-    },
     'Major Vynder': {
+      ship: "Alpha-class Star Wing",
       text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
     },
     'Lieutenant Karsabi': {
+      ship: "Alpha-class Star Wing",
       text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
     },
+    'Rho Squadron Veteran': {
+      ship: "Alpha-class Star Wing"
+    },
+    'Nu Squadron Pilot': {
+      ship: "Alpha-class Star Wing"
+    },
     'Torani Kulda': {
+      ship: "M12-L Kimogila Fighter",
       text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
     },
     'Dalan Oberos (Kimogila)': {
+      ship: "M12-L Kimogila Fighter",
       text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+    },
+    'Cartel E???': {
+      ship: "M12-L Kimogila Fighter"
+    },
+    'Cartel Brute': {
+      ship: "M12-L Kimogila Fighter"
     },
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
@@ -9348,7 +9373,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Genius"': {
       name: '"Genie"',
-      text: "Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."
+      text: "Nachdem du ein Manöver aufgedeckt und ausgeführt hast und dich nicht mit einem Schiff überlappst, darfst du 1 deiner ausgerüsteten Bomben-Aufwertungskarten ohne das Stichwort \"<strong>Aktion:</strong>\" ablegen, um den entsrpechenden Bombenmarker zu legen."
     },
     "Unhinged Astromech": {
       name: "Ausgeklinkter Astromech-Droide",
@@ -9578,7 +9603,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Attanni Mindlink": {
       name: "Attanni-Implantat",
-      text: "%DE_SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."
+      text: "<span class=\"card-restriction\">Maximal 2 pro Staffel.</span> %DE_SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."
     },
     "Boba Fett": {
       name: "Boba Fett (Crew)",
@@ -9753,7 +9778,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für C-ROC Kreuzer.</span>%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff auf 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'
     },
     'Cikatro Vizago': {
-      text: '%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die osten der neuen Aufwertung müssen gleich oder niedriger sein.'
+      text: '%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'
     },
     'Azmorigan': {
       text: '%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 Energie ausgeben, um eine von dir ausgerüstete offene %CREW%- oder %TEAM%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'
@@ -9824,7 +9849,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
     },
     'Harpoon Missiles': {
-      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, after the attack resolves, assign the "Harpooned!" Condition to the defender.'
     },
     'Ordnance Silos': {
       text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
@@ -10216,9 +10241,11 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
     },
     'XG-1 Assault Configuration': {
+      ship: "Alpha-class Star Wing",
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
     },
     'Enforcer': {
+      ship: "M12-L Kimogila Fighter",
       text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
     },
     'Ghost (Phantom II)': {
@@ -10231,6 +10258,7 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
     },
     'Os-1 Arsenal Loadout': {
+      ship: "Alpha-class Star Wing",
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
     }
   };
@@ -26414,7 +26442,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25092
+                    lineno: 25118
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27003,7 +27031,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25722
+              lineno: 25748
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27747,7 +27775,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26352
+          lineno: 26378
         }));
         __iced_deferrals._fulfill();
       });
@@ -27759,7 +27787,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26353
+            lineno: 26379
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29370,7 +29398,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27258
+                      lineno: 27284
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29444,7 +29472,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27284
+                lineno: 27310
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29499,7 +29527,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27307
+              lineno: 27333
             }));
           }
         }
@@ -29508,7 +29536,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27309
+              lineno: 27335
             }));
           }
         }
@@ -29517,7 +29545,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27311
+              lineno: 27337
             }));
           }
         }
@@ -30540,7 +30568,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 27995
+                lineno: 28021
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30659,7 +30687,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28054
+                  lineno: 28080
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30681,7 +30709,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28058
+                    lineno: 28084
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30771,7 +30799,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28101
+            lineno: 28127
           }));
         }
         __iced_deferrals._fulfill();
