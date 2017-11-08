@@ -1073,7 +1073,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Während des Spielaufbaus, vor dem Schritt "Streitkräfte platzieren", darfst du 1 feindliches Schiff wählen und ihm die Zustandskarte "Wie ein Schatten" oder "Wie ein Spiegelbild" zuordnen.'''
         'Viktor Hel':
         	ship: "Kihraxz-Jäger"
-            text: '''Nachdem du dich verteidigt hast, falls du nicht genau 2 Verteidigungswürfel geworfen hast, erhält der Angreifer 1 Stressmaker.'''
+        	text: '''Nachdem du dich verteidigt hast, falls du nicht genau 2 Verteidigungswürfel geworfen hast, erhält der Angreifer 1 Stressmaker.'''
         'Captain Jostero':
             ship: "Kihraxz-Jäger"
             text: '''Ein Mal pro Runde, nachdem ein feindliches Schiff, das sich nicht gegen einen Angriff verteidigt, Schaden oder kritischen Schaden genommen hat, darfst du einen Angriff gegen jenes Schiff durchführen.'''
