@@ -91,6 +91,10 @@ exportObj.translations.Deutsch =
         "Scurrg H-6 Bomber Expansion Pack": "Scurrg H-6 Bomber Erweiterung"
         "Auzituck Gunship Expansion Pack": "Auzituck-Kanonenboot Erweiterung"
         "Guns for Hire Expansion Pack": "Söldnerseelen Erweiterung"
+        "M12-L Kimogila Fighter Expansion Pack": "M12-L Kimogila Fighter Expansion Pack"
+        "Phantom II Expansion Pack": "Phantom II Expansion Pack"
+        "Resistance Bomber Expansion Pack": "Resistance Bomber Expansion Pack"
+        "TIE Silencer Expansion Pack": "TIE Silencer Expansion Pack"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -233,6 +237,9 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'Auzituck Gunship', 'Auzituck-Kanonenboot'
     exportObj.renameShip 'TIE Aggressor', 'TIE-Aggressor'
     exportObj.renameShip 'TIE Advanced', 'TIE-Turbojäger'
+    exportObj.renameShip 'Alpha-class Star Wing', 'Alpha-class Star Wing'
+    exportObj.renameShip 'M12-L Kimogila Fighter', 'M12-L Kimogila Fighter'
+    exportObj.renameShip 'Sheathipede-class Shuttle', 'Sheathipede-class Shuttle'
     pilot_translations =
         "Wedge Antilles":
             ship: "X-Flügler"
@@ -248,7 +255,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Anfängerpilot"
         "Biggs Darklighter":
             ship: "X-Flügler"
-            text: """Andere freundliche Schiffe in Reichweite 1 dürfen nur dann angegriffen werden, wenn der Angreifer dich nicht zum Ziel bestimmen kann."""
+            text: """Einmal pro Spiel, zu Beginn der Kampfphase, darfst du wählen, dass andere freundliche Schiffe in Reichweite 1 nur dann angegriffen werden dürfen, wenn der Angreifer dich nicht zum Ziel bestimmen kann."""
         "Luke Skywalker":
             ship: "X-Flügler"
             text: """Wenn du verteidigst, kannst du 1 deiner %FOCUS% in ein %EVADE% ändern."""
@@ -1059,10 +1066,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Pirat aus dem Karthakk-Sektor"
 		# Söldnerseelen
         'Dalan Oberos':
-            ship: "StarViper"
+            ship: "SternenViper"
             text: '''Falls du nicht gestresst bist, sobald du ein Wende-, Dreh-, oder Segnor-Looping-Manöver aufdeckst, darfst du es stattdessen wie ein rotes Tallon-Rolle-Manöver mit gleicher Flugrichtung (links oder rechts) behandeln und die Schablone des ursprünglich aufgedeckten Manövers verwenden .'''
         'Thweek':
-            ship: "StarViper"
+            ship: "SternenViper"
             text: '''Während des Spielaufbaus, vor dem Schritt "Streitkräfte platzieren", darfst du 1 feindliches Schiff wählen und ihm die Zustandskarte "Wie ein Schatten" oder "Wie ein Spiegelbild" zuordnen.'''
         'Viktor Hel':
         	ship: "Kihraxz-Jäger"
@@ -1071,17 +1078,29 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Kihraxz-Jäger"
             text: '''Ein Mal pro Runde, nachdem ein feindliches Schiff, das sich nicht gegen einen Angriff verteidigt, Schaden oder kritischen Schaden genommen hat, darfst du einen Angriff gegen jenes Schiff durchführen.'''
         'Black Sun Assassin':
-            ship: "StarViper"
+            ship: "SternenViper"
             name: "Attentäter der Schwarzen Sonne"
 # TODO unveröffentliche Piloten
         'Major Vynder':
+            ship: "Alpha-class Star Wing"
             text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
         'Lieutenant Karsabi':
+            ship: "Alpha-class Star Wing"
             text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
+        'Rho Squadron Veteran':
+            ship: "Alpha-class Star Wing"
+        'Nu Squadron Pilot':
+            ship: "Alpha-class Star Wing"
         'Torani Kulda':
+            ship: "M12-L Kimogila Fighter"
             text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
         'Dalan Oberos (Kimogila)':
+            ship: "M12-L Kimogila Fighter"
             text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
+        'Cartel E???':
+            ship: "M12-L Kimogila Fighter"
+        'Cartel Brute':
+            ship: "M12-L Kimogila Fighter"
         'Fenn Rau (Sheathipede)':
             text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
         '"Crimson Leader"':
@@ -1430,7 +1449,7 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "Y-Flügler"
         '"Genius"':
             name: '"Genie"'
-            text: """Wenn du eine Bombe ausgerüstet hast, die gelegt werden kann, sobald du ein Manöver aufdeckst, darfst du die Bombe legen, nachdem du dein Manöver ausgeführt hast."""
+            text: """Nachdem du ein Manöver aufgedeckt und ausgeführt hast und dich nicht mit einem Schiff überlappst, darfst du 1 deiner ausgerüsteten Bomben-Aufwertungskarten ohne das Stichwort "<strong>Aktion:</strong>" ablegen, um den entsrpechenden Bombenmarker zu legen."""
         "Unhinged Astromech":
             name: "Ausgeklinkter Astromech-Droide"
             text: """Du darfst alle Manöver mit Geschwindigkeit 3 wie grüne Manöver behandeln."""
@@ -1602,7 +1621,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """<strong>Aktion:</strong> Ordne deinem Schiff 1 Fokusmarker zu und erhalte 2 Stressmarker. Bis zum Ende der runde darfst du bis zu 3 Angriffswürfel neu würfeln, sobald du angreifst."""
         "Attanni Mindlink":
             name: "Attanni-Implantat"
-            text: """%DE_SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."""
+            text: """<span class="card-restriction">Maximal 2 pro Staffel.</span> %DE_SCUMONLY%%LINEBREAK%Immer wenn dir ein Fokus- oder Stressmarker zugeordnet wird, muss jedem anderen freundlichen Schiff mit Attanni-Implantat ein Marker desselben Typs zugeordnet werden, falls es diesen nicht schon hat."""
         "Boba Fett":
             name: "Boba Fett (Crew)"
             text: """%DE_SCUMONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast und falls dem Verteidiger eine offene Schadenskarte zugeteilt worden ist, darfst du diese Karte ablegen, um 1 der Aufwertungskarten des Verteidigers zu wählen und abzulegen."""
@@ -1732,7 +1751,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Schweres Lasergeschütz"
             text: '''<span class="card-restriction">Nur für C-ROC Kreuzer.</span>%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff auf 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'''
         'Cikatro Vizago':
-            text: '''%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die osten der neuen Aufwertung müssen gleich oder niedriger sein.'''
+            text: '''%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
         'Azmorigan':
             text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 Energie ausgeben, um eine von dir ausgerüstete offene %CREW%- oder %TEAM%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
         'Quick-release Cargo Locks':
@@ -2090,9 +2109,12 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "SternenViper vom Typ II"
             ship: "SternenViper"
             text: '''<span class="card-restriction">Nur für SternenViper. Titel.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Titel-Aufwertungen ausrüsten.%LINEBREAK%Sobald du die Aktion Fassrolle durchführst, <strong>musst</strong> du die (%BANKLEFT% 1)- oder (%BANKRIGHT% 1)-Schablone anstelle der (%STRAIGHT% 1)-Schablone verwenden.'''
+# TODO unveröffentliche Karten
         'XG-1 Assault Configuration':
+            ship: "Alpha-class Star Wing"
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'''
         'Enforcer':
+            ship: "M12-L Kimogila Fighter"
             text: '''<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'''
         'Ghost (Phantom II)':
             text: '''<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
@@ -2101,6 +2123,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'First Order Vanguard':
             text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
         'Os-1 Arsenal Loadout':
+            ship: "Alpha-class Star Wing"
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
 
     condition_translations =
