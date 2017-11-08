@@ -1806,6 +1806,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'Harpoon Missiles':
             name: "Harpunen-Rakete"
             text: '''<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen%LINEBREAK%Falls der Angriff trifft, nachdem der Angriff abgehandelt worden ist, ordne dem Verteidiger den Zustand "Harpuniert!" zu.'''
+# TODO unveröffentliche Karten
         'Ordnance Silos':
             text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
         'Trajectory Simulator':
