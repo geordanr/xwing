@@ -8860,22 +8860,23 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Dalan Oberos': {
       ship: "SternenViper",
-      text: 'If you are not stressed, when you reveal a turn, bank, or Segnor\'s Loop maneuver, you may instead treat it as a red Tallon Roll maneuver of the same direction (left or right) using the template of the original revealed maneuver.'
+      text: 'Falls du nicht gestresst bist, sobald du ein Wende-, Dreh-, oder Segnor-Looping-Manöver aufdeckst, darfst du es stattdessen wie ein rotes Tallon-Rolle-Manöver mit gleicher Flugrichtung (links oder rechts) behandeln und die Schablone des ursprünglich aufgedeckten Manövers verwenden .'
     },
     'Thweek': {
       ship: "SternenViper",
-      text: 'During setup, before the "Place Forces" step, you may choose 1 enemy ship and assign the "Shadowed" or "Mimicked" Condition card to it.'
-    },
-    'Black Sun Assassin': {
-      ship: "SternenViper"
+      text: 'Während des Spielaufbaus, vor dem Schritt "Streitkräfte platzieren", darfst du 1 feindliches Schiff wählen und ihm die Zustandskarte "Wie ein Schatten" oder "Wie ein Spiegelbild" zuordnen.'
     },
     'Viktor Hel': {
       ship: "Kihraxz-Jäger",
-      text: 'After defending, if you did not roll exactly 2 defense dice, the attacker receives 1 stress token.'
+      text: 'Nachdem du dich verteidigt hast, falls du nicht genau 2 Verteidigungswürfel geworfen hast, erhält der Angreifer 1 Stressmaker.'
     },
     'Captain Jostero': {
       ship: "Kihraxz-Jäger",
-      text: 'Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'
+      text: 'Ein Mal pro Runde, nachdem ein feindliches Schiff, das sich nicht gegen einen Angriff verteidigt, Schaden oder kritischen Schaden genommen hat, darfst du einen Angriff gegen jenes Schiff durchführen.'
+    },
+    'Black Sun Assassin': {
+      ship: "SternenViper",
+      name: "Attentäter der Schwarzen Sonne"
     },
     'Major Vynder': {
       ship: "Alpha-class Star Wing",
@@ -9846,10 +9847,12 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen. Du darfst zusätzliche Angriffswürfel in Höhe der Geschwindigkeit des Manövers, das du in dieser Runde ausgeführt hast, werfen bis zu einem Maxiumum von 4 zusätzlichen Würfeln.'
     },
     'Ion Dischargers': {
-      text: 'After you receive an ion token, you may choose an enemy ship at Range 1.  If you do, remove that ion token. Then that ship may choose to receive 1 ion token. If it does, discard this card.'
+      name: "Ionen-Entlader",
+      text: 'Nachdem du einen Ionenmarker erhalten hast, darfst du ein feindliches Schiff in Reichweite 1 wählen. Tust du das, entferne den Ionenmarker. Dann kann jenes Schiff wählen, 1 Ionenmarker zu erhalten. Falls es das tut, wird diese Kart abgelegt.'
     },
     'Harpoon Missiles': {
-      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, after the attack resolves, assign the "Harpooned!" Condition to the defender.'
+      name: "Harpunen-Rakete",
+      text: '<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen%LINEBREAK%Falls der Angriff trifft, nachdem der Angriff abgehandelt worden ist, ordne dem Verteidiger den Zustand "Harpuniert!" zu.'
     },
     'Ordnance Silos': {
       text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
@@ -10234,11 +10237,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Vaksai': {
       ship: "Kihraxz-Jäger",
-      text: '<span class="card-restriction">Kihraxz Fighter only.</span>%LINEBREAK%The squad point cost of each of your equipped upgrades is reduced by 1 (to a minimum of 0).%LINEBREAK%You may equip up to 3 different Modification upgrades.'
+      text: '<span class="card-restriction">Nur für Kihraxz-Jäger.</span>%LINEBREAK%Senke die Kommandopunktekosten jeder Aufwertung, die du ausgerüstet hast, um 1 (Minimum 0).%LINEBREAK%Du darfst bis zu 3 verscheidene Modifikation-Aufwertungen ausrüsten.'
     },
     'StarViper Mk. II': {
+      name: "SternenViper vom Typ II",
       ship: "SternenViper",
-      text: '<span class="card-restriction">StarViper only.</span>%LINEBREAK%You may equip up to 2 different title Upgrades.%LINEBREAK%When performing a barrel roll action, you <strong>must</strong> use the (%BANKLEFT% 1) or (%BANKRIGHT% 1) template instead of the (%STRAIGHT% 1) template.'
+      text: '<span class="card-restriction">Nur für SternenViper. Titel.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Titel-Aufwertungen ausrüsten.%LINEBREAK%Sobald du die Aktion Fassrolle durchführst, <strong>musst</strong> du die (%BANKLEFT% 1)- oder (%BANKRIGHT% 1)-Schablone anstelle der (%STRAIGHT% 1)-Schablone verwenden.'
     },
     'XG-1 Assault Configuration': {
       ship: "Alpha-class Star Wing",
@@ -10280,13 +10284,16 @@ exportObj.cardLoaders.Deutsch = function() {
       text: 'Sobald du ein Schiff mit der Aufwertungskarte "Eine offene Rechnung" angreifst, darfst du 1 %FOCUS% in ein %CRIT% ändern.'
     },
     'Shadowed': {
-      text: '"Thweek" is treated as having the pilot skill value you had after setup.%LINEBREAK%The pilot skill value of "Thweek" does not change if your pilot skill value changes or you are destroyed.'
+      name: "Wie ein Schatten",
+      text: '"Thweek" wird behandelt, als hätte er den Pilotenwert, den du nach dem Spielaufbau hattest.%LINEBREAK%Der Pilotenwert von "Thweek" ändert sich nicht, falls sich dein Pilotenwert ändert oder du zerstört wirst.'
     },
     'Mimicked': {
-      text: '"Thweek" is treated as having your pilot ability.%LINEBREAK%"Thweek" cannot apply a Condition card by using your pilot ability.%LINEBREAK%"Thweek" does not lose your pilot ability if you are destroyed.'
+      name: "Wie ein Spiegelbild",
+      text: '"Thweek" wird behandelt, als hätte er deine Pilotenfähigkeit.%LINEBREAK%"Thweek" kann deine Pilotenfähigkeit nicht verwenden, um eine Zustandskarte zuzuordnen.%LINEBREAK%"Thweek" verliert deine Pilotenfähigkeit nicht, falls du zerstört wirst.'
     },
     'Harpooned!': {
-      text: 'When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'
+      name: "Harpuniert!",
+      text: 'Sobald du von einem Angriff getroffen wirst und falls es mindestens 1 nicht-negiertes %CRIT% gibt, nimmt jedes andere Schiff, das in Reichweite 1 zu dir ist, 1 Schaden. Denn legst du diese Karte ab und erhältst 1 verdeckte Schadenskarte.%LINEBREAK%Sobald du zerstört wirst, nimmt jedes Schiff, das in Reichweite 1 zu dir ist, 1 Schaden.%LINEBREAK%<strong>Aktion:</strong>Lege diese Karte ab. Wirf dann 1 Angiffswürfel. Bei a %HIT% oder %CRIT% nimmst du 1 Schaden.'
     },
     'Rattled': {
       text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
@@ -26442,7 +26449,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25118
+                    lineno: 25128
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27031,7 +27038,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25748
+              lineno: 25758
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27775,7 +27782,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26378
+          lineno: 26388
         }));
         __iced_deferrals._fulfill();
       });
@@ -27787,7 +27794,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26379
+            lineno: 26389
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29398,7 +29405,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27284
+                      lineno: 27294
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29472,7 +29479,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27310
+                lineno: 27320
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29527,7 +29534,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27333
+              lineno: 27343
             }));
           }
         }
@@ -29536,7 +29543,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27335
+              lineno: 27345
             }));
           }
         }
@@ -29545,7 +29552,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27337
+              lineno: 27347
             }));
           }
         }
@@ -30568,7 +30575,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28021
+                lineno: 28031
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30687,7 +30694,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28080
+                  lineno: 28090
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30709,7 +30716,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28084
+                    lineno: 28094
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30799,7 +30806,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28127
+            lineno: 28137
           }));
         }
         __iced_deferrals._fulfill();
