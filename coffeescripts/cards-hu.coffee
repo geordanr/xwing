@@ -528,6 +528,12 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
         'Fenn Rau (Sheathipede)':
             text: '''Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'''
+        'Ezra Bridger (Sheathipede)':
+            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
+        '"Zeb" Orrelios (Sheathipede)':
+            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+        'AP-5':
+            text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
         '"Crimson Leader"':
             text: '''Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'''
         'Kylo Ren (TIE Silencer)':
@@ -1049,6 +1055,14 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Miután végrehajtottál egy támadást egy %TORPEDO% vagy %MISSILE% másodlagos fegyvereddel ami nem tálált, a védekezőtől 1-es távolságban lévő összes hajó, aminek mozgékonyság értéke kisebb, mint a %TORPEDO% vagy %MISSILE% kártya pontértéke, dob egy támadó kockával és elszenvedi a dobott %HIT% vagy %CRIT% sérülést.'''
         'Contraband Cybernetics':
             text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
+        'Maul':
+            text: '''%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'''
+        'Courier Droid':
+            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'''
+        '"Chopper" (Astromech)':
+            text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
+        'Flight-Assist Astromech':
+            text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
 
     modification_translations =
         "Stealth Device":

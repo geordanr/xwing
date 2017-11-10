@@ -4990,7 +4990,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 16
         }
         {
             name: 'Ezra Bridger (Sheathipede)'
@@ -5001,13 +5001,14 @@ exportObj.basicCardData = ->
             ship: 'Sheathipede-class Shuttle'
             skill: 5
             slots: [
+                'Elite'
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 17
         }
         {
-            name: 'A???'
+            name: 'AP-5'
             id: 278
             faction: 'Rebel Alliance'
             unique: true
@@ -5017,7 +5018,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 15
         }
         {
             name: 'Crimson Sq???'
@@ -7035,6 +7036,40 @@ exportObj.basicCardData = ->
             name: 'Contraband Cybernetics'
             id: 249
             slot: 'Illicit'
+            points: 1
+        }
+        {
+            name: 'Maul'
+            id: 250
+            unique: true
+            slot: 'Crew'
+            points: 3
+            restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy"
+                for t, things of builder.uniques_in_use
+                    return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
+        }
+        {
+            name: 'Courier Droid'
+            id: 251
+            slot: 'Crew'
+            limited: true
+            points: 0
+        }
+        {
+            name: '"Chopper" (Astromech)'
+            id: 252
+            canonical_name: '"Chopper"'.canonicalize()
+            unique: true
+            slot: 'Astromech'
+            points: 1
+        }
+        {
+            name: 'Flight-Assist Astromech'
+            id: 253
+            slot: 'Astromech'
             points: 1
         }
     ]
