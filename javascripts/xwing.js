@@ -4302,7 +4302,7 @@ exportObj.basicCardData = function() {
         ship: 'Sheathipede-class Shuttle',
         skill: 3,
         slots: ['Crew', 'Astromech'],
-        points: 100
+        points: 16
       }, {
         name: 'Ezra Bridger (Sheathipede)',
         id: 277,
@@ -4311,17 +4311,17 @@ exportObj.basicCardData = function() {
         faction: 'Rebel Alliance',
         ship: 'Sheathipede-class Shuttle',
         skill: 5,
-        slots: ['Crew', 'Astromech'],
-        points: 100
+        slots: ['Elite', 'Crew', 'Astromech'],
+        points: 17
       }, {
-        name: 'A???',
+        name: 'AP-5',
         id: 278,
         faction: 'Rebel Alliance',
         unique: true,
         ship: 'Sheathipede-class Shuttle',
         skill: 1,
         slots: ['Crew', 'Astromech'],
-        points: 100
+        points: 15
       }, {
         name: 'Crimson Sq???',
         id: 279,
@@ -6147,6 +6147,53 @@ exportObj.basicCardData = function() {
         name: 'Contraband Cybernetics',
         id: 249,
         slot: 'Illicit',
+        points: 1
+      }, {
+        name: 'Maul',
+        id: 250,
+        unique: true,
+        slot: 'Crew',
+        points: 3,
+        restriction_func: function(ship) {
+          var builder, t, thing, things, _ref;
+          builder = ship.builder;
+          if (builder.faction === "Scum and Villainy") {
+            return true;
+          }
+          _ref = builder.uniques_in_use;
+          for (t in _ref) {
+            things = _ref[t];
+            if (__indexOf.call((function() {
+              var _i, _len, _results;
+              _results = [];
+              for (_i = 0, _len = things.length; _i < _len; _i++) {
+                thing = things[_i];
+                _results.push(thing.canonical_name.getXWSBaseName());
+              }
+              return _results;
+            })(), 'ezrabridger') >= 0) {
+              return true;
+            }
+          }
+          return false;
+        }
+      }, {
+        name: 'Courier Droid',
+        id: 251,
+        slot: 'Crew',
+        limited: true,
+        points: 0
+      }, {
+        name: '"Chopper" (Astromech)',
+        id: 252,
+        canonical_name: '"Chopper"'.canonicalize(),
+        unique: true,
+        slot: 'Astromech',
+        points: 1
+      }, {
+        name: 'Flight-Assist Astromech',
+        id: 253,
+        slot: 'Astromech',
         points: 1
       }
     ],
@@ -8909,6 +8956,15 @@ exportObj.cardLoaders.Deutsch = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -9871,6 +9927,18 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -11025,6 +11093,15 @@ exportObj.cardLoaders.English = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -11779,6 +11856,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -13418,6 +13507,15 @@ exportObj.cardLoaders['Español'] = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -14356,6 +14454,18 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -15739,6 +15849,15 @@ exportObj.cardLoaders['Français'] = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -16637,6 +16756,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -17725,6 +17856,15 @@ exportObj.cardLoaders.Magyar = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'
     },
@@ -18494,6 +18634,18 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -19698,6 +19850,15 @@ exportObj.cardLoaders['Polski'] = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -20524,6 +20685,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -21540,6 +21713,15 @@ exportObj.cardLoaders['Türkçe'] = function() {
     'Fenn Rau (Sheathipede)': {
       text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
     },
+    'Ezra Bridger (Sheathipede)': {
+      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+    },
+    '"Zeb" Orrelios (Sheathipede)': {
+      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+    },
+    'AP-5': {
+      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+    },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
@@ -22270,6 +22452,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Contraband Cybernetics': {
       text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+    },
+    'Maul': {
+      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+    },
+    'Courier Droid': {
+      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+    },
+    '"Chopper" (Astromech)': {
+      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+    },
+    'Flight-Assist Astromech': {
+      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
     }
   };
   modification_translations = {
@@ -26449,7 +26643,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25128
+                    lineno: 25261
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27038,7 +27232,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25758
+              lineno: 25891
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27782,7 +27976,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26388
+          lineno: 26521
         }));
         __iced_deferrals._fulfill();
       });
@@ -27794,7 +27988,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26389
+            lineno: 26522
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29405,7 +29599,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27294
+                      lineno: 27427
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29479,7 +29673,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27320
+                lineno: 27453
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29534,7 +29728,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27343
+              lineno: 27476
             }));
           }
         }
@@ -29543,7 +29737,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27345
+              lineno: 27478
             }));
           }
         }
@@ -29552,7 +29746,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27347
+              lineno: 27480
             }));
           }
         }
@@ -30575,7 +30769,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28031
+                lineno: 28164
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30694,7 +30888,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28090
+                  lineno: 28223
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30716,7 +30910,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28094
+                    lineno: 28227
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -30806,7 +31000,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28137
+            lineno: 28270
           }));
         }
         __iced_deferrals._fulfill();
