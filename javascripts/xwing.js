@@ -6983,7 +6983,7 @@ exportObj.basicCardData = function() {
         unequips_upgrades: ["Cargo"],
         also_occupies_upgrades: ["Cargo"],
         modifier_func: function(stats) {
-          return stats.energy += 2;
+          return stats.energy += 1;
         }
       }, {
         name: '"Light Scyk" Interceptor',
