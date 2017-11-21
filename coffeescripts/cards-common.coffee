@@ -7857,7 +7857,7 @@ exportObj.basicCardData = ->
             unequips_upgrades: [ "Cargo" ]
             also_occupies_upgrades: [ "Cargo" ]
             modifier_func: (stats) ->
-                stats.energy += 2
+                stats.energy += 1
         }
         {
             name: '''"Light Scyk" Interceptor'''
