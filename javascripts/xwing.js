@@ -1808,7 +1808,7 @@ exportObj.basicCardData = function() {
         shields: 3,
         actions: ['Focus', 'Target Lock'],
         attack_icon: 'xwing-miniatures-font-attack-turret',
-        maneuvers: [[3, 0, 3, 0, 3, 0], [0, 2, 2, 2, 0, 0], [1, 1, 2, 1, 1, 0], [0, 1, 1, 1, 0, 0]]
+        maneuvers: [[0, 0, 3, 0, 0, 0], [3, 2, 2, 2, 3, 0], [1, 1, 2, 1, 1, 0], [0, 1, 1, 1, 0, 0]]
       },
       'TIE Silencer': {
         name: 'TIE Silencer',
