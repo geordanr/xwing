@@ -1084,6 +1084,13 @@ exportObj.basicCardData = ->
                 'Coordinate'
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0]
+                [ 1, 2, 2, 2, 1, 0]
+                [ 3, 1, 2, 1, 3, 3]
+                [ 0, 0, 3, 0, 0, 0]
+            ]
         'B/SF-17 Bomber':
             name: 'B/SF-17 Bomber'
             factions: ["Resistance"]
@@ -1097,6 +1104,12 @@ exportObj.basicCardData = ->
                 'Target Lock'
             ]
             attack_icon: 'xwing-miniatures-font-attack-turret'
+            maneuvers: [
+                [ 3, 0, 3, 0, 3, 0]
+                [ 0, 2, 2, 2, 0, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 1, 1, 1, 0, 0]
+            ]
         'TIE Silencer':
             name: 'TIE Silencer'
             factions: ["First Order"]
@@ -5021,7 +5034,7 @@ exportObj.basicCardData = ->
             points: 15
         }
         {
-            name: 'Crimson Sq???'
+            name: 'Crimson Squadron Pilot'
             id: 279
             faction: 'Resistance'
             ship: 'B/SF-17 Bomber'
@@ -5032,10 +5045,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: '"Crimson ???'
+            name: '"Crimson Specialist"'
             id: 280
             faction: 'Resistance'
             unique: true
@@ -5047,10 +5060,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 27
         }
         {
-            name: '"Cobal???'
+            name: '"Cobalt Leader"'
             id: 281
             faction: 'Resistance'
             unique: true
@@ -5062,7 +5075,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 28
         }
         {
             name: '"Crimson Leader"'
@@ -7072,6 +7085,12 @@ exportObj.basicCardData = ->
             slot: 'Astromech'
             points: 1
         }
+        {
+            name: 'Advanced Optics'
+            id: 254
+            slot: 'Tech'
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -7319,6 +7338,12 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 ship.effectiveStats().shields == 1
+        }
+        {
+            name: 'Deflective Plating'
+            ship: 'B/SF-17 Bomber'
+            id: 33
+            points: 1
         }
     ]
 
@@ -7999,6 +8024,12 @@ exportObj.basicCardData = ->
                     slot: "Missile"
                 }
             ]
+        }
+        {
+            name: 'Crossfire Formation'
+            id: 62
+            ship: 'B/SF-17 Bomber'
+            points: 2
         }
     ]
 

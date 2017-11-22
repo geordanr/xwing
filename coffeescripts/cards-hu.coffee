@@ -536,6 +536,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
         '"Crimson Leader"':
             text: '''Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'''
+        '"Crimson Specialist"':
+            text: '''When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'''
+        '"Cobalt Leader"':
+            text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
         'Kylo Ren (TIE Silencer)':
             text: '''Körönként mikor először ér találat, oszd ki a "I'll Show You the Dark Side" kondíciós kártyát a támadónak.'''
 
@@ -1063,6 +1067,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
         'Flight-Assist Astromech':
             text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
+        'Advanced Optics':
+            text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -1134,6 +1140,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'''
         'Pulsed Ray Shield':
             text: '''<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'''
+        'Deflective Plating':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
 
     title_translations =
         "Slave I":
@@ -1262,6 +1270,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak TIE Silencer.</span>%LINEBREAK%Támadáskor, ha a védekező az egyetlen hajó a tűzívedben 1-3 távolságban, újradobhatsz 1 támadó kockát. Védekezéskor eldobhatod ezt a kártyát, hogy újradobd az összes védő kockádat.'''
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyver" jelződ van.'''
+        'Crossfire Formation':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

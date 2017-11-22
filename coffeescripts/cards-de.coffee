@@ -1111,6 +1111,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
         '"Crimson Leader"':
             text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+        '"Crimson Specialist"':
+            text: '''When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'''
+        '"Cobalt Leader"':
+            text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
         'Kylo Ren (TIE Silencer)':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
 
@@ -1833,6 +1837,8 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
         'Flight-Assist Astromech':
             text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
+        'Advanced Optics':
+            text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
 
     modification_translations =
         "Stealth Device":
@@ -1937,6 +1943,8 @@ exportObj.cardLoaders.Deutsch = () ->
         'Pulsed Ray Shield':
             name: "Pulsstrahlenschild"
             text: '''<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%LINEBREAK%Während der Endphase darfst du 1 Ionenmarker erhalten, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert). Du kannst diese Karte nur dann ausrüsten, wenn dein Schildwert 1 ist.'''
+        'Deflective Plating':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
 
     title_translations =
         "Slave I":
@@ -2140,6 +2148,8 @@ exportObj.cardLoaders.Deutsch = () ->
         'Os-1 Arsenal Loadout':
             ship: "Alpha-class Star Wing"
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
+        'Crossfire Formation':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
