@@ -1795,7 +1795,8 @@ exportObj.basicCardData = function() {
         hull: 4,
         shields: 1,
         actions: ['Focus', 'Target Lock', 'Coordinate'],
-        attack_icon: 'xwing-miniatures-font-attack-frontback'
+        attack_icon: 'xwing-miniatures-font-attack-frontback',
+        maneuvers: [[0, 0, 0, 0, 0, 0], [0, 1, 2, 1, 0, 0], [1, 2, 2, 2, 1, 0], [3, 1, 2, 1, 3, 3], [0, 0, 3, 0, 0, 0]]
       },
       'B/SF-17 Bomber': {
         name: 'B/SF-17 Bomber',
@@ -1806,7 +1807,8 @@ exportObj.basicCardData = function() {
         hull: 9,
         shields: 3,
         actions: ['Focus', 'Target Lock'],
-        attack_icon: 'xwing-miniatures-font-attack-turret'
+        attack_icon: 'xwing-miniatures-font-attack-turret',
+        maneuvers: [[3, 0, 3, 0, 3, 0], [0, 2, 2, 2, 0, 0], [1, 1, 2, 1, 1, 0], [0, 1, 1, 1, 0, 0]]
       },
       'TIE Silencer': {
         name: 'TIE Silencer',
@@ -4323,31 +4325,31 @@ exportObj.basicCardData = function() {
         slots: ['Crew', 'Astromech'],
         points: 15
       }, {
-        name: 'Crimson Sq???',
+        name: 'Crimson Squadron Pilot',
         id: 279,
         faction: 'Resistance',
         ship: 'B/SF-17 Bomber',
         skill: 1,
         slots: ['System', 'Bomb', 'Bomb', 'Tech'],
-        points: 100
+        points: 25
       }, {
-        name: '"Crimson ???',
+        name: '"Crimson Specialist"',
         id: 280,
         faction: 'Resistance',
         unique: true,
         ship: 'B/SF-17 Bomber',
         skill: 4,
         slots: ['System', 'Bomb', 'Bomb', 'Tech'],
-        points: 100
+        points: 27
       }, {
-        name: '"Cobal???',
+        name: '"Cobalt Leader"',
         id: 281,
         faction: 'Resistance',
         unique: true,
         ship: 'B/SF-17 Bomber',
         skill: 6,
         slots: ['System', 'Bomb', 'Bomb', 'Tech'],
-        points: 100
+        points: 28
       }, {
         name: '"Crimson Leader"',
         id: 282,
@@ -6195,6 +6197,11 @@ exportObj.basicCardData = function() {
         id: 253,
         slot: 'Astromech',
         points: 1
+      }, {
+        name: 'Advanced Optics',
+        id: 254,
+        slot: 'Tech',
+        points: 2
       }
     ],
     modificationsById: [
@@ -6483,6 +6490,11 @@ exportObj.basicCardData = function() {
         restriction_func: function(ship) {
           return ship.effectiveStats().shields === 1;
         }
+      }, {
+        name: 'Deflective Plating',
+        ship: 'B/SF-17 Bomber',
+        id: 33,
+        points: 1
       }
     ],
     titlesById: [
@@ -7122,6 +7134,11 @@ exportObj.basicCardData = function() {
             slot: "Missile"
           }
         ]
+      }, {
+        name: 'Crossfire Formation',
+        id: 62,
+        ship: 'B/SF-17 Bomber',
+        points: 2
       }
     ],
     conditionsById: [
@@ -8968,6 +8985,12 @@ exportObj.cardLoaders.Deutsch = function() {
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+    },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
@@ -9939,6 +9962,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -10073,6 +10099,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Pulsed Ray Shield': {
       name: "Pulsstrahlenschild",
       text: '<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%LINEBREAK%Während der Endphase darfst du 1 Ionenmarker erhalten, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert). Du kannst diese Karte nur dann ausrüsten, wenn dein Schildwert 1 ist.'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -10332,6 +10361,9 @@ exportObj.cardLoaders.Deutsch = function() {
     'Os-1 Arsenal Loadout': {
       ship: "Alpha-class Star Wing",
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -11105,6 +11137,12 @@ exportObj.cardLoaders.English = function() {
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+    },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
@@ -11868,6 +11906,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -11966,6 +12007,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Pulsed Ray Shield': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -12148,6 +12192,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -13519,6 +13566,12 @@ exportObj.cardLoaders['Español'] = function() {
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+    },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
@@ -14466,6 +14519,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -14600,6 +14656,9 @@ exportObj.cardLoaders['Español'] = function() {
     'Pulsed Ray Shield': {
       name: "Escudo de rayos pulsátil",
       text: '<span class="card-restriction">Sólo Escoria y Rebelde.</span>%LINEBREAK%Durante la fase Final, puedes recibir 1 ficha de Iones para recuperar 1 ficha de Escudos (pero no puedes exceder tu valor de Escudos). Sólo puedes equipar esta carta si tu valor de Escudos es 1.'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -14864,6 +14923,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -15861,6 +15923,12 @@ exportObj.cardLoaders['Français'] = function() {
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+    },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
@@ -16768,6 +16836,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -16896,6 +16967,9 @@ exportObj.cardLoaders['Français'] = function() {
     'Advanced SLAM': {
       name: "MASL avancé",
       text: 'Après avoir effectué une action MASL, si vous n\'avez pas chevauché un obstacle ou un autre vaisseau, vous pouvez effecteur une action gratuite.'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -17108,6 +17182,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -17867,6 +17944,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     '"Crimson Leader"': {
       text: 'Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'
+    },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'Körönként mikor először ér találat, oszd ki a "I\'ll Show You the Dark Side" kondíciós kártyát a támadónak.'
@@ -18646,6 +18729,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -18749,6 +18835,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Pulsed Ray Shield': {
       text: '<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -18935,6 +19024,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyver" jelződ van.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -19862,6 +19954,12 @@ exportObj.cardLoaders['Polski'] = function() {
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
     },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+    },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
     }
@@ -20697,6 +20795,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -20808,6 +20909,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Pulsed Ray Shield': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -21005,6 +21109,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -21724,6 +21831,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Crimson Leader"': {
       text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
+    },
+    '"Crimson Specialist"': {
+      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+    },
+    '"Cobalt Leader"': {
+      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
@@ -22464,6 +22577,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Flight-Assist Astromech': {
       text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+    },
+    'Advanced Optics': {
+      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
     }
   };
   modification_translations = {
@@ -22559,6 +22675,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Pulsed Ray Shield': {
       text: '<span class="card-restriction">Rebel and Scum only.</span>%LINEBREAK%During the End phase, you may receive 1 ion token to recover 1 shield (up to your shield value). You can equip this card only if your shield value is "1."'
+    },
+    'Deflective Plating': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
     }
   };
   title_translations = {
@@ -22720,6 +22839,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Os-1 Arsenal Loadout': {
       text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+    },
+    'Crossfire Formation': {
+      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
     }
   };
   condition_translations = {
@@ -26643,7 +26765,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25261
+                    lineno: 25362
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27232,7 +27354,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25891
+              lineno: 25992
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -27976,7 +28098,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26521
+          lineno: 26622
         }));
         __iced_deferrals._fulfill();
       });
@@ -27988,7 +28110,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26522
+            lineno: 26623
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29599,7 +29721,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27427
+                      lineno: 27528
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29673,7 +29795,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27453
+                lineno: 27554
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29728,7 +29850,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27476
+              lineno: 27577
             }));
           }
         }
@@ -29737,7 +29859,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27478
+              lineno: 27579
             }));
           }
         }
@@ -29746,7 +29868,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27480
+              lineno: 27581
             }));
           }
         }
@@ -30769,7 +30891,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28164
+                lineno: 28265
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30888,7 +31010,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28223
+                  lineno: 28324
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -30910,7 +31032,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28227
+                    lineno: 28328
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -31000,7 +31122,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28270
+            lineno: 28371
           }));
         }
         __iced_deferrals._fulfill();
