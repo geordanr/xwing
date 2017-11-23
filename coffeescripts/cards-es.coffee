@@ -1773,6 +1773,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
         'Advanced Optics':
             text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
+        'Scrambler Missiles':
+            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'''
+        'R5-TK':
+            text: '''You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'''
 
     modification_translations =
         "Stealth Device":

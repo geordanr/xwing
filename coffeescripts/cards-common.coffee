@@ -1071,6 +1071,13 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Reload'
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 3, 1, 2, 1, 3, 0]
+                [ 3, 2, 2, 2, 3, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 0, 0, 0, 0, 3]
+            ]
         'Sheathipede-class Shuttle':
             name: 'Sheathipede-class Shuttle'
             factions: ["Rebel Alliance"]
@@ -7090,6 +7097,21 @@ exportObj.basicCardData = ->
             id: 254
             slot: 'Tech'
             points: 2
+        }
+        {
+            name: 'Scrambler Missiles'
+            id: 255
+            slot: 'Missile'
+            points: 2
+            attack: 3
+            range: '2-3'
+        }
+        {
+            name: 'R5-TK'
+            id: 256
+            unique: true
+            slot: 'Salvaged Astromech'
+            points: 0
         }
     ]
 
