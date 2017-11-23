@@ -1785,7 +1785,8 @@ exportObj.basicCardData = function() {
         agility: 1,
         hull: 6,
         shields: 2,
-        actions: ['Target Lock', 'Focus', 'Barrel Roll', 'Reload']
+        actions: ['Target Lock', 'Focus', 'Barrel Roll', 'Reload'],
+        maneuvers: [[0, 0, 0, 0, 0, 0], [3, 1, 2, 1, 3, 0], [3, 2, 2, 2, 3, 0], [1, 1, 2, 1, 1, 0], [0, 0, 0, 0, 0, 3]]
       },
       'Sheathipede-class Shuttle': {
         name: 'Sheathipede-class Shuttle',
@@ -6202,6 +6203,19 @@ exportObj.basicCardData = function() {
         id: 254,
         slot: 'Tech',
         points: 2
+      }, {
+        name: 'Scrambler Missiles',
+        id: 255,
+        slot: 'Missile',
+        points: 2,
+        attack: 3,
+        range: '2-3'
+      }, {
+        name: 'R5-TK',
+        id: 256,
+        unique: true,
+        slot: 'Salvaged Astromech',
+        points: 0
       }
     ],
     modificationsById: [
@@ -9965,6 +9979,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -11909,6 +11929,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -14522,6 +14548,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -16839,6 +16871,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -18732,6 +18770,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -20798,6 +20842,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -22580,6 +22630,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Advanced Optics': {
       text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+    },
+    'Scrambler Missiles': {
+      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+    },
+    'R5-TK': {
+      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     }
   };
   modification_translations = {
@@ -26765,7 +26821,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25362
+                    lineno: 25412
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27354,7 +27410,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 25992
+              lineno: 26042
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -28098,7 +28154,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26622
+          lineno: 26672
         }));
         __iced_deferrals._fulfill();
       });
@@ -28110,7 +28166,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26623
+            lineno: 26673
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29721,7 +29777,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27528
+                      lineno: 27578
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29795,7 +29851,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27554
+                lineno: 27604
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29850,7 +29906,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27577
+              lineno: 27627
             }));
           }
         }
@@ -29859,7 +29915,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27579
+              lineno: 27629
             }));
           }
         }
@@ -29868,7 +29924,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27581
+              lineno: 27631
             }));
           }
         }
@@ -30891,7 +30947,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28265
+                lineno: 28315
               })
             ]);
             __iced_deferrals._fulfill();
@@ -31010,7 +31066,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28324
+                  lineno: 28374
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -31032,7 +31088,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28328
+                    lineno: 28378
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -31122,7 +31178,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28371
+            lineno: 28421
           }));
         }
         __iced_deferrals._fulfill();
