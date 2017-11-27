@@ -4262,7 +4262,7 @@ exportObj.basicCardData = function() {
         points: 27
       }, {
         name: 'Dalan Oberos (Kimogila)',
-        canonical_name: "" + ('Dalan Oberos'.canonicalize()) + "-swx70",
+        canonical_name: "dalanoberos",
         id: 272,
         unique: true,
         faction: 'Scum and Villainy',
