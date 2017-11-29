@@ -764,6 +764,8 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
         'Kylo Ren (TIE Silencer)':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
+        'Test Pilot "Blackout"':
+            text: '''When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'''
 
     upgrade_translations =
         #Traits de pilotes
@@ -1441,6 +1443,10 @@ exportObj.cardLoaders['Français'] = () ->
             text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'''
         'R5-TK':
             text: '''You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'''
+        'Threat Tracker':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'''
+        'Debris Gambit':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'''
 
     modification_translations =
         "Shield Upgrade":

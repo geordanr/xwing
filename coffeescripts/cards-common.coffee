@@ -5133,17 +5133,18 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Test Pilo???'
+            name: 'Test Pilot "Blackout"'
             id: 285
             faction: 'First Order'
             unique: true
             ship: 'TIE Silencer'
             skill: 6
             slots: [
+                'Elite'
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 31
         }
         {
             name: 'Kylo Ren (TIE Silencer)'
@@ -7120,6 +7121,22 @@ exportObj.basicCardData = ->
             unique: true
             slot: 'Salvaged Astromech'
             points: 0
+        }
+        {
+            name: 'Threat Tracker'
+            id: 257
+            slot: 'Tech'
+            points: 3
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Debris Gambit'
+            id: 258
+            slot: 'Elite'
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
     ]
 
