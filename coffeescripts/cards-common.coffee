@@ -5138,7 +5138,7 @@ exportObj.basicCardData = ->
             faction: 'First Order'
             unique: true
             ship: 'TIE Silencer'
-            skill: 6
+            skill: 7
             slots: [
                 'Elite'
                 'System'
