@@ -4379,14 +4379,14 @@ exportObj.basicCardData = function() {
         slots: ['System', 'Tech'],
         points: 100
       }, {
-        name: 'Test Pilo???',
+        name: 'Test Pilot "Blackout"',
         id: 285,
         faction: 'First Order',
         unique: true,
         ship: 'TIE Silencer',
         skill: 6,
-        slots: ['System', 'Tech'],
-        points: 100
+        slots: ['Elite', 'System', 'Tech'],
+        points: 31
       }, {
         name: 'Kylo Ren (TIE Silencer)',
         id: 286,
@@ -6217,6 +6217,24 @@ exportObj.basicCardData = function() {
         unique: true,
         slot: 'Salvaged Astromech',
         points: 0
+      }, {
+        name: 'Threat Tracker',
+        id: 257,
+        slot: 'Tech',
+        points: 3,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
+      }, {
+        name: 'Debris Gambit',
+        id: 258,
+        slot: 'Elite',
+        points: 2,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
+        }
       }
     ],
     modificationsById: [
@@ -9008,6 +9026,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -9986,6 +10007,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -11166,6 +11193,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -11936,6 +11966,12 @@ exportObj.cardLoaders.English = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -13601,6 +13637,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -14555,6 +14594,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -15964,6 +16009,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -16878,6 +16926,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -17992,6 +18046,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'Körönként mikor először ér találat, oszd ki a "I\'ll Show You the Dark Side" kondíciós kártyát a támadónak.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -18777,6 +18834,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -20007,6 +20070,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -20849,6 +20915,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -21891,6 +21963,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Kylo Ren (TIE Silencer)': {
       text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+    },
+    'Test Pilot "Blackout"': {
+      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
     }
   };
   upgrade_translations = {
@@ -22637,6 +22712,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'R5-TK': {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+    },
+    'Threat Tracker': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+    },
+    'Debris Gambit': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
     }
   };
   modification_translations = {
@@ -26822,7 +26903,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25420
+                    lineno: 25479
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27411,7 +27492,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 26050
+              lineno: 26109
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -28155,7 +28236,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 26680
+          lineno: 26739
         }));
         __iced_deferrals._fulfill();
       });
@@ -28167,7 +28248,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 26681
+            lineno: 26740
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -29778,7 +29859,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27586
+                      lineno: 27645
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -29852,7 +29933,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27612
+                lineno: 27671
               })
             ]);
             __iced_deferrals._fulfill();
@@ -29907,7 +29988,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 27635
+              lineno: 27694
             }));
           }
         }
@@ -29916,7 +29997,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 27637
+              lineno: 27696
             }));
           }
         }
@@ -29925,7 +30006,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 27639
+              lineno: 27698
             }));
           }
         }
@@ -30948,7 +31029,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28323
+                lineno: 28382
               })
             ]);
             __iced_deferrals._fulfill();
@@ -31067,7 +31148,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28382
+                  lineno: 28441
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -31089,7 +31170,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28386
+                    lineno: 28445
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -31179,7 +31260,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28429
+            lineno: 28488
           }));
         }
         __iced_deferrals._fulfill();
