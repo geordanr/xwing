@@ -1264,7 +1264,7 @@ exportObj.cardLoaders.English = () ->
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
         'Crossfire Formation':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker, you may add 1 %FOCUS% result to your roll.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
