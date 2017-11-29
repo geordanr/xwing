@@ -4384,7 +4384,7 @@ exportObj.basicCardData = function() {
         faction: 'First Order',
         unique: true,
         ship: 'TIE Silencer',
-        skill: 6,
+        skill: 7,
         slots: ['Elite', 'System', 'Tech'],
         points: 31
       }, {
