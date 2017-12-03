@@ -1057,12 +1057,26 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
         'Torani Kulda':
             text: '''After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'''
+        'Dalan Oberos (Kimogila)':
+            text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
         'Fenn Rau (Sheathipede)':
             text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
+        'Ezra Bridger (Sheathipede)':
+            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
+        '"Zeb" Orrelios (Sheathipede)':
+            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+        'AP-5':
+            text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
         '"Crimson Leader"':
             text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+        '"Crimson Specialist"':
+            text: '''When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'''
+        '"Cobalt Leader"':
+            text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
         'Kylo Ren (TIE Silencer)':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
+        'Test Pilot "Blackout"':
+            text: '''When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1749,6 +1763,26 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'''
         'Saturation Salvo':
             text: '''After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'''
+        'Contraband Cybernetics':
+            text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
+        'Maul':
+            text: '''%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'''
+        'Courier Droid':
+            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'''
+        '"Chopper" (Astromech)':
+            text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
+        'Flight-Assist Astromech':
+            text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
+        'Advanced Optics':
+            text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
+        'Scrambler Missiles':
+            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'''
+        'R5-TK':
+            text: '''You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'''
+        'Threat Tracker':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'''
+        'Debris Gambit':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'''
 
     modification_translations =
         "Stealth Device":
@@ -1851,6 +1885,8 @@ exportObj.cardLoaders['Español'] = () ->
         'Pulsed Ray Shield':
             name: "Escudo de rayos pulsátil"
             text: '''<span class="card-restriction">Sólo Escoria y Rebelde.</span>%LINEBREAK%Durante la fase Final, puedes recibir 1 ficha de Iones para recuperar 1 ficha de Escudos (pero no puedes exceder tu valor de Escudos). Sólo puedes equipar esta carta si tu valor de Escudos es 1.'''
+        'Deflective Plating':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
 
     title_translations =
         "Slave I":
@@ -2057,6 +2093,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
+        'Crossfire Formation':
+            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':

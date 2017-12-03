@@ -2,7 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    'Guns for Hire Expansion Pack'
     'Alpha-class Star Wing Expansion Pack',
     'M12-L Kimogila Fighter Expansion Pack',
     'Phantom II Expansion Pack',
@@ -1072,6 +1071,13 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Reload'
             ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 3, 1, 2, 1, 3, 0]
+                [ 3, 2, 2, 2, 3, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 0, 0, 0, 0, 3]
+            ]
         'Sheathipede-class Shuttle':
             name: 'Sheathipede-class Shuttle'
             factions: ["Rebel Alliance"]
@@ -1085,6 +1091,13 @@ exportObj.basicCardData = ->
                 'Coordinate'
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0]
+                [ 1, 2, 2, 2, 1, 0]
+                [ 3, 1, 2, 1, 3, 3]
+                [ 0, 0, 3, 0, 0, 0]
+            ]
         'B/SF-17 Bomber':
             name: 'B/SF-17 Bomber'
             factions: ["Resistance"]
@@ -1098,6 +1111,12 @@ exportObj.basicCardData = ->
                 'Target Lock'
             ]
             attack_icon: 'xwing-miniatures-font-attack-turret'
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0]
+                [ 3, 2, 2, 2, 3, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 1, 1, 1, 0, 0]
+            ]
         'TIE Silencer':
             name: 'TIE Silencer'
             factions: ["First Order"]
@@ -1110,6 +1129,14 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Boost'
                 'Target Lock'
+            ]
+            maneuvers: [
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 0, 0, 0, 1, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 2, 2, 2, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 3, 3 ]
+                [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
+                [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
             ]
 
     # name field is for convenience only
@@ -3502,10 +3529,7 @@ exportObj.basicCardData = ->
             skill: 9
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 33
@@ -3519,10 +3543,7 @@ exportObj.basicCardData = ->
             skill: 7
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 30
@@ -3536,10 +3557,7 @@ exportObj.basicCardData = ->
             skill: 4
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 27
@@ -3552,10 +3570,7 @@ exportObj.basicCardData = ->
             skill: 3
             slots: [
                 'Elite'
-                'Torpedo'
-                'Torpedo'
                 'Crew'
-                'Salvaged Astromech'
                 'Illicit'
             ]
             points: 25
@@ -4931,7 +4946,8 @@ exportObj.basicCardData = ->
             points: 27
         }
         {
-            name: 'Dal???'
+            name: 'Dalan Oberos (Kimogila)'
+            canonical_name: "dalanoberos"
             id: 272
             unique: true
             faction: 'Scum and Villainy'
@@ -4944,7 +4960,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 25
         }
         {
             name: 'Cartel E???'
@@ -4962,7 +4978,7 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Carte???'
+            name: 'Cartel Brute'
             id: 274
             faction: 'Scum and Villainy'
             ship: 'M12-L Kimogila Fighter'
@@ -4973,7 +4989,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 22
         }
         {
             name: 'Fenn Rau (Sheathipede)'
@@ -5002,7 +5018,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 16
         }
         {
             name: 'Ezra Bridger (Sheathipede)'
@@ -5013,13 +5029,14 @@ exportObj.basicCardData = ->
             ship: 'Sheathipede-class Shuttle'
             skill: 5
             slots: [
+                'Elite'
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 17
         }
         {
-            name: 'A???'
+            name: 'AP-5'
             id: 278
             faction: 'Rebel Alliance'
             unique: true
@@ -5029,10 +5046,10 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Astromech'
             ]
-            points: 100
+            points: 15
         }
         {
-            name: 'Crimson Sq???'
+            name: 'Crimson Squadron Pilot'
             id: 279
             faction: 'Resistance'
             ship: 'B/SF-17 Bomber'
@@ -5043,10 +5060,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: '"Crimson ???'
+            name: '"Crimson Specialist"'
             id: 280
             faction: 'Resistance'
             unique: true
@@ -5058,10 +5075,10 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 27
         }
         {
-            name: '"Cobal???'
+            name: '"Cobalt Leader"'
             id: 281
             faction: 'Resistance'
             unique: true
@@ -5073,7 +5090,7 @@ exportObj.basicCardData = ->
                 'Bomb'
                 'Tech'
             ]
-            points: 100
+            points: 28
         }
         {
             name: '"Crimson Leader"'
@@ -5116,17 +5133,18 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Test Pilo???'
+            name: 'Test Pilot "Blackout"'
             id: 285
             faction: 'First Order'
             unique: true
             ship: 'TIE Silencer'
-            skill: 6
+            skill: 7
             slots: [
+                'Elite'
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 31
         }
         {
             name: 'Kylo Ren (TIE Silencer)'
@@ -6482,6 +6500,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             slot: "Elite"
             points: 1
+            max_per_squad: 2
         }
         {
             name: "Boba Fett"
@@ -7042,6 +7061,83 @@ exportObj.basicCardData = ->
             slot: 'Elite'
             points: 1
         }
+        {
+            name: 'Contraband Cybernetics'
+            id: 249
+            slot: 'Illicit'
+            points: 1
+        }
+        {
+            name: 'Maul'
+            id: 250
+            unique: true
+            slot: 'Crew'
+            points: 3
+            restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy"
+                for t, things of builder.uniques_in_use
+                    return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
+        }
+        {
+            name: 'Courier Droid'
+            id: 251
+            slot: 'Crew'
+            limited: true
+            points: 0
+        }
+        {
+            name: '"Chopper" (Astromech)'
+            id: 252
+            canonical_name: '"Chopper"'.canonicalize()
+            unique: true
+            slot: 'Astromech'
+            points: 1
+        }
+        {
+            name: 'Flight-Assist Astromech'
+            id: 253
+            slot: 'Astromech'
+            points: 1
+        }
+        {
+            name: 'Advanced Optics'
+            id: 254
+            slot: 'Tech'
+            points: 2
+        }
+        {
+            name: 'Scrambler Missiles'
+            id: 255
+            slot: 'Missile'
+            points: 2
+            attack: 3
+            range: '2-3'
+        }
+        {
+            name: 'R5-TK'
+            id: 256
+            unique: true
+            slot: 'Salvaged Astromech'
+            points: 0
+        }
+        {
+            name: 'Threat Tracker'
+            id: 257
+            slot: 'Tech'
+            points: 3
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Debris Gambit'
+            id: 258
+            slot: 'Elite'
+            points: 2
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
     ]
 
     modificationsById: [
@@ -7289,6 +7385,12 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 ship.effectiveStats().shields == 1
+        }
+        {
+            name: 'Deflective Plating'
+            ship: 'B/SF-17 Bomber'
+            id: 33
+            points: 1
         }
     ]
 
@@ -7827,7 +7929,7 @@ exportObj.basicCardData = ->
             unequips_upgrades: [ "Cargo" ]
             also_occupies_upgrades: [ "Cargo" ]
             modifier_func: (stats) ->
-                stats.energy += 2
+                stats.energy += 1
         }
         {
             name: '''"Light Scyk" Interceptor'''
@@ -7969,6 +8071,12 @@ exportObj.basicCardData = ->
                     slot: "Missile"
                 }
             ]
+        }
+        {
+            name: 'Crossfire Formation'
+            id: 62
+            ship: 'B/SF-17 Bomber'
+            points: 2
         }
     ]
 

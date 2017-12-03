@@ -1278,6 +1278,15 @@ class exportObj.SquadBuilder
     dfl_filter_func = ->
         true
 
+    countUpgrades: (canonical_name) ->
+        # returns number of upgrades with given canonical name equipped
+        count = 0
+        for ship in @ships
+            for upgrade in ship.upgrades
+                if upgrade?.data?.canonical_name == canonical_name
+                    count++
+        count
+
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func) ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
@@ -1292,7 +1301,7 @@ class exportObj.SquadBuilder
         if (@isEpic or @isCustom) and slot == 'Hardpoint' and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name.getXWSBaseName() for m in ship.modifications when m.data?)
             available_upgrades = available_upgrades.concat (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot in ['Missile', 'Torpedo'] and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use)
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
 
         # Special case #2 :(
         # current_upgrade_forcibly_removed = false
@@ -1303,7 +1312,7 @@ class exportObj.SquadBuilder
                     # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
 
         # Re-enable selected upgrade
-        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
+        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited? or include_upgrade.max_per_squad?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
         retval = ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
@@ -1332,8 +1341,8 @@ class exportObj.SquadBuilder
         # then I will try to make this more systematic, but I haven't come up
         # with a good solution... yet.
         # current_mod_forcibly_removed = false
-        for title in ship?.titles ? []
-            if title?.data?.special_case == 'Royal Guard TIE'
+        for thing in (ship?.titles ? []).concat(ship?.upgrades ? [])
+            if thing?.data?.special_case == 'Royal Guard TIE'
                 # Need to refetch by ID because Vaksai may have modified its cost
                 for equipped_modification in (modificationsById[modification.data.id] for modification in ship.modifications when modification?.data?)
                     eligible_modifications.removeItem equipped_modification
@@ -2018,7 +2027,7 @@ class Ship
 
                 other_upgrades = {}
                 for upgrade in other.upgrades
-                    if upgrade?.data? and not upgrade.data.unique
+                    if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
                         other_upgrades[upgrade.slot] ?= []
                         other_upgrades[upgrade.slot].push upgrade
 
@@ -2058,8 +2067,8 @@ class Ship
             other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
             #console.log "Looking for conferred upgrades..."
             for other_upgrade, i in other.upgrades
-                #console.log "Examining upgrade #{other_upgrade}"
-                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique and i < @upgrades.length
+                # console.log "Examining upgrade #{other_upgrade}"
+                if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
                     #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
                     @upgrades[i].setById other_upgrade.data.id
             #console.log "Checking other ship base title #{other.title ? null}"
