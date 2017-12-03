@@ -524,12 +524,26 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Mikor "inaktív fegyver" jelzőt kapsz és nem vagy stresszes, kaphatsz egy stressz jelzőt hogy levehesd azt.'''
         'Torani Kulda':
             text: '''Miután végrehajtottál egy támadást, minden hajó amelyik benne van a bulleye tűzívedben 1-3 távolságban választhat, hogy elszenved egy sérülést vagy eldobja az összes %FOCUS% és %EVADE% jelzőjét.'''
+        'Dalan Oberos (Kimogila)':
+            text: '''A harci fázis kezdetén feltehetsz egy célpontbemérőt egy ellenséges hajóra, amely a bullseye tűzívedben van 1-3-as távolságban.'''
         'Fenn Rau (Sheathipede)':
             text: '''Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'''
+        'Ezra Bridger (Sheathipede)':
+            text: """Védekezéskor, ha stresszelve vagy, átfordíthatsz akár 2 %FOCUS% dobást %EVADE%-re."""
+        '"Zeb" Orrelios (Sheathipede)':
+            text: '''Mikor védekezel, a %CRIT% dobásokat előbb semlegesítheted, mint a %HIT% dobásokat.'''
+        'AP-5':
+            text: '''Mikor végrehajtasz egy koordinálás akciót, miután kiválasztottál egy baráti hajót és mielőtt az végrehajtaná az ingyenes akcióját, kaphatsz 2 stressz jelzőt, hogy levegyél róla 1 stressz jelzőt.'''
         '"Crimson Leader"':
             text: '''Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'''
+        '"Crimson Specialist"':
+            text: '''Mikor felteszed a bomba jelzőt, amit a tárcsa felfedése után dobtál ki, a jelzőt a hajóval érintkezve bárhova teheted a pályára.'''
+        '"Cobalt Leader"':
+            text: '''Támadáskor, ha a védekező 1-es távolságban van egy bomba jelzőtől, eggyel kevesebb védekező kockával gurít.'''
         'Kylo Ren (TIE Silencer)':
             text: '''Körönként mikor először ér találat, oszd ki a "I'll Show You the Dark Side" kondíciós kártyát a támadónak.'''
+        'Test Pilot "Blackout"':
+            text: '''Támadáskor, ha a támadás akadályozott, a védekező kettővel kevesebb védekező kockával gurít.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1045,6 +1059,26 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Mikor az elsődleges vagy %CANNON% másodlagos fegyvereddel támadsz, újradobhatsz egy támadó kockádat.'''
         'Saturation Salvo':
             text: '''Miután végrehajtottál egy támadást egy %TORPEDO% vagy %MISSILE% másodlagos fegyvereddel ami nem tálált, a védekezőtől 1-es távolságban lévő összes hajó, aminek mozgékonyság értéke kisebb, mint a %TORPEDO% vagy %MISSILE% kártya pontértéke, dob egy támadó kockával és elszenvedi a dobott %HIT% vagy %CRIT% sérülést.'''
+        'Contraband Cybernetics':
+            text: '''Mikor az aktivációs fázisban te leszel az aktív hajó, eldobhatod ezt a kártyát, hogy kapj egy stressz jelzőt. Ha így teszel, a kör végéig végrehajthatsz akciókat és piros manővert még ha stresszes is vagy.'''
+        'Maul':
+            text: '''<span class="card-restriction">Csak söpredék.</span> <span class="card-restriction">Figylemen kívül hagyhatod ezt a korlátozást, ha a csapat tagja "Ezra Bridger".</span>%LINEBREAK%Támadáskor, ha nem vagy stresszelve, kaphatsz annyi stressz jelzőt, amennyi kockát újradobsz. Miután a végrehajtott támadás talált, levehetsz 1 stressz jelzőt.'''
+        'Courier Droid':
+            text: '''A hajók lehelyezése lépés kezdetén, eldöntheted, hogy "0" vagy "8" PS-űként kezeled a hajód, ezen lépés végéig.'''
+        '"Chopper" (Astromech)':
+            text: '''<strong>Akció: </strong>Dobj el egy felszerelt fejlesztés kártyát, hogy visszatölts egy pajzsot.'''
+        'Flight-Assist Astromech':
+            text: '''Nem hajthatsz végre támadást a tűzíveden kívül.%LINEBREAK%Miután végrehajtottál egy manővert és a hajód nem kerül átfedésbe akadállyal vagy egy másik hajóval és nincs ellenséges hajó a tűzívedben 1-3-as távolságban végrehajthatsz egy ingyenes %BOOST% vagy %BARRELROLL% akciót.'''
+        'Advanced Optics':
+            text: '''Nem lehet több, mint 1 %FOCUS% jelződ. A befejező fázisban ne vedd le a megmaradt %FOCUS% jelzőt a hajódról.'''
+        'Scrambler Missiles':
+            text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Ha a támdás talált, a védekező és attól minden 1-es távolságban lévő hajó kap egy jam jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell.'''
+        'R5-TK':
+            text: '''Baráti hajóra is tehetsz célpontbemérőt. Támadhatsz baráti hajót.'''
+        'Threat Tracker':
+            text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Mikor egy ellenséges hajó a tűzívedben 1-2-es távolságban a harci fázisban aktiválódik, elköltheted a rajta lévő célpontbemérődet, hogy végrehajts egy %BOOST% vagy %BARRELROLL% akciót, ha az rajta van az akciósávodon.'''
+        'Debris Gambit':
+            text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Adjál 1 %EVADE% jelzőt a hajódhoz minden 1-es távolságban lévő akadály után, de maximum kettőt.'''
 
     modification_translations =
         "Stealth Device":
@@ -1116,6 +1150,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak TIE.</span>%LINEBREAK%Védekezéskor, védekező kockák dobása után, ha több támadó kocka volt, mint védekező, dobj még egy védekező kockával.%LINEBREAK%Nem használhatod, ha az mozgékonyságod 3 vagy nagyobb.'''
         'Pulsed Ray Shield':
             text: '''<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'''
+        'Deflective Plating':
+            text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
 
     title_translations =
         "Slave I":
@@ -1244,6 +1280,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak TIE Silencer.</span>%LINEBREAK%Támadáskor, ha a védekező az egyetlen hajó a tűzívedben 1-3 távolságban, újradobhatsz 1 támadó kockát. Védekezéskor eldobhatod ezt a kártyát, hogy újradobd az összes védő kockádat.'''
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyver" jelződ van.'''
+        'Crossfire Formation':
+            text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Védekezéskor, ha legalább egy másik baráti Ellenállás hajó van 1-2-es távolságra a támadótól, adhatsz egy %FOCUS% eredmény a dobásodhoz.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
