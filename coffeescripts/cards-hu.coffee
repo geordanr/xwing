@@ -525,25 +525,25 @@ exportObj.cardLoaders.Magyar = () ->
         'Torani Kulda':
             text: '''Miután végrehajtottál egy támadást, minden hajó amelyik benne van a bulleye tűzívedben 1-3 távolságban választhat, hogy elszenved egy sérülést vagy eldobja az összes %FOCUS% és %EVADE% jelzőjét.'''
         'Dalan Oberos (Kimogila)':
-            text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
+            text: '''A harci fázis kezdetén feltehetsz egy célpontbemérőt egy ellenséges hajóra, amely a bullseye tűzívedben van 1-3-as távolságban.'''
         'Fenn Rau (Sheathipede)':
             text: '''Mikor egy ellenséges hajó a tűzívedben 1-3 távolságban a harci fázisban aktiválódik és nem vagy stresszes, kaphatsz egy stressz jelzőt. Ha így teszel, az a hajó ebben a körben nem költhet el jelzőt, hogy módosítsa a támadó kockáit.'''
         'Ezra Bridger (Sheathipede)':
-            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
+            text: """Védekezéskor, ha stresszelve vagy, átfordíthatsz akár 2 %FOCUS% dobást %EVADE%-re."""
         '"Zeb" Orrelios (Sheathipede)':
-            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+            text: '''Mikor védekezel, a %CRIT% dobásokat előbb semlegesítheted, mint a %HIT% dobásokat.'''
         'AP-5':
-            text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
+            text: '''Mikor végrehajtasz egy koordinálás akciót, miután kiválasztottál egy baráti hajót és mielőtt az végrehajtaná az ingyenes akcióját, kaphatsz 2 stressz jelzőt, hogy levegyél róla 1 stressz jelzőt.'''
         '"Crimson Leader"':
             text: '''Támadáskor, ha a védekező benne van a tűzívedben, elkölthetsz egy %HIT% vagy %CRIT% dobásodat, hogy a védekezőhöz rendeld a "Rattled" kondíciós kártyát.'''
         '"Crimson Specialist"':
-            text: '''When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'''
+            text: '''Mikor felteszed a bomba jelzőt, amit a tárcsa felfedése után dobtál ki, a jelzőt a hajóval érintkezve bárhova teheted a pályára.'''
         '"Cobalt Leader"':
-            text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
+            text: '''Támadáskor, ha a védekező 1-es távolságban van egy bomba jelzőtől, eggyel kevesebb védekező kockával gurít.'''
         'Kylo Ren (TIE Silencer)':
             text: '''Körönként mikor először ér találat, oszd ki a "I'll Show You the Dark Side" kondíciós kártyát a támadónak.'''
         'Test Pilot "Blackout"':
-            text: '''When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'''
+            text: '''Támadáskor, ha a támadás akadályozott, a védekező kettővel kevesebb védekező kockával gurít.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1060,25 +1060,25 @@ exportObj.cardLoaders.Magyar = () ->
         'Saturation Salvo':
             text: '''Miután végrehajtottál egy támadást egy %TORPEDO% vagy %MISSILE% másodlagos fegyvereddel ami nem tálált, a védekezőtől 1-es távolságban lévő összes hajó, aminek mozgékonyság értéke kisebb, mint a %TORPEDO% vagy %MISSILE% kártya pontértéke, dob egy támadó kockával és elszenvedi a dobott %HIT% vagy %CRIT% sérülést.'''
         'Contraband Cybernetics':
-            text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
+            text: '''Mikor az aktivációs fázisban te leszel az aktív hajó, eldobhatod ezt a kártyát, hogy kapj egy stressz jelzőt. Ha így teszel, a kör végéig végrehajthatsz akciókat és piros manővert még ha stresszes is vagy.'''
         'Maul':
-            text: '''%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'''
+            text: '''<span class="card-restriction">Csak söpredék.</span> <span class="card-restriction">Figylemen kívül hagyhatod ezt a korlátozást, ha a csapat tagja "Ezra Bridger".</span>%LINEBREAK%Támadáskor, ha nem vagy stresszelve, kaphatsz annyi stressz jelzőt, amennyi kockát újradobsz. Miután a végrehajtott támadás talált, levehetsz 1 stressz jelzőt.'''
         'Courier Droid':
-            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'''
+            text: '''A hajók lehelyezése lépés kezdetén, eldöntheted, hogy "0" vagy "8" PS-űként kezeled a hajód, ezen lépés végéig.'''
         '"Chopper" (Astromech)':
-            text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
+            text: '''<strong>Akció: </strong>Dobj el egy felszerelt fejlesztés kártyát, hogy visszatölts egy pajzsot.'''
         'Flight-Assist Astromech':
-            text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
+            text: '''Nem hajthatsz végre támadást a tűzíveden kívül.%LINEBREAK%Miután végrehajtottál egy manővert és a hajód nem kerül átfedésbe akadállyal vagy egy másik hajóval és nincs ellenséges hajó a tűzívedben 1-3-as távolságban végrehajthatsz egy ingyenes %BOOST% vagy %BARRELROLL% akciót.'''
         'Advanced Optics':
-            text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
+            text: '''Nem lehet több, mint 1 %FOCUS% jelződ. A befejező fázisban ne vedd le a megmaradt %FOCUS% jelzőt a hajódról.'''
         'Scrambler Missiles':
-            text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'''
+            text: '''<strong>Támadás (célpontbemérő):</strong> dobd el ezt a kártyát, hogy végrehajtsd a támadást.%LINEBREAK% Ha a támdás talált, a védekező és attól minden 1-es távolságban lévő hajó kap egy jam jelzőt. Ezután az összes kocka eredményét érvényteleníteni kell.'''
         'R5-TK':
-            text: '''You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'''
+            text: '''Baráti hajóra is tehetsz célpontbemérőt. Támadhatsz baráti hajót.'''
         'Threat Tracker':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'''
+            text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Mikor egy ellenséges hajó a tűzívedben 1-2-es távolságban a harci fázisban aktiválódik, elköltheted a rajta lévő célpontbemérődet, hogy végrehajts egy %BOOST% vagy %BARRELROLL% akciót, ha az rajta van az akciósávodon.'''
         'Debris Gambit':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'''
+            text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Adjál 1 %EVADE% jelzőt a hajódhoz minden 1-es távolságban lévő akadály után, de maximum kettőt.'''
 
     modification_translations =
         "Stealth Device":
@@ -1151,7 +1151,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Pulsed Ray Shield':
             text: '''<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'''
         'Deflective Plating':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
+            text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
 
     title_translations =
         "Slave I":
@@ -1281,7 +1281,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyver" jelződ van.'''
         'Crossfire Formation':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
+            text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Védekezéskor, ha legalább egy másik baráti Ellenállás hajó van 1-2-es távolságra a támadótól, adhatsz egy %FOCUS% eredmény a dobásodhoz.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
