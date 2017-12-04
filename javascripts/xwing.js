@@ -4272,13 +4272,13 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
         points: 25
       }, {
-        name: 'Cartel E???',
+        name: 'Cartel Executioner',
         id: 273,
         faction: 'Scum and Villainy',
         ship: 'M12-L Kimogila Fighter',
         skill: 5,
         slots: ['Elite', 'Torpedo', 'Missile', 'Salvaged Astromech', 'Illicit'],
-        points: 100
+        points: 24
       }, {
         name: 'Cartel Brute',
         id: 274,
@@ -8997,7 +8997,7 @@ exportObj.cardLoaders.Deutsch = function() {
       ship: "M12-L Kimogila Fighter",
       text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
     },
-    'Cartel E???': {
+    'Cartel Executioner': {
       ship: "M12-L Kimogila Fighter"
     },
     'Cartel Brute': {
