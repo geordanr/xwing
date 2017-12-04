@@ -4963,7 +4963,7 @@ exportObj.basicCardData = ->
             points: 25
         }
         {
-            name: 'Cartel E???'
+            name: 'Cartel Executioner'
             id: 273
             faction: 'Scum and Villainy'
             ship: 'M12-L Kimogila Fighter'
@@ -4975,7 +4975,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Cartel Brute'

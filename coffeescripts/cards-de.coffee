@@ -1097,7 +1097,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'Dalan Oberos (Kimogila)':
             ship: "M12-L Kimogila Fighter"
             text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
-        'Cartel E???':
+        'Cartel Executioner':
             ship: "M12-L Kimogila Fighter"
         'Cartel Brute':
             ship: "M12-L Kimogila Fighter"
