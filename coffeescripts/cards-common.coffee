@@ -5109,7 +5109,7 @@ exportObj.basicCardData = ->
             applies_condition: 'Rattled'.canonicalize()
         }
         {
-            name: 'Sienar-Jae???'
+            name: 'Sienar-Jaemus Analyst'
             id: 283
             faction: 'First Order'
             ship: 'TIE Silencer'
@@ -5118,19 +5118,20 @@ exportObj.basicCardData = ->
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 26
         }
         {
-            name: 'First Orde???'
+            name: 'First Order Test Pilot'
             id: 284
             faction: 'First Order'
             ship: 'TIE Silencer'
             skill: 6
             slots: [
+                'Elite'
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 29
         }
         {
             name: 'Test Pilot "Blackout"'
