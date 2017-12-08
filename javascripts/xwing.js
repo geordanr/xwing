@@ -26604,7 +26604,7 @@ exportObj.manifestByExpansion = {
       type: 'pilot',
       count: 1
     }, {
-      name: 'Dalan Oberos',
+      name: 'Dalan Oberos (Kimogila)',
       type: 'pilot',
       count: 1
     }, {
