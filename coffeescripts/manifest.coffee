@@ -4418,7 +4418,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'OS-1 Arsenal Loadout'
+            name: 'Os-1 Arsenal Loadout'
             type: 'title'
             count: 1
         }
