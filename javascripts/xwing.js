@@ -7737,10 +7737,11 @@ exportObj.translations.Deutsch = {
     "Scurrg H-6 Bomber Expansion Pack": "Scurrg H-6 Bomber Erweiterung",
     "Auzituck Gunship Expansion Pack": "Auzituck-Kanonenboot Erweiterung",
     "Guns for Hire Expansion Pack": "Söldnerseelen Erweiterung",
-    "M12-L Kimogila Fighter Expansion Pack": "M12-L Kimogila Fighter Expansion Pack",
-    "Phantom II Expansion Pack": "Phantom II Expansion Pack",
-    "Resistance Bomber Expansion Pack": "Resistance Bomber Expansion Pack",
-    "TIE Silencer Expansion Pack": "TIE Silencer Expansion Pack"
+    "M12-L Kimogila Fighter Expansion Pack": "M12-L-Kimogila-Jäger Erweiterung",
+    "Phantom II Expansion Pack": "Phantom II Erweiterung",
+    "Resistance Bomber Expansion Pack": "Bomber des Widerstands Erweiterung",
+    "TIE Silencer Expansion Pack": "TIE-Dämpfer Erweiterung",
+    "Alpha-class Star Wing Expansion Pack": "Sternflügler der Alpha-Klasse Erweiterung"
   },
   ui: {
     shipSelectorPlaceholder: "Wähle ein Schiff",
@@ -7882,9 +7883,11 @@ exportObj.cardLoaders.Deutsch = function() {
   exportObj.renameShip('Auzituck Gunship', 'Auzituck-Kanonenboot');
   exportObj.renameShip('TIE Aggressor', 'TIE-Aggressor');
   exportObj.renameShip('TIE Advanced', 'TIE-Turbojäger');
-  exportObj.renameShip('Alpha-class Star Wing', 'Alpha-class Star Wing');
-  exportObj.renameShip('M12-L Kimogila Fighter', 'M12-L Kimogila Fighter');
-  exportObj.renameShip('Sheathipede-class Shuttle', 'Sheathipede-class Shuttle');
+  exportObj.renameShip('Alpha-class Star Wing', 'Sternflügler der Alpha-Klasse');
+  exportObj.renameShip('M12-L Kimogila Fighter', 'M12-L-Kimogila-Jäger');
+  exportObj.renameShip('Sheathipede-class Shuttle', 'Raumfähre der Sheathipede-Klasse');
+  exportObj.renameShip('B/SF-17 Bomber', 'B/SF-17-Bomber');
+  exportObj.renameShip('TIE Silencer', 'TIE-Dämpfer');
   pilot_translations = {
     "Wedge Antilles": {
       ship: "X-Flügler",
@@ -8976,59 +8979,88 @@ exportObj.cardLoaders.Deutsch = function() {
       name: "Attentäter der Schwarzen Sonne"
     },
     'Major Vynder': {
-      ship: "Alpha-class Star Wing",
-      text: 'When defending, if you have a weapons disabled token, roll 1 additional defense die.'
+      ship: "Sternflügler der Alpha-Klasse",
+      text: 'Sobald du dich verteidigst, wirfst du , falls du einen Waffen-deaktiviert-Marker hast 1 zusätzlichen Verteidigungswürfel.'
     },
     'Lieutenant Karsabi': {
-      ship: "Alpha-class Star Wing",
-      text: 'When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'
+      ship: "Sternflügler der Alpha-Klasse",
+      text: 'Sobald du einen Waffen-deaktiviert-Marker erhältst, darfst du, falls du nicht gestresst bist, 1 Stressmarker erhalten, um den Waffen-deaktiviert-Marker zu entfernen.'
     },
     'Rho Squadron Veteran': {
-      ship: "Alpha-class Star Wing"
+      name: "Veteran der Rho-Staffel",
+      ship: "Sternflügler der Alpha-Klasse"
     },
     'Nu Squadron Pilot': {
-      ship: "Alpha-class Star Wing"
+      name: "Pilot der Nu-Staffel",
+      ship: "Sternflügler der Alpha-Klasse"
     },
     'Torani Kulda': {
-      ship: "M12-L Kimogila Fighter",
-      text: 'After you perform an attack, each enemy ship inside your bullseye firing arc at Range 1-3 must choose to suffer 1 damage or remove all of its focus and evade tokens.'
+      ship: "M12-L-Kimogila-Jäger",
+      text: 'Nachdem du einen Angriff durchgeführt hast, muss jedes feindliche Schiff in deinem Bullaugen-Feuerwinkel in Reichweite 1-3 wählen, ob es 1 Schaden nimmt oder alle seine Fokus- und Ausweichmarker entfernt.'
     },
     'Dalan Oberos (Kimogila)': {
-      ship: "M12-L Kimogila Fighter",
-      text: 'At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'
+      ship: "M12-L-Kimogila-Jäger",
+      text: 'Zu Beginn der Kampfphase darfst du ein feindliches Schiff in deinem Bullaugen-Feuerwinkel in Reichweite 1-3 in die Zielerfassung nehmen.'
     },
     'Cartel Executioner': {
-      ship: "M12-L Kimogila Fighter"
+      ship: "M12-L-Kimogila-Jäger",
+      name: "Killer des Kartells"
     },
     'Cartel Brute': {
-      ship: "M12-L Kimogila Fighter"
+      ship: "M12-L-Kimogila-Jäger",
+      name: "Schläger des Kartells"
     },
     'Fenn Rau (Sheathipede)': {
-      text: 'When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'
+      ship: "Raumfähre der Sheathipede-Klasse",
+      text: 'Sobald ein feindliches Schiff in deinem Feuerwinkel in Reichweite 1-3 während der Kampfphase zum aktiven Schiff wird, darfst du, falls du nicht gestresst bist, 1 Stressmarker erhalten. Falls du das tust, darf jenes Schiff keine Marker ausgeben, um seine Würfel zu modifizieren, sobald es in dieser Runde angreift.'
     },
     'Ezra Bridger (Sheathipede)': {
-      text: "When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."
+      ship: "Raumfähre der Sheathipede-Klasse",
+      text: "Sobald du dich verteidigst, darfst du, falls du gestresst bist, bis zu 2 deiner %FOCUS% in %EVADE% ändern."
     },
     '"Zeb" Orrelios (Sheathipede)': {
-      text: 'When defending, you may cancel %CRIT% results before %HIT% results.'
+      ship: "Raumfähre der Sheathipede-Klasse",
+      text: 'Sobald du dich verteidigst, darfst du %CRIT% vor %HIT% negieren.'
     },
     'AP-5': {
-      text: 'When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'
+      ship: "Raumfähre der Sheathipede-Klasse",
+      text: 'Sobald du die Aktion Koordination durchführst, nachdem du ein freundliches Schiff gewählt hast und bevor es eine freie Aktion durchführt, darfst du 2 Stressmarker erhalten, um 1 Stressmarker von ihm zu entfernen.'
     },
     '"Crimson Leader"': {
-      text: 'When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'
-    },
-    '"Crimson Specialist"': {
-      text: 'When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'
+      name: '"Purpur Eins"',
+      ship: "B/SF-17-Bomber",
+      text: 'Sobald du angreifst, darfst du , falls sich der Verteidiger in deinem Feuerwinkel befindet, 1 %HIT% oder %CRIT% ausgeben, um dem Verteidiger den Zustand "Aus der Fassung" zuzuordnen.'
     },
     '"Cobalt Leader"': {
-      text: 'When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'
+      name: '"Cobalt Eins"',
+      ship: "B/SF-17-Bomber",
+      text: 'Sobald du angreifst, wirft der Verteidiger, falls er sich in Reichweite 1 zu einem Bombenmarker befindet, 1 Verteidigungswürfel weniger (bis zu einem Minimum von 0).'
+    },
+    '"Crimson Specialist"': {
+      name: '"Elitepilot der Purpur-Staffel"',
+      ship: "B/SF-17-Bomber",
+      text: 'Sobald du einen Bombenmarker platzierst, den du gelegt hast, nachdem du dein Manöverrad aufgedeckt hast, darfst du den Bombenmarker irgendwo auf der Spielfläche platzieren, so dass er dein Schiff berührt.'
+    },
+    'Crimson Squadron Pilot': {
+      name: "Pilot der Purpur-Staffel",
+      ship: "B/SF-17-Bomber"
     },
     'Kylo Ren (TIE Silencer)': {
-      text: 'The first time you are hit by an attack each round, deal the "I\'ll Show You the Dark Side" Condition card to the attacker.'
+      ship: "TIE-Dämpfer",
+      text: 'Das erste Mal, wenn du in jeder Runde von einem Angriff getroffen wirst, ordne dem Angreifer die Zustandskarte "Ich zeige dir die Dunkle Seite" zu.'
     },
     'Test Pilot "Blackout"': {
-      text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
+      name: '"Blackout" Testpilot',
+      ship: "TIE-Dämpfer",
+      text: 'Sobald du angreifst, wirft der Verteidiger 2 Würfel weniger (bis zu einem Minimum von 0), falls der Angriff versperrt ist.'
+    },
+    'First Order Test Pilot': {
+      name: "Testpilot der ersten Ordnung",
+      ship: "TIE-Dämpfer"
+    },
+    'Sienar-Jaemus Analyst': {
+      name: "Analyst von Sienar-Jaemus",
+      ship: "TIE-Dämpfer"
     }
   };
   upgrade_translations = {
@@ -9970,49 +10002,62 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen%LINEBREAK%Falls der Angriff trifft, nachdem der Angriff abgehandelt worden ist, ordne dem Verteidiger den Zustand "Harpuniert!" zu.'
     },
     'Ordnance Silos': {
-      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'
+      ship: "B/SF-17-Bomber",
+      name: "Abwurfsilos",
+      text: '<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald du diese Karte ausrüstest platziere 3 Munitionsmarker auf jede andere ausgerüstete %BOMB%-Aufwertungskarte. Sobald du angewiesen wirst eine Aufwertungskarte abzulegen darfst du stattdessen 1 Munitionsmarker von jener Karte ablegen.'
     },
     'Trajectory Simulator': {
-      text: 'You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'
+      name: "Flugbahn-Simulator",
+      text: 'Du darfst Bomben abfeuern und dabei die (%STRAIGHT% 5)-Schablone verwenden, anstatt sie zu legen. Du kannst keine Bomben mit dem Stichwort "<strong>Aktion:</strong>" auf diese Weise abfeuern.'
     },
     'Jamming Beam': {
-      text: '<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'
+      name: "Störstrahl",
+      text: '<strong>Angriff:</strong> Greife 1 Schiff an.%LINEBREAK%Falls dieser Angriff trifft, ordne dem Verteidiger 1 Störsignalmarker zu. Dann werden <strong>alle</strong> Würfelergebnisse negiert.'
     },
     'Linked Battery': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%When attacking with a primary or %CANNON% secondary weapon, you may reroll 1 attack die.'
+      name: "Gekoppelte Geschützbatterie",
+      text: '%SMALLSHIPONLY% %LIMITED%%LINEBREAK%Sobald du mit einer Primär oder  %CANNON%-Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln.'
     },
     'Saturation Salvo': {
-      text: 'After you perform an attack with a %TORPEDO% or %MISSILE% secondary weapon that does not hit, each ship at Range 1 of the defender with an agility value lower than the squad point cost of the %TORPEDO% or %MISSILE% Upgrade card must roll 1 attack die and suffer any damage (%HIT%) or critical damage (%CRIT%) rolled.'
+      name: "Flächenangriff",
+      text: 'Nachdem du mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe einen Angriff durcheführt hast, der nicht getroffen hat, muss jedes Schiff in Reichweite 1 des Verteidigers mit einem Wendigkeitswert niedriger als die Kommandopunktekosten der %TORPEDO%- oder %MISSILE%-Aufwertungskarte 1 Angriffswürfel werfen und den gewürfelten Schaden (%HIT%) oder kritischen Schaden (%CRIT%) nehmen.'
     },
     'Contraband Cybernetics': {
-      text: 'When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'
+      name: "Illegale Kybernetik",
+      text: 'Sobald du während der Aktivierungsphase zum aktiven Schiff wirst, darfst du diese Karte ablegen und 1 Stressmarker erhalten. Falls du das tust, darfst du bis zum Ende der Runde Aktionen und rote Manöver auch durchführen solange du gestresst bist.'
     },
     'Maul': {
-      text: '%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'
+      text: '%SCUMONLY% <span class="card-restriction">Ignoriere diese Beschränkung, falls "Ezra Bridger" in deiner Staffel ist.</span>%LINEBREAK%Sobald du angreifst, darfst du, falls du nicht gestresst bist, beliebig viele Stressmarker erhalten, um ebesno viele Angriffswürfel neu zu würfeln.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du 1 deiner Stressmarker entfernen.'
     },
     'Courier Droid': {
-      text: 'At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'
+      name: "Kurierdroide",
+      text: '%LIMITED%%LINEBREAK%Zu Beginn des Schnitts "Streitkräfte platzieren" darfst du wählen, deinen Pilotenwert bis zum Ende des Schritts als 0 oder als 8 zu behandeln.'
     },
     '"Chopper" (Astromech)': {
-      text: '<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'
+      text: '<strong>Aktion: </strong>Lege 1 andere ausgerüstete Aufwertung ab, um 1 Schild wieder aufzuladen.'
     },
     'Flight-Assist Astromech': {
-      text: 'You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'
+      name: "Glugassistenz-Astromech",
+      text: 'Du darfst keine Schiffe außerhalb deines Feuerwinkels angreifen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du, falls du dich nicht mit einem Schiff oder Hindernis überschnitten hast und keine feindlichen Schiffe in deinem Feuerwinkel in Reichweite 1-3 sind, einen Schub oder eine Fassrole als freie Aktion durchführen.'
     },
     'Advanced Optics': {
-      text: 'You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'
+      name: "Verbeserte Optik",
+      text: 'Du kannst nicht mehr als 1 Fokusmarker haben.%LINEBREAK%Während der Endphase entfernst du einen nicht genutzten Fokusmarker nicht von deinem Schiff.'
     },
     'Scrambler Missiles': {
-      text: '<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, the defender and each other ship at Range 1 receives 1 jam token.  Then cancel <strong>all</strong> results.'
+      name: "Störraketen",
+      text: '<strong>Angriff (Zielerfassung):</strong> Lege diese Karte ab, um diesen Angriff durchzuführen.%LINEBREAK%Falls dieser Angriff trifft, erhalten der Verteidiger und jedes andere Schiff in Reichweite 1 jeweils 1 Störsignalmarker: Dann werden <strong>alle</strong> Würfelergebnisse negiert.'
     },
     'R5-TK': {
-      text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
+      text: 'Du kannst freundliche Schiffe in die Zielerfassung nehmen.%LINEBREAK%Du kannst freundlche Schiffe angreifen.'
     },
     'Threat Tracker': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+      name: "Annäherungsalarm",
+      text: '%SMALLSHIPONLY%%LINEBREAK%Sobald ein feindliches Schiff in deinem Feuerwinkel in Reichweite 1-2 während der Kampfphase zum aktiven Schiff wird, darfst du deine Zielerfassung auf jenem Schiff ausgeben, um ene freie Schub-Aktion oder eine freie Aktion Fassrolle durchzuführen, falls du die Aktion in deiner Aktionsleiste hast.'
     },
     'Debris Gambit': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
+      name: "Trümmer-Gambit",
+      text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'
     }
   };
   modification_translations = {
@@ -10149,7 +10194,9 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%LINEBREAK%Während der Endphase darfst du 1 Ionenmarker erhalten, um 1 Schild wiederaufzuladen (bis maximal zum Schildwert). Du kannst diese Karte nur dann ausrüsten, wenn dein Schildwert 1 ist.'
     },
     'Deflective Plating': {
-      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'
+      name: "Deflektorpanzerung",
+      ship: "B/SF-17-Bomber",
+      text: '<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald eine freundliche Bombe detoniert, darfst du wählen ihre Effekte nicht zu erleiden. Falls du das tust, wirf einen Angriffswürfel. Lege diese Karte bei einem %HIT% an.'
     }
   };
   title_translations = {
@@ -10390,28 +10437,37 @@ exportObj.cardLoaders.Deutsch = function() {
       text: '<span class="card-restriction">Nur für SternenViper. Titel.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Titel-Aufwertungen ausrüsten.%LINEBREAK%Sobald du die Aktion Fassrolle durchführst, <strong>musst</strong> du die (%BANKLEFT% 1)- oder (%BANKRIGHT% 1)-Schablone anstelle der (%STRAIGHT% 1)-Schablone verwenden.'
     },
     'XG-1 Assault Configuration': {
-      ship: "Alpha-class Star Wing",
-      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains 2 %CANNON% icons.%LINEBREAK%You may perform attacks with %CANNON% secondary weapons that cost 2 or fewer points even while you have a weapons disabled token.'
+      ship: "Sternflügler der Alpha-Klasse",
+      name: "XG-1-Angriffskonfiguration",
+      text: '<span class="card-restriction">Nur für Sternflügler der Alpha-Klasse.</span>%LINEBREAK%Füge diener Aktionsleiste 2 %CANNON%-Symbole hinzu.%LINEBREAK%Du darfst Angriffe mit %CANNON%-Sekundärwaffen, die 2 oder weniger Kommandopunkte kosten auch durchführen, solange du einen Waffen-deaktiviert-Marker hast.'
     },
     'Enforcer': {
-      ship: "M12-L Kimogila Fighter",
-      text: '<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'
+      name: "Vollstrecker",
+      ship: "M12-L-Kimogila-Jäger",
+      text: '<span class="card-restriction">Nur für M12-L-Kimogila-Jäger.</span>%LINEBREAK%Nachdem du dich versteidigt hast, erhält der Angreifer, falls er in deinem Bullaugen-Feuerwinkel ist, 1 Stressmarker.'
     },
     'Ghost (Phantom II)': {
-      text: '<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'
+      ship: "VCX-100",
+      text: '<span class="card-restriction">Nur für VCX-100.</span>%LINEBREAK%Rüste eine freundliche <em>Raumfähre der Sheathipede-Klasse</em> mit dem Titel <em>Phantom II</em> aus und docke sie an diesem Schiff an.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du die Raumfähre von deinen Heck-Stoppern aus starten lassen.'
     },
     'Phantom II': {
-      text: 'While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'
+      ship: "Raumfähre der Sheathipede-Klasse",
+      text: 'Solange du angedockt bist, kann die <em>Ghost</em> mit ihren Primärwaffen auch Ziele in ihrem Spezial-Feuerwinkel angreifen.%LINEBREAK%Solange du angedockt bist, darf die <em>Ghost</em> am Ende der Aktivierungsphase eine freie Aktion Koordination durchführen.'
     },
     'First Order Vanguard': {
-      text: '<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'
+      ship: "TIE-Dämpfer",
+      name: "Vorhut der Ersten Ordnung",
+      text: '<span class="card-restriction">Nur für TIE-Dämpfer.</span>%LINEBREAK%Sobald du angreifst, darfst du, falls der Verteidiger das einzige Schiff in deinem Feuerwinkel in Reichweite 1-3 ist, 1 Angriffswürfel neu werfen.%LINEBREAK%Sobald du verteidigst, darfst du diese Karte ablegen, um alle deine Verteidigungswürfel neu zu werfen.'
     },
     'Os-1 Arsenal Loadout': {
-      ship: "Alpha-class Star Wing",
-      text: '<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'
+      name: "Os-1-Waffenarsenal",
+      ship: "Sternflügler der Alpha-Klasse",
+      text: '<span class="card-restriction">Nur für Sternflügler der Alpha-Klasse.</span>%LINEBREAK%Deine Aufwertungsleiste erhält ein %TORPEDO%- und ein %MISSILE%-Symbol.%LINEBREAK%Du darfst Angriffe mit %TORPEDO%- and %MISSILE%-Sekundärwaffen gegen Schiffe, die du in der Zielerfassung hast, auch durchführen, solange du einen Waffen-deaktiviert-Marker hast.'
     },
     'Crossfire Formation': {
-      text: '<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'
+      ship: "B/SF-17-Bomber",
+      name: "Kreuzfeuer-Formation",
+      text: '<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald du verteidigst, darfst du, falls sich minestens 1 anderes freunldiches Schiff des Widerstands in Reichweite 1-2 zum Angreifer befindet, 1 %FOCUS% hinzufügen.'
     }
   };
   condition_translations = {
@@ -10441,10 +10497,11 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Harpooned!': {
       name: "Harpuniert!",
-      text: 'Sobald du von einem Angriff getroffen wirst und falls es mindestens 1 nicht-negiertes %CRIT% gibt, nimmt jedes andere Schiff, das in Reichweite 1 zu dir ist, 1 Schaden. Denn legst du diese Karte ab und erhältst 1 verdeckte Schadenskarte.%LINEBREAK%Sobald du zerstört wirst, nimmt jedes Schiff, das in Reichweite 1 zu dir ist, 1 Schaden.%LINEBREAK%<strong>Aktion:</strong>Lege diese Karte ab. Wirf dann 1 Angiffswürfel. Bei a %HIT% oder %CRIT% nimmst du 1 Schaden.'
+      text: 'Sobald du von einem Angriff getroffen wirst und falls es mindestens 1 nicht-negiertes %CRIT% gibt, nimmt jedes andere Schiff, das in Reichweite 1 zu dir ist, 1 Schaden. Denn legst du diese Karte ab und erhältst 1 verdeckte Schadenskarte.%LINEBREAK%Sobald du zerstört wirst, nimmt jedes Schiff, das in Reichweite 1 zu dir ist, 1 Schaden.%LINEBREAK%<strong>Aktion:</strong>Lege diese Karte ab. Wirf dann 1 Angiffswürfel. Bei %HIT% oder %CRIT% nimmst du 1 Schaden.'
     },
     'Rattled': {
-      text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
+      name: "Aus der Fassung",
+      text: 'Sobald du Schaden oder kritischen Schaden durch eine Bombe nimmst, nimmst du 1 zusätzlichen kritischen Schaden. Entferne dann diese Karte.%LINEBREAK%<strong>Aktion:</strong> Wirf 1 Angriffswürfel. Bei einem %FOCUS% oder %HIT% entferne diese Karte.'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -26630,7 +26687,7 @@ exportObj.manifestByExpansion = {
       type: 'title',
       count: 1
     }, {
-      name: 'OS-1 Arsenal Loadout',
+      name: 'Os-1 Arsenal Loadout',
       type: 'title',
       count: 1
     }, {
@@ -27162,7 +27219,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25790
+                    lineno: 25840
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27751,7 +27808,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 26420
+              lineno: 26470
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -28495,7 +28552,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 27050
+          lineno: 27100
         }));
         __iced_deferrals._fulfill();
       });
@@ -28507,7 +28564,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 27051
+            lineno: 27101
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -30118,7 +30175,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 27956
+                      lineno: 28006
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -30192,7 +30249,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 27982
+                lineno: 28032
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30247,7 +30304,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 28005
+              lineno: 28055
             }));
           }
         }
@@ -30256,7 +30313,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 28007
+              lineno: 28057
             }));
           }
         }
@@ -30265,7 +30322,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 28009
+              lineno: 28059
             }));
           }
         }
@@ -31288,7 +31345,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28693
+                lineno: 28743
               })
             ]);
             __iced_deferrals._fulfill();
@@ -31407,7 +31464,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28752
+                  lineno: 28802
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -31429,7 +31486,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28756
+                    lineno: 28806
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -31519,7 +31576,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28799
+            lineno: 28849
           }));
         }
         __iced_deferrals._fulfill();
