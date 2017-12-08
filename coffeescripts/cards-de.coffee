@@ -1873,7 +1873,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Chopper" (Astromech)':
             text: '''<strong>Aktion: </strong>Lege 1 andere ausgerüstete Aufwertung ab, um 1 Schild wieder aufzuladen.'''
         'Flight-Assist Astromech':
-            name: "Glugassistenz-Astromech"
+            name: "Flugassistenz-Astromech"
             text: '''Du darfst keine Schiffe außerhalb deines Feuerwinkels angreifen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du, falls du dich nicht mit einem Schiff oder Hindernis überschnitten hast und keine feindlichen Schiffe in deinem Feuerwinkel in Reichweite 1-3 sind, einen Schub oder eine Fassrole als freie Aktion durchführen.'''
         'Advanced Optics':
             name: "Verbeserte Optik"
@@ -2101,7 +2101,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<span class="card-restriction">Nur für Korvetten der <em>Sturm</em>-Klasse (Heck).</span>%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der ein feindliches Schiff zerstört hat, darfst du ein Schiff in die Zielerfassung nehmen..'''
         'TIE/x7':
             ship: "TIE-Jagdbomber"
-            text: '''<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert die Symbole %CANNON% und %MISSILE%.%LINEBREAK%Nachdem du ein Manöver mit Geschwindigkeit 3, 4 oder 5 ausgeführt hast, darfst du deinem Schiff 1 Ausweichmarker zuordnen.'''
+            text: '''<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Deine Aufwertungsleiste verliert die Symbole %CANNON% und %MISSILE%.%LINEBREAK%Nachdem du ein Manöver mit Geschwindigkeit 3, 4 oder 5 ausgeführt hast, das nicht zur Überschneidung mit einem Schiff oder Hindernis geführt hat, darfst du eine freie Aktion Ausweichmarker durchführen.'''
         'TIE/D':
             ship: "TIE-Jagdbomber"
             text: '''<span class="card-restriction">Nur für TIE-Jagdbomber.</span>%LINEBREAK%Ein Mal pro Runde, nachdem du einen Angriff mit einer %CANNON%-Sekundärwaffe durchgeführt hast, die 3 oder weniger Kommandopunkte kosten, darfst du einen Primärwaffenangriff durchführen.'''
