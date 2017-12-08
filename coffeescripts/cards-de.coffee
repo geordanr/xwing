@@ -1873,7 +1873,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Chopper" (Astromech)':
             text: '''<strong>Aktion: </strong>Lege 1 andere ausgerüstete Aufwertung ab, um 1 Schild wieder aufzuladen.'''
         'Flight-Assist Astromech':
-            name: "Glugassistenz-Astromech"
+            name: "Flugassistenz-Astromech"
             text: '''Du darfst keine Schiffe außerhalb deines Feuerwinkels angreifen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du, falls du dich nicht mit einem Schiff oder Hindernis überschnitten hast und keine feindlichen Schiffe in deinem Feuerwinkel in Reichweite 1-3 sind, einen Schub oder eine Fassrole als freie Aktion durchführen.'''
         'Advanced Optics':
             name: "Verbeserte Optik"
