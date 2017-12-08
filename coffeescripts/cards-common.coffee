@@ -7086,7 +7086,7 @@ exportObj.basicCardData = ->
         {
             name: '"Chopper" (Astromech)'
             id: 252
-            canonical_name: '"Chopper"'.canonicalize()
+            canonical_name: 'chopper-swx72'
             unique: true
             slot: 'Astromech'
             points: 1
