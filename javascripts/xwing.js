@@ -10125,7 +10125,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     "Advanced SLAM": {
       name: "Verbesserter SLAM",
-      text: "Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."
+      text: "Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion aus deiner Aktionsleiste durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."
     },
     "Twin Ion Engine Mk. II": {
       name: "Zwillings-Ionenantrieb MK. II",
