@@ -1940,7 +1940,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: """Sobald du verteidigst und du im Feuerwinkel jenseits Reichweite 2 oder außerhalb des Feuerwinkels des Angreifers bist, darfst du 1 deiner Leerseiten in ein %EVADE% ändern. Du darfst diese Karte nur ausrüsten, wenn du das %BOOST%-Aktionssymbol hast."""
         "Advanced SLAM":
             name: "Verbesserter SLAM"
-            text: """Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."""
+            text: """Nachdem du die Aktion SLAM durchgeführt hast, darfst du 1 freie Aktion aus deiner Aktionsleiste durchführen, falls du dich nicht mit einem Hindernis oder anderen Schiff überschnitten hast."""
         "Twin Ion Engine Mk. II":
             name: "Zwillings-Ionenantrieb MK. II"
             text: """Du darfst alle Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) als grüne Manöver behandeln."""
