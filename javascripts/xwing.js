@@ -12025,7 +12025,7 @@ exportObj.cardLoaders.English = function() {
       text: 'You can acquire target locks on friendly ships.%LINEBREAK%You can attack friendly ships.'
     },
     'Threat Tracker': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'
+      text: '%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes the active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrel roll action if that action is on your action bar.'
     },
     'Debris Gambit': {
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
