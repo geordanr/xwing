@@ -159,7 +159,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Luke Skywalker":
             text: """Védekezéskor egy %FOCUS%-odat átforgathatsz %EVADE%-re."""
         '"Dutch" Vander':
-            text: """Miután feltettél egy célpontbemérőt, válassz egy baráti hajót 1-2 távolságban. A kiválasztott hajó azonnal feltehet egy célpontbemérőt."""
+            text: """Miután feltettél egy célpontbemérőt, válassz egy másik baráti hajót 1-2 távolságban. A kiválasztott hajó azonnal feltehet egy célpontbemérőt."""
         "Horton Salm":
             text: """2-3-as távolságban támadáskor, bármennyi üres kockát újradobhatsz."""
         '"Winged Gundark"':
@@ -173,7 +173,7 @@ exportObj.cardLoaders.Magyar = () ->
         '"Mauler Mithel"':
             text: """Mikor 1-es távolságban támadsz, 1 plusz támadó kockával dobhatsz."""
         '"Howlrunner"':
-            text: """Mikor 1-es távolságban lévő baráti hajó támad az elsődleges fegyverével, 1 támadó kockáját újradobhatja."""
+            text: """Mikor 1-es távolságban lévő másik baráti hajó támad az elsődleges fegyverével, 1 támadó kockáját újradobhatja."""
         "Maarek Stele":
             text: """Mikor támadásodból felfordítot sérüléskártyát húzna a védekező, húzz te 3-at, válassz ki egyet és add át a védekezőnek. A többit dobd el."""
         "Darth Vader":
@@ -207,11 +207,11 @@ exportObj.cardLoaders.Magyar = () ->
         "Roark Garnet":
             text: '''A támadás fázis kezdetekor válassz egy másik baráti hajót 1-3 távolságban. A fázis végéig a hajó pilótája 12-esnek minősül.'''
         "Kyle Katarn":
-            text: """A támadás fázis kezdetekor hozzárendelheted egy %FOCUS% jelződ egy baráti hajóhoz 1-3 távolságban."""
+            text: """A támadás fázis kezdetekor hozzárendelheted egy %FOCUS% jelződ egy másik baráti hajóhoz 1-3 távolságban."""
         "Jan Ors":
-            text: """Ha egy baráti hajó 1-3 távolságban támad és nincs stressz jelződ, kaphatsz egy stressz jelzőt, hogy a másik hajó plusz egy kockával támadhasson. [FAQ]"""
+            text: """Ha egy másik baráti hajó 1-3 távolságban támad és nincs stressz jelződ, kaphatsz egy stressz jelzőt, hogy a másik hajó plusz egy kockával támadhasson. [FAQ]"""
         "Captain Jonus":
-            text: """Ha egy baráti hajó 1-es távolságban támad a másodlagos fegyverével, újradobhat akár 2 kockával is. [FAQ]"""
+            text: """Ha egy másik baráti hajó 1-es távolságban támad a másodlagos fegyverével, újradobhat akár 2 kockával is. [FAQ]"""
         "Major Rhymer":
             text: """Mikor másodlagos fegyverrel támadsz, növelheted vagy csökkentheted a fegyver hatótávját eggyel (az 1-3 határon belül)."""
         "Captain Kagi":
@@ -219,7 +219,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Colonel Jendon":
             text: """A támadás fázis kezdetekor a célpontbemérőd átadhatod egy baráti hajónak 1-es távolságban, ha neki még nincsen. [FAQ]"""
         "Captain Yorr":
-            text: """Ha egy baráti hajó 1-2 távolságban egy stressz jelzőt kap és neked 2 vagy kevesebb van, megkaphatod helyette. [FAQ]"""
+            text: """Ha egy másik baráti hajó 1-2 távolságban egy stressz jelzőt kap és neked 2 vagy kevesebb van, megkaphatod helyette. [FAQ]"""
         "Lieutenant Lorrir":
             text: """%BARRELROLL% akció végrehajtásakor, kaphatsz egy stressz jelzőt, hogy az (%STRAIGHT% 1) helyett a (%BANKLEFT% 1) vagy (%BANKRIGHT% 1) sablont használd. [FAQ]"""
         "Tetran Cowall":
@@ -231,7 +231,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Lieutenant Blount":
             text: """Támadásod akkor is találatnak számít, ha a védő nem sérül."""
         "Airen Cracken":
-            text: """Miután végrehajtottad a támadásod, választhatsz egy baráti hajót 1-es távolságban. Ez a hajó végrehajthat egy ingyenes akciót. [FAQ]"""
+            text: """Miután végrehajtottad a támadásod, választhatsz egy másik baráti hajót 1-es távolságban. Ez a hajó végrehajthat egy ingyenes akciót. [FAQ]"""
         "Colonel Vessery":
             text: """Támadáskor, a kocka dobás után közvetlenül feltehetsz egy célpontbemérőt a védekezőre, ha már van rajta piros célpontbemérő jelző. [FAQ]"""
         "Rexler Brath":
@@ -281,7 +281,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Guri":
             text: """A támadás fázis elején, ha ellenséges hajó van 1-es távolságban, kaphatsz egy %FOCUS% jelzőt."""
         "Serissu":
-            text: """Mikor egy baráti hajó védekezik 1-es távolságban, újra dobhat egy védekező kockával."""
+            text: """Mikor egy másik baráti hajó védekezik 1-es távolságban, újradobhat egy védekező kockával."""
         "Laetin A'shera":
             text: """Miután védekeztél egy támadás ellen és a támadás nem talált, kaphatsz egy %EVADE% jelzőt."""
         "IG-88A":
@@ -311,7 +311,7 @@ exportObj.cardLoaders.Magyar = () ->
         "N'Dru Suhlak":
             text: """Mikor támadsz és nincs másik baráti hajó 1-2 távolságban, plusz egy támadó kockával dobhatsz."""
         "Kaa'to Leeachos":
-            text: """A támadás fázis elején, elvehetsz egy %FOCUS% vagy %EVADE% jelzőt egy baráti hajótól 1-2 távolságban és magadra rakhatod."""
+            text: """A támadás fázis elején, elvehetsz egy %FOCUS% vagy %EVADE% jelzőt egy másik baráti hajótól 1-2 távolságban és magadra rakhatod."""
         "Commander Alozen":
             text: """A támadás fázis elején, feltehetsz egy célpontbemérőt 1-es távolságban lévő ellenséges hajóra."""
         "Raider-class Corvette (Fore)":
@@ -337,7 +337,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Graz the Hunter":
             text: """Védekezéskor, ha a támadó a tüzelési szögedben van, eggyel több védekező kockával dobhatsz."""
         "Esege Tuketu":
-            text: """Ha egy baráti hajó támad 1-2 távolságban, sajátjának tekintheti a %FOCUS% jelződ. [FAQ]"""
+            text: """Ha egy másik baráti hajó támad 1-2 távolságban, sajátjának tekintheti a %FOCUS% jelződ. [FAQ]"""
         "Moralo Eval":
             text: """Támadhatsz a %CANNON% másodlagos fegyvereddel a kiegészítő tüzelési szögeden is."""
         'Gozanti-class Cruiser':
@@ -378,7 +378,7 @@ exportObj.cardLoaders.Magyar = () ->
         '"Wampa"':
             text: """Támadáskor, az eredmények összehasonlítása kezdetén, törölheted az összes dobásod. Minden törölt %CRIT% találatra a védekező kap egy lefordított sérülés kártyát. [FAQ/ERRATA]"""
         '"Chaser"':
-            text: """Mikor egy  1-es távolságban lévő baráti hajó elkölt egy %FOCUS% jelzőt, kapsz egy %FOCUS% jelzőt."""
+            text: """Mikor egy 1-es távolságban lévő másik baráti hajó elkölt egy %FOCUS% jelzőt, kapsz egy %FOCUS% jelzőt."""
         'Ezra Bridger':
             text: """Védekezéskor, ha stresszelve vagy, átfordíthatsz akár 2 %FOCUS% dobást %EVADE%-re."""
         '"Zeta Leader"':
@@ -406,7 +406,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Tel Trevura":
             text: """Első alkalommal, mikor megsemmisülnél, dobj el minden addigi sérülés kártyád, és osszál 4 sérülés lapot lefordítva a hajódhoz. [FAQ]"""
         "Manaroo":
-            text: """A harci fázis kezdetén hozzárendelheted az összes fókuszt, kitérés és kék célpontbemérő jelződet egy baráti hajónak 1-es távolságban. [FAQ]"""
+            text: """A harci fázis kezdetén hozzárendelheted az összes fókuszt, kitérés és kék célpontbemérő jelződet egy másik baráti hajónak 1-es távolságban. [FAQ]"""
         '"Deathfire"':
             text: '''Mikor felfeded a manőver tárcsád vagy miután végrehajtasz egy akciót, végrehajthatsz egy %BOMB% fejlesztés kártya akciót ingyen.'''
         "Maarek Stele (TIE Defender)":
@@ -420,7 +420,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Han Solo (TFA)':
             text: '''A hajók felhelyezésénél, bárhova elhelyezheted a hajót az ellenséges hajóktól legalább 3-as távolságra. [FAQ]'''
         'Chewbacca (TFA)':
-            text: '''Miután egy baráti hajó 1-3-as távolságban megsemmisül (de nem leesik a pályáról), végrehajthatsz egy támadást.'''
+            text: '''Miután egy másik baráti hajó 1-3-as távolságban megsemmisül (de nem leesik a pályáról), végrehajthatsz egy támadást.'''
         'Norra Wexley':
             text: '''Támadáskor vagy védekezéskor, elkölthetsz egy célpontbemérőt, ami az ellenfél hajóján van, hogy egy %FOCUS% eredményt adhass a dobásodhoz.'''
         'Shara Bey':
@@ -714,7 +714,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Carlist Rieekan":
             text: """<span class="card-restriction">Csak óriás hajó. Csak lázadók.</span> %LINEBREAK%Csak nagy hajók. Csak lázadók. Az aktiválási fázis elején, eldobhatod ez a kártyát, annak érdekében, hogy minden baráti hajó pilóta képzettségét megnöveld "12"-re, a kör végéig."""
         "Jan Dodonna":
-            text: """<span class="card-restriction">Csak óriás hajó. Csak lázadók.</span> %LINEBREAK%Amikor egy 1 távolságra lévő baráti hajó támad, az egyik %HIT%-t %CRIT%-ra változtathatja."""
+            text: """<span class="card-restriction">Csak óriás hajó. Csak lázadók.</span> %LINEBREAK%Amikor egy 1 távolságra lévő másik baráti hajó támad, az egyik %HIT%-t %CRIT%-ra változtathatja."""
         "Expanded Cargo Hold":
             text: """<span class="card-restriction">Csak GR-75.</span> Egy körben egyszer lehet csak igénybe venni. Ha kapnál egy felfordított sebzés kártyát (kritikus sebzés után), akkor eldöntheted, hogy azt az orr, vagy a tat pakliból veszed ki."""
         "Backup Shield Generator":
@@ -982,7 +982,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Targeting Synchronizer':
             text: '''Mikor egy baráti hajó 1-2 távolságban támad egy hajót amin célpontbemérőd van, a baráti hajó kezelje a <strong>Támadás (célpontbemérő):</strong> fejlécet mint as <strong>Támadás:</strong>. Ha az instrukció célpontbemérő költést ír elő a hajónak, elköltheti a te célbepombemérésedet.'''
         'Hyperwave Comm Scanner':
-            text: '''A hajók lehelyezése lépés kezdetén kezelheted a pilóta képzettséged mint 0, 6 vagy 12 a lehelyezés végéig.%LINEBREAK%Az előkészítés alatt, miután egy baráti hajót leteszel 1-2 távolságban, adhatsz neki egy %FOCUS% vagy %EVADE% jelzőt.'''
+            text: '''A hajók lehelyezése lépés kezdetén kezelheted a pilóta képzettséged mint 0, 6 vagy 12 a lehelyezés végéig.%LINEBREAK%Az előkészítés alatt, miután egy másik baráti hajót leteszel 1-2 távolságban, adhatsz neki egy %FOCUS% vagy %EVADE% jelzőt.'''
         'Trick Shot':
             text: '''Támadáskor, ha a támadás akadályon át történik, plusz 1 támadó kockával dobhatsz.'''
         'Hotshot Co-pilot':
