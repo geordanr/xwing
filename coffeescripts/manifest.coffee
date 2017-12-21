@@ -4321,7 +4321,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Cartel Enforcer'
+            name: 'Cartel Executioner'
             type: 'pilot'
             count: 1
         }
@@ -4341,7 +4341,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Scrambler Missile'
+            name: 'Scrambler Missiles'
             type: 'upgrade'
             count: 2
         }
