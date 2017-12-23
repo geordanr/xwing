@@ -88,6 +88,11 @@ exportObj.translations['Español'] =
         "TIE Aggressor Expansion Pack": "Pack de Expansión Tie Agresor"
         "Scurrg H-6 Bomber Expansion Pack": "Pack de Expansión Bombardero Scurrg H-6"
         "Auzituck Gunship Expansion Pack": "Pack de Expansión Cañonera Auzituck"
+        "TIE Silencer Expansion Pack": "Pack de Expansión Silenciador TIE"
+        "Alpha-class Star Wing Expansion Pack": "Pack de Expansión Ala Estelar clase Alfa"
+        "Resistance Bomber Expansion Pack": "Pack de Expansión Bombardero de la Resistencia"
+        "Phantom II Expansion Pack": "Pack de Expansión Fantasma II"
+        "Kimogila Fighter Expansion Pack": "Pack de Expansión Caza M12-L Kimogila"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -202,6 +207,8 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Striker', 'Fustigador TIE'
     exportObj.renameShip 'Upsilon-class Shuttle', 'Lanzadera clase Ípsilon'
     exportObj.renameShip 'TIE Aggressor', 'TIE Agresor'
+    exportObj.renameShip 'TIE Silencer', 'Silenciador TIE'
+    exportObj.renameShip 'Alpha-class Star Wing', 'Ala Estelar clase Alfa'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -216,6 +223,8 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'T-70 X-Wing', 'T-70 Ala-X'
     exportObj.renameShip 'U-Wing', 'Ala-U'
     exportObj.renameShip 'Auzituck Gunship', 'Cañonera Auzituck'
+    exportObj.renameShip 'B/SF-17 Bomber', 'Bombardero B/SF-17'
+    exportObj.renameShip 'Sheathipede-class Shuttle', 'Lanzadera clase Sheathipede'
     exportObj.renameShip 'M3-A Interceptor', 'Interceptor M3-A'
     exportObj.renameShip 'StarViper', 'Víbora Estelar'
     exportObj.renameShip 'Aggressor', 'Agresor'
@@ -227,6 +236,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'Quadjumper', 'Saltador Quad'
     exportObj.renameShip 'C-ROC Cruiser', 'Crucero C-ROC'
     exportObj.renameShip 'Scurrg H-6 Bomber', 'Bombardero Scurrg H-6'
+    exportObj.renameShip 'M12-L Kimogila Fighter', 'Caza M12-L Kimogila'
 
     pilot_translations =
         "Wedge Antilles":
@@ -1060,19 +1070,32 @@ exportObj.cardLoaders['Español'] = () ->
         'Dalan Oberos (Kimogila)':
             text: '''At the start of the Combat phase, you may acquire a target lock on an enemy ship inside your bullseye firing arc at Range 1-3 .'''
         'Fenn Rau (Sheathipede)':
-            text: '''When an enemy ship inside your firing arc at Range 1-3 becomes the active ship during the Combat phase, if you are not stressed, you may receive 1 stress token.  If you do, that ship cannot spend tokens to modify its dice when attacking this round.'''
+            ship: "Lanzadera clase Sheathipede"
+            text: '''Cuando una nave enemiga que tengas a alcance 1-3 y esté situada dentro de tu arco de fuego pase a ser la nave activa durante la fase de Combate, si no estás bajo tensión, puedes recibir 1 ficha de Tensión. Si lo haces, esa nave no podrá gastar fichas para modificar sus dados cuando ataque en esta ronda.'''
         'Ezra Bridger (Sheathipede)':
-            text: """When defending, if you are stressed, you may change up to 2 of your %FOCUS% results to %EVADE% results."""
+            ship: "Lanzadera clase Sheathipede"
+            text: """Cuando te defiendas, si estás bajo tensión, puedes cambiar hasta 2 de tus resultados %FOCUS% por resultados %EVADE%."""
         '"Zeb" Orrelios (Sheathipede)':
-            text: '''When defending, you may cancel %CRIT% results before %HIT% results.'''
+            ship: "Lanzadera clase Sheathipede"
+            text: '''Cuando te defiendas, puedes anular resultados %CRIT% antes de anular resultados %HIT%.'''
         'AP-5':
-            text: '''When you perform the coordinate action, after you choose a friendly ship and before it performs a free action, you may receive 2 stress tokens to remove 1 stress token from it.'''
+            ship: "Lanzadera clase Sheathipede"
+            text: '''Cuando realices la acción de coordinación, después de que elijas a una nave aliada y antes de que esa nave realice su acción gratuita, puedes recibir 2 fichas de Tensión para quitarle 1 ficha de Tensión a esa nave.'''
+        'Crimson Squadron Pilot ':
+            name: "Piloto del Escuadrón Carmesí"
+            ship: "Bombardero B/SF-17"
         '"Crimson Leader"':
-            text: '''When attacking, if the defender is inside your firing arc, you may spend 1 %HIT% or %CRIT% result to assign the "Rattled" Condition to the defender.'''
+            name: '"Piloto del Escuadrón Carmesí"'
+            ship: "Bombardero B/SF-17"
+            text: '''Cuando ataques, si el defensor está situado dentro de tu arco de fuego, puedes gastar 1 resultado %HIT% o %CRIT% para asignar el estado "Estremecido" al defensor.'''
         '"Crimson Specialist"':
-            text: '''When placing a bomb token you dropped after revealing your maneuver dial, you may place the bomb token anywhere on the play area touching your ship.'''
+            name: '"Especialista Carmesí"'
+            ship: "Bombardero B/SF-17"
+            text: '''Cuando coloques una ficha de Bomba que has soltado después de revelar tu selector de maniobras, puedes colocarla en cualquier lugar de la zona de juego donde quede en contacto con tu nave.'''
         '"Cobalt Leader"':
-            text: '''When attacking, if the defender is at range 1 of a bomb token, the defender rolls 1 fewer defense die, to a minimum of 0.'''
+            name: '"Jefe Cobalto"'
+            ship: "Bombardero B/SF-17"
+            text: '''Cuando ataques, si el defensor está situado a alcance 1 de una ficha de Bomba, el defensor tira 1 dado de defensa menos (hasta un mínimo de 0).'''
         'Kylo Ren (TIE Silencer)':
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
         'Test Pilot "Blackout"':
@@ -1754,9 +1777,12 @@ exportObj.cardLoaders['Español'] = () ->
         'Harpoon Missiles':
             text: '''<strong>Attack (target lock):</strong> Discard this card to perform this attack.%LINEBREAK%If this attack hits, assign the "Harpooned!" Condition to the defender.'''
         'Ordnance Silos':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When you equip this card, place 3 ordnance tokens on each other equipped %BOMB% Upgrade card. When you are instructed to discard an Upgrade card, you may discard 1 ordnance token on that card instead.'''
+            name: "Silos de munición"
+            ship: "Bombardero B/SF-17"
+            text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando te equipes con esta carta, coloca 3 fichas de Munición de artillería encima de cada otra carta de mejora %BOMB% que tengas equipada. Cuando debas descartar una carta de Mejora, en vez de eso puedes descartar 1 ficha de Munición de artillería que esté encima de esa carta.'''
         'Trajectory Simulator':
-            text: '''You may launch bombs using the (%STRAIGHT% 5) template instead of dropping them.  You cannot launch bombs with the "<strong>Action:</strong>" header in this way.'''
+            name: "Simulador de trayectorias"
+            text: '''Puedes lanzar bombas utilizando la plantilla de maniobra (%STRAIGHT% 5) en vez de soltarlas. No puedes lanzar de esta manera bombas que tengan el encabezado "<strong>Acción:</strong>".'''
         'Jamming Beam':
             text: '''<strong>Attack:</strong> Attack 1 ship.%LINEBREAK%If this attack hits, assign the defender 1 jam token.  Then cancel <strong>all</strong> dice results.'''
         'Linked Battery':
@@ -1886,7 +1912,9 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Escudo de rayos pulsátil"
             text: '''<span class="card-restriction">Sólo Escoria y Rebelde.</span>%LINEBREAK%Durante la fase Final, puedes recibir 1 ficha de Iones para recuperar 1 ficha de Escudos (pero no puedes exceder tu valor de Escudos). Sólo puedes equipar esta carta si tu valor de Escudos es 1.'''
         'Deflective Plating':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
+            name: "Blindaje deflector de impactos"
+            ship: "Bombardero B/SF-17"
+            text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAKCuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
 
     title_translations =
         "Slave I":
@@ -2094,7 +2122,9 @@ exportObj.cardLoaders['Español'] = () ->
         'Os-1 Arsenal Loadout':
             text: '''<span class="card-restriction">Alpha-class Star Wing only.</span>%LINEBREAK%Your upgrade bar gains the %TORPEDO% and %MISSILE% icons.%LINEBREAK%You may perform attacks with %TORPEDO% and %MISSILE% secondary weapons against ships you have locked even while you have a weapons disabled token.'''
         'Crossfire Formation':
-            text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When defending, if there is at least 1 other friendly Resistance ship at Range 1-2 of the attacker with the Crossfire Formation Upgrade card, you may add 1 %FOCUS% result to your roll.'''
+            name: "Formación de fuego cruzado"
+            ship: "Bombardero B/SF-17"
+            text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando te defiendas, si hay por lo menos 1 otra nave aliada de la Reistencia situada a alcance 1-2 del atacante, puedes añadir 1 resultado %FOCUS% a tu tirada.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -2116,6 +2146,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Harpooned!':
             text: '''When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'''
         'Rattled':
-            text: '''When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'''
+            name: "Estremecido"
+            text: '''Cuando sufras daño normal o daño crítico causado por una bomba, sufres 1 punto adicional de daño crítico. Luego, retira esta carta%LINEBREAK%<strong>Acción:</strong> Tira 1 dado de ataque. Si sacas %FOCUS% o %HIT%, retira esta carta.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
