@@ -1063,6 +1063,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Once per round, after an enemy ship that is not defending against an attack suffers damage or critical damage, you may perform an attack against that ship.'''
         'Major Vynder':
             text: '''When defending, if you have a weapons disabled token, roll 1 additional defense die.'''
+        'Karthakk Pirate':
+            name: "Pirata de Karthakk"
+            ship: "Bombardero Scurrg H-6"
+        'Karthakk Pirate':
+            name: "Pirata de Karthakk"
+            ship: "Bombardero Scurrg H-6"
         'Lieutenant Karsabi':
             text: '''When you receive a weapons disabled token, if you are not stressed, you may receive 1 stress token to remove it.'''
         'Torani Kulda':
@@ -1792,13 +1798,15 @@ exportObj.cardLoaders['Español'] = () ->
         'Contraband Cybernetics':
             text: '''When you become the active ship during the Activation phase, you may discard this card and receive 1 stress token. If you do, until the end of the round, you may perform actions and red maneuvers even while you are stressed.'''
         'Maul':
-            text: '''%SCUMONLY% <span class="card-restriction">Ignore this restriction if your squad contains "Ezra Bridger."</span>%LINEBREAK%When attacking, if you are not stressed, you may receive any number of stress tokens to reroll that many attack dice.%LINEBREAK%After performing an attack that hits, you may remove 1 of your stress tokens.'''
+            text: '''%SCUMONLY% <span class="card-restriction">Ignora esta restricción si tu escuadrón contiene a "Ezra Bridger."</span>%LINEBREAK%Cuando ataques, si no estás bajo tensión, puedes recibir cualquier cantidad de fichas de Tensión para volver a tirar esa misma cantidad de dados de ataque.%LINEBREAK% Después de que realices un ataque que impacte, puedes retirar 1 de tus fichas de Tensión.'''
         'Courier Droid':
-            text: '''At the start of the "Place Forces" step, you may choose to treat your pilot skill value as "0" or "8" until the end of the step.'''
+            name: "Droide mensajero"
+            text: '''Al comienzo del paso "Desplegar fuerzas", puedes elegir que la puntuación de Habilidad de tu piloto se considere 0 u 8 hasta el final de este paso.'''
         '"Chopper" (Astromech)':
-            text: '''<strong>Action: </strong>Discard 1 other equipped Upgrade card to recover 1 shield.'''
+            text: '''<strong>Acción: </strong>Descarta 1 de tus otras cartas de Mejora equipadas para recuperar 1 ficha de Escudos.'''
         'Flight-Assist Astromech':
-            text: '''You cannot attack ships outside your firing arc.%LINEBREAK%After you execute a maneuver, if you did not overlap a ship or obstacle and there are no enemy ships inside your firing arc at Range 1-3, you may perform a free boost or barrel roll action.'''
+            name: "Droide astromecánico de ayuda al pilotaje"
+            text: '''No puedes efectuar ataques ataques contra naves que estén situadas fuera de tu arco de fuego.%LINEBREAK%Después de que ejecutes una maniobra, si no te has solapado con una nave ni con un obstáculo, y no tienes ninguna nave enemiga a alcance 1-3 situada dentro de tu arco de fuego, puedes realizar una acción gratuita de impulso o tonel volado.'''
         'Advanced Optics':
             text: '''You cannot have more than 1 focus token.%LINEBREAK%During the End phase, do not remove an unused focus token from your ship.'''
         'Scrambler Missiles':
@@ -2114,9 +2122,12 @@ exportObj.cardLoaders['Español'] = () ->
         'Enforcer':
             text: '''<span class="card-restriction">M12-L Kimogila Fighter only.</span>%LINEBREAK%After defending, if the attacker is inside your bullseye firing arc, the attacker receives 1 stress token.'''
         'Ghost (Phantom II)':
-            text: '''<span class="card-restriction">VCX-100 only.</span>%LINEBREAK%Equip the <em>Phantom II</em> title card to a friendly <em>Sheathipede</em>-class shuttle and dock it to this ship.%LINEBREAK%After you execute a maneuver, you may deploy it from your rear guides.'''
+            name: "Espíritu (Fantasma II)"
+            text: '''<span class="card-restriction">Sólo VCX-100.</span>%LINEBREAK%Equipa la carta de Título <em>Fantasma II</em> a una Lanzadera clase <em>Sheathipede</em> aliada y acóplala a esta nave.%LINEBREAK%Después de que ejecutes una maniobra, puedes desplegar la nave que tienes acoplada desde los salientes de la parte trasera de tu peana.'''
         'Phantom II':
-            text: '''While you are docked, the <em>Ghost</em> can perform primary weapon attacks from its special firing arc.%LINEBREAK%While you are docked, at the end of the Activation phase, the <em>Ghost</em> may perform a free coordinate action.'''
+            name: "Fantasma II"
+            ship: "Lanzadera clase Sheathipede"
+            text: '''Mientras estés acoplado, el <em>Espíritu</em> puede efectuar ataques con su armamento principal desde su arco de fuego especial.%LINEBREAK%Mientras estés acoplado, al final de la fase de Activación, el <em>Espíritu</em> puede efectuar una acción gratuita de coordinación.'''
         'First Order Vanguard':
             text: '''<span class="card-restriction">TIE Silencer only.</span>%LINEBREAK%When attacking, if the defender is the only ship in your firing arc at Range 1-3, you may reroll 1 attack die.%LINEBREAK%When defending, you may discard this card to reroll all of your defense dice.'''
         'Os-1 Arsenal Loadout':
