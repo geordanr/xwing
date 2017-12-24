@@ -1104,7 +1104,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Piloto del Escuadrón Carmesí"
             ship: "Bombardero B/SF-17"
         '"Crimson Leader"':
-            name: '"Piloto del Escuadrón Carmesí"'
+            name: '"Jefe Carmesí"'
             ship: "Bombardero B/SF-17"
             text: '''Cuando ataques, si el defensor está situado dentro de tu arco de fuego, puedes gastar 1 resultado %HIT% o %CRIT% para asignar el estado "Estremecido" al defensor.'''
         '"Crimson Specialist"':
@@ -2198,7 +2198,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Imitado"
             text: '''Se considera que "Thweek" tiene tu misma capacidad especial de piloto.%LINEBREAK%"Thweek" no puede utilizar tu capacidad especial de piloto para asignar una carta de Estado.%LINEBREAK%"Thweek" no pierde tu capacidad especial de piloto si eres destruido.'''
         'Harpooned!':
-            name: "¡Arponeado!
+            name: "¡Arponeado!"
             text: '''Cuando seas impactado por un ataque, si hay al menos 1 resultad %CRIT% sin anular, toda otra nave que tengas a alcance 1 sufre 1 punto de daño. Luego descarta esta carta y recibe 1 carta de Daño boca abajo.%LINEBREAK%Cuando seas destruido, toda nave que tengas a alcance 1 sufre 1 punto de daño.%LINEBREAK%<strong>Acción:</strong> Descarta esta carta. Luego tira 1 dado de ataque. Si sacas %HIT% o %CRIT%, sufres 1 punto de daño.'''
         'Rattled':
             name: "Estremecido"
