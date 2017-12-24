@@ -1954,7 +1954,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Deflective Plating':
             name: "Blindaje deflector de impactos"
             ship: "Bombardero B/SF-17"
-            text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAKCuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
+            text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
 
     title_translations =
         "Slave I":
