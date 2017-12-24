@@ -2152,7 +2152,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">Sólo Víbora Estelar.</span>%LINEBREAK%Puedes equipar un máximo de 2 mejoras distintas de Título.%LINEBREAK%Cuando realices una acción de tonel volado <strong>debes</strong> utilizar la plantilla (%BANKLEFT% 1) o (%BANKRIGHT% 1) en vez de la plantilla (%STRAIGHT% 1).'''
         'XG-1 Assault Configuration':
             ship: "Ala Estelar clase Alfa"
-            name: "Configuración de asalto Xg-1
+            name: "Configuración de asalto Xg-1"
             text: '''<span class="card-restriction">Sólo Ala Estelar clase Alfa.</span>%LINEBREAK%Tu barra de mejoras gana 2 iconos %CANNON%.%LINEBREAK%Puedes efectuar ataques con sistemas de armamento secundario %CANNON% con un coste igual o inferior a 2 puntos de escuadrón incluso aunque tengas asignada una ficha de Armas bloqueadas.'''
         'Enforcer':
             name: "Brazo Ejecutor"
