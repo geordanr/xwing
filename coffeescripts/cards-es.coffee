@@ -1127,6 +1127,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''La primera vez que seas impactado por un ataque en cada ronda, asigna la carta de Estado "Yo te mostraré el Lado Oscuro" al atacante.'''
         'Test Pilot "Blackout"':
             name: 'Piloto de pruebas "Apagón"'
+            ship: "Silenciador TIE"
             text: '''Cuando ataques, si el ataque está obstruido, el defensor tira 2 dados de defensa menos (hasta un mínimo de 0).'''
 
     upgrade_translations =
