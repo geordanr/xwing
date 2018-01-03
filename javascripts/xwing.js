@@ -8980,7 +8980,7 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Major Vynder': {
       ship: "Sternflügler der Alpha-Klasse",
-      text: 'Sobald du dich verteidigst, wirfst du , falls du einen Waffen-deaktiviert-Marker hast 1 zusätzlichen Verteidigungswürfel.'
+      text: 'Sobald du dich verteidigst, wirfst du, falls du einen Waffen-deaktiviert-Marker hast, 1 zusätzlichen Verteidigungswürfel.'
     },
     'Lieutenant Karsabi': {
       ship: "Sternflügler der Alpha-Klasse",
