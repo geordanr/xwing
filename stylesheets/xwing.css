@@ -58,7 +58,7 @@ strong em, em strong {
 .info-data.info-skill {
   color: #CD6D2D; }
 
-.card-icon, i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield {
+.card-icon, i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-energy, i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield {
   background: black;
   border-radius: 50%;
   padding: 3px;
@@ -70,7 +70,7 @@ td.info-header {
 i.xwing-miniatures-font {
   color: black; }
 
-i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180 {
+i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye {
   color: #EF232B; }
 
 i.xwing-miniatures-font-attack-frontback {

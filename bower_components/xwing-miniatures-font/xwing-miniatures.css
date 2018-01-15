@@ -20,6 +20,12 @@ i.xwing-miniatures-font-astromech:before {
 i.xwing-miniatures-font-attack-180:before {
   content: ">"; }
 
+i.xwing-miniatures-font-attack-bullseye:before {
+  content: "?"; }
+
+i.xwing-miniatures-font-attack-bullseye-top-separated:before {
+  content: "’"; }
+
 i.xwing-miniatures-font-attack-frontback:before {
   content: "<"; }
 
@@ -67,6 +73,12 @@ i.xwing-miniatures-font-crew:before {
 
 i.xwing-miniatures-font-crit:before {
   content: "c"; }
+
+i.xwing-miniatures-font-dalan-bankleft:before {
+  content: "["; }
+
+i.xwing-miniatures-font-dalan-bankright:before {
+  content: "]"; }
 
 i.xwing-miniatures-font-elite:before {
   content: "E"; }
@@ -257,6 +269,9 @@ i.xwing-miniatures-font-recover:before {
 i.xwing-miniatures-font-reinforce:before {
   content: "i"; }
 
+i.xwing-miniatures-font-reload:before {
+  content: "="; }
+
 i.xwing-miniatures-font-reversebankleft:before {
   content: "J"; }
 
@@ -416,6 +431,9 @@ i.xwing-miniatures-font-turret:before {
 i.xwing-miniatures-font-unique:before {
   content: "u"; }
 
+i.xwing-miniatures-font-unique-outline:before {
+  content: "•"; }
+
 /*
  * Ships
  */
@@ -431,6 +449,9 @@ i.xwing-miniatures-ship {
 i.xwing-miniatures-ship-aggressor:before {
   content: "i"; }
 
+i.xwing-miniatures-ship-alphaclassstarwing:before {
+  content: "&"; }
+
 i.xwing-miniatures-ship-arc170:before {
   content: "c"; }
 
@@ -445,6 +466,9 @@ i.xwing-miniatures-ship-awing:before {
 
 i.xwing-miniatures-ship-bwing:before {
   content: "b"; }
+
+i.xwing-miniatures-ship-bsf17bomber:before {
+  content: "Z"; }
 
 i.xwing-miniatures-ship-cr90corvette:before {
   content: "2"; }
@@ -482,6 +506,9 @@ i.xwing-miniatures-ship-kihraxzfighter:before {
 i.xwing-miniatures-ship-kwing:before {
   content: "k"; }
 
+i.xwing-miniatures-ship-m12lkimogilafighter:before {
+  content: "K"; }
+
 i.xwing-miniatures-ship-lambdaclassshuttle:before {
   content: "l"; }
 
@@ -502,6 +529,9 @@ i.xwing-miniatures-ship-raiderclasscorvette:before {
 
 i.xwing-miniatures-ship-scurrgh6bomber:before {
   content: "H"; }
+
+i.xwing-miniatures-ship-sheathipedeclassshuttle:before {
+  content: "%"; }
 
 i.xwing-miniatures-ship-starviper:before {
   content: "v"; }
@@ -544,6 +574,9 @@ i.xwing-miniatures-ship-tiepunisher:before {
 
 i.xwing-miniatures-ship-tiesffighter:before {
   content: "S"; }
+
+i.xwing-miniatures-ship-tiesilencer:before {
+  content: "$"; }
 
 i.xwing-miniatures-ship-tiestriker:before {
   content: "T"; }
