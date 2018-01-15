@@ -1056,6 +1056,7 @@ exportObj.basicCardData = ->
         'M12-L Kimogila Fighter':
             name: 'M12-L Kimogila Fighter'
             factions: ["Scum and Villainy"]
+            attack_icon: 'xwing-miniatures-font-attack-bullseye'
             attack: 3
             agility: 1
             hull: 6
