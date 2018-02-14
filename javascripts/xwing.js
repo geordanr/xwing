@@ -1197,7 +1197,7 @@ exportObj.CardBrowser = (function() {
 
 exportObj = typeof exports !== "undefined" && exports !== null ? exports : this;
 
-exportObj.unreleasedExpansions = [];
+exportObj.unreleasedExpansions = ['Saw\'s Renegades Expansion Pack', 'TIE Reaper Expansion Pack'];
 
 exportObj.isReleased = function(data) {
   var source, _i, _len, _ref;
@@ -1821,6 +1821,15 @@ exportObj.basicCardData = function() {
         shields: 2,
         actions: ['Focus', 'Barrel Roll', 'Boost', 'Target Lock'],
         maneuvers: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 0, 0, 0, 0, 0], [1, 2, 2, 2, 1, 0, 0, 0, 3, 3], [0, 0, 2, 0, 0, 3, 0, 0, 0, 0], [0, 0, 2, 0, 0, 0, 0, 0, 0, 0]]
+      },
+      'TIE Reaper': {
+        name: 'TIE Reaper',
+        factions: ["Galactic Empire"],
+        attack: 3,
+        agility: 1,
+        hull: 6,
+        shields: 2,
+        actions: ['Focus', 'Evade', 'Jam']
       }
     },
     pilotsById: [
@@ -4399,6 +4408,94 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'System', 'Tech'],
         points: 35,
         applies_condition: 'I\'ll Show You the Dark Side'.canonicalize()
+      }, {
+        name: 'Saw Gerrera',
+        id: 287,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 6,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS5 U-Wing Pilot',
+        id: 288,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 5,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Edrio ???',
+        id: 289,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'X-Wing',
+        skill: 4,
+        slots: ['Torpedo', 'Astromech'],
+        points: 100
+      }, {
+        name: 'Lee???',
+        id: 290,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'X-Wing',
+        skill: 4,
+        slots: ['Torpedo', 'Astromech'],
+        points: 100
+      }, {
+        name: 'Kullbee Sperado',
+        id: 291,
+        unique: true,
+        faction: 'Rebel Alliance',
+        ship: 'X-Wing',
+        skill: 7,
+        slots: ['Elite', 'Torpedo', 'Astromech'],
+        points: 26
+      }, {
+        name: 'Major Vermeil',
+        id: 292,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Reaper',
+        skill: 6,
+        slots: ['Elite', 'Crew', 'Crew'],
+        points: 26
+      }, {
+        name: 'Capta???',
+        id: 293,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Reaper',
+        skill: 4,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: '"V???"',
+        id: 294,
+        unique: true,
+        faction: 'Galactic Empire',
+        ship: 'TIE Reaper',
+        skill: 3,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Unspoiled PS1 TIE Reaper Pilot',
+        id: 295,
+        faction: 'Galactic Empire',
+        ship: 'TIE Reaper',
+        skill: 1,
+        slots: ['Crew', 'Crew'],
+        points: 100
+      }, {
+        name: 'Cavern Angels Zealot',
+        id: 296,
+        faction: 'Rebel Alliance',
+        ship: 'X-Wing',
+        skill: 1,
+        slots: ['Torpedo', 'Astromech'],
+        points: 100
       }
     ],
     upgradesById: [
@@ -6236,6 +6333,39 @@ exportObj.basicCardData = function() {
           var _ref, _ref1;
           return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
         }
+      }, {
+        name: 'Targeting Scrambler',
+        id: 259,
+        slot: 'System',
+        points: 0,
+        applies_condition: 'Scrambled'.canonicalize()
+      }, {
+        name: 'Death Troopers',
+        unique: true,
+        id: 260,
+        slot: "Crew",
+        points: 2,
+        faction: "Galactic Empire",
+        restriction_func: function(ship, upgrade_obj) {
+          return ship.hasAnotherUnoccupiedSlotLike(upgrade_obj);
+        },
+        validation_func: function(ship, upgrade_obj) {
+          return upgrade_obj.occupiesAnotherUpgradeSlot();
+        },
+        also_occupies_upgrades: ["Crew"]
+      }, {
+        name: 'Saw Gerrera',
+        id: 261,
+        slot: 'Crew',
+        faction: 'Rebel Alliance',
+        points: 1
+      }, {
+        name: 'Director Krennic',
+        id: 262,
+        slot: 'Crew',
+        faction: 'Galactic Empire',
+        points: 5,
+        applies_condition: 'Optimized Prototype'.canonicalize()
       }
     ],
     modificationsById: [
@@ -7209,6 +7339,14 @@ exportObj.basicCardData = function() {
       }, {
         name: 'Rattled',
         id: 8,
+        unique: true
+      }, {
+        name: 'Scrambled',
+        id: 9,
+        unique: true
+      }, {
+        name: 'Optimized Prototype',
+        id: 10,
         unique: true
       }
     ]
@@ -9062,6 +9200,13 @@ exportObj.cardLoaders.Deutsch = function() {
     'Sienar-Jaemus Analyst': {
       name: "Analyst von Sienar-Jaemus",
       ship: "TIE-Dämpfer"
+    },
+    'Kullbee Sperado': {
+      ship: "X-Flügler",
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -10059,6 +10204,18 @@ exportObj.cardLoaders.Deutsch = function() {
     'Debris Gambit': {
       name: "Trümmer-Gambit",
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -10503,6 +10660,12 @@ exportObj.cardLoaders.Deutsch = function() {
     'Rattled': {
       name: "Aus der Fassung",
       text: 'Sobald du Schaden oder kritischen Schaden durch eine Bombe nimmst, nimmst du 1 zusätzlichen kritischen Schaden. Entferne dann diese Karte.%LINEBREAK%<strong>Aktion:</strong> Wirf 1 Angriffswürfel. Bei einem %FOCUS% oder %HIT% entferne diese Karte.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -11254,6 +11417,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Test Pilot "Blackout"': {
       text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
+    },
+    'Kullbee Sperado': {
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -12030,6 +12199,18 @@ exportObj.cardLoaders.English = function() {
     },
     'Debris Gambit': {
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -12342,6 +12523,12 @@ exportObj.cardLoaders.English = function() {
     },
     'Rattled': {
       text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -13757,6 +13944,13 @@ exportObj.cardLoaders['Español'] = function() {
       name: 'Piloto de pruebas "Apagón"',
       ship: "Silenciador TIE",
       text: 'Cuando ataques, si el ataque está obstruido, el defensor tira 2 dados de defensa menos (hasta un mínimo de 0).'
+    },
+    'Kullbee Sperado': {
+      ship: "Ala-X",
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -14732,6 +14926,18 @@ exportObj.cardLoaders['Español'] = function() {
     'Debris Gambit': {
       name: "Treta de los desechos",
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Acción:</strong> Asigna 1 ficha de Evasión a tu nave por cada obstáculo que tengas a alcance 1, hast aun máximo de 2 fichas de Evasión.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -15186,6 +15392,12 @@ exportObj.cardLoaders['Español'] = function() {
     'Rattled': {
       name: "Estremecido",
       text: 'Cuando sufras daño normal o daño crítico causado por una bomba, sufres 1 punto adicional de daño crítico. Luego, retira esta carta%LINEBREAK%<strong>Acción:</strong> Tira 1 dado de ataque. Si sacas %FOCUS% o %HIT%, retira esta carta.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -16164,6 +16376,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Test Pilot "Blackout"': {
       text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
+    },
+    'Kullbee Sperado': {
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -17084,6 +17302,18 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Debris Gambit': {
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -17460,6 +17690,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Rattled': {
       text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -18201,6 +18437,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Test Pilot "Blackout"': {
       text: 'Támadáskor, ha a támadás akadályozott, a védekező kettővel kevesebb védekező kockával gurít.'
+    },
+    'Kullbee Sperado': {
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -18992,6 +19234,18 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Debris Gambit': {
       text: '<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Adjál 1 %EVADE% jelzőt a hajódhoz minden 1-es távolságban lévő akadály után, de maximum kettőt.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -19313,6 +19567,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Rattled': {
       text: 'Mikor bombától szenvedsz sérülést, elszenvedsz egy további kritikus sérülést is. Aztán vedd le ezt a kártyát.%LINEBREAK%<strong>Akció:</strong> Dobj egy támadó kockával. %FOCUS% vagy %HIT% eredménynél vedd le ezt a kártyát.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -20225,6 +20485,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Test Pilot "Blackout"': {
       text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
+    },
+    'Kullbee Sperado': {
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -21073,6 +21339,18 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Debris Gambit': {
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -21413,6 +21691,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Rattled': {
       text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -22118,6 +22402,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Test Pilot "Blackout"': {
       text: 'When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'
+    },
+    'Kullbee Sperado': {
+      text: 'After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'
+    },
+    'Major Vermeil': {
+      text: 'When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'
     }
   };
   upgrade_translations = {
@@ -22870,6 +23160,18 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Debris Gambit': {
       text: '%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'
+    },
+    'Targeting Scrambler': {
+      text: 'At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'
+    },
+    'Death Troopers': {
+      text: 'After another friendly ship at range 1 becomes the defender, if you are inside the attacker\'s firing arc at range 1-3, the attacker receives 1 stress token.'
+    },
+    'Saw Gerrera': {
+      text: '%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'
+    },
+    'Director Krennic': {
+      text: 'During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'
     }
   };
   modification_translations = {
@@ -23158,6 +23460,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Rattled': {
       text: 'When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'
+    },
+    'Scrambled': {
+      text: 'When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'
+    },
+    'Optimized Prototype': {
+      text: 'Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'
     }
   };
   return exportObj.setupCardData(basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations);
@@ -27314,7 +27622,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 25928
+                    lineno: 26235
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -27903,7 +28211,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 26558
+              lineno: 26865
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -28647,7 +28955,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 27188
+          lineno: 27495
         }));
         __iced_deferrals._fulfill();
       });
@@ -28659,7 +28967,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 27189
+            lineno: 27496
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -30270,7 +30578,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 28094
+                      lineno: 28401
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -30344,7 +30652,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 28120
+                lineno: 28427
               })
             ]);
             __iced_deferrals._fulfill();
@@ -30399,7 +30707,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 28143
+              lineno: 28450
             }));
           }
         }
@@ -30408,7 +30716,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 28145
+              lineno: 28452
             }));
           }
         }
@@ -30417,7 +30725,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 28147
+              lineno: 28454
             }));
           }
         }
@@ -31442,7 +31750,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 28833
+                lineno: 29140
               })
             ]);
             __iced_deferrals._fulfill();
@@ -31561,7 +31869,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 28892
+                  lineno: 29199
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -31583,7 +31891,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 28896
+                    lineno: 29203
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -31673,7 +31981,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 28939
+            lineno: 29246
           }));
         }
         __iced_deferrals._fulfill();
