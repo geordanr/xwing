@@ -1129,6 +1129,11 @@ exportObj.cardLoaders['Español'] = () ->
             name: 'Piloto de pruebas "Apagón"'
             ship: "Silenciador TIE"
             text: '''Cuando ataques, si el ataque está obstruido, el defensor tira 2 dados de defensa menos (hasta un mínimo de 0).'''
+        'Kullbee Sperado':
+            ship: "Ala-X"
+            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+        'Major Vermeil':
+            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1850,6 +1855,14 @@ exportObj.cardLoaders['Español'] = () ->
         'Debris Gambit':
             name: "Treta de los desechos"
             text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Acción:</strong> Asigna 1 ficha de Evasión a tu nave por cada obstáculo que tengas a alcance 1, hast aun máximo de 2 fichas de Evasión.'''
+        'Targeting Scrambler':
+            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+        'Death Troopers':
+            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+        'Saw Gerrera':
+            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+        'Director Krennic':
+            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
 
     modification_translations =
         "Stealth Device":
@@ -2204,5 +2217,9 @@ exportObj.cardLoaders['Español'] = () ->
         'Rattled':
             name: "Estremecido"
             text: '''Cuando sufras daño normal o daño crítico causado por una bomba, sufres 1 punto adicional de daño crítico. Luego, retira esta carta%LINEBREAK%<strong>Acción:</strong> Tira 1 dado de ataque. Si sacas %FOCUS% o %HIT%, retira esta carta.'''
+        'Scrambled':
+            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+        'Optimized Prototype':
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

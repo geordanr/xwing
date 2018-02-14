@@ -1147,6 +1147,11 @@ exportObj.cardLoaders.Deutsch = () ->
         'Sienar-Jaemus Analyst':
             name: "Analyst von Sienar-Jaemus"
             ship: "TIE-Dämpfer"
+        'Kullbee Sperado':
+            ship: "X-Flügler"
+            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+        'Major Vermeil':
+            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1889,6 +1894,14 @@ exportObj.cardLoaders.Deutsch = () ->
         'Debris Gambit':
             name: "Trümmer-Gambit"
             text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'''
+        'Targeting Scrambler':
+            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+        'Death Troopers':
+            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+        'Saw Gerrera':
+            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+        'Director Krennic':
+            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
 
     modification_translations =
         "Stealth Device":
@@ -2237,5 +2250,9 @@ exportObj.cardLoaders.Deutsch = () ->
         'Rattled':
             name: "Aus der Fassung"
             text: '''Sobald du Schaden oder kritischen Schaden durch eine Bombe nimmst, nimmst du 1 zusätzlichen kritischen Schaden. Entferne dann diese Karte.%LINEBREAK%<strong>Aktion:</strong> Wirf 1 Angriffswürfel. Bei einem %FOCUS% oder %HIT% entferne diese Karte.'''
+        'Scrambled':
+            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+        'Optimized Prototype':
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

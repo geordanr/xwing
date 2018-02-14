@@ -39,6 +39,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "Rebel Transport Expansion Pack"
         "Resistance Bomber Expansion Pack"
         "Sabine's TIE Fighter Expansion Pack"
+        '''Saw's Renegades Expansion Pack'''
         "Scurrg H-6 Bomber Expansion Pack"
         "Shadow Caster Expansion Pack"
         "Slave I Expansion Pack"
@@ -56,6 +57,7 @@ casper.test.begin "Validate Expansions", (test) ->
         "TIE Interceptor Expansion Pack"
         "TIE Phantom Expansion Pack"
         "TIE Punisher Expansion Pack"
+        'TIE Reaper Expansion Pack'
         "TIE Silencer Expansion Pack"
         "TIE Striker Expansion Pack"
         "Upsilon-class Shuttle Expansion Pack"

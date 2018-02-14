@@ -544,6 +544,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Körönként mikor először ér találat, oszd ki a "I'll Show You the Dark Side" kondíciós kártyát a támadónak.'''
         'Test Pilot "Blackout"':
             text: '''Támadáskor, ha a támadás akadályozott, a védekező kettővel kevesebb védekező kockával gurít.'''
+        'Kullbee Sperado':
+            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+        'Major Vermeil':
+            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1079,6 +1083,14 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Mikor egy ellenséges hajó a tűzívedben 1-2-es távolságban a harci fázisban aktiválódik, elköltheted a rajta lévő célpontbemérődet, hogy végrehajts egy %BOOST% vagy %BARRELROLL% akciót, ha az rajta van az akciósávodon.'''
         'Debris Gambit':
             text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%<strong>Akció:</strong> Adjál 1 %EVADE% jelzőt a hajódhoz minden 1-es távolságban lévő akadály után, de maximum kettőt.'''
+        'Targeting Scrambler':
+            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+        'Death Troopers':
+            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+        'Saw Gerrera':
+            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+        'Director Krennic':
+            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
 
     modification_translations =
         "Stealth Device":
@@ -1300,5 +1312,9 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Mikor egy támadásból találat ér, amiben legalább 1 kivédetlen %CRIT% van, minden 1-es távolságban lévő hajó elszenved 1 sérülést. Aztán dobd el ezt a lapot és kapsz egy lefordított sérülés kártyát.%LINEBREAK%Mikor megsemmisülsz, minden 1-es távolságban lévő hajó elszenved 1 sérülést%LINEBREAK%<strong>Akció:</strong> dobd el ezt a kártyát. Dobj egy támadás kockával, %HIT% vagy %CRIT% esetén elszenvedsz egy sérülést.'''
         'Rattled':
             text: '''Mikor bombától szenvedsz sérülést, elszenvedsz egy további kritikus sérülést is. Aztán vedd le ezt a kártyát.%LINEBREAK%<strong>Akció:</strong> Dobj egy támadó kockával. %FOCUS% vagy %HIT% eredménynél vedd le ezt a kártyát.'''
+        'Scrambled':
+            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+        'Optimized Prototype':
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
