@@ -7305,6 +7305,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Saw Gerrera'
+            unique: true
             id: 261
             slot: 'Crew'
             faction: 'Rebel Alliance'
@@ -7312,6 +7313,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Director Krennic'
+            unique: true
             id: 262
             slot: 'Crew'
             faction: 'Galactic Empire'
