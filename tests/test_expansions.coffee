@@ -4,6 +4,7 @@ common.setup()
 
 casper.test.begin "Validate Expansions", (test) ->
     valid_expansions = [
+        "Alpha-class Star Wing Expansion Pack"
         "ARC-170 Expansion Pack"
         "Auzituck Gunship Expansion Pack"
         "A-Wing Expansion Pack"
@@ -23,18 +24,22 @@ casper.test.begin "Validate Expansions", (test) ->
         "Imperial Veterans Expansion Pack"
         "Inquisitor's TIE Expansion Pack"
         "Kihraxz Fighter Expansion Pack"
+        "Kimogila Fighter Expansion Pack"
         "K-Wing Expansion Pack"
         "Lambda-Class Shuttle Expansion Pack"
         "M3-A Interceptor Expansion Pack"
         "Millennium Falcon Expansion Pack"
         'Mist Hunter Expansion Pack'
         "Most Wanted Expansion Pack"
+        "Phantom II Expansion Pack"
         "Protectorate Starfighter Expansion Pack"
         'Punishing One Expansion Pack'
         'Quadjumper Expansion Pack'
         "Rebel Aces Expansion Pack"
         "Rebel Transport Expansion Pack"
+        "Resistance Bomber Expansion Pack"
         "Sabine's TIE Fighter Expansion Pack"
+        '''Saw's Renegades Expansion Pack'''
         "Scurrg H-6 Bomber Expansion Pack"
         "Shadow Caster Expansion Pack"
         "Slave I Expansion Pack"
@@ -52,6 +57,8 @@ casper.test.begin "Validate Expansions", (test) ->
         "TIE Interceptor Expansion Pack"
         "TIE Phantom Expansion Pack"
         "TIE Punisher Expansion Pack"
+        'TIE Reaper Expansion Pack'
+        "TIE Silencer Expansion Pack"
         "TIE Striker Expansion Pack"
         "Upsilon-class Shuttle Expansion Pack"
         "U-Wing Expansion Pack"

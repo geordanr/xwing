@@ -2,11 +2,8 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    'Alpha-class Star Wing Expansion Pack',
-    'M12-L Kimogila Fighter Expansion Pack',
-    'Phantom II Expansion Pack',
-    'Resistance Bomber Expansion Pack',
-    'TIE Silencer Expansion Pack',
+    '''Saw's Renegades Expansion Pack'''
+    'TIE Reaper Expansion Pack'
 ]
 
 exportObj.isReleased = (data) ->
@@ -1061,6 +1058,7 @@ exportObj.basicCardData = ->
         'M12-L Kimogila Fighter':
             name: 'M12-L Kimogila Fighter'
             factions: ["Scum and Villainy"]
+            attack_icon: 'xwing-miniatures-font-attack-bullseye'
             attack: 3
             agility: 1
             hull: 6
@@ -1137,6 +1135,18 @@ exportObj.basicCardData = ->
                 [ 1, 2, 2, 2, 1, 0, 0, 0, 3, 3 ]
                 [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
+            ]
+        'TIE Reaper':
+            name: 'TIE Reaper'
+            factions: ["Galactic Empire"]
+            attack: 3
+            agility: 1
+            hull: 6
+            shields: 2
+            actions: [
+                'Focus'
+                'Evade'
+                'Jam'
             ]
 
     # name field is for convenience only
@@ -4963,7 +4973,7 @@ exportObj.basicCardData = ->
             points: 25
         }
         {
-            name: 'Cartel E???'
+            name: 'Cartel Executioner'
             id: 273
             faction: 'Scum and Villainy'
             ship: 'M12-L Kimogila Fighter'
@@ -4975,7 +4985,7 @@ exportObj.basicCardData = ->
                 'Salvaged Astromech'
                 'Illicit'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Cartel Brute'
@@ -5109,7 +5119,7 @@ exportObj.basicCardData = ->
             applies_condition: 'Rattled'.canonicalize()
         }
         {
-            name: 'Sienar-Jae???'
+            name: 'Sienar-Jaemus Analyst'
             id: 283
             faction: 'First Order'
             ship: 'TIE Silencer'
@@ -5118,19 +5128,20 @@ exportObj.basicCardData = ->
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 26
         }
         {
-            name: 'First Orde???'
+            name: 'First Order Test Pilot'
             id: 284
             faction: 'First Order'
             ship: 'TIE Silencer'
             skill: 6
             slots: [
+                'Elite'
                 'System'
                 'Tech'
             ]
-            points: 100
+            points: 29
         }
         {
             name: 'Test Pilot "Blackout"'
@@ -5161,6 +5172,140 @@ exportObj.basicCardData = ->
             ]
             points: 35
             applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
+        }
+        {
+            name: 'Saw Gerrera'
+            id: 287
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 6
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS5 U-Wing Pilot'
+            id: 288
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 5
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Edrio ???'
+            id: 289
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 4
+            slots: [
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Lee???'
+            id: 290
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 5
+            slots: [
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 100
+        }
+        {
+            name: 'Kullbee Sperado'
+            id: 291
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 7
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 26
+        }
+        {
+            name: 'Major Vermeil'
+            id: 292
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Reaper'
+            skill: 6
+            slots: [
+                'Elite'
+                'Crew'
+                'Crew'
+            ]
+            points: 26
+        }
+        {
+            name: 'Capta???'
+            id: 293
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Reaper'
+            skill: 4
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: '"V???"'
+            id: 294
+            unique: true
+            faction: 'Galactic Empire'
+            ship: 'TIE Reaper'
+            skill: 3
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Unspoiled PS1 TIE Reaper Pilot'
+            id: 295
+            faction: 'Galactic Empire'
+            ship: 'TIE Reaper'
+            skill: 1
+            slots: [
+                'Crew'
+                'Crew'
+            ]
+            points: 100
+        }
+        {
+            name: 'Cavern Angels Zealot'
+            id: 296
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 1
+            slots: [
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 100
         }
     ]
 
@@ -7090,7 +7235,7 @@ exportObj.basicCardData = ->
         {
             name: '"Chopper" (Astromech)'
             id: 252
-            canonical_name: '"Chopper"'.canonicalize()
+            canonical_name: 'chopper-swx72'
             unique: true
             slot: 'Astromech'
             points: 1
@@ -7137,6 +7282,43 @@ exportObj.basicCardData = ->
             points: 2
             restriction_func: (ship) ->
                 not ((ship.data.large ? false) or (ship.data.huge ? false))
+        }
+        {
+            name: 'Targeting Scrambler'
+            id: 259
+            slot: 'System'
+            points: 0
+            applies_condition: 'Scrambled'.canonicalize()
+        }
+        {
+            name: 'Death Troopers'
+            unique: true
+            id: 260
+            slot: "Crew"
+            points: 2
+            faction: "Galactic Empire"
+            restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+            validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+            also_occupies_upgrades: [ "Crew" ]
+        }
+        {
+            name: 'Saw Gerrera'
+            unique: true
+            id: 261
+            slot: 'Crew'
+            faction: 'Rebel Alliance'
+            points: 1
+        }
+        {
+            name: 'Director Krennic'
+            unique: true
+            id: 262
+            slot: 'Crew'
+            faction: 'Galactic Empire'
+            points: 5
+            applies_condition: 'Optimized Prototype'.canonicalize()
         }
     ]
 
@@ -8122,6 +8304,16 @@ exportObj.basicCardData = ->
         {
             name: 'Rattled'
             id: 8
+            unique: true
+        }
+        {
+            name: 'Scrambled'
+            id: 9
+            unique: true
+        }
+        {
+            name: 'Optimized Prototype'
+            id: 10
             unique: true
         }
     ]

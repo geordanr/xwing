@@ -4247,6 +4247,321 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Phantom II Expansion Pack': [
+        {
+            name: 'Sheathipede-class Shuttle'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Fenn Rau (Sheathipede)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ezra Bridger (Sheathipede)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Zeb" Orrelios (Sheathipede)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'AP-5'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Maul'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Courier Droid'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: '"Chopper" (Astromech)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Flight-Assist Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ghost (Phantom II)'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Phantom II'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Kimogila Fighter Expansion Pack': [
+        {
+            name: 'M12-L Kimogila Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Torani Kulda'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Dalan Oberos (Kimogila)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Executioner'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cartel Brute'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Plasma Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Scrambler Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R5-TK'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Dead Man's Switch"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Enforcer'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'Alpha-class Star Wing Expansion Pack': [
+        {
+            name: 'Alpha-class Star Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Major Vynder'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Karsabi'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Rho Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nu Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Saturation Salvo'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Linked Battery'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Cruise Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'XG-1 Assault Configuration'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Os-1 Arsenal Loadout'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    'Resistance Bomber Expansion Pack': [
+        {
+            name: 'B/SF-17 Bomber'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: '"Crimson Leader"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Cobalt Leader"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Crimson Specialist"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Crimson Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Conner Net'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ordnance Silos'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thermal Detonators'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Trajectory Simulator'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Crossfire Formation'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Deflective Plating'
+            type: 'modification'
+            count: 1
+        }
+    ]
+    'TIE Silencer Expansion Pack': [
+        {
+            name: 'TIE Silencer'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Kylo Ren (TIE Silencer)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Test Pilot "Blackout"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'First Order Test Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Sienar-Jaemus Analyst'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Sensor Jammer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Threat Tracker'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'First Order Vanguard'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Autothrusters'
+            type: 'modification'
+            count: 2
+        }
+    ]
 
 
 class exportObj.Collection

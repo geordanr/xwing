@@ -710,6 +710,10 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''The first time you are hit by an attack each round, deal the "I'll Show You the Dark Side" Condition card to the attacker.'''
         'Test Pilot "Blackout"':
             text: '''When attacking, if the attack is obstructed, the defender rolls 2 fewer defense dice (to a minimum of 0).'''
+        'Kullbee Sperado':
+            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+        'Major Vermeil':
+            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1324,6 +1328,14 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''%SMALLSHIPONLY%%LINEBREAK%When an enemy ship inside your firing arc at Range 1-2 becomes thee active ship during the Combat phase, you may spend your target lock on that ship to perform a free boost or barrell roll action if that action is on your action bar.'''
         'Debris Gambit':
             text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Action:</strong> Assign 1 evade token to your ship for each obstacle at Range 1, to a maximum of 2 evade tokens.'''
+        'Targeting Scrambler':
+            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+        'Death Troopers':
+            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+        'Saw Gerrera':
+            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+        'Director Krennic':
+            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1566,5 +1578,9 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''When you are hit by an attack, if there is at least 1 uncanceled %CRIT% result, each other ship at Range 1 suffers 1 damage.  Then discard this card and receive 1 facedown Damage card.%LINEBREAK%When you are destroyed, each ship at Range 1 suffers 1 damage.%LINEBREAK%<strong>Action:</strong> Discard this card.  Then roll 1 attack die.  On a %HIT% or %CRIT% result, suffer 1 damage.'''
         'Rattled':
             text: '''When you suffer damage from a bomb, you suffer 1 additional critical damage. Then, remove this card.%LINEBREAK%<strong>Action:</strong> Roll 1 attack die. On a %FOCUS% or %HIT% result, remove this card.'''
+        'Scrambled':
+            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+        'Optimized Prototype':
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
