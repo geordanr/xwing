@@ -182,3 +182,9 @@
   background-image: url("../images/upsilonclassshuttle.png");
   background-repeat: no-repeat;
   background-position: 0px -112px; }
+
+.its-working {
+  background-image: url("../images/its_working.png");
+  background-repeat: no-repeat;
+  background-position: 0px -50px; }
+}
