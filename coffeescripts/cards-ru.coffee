@@ -193,7 +193,7 @@ exportObj.cardLoaders['Русский'] = () ->
 
     # ship translations
     exportObj.renameShip 'Lambda-Class Shuttle', 'Шаттл класса Лямбда'
-    exportObj.renameShip 'TIE Advanced', 'TIE-улучшенный'
+    exportObj.renameShip 'TIE Advanced', 'TIE улучшенный'
     exportObj.renameShip 'TIE Bomber', 'TIE бомбардировщик'
     exportObj.renameShip 'TIE Fighter', 'TIE истребитель'
     exportObj.renameShip 'TIE Interceptor', 'TIE перехватчик'
