@@ -1134,6 +1134,12 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
         'Major Vermeil':
             text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
+        'Leevan Tenza':
+            text: '''After you perform a boost action, you may receive 1 stress token to receive 1 evade token.'''
+        'Saw Gerrera':
+            text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
+        'Benthic Two-Tubes':
+            text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1863,6 +1869,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
         'Director Krennic':
             text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
+        'Magva Yarro':
+            text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
+        'Renegade Refit':
+            text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
 
     modification_translations =
         "Stealth Device":
@@ -1969,6 +1979,8 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Blindaje deflector de impactos"
             ship: "Bombardero B/SF-17"
             text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
+        'Servomotor S-Foils':
+            text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
 
     title_translations =
         "Slave I":

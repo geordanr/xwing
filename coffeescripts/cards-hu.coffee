@@ -548,6 +548,12 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Miután végrehajtasz egy %BOOST% vagy %BARRELROLL% akciót, átforgathatod a "Servomotor S-foils" fejlesztés kártyád.'''
         'Major Vermeil':
             text: '''Támadáskor, ha a védekezőnek nincs %FOCUS% vagy %EVADE% jelzője, átforgathatod az egyik üres vagy %FOCUS% dobásod %HIT% eredményre.'''
+        'Leevan Tenza':
+            text: '''After you perform a boost action, you may receive 1 stress token to receive 1 evade token.'''
+        'Saw Gerrera':
+            text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
+        'Benthic Two-Tubes':
+            text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1091,6 +1097,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Támadáskor elszenvedhetsz egy sérülést, hogy az összes %FOCUS% dobásod átforgathatsd %CRIT%-re.'''
         'Director Krennic':
             text: '''A hajók felhelyezése fázisban, rendeld hozzá az "Optimized Prototype" kondíciót egy baráti Galactic Empire hajóhoz aminek 3 vagy kevesebb pajzsa van.'''
+        'Magva Yarro':
+            text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
+        'Renegade Refit':
+            text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
 
     modification_translations =
         "Stealth Device":
@@ -1164,6 +1174,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'''
         'Deflective Plating':
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
+        'Servomotor S-Foils':
+            text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
 
     title_translations =
         "Slave I":
