@@ -53,6 +53,7 @@ German translation by [failgod](https://github.com/failgod-marcus) and [strikegu
 Spanish translation by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums and [negroscuro](https://github.com/negroscuro).
 French translation by [pejuaxel](https://github.com/pejuaxel).
 Polish translation by [Bober9000](https://github.com/Bober9000).
+Russian translation by [Foxygunische](https://github.com/Foxygunische)
 Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
 Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
 
