@@ -554,6 +554,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
         'Benthic Two-Tubes':
             text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
+        'Captain Feroph':
+            text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
+        '"Vizier"':
+            text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1101,6 +1105,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
         'Renegade Refit':
             text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
+        'Tactical Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
+        'ISB Slicer':
+            text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
 
     modification_translations =
         "Stealth Device":
@@ -1306,6 +1314,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyverzet" jelződ van.'''
         'Crossfire Formation':
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Védekezéskor, ha legalább egy másik baráti Ellenállás hajó van 1-2-es távolságra a támadótól, adhatsz egy %FOCUS% eredmény a dobásodhoz.'''
+        'Advanced Ailerons':
+            text: '''<span class="card-restriction">TIE Reaper only.</span>%LINEBREAK%Treat your (%BANKLEFT% 3) and (%BANKRIGHT% 3) maneuvers as white.%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you must execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -1327,6 +1337,6 @@ exportObj.cardLoaders.Magyar = () ->
         'Scrambled':
             text: '''Mikor 1-es távolságban támadsz egy hajót, amint "Targeting Scrambler" fejlesztés van, nem módosíthatod a támadó kockáidat. A harci fázis végén vedd le ezt a kártyát.'''
         'Optimized Prototype':
-            text: '''Növeld meg a pajzs értékedet 1-gyel.%LINEBREAK%Körönként egyszer, mikor vérgehajtasz egy támadást az elsődleges fegyvereddel, elkölthetsz egy dobás eredményed, hogy levegyél egy pajzsot a védekezőről. ...'''
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender.%LINEBREAK%After you perform a primary weapon attack, a friendly ship at Range 1-2 equipped with the "Director Krennic" Upgrade card may acquire a target lock on the defender.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

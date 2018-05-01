@@ -1255,6 +1255,10 @@ exportObj.cardLoaders['Русский'] = () ->
         'Major Vermeil':
             name: "Майор Вермейл"
             text: '''Атакуя, если у защищающегося нет жетонов Концентрации или Уклонения, вы можете заменить 1 из ваших пустых или %FOCUS% результатов на результат %HIT%.'''
+        'Captain Feroph':
+            text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
+        '"Vizier"':
+            text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -2035,6 +2039,10 @@ exportObj.cardLoaders['Русский'] = () ->
         'Director Krennic':
             name: "Директор Кренник"
             text: '''Во время расстановки, перед шагом "Расстановка сил", назначьте состояние "Оптимизированный прототип" на дружественный корабль Галактической Империи с 3 или меньшим количеством щитов.'''
+        'Tactical Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
+        'ISB Slicer':
+            text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
 
     modification_translations =
         "Stealth Device":
@@ -2368,6 +2376,8 @@ exportObj.cardLoaders['Русский'] = () ->
             name: "Построение перекрестного огня"
             ship: "Бомбардировщик B/SF-17"
             text: '''<span class="card-restriction">Только для Бомбардировщика B/SF-17.</span>%LINEBREAK%Защищаясь, если есть по меньшей мере 1 дружественный корабль Сопротивления на расстоянии 1-2 от атакующего, вы можете добавить 1 результат %FOCUS% к вашему броску.'''
+        'Advanced Ailerons':
+            text: '''<span class="card-restriction">TIE Reaper only.</span>%LINEBREAK%Treat your (%BANKLEFT% 3) and (%BANKRIGHT% 3) maneuvers as white.%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you must execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -2399,6 +2409,6 @@ exportObj.cardLoaders['Русский'] = () ->
             text: '''Атакуя корабль на расстоянии 1, оснащенный улучшением "Помехи наведения", вы не можете модифицировать кубики атаки.%LINEBREAK%В конце фазы Боя, сбросьте эту карту.'''
         'Optimized Prototype':
             name: "Оптимизированный прототип"
-            text: '''Ваше значение щита увеличивается на 1.%LINEBREAK%Один раз за ход, выполняя атаку основным оружием, вы можете потратить 1 результат кубика, чтобы снять 1 щит с защищающегося.'''
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender.%LINEBREAK%After you perform a primary weapon attack, a friendly ship at Range 1-2 equipped with the "Director Krennic" Upgrade card may acquire a target lock on the defender.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

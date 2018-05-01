@@ -1148,6 +1148,12 @@ exportObj.basicCardData = ->
                 'Evade'
                 'Jam'
             ]
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 3, 3 ]
+                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
+                [ 0, 3, 2, 3, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -5260,20 +5266,21 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Capta???'
+            name: 'Captain Feroph'
             id: 293
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Reaper'
             skill: 4
             slots: [
+                'Elite'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 24
         }
         {
-            name: '"V???"'
+            name: '"Vizier"'
             id: 294
             unique: true
             faction: 'Galactic Empire'
@@ -5283,10 +5290,10 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 23
         }
         {
-            name: 'Unspoiled PS1 TIE Reaper Pilot'
+            name: 'Scarif Base Pilot'
             id: 295
             faction: 'Galactic Empire'
             ship: 'TIE Reaper'
@@ -5295,7 +5302,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 22
         }
         {
             name: 'Cavern Angels Zealot'
@@ -7359,6 +7366,22 @@ exportObj.basicCardData = ->
             ]
             special_case: 'Royal Guard TIE'
         }
+        {
+            name: 'Tactical Officer'
+            id: 265
+            slot: 'Crew'
+            faction: "Galactic Empire"
+            points: 2
+            modifier_func: (stats) ->
+                stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
+        }
+        {
+            name: 'ISB Slicer'
+            id: 266
+            slot: 'Crew'
+            faction: "Galactic Empire"
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -8305,6 +8328,15 @@ exportObj.basicCardData = ->
             id: 62
             ship: 'B/SF-17 Bomber'
             points: 2
+        }
+        {
+            name: '''Advanced Ailerons'''
+            id: 63
+            ship: 'TIE Reaper'
+            points: 0
+            modifier_func: (stats) ->
+                for idx in [1..3]
+                    stats.maneuvers[3][idx] = 1
         }
     ]
 
