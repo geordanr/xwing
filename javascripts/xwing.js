@@ -7369,7 +7369,11 @@ exportObj.basicCardData = function() {
           var idx, _i, _results;
           _results = [];
           for (idx = _i = 1; _i <= 3; idx = ++_i) {
-            _results.push(stats.maneuvers[3][idx] = 1);
+            if (idx !== 2) {
+              _results.push(stats.maneuvers[3][idx] = 1);
+            } else {
+              _results.push(void 0);
+            }
           }
           return _results;
         }
