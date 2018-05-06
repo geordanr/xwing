@@ -8336,7 +8336,7 @@ exportObj.basicCardData = ->
             points: 0
             modifier_func: (stats) ->
                 for idx in [1..3]
-                    stats.maneuvers[3][idx] = 1
+                    stats.maneuvers[3][idx] = 1 unless idx == 2
         }
     ]
 
