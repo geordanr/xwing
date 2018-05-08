@@ -548,6 +548,16 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Miután végrehajtasz egy %BOOST% vagy %BARRELROLL% akciót, átforgathatod a "Servomotor S-foils" fejlesztés kártyád.'''
         'Major Vermeil':
             text: '''Támadáskor, ha a védekezőnek nincs %FOCUS% vagy %EVADE% jelzője, átforgathatod az egyik üres vagy %FOCUS% dobásod %HIT% eredményre.'''
+        'Leevan Tenza':
+            text: '''Miután végrehajtasz egy %BOOST% akciót, kaphatsz egy stressz jelzőt, hogy kapj egy kitérés jelzőt.'''
+        'Saw Gerrera':
+            text: '''Mikor egy baráti hajó 1-2 távolságban támad, ha az stesszes vagy van legalább 1 sérülés kártyája, újradobhat 1 támadó kockát.'''
+        'Benthic Two-Tubes':
+            text: '''Miután végrehajtasz egy %FOCUS% akciót, egy %FOCUS% jelződet átadhatod egy 1-2-es távolságban lévő baráti hajónak.'''
+        'Captain Feroph':
+            text: '''Védekezéskor, ha a támadónak van zavarás jelzője, adj egy %EVADE% eredményt a dobásodhoz.'''
+        '"Vizier"':
+            text: '''Miután egy baráti hajó végrehajt egy 1-es sebességű manővert, ha 1-es távolságra van és nem került átfedésbe egy másik hajóval, átadhatod neki egy %FOCUS% vagy %EVADE% jelződet.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -752,7 +762,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Stay On Target":
             text: """Amikor felfeded a manővertárcsád, átforgathatod a tárcsát egy másik, de ugyanekkora sebességű manőverre. A manővered pirosnak kell tekinteni. [FAQ]"""
         "Dash Rendar":
-            text: """<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Akkor is támadhatsz, ha egy akadállyal fedésben vagy. A támadásod nem zavarható."""
+            text: """<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Akkor is támadhatsz, ha egy akadállyal fedésben vagy. A támadások nem akadályozottak."""
         '"Leebo"':
             text: """<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%<strong>Akció:</strong> végrehajthatsz egy ingyen gyorsítás akciót. Ezután kapsz egy ion jelzőt."""
         "Ruthlessness":
@@ -1091,6 +1101,14 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Támadáskor elszenvedhetsz egy sérülést, hogy az összes %FOCUS% dobásod átforgathatsd %CRIT%-re.'''
         'Director Krennic':
             text: '''A hajók felhelyezése fázisban, rendeld hozzá az "Optimized Prototype" kondíciót egy baráti Galactic Empire hajóhoz aminek 3 vagy kevesebb pajzsa van.'''
+        'Magva Yarro':
+            text: '''<span class="card-restriction">Csak lázadók.</span>%LINEBREAK%Védekezés után tehetsz egy célpontbemérőt a támadóra.'''
+        'Renegade Refit':
+            text: '''<span class="card-restriction">Csak T-65 X-Wing és U-Wing.</span>%LINEBREAK%Felszrelhetsz két különböző módosítás fejlesztést.%LINEBREAK%Minden felszerelt %ELITE% fejlesztés 1 ponttal kevesebbe kerül (minimum 0).'''
+        'Tactical Officer':
+            text: '''<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%Az akciósávod megkapja a %COORDINATE% akciót.'''
+        'ISB Slicer':
+            text: '''Miután végrehajtottál egy zavarás akciót egy elleséges hajó ellen, választhatsz egy attól 1-es távolságban lévő hajót amin nincs zavarás jelző és adhatsz neki egyet.'''
 
     modification_translations =
         "Stealth Device":
@@ -1164,6 +1182,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak lázadó és söpredék.</span>%LINEBREAK%A befejező fázis alatt kaphatsz 1 ion jelzőt, hogy visszatölthess 1 pajzsot (az eredeti értékig). Csak akkor használhatod ezt a kártyát, ha a pajzs értéked 1.'''
         'Deflective Plating':
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
+        'Servomotor S-Foils':
+            text: '''<span class="card-restriction">Csak T-65 X-Wing.</span> <span class="card-restriction">Kettős kártya.</span>%LINEBREAK%<strong>A oldal (Attack):</strong>Az akciósávod megkapja a %BARRELROLL% ikont.  Ha nem vagy stresszes, mikor felfedsz egy  (%TURNLEFT% 3) vagy (3 %TURNRIGHT%) manővert, kezelheted úgy mint piros (%TROLLLEFT% 3) vagy (%TROLLRIGHT% 3) a megfeleltethető irányban.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.%LINEBREAK%<strong>B oldal (Closed):</strong>Csökkentsd az elsődleges támadási értékedet eggyel.  Az akciósávod megkapja a %BOOST% ikont.  A (%BANKLEFT% 2) és (%BANKRIGHT% 2 ) mozgást kezeld zöldként.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.'''
 
     title_translations =
         "Slave I":
@@ -1294,6 +1314,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak Alpha-class Star Wing.</span>%LINEBREAK%A fejlesztősávod kap egy-egy %TORPEDO% és %MISSILE% ikont. Akkor is végrehajthatsz %TORPEDO% és %MISSILE% másodlagos fegyver támadást bemért hajó ellen, ha "inaktív fegyverzet" jelződ van.'''
         'Crossfire Formation':
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Védekezéskor, ha legalább egy másik baráti Ellenállás hajó van 1-2-es távolságra a támadótól, adhatsz egy %FOCUS% eredmény a dobásodhoz.'''
+        'Advanced Ailerons':
+            text: '''<span class="card-restriction">Csak TIE Reaper.</span>%LINEBREAK%Kezeld a (%BANKLEFT% 3) és (%BANKRIGHT% 3) manővert fehérként.%LINEBREAK%Tárcsa felfedés előtt, ha nem vagy stresszes, végre KELL hajtadod egy (%BANKLEFT% 1), (%STRAIGHT% 1) vagy (%BANKRIGHT% 1) manővert.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -1301,7 +1323,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Suppressive Fire':
             text: '''Ha más hajót támadsz mint "Captain Rex", egy támadó kockával kevesebbel dobsz.%LINEBREAK%Ha a támadásod célpontja "Captain Rex" vagy mikor "Captain Rex" megsemmisül, vedd le ezt a kártyát.%LINEBREAK%A harci fázis végén, ha Captain Rex nem hajtott végre támadást ebben a fázisban, vedd le a kártyát.'''
         'Fanatical Devotion':
-            text: '''Védekezéskor nem tudsz %FOCUS% jelzőt elkölteni.%LINEBREAK%Támadáskor, ha %FOCUS% jelzőt költenél, hogy az összes %FOCUS% dobást átfogasd %HIT%-re, tedd az első %FOCUS% dobásod félre. A félretett immár %HIT% dobás nem semlegesíthető védő kockával, de a védekező a %CRIT% dobásokat semlegesíthető elébb.%LINEBREAK%A befejező fázis alatt vedd le ezt a kártyát.'''
+            text: '''Védekezéskor nem tudsz %FOCUS% jelzőt elkölteni.%LINEBREAK%Támadáskor, ha %FOCUS% jelzőt költenél, hogy az összes %FOCUS% dobást átfogasd %HIT%-re, tedd az első %FOCUS% dobásod félre. A félretett immár %HIT% dobás nem semlegesíthető védő kockával, de a védekező a %CRIT% dobásokat semlegesítheti elébb.%LINEBREAK%A befejező fázis alatt vedd le ezt a kártyát.'''
         'A Debt to Pay':
             text: '''Az "A Score to Settle" fejlesztés kártyával rendelkező hajót támadva, átforgathatsz egy %FOCUS% dobást %CRIT%-re.'''
         'Shadowed':
@@ -1315,6 +1337,7 @@ exportObj.cardLoaders.Magyar = () ->
         'Scrambled':
             text: '''Mikor 1-es távolságban támadsz egy hajót, amint "Targeting Scrambler" fejlesztés van, nem módosíthatod a támadó kockáidat. A harci fázis végén vedd le ezt a kártyát.'''
         'Optimized Prototype':
-            text: '''Növeld meg a pajzs értékedet 1-gyel.%LINEBREAK%Körönként egyszer, mikor vérgehajtasz egy támadást az elsődleges fegyvereddel, elkölthetsz egy dobás eredményed, hogy levegyél egy pajzsot a védekezőről. ...'''
+            text: '''Növeld a pajzs értéket eggyel.%LINEBREAK%
+			Körönként egyszer, mikor végrehajtasz egy támadást az elsődleges fegyvereddel, elkölthetsz egy dobás eredményt, hogy levegyél egy pajzsot a védekezőről.%LINEBREAK%Miután végrehajtottál egy támadást az elsődleges fegyvereddel, egy baráti hajó 1-2-es távolságban a "Director Krennic" fejlesztéssel felszerelve, feltehet egy célpontbemérőt a védekezőre.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
