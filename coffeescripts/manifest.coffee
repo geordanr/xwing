@@ -3614,6 +3614,11 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
+            name: 'Flechette Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Sensor Jammer'
             type: 'upgrade'
             count: 1

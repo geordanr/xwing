@@ -1152,6 +1152,16 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
         'Major Vermeil':
             text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
+        'Leevan Tenza':
+            text: '''After you perform a boost action, you may receive 1 stress token to receive 1 evade token.'''
+        'Saw Gerrera':
+            text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
+        'Benthic Two-Tubes':
+            text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
+        'Captain Feroph':
+            text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
+        '"Vizier"':
+            text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1902,6 +1912,14 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
         'Director Krennic':
             text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
+        'Magva Yarro':
+            text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
+        'Renegade Refit':
+            text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
+        'Tactical Officer':
+            text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
+        'ISB Slicer':
+            text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
 
     modification_translations =
         "Stealth Device":
@@ -2010,6 +2028,8 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Deflektorpanzerung"
             ship: "B/SF-17-Bomber"
             text: '''<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald eine freundliche Bombe detoniert, darfst du wählen ihre Effekte nicht zu erleiden. Falls du das tust, wirf einen Angriffswürfel. Lege diese Karte bei einem %HIT% an.'''
+        'Servomotor S-Foils':
+            text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
 
     title_translations =
         "Slave I":
@@ -2223,6 +2243,8 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "B/SF-17-Bomber"
             name: "Kreuzfeuer-Formation"
             text: '''<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald du verteidigst, darfst du, falls sich minestens 1 anderes freunldiches Schiff des Widerstands in Reichweite 1-2 zum Angreifer befindet, 1 %FOCUS% hinzufügen.'''
+        'Advanced Ailerons':
+            text: '''<span class="card-restriction">TIE Reaper only.</span>%LINEBREAK%Treat your (%BANKLEFT% 3) and (%BANKRIGHT% 3) maneuvers as white.%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you must execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -2253,6 +2275,6 @@ exportObj.cardLoaders.Deutsch = () ->
         'Scrambled':
             text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
         'Optimized Prototype':
-            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender. ...'''
+            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender.%LINEBREAK%After you perform a primary weapon attack, a friendly ship at Range 1-2 equipped with the "Director Krennic" Upgrade card may acquire a target lock on the defender.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

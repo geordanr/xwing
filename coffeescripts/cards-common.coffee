@@ -1148,6 +1148,12 @@ exportObj.basicCardData = ->
                 'Evade'
                 'Jam'
             ]
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 3, 3 ]
+                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
+                [ 0, 3, 2, 3, 0, 0, 0, 0 ]
+            ]
 
     # name field is for convenience only
     pilotsById: [
@@ -5181,12 +5187,13 @@ exportObj.basicCardData = ->
             ship: 'U-Wing'
             skill: 6
             slots: [
+                'Elite'
                 'System'
                 'Torpedo'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 26
         }
         {
             name: 'Unspoiled PS5 U-Wing Pilot'
@@ -5217,17 +5224,18 @@ exportObj.basicCardData = ->
             points: 100
         }
         {
-            name: 'Lee???'
+            name: 'Leevan Tenza'
             id: 290
             unique: true
             faction: 'Rebel Alliance'
             ship: 'X-Wing'
             skill: 5
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
             ]
-            points: 100
+            points: 25
         }
         {
             name: 'Kullbee Sperado'
@@ -5258,20 +5266,21 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Capta???'
+            name: 'Captain Feroph'
             id: 293
             unique: true
             faction: 'Galactic Empire'
             ship: 'TIE Reaper'
             skill: 4
             slots: [
+                'Elite'
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 24
         }
         {
-            name: '"V???"'
+            name: '"Vizier"'
             id: 294
             unique: true
             faction: 'Galactic Empire'
@@ -5281,10 +5290,10 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 23
         }
         {
-            name: 'Unspoiled PS1 TIE Reaper Pilot'
+            name: 'Scarif Base Pilot'
             id: 295
             faction: 'Galactic Empire'
             ship: 'TIE Reaper'
@@ -5293,7 +5302,7 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 22
         }
         {
             name: 'Cavern Angels Zealot'
@@ -5306,6 +5315,21 @@ exportObj.basicCardData = ->
                 'Astromech'
             ]
             points: 100
+        }
+        {
+            name: 'Benthic Two-Tubes'
+            id: 297
+            unique: true
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 4
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 24
         }
     ]
 
@@ -7320,6 +7344,44 @@ exportObj.basicCardData = ->
             points: 5
             applies_condition: 'Optimized Prototype'.canonicalize()
         }
+        {
+            name: 'Magva Yarro'
+            unique: true
+            id: 263
+            slot: 'Crew'
+            faction: 'Rebel Alliance'
+            points: 2
+        }
+        {
+            name: 'Renegade Refit'
+            id: 264
+            slot: 'Torpedo'
+            points: -2
+            restriction_func: (ship) ->
+                ship.data.canonical_name =='xwing' or ship.data.canonical_name.indexOf('uwing') != -1
+            confersAddons: [
+                {
+                    type: exportObj.Modification
+                }
+            ]
+            special_case: 'Royal Guard TIE'
+        }
+        {
+            name: 'Tactical Officer'
+            id: 265
+            slot: 'Crew'
+            faction: "Galactic Empire"
+            points: 2
+            modifier_func: (stats) ->
+                stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
+        }
+        {
+            name: 'ISB Slicer'
+            id: 266
+            slot: 'Crew'
+            faction: "Galactic Empire"
+            points: 2
+        }
     ]
 
     modificationsById: [
@@ -7573,6 +7635,13 @@ exportObj.basicCardData = ->
             ship: 'B/SF-17 Bomber'
             id: 33
             points: 1
+        }
+        {
+            name: 'Servomotor S-Foils'
+            id: 34
+            points: 0
+            restriction_func: (ship) ->
+                ship.data.canonical_name == 'X-Wing'.canonicalize() && ship.data.canonical_name != 'T-70 X-Wing'.canonicalize()
         }
     ]
 
@@ -8259,6 +8328,15 @@ exportObj.basicCardData = ->
             id: 62
             ship: 'B/SF-17 Bomber'
             points: 2
+        }
+        {
+            name: '''Advanced Ailerons'''
+            id: 63
+            ship: 'TIE Reaper'
+            points: 0
+            modifier_func: (stats) ->
+                for idx in [1..3]
+                    stats.maneuvers[3][idx] = 1 unless idx == 2
         }
     ]
 

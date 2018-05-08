@@ -3002,6 +3002,9 @@ class GenericAddon
         # Moar special case jankiness
         if 'vaksai' in (title.data?.canonical_name for title in @ship?.titles ? []) and @data?.canonical_name != 'vaksai'
             Math.max(0, (@data?.points ? 0) - 1)
+        # And more
+        else if @slot == 'Elite' and 'renegaderefit' in (upgrade.data?.canonical_name for upgrade in @ship?.upgrades ? [])
+            Math.max(0, (@data?.points ? 0) - 1)
         else
             @data?.points ? 0
 
