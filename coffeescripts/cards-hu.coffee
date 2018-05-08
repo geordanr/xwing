@@ -1337,7 +1337,6 @@ exportObj.cardLoaders.Magyar = () ->
         'Scrambled':
             text: '''Mikor 1-es távolságban támadsz egy hajót, amint "Targeting Scrambler" fejlesztés van, nem módosíthatod a támadó kockáidat. A harci fázis végén vedd le ezt a kártyát.'''
         'Optimized Prototype':
-            text: '''Növeld a pajzs értéket eggyel.%LINEBREAK%
-			Körönként egyszer, mikor végrehajtasz egy támadást az elsődleges fegyvereddel, elkölthetsz egy dobás eredményt, hogy levegyél egy pajzsot a védekezőről.%LINEBREAK%Miután végrehajtottál egy támadást az elsődleges fegyvereddel, egy baráti hajó 1-2-es távolságban a "Director Krennic" fejlesztéssel felszerelve, feltehet egy célpontbemérőt a védekezőre.'''
+            text: '''Növeld a pajzs értéket eggyel.%LINEBREAK%Körönként egyszer, mikor végrehajtasz egy támadást az elsődleges fegyvereddel, elkölthetsz egy dobás eredményt, hogy levegyél egy pajzsot a védekezőről.%LINEBREAK%Miután végrehajtottál egy támadást az elsődleges fegyvereddel, egy baráti hajó 1-2-es távolságban a "Director Krennic" fejlesztéssel felszerelve, feltehet egy célpontbemérőt a védekezőre.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
