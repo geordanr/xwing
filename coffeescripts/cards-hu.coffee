@@ -376,7 +376,7 @@ exportObj.cardLoaders.Magyar = () ->
         '"Youngster"':
             text: """A baráti TIE vadászok 1-3 távolságon belül végrehajthatják az erre a hajóra felszerelt %ELITE% fejlesztés kártya akciót. [FAQ]"""
         '"Wampa"':
-            text: """Támadáskor, az eredmények összehasonlítása kezdetén, törölheted az összes dobásod. Minden törölt %CRIT% találatra a védekező kap egy lefordított sérülés kártyát. [FAQ/ERRATA]"""
+            text: """Támadáskor, az eredmények összehasonlítása kezdetén, törölheted az összes dobásod. Ha töröltél %CRIT% találatot, a védekező kap egy lefordított sérülés kártyát. [FAQ/ERRATA]"""
         '"Chaser"':
             text: """Mikor egy 1-es távolságban lévő másik baráti hajó elkölt egy %FOCUS% jelzőt, kapsz egy %FOCUS% jelzőt."""
         'Ezra Bridger':
@@ -1278,7 +1278,7 @@ exportObj.cardLoaders.Magyar = () ->
         '''Sabine's Masterpiece''':
             text: '''<span class="card-restriction">Csak TIE Fighter. Csak lázadók</span>%LINEBREAK%A fejlesztés sévod kap egy %CREW% és %ILLICIT% ikont.'''
         '''Kylo Ren's Shuttle''':
-            text: '''<span class="card-restriction">Csak Upsilon-class Shuttle.</span>%LINEBREAK%A harci fázis végén válassz egy nem stresszelt ellenséges hajót 1-2 távolságban. A gazdájának stressz token kell adnia ennek vagy tőled 1-2 távolságban lévő hajónak, amit ő irányít.'''
+            text: '''<span class="card-restriction">Csak Upsilon-class Shuttle.</span>%LINEBREAK%A harci fázis végén válassz egy nem stresszelt ellenséges hajót 1-2 távolságban. A gazdájának stressz tokent kell adnia ennek vagy tőle 1-2 távolságban lévő hajónak, amit ő irányít.'''
         '''Pivot Wing''':
             name: "Pivot Wing (Támasztékszárny)"
             text: '''<span class="card-restriction">Csak U-Wing. Kettős kártya</span>%LINEBREAK%<strong>A oldal (támadás):</strong> Növeld a mozgékonyságod eggyel.%LINEBREAK%Miután végrehajtottál egy manővert átfogathatod a kártyát.%LINEBREAK%<strong>B oldal (landolás):</strong> Mikor felfedsz egy (0 %STOP%) manővert, elforgathatod a hajót 180 fokban.%LINEBREAK%Miután végrehajtottál egy manővert átfogathatod a kártyát.'''
