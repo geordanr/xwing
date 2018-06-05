@@ -5331,6 +5331,19 @@ exportObj.basicCardData = ->
             ]
             points: 24
         }
+        {
+            name: 'Cavern Angels Zealot'
+            id: 298
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 1
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 22
+        }
     ]
 
     upgradesById: [
