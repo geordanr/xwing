@@ -5196,7 +5196,7 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Unspoiled PS5 U-Wing Pilot'
+            name: 'Magva Yarro'
             id: 288
             unique: true
             faction: 'Rebel Alliance'
@@ -5208,20 +5208,21 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: 'Edrio ???'
+            name: 'Edrio Two-Tubes'
             id: 289
             unique: true
             faction: 'Rebel Alliance'
             ship: 'X-Wing'
             skill: 4
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Leevan Tenza'
@@ -5306,6 +5307,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Cavern Angels Zealot'
+            skip: true
             id: 296
             faction: 'Rebel Alliance'
             ship: 'X-Wing'
@@ -5314,7 +5316,7 @@ exportObj.basicCardData = ->
                 'Torpedo'
                 'Astromech'
             ]
-            points: 100
+            points: 0
         }
         {
             name: 'Benthic Two-Tubes'
@@ -7394,6 +7396,14 @@ exportObj.basicCardData = ->
             slot: 'Crew'
             faction: "Galactic Empire"
             points: 2
+        }
+        {
+            name: 'Thrust Corrector'
+            id: 267
+            slot: 'System'
+            points: 1
+            restriction_func: (ship) ->
+                ship.effectiveStats().hull <= 4
         }
     ]
 

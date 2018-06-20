@@ -571,6 +571,10 @@ exportObj.cardLoaders.English = () ->
             text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
         '"Vizier"':
             text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
+        'Magva Yarro':
+            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+        'Edrio Two-Tubes':
+            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1107,6 +1111,8 @@ exportObj.cardLoaders.English = () ->
             text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
         'ISB Slicer':
             text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
+        'Thrust Corrector':
+            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
 
     modification_translations =
         "Stealth Device":

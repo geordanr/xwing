@@ -558,6 +558,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Védekezéskor, ha a támadónak van zavarás jelzője, adj egy %EVADE% eredményt a dobásodhoz.'''
         '"Vizier"':
             text: '''Miután egy baráti hajó végrehajt egy 1-es sebességű manővert, ha 1-es távolságra van és nem került átfedésbe egy másik hajóval, átadhatod neki egy %FOCUS% vagy %EVADE% jelződet.'''
+        'Magva Yarro':
+            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+        'Edrio Two-Tubes':
+            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1109,6 +1113,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%Az akciósávod megkapja a %COORDINATE% akciót.'''
         'ISB Slicer':
             text: '''Miután végrehajtottál egy zavarás akciót egy elleséges hajó ellen, választhatsz egy attól 1-es távolságban lévő hajót amin nincs zavarás jelző és adhatsz neki egyet.'''
+        'Thrust Corrector':
+            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
 
     modification_translations =
         "Stealth Device":
