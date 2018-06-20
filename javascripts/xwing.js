@@ -4419,23 +4419,23 @@ exportObj.basicCardData = function() {
         slots: ['Elite', 'System', 'Torpedo', 'Crew', 'Crew'],
         points: 26
       }, {
-        name: 'Unspoiled PS5 U-Wing Pilot',
+        name: 'Magva Yarro',
         id: 288,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'U-Wing',
         skill: 5,
         slots: ['System', 'Torpedo', 'Crew', 'Crew'],
-        points: 100
+        points: 25
       }, {
-        name: 'Edrio ???',
+        name: 'Edrio Two-Tubes',
         id: 289,
         unique: true,
         faction: 'Rebel Alliance',
         ship: 'X-Wing',
         skill: 4,
-        slots: ['Torpedo', 'Astromech'],
-        points: 100
+        slots: ['Elite', 'Torpedo', 'Astromech'],
+        points: 24
       }, {
         name: 'Leevan Tenza',
         id: 290,
@@ -4491,12 +4491,13 @@ exportObj.basicCardData = function() {
         points: 22
       }, {
         name: 'Cavern Angels Zealot',
+        skip: true,
         id: 296,
         faction: 'Rebel Alliance',
         ship: 'X-Wing',
         skill: 1,
         slots: ['Torpedo', 'Astromech'],
-        points: 100
+        points: 0
       }, {
         name: 'Benthic Two-Tubes',
         id: 297,
@@ -6424,6 +6425,14 @@ exportObj.basicCardData = function() {
         slot: 'Crew',
         faction: "Galactic Empire",
         points: 2
+      }, {
+        name: 'Thrust Corrector',
+        id: 267,
+        slot: 'System',
+        points: 1,
+        restriction_func: function(ship) {
+          return ship.effectiveStats().hull <= 4;
+        }
       }
     ],
     modificationsById: [
@@ -9304,6 +9313,12 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -10325,6 +10340,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -11553,6 +11571,12 @@ exportObj.cardLoaders.English = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -12353,6 +12377,9 @@ exportObj.cardLoaders.English = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -14108,6 +14135,12 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Benthic Two-Tubes': {
       text: 'After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -15101,6 +15134,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Renegade Refit': {
       text: '<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -16563,6 +16599,12 @@ exportObj.cardLoaders['Français'] = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -17507,6 +17549,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -18657,6 +18702,12 @@ exportObj.cardLoaders.Magyar = function() {
     },
     '"Vizier"': {
       text: 'Miután egy baráti hajó végrehajt egy 1-es sebességű manővert, ha 1-es távolságra van és nem került átfedésbe egy másik hajóval, átadhatod neki egy %FOCUS% vagy %EVADE% jelződet.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -19472,6 +19523,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'ISB Slicer': {
       text: 'Miután végrehajtottál egy zavarás akciót egy elleséges hajó ellen, választhatsz egy attól 1-es távolságban lévő hajót amin nincs zavarás jelző és adhatsz neki egyet.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -20738,6 +20792,12 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -21610,6 +21670,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -23511,6 +23574,12 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -24555,6 +24624,9 @@ exportObj.cardLoaders['Русский'] = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -25751,6 +25823,12 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     '"Vizier"': {
       text: 'After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'
+    },
+    'Magva Yarro': {
+      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+    },
+    'Edrio Two-Tubes': {
+      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
     }
   };
   upgrade_translations = {
@@ -26527,6 +26605,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'ISB Slicer': {
       text: 'After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'
+    },
+    'Thrust Corrector': {
+      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
     }
   };
   modification_translations = {
@@ -30987,7 +31068,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 28891
+                    lineno: 28949
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -31576,7 +31657,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 29521
+              lineno: 29579
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -32320,7 +32401,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 30151
+          lineno: 30209
         }));
         __iced_deferrals._fulfill();
       });
@@ -32332,7 +32413,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 30152
+            lineno: 30210
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -33943,7 +34024,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 31057
+                      lineno: 31115
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -34017,7 +34098,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 31083
+                lineno: 31141
               })
             ]);
             __iced_deferrals._fulfill();
@@ -34072,7 +34153,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 31106
+              lineno: 31164
             }));
           }
         }
@@ -34081,7 +34162,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 31108
+              lineno: 31166
             }));
           }
         }
@@ -34090,7 +34171,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 31110
+              lineno: 31168
             }));
           }
         }
@@ -35115,7 +35196,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 31796
+                lineno: 31854
               })
             ]);
             __iced_deferrals._fulfill();
@@ -35234,7 +35315,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 31855
+                  lineno: 31913
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -35256,7 +35337,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 31859
+                    lineno: 31917
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -35346,7 +35427,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 31902
+            lineno: 31960
           }));
         }
         __iced_deferrals._fulfill();
