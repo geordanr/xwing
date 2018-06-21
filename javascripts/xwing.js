@@ -4515,6 +4515,14 @@ exportObj.basicCardData = function() {
         skill: 1,
         slots: ['Elite', 'Torpedo', 'Astromech'],
         points: 22
+      }, {
+        name: 'Partisan Renegade',
+        id: 299,
+        faction: 'Rebel Alliance',
+        ship: 'U-Wing',
+        skill: 1,
+        slots: ['System', 'Torpedo', 'Crew', 'Crew'],
+        points: 22
       }
     ],
     upgradesById: [
@@ -6732,6 +6740,15 @@ exportObj.basicCardData = function() {
         points: 0,
         restriction_func: function(ship) {
           return ship.data.canonical_name === 'X-Wing'.canonicalize() && ship.data.canonical_name !== 'T-70 X-Wing'.canonicalize();
+        }
+      }, {
+        name: 'Multi-spectral Camouflage',
+        id: 35,
+        unique: true,
+        points: 1,
+        restriction_func: function(ship) {
+          var _ref, _ref1;
+          return !(((_ref = ship.data.large) != null ? _ref : false) || ((_ref1 = ship.data.huge) != null ? _ref1 : false));
         }
       }
     ],
@@ -10485,6 +10502,9 @@ exportObj.cardLoaders.Deutsch = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -12484,6 +12504,9 @@ exportObj.cardLoaders.English = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -15279,6 +15302,9 @@ exportObj.cardLoaders['Español'] = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -17686,6 +17712,9 @@ exportObj.cardLoaders['Français'] = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -19635,6 +19664,9 @@ exportObj.cardLoaders.Magyar = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">Csak T-65 X-Wing.</span> <span class="card-restriction">Kettős kártya.</span>%LINEBREAK%<strong>A oldal (Attack):</strong>Az akciósávod megkapja a %BARRELROLL% ikont.  Ha nem vagy stresszes, mikor felfedsz egy  (%TURNLEFT% 3) vagy (3 %TURNRIGHT%) manővert, kezelheted úgy mint piros (%TROLLLEFT% 3) vagy (%TROLLRIGHT% 3) a megfeleltethető irányban.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.%LINEBREAK%<strong>B oldal (Closed):</strong>Csökkentsd az elsődleges támadási értékedet eggyel.  Az akciósávod megkapja a %BOOST% ikont.  A (%BANKLEFT% 2) és (%BANKRIGHT% 2 ) mozgást kezeld zöldként.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -21790,6 +21822,9 @@ exportObj.cardLoaders['Polski'] = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -24767,6 +24802,9 @@ exportObj.cardLoaders['Русский'] = function() {
       name: "Отражающее покрытие",
       ship: "Бомбардировщик B/SF-17",
       text: '<span class="card-restriction">Только для бомбардировщика B/SF-17.</span>%LINEBREAK%Когда взрывается дружественный жетон бомбы, вы можете выбрать не получать соответствующий эффект. Если вы делаете это, бросьте кубик атаки. При результате %HIT%, сбросьте эту карту.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -26709,6 +26747,9 @@ exportObj.cardLoaders['Türkçe'] = function() {
     },
     'Servomotor S-Foils': {
       text: '<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'
+    },
+    'Multi-spectral Camouflage': {
+      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
     }
   };
   title_translations = {
@@ -31068,7 +31109,7 @@ exportObj.setupTranslationSupport = function() {
                     parent: ___iced_passed_deferral
                   });
                   builder.container.trigger('xwing:beforeLanguageLoad', __iced_deferrals.defer({
-                    lineno: 28949
+                    lineno: 28987
                   }));
                   __iced_deferrals._fulfill();
                 })(_next);
@@ -31657,7 +31698,7 @@ exportObj.SquadBuilder = (function() {
                   return results = arguments[0];
                 };
               })(),
-              lineno: 29579
+              lineno: 29617
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -32401,7 +32442,7 @@ exportObj.SquadBuilder = (function() {
           funcname: "SquadBuilder.removeShip"
         });
         ship.destroy(__iced_deferrals.defer({
-          lineno: 30209
+          lineno: 30247
         }));
         __iced_deferrals._fulfill();
       });
@@ -32413,7 +32454,7 @@ exportObj.SquadBuilder = (function() {
             funcname: "SquadBuilder.removeShip"
           });
           _this.container.trigger('xwing:pointsUpdated', __iced_deferrals.defer({
-            lineno: 30210
+            lineno: 30248
           }));
           __iced_deferrals._fulfill();
         })(function() {
@@ -34024,7 +34065,7 @@ Ship = (function() {
                   });
                   _this.builder.container.trigger('xwing:claimUnique', [
                     new_pilot, 'Pilot', __iced_deferrals.defer({
-                      lineno: 31115
+                      lineno: 31153
                     })
                   ]);
                   __iced_deferrals._fulfill();
@@ -34098,7 +34139,7 @@ Ship = (function() {
             });
             _this.builder.container.trigger('xwing:releaseUnique', [
               _this.pilot, 'Pilot', __iced_deferrals.defer({
-                lineno: 31141
+                lineno: 31179
               })
             ]);
             __iced_deferrals._fulfill();
@@ -34153,7 +34194,7 @@ Ship = (function() {
           title = _ref[_i];
           if (title != null) {
             title.destroy(__iced_deferrals.defer({
-              lineno: 31164
+              lineno: 31202
             }));
           }
         }
@@ -34162,7 +34203,7 @@ Ship = (function() {
           upgrade = _ref1[_j];
           if (upgrade != null) {
             upgrade.destroy(__iced_deferrals.defer({
-              lineno: 31166
+              lineno: 31204
             }));
           }
         }
@@ -34171,7 +34212,7 @@ Ship = (function() {
           modification = _ref2[_k];
           if (modification != null) {
             modification.destroy(__iced_deferrals.defer({
-              lineno: 31168
+              lineno: 31206
             }));
           }
         }
@@ -35196,7 +35237,7 @@ GenericAddon = (function() {
             });
             _this.ship.builder.container.trigger('xwing:releaseUnique', [
               _this.data, _this.type, __iced_deferrals.defer({
-                lineno: 31854
+                lineno: 31892
               })
             ]);
             __iced_deferrals._fulfill();
@@ -35315,7 +35356,7 @@ GenericAddon = (function() {
               });
               _this.ship.builder.container.trigger('xwing:releaseUnique', [
                 _this.unadjusted_data, _this.type, __iced_deferrals.defer({
-                  lineno: 31913
+                  lineno: 31951
                 })
               ]);
               __iced_deferrals._fulfill();
@@ -35337,7 +35378,7 @@ GenericAddon = (function() {
                 });
                 _this.ship.builder.container.trigger('xwing:claimUnique', [
                   new_data, _this.type, __iced_deferrals.defer({
-                    lineno: 31917
+                    lineno: 31955
                   })
                 ]);
                 __iced_deferrals._fulfill();
@@ -35427,7 +35468,7 @@ GenericAddon = (function() {
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           addon = _ref[_i];
           addon.destroy(__iced_deferrals.defer({
-            lineno: 31960
+            lineno: 31998
           }));
         }
         __iced_deferrals._fulfill();
