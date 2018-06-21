@@ -1190,6 +1190,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
         'Servomotor S-Foils':
             text: '''<span class="card-restriction">Csak T-65 X-Wing.</span> <span class="card-restriction">Kettős kártya.</span>%LINEBREAK%<strong>A oldal (Attack):</strong>Az akciósávod megkapja a %BARRELROLL% ikont.  Ha nem vagy stresszes, mikor felfedsz egy  (%TURNLEFT% 3) vagy (3 %TURNRIGHT%) manővert, kezelheted úgy mint piros (%TROLLLEFT% 3) vagy (%TROLLRIGHT% 3) a megfeleltethető irányban.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.%LINEBREAK%<strong>B oldal (Closed):</strong>Csökkentsd az elsődleges támadási értékedet eggyel.  Az akciósávod megkapja a %BOOST% ikont.  A (%BANKLEFT% 2) és (%BANKRIGHT% 2 ) mozgást kezeld zöldként.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.'''
+        'Multi-spectral Camouflage':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
 
     title_translations =
         "Slave I":

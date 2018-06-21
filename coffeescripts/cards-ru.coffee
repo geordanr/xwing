@@ -2156,6 +2156,8 @@ exportObj.cardLoaders['Русский'] = () ->
             name: "Отражающее покрытие"
             ship: "Бомбардировщик B/SF-17"
             text: '''<span class="card-restriction">Только для бомбардировщика B/SF-17.</span>%LINEBREAK%Когда взрывается дружественный жетон бомбы, вы можете выбрать не получать соответствующий эффект. Если вы делаете это, бросьте кубик атаки. При результате %HIT%, сбросьте эту карту.'''
+        'Multi-spectral Camouflage':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
 
     title_translations =
         "Slave I":
