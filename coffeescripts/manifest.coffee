@@ -4567,6 +4567,165 @@ exportObj.manifestByExpansion =
             count: 2
         }
     ]
+    "Saw's Renegades Expansion Pack": [
+        {
+            name: 'U-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Saw Gerrera'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Magva Yarro'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Benthic Two-Tubes'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kullbee Sperado'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Leevan Tenza'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Edrio Two-Tubes'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cavern Angel Zealot'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Saw Gerrera'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Magva Yarro'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Flight-Assist Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Scrambler'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Thrust Corrector'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Renegade Refit'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Servomotor S-Foils'
+            type: 'modification'
+            count: 3
+        }
+        {
+            name: 'Pivot Wing'
+            type: 'title'
+            count: 1
+        }
+    ]
+    'TIE Reaper Expansion Pack': [
+        {
+            name: 'TIE Reaper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Major Vermeil'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Feroph'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Vizier"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scarif Base Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Decoy'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Systems Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Death Troopers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Director Krennic'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'ISB Slicer'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Ailerons'
+            type: 'title'
+            count: 1
+        }
+        {
+            name: 'Multi-spectral Camouflage'
+            type: 'modification'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

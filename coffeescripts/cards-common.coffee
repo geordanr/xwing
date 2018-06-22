@@ -2,8 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    '''Saw's Renegades Expansion Pack'''
-    'TIE Reaper Expansion Pack'
 ]
 
 exportObj.isReleased = (data) ->
