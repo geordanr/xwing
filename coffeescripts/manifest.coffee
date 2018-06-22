@@ -4589,6 +4589,11 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: 'Partisan Renegade'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Benthic Two-Tubes'
             type: 'pilot'
             count: 1
@@ -4609,7 +4614,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Cavern Angel Zealot'
+            name: 'Cavern Angels Zealot'
             type: 'pilot'
             count: 3
         }
