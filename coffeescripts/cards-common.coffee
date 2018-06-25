@@ -2,8 +2,6 @@
 exportObj = exports ? this
 
 exportObj.unreleasedExpansions = [
-    '''Saw's Renegades Expansion Pack'''
-    'TIE Reaper Expansion Pack'
 ]
 
 exportObj.isReleased = (data) ->
@@ -5196,7 +5194,7 @@ exportObj.basicCardData = ->
             points: 26
         }
         {
-            name: 'Unspoiled PS5 U-Wing Pilot'
+            name: 'Magva Yarro'
             id: 288
             unique: true
             faction: 'Rebel Alliance'
@@ -5208,20 +5206,21 @@ exportObj.basicCardData = ->
                 'Crew'
                 'Crew'
             ]
-            points: 100
+            points: 25
         }
         {
-            name: 'Edrio ???'
+            name: 'Edrio Two-Tubes'
             id: 289
             unique: true
             faction: 'Rebel Alliance'
             ship: 'X-Wing'
             skill: 4
             slots: [
+                'Elite'
                 'Torpedo'
                 'Astromech'
             ]
-            points: 100
+            points: 24
         }
         {
             name: 'Leevan Tenza'
@@ -5306,6 +5305,7 @@ exportObj.basicCardData = ->
         }
         {
             name: 'Cavern Angels Zealot'
+            skip: true
             id: 296
             faction: 'Rebel Alliance'
             ship: 'X-Wing'
@@ -5314,7 +5314,7 @@ exportObj.basicCardData = ->
                 'Torpedo'
                 'Astromech'
             ]
-            points: 100
+            points: 0
         }
         {
             name: 'Benthic Two-Tubes'
@@ -5330,6 +5330,33 @@ exportObj.basicCardData = ->
                 'Crew'
             ]
             points: 24
+        }
+        {
+            name: 'Cavern Angels Zealot'
+            id: 298
+            faction: 'Rebel Alliance'
+            ship: 'X-Wing'
+            skill: 1
+            slots: [
+                'Elite'
+                'Torpedo'
+                'Astromech'
+            ]
+            points: 22
+        }
+        {
+            name: 'Partisan Renegade'
+            id: 299
+            faction: 'Rebel Alliance'
+            ship: 'U-Wing'
+            skill: 1
+            slots: [
+                'System'
+                'Torpedo'
+                'Crew'
+                'Crew'
+            ]
+            points: 22
         }
     ]
 
@@ -7382,6 +7409,14 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             points: 2
         }
+        {
+            name: 'Thrust Corrector'
+            id: 267
+            slot: 'System'
+            points: 1
+            restriction_func: (ship) ->
+                ship.effectiveStats().hull <= 4
+        }
     ]
 
     modificationsById: [
@@ -7642,6 +7677,14 @@ exportObj.basicCardData = ->
             points: 0
             restriction_func: (ship) ->
                 ship.data.canonical_name == 'X-Wing'.canonicalize() && ship.data.canonical_name != 'T-70 X-Wing'.canonicalize()
+        }
+        {
+            name: 'Multi-spectral Camouflage'
+            id: 35
+            unique: true,
+            points: 1
+            restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.huge ? false))
         }
     ]
 

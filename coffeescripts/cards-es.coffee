@@ -1140,6 +1140,10 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
         'Benthic Two-Tubes':
             text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
+        'Magva Yarro':
+            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+        'Edrio Two-Tubes':
+            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1873,6 +1877,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
         'Renegade Refit':
             text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
+        'Thrust Corrector':
+            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
 
     modification_translations =
         "Stealth Device":
@@ -1981,6 +1987,8 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
         'Servomotor S-Foils':
             text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
+        'Multi-spectral Camouflage':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
 
     title_translations =
         "Slave I":

@@ -724,6 +724,10 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
         '"Vizier"':
             text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
+        'Magva Yarro':
+            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+        'Edrio Two-Tubes':
+            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
 
     upgrade_translations =
         #Elitarna zdolność
@@ -1354,6 +1358,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
         'ISB Slicer':
             text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
+        'Thrust Corrector':
+            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
 
     modification_translations =
         "Shield Upgrade":
@@ -1438,6 +1444,8 @@ exportObj.cardLoaders['Polski'] = () ->
             text: '''<span class="card-restriction">B/SF-17 Bomber only.</span>%LINEBREAK%When a friendly bomb token detonates, you may choose not to suffer its effects.  If you do, roll an attack die.  On a %HIT% result, discard this card.'''
         'Servomotor S-Foils':
             text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
+        'Multi-spectral Camouflage':
+            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
 
     title_translations =
         "Slave I":
