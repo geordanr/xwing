@@ -558,6 +558,10 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''Védekezéskor, ha a támadónak van zavarás jelzője, adj egy %EVADE% eredményt a dobásodhoz.'''
         '"Vizier"':
             text: '''Miután egy baráti hajó végrehajt egy 1-es sebességű manővert, ha 1-es távolságra van és nem került átfedésbe egy másik hajóval, átadhatod neki egy %FOCUS% vagy %EVADE% jelződet.'''
+        'Magva Yarro':
+            text: '''Mikor egy másik baráti hajó 1-2 távolságban vedekezik, a támadója nem dobhatja újra csupán csak egy kockáját.'''
+        'Edrio Two-Tubes':
+            text: '''Mikor az aktivációs fázisban aktiválódik a hajód, ha van legalább 1 fókusz jelződ, végrehajthatsz egy ingyenes akciót.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1109,6 +1113,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak birodalmiak.</span>%LINEBREAK%Az akciósávod megkapja a %COORDINATE% akciót.'''
         'ISB Slicer':
             text: '''Miután végrehajtottál egy zavarás akciót egy elleséges hajó ellen, választhatsz egy attól 1-es távolságban lévő hajót amin nincs zavarás jelző és adhatsz neki egyet.'''
+        'Thrust Corrector':
+            text: '''Védekezéskor, ha 3 vagy kevesebb stressz jelződ van, kaphatsz 1 stressz jelzőt, hogy érvénytelenítsd az összes dobásod. Ha így teszel, adj 1 %EVADE% eredményt a dobásaidhoz. A kockáid nem módosíthatók újra ezen támadás alatt.%LINEBREAK%Ez a fejlesztés csak akkor szerelhető fel ha a szerkeszeti erősséged (hull) 4 vagy kisebb.'''
 
     modification_translations =
         "Stealth Device":
@@ -1184,6 +1190,8 @@ exportObj.cardLoaders.Magyar = () ->
             text: '''<span class="card-restriction">Csak B/SF-17 Bomber.</span>%LINEBREAK%Mikor egy baráti bomba felrobban, nem kell elszenvedned a hatását. Ha így teszel, dobbj egy támadó kockával. %HIT% eredménynél dobd el ezt a kártyát.'''
         'Servomotor S-Foils':
             text: '''<span class="card-restriction">Csak T-65 X-Wing.</span> <span class="card-restriction">Kettős kártya.</span>%LINEBREAK%<strong>A oldal (Attack):</strong>Az akciósávod megkapja a %BARRELROLL% ikont.  Ha nem vagy stresszes, mikor felfedsz egy  (%TURNLEFT% 3) vagy (3 %TURNRIGHT%) manővert, kezelheted úgy mint piros (%TROLLLEFT% 3) vagy (%TROLLRIGHT% 3) a megfeleltethető irányban.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.%LINEBREAK%<strong>B oldal (Closed):</strong>Csökkentsd az elsődleges támadási értékedet eggyel.  Az akciósávod megkapja a %BOOST% ikont.  A (%BANKLEFT% 2) és (%BANKRIGHT% 2 ) mozgást kezeld zöldként.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.'''
+        'Multi-spectral Camouflage':
+            text: '''<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Miután kapsz egy piros célpontbemérő jelzőt, ha csak 1 ilyen jelződ van, dobj egy védekező kockával. %EVADE% dobás esetén vegyél le egy piros célpontbemérő jelzőt a hajódról.'''
 
     title_translations =
         "Slave I":
