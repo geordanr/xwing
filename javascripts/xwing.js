@@ -18733,10 +18733,10 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Miután egy baráti hajó végrehajt egy 1-es sebességű manővert, ha 1-es távolságra van és nem került átfedésbe egy másik hajóval, átadhatod neki egy %FOCUS% vagy %EVADE% jelződet.'
     },
     'Magva Yarro': {
-      text: 'When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'
+      text: 'Mikor egy másik baráti hajó 1-2 távolságban vedekezik, a támadója nem dobhatja újra csupán csak egy kockáját.'
     },
     'Edrio Two-Tubes': {
-      text: 'When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'
+      text: 'Mikor az aktivációs fázisban aktiválódik a hajód, ha van legalább 1 fókusz jelződ, végrehajthatsz egy ingyenes akciót.'
     }
   };
   upgrade_translations = {
@@ -19554,7 +19554,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: 'Miután végrehajtottál egy zavarás akciót egy elleséges hajó ellen, választhatsz egy attól 1-es távolságban lévő hajót amin nincs zavarás jelző és adhatsz neki egyet.'
     },
     'Thrust Corrector': {
-      text: 'When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'
+      text: 'Védekezéskor, ha 3 vagy kevesebb stressz jelződ van, kaphatsz 1 stressz jelzőt, hogy érvénytelenítsd az összes dobásod. Ha így teszel, adj 1 %EVADE% eredményt a dobásaidhoz. A kockáid nem módosíthatók újra ezen támadás alatt.%LINEBREAK%Ez a fejlesztés csak akkor szerelhető fel ha a szerkeszeti erősséged (hull) 4 vagy kisebb.'
     }
   };
   modification_translations = {
@@ -19666,7 +19666,7 @@ exportObj.cardLoaders.Magyar = function() {
       text: '<span class="card-restriction">Csak T-65 X-Wing.</span> <span class="card-restriction">Kettős kártya.</span>%LINEBREAK%<strong>A oldal (Attack):</strong>Az akciósávod megkapja a %BARRELROLL% ikont.  Ha nem vagy stresszes, mikor felfedsz egy  (%TURNLEFT% 3) vagy (3 %TURNRIGHT%) manővert, kezelheted úgy mint piros (%TROLLLEFT% 3) vagy (%TROLLRIGHT% 3) a megfeleltethető irányban.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.%LINEBREAK%<strong>B oldal (Closed):</strong>Csökkentsd az elsődleges támadási értékedet eggyel.  Az akciósávod megkapja a %BOOST% ikont.  A (%BANKLEFT% 2) és (%BANKRIGHT% 2 ) mozgást kezeld zöldként.%LINEBREAK%Az aktivációs fázis kezdetén átfordíthatod ezt a kártyát.'
     },
     'Multi-spectral Camouflage': {
-      text: '%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'
+      text: '<span class="card-restriction">Csak kis hajók.</span>%LINEBREAK%Miután kapsz egy piros célpontbemérő jelzőt, ha csak 1 ilyen jelződ van, dobj egy védekező kockával. %EVADE% dobás esetén vegyél le egy piros célpontbemérő jelzőt a hajódról.'
     }
   };
   title_translations = {
