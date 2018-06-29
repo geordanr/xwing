@@ -1643,7 +1643,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%DE_GOZANTIONLY%%LINEBREAK%Deine Aktionsleiste erhält das %JAM%-Aktionssymbol.'''
         'Rear Admiral Chiraneau':
             name: "Konteradmiral Chiraneau"
-            text: '''%HUGESHIPONLY% %IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Führe ein weißes (%STRAIGHT% 1)-Manöver aus.'''
+            text: '''%DE_HUGESHIPONLY% %DE_IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Führe ein weißes (%STRAIGHT% 1)-Manöver aus.'''
         'Ordnance Experts':
             name: "Flugkörperexperten"
             text: '''Sobald ein freundliches Schiff in Reichweite 1-3 einen Angriff mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe durchführt, darf es ein Mal pro Runde 1 seiner Leerseiten in ein %HIT% ändern.'''
@@ -1788,12 +1788,12 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "EMP Emitter"
             text: '''Während der Kampfphase darfst du, statt Angriffe durchzuführen, diese Karte ablegen, um jedes Schiff, das in Reichweite 1 ist, 2 Ionenmarker zuzuordnen.'''
         'Captain Rex':
-            text: '''%REBELONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der nicht getroffen hat, darfst du deinem Schiff 1 Fokusmarker zuordnen.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der nicht getroffen hat, darfst du deinem Schiff 1 Fokusmarker zuordnen.'''
         'General Hux':
-            text: '''%IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Wähle bis zu 3 freundliche Schiffe in Reichweite 1-2. Ordne jedem dieser Schiffe 1 Fokusmarker zu und ordne einem von ihnen die Zustandskarte "Fanatische Ergebenheit" zu. Dann erhältst du 1 Stressmarker.'''
+            text: '''%DE_IMPERIALONLY%%LINEBREAK%<strong>Aktion:</strong> Wähle bis zu 3 freundliche Schiffe in Reichweite 1-2. Ordne jedem dieser Schiffe 1 Fokusmarker zu und ordne einem von ihnen die Zustandskarte "Fanatische Ergebenheit" zu. Dann erhältst du 1 Stressmarker.'''
         'Operations Specialist':
             name: "Einsatzspezialist"
-            text: '''%LIMITED%%LINEBREAK%Nachdem ein freundliches Schiff in Reichweite 1-2 einen Angriff durchgeführt hat, der nicht trifft, darfst du einem freundlichen Schiff in Reichweite 1-3 des Angreifers 1 Fokusmarker zuordnen.'''
+            text: '''%DE_LIMITED%%LINEBREAK%Nachdem ein freundliches Schiff in Reichweite 1-2 einen Angriff durchgeführt hat, der nicht trifft, darfst du einem freundlichen Schiff in Reichweite 1-3 des Angreifers 1 Fokusmarker zuordnen.'''
         'Targeting Synchronizer':
             name: "Zielsynchronisiersystem"
             text: '''Sobald ein freundliches Schiff in Reichweite 1-2 ein Schiff angreift, das du in der Zielerfassung hast, behandelt das freundliche Schiff das Stichwort "<strong>Angriff (Zielerfassung):</strong>" wie "<strong>Angriff:</strong>". Weist ein Spieleffekt jenes Schiff an, einen Zielerfassungsmarker auszugeben, darf es stattdessen deine Zielerfassungsmarker ausgeben.'''
@@ -1810,9 +1810,9 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Schrottsammler-Kran"
             text: '''Nachdem ein Schiff in Reichweite 1-2 zerstört worden ist, darfst du eine abgelegte %TORPEDO%, %MISSILE%, %BOMB%, %CANNON%, %TURRET%-, oder Modifikations-Aufwertungskarte, die dein Schiff ausgerüstet hatte, wählen und aufdecken. Dann wirfst du 1 Angriffswürfel. Bei einer Leerseite wird Schrottsammler-Kran abgelegt.'''
         'Bodhi Rook':
-            text: '''%REBELONLY%%LINEBREAK%Sobald du eine Zielerfassung durchführst, kannst du ein feindliches Schiff in Reichweite 1-3 zu einem freundlichen Schiff in die Zielerfassung nehmen.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Sobald du eine Zielerfassung durchführst, kannst du ein feindliches Schiff in Reichweite 1-3 zu einem freundlichen Schiff in die Zielerfassung nehmen.'''
         'Baze Malbus':
-            text: '''%REBELONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der nicht getroffen hat, darfst du sofort einen Angriff mit deiner Primärwaffe gegen ein anderes Schiff durchführen. Du darfst diese Runde keinen anderen Angriff durchführen.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der nicht getroffen hat, darfst du sofort einen Angriff mit deiner Primärwaffe gegen ein anderes Schiff durchführen. Du darfst diese Runde keinen anderen Angriff durchführen.'''
         'Inspiring Recruit':
             name: "Inspirierender Rekrut"
             text: '''Ein Mal pro Runde, darf ein freundliches Schiff in Reichweite 1-2, sobald es einen Stressmarker entfernt, einen zusätzlichen Stressmarker entfernen.'''
@@ -1820,7 +1820,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Schwarmführer"
             text: '''Sobald du einen Angriff mit einer Primärwaffe ausführst, wähle bis zu 2 andere freundliche Schiffe, die den Verteidiger in ihren Feuerwinkeln in Reichweite 1-3 haben. Entferne 1 Ausweichmarker von jedem gewählten Schiff, um 1 zusätzlichen Angriffswürfel für jeden entfernten Marker zu würfeln.'''
         'Bistan':
-            text: '''%REBELONLY%%LINEBREAK%Sobald du in Reichweite 1-2 angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Sobald du in Reichweite 1-2 angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'''
         'Expertise':
             name: "Expertenwissen"
             text: '''Sobald du angreifst und falls du nicht gestresst bist, darfst du alle deine %FOCUS% in %HIT% ändern.'''
@@ -1831,9 +1831,9 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Schweres Lasergeschütz"
             text: '''<span class="card-restriction">Nur für C-ROC Kreuzer.</span>%LINEBREAK%<strong>Angriff (Energie):</strong> Gib 2 Energie von dieser Karte aus, um diesen Angriff auf 1 Schiff durchzuführen (auch außerhalb deines Feuerwinkels).'''
         'Cikatro Vizago':
-            text: '''%SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
+            text: '''%DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du diese Karte ablegen, um eine von dir ausgerüstete offene %ILLICIT%- oder %CARGO%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
         'Azmorigan':
-            text: '''%HUGESHIPONLY% %SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 Energie ausgeben, um eine von dir ausgerüstete offene %CREW%- oder %TEAM%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
+            text: '''%DE_HUGESHIPONLY% %DE_SCUMONLY%%LINEBREAK%Zu Beginn der Endphase darfst du 1 Energie ausgeben, um eine von dir ausgerüstete offene %CREW%- oder %TEAM%-Aufwertung durch eine andere Aufwertung desselben Typs zu ersetzen. Die Kosten der neuen Aufwertung müssen gleich oder niedriger sein.'''
         'Quick-release Cargo Locks':
             name: "Frachtcontainer mit Schnellverschluss"
             text: '''%LINEBREAK%Am Ende der Aktivierungsphase darfst du diese Karte ablegen, um 1 Containermarker zu <strong>platzieren</strong>.'''
@@ -1842,10 +1842,10 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Sobald du angreifst, darfst du diese Karte ablegen, um 2 zusätzliche Angriffswürfel zu werfen.'''
         'ARC Caster':
             name: "ARC-Werfer"
-            text: '''<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%DUALCARD%%LINEBREAK%<strong>Seite A:</strong>%LINEBREAK%<strong>Angriff:</strong> Greife 1 Schiff an. Falls der Angriff trifft, musst du 1 anderes Schiff in Reichweite 1 des Verteidigers wählen, das 1 Schaden nimmt.%LINEBREAK%Dann wird diese Karte umgedreht.%LINEBREAK%<strong>Seite B:</strong>%LINEBREAK%(wird aufgeladen) Zu Beginn der Kampfphase darfst du einen Waffen-deaktiviert-Marker erhalten, um diese Karte umzudrehen.'''
+            text: '''<span class="card-restriction">Nur für Rebellen und Abschaum & Kriminelle.</span>%DE_DUALCARD%%LINEBREAK%<strong>Seite A:</strong>%LINEBREAK%<strong>Angriff:</strong> Greife 1 Schiff an. Falls der Angriff trifft, musst du 1 anderes Schiff in Reichweite 1 des Verteidigers wählen, das 1 Schaden nimmt.%LINEBREAK%Dann wird diese Karte umgedreht.%LINEBREAK%<strong>Seite B:</strong>%LINEBREAK%(wird aufgeladen) Zu Beginn der Kampfphase darfst du einen Waffen-deaktiviert-Marker erhalten, um diese Karte umzudrehen.'''
         'Wookiee Commandos':
             name: "Wookiee-Kommandotrupp"
-            text: '''%REBELONLY%Sobald du angreifst, darfst du deine %FOCUS% neu würfeln.'''
+            text: '''%DE_REBELONLY%Sobald du angreifst, darfst du deine %FOCUS% neu würfeln.'''
         'Synced Turret':
             name: "Gekoppeltes Geschütz"
             text: '''<strong>Angriff (Zielerfassung):</strong> Greife 1 Schiff an (auch außerhalb deines Feuerwinkels).%LINEBREAK%Falls der Verteidiger innerhalb deines normalen Feuerwinkels ist, darfst du bis zu X Angriffswürfel neu würfeln, X ist dein Primärwaffenwert.'''
@@ -1854,16 +1854,16 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<strong>Angriff (Fokus):</strong> Greife 1 Schiff an.%LINEBREAK%Deine Angriffswürfel können nur durch das Ausgeben eines Fokusmarkers für dessen normalen Effekt modifiziert werden.'''
         'Intensity':
             name: "Anspannung"
-            text: '''%SMALLSHIPONLY% %DUALCARD%%LINEBREAK%<strong>Seite A:</strong> Nachdem du die Aktion Schub oder Fassrolle durchgeführt hast, darfst du deinem Schiff 1 Fokus- oder Ausweichmarker zuordnen. Falls du das tust, wird dieses Karte umgedreht.%LINEBREAK%<strong>Seite B:</strong> (Erschöpft) Am Ende der Kampfphase darfst du 1 Fokus- oder Ausweichmarker ausgeben, um diese Karte umzudrehen.'''
+            text: '''%DE_SMALLSHIPONLY% %DE_DUALCARD%%LINEBREAK%<strong>Seite A:</strong> Nachdem du die Aktion Schub oder Fassrolle durchgeführt hast, darfst du deinem Schiff 1 Fokus- oder Ausweichmarker zuordnen. Falls du das tust, wird dieses Karte umgedreht.%LINEBREAK%<strong>Seite B:</strong> (Erschöpft) Am Ende der Kampfphase darfst du 1 Fokus- oder Ausweichmarker ausgeben, um diese Karte umzudrehen.'''
         'Jabba the Hutt':
             name: "Jabba der Hutt"
-            text: '''%SCUMONLY%%LINEBREAK%Sobald du diese Karten ausrüstest, lege 1 Schmugglermarker auf jede %ILLICIT%-Aufwertung deiner Staffel. Sobald du angewiesen wirst eine Aufwertung abzulegen, darfst du stattdessen 1 Schmugglermarker von ihr ablegen.'''
+            text: '''%DE_SCUMONLY%%LINEBREAK%Sobald du diese Karten ausrüstest, lege 1 Schmugglermarker auf jede %ILLICIT%-Aufwertung deiner Staffel. Sobald du angewiesen wirst eine Aufwertung abzulegen, darfst du stattdessen 1 Schmugglermarker von ihr ablegen.'''
         'IG-RM Thug Droids':
             name: "IG-RM-Schlägerdroiden"
             text: '''Sobald du angreifst, darfst du 1 deiner %HIT% in ein %CRIT% ändern.'''
         'Selflessness':
             name: "Selbstlosigkeit"
-            text: '''%DE_SMALLSHIPONLY% %REBELONLY%%LINEBREAK%Wenn ein freundlcihes Schiff in Reichweite 1 von einem Angriff getroffen wird, darfst du diese Karte ablegen, um alle nicht-negierten %HIT% statt des Ziel-Schiffes zu nehmen.'''
+            text: '''%DE_SMALLSHIPONLY% %DE_REBELONLY%%LINEBREAK%Wenn ein freundlcihes Schiff in Reichweite 1 von einem Angriff getroffen wird, darfst du diese Karte ablegen, um alle nicht-negierten %HIT% statt des Ziel-Schiffes zu nehmen.'''
         'Breach Specialist':
             name: "Experte für Hüllenreperatur"
             text: '''Sobald dir eine offene Schadenskarte zugeteilt wird, darfst du 1 Verstärkungsmarker ausgeben, um sie umzudrehen (ohne ihren Effekt abzuhandeln). Falls du das tust, drehst du bis zum Ende der Runde, sobald dir eine offene Schadenskarte zugeteilt wird, diese um (ohne ihren Efekt abzuhandeln).'''
@@ -1871,7 +1871,7 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Streubombengenerator"
             text: '''Sobald du dein Manöver aufdeckst, darfst du 1 Streubombenmarker <strong>legen</strong>.%LINEBREAK%Dieser Marker <strong>detoniert</strong> am Ende der Aktivierungsphase%LINEBREAK%<strong>Streubomben:</strong> Sobald dieser Bombenmarker detoniert, wirft jedes Schiff in Reichweite 1 des Markers 2 Angriffswürfel und nimmt allen Schaden (%HIT%) und kritischen Schaden (%CRIT%). Dann wird der Bombemmarker abgelegt.'''
         'Cad Bane':
-            text: '''%SCUMONLY%%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu. Ein Mal pro Runde darfst du, sobald ein feindliches Schiff aufgrund der Detonation eines freundlichen Bombenmarkers Angriffswürfel wirft, beliebig viele %FOCUS% und Leerseiten wählen. Es muss diese Ergebnisse neu würfeln.'''
+            text: '''%DE_SCUMONLY%%LINEBREAK%Füge deiner Aufwertungsleiste das %BOMB%-Symbol hinzu. Ein Mal pro Runde darfst du, sobald ein feindliches Schiff aufgrund der Detonation eines freundlichen Bombenmarkers Angriffswürfel wirft, beliebig viele %FOCUS% und Leerseiten wählen. Es muss diese Ergebnisse neu würfeln.'''
         'Minefield Mapper':
             name: "Minenwurfsystem"
             text: '''Nach dem Schritt "Streitkräfte platzieren" während des Spielaufbaus, darfst du beliebig viele deiner ausgerüsteten %BOMB%-Aufwertungen ablegen. Platziere alle zugehörigen Bombenmarker auf der Spielfläche jenseits von Reichweite 3 feindlicher Schiffe.'''
@@ -1898,7 +1898,7 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''<strong>Angriff:</strong> Greife 1 Schiff an.%LINEBREAK%Falls dieser Angriff trifft, ordne dem Verteidiger 1 Störsignalmarker zu. Dann werden <strong>alle</strong> Würfelergebnisse negiert.'''
         'Linked Battery':
             name: "Gekoppelte Geschützbatterie"
-            text: '''%SMALLSHIPONLY% %LIMITED%%LINEBREAK%Sobald du mit einer Primär oder  %CANNON%-Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln.'''
+            text: '''%DE_SMALLSHIPONLY% %DE_LIMITED%%LINEBREAK%Sobald du mit einer Primär oder  %CANNON%-Sekundärwaffe angreifst, darfst du 1 Angriffswürfel neu würfeln.'''
         'Saturation Salvo':
             name: "Flächenangriff"
             text: '''Nachdem du mit einer %TORPEDO%- oder %MISSILE%-Sekundärwaffe einen Angriff durcheführt hast, der nicht getroffen hat, muss jedes Schiff in Reichweite 1 des Verteidigers mit einem Wendigkeitswert niedriger als die Kommandopunktekosten der %TORPEDO%- oder %MISSILE%-Aufwertungskarte 1 Angriffswürfel werfen und den gewürfelten Schaden (%HIT%) oder kritischen Schaden (%CRIT%) nehmen.'''
@@ -1906,10 +1906,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Illegale Kybernetik"
             text: '''Sobald du während der Aktivierungsphase zum aktiven Schiff wirst, darfst du diese Karte ablegen und 1 Stressmarker erhalten. Falls du das tust, darfst du bis zum Ende der Runde Aktionen und rote Manöver auch durchführen solange du gestresst bist.'''
         'Maul':
-            text: '''%SCUMONLY% <span class="card-restriction">Ignoriere diese Beschränkung, falls "Ezra Bridger" in deiner Staffel ist.</span>%LINEBREAK%Sobald du angreifst, darfst du, falls du nicht gestresst bist, beliebig viele Stressmarker erhalten, um ebesno viele Angriffswürfel neu zu würfeln.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du 1 deiner Stressmarker entfernen.'''
+            text: '''%DE_SCUMONLY% <span class="card-restriction">Ignoriere diese Beschränkung, falls "Ezra Bridger" in deiner Staffel ist.</span>%LINEBREAK%Sobald du angreifst, darfst du, falls du nicht gestresst bist, beliebig viele Stressmarker erhalten, um ebesno viele Angriffswürfel neu zu würfeln.%LINEBREAK%Nachdem du einen Angriff durchgeführt hast, der getroffen hat, darfst du 1 deiner Stressmarker entfernen.'''
         'Courier Droid':
             name: "Kurierdroide"
-            text: '''%LIMITED%%LINEBREAK%Zu Beginn des Schnitts "Streitkräfte platzieren" darfst du wählen, deinen Pilotenwert bis zum Ende des Schritts als 0 oder als 8 zu behandeln.'''
+            text: '''%DE_LIMITED%%LINEBREAK%Zu Beginn des Schnitts "Streitkräfte platzieren" darfst du wählen, deinen Pilotenwert bis zum Ende des Schritts als 0 oder als 8 zu behandeln.'''
         '"Chopper" (Astromech)':
             text: '''<strong>Aktion: </strong>Lege 1 andere ausgerüstete Aufwertung ab, um 1 Schild wieder aufzuladen.'''
         'Flight-Assist Astromech':
@@ -1925,33 +1925,33 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''Du kannst freundliche Schiffe in die Zielerfassung nehmen.%LINEBREAK%Du kannst freundlche Schiffe angreifen.'''
         'Threat Tracker':
             name: "Annäherungsalarm"
-            text: '''%SMALLSHIPONLY%%LINEBREAK%Sobald ein feindliches Schiff in deinem Feuerwinkel in Reichweite 1-2 während der Kampfphase zum aktiven Schiff wird, darfst du deine Zielerfassung auf jenem Schiff ausgeben, um ene freie Schub-Aktion oder eine freie Aktion Fassrolle durchzuführen, falls du die Aktion in deiner Aktionsleiste hast.'''
+            text: '''%DE_SMALLSHIPONLY%%LINEBREAK%Sobald ein feindliches Schiff in deinem Feuerwinkel in Reichweite 1-2 während der Kampfphase zum aktiven Schiff wird, darfst du deine Zielerfassung auf jenem Schiff ausgeben, um ene freie Schub-Aktion oder eine freie Aktion Fassrolle durchzuführen, falls du die Aktion in deiner Aktionsleiste hast.'''
         'Debris Gambit':
             name: "Trümmer-Gambit"
-            text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'''
+            text: '''%DE_SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'''
         'Targeting Scrambler':
             name: "Zielcomputer-Sperrsystem"
             text: '''Zu Beginn der Planungsphase darfst du einen Waffen-deaktiviert-Marker erhalten, um ein Schiff in Reichweite 1-3 zu wählen und ihm den Zustand "Gesperrt" zuzuordnen.'''
         'Death Troopers':
             name: "Todestruppen"
-            text: '''%IMPERIALONLY%%LINEBREAK%Nachdem ein anderes freundliches Schiff in Reichweite 1 zum Verteidiger geworden ist, erhält der Angreifer 1 Stressmarker, falls du innnerhalb des Feuerwinkels des Angreifers und in Reichweite 1-3 zu ihm bist.'''
+            text: '''%DE_IMPERIALONLY%%LINEBREAK%Nachdem ein anderes freundliches Schiff in Reichweite 1 zum Verteidiger geworden ist, erhält der Angreifer 1 Stressmarker, falls du innnerhalb des Feuerwinkels des Angreifers und in Reichweite 1-3 zu ihm bist.'''
         'Saw Gerrera':
-            text: '''%REBELONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 Schaden nehmen, um alle deine %FOCUS% in %CRIT% zu ändern.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 Schaden nehmen, um alle deine %FOCUS% in %CRIT% zu ändern.'''
         'Director Krennic':
             name: "Direktor Krennic"
-            text: '''%IMPERIALONLY%%LINEBREAK%Ordne den Zustand "Optimierter Prototyp" während des Spielaufbaus vor dem Schritt "Streitkräfte platzieren", einem freundlichen Schiff des Galaktischen Imperiums zu, das 3 oder weniger Schilde hat.'''
+            text: '''%DE_IMPERIALONLY%%LINEBREAK%Ordne den Zustand "Optimierter Prototyp" während des Spielaufbaus vor dem Schritt "Streitkräfte platzieren", einem freundlichen Schiff des Galaktischen Imperiums zu, das 3 oder weniger Schilde hat.'''
         'Magva Yarro':
-            text: '''%REBELONLY%%LINEBREAK%Nachdem du verteidigt hast, darfst du den Angreifer in die Zielerfassung nehmen.'''
+            text: '''%DE_REBELONLY%%LINEBREAK%Nachdem du verteidigt hast, darfst du den Angreifer in die Zielerfassung nehmen.'''
         'Renegade Refit':
             name: "Umrüstung der Miliz"
             ship: "X-Flügler"
             text: '''<span class="card-restriction">Nur für T-65 X-Flügler und U-Flügler.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Modifikation-Aufwertungen ausrüsten.%LINEBREAK%Die Kommandopunktekosten jeder %ELITE%-Aufwertung, die du ausgerüstet hast, sinken um 1 (bis zu einem Minimum von 0).'''
         'Tactical Officer':
             name: "Taktikoffizier"
-            text: '''%IMPERIALONLY%%LINEBREAK%Deine Aktionsleite erhält %COORDINATE%.'''
+            text: '''%DE_IMPERIALONLY%%LINEBREAK%Deine Aktionsleite erhält %COORDINATE%.'''
         'ISB Slicer':
             name: "ISB-Hacker"
-            text: '''%IMPERIALONLY%%LINEBREAK%Nachdem du die Aktion Störsignal gegen ein feindliches Schiff durchgeführt hast, darfst du ein nicht gestörtes Schiff in Reichweite 1 zu jenem Schiff wählen und ihm 1 Störsignal-Marker zuordnen.'''
+            text: '''%DE_IMPERIALONLY%%LINEBREAK%Nachdem du die Aktion Störsignal gegen ein feindliches Schiff durchgeführt hast, darfst du ein nicht gestörtes Schiff in Reichweite 1 zu jenem Schiff wählen und ihm 1 Störsignal-Marker zuordnen.'''
         'Thrust Corrector':
             name: "Schubregler"
             text: '''Sobald du verteidigst, darfst du, falls du 3 oder weniger Stressmarker hast, 1 Stressmarker erhalten, um alle deine Würfelergebnisse zu negieren. Falls du das tust, füge deinem Wurf 1 %EVADE% hinzu. Während diees Angriffs können deine Würfel nicht erneut modifiziert werden.%LINEBREAK%Du kannst die Aufwertung nur dann ausrüsten, falls dein Hüllenwert 4 oder niedriger ist.'''
@@ -2049,7 +2049,7 @@ exportObj.cardLoaders.Deutsch = () ->
         'Captured TIE':
             name: "Gekaperter TIE"
             ship: "TIE-Jäger"
-            text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%REBELONLY%%LINEBREAK%Feindliche Schiffe mit einem Pilotenwert, der niedriger ist als deiner, können dich nicht zum Ziel eines Angriffs deklarieren. Nachdem du einen Angriff durchgeführt hast oder sobald du das einzige freundliche Schiff im Spiel bist, lege diese Karte ab.'''
+            text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%DE_REBELONLY%%LINEBREAK%Feindliche Schiffe mit einem Pilotenwert, der niedriger ist als deiner, können dich nicht zum Ziel eines Angriffs deklarieren. Nachdem du einen Angriff durchgeführt hast oder sobald du das einzige freundliche Schiff im Spiel bist, lege diese Karte ab.'''
         'Spacetug Tractor Array':
             name: "Schleppertraktorstrahl"
             text: '''<span class="card-restriction">Nur für Quadjumper.</span>%LINEBREAK%<strong>Aktion:</strong> Wähle ein Schiff innerhalb deines Feuerwinkels und in Reichweite 1 und ordne ihm einen Traktorstrahlmarker zu. Falls es ein freundliches Schiff ist, handle den Effekt des Traktorstrahlmarkers ab, als wäre es ein feindliches Schiff.'''
@@ -2066,10 +2066,10 @@ exportObj.cardLoaders.Deutsch = () ->
         'Servomotor S-Foils':
             name: "Servomotorische S-Flügel"
             ship: "X-Flügler"
-            text: '''<span class="card-restriction">Nur für T-65 X-Flügler.</span> %DUALCARD%%LINEBREAK%<strong>Seite A (Angriffsposition):</strong>Deine Aktionsleiste erhält %BARRELROLL%.  Falls du nicht gestresst bist, darfst du, sobald du ein (%TURNLEFT% 3)- oder (3 %TURNRIGHT%)-Manöver aufdeckst, es wie ein rotes (%TROLLLEFT% 3)- oder (%TROLLRIGHT% 3)-Manöver mit gleicher Flugrichtung behandeln.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.%LINEBREAK%<strong>Seite B (Geschlossen):</strong>Senke deinen Primärangriffswert um 1. Deine Aktionsleiste erhält %BOOST%. Behandle deine Manöver (%BANKLEFT% 2) und (%BANKRIGHT% 2) wie grüne Manöver.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.'''
+            text: '''<span class="card-restriction">Nur für T-65 X-Flügler.</span> %DE_DUALCARD%%LINEBREAK%<strong>Seite A (Angriffsposition):</strong>Deine Aktionsleiste erhält %BARRELROLL%.  Falls du nicht gestresst bist, darfst du, sobald du ein (%TURNLEFT% 3)- oder (3 %TURNRIGHT%)-Manöver aufdeckst, es wie ein rotes (%TROLLLEFT% 3)- oder (%TROLLRIGHT% 3)-Manöver mit gleicher Flugrichtung behandeln.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.%LINEBREAK%<strong>Seite B (Geschlossen):</strong>Senke deinen Primärangriffswert um 1. Deine Aktionsleiste erhält %BOOST%. Behandle deine Manöver (%BANKLEFT% 2) und (%BANKRIGHT% 2) wie grüne Manöver.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.'''
         'Multi-spectral Camouflage':
             name: "Multispektrale Tarnung"
-            text: '''%SMALLSHIPONLY%%LINEBREAK%Nachdem du einen roten Zielerfassungsmarker erhalten hast, wirf 1 Verteidigungswürfel, falls du nur 1 roten Zielerfassungsmarker hast. Bei einem %EVADE% entferne 1 roten Zielerfassungsmarker.'''
+            text: '''%DE_SMALLSHIPONLY%%LINEBREAK%Nachdem du einen roten Zielerfassungsmarker erhalten hast, wirf 1 Verteidigungswürfel, falls du nur 1 roten Zielerfassungsmarker hast. Bei einem %EVADE% entferne 1 roten Zielerfassungsmarker.'''
 
     title_translations =
         "Slave I":
@@ -2219,7 +2219,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '''Sabine's Masterpiece''':
             name: "Sabines Meisterwerk"
             ship: "TIE-Jäger"
-            text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%REBELONLY%%LINEBREAK%Füge deiner Aufwertungsleiste die Symbole %CREW% und %ILLICIT% hinzu.'''
+            text: '''<span class="card-restriction">Nur für TIE-Jäger.</span>%DE_REBELONLY%%LINEBREAK%Füge deiner Aufwertungsleiste die Symbole %CREW% und %ILLICIT% hinzu.'''
         '''Kylo Ren's Shuttle''':
             name: "Kylo Rens Shuttle"
             ship: "Shuttle der Ypsilon-Klasse"
@@ -2227,7 +2227,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '''Pivot Wing''':
             name: "Schwenkflügel"
             ship: 'U-Flügler'
-            text: '''<span class="card-restriction">Nur für U-Flügler.</span> %DUALCARD%%LINEBREAK%<strong>Angriffsposition:</strong> Erhöhe deinen Wendigkeitswert um 1.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Landeposition:</strong> Sobald du ein (0 %STOP%)-Manöver aufdeckst, darfst du dein Schiff um 180&deg; drehen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.'''
+            text: '''<span class="card-restriction">Nur für U-Flügler.</span> %DE_DUALCARD%%LINEBREAK%<strong>Angriffsposition:</strong> Erhöhe deinen Wendigkeitswert um 1.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.%LINEBREAK%<strong>Landeposition:</strong> Sobald du ein (0 %STOP%)-Manöver aufdeckst, darfst du dein Schiff um 180&deg; drehen.%LINEBREAK%Nachdem du ein Manöver ausgeführt hast, darfst du diese Karte umdrehen.'''
         '''Adaptive Ailerons''':
             name: "Adaptive Querruder"
             ship: "TIE-Stürmer"
