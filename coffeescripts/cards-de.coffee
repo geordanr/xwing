@@ -97,6 +97,7 @@ exportObj.translations.Deutsch =
         "TIE Silencer Expansion Pack": "TIE-Dämpfer Erweiterung"
         "Alpha-class Star Wing Expansion Pack": "Sternflügler der Alpha-Klasse Erweiterung"
         "Saw's Renegades Expansion Pack" : "Saws Rebellenmiliz Erweiterung"
+        "TIE Reaper Expansion Pack" : "TIE-Schnitter Erweiterung"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
