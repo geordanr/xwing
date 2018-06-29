@@ -96,6 +96,7 @@ exportObj.translations.Deutsch =
         "Resistance Bomber Expansion Pack": "Bomber des Widerstands Erweiterung"
         "TIE Silencer Expansion Pack": "TIE-Dämpfer Erweiterung"
         "Alpha-class Star Wing Expansion Pack": "Sternflügler der Alpha-Klasse Erweiterung"
+        "Saw's Renegades Expansion Pack" : "Saws Rebellenmiliz Erweiterung"
     ui:
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
@@ -243,6 +244,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'Sheathipede-class Shuttle', 'Raumfähre der Sheathipede-Klasse'
     exportObj.renameShip 'B/SF-17 Bomber', 'B/SF-17-Bomber'
     exportObj.renameShip 'TIE Silencer', 'TIE-Dämpfer'
+    exportObj.renameShip 'TIE Reaper', 'TIE-Schnitter'
     pilot_translations =
         "Wedge Antilles":
             ship: "X-Flügler"
@@ -1147,25 +1149,43 @@ exportObj.cardLoaders.Deutsch = () ->
         'Sienar-Jaemus Analyst':
             name: "Analyst von Sienar-Jaemus"
             ship: "TIE-Dämpfer"
+        'Cavern Angels Zealot':
+            name: "Fanatiker der Sturmengel"
+            ship: "X-Flügler"
+        'Partisan Renegade':
+            name: "Überzeugter Partisan"
+            ship: "U-Flügler"
+        'Scarif Base Pilot':
+            name: "Pilot der Scarif-Basis"
+            ship: "TIE-Schnitter"
         'Kullbee Sperado':
             ship: "X-Flügler"
-            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+            text: '''Nachdem du die Aktion Schub oder Fassrolle durchgeführt hast, darfst du deine ausgerüstete Aufwertungskarte "Servomotorische S-Flügel" umdrehen.'''
         'Major Vermeil':
-            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
+            ship: "TIE-Schnitter"
+            text: '''Sobald du angreifst, darfst du, falls der Verteidiger keine Fokus- oder Ausweichmarker hat, 1 deiner Leerseiten oder %FOCUS% in ein %HIT% ändern.'''
         'Leevan Tenza':
-            text: '''After you perform a boost action, you may receive 1 stress token to receive 1 evade token.'''
+            ship: "X-Flügler"
+            text: '''Nachdem du die Aktion Schub durchgeführt hast, darfst du 1 Stressmarker erhalten, um 1 Ausweichmarker zu erhalten.'''
         'Saw Gerrera':
-            text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
+            ship: "U-Flügler"
+            text: '''Sobald ein freundliches Schiff in Reichweite 1-2 angreift, darf es, falls es gestresst ist oder mindestens 1 Schadenskarte hat, 1 Angriffswürfel neu würfeln.'''
         'Benthic Two-Tubes':
-            text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
+            ship: "U-Flügler"
+            text: '''Nachdem du die Aktion Fokussierung durchgeführt hast, darfst du 1 deiner Fokusmarker entfernen, um ihn einem freundlichen Schiff in Reichweite 1-2 zuzuordnen.'''
         'Captain Feroph':
-            text: '''When defending, if the attacker is jammed, add 1 %EVADE% result to your roll.'''
+            ship: "TIE-Schnitter"
+            text: '''Sobald du verteidigst, falls der Angreifer gestört ist, fügst du 1 %EVADE% zu deinem Wurf hinzu.'''
         '"Vizier"':
-            text: '''After a friendly ship executes a 1-speed maneuver, if it is at Range 1 and did not overlap a ship, you may assign 1 of your focus or evade tokens to it.'''
+            name: "Wesir"
+            ship: "TIE-Schnitter"
+            text: '''Nachdem ein freundliches Schiff ein Manöver mit Geschwindigkeit 1 ausgeführt hat, darfst du ihm, falls es in Reichweite 1 ist und sich nicht mit einem Schiff überschnitten hat, 1 deiner Fokus- oder Ausweichmarker zuordnen.'''
         'Magva Yarro':
-            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+            ship: "U-Flügler"
+            text: '''Sobald ein anderes freundliches Schiff in Reichweite 1-2 verteidigt kann der Angreifer nicht mehr als 1 Angriffswürfel neu würfeln.'''
         'Edrio Two-Tubes':
-            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
+            ship: "X-Flügler"
+            text: '''Sobald du während der Aktivierungsphase zum aktiven Schiff wirst, darfst du, falls du 1 oder mehrere Fokusmarker hast, eine freie Aktion durchführen.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1909,23 +1929,31 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Trümmer-Gambit"
             text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Aktion:</strong> Ordne deinem Schiff 1 Ausweichmarker für jedes Hindernis in Reichweite 1 bis zu einem Maximum von 2 Ausweichmarkern zu.'''
         'Targeting Scrambler':
-            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+            name: "Zielcomputer-Sperrsystem"
+            text: '''Zu Beginn der Planungsphase darfst du einen Waffen-deaktiviert-Marker erhalten, um ein Schiff in Reichweite 1-3 zu wählen und ihm den Zustand "Gesperrt" zuzuordnen.'''
         'Death Troopers':
-            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+            name: "Todestruppen"
+            text: '''%IMPERIALONLY%%LINEBREAK%Nachdem ein anderes freundliches Schiff in Reichweite 1 zum Verteidiger geworden ist, erhält der Angreifer 1 Stressmarker, falls du innnerhalb des Feuerwinkels des Angreifers und in Reichweite 1-3 zu ihm bist.'''
         'Saw Gerrera':
-            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+            text: '''%REBELONLY%%LINEBREAK%Sobald du angreifst, darfst du 1 Schaden nehmen, um alle deine %FOCUS% in %CRIT% zu ändern.'''
         'Director Krennic':
-            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
+            name: "Direktor Krennic"
+            text: '''%IMPERIALONLY%%LINEBREAK%Ordne den Zustand "Optimierter Prototyp" während des Spielaufbaus vor dem Schritt "Streitkräfte platzieren", einem freundlichen Schiff des Galaktischen Imperiums zu, das 3 oder weniger Schilde hat.'''
         'Magva Yarro':
-            text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
+            text: '''%REBELONLY%%LINEBREAK%Nachdem du verteidigt hast, darfst du den Angreifer in die Zielerfassung nehmen.'''
         'Renegade Refit':
-            text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
+            name: "Umrüstung der Miliz"
+            ship: "X-Flügler"
+            text: '''<span class="card-restriction">Nur für T-65 X-Flügler und U-Flügler.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Modifikation-Aufwertungen ausrüsten.%LINEBREAK%Die Kommandopunktekosten jeder %ELITE%-Aufwertung, die du ausgerüstet hast, sinken um 1 (bis zu einem Minimum von 0).'''
         'Tactical Officer':
-            text: '''%IMPERIALONLY%%LINEBREAK%Your action bar gains %COORDINATE%.'''
+            name: "Taktikoffizier"
+            text: '''%IMPERIALONLY%%LINEBREAK%Deine Aktionsleite erhält %COORDINATE%.'''
         'ISB Slicer':
-            text: '''After you perform a jam action against an enemy ship, you may choose a ship at Range 1 of that ship that is not jammed and assign it 1 jam token.'''
+            name: "ISB-Hacker"
+            text: '''%IMPERIALONLY%%LINEBREAK%Nachdem du die Aktion Störsignal gegen ein feindliches Schiff durchgeführt hast, darfst du ein nicht gestörtes Schiff in Reichweite 1 zu jenem Schiff wählen und ihm 1 Störsignal-Marker zuordnen.'''
         'Thrust Corrector':
-            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
+            name: "Schubregler"
+            text: '''Sobald du verteidigst, darfst du, falls du 3 oder weniger Stressmarker hast, 1 Stressmarker erhalten, um alle deine Würfelergebnisse zu negieren. Falls du das tust, füge deinem Wurf 1 %EVADE% hinzu. Während diees Angriffs können deine Würfel nicht erneut modifiziert werden.%LINEBREAK%Du kannst die Aufwertung nur dann ausrüsten, falls dein Hüllenwert 4 oder niedriger ist.'''
 
     modification_translations =
         "Stealth Device":
@@ -2035,9 +2063,12 @@ exportObj.cardLoaders.Deutsch = () ->
             ship: "B/SF-17-Bomber"
             text: '''<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald eine freundliche Bombe detoniert, darfst du wählen ihre Effekte nicht zu erleiden. Falls du das tust, wirf einen Angriffswürfel. Lege diese Karte bei einem %HIT% an.'''
         'Servomotor S-Foils':
-            text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
+            name: "Servomotorische S-Flügel"
+            ship: "X-Flügler"
+            text: '''<span class="card-restriction">Nur für T-65 X-Flügler.</span> %DUALCARD%%LINEBREAK%<strong>Seite A (Angriffsposition):</strong>Deine Aktionsleiste erhält %BARRELROLL%.  Falls du nicht gestresst bist, darfst du, sobald du ein (%TURNLEFT% 3)- oder (3 %TURNRIGHT%)-Manöver aufdeckst, es wie ein rotes (%TROLLLEFT% 3)- oder (%TROLLRIGHT% 3)-Manöver mit gleicher Flugrichtung behandeln.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.%LINEBREAK%<strong>Seite B (Geschlossen):</strong>Senke deinen Primärangriffswert um 1. Deine Aktionsleiste erhält %BOOST%. Behandle deine Manöver (%BANKLEFT% 2) und (%BANKRIGHT% 2) wie grüne Manöver.%LINEBREAK%Zu Beginn der Aktivierungsphase darfst du diese Karte umdrehen.'''
         'Multi-spectral Camouflage':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
+            name: "Multispektrale Tarnung"
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Nachdem du einen roten Zielerfassungsmarker erhalten hast, wirf 1 Verteidigungswürfel, falls du nur 1 roten Zielerfassungsmarker hast. Bei einem %EVADE% entferne 1 roten Zielerfassungsmarker.'''
 
     title_translations =
         "Slave I":
@@ -2252,7 +2283,9 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Kreuzfeuer-Formation"
             text: '''<span class="card-restriction">Nur für B/SF-17-Bomber.</span>%LINEBREAK%Sobald du verteidigst, darfst du, falls sich minestens 1 anderes freunldiches Schiff des Widerstands in Reichweite 1-2 zum Angreifer befindet, 1 %FOCUS% hinzufügen.'''
         'Advanced Ailerons':
-            text: '''<span class="card-restriction">TIE Reaper only.</span>%LINEBREAK%Treat your (%BANKLEFT% 3) and (%BANKRIGHT% 3) maneuvers as white.%LINEBREAK%Immediately before you reveal your dial, if you are not stressed, you must execute a white (%BANKLEFT% 1), (%STRAIGHT% 1), or (%BANKRIGHT% 1) maneuver.'''
+            ship: "TIE-Schnitter"
+            name: "Verbesserte Querruder"
+            text: '''<span class="card-restriction">Nur für TIE-Schnitter</span>%LINEBREAK%Behandle deine Manöver (%BANKLEFT% 3) und (%BANKRIGHT% 3) wie weiße Manöver. Unmittelbar bevor du dein Rad aufdeckst, musst du, falls du nicht gestresst bist, ein weißes (%BANKLEFT% 1)-, (%STRAIGHT% 1)- oder (%BANKRIGHT% 1)-Manöver ausführen.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -2281,8 +2314,10 @@ exportObj.cardLoaders.Deutsch = () ->
             name: "Aus der Fassung"
             text: '''Sobald du Schaden oder kritischen Schaden durch eine Bombe nimmst, nimmst du 1 zusätzlichen kritischen Schaden. Entferne dann diese Karte.%LINEBREAK%<strong>Aktion:</strong> Wirf 1 Angriffswürfel. Bei einem %FOCUS% oder %HIT% entferne diese Karte.'''
         'Scrambled':
-            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+            name: "Gesperrt"
+            text: '''Sobald du ein mit der Aufwertung "Zielcomputer-Sperrsystem" ausgerüstetes Schiff in Reichweite 1 angreifst, kannst du deine Angriffswürfel nicht modifizieren.%LINEBREAK%Entferne diese Karte am Ende der Kampfhase.'''
         'Optimized Prototype':
-            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender.%LINEBREAK%After you perform a primary weapon attack, a friendly ship at Range 1-2 equipped with the "Director Krennic" Upgrade card may acquire a target lock on the defender.'''
+            name: "Optimierter Prototyp"
+            text: '''Erhöhe deinen Schildwert um 1.%LINEBREAK%Ein Mal pro Runde darfst du, sobald du einen Primärwaffenangriff durchführst 1 Würfelergebnis ausgeben, um 1 Schild vom Verteidiger zu entfernen.%LINEBREAK%Nachdem du einen Primärwaffenangriff durchgeführt hast, darf ein mit der Aufwertung "Direktor Krennic" ausgerüstetes, befreundetes Schiff in Reichweite 1-2 den Verteidiger in die Zielerfassung nehmen.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
