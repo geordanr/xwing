@@ -7337,6 +7337,7 @@ exportObj.basicCardData = ->
         {
             name: 'Targeting Scrambler'
             id: 259
+            unique: true
             slot: 'System'
             points: 0
             applies_condition: 'Scrambled'.canonicalize()
