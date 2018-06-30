@@ -8741,6 +8741,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%DE_GOZANTIONLY%/g, '<span class="card-restriction">Nur für Kreuzer der <em>Gozanti</em>-Klasse.</span>')
             .replace(/%DE_LIMITED%/g, '<span class="card-restriction">Limitiert.</span>')
             .replace(/%DE_SMALLSHIPONLY%/g, '<span class="card-restriction">Nur für kleine Schiffe.</span>')
+            .replace(/%DE_DUALCARD%/g, '<span class="card-restriction">Doppelseiteige Karte.</span>')
             .replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>')
             .replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>')
             .replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>')
