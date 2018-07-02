@@ -1944,7 +1944,6 @@ exportObj.cardLoaders.Deutsch = () ->
             text: '''%DE_REBELONLY%%LINEBREAK%Nachdem du verteidigt hast, darfst du den Angreifer in die Zielerfassung nehmen.'''
         'Renegade Refit':
             name: "Umrüstung der Miliz"
-            ship: "X-Flügler"
             text: '''<span class="card-restriction">Nur für T-65 X-Flügler und U-Flügler.</span>%LINEBREAK%Du darfst bis zu 2 verschiedene Modifikation-Aufwertungen ausrüsten.%LINEBREAK%Die Kommandopunktekosten jeder %ELITE%-Aufwertung, die du ausgerüstet hast, sinken um 1 (bis zu einem Minimum von 0).'''
         'Tactical Officer':
             name: "Taktikoffizier"
