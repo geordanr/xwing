@@ -1149,7 +1149,7 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Segador TIE"
             text: '''Cuando ataques, si el defensor no tiene asignada ninguna ficha de Concentración ni de Evasión, puedes cambiar 1 de tus resultados %FOCUS% o de cara vacía por un resultado %HIT%.'''
         '"Visir"':
-            text: """Después de que una nave aliada ejecute una maniobra con una velocidad de 1, si esa nave está situada a alcance 1 de ti y no se ha solapado con ninguna nave, puedes asignarle 1 de tus fichas de Concentración o Evasión."""
+            text: '''Después de que una nave aliada ejecute una maniobra con una velocidad de 1, si esa nave está situada a alcance 1 de ti y no se ha solapado con ninguna nave, puedes asignarle 1 de tus fichas de Concentración o Evasión.'''
             ship: "Segador TIE"
         'Captain Feroph':
             name: 'Capitán Feroph'
