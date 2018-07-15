@@ -1907,7 +1907,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''%IMPERIALONLY%%LINEBREAK%Después de que realices una acción de interferencia contra una nave enemiga, puedes elegir una nave que esté situada a alcance 1 de esa nave enemiga y no esté interferida, y asignarle 1 ficha de Interferencia.'''
         'Tactical Officer':
             name: "Oficial táctico"
-            text: '''%IMPERIALONLY%%LINEBREAK%Tu barra de acciones gana el icono %COORDINATE%.'''
+            text: '''%IMPERIALONLY%%LINEBREAK%Tu barra de acciones gana el icono COORDINATE.'''
         'Saw Gerrera':
             text: '''%REBELONLY%%LINEBREAK%Cuando ataques, puedes sufrir 1 de daño para cambiar todos tus resultados %FOCUS% por resultados %CRIT%.'''
         'Director Krennic':
