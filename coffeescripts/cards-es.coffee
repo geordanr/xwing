@@ -93,7 +93,7 @@ exportObj.translations['Español'] =
         "Resistance Bomber Expansion Pack": "Pack de Expansión Bombardero de la Resistencia"
         "Phantom II Expansion Pack": "Pack de Expansión Fantasma II"
         "Kimogila Fighter Expansion Pack": "Pack de Expansión Caza M12-L Kimogila"
-        "TIE Reaper Expansion Pack ": "Pack de Expansión Segador TIE"
+        "TIE Reaper Expansion Pack": "Pack de Expansión Segador TIE"
         "Saw's Renegades Expansion Pack": "Pack de Expansión Renegados de Saw"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
@@ -1140,7 +1140,7 @@ exportObj.cardLoaders['Español'] = () ->
             text: '''Después de que realices una acción de impulso o de tonel volado, puedes darle la vuelta a la carta de Mejora "Alas móviles" que tengas equipada en tu nave.'''
         'Major Vermeil':
             ship: "Segador TIE"
-            name: "MAyor Vermeil"
+            name: "Mayor Vermeil"
             text: '''Cuando ataques, si el defensor no tiene asignada ninguna ficha de Concentración ni de Evasión, puedes cambiar 1 de tus resultados %FOCUS% o de cara vacía por un resultado %HIT%.'''
         "Scarif Base Pilot":
             name: "Piloto de la base de Scarif"
@@ -2257,7 +2257,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Advanced Ailerons':
             name: "Alerones avanzados"
             ship: "Segador TIE"
-            text: '''<span class="card-restriction">Sólo Swgador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT%3) y (%BANKRIGHT%3) se consideran blancas.%LINEBREAK% Inmediatamente después de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra (%BANKLEFT%1), (%STRAIGHT%1) o (%BANKRIGHT%1) de color blanco.'''
+            text: '''<span class="card-restriction">Sólo Segador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT%3) y (%BANKRIGHT%3) se consideran blancas.%LINEBREAK% Inmediatamente después de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra (%BANKLEFT%1), (%STRAIGHT%1) o (%BANKRIGHT%1) de color blanco.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
