@@ -1151,7 +1151,7 @@ exportObj.cardLoaders['Español'] = () ->
         '"Visir"':
             text: """Después de que una nave aliada ejecute una maniobra con una velocidad de 1, si esa nave está situada a alcance 1 de ti y no se ha solapado con ninguna nave, puedes asignarle 1 de tus fichas de Concentración o Evasión."""
             ship: "Segador TIE"
-        'Captain Feroph"':
+        'Captain Feroph':
             name: 'Capitán Feroph'
             ship: "Segador TIE"
             text: '''Cuando te defiendas, si el atacante está interferido, añade 1 resultado %EVADE% a tu tirada.'''
@@ -2254,7 +2254,7 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Formación de fuego cruzado"
             ship: "Bombardero B/SF-17"
             text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando te defiendas, si hay por lo menos 1 otra nave aliada de la Reistencia situada a alcance 1-2 del atacante, puedes añadir 1 resultado %FOCUS% a tu tirada.'''
-        '''Advanced Ailerons''':
+        'Advanced Ailerons':
             name: "Alerones avanzados"
             ship: "Segador TIE"
             text: '''<span class="card-restriction">Sólo Segador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT% 3) y (%BANKRIGHT% 3) se consideran blancas.%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'''
