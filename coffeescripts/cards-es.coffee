@@ -2257,7 +2257,7 @@ exportObj.cardLoaders['Español'] = () ->
         'Advanced Ailerons':
             name: "Alerones avanzados"
             ship: "Segador TIE"
-            text: '''<span class="card-restriction">Sólo Segador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT%3) y (%BANKRIGHT%3) se consideran blancas.%LINEBREAK% Inmediatamente después de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra (%BANKLEFT%1), (%STRAIGHT%1) o (%BANKRIGHT%1) de color blanco.'''
+            text: '''<span class="card-restriction">Sólo Segador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT% 3) y (%BANKRIGHT% 3) se consideran blancas.%LINEBREAK% Inmediatamente después de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1) de color blanco.'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
