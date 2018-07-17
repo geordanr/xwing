@@ -93,6 +93,8 @@ exportObj.translations['Español'] =
         "Resistance Bomber Expansion Pack": "Pack de Expansión Bombardero de la Resistencia"
         "Phantom II Expansion Pack": "Pack de Expansión Fantasma II"
         "Kimogila Fighter Expansion Pack": "Pack de Expansión Caza M12-L Kimogila"
+        "Saw's Renegades Expansion Pack": "Pack de Expansión Renegados de Saw"
+        "TIE Reaper Expansion Pack": "Pack de Expansión Segador TIE"
     ui:
         shipSelectorPlaceholder: "Selecciona una nave"
         pilotSelectorPlaceholder: "Selecciona un piloto"
@@ -209,6 +211,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip 'TIE Aggressor', 'TIE Agresor'
     exportObj.renameShip 'TIE Silencer', 'Silenciador TIE'
     exportObj.renameShip 'Alpha-class Star Wing', 'Ala Estelar clase Alfa'
+    exportObj.renameShip 'TIE Reaper', 'Segador TIE'
     exportObj.renameShip 'A-Wing', 'Ala-A'
     exportObj.renameShip 'B-Wing', 'Ala-B'
     exportObj.renameShip 'E-Wing', 'Ala-E'
@@ -1058,6 +1061,9 @@ exportObj.cardLoaders['Español'] = () ->
         'Thweek':
             ship: 'Víbora Estelar'
             text: '''Durante la preparación de la partida, antes del paso "Desplegar fuerzas", puedes elegir 1 nave enemiga y asignarle la carta de Estado "Vigilado" o "Imitado".'''
+        'Black Sun Assassin':
+            name: "Asesino del Sol Negro"
+            ship: 'Víbora Estelar'
         'Captain Jostero':
             name: "Capitán Jostero"
             ship: "Caza Kihraxz"
@@ -1129,21 +1135,47 @@ exportObj.cardLoaders['Español'] = () ->
             name: 'Piloto de pruebas "Apagón"'
             ship: "Silenciador TIE"
             text: '''Cuando ataques, si el ataque está obstruido, el defensor tira 2 dados de defensa menos (hasta un mínimo de 0).'''
+        'Partisan Renegade':
+            name: "Insurgente de los Partisanos"
+            ship: "Ala-U"
+        'Cavern Angels Zealot':
+            name: "Fanático de los Ángeles Cavernarios"
+            ship: "Ala-X"
         'Kullbee Sperado':
             ship: "Ala-X"
-            text: '''After you perform a boost or barrel roll action, you may flip your equipped "Servomotor S-foils" upgrade card.'''
+            text: '''Después de que realices una acción de impulso o de tonel volado, puedes darle la vuelta a la carta de Mejora "Alas móviles" que tengas equipada en tu nave.'''
         'Major Vermeil':
-            text: '''When attacking, if the defender does not have a focus or evade token, you may change one of your blank or %FOCUS% results to a %HIT% result.'''
+            name: "Mayor Vermeil"
+            ship: "Segador TIE"
+            text: '''Cuando ataques, si el defensor no tiene asignada ninguna ficha de Concentración ni de Evasión, puedes cambiar 1 de tus resultados %FOCUS% o de cara vacía por un resultado %HIT%.'''
+        '"Vizier"':
+            name: '"Visir"'
+            text: '''Después de que una nave aliada ejecute una maniobra con una velocidad de 1, si esa nave está situada a alcance 1 de ti y no se ha solapado con ninguna nave, puedes asignarle 1 de tus fichas de Concentración o Evasión.'''
+            ship: "Segador TIE"
+        'Captain Feroph':
+            name: 'Capitán Feroph'
+            ship: "Segador TIE"
+            text: '''Cuando te defiendas, si el atacante está interferido, añade 1 resultado %EVADE% a tu tirada.'''
+        'Scarif Base Pilot':
+            name: "Piloto de la base de Scarif"
+            ship: "Segador TIE"
         'Leevan Tenza':
-            text: '''After you perform a boost action, you may receive 1 stress token to receive 1 evade token.'''
+            ship: "Ala-X"
+            text: '''Después de que realices una acción de impulso, puedes recibir 1 ficha de Tensión para recibir 1 ficha de Evasión.'''
         'Saw Gerrera':
-            text: '''When a friendly ship at Range 1-2 attacks, if it is stressed or has at least 1 Damage card, it may reroll 1 attack die.'''
+            ship: "Ala-U"
+            text: '''Cuando una nave aliada que tengas a alcance 1-2 efectúe un ataque, si esa nave está bajo tensión o tiene asignada por lo menos 1 carta de Daño, puede volver a tirar 1 dado de ataque.'''
         'Benthic Two-Tubes':
-            text: '''After you perform a focus action, you may remove 1 of your focus tokens to assign it to a friendly ship at Range 1-2.'''
+            name: "Benthic Dos Tubos"
+            ship: "Ala-U"
+            text: '''Después de que realices una acción de concentración, puedes retirar 1 de tus fichas de Concentración para asignarla a una nave aliada que tengas a alcance 1-2.'''
         'Magva Yarro':
-            text: '''When another friendly ship at Range 1-2 is defending, the attacker cannot reroll more than 1 attack die.'''
+            ship: "Ala-U"
+            text: '''Cuando otra nave aliada que tengas a alcance 1-2 se defienda, el atacante no puede volver a tirar más de 1 dado de ataque.'''
         'Edrio Two-Tubes':
-            text: '''When you become the active ship during the Activation phase, if you have 1 or more focus tokens, you may perform a free action.'''
+            name: "Edrio Dos Tubos"
+            ship: "Ala-X"
+            text: '''Cuando te conviertas en la nave activa durante la fase de Activación, si tienes asignadas 1 o más fichas de Concentración, puedes realizar una acción gratuita.'''
 
     upgrade_translations =
         "Ion Cannon Turret":
@@ -1866,19 +1898,29 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Treta de los desechos"
             text: '''%SMALLSHIPONLY%%LINEBREAK%<strong>Acción:</strong> Asigna 1 ficha de Evasión a tu nave por cada obstáculo que tengas a alcance 1, hast aun máximo de 2 fichas de Evasión.'''
         'Targeting Scrambler':
-            text: '''At the start of the Planning phase, you may receive a weapons disabled token to choose a ship at Range 1-3 and assign it the "Scrambled" Condition.'''
+            name: "Interferidor de sistemas de puntería"
+            text: '''Al comienzo de la fase de Planificación, puedes recibir una ficha de Armas bloqueadas para elegir una nave que tengas a alcance 1-3 y asignarle el Estado "Sistemas interferidos".'''
         'Death Troopers':
-            text: '''After another friendly ship at range 1 becomes the defender, if you are inside the attacker's firing arc at range 1-3, the attacker receives 1 stress token.'''
+            name: "Soldados de la muerte"
+            text: '''Después de que otra nave aliada que tengas a alcance 1 se convierta en el defensor, si estás situado a alcance 1-3 del atacante y dentro de su arco de fuego, el atacante recibe 1 ficha de Tensión.'''
+        'ISB Slicer':
+            name: "Técnico en guerra electrónica de la OSI"
+            text: '''%IMPERIALONLY%%LINEBREAK%Después de que realices una acción de interferencia contra una nave enemiga, puedes elegir una nave que esté situada a alcance 1 de esa nave enemiga y no esté interferida, y asignarle 1 ficha de Interferencia.'''
+        'Tactical Officer':
+            name: "Oficial táctico"
+            text: '''%IMPERIALONLY%%LINEBREAK%Tu barra de acciones gana el icono COORDINATE.'''
         'Saw Gerrera':
-            text: '''%REBELONLY%%LINEBREAK%When attacking, you may suffer 1 damage to change all of your %FOCUS% results to %CRIT% results.'''
+            text: '''%REBELONLY%%LINEBREAK%Cuando ataques, puedes sufrir 1 de daño para cambiar todos tus resultados %FOCUS% por resultados %CRIT%.'''
         'Director Krennic':
-            text: '''During setup, before the "Place Forces" step, assign the "Optimized Prototype" condition to a friendly Galactic Empire ship with 3 or fewer shields.'''
+            text: '''Durante la preparación de la partida, antes del paso "Desplegar fuerzas", asigna el Estado "Prototipo optimizado" a una nave aliada del Imperio Galáctico que tenga un valor de Escudos igual o inferior a 3.'''
         'Magva Yarro':
-            text: '''%REBELONLY%%LINEBREAK%After defending, you may acquire a target lock on the attacker.'''
+            text: '''%REBELONLY%%LINEBREAK%Después de que te defiendas, puedes fijar como blanco al atacante.'''
         'Renegade Refit':
-            text: '''<span class="card-restriction">T-65 X-Wing and U-Wing only.</span>%LINEBREAK%You can equip up to two different Modification upgrades.%LINEBREAK%The squad point cost of each of your equipped %ELITE% upgrades is reduced by 1 (to a minimum of 0).'''
+            name: "Reequipado por los Renegados"
+            text: '''<span class="card-restriction">Sólo T-65 Ala-X y Ala-U.</span>%LINEBREAK%Te puedes equipar con un máximo de 2 mejoras de Modificación distintas.%LINEBREAK%El coste en puntos de escuadrón de cada una de las mejoras %ELITE% que tengas equipadas en tu nave se reduce en 1 (hasta un mínimo de 0).'''
         'Thrust Corrector':
-            text: '''When defending, if you have 3 or fewer stress tokens, you may receive 1 stress token to cancel all of your dice results.  If you do, add 1 %EVADE% result to your roll.  Your dice cannot be modified again during this attack.%LINEBREAK%You can equip this Upgrade only if your hull value is "4" or lower.'''
+            name: "Corrector de empuje"
+            text: '''Cuando te defiendas, si no tienes asignadas más de 3 fichas de Tensión, puedes recibir 1 ficha de Tensión para anular todos los resultados de tus dados. Si lo haces, añade 1 resultado %EVADE% a tu tirada. No podrás volver a modificar tus dados durante este ataque.%LINEBREAK%Sólo puedes equipar esta Mejora en naves con una puntuación de Casco 4 o inferior.'''
 
     modification_translations =
         "Stealth Device":
@@ -1986,9 +2028,11 @@ exportObj.cardLoaders['Español'] = () ->
             ship: "Bombardero B/SF-17"
             text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando una bomba aliada se detone, puedes elegir no sufrir sus efectos. Si lo haces, tira un dado de ataque. Si sacas %HIT%, descarta esta carta.'''
         'Servomotor S-Foils':
-            text: '''<span class="card-restriction">T-65 X-Wing only.</span> %DUALCARD%%LINEBREAK%<strong>Side A (Attack):</strong>Your action bar gains %BARRELROLL%.  If you are not stressed, when you reveal a (%TURNLEFT% 3) or (3 %TURNRIGHT%) maneuver, you may treat it as a red (%TROLLLEFT% 3) or (%TROLLRIGHT% 3) in the same direction.%LINEBREAK%At the start of the Activation phase, you may flip this card.%LINEBREAK%<strong>Side B (Closed):</strong>Reduce your primary attack value by 1.  Your action bar gains %BOOST%.  Treat your (%BANKLEFT% 2) and (%BANKRIGHT% 2 ) as green.%LINEBREAK%At the start of the Activation phase, you may flip this card.'''
+            name: "Alas móviles"
+            text: '''<span class="card-restriction">Sólo T-65 Ala-X.</span> %DUALCARD%%LINEBREAK%<strong>Cara A (Ataque):</strong>Tu barra de acciones gana el icono %BARRELROLL%.  Si no estás bajo tensión, cuando reveles una maniobra (%TURNLEFT% 3) o (%TURNRIGHT% 3), puedes considerarla como si fuera una maniobra roja (%TROLLLEFT% 3) o (%TROLLRIGHT% 3) con la misma dirección.%LINEBREAK%Al comienzo de la fase de Activación, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerrada):</strong>Tu valor de Armamento principal se reduce en 1. Tu barra de acciones gana el icono %BOOST%.  Tus maniobras (%BANKLEFT% 2) y (%BANKRIGHT% 2 ) se consideran verdes.%LINEBREAK%Al comienzo de la fase de Activacion, puedes darle la vuelta a esta carta.'''
         'Multi-spectral Camouflage':
-            text: '''%SMALLSHIPONLY%%LINEBREAK%After you receive a red target lock token, if you have only 1 red target lock token, roll 1 defense die.  On an %EVADE% result, remove 1 red target lock token.'''
+            name: "Camuflaje multiespectral"
+            text: '''%SMALLSHIPONLY%%LINEBREAK%Después de que recibas una ficha roja de Blanco fijado, si sólo tienes asignada 1 ficha roja de Blanco fijado, tira 1 dado de defensa. Si obtienes un resultado %EVADE%, retira esa ficha roja de Blanco fijado.'''
 
     title_translations =
         "Slave I":
@@ -2211,6 +2255,10 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Formación de fuego cruzado"
             ship: "Bombardero B/SF-17"
             text: '''<span class="card-restriction">Sólo bombardero B/SF-17.</span>%LINEBREAK%Cuando te defiendas, si hay por lo menos 1 otra nave aliada de la Reistencia situada a alcance 1-2 del atacante, puedes añadir 1 resultado %FOCUS% a tu tirada.'''
+        'Advanced Ailerons':
+            name: "Alerones avanzados"
+            ship: "Segador TIE"
+            text: '''<span class="card-restriction">Sólo Segador TIE.</span>%LINEBREAK%Tus maniobras (%BANKLEFT% 3) y (%BANKRIGHT% 3) se consideran blancas.%LINEBREAK%Inmediatamente antes de revelar tu selector de maniobras, si no estás bajo tensión, debes ejecutar una manibora blanca (%BANKLEFT% 1), (%STRAIGHT% 1) o (%BANKRIGHT% 1).'''
 
     condition_translations =
         '''I'll Show You the Dark Side''':
@@ -2238,8 +2286,10 @@ exportObj.cardLoaders['Español'] = () ->
             name: "Estremecido"
             text: '''Cuando sufras daño normal o daño crítico causado por una bomba, sufres 1 punto adicional de daño crítico. Luego, retira esta carta%LINEBREAK%<strong>Acción:</strong> Tira 1 dado de ataque. Si sacas %FOCUS% o %HIT%, retira esta carta.'''
         'Scrambled':
-            text: '''When attacking a ship at Range 1 that is equipped with the "Targeting Scrambler" upgrade, you cannot modify attack dice.%LINEBREAK%At the end of the combat phase, remove this card.'''
+            name: "Sistemas interferidos"
+            text: '''Cuando ataques a una nave que tengas a alcance 1 y esté equipada con la mejora "Interferidor de sistemas de puntería", no puedes modificar tus dados de ataque.%LINEBREAK%Al final de la fase de Combate, retira esta carta.'''
         'Optimized Prototype':
-            text: '''Increase your shield value by 1.%LINEBREAK%Once per round, when performing a primary weapon attack, you may spend 1 die result to remove 1 shield from the defender.%LINEBREAK%After you perform a primary weapon attack, a friendly ship at Range 1-2 equipped with the "Director Krennic" Upgrade card may acquire a target lock on the defender.'''
+            name: "Prototipo optimizado"
+            text: '''Tu valor de Escudos se incrementa en 1.%LINEBREAK%Una vez por ronda, cuando efectúes un ataque con tu armamento principal, puedes gastar 1 resultado de dado para retirar 1 ficha de Escudos del defensor.%LINEBREAK%Después de que efectúes un ataque con tu armamento principal, una nave aliada que tengas a alcance 1-2 y esté equipada con la carta de Mejora "Director Krennic" puede fijar como blanco al defensor.'''
 
     exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations
