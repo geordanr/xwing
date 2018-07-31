@@ -1167,6 +1167,7 @@ exportObj.basicCardData = ->
                 "Elite"
                 "Torpedo"
                 "Astromech"
+                "Configuration"
             ]
         }
         {
