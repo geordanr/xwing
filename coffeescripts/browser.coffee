@@ -86,6 +86,15 @@ class exportObj.CardBrowser
                                     <tr class="info-attack">
                                         <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
                                         <td class="info-data info-attack"></td>
+                                    <tr class="info-attack-back">
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                                        <td class="info-data info-attack"></td>
+                                    <tr class="info-attack-turret">
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                                        <td class="info-data info-attack"></td>
+                                    <tr class="info-attack-doubleturret">
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                                        <td class="info-data info-attack"></td>
                                     </tr>
                                     <tr class="info-range">
                                         <td class="info-header">Range</td>
@@ -240,7 +249,16 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-skill').show()
                 @card_viewer_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                 @card_viewer_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+                
+                @card_viewer_container.find('tr.info-attack-back td.info-data').text(ship.attackb)
+                @card_viewer_container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
+                @card_viewer_container.find('tr.info-attack-doubleturret td.info-data').text(ship.attackdt)
 
+                @card_viewer_container.find('tr.info-attack-back td.info-data').toggle(ship.attackb?)
+                @card_viewer_container.find('tr.info-attack-turret td.info-data').toggle(ship.attackt?)
+                @card_viewer_container.find('tr.info-attack-doubleturret td.info-data').toggle(ship.attackdt?)
+            
+                
                 for cls in @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
                     @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
                 @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
@@ -254,10 +272,19 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-hull').show()
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
+
+                @card_viewer_container.find('tr.info-force td.info-data').text(data.ship_override?.shields)
+                @card_viewer_container.find('tr.info-force').toggle(data.ship_override?.shields?)
+                
                 @card_viewer_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
-                @card_viewer_container.find('tr.info-actions-red td.info-data-red').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actionsred).join(', ')
+
+                if ships[data.ship].actionsred?
+                    @card_viewer_container.find('tr.info-actions-red td.info-data-red').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actionsred).join(', ')
+                    @card_viewer_container.find('tr.info-actions-red').show()
+                else
+                    @card_viewer_container.find('tr.info-actions-red').hide()
+
                 @card_viewer_container.find('tr.info-actions').show()
-                @card_viewer_container.find('tr.info-actions-red').toggle(ships[data.ship].actionsred?)
                 @card_viewer_container.find('tr.info-upgrades').show()
                 @card_viewer_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
             else

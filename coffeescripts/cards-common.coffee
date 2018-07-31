@@ -1016,13 +1016,15 @@ exportObj.basicCardData = ->
             id: 5
             unique: true
             ship: "X-Wing"
-            skill: 8
-            points: 28
+            skill: 5
+            points: 62
             slots: [
-                "Elite"
                 "Torpedo"
                 "Astromech"
+                "Configuration"
             ]
+            ship_override:
+                force: 2
         }
         {
             name: "Gray Squadron Pilot"
