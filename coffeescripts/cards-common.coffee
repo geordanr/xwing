@@ -99,7 +99,6 @@ exportObj.basicCardData = ->
             actionsred: [
                 "Boost"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 1, 2, 1, 0, 0, 0, 0]
@@ -185,7 +184,6 @@ exportObj.basicCardData = ->
             actionsred: [
                 "Reinforce"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
@@ -384,7 +382,6 @@ exportObj.basicCardData = ->
                 "Barrel Roll"
             ]
             large: true
-            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 1, 2, 2, 2, 1, 0]
@@ -409,7 +406,6 @@ exportObj.basicCardData = ->
                 "Coordinate"
             ]
             large: true
-            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 3, 2, 2, 2, 3, 0]
@@ -533,7 +529,6 @@ exportObj.basicCardData = ->
                 "Rotate Arc"
                 "Reload"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -659,7 +654,6 @@ exportObj.basicCardData = ->
             actionsred: [
                 "Barrel Roll"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 1, 2, 2, 1, 3, 0, 0, 0 ]
@@ -682,7 +676,6 @@ exportObj.basicCardData = ->
             actionsred: [
                 "Barrel Roll"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -877,7 +870,6 @@ exportObj.basicCardData = ->
         "M12-L Kimogila Fighter":
             name: "M12-L Kimogila Fighter"
             factions: ["Scum and Villainy"]
-            attack_icon: 'xwing-miniatures-font-attack-bullseye'
             attack: 3
             agility: 1
             hull: 7
@@ -909,7 +901,6 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Coordinate"
             ]
-            attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                 [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0]
@@ -1672,7 +1663,7 @@ exportObj.basicCardData = ->
                 "illicit"
             ]
             ship_override:
-                Charge: 1
+                charge: 1
         }
         {
             name: "Outer Rim Smuggler"
@@ -3514,7 +3505,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Scum and Villainy"
             ship: "Z-95 Headhunter"
-            skill: 0
+            skill: 1
             points: 6
             slots: [
                 "Missile"
