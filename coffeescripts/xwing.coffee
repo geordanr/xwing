@@ -683,19 +683,19 @@ class exportObj.SquadBuilder
                             <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-attack">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-back">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-turret">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-doubleturret">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-attack"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
@@ -715,7 +715,7 @@ class exportObj.SquadBuilder
                             <td class="info-data info-shields"></td>
                         </tr>
                         <tr class="info-force">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i></td>
                             <td class="info-data info-force"></td>
                         </tr>
                         <tr class="info-actions">
@@ -1536,8 +1536,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill').show()
 
                     for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
-                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-attack')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-frontarc')
 
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
                     @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
@@ -1606,8 +1606,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack-doubleturret').toggle(ship.attackdt?)
                     
                     for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
-                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-frontarc')
 
                     @info_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
                     @info_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
@@ -1654,8 +1654,8 @@ class exportObj.SquadBuilder
                     if data.attack?
                         # Attack icons on upgrade cards don't get special icons
                         for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                            @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
-                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-attack')
+                            @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-frontarc')
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
                     else
@@ -1665,6 +1665,10 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-range').show()
                     else
                         @info_container.find('tr.info-range').hide()
+                    
+                    @info_container.find('tr.info-force td.info-data').text(data.ship_override?.force)
+                    @info_container.find('tr.info-force').toggle(data.ship_override?.force?)
+                    
                     @info_container.find('tr.info-agility').hide()
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
@@ -1717,9 +1721,9 @@ class exportObj.SquadBuilder
                         when 'Title'
                             available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
                             addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
-                        when 'Modification'
-                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
-                            addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
+                        #when 'Modification'
+                        #    available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                        #    addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
                         else
                             throw new Error("Invalid addon type #{addon.type}")
 
@@ -2453,7 +2457,7 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>"""
                 when 'Cloak'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>"""
-                when 'SLAM'
+                when 'Slam'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>"""
                 when 'Rotate Arc'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
@@ -2463,7 +2467,7 @@ class Ship
                     """<span>&nbsp;#{action}<span>"""
         action_bar = action_icons.join ' '
 
-        attack_icon = @data.attack_icon ? 'xwing-miniatures-font-attack'
+        attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
             <i class="xwing-miniatures-font #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
@@ -2494,6 +2498,8 @@ class Ship
                     <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
                     <i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>
                     <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>
+                    <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @data.force), effective_stats, 'force')}</span>
                     &nbsp;
                     #{action_bar}
                 </div>
@@ -3102,7 +3108,7 @@ class GenericAddon
                 <div class="upgrade-attack">
                     <span class="upgrade-attack-range">#{@data.range}</span>
                     <span class="info-data info-attack">#{@data.attack}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-attack"></i>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>
                 </div>
             """ else ''
 
@@ -3235,26 +3241,27 @@ class exportObj.Upgrade extends GenericAddon
                     more: false
                     results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
 
-class exportObj.Modification extends GenericAddon
-    constructor: (args) ->
-        super args
-        @type = 'Modification'
-        @dataById = exportObj.modificationsById
-        @dataByName = exportObj.modificationsByLocalizedName
-        @serialization_code = 'M'
+#Temporarily removed modifications as they are now upgrades                    
+#class exportObj.Modification extends GenericAddon
+#    constructor: (args) ->
+#        super args
+#        @type = 'Modification'
+#        @dataById = exportObj.modificationsById
+#        @dataByName = exportObj.modificationsByLocalizedName
+#        @serialization_code = 'M'
 
-        @setupSelector()
+#        @setupSelector()
 
-    setupSelector: ->
-        super
-            width: '50%'
-            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder')
-            allowClear: true
-            query: (query) =>
-                @ship.builder.checkCollection()
-                query.callback
-                    more: false
-                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term, @filter_func)
+#    setupSelector: ->
+#        super
+#            width: '50%'
+#            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder')
+#            allowClear: true
+#            query: (query) =>
+#                @ship.builder.checkCollection()
+#                query.callback
+#                    more: false
+#                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term, @filter_func)
 
 class exportObj.Title extends GenericAddon
     constructor: (args) ->

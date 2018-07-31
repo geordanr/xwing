@@ -112,6 +112,10 @@ class exportObj.CardBrowser
                                         <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i></td>
                                         <td class="info-data info-shields"></td>
                                     </tr>
+                                    <tr class="info-force">
+                                        <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i></td>
+                                        <td class="info-data info-force"></td>
+                                    </tr>
                                     <tr class="info-actions">
                                         <td class="info-header">Actions</td>
                                         <td class="info-data"></td>
@@ -273,8 +277,8 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
 
-                @card_viewer_container.find('tr.info-force td.info-data').text(data.ship_override?.shields)
-                @card_viewer_container.find('tr.info-force').toggle(data.ship_override?.shields?)
+                @card_viewer_container.find('tr.info-force td.info-data').text(data.ship_override?.force)
+                @card_viewer_container.find('tr.info-force').toggle(data.ship_override?.force?)
                 
                 @card_viewer_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
 

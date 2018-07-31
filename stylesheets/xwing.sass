@@ -83,7 +83,7 @@ td.info-header
 i.xwing-miniatures-font
   color: black
 
-i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye
+i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-doublearcturret, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc 
   @extend .card-icon
   color: $attack_color
 
@@ -110,6 +110,12 @@ i.xwing-miniatures-font-shield
   color: $shields_color
   padding: 2px 3px 4px 3px
 
+i.xwing-miniatures-font-forcepower
+  @extend .card-icon
+  color: $shields_color
+  padding: 2px 3px 4px 3px
+
+
 .info-data.info-attack
   @extend .card-stat
   color: $attack_color
@@ -127,6 +133,11 @@ i.xwing-miniatures-font-shield
   color: $hull_color
 
 .info-data.info-shields
+  @extend .card-stat
+  color: $shields_color
+  padding: 2px
+
+.info-data.info-force
   @extend .card-stat
   color: $shields_color
   padding: 2px
