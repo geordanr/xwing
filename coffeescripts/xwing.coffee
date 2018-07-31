@@ -706,6 +706,10 @@ class exportObj.SquadBuilder
                             <td class="info-header">Actions</td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-actions-red">
+                            <td></td>
+                            <td class="info-data-red"></td>
+                        </tr>
                         <tr class="info-upgrades">
                             <td class="info-header">Upgrades</td>
                             <td class="info-data"></td>
@@ -1531,7 +1535,9 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
+                    @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', actionsred}</strong>" for action in extra_actions_red))).join ', '
                     @info_container.find('tr.info-actions').show()
+                    @info_container.find('tr.info-actions-red').toggle(ships[data.ship].actionsred?)
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
@@ -1568,7 +1574,9 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
                     @info_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')
+                    @info_container.find('tr.info-actions-red td.info-data-red').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actionsred)).join(', ')
                     @info_container.find('tr.info-actions').show()
+                    @info_container.find('tr.info-actions-red').toggle(ships[data.ship].actionsred?)
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
@@ -1607,6 +1615,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
                     @info_container.find('tr.info-actions').hide()
+                    @info_container.find('tr.info-actions-red').hide()
                     @info_container.find('tr.info-upgrades').hide()
                     @info_container.find('p.info-maneuvers').hide()
             @info_container.show()

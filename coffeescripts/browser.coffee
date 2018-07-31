@@ -107,6 +107,10 @@ class exportObj.CardBrowser
                                         <td class="info-header">Actions</td>
                                         <td class="info-data"></td>
                                     </tr>
+                                    <tr class="info-actions-red">
+                                        <td></td>
+                                        <td class="info-data-red"></td>
+                                    </tr>
                                     <tr class="info-upgrades">
                                         <td class="info-header">Upgrades</td>
                                         <td class="info-data"></td>
@@ -251,7 +255,9 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
                 @card_viewer_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
+                @card_viewer_container.find('tr.info-actions-red td.info-data-red').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actionsred).join(', ')
                 @card_viewer_container.find('tr.info-actions').show()
+                @card_viewer_container.find('tr.info-actions-red').toggle(ships[data.ship].actionsred?)
                 @card_viewer_container.find('tr.info-upgrades').show()
                 @card_viewer_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
             else
@@ -278,6 +284,7 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-hull').hide()
                 @card_viewer_container.find('tr.info-shields').hide()
                 @card_viewer_container.find('tr.info-actions').hide()
+                @card_viewer_container.find('tr.info-actions-red').hide()
                 @card_viewer_container.find('tr.info-upgrades').hide()
 
         @card_viewer_container.show()

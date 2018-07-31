@@ -26,33 +26,38 @@ exportObj.basicCardData = ->
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 2
-            hull: 3
+            hull: 4
             shields: 2
             actions: [
                 "Focus"
                 "Target Lock"
+                "Barrel Roll"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 0, 2, 2, 2, 0, 0]
-              [ 1, 1, 2, 1, 1, 0]
-              [ 1, 1, 1, 1, 1, 0]
-              [ 0, 0, 1, 0, 0, 3]
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
+              [ 1, 1, 1, 1, 1, 0, 0, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
         "Y-Wing":
             name: "Y-Wing"
             factions: [ "Rebel Alliance", "Scum and Villainy", ]
             attack: 2
             agility: 1
-            hull: 5
-            shields: 3
+            hull: 6
+            shields: 2
             actions: [
                 "Focus"
                 "Target Lock"
             ]
+            actionsred: [
+                "Barrel Roll"
+                "Reload"
+            ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
-              [ 0, 1, 2, 1, 0, 0]
+              [ 0, 2, 2, 2, 0, 0]
               [ 1, 1, 2, 1, 1, 0]
               [ 3, 1, 1, 1, 3, 0]
               [ 0, 0, 3, 0, 0, 3]
@@ -66,36 +71,41 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "Target Lock"
-                "Boost"
                 "Evade"
+                "Target Lock"
+                "Barrel Roll"
+                "Boost"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 1, 0, 0, 0, 1, 0]
-              [ 2, 2, 2, 2, 2, 0]
-              [ 1, 1, 2, 1, 1, 3]
-              [ 0, 0, 2, 0, 0, 0]
-              [ 0, 0, 2, 0, 0, 3]
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 0, 0, 0]
+              [ 2, 2, 2, 2, 2, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 3, 3]
+              [ 0, 0, 2, 0, 0, 0, 0, 0]
+              [ 0, 0, 2, 0, 0, 5, 0, 0]
             ]
         "YT-1300":
             name: "YT-1300"
             factions: [ "Rebel Alliance", "Resistance" ]
-            attack: 2
+            attackdt: 3
             agility: 1
-            hull: 6
-            shields: 4
+            hull: 8
+            shields: 5
             actions: [
                 "Focus"
                 "Target Lock"
+                "Rotate Arc"
+            ]
+            actionsred: [
+                "Boost"
             ]
             attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 1, 2, 2, 2, 1, 0]
-              [ 1, 1, 2, 1, 1, 0]
-              [ 0, 1, 1, 1, 0, 3]
-              [ 0, 0, 1, 0, 0, 3]
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 1, 2, 1, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0]
             ]
             large: true
         "TIE Fighter":
@@ -126,18 +136,17 @@ exportObj.basicCardData = ->
             hull: 3
             shields: 2
             actions: [
-                "Focus"
+                "Focus > Barrel Roll"
                 "Target Lock"
                 "Barrel Roll"
-                "Evade"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 0, 2, 0, 2, 0, 0]
-              [ 1, 1, 2, 1, 1, 0]
-              [ 1, 1, 2, 1, 1, 0]
-              [ 0, 0, 1, 0, 0, 3]
-              [ 0, 0, 1, 0, 0, 0]
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 2, 1, 2, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
@@ -153,62 +162,76 @@ exportObj.basicCardData = ->
                 "Evade"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 1, 0, 0, 0, 1, 0]
-              [ 2, 2, 2, 2, 2, 0]
-              [ 1, 1, 2, 1, 1, 3]
-              [ 0, 0, 2, 0, 0, 0]
-              [ 0, 0, 1, 0, 0, 3]
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 0, 0, 0]
+              [ 2, 2, 2, 2, 2, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 3, 3]
+              [ 0, 0, 2, 0, 0, 3, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0]
             ]
         "Firespray-31":
             name: "Firespray-31"
-            factions: [ "Galactic Empire", "Scum and Villainy", ]
+            factions: [ "Scum and Villainy", ]
             attack: 3
+            attackb: 3
             agility: 2
             hull: 6
             shields: 4
             actions: [
                 "Focus"
                 "Target Lock"
-                "Evade"
+                "Boost"
+            ]
+            actionsred: [
+                "Reinforce"
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 0, 2, 2, 2, 0, 0]
-              [ 1, 1, 2, 1, 1, 0]
-              [ 1, 1, 1, 1, 1, 3]
-              [ 0, 0, 1, 0, 0, 3]
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0]
+              [ 0, 1, 2, 1, 0, 0, 0, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
             large: true
         "HWK-290":
             name: "HWK-290"
             factions: [ "Rebel Alliance", "Scum and Villainy", ]
-            attack: 1
+            attackt: 2
             agility: 2
-            hull: 4
-            shields: 1
+            hull: 3
+            shields: 2
             actions: [
-                "Focus"
-                "Target Lock"
+                "Focus > Rotate Arc"
+                "Target Lock > Rotate Arc"
+                "Rotate Arc"
+            ]
+            actionsred: [
+                "Boost"
+                "Jam"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0]
+              [ 0, 0, 3, 0, 0]
               [ 0, 2, 2, 2, 0]
               [ 1, 1, 2, 1, 1]
-              [ 0, 3, 1, 3, 0]
+              [ 3, 1, 1, 1, 3]
               [ 0, 0, 3, 0, 0]
             ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
             factions: [ "Galactic Empire", ]
             attack: 3
+            attackb: 2
             agility: 1
-            hull: 5
-            shields: 5
+            hull: 6
+            shields: 4
             actions: [
                 "Focus"
-                "Target Lock"
+                "Coordinate"
+                "Reinforce"
+            ]
+            actionsred: [
+                "Jam"
             ]
             maneuvers: [
               [ 0, 0, 3, 0, 0]
@@ -222,19 +245,19 @@ exportObj.basicCardData = ->
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 1
-            hull: 3
-            shields: 5
+            hull: 4
+            shields: 4
             actions: [
-                "Focus"
+                "Focus > Barrel Roll"
                 "Target Lock"
                 "Barrel Roll"
             ]
             maneuvers: [
-              [ 0, 0, 0, 0, 0, 0]
-              [ 3, 2, 2, 2, 3, 0]
-              [ 1, 1, 2, 1, 1, 3]
-              [ 0, 3, 1, 3, 0, 0]
-              [ 0, 0, 3, 0, 0, 0]
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 3, 2, 2, 2, 3, 0, 0, 0, 3, 3]
+              [ 1, 1, 2, 1, 1, 3, 0, 0, 0, 0]
+              [ 0, 3, 1, 3, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
             ]
         "TIE Bomber":
             name: "TIE Bomber"
@@ -246,37 +269,18 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll"
+                "Barrel Roll > Target Lock"
+            ]
+            actionsred: [
+                "Reload"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 0, 1, 2, 1, 0, 0]
-              [ 3, 2, 2, 2, 3, 0]
-              [ 1, 1, 2, 1, 1, 0]
+              [ 1, 2, 2, 2, 1, 0]
+              [ 1, 1, 2, 1, 1, 3]
               [ 0, 0, 1, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 3]
-            ]
-        "GR-75 Medium Transport":
-            name: "GR-75 Medium Transport"
-            factions: [ "Rebel Alliance", ]
-            energy: 4
-            agility: 0
-            hull: 8
-            shields: 4
-            actions: [
-                "Recover"
-                "Reinforce"
-                "Coordinate"
-                "Jam"
-            ]
-            huge: true
-            epic_points: 2
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
             ]
         "Z-95 Headhunter":
             name: "Z-95 Headhunter"
@@ -288,13 +292,17 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
+                "Barrel Roll"
+            ]
+            actionsred: [
+                "Barrel Roll"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
               [ 0, 1, 2, 1, 0, 0]
               [ 1, 2, 2, 2, 1, 0]
               [ 1, 1, 1, 1, 1, 3]
-              [ 0, 0, 1, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3]
             ]
         "TIE Defender":
             name: "TIE Defender"
@@ -302,16 +310,18 @@ exportObj.basicCardData = ->
             attack: 3
             agility: 3
             hull: 3
-            shields: 3
+            shields: 4
             actions: [
                 "Focus"
+                "Evade"
                 "Target Lock"
                 "Barrel Roll"
+                "Boost"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0]
-              [ 3, 1, 0, 1, 3, 0]
-              [ 3, 1, 2, 1, 3, 0]
+              [ 3, 2, 0, 2, 3, 0]
+              [ 3, 1, 2, 1, 3, 3]
               [ 1, 1, 2, 1, 1, 0]
               [ 0, 0, 2, 0, 0, 1]
               [ 0, 0, 2, 0, 0, 0]
@@ -321,101 +331,56 @@ exportObj.basicCardData = ->
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 3
-            hull: 2
+            hull: 3
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
-                "Barrel Roll"
                 "Evade"
+                "Target Lock"
+                "Barrel Roll > Target Lock"
+                "Boost > Target Lock"
             ]
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 2, 1, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0 ]
-                [ 1, 1, 2, 1, 1, 3 ]
-                [ 0, 0, 1, 0, 0, 3 ]
-                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 3, 3 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
             ]
         "TIE Phantom":
             name: "TIE Phantom"
             factions: [ "Galactic Empire", ]
-            attack: 4
+            attack: 3
             agility: 2
-            hull: 2
+            hull: 3
             shields: 2
             actions: [
                 "Focus"
-                "Barrel Roll"
                 "Evade"
+                "Barrel Roll"
                 "Cloak"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
-                [ 1, 0, 0, 0, 1, 0]
+                [ 1, 1, 0, 1, 1, 0]
                 [ 1, 2, 2, 2, 1, 0]
                 [ 1, 1, 2, 1, 1, 3]
                 [ 0, 0, 1, 0, 0, 3]
             ]
-        "CR90 Corvette (Fore)":
-            name: "CR90 Corvette (Fore)"
-            factions: [ "Rebel Alliance", ]
-            attack: 4
-            agility: 0
-            hull: 8
-            shields: 5
-            actions: [
-                "Coordinate"
-                "Target Lock"
-            ]
-            huge: true
-            epic_points: 1.5
-            attack_icon: 'xwing-miniatures-font-attack-turret'
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0]
-                [ 0, 1, 0, 1, 0, 0]
-                [ 0, 1, 1, 1, 0, 0]
-                [ 0, 0, 1, 0, 0, 0]
-                [ 0, 0, 1, 0, 0, 0]
-            ]
-            multisection: [
-                "CR90 Corvette (Aft)".canonicalize()
-            ]
-            canonical_name: "CR90 Corvette".canonicalize()
-        "CR90 Corvette (Aft)":
-            name: "CR90 Corvette (Aft)"
-            factions: [ "Rebel Alliance", ]
-            energy: 5
-            agility: 0
-            hull: 8
-            shields: 3
-            actions: [
-                "Reinforce"
-                "Recover"
-            ]
-            huge: true
-            epic_points: 1.5
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0]
-                [ 0, 1, 0, 1, 0, 0]
-                [ 0, 1, 1, 1, 0, 0]
-                [ 0, 0, 1, 0, 0, 0]
-                [ 0, 0, 1, 0, 0, 0]
-            ]
-            multisection: [
-                "CR90 Corvette (Fore)".canonicalize()
-            ]
-            canonical_name: "CR90 Corvette".canonicalize()
         "YT-2400":
             name: "YT-2400"
             factions: [ "Rebel Alliance", ]
-            attack: 2
+            attackdt: 4
             agility: 2
-            hull: 5
-            shields: 5
+            hull: 6
+            shields: 4
             actions: [
                 "Focus"
                 "Target Lock"
+                "Rotate Arc"
+            ]
+            actionsred: [
                 "Barrel Roll"
             ]
             large: true
@@ -430,21 +395,26 @@ exportObj.basicCardData = ->
         "VT-49 Decimator":
             name: "VT-49 Decimator"
             factions: [ "Galactic Empire", ]
-            attack: 3
+            attackdt: 3
             agility: 0
             hull: 12
             shields: 4
             actions: [
                 "Focus"
                 "Target Lock"
+                "Reinforce"
+                "Rotate Arc"
+            ]
+            actionsred: [
+                "Coordinate"
             ]
             large: true
             attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
-                [ 0, 1, 1, 1, 0, 0]
-                [ 1, 2, 2, 2, 1, 0]
+                [ 3, 2, 2, 2, 3, 0]
                 [ 1, 1, 2, 1, 1, 0]
+                [ 1, 1, 1, 1, 1, 0]
                 [ 0, 0, 1, 0, 0, 0]
             ]
         "StarViper":
@@ -457,13 +427,13 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll"
-                "Boost"
+                "Barrel Roll > Focus"
+                "Boost > Focus"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0]
                 [ 1, 2, 2, 2, 1, 0, 0, 0]
-                [ 1, 1, 2, 1, 1, 0, 0, 0]
+                [ 1, 2, 2, 2, 1, 0, 0, 0]
                 [ 0, 1, 2, 1, 0, 0, 3, 3]
                 [ 0, 0, 1, 0, 0, 0, 0, 0]
             ]
@@ -472,34 +442,34 @@ exportObj.basicCardData = ->
             factions: [ "Scum and Villainy" ]
             attack: 2
             agility: 3
-            hull: 2
+            hull: 3
             shields: 1
             actions: [
                 "Focus"
+                "Evade"
                 "Target Lock"
                 "Barrel Roll"
-                "Evade"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 1, 2, 0, 2, 1, 0 ]
-                [ 1, 2, 2, 2, 1, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
                 [ 0, 1, 2, 1, 0, 3 ]
                 [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 0, 0, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 3 ]
             ]
         "Aggressor":
             name: "Aggressor"
             factions: [ "Scum and Villainy" ]
             attack: 3
             agility: 3
-            hull: 4
-            shields: 4
+            hull: 5
+            shields: 3
             actions: [
-                "Focus"
+                "Calculate"
+                "Evade"
                 "Target Lock"
                 "Boost"
-                "Evade"
             ]
             large: true
             maneuvers: [
@@ -507,66 +477,19 @@ exportObj.basicCardData = ->
                 [ 1, 2, 2, 2, 1, 0, 0, 0 ]
                 [ 1, 2, 2, 2, 1, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0, 3, 3 ]
-                [ 0, 0, 0, 0, 0, 3, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
             ]
-        "Raider-class Corvette (Fore)":
-            name: "Raider-class Corvette (Fore)"
-            factions: [ "Galactic Empire" ]
-            attack: 4
-            agility: 0
-            hull: 8
-            shields: 6
-            actions: [
-                "Recover"
-                "Reinforce"
-            ]
-            huge: true
-            epic_points: 1.5
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-            ]
-            multisection: [
-                "Raider-class Corvette (Aft)".canonicalize()
-            ]
-            canonical_name: "Raider-class Corvette".canonicalize()
-        "Raider-class Corvette (Aft)":
-            name: "Raider-class Corvette (Aft)"
-            factions: [ "Galactic Empire" ]
-            energy: 6
-            agility: 0
-            hull: 8
-            shields: 4
-            actions: [
-                "Coordinate"
-                "Target Lock"
-            ]
-            huge: true
-            epic_points: 1.5
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-            ]
-            multisection: [
-                "Raider-class Corvette (Fore)".canonicalize()
-            ]
-            canonical_name: "Raider-class Corvette".canonicalize()
         "YV-666":
             name: "YV-666"
             factions: [ "Scum and Villainy" ]
             attack: 3
             agility: 1
-            hull: 6
-            shields: 6
+            hull: 9
+            shields: 3
             large: true
             actions: [
                 "Focus"
+                "Reinforce"
                 "Target Lock"
             ]
             attack_icon: 'xwing-miniatures-font-attack-180'
@@ -582,31 +505,33 @@ exportObj.basicCardData = ->
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 2
-            hull: 4
+            hull: 5
             shields: 1
             actions: [
                 "Focus"
                 "Target Lock"
+                "Barrel Roll"
             ]
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 0, 2, 1, 0 ]
-                [ 1, 2, 2, 2, 1, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 3 ]
-                [ 0, 0, 0, 0, 0, 3 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 0, 2, 1, 0, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 3, 3 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
             ]
         "K-Wing":
             name: "K-Wing"
             factions: ["Rebel Alliance"]
-            attack: 2
+            attackdt: 2
             agility: 1
-            hull: 5
-            shields: 4
+            hull: 6
+            shields: 3
             actions: [
                 "Focus"
                 "Target Lock"
-                "SLAM"
+                "Slam"
+                "Rotate Arc"
+                "Reload"
             ]
             attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
@@ -625,36 +550,18 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Boost"
+                "Boost > Target Lock"
+                "Reload"
+            ]
+            actionsred: [
+                "Barrel Roll"
             ]
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
-                [ 3, 1, 2, 1, 3, 0 ]
-                [ 1, 1, 1, 1, 1, 0 ]
+                [ 1, 1, 2, 1, 1, 0 ]
+                [ 3, 1, 1, 1, 3, 0 ]
                 [ 0, 0, 0, 0, 0, 3 ]
-            ]
-        "Gozanti-class Cruiser":
-            name: "Gozanti-class Cruiser"
-            factions: ["Galactic Empire"]
-            energy: 4
-            agility: 0
-            hull: 9
-            shields: 5
-            huge: true
-            epic_points: 2 # guessing it's the same as rebel transport
-            actions: [
-                "Recover"
-                "Reinforce"
-                "Coordinate"
-                "Target Lock"
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
             ]
         "VCX-100":
             name: "VCX-100"
@@ -662,32 +569,31 @@ exportObj.basicCardData = ->
             attack: 4
             agility: 0
             hull: 10
-            shields: 6
+            shields: 4
             large: true
             actions: [
                 "Focus"
                 "Target Lock"
-                "Evade"
+                "Reinforce"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
                 [ 3, 1, 2, 1, 3, 0 ]
                 [ 1, 2, 2, 2, 1, 0 ]
                 [ 3, 1, 1, 1, 3, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 0, 0, 0, 3 ]
+                [ 0, 0, 1, 0, 0, 3 ]
             ]
         "Attack Shuttle":
             name: "Attack Shuttle"
             factions: ["Rebel Alliance"]
             attack: 3
             agility: 2
-            hull: 2
-            shields: 2
+            hull: 3
+            shields: 1
             actions: [
                 "Focus"
-                "Barrel Roll"
                 "Evade"
+                "Barrel Roll > Evade"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
@@ -706,108 +612,75 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
+                "Evade"
                 "Target Lock"
-                "Barrel Roll"
-                "Boost"
+                "Barrel Roll > Focus"
+                "Boost > Focus"
             ]
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 2, 2, 0, 2, 2, 0 ]
-                [ 1, 1, 2, 1, 1, 0 ]
-                [ 1, 1, 2, 1, 1, 0 ]
-                [ 0, 0, 2, 0, 0, 3 ]
-                [ 0, 0, 1, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 2, 2, 0, 2, 2, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
             ]
         "G-1A Starfighter":
             name: "G-1A Starfighter"
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 1
-            hull: 4
-            shields: 4
-            actions: [
-                "Focus"
-                "Target Lock"
-                "Evade"
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 3, 2, 2, 2, 3, 0 ]
-                [ 1, 1, 2, 1, 1, 0 ]
-                [ 0, 3, 2, 3, 0, 3 ]
-                [ 0, 0, 1, 0, 0, 3 ]
-            ]
-        "JumpMaster 5000":
-            name: "JumpMaster 5000"
-            factions: ["Scum and Villainy"]
-            large: true
-            attack: 2
-            agility: 2
             hull: 5
             shields: 4
             actions: [
                 "Focus"
                 "Target Lock"
+                "Jam"
+            ]
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0 ]
+                [ 1, 1, 2, 1, 1, 3 ]
+                [ 0, 3, 1, 3, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 3 ]
+            ]
+        "JumpMaster 5000":
+            name: "JumpMaster 5000"
+            factions: ["Scum and Villainy"]
+            large: true
+            attackt: 2
+            agility: 2
+            hull: 6
+            shields: 3
+            actions: [
+                "Focus > Rotate Arc"
+                "Target Lock > Rotate Arc"
+            ]
+            actionsred: [
                 "Barrel Roll"
             ]
             attack_icon: 'xwing-miniatures-font-attack-turret'
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 2, 2, 2, 1, 1, 0, 0, 0 ]
-                [ 2, 2, 2, 1, 1, 0, 1, 3 ]
-                [ 0, 1, 1, 1, 0, 0, 0, 0 ]
+                [ 1, 2, 2, 1, 3, 0, 0, 0 ]
+                [ 1, 2, 2, 1, 3, 0, 0, 0 ]
+                [ 0, 2, 2, 1, 0, 0, 3, 0 ]
                 [ 0, 0, 1, 0, 0, 3, 0, 0 ]
-            ]
-        "T-70 X-Wing":
-            name: "T-70 X-Wing"
-            factions: ["Resistance"]
-            attack: 3
-            agility: 2
-            hull: 3
-            shields: 3
-            actions: [
-                "Focus"
-                "Target Lock"
-                "Boost"
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3 ]
-                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
-            ]
-        "TIE/fo Fighter":
-            name: "TIE/fo Fighter"
-            factions: ["First Order"]
-            attack: 2
-            agility: 3
-            hull: 3
-            shields: 1
-            actions: [
-                "Focus"
-                "Target Lock"
-                "Barrel Roll"
-                "Evade"
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 0, 0, 0, 1, 0, 0, 0 ]
-                [ 2, 2, 2, 2, 2, 0, 3, 3 ]
-                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 3, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
             ]
         'ARC-170':
             name: 'ARC-170'
             factions: ["Rebel Alliance"]
-            attack: 2
+            attack: 3
+            attackb: 2
             agility: 1
             hull: 6
             shields: 3
             actions: [
                 "Focus"
                 "Target Lock"
+            ]
+            actionsred: [
+                "Barrel Roll"
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
@@ -817,26 +690,6 @@ exportObj.basicCardData = ->
                 [ 3, 1, 1, 1, 3, 0 ]
                 [ 0, 0, 3, 0, 0, 3 ]
             ]
-        'TIE/sf Fighter':
-            name: 'TIE/sf Fighter'
-            factions: ["First Order"]
-            attack: 2
-            agility: 2
-            hull: 3
-            shields: 3
-            actions: [
-                'Focus'
-                'Target Lock'
-                'Barrel Roll'
-            ]
-            attack_icon: 'xwing-miniatures-font-attack-frontback'
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 0, 0, 0 ]
-                [ 3, 1, 2, 1, 3, 0, 3, 3 ]
-                [ 0, 0, 1, 0, 0, 0, 0, 0 ]
-            ]
         'Protectorate Starfighter':
             name: 'Protectorate Starfighter'
             factions: ["Scum and Villainy"]
@@ -845,10 +698,10 @@ exportObj.basicCardData = ->
             hull: 4
             shields: 0
             actions: [
-                'Focus'
-                'Target Lock'
-                'Barrel Roll'
-                'Boost'
+                "Focus"
+                "Target Lock"
+                "Barrel Roll > Focus"
+                "Boost Focus"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -863,13 +716,14 @@ exportObj.basicCardData = ->
             factions: ["Scum and Villainy"]
             large: true
             attack: 3
+            attackt: 2
             agility: 2
-            hull: 7
-            shields: 3
+            hull: 8
+            shields: 2
             actions: [
                 'Focus'
-                'Target Lock'
                 'Evade'
+                'Target Lock'
                 'Rotate Arc'
             ]
             maneuvers: [
@@ -880,25 +734,6 @@ exportObj.basicCardData = ->
                 [ 0, 0, 2, 0, 0, 0]
                 [ 0, 0, 1, 0, 0, 3]
             ]
-        'Upsilon-class Shuttle':
-            name: 'Upsilon-class Shuttle'
-            factions: ["First Order"]
-            large: true
-            attack: 4
-            agility: 1
-            hull: 6
-            shields: 6
-            actions: [
-                'Focus'
-                'Target Lock'
-                'Coordinate'
-            ]
-            maneuvers: [
-              [ 0, 0, 3, 0, 0]
-              [ 3, 1, 2, 1, 3]
-              [ 1, 2, 2, 2, 1]
-              [ 3, 1, 1, 1, 3]
-            ]
         'Quadjumper':
             name: 'Quadjumper'
             factions: ["Scum and Villainy"]
@@ -907,13 +742,16 @@ exportObj.basicCardData = ->
             hull: 5
             shields: 0
             actions: [
-                'Barrel Roll'
-                'Focus'
+                "Barrel Roll"
+                "Focus"
+            ]
+            actionsred: [
+                "Evade"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 3, 3, 3 ]
-                [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 3, 0, 3 ]
+                [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0, 0, 3, 0 ]
                 [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
             ]
         'U-Wing':
@@ -921,12 +759,15 @@ exportObj.basicCardData = ->
             factions: ["Rebel Alliance"]
             large: true
             attack: 3
-            agility: 1
-            hull: 4
-            shields: 4
+            agility: 2
+            hull: 5
+            shields: 3
             actions: [
-                'Focus'
-                'Target Lock'
+                "Focus"
+                "Target Lock"
+            ]
+            actionsred: [
+                "Coordinate"
             ]
             maneuvers: [
                 [ 0, 0, 3, 0, 0 ]
@@ -943,36 +784,15 @@ exportObj.basicCardData = ->
             hull: 4
             shields: 0
             actions: [
-                'Focus'
-                'Barrel Roll'
-                'Evade'
+                "Focus"
+                "Evade"
+                "Barrel Roll"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 3, 3, 3 ]
+                [ 1, 2, 2, 2, 1, 3, 0, 0 ]
+                [ 1, 2, 2, 2, 1, 0, 3, 3 ]
                 [ 0, 1, 2, 1, 0, 0, 0, 0 ]
-            ]
-        "C-ROC Cruiser":
-            name: "C-ROC Cruiser"
-            factions: ["Scum and Villainy"]
-            energy: 4
-            agility: 0
-            hull: 10
-            shields: 4
-            huge: true
-            actions: [
-                "Recover"
-                "Reinforce"
-                "Target Lock"
-                "Jam"
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 1, 1, 1, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
-                [ 0, 0, 1, 0, 0, 0 ]
             ]
         'Auzituck Gunship':
             name: 'Auzituck Gunship'
@@ -982,36 +802,37 @@ exportObj.basicCardData = ->
             hull: 6
             shields: 3
             actions: [
-                'Focus'
-                'Reinforce'
+                "Focus"
+                "Reinforce"
             ]
             attack_icon: 'xwing-miniatures-font-attack-180'
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0, 0, 0 ]
                 [ 1, 1, 2, 1, 1, 0, 0, 0 ]
                 [ 1, 1, 2, 1, 1, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 3, 0, 0, 0, 0, 0 ]
             ]
         'Scurrg H-6 Bomber':
             name: 'Scurrg H-6 Bomber'
-            factions: ["Rebel Alliance", "Scum and Villainy"]
+            factions: ["Scum and Villainy"]
             attack: 3
             agility: 1
-            hull: 5
-            shields: 5
+            hull: 6
+            shields: 4
             actions: [
-                'Focus'
-                'Target Lock'
-                'Barrel Roll'
+                "Focus"
+                "Target Lock"
+                "Barrel Roll"
+            ]
+            actionsred: [
+                "Barrel Roll"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0 ]
-                [ 3, 1, 2, 1, 3, 0, 0, 0, 3, 3 ]
-                [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0 ]
+                [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
+                [ 3, 1, 1, 1, 3, 0, 0, 0, 3, 3 ]
                 [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 ]
             ]
         'TIE Aggressor':
@@ -1024,7 +845,7 @@ exportObj.basicCardData = ->
             actions: [
                 'Focus'
                 'Target Lock'
-                'Barrel Roll'
+                'Barrel Roll > Evade'
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -1041,9 +862,9 @@ exportObj.basicCardData = ->
             hull: 4
             shields: 3
             actions: [
-                'Target Lock'
                 'Focus'
-                'SLAM'
+                'Target Lock'
+                'Slam'
                 'Reload'
             ]
             maneuvers: [
@@ -1059,7 +880,7 @@ exportObj.basicCardData = ->
             attack_icon: 'xwing-miniatures-font-attack-bullseye'
             attack: 3
             agility: 1
-            hull: 6
+            hull: 7
             shields: 2
             actions: [
                 'Target Lock'
@@ -1067,10 +888,15 @@ exportObj.basicCardData = ->
                 'Barrel Roll'
                 'Reload'
             ]
+            actionsred: [
+                'Target Lock'
+                'Focus'
+                'Reload'
+            ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0]
                 [ 3, 1, 2, 1, 3, 0]
-                [ 3, 2, 2, 2, 3, 0]
+                [ 1, 2, 2, 2, 1, 0]
                 [ 1, 1, 2, 1, 1, 0]
                 [ 0, 0, 0, 0, 0, 3]
             ]
@@ -1088,51 +914,11 @@ exportObj.basicCardData = ->
             ]
             attack_icon: 'xwing-miniatures-font-attack-frontback'
             maneuvers: [
-                [ 0, 0, 0, 0, 0, 0]
-                [ 0, 1, 2, 1, 0, 0]
-                [ 1, 2, 2, 2, 1, 0]
-                [ 3, 1, 2, 1, 3, 3]
-                [ 0, 0, 3, 0, 0, 0]
-            ]
-        'B/SF-17 Bomber':
-            name: 'B/SF-17 Bomber'
-            factions: ["Resistance"]
-            large: true
-            attack: 2
-            agility: 1
-            hull: 9
-            shields: 3
-            actions: [
-                'Focus'
-                'Target Lock'
-            ]
-            attack_icon: 'xwing-miniatures-font-attack-turret'
-            maneuvers: [
-                [ 0, 0, 3, 0, 0, 0]
-                [ 3, 2, 2, 2, 3, 0]
-                [ 1, 1, 2, 1, 1, 0]
-                [ 0, 1, 1, 1, 0, 0]
-            ]
-        'TIE Silencer':
-            name: 'TIE Silencer'
-            factions: ["First Order"]
-            attack: 3
-            agility: 3
-            hull: 4
-            shields: 2
-            actions: [
-                'Focus'
-                'Barrel Roll'
-                'Boost'
-                'Target Lock'
-            ]
-            maneuvers: [
-                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-                [ 1, 0, 0, 0, 1, 0, 0, 0, 0, 0 ]
-                [ 2, 2, 2, 2, 2, 0, 0, 0, 0, 0 ]
-                [ 1, 2, 2, 2, 1, 0, 0, 0, 3, 3 ]
-                [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
-                [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0 ]
+                [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0]
+                [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+                [ 3, 1, 2, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0]
+                [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
         'TIE Reaper':
             name: 'TIE Reaper'
@@ -1146,11 +932,14 @@ exportObj.basicCardData = ->
                 'Evade'
                 'Jam'
             ]
+            actionsred: [
+                'Coordinate'
+            ]
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0, 0, 0 ]
-                [ 1, 1, 2, 1, 1, 0, 3, 3 ]
-                [ 3, 2, 2, 2, 3, 0, 0, 0 ]
-                [ 0, 3, 2, 3, 0, 0, 0, 0 ]
+                [ 3, 2, 2, 2, 3, 0, 3, 3 ]
+                [ 3, 1, 2, 1, 3, 0, 0, 0 ]
+                [ 0, 1, 2, 1, 0, 0, 0, 0 ]
             ]
 
     # name field is for convenience only
@@ -1181,6 +970,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Torpedo"
                 "Astromech"
+                "Configuration"
             ]
         }
         {
