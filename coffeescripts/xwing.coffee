@@ -1562,7 +1562,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-force td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.force ? data.data.force), effective_stats, 'force')
+                    @info_container.find('tr.info-force td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force')
                     
                     if data.pilot.ship_override?.force? or data.pilot.force?
                         @info_container.find('tr.info-force').show()
@@ -1618,8 +1618,12 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
-                    @info_container.find('tr.info-force td.info-data').text (data.ship_override?.force ? ship.force)
-                    @info_container.find('tr.info-force').toggle(data.ship_override?.force ? ship.force?)                        
+
+                    if data.ship_override?.force or data.force?
+                        @info_container.find('tr.info-force td.info-data').text (data.ship_override?.force ? data.force)
+                        @info_container.find('tr.info-force').show()
+                    else
+                        @info_container.find('tr.info-force').hide()
                     
                     @info_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')
                     
@@ -2783,7 +2787,7 @@ class Ship
             agility: @pilot.ship_override?.agility ? @data.agility
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
-            force: @pilot.ship_override?.force ? @data.force
+            force: @pilot.ship_override?.force ? @pilot.force
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
             actionsred: ((@pilot.ship_override?.actionsred ? @data.actionsred) ? "").slice 1
 
