@@ -39,7 +39,7 @@ exportObj.translations.English =
         "Modification": "Modification"
         "Gunner": "Gunner"
         "Device": "Device"
-        "Title": "TItle"
+        "Title": "Title"
     sources: # needed?
         "Core": "Core"
         "A-Wing Expansion Pack": "A-Wing Expansion Pack"
@@ -310,11 +310,11 @@ exportObj.cardLoaders.English = () ->
         '"Dutch" Vander':
            text: """After you perform the %LOCK% action, you may choose 1 friendly ship at range 1-3. That ship may acquire a lock on the object you locked, ignoring range restrictions."""
         '"Echo"':
-           text: """While you decloak, you must use the (2 %LBANK%) or (2 %RBANK%) template instead of the (2 %STRAIGHT%) template."""
+           text: """While you decloak, you must use the (2 %BANKLEFT%) or (2 %BANKRIGHT%) template instead of the (2 %STRAIGHT%) template."""
         "Edrio Two-Tubes":
            text: """Before you activate, if you are focused, you may perform an action."""
         "Emon Azzameen":
-           text: """If you would drop a device using a [1 %STRAIGHT%] template, you may use the [3 %LTURN%], [3 %STRAIGHT%], or [3 %RTURN%] template instead."""
+           text: """If you would drop a device using a [1 %STRAIGHT%] template, you may use the [3 %TURNLEFT%], [3 %STRAIGHT%], or [3 %TURNRIGHT%] template instead."""
         "Esege Tuketu":
            text: """While a friendly ship at range 0-2 defends or performs an attack, it may spend your focus tokens as if that ship has them."""
         "Evaan Verlaine":
@@ -384,7 +384,7 @@ exportObj.cardLoaders.English = () ->
         "IG-88C":
            text: """After you perform a %BOOST% action, you may perform an %EVADE% action."""
         "IG-88D":
-           text: """While you execute a Segnor's Loop (%LSLOOP% or %RSLOOP%) maneuver, you may use another template of the same speed instead: either the turn (%LTURN% or %RTURN%) of the same direction or the straight (%STRAIGHT%) template."""
+           text: """While you execute a Segnor's Loop (%LSLOOP% or %RSLOOP%) maneuver, you may use another template of the same speed instead: either the turn (%TURNLEFT% or %TURNRIGHT%) of the same direction or the straight (%STRAIGHT%) template."""
         "Imdaar Test Pilot":
            text: """The primary result of a hidden research facility on Imdaar Alpha, the TIE phantom achieves what many thought was impossible: a small starfighter equipped with an advanced cloaking device."""
         "Inaldra":
@@ -426,9 +426,9 @@ exportObj.cardLoaders.English = () ->
         "Kyle Katarn":
            text: """At the start of the Engagement Phase, you may transfer 1 of your focus tokens to a friendly ship in your firing arc."""
         "L3-37 (Escape Craft)":
-           text: """If you are not shielded, decrease the difficulty of your bank (%LBANK% and %RBANK%) maneuvers."""
+           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "L3-37 (YT-1300)":
-           text: """If you are not shielded, decrease the difficulty of your bank (%LBANK% and %RBANK%) maneuvers."""
+           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Laetin A'shera":
            text: """After you defend or perform an attack, if the attack missed, gain 1 evade token."""
         "Lando Calrissian (Scum) (Escape Craft)":
@@ -710,7 +710,7 @@ exportObj.cardLoaders.English = () ->
         "Crack Shot":
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, before the Neutralize Results step, you may spend 1 %CHARGE% to cancel 1 %EVADE% result."""
         "Daredevil":
-           text: """While you perform a while %BOOST% action, you may treat it as red to use the [1%LTURN%] or [1 %RTURN%] template instead."""
+           text: """While you perform a while %BOOST% action, you may treat it as red to use the [1%TURNLEFT%] or [1 %TURNRIGHT%] template instead."""
         "Darth Vader":
            text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1 %FORCE%. If you do, that ship suffers 1 %HIT% damage unless it chooses to remove 1 green token."""
         "Dauntless":
@@ -784,7 +784,7 @@ exportObj.cardLoaders.English = () ->
         "IG-88D":
            text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade. After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Inertial Dampeners":
-           text: """Before you would execute a maneuver, you may spend 1 shield. If you do, execute a white [0 %STATIONARY%] instead of the maneuver you revealed, then gain 1 stress token."""
+           text: """Before you would execute a maneuver, you may spend 1 shield. If you do, execute a white [0 %STOP%] instead of the maneuver you revealed, then gain 1 stress token."""
         "Informant":
            text: """Setup: After placing forces, choose 1 enemy ship and assign the Listening Device condition to it."""
         "Instinctive Aim":
@@ -816,7 +816,7 @@ exportObj.cardLoaders.English = () ->
         "L3-37":
            text: """Setup: Equip this side faceup. While you defend, you may flip this card. If you do, the attack must reroll all attack dice"""
         "L3-37's Programming":
-           text: """If you are not shielded, decrease the difficulty of your bank (%LBANK% and %RBANK%) maneuvers."""
+           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Lando Calrissian (Rebel)":
            text: """Action: Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":
@@ -846,13 +846,13 @@ exportObj.cardLoaders.English = () ->
         "Mist Hunter":
            text: """Add %CANNON% slot."""
         "Moff Jerjerrod":
-           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, choose the (1 %LBANK%), (1 %STRAIGHT%), or (1 %RBANK%) template. Each friendly ship may perform a red %BOOST% action using that template."""
+           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, choose the (1 %BANKLEFT%), (1 %STRAIGHT%), or (1 %BANKRIGHT%) template. Each friendly ship may perform a red %BOOST% action using that template."""
         "Moldy Crow":
            text: """Gain a %FRONTARC% primary weapon with a value of \"3.\" During the End Phase, do not remove up to 2 focus tokens."""
         "Munitions Failsafe":
            text: """While you perform a %TORPEDO% or %MISSILE% attack, after rolling attack dice, you may cancel all dice results to recover 1 %CHARGE% you spent as a cost for the attack."""
         "Nien Nunb":
-           text: """Decrease the difficulty of your bank maneuvers [%LBANK% and %RBANK%]."""
+           text: """Decrease the difficulty of your bank maneuvers [%BANKLEFT% and %BANKRIGHT%]."""
         "Novice Technician":
            text: """At the end of the round, you may roll 1 attack die to repair 1 faceup damage card. Then, on a %HIT% result, expose 1 damage card."""
         "Os-1 Arsenal Loadout":
@@ -866,7 +866,7 @@ exportObj.cardLoaders.English = () ->
         "Phantom":
            text: """You can dock at range 0-1."""
         "Pivot Wing (Closed)":
-           text: """While you defend, roll 1 fewer defense die. After you execute a [0 %STATIONARY%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card"""
+           text: """While you defend, roll 1 fewer defense die. After you execute a [0 %STOP%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card"""
         "Predator":
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
         "Proton Bombs":
@@ -890,7 +890,7 @@ exportObj.cardLoaders.English = () ->
         "R3 Astromech":
            text: """You can maintain up to 2 locks. Each lock must be on a different object. After you perform a %LOCK% action, you may acquire a lock."""
         "R4 Astromech":
-           text: """Decrease the difficulty of your speed 1-2 basic maneuvers (%LTURN%, %LBANK%, %STRAIGHT%, %RBANK%, %RTURN%)."""
+           text: """Decrease the difficulty of your speed 1-2 basic maneuvers (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%)."""
         "R5 Astromech":
            text: """Action: Spend 1 %CHARGE% to repair 1 facedown damage card. Action: Repair 1 faceup Ship damage card."""
         "R5-D8":
@@ -928,7 +928,7 @@ exportObj.cardLoaders.English = () ->
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
-           text: """After you reveal a turn, (%LTURN% or %RTURN%) or bank (%LBANK% or %RBANK%) maneuver, you may gain 1 stress token. If you do, set your dial to the maneuver of the same speed and bearing in the other direction. Add %TORPEDO% slot."""
+           text: """After you reveal a turn, (%TURNLEFT% or %TURNRIGHT%) or bank (%BANKLEFT% or %BANKRIGHT%) maneuver, you may gain 1 stress token. If you do, set your dial to the maneuver of the same speed and bearing in the other direction. Add %TORPEDO% slot."""
         "Squad Leader":
            text: """While you coordinate, the ship you choose can perform an action only if that action is also on your action bar."""
         "ST-321":

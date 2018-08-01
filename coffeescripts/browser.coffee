@@ -277,9 +277,13 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
 
-                @card_viewer_container.find('tr.info-force td.info-data').text(data.ship_override?.force)
-                @card_viewer_container.find('tr.info-force').toggle(data.ship_override?.force?)
-                
+                if data.ship_override?.force?
+                    @info_container.find('tr.info-force td.info-data').text(data.ship_override?.force)
+                    @info_container.find('tr.info-force td.info-header').show()
+                    @info_container.find('tr.info-force').show()
+                else
+                    @info_container.find('tr.info-force').hide() 
+                        
                 @card_viewer_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')
 
                 if ships[data.ship].actionsred?

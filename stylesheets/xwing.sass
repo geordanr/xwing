@@ -6,6 +6,8 @@ $energy_color: #C7B5E2
 $agility_color: #6BBE44
 $hull_color: #B6B335
 $shields_color: #7ED3E5
+$force_color: #9D899D
+$charge_color: #C2B230
 
 @font-face
   font-family: kimberley
@@ -83,9 +85,17 @@ td.info-header
 i.xwing-miniatures-font
   color: black
 
-i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-doublearcturret, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc 
+i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180
   @extend .card-icon
   color: $attack_color
+
+i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc 
+  @extend .card-icon
+  color: $attack_color
+
+p
+  border-radius: 0% !important
+  color: black !important
 
 i.xwing-miniatures-font-attack-frontback
   padding-left: 5px
@@ -112,7 +122,7 @@ i.xwing-miniatures-font-shield
 
 i.xwing-miniatures-font-forcepower
   @extend .card-icon
-  color: $shields_color
+  color: $force_color
   padding: 2px 3px 4px 3px
 
 
@@ -139,8 +149,7 @@ i.xwing-miniatures-font-forcepower
 
 .info-data.info-force
   @extend .card-stat
-  color: $shields_color
-  padding: 2px
+  color: $force_color
 
 .info-maneuvers table
   table-layout: fixed
