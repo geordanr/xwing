@@ -192,8 +192,6 @@ class exportObj.SquadBuilder
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
                         <option value="standard">Standard</option>
-                        <option value="epic">Epic</option>
-                        <option value="team-epic">Team Epic</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -957,23 +955,9 @@ class exportObj.SquadBuilder
             when 'standard'
                 @isEpic = false
                 @isCustom = false
-                @desired_points_input.val 100
+                @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-            when 'epic'
-                @isEpic = true
-                @isCustom = false
-                @maxEpicPointsAllowed = 5
-                @desired_points_input.val 300
-                @maxSmallShipsOfOneType = 12
-                @maxLargeShipsOfOneType = 6
-            when 'team-epic'
-                @isEpic = true
-                @isCustom = false
-                @maxEpicPointsAllowed = 3
-                @desired_points_input.val 200
-                @maxSmallShipsOfOneType = 8
-                @maxLargeShipsOfOneType = 4
             when 'custom'
                 @isEpic = false
                 @isCustom = true
@@ -1142,10 +1126,6 @@ class exportObj.SquadBuilder
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
-            when 'epic'
-                'e'
-            when 'team-epic'
-                't'
             when 'custom'
                 "c=#{$.trim @desired_points_input.val()}"
         """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
@@ -1167,12 +1147,6 @@ class exportObj.SquadBuilder
                     switch game_type_abbrev
                         when 's'
                             @game_type_selector.val 'standard'
-                            @game_type_selector.change()
-                        when 'e'
-                            @game_type_selector.val 'epic'
-                            @game_type_selector.change()
-                        when 't'
-                            @game_type_selector.val 'team-epic'
                             @game_type_selector.change()
                         else
                             @game_type_selector.val 'custom'
@@ -1422,7 +1396,7 @@ class exportObj.SquadBuilder
 
                     color = switch maneuvers[speed][turn]
                         when 1 then "white"
-                        when 2 then "green"
+                        when 2 then "blue"
                         when 3 then "red"
 
                     outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
@@ -2483,6 +2457,11 @@ class Ship
             <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
         """ else ''
+            
+        forceHTML = if (@pilot.force?) then $.trim """
+            <i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>
+            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}</span>
+        """ else ''
 
         html = $.trim """
             <div class="fancy-pilot-header">
@@ -2504,14 +2483,13 @@ class Ship
                     <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
                     <i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>
                     <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>
-                    <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @data.force), effective_stats, 'force')}</span>
+                    #{forceHTML}
                     &nbsp;
                     #{action_bar}
                 </div>
             </div>
         """
-
+        
         if @pilot.text
             html += $.trim """
                 <div class="fancy-pilot-text">#{@pilot.text}</div>
@@ -3130,7 +3108,7 @@ class GenericAddon
                     <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
                 </div>
             """ else ''
-
+                
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">

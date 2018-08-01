@@ -82,7 +82,7 @@ exportObj.basicCardData = ->
               [ 2, 2, 2, 2, 2, 0, 0, 0]
               [ 1, 1, 2, 1, 1, 0, 3, 3]
               [ 0, 0, 2, 0, 0, 0, 0, 0]
-              [ 0, 0, 2, 0, 0, 5, 0, 0]
+              [ 0, 0, 2, 0, 0, 3, 0, 0]
             ]
         "YT-1300":
             name: "YT-1300"
@@ -4522,7 +4522,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 4
-            Points: 26
+            points: 26
             slots: [       
                 "Talent"
                 "Modification"
