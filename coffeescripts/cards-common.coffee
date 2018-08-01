@@ -191,7 +191,7 @@ exportObj.basicCardData = ->
               [ 0, 1, 2, 1, 0, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
-            large: true
+            medium: true
         "HWK-290":
             name: "HWK-290"
             factions: [ "Rebel Alliance", "Scum and Villainy", ]
@@ -467,7 +467,7 @@ exportObj.basicCardData = ->
                 "Target Lock"
                 "Boost"
             ]
-            large: true
+            medium: true
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
                 [ 1, 2, 2, 2, 1, 0, 0, 0 ]
@@ -522,6 +522,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 3
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -542,6 +543,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 3
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -626,6 +628,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 5
             shields: 4
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -668,6 +671,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 3
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -749,7 +753,7 @@ exportObj.basicCardData = ->
         "U-Wing":
             name: "U-Wing"
             factions: ["Rebel Alliance"]
-            large: true
+            medium: true
             attack: 3
             agility: 2
             hull: 5
@@ -812,6 +816,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 4
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -913,6 +918,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 6
             shields: 2
+            medium: true
             actions: [
                 "Focus"
                 "Evade"
@@ -1019,6 +1025,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "X-Wing"
             skill: 5
+            force: 2
             points: 62
             slots: [
                 "Force"
@@ -1027,8 +1034,6 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Configuration"
             ]
-            ship_override:
-                force: 2
         }
         {
             name: "Wedge Antilles"
@@ -1165,13 +1170,12 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "TIE Fighter"
             skill: 3
+            force: 1
             points: 32
             slots: [
                 "Force"
                 "Modification"
             ]
-            ship_override:
-                force: 1
         }
         {
             name: '"Zeb" Orrelios (TIE Fighter)'
@@ -1922,6 +1926,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "VCX-100"
             skill: 3
+            force: 2
             points: 90
             slots: [
                 "Force"
@@ -1933,8 +1938,6 @@ exportObj.basicCardData = ->
                 "Turret"
                 "Title"
             ]
-            ship_override:
-                force: 2
         }
         {
             name: '"Chopper"'
@@ -2010,6 +2013,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Attack Shuttle"
             skill: 3
+            force: 1
             points: 41
             slots: [
                 "Force"
@@ -2018,8 +2022,6 @@ exportObj.basicCardData = ->
                 "Turret"
                 "Title"
             ]
-            ship_override:
-                force: 1
         }
 
         {
@@ -2060,6 +2062,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Sheathipede-class Shuttle"
             skill: 3
+            force: 1
             points: 42
             slots: [
                 "force"
@@ -2068,8 +2071,6 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Title"
             ]
-            ship_override:
-                force: 1
         }
         {
             name: '"Zeb" Orrelios (Sheathipede)'
@@ -4777,6 +4778,7 @@ exportObj.basicCardData = ->
            id: 26
            slot: "Crew"
            points: 14
+           force: 1
            unique: true
            faction: "Galactic Empire"
            modifier_func: (stats) ->
@@ -4803,6 +4805,7 @@ exportObj.basicCardData = ->
            id: 29
            slot: "Crew"
            points: 13
+           force: 1
            unique: true
            faction: "Galactic Empire"
            modifier_func: (stats) ->
@@ -4900,6 +4903,7 @@ exportObj.basicCardData = ->
            id: 41
            slot: "Crew"
            points: 14
+           force: 1
            unique: true
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
@@ -5053,6 +5057,7 @@ exportObj.basicCardData = ->
            id: 60
            slot: "Crew"
            points: 12
+           force: 1
            unique: true
            faction: "Galactic Empire"
            modifier_func: (stats) ->
@@ -5207,6 +5212,7 @@ exportObj.basicCardData = ->
            id: 81
            slot: "Gunner"
            points: 18
+           force: 1
            unique: true
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
@@ -5217,6 +5223,7 @@ exportObj.basicCardData = ->
            id: 82
            slot: "Gunner"
            points: 12
+           force: 1
            unique: true
            faction: "Galactic Empire"
            modifier_func: (stats) ->
@@ -5258,6 +5265,7 @@ exportObj.basicCardData = ->
            id: 87
            slot: "Gunner"
            points: 30
+           force: 1
            unique: true
            faction: "Rebel Alliance"
            modifier_func: (stats) ->
@@ -5405,7 +5413,8 @@ exportObj.basicCardData = ->
            name: "Engine Upgrade"
            id: 107
            slot: "Modification"
-           points: 3,6,9
+           points: 3
+           variablebase: true
        }
        {
            name: "Munitions Failsafe"
@@ -5486,7 +5495,8 @@ exportObj.basicCardData = ->
            name: "Expert Handling"
            id: 120
            slot: "Talent"
-           points: 2,4,6
+           points: 2
+           variablebase: true
        }
        {
            name: "Fearless"
@@ -5879,20 +5889,29 @@ exportObj.basicCardData = ->
            name: "Hull Upgrade"
            id: 164
            slot: "Modification"
-           points: 7
+           points: 2
+           variableagility: true
+           modifier_func: (stats) ->
+                stats.hull += 1       
        }
        {
            name: "Shield Upgrade"
            id: 165
            slot: "Modification"
-           points: 8
+           points: 3
+           variableagility: true
+           modifier_func: (stats) ->
+                stats.shields += 1       
        }
        {
            name: "Stealth Device"
            id: 166
            slot: "Modification"
-           points: 8
+           points: 3
+           variableagility: true
            charge: 1
+           modifier_func: (stats) ->
+                stats.agility += 1       
        }
     ]
     modificationsById: [
