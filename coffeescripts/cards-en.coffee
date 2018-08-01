@@ -33,6 +33,13 @@ exportObj.translations.English =
         "Team": "Team"
         "Illicit": "Illicit"
         "Salvaged Astromech": "Salvaged Astromech"
+        "Configuration": "Configuration"
+        "Talent": "Talent"
+        "Force": "Force"
+        "Modification": "Modification"
+        "Gunner": "Gunner"
+        "Device": "Device"
+        "Title": "TItle"
     sources: # needed?
         "Core": "Core"
         "A-Wing Expansion Pack": "A-Wing Expansion Pack"
@@ -558,7 +565,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results."""
         "Sienar Specialist":
            text: """During the development of the TIE aggressor, Sienar Fleet Systems valued performance and versatility over raw cost efficiency."""
-        "Sigma Squadron Ace":
+        '"Sigma Squadron Ace"':
            text: """Featuring a hyperdrive and shields, the TIE phantom is also equipped with five laser cannons, giving it substantial firepower for an Imperial fighter."""
         "Skull Squadron Pilot":
            text: """The aces of Skull Squadron favor an aggressive approach, using their craft's pivot wing technology to achieve unmatched agility in the pursuit of their quarry."""
@@ -860,8 +867,6 @@ exportObj.cardLoaders.English = () ->
            text: """You can dock at range 0-1."""
         "Pivot Wing (Closed)":
            text: """While you defend, roll 1 fewer defense die. After you execute a [0 %STATIONARY%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card"""
-        "Pivot Wing (Open)":
-           text: """Before you activate, you may flip this card."""
         "Predator":
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
         "Proton Bombs":
@@ -914,8 +919,6 @@ exportObj.cardLoaders.English = () ->
            text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1 %FORCE%, you may choose a ship at range 0-3 instead."""
         "Servomotor S-foils (Closed)":
            text: """While you perform a primary attack, roll 1 fewer attack die. Before you activate, you may flip this card"""
-        "Servomotor S-foils (Open)":
-           text: """Before you activate, you may flip this card."""
         "Seventh Sister":
            text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
         "Shadow Caster":
@@ -968,344 +971,9 @@ exportObj.cardLoaders.English = () ->
            text: """Setup: Lose 1 %CHARGE%. Action: Recover 1 %CHARGE%. Action: Spend 1 %CHARGE% to recover 1 shield."""
 
     modification_translations =
-        "0-0-0":
-           text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 0-1. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token."""
-        "4-LOM":
-           text: """While you perform an attack, after rolling attack dice, you may name a type of green token. If you do, gain 2 ion tokens and, during this attack, the defender cannot spend tokens of the named type."""
-        "Ablative Plating":
-           text: """Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1 %CHARGE%. If you do, prevent 1 damage."""
-        "Admiral Sloane":
-           text: """After another friendly ship at range 0-3 defends, if it is destroyed, the attacker gains 2 stress tokens. While a friendly ship at range 0-3 performs an attack against a stressed ship, it may reroll 1 attack die."""
-        "Adv. Proton Torpedoes":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. Change 1 %HIT% result to a %CRIT% result."""
-        "Advanced Sensors":
-           text: """After you reveal your dial, you may perform 1 action. If you do, you cannot perform another action during your activation."""
-        "Advanced SLAM":
-           text: """After you perform a %SLAM% action, if you fully executed that maneuver, you may perform a white action on your action bar, treating that action as red."""
-        "Afterburners":
-           text: """After you fully execute a speed 3-5 maneuver, you may spend 1 %CHARGE% to perform a %BOOST% action, even while stressed."""
-        "Agent Kallus":
-           text: """Setup: Assign the Hunted condition to 1 enemy ship. While you perform an attack against th eship with the Hunted condition, you may change 1 of your %FOCUS% results to a %HIT% result."""
-        "Agile Gunner":
-           text: """In the End Phase you may rotate your %TURRET% indi﻿cator﻿"""
-        "Andrasta":
-           text: """Add %DEVICE% slot."""
-        "Barrage Rockets":
-           text: """Attack (%FOCUS%): Spend 1 %CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or mroe %CHARGE% to reroll that many attack dice."""
-        "Baze Malbus":
-           text: """While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1 to a mazimum of 2."""
-        "Bistan":
-           text: """After you perform a primary attack, if you are focused, you may perform a bonus %TURRET% attack against a shipe you have not already attacked this round."""
-        "Boba Fett":
-           text: """Setup: Start in reserve. At the end of Setup, place yourself at range 0 of an obstacle and beyond range 3 of an enemy ship."""
-        "Bomblet Generator":
-           text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Bomblet with the [1 %STRAIGHT%] templete. At the start of the Activation Phase, you may spend 1 shield to recover 2 %CHARGE%."""
-        "Bossk":
-           text: """After you perform a primary attack that misses, if you are not stressedm you must receive 1 stress token to perform a bonus primary attack against the same target."""
-        "BT-1":
-           text: """While you perform an attack, you may change 1 %HIT% result to a %CRIT% result for each stress token the defender has."""
-        "C-3PO":
-           text: """Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do, and you roll exactly that many %EVADE% results, add 1 %EVADE% result. Adter you perform the %CALCULATE% action, gain 1 calculate token."""
-        "Cad Bane":
-           text: """After you drop or launch a device, you may perform a red %BOOST% action."""
-        "Cassian Andor":
-           text: """During the System Phase, you may choose 1 enemy ship at range 1-2 and guess aloud a bearing and speed, then look at that ship's dial. If the chosen ship's bearing and speed match your guess, you may set your dial to another maneuver."""
-        "Chewbacca (Rebel)":
-           text: """At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
-        "Chewbacca (Scum)":
-           text: """At the start of the End Phase, you may spend 1 focus token to repair 1 of your faceup damage cards."""
-        '"Chopper" (Astromech)':
-           text: """Action: Spend 1 non-recurring %CHARGE% from another equipped upgrade to recover 1 shield. Action: Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
-        '"Chopper" (Crew)':
-           text: """During the Perform Action step, you may perofrm 1 action, even while stressed. Adter you perform an action while stressed, suffer 1 %HIT% damage unless you expose 1 of your damage cards."""
-        "Ciena Ree":
-           text: """After you perform a %COORDINATE% action, if the ship you coordinated performed a %BARRELROLL% or %BOOST% action, it may gain 1 stress token to rotate 90˚."""
-        "Cikatro Vizago":
-           text: """During the End Phase, you may choose 2 %ILLICIT% upgrades equipped to friendly ships at range 0-1. If you do, you may exchange these upgrades. End of Game: Return all %ILLICIT% upgrades to their original ships."""
-        "Cloaking Device":
-           text: """Action: Spend 1 %CHARGE% to perform a %CLOAK% action. At the start of the Planning Phase, roll 1 attack die. On a %FOCUS% result, decloak or discard your cloak token."""
-        "Cluster Missiles":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. After this attack, you may perform this attack as a bonus attack against a different target at range 0-1 of the defender, ignoring the %LOCK% requirement."""
-        "Collision Detector":
-           text: """While you boost or barrel roll, you can move through and overlap obstacles. After you move through or overlap an obstacle, you may spend 1 %CHARGE% to ignore its effects ntie the end of the round."""
-        "Composure":
-           text: """Requires a %FOCUS% action. If you fail an action and don't have any green tokens you may perform a %FOCUS% action.﻿﻿"""
-        "Concussion Missiles":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. After this attack hits, each ship at range 0-1 of the defender exposes 1 of its damage cards."""
-        "Conner Nets":
-           text: """Mine During the System Phase, you may spend 1 %CHARGE% to drop a Conner Net using the [1 %STRAIGHT%] template. This card's %CHARGE% cannot be recovered."""
-        "Contraband Cybernetics":
-           text: """Before you activate, you may spend 1 %CHARGE%. If you do, until the end of the round, you can perform actions and execute red maneuvers, even while stressed."""
-        "Crack Shot":
-           text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, before the Neutralize Results step, you may spend 1 %CHARGE% to cancel 1 %EVADE% result."""
-        "Daredevil":
-           text: """While you perform a while %BOOST% action, you may treat it as red to use the [1%LTURN%] or [1 %RTURN%] template instead."""
-        "Darth Vader":
-           text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1 %FORCE%. If you do, that ship suffers 1 %HIT% damage unless it chooses to remove 1 green token."""
-        "Dauntless":
-           text: """After you partially execute a maneuver, you may perform 1 white action, treating that action as red."""
-        "Deadman's Switch":
-           text: """After you are destroyed, each other ship at range 0-1 suffers 1 %HIT% damage."""
-        "Death Troopers":
-           text: """During the Activation Phase, enemy ships at range 0-1 cannot remove stress tokens."""
-        "Debris Gambit":
-           text: """While you perform a red %EVADE% action, if there is an obstacle at range 0-1, treat the action as white instead."""
-        "Dengar":
-           text: """After you defend, if the attacker is in your firing arc, you may spend 1 %CHARGE%. If you do, roll 1 attack die unless the attacker chooses to remove 1 green token. On a %HIT% or %CRIT% result, the attacker suffers 1 %HIT% damage."""
-        "Director Krennic":
-           text: """Setup: Before placing forces, assign the Optimized Prototype condition to another friendly ship."""
-        "Dorsal Turret":
-           text: """Attack"""
-        "Electronic Baffle":
-           text: """During the End Phase, you may suffer 1 %HIT% damage to remove 1 red token."""
-        "Elusive":
-           text: """While you defend, you may spend 1 %CHARGE% to reroll 1 defense die. After you fully execute a red maneuver, recover 1 %CHARGE%."""
-        "Emperor Palpatine":
-           text: """While another friendly ship defends or performs an attack, you may spend 1 %FORCE% to modify 1 of its dice as though that ship had spent 1 %FORCE%."""
-        "Engine Upgrade":
-           text: """Large military forces such as the Galactic Empire have standardized engines, but individual pilots and small organizations often replace the power couplings add thrusters, or use high-performance fuel to get extra push out of their engines."""
-        "Expert Handling":
-           text: """While heavy fighters can often be coaxed into a barrel roll, seasoned pilots know how to do it without putting undue stress on their craft or leaving themselves open to attack."""
-        "Ezra Bridger":
-           text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %TURRET% attack from a %TURRET% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
-        "Fearless":
-           text: """While you perform a %FRONTARC% primary attack, if the attack range is 1 and you are in the defender's %FRONTARC%, you may change 1 of your results to a %HIT% result."""
-        "Feedback Array":
-           text: """Before you engage, you may gain 1 ion token and 1 disarm token. If you do, each ship at range 0 suffers 1 %HIT% damage."""
-        "Fifth Brother":
-           text: """While you perform an attack, you may spend 1 %FORCE% to change 1 of your %FOCUS% results to a %CRIT% result."""
-        "Fire-Control System":
-           text: """While you perform an attack, if you have a lock on the defender, you may reroll 1 attack die. If you do, you cannot spend your lock during this attack."""
-        "Freelance Slicer":
-           text: """While you defend, before attack dice are rolled, you may spend a lock you have on the attacker to roll 1 attack die. If you do, the attacker gains 1 %JAM% token. Then, on a %HIT% or %CRIT% result, gain 1 %JAM% token."""
-        '"Genius"':
-           text: """After you fully execute a maneuver, if you have not dropped or launched a device this round, you may drop 1 bomb."""
-        "Ghost":
-           text: """You can dock 1 attack shuttle or Sheathipede-class shuttle. Your docked ships can deploy only from your rear guides."""
-        "Grand Inquisitor":
-           text: """After an enemy ship at range 0-2 reveals its dial, you may spend 1 %FORCE% to perform 1 white action on your action bar, treating that action as red."""
-        "Grand Moff Tarkin":
-           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, each friendly ship may acquire a lock on a ship that you have locked."""
-        "Greedo":
-           text: """While you perform an attack, you may spend 1 %CHARGE% to change 1 %HIT% result to a %CRIT% result. While you defend, if your %CHARGE% is active, the attacker may change 1 %HIT% result to a %CRIT% result."""
-        "Han Solo (Rebel)":
-           text: """During the Engagement Phase, at initiative 7, you may perform a %TURRET% attack. You cannot attack from that %TURRET% again this round."""
-        "Han Solo (Scum)":
-           text: """Before you engage, you may perform a red %FOCUS% action."""
-        "Havoc":
-           text: """Remove %CREW% slot. Add %SYSTEM% and %ASTROMECH% slots."""
-        "Heavy Laser Cannon":
-           text: """Attack: After the Modify Attack Dice step, change all %CRIT% results to %HIT% results."""
-        "Heightened Perception":
-           text: """At the start of the Engagement Phase, you may spend 1 %FORCE%. If you do, engage at initiative 7 instead of your standard initiative value this phase."""
-        "Hera Syndulla":
-           text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you ahve 3 or more stress tokens, remove 1 stress token and suffer 1 %HIT% damage."""
-        "Homing Missiles":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. After you declare the defender, the defender may choose to suffer 1 %HIT% damage. If it does, skip the Attack and Defense Dice steps and the attack is treated as hitting."""
-        "Hotshot Gunner":
-           text: """While you perform a %TURRET% attack, after the Modify Defense Dice step, the defender removes 1 focus or calculate token."""
-        "Hound's Tooth":
-           text: """1 Z-95 AF4 headhunter can dock with you."""
-        "Hull Upgrade":
-           text: """For those who cannot afford an enhanced shield generator, bolting additional plates onto the hull of a ship can serve as an adequate substitute."""
-        "IG-2000":
-           text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade."""
-        "IG-88D":
-           text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade. After you perform a %CALCULATE% action, gain 1 calculate token."""
-        "Inertial Dampeners":
-           text: """Before you would execute a maneuver, you may spend 1 shield. If you do, execute a white [0 %STATIONARY%] instead of the maneuver you revealed, then gain 1 stress token."""
-        "Informant":
-           text: """Setup: After placing forces, choose 1 enemy ship and assign the Listening Device condition to it."""
-        "Instinctive Aim":
-           text: """While you perform a special attack, you may spend 1 %FORCE% to ignore the %FOCUS% or %LOCK% requirement."""
-        "Intimidation":
-           text: """While an enemy ship at range 0 defends, it rolls 1 fewer defense die."""
-        "Ion Cannon Turret":
-           text: """Attack: If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
-        "Ion Cannon":
-           text: """Attack: If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
-        "Ion Missiles":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
-        "Ion Torpedoes":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
-        "ISB Slicer":
-           text: """During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""
-        "Jabba the Hutt":
-           text: """During the End Phase, you may choose 1 friendly ship at range 0-2 and spend 1 %CHARGE%. If you do, that ship recovers 1 %CHARGE% on 1 of its equipped %ILLICIT% upgrades."""
-        "Jamming Beam":
-           text: """Attack: If this attack hits, all %HIT%/%CRIT% results inflict jam tokens instead of damage."""
-        "Juke":
-           text: """While you perform an attack, if you are evading, you may change 1 of the defender's %EVADE% results to a %FOCUS% result."""
-        "Jyn Erso":
-           text: """If a friendly ship at range 0-3 would gain a focus token, it may gain 1 evade token instead."""
-        "Kanan Jarrus":
-           text: """After a friendly ship at range 0-2 fully executes a white maneuver, you may spend 1 %FORCE% to remove 1 stress token from that ship."""
-        "Ketsu Onyo":
-           text: """At the start of the End Phase, you may choose 1 enemy ship at range 0-2 in your firing arc. If you do, that ship does not remove its tractor tokens."""
-        "L3-37":
-           text: """Setup: Equip this side faceup. While you defend, you may flip this card. If you do, the attack must reroll all attack dice"""
-        "L3-37's Programming":
-           text: """If you are not shielded, decrease the difficulty of your bank (%LBANK% and %RBANK%) maneuvers."""
-        "Lando Calrissian (Rebel)":
-           text: """Action: Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
-        "Lando Calrissian (Scum)":
-           text: """After you roll dice, you may spend 1 green token to reroll up to 2 of your results."""
-        "Lando's Millennium Falcon":
-           text: """1 Escape Craft may dock with you. While you have an Escape Craft docked, you may spend its shields as if they were on your ship card. While you perform a primary attack against a stressed ship, roll 1 additional attack die."""
-        "Latts Razzi":
-           text: """While you defend, if the attacker is stressed, you may remove 1 stress from the attacker to change 1 of your blank/%FOCUS% results to an %EVADE% result."""
-        "Leia Organa":
-           text: """At the start of the Activation Phase, you may spend 3 %CHARGE%. During this phase, each friendly ship reduces the difficulty of its red maneuvers."""
-        "Lone Wolf":
-           text: """While you defend or perform an attack, if there are no other friendly ships at range 0-2, you may spend 1 %CHARGE% to reroll 1 of your dice."""
-        "Luke Skywalker":
-           text: """At the start of the Engagement Phase, you may spend 1 %FORCE% to rotate your %TURRET% indicator."""
-        "Magva Yarro":
-           text: """After you defend, if the attack hit, you may acquire a lock on the attacker."""
-        "Marauder":
-           text: """While you perform a primary %REARARC% attack,, you may reroll 1 attack die. Add %GUNNER% slot."""
-        "Marksmanship":
-           text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may change 1 %HIT% result to a %CRIT% result."""
-        "Maul":
-           text: """After you suffer damage, you may gain 1 stress token to recover 1 %FORCE%. You can equip \"Dark Side\" upgades."""
-        "Millennium Falcon":
-           text: """While you defend, if you are evading, you may reroll 1 defense die."""
-        "Minister Tua":
-           text: """At the start of the Engagement Phase, if you are damaged, you may perform a red %REINFORCE% action."""
-        "Mist Hunter":
-           text: """Add %CANNON% slot."""
-        "Moff Jerjerrod":
-           text: """During the System Phase, you may spend 2 %CHARGE%. If you do, choose the (1 %LBANK%), (1 %STRAIGHT%), or (1 %RBANK%) template. Each friendly ship may perform a red %BOOST% action using that template."""
-        "Moldy Crow":
-           text: """Gain a %FRONTARC% primary weapon with a value of \"3.\" During the End Phase, do not remove up to 2 focus tokens."""
-        "Munitions Failsafe":
-           text: """While you perform a %TORPEDO% or %MISSILE% attack, after rolling attack dice, you may cancel all dice results to recover 1 %CHARGE% you spent as a cost for the attack."""
-        "Nien Nunb":
-           text: """Decrease the difficulty of your bank maneuvers [%LBANK% and %RBANK%]."""
-        "Novice Technician":
-           text: """At the end of the round, you may roll 1 attack die to repair 1 faceup damage card. Then, on a %HIT% result, expose 1 damage card."""
-        "Os-1 Arsenal Loadout":
-           text: """While you have exactly 1 disarm token, you can still perform %TORPEDO% and %MISSILE% attacks against targets you have locked. If you do, you cannot spend you lock during the attack. Add %TORPEDO% and %MISSILE% slots."""
-        "Outmaneuver":
-           text: """While you perform a %FRONTARC% arrack, if you are not in the defender's firing arc, the defender rolls 1 fewer defense die."""
-        "Outrider":
-           text: """While you perform an obstructed attack, the defender rolls 1 fewer defense die. After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens."""
-        "Perceptive Copilot":
-           text: """After you perform a %FOCUS% action, gain 1 focus token."""
-        "Phantom":
-           text: """You can dock at range 0-1."""
-        "Pivot Wing (Closed)":
-           text: """While you defend, roll 1 fewer defense die. After you execute a [0 %STATIONARY%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card"""
-        "Pivot Wing (Open)":
-           text: """Before you activate, you may flip this card."""
-        "Predator":
-           text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
-        "Proton Bombs":
-           text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Proton Bomb using the [1 %STRAIGHT%] template."""
-        "Proton Rockets":
-           text: """Attack (%FOCUS%): Spend 1 %CHARGE%."""
-        "Proton Torpedoes":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. Change 1 %HIT% result to a %CRIT% result."""
-        "Proximity Mines":
-           text: """Mine During the System Phase, you may spend 1 %CHARGE% to drop a Proximity Mine using the [1 %STRAIGHT%] template. This card's %CHARGE% cannot be recovered."""
-        "Punishing One":
-           text: """When you perform a primary attack, if the defender is in your %FRONTARC%, roll 1 additional attack die. Remove %CREW% slot. Add %ASTROMECH% slot."""
-        "Qi'ra":
-           text: """While you move and perform attacks, you ignore all obstacles that you are locking."""
-        "R2 Astromech":
-           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
-        "R2-D2 (Astromech)":
-           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
-        "R2-D2 (Crew)":
-           text: """During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
-        "R3 Astromech":
-           text: """You can maintain up to 2 locks. Each lock must be on a different object. After you perform a %LOCK% action, you may acquire a lock."""
-        "R4 Astromech":
-           text: """Decrease the difficulty of your speed 1-2 basic maneuvers (%LTURN%, %LBANK%, %STRAIGHT%, %RBANK%, %RTURN%)."""
-        "R5 Astromech":
-           text: """Action: Spend 1 %CHARGE% to repair 1 facedown damage card. Action: Repair 1 faceup Ship damage card."""
-        "R5-D8":
-           text: """Action: Spend 1 %CHARGE% to repair 1 facedown damage card. Action: Repair 1 faceup Ship damage card."""
-        "R5-P8":
-           text: """While you perform an attack against a defender in your %FRONTARC%, you may spend 1 %CHARGE% to reroll 1 attack die. If the rerolled results is a %CRIT%, suffer 1 %CRIT% damage."""
-        "R5-TK":
-           text: """You can perform attacks against friendly ships."""
-        "Rigged Cargo Chute":
-           text: """Action: Spend 1 %CHARGE%. Drop 1 loose cargo using the [1 %STRAIGHT%] template."""
-        "Ruthless":
-           text: """While you perform an attack, you may choose another friendly ship at range 0-1 of the defender. If you do, that ship suffers 1 %HIT% damage and you may change 1 of your die results to a %HIT% result."""
-        "Sabine Wren":
-           text: """Setup: Place 1 ion, 1 jam, 1 stress, and 1 tractor token on this card. After a ship suffers the effect of a friendly bomb, you may remove 1 ion, jam, stress, or tractor token from this card. If you do, that ship gains a matching token."""
-        "Saturation Salvo":
-           text: """While you perform a %TORPEDO% or %MISSILE% attack, you may spend 1 charge from that upgrade. If you do, choose two defence dice. The defender must reroll those dice."""
-        "Saw Gerrera":
-           text: """While you perform an attack, you may suffer 1 %HIT% damage to change all of your %FOCUS% results to %CRIT% results."""
-        "Seasoned Navigator":
-           text: """After you reveal your dial, you may set your dial to another non-red maneuver of the same speed. While you execute that maneuver, increase its difficulty."""
-        "Seismic Charges":
-           text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Seismic Charge with the [1 %STRAIGHT%] template."""
-        "Selfless":
-           text: """Whlie another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1 %CRIT% damage to cancel 1 %CRIT% result."""
-        "Sense":
-           text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1 %FORCE%, you may choose a ship at range 0-3 instead."""
-        "Servomotor S-foils (Closed)":
-           text: """While you perform a primary attack, roll 1 fewer attack die. Before you activate, you may flip this card"""
-        "Servomotor S-foils (Open)":
-           text: """Before you activate, you may flip this card."""
-        "Seventh Sister":
-           text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
-        "Shadow Caster":
-           text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
-        "Shield Upgrade":
-           text: """Deflector shields are a substantial line of defense on most starships beyond the lightest fighters. While enhancing a ship's shield capacity can be costly, all but the most confident or reckless pilots see the value in this sort of investment."""
-        "Skilled Bombardier":
-           text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
-        "Slave I":
-           text: """After you reveal a turn, (%LTURN% or %RTURN%) or bank (%LBANK% or %RBANK%) maneuver, you may gain 1 stress token. If you do, set your dial to the maneuver of the same speed and bearing in the other direction. Add %TORPEDO% slot."""
-        "Squad Leader":
-           text: """While you coordinate, the ship you choose can perform an action only if that action is also on your action bar."""
-        "ST-321":
-           text: """After you perform a %COORDINATE% action, you may choose an enemy ship at range 0-3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions."""
-        "Static Discharge Vanes":
-           text: """If you would gain an ion or jam token, you may choose a ship at range 0-1. If you do, gain 1 stress token and transfer 1 ion or jam token to that ship."""
-        "Stealth Device":
-           text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%."""
-        "Supernatural Reflexes":
-           text: """Before you activate, you may spend 1 %FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, suffer 1 %HIT% damage."""
-        "Swarm Tactics":
-           text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 1. If you do, that ship treats its initiative as equal to yours until the end of the round."""
-        "Tactical Officer":
-           text: """In the chaos of a starfighter battle, a single order can mean the difference between a victory and a massacre."""
-        "Tactical Scrambler":
-           text: """While you obstruct an enemy ship's attack, the defender rolls 1 additional defense die."""
-        "Tobias Beckett":
-           text: """Setup: After placing forces, you may choose 1 obstacle in the play area. If you do, place it anywhere in the play area beyond range 2 of any board edge or ship and beyond range 1 of other obstacles."""
-        "Tractor Beam":
-           text: """Attack: If this attack hits, all %HIT%/%CRIT% results inflict tractor tokens instead of damage."""
-        "Trajectory Simulator":
-           text: """During the System Phase, if you would drop or launch a bomb, you may launch it using the (5 %STRAIGHT%) tempplate instead."""
-        "Trick Shot":
-           text: """While you perform an attack that is obstructed by an obstacle, roll 1 additional attack die."""
-        "Unkar Plutt":
-           text: """After you partially excute a maneuver, you may suffer 1 %HIT% damage to perform 1 white action."""
-        "Veteran Tail Gunner":
-           text: """After you perform a primary %FRONTARC% attack, you may perform a bonus primary %REARARC% attack."""
-        "Veteran Turret Gunner":
-           text: """After you perform a primary attack, you may perform a bonus %TURRET% attack using a %TURRET% you did not already attack from this round."""
-        "Virago":
-           text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Add %MODIFICATION% slot."""
-        "Xg-1 Assault Configuration":
-           text: """While you have exactly 1 disarm token, uou can still perform %CANNON% attacks. While you perform a %CANNON% attack while disarmed, roll a maximum of 3 attack dice. Add %CANNON% slot."""
-        '"Zeb" Orrelios':
-           text: """You can perform primary attacks at range 0. Enemy ships at range 0 can perform primary attacks against you."""
-        "Zuckuss":
-           text: """While you perform an attack, if ou are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
-        'GNK "Gonk" Droid':
-           text: """Setup: Lose 1 %CHARGE%. Action: Recover 1 %CHARGE%. Action: Spend 1 %CHARGE% to recover 1 shield."""
 
     title_translations =
 
     condition_translations =
 
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations
-    #modification_translations, title_translations, condition_translations
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations

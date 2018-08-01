@@ -599,7 +599,6 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced Prototype":
             name: "TIE Advanced Prototype"
-            canonical_name: 'TIE Adv. Prototype'.canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 3
@@ -1128,6 +1127,11 @@ exportObj.basicCardData = ->
             ]
         }
         {
+            name: "whoops"
+            id: 11
+            skip: true
+        }
+        {
             name: "Kullbee Sperado"
             id: 12
             unique: true
@@ -1429,7 +1433,7 @@ exportObj.basicCardData = ->
             points: 49
             slots: [
                 "Talent"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1446,7 +1450,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "Talent"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1463,7 +1467,7 @@ exportObj.basicCardData = ->
             points: 45
             slots: [
                 "Talent"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1480,7 +1484,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [
                 "Talent"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1498,7 +1502,7 @@ exportObj.basicCardData = ->
             points: 52
             slots: [
                 "Talent"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1516,7 +1520,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "illicit"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1532,7 +1536,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 43
             slots: [
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1548,7 +1552,7 @@ exportObj.basicCardData = ->
             points: 43
             slots: [
                 "illicit"
-                "Sensor"
+                "System"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -4564,27 +4568,109 @@ exportObj.basicCardData = ->
     ]
     upgradesById: [
        {
-           name: "0-0-0"
-           id: 63
-           slot: "Crew"
-           points: 3
+           name: '"Chopper" (Astromech)'
+           id: 0
+           slot: "Astromech"
+           points: 2
+           unique: true
+           faction: "Rebel"
+       }
+       {
+           name: '"Genius"'
+           id: 1
+           slot: "Astromech"
            unique: true
            faction: "Scum"
        }
        {
-           name: "4-LOM"
-           id: 31
-           slot: "Crew"
-           points: 3
-           unique: true
-           faction: "Scum"
-       }
-       {
-           name: "Ablative Plating"
-           id: 103
-           slot: "Modification"
-           points: 4
+           name: "R2 Astromech"
+           id: 2
+           slot: "Astromech"
+           points: 6
            charge: 2
+       }
+       {
+           name: "R2-D2 (Astromech)"
+           id: 3
+           unique: true
+           slot: "Astromech"
+           points: 8
+           charge: 3
+       }
+       {
+           name: "R3 Astromech"
+           id: 4
+           slot: "Astromech"
+           points: 3
+       }
+       {
+           name: "R4 Astromech"
+           id: 5
+           slot: "Astromech"
+           points: 2
+       }
+       {
+           name: "R5 Astromech"
+           id: 6
+           slot: "Astromech"
+           points: 5
+           charge: 2
+       }
+       {
+           name: "R5-D8"
+           id: 7
+           slot: "Astromech"
+           points: 7
+           charge: 3
+       }
+       {
+           name: "R5-P8"
+           id: 8
+           slot: "Astromech"
+           points: 4
+           unique: true
+           faction: "Scum"
+           charge: 3
+       }
+       {
+           name: "R5-TK"
+           id: 9
+           slot: "Astromech"
+           points: 1
+           unique: true
+           faction: "Scum"
+       }
+       {
+           name: "Heavy Laser Cannon"
+           id: 10
+           slot: "Cannon"
+           points: 4
+           attack: 4
+           range: """2-3"""
+       }
+       {
+           name: "Ion Cannon"
+           id: 11
+           slot: "Cannon"
+           points: 5
+           attack: 3
+           range: """1-3"""
+       }
+       {
+           name: "Jamming Beam"
+           id: 12
+           slot: "Cannon"
+           points: 2
+           attack: 3
+           range: """1-2"""
+       }
+       {
+           name: "Tractor Beam"
+           id: 13
+           slot: "Cannon"
+           points: 3
+           attack: 3
+           range: """1-3"""
        }
        {
            name: "Admiral Sloane"
@@ -4595,80 +4681,12 @@ exportObj.basicCardData = ->
            faction: "Imperial"
        }
        {
-           name: "Adv. Proton Torpedoes"
-           id: 134
-           slot: "Torpedo"
-           points: 6
-           attack: 5
-           range: """1"""
-           charge: 1
-       }
-       {
-           name: "Advanced Sensors"
-           id: 111
-           slot: "System"
-           points: 8
-       }
-       {
-           name: "Advanced SLAM"
-           id: 104
-           slot: "Modification"
-           points: 3
-       }
-       {
-           name: "Afterburners"
-           id: 105
-           slot: "Modification"
-           points: 8
-           charge: 2
-       }
-       {
            name: "Agent Kallus"
            id: 15
            slot: "Crew"
            points: 6
            unique: true
            faction: "Imperial"
-       }
-       {
-           name: "Agile Gunner"
-           id: 76
-           slot: "Gunner"
-           points: 10
-       }
-       {
-           name: "Andrasta"
-           id: 146
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Scum"
-           ship: "Firespray-31"
-       }
-       {
-           name: "Barrage Rockets"
-           id: 97
-           slot: "Missile"
-           points: 6
-           attack: 3
-           range: """2-3"""
-           charge: 5
-       }
-       {
-           name: "Baze Malbus"
-           id: 17
-           slot: "Crew"
-           points: 8
-           unique: true
-           faction: "Rebel"
-       }
-       {
-           name: "Bistan"
-           id: 77
-           slot: "Gunner"
-           points: 14
-           unique: true
-           faction: "Rebel"
        }
        {
            name: "Boba Fett"
@@ -4679,27 +4697,12 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "Bomblet Generator"
-           id: 67
-           slot: "Device"
-           points: 5
-           charge: 2
-       }
-       {
-           name: "Bossk"
-           id: 78
-           slot: "Gunner"
-           points: 10
+           name: "Baze Malbus"
+           id: 17
+           slot: "Crew"
+           points: 8
            unique: true
-           faction: "Scum"
-       }
-       {
-           name: "BT-1"
-           id: 79
-           slot: "Gunner"
-           points: 2
-           unique: true
-           faction: "Scum"
+           faction: "Rebel"
        }
        {
            name: "C-3PO"
@@ -4710,20 +4713,20 @@ exportObj.basicCardData = ->
            faction: "Rebel"
        }
        {
-           name: "Cad Bane"
-           id: 20
-           slot: "Crew"
-           points: 4
-           unique: true
-           faction: "Scum"
-       }
-       {
            name: "Cassian Andor"
            id: 19
            slot: "Crew"
            points: 6
            unique: true
            faction: "Rebel"
+       }
+       {
+           name: "Cad Bane"
+           id: 20
+           slot: "Crew"
+           points: 4
+           unique: true
+           faction: "Scum"
        }
        {
            name: "Chewbacca (Rebel)"
@@ -4741,13 +4744,6 @@ exportObj.basicCardData = ->
            points: 4
            unique: true
            faction: "Scum"
-       }
-       {
-           name: '"Chopper" (Astromech)'
-           slot: "Astromech"
-           points: 2
-           unique: true
-           faction: "Rebel"
        }
        {
            name: '"Chopper" (Crew)'
@@ -4774,72 +4770,6 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "Cloaking Device"
-           id: 91
-           slot: "Illicit"
-           points: 5
-           unique: true
-           charge: 2
-       }
-       {
-           name: "Cluster Missiles"
-           id: 98
-           slot: "Missile"
-           points: 5
-           attack: 3
-           range: """1-2"""
-           charge: 4
-       }
-       {
-           name: "Collision Detector"
-           id: 112
-           slot: "System"
-           points: 5
-           charge: 2
-       }
-       {
-           name: "Composure"
-           id: 115
-           slot: "Talent"
-           points: 2
-       }
-       {
-           name: "Concussion Missiles"
-           id: 99
-           slot: "Missile"
-           points: 6
-           attack: 3
-           range: """2-3"""
-           charge: 3
-       }
-       {
-           name: "Conner Nets"
-           id: 68
-           slot: "Device"
-           points: 6
-           charge: 1
-       }
-       {
-           name: "Contraband Cybernetics"
-           id: 92
-           slot: "Illicit"
-           points: 5
-           charge: 1
-       }
-       {
-           name: "Crack Shot"
-           id: 116
-           slot: "Talent"
-           points: 1
-           charge: 1
-       }
-       {
-           name: "Daredevil"
-           id: 117
-           slot: "Talent"
-           points: 3
-       }
-       {
            name: "Darth Vader"
            id: 26
            slot: "Crew"
@@ -4847,21 +4777,6 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Imperial"
            force: 1
-       }
-       {
-           name: "Dauntless"
-           id: 147
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Imperial"
-           ship: "VT-49 Decimator"
-       }
-       {
-           name: "Deadman's Switch"
-           id: 93
-           slot: "Illicit"
-           points: 2
        }
        {
            name: "Death Troopers"
@@ -4872,48 +4787,12 @@ exportObj.basicCardData = ->
            faction: "Imperial"
        }
        {
-           name: "Debris Gambit"
-           id: 118
-           slot: "Talent"
-           points: 2
-       }
-       {
-           name: "Dengar"
-           id: 80
-           slot: "Gunner"
-           points: 6
-           unique: true
-           faction: "Scum"
-           charge: 1
-       }
-       {
            name: "Director Krennic"
            id: 28
            slot: "Crew"
            points: 5
            unique: true
            faction: "Imperial"
-       }
-       {
-           name: "Dorsal Turret"
-           id: 137
-           slot: "Turret"
-           points: 4
-           attack: 2
-           range: """1-2"""
-       }
-       {
-           name: "Electronic Baffle"
-           id: 106
-           slot: "Modification"
-           points: 2
-       }
-       {
-           name: "Elusive"
-           id: 119
-           slot: "Talent"
-           points: 3
-           charge: 1
        }
        {
            name: "Emperor Palpatine"
@@ -4925,74 +4804,25 @@ exportObj.basicCardData = ->
            force: 1
        }
        {
-           name: "Engine Upgrade"
-           id: 107
-           slot: "Modification"
-           points: 3,6,9
-       }
-       {
-           name: "Expert Handling"
-           id: 120
-           slot: "Talent"
-           points: 2,4,6
-       }
-       {
-           name: "Ezra Bridger"
-           id: 81
-           slot: "Gunner"
-           points: 18
-           unique: true
-           faction: "Rebel"
-           force: 1
-       }
-       {
-           name: "Fearless"
-           id: 121
-           slot: "Talent"
-           points: 3
-           faction: "Scum"
-       }
-       {
-           name: "Feedback Array"
-           id: 94
-           slot: "Illicit"
-           points: 4
-       }
-       {
-           name: "Fifth Brother"
-           id: 82
-           slot: "Gunner"
-           points: 12
-           unique: true
-           faction: "Imperial"
-           force: 1
-       }
-       {
-           name: "Fire-Control System"
-           id: 113
-           slot: "System"
-           points: 3
-       }
-       {
            name: "Freelance Slicer"
            id: 30
            slot: "Crew"
            points: 3
        }
        {
-           name: '"Genius"'
-           id: 1
-           slot: "Astromech"
+           name: "4-LOM"
+           id: 31
+           slot: "Crew"
+           points: 3
            unique: true
            faction: "Scum"
        }
        {
-           name: "Ghost"
-           id: 148
-           slot: "Title"
-           unique: true
-           faction: "Rebel"
-           ship: "VCX-100"
+           name: 'GNK "Gonk" Droid'
+           id: 32
+           slot: "Crew"
+           points: 10
+           charge: 1
        }
        {
            name: "Grand Inquisitor"
@@ -5013,98 +4843,12 @@ exportObj.basicCardData = ->
            charge: 2
        }
        {
-           name: "Greedo"
-           id: 83
-           slot: "Gunner"
-           points: 1
-           unique: true
-           faction: "Scum"
-           charge: 1
-       }
-       {
-           name: "Han Solo (Rebel)"
-           id: 84
-           slot: "Gunner"
-           points: 12
-           unique: true
-           faction: "Rebel"
-       }
-       {
-           name: "Han Solo (Scum)"
-           id: 85
-           slot: "Gunner"
-           points: 3
-           unique: true
-           faction: "Scum"
-       }
-       {
-           name: "Havoc"
-           id: 149
-           slot: "Title"
-           points: 4
-           unique: true
-           faction: "Scum"
-           ship: "Scurrg H-6 bomber"
-       }
-       {
-           name: "Heavy Laser Cannon"
-           id: 10
-           slot: "Cannon"
-           points: 4
-           attack: 4
-           range: """2-3"""
-       }
-       {
-           name: "Heightened Perception"
-           id: 72
-           slot: "Force"
-           points: 3
-       }
-       {
            name: "Hera Syndulla"
            id: 35
            slot: "Crew"
            points: 4
            unique: true
            faction: "Rebel"
-       }
-       {
-           name: "Homing Missiles"
-           id: 100
-           slot: "Missile"
-           points: 3
-           attack: 4
-           range: """2-3"""
-           charge: 2
-       }
-       {
-           name: "Hotshot Gunner"
-           id: 86
-           slot: "Gunner"
-           points: 7
-       }
-       {
-           name: "Hound's Tooth"
-           id: 150
-           slot: "Title"
-           points: 1
-           unique: true
-           faction: "Scum"
-           ship: "YV-666"
-       }
-       {
-           name: "Hull Upgrade"
-           id: 164
-           slot: "Modification"
-           points: 7
-       }
-       {
-           name: "IG-2000"
-           id: 151
-           slot: "Title"
-           points: 2
-           faction: "Scum"
-           ship: "Aggressor"
        }
        {
            name: "IG-88D"
@@ -5115,55 +4859,11 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "Inertial Dampeners"
-           id: 95
-           slot: "Illicit"
-           points: 1
-       }
-       {
            name: "Informant"
            id: 37
            slot: "Crew"
            points: 5
            unique: true
-       }
-       {
-           name: "Instinctive Aim"
-           id: 73
-           slot: "Force"
-           points: 2
-       }
-       {
-           name: "Intimidation"
-           id: 122
-           slot: "Talent"
-           points: 3
-       }
-       {
-           name: "Ion Cannon"
-           id: 11
-           slot: "Cannon"
-           points: 5
-           attack: 3
-           range: """1-3"""
-       }
-       {
-           name: "Ion Missiles"
-           id: 101
-           slot: "Missile"
-           points: 4
-           attack: 3
-           range: """2-3"""
-           charge: 3
-       }
-       {
-           name: "Ion Torpedoes"
-           id: 135
-           slot: "Torpedo"
-           points: 6
-           attack: 4
-           range: """2-3"""
-           charge: 2
        }
        {
            name: "ISB Slicer"
@@ -5180,20 +4880,6 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Scum"
            charge: 4
-       }
-       {
-           name: "Jamming Beam"
-           id: 12
-           slot: "Cannon"
-           points: 2
-           attack: 3
-           range: """1-2"""
-       }
-       {
-           name: "Juke"
-           id: 123
-           slot: "Talent"
-           points: 4
        }
        {
            name: "Jyn Erso"
@@ -5230,12 +4916,6 @@ exportObj.basicCardData = ->
            force: 1
        }
        {
-           name: "L3-37's Programming"
-           id: 145
-           slot: "Config"
-           faction: "Scum"
-       }
-       {
            name: "Lando Calrissian (Rebel)"
            id: 44
            slot: "Crew"
@@ -5252,23 +4932,6 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "Lando's Millennium Falcon"
-           id: 152
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Scum"
-           ship: "YT-1300"
-       }
-       {
-           name: "Latts Razzi"
-           id: 47
-           slot: "Crew"
-           points: 7
-           unique: true
-           faction: "Scum"
-       }
-       {
            name: "Leia Organa"
            id: 46
            slot: "Crew"
@@ -5278,44 +4941,12 @@ exportObj.basicCardData = ->
            charge: 3
        }
        {
-           name: "Lone Wolf"
-           id: 124
-           slot: "Talent"
-           points: 4
-           unique: true
-           charge: 1
-       }
-       {
-           name: "Luke Skywalker"
-           id: 87
-           slot: "Gunner"
-           points: 30
-           unique: true
-           faction: "Rebel"
-           force: 1
-       }
-       {
-           name: "Magva Yarro"
-           id: 51
+           name: "Latts Razzi"
+           id: 47
            slot: "Crew"
            points: 7
            unique: true
-           faction: "Rebel"
-       }
-       {
-           name: "Marauder"
-           id: 153
-           slot: "Title"
-           points: 3
-           unique: true
            faction: "Scum"
-           ship: "Firespray-31"
-       }
-       {
-           name: "Marksmanship"
-           id: 125
-           slot: "Talent"
-           points: 1
        }
        {
            name: "Maul"
@@ -5327,30 +4958,12 @@ exportObj.basicCardData = ->
            charge: 1
        }
        {
-           name: "Millennium Falcon"
-           id: 154
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Rebel"
-           ship: "YT-1300"
-       }
-       {
            name: "Minister Tua"
            id: 49
            slot: "Crew"
            points: 7
            unique: true
            faction: "Imperial"
-       }
-       {
-           name: "Mist Hunter"
-           id: 155
-           slot: "Title"
-           points: 2
-           unique: true
-           faction: "Scum"
-           ship: "G-1A Starfighter"
        }
        {
            name: "Moff Jerjerrod"
@@ -5362,19 +4975,12 @@ exportObj.basicCardData = ->
            charge: 2
        }
        {
-           name: "Moldy Crow"
-           id: 156
-           slot: "Title"
-           points: 12
+           name: "Magva Yarro"
+           id: 51
+           slot: "Crew"
+           points: 7
            unique: true
            faction: "Rebel"
-           ship: "HWK-290"
-       }
-       {
-           name: "Munitions Failsafe"
-           id: 108
-           slot: "Modification"
-           points: 2
        }
        {
            name: "Nien Nunb"
@@ -5391,99 +4997,10 @@ exportObj.basicCardData = ->
            points: 4
        }
        {
-           name: "Os-1 Arsenal Loadout"
-           id: 139
-           slot: "Config"
-           ship: "Alpha-Class Star Wing"
-       }
-       {
-           name: "Outmaneuver"
-           id: 126
-           slot: "Talent"
-           points: 6
-       }
-       {
-           name: "Outrider"
-           id: 157
-           slot: "Title"
-           points: 14
-           unique: true
-           faction: "Rebel"
-           ship: "YT-2400"
-       }
-       {
            name: "Perceptive Copilot"
            id: 54
            slot: "Crew"
            points: 10
-       }
-       {
-           name: "Phantom"
-           id: 158
-           slot: "Title"
-           points: 2
-           unique: true
-           faction: "Rebel"
-           ship: "Sheathipede-class Shuttle"
-       }
-       {
-           name: "Pivot Wing (Closed)"
-           id: 140
-           slot: "Config"
-           ship: "U-wing"
-       }
-       {
-           name: "Pivot Wing (Open)"
-           id: 141
-           slot: "Config"
-           ship: "U-wing"
-       }
-       {
-           name: "Predator"
-           id: 127
-           slot: "Talent"
-           points: 2
-       }
-       {
-           name: "Proton Bombs"
-           id: 69
-           slot: "Device"
-           points: 5
-           charge: 2
-       }
-       {
-           name: "Proton Rockets"
-           id: 102
-           slot: "Missile"
-           points: 7
-           attack: 5
-           range: """1-2"""
-           charge: 1
-       }
-       {
-           name: "Proton Torpedoes"
-           id: 136
-           slot: "Torpedo"
-           points: 9
-           attack: 4
-           range: """2-3"""
-           charge: 2
-       }
-       {
-           name: "Proximity Mines"
-           id: 70
-           slot: "Device"
-           points: 6
-           charge: 2
-       }
-       {
-           name: "Punishing One"
-           id: 159
-           slot: "Title"
-           points: 8
-           unique: true
-           faction: "Scum"
-           ship: "JumpMaster 5000"
        }
        {
            name: "Qi'ra"
@@ -5494,13 +5011,6 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "R2 Astromech"
-           id: 2
-           slot: "Astromech"
-           points: 6
-           charge: 2
-       }
-       {
            name: "R2-D2 (Crew)"
            id: 56
            slot: "Crew"
@@ -5509,68 +5019,12 @@ exportObj.basicCardData = ->
            faction: "Rebel"
        }
        {
-           name: "R3 Astromech"
-           id: 4
-           slot: "Astromech"
-           points: 3
-       }
-       {
-           name: "R4 Astromech"
-           id: 5
-           slot: "Astromech"
-           points: 2
-       }
-       {
-           name: "R5 Astromech"
-           id: 6
-           slot: "Astromech"
-           points: 5
-           charge: 2
-       }
-       {
-           name: "R5-P8"
-           id: 8
-           slot: "Astromech"
-           points: 4
-           unique: true
-           faction: "Scum"
-           charge: 3
-       }
-       {
-           name: "R5-TK"
-           id: 9
-           slot: "Astromech"
-           points: 1
-           unique: true
-           faction: "Scum"
-       }
-       {
-           name: "Rigged Cargo Chute"
-           id: 96
-           slot: "Illicit"
-           points: 4
-           charge: 1
-       }
-       {
-           name: "Ruthless"
-           id: 128
-           slot: "Talent"
-           points: 1
-           faction: "Imperial"
-       }
-       {
            name: "Sabine Wren"
            id: 57
            slot: "Crew"
            points: 3
            unique: true
            faction: "Rebel"
-       }
-       {
-           name: "Saturation Salvo"
-           id: 129
-           slot: "Talent"
-           points: 6
        }
        {
            name: "Saw Gerrera"
@@ -5587,32 +5041,6 @@ exportObj.basicCardData = ->
            points: 5
        }
        {
-           name: "Seismic Charges"
-           id: 71
-           slot: "Device"
-           points: 3
-           charge: 2
-       }
-       {
-           name: "Selfless"
-           id: 130
-           slot: "Talent"
-           points: 3
-           faction: "Rebel"
-       }
-       {
-           name: "Sense"
-           id: 75
-           slot: "Force"
-           points: 6
-       }
-       {
-           name: "Servomotor S-foils (Closed)"
-           id: 142
-           slot: "Config"
-           ship: "X-Wing"
-       }
-       {
            name: "Seventh Sister"
            id: 60
            slot: "Crew"
@@ -5622,86 +5050,9 @@ exportObj.basicCardData = ->
            force: 1
        }
        {
-           name: "Shadow Caster"
-           id: 160
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Scum"
-           ship: "Lancer-class Pursuit Craft"
-       }
-       {
-           name: "Shield Upgrade"
-           id: 165
-           slot: "Modification"
-           points: 8
-       }
-       {
-           name: "Skilled Bombardier"
-           id: 88
-           slot: "Gunner"
-           points: 2
-       }
-       {
-           name: "Slave I"
-           id: 161
-           slot: "Title"
-           points: 5
-           unique: true
-           faction: "Scum"
-           ship: "Firespray-31"
-       }
-       {
-           name: "Squad Leader"
-           id: 131
-           slot: "Talent"
-           points: 4
-           unique: true
-       }
-       {
-           name: "ST-321"
-           id: 162
-           slot: "Title"
-           points: 6
-           unique: true
-           faction: "Imperial"
-           ship: "Lambda-Class Shuttle"
-       }
-       {
-           name: "Static Discharge Vanes"
-           id: 109
-           slot: "Modification"
-           points: 6
-       }
-       {
-           name: "Stealth Device"
-           id: 166
-           slot: "Modification"
-           points: 8
-           charge: 1
-       }
-       {
-           name: "Supernatural Reflexes"
-           id: 74
-           slot: "Force"
-           points: 12
-       }
-       {
-           name: "Swarm Tactics"
-           id: 132
-           slot: "Talent"
-           points: 3
-       }
-       {
            name: "Tactical Officer"
            id: 61
            slot: "Crew"
-           points: 2
-       }
-       {
-           name: "Tactical Scrambler"
-           id: 110
-           slot: "Modification"
            points: 2
        }
        {
@@ -5713,24 +5064,12 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: "Tractor Beam"
-           id: 13
-           slot: "Cannon"
+           name: "0-0-0"
+           id: 63
+           slot: "Crew"
            points: 3
-           attack: 3
-           range: """1-3"""
-       }
-       {
-           name: "Trajectory Simulator"
-           id: 114
-           slot: "System"
-           points: 3
-       }
-       {
-           name: "Trick Shot"
-           id: 133
-           slot: "Talent"
-           points: 1
+           unique: true
+           faction: "Scum"
        }
        {
            name: "Unkar Plutt"
@@ -5739,33 +5078,6 @@ exportObj.basicCardData = ->
            points: 2
            unique: true
            faction: "Scum"
-       }
-       {
-           name: "Veteran Tail Gunner"
-           id: 89
-           slot: "Gunner"
-           points: 4
-       }
-       {
-           name: "Veteran Turret Gunner"
-           id: 90
-           slot: "Gunner"
-           points: 8
-       }
-       {
-           name: "Virago"
-           id: 163
-           slot: "Title"
-           points: 10
-           unique: true
-           charge: 2
-           ship: "StarViper"
-       }
-       {
-           name: "Xg-1 Assault Configuration"
-           id: 144
-           slot: "Config"
-           ship: "Alpha-Class Star Wing"
        }
        {
            name: '"Zeb" Orrelios'
@@ -5784,12 +5096,737 @@ exportObj.basicCardData = ->
            faction: "Scum"
        }
        {
-           name: 'GNK "Gonk" Droid'
-           id: 32
-           slot: "Crew"
-           points: 10
+           name: "Bomblet Generator"
+           id: 67
+           slot: "Device"
+           points: 5
+           charge: 2
+       }
+       {
+           name: "Conner Nets"
+           id: 68
+           slot: "Device"
+           points: 6
            charge: 1
        }
+       {
+           name: "Proton Bombs"
+           id: 69
+           slot: "Device"
+           points: 5
+           charge: 2
+       }
+       {
+           name: "Proximity Mines"
+           id: 70
+           slot: "Device"
+           points: 6
+           charge: 2
+       }
+       {
+           name: "Seismic Charges"
+           id: 71
+           slot: "Device"
+           points: 3
+           charge: 2
+       }
+       {
+           name: "Heightened Perception"
+           id: 72
+           slot: "Force"
+           points: 3
+       }
+       {
+           name: "Instinctive Aim"
+           id: 73
+           slot: "Force"
+           points: 2
+       }
+       {
+           name: "Supernatural Reflexes"
+           id: 74
+           slot: "Force"
+           points: 12
+       }
+       {
+           name: "Sense"
+           id: 75
+           slot: "Force"
+           points: 6
+       }
+       {
+           name: "Agile Gunner"
+           id: 76
+           slot: "Gunner"
+           points: 10
+       }
+       {
+           name: "Bistan"
+           id: 77
+           slot: "Gunner"
+           points: 14
+           unique: true
+           faction: "Rebel"
+       }
+       {
+           name: "Bossk"
+           id: 78
+           slot: "Gunner"
+           points: 10
+           unique: true
+           faction: "Scum"
+       }
+       {
+           name: "BT-1"
+           id: 79
+           slot: "Gunner"
+           points: 2
+           unique: true
+           faction: "Scum"
+       }
+       {
+           name: "Dengar"
+           id: 80
+           slot: "Gunner"
+           points: 6
+           unique: true
+           faction: "Scum"
+           charge: 1
+       }
+       {
+           name: "Ezra Bridger"
+           id: 81
+           slot: "Gunner"
+           points: 18
+           unique: true
+           faction: "Rebel"
+           force: 1
+       }
+       {
+           name: "Fifth Brother"
+           id: 82
+           slot: "Gunner"
+           points: 12
+           unique: true
+           faction: "Imperial"
+           force: 1
+       }
+       {
+           name: "Greedo"
+           id: 83
+           slot: "Gunner"
+           points: 1
+           unique: true
+           faction: "Scum"
+           charge: 1
+       }
+       {
+           name: "Han Solo (Rebel)"
+           id: 84
+           slot: "Gunner"
+           points: 12
+           unique: true
+           faction: "Rebel"
+       }
+       {
+           name: "Han Solo (Scum)"
+           id: 85
+           slot: "Gunner"
+           points: 3
+           unique: true
+           faction: "Scum"
+       }
+       {
+           name: "Hotshot Gunner"
+           id: 86
+           slot: "Gunner"
+           points: 7
+       }
+       {
+           name: "Luke Skywalker"
+           id: 87
+           slot: "Gunner"
+           points: 30
+           unique: true
+           faction: "Rebel"
+           force: 1
+       }
+       {
+           name: "Skilled Bombardier"
+           id: 88
+           slot: "Gunner"
+           points: 2
+       }
+       {
+           name: "Veteran Tail Gunner"
+           id: 89
+           slot: "Gunner"
+           points: 4
+       }
+       {
+           name: "Veteran Turret Gunner"
+           id: 90
+           slot: "Gunner"
+           points: 8
+       }
+       {
+           name: "Cloaking Device"
+           id: 91
+           slot: "Illicit"
+           points: 5
+           unique: true
+           charge: 2
+       }
+       {
+           name: "Contraband Cybernetics"
+           id: 92
+           slot: "Illicit"
+           points: 5
+           charge: 1
+       }
+       {
+           name: "Deadman's Switch"
+           id: 93
+           slot: "Illicit"
+           points: 2
+       }
+       {
+           name: "Feedback Array"
+           id: 94
+           slot: "Illicit"
+           points: 4
+       }
+       {
+           name: "Inertial Dampeners"
+           id: 95
+           slot: "Illicit"
+           points: 1
+       }
+       {
+           name: "Rigged Cargo Chute"
+           id: 96
+           slot: "Illicit"
+           points: 4
+           charge: 1
+       }
+       {
+           name: "Barrage Rockets"
+           id: 97
+           slot: "Missile"
+           points: 6
+           attack: 3
+           range: """2-3"""
+           charge: 5
+       }
+       {
+           name: "Cluster Missiles"
+           id: 98
+           slot: "Missile"
+           points: 5
+           attack: 3
+           range: """1-2"""
+           charge: 4
+       }
+       {
+           name: "Concussion Missiles"
+           id: 99
+           slot: "Missile"
+           points: 6
+           attack: 3
+           range: """2-3"""
+           charge: 3
+       }
+       {
+           name: "Homing Missiles"
+           id: 100
+           slot: "Missile"
+           points: 3
+           attack: 4
+           range: """2-3"""
+           charge: 2
+       }
+       {
+           name: "Ion Missiles"
+           id: 101
+           slot: "Missile"
+           points: 4
+           attack: 3
+           range: """2-3"""
+           charge: 3
+       }
+       {
+           name: "Proton Rockets"
+           id: 102
+           slot: "Missile"
+           points: 7
+           attack: 5
+           range: """1-2"""
+           charge: 1
+       }
+       {
+           name: "Ablative Plating"
+           id: 103
+           slot: "Modification"
+           points: 4
+           charge: 2
+       }
+       {
+           name: "Advanced SLAM"
+           id: 104
+           slot: "Modification"
+           points: 3
+       }
+       {
+           name: "Afterburners"
+           id: 105
+           slot: "Modification"
+           points: 8
+           charge: 2
+       }
+       {
+           name: "Electronic Baffle"
+           id: 106
+           slot: "Modification"
+           points: 2
+       }
+       {
+           name: "Engine Upgrade"
+           id: 107
+           slot: "Modification"
+           points: 3,6,9
+       }
+       {
+           name: "Munitions Failsafe"
+           id: 108
+           slot: "Modification"
+           points: 2
+       }
+       {
+           name: "Static Discharge Vanes"
+           id: 109
+           slot: "Modification"
+           points: 6
+       }
+       {
+           name: "Tactical Scrambler"
+           id: 110
+           slot: "Modification"
+           points: 2
+       }
+       {
+           name: "Advanced Sensors"
+           id: 111
+           slot: "System"
+           points: 8
+       }
+       {
+           name: "Collision Detector"
+           id: 112
+           slot: "System"
+           points: 5
+           charge: 2
+       }
+       {
+           name: "Fire-Control System"
+           id: 113
+           slot: "System"
+           points: 3
+       }
+       {
+           name: "Trajectory Simulator"
+           id: 114
+           slot: "System"
+           points: 3
+       }
+       {
+           name: "Composure"
+           id: 115
+           slot: "Talent"
+           points: 2
+       }
+       {
+           name: "Crack Shot"
+           id: 116
+           slot: "Talent"
+           points: 1
+           charge: 1
+       }
+       {
+           name: "Daredevil"
+           id: 117
+           slot: "Talent"
+           points: 3
+       }
+       {
+           name: "Debris Gambit"
+           id: 118
+           slot: "Talent"
+           points: 2
+       }
+       {
+           name: "Elusive"
+           id: 119
+           slot: "Talent"
+           points: 3
+           charge: 1
+       }
+       {
+           name: "Expert Handling"
+           id: 120
+           slot: "Talent"
+           points: 2,4,6
+       }
+       {
+           name: "Fearless"
+           id: 121
+           slot: "Talent"
+           points: 3
+           faction: "Scum"
+       }
+       {
+           name: "Intimidation"
+           id: 122
+           slot: "Talent"
+           points: 3
+       }
+       {
+           name: "Juke"
+           id: 123
+           slot: "Talent"
+           points: 4
+       }
+       {
+           name: "Lone Wolf"
+           id: 124
+           slot: "Talent"
+           points: 4
+           unique: true
+           charge: 1
+       }
+       {
+           name: "Marksmanship"
+           id: 125
+           slot: "Talent"
+           points: 1
+       }
+       {
+           name: "Outmaneuver"
+           id: 126
+           slot: "Talent"
+           points: 6
+       }
+       {
+           name: "Predator"
+           id: 127
+           slot: "Talent"
+           points: 2
+       }
+       {
+           name: "Ruthless"
+           id: 128
+           slot: "Talent"
+           points: 1
+           faction: "Imperial"
+       }
+       {
+           name: "Saturation Salvo"
+           id: 129
+           slot: "Talent"
+           points: 6
+       }
+       {
+           name: "Selfless"
+           id: 130
+           slot: "Talent"
+           points: 3
+           faction: "Rebel"
+       }
+       {
+           name: "Squad Leader"
+           id: 131
+           slot: "Talent"
+           points: 4
+           unique: true
+       }
+       {
+           name: "Swarm Tactics"
+           id: 132
+           slot: "Talent"
+           points: 3
+       }
+       {
+           name: "Trick Shot"
+           id: 133
+           slot: "Talent"
+           points: 1
+       }
+       {
+           name: "Adv. Proton Torpedoes"
+           id: 134
+           slot: "Torpedo"
+           points: 6
+           attack: 5
+           range: """1"""
+           charge: 1
+       }
+       {
+           name: "Ion Torpedoes"
+           id: 135
+           slot: "Torpedo"
+           points: 6
+           attack: 4
+           range: """2-3"""
+           charge: 2
+       }
+       {
+           name: "Proton Torpedoes"
+           id: 136
+           slot: "Torpedo"
+           points: 9
+           attack: 4
+           range: """2-3"""
+           charge: 2
+       }
+       {
+           name: "Dorsal Turret"
+           id: 137
+           slot: "Turret"
+           points: 4
+           attack: 2
+           range: """1-2"""
+       }
+       {
+           name: "Ion Cannon Turret"
+           id: 138
+           slot: "Turret"
+           points: 6
+           attack: 3
+           range: """1-2"""
+       }
+       {
+           name: "Os-1 Arsenal Loadout"
+           id: 139
+           slot: "Configuration"
+           ship: "Alpha-Class Star Wing"
+       }
+       {
+           name: "Pivot Wing (Closed)"
+           id: 140
+           slot: "Configuration"
+           ship: "U-wing"
+       }
+       {
+           name: "Pivot Wing (Open)"
+           id: 141
+           slot: "Configuration"
+           ship: "U-wing"
+       }
+       {
+           name: "Servomotor S-foils (Closed)"
+           id: 142
+           slot: "Configuration"
+           ship: "X-Wing"
+       }
+       {
+           name: "Servomotor S-foils (Open)"
+           id: 143
+           slot: "Configuration"
+           ship: "X-Wing"
+       }
+       {
+           name: "Xg-1 Assault Configuration"
+           id: 144
+           slot: "Configuration"
+           ship: "Alpha-Class Star Wing"
+       }
+       {
+           name: "L3-37's Programming"
+           id: 145
+           slot: "Configuration"
+           faction: "Scum"
+       }
+       {
+           name: "Andrasta"
+           id: 146
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Scum"
+           ship: "Firespray-31"
+       }
+       {
+           name: "Dauntless"
+           id: 147
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Imperial"
+           ship: "VT-49 Decimator"
+       }
+       {
+           name: "Ghost"
+           id: 148
+           slot: "Title"
+           unique: true
+           faction: "Rebel"
+           ship: "VCX-100"
+       }
+       {
+           name: "Havoc"
+           id: 149
+           slot: "Title"
+           points: 4
+           unique: true
+           faction: "Scum"
+           ship: "Scurrg H-6 bomber"
+       }
+       {
+           name: "Hound's Tooth"
+           id: 150
+           slot: "Title"
+           points: 1
+           unique: true
+           faction: "Scum"
+           ship: "YV-666 Light Freighter"
+       }
+       {
+           name: "IG-2000"
+           id: 151
+           slot: "Title"
+           points: 2
+           faction: "Scum"
+           ship: "Aggressor Assault Fighter"
+       }
+       {
+           name: "Lando's Millennium Falcon"
+           id: 152
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Scum"
+           ship: "Customized YT-1300 Light Freighter"
+       }
+       {
+           name: "Marauder"
+           id: 153
+           slot: "Title"
+           points: 3
+           unique: true
+           faction: "Scum"
+           ship: "Firespray-class Patrol Craft"
+       }
+       {
+           name: "Millennium Falcon"
+           id: 154
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Rebel"
+           ship: "YT-1300"
+       }
+       {
+           name: "Mist Hunter"
+           id: 155
+           slot: "Title"
+           points: 2
+           unique: true
+           faction: "Scum"
+           ship: "G-1A Starfighter"
+       }
+       {
+           name: "Moldy Crow"
+           id: 156
+           slot: "Title"
+           points: 12
+           unique: true
+           faction: "Rebel"
+           ship: "HWK-290 Light Freighter"
+       }
+       {
+           name: "Outrider"
+           id: 157
+           slot: "Title"
+           points: 14
+           unique: true
+           faction: "Rebel"
+           ship: "YT-2400"
+       }
+       {
+           name: "Phantom"
+           id: 158
+           slot: "Title"
+           points: 2
+           unique: true
+           faction: "Rebel"
+           ship: "Sheathipede-class Shuttle"
+       }
+       {
+           name: "Punishing One"
+           id: 159
+           slot: "Title"
+           points: 8
+           unique: true
+           faction: "Scum"
+           ship: "JumpMaster 5000"
+       }
+       {
+           name: "Shadow Caster"
+           id: 160
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Scum"
+           ship: "Lancer-class Pursuit Craft"
+       }
+       {
+           name: "Slave I"
+           id: 161
+           slot: "Title"
+           points: 5
+           unique: true
+           faction: "Scum"
+           ship: "Firespray-31"
+       }
+       {
+           name: "ST-321"
+           id: 162
+           slot: "Title"
+           points: 6
+           unique: true
+           faction: "Imperial"
+           ship: "Lambda-Class Shuttle"
+       }
+       {
+           name: "Virago"
+           id: 163
+           slot: "Title"
+           points: 10
+           unique: true
+           charge: 2
+           ship: "StarViper"
+       }
+       {
+           name: "Hull Upgrade"
+           id: 164
+           slot: "Modification"
+           points: 7
+       }
+       {
+           name: "Shield Upgrade"
+           id: 165
+           slot: "Modification"
+           points: 8
+       }
+       {
+           name: "Stealth Device"
+           id: 166
+           slot: "Modification"
+           points: 8
+           charge: 1
+       }
+    ]
+    modificationsById: [
+
     ]
 
     titlesById: [
