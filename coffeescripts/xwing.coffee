@@ -1528,6 +1528,8 @@ class exportObj.SquadBuilder
                     effective_stats = data.effectiveStats()
                     extra_actions = $.grep effective_stats.actions, (el, i) ->
                         el not in data.data.actions
+                    extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
+                        el not in data.data.actionsred
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1536,21 +1538,20 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-skill').show()
 
                     for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
-                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-frontarc')
+                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-attack')
 
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
-                    @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
+                    @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
                     
                     @info_container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackb ? data.data.attackb), effective_stats, 'attackb')
-                    @info_container.find('tr.info-attack-back').toggle(data.ship_override?.attackb? or ship.attackb?)
-                    
+                    @info_container.find('tr.info-attack-back').toggle(data.pilot.ship_override?.attackb? or data.data.attackb?)
+
                     @info_container.find('tr.info-attack-turret td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackt ? data.data.attackt), effective_stats, 'attackt')
-                    @info_container.find('tr.info-attack-turret').toggle(data.ship_override?.attackt? or ship.attackt?)
-   
-                    
-                    @info_container.find('tr.info-attack-doubleturret td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackdt ?data.data.attackdt), effective_stats, 'attackdt')
-                    @info_container.find('tr.info-attack-turret').toggle(data.ship_override?.attackdt? or ship.attackdt?)
+                    @info_container.find('tr.info-attack-turret').toggle(data.pilot.ship_override?.attackt? or data.data.attackt?)
+
+                    @info_container.find('tr.info-attack-doubleturret td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackdt ? data.data.attackdt), effective_stats, 'attackdt')
+                    @info_container.find('tr.info-attack-doubleturret').toggle(data.pilot.ship_override?.attackdt? or data.data.attackdt?)
                                         
                     @info_container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.energy ? data.data.energy), effective_stats, 'energy')
                     @info_container.find('tr.info-energy').toggle(data.pilot.ship_override?.energy? or data.data.energy?)
@@ -1564,11 +1565,8 @@ class exportObj.SquadBuilder
                     
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
 
-                    if ships[data.ship].actionsred?
-                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', actionsred}</strong>" for action in extra_actions_red))).join ', '
-                        @info_container.find('tr.info-actions-red').show()
-                    else
-                        @info_container.find('tr.info-actions-red').hide()
+                    @info_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', actionsred}</strong>" for action in extra_actions_red))).join ', '
+                    @info_container.find('tr.info-actions-red').show()
 
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
@@ -1730,9 +1728,9 @@ class exportObj.SquadBuilder
                         when 'Title'
                             available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
                             addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
-                        #when 'Modification'
-                        #    available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
-                        #    addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
+                        when 'Modification'
+                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
+                            addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
                         else
                             throw new Error("Invalid addon type #{addon.type}")
 
@@ -2254,14 +2252,14 @@ class Ship
                 container: @addon_container
                 slot: slot
         # Title
-        if @pilot.ship of exportObj.titlesByShip
-            @titles.push new exportObj.Title
-                ship: this
-                container: @addon_container
+        #if @pilot.ship of exportObj.titlesByShip
+        #    @titles.push new exportObj.Title
+        #        ship: this
+        #        container: @addon_container
         # Modifications
-        @modifications.push new exportObj.Modification
-            ship: this
-            container: @addon_container
+        #@modifications.push new exportObj.Modification
+        #    ship: this
+        #    container: @addon_container
 
     resetAddons: ->
         await
@@ -2783,11 +2781,16 @@ class Ship
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
+            attackb: @pilot.ship_override?.attack ? @data.attack
+            attackt: @pilot.ship_override?.attack ? @data.attack
+            attackdt: @pilot.ship_override?.attack ? @data.attack
             energy: @pilot.ship_override?.energy ? @data.energy
             agility: @pilot.ship_override?.agility ? @data.agility
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
+            force: @pilot.ship_override?.force ? @data.force
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
+#            actionsred: (@pilot.ship_override?.actionsred ? @data.actionsred).slice 0
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
@@ -3301,13 +3304,13 @@ class exportObj.RestrictedUpgrade extends exportObj.Upgrade
         if args.auto_equip?
             @setById args.auto_equip
 
-class exportObj.RestrictedModification extends exportObj.Modification
-    constructor: (args) ->
-        @filter_func = args.filter_func
-        super args
-        @serialization_code = 'm'
-        if args.auto_equip?
-            @setById args.auto_equip
+#class exportObj.RestrictedModification extends exportObj.Modification
+#    constructor: (args) ->
+#        @filter_func = args.filter_func
+#        super args
+#        @serialization_code = 'm'
+#        if args.auto_equip?
+#            @setById args.auto_equip
 
 SERIALIZATION_CODE_TO_CLASS =
     'M': exportObj.Modification

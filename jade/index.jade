@@ -14,7 +14,7 @@ html
     link(rel="stylesheet", href=`stylesheets/xwing.css?${now_ts}`)
     link(rel="stylesheet", href=`stylesheets/xwing-screen.css?${now_ts}`, media="screen,handheld")
     link(rel="stylesheet", href=`stylesheets/xwing-print.css?${now_ts}`, media="print")
-    link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen,handheld")
+    //link(rel="stylesheet", href=`stylesheets/backgrounds.css?${now_ts}`, media="screen,handheld")
     link(rel="stylesheet", href=`bower_components/xwing-miniatures-font/xwing-miniatures.css?${now_ts}`, media="screen,handheld,print")
 
   body
@@ -55,7 +55,7 @@ html
             span.show-authenticated
               i.fa.fa-sign-out.hidden-phone.hidden-tablet
               | Log Out
-        li
+        //li
           a(href='https://github.com/geordanr/xwing/issues/new', target='_blank') Submit Bug/Feature Request
 
       .tab-content
@@ -71,10 +71,14 @@ html
           .container-fluid
             .row-fluid
               .span8
-                h2 (Yet Another) X-Wing Miniatures Squad Builder
+                h2 YASB for X-Wing 2.0
                 p
                   :markdown
                     This is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
+
+                    2.0 code editing by Stephen Kim.
+
+                    2.0 content thanks to Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.
 
                     Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
 
