@@ -182,7 +182,7 @@ exportObj.basicCardData = ->
                 "Boost"
             ]
             actionsred: [
-                "Reinforce"
+                "Coordinate"
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -1346,7 +1346,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Y-Wing"
             skill: 4
-            points: 42
+            points: 38
             slots: [
                 "Talent"
                 "Turret"
@@ -1382,7 +1382,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Y-Wing"
             skill: 4
-            points: 42
+            points: 36
             slots: [
                 "Talent"
                 "Turret"
@@ -1399,7 +1399,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Y-Wing"
             skill: 4
-            points: 42
+            points: 34
             slots: [
                 "Talent"
                 "Turret"
@@ -1416,7 +1416,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Y-Wing"
             skill: 4
-            points: 42
+            points: 32
             slots: [
                 "Turret"
                 "Torpedo"
@@ -4795,7 +4795,11 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Galactic Empire"
-       }
+           restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ "Crew" ]       }
        {
            name: "Director Krennic"
            id: 28
@@ -4812,6 +4816,11 @@ exportObj.basicCardData = ->
            force: 1
            unique: true
            faction: "Galactic Empire"
+           restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ "Crew" ]
            modifier_func: (stats) ->
                 stats.force += 1
        }
@@ -5280,7 +5289,7 @@ exportObj.basicCardData = ->
            name: "Han Solo (Scum)"
            id: 85
            slot: "Gunner"
-           points: 3
+           points: 4
            unique: true
            faction: "Scum and Villainy"
        }
@@ -5375,6 +5384,11 @@ exportObj.basicCardData = ->
            attack: 3
            range: """2-3"""
            charge: 5
+           restriction_func: (ship, upgrade_obj) ->
+               ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+               upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ 'Missile' ]
        }
        {
            name: "Cluster Missiles"
@@ -5882,7 +5896,6 @@ exportObj.basicCardData = ->
            slot: "Title"
            points: 12
            unique: true
-           faction: "Rebel Alliance"
            ship: "HWK-290"
        }
        {
@@ -5895,7 +5908,7 @@ exportObj.basicCardData = ->
            ship: "YT-2400"
        }
        {
-           name: "Phantom"
+           name: "Phantom (Sheathipede)"
            id: 158
            slot: "Title"
            points: 2
@@ -5920,7 +5933,7 @@ exportObj.basicCardData = ->
            confersAddons: [
                 {
                     type: exportObj.Upgrade
-                    slot: 'Salvaged Astromech'
+                    slot: 'Astromech'
                 }
            ]
        }
@@ -5998,6 +6011,15 @@ exportObj.basicCardData = ->
            charge: 1
            modifier_func: (stats) ->
                 stats.agility += 1       
+       }
+       {
+           name: "Phantom"
+           id: 167
+           slot: "Title"
+           points: 2
+           unique: true
+           faction: "Rebel Alliance"
+           ship: "Attack Shuttle"
        }
     ]
     modificationsById: [
