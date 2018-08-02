@@ -5331,7 +5331,7 @@ exportObj.basicCardData = ->
            unique: true
            charge: 2
            restriction_func: (ship) ->
-                ship.data.large ? false
+                not(ship.data.large?)
        }
        {
            name: "Contraband Cybernetics"
@@ -5577,7 +5577,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            restriction_func: (ship) ->
-                ship.data.large ? false
+                not (ship.data.large?)
        }
        {
            name: "Lone Wolf"
