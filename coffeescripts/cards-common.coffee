@@ -4610,6 +4610,8 @@ exportObj.basicCardData = ->
            id: 5
            slot: "Astromech"
            points: 2
+           restriction_func: (ship) ->
+                not (ship.data.large ? false) or (ship.data.medium ? false) 
        }
        {
            name: "R5 Astromech"
@@ -4764,6 +4766,8 @@ exportObj.basicCardData = ->
            points: 10
            unique: true
            faction: "Galactic Empire"
+           restriction_func: (ship) ->
+                "Coordinate" in ship.effectiveStats().actions
        }
        {
            name: "Cikatro Vizago"
@@ -4850,6 +4854,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            charge: 2
+           restriction_func: (ship) ->
+                "Target Lock" in ship.effectiveStats().actions
        }
        {
            name: "Hera Syndulla"
@@ -4968,6 +4974,12 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Scum and Villainy"
            charge: 1
+           restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy"
+                for t, things of builder.uniques_in_use
+                    return true if 'ezrabridger' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
        }
        {
            name: "Minister Tua"
@@ -4985,6 +4997,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            charge: 2
+           restriction_func: (ship) ->
+                "Coordinate" in ship.effectiveStats().actions
        }
        {
            name: "Magva Yarro"
@@ -5068,6 +5082,10 @@ exportObj.basicCardData = ->
            id: 61
            slot: "Crew"
            points: 2
+           restriction_func: (ship) ->
+                "Coordinate" in ship.data.actionsred
+           modifier_func: (stats) ->
+                stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
        }
        {
            name: "Tobias Beckett"
@@ -5084,6 +5102,12 @@ exportObj.basicCardData = ->
            points: 3
            unique: true
            faction: "Scum and Villainy"
+           restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy"
+                for t, things of builder.uniques_in_use
+                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
        }
        {
            name: "Unkar Plutt"
@@ -5197,6 +5221,12 @@ exportObj.basicCardData = ->
            points: 2
            unique: true
            faction: "Scum and Villainy"
+           restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.faction == "Scum and Villainy"
+                for t, things of builder.uniques_in_use
+                    return true if 'darthvader' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
        }
        {
            name: "Dengar"
@@ -5282,12 +5312,16 @@ exportObj.basicCardData = ->
            id: 89
            slot: "Gunner"
            points: 4
+           restriction_func: (ship) ->
+                ship.effectiveStats().actions
        }
        {
            name: "Veteran Turret Gunner"
            id: 90
            slot: "Gunner"
            points: 8
+           restriction_func: (ship) ->
+                ship.data.attackb?
        }
        {
            name: "Cloaking Device"
@@ -5296,6 +5330,8 @@ exportObj.basicCardData = ->
            points: 5
            unique: true
            charge: 2
+           restriction_func: (ship) ->
+                ship.data.large ? false
        }
        {
            name: "Contraband Cybernetics"
@@ -5328,6 +5364,8 @@ exportObj.basicCardData = ->
            slot: "Illicit"
            points: 4
            charge: 1
+           restriction_func: (ship) ->
+                ship.data.medium?  or ship.data.large?
        }
        {
            name: "Barrage Rockets"
@@ -5389,12 +5427,16 @@ exportObj.basicCardData = ->
            slot: "Modification"
            points: 4
            charge: 2
+           restriction_func: (ship) ->
+                ship.data.medium?  or ship.data.large?
        }
        {
            name: "Advanced SLAM"
            id: 104
            slot: "Modification"
            points: 3
+           restriction_func: (ship) ->
+                "Slam" in ship.effectiveStats().actions
        }
        {
            name: "Afterburners"
@@ -5402,6 +5444,8 @@ exportObj.basicCardData = ->
            slot: "Modification"
            points: 8
            charge: 2
+           restriction_func: (ship) ->
+                not ((ship.data.large ? false) or (ship.data.medium ? false))
        }
        {
            name: "Electronic Baffle"
@@ -5415,6 +5459,10 @@ exportObj.basicCardData = ->
            slot: "Modification"
            points: 3
            variablebase: true
+           restriction_func: (ship) ->
+                "Boost" in ship.data.actionsred
+           modifier_func: (stats) ->
+                stats.actions.push 'Boost' if 'Boost' not in stats.actions
        }
        {
            name: "Munitions Failsafe"
@@ -5433,6 +5481,8 @@ exportObj.basicCardData = ->
            id: 110
            slot: "Modification"
            points: 2
+           restriction_func: (ship) ->
+                ship.data.medium?  or ship.data.large?
        }
        {
            name: "Advanced Sensors"
@@ -5464,6 +5514,8 @@ exportObj.basicCardData = ->
            id: 115
            slot: "Talent"
            points: 2
+           restriction_func: (ship) ->
+                "Boost" in ship.effectiveStats().actions
        }
        {
            name: "Crack Shot"
@@ -5477,12 +5529,16 @@ exportObj.basicCardData = ->
            id: 117
            slot: "Talent"
            points: 3
+           restriction_func: (ship) ->
+                "Boost" in ship.effectiveStats().actions
        }
        {
            name: "Debris Gambit"
            id: 118
            slot: "Talent"
            points: 2
+           restriction_func: (ship) ->
+                "Evade" in ship.data.actionsred
        }
        {
            name: "Elusive"
@@ -5497,6 +5553,10 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            variablebase: true
+           restriction_func: (ship) ->
+                "Barrel Roll" in ship.data.actionsred
+           modifier_func: (stats) ->
+                stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
        }
        {
            name: "Fearless"
@@ -5516,6 +5576,8 @@ exportObj.basicCardData = ->
            id: 123
            slot: "Talent"
            points: 4
+           restriction_func: (ship) ->
+                ship.data.large ? false
        }
        {
            name: "Lone Wolf"
@@ -5555,6 +5617,8 @@ exportObj.basicCardData = ->
            id: 129
            slot: "Talent"
            points: 6
+           restriction_func: (ship) ->
+                "Reload" in ship.effectiveStats().actions
        }
        {
            name: "Selfless"
@@ -5631,6 +5695,16 @@ exportObj.basicCardData = ->
            points: 0
            slot: "Configuration"
            ship: "Alpha-class Star Wing"
+           confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missile"
+                }
+            ]
        }
        {
            name: "Pivot Wing (Closed)"
@@ -5666,6 +5740,12 @@ exportObj.basicCardData = ->
            points: 0
            slot: "Configuration"
            ship: "Alpha-class Star Wing"
+           confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
+           ]
        }
        {
            name: "L3-37's Programming"
@@ -5769,7 +5849,7 @@ exportObj.basicCardData = ->
            confersAddons: [
               {
                   type: exportObj.Upgrade
-                  slot: "Device"
+                  slot: "Gunner"
               }
             ]       }
        {
@@ -5884,6 +5964,12 @@ exportObj.basicCardData = ->
            unique: true
            charge: 2
            ship: "StarViper"
+           confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Modification"
+                }
+            ]
        }
        {
            name: "Hull Upgrade"
