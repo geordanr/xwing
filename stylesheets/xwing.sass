@@ -37,7 +37,11 @@ $charge_color: #C2B230
   font-family: BankGothicHD
   src: url('../fonts/bankgthd.ttf')
 
-body, button
+body
+  background-color: #202020
+  font-family: EurostileStandard
+    
+button
   font-family: EurostileStandard
 
 strong
@@ -53,14 +57,8 @@ strong em, em strong
   font-style: normal
   font-weight: normal
 
-.nav-pills
-  border-bottom: thin solid darkgray
-
 .ship-container > .row-fluid
   padding: 10px 0px
-
-.ship
-  border: medium solid black
 
 .card-stat
   font-family: kimberley
@@ -84,6 +82,9 @@ td.info-header
 
 i.xwing-miniatures-font
   color: black
+
+i.red
+  color: $attack_color
 
 i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180
   @extend .card-icon
@@ -205,7 +206,6 @@ ul.squad-list
 
 .points-display-container
   font-size: 1.2em
-  background-color: rgba(0, 0, 0, 0.5)
   padding-top: 5px
   text-align: center
 

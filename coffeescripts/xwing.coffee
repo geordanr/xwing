@@ -1545,6 +1545,7 @@ class exportObj.SquadBuilder
                         
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
 
+                    
                     @info_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', actionsred}</strong>" for action in extra_actions_red))).join ', '
 
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
@@ -1659,7 +1660,7 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-maneuvers').hide()
             @info_container.show()
             @tooltip_currently_displaying = data
-
+            
     _randomizerLoopBody: (data) =>
         if data.keep_running and data.iterations < data.max_iterations
             data.iterations++
@@ -2416,6 +2417,7 @@ class Ship
     toHTML: ->
         effective_stats = @effectiveStats()
         action_icons = []
+        action_icons_red = []
         for action in effective_stats.actions
             action_icons.push switch action
                 when 'Focus'
@@ -2446,9 +2448,43 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
+
+        for actionred in effective_stats.actionsred
+            action_icons_red.push switch actionred
+                when 'Focus'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-focus"></i>"""
+                when 'Evade'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>"""
+                when 'Barrel Roll'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>"""
+                when 'Target Lock'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-targetlock"></i>"""
+                when 'Boost'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-boost"></i>"""
+                when 'Coordinate'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-coordinate"></i>"""
+                when 'Jam'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-jam"></i>"""
+                when 'Recover'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-recover"></i>"""
+                when 'Reinforce'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-reinforce"></i>"""
+                when 'Cloak'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-cloak"></i>"""
+                when 'Slam'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-slam"></i>"""
+                when 'Rotate Arc'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>"""
+                when 'Reload'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-reload"></i>"""
+                else
+                    """<span>&nbsp;#{action}<span>"""
+    
         action_bar = action_icons.join ' '
+        action_bar_red = action_icons_red.join ' '
 
         attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
+
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
             <i class="xwing-miniatures-font #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
@@ -2487,6 +2523,8 @@ class Ship
                     #{forceHTML}
                     &nbsp;
                     #{action_bar}
+                    &nbsp;
+                    #{action_bar_red}
                 </div>
             </div>
         """
