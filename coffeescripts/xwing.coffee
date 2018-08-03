@@ -2496,13 +2496,15 @@ class Ship
                 when 'Reload'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
                 when "<r>> Target Lock</r>"
-                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-lock"></i></r>"""
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i></r>"""
+                when "<r>> Barrel Roll</r>"
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i></r>"""
                 when "<r>> Focus</r>"
-                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-focus"></i></r>"""
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-focus"></i></r>"""
                 when "<r>> Rotate Arc</r>"
-                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-rotatearc"></i></r>"""
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i></r>"""
                 when "<r>> Evade</r>"
-                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-evade"></i></r>"""
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i></r>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -3200,6 +3202,18 @@ class GenericAddon
                     <span class="upgrade-attack-range">#{@data.range}</span>
                     <span class="info-data info-attack">#{@data.attack}</span>
                     <i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>
+                </div>
+            """ else if (@data.attackt?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attackt}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>
+                </div>
+            """ else if (@data.attackbull?) then $.trim """
+                <div class="upgrade-attack">
+                    <span class="upgrade-attack-range">#{@data.range}</span>
+                    <span class="info-data info-attack">#{@data.attackbull}</span>
+                    <i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>
                 </div>
             """ else ''
 

@@ -876,7 +876,7 @@ exportObj.cardLoaders.English = () ->
         "Proton Bombs":
            text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Proton Bomb using the [1 %STRAIGHT%] template."""
         "Proton Rockets":
-           text: """%BULLSEYEARC% only. Attack (%FOCUS%): Spend 1 %CHARGE%."""
+           text: """Attack (%FOCUS%): Spend 1 %CHARGE%."""
         "Proton Torpedoes":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. Change 1 %HIT% result to a %CRIT% result."""
         "Proximity Mines":
