@@ -42,7 +42,7 @@ exportObj.basicCardData = ->
             ]
         "Y-Wing":
             name: "Y-Wing"
-            factions: [ "Rebel Alliance", "Scum and Villainy", ]
+            factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 1
             hull: 6
@@ -64,7 +64,7 @@ exportObj.basicCardData = ->
             ]
         "A-Wing":
             name: "A-Wing"
-            factions: [ "Rebel Alliance", ]
+            factions: [ "Rebel Alliance" ]
             attack: 2
             agility: 3
             hull: 2
@@ -129,7 +129,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced":
             name: "TIE Advanced"
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 2
             agility: 3
             hull: 3
@@ -149,7 +149,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Interceptor":
             name: "TIE Interceptor"
-            factions: [ "Galactic Empire", ]
+            factions: [ "Galactic Empire" ]
             attack: 3
             agility: 3
             hull: 3
@@ -186,7 +186,7 @@ exportObj.basicCardData = ->
             ]
             maneuvers: [
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-              [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
               [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0]
               [ 0, 1, 2, 1, 0, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
@@ -194,7 +194,7 @@ exportObj.basicCardData = ->
             medium: true
         "HWK-290":
             name: "HWK-290"
-            factions: [ "Rebel Alliance", "Scum and Villainy", ]
+            factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attackt: 2
             agility: 2
             hull: 3
@@ -935,12 +935,11 @@ exportObj.basicCardData = ->
             ]
         "Escape Craft":
             name: "Escape Craft"
-            factions: ["Scum and Villiany"]
+            factions: ["Scum and Villainy"]
             attack: 2
             agility: 2
             hull: 2
             shields: 2
-            charge: 3
             actions: [
                 "Focus"
                 "Barrel Roll"
@@ -954,7 +953,6 @@ exportObj.basicCardData = ->
                 [ 3, 1, 2, 1, 0, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 3, 0, 0, 0 ]
             ]
-        
 
     # name field is for convenience only
     pilotsById: [
@@ -1335,7 +1333,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1353,7 +1351,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1371,7 +1369,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1389,7 +1387,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1406,7 +1404,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1422,7 +1420,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Astromech"
                 "Modification"
-                "Astromech"
+                "Device"
                 "Gunner"
             ]
         }
@@ -1761,7 +1759,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "A-Wing"
-            skill: 3
+            skill: 4
             points: 40
             slots: [
                 "Talent"
@@ -1811,7 +1809,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "Z-95 Headhunter"
             skill: 5
-            points: 30
+            points: 36
             slots: [
                 "Talent"
                 "Missile"
@@ -2314,7 +2312,7 @@ exportObj.basicCardData = ->
             id: 85
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-wing"
+            ship: "Y-Wing"
             skill: 5
             points: 42
             slots: [
@@ -2333,7 +2331,7 @@ exportObj.basicCardData = ->
             id: 86
             unique: true
             faction: "Scum and Villainy"
-            ship: "Y-wing"
+            ship: "Y-Wing"
             skill: 4
             points: 40
             slots: [
@@ -2351,7 +2349,7 @@ exportObj.basicCardData = ->
             name: "Hired Gun"
             id: 87
             faction: "Scum and Villainy"
-            ship: "Y-wing"
+            ship: "Y-Wing"
             skill: 2
             points: 34
             slots: [
@@ -2369,7 +2367,7 @@ exportObj.basicCardData = ->
             name: "Crymorah Goon"
             id: 88
             faction: "Scum and Villainy"
-            ship: "Y-wing"
+            ship: "Y-Wing"
             skill: 4
             points: 32
             slots: [
@@ -2399,7 +2397,12 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
                 "Title"
-              ]
+            ]
+            ship_override:
+                attackdt: 2
+                agility: 1
+                hull: 8
+                shields: 3
         }
         {
             name: "Lando Calrissian (Scum)"
@@ -2418,7 +2421,12 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
                 "Title"
-              ]
+            ]
+            ship_override:
+                attackdt: 2
+                agility: 1
+                hull: 8
+                shields: 3
         }
         {
             name: "L3-37 (YT-1300)"
@@ -2436,7 +2444,12 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
                 "Title"
-              ]
+            ]
+            ship_override:
+                attackdt: 2
+                agility: 1
+                hull: 8
+                shields: 3
         }
         {
             name: "Freighter Captain"
@@ -2453,7 +2466,12 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
                 "Title"
-              ]
+            ]
+            ship_override:
+                attackdt: 2
+                agility: 1
+                hull: 8
+                shields: 3
         }
         {
             name: "Lando Calrissian (Scum) (Escape Craft)"
@@ -4904,6 +4922,11 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Scum and Villainy"
            charge: 4
+           restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ "Crew" ]
        }
        {
            name: "Jyn Erso"
@@ -4981,7 +5004,6 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 13
            unique: true
-           faction: "Scum and Villainy"
            charge: 1
            restriction_func: (ship) ->
                 builder = ship.builder
@@ -5092,7 +5114,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 2
            restriction_func: (ship) ->
-                "Coordinate" in ship.effectiveStats().actionsred
+                "Coordinate" in ship.data.actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
        }
@@ -5110,7 +5132,6 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 3
            unique: true
-           faction: "Scum and Villainy"
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -5148,6 +5169,11 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 5
            charge: 2
+           restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ "Device" ]
        }
        {
            name: "Conner Nets"
@@ -5229,7 +5255,6 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 2
            unique: true
-           faction: "Scum and Villainy"
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -5474,7 +5499,7 @@ exportObj.basicCardData = ->
            points: 3
            variablebase: true
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actionsred
+                "Boost" in ship.data.actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Boost' if 'Boost' not in stats.actions
        }
@@ -5552,7 +5577,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Evade" in ship.effectiveStats().actionsred
+                "Evade" in ship.data.actionsred
        }
        {
            name: "Elusive"
@@ -5568,7 +5593,7 @@ exportObj.basicCardData = ->
            points: 2
            variablebase: true
            restriction_func: (ship) ->
-                "Barrel Roll" in ship.effectiveStats().actionsred
+                "Barrel Roll" in ship.data.actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
        }

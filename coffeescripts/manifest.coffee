@@ -238,6 +238,13 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    "Lando Calrissian's Millenium Falcon": [
+        {
+            name: 'Escape Craft'
+            type: 'ship'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection

@@ -1396,7 +1396,7 @@ class exportObj.SquadBuilder
 
                     color = switch maneuvers[speed][turn]
                         when 1 then "white"
-                        when 2 then "aqua"
+                        when 2 then "#7ED3E5"
                         when 3 then "red"
 
                     outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
