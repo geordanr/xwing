@@ -818,6 +818,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Reinforce"
             ]
+            actionsred: [
+                "Barrel Roll"
+            ]
             attack_icon: 'xwing-miniatures-font-fullfrontarc'
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0, 0, 0 ]
