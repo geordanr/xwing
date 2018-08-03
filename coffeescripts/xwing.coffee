@@ -1534,7 +1534,6 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack-fullfront').toggle(data.pilot.ship_override?.attackf? or data.data.attackf?)
 
                     @info_container.find('tr.info-attack-bullseye').hide()
-
                     
                     @info_container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackb ? data.data.attackb), effective_stats, 'attackb')
                     @info_container.find('tr.info-attack-back').toggle(data.pilot.ship_override?.attackb? or data.data.attackb?)
@@ -1555,14 +1554,20 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
 
-                    @info_container.find('tr.info-force td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force')
+                    @info_container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                     if data.pilot.ship_override?.force? or data.pilot.force?
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
 
-                    @info_container.find('tr.info-charge td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.charge ? data.pilot.charge), effective_stats, 'charge')
-                    @info_container.find('tr.info-charge').toggle(data.pilot.ship_override?.charge? or data.pilot.charge?)
+                    if data.pilot.charge?
+                        if data.pilot.recurring?
+                            @info_container.find('tr.info-charge td.info-data').html (data.pilot.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                        else
+                            @info_container.find('tr.info-charge td.info-data').text data.pilot.charge
+                        @info_container.find('tr.info-charge').show()
+                    else
+                        @info_container.find('tr.info-charge').hide()
                         
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
 
@@ -1571,7 +1576,6 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
                     
                     @info_container.find('tr.info-actions').show()
-                    @info_container.find('tr.info-charge').hide()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(' ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
@@ -1596,7 +1600,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
 
                     @info_container.find('tr.info-attack-fullfront td.info-data').text(ship.attackf)
-                    @info_container.find('tr.info-attack-fullfront').toggle(ship.attackb?)
+                    @info_container.find('tr.info-attack-fullfront').toggle(ship.attackf?)
                     
                     @info_container.find('tr.info-attack-bullseye').hide()
                     
@@ -1622,13 +1626,16 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
 
                     if data.ship_override?.force or data.force?
-                        @info_container.find('tr.info-force td.info-data').text (data.ship_override?.force ? data.force)
+                        @info_container.find('tr.info-force td.info-data').html ((data.ship_override?.force ? data.force)+ '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
 
-                    if data.ship_override?.charge or data.charge?
-                        @info_container.find('tr.info-charge td.info-data').text (data.ship_override?.force ? data.force)
+                    if data.charge?
+                        if data.recurring?
+                            @info_container.find('tr.info-charge td.info-data').html (data.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                        else
+                            @info_container.find('tr.info-charge td.info-data').text data.charge
                         @info_container.find('tr.info-charge').show()
                     else
                         @info_container.find('tr.info-charge').hide()
@@ -1688,7 +1695,10 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack-back').hide()
                     @info_container.find('tr.info-attack-doubleturret').hide()
 
-                    @info_container.find('tr.info-charge td.info-data').text (data.charge)
+                    if data.recurring?
+                        @info_container.find('tr.info-charge td.info-data').html (data.charge + """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-recurring"></i>""")
+                    else                
+                        @info_container.find('tr.info-charge td.info-data').text data.charge
                     @info_container.find('tr.info-charge').toggle(data.charge?)                        
                     
                     if data.range?
@@ -1697,7 +1707,7 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-range').hide()
                     
-                    @info_container.find('tr.info-force td.info-data').text (data.force)
+                    @info_container.find('tr.info-force td.info-data').html (data.force + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                     @info_container.find('tr.info-force').toggle(data.force?)                        
 
                     @info_container.find('tr.info-agility').hide()

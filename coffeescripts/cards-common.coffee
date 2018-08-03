@@ -1182,6 +1182,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (TIE Fighter)"
+            canonical_name: 'Ezra Bridger'.canonicalize()
             id: 14
             unique: true
             faction: "Rebel Alliance"
@@ -1196,6 +1197,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Zeb" Orrelios (TIE Fighter)'
+            canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 15
             unique: true
             faction: "Rebel Alliance"
@@ -1676,6 +1678,7 @@ exportObj.basicCardData = ->
             ship: "YT-1300"
             skill: 4
             charge: 1
+            recurring: true
             points: 84
             slots: [
                 "Talent"
@@ -2024,6 +2027,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (Attack Shuttle)"
+            canonical_name: 'Ezra Bridger'.canonicalize()
             id: 67
             unique: true
             faction: "Rebel Alliance"
@@ -2042,6 +2046,7 @@ exportObj.basicCardData = ->
 
         {
             name: '"Zeb" Orrelios (Attack Shuttle)'
+            canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 68
             unique: true
             faction: "Rebel Alliance"
@@ -2073,6 +2078,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Ezra Bridger (Sheathipede)"
+            canonical_name: 'Ezra Bridger'.canonicalize()
             id: 70
             unique: true
             faction: "Rebel Alliance"
@@ -2090,6 +2096,7 @@ exportObj.basicCardData = ->
         }
         {
             name: '"Zeb" Orrelios (Sheathipede)'
+            canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 71
             unique: true
             faction: "Rebel Alliance"
@@ -2448,6 +2455,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "L3-37 (YT-1300)"
+            canonical_name: 'L3-37'.canonicalize()
             id: 91
             unique: true
             faction: "Scum and Villainy"
@@ -2493,6 +2501,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "Lando Calrissian (Scum) (Escape Craft)"
+            canonical_name: 'Lando Calrissian (Scum)'.canonicalize()
             id: 93
             unique: true
             faction: "Scum and Villainy"
@@ -2508,6 +2517,7 @@ exportObj.basicCardData = ->
         {
             name: "Outer Rim Pioneer"
             id: 94
+            unique: true
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 3
@@ -2520,6 +2530,7 @@ exportObj.basicCardData = ->
         }
         {
             name: "L3-37 (Escape Craft)"
+            canonical_name: 'L3-37'.canonicalize()
             id: 95
             unique: true
             faction: "Scum and Villainy"
@@ -2535,9 +2546,11 @@ exportObj.basicCardData = ->
         {
             name: "Autopilot Drone"
             id: 96
+            unique: true        
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 1
+            charge: 3
             points: 12
             slots: [
                 "Talent"
@@ -2807,6 +2820,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "HWK-290"
             skill: 4
+            charge: 3
+            recurring: true
             points: 36
             slots: [
                 "Talent"
@@ -2842,6 +2857,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "JumpMaster 5000"
             skill: 6
+            charge: 1
+            recurring: true
             points: 64
             slots: [
                 "Talent"
@@ -2859,6 +2876,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "JumpMaster 5000"
             skill: 4
+            charge: 1        
             points: 60
             slots: [
                 "Talent"
@@ -3089,6 +3107,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "M12-L Kimogila Fighter"
             skill: 3
+            charge: 2
             points: 48
             slots: [
                 "Talent"
@@ -3293,6 +3312,8 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "Scurrg H-6 Bomber"
             skill: 5
+            charge: 1
+            recurring: true
             points: 52
             slots: [
                 "Talent"
@@ -3422,6 +3443,7 @@ exportObj.basicCardData = ->
             faction: "Scum and Villainy"
             ship: "YV-666"
             skill: 4
+            charge: 2
             points: 72
             slots: [
                 "Talent"
@@ -3671,6 +3693,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "Lambda-Class Shuttle"
             skill: 3
+            charge: 2
             points: 46
             slots: [       
                 "System"
@@ -4455,6 +4478,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 4
+            charge: 1
             points: 40
             slots: [       
                 "Talent"
@@ -4494,6 +4518,8 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Fighter"
             skill: 1
+            recurring: true
+            charge: 1
             points: 30
             slots: [       
                 "Modification"
@@ -4801,6 +4827,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            charge: 2
+           recurring: true 
        }
        {
            name: "Chewbacca (Scum)"
@@ -4816,7 +4843,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 2
            unique: true
-           faction: "Scum and Villainy"
+           faction: "Rebel Alliance"
        }
        {
            name: "Ciena Ree"
@@ -4922,6 +4949,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            charge: 2
+           recurring: true
            restriction_func: (ship) ->
                 "Target Lock" in ship.effectiveStats().actions
        }
@@ -5000,11 +5028,10 @@ exportObj.basicCardData = ->
            name: "L3-37"
            id: 43
            slot: "Crew"
+           charge: 1 
            points: 4
            unique: true
            faction: "Scum and Villainy"
-           modifier_func: (stats) ->
-                stats.charge += 1
        }
        {
            name: "Lando Calrissian (Rebel)"
@@ -5030,6 +5057,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            charge: 3
+           recurring: true 
        }
        {
            name: "Latts Razzi"
@@ -5045,7 +5073,9 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 13
            unique: true
-           charge: 1
+           force: 1
+           modifier_func: (stats) ->
+                stats.force += 1
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -5069,6 +5099,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            charge: 2
+           recurring: true
            restriction_func: (ship) ->
                 "Coordinate" in ship.effectiveStats().actions
        }
@@ -5189,7 +5220,7 @@ exportObj.basicCardData = ->
            faction: "Scum and Villainy"
        }
        {
-           name: '"Zeb" Orrelios'
+           name: '"Zeb" Orrelios' 
            id: 65
            slot: "Crew"
            points: 1
@@ -5310,7 +5341,6 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Scum and Villainy"
-           charge: 1
        }
        {
            name: "Ezra Bridger"
@@ -6043,6 +6073,8 @@ exportObj.basicCardData = ->
            unique: true
            charge: 2
            ship: "StarViper"
+           modifier_func: (stats) ->
+                stats.shields += 1       
            confersAddons: [
                 {
                     type: exportObj.Upgrade
