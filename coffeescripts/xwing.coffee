@@ -677,23 +677,23 @@ class exportObj.SquadBuilder
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-energy">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-energy"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i></td>
                             <td class="info-data info-energy"></td>
                         </tr>
                         <tr class="info-attack">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-back">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-turret">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-doubleturret">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-doubleturretarc"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-range">
@@ -701,20 +701,24 @@ class exportObj.SquadBuilder
                             <td class="info-data info-range"></td>
                         </tr>
                         <tr class="info-agility">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-agility"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
                             <td class="info-data info-agility"></td>
                         </tr>
                         <tr class="info-hull">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-hull"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i></td>
                             <td class="info-data info-hull"></td>
                         </tr>
                         <tr class="info-shields">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-shield"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i></td>
                             <td class="info-data info-shields"></td>
                         </tr>
                         <tr class="info-force">
-                            <td class="info-header"><i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-force xwing-miniatures-font-forcepower"></i></td>
                             <td class="info-data info-force"></td>
+                        </tr>
+                        <tr class="info-charge">
+                            <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
+                            <td class="info-data info-charge"></td>
                         </tr>
                         <tr class="info-actions">
                             <td class="info-header">Actions</td>
@@ -1536,20 +1540,24 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-hull').show()
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
+
                     @info_container.find('tr.info-force td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force')
-                    
                     if data.pilot.ship_override?.force? or data.pilot.force?
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
+
+                    @info_container.find('tr.info-charge td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.charge ? data.pilot.charge), effective_stats, 'charge')
+                    @info_container.find('tr.info-charge').toggle(data.pilot.ship_override?.charge? or data.pilot.charge?)
                         
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
 
-                    @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in data.data.actionsred.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '
-
+                    if data.data.actionsred?
+                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in data.data.actionsred.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
                     
                     @info_container.find('tr.info-actions').show()
+                    @info_container.find('tr.info-charge').hide()
                     @info_container.find('tr.info-upgrades').show()
                     @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(' ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
@@ -1599,6 +1607,12 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
+
+                    if data.ship_override?.charge or data.charge?
+                        @info_container.find('tr.info-charge td.info-data').text (data.ship_override?.force ? data.force)
+                        @info_container.find('tr.info-charge').show()
+                    else
+                        @info_container.find('tr.info-charge').hide()
                     
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(' ')
     
@@ -1638,6 +1652,10 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-attack').show()
                     else
                         @info_container.find('tr.info-attack').hide()
+
+                    @info_container.find('tr.info-charge td.info-data').text (data.charge)
+                    @info_container.find('tr.info-charge').toggle(data.charge?)                        
+                    
                     if data.range?
                         @info_container.find('tr.info-range td.info-data').text data.range
                         @info_container.find('tr.info-range').show()
@@ -1646,7 +1664,7 @@ class exportObj.SquadBuilder
                     
                     @info_container.find('tr.info-force td.info-data').text (data.force)
                     @info_container.find('tr.info-force').toggle(data.force?)                        
-                    
+
                     @info_container.find('tr.info-attack-back').hide()
                     @info_container.find('tr.info-attack-turret').hide()
                     @info_container.find('tr.info-attack-doubleturret').hide()
@@ -2804,6 +2822,7 @@ class Ship
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
             force: @pilot.ship_override?.force ? @pilot.force
+            charge: @pilot.ship_override?.charge ? @pilot.charge
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
             actionsred: ((@pilot.ship_override?.actionsred ? @data.actionsred) ? []).slice 0
 

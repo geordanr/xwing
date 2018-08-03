@@ -1674,6 +1674,7 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "YT-1300"
             skill: 4
+            charge: 1
             points: 84
             slots: [
                 "Talent"
@@ -1685,8 +1686,6 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
-            ship_override:
-                charge: 1
         }
         {
             name: "Outer Rim Smuggler"

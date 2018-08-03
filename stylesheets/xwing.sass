@@ -87,7 +87,7 @@ i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-m
   @extend .card-icon
   color: $attack_color
 
-i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc 
+i.header-attack
   @extend .card-icon
   color: $attack_color
 
@@ -95,28 +95,33 @@ i.xwing-miniatures-font-attack-frontback
   padding-left: 5px
   padding-right: 5px
 
-i.xwing-miniatures-font-energy
+i.header-energy
   @extend .card-icon
   color: $energy_color
   padding: 2px 3px 5px 2px
 
-i.xwing-miniatures-font-agility
+i.header-agility
   @extend .card-icon
   color: $agility_color
   padding: 1px
 
-i.xwing-miniatures-font-hull
+i.header-hull
   @extend .card-icon
   color: $hull_color
 
-i.xwing-miniatures-font-shield
+i.header-shield
   @extend .card-icon
   color: $shields_color
   padding: 2px 3px 4px 3px
 
-i.xwing-miniatures-font-forcepower
+i.header-force
   @extend .card-icon
   color: $force_color
+  padding: 2px 3px 4px 3px
+
+i.header-charge
+  @extend .card-icon
+  color: $charge_color
   padding: 2px 3px 4px 3px
 
 
@@ -144,6 +149,10 @@ i.xwing-miniatures-font-forcepower
 .info-data.info-force
   @extend .card-stat
   color: $force_color
+
+.info-data.info-charge
+  @extend .card-stat
+  color: $charge_color
 
 r
   color: $attack_color 
