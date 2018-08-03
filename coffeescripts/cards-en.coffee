@@ -975,6 +975,12 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform an attack, if ou are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
         'GNK "Gonk" Droid':
            text: """Setup: Lose 1 %CHARGE%. Action: Recover 1 %CHARGE%. Action: Spend 1 %CHARGE% to recover 1 shield."""
+        "Hardpoint: Cannon":
+           text: """Adds a %CANNON% slot"""
+        "Hardpoint: Missile":
+           text: """Adds a %MISSILE% slot"""
+        "Hardpoint: Torpedo":
+           text: """Adds a %TORPEDO% slot"""
 
     modification_translations =
 

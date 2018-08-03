@@ -6107,14 +6107,14 @@ exportObj.basicCardData = ->
             ]
         }
        {
-            name: "Hardpoint: Missle"
+            name: "Hardpoint: Missile"
             id: 170
             slot: "Hardpoint"
             points: 0
             confersAddons: [
                 {
                     type: exportObj.Upgrade
-                    slot: "Missle"
+                    slot: "Missile"
                 }
             ]
         }
