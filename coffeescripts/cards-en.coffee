@@ -869,6 +869,8 @@ exportObj.cardLoaders.English = () ->
            text: """You can dock at range 0-1."""
         "Pivot Wing (Closed)":
            text: """While you defend, roll 1 fewer defense die. After you execute a [0 %STOP%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card"""
+        "Pivot Wing (Open)":
+           text: """Before you activate, you may flip this card"""
         "Predator":
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
         "Proton Bombs":
@@ -921,6 +923,8 @@ exportObj.cardLoaders.English = () ->
            text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1 %FORCE%, you may choose a ship at range 0-3 instead."""
         "Servomotor S-foils (Closed)":
            text: """While you perform a primary attack, roll 1 fewer attack die. Before you activate, you may flip this card"""
+        "Servomotor S-foils (Open)":
+           text: """Before you activate, you may flip this card"""
         "Seventh Sister":
            text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
         "Shadow Caster":

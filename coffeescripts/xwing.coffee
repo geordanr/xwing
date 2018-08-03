@@ -1543,16 +1543,15 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-force').hide()
                         
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', '
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
 
-                    
-                    @info_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', actionsred}</strong>" for action in extra_actions_red))).join ', '
+                    @info_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '
 
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
                     
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(' ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
@@ -1601,17 +1600,17 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-force').hide()
                     
-                    @info_container.find('tr.info-actions td.info-data').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')
-                    
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(' ')
+    
                     if ships[data.ship].actionsred?
-                        @info_container.find('tr.info-actions-red td.info-data-red').text (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
+                        @info_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(' ')
                         @info_container.find('tr.info-actions-red').show()
                     else
                         @info_container.find('tr.info-actions-red').hide()
 
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(' ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
@@ -1632,8 +1631,8 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-energy').hide()
                     if data.attack?
                         # Attack icons on upgrade cards don't get special icons
-                        for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
-                            @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
+                    #    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                    #        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
                         @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-frontarc')
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
@@ -1661,6 +1660,26 @@ class exportObj.SquadBuilder
             @info_container.show()
             @tooltip_currently_displaying = data
             
+    parseActions: (actions) ->
+        actiontext = (exportObj.translate(@language, 'action', action) for action in (actions).join ' ')
+
+        actionhtml = actiontext
+            .replace(/%ASTROMECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>')
+            .replace(/%BULLSEYEARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bullseyearc"></i>')
+            .replace(/%GUNNER%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>')
+            .replace(/%SINGLETURRETARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>')
+            .replace(/%FRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>')
+            .replace(/%REARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i>')
+            .replace(/%DEVICE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>')
+            .replace(/%FORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>')
+            .replace(/%CHARGE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>')
+            .replace(/%CALCULATE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>')
+            .replace(/%BANKLEFT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankleft"></i>')
+            .replace(/%BANKRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-bankright"></i>')
+            .replace(/%BARRELROLL%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>')
+
+        return actionhtml
+        
     _randomizerLoopBody: (data) =>
         if data.keep_running and data.iterations < data.max_iterations
             data.iterations++

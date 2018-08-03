@@ -135,7 +135,8 @@ exportObj.basicCardData = ->
             hull: 3
             shields: 2
             actions: [
-                "Focus > Barrel Roll"
+                "Focus" 
+                "<r>> Barrel Roll</r>"
                 "Target Lock"
                 "Barrel Roll"
             ]
@@ -200,8 +201,10 @@ exportObj.basicCardData = ->
             hull: 3
             shields: 2
             actions: [
-                "Focus > Rotate Arc"
-                "Target Lock > Rotate Arc"
+                "Focus"
+                "<r>> Rotate Arc</r>"
+                "Target Lock" 
+                "<r>> Rotate Arc</r>"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -246,7 +249,8 @@ exportObj.basicCardData = ->
             hull: 4
             shields: 4
             actions: [
-                "Focus > Barrel Roll"
+                "Focus"
+                "<r>> Barrel Roll</r>"
                 "Target Lock"
                 "Barrel Roll"
             ]
@@ -267,7 +271,8 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll > Target Lock"
+                "Barrel Roll"
+                "<r>> Target Lock</r>"
             ]
             actionsred: [
                 "Reload"
@@ -335,8 +340,10 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Evade"
                 "Target Lock"
-                "Barrel Roll > Target Lock"
-                "Boost > Target Lock"
+                "Barrel Roll"
+                "<r>> Target Lock</r>"
+                "Boost"
+                "<r>> Target Lock</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -423,8 +430,10 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll > Focus"
-                "Boost > Focus"
+                "Barrel Roll"
+                "<r>> Focus</r>"
+                "Boost"
+                "<r>> Focus</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0]
@@ -547,7 +556,8 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Boost > Target Lock"
+                "Boost" 
+                "<r>> Target Lock</r>"
                 "Reload"
             ]
             actionsred: [
@@ -590,7 +600,8 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Barrel Roll > Evade"
+                "Barrel Roll"
+                "<r>> Evade</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0 ]
@@ -610,8 +621,10 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Evade"
                 "Target Lock"
-                "Barrel Roll > Focus"
-                "Boost > Focus"
+                "Barrel Roll"
+                "<r>> Focus</r>"
+                "Boost"
+                "<r>> Focus</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -650,8 +663,10 @@ exportObj.basicCardData = ->
             hull: 6
             shields: 3
             actions: [
-                "Focus > Rotate Arc"
-                "Target Lock > Rotate Arc"
+                "Focus"
+                "<r>> Rotate Arc</r>"
+                "Target Lock"
+                "<r>> Rotate Arc</r>"
             ]
             actionsred: [
                 "Barrel Roll"
@@ -696,8 +711,10 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll > Focus"
-                "Boost Focus"
+                "Barrel Roll"
+                "<r>> Focus</r>"
+                "Boost"
+                "<r>> Focus</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -841,7 +858,8 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Target Lock"
-                "Barrel Roll > Evade"
+                "Barrel Roll" 
+                "<r>> Evade</r>"
             ]
             maneuvers: [
                 [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -3104,6 +3122,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3117,6 +3136,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3130,6 +3150,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3143,6 +3164,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3155,6 +3177,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3167,6 +3190,7 @@ exportObj.basicCardData = ->
             points: 32
             slots: [
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3179,6 +3203,7 @@ exportObj.basicCardData = ->
             points: 31
             slots: [
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -3190,6 +3215,7 @@ exportObj.basicCardData = ->
             points: 29
             slots: [
                 "Modification"
+                "Hardpoint"
               ]
         }
         {
@@ -6045,6 +6071,42 @@ exportObj.basicCardData = ->
            faction: "Rebel Alliance"
            ship: "Attack Shuttle"
        }
+       {
+            name: "Hardpoint: Cannon"
+            id: 168
+            slot: "Hardpoint"
+            points: 0
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Cannon"
+                }
+            ]
+       }
+       {
+            name: "Hardpoint: Torpedo"
+            id: 169
+            slot: "Hardpoint"
+            points: 0
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Torpedo"
+                }
+            ]
+        }
+       {
+            name: "Hardpoint: Missle"
+            id: 170
+            slot: "Hardpoint"
+            points: 0
+            confersAddons: [
+                {
+                    type: exportObj.Upgrade
+                    slot: "Missle"
+                }
+            ]
+        }
     ]
     modificationsById: [
 
