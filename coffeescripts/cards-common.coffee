@@ -4655,6 +4655,18 @@ exportObj.basicCardData = ->
            points: 2
            restriction_func: (ship) ->
                 not (ship.data.large ? false) or (ship.data.medium ? false) 
+           modifier_func: (stats) ->
+                for turn in [0 ... stats.maneuvers[1].length]
+                    if stats.maneuvers[1][turn] > 0 
+                        if stats.maneuvers[1][turn] == 3
+                            stats.maneuvers[1][turn] = 1
+                        else 
+                            stats.maneuvers[1][turn] = 2
+                    if stats.maneuvers[2][turn] > 0 
+                        if stats.maneuvers[2][turn] == 3
+                            stats.maneuvers[2][turn] = 1
+                        else 
+                            stats.maneuvers[2][turn] = 2
        }
        {
            name: "R5 Astromech"
@@ -5372,7 +5384,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 4
            restriction_func: (ship) ->
-                ship.effectiveStats().actions
+                ship.data.attackb?
        }
        {
            name: "Veteran Turret Gunner"
@@ -5380,7 +5392,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 8
            restriction_func: (ship) ->
-                ship.data.attackb?
+                "Rotate Arc" in ship.effectiveStats().actions or ship.effectiveStats().actionsred
        }
        {
            name: "Cloaking Device"
@@ -5682,7 +5694,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 6
            restriction_func: (ship) ->
-                "Reload" in ship.effectiveStats().actions
+                "Reload" in ship.effectiveStats().actions or ship.effectiveStats().actionsred
        }
        {
            name: "Selfless"
