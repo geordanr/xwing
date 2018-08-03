@@ -487,7 +487,7 @@ exportObj.basicCardData = ->
         "YV-666":
             name: "YV-666"
             factions: [ "Scum and Villainy" ]
-            attack: 3
+            attackf: 3
             agility: 1
             hull: 9
             shields: 3
@@ -497,7 +497,6 @@ exportObj.basicCardData = ->
                 "Reinforce"
                 "Target Lock"
             ]
-            attack_icon: 'xwing-miniatures-font-fullfrontarc'
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0 ]
@@ -810,7 +809,7 @@ exportObj.basicCardData = ->
         "Auzituck Gunship":
             name: "Auzituck Gunship"
             factions: ["Rebel Alliance"]
-            attack: 3
+            attackf: 3
             agility: 1
             hull: 6
             shields: 3
@@ -821,7 +820,6 @@ exportObj.basicCardData = ->
             actionsred: [
                 "Barrel Roll"
             ]
-            attack_icon: 'xwing-miniatures-font-fullfrontarc'
             maneuvers: [
                 [ 0, 0, 3, 0, 0, 0, 0, 0 ]
                 [ 0, 2, 2, 2, 0, 0, 0, 0 ]
@@ -4712,7 +4710,7 @@ exportObj.basicCardData = ->
            id: 10
            slot: "Cannon"
            points: 4
-           attack: 4
+           attackbull: 4
            range: """2-3"""
        }
        {
@@ -5499,7 +5497,7 @@ exportObj.basicCardData = ->
            id: 102
            slot: "Missile"
            points: 7
-           attack: 5
+           attackbull: 5
            range: """1-2"""
            charge: 1
        }
@@ -5760,7 +5758,7 @@ exportObj.basicCardData = ->
            id: 137
            slot: "Turret"
            points: 4
-           attack: 2
+           attackt: 2
            range: """1-2"""
        }
        {
@@ -5768,7 +5766,7 @@ exportObj.basicCardData = ->
            id: 138
            slot: "Turret"
            points: 6
-           attack: 3
+           attackt: 3
            range: """1-2"""
        }
        {

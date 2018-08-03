@@ -684,12 +684,20 @@ class exportObj.SquadBuilder
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-frontarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
+                        <tr class="info-attack-fullfront">
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i></td>
+                            <td class="info-data info-attack"></td>
+                        </tr>
+                        <tr class="info-attack-bullseye">
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-bullseyearc"></i></td>
+                            <td class="info-data info-attack"></td>
+                        </tr>
                         <tr class="info-attack-back">
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-turret">
-                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-turret"></i></td>
+                            <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
                         <tr class="info-attack-doubleturret">
@@ -1522,6 +1530,12 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
                     @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
                     
+                    @info_container.find('tr.info-attack-fullfront td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackf ? data.data.attackf), effective_stats, 'attackf')
+                    @info_container.find('tr.info-attack-fullfront').toggle(data.pilot.ship_override?.attackf? or data.data.attackf?)
+
+                    @info_container.find('tr.info-attack-bullseye').hide()
+
+                    
                     @info_container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackb ? data.data.attackb), effective_stats, 'attackb')
                     @info_container.find('tr.info-attack-back').toggle(data.pilot.ship_override?.attackb? or data.data.attackb?)
 
@@ -1581,6 +1595,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
                     @info_container.find('tr.info-attack').toggle(data.ship_override?.attack? or ship.attack?)
 
+                    @info_container.find('tr.info-attack-fullfront td.info-data').text(ship.attackf)
+                    @info_container.find('tr.info-attack-fullfront').toggle(ship.attackb?)
+                    
+                    @info_container.find('tr.info-attack-bullseye').hide()
+                    
                     @info_container.find('tr.info-attack-back td.info-data').text(ship.attackb)
                     @info_container.find('tr.info-attack-back').toggle(ship.attackb?)
                     @info_container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
@@ -1647,11 +1666,27 @@ class exportObj.SquadBuilder
                         # Attack icons on upgrade cards don't get special icons
                     #    for cls in @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
                     #        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-frontarc')
-                        @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-frontarc')
+                    #    @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass('xwing-miniatures-font-frontarc')
                         @info_container.find('tr.info-attack td.info-data').text data.attack
                         @info_container.find('tr.info-attack').show()
                     else
                         @info_container.find('tr.info-attack').hide()
+
+                    if data.attackt?
+                        @info_container.find('tr.info-attack-turret td.info-data').text data.attackt
+                        @info_container.find('tr.info-attack-turret').show()
+                    else
+                        @info_container.find('tr.info-attack-turret').hide()
+
+                    if data.attackbull?
+                        @info_container.find('tr.info-attack-bullseye td.info-data').text data.attackbull
+                        @info_container.find('tr.info-attack-bullseye').show()
+                    else
+                        @info_container.find('tr.info-attack-bullseye').hide()
+
+                    @info_container.find('tr.info-attack-fullfront').hide()
+                    @info_container.find('tr.info-attack-back').hide()
+                    @info_container.find('tr.info-attack-doubleturret').hide()
 
                     @info_container.find('tr.info-charge td.info-data').text (data.charge)
                     @info_container.find('tr.info-charge').toggle(data.charge?)                        
@@ -1665,9 +1700,6 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-force td.info-data').text (data.force)
                     @info_container.find('tr.info-force').toggle(data.force?)                        
 
-                    @info_container.find('tr.info-attack-back').hide()
-                    @info_container.find('tr.info-attack-turret').hide()
-                    @info_container.find('tr.info-attack-doubleturret').hide()
                     @info_container.find('tr.info-agility').hide()
                     @info_container.find('tr.info-hull').hide()
                     @info_container.find('tr.info-shields').hide()
@@ -2444,7 +2476,7 @@ class Ship
                 when 'Barrel Roll'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>"""
                 when 'Target Lock'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-targetlock"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>"""
                 when 'Boost'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>"""
                 when 'Coordinate'
@@ -2463,6 +2495,14 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
                 when 'Reload'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
+                when "<r>> Target Lock</r>"
+                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-lock"></i></r>"""
+                when "<r>> Focus</r>"
+                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-focus"></i></r>"""
+                when "<r>> Rotate Arc</r>"
+                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-rotatearc"></i></r>"""
+                when "<r>> Evade</r>"
+                    """<r>> <i class="xwing-miniatures-font r xwing-miniatures-font-evade"></i></r>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -2475,7 +2515,7 @@ class Ship
                 when 'Barrel Roll'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>"""
                 when 'Target Lock'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-targetlock"></i>"""
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>"""
                 when 'Boost'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-boost"></i>"""
                 when 'Coordinate'
@@ -2814,6 +2854,7 @@ class Ship
         stats =
             skill: @pilot.skill
             attack: @pilot.ship_override?.attack ? @data.attack
+            attackf: @pilot.ship_override?.attackf ? @data.attackf
             attackb: @pilot.ship_override?.attackb ? @data.attackb
             attackt: @pilot.ship_override?.attackt ? @data.attackt
             attackdt: @pilot.ship_override?.attackdt ? @data.attackdt
@@ -3029,9 +3070,7 @@ class GenericAddon
                     @type.toLowerCase().replace(/[^0-9a-z]/gi, '')
                     
             icon = icon.replace("configuration", "config")
-                        .replace("talent", "elite")
                         .replace("force", "forcepower")
-                        .replace("device", "bomb")
                 
             # Append directly so we don't have to disable markup escaping
             $(container).append """<i class="xwing-miniatures-font xwing-miniatures-font-#{icon}"></i> #{obj.text}"""

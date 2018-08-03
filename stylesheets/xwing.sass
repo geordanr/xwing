@@ -81,7 +81,7 @@ td.info-header
   padding: 3px
 
 i.xwing-miniatures-font
-  color: black
+//  color: black 
 
 i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180
   @extend .card-icon
@@ -91,9 +91,9 @@ i.header-attack
   @extend .card-icon
   color: $attack_color
 
-i.header-attack-turret
-  padding: 2px 3px 5px 2px
-
+i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-doubleturretarc
+  padding-left: 5px
+  padding-right: 5px
 
 i.xwing-miniatures-font-attack-frontback
   padding-left: 5px
@@ -126,7 +126,7 @@ i.header-force
 i.header-charge
   @extend .card-icon
   color: $charge_color
-  padding: 2px 0px 2px 3px
+  padding: 2px 3px 2px 3px
 
 .info-data.info-attack
   @extend .card-stat
