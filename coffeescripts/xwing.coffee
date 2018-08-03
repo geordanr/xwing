@@ -696,10 +696,6 @@ class exportObj.SquadBuilder
                             <td class="info-header"><i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i></td>
                             <td class="info-data info-attack"></td>
                         </tr>
-                        <tr class="info-range">
-                            <td class="info-header">Range</td>
-                            <td class="info-data info-range"></td>
-                        </tr>
                         <tr class="info-agility">
                             <td class="info-header"><i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i></td>
                             <td class="info-data info-agility"></td>
@@ -719,6 +715,10 @@ class exportObj.SquadBuilder
                         <tr class="info-charge">
                             <td class="info-header"><i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i></td>
                             <td class="info-data info-charge"></td>
+                        </tr>
+                        <tr class="info-range">
+                            <td class="info-header">Range</td>
+                            <td class="info-data info-range"></td>
                         </tr>
                         <tr class="info-actions">
                             <td class="info-header">Actions</td>
