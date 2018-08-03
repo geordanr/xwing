@@ -926,7 +926,7 @@ exportObj.cardLoaders.English = () ->
         "Shadow Caster":
            text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
         "Shield Upgrade":
-           text: """Add 1 Hull Point"""
+           text: """Add 1 Shield Point"""
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
@@ -944,7 +944,7 @@ exportObj.cardLoaders.English = () ->
         "Swarm Tactics":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 1. If you do, that ship treats its initiative as equal to yours until the end of the round."""
         "Tactical Officer":
-           text: """Add a white %BOOST%"""
+           text: """Add a white %COORDINATE%"""
         "Tactical Scrambler":
            text: """While you obstruct an enemy ship's attack, the defender rolls 1 additional defense die."""
         "Tobias Beckett":

@@ -5113,7 +5113,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 2
            restriction_func: (ship) ->
-                "Coordinate" in ship.data.actionsred
+                "Coordinate" in ship.effectiveStats().actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Coordinate' if 'Coordinate' not in stats.actions
        }
@@ -5498,7 +5498,7 @@ exportObj.basicCardData = ->
            points: 3
            variablebase: true
            restriction_func: (ship) ->
-                "Boost" in ship.data.actionsred
+                "Boost" in ship.effectiveStats().actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Boost' if 'Boost' not in stats.actions
        }
@@ -5576,7 +5576,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Evade" in ship.data.actionsred
+                "Evade" in ship.effectiveStats().actionsred
        }
        {
            name: "Elusive"
@@ -5592,7 +5592,7 @@ exportObj.basicCardData = ->
            points: 2
            variablebase: true
            restriction_func: (ship) ->
-                "Barrel Roll" in ship.data.actionsred
+                "Barrel Roll" in ship.effectiveStats().actionsred
            modifier_func: (stats) ->
                 stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
        }

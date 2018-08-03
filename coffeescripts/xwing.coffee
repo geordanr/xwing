@@ -2806,7 +2806,7 @@ class Ship
             shields: @pilot.ship_override?.shields ? @data.shields
             force: @pilot.ship_override?.force ? @pilot.force
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
-            actionsred: ((@pilot.ship_override?.actionsred ? @data.actionsred) ? "").slice 1
+            actionsred: (@pilot.ship_override?.actionsred ? @data.actionsred).slice 0
 
         # need a deep copy of maneuvers array
         stats.maneuvers = []
