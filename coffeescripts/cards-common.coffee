@@ -1397,7 +1397,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "Y-Wing"
-            skill: 4
+            skill: 3
             points: 36
             slots: [
                 "Talent"
@@ -1414,7 +1414,7 @@ exportObj.basicCardData = ->
             id: 29
             faction: "Rebel Alliance"
             ship: "Y-Wing"
-            skill: 4
+            skill: 3
             points: 34
             slots: [
                 "Talent"
@@ -1431,7 +1431,7 @@ exportObj.basicCardData = ->
             id: 30
             faction: "Rebel Alliance"
             ship: "Y-Wing"
-            skill: 4
+            skill: 2
             points: 32
             slots: [
                 "Turret"
