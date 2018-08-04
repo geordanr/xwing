@@ -4656,6 +4656,7 @@ exportObj.basicCardData = ->
            name: '"Genius"'
            id: 1
            slot: "Astromech"
+           points: 0
            unique: true
            faction: "Scum and Villainy"
        }
@@ -5581,7 +5582,8 @@ exportObj.basicCardData = ->
            name: "Engine Upgrade"
            id: 107
            slot: "Modification"
-           points: 3
+           points: '*'
+           basepoints: 3
            variablebase: true
            restriction_func: (ship) ->
                 "Boost" in ship.effectiveStats().actionsred
@@ -5675,7 +5677,8 @@ exportObj.basicCardData = ->
            name: "Expert Handling"
            id: 120
            slot: "Talent"
-           points: 2
+           points: '*'
+           basepoints: 2
            variablebase: true
            restriction_func: (ship) ->
                 "Barrel Roll" in ship.effectiveStats().actionsred
@@ -6102,7 +6105,8 @@ exportObj.basicCardData = ->
            name: "Hull Upgrade"
            id: 164
            slot: "Modification"
-           points: 2
+           points: '*'
+           basepoints: 2
            variableagility: true
            modifier_func: (stats) ->
                 stats.hull += 1       
@@ -6111,7 +6115,8 @@ exportObj.basicCardData = ->
            name: "Shield Upgrade"
            id: 165
            slot: "Modification"
-           points: 3
+           points: '*'
+           basepoints: 3
            variableagility: true
            modifier_func: (stats) ->
                 stats.shields += 1       
@@ -6120,7 +6125,8 @@ exportObj.basicCardData = ->
            name: "Stealth Device"
            id: 166
            slot: "Modification"
-           points: 3
+           points: '*'
+           basepoints: 3
            variableagility: true
            charge: 1
            modifier_func: (stats) ->

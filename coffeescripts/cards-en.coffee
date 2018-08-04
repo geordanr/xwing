@@ -734,9 +734,9 @@ exportObj.cardLoaders.English = () ->
         "Emperor Palpatine":
            text: """While another friendly ship defends or performs an attack, you may spend 1 %FORCE% to modify 1 of its dice as though that ship had spent 1 %FORCE%."""
         "Engine Upgrade":
-           text: """Add a white %BOOST%"""
+           text: """Add a white %BOOST% %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Expert Handling":
-           text: """Add a white %BARRELROLL%"""
+           text: """Add a white %BARRELROLL% %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Ezra Bridger":
            text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %TURRET% attack from a %TURRET% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fearless":
@@ -778,7 +778,7 @@ exportObj.cardLoaders.English = () ->
         "Hound's Tooth":
            text: """1 Z-95 AF4 headhunter can dock with you."""
         "Hull Upgrade":
-           text: """Add 1 Hull Point"""
+           text: """Add 1 Hull Point %LINEBREAK%<i>This upgrade has a variable cost, worth 2, 3, 5, or 7 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
         "IG-2000":
            text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade."""
         "IG-88D":
@@ -930,7 +930,7 @@ exportObj.cardLoaders.English = () ->
         "Shadow Caster":
            text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
         "Shield Upgrade":
-           text: """Add 1 Shield Point"""
+           text: """Add 1 Shield Point %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
@@ -942,7 +942,7 @@ exportObj.cardLoaders.English = () ->
         "Static Discharge Vanes":
            text: """If you would gain an ion or jam token, you may choose a ship at range 0-1. If you do, gain 1 stress token and transfer 1 ion or jam token to that ship."""
         "Stealth Device":
-           text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%."""
+           text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%. %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
         "Supernatural Reflexes":
            text: """Before you activate, you may spend 1 %FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, suffer 1 %HIT% damage."""
         "Swarm Tactics":

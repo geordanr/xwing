@@ -1321,7 +1321,9 @@ class exportObj.SquadBuilder
         if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited? or include_upgrade.max_per_squad?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
+
         retval = ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        
         # Possibly adjust the upgrade
         if this_upgrade_obj.adjustment_func?
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
@@ -3172,11 +3174,11 @@ class GenericAddon
     getPoints: ->
         # Moar special case jankiness
         if @data?.variableagility == true and @ship?
-            Math.max(@data?.points ? 0, (@data?.points ? 0) + ((@ship?.data.agility - 1)*2) + 1)
+            Math.max(@data?.basepoints ? 0, (@data?.basepoints ? 0) + ((@ship?.data.agility - 1)*2) + 1)
         else if @data?.variablebase == true and @ship?.data.medium == true
-            Math.max(0, (@data?.points ? 0) + (@data?.points))
+            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints))
         else if @data?.variablebase == true and @ship?.data.large == true
-            Math.max(0, (@data?.points ? 0) + (@data?.points * 2))
+            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints * 2))
         else
             @data?.points ? 0
 
