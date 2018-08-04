@@ -1698,7 +1698,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack-doubleturret').hide()
 
                     if data.recurring?
-                        @info_container.find('tr.info-charge td.info-data').html (data.charge + """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-recurring"></i>""")
+                        @info_container.find('tr.info-charge td.info-data').html (data.charge + """<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>""")
                     else                
                         @info_container.find('tr.info-charge td.info-data').text data.charge
                     @info_container.find('tr.info-charge').toggle(data.charge?)                        

@@ -347,7 +347,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Defender":
             name: "TIE Defender"
-            xws: "TIE Defender".canonicalize()
+            xws: "TIE/D Defender".canonicalize()
             factions: [ "Galactic Empire", ]
             attack: 3
             agility: 3
@@ -4908,7 +4908,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            restriction_func: (ship) ->
-                "Coordinate" in ship.effectiveStats().actions
+                "Coordinate" in ship.effectiveStats().actions or "Coordinate" in ship.effectiveStats().actionsred
        }
        {
            name: "Cikatro Vizago"
@@ -4949,7 +4949,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Galactic Empire"
            applies_condition: 'Optimized Prototype'.canonicalize()
-       }
+           modifier_func: (stats) ->
+                stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions       }
        {
            name: "Emperor Palpatine"
            id: 29
@@ -5007,7 +5008,7 @@ exportObj.basicCardData = ->
            charge: 2
            recurring: true
            restriction_func: (ship) ->
-                "Target Lock" in ship.effectiveStats().actions
+                "Target Lock" in ship.effectiveStats().actions or "Target Lock" in ship.effectiveStats().actionsred
        }
        {
            name: "Hera Syndulla"
@@ -5158,7 +5159,7 @@ exportObj.basicCardData = ->
            charge: 2
            recurring: true
            restriction_func: (ship) ->
-                "Coordinate" in ship.effectiveStats().actions
+                "Coordinate" in ship.effectiveStats().actions or "Coordinate" in ship.effectiveStats().actionsred
        }
        {
            name: "Magva Yarro"
@@ -5496,7 +5497,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 8
            restriction_func: (ship) ->
-                "Rotate Arc" in ship.effectiveStats().actions or ship.effectiveStats().actionsred
+                "Rotate Arc" in ship.effectiveStats().actions or "Rotate Arc" in ship.effectiveStats().actionsred
        }
        {
            name: "Cloaking Device"
@@ -5615,8 +5616,8 @@ exportObj.basicCardData = ->
            id: 104
            slot: "Modification"
            points: 3
-           restriction_func: (ship) ->
-                "Slam" in ship.effectiveStats().actions
+           restriction_func: (ship) -> 
+                "Slam" in ship.effectiveStats().actions or "Slam" in ship.effectiveStats().actionsred
        }
        {
            name: "Afterburners"
@@ -5696,7 +5697,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actions
+                "Boost" in ship.effectiveStats().actions or "Boost" in ship.effectiveStats().actionsred
        }
        {
            name: "Crack Shot"
@@ -5733,6 +5734,7 @@ exportObj.basicCardData = ->
            id: 120
            slot: "Talent"
            points: '*'
+           basepoints: 2
            basepoints: 2
            variablebase: true
            restriction_func: (ship) ->
@@ -5800,7 +5802,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 6
            restriction_func: (ship) ->
-                "Reload" in ship.effectiveStats().actions or ship.effectiveStats().actionsred
+                "Reload" in ship.effectiveStats().actions or "Reload" in ship.effectiveStats().actionsred
        }
        {
            name: "Selfless"
