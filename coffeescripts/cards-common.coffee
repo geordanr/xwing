@@ -5178,11 +5178,16 @@ exportObj.basicCardData = ->
            modifier_func: (stats) ->
                 for s, spd in (stats.maneuvers ? [])
                     continue if spd == 0
-                    if s[2] > 0 
-                        if s[2] = 3
-                            s[2] = 1
-                        else if s[2] = 1
-                            s[2] = 2
+                    if s[1] > 0 
+                        if s[1] = 1
+                            s[1] = 2
+                        else if s[1] = 3
+                            s[1] = 1
+                    if s[3] > 0 
+                        if s[3] = 1
+                            s[3] = 2
+                        else if s[3] = 3
+                            s[3] = 1
        }
        {
            name: "Novice Technician"
