@@ -1,4 +1,6 @@
-## YASB Bug Report
+## YASB (First Edition) Bug Report
+
+### This bug report filer is for First Edition X-Wing only!
 
 **Note:** If you are experiencing problems with the permalink URL when you have **Maul** or **Bomblet Generator** in your list, this is a known issue.  For more information please see https://www.reddit.com/r/XWingTMG/comments/7c4q6h/yet_another_squad_builder_problems_with_maul/
 
