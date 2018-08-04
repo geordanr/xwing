@@ -1,6 +1,8 @@
 (Yet Another) X-Wing Miniatures Squad Builder
 =============================================
 
+**NOTE:  This builder is for First Edition ONLY!**  There is a fork for [Second Edition](https://github.com/raithos/xwing).
+
 [![Build Status](https://travis-ci.org/geordanr/xwing.png)](https://travis-ci.org/geordanr/xwing)
 
 What?
