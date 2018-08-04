@@ -3172,7 +3172,7 @@ class GenericAddon
     getPoints: ->
         # Moar special case jankiness
         if @data?.variableagility == true and @ship?
-            Math.max(0, (@data?.points ? 0) + ((@ship?.data.agility - 1)*2) + 1)
+            Math.max(@data?.points ? 0, (@data?.points ? 0) + ((@ship?.data.agility - 1)*2) + 1)
         else if @data?.variablebase == true and @ship?.data.medium == true
             Math.max(0, (@data?.points ? 0) + (@data?.points))
         else if @data?.variablebase == true and @ship?.data.large == true

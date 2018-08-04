@@ -1220,6 +1220,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Modification"
             ]
+            applies_condition: 'Suppressive Fire'.canonicalize()
         }
         {
             name: "Miranda Doni"
@@ -4780,6 +4781,7 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Galactic Empire"
+           applies_condition: 'Hunted'.canonicalize()
        }
        {
            name: "Boba Fett"
@@ -4895,6 +4897,7 @@ exportObj.basicCardData = ->
            points: 5
            unique: true
            faction: "Galactic Empire"
+           applies_condition: 'Optimized Prototype'.canonicalize()
        }
        {
            name: "Emperor Palpatine"
@@ -4977,6 +4980,7 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 5
            unique: true
+           applies_condition: 'Listening Device'.canonicalize()
        }
        {
            name: "ISB Slicer"
@@ -5120,6 +5124,14 @@ exportObj.basicCardData = ->
            points: 5
            unique: true
            faction: "Rebel Alliance"
+           modifier_func: (stats) ->
+                for s, spd in (stats.maneuvers ? [])
+                    continue if spd == 0
+                    if s[2] > 0 
+                        if s[2] = 3
+                            s[2] = 1
+                        else if s[2] = 1
+                            s[2] = 2
        }
        {
            name: "Novice Technician"
@@ -5972,6 +5984,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            ship: "YT-1300"
+           modifier_func: (stats) ->
+                stats.actions.push 'Evade' if 'Evade' not in stats.actions
        }
        {
            name: "Mist Hunter"
@@ -6158,6 +6172,32 @@ exportObj.basicCardData = ->
             ]
         }
     ]
+    conditionsById: [
+        {
+            name: '''Zero Condition'''
+            id: 0
+        }
+        {
+            name: 'Suppressive Fire'
+            id: 1
+            unique: true
+        }
+        {
+            name: 'Hunted'
+            id: 2
+            unique: true
+        }
+        {
+            name: 'Listening Device'
+            id: 3
+            unique: true
+        }
+        {
+            name: 'Optimized Prototype'
+            id: 4
+            unique: true
+        }
+    ]
     modificationsById: [
 
     ]
@@ -6166,10 +6206,8 @@ exportObj.basicCardData = ->
 
     ]
 
-    conditionsById: [
-    ]
 
-exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, modification_translations, title_translations, condition_translations) ->
+exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
         if pilot_data.id != i
