@@ -2978,8 +2978,8 @@ class Ship
         xws =
             name: @pilot.canonical_name
             points: @getPoints()
-            ship: @data.canonical_name
-#            ship: @data.xws.canonicalize()
+#            ship: @data.canonical_name
+            ship: @data.xws.canonicalize()
 
         if @data.multisection
             xws.multisection = @data.multisection.slice 0
