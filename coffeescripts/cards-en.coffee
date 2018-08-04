@@ -236,7 +236,7 @@ exportObj.cardLoaders.English = () ->
         "Braylen Stramm":
            text: """While you defend or perform an attack, if you are stressed, you may reroll up to 2 of your dice."""
         "Captain Feroph":
-           text: """While you defend, if the attacker does not have any green tokens, you may change 1 of your %FOCUS%/blank results to an %EVADE% result. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           text: """While you defend, if the attacker does not have any green tokens, you may change 1 of your blank or %FOCUS% results to an %EVADE% result. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         "Captain Jonus":
            text: """While a friendly ship at range 0-1 performs a %TORPEDO% or %MISSILE% attack, that ship may reroll up to 2 attack dice. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
         "Captain Jostero":
@@ -288,7 +288,7 @@ exportObj.cardLoaders.English = () ->
         "Dalan Oberos (StarViper)":
            text: """After you fully execute a maneuver, you ay gain 1 stress token to rotate your ship 90˚.  %LINEBREAK% MICROTHRUSTERS: While you perform a barrel roll, you MUST use the (1 %BANKLEFT%) or (1 %BANKRIGHT%) template instead of the [1 %STRAIGHT%] template."""
         "Darth Vader":
-           text: """After you perform an action, you may spend 1 %FORCE% to perform an action. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, ro;; 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """After you perform an action, you may spend 1 %FORCE% to perform an action. %LINEBREAK% ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Dash Rendar":
            text: """While you move, you ignore obstacles. %LINEBREAK% SENSOR BLINDSPOT: While you perform a primary attack at range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
         '"Deathfire"':
@@ -466,7 +466,7 @@ exportObj.cardLoaders.English = () ->
         "Major Rhymer":
            text: """While you perform a %TORPEDO% or %MISSILE% attack, you may increase or decrease the range requirement by 1, to a limit of 0-3. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
         "Major Vermeil":
-           text: """While you perform an attack, if the defender does not have any green tokens, you may change 1 of your %FOCUS%/blank results to a %HIT% result. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           text: """While you perform an attack, if the defender does not have any green tokens, you may change 1 of your  blank  or %FOCUS% results to a %HIT% result. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         "Major Vynder":
            text: """While you defend, if you are disarmed, roll 1 additional defense die."""
         "Manaroo":
@@ -484,7 +484,7 @@ exportObj.cardLoaders.English = () ->
         '"Night Beast"':
            text: """After you fully execute a blue maneuver, you may perform a %FOCUS% action."""
         "Norra Wexley (ARC-170)":
-           text: """While you defend, if there is an enemy ship at range 0-1, you may add 1 %EVADE% result to your dice results."""
+           text: """While you defend, if there is an enemy ship at range 0-1, add 1 %EVADE% result to your dice results."""
         "Norra Wexley (Y-Wing)":
            text: """While you defend, if there is an enemy ship at range 0-1, you may add 1 %EVADE% result to your dice results."""
         "Nu Squadron Pilot":
@@ -860,7 +860,7 @@ exportObj.cardLoaders.English = () ->
         "Outmaneuver":
            text: """While you perform a %FRONTARC% arrack, if you are not in the defender's firing arc, the defender rolls 1 fewer defense die."""
         "Outrider":
-           text: """While you perform an obstructed attack, the defender rolls 1 fewer defense die. After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens."""
+           text: """While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens."""
         "Perceptive Copilot":
            text: """After you perform a %FOCUS% action, gain 1 focus token."""
         "Phantom":
@@ -934,13 +934,13 @@ exportObj.cardLoaders.English = () ->
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
-           text: """After you reveal a turn, (%TURNLEFT% or %TURNRIGHT%) or bank (%BANKLEFT% or %BANKRIGHT%) maneuver, you may gain 1 stress token. If you do, set your dial to the maneuver of the same speed and bearing in the other direction. Add %TORPEDO% slot."""
+           text: """After you reveal a turn, (%TURNLEFT% or %TURNRIGHT%) or bank (%BANKLEFT% or %BANKRIGHT%) maneuver you may set your dial to the maneuver of the same speed and bearing in the other direction. Add %TORPEDO% slot."""
         "Squad Leader":
            text: """While you coordinate, the ship you choose can perform an action only if that action is also on your action bar."""
         "ST-321":
            text: """After you perform a %COORDINATE% action, you may choose an enemy ship at range 0-3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions."""
         "Static Discharge Vanes":
-           text: """If you would gain an ion or jam token, you may choose a ship at range 0-1. If you do, gain 1 stress token and transfer 1 ion or jam token to that ship."""
+           text: """Before you would gain 1 ion or jam token, if you are not stressed, you may choose another ship at range 0–1 and gain 1 stress token. If you do, the chosen ship gains that ion or jam token instead."""
         "Stealth Device":
            text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%. %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
         "Supernatural Reflexes":
