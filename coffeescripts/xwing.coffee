@@ -1892,7 +1892,7 @@ class exportObj.SquadBuilder
         # Often you will want JSON.stringify(builder.toXWS())
         xws =
             description: @getNotes()
-            faction: exportObj.toXWSFaction[@faction]
+            faction: @faction.canonicalize()
             name: @current_squad.name
             pilots: []
             points: @total_points
