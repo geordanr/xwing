@@ -5865,6 +5865,8 @@ exportObj.basicCardData = ->
            points: 4
            attackt: 2
            range: """1-2"""
+           modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
        }
        {
            name: "Ion Cannon Turret"
@@ -5873,6 +5875,8 @@ exportObj.basicCardData = ->
            points: 6
            attackt: 3
            range: """1-2"""
+           modifier_func: (stats) ->
+                stats.actions.push 'Rotate Arc' if 'Rotate Arc' not in stats.actions
        }
        {
            name: "Os-1 Arsenal Loadout"
