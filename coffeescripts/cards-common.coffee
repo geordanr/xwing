@@ -1304,6 +1304,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Missile"
                 "Missile"
+                "Gunner"
                 "Crew"
                 "Device"
                 "Device"
@@ -1317,11 +1318,12 @@ exportObj.basicCardData = ->
             faction: "Rebel Alliance"
             ship: "K-Wing"
             skill: 3
-            points: 50
+            points: 48
             slots: [
                 "Torpedo"
                 "Missile"
                 "Missile"
+                "Gunner"
                 "Crew"
                 "Device"
                 "Device"
@@ -1344,6 +1346,7 @@ exportObj.basicCardData = ->
                 "Torpedo"
                 "Missile"
                 "Missile"
+                "Gunner"
                 "Crew"
                 "Device"
                 "Device"

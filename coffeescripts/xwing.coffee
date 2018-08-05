@@ -1892,7 +1892,7 @@ class exportObj.SquadBuilder
         # Often you will want JSON.stringify(builder.toXWS())
         xws =
             description: @getNotes()
-            faction: @faction.canonicalize()
+            faction: exportObj.toXWSFaction[@faction]
             name: @current_squad.name
             pilots: []
             points: @total_points
@@ -1990,7 +1990,7 @@ class exportObj.SquadBuilder
                     try
                         new_ship.setPilot (p for p in exportObj.pilotsByFactionCanonicalName[@faction][pilot.name] when p.ship.canonicalize() == pilot.ship)[0]
                     catch err
-                        # console.error err.message
+                        console.error err.message 
                         continue
                     # Turn all the upgrades into a flat list so we can keep trying to add them
                     addons = []
