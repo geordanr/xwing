@@ -4738,7 +4738,8 @@ exportObj.basicCardData = ->
            slot: "Astromech"
            points: 2
            restriction_func: (ship) ->
-                not (ship.data.large ? false) or (ship.data.medium ? false) 
+                not (ship.data.large? or ship.data.medium?)
+           modifier_func: (stats) ->
            modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
                     if stats.maneuvers[1][turn] > 0 
