@@ -673,7 +673,7 @@ class exportObj.SquadBuilder
                             <td class="info-data"></td>
                         </tr>
                         <tr class="info-skill">
-                            <td class="info-header">Skill</td>
+                            <td class="info-header">Initiative</td>
                             <td class="info-data info-skill"></td>
                         </tr>
                         <tr class="info-energy">
