@@ -107,7 +107,7 @@ exportObj.translations.English =
         '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
         # Info well
         '.info-well .info-ship td.info-header': 'Ship'
-        '.info-well .info-skill td.info-header': 'Skill'
+        '.info-well .info-skill td.info-header': 'Initiative'
         '.info-well .info-actions td.info-header': 'Actions'
         '.info-well .info-upgrades td.info-header': 'Upgrades'
         '.info-well .info-range td.info-header': 'Range'
