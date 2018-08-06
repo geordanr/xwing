@@ -1297,25 +1297,25 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
-
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)))
+        
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
         # Special case #3
-        # Ordnance tube hack
-        if (@isEpic or @isCustom) and slot == 'Hardpoint' and 'Ordnance Tubes'.canonicalize() in (m.data.canonical_name.getXWSBaseName() for m in ship.modifications when m.data?)
-            available_upgrades = available_upgrades.concat (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot in ['Missile', 'Torpedo'] and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and ((@isEpic or @isCustom) or upgrade.restriction_func != exportObj.hugeOnly))
 
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
 
         # Special case #2 :(
         # current_upgrade_forcibly_removed = false
-        for title in ship?.titles ? []
-            if title?.data?.special_case == 'A-Wing Test Pilot'
-                for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
-                    eligible_upgrades.removeItem equipped_upgrade
+        #for title in ship?.titles ? []
+        #    if title?.data?.special_case == 'A-Wing Test Pilot'
+        #        for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
+        #            eligible_upgrades.removeItem equipped_upgrade
                     # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
+
+        for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
+            eligible_upgrades.removeItem equipped_upgrade
 
         # Re-enable selected upgrade
         if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited? or include_upgrade.max_per_squad?) and @matcher(include_upgrade.name, term)))# or current_upgrade_forcibly_removed)
