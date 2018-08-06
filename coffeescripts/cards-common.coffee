@@ -3809,7 +3809,7 @@ exportObj.basicCardData = ->
             id: 171
             faction: "Galactic Empire"
             ship: "TIE Advanced Prototype"
-            skill: 5
+            skill: 3
             points: 40
             slots: [       
                 "Force"
@@ -5821,6 +5821,8 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            unique: true
+           modifier_func: (stats) ->
+                stats.actionsred.push 'Coordinate' if 'Coordinate' not in stats.actionsred
        }
        {
            name: "Swarm Tactics"
