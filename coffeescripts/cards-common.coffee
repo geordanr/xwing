@@ -5774,7 +5774,9 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Evade" in ship.effectiveStats().actionsred
+                not (ship.data.large?)
+           modifier_func: (stats) ->
+                stats.actionsred.push 'Evade' if 'Evade' not in stats.actionsred
        }
        {
            name: "Elusive"
