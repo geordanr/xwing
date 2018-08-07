@@ -5825,6 +5825,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            unique: true
+           recurring: true
            charge: 1
        }
        {
