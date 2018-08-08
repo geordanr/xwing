@@ -1011,6 +1011,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 7
             shields: 2
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
