@@ -5138,7 +5138,6 @@ exportObj.basicCardData = ->
            name: "L3-37"
            id: 43
            slot: "Crew"
-           charge: 1 
            points: 4
            unique: true
            faction: "Scum and Villainy"
