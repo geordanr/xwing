@@ -1011,6 +1011,7 @@ exportObj.basicCardData = ->
             agility: 1
             hull: 7
             shields: 2
+            medium: true
             actions: [
                 "Focus"
                 "Target Lock"
@@ -1458,7 +1459,6 @@ exportObj.basicCardData = ->
             skill: 2
             points: 61
             slots: [
-                "Talent"
                 "System"
                 "Torpedo"
                 "Astromech"
@@ -2659,10 +2659,7 @@ exportObj.basicCardData = ->
             charge: 3
             points: 12
             slots: [
-                "Talent"
-                "Crew"
-                "Modification"
-              ]
+            ]
         }
         {
             name: "Fenn Rau (Fang Fighter)"
@@ -3888,6 +3885,7 @@ exportObj.basicCardData = ->
             ship: "TIE Advanced"
             skill: 6
             points: 70
+            force: 3
             slots: [       
                 "Force"
                 "System"
@@ -5790,8 +5788,7 @@ exportObj.basicCardData = ->
            id: 120
            slot: "Talent"
            points: '*'
-           basepoints: 2
-           basepoints: 2
+           basepoints: 3
            variablebase: true
            restriction_func: (ship) ->
                 "Barrel Roll" in ship.effectiveStats().actionsred
@@ -5825,6 +5822,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 4
            unique: true
+           recurring: true
            charge: 1
        }
        {
