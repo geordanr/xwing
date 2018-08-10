@@ -245,6 +245,317 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Second Edition Core Set': [
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Luke Skywalker'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jek Porkins'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Escort'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Iden Versio'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Valen Rudor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Squadron Ace'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: '"Night Beast"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Obsidian Squadron Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Academy Pilot'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Heightened Perception'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Instinctive Aim'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Sense'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Supernatural Reflexes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2-D2 (Astromech)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-D8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-Foils (Open)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-Foils (Closed)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Afterburners'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    "Saw's Renegades Expansion Pack" : [
+        {
+            name: 'U-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Saw Gerrera'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Magva Yarro'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Benthic Two-Tubes'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Partisan Renegade'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kullbee Sperado'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Leevan Tenza'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Edrio Two-Tubes'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cavern Angels Zealot'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R4 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Saw Gerrera'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Magva Yarro'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Pivot Wing'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-Foils'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Deadman's Switch"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'TIE Reaper Expansion Pack' : [
+        {
+            name: 'TIE Reaper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Major Vermeil'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Feroph'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Vizier"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Scarif Base Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Director Krennic'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Death Troopers'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'ISB Slicer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
 
 
 class exportObj.Collection
