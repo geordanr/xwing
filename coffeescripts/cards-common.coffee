@@ -1740,6 +1740,12 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Target Lock"
+                    "Rotate Arc"
+                ]
         }
         {
             name: "Wild Space Fringer"
@@ -2100,6 +2106,12 @@ exportObj.basicCardData = ->
                 "Turret"
                 "Title"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Target Lock"
+                    "Reinforce"
+                ]
         }
         {
             name: "Lothal Rebel"
@@ -2587,6 +2599,12 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Target Lock"
+                    "Rotate Arc"
+                ]
         }
         {
             name: "Freighter Captain"
@@ -2648,6 +2666,11 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Modification"
               ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Barrel Roll"
+                ]
         }
         {
             name: "Autopilot Drone"
@@ -2660,6 +2683,12 @@ exportObj.basicCardData = ->
             points: 12
             slots: [
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Barrel Roll"
+                ]
+
         }
         {
             name: "Fenn Rau (Fang Fighter)"
@@ -2865,6 +2894,13 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
               ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Target Lock"
+                    "Jam"
+                ]
+
         }
         {
             name: "Zuckuss"
@@ -3477,6 +3513,15 @@ exportObj.basicCardData = ->
                 "Modification"
                 "Title"
               ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Target Lock"
+                    "Barrel Roll"
+                    "<r>> Calculate</r>"
+                    "Boost"
+                    "<r>> Calculate</r>"
+                ]
         }
         {
             name: "Prince Xizor"
@@ -4791,7 +4836,6 @@ exportObj.basicCardData = ->
            restriction_func: (ship) ->
                 not (ship.data.large? or ship.data.medium?)
            modifier_func: (stats) ->
-           modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
                     if stats.maneuvers[1][turn] > 0 
                         if stats.maneuvers[1][turn] == 3
@@ -4909,6 +4953,8 @@ exportObj.basicCardData = ->
            points: 12
            unique: true
            faction: "Rebel Alliance"
+           modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
        }
        {
            name: "Cassian Andor"
@@ -4992,7 +5038,8 @@ exportObj.basicCardData = ->
                 ship.hasAnotherUnoccupiedSlotLike upgrade_obj
            validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnotherUpgradeSlot()
-           also_occupies_upgrades: [ "Crew" ]       }
+           also_occupies_upgrades: [ "Crew" ]
+       }
        {
            name: "Director Krennic"
            id: 28
@@ -5002,7 +5049,8 @@ exportObj.basicCardData = ->
            faction: "Galactic Empire"
            applies_condition: 'Optimized Prototype'.canonicalize()
            modifier_func: (stats) ->
-                stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions       }
+                stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
+       }
        {
            name: "Emperor Palpatine"
            id: 29

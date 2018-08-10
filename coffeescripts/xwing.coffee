@@ -1515,9 +1515,9 @@ class exportObj.SquadBuilder
                         @info_container.find('.info-collection').text ''
                     effective_stats = data.effectiveStats()
                     extra_actions = $.grep effective_stats.actions, (el, i) ->
-                        el not in data.data.actions
+                        el not in (data.pilot.ship_override?.actions ? data.data.actions)
                     extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
-                        el not in data.data.actionsred
+                        el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1570,16 +1570,16 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-charge').show()
                     else
                         @info_container.find('tr.info-charge').hide()
-                        
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in data.data.actions.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
 
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
+                    
                     if data.data.actionsred?
-                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in data.data.actionsred.concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '
+                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actionsred ? data.data.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '       
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
                     
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(' ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.pilot.slots).join(', ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(effective_stats.maneuvers, data.data.maneuvers))
                 when 'Pilot'
@@ -1641,7 +1641,7 @@ class exportObj.SquadBuilder
                         @info_container.find('tr.info-charge').show()
                     else
                         @info_container.find('tr.info-charge').hide()
-                    
+
                     @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(' ')
     
                     if ships[data.ship].actionsred?
@@ -1652,7 +1652,7 @@ class exportObj.SquadBuilder
 
                     @info_container.find('tr.info-actions').show()
                     @info_container.find('tr.info-upgrades').show()
-                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(' ') or 'None')
+                    @info_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
                     @info_container.find('p.info-maneuvers').show()
                     @info_container.find('p.info-maneuvers').html(@getManeuverTableHTML(ship.maneuvers, ship.maneuvers))
                 when 'Addon'
@@ -2507,6 +2507,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
                 when 'Reload'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
+                when 'Calculate'
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>"""
                 when "<r>> Target Lock</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i></r>"""
                 when "<r>> Barrel Roll</r>"
@@ -2517,6 +2519,8 @@ class Ship
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i></r>"""
                 when "<r>> Evade</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i></r>"""
+                when "<r>> Calculate</r>"
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-calculate"></i></r>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -2548,6 +2552,8 @@ class Ship
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>"""
                 when 'Reload'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-reload"></i>"""
+                when 'Calculate'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
     
