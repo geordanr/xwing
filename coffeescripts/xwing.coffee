@@ -1514,6 +1514,10 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('.info-collection').text ''
                     effective_stats = data.effectiveStats()
+                    extra_actions = $.grep effective_stats.actions, (el, i) ->
+                        el not in (data.pilot.ship_override?.actions ? data.data.actions)
+                    extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
+                        el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name}#{if data.pilot.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1567,10 +1571,10 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-charge').hide()
 
-                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions)).join ' '
-
+                    @info_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ' '
+                    
                     if data.data.actionsred?
-                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actionsred ? data.data.actionsred)).join ' '
+                        @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actionsred ? data.data.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ' '       
                     @info_container.find('tr.info-actions-red').toggle(data.data.actionsred?)
                     
                     @info_container.find('tr.info-actions').show()
