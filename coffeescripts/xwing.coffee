@@ -2507,6 +2507,8 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
                 when 'Reload'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
+                when 'Calculate'
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>"""
                 when "<r>> Target Lock</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i></r>"""
                 when "<r>> Barrel Roll</r>"
@@ -2517,6 +2519,8 @@ class Ship
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i></r>"""
                 when "<r>> Evade</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i></r>"""
+                when "<r>> Calculate</r>"
+                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-calculate"></i></r>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -2548,6 +2552,8 @@ class Ship
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>"""
                 when 'Reload'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-reload"></i>"""
+                when 'Calculate'
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>"""
                 else
                     """<span>&nbsp;#{action}<span>"""
     
