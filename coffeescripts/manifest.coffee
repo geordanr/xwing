@@ -1407,12 +1407,12 @@ exportObj.manifestByExpansion =
         {
             name: 'Red Squadron Veteran'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Blue Squadron Escort'
             type: 'pilot'
-            count: 2
+            count: 1
         }
         {
             name: 'Selfless'
@@ -1440,7 +1440,73 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
-
+    'BTL-A4 Y-Wing Expansion' : [
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Horton Salm'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Norra Wexley (Y-Wing)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Dutch" Vander'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Evaan Verlaine'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gold Squadron Veteran'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Gray Squadron Bomber'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R5 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Expert Handling'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Cannon Turret'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Veteran Turret Gunner'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
 class exportObj.Collection
     # collection = new exportObj.Collection
