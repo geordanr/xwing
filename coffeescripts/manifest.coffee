@@ -372,12 +372,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Servomotor S-Foils (Open)'
+            name: 'Servomotor S-foils (Open)'
             type: 'upgrade'
             count: 1
         }
         {
-            name: 'Servomotor S-Foils (Closed)'
+            name: 'Servomotor S-foils (Closed)'
             type: 'upgrade'
             count: 1
         }
@@ -469,12 +469,22 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Pivot Wing'
+            name: 'Pivot Wing (Open)'
             type: 'upgrade'
             count: 1
         }
         {
-            name: 'Servomotor S-Foils'
+            name: 'Pivot Wing (Closed)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-foils (Open)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-foils (Closed)'
             type: 'upgrade'
             count: 1
         }
@@ -1253,14 +1263,24 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Pivot Wing'
+            name: 'Pivot Wing (Open)'
             type: 'upgrade'
-            count: 1
+            count: 2
         }
         {
-            name: 'Servomotor S-Foils'
+            name: 'Pivot Wing (Closed)'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'Servomotor S-foils (Open)'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Servomotor S-foils (Closed)'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'Bistan'
@@ -1435,7 +1455,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Servomotor S-Foils'
+            name: 'Servomotor S-foils (Open)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-foils (Closed)'
             type: 'upgrade'
             count: 1
         }
