@@ -4954,6 +4954,8 @@ exportObj.basicCardData = ->
            points: 12
            unique: true
            faction: "Rebel Alliance"
+           modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
        }
        {
            name: "Cassian Andor"
