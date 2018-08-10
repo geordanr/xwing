@@ -1378,6 +1378,68 @@ exportObj.manifestByExpansion =
             count: 2
         }
     ]
+    'T-65 X-Wing Expansion' : [
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Wedge Antilles'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Thane Kyrell'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Garven Dreis'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Biggs Darklighter'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Veteran'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Blue Squadron Escort'
+            type: 'pilot'
+            count: 2
+        }
+        {
+            name: 'Selfless'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R2 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R4 Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Servomotor S-Foils'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
 
 
 class exportObj.Collection
