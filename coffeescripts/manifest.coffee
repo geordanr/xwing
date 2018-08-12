@@ -1628,7 +1628,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Sigma Squadron Ace'
+            name: '"Sigma Squadron Ace"'
             type: 'pilot'
             count: 2
         }
@@ -2435,7 +2435,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Sabine Wren (Lancer)'
+            name: 'Sabine Wren (Scum)'
             type: 'pilot'
             count: 1
         }
@@ -2947,7 +2947,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Garven Dreis'
+            name: 'Garven Dreis (X-Wing)'
             type: 'pilot'
             count: 1
         }
@@ -3312,7 +3312,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Fenn Rau'
+            name: 'Fenn Rau (Fang Fighter)'
             type: 'pilot'
             count: 1
         }
@@ -3735,7 +3735,7 @@ class exportObj.Collection
             $(row).find('.upgrade-name').data 'english_name', expansion
             upgradecollection_content.append row
 
-        modificationcollection_content = $ @modal.find('.collection-modification-content')
+        ###modificationcollection_content = $ @modal.find('.collection-modification-content')
         for modification in singletonsByType.modification
             count = parseInt(@singletons.modification?[modification] ? 0)
             row = $.parseHTML $.trim """
@@ -3753,9 +3753,9 @@ class exportObj.Collection
             input.data 'singletonName', modification
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.modification-name').data 'english_name', expansion
-            modificationcollection_content.append row
+            modificationcollection_content.append row ###
 
-        titlecollection_content = $ @modal.find('.collection-title-content')
+        ###titlecollection_content = $ @modal.find('.collection-title-content')
         for title in singletonsByType.title
             count = parseInt(@singletons.title?[title] ? 0)
             row = $.parseHTML $.trim """
@@ -3773,7 +3773,7 @@ class exportObj.Collection
             input.data 'singletonName', title
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.title-name').data 'english_name', expansion
-            titlecollection_content.append row
+            titlecollection_content.append row###
 
     destroyUI: ->
         @modal.modal 'hide'

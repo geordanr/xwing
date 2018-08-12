@@ -5798,7 +5798,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 2
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actions or "Boost" in ship.effectiveStats().actionsred
+                "Focus" in ship.effectiveStats().actions or "Focus" in ship.effectiveStats().actionsred
        }
        {
            name: "Crack Shot"
@@ -5937,7 +5937,7 @@ exportObj.basicCardData = ->
            points: 1
        }
        {
-           name: "Adv. Proton Torpedoes"
+           name: "Advanced Proton Torpedoes"
            id: 134
            slot: "Torpedo"
            points: 6

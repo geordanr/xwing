@@ -647,7 +647,7 @@ exportObj.cardLoaders.English = () ->
            text: """Before you would suffer damage from an obstacle or from a friendly bomb detonating, you may spend 1 %CHARGE%. If you do, prevent 1 damage."""
         "Admiral Sloane":
            text: """After another friendly ship at range 0-3 defends, if it is destroyed, the attacker gains 2 stress tokens. While a friendly ship at range 0-3 performs an attack against a stressed ship, it may reroll 1 attack die."""
-        "Adv. Proton Torpedoes":
+        "Advanced Proton Torpedoes":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. Change 1 %HIT% result to a %CRIT% result."""
         "Advanced Sensors":
            text: """After you reveal your dial, you may perform 1 action. If you do, you cannot perform another action during your activation."""
@@ -700,7 +700,7 @@ exportObj.cardLoaders.English = () ->
         "Collision Detector":
            text: """While you boost or barrel roll, you can move through and overlap obstacles. After you move through or overlap an obstacle, you may spend 1 %CHARGE% to ignore its effects until the end of the round."""
         "Composure":
-           text: """Requires a %FOCUS% action. If you fail an action and don't have any green tokens you may perform a %FOCUS% action.﻿﻿"""
+           text: """If you fail an action and don't have any green tokens you may perform a %FOCUS% action.﻿﻿"""
         "Concussion Missiles":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. After this attack hits, each ship at range 0-1 of the defender exposes 1 of its damage cards."""
         "Conner Nets":
