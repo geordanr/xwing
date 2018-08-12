@@ -1261,6 +1261,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 46
             slots: [
+                "Illicit"
                 "Talent"
                 "Torpedo"
                 "Astromech"
@@ -1282,6 +1283,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 48
             slots: [
+                "Illicit"
                 "Talent"
                 "Torpedo"
                 "Astromech"
@@ -5835,7 +5837,7 @@ exportObj.basicCardData = ->
            id: 120
            slot: "Talent"
            points: '*'
-           basepoints: 3
+           basepoints: 2
            variablebase: true
            restriction_func: (ship) ->
                 "Barrel Roll" in ship.effectiveStats().actionsred
