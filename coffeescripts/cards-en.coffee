@@ -186,9 +186,9 @@ exportObj.cardLoaders.English = () ->
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""
         "Alpha Squadron Pilot":
-           text: """AUTOTHRUSTERS: After you perform an actino. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+           text: """AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "AP-5":
-           text: """While you coordinate, if you chose a ship with exactly 1 stress token, it can perform actions. COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
+           text: """While you coordinate, if you chose a ship with exactly 1 stress token, it can perform actions. COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier ship activates, it may perform a %COORDINATE% action."""
         "Arvel Crynyd":
            text: """You can perform primary attacks at range 0. If you would fail a %BOOST% action by overlapping another ship, resolve it as though you were partially executing a maneuver instead. %LINEBREAK% VECTORED THRUSTERS: After you perform an action, you may perform a red %BOOST% action."""
         "Asajj Ventress":
@@ -266,7 +266,7 @@ exportObj.cardLoaders.English = () ->
         "Colonel Jendon":
            text: """At the start of the Activation Phase, you may spend 1 %CHARGE%. If you do, while friendly ships acquire lock this round, they must acquire locks beyond range 3 instead of at range 0-3."""
         "Colonel Vessery":
-           text: """While you perform an attack against a locked ship, after you roll attack dice, you may acquire a lock on the defender. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 manouver, you may perform an %EVADE% action."""
+           text: """While you perform an attack against a locked ship, after you roll attack dice, you may acquire a lock on the defender. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Constable Zuvio":
            text: """If you would drop a device, you may launch it using a [1 %STRAIGHT%] template instead. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Contracted Scout":
@@ -276,7 +276,7 @@ exportObj.cardLoaders.English = () ->
         '"Countdown"':
            text: """While you defend, after the Neutralize Results step, if you are not stressed, you may suffer 1 %HIT% damage and gain 1 stress token. If you do, cancel all dice results. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         "Countess Ryad":
-           text: """While you would execute a %STRAIGHT% maneuver, you may increase the difficulty of the maneuver. If you do, execute it as a %KTURN% maneuver instead. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 manouver, you may perform an %EVADE% action."""
+           text: """While you would execute a %STRAIGHT% maneuver, you may increase the difficulty of the maneuver. If you do, execute it as a %KTURN% maneuver instead. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Crymorah Goon":
            text: """ """
         "Cutlass Squadron Pilot":
@@ -298,7 +298,7 @@ exportObj.cardLoaders.English = () ->
         "Del Meeko":
            text: """While a friendly ship at range 0-2 defends against a damaged attacker, the defender may reroll 1 defense die."""
         "Delta Squadron Pilot":
-           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 manouver, you may perform an %EVADE% action."""
+           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Dengar":
            text: """After you defend, if the attcker is in your %FRONTARC%, you may spend 1 %CHARGE% to perform a bonus attack against the attacker."""
         '"Double Edge"':
@@ -320,9 +320,9 @@ exportObj.cardLoaders.English = () ->
         "Evaan Verlaine":
            text: """At the start of the Engagement Phase, you may spend 1 focus token to choose a friendly ship at range 0-1. If you do, that ship rolls 1 additional defense die while defending until the end of the round."""
         "Ezra Bridger (Attack Shuttle)":
-           text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performes a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
+           text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         "Ezra Bridger (Sheathipede)":
-           text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE%/%HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performes a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
+           text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE%/%HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         "Ezra Bridger (TIE Fighter)":
            text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Fenn Rau (Fang Fighter)":
@@ -364,7 +364,7 @@ exportObj.cardLoaders.English = () ->
         "Heff Tobber":
            text: """After an enemy ship executes a maneuver, if it is at range 0, you may perform an action."""
         "Hera Syndulla (Attack Shuttle)":
-           text: """After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performes a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
+           text: """After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         "Hera Syndulla (VCX-100)":
            text: """After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty. TAIL GUN: While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship's Primary %FRONTARC% attack value."""
         "Hired Gun":
@@ -460,7 +460,7 @@ exportObj.cardLoaders.English = () ->
         "Luke Skywalker":
            text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
         "Maarek Stele":
-           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, ro;; 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Magva Yarro":
            text: """While a friendly ship at range 0-2 defends, the attacker cannot reroll more than 1 attack die."""
         "Major Rhymer":
@@ -496,7 +496,7 @@ exportObj.cardLoaders.English = () ->
         "Omicron Group Pilot":
            text: """ """
         "Onyx Squadron Ace":
-           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 manouver, you may perform an %EVADE% action."""
+           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Onyx Squadron Scout":
            text: """ """
         "Outer Rim Pioneer":
@@ -528,17 +528,17 @@ exportObj.cardLoaders.English = () ->
         '"Redline"':
            text: """You can maintain up to 2 locks. After you perform an action, you may acquire a lock."""
         "Rexler Brath":
-           text: """After you perform an attack that hits, if you are evading, expose 1 of the defender's damage cards. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 manouver, you may perform an %EVADE% action."""
+           text: """After you perform an attack that hits, if you are evading, expose 1 of the defender's damage cards. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Rho Squadron Pilot":
            text: """ """
         "Roark Garnet":
            text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc. If you do, it engages at initiative 7 instead of its standard initiative value this phase."""
         "Rogue Squadron Escort":
-           text: """EXPERIMENTAL SCANNERS: You can acquire locks beyond range 3. You cannot acquite locks at range 1."""
+           text: """EXPERIMENTAL SCANNERS: You can acquire locks beyond range 3. You cannot acquire locks at range 1."""
         "Saber Squadron Ace":
-           text: """AUTOTHRUSTERS: After you perform an actino. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+           text: """AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "Sabine Wren (Attack Shuttle)":
-           text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performes a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
+           text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         "Sabine Wren (Scum)":
            text: """While you defend, if the attacker is in your %SINGLETURRETARC% at range 0-2, you may add 1 %FOCUS% result to your dice results."""
         "Sabine Wren (TIE Fighter)":
@@ -550,7 +550,7 @@ exportObj.cardLoaders.English = () ->
         "Scarif Base Pilot":
            text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         "Scimitar Squadron Pilot":
-           text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% template of the same speed instead."""
         '"Scourge" Skutu':
            text: """While you perform an attack against a defender in your %BULLSEYEARC%, roll 1 additional attack die."""
         "Serissu":
@@ -572,11 +572,11 @@ exportObj.cardLoaders.English = () ->
         "Sol Sixxa":
            text: """If you would drop a device using a [1 %STRAIGHT%] template, you may drop it using any other speed 1 template instead."""
         "Soontir Fel":
-           text: """At the start of the Engagement Phase, if there is an enemy ship in your %BULLSEYEARC%, gain 1 focus token. %LINEBREAK% AUTOTHRUSTERS: After you perform an actino. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+           text: """At the start of the Engagement Phase, if there is an enemy ship in your %BULLSEYEARC%, gain 1 focus token. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "Spice Runner":
            text: """ """
         "Storm Squadron Ace":
-           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, ro;; 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Sunny Bounder":
            text: """While you defend or perform an attack, after you roll or reroll your dice, if you have the same result on each of your dice, you may add 1 matching result. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Tala Squadron Pilot":
@@ -594,7 +594,7 @@ exportObj.cardLoaders.English = () ->
         "Thane Kyrell":
            text: """While you perform an attack, you may spend 1 %FOCUS%, %HIT%, or %CRIT% result to look at the defender's facedown damage cards, choose 1, and expose it."""
         "Tomax Bren":
-           text: """After you perform a %RELOAD% action, you may revocer 1 %CHARGE% token on 1 of your equipped %TALENT% upgrade cards. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           text: """After you perform a %RELOAD% action, you may recover 1 %CHARGE% token on 1 of your equipped %TALENT% upgrade cards. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
         "Torani Kulda":
            text: """After you perform an attack, each enemy ship in your %BULLSEYEARC% suffers 1 %HIT% damage unless it removes 1 green token. %LINEBREAK% DEAD TO RIGHTS: While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
         "Torkil Mux":
@@ -602,13 +602,13 @@ exportObj.cardLoaders.English = () ->
         "Trandoshan Slaver":
            text: """ """
         "Turr Phennir":
-           text: """After you perform an attack, you may perform a %BARRELROLL% or %BOOST% action, even if you are stressed. %LINEBREAK% AUTOTHRUSTERS: After you perform an actino. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+           text: """After you perform an attack, you may perform a %BARRELROLL% or %BOOST% action, even if you are stressed. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "Unkar Plutt":
            text: """At the start of the Engagement Phase, if there are one or more other ships at range 0, you and each other ship at range 0 gain 1 tractor token. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Valen Rudor":
            text: """After a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
         "Ved Foslo":
-           text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, ro;; 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Viktor Hel":
            text: """After you defend, if you did not roll exactly 2 defense dice, the attack gains 1 stress token."""
         '"Vizier"':
@@ -628,13 +628,13 @@ exportObj.cardLoaders.English = () ->
         "Zealous Recruit":
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result"""
         '"Zeb" Orrelios (Attack Shuttle)':
-           text: """While you defend, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performes a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
+           text: """While you defend, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         '"Zeb" Orrelios (Sheathipede)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results. COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         '"Zeb" Orrelios (TIE Fighter)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Zertik Strom":
-           text: """During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship's damage cards. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, ro;; 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship's damage cards. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Zuckuss":
            text: """While you perform a primary attack, you may roll 1 additional attack die. If you do, the defender rolls 1 additional defense die."""
 
@@ -662,21 +662,21 @@ exportObj.cardLoaders.English = () ->
         "Andrasta":
            text: """Add %DEVICE% slot."""
         "Barrage Rockets":
-           text: """Attack (%FOCUS%): Spend 1 %CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or mroe %CHARGE% to reroll that many attack dice."""
+           text: """Attack (%FOCUS%): Spend 1 %CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or more %CHARGE% to reroll that many attack dice."""
         "Baze Malbus":
-           text: """While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1 to a mazimum of 2."""
+           text: """While you perform a %FOCUS% action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0-1 to a maximum of 2."""
         "Bistan":
-           text: """After you perform a primary attack, if you are focused, you may perform a bonus %TURRET% attack against a shipe you have not already attacked this round."""
+           text: """After you perform a primary attack, if you are focused, you may perform a bonus %TURRET% attack against a ship you have not already attacked this round."""
         "Boba Fett":
            text: """Setup: Start in reserve. At the end of Setup, place yourself at range 0 of an obstacle and beyond range 3 of an enemy ship."""
         "Bomblet Generator":
-           text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Bomblet with the [1 %STRAIGHT%] templete. At the start of the Activation Phase, you may spend 1 shield to recover 2 %CHARGE%."""
+           text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Bomblet with the [1 %STRAIGHT%] template. At the start of the Activation Phase, you may spend 1 shield to recover 2 %CHARGE%."""
         "Bossk":
-           text: """After you perform a primary attack that misses, if you are not stressedm you must receive 1 stress token to perform a bonus primary attack against the same target."""
+           text: """After you perform a primary attack that misses, if you are not stressed you must receive 1 stress token to perform a bonus primary attack against the same target."""
         "BT-1":
            text: """While you perform an attack, you may change 1 %HIT% result to a %CRIT% result for each stress token the defender has."""
         "C-3PO":
-           text: """Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do, and you roll exactly that many %EVADE% results, add 1 %EVADE% result. Adter you perform the %CALCULATE% action, gain 1 calculate token."""
+           text: """Before rolling defense dice, you may spend 1 calculate token to guess aloud a number 1 or higher. If you do, and you roll exactly that many %EVADE% results, add 1 %EVADE% result. After you perform the %CALCULATE% action, gain 1 calculate token."""
         "Cad Bane":
            text: """After you drop or launch a device, you may perform a red %BOOST% action."""
         "Cassian Andor":
@@ -688,7 +688,7 @@ exportObj.cardLoaders.English = () ->
         '"Chopper" (Astromech)':
            text: """Action: Spend 1 non-recurring %CHARGE% from another equipped upgrade to recover 1 shield. Action: Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
         '"Chopper" (Crew)':
-           text: """During the Perform Action step, you may perofrm 1 action, even while stressed. Adter you perform an action while stressed, suffer 1 %HIT% damage unless you expose 1 of your damage cards."""
+           text: """During the Perform Action step, you may perform 1 action, even while stressed. After you perform an action while stressed, suffer 1 %HIT% damage unless you expose 1 of your damage cards."""
         "Ciena Ree":
            text: """After you perform a %COORDINATE% action, if the ship you coordinated performed a %BARRELROLL% or %BOOST% action, it may gain 1 stress token to rotate 90˚."""
         "Cikatro Vizago":
@@ -698,7 +698,7 @@ exportObj.cardLoaders.English = () ->
         "Cluster Missiles":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. After this attack, you may perform this attack as a bonus attack against a different target at range 0-1 of the defender, ignoring the %LOCK% requirement."""
         "Collision Detector":
-           text: """While you boost or barrel roll, you can move through and overlap obstacles. After you move through or overlap an obstacle, you may spend 1 %CHARGE% to ignore its effects ntie the end of the round."""
+           text: """While you boost or barrel roll, you can move through and overlap obstacles. After you move through or overlap an obstacle, you may spend 1 %CHARGE% to ignore its effects until the end of the round."""
         "Composure":
            text: """Requires a %FOCUS% action. If you fail an action and don't have any green tokens you may perform a %FOCUS% action.﻿﻿"""
         "Concussion Missiles":
@@ -736,7 +736,7 @@ exportObj.cardLoaders.English = () ->
         "Engine Upgrade":
            text: """Add a white %BOOST% %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Expert Handling":
-           text: """Add a white %BARRELROLL% %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
+           text: """Add a white %BARRELROLL% %LINEBREAK%<i>This upgrade has a variable cost, worth 2, 4, or 6 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Ezra Bridger":
            text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %TURRET% attack from a %TURRET% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fearless":
@@ -770,7 +770,7 @@ exportObj.cardLoaders.English = () ->
         "Heightened Perception":
            text: """At the start of the Engagement Phase, you may spend 1 %FORCE%. If you do, engage at initiative 7 instead of your standard initiative value this phase."""
         "Hera Syndulla":
-           text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you ahve 3 or more stress tokens, remove 1 stress token and suffer 1 %HIT% damage."""
+           text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you have 3 or more stress tokens, remove 1 stress token and suffer 1 %HIT% damage."""
         "Homing Missiles":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. After you declare the defender, the defender may choose to suffer 1 %HIT% damage. If it does, skip the Attack and Defense Dice steps and the attack is treated as hitting."""
         "Hotshot Gunner":
@@ -838,7 +838,7 @@ exportObj.cardLoaders.English = () ->
         "Marksmanship":
            text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may change 1 %HIT% result to a %CRIT% result."""
         "Maul":
-           text: """After you suffer damage, you may gain 1 stress token to recover 1 %FORCE%. You can equip \"Dark Side\" upgades."""
+           text: """After you suffer damage, you may gain 1 stress token to recover 1 %FORCE%. You can equip \"Dark Side\" upgrades."""
         "Millennium Falcon":
            text: """While you defend, if you are evading, you may reroll 1 defense die."""
         "Minister Tua":
@@ -910,7 +910,7 @@ exportObj.cardLoaders.English = () ->
         "Sabine Wren":
            text: """Setup: Place 1 ion, 1 jam, 1 stress, and 1 tractor token on this card. After a ship suffers the effect of a friendly bomb, you may remove 1 ion, jam, stress, or tractor token from this card. If you do, that ship gains a matching token."""
         "Saturation Salvo":
-           text: """While you perform a %TORPEDO% or %MISSILE% attack, you may spend 1 charge from that upgrade. If you do, choose two defence dice. The defender must reroll those dice."""
+           text: """While you perform a %TORPEDO% or %MISSILE% attack, you may spend 1 charge from that upgrade. If you do, choose two defense dice. The defender must reroll those dice."""
         "Saw Gerrera":
            text: """While you perform an attack, you may suffer 1 %HIT% damage to change all of your %FOCUS% results to %CRIT% results."""
         "Seasoned Navigator":
@@ -968,11 +968,11 @@ exportObj.cardLoaders.English = () ->
         "Virago":
            text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Add %MODIFICATION% slot."""
         "Xg-1 Assault Configuration":
-           text: """While you have exactly 1 disarm token, uou can still perform %CANNON% attacks. While you perform a %CANNON% attack while disarmed, roll a maximum of 3 attack dice. Add %CANNON% slot."""
+           text: """While you have exactly 1 disarm token, you can still perform %CANNON% attacks. While you perform a %CANNON% attack while disarmed, roll a maximum of 3 attack dice. Add %CANNON% slot."""
         '"Zeb" Orrelios':
            text: """You can perform primary attacks at range 0. Enemy ships at range 0 can perform primary attacks against you."""
         "Zuckuss":
-           text: """While you perform an attack, if ou are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
+           text: """While you perform an attack, if you are not stressed, you may choose 1 defense die and gain 1 stress token. If you do, the defender must reroll that die."""
         'GNK "Gonk" Droid':
            text: """Setup: Lose 1 %CHARGE%. Action: Recover 1 %CHARGE%. Action: Spend 1 %CHARGE% to recover 1 shield."""
         "Hardpoint: Cannon":
