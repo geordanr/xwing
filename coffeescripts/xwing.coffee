@@ -1996,7 +1996,7 @@ class exportObj.SquadBuilder
                                 xws: ship_data.xws
                     console.log "#{pilot.xws}"
                     try
-                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilot.name] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]) when p.ship == shipnameXWS.id)[0]
+                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilot.id] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilot.id]) when p.ship == shipnameXWS.id)[0]
                     catch err
                         console.error err.message 
                         continue
@@ -2983,7 +2983,7 @@ class Ship
 
     toXWS: ->
         xws =
-            name: (@pilot.xws ? @pilot.canonical_name)
+            id: (@pilot.xws ? @pilot.canonical_name)
             points: @getPoints()
             #ship: @data.canonical_name
             ship: @data.xws.canonicalize()
