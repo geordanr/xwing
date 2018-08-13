@@ -696,22 +696,22 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Ezra Bridger (Attack Shuttle)'
+            name: 'Ezra Bridger'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Hera Syndulla (Attack Shuttle)'
+            name: 'Hera Syndulla'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Sabine Wren (Attack Shuttle)'
+            name: 'Sabine Wren'
             type: 'pilot'
             count: 1
         }
         {
-            name: '"Zeb" Orrelios (Attack Shuttle)'
+            name: '"Zeb" Orrelios'
             type: 'pilot'
             count: 1
         }
@@ -831,7 +831,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Garven Dreis (ARC-170)'
+            name: 'Garven Dreis'
             type: 'pilot'
             count: 1
         }
@@ -841,7 +841,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Norra Wexley (ARC-170)'
+            name: 'Norra Wexley'
             type: 'pilot'
             count: 1
         }
@@ -1061,7 +1061,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Advanced Proton Torpedoes'
+            name: 'Adv. Proton Torpedoes'
             type: 'upgrade'
             count: 2
         }
@@ -1833,7 +1833,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Advanced Proton Torpedoes'
+            name: 'Adv. Proton Torpedoes'
             type: 'upgrade'
             count: 3
         }
@@ -2090,7 +2090,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Fenn Rau (Fang Fighter)'
+            name: 'Fenn Rau'
             type: 'pilot'
             count: 1
         }
@@ -2370,7 +2370,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Dalan Oberos (Kimogila)'
+            name: 'Dalan Oberos'
             type: 'pilot'
             count: 1
         }
@@ -2605,7 +2605,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Advanced Proton Torpedoes'
+            name: 'Adv. Proton Torpedoes'
             type: 'upgrade'
             count: 2
         }
@@ -3312,7 +3312,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Fenn Rau (Fang Fighter)'
+            name: 'Fenn Rau'
             type: 'pilot'
             count: 1
         }
@@ -3384,7 +3384,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'L3-37 (YT-1300)'
+            name: 'L3-37'
             type: 'pilot'
             count: 1
         }

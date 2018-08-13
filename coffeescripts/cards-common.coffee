@@ -1191,8 +1191,10 @@ exportObj.basicCardData = ->
         }
         {
             name: "Garven Dreis (X-Wing)"
+            canonical_name: 'Garven Dreis'.canonicalize()
             id: 6
             unique: true
+            xws: "garvendreis-t65xwing"
             faction: "Rebel Alliance"
             ship: "X-Wing"
             skill: 4
@@ -1296,6 +1298,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Sabine Wren'.canonicalize()
             id: 13
             unique: true
+            xws: "sabinewren-tielnfighter"
             faction: "Rebel Alliance"
             ship: "TIE Fighter"
             skill: 3
@@ -1309,6 +1312,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Ezra Bridger'.canonicalize()
             id: 14
             unique: true
+            xws: "ezrabridger-tielnfighter"
             faction: "Rebel Alliance"
             ship: "TIE Fighter"
             skill: 3
@@ -1324,6 +1328,7 @@ exportObj.basicCardData = ->
             canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 15
             unique: true
+            xws: "zeborrelios-tielnfighter"
             faction: "Rebel Alliance"
             ship: "TIE Fighter"
             skill: 2
@@ -1471,6 +1476,7 @@ exportObj.basicCardData = ->
             name: "Norra Wexley (Y-Wing)"
             id: 25
             unique: true
+            xws: "norrawexley-btla4ywing"
             faction: "Rebel Alliance"
             ship: "Y-Wing"
             skill: 5
@@ -1769,6 +1775,7 @@ exportObj.basicCardData = ->
             name: "Han Solo (Rebel)"
             id: 42
             unique: true
+            xws: "hansolo-modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
             ship: "YT-1300"
             skill: 6
@@ -1788,6 +1795,7 @@ exportObj.basicCardData = ->
             name: "Lando Calrissian (Rebel)"
             id: 43
             unique: true
+            xws: "landocalrissian-modifiedyt1300lightfreighter"
             faction: "Rebel Alliance"
             ship: "YT-1300"
             skill: 5
@@ -2056,6 +2064,7 @@ exportObj.basicCardData = ->
             name: "Hera Syndulla (VCX-100)"
             id: 61
             unique: true
+            xws: "herasyndulla-vcx100lightfreighter"
             faction: "Rebel Alliance"
             ship: "VCX-100"
             skill: 5
@@ -2133,7 +2142,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Hera Syndulla (Attack Shuttle)"
+            name: "Hera Syndulla"
             id: 65
             unique: true
             faction: "Rebel Alliance"
@@ -2149,7 +2158,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sabine Wren (Attack Shuttle)"
+            name: "Sabine Wren"
             canonical_name: 'Sabine Wren'.canonicalize()
             id: 66
             unique: true
@@ -2166,8 +2175,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Ezra Bridger (Attack Shuttle)"
-            canonical_name: 'Ezra Bridger'.canonicalize()
+            name: "Ezra Bridger"
             id: 67
             unique: true
             faction: "Rebel Alliance"
@@ -2185,8 +2193,7 @@ exportObj.basicCardData = ->
         }
 
         {
-            name: '"Zeb" Orrelios (Attack Shuttle)'
-            canonical_name: '"Zeb" Orrelios'.canonicalize()
+            name: '"Zeb" Orrelios'
             id: 68
             unique: true
             faction: "Rebel Alliance"
@@ -2204,6 +2211,7 @@ exportObj.basicCardData = ->
             name: "Fenn Rau (Sheathipede)"
             id: 69
             unique: true
+            xws: "fennrau-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 6
@@ -2221,6 +2229,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Ezra Bridger'.canonicalize()
             id: 70
             unique: true
+            xws: "ezrabridger-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 3
@@ -2239,6 +2248,7 @@ exportObj.basicCardData = ->
             canonical_name: '"Zeb" Orrelios'.canonicalize()
             id: 71
             unique: true
+            xws: "zeborrelios-sheathipedeclassshuttle"
             faction: "Rebel Alliance"
             ship: "Sheathipede-Class Shuttle"
             skill: 2
@@ -2333,7 +2343,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Norra Wexley (ARC-170)"
+            name: "Norra Wexley"
             id: 77
             unique: true
             faction: "Rebel Alliance"
@@ -2367,7 +2377,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Garven Dreis (ARC-170)"
+            name: "Garven Dreis"
             id: 79
             unique: true
             faction: "Rebel Alliance"
@@ -2549,6 +2559,7 @@ exportObj.basicCardData = ->
             name: "Han Solo (Scum)"
             id: 89
             unique: true
+            xws: "hansolo"
             faction: "Scum and Villainy"
             ship: "YT-1300 (Scum)"
             skill: 6
@@ -2568,6 +2579,7 @@ exportObj.basicCardData = ->
             name: "Lando Calrissian (Scum)"
             id: 90
             unique: true
+            xws: "landocalrissian"
             faction: "Scum and Villainy"
             ship: "YT-1300 (Scum)"
             skill: 4
@@ -2584,8 +2596,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "L3-37 (YT-1300)"
-            canonical_name: 'L3-37'.canonicalize()
+            name: "L3-37"
             id: 91
             unique: true
             faction: "Scum and Villainy"
@@ -2630,6 +2641,7 @@ exportObj.basicCardData = ->
             canonical_name: 'Lando Calrissian (Scum)'.canonicalize()
             id: 93
             unique: true
+            xws: "landocalrissian-escapecraft"
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 4
@@ -2659,6 +2671,7 @@ exportObj.basicCardData = ->
             canonical_name: 'L3-37'.canonicalize()
             id: 95
             unique: true
+            xws: "l337-escapecraft"
             faction: "Scum and Villainy"
             ship: "Escape Craft"
             skill: 2
@@ -2693,7 +2706,7 @@ exportObj.basicCardData = ->
 
         }
         {
-            name: "Fenn Rau (Fang Fighter)"
+            name: "Fenn Rau"
             id: 97
             unique: true
             faction: "Scum and Villainy"
@@ -3196,6 +3209,7 @@ exportObj.basicCardData = ->
             name: "Sabine Wren (Scum)"
             id: 127
             unique: true
+            xws: "sabinewren-lancerclasspursuitcraft"
             faction: "Scum and Villainy"
             ship: "Lancer-class Pursuit Craft"
             skill: 3
@@ -3242,7 +3256,7 @@ exportObj.basicCardData = ->
               ]
         }
         {
-            name: "Dalan Oberos (Kimogila)"
+            name: "Dalan Oberos"
             id: 130
             unique: true
             faction: "Scum and Villainy"
@@ -3545,6 +3559,7 @@ exportObj.basicCardData = ->
             name: "Dalan Oberos (StarViper)"
             id: 149
             unique: true
+            xws: "dalanoberos-starviperclassattackplatform"
             faction: "Scum and Villainy"
             ship: "StarViper"
             skill: 4
@@ -4978,6 +4993,7 @@ exportObj.basicCardData = ->
            name: "Chewbacca (Rebel)"
            id: 21
            slot: "Crew"
+           xws: "chewbacca" 
            points: 5
            unique: true
            faction: "Rebel Alliance"
@@ -4988,6 +5004,7 @@ exportObj.basicCardData = ->
            name: "Chewbacca (Scum)"
            id: 22
            slot: "Crew"
+           xws: "chewbacca-crew" 
            points: 4
            unique: true
            faction: "Scum and Villainy"
@@ -4995,6 +5012,7 @@ exportObj.basicCardData = ->
        {
            name: '"Chopper" (Crew)'
            id: 23
+           xws: "chopper-crew" 
            slot: "Crew"
            points: 2
            unique: true
@@ -5196,6 +5214,7 @@ exportObj.basicCardData = ->
            name: "Lando Calrissian (Rebel)"
            id: 44
            slot: "Crew"
+           xws: "landocalrissian" 
            points: 5
            unique: true
            faction: "Rebel Alliance"
@@ -5204,6 +5223,7 @@ exportObj.basicCardData = ->
            name: "Lando Calrissian (Scum)"
            id: 45
            slot: "Crew"
+           xws: "landocalrissian-crew" 
            points: 8
            unique: true
            faction: "Scum and Villainy"
@@ -5315,6 +5335,7 @@ exportObj.basicCardData = ->
            name: "R2-D2 (Crew)"
            id: 56
            slot: "Crew"
+           xws: "r2d2-crew"
            points: 8
            unique: true
            faction: "Rebel Alliance"
@@ -5549,6 +5570,7 @@ exportObj.basicCardData = ->
            name: "Han Solo (Rebel)"
            id: 84
            slot: "Gunner"
+           xws: "hansolo" 
            points: 12
            unique: true
            faction: "Rebel Alliance"
@@ -5557,6 +5579,7 @@ exportObj.basicCardData = ->
            name: "Han Solo (Scum)"
            id: 85
            slot: "Gunner"
+           xws: "hansolo-gunner"
            points: 4
            unique: true
            faction: "Scum and Villainy"
@@ -5937,7 +5960,7 @@ exportObj.basicCardData = ->
            points: 1
        }
        {
-           name: "Advanced Proton Torpedoes"
+           name: "Adv. Proton Torpedoes"
            id: 134
            slot: "Torpedo"
            points: 6
@@ -6416,7 +6439,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             catch e
                 console.error "Cannot find translation for attribute #{field} for pilot #{pilot_name}"
                 throw e
-
+                
     exportObj.upgrades = {}
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
@@ -6532,6 +6555,11 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         ((exportObj.pilotsByFactionCanonicalName[pilot.faction] ?= {})[pilot.canonical_name] ?= []).push pilot
         (exportObj.pilotsByUniqueName[pilot.canonical_name.getXWSBaseName()] ?= []).push pilot
 
+    exportObj.pilotsByFactionXWS = {}
+    for pilot_name, pilot of exportObj.pilots
+        ((exportObj.pilotsByFactionXWS[pilot.faction] ?= {})[pilot.xws] ?= []).push pilot
+        
+
     exportObj.upgradesById = {}
     exportObj.upgradesByLocalizedName = {}
     for upgrade_name, upgrade of exportObj.upgrades
@@ -6544,9 +6572,11 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         throw new Error("At least one upgrade shares an ID with another")
 
     exportObj.upgradesBySlotCanonicalName = {}
+    exportObj.upgradesBySlotXWSName = {}
     exportObj.upgradesBySlotUniqueName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
+        (exportObj.upgradesBySlotXWSName[upgrade.slot] ?= {})[upgrade.xws] = upgrade
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
 
     exportObj.modificationsById = {}

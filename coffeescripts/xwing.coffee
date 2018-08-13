@@ -1270,6 +1270,8 @@ class exportObj.SquadBuilder
                         canonical_name: ship_data.canonical_name
         ships.sort exportObj.sortHelper
 
+        
+        
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
         available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term))
@@ -1987,8 +1989,14 @@ class exportObj.SquadBuilder
 
                 for pilot in xws.pilots
                     new_ship = @addShip()
+                    for ship_name, ship_data of exportObj.ships
+                        if @matcher(ship_data.xws, pilot.ship)
+                            shipnameXWS =
+                                id: ship_data.name
+                                xws: ship_data.xws
+                    console.log "#{pilot.xws}"
                     try
-                        new_ship.setPilot (p for p in exportObj.pilotsByFactionCanonicalName[@faction][pilot.name] when p.ship.canonicalize() == pilot.ship)[0]
+                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilot.name] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilot.name]) when p.ship == shipnameXWS.id)[0]
                     catch err
                         console.error err.message 
                         continue
@@ -1998,19 +2006,12 @@ class exportObj.SquadBuilder
                         for upgrade_canonical in upgrade_canonicals
                             # console.log upgrade_type, upgrade_canonical
                             slot = null
-                            yasb_upgrade_type = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
-                            addon = switch yasb_upgrade_type
-                                when 'Modification'
-                                    exportObj.modificationsByCanonicalName[upgrade_canonical]
-                                when 'Title'
-                                    exportObj.titlesByCanonicalName[upgrade_canonical]
-                                else
-                                    slot = yasb_upgrade_type
-                                    exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
+                            slot = exportObj.fromXWSUpgrade[upgrade_type] ? upgrade_type.capitalize()
+                            addon = exportObj.upgradesBySlotXWSName[slot][upgrade_canonical] ?= exportObj.upgradesBySlotCanonicalName[slot][upgrade_canonical]
                             if addon?
                                 # console.log "-> #{upgrade_type} #{addon.name} #{slot}"
                                 addons.push
-                                    type: yasb_upgrade_type
+                                    type: slot
                                     data: addon
                                     slot: slot
 
@@ -2982,9 +2983,9 @@ class Ship
 
     toXWS: ->
         xws =
-            name: @pilot.canonical_name
+            name: (@pilot.xws ? @pilot.canonical_name)
             points: @getPoints()
-#            ship: @data.canonical_name
+            #ship: @data.canonical_name
             ship: @data.xws.canonicalize()
 
         if @data.multisection
@@ -3342,7 +3343,7 @@ class GenericAddon
                 exportObj.toXWSUpgrade[@slot] ? @slot.canonicalize()
             else
                 exportObj.toXWSUpgrade[@type] ?  @type.canonicalize()
-        (upgrade_dict[upgrade_type] ?= []).push @data.canonical_name
+        (upgrade_dict[upgrade_type] ?= []).push (@data.xws ? @data.canonical_name)
 
 class exportObj.Upgrade extends GenericAddon
     constructor: (args) ->
