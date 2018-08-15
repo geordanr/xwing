@@ -1032,6 +1032,7 @@ exportObj.basicCardData = ->
             xws: "Sheathipede-Class Shuttle".canonicalize()
             factions: ["Rebel Alliance"]
             attack: 2
+            attackb: 2
             agility: 2
             hull: 4
             shields: 1
@@ -1092,6 +1093,76 @@ exportObj.basicCardData = ->
                 [ 0, 2, 2, 2, 0, 0, 0, 0 ]
                 [ 3, 1, 2, 1, 3, 0, 0, 0 ]
                 [ 0, 1, 1, 1, 0, 0, 0, 0 ]
+            ]
+        "T-70 X-Wing":
+            name: "T-70 X-Wing"
+            xws: "T-70 X-Wing".canonicalize()
+            factions: [ "Resistance"]
+            attack: 3
+            agility: 2
+            hull: 4
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+                "Boost"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 2, 2, 2, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+            ]
+        "RZ-2 A-Wing":
+            name: "RZ-2 A-Wing"
+            xws: "RZ-2 A-Wing".canonicalize()
+            factions: ["Resistance"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 2
+            actions: [
+                "Focus"
+                "Evade"
+                "Target Lock"
+                "Barrel Roll"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 0, 0, 0]
+              [ 2, 2, 2, 2, 2, 0, 3, 3]
+              [ 1, 1, 2, 1, 1, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0]
+            ]
+        "TIE/FO Fighter":
+            name: "TIE/FO Fighter"
+            xws: "TIE/FO Fighter".canonicalize()
+            factions: ["First Order"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 1
+            actions: [
+                "Focus"
+                "Evade"
+                "Target Lock"
+                "Barrel Roll"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 0, 0, 0]
+              [ 2, 2, 2, 2, 2, 0, 3, 3]
+              [ 1, 1, 2, 1, 1, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0]
             ]
 
     # name field is for convenience only
@@ -4805,6 +4876,77 @@ exportObj.basicCardData = ->
                 "Title"
             ]
         }
+        {
+            name: "Poe Dameron"
+            id: 231
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 6
+            points: 100
+            charge: 1
+            recurring: true 
+            slots: [
+                "Torpedo"
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+            ]
+        }
+        {
+            name: "Lieutenant Bastian"
+            id: 232
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 6
+            points: 1
+            slots: [
+                "Torpedo"
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+            ]
+        }
+        {
+            name: '"Midnight"'
+            id: 233
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 6
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Longshot"'
+            id: 234
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 3
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Muse"'
+            id: 235
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 2
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
     ]
     upgradesById: [
        {
@@ -6354,7 +6496,7 @@ exportObj.basicCardData = ->
                     slot: "Torpedo"
                 }
             ]
-        }
+       }
        {
             name: "Hardpoint: Missile"
             id: 170
@@ -6366,7 +6508,16 @@ exportObj.basicCardData = ->
                     slot: "Missile"
                 }
             ]
-        }
+       }
+       {
+            name: "Black One"
+            id: 171
+            slot: "Title"
+            charge: 1
+            points: 0
+            modifier_func: (stats) ->
+                stats.actions.push 'Slam' if 'Slam' not in stats.actions
+       }
     ]
     conditionsById: [
         {

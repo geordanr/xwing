@@ -58,9 +58,9 @@ statAndEffectiveStat = (base_stat, effective_stats, key) ->
 
 getPrimaryFaction = (faction) ->
     switch faction
-        when 'Rebel Alliance', 'Resistance'
+        when 'Rebel Alliance'
             'Rebel Alliance'
-        when 'Galactic Empire', 'First Order'
+        when 'Galactic Empire'
             'Galactic Empire'
         else
             faction

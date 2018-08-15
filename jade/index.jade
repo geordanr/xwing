@@ -30,11 +30,15 @@ html
     .tabbable.hidden-print
       ul.nav.nav-pills
         li
-          a#rebelTab('data-toggle'="tab", href='#rebelContent') Rebel Alliance
+          a#rebelTab('data-toggle'="tab", href='#rebelContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel"></i>
         li
-          a#empireTab('data-toggle'="tab", href='#empireContent') Galactic Empire
+          a#empireTab('data-toggle'="tab", href='#empireContent') <i class="xwing-miniatures-font xwing-miniatures-font-empire"></i>
         li
-          a#scumTab('data-toggle'="tab", href='#scumContent') Scum and Villainy
+          a#scumTab('data-toggle'="tab", href='#scumContent') <i class="xwing-miniatures-font xwing-miniatures-font-scum"></i>
+        li
+          a#rebelTab('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
+        li
+          a#rebelTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
         li
           a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser
         li
@@ -66,6 +70,10 @@ html
           #empire-builder
         .tab-pane#scumContent
           #scum-builder
+        .tab-pane#resistanceContent
+          #resistance-builder
+        .tab-pane#firstorderContent
+          #firstorder-builder
         .tab-pane#browserContent
           #card-browser
         .tab-pane#aboutContent
@@ -144,6 +152,10 @@ html
               window.location.replace '?f=Galactic Empire'
             when '#scumContent'
               window.location.replace '?f=Scum and Villainy'
+            when '#resistanceContent'
+              window.location.replace '?f=Resistance'
+            when '#resistanceContent'
+              window.location.replace '?f=First Order'
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
@@ -158,6 +170,14 @@ html
             ga 'send', 'pageview',
               page: '/scum'
               title: 'Scum and Villainy'
+          $('#resistanceTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/resistance'
+              title: 'Resistance'
+          $('#firstorderTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/firstorder'
+              title: 'First Order'
           $('#browserTab').click (e) ->
             ga 'send', 'pageview',
               page: '/browser'
@@ -188,6 +208,20 @@ html
               printable_container: '#printable'
           window.registerBuilderForTranslation window.scum_sb
 
+          window.resistance_sb = new window.SquadBuilder
+              tab: '#resistanceTab'
+              faction: 'Resistance'
+              container: '#resistance-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.resistance_sb
+
+          window.firstorder_sb = new window.SquadBuilder
+              tab: '#firstorderTab'
+              faction: 'First Order'
+              container: '#firstorder-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.firstorder_sb
+
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
                 ga 'send', 'pageview',
@@ -204,6 +238,16 @@ html
                   page: '/scum'
                   title: 'Scum and Villainy'
                 $('#scumTab').tab 'show'
+            when 'Resistance'
+                ga 'send', 'pageview',
+                  page: '/resistance'
+                  title: 'Resistance'
+                $('#resistanceTab').tab 'show'
+            when 'First Order'
+                ga 'send', 'pageview',
+                  page: '/firstorder'
+                  title: 'First Order'
+                $('#firstorderTab').tab 'show'
             else
                 ga 'send', 'pageview',
                   page: '/rebels'
@@ -216,6 +260,8 @@ html
                 window.rebel_sb
                 window.empire_sb
                 window.scum_sb
+                window.resistance_sb
+                window.firstorder_sb
               ]
               login_logout_button: '#login-logout'
               auth_status: '#auth-status'
