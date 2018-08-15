@@ -919,7 +919,7 @@ exportObj.basicCardData = ->
             attackf: 3
             agility: 1
             hull: 6
-            shields: 3
+            shields: 2
             actions: [
                 "Focus"
                 "Reinforce"
