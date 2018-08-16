@@ -6515,6 +6515,8 @@ exportObj.basicCardData = ->
             slot: "Title"
             charge: 1
             points: 0
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
             modifier_func: (stats) ->
                 stats.actions.push 'Slam' if 'Slam' not in stats.actions
        }
