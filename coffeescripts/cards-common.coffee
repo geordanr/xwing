@@ -1200,13 +1200,13 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "<r>> Rotate Arc</r>"
+                "> Rotate Arc"
                 "Evade"
-                "<r>> Rotate Arc</r>"
+                "> Rotate Arc"
                 "Target Lock"
-                "<r>> Rotate Arc</r>"
+                "> Rotate Arc"
                 "Barrel Roll"
-                "<r>> Rotate Arc</r>"
+                "> Rotate Arc"
             ]
             actionsred: [
             ]
@@ -1271,6 +1271,7 @@ exportObj.basicCardData = ->
             large: true
         "YT-1300 (Resistance)":
             name: "YT-1300 (Resistance)"
+            canonical_name: 'YT-1300'.canonicalize()
             xws: "??? YT-1300 Light Freighter".canonicalize()
             factions: [ "Resistance" ]
             attackdt: 0
@@ -6548,7 +6549,7 @@ exportObj.basicCardData = ->
             ]
        }
        {
-           name: "Pivot Wing (Closed)"
+           name: "Pivot Wing"
            id: 140
            points: 0
            slot: "Configuration"
@@ -6558,22 +6559,19 @@ exportObj.basicCardData = ->
            name: "Pivot Wing (Open)"
            id: 141
            points: 0
-           slot: "Configuration"
-           ship: "U-Wing"
+           skip: true 
        }
        {
-           name: "Servomotor S-foils (Closed)"
+           name: "Servomotor S-Foils"
            id: 142
            points: 0
            slot: "Configuration"
            ship: "X-Wing"
        }
        {
-           name: "Servomotor S-foils (Open)"
+           name: "Blank"
            id: 143
-           slot: "Configuration"
-           points: 0
-           ship: "X-Wing"
+           skip: true
        }
        {
            name: "Xg-1 Assault Configuration"
@@ -6924,7 +6922,7 @@ exportObj.basicCardData = ->
             faction: "Resistance"
        }
        {
-            name: "Integrated S-Foils (Closed)"
+            name: "Integrated S-Foils"
             id: 175
             slot: "Configuration"
             points: 0
@@ -6934,10 +6932,7 @@ exportObj.basicCardData = ->
        {
             name: "Integrated S-Foils (Open)"
             id: 176
-            slot: "Configuration"
-            points: 0
-            faction: "Resistance"
-            ship: "T-70 X-Wing"
+            skip: true
        }
        {
             name: "Targeting Synchronizer"
@@ -7349,6 +7344,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%SINGLETURRETARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>')
             .replace(/%FRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>')
             .replace(/%REARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i>')
+            .replace(/%ROTATEARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>')
             .replace(/%FULLFRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>')
             .replace(/%FULLREARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullreararc"></i>')
             .replace(/%DEVICE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>')

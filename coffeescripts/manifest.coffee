@@ -141,12 +141,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Servomotor S-foils (Open)'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Servomotor S-foils (Closed)'
+            name: 'Servomotor S-Foils'
             type: 'upgrade'
             count: 1
         }
@@ -238,22 +233,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Pivot Wing (Open)'
+            name: 'Pivot Wing'
             type: 'upgrade'
             count: 1
         }
         {
-            name: 'Pivot Wing (Closed)'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Servomotor S-foils (Open)'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Servomotor S-foils (Closed)'
+            name: 'Servomotor S-Foils'
             type: 'upgrade'
             count: 1
         }
@@ -1117,22 +1102,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Pivot Wing (Open)'
+            name: 'Pivot Wing'
             type: 'upgrade'
             count: 2
         }
         {
-            name: 'Pivot Wing (Closed)'
-            type: 'upgrade'
-            count: 2
-        }
-        {
-            name: 'Servomotor S-foils (Open)'
-            type: 'upgrade'
-            count: 2
-        }
-        {
-            name: 'Servomotor S-foils (Closed)'
+            name: 'Servomotor S-Foils'
             type: 'upgrade'
             count: 2
         }
@@ -2983,12 +2958,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Servomotor S-foils (Open)'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Servomotor S-foils (Closed)'
+            name: 'Servomotor S-Foils'
             type: 'upgrade'
             count: 1
         }
