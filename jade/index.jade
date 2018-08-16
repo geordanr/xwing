@@ -36,9 +36,9 @@ html
         li
           a#scumTab('data-toggle'="tab", href='#scumContent') <i class="xwing-miniatures-font xwing-miniatures-font-scum"></i>
         li
-          a#rebelTab('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
+          a#resistanceTab('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
         li
-          a#rebelTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
+          a#firstorderTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
         li
           a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser
         li
@@ -154,7 +154,7 @@ html
               window.location.replace '?f=Scum and Villainy'
             when '#resistanceContent'
               window.location.replace '?f=Resistance'
-            when '#resistanceContent'
+            when '#firstorderContent'
               window.location.replace '?f=First Order'
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""

@@ -876,6 +876,10 @@ class exportObj.SquadBuilder
                             'empire'
                         when 'Scum and Villainy'
                             'scum'
+                        when 'Resistance'
+                            'resistance'
+                        when 'First Order'
+                            'firstorder'
                     @printable_container.find('.squad-faction').html """<i class="xwing-miniatures-font xwing-miniatures-font-#{faction}"></i>"""
 
             # Conditions
