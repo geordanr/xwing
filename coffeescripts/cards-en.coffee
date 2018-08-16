@@ -644,7 +644,20 @@ exportObj.cardLoaders.English = () ->
            text: """While you perform a primary attack at attack range 3, roll 1 additional attack die."""
         '"Muse"':
            text: """At the start of the Engagement Phase, you may choose a friendly ship at range 0-1. If you do, that ship removes 1 stress token."""
-            
+        "Kylo Ren":
+           text: """ After you defend, you may spend 1 %FORCE% to assign the I'll Show You the Dark Side condition to the attacker. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+        '"Blackout"':
+           text: """ ??? %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
+        "Lieutenant Dormitz":
+           text: """ ??? """
+        "Tallissan Lintra":
+           text: """While an enemy ship in your %BULLSEYEARC% performs an attack, you may spend 1 %CHARGE%.  If you do, the defender rolls 1 additional die."""
+        "Lulo Lampar":
+           text: """While you defend or perform a primary attack, if you are stressed, you must roll 1 fewer defense die or 1 additional attack die."""
+        '"Backdraft"':
+           text: """ ??? """
+        '"Quickdraw"':
+           text: """ ??? """            
     upgrade_translations =
         "0-0-0":
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 0-1. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token."""

@@ -1193,20 +1193,20 @@ exportObj.basicCardData = ->
             name: "TIE/sf Fighter"
             xws: "TIE/sf Fighter".canonicalize()
             factions: ["First Order"]
-            attack: ?
-            attackt: ?
+            attack: 0
+            attackt: 0
             agility: 2
             hull: 3
             shields: 3
             actions: [
                 "Focus"
-                "> Rotate Arc"
+                "<r>> Rotate Arc</r>"
                 "Evade"
-                "> Rotate Arc"
+                "<r>> Rotate Arc</r>"
                 "Target Lock"
-                "> Rotate Arc"
+                "<r>> Rotate Arc</r>"
                 "Barrel Roll"
-                "> Rotate Arc"
+                "<r>> Rotate Arc</r>"
             ]
             actionsred: [
             ]
@@ -1222,9 +1222,9 @@ exportObj.basicCardData = ->
             name: "Upsilon-class Shuttle"
             xws: "Upsilon-class Shuttle".canonicalize()
             factions: ["First Order"]
-            attack: ?
-            agility: ?
-            hull: ?
+            attack: 0
+            agility: 0
+            hull: 0
             shields: 6
             actions: [
                 "Focus"
@@ -1247,10 +1247,10 @@ exportObj.basicCardData = ->
             name: "B/SF-17 Bomber"
             xws: "B/SF-17 Bomber".canonicalize()
             factions: ["Resistance"]
-            attack: ?
-            agility: ?
-            hull: ?
-            shields: ?
+            attack: 0
+            agility: 0
+            hull: 0
+            shields: 0
             actions: [
             ]
             actionsred: [
@@ -5080,7 +5080,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "Upsilon-class Shuttle"
-            skill: ?
+            skill: 0
             points: 100
             slots: [
                 "Tech"
@@ -5110,6 +5110,8 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "RZ-2 A-Wing"
             skill: 5
+            charge: 1
+            recurring: true
             points: 100
             slots: [
                 "Talent"
@@ -5123,8 +5125,6 @@ exportObj.basicCardData = ->
             faction: "Resistance"
             ship: "RZ-2 A-Wing"
             skill: 5
-            charge: 1
-            recurring: true
             points: 100
             slots: [
                 "Talent"
@@ -5152,7 +5152,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/sf Fighter"
-            skill: ?
+            skill: 0
             points: 100
             slots: [
                 "Talent"
