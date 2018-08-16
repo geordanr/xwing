@@ -1243,15 +1243,20 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
+            large: true
         "B/SF-17 Bomber":
             name: "B/SF-17 Bomber"
             xws: "B/SF-17 Bomber".canonicalize()
             factions: ["Resistance"]
             attack: 0
             agility: 0
-            hull: 0
-            shields: 0
+            hull: 9
+            shields: 3
             actions: [
+                "Focus"
+                "Target Lock"
+                "Rotate Arc"
+                "Reload"
             ]
             actionsred: [
             ]
@@ -1262,6 +1267,54 @@ exportObj.basicCardData = ->
               [ 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ]
+            large: true
+        "YT-1300 (Resistance)":
+            name: "YT-1300 (Resistance)"
+            xws: "??? YT-1300 Light Freighter".canonicalize()
+            factions: [ "Rebel Alliance" ]
+            attackdt: 0
+            agility: 0
+            hull: 0
+            shields: 3
+            actions: [
+                "Focus"
+                "Target Lock"
+            ]
+            actionsred: [
+                "Boost"
+                "Rotate Arc"
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 1, 2, 1, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 3, 3]
+              [ 0, 0, 1, 0, 0, 3, 0, 0]
+            ]
+            large: true
+        "Mining Guild TIE Fighter":
+            name: "Mining Guild TIE Fighter"
+            xws: "Modified TIE/LN Fighter".canonicalize()
+            factions: ["Rebel Alliance", "Galactic Empire"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 0
+            actions: [
+                "Focus"
+                "Barrel Roll"
+                "Evade"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 0]
+              [ 1, 2, 2, 2, 1, 0]
+              [ 1, 1, 2, 1, 1, 3]
+              [ 0, 0, 1, 0, 0, 0]
+              [ 0, 0, 3, 0, 0, 0]
             ]
     # name field is for convenience only
     pilotsById: [
@@ -5142,6 +5195,7 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Tech"
+                "Gunner"
                 "System"
                 "Modification"
             ]
@@ -5157,10 +5211,115 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Tech"
+                "Gunner"
                 "System"
                 "Modification"
             ]
         }
+        {
+            name: "Rey"
+            id: 244
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300 (Resistance)"
+            skill: 0
+            points: 100
+            force: 2
+            slots: [
+                "Force"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Modification"
+            ]
+        }
+        {
+            name: "Han Solo (Resistance)"
+            id: 245
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300 (Resistance)"
+            skill: 6
+            points: 100
+            slots: [
+                "Talent"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Modification"
+            ]
+        }
+        }
+        {
+            name: "Chewbacca (Resistance)"
+            id: 246
+            unique: true
+            faction: "Resistance"
+            ship: "YT-1300 (Resistance)"
+            skill: 4
+            points: 100
+            slots: [
+                "Talent"
+                "Crew"
+                "Crew"
+                "Gunner"
+                "Modification"
+            ]
+        }
+        {
+            name: "Captain Seevor"
+            id: 247
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Mining Guild Tie Fighter"
+            skill: 3
+            charge: 1
+            Recurring: true
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Mining Guild Surveyor"
+            id: 248
+            faction: "Scum and Villainy"
+            ship: "Mining Guild Tie Fighter"
+            skill: 2
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Ahhav"
+            id: 249
+            unique: true
+            faction: "Scum and Villainy"
+            ship: "Mining Guild Tie Fighter"
+            skill: 0
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Finch Dallow"
+            id: 250
+            unique: true
+            faction: "Resistance"
+            ship: "B/SF-17 Bomber"
+            skill: 0
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        
+        
     ]
     upgradesById: [
        {
@@ -6736,6 +6895,129 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.actions.push 'Slam' if 'Slam' not in stats.actions
        }
+       {
+            name: "Heroic"
+            id: 172
+            slot: "Talent"
+            points: 0
+            faction: "Resistance"
+       }
+       {
+            name: "Rose Tico"
+            id: 173
+            slot: "Crew"
+            points: 0
+            faction: "Resistance"
+       }
+       {
+            name: "Finn"
+            id: 174
+            slot: "Gunner"
+            points: 0
+            faction: "Resistance"
+       }
+       {
+            name: "Integrated S-Foils (Closed)"
+            id: 175
+            slot: "Configuration"
+            points: 0
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+       }
+       {
+            name: "Integrated S-Foils (Open)"
+            id: 176
+            slot: "Configuration"
+            points: 0
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+       }
+       {
+            name: "Targetting Synchronizer"
+            id: 177
+            slot: "Tech"
+            points: 0
+       }
+       {
+            name: "Primed Thrusters"
+            id: 178
+            slot: "Tech"
+            points: 0
+       }
+       {
+            name: "Kylo Ren (Crew)"
+            id: 179
+            slot: "Crew"
+            points: 0
+            faction: "First Order"
+           modifier_func: (stats) ->
+                stats.force += 1
+       }
+       {
+            name: "General Hux"
+            id: 180
+            slot: "Crew"
+            points: 0
+            faction: "First Order"
+       }
+       {
+            name: "Fanatical"
+            id: 181
+            slot: "Talent"
+            points: 0
+            faction: "First Order"
+       }
+       {
+            name: "Special Forces Gunner"
+            id: 182
+            slot: "Gunner"
+            points: 0
+            faction: "First Order"
+       }
+       {
+            name: "Captain Phasma"
+            id: 183
+            slot: "Crew"
+            points: 0
+            faction: "First Order"
+       }
+       {
+            name: "Supreme Leader Snoke"
+            id: 184
+            slot: "Crew"
+            points: 0
+            faction: "First Order"
+           restriction_func: (ship, upgrade_obj) ->
+                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
+           validation_func: (ship, upgrade_obj) ->
+                upgrade_obj.occupiesAnotherUpgradeSlot()
+           also_occupies_upgrades: [ "Crew" ]
+           modifier_func: (stats) ->
+                stats.force += 1
+       }
+       {
+            name: "Hyperspace Tracking Data"
+            id: 185
+            slot: "Tech"
+            points: 0
+       }
+       {
+            name: "Advanced Optics"
+            id: 186
+            slot: "Tech"
+            points: 0
+       }
+       {
+            name: "Rey (Gunner)"
+            id: 187
+            slot: "Gunner"
+            points: 0
+            faction: "Resistance"
+           modifier_func: (stats) ->
+                stats.force += 1
+       }
+
+
     ]
     conditionsById: [
         {
@@ -6760,6 +7042,11 @@ exportObj.basicCardData = ->
         {
             name: 'Optimized Prototype'
             id: 4
+            unique: true
+        }
+        {
+            name: 'Ill Show You the Dark Side'
+            id: 5
             unique: true
         }
     ]
