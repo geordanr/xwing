@@ -1272,7 +1272,7 @@ exportObj.basicCardData = ->
         "YT-1300 (Resistance)":
             name: "YT-1300 (Resistance)"
             xws: "??? YT-1300 Light Freighter".canonicalize()
-            factions: [ "Rebel Alliance" ]
+            factions: [ "Resistance" ]
             attackdt: 0
             agility: 0
             hull: 0
@@ -1296,7 +1296,7 @@ exportObj.basicCardData = ->
         "Mining Guild TIE Fighter":
             name: "Mining Guild TIE Fighter"
             xws: "Modified TIE/LN Fighter".canonicalize()
-            factions: ["Rebel Alliance", "Galactic Empire"]
+            factions: ["Scum and Villainy"]
             attack: 2
             agility: 3
             hull: 3
@@ -5107,6 +5107,7 @@ exportObj.basicCardData = ->
             skill: 5
             force: 2
             points: 100
+            applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
             slots: [
                 "Force"
                 "Tech"
@@ -5138,6 +5139,8 @@ exportObj.basicCardData = ->
             slots: [
                 "Tech"
                 "Tech"
+                "Crew"
+                "Crew"
                 "Cannon"
                 "System"
                 "Modification"
@@ -5248,7 +5251,6 @@ exportObj.basicCardData = ->
                 "Gunner"
                 "Modification"
             ]
-        }
         }
         {
             name: "Chewbacca (Resistance)"
@@ -5949,6 +5951,7 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 5
            charge: 2
+           applies_condition: 'Bomblet'.canonicalize()
            restriction_func: (ship, upgrade_obj) ->
                 ship.hasAnotherUnoccupiedSlotLike upgrade_obj
            validation_func: (ship, upgrade_obj) ->
@@ -5961,6 +5964,7 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 6
            charge: 1
+           applies_condition: 'Conner Net'.canonicalize()
        }
        {
            name: "Proton Bombs"
@@ -5968,6 +5972,7 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 5
            charge: 2
+           applies_condition: 'Proton Bomb'.canonicalize()
        }
        {
            name: "Proximity Mines"
@@ -5975,6 +5980,7 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 6
            charge: 2
+           applies_condition: 'Proximity Mine'.canonicalize()
        }
        {
            name: "Seismic Charges"
@@ -5982,6 +5988,7 @@ exportObj.basicCardData = ->
            slot: "Device"
            points: 3
            charge: 2
+           applies_condition: 'Seismic Charge'.canonicalize()
        }
        {
            name: "Heightened Perception"
@@ -6933,10 +6940,12 @@ exportObj.basicCardData = ->
             ship: "T-70 X-Wing"
        }
        {
-            name: "Targetting Synchronizer"
+            name: "Targeting Synchronizer"
             id: 177
             slot: "Tech"
             points: 0
+            restriction_func: (ship) ->
+                "Target Lock" in ship.effectiveStats().actions or "Target Lock" in ship.effectiveStats().actionsred
        }
        {
             name: "Primed Thrusters"
@@ -6949,8 +6958,10 @@ exportObj.basicCardData = ->
             id: 179
             slot: "Crew"
             points: 0
+            force: 1
             faction: "First Order"
-           modifier_func: (stats) ->
+            applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
+            modifier_func: (stats) ->
                 stats.force += 1
        }
        {
@@ -6986,13 +6997,14 @@ exportObj.basicCardData = ->
             id: 184
             slot: "Crew"
             points: 0
+            force: 1
             faction: "First Order"
-           restriction_func: (ship, upgrade_obj) ->
+            restriction_func: (ship, upgrade_obj) ->
                 ship.hasAnotherUnoccupiedSlotLike upgrade_obj
-           validation_func: (ship, upgrade_obj) ->
+            validation_func: (ship, upgrade_obj) ->
                 upgrade_obj.occupiesAnotherUpgradeSlot()
-           also_occupies_upgrades: [ "Crew" ]
-           modifier_func: (stats) ->
+            also_occupies_upgrades: [ "Crew" ]
+            modifier_func: (stats) ->
                 stats.force += 1
        }
        {
@@ -7012,13 +7024,14 @@ exportObj.basicCardData = ->
             id: 187
             slot: "Gunner"
             points: 0
+            force: 1
             faction: "Resistance"
-           modifier_func: (stats) ->
+            modifier_func: (stats) ->
                 stats.force += 1
        }
-
-
     ]
+
+
     conditionsById: [
         {
             name: '''Zero Condition'''
@@ -7045,11 +7058,36 @@ exportObj.basicCardData = ->
             unique: true
         }
         {
-            name: 'Ill Show You the Dark Side'
+            name: '''I'll Show You the Dark Side'''
             id: 5
             unique: true
         }
+        {
+            name: 'Proton Bomb'
+            id: 6
+        }
+        {
+            name: 'Seismic Charge'
+            id: 7
+        }
+        {
+            name: 'Bomblet'
+            id: 8
+        }
+        {
+            name: 'Loose Cargo'
+            id: 9
+        }
+        {
+            name: 'Conner Net'
+            id: 10
+        }
+        {
+            name: 'Proximity Mine'
+            id: 11
+        }
     ]
+
     modificationsById: [
 
     ]

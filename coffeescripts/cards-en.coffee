@@ -658,7 +658,6 @@ exportObj.cardLoaders.English = () ->
            text: """ ... perform a %TURRET% primary ... defender is in your %BACKARC% ... additional dice. %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """
         '"Quickdraw"':
            text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """    
-            
         "Rey":
            text: """ ... perform an attack, ... in your %FRONTARC%, you may ... change 1 of your blank ... or %HIT% result. """
         "Han Solo (Resistance)":
@@ -772,9 +771,9 @@ exportObj.cardLoaders.English = () ->
         "Emperor Palpatine":
            text: """While another friendly ship defends or performs an attack, you may spend 1 %FORCE% to modify 1 of its dice as though that ship had spent 1 %FORCE%."""
         "Engine Upgrade":
-           text: """Add a white %BOOST% %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
+           text: """<i>Requires: <r>%BOOST%</r> Adds: %BOOST% %LINEBREAK% This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Expert Handling":
-           text: """Add a white %BARRELROLL% %LINEBREAK%<i>This upgrade has a variable cost, worth 2, 4, or 6 points depending on if the ship base is small, medium or large respectively.</i>"""
+           text: """<i>Requires: <r>%BARRELROLL%</r> Adds: %BARRELROLL% %LINEBREAK% This upgrade has a variable cost, worth 2, 4, or 6 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Ezra Bridger":
            text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %TURRET% attack from a %TURRET% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fearless":
@@ -1031,12 +1030,12 @@ exportObj.cardLoaders.English = () ->
            text: """ While you perform a primary attack, if the defender is not in your %BULLSEYEARC%, roll 1 fewer attack die. Before you activate, you may flip this card. (Adds %BARRELLROLL% and %FOCUS% > (red)%BARRELROLL%) """
         "Integrated S-Foils (Open)":
            text: """ ??? """
-        "Targetting Synchronizer":
-           text: """ While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the %TARGETLOCK% attack requirement. """
+        "Targeting Synchronizer":
+           text: """ While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the %LOCK% attack requirement. """
         "Primed Thrusters":
            text: """ While you have 2 or fewer stress tokens, you can perform %BARRELROLL% and %BOOST% actions even while stressed. """
         "Kylo Ren (Crew)":
-           text: """ Action: Choose 1 enemy ship at range 1-3. If you do, spend 1 %FORCE% to assign the I'll show you the Dark Side condition to that ship. """
+           text: """ Action: Choose 1 enemy ship at range 1-3. If you do, spend 1 %FORCE% to assign the I'll Show You the Dark Side condition to that ship. """
         "General Hux":
            text: """ ... perform a white %COORDINATE% action ... it as red. If you do, you ... up to 2 additional ships ... ship type, and each ship you coordinate must perform the same action, treating that action as red. """
         "Fanatical":
@@ -1063,8 +1062,21 @@ exportObj.cardLoaders.English = () ->
            text: '''During the System Phase, if an enemy ship with the <strong>Informant</strong> upgrade is at range 0-2, flip your dial faceup.'''
         'Optimized Prototype':
            text: '''While you perform a %FRONTARC% primary attack against a ship locked by a friendly ship with the <strong>Director Krennic</strong> upgrade, you may spend 1 %HIT%/%CRIT%/%FOCUS% result. If you do, choose one: the defender loses 1 shield or the defender flips 1 of its facedown damage cards.'''
-        'Ill Show you the Dark Side': 
+        '''I'll Show You the Dark Side''': 
            text: ''' ??? '''
+        'Proton Bomb':
+           text: '''(Bomb Token) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 suffers 1 %CRIT% damage.'''
+        'Seismic Charge':
+           text: '''(Bomb Token) - At the end of the Activation Phase this device detonates. When this device detonates, choose 1 obstacle at range 0–1. Each ship at range 0–1 of the obstacle suffers 1 %HIT% damage. Then remove that obstacle. '''
+        'Bomblet':
+           text: '''(Bomb Token) - At the end of the Activation Phase this device detonates. When this device detonates, each ship at range 0–1 rolls 2 attack dice. Each ship suffers 1 %HIT% damage for each %HIT%/%CRIT% result.'''
+        'Loose Cargo':
+           text: '''(Debris Token) - Loose cargo is a debris cloud.'''
+        'Conner Net':
+           text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, the ship suffers 1 %HIT% damage and gains 3 ion tokens.'''
+        'Proximity Mine':
+           text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.'''
+            
     modification_translations =
 
     title_translations =
