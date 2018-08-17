@@ -6361,7 +6361,7 @@ exportObj.basicCardData = ->
            slot: "Talent"
            points: 3
            restriction_func: (ship) ->
-                "Boost" in ship.effectiveStats().actions
+                "Boost" in ship.effectiveStats().actions and not (ship.data.large? or ship.data.medium?)
        }
        {
            name: "Debris Gambit"
