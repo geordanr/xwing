@@ -6607,6 +6607,8 @@ exportObj.basicCardData = ->
                   slot: "Device"
               }
             ]
+           modifier_func: (stats) ->
+                stats.actions.push 'Reload' if 'Reload' not in stats.actions
        }
        {
            name: "Dauntless"

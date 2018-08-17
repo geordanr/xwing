@@ -697,7 +697,7 @@ exportObj.cardLoaders.English = () ->
         "Agile Gunner":
            text: """In the End Phase you may rotate your %TURRET% indi﻿cator﻿"""
         "Andrasta":
-           text: """Add %DEVICE% slot."""
+           text: """<i>Adds: %RELOAD%</i> %LINEBREAK% Add %DEVICE% slot."""
         "Barrage Rockets":
            text: """Attack (%FOCUS%): Spend 1 %CHARGE%. If the defender is in your %BULLSEYEARC%, you may spend 1 or more %CHARGE% to reroll that many attack dice."""
         "Baze Malbus":
