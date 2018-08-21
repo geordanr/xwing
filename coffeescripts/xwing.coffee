@@ -2581,7 +2581,7 @@ class Ship
         """ else ''
             
         forceHTML = if (@pilot.force?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-force"></i>
+            <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>
             <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}</span>
         """ else ''
 
