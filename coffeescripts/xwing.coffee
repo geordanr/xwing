@@ -1563,7 +1563,10 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
 
                     @info_container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                    @info_container.find('tr.info-force').toggle(data.pilot.ship_override?.force? or data.pilot.force?)
+                    if data.pilot.ship_override?.force? or data.pilot.force?
+                        @info_container.find('tr.info-force').show()
+                    else
+                        @info_container.find('tr.info-force').hide()
 
                     if data.pilot.charge?
                         if data.pilot.recurring?
@@ -1630,9 +1633,11 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
 
-                    if data.ship_override?.force or data.force?
+                    if data.ship_override?.force? or data.force?
                         @info_container.find('tr.info-force td.info-data').html ((data.ship_override?.force ? data.force)+ '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                    @info_container.find('tr.info-force').toggle(data.pilot.ship_override?.force? or data.pilot.force?)
+                        @info_container.find('tr.info-force').show()
+                    else
+                        @info_container.find('tr.info-force').hide()
 
                     if data.charge?
                         if data.recurring?
