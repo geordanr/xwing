@@ -1565,8 +1565,8 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.shields ? data.data.shields), effective_stats, 'shields')
                     @info_container.find('tr.info-shields').show()
 
-                    @info_container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                    if effective_stats?.force? or data.pilot.force?
+                    if (effective_stats.force > 0) or data.pilot.force?
+                        @info_container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
