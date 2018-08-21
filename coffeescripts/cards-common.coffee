@@ -3402,6 +3402,7 @@ exportObj.basicCardData = ->
             ship: "Lancer-class Pursuit Craft"
             skill: 4
             points: 84
+            force: 2
             slots: [
                 "Force"
                 "Crew"
