@@ -997,7 +997,7 @@ exportObj.cardLoaders.English = () ->
         "Veteran Tail Gunner":
            text: """<i>Requires: %REARARC%</i> %LINEBREAK% After you perform a primary %FRONTARC% attack, you may perform a bonus primary %REARARC% attack."""
         "Veteran Turret Gunner":
-           text: """<i>Requires: %TURRET%</i> %LINEBREAK% After you perform a primary attack, you may perform a bonus %TURRET% attack using a %TURRET% you did not already attack from this round."""
+           text: """<i>Requires: %ROTATEARC%</i> %LINEBREAK% After you perform a primary attack, you may perform a bonus %SINGLETURRETARC% attack using a %SINGLETURRETARC% you did not already attack from this round."""
         "Virago":
            text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Add %MODIFICATION% slot."""
         "Xg-1 Assault Configuration":
@@ -1035,7 +1035,7 @@ exportObj.cardLoaders.English = () ->
         "Fanatical":
            text: """ While you perform a primary attack, if you are not shielded, you may change 1 %FOCUS% result to a %HIT% result. """
         "Special Forces Gunner":
-           text: """ ... you perform a primary %FRONTARC% attack, ... your %TURRET% is in your %FRONTARC%, you may roll 1 additional attack die. After you perform a primary %FRONTARC% attack, ... your %TURRET% is in your %BACKARC%, you may perform a bonus primary %TURRET% attack. """
+           text: """ ... you perform a primary %FRONTARC% attack, ... your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1 additional attack die. After you perform a primary %FRONTARC% attack, ... your %TURRET% is in your %BACKARC%, you may perform a bonus primary %SINGLETURRETARC% attack. """
         "Captain Phasma":
            text: """ ??? """
         "Supreme Leader Snoke":
@@ -1045,7 +1045,7 @@ exportObj.cardLoaders.English = () ->
         "Advanced Optics":
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
         "Rey (Gunner)":
-           text: """ ... defend or ... If the ... in your %TURRET% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
+           text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
             
     condition_translations =
         'Suppressive Fire':
