@@ -37,7 +37,7 @@ class exportObj.XWSManager
         @container.addClass 'hidden-print'
         @container.html $.trim """
             <div class="row-fluid">
-                <div class="span9">
+                <div class="span9 indent">
                     <button class="btn btn-primary from-xws">Import from XWS (beta)</button>
                     <button class="btn btn-primary to-xws">Export to XWS (beta)</button>
                 </div>
