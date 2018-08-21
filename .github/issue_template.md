@@ -1,6 +1,6 @@
-## YASB Bug Report
+## YASB 2.0 Bug Report
 
-**Note:** If you are experiencing problems with the permalink URL when you have **Maul** or **Bomblet Generator** in your list, this is a known issue.  For more information please see https://www.reddit.com/r/XWingTMG/comments/7c4q6h/yet_another_squad_builder_problems_with_maul/
+**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times.
 
 ### Expected Behavior
 
@@ -12,4 +12,4 @@ State what actually happens here.
 
 ### Language
 
-State what language translation you use.
+HA there aren't any other languages yet. If you be interested in contrubuting to adding a language I would be your best friend <3
