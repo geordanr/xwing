@@ -260,7 +260,7 @@ exportObj.basicCardData = ->
               [ 0, 2, 2, 2, 0]
               [ 1, 1, 2, 1, 1]
               [ 3, 1, 1, 1, 3]
-              [ 0, 0, 3, 0, 0]
+              [ 0, 0, 1, 0, 0]
             ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
@@ -5632,9 +5632,10 @@ exportObj.basicCardData = ->
            slot: "Crew"
            points: 16
            unique: true
+           force: 1 
            faction: "Galactic Empire"
            modifier_func: (stats) ->
-                stats.attack += 1
+                stats.force += 1
        }
        {
            name: "Grand Moff Tarkin"
@@ -6712,6 +6713,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Scum and Villainy"
            ship: "G-1A Starfighter"
+           modifier_func: (stats) ->
+                stats.actions.push 'Barrel Roll' if 'Barrel Roll' not in stats.actions
            confersAddons: [
                 {
                     type: exportObj.Upgrade

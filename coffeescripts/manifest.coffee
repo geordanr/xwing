@@ -1981,6 +1981,11 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
+            name: 'Aggressor'
+            type: 'ship'
+            count: 2
+        }
+        {
             name: 'HWK-290'
             type: 'ship'
             count: 2
