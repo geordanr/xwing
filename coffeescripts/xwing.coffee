@@ -54,7 +54,10 @@ URL_BASE = "#{window.location.protocol}//#{window.location.host}#{window.locatio
 SQUAD_DISPLAY_NAME_MAX_LENGTH = 24
 
 statAndEffectiveStat = (base_stat, effective_stats, key) ->
-    """#{base_stat}#{if effective_stats[key] != base_stat then " (#{effective_stats[key]})" else ""}"""
+    if base_stat?
+        """#{base_stat}#{if effective_stats[key] != base_stat then " (#{effective_stats[key]})" else ""}"""
+    else
+        """0 (#{effective_stats[key]})"""
 
 getPrimaryFaction = (faction) ->
     switch faction
@@ -1563,7 +1566,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields').show()
 
                     @info_container.find('tr.info-force td.info-data').html (statAndEffectiveStat((data.pilot.ship_override?.force ? data.pilot.force), effective_stats, 'force') + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                    if data.pilot.ship_override?.force? or data.pilot.force?
+                    if effective_stats?.force? or data.pilot.force?
                         @info_container.find('tr.info-force').show()
                     else
                         @info_container.find('tr.info-force').hide()
@@ -1633,7 +1636,7 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                     @info_container.find('tr.info-shields').show()
 
-                    if data.ship_override?.force? or data.force?
+                    if effective_stats?.force? or data.force?
                         @info_container.find('tr.info-force td.info-data').html ((data.ship_override?.force ? data.force)+ '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                         @info_container.find('tr.info-force').show()
                     else
@@ -2887,7 +2890,7 @@ class Ship
             agility: @pilot.ship_override?.agility ? @data.agility
             hull: @pilot.ship_override?.hull ? @data.hull
             shields: @pilot.ship_override?.shields ? @data.shields
-            force: @pilot.ship_override?.force ? @pilot.force
+            force: (@pilot.ship_override?.force ? @pilot.force) ? 0
             charge: @pilot.ship_override?.charge ? @pilot.charge
             actions: (@pilot.ship_override?.actions ? @data.actions).slice 0
             actionsred: ((@pilot.ship_override?.actionsred ? @data.actionsred) ? []).slice 0

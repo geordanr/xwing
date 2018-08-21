@@ -2295,10 +2295,10 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
+                "Gunner"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Gunner"
                 "Turret"
                 "Title"
             ]
@@ -2315,10 +2315,10 @@ exportObj.basicCardData = ->
             slots: [
                 "Force"
                 "Torpedo"
+                "Gunner"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Gunner"
                 "Turret"
                 "Title"
             ]
@@ -2333,10 +2333,10 @@ exportObj.basicCardData = ->
             points: 72
             slots: [
                 "Torpedo"
+                "Gunner"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Gunner"
                 "Turret"
                 "Title"
             ]
@@ -2356,10 +2356,10 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Torpedo"
+                "Gunner"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Gunner"
                 "Turret"
                 "Title"
             ]
