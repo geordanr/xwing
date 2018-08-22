@@ -4117,6 +4117,7 @@ exportObj.basicCardData = ->
             ship: "TIE Advanced Prototype"
             skill: 5
             points: 58
+            force: 2
             slots: [       
                 "Force"
                 "System"
@@ -4131,6 +4132,7 @@ exportObj.basicCardData = ->
             ship: "TIE Advanced Prototype"
             skill: 4
             points: 48
+            force: 2
             slots: [       
                 "Force"
                 "System"
@@ -4144,6 +4146,7 @@ exportObj.basicCardData = ->
             ship: "TIE Advanced Prototype"
             skill: 3
             points: 40
+            force: 1
             slots: [       
                 "Force"
                 "System"
