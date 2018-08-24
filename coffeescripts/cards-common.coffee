@@ -5044,12 +5044,12 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: true 
             slots: [
-                "Torpedo"
                 "Astromech"
                 "Modification"
                 "Configuration"
                 "Tech"
                 "Title"
+                "Hardpoint"
             ]
         }
         {
@@ -5061,11 +5061,11 @@ exportObj.basicCardData = ->
             skill: 6
             points: 1
             slots: [
-                "Torpedo"
                 "Astromech"
                 "Modification"
                 "Configuration"
                 "Tech"
+                "Hardpoint"
             ]
         }
         {
