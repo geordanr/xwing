@@ -5357,10 +5357,9 @@ exportObj.basicCardData = ->
            charge: 2
        }
        {
-           name: "R2-D2 (Astromech)"
+           name: "R2-D2"
            id: 3
            unique: true
-           canonical_name: 'R2-D2'.canonicalize()
            slot: "Astromech"
            points: 8
            charge: 3
@@ -5863,6 +5862,7 @@ exportObj.basicCardData = ->
            name: "R2-D2 (Crew)"
            id: 56
            slot: "Crew"
+           canonical_name: 'r2d2-crew'
            xws: "r2d2-crew"
            points: 8
            unique: true

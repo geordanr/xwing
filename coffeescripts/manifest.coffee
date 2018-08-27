@@ -121,7 +121,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'R2-D2 (Astromech)'
+            name: 'R2-D2'
             type: 'upgrade'
             count: 1
         }

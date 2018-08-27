@@ -891,7 +891,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you move and perform attacks, you ignore all obstacles that you are locking."""
         "R2 Astromech":
            text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
-        "R2-D2 (Astromech)":
+        "R2-D2":
            text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
         "R2-D2 (Crew)":
            text: """During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
