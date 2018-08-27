@@ -11,7 +11,7 @@ exportObj.translations.English =
         "Boost": "Boost"
         "Evade": "Evade"
         "Focus": "Focus"
-        "Target Lock": "Target Lock"
+        "Lock": "Lock"
         "Recover": "Recover"
         "Reinforce": "Reinforce"
         "Jam": "Jam"
@@ -42,37 +42,6 @@ exportObj.translations.English =
         "Title": "Title"
     sources: # needed?
         "Core": "Core"
-        "A-Wing Expansion Pack": "A-Wing Expansion Pack"
-        "B-Wing Expansion Pack": "B-Wing Expansion Pack"
-        "X-Wing Expansion Pack": "X-Wing Expansion Pack"
-        "Y-Wing Expansion Pack": "Y-Wing Expansion Pack"
-        "Millennium Falcon Expansion Pack": "Millennium Falcon Expansion Pack"
-        "HWK-290 Expansion Pack": "HWK-290 Expansion Pack"
-        "TIE Fighter Expansion Pack": "TIE Fighter Expansion Pack"
-        "TIE Interceptor Expansion Pack": "TIE Interceptor Expansion Pack"
-        "TIE Bomber Expansion Pack": "TIE Bomber Expansion Pack"
-        "TIE Advanced Expansion Pack": "TIE Advanced Expansion Pack"
-        "Lambda-Class Shuttle Expansion Pack": "Lambda-Class Shuttle Expansion Pack"
-        "Slave I Expansion Pack": "Slave I Expansion Pack"
-        "Imperial Aces Expansion Pack": "Imperial Aces Expansion Pack"
-        "Rebel Transport Expansion Pack": "Rebel Transport Expansion Pack"
-        "Z-95 Headhunter Expansion Pack": "Z-95 Headhunter Expansion Pack"
-        "TIE Defender Expansion Pack": "TIE Defender Expansion Pack"
-        "E-Wing Expansion Pack": "E-Wing Expansion Pack"
-        "TIE Phantom Expansion Pack": "TIE Phantom Expansion Pack"
-        "Tantive IV Expansion Pack": "Tantive IV Expansion Pack"
-        "Rebel Aces Expansion Pack": "Rebel Aces Expansion Pack"
-        "YT-2400 Freighter Expansion Pack": "YT-2400 Freighter Expansion Pack"
-        "VT-49 Decimator Expansion Pack": "VT-49 Decimator Expansion Pack"
-        "StarViper Expansion Pack": "StarViper Expansion Pack"
-        "M3-A Interceptor Expansion Pack": "M3-A Interceptor Expansion Pack"
-        "IG-2000 Expansion Pack": "IG-2000 Expansion Pack"
-        "Most Wanted Expansion Pack": "Most Wanted Expansion Pack"
-        "Imperial Raider Expansion Pack": "Imperial Raider Expansion Pack"
-        "Hound's Tooth Expansion Pack": "Hound's Tooth Expansion Pack"
-        "Kihraxz Fighter Expansion Pack": "Kihraxz Fighter Expansion Pack"
-        "K-Wing Expansion Pack": "K-Wing Expansion Pack"
-        "TIE Punisher Expansion Pack": "TIE Punisher Expansion Pack"
         "The Force Awakens Core Set": "The Force Awakens Core Set"
     ui:
         shipSelectorPlaceholder: "Select a ship"
@@ -356,7 +325,7 @@ exportObj.cardLoaders.English = () ->
            text: """At the start of the Engagement Phase, if there is at least 1 enemy ship at range 0-1, you may gain 1 focus token.  %LINEBREAK% MICROTHRUSTERS: While you perform a barrel roll, you MUST use the (1 %BANKLEFT%) or (1 %BANKRIGHT%) template instead of the [1 %STRAIGHT%] template."""
         "Han Solo (Scum)":
            text: """Whlie you defend or perform a primary attack, if the attack is obstructed by an obstacle, you may roll 1 additional die."""
-        "Han Solo (Rebel)":
+        "Han Solo":
            text: """After you roll dice, if you are at range 0-1 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects."""
         "Heff Tobber":
            text: """After an enemy ship executes a maneuver, if it is at range 0, you may perform an action."""
@@ -430,7 +399,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you defend or perform an attack, if the attack missed, gain 1 evade token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Lando Calrissian (Scum) (Escape Craft)":
            text: """After you roll dice, if you are not stressed, you may gain 1 stress token to reroll all of your blank results. %LINEBREAK% CO-PILOT: While you are docked, your carried ship has your pilot ability in addition it's own."""
-        "Lando Calrissian (Rebel)":
+        "Lando Calrissian":
            text: """After you fully execute a blue maneuver, you may choose a friendly ship at range 0-3. That ship may perform an action."""
         "Lando Calrissian (Scum)":
            text: """After you roll dice, if you are not stressed, you may gain 1 stress token to reroll all of your blank results."""
@@ -718,7 +687,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you drop or launch a device, you may perform a red %BOOST% action."""
         "Cassian Andor":
            text: """During the System Phase, you may choose 1 enemy ship at range 1-2 and guess aloud a bearing and speed, then look at that ship's dial. If the chosen ship's bearing and speed match your guess, you may set your dial to another maneuver."""
-        "Chewbacca (Rebel)":
+        "Chewbacca":
            text: """At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
         "Chewbacca (Scum)":
            text: """At the start of the End Phase, you may spend 1 focus token to repair 1 of your faceup damage cards."""
@@ -796,7 +765,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Requires: %LOCK%</i> %LINEBREAK% During the System Phase, you may spend 2 %CHARGE%. If you do, each friendly ship may acquire a lock on a ship that you have locked."""
         "Greedo":
            text: """While you perform an attack, you may spend 1 %CHARGE% to change 1 %HIT% result to a %CRIT% result. While you defend, if your %CHARGE% is active, the attacker may change 1 %HIT% result to a %CRIT% result."""
-        "Han Solo (Rebel)":
+        "Han Solo":
            text: """During the Engagement Phase, at initiative 7, you may perform a %TURRET% attack. You cannot attack from that %TURRET% again this round."""
         "Han Solo (Scum)":
            text: """Before you engage, you may perform a red %FOCUS% action."""
@@ -854,7 +823,7 @@ exportObj.cardLoaders.English = () ->
            text: """Setup: Equip this side faceup. While you defend, you may flip this card. If you do, the attack must reroll all attack dice"""
         "L3-37's Programming":
            text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
-        "Lando Calrissian (Rebel)":
+        "Lando Calrissian":
            text: """Action: Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":
            text: """After you roll dice, you may spend 1 green token to reroll up to 2 of your results."""

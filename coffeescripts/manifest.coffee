@@ -702,12 +702,12 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Han Solo (Rebel)'
+            name: 'Han Solo'
             type: 'pilot'
             count: 1
         }
         {
-            name: 'Lando Calrissian (Rebel)'
+            name: 'Lando Calrissian'
             type: 'pilot'
             count: 1
         }
@@ -937,7 +937,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Chewbacca (Rebel)'
+            name: 'Chewbacca'
             type: 'upgrade'
             count: 1
         }
@@ -977,7 +977,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Lando Calrissian (Rebel)'
+            name: 'Lando Calrissian'
             type: 'upgrade'
             count: 1
         }
@@ -1122,7 +1122,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Han Solo (Rebel)'
+            name: 'Han Solo'
             type: 'upgrade'
             count: 1
         }
@@ -1976,6 +1976,11 @@ exportObj.manifestByExpansion =
     ]
     'Scum and Villainy Conversion Kit': [
         {
+            name: 'Kihraxz Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
             name: 'YV-666'
             type: 'ship'
             count: 2
@@ -2036,7 +2041,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: 'Starviper'
+            name: 'StarViper'
             type: 'ship'
             count: 2
         }

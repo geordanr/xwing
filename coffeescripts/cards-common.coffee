@@ -31,7 +31,7 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -53,7 +53,7 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
                 "Barrel Roll"
@@ -77,7 +77,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
                 "Boost"
             ]
@@ -101,7 +101,7 @@ exportObj.basicCardData = ->
             shields: 5
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -126,7 +126,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -174,7 +174,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus" 
                 "<r>> Barrel Roll</r>"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -222,7 +222,7 @@ exportObj.basicCardData = ->
             shields: 4
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Boost"
             ]
             actionsred: [
@@ -247,7 +247,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "<r>> Rotate Arc</r>"
-                "Target Lock" 
+                "Lock" 
                 "<r>> Rotate Arc</r>"
                 "Rotate Arc"
             ]
@@ -297,7 +297,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "<r>> Barrel Roll</r>"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -319,9 +319,9 @@ exportObj.basicCardData = ->
             shields: 0
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
-                "<r>> Target Lock</r>"
+                "<r>> Lock</r>"
             ]
             actionsred: [
                 "Reload"
@@ -344,7 +344,7 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -368,7 +368,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
                 "Boost"
             ]
@@ -393,11 +393,11 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
-                "<r>> Target Lock</r>"
+                "<r>> Lock</r>"
                 "Boost"
-                "<r>> Target Lock</r>"
+                "<r>> Lock</r>"
             ]
             actionsred: [
             ]
@@ -442,7 +442,7 @@ exportObj.basicCardData = ->
             shields: 4
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -466,7 +466,7 @@ exportObj.basicCardData = ->
             shields: 4
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Reinforce"
                 "Rotate Arc"
             ]
@@ -491,7 +491,7 @@ exportObj.basicCardData = ->
             shields: 1
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
                 "<r>> Focus</r>"
                 "Boost"
@@ -517,7 +517,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -541,7 +541,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Calculate"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Boost"
             ]
             actionsred: [
@@ -566,7 +566,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Reinforce"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
             ]
@@ -587,7 +587,7 @@ exportObj.basicCardData = ->
             shields: 1
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -610,7 +610,7 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Slam"
                 "Rotate Arc"
                 "Reload"
@@ -634,9 +634,9 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Boost" 
-                "<r>> Target Lock</r>"
+                "<r>> Lock</r>"
                 "Reload"
             ]
             actionsred: [
@@ -660,7 +660,7 @@ exportObj.basicCardData = ->
             large: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Reinforce"
             ]
             actionsred: [
@@ -706,7 +706,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
                 "<r>> Focus</r>"
                 "Boost"
@@ -733,7 +733,7 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Jam"
             ]
             actionsred: [
@@ -757,7 +757,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "<r>> Rotate Arc</r>"
-                "Target Lock"
+                "Lock"
                 "<r>> Rotate Arc</r>"
             ]
             actionsred: [
@@ -782,7 +782,7 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
                 "Barrel Roll"
@@ -805,7 +805,7 @@ exportObj.basicCardData = ->
             shields: 0
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
                 "<r>> Focus</r>"
                 "Boost"
@@ -834,7 +834,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -879,7 +879,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
                 "Coordinate"
@@ -945,7 +945,7 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
                 "Barrel Roll"
@@ -967,7 +967,7 @@ exportObj.basicCardData = ->
             shields: 1
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll" 
                 "<r>> Evade</r>"
             ]
@@ -990,7 +990,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Slam"
                 "Reload"
             ]
@@ -1014,7 +1014,7 @@ exportObj.basicCardData = ->
             medium: true
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Reload"
             ]
             actionsred: [
@@ -1038,7 +1038,7 @@ exportObj.basicCardData = ->
             shields: 1
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Coordinate"
             ]
             actionsred: [
@@ -1104,7 +1104,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Boost"
             ]
             actionsred: [
@@ -1128,7 +1128,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -1152,7 +1152,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Evade"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -1176,7 +1176,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Boost"
-                "Target Lock"
+                "Lock"
                 "Barrel Roll"
             ]
             actionsred: [
@@ -1203,7 +1203,7 @@ exportObj.basicCardData = ->
                 "> Rotate Arc"
                 "Evade"
                 "> Rotate Arc"
-                "Target Lock"
+                "Lock"
                 "> Rotate Arc"
                 "Barrel Roll"
                 "> Rotate Arc"
@@ -1229,7 +1229,7 @@ exportObj.basicCardData = ->
             actions: [
                 "Focus"
                 "Reinforce"
-                "Target Lock"
+                "Lock"
                 "Coordinate"
                 "Jam"
             ]
@@ -1254,7 +1254,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
                 "Rotate Arc"
                 "Reload"
             ]
@@ -1280,7 +1280,7 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "Target Lock"
+                "Lock"
             ]
             actionsred: [
                 "Boost"
@@ -1700,6 +1700,7 @@ exportObj.basicCardData = ->
             name: "Norra Wexley (Y-Wing)"
             id: 25
             unique: true
+            canonical_name: 'Norra Wexley'.canonicalize()
             xws: "norrawexley-btla4ywing"
             faction: "Rebel Alliance"
             ship: "Y-Wing"
@@ -1975,7 +1976,7 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
-                    "Target Lock"
+                    "Lock"
                     "Rotate Arc"
                 ]
         }
@@ -1996,7 +1997,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Han Solo (Rebel)"
+            name: "Han Solo"
             id: 42
             unique: true
             xws: "hansolo-modifiedyt1300lightfreighter"
@@ -2016,7 +2017,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Lando Calrissian (Rebel)"
+            name: "Lando Calrissian"
             id: 43
             unique: true
             xws: "landocalrissian-modifiedyt1300lightfreighter"
@@ -2288,6 +2289,7 @@ exportObj.basicCardData = ->
             name: "Hera Syndulla (VCX-100)"
             id: 61
             unique: true
+            canonical_name: 'Hera Syndulla'.canonicalize()
             xws: "herasyndulla-vcx100lightfreighter"
             faction: "Rebel Alliance"
             ship: "VCX-100"
@@ -2344,7 +2346,7 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
-                    "Target Lock"
+                    "Lock"
                     "Reinforce"
                 ]
         }
@@ -2839,7 +2841,7 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
-                    "Target Lock"
+                    "Lock"
                     "Rotate Arc"
                 ]
         }
@@ -3136,7 +3138,7 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
-                    "Target Lock"
+                    "Lock"
                     "Jam"
                 ]
 
@@ -3757,7 +3759,7 @@ exportObj.basicCardData = ->
             ship_override:
                 actions: [
                     "Calculate"
-                    "Target Lock"
+                    "Lock"
                     "Barrel Roll"
                     "<r>> Calculate</r>"
                     "Boost"
@@ -5334,6 +5336,7 @@ exportObj.basicCardData = ->
            name: '"Chopper" (Astromech)'
            id: 0
            slot: "Astromech"
+           canonical_name: '"Chopper"'.canonicalize()
            points: 2
            unique: true
            faction: "Rebel Alliance"
@@ -5357,6 +5360,7 @@ exportObj.basicCardData = ->
            name: "R2-D2 (Astromech)"
            id: 3
            unique: true
+           canonical_name: 'R2-D2'.canonicalize()
            slot: "Astromech"
            points: 8
            charge: 3
@@ -5513,10 +5517,9 @@ exportObj.basicCardData = ->
            faction: "Scum and Villainy"
        }
        {
-           name: "Chewbacca (Rebel)"
+           name: "Chewbacca"
            id: 21
            slot: "Crew"
-           xws: "chewbacca" 
            points: 5
            unique: true
            faction: "Rebel Alliance"
@@ -5535,6 +5538,7 @@ exportObj.basicCardData = ->
        {
            name: '"Chopper" (Crew)'
            id: 23
+           canonical_name: '"Chopper"'.canonicalize()
            xws: "chopper-crew" 
            slot: "Crew"
            points: 2
@@ -5592,7 +5596,7 @@ exportObj.basicCardData = ->
            faction: "Galactic Empire"
            applies_condition: 'Optimized Prototype'.canonicalize()
            modifier_func: (stats) ->
-                stats.actions.push 'Target Lock' if 'Target Lock' not in stats.actions
+                stats.actions.push 'Lock' if 'Lock' not in stats.actions
        }
        {
            name: "Emperor Palpatine"
@@ -5652,7 +5656,7 @@ exportObj.basicCardData = ->
            charge: 2
            recurring: true
            restriction_func: (ship) ->
-                "Target Lock" in ship.effectiveStats().actions or "Target Lock" in ship.effectiveStats().actionsred
+                "Lock" in ship.effectiveStats().actions or "Lock" in ship.effectiveStats().actionsred
        }
        {
            name: "Hera Syndulla"
@@ -5735,7 +5739,7 @@ exportObj.basicCardData = ->
            faction: "Scum and Villainy"
        }
        {
-           name: "Lando Calrissian (Rebel)"
+           name: "Lando Calrissian"
            id: 44
            slot: "Crew"
            xws: "landocalrissian" 
@@ -6098,7 +6102,7 @@ exportObj.basicCardData = ->
            charge: 1
        }
        {
-           name: "Han Solo (Rebel)"
+           name: "Han Solo"
            id: 84
            slot: "Gunner"
            xws: "hansolo" 
@@ -6950,7 +6954,7 @@ exportObj.basicCardData = ->
             slot: "Tech"
             points: 0
             restriction_func: (ship) ->
-                "Target Lock" in ship.effectiveStats().actions or "Target Lock" in ship.effectiveStats().actionsred
+                "Lock" in ship.effectiveStats().actions or "Lock" in ship.effectiveStats().actionsred
        }
        {
             name: "Primed Thrusters"

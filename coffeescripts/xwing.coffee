@@ -2495,7 +2495,7 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>"""
                 when 'Barrel Roll'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>"""
-                when 'Target Lock'
+                when 'Lock'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>"""
                 when 'Boost'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>"""
@@ -2517,7 +2517,7 @@ class Ship
                     """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
                 when 'Calculate'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>"""
-                when "<r>> Target Lock</r>"
+                when "<r>> Lock</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i></r>"""
                 when "<r>> Barrel Roll</r>"
                     """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i></r>"""
@@ -2540,7 +2540,7 @@ class Ship
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>"""
                 when 'Barrel Roll'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>"""
-                when 'Target Lock'
+                when 'Lock'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>"""
                 when 'Boost'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-boost"></i>"""
