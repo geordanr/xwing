@@ -3259,16 +3259,6 @@ class GenericAddon
                 </div>
             """ else ''
             
-            forceHTML = if (@pilot.force?) then $.trim """
-                <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>
-                <span class="info-data info-force">#{@pilot.force}</span>
-            """ else ''
-
-            chargeHTML = if (@pilot.charge?) then $.trim """
-                <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>
-                <span class="info-data info-charge">#{@pilot.charge}</span>
-            """ else ''
-                
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
@@ -3282,8 +3272,6 @@ class GenericAddon
                     </div>
                     #{attackHTML}
                     #{energyHTML}
-                    #{forceHTML}
-                    #{chargeHTML}
                     <div class="upgrade-text">#{text_str}</div>
                     <div style="clear: both;"></div>
                 </div>
