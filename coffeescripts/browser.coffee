@@ -297,18 +297,18 @@ class exportObj.CardBrowser
                 @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
                 @card_viewer_container.find('tr.info-shields').show()
 
-                if ship.force?
-                    @card_viewer_container.find('tr.info-force td.info-data').html (ship.force + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>') 
+                if data.force?
+                    @card_viewer_container.find('tr.info-force td.info-data').html (data.force + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>') 
                     @card_viewer_container.find('tr.info-force td.info-header').show()
                     @card_viewer_container.find('tr.info-force').show()
                 else
                     @card_viewer_container.find('tr.info-force').hide() 
 
-                if ship.charge?
+                if data.charge?
                     if data.recurring?
-                        @card_viewer_container.find('tr.info-charge td.info-data').html (ship.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
+                        @card_viewer_container.find('tr.info-charge td.info-data').html (data.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
                     else
-                        @card_viewer_container.find('tr.info-charge td.info-data').text ship.charge
+                        @card_viewer_container.find('tr.info-charge td.info-data').text data.charge
                     @card_viewer_container.find('tr.info-charge').show()
                 else
                     @card_viewer_container.find('tr.info-charge').hide()
