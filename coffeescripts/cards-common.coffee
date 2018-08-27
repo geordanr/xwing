@@ -4347,8 +4347,7 @@ exportObj.basicCardData = ->
             ship: "TIE Reaper"
             skill: 2
             points: 45
-            slots: [       
-                "Talent"
+            slots: [
                 "Crew"
                 "Crew"
                 "Modification"
