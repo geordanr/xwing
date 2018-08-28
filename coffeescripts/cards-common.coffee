@@ -173,7 +173,7 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus" 
-                "<r>> Barrel Roll</r>"
+                "R> Barrel Roll"
                 "Lock"
                 "Barrel Roll"
             ]
@@ -246,9 +246,9 @@ exportObj.basicCardData = ->
             shields: 2
             actions: [
                 "Focus"
-                "<r>> Rotate Arc</r>"
+                "R> Rotate Arc"
                 "Lock" 
-                "<r>> Rotate Arc</r>"
+                "R> Rotate Arc"
                 "Rotate Arc"
             ]
             actionsred: [
@@ -296,7 +296,7 @@ exportObj.basicCardData = ->
             shields: 4
             actions: [
                 "Focus"
-                "<r>> Barrel Roll</r>"
+                "R> Barrel Roll"
                 "Lock"
                 "Barrel Roll"
             ]
@@ -321,7 +321,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "<r>> Lock</r>"
+                "R> Lock"
             ]
             actionsred: [
                 "Reload"
@@ -395,9 +395,9 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Lock"
                 "Barrel Roll"
-                "<r>> Lock</r>"
+                "R> Lock"
                 "Boost"
-                "<r>> Lock</r>"
+                "R> Lock"
             ]
             actionsred: [
             ]
@@ -493,9 +493,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "<r>> Focus</r>"
+                "R> Focus"
                 "Boost"
-                "<r>> Focus</r>"
+                "R> Focus"
             ]
             actionsred: [
             ]
@@ -636,7 +636,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Boost" 
-                "<r>> Lock</r>"
+                "R> Lock"
                 "Reload"
             ]
             actionsred: [
@@ -684,7 +684,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Evade"
                 "Barrel Roll"
-                "<r>> Evade</r>"
+                "R> Evade"
             ]
             actionsred: [
             ]
@@ -708,9 +708,9 @@ exportObj.basicCardData = ->
                 "Evade"
                 "Lock"
                 "Barrel Roll"
-                "<r>> Focus</r>"
+                "R> Focus"
                 "Boost"
-                "<r>> Focus</r>"
+                "R> Focus"
             ]
             actionsred: [
             ]
@@ -756,9 +756,9 @@ exportObj.basicCardData = ->
             shields: 3
             actions: [
                 "Focus"
-                "<r>> Rotate Arc</r>"
+                "R> Rotate Arc"
                 "Lock"
-                "<r>> Rotate Arc</r>"
+                "R> Rotate Arc"
             ]
             actionsred: [
                 "Barrel Roll"
@@ -807,9 +807,9 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll"
-                "<r>> Focus</r>"
+                "R> Focus"
                 "Boost"
-                "<r>> Focus</r>"
+                "R> Focus"
             ]
             actionsred: [
             ]
@@ -969,7 +969,7 @@ exportObj.basicCardData = ->
                 "Focus"
                 "Lock"
                 "Barrel Roll" 
-                "<r>> Evade</r>"
+                "R> Evade"
             ]
             actionsred: [
             ]
@@ -3761,9 +3761,9 @@ exportObj.basicCardData = ->
                     "Calculate"
                     "Lock"
                     "Barrel Roll"
-                    "<r>> Calculate</r>"
+                    "R> Calculate"
                     "Boost"
-                    "<r>> Calculate</r>"
+                    "R> Calculate"
                 ]
         }
         {

@@ -6,39 +6,63 @@ exportObj.codeToLanguage.en = 'English'
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
 exportObj.translations.English =
-    action:
-        "Barrel Roll": "Barrel Roll"
-        "Boost": "Boost"
-        "Evade": "Evade"
-        "Focus": "Focus"
-        "Lock": "Lock"
-        "Recover": "Recover"
-        "Reinforce": "Reinforce"
-        "Jam": "Jam"
-        "Coordinate": "Coordinate"
-        "Cloak": "Cloak"
-        "Slam": "Slam"
+    action: #do not change this anymore. We use Icons instead of words
+        "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
+        "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
+        "Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>'
+        "Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>'
+        "Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>'
+        "Reload": '<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>'
+        "Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
+        "Reinforce": '<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>'
+        "Jam": '<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>'
+        "Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>'
+        "Coordinate": '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>'
+        "Cloak": '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>'
+        "Slam": '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>'
+        "R> Barrel Roll": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i></r>'
+        "R> Focus": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-focus"></i></r>'
+        "R> Lock": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-lock"></i></r>'
+        "> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
+        "R> Rotate Arc": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i></r>'
+        "R> Evade": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-evade"></i></r>'
+        "R> Calculate": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i></r>'
+    sloticon:
+        "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
+        "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
+        "Bomb": '<i class="xwing-miniatures-font xwing-miniatures-font-bomb"></i>'
+        "Cannon": '<i class="xwing-miniatures-font xwing-miniatures-font-cannon"></i>'
+        "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
+        "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
+        "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
+        "System": '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>'
+        "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
+        "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
+        "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
+        "Configuration": '<i class="xwing-miniatures-font xwing-miniatures-font-configuration"></i>'
+        "Modification": '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>'
+        "Gunner": '<i class="xwing-miniatures-font xwing-miniatures-font-gunner"></i>'
+        "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
+        "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
+        "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
     slot:
         "Astromech": "Astromech"
+        "Force": "Force"
         "Bomb": "Bomb"
         "Cannon": "Cannon"
         "Crew": "Crew"
-        "Elite": "Elite"
         "Missile": "Missile"
         "System": "System"
         "Torpedo": "Torpedo"
         "Turret": "Turret"
-        "Cargo": "Cargo"
         "Hardpoint": "Hardpoint"
-        "Team": "Team"
         "Illicit": "Illicit"
-        "Salvaged Astromech": "Salvaged Astromech"
         "Configuration": "Configuration"
         "Talent": "Talent"
-        "Force": "Force"
         "Modification": "Modification"
         "Gunner": "Gunner"
         "Device": "Device"
+        "Tech": "Tech"
         "Title": "Title"
     sources: # needed?
         "Core": "Core"

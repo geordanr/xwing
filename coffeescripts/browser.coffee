@@ -313,7 +313,7 @@ class exportObj.CardBrowser
                 else
                     @card_viewer_container.find('tr.info-charge').hide()
 
-                @card_viewer_container.find('tr.info-actions td.info-data').html (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(' ')
+                @card_viewer_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto double replace for linked actions
                 @card_viewer_container.find('tr.info-actions').show()
 
                 if ships[data.ship].actionsred?
@@ -323,7 +323,7 @@ class exportObj.CardBrowser
                     @card_viewer_container.find('tr.info-actions-red').hide()
 
                 @card_viewer_container.find('tr.info-upgrades').show()
-                @card_viewer_container.find('tr.info-upgrades td.info-data').text((exportObj.translate(@language, 'slot', slot) for slot in data.slots).join(', ') or 'None')
+                @card_viewer_container.find('tr.info-upgrades td.info-data').html((exportObj.translate(@language, 'sloticon', slot) for slot in data.slots).join(' ') or 'None')
             else
                 @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
