@@ -1,6 +1,6 @@
 ## YASB 2.0 Bug Report
 
-**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times.
+**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. Unless youre from Mynock Squadron, in which case, it's wholy intentional.
 
 ### Expected Behavior
 
