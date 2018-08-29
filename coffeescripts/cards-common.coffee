@@ -1645,7 +1645,7 @@ exportObj.basicCardData = ->
             points: 74
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Astromech"
                 "Modification"
@@ -1661,7 +1661,7 @@ exportObj.basicCardData = ->
             points: 68
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Astromech"
                 "Modification"
@@ -1676,7 +1676,7 @@ exportObj.basicCardData = ->
             points: 63
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Astromech"
                 "Modification"
@@ -1690,7 +1690,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 61
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Astromech"
                 "Modification"
@@ -1813,7 +1813,7 @@ exportObj.basicCardData = ->
             points: 49
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1830,7 +1830,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1847,7 +1847,7 @@ exportObj.basicCardData = ->
             points: 45
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1864,7 +1864,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1882,7 +1882,7 @@ exportObj.basicCardData = ->
             points: 52
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1900,7 +1900,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "Illicit"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1916,7 +1916,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 43
             slots: [
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -1932,7 +1932,7 @@ exportObj.basicCardData = ->
             points: 43
             slots: [
                 "Illicit"
-                "System"
+                "Sensor"
                 "Crew"
                 "Crew"
                 "Modification"
@@ -2513,7 +2513,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Torpedo"
@@ -2530,7 +2530,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Torpedo"
@@ -2546,7 +2546,7 @@ exportObj.basicCardData = ->
             points: 44
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Torpedo"
@@ -2561,7 +2561,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 42
             slots: [
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Torpedo"
@@ -2645,7 +2645,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Device"
@@ -2663,7 +2663,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Device"
@@ -2681,7 +2681,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Device"
@@ -2699,7 +2699,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Cannon"
                 "Device"
@@ -3129,7 +3129,7 @@ exportObj.basicCardData = ->
             points: 49
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Illicit"
                 "Modification"
@@ -3153,7 +3153,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Illicit"
                 "Modification"
@@ -3168,7 +3168,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 43
             slots: [
-                "System"
+                "Sensor"
                 "Crew"
                 "Illicit"
                 "Modification"
@@ -3751,7 +3751,7 @@ exportObj.basicCardData = ->
             points: 62
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -3776,7 +3776,7 @@ exportObj.basicCardData = ->
             points: 54
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -3793,7 +3793,7 @@ exportObj.basicCardData = ->
             points: 54
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -3808,7 +3808,7 @@ exportObj.basicCardData = ->
             points: 48
             slots: [
                 "Talent"
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -3822,7 +3822,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 46
             slots: [
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Modification"
                 "Title"
@@ -3989,7 +3989,7 @@ exportObj.basicCardData = ->
             points: 41
             slots: [
                 "Talent"         
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Modification"
@@ -4006,7 +4006,7 @@ exportObj.basicCardData = ->
             points: 39
             slots: [
                 "Talent"         
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Modification"
@@ -4022,7 +4022,7 @@ exportObj.basicCardData = ->
             points: 37
             slots: [
                 "Talent"         
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Modification"
@@ -4037,7 +4037,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 35
             slots: [      
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Modification"
@@ -4053,7 +4053,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 48
             slots: [       
-                "System"
+                "Sensor"
                 "Cannon"
                 "Crew"
                 "Crew"
@@ -4070,7 +4070,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 47
             slots: [       
-                "System"
+                "Sensor"
                 "Cannon"
                 "Crew"
                 "Crew"
@@ -4088,7 +4088,7 @@ exportObj.basicCardData = ->
             charge: 2
             points: 46
             slots: [       
-                "System"
+                "Sensor"
                 "Cannon"
                 "Crew"
                 "Crew"
@@ -4104,7 +4104,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 43
             slots: [       
-                "System"
+                "Sensor"
                 "Cannon"
                 "Crew"
                 "Crew"
@@ -4123,7 +4123,7 @@ exportObj.basicCardData = ->
             force: 2
             slots: [       
                 "Force"
-                "System"
+                "Sensor"
                 "Missile"
               ]
         }
@@ -4138,7 +4138,7 @@ exportObj.basicCardData = ->
             force: 2
             slots: [       
                 "Force"
-                "System"
+                "Sensor"
                 "Missile"
               ]
         }
@@ -4152,7 +4152,7 @@ exportObj.basicCardData = ->
             force: 1
             slots: [       
                 "Force"
-                "System"
+                "Sensor"
                 "Missile"
               ]
         }
@@ -4165,7 +4165,7 @@ exportObj.basicCardData = ->
             points: 34
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Missile"
               ]
         }
@@ -4180,7 +4180,7 @@ exportObj.basicCardData = ->
             force: 3
             slots: [       
                 "Force"
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4195,7 +4195,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4210,7 +4210,7 @@ exportObj.basicCardData = ->
             points: 47
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4224,7 +4224,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 45
             slots: [       
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4238,7 +4238,7 @@ exportObj.basicCardData = ->
             points: 43
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4251,7 +4251,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 41
             slots: [  
-                "System"
+                "Sensor"
                 "Missile"
                 "Modification"
               ]
@@ -4440,7 +4440,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 44
             slots: [       
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -4459,7 +4459,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 42
             slots: [       
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -4477,7 +4477,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 36
             slots: [       
-                "System"
+                "Sensor"
                 "Torpedo"
                 "Missile"
                 "Missile"
@@ -4497,7 +4497,7 @@ exportObj.basicCardData = ->
             points: 88
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Missile"
               ]
@@ -4512,7 +4512,7 @@ exportObj.basicCardData = ->
             points: 86
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Missile"
               ]
@@ -4527,7 +4527,7 @@ exportObj.basicCardData = ->
             points: 84
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Missile"
               ]
@@ -4541,7 +4541,7 @@ exportObj.basicCardData = ->
             points: 78
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Cannon"
                 "Missile"
               ]
@@ -4554,7 +4554,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 72
             slots: [       
-                "System"
+                "Sensor"
                 "Cannon"
                 "Missile"
               ]
@@ -4569,7 +4569,7 @@ exportObj.basicCardData = ->
             points: 52
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Modification"
               ]
@@ -4584,7 +4584,7 @@ exportObj.basicCardData = ->
             points: 50
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Modification"
               ]
@@ -4598,7 +4598,7 @@ exportObj.basicCardData = ->
             points: 46
             slots: [       
                 "Talent"
-                "System"
+                "Sensor"
                 "Crew"
                 "Modification"
               ]
@@ -4611,7 +4611,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 44
             slots: [       
-                "System"
+                "Sensor"
                 "Crew"
                 "Modification"
               ]
@@ -5149,7 +5149,7 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Crew"
                 "Cannon"
-                "System"
+                "Sensor"
                 "Modification"
             ]
         }
@@ -5206,7 +5206,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Tech"
                 "Gunner"
-                "System"
+                "Sensor"
                 "Modification"
             ]
         }
@@ -5222,7 +5222,7 @@ exportObj.basicCardData = ->
                 "Talent"
                 "Tech"
                 "Gunner"
-                "System"
+                "Sensor"
                 "Modification"
             ]
         }
@@ -6327,26 +6327,26 @@ exportObj.basicCardData = ->
        {
            name: "Advanced Sensors"
            id: 111
-           slot: "System"
+           slot: "Sensor"
            points: 8
        }
        {
            name: "Collision Detector"
            id: 112
-           slot: "System"
+           slot: "Sensor"
            points: 5
            charge: 2
        }
        {
            name: "Fire-Control System"
            id: 113
-           slot: "System"
+           slot: "Sensor"
            points: 3
        }
        {
            name: "Trajectory Simulator"
            id: 114
-           slot: "System"
+           slot: "Sensor"
            points: 3
        }
        {
@@ -6654,7 +6654,7 @@ exportObj.basicCardData = ->
            confersAddons: [
                 {
                     type: exportObj.Upgrade
-                    slot: 'System'
+                    slot: 'Sensor'
                 }
                 {
                     type: exportObj.Upgrade
@@ -7395,7 +7395,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>')
             .replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>')
             .replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>')
-            .replace(/%SYSTEM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>')
+            .replace(/%SENSOR%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>')
             .replace(/%LOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>')
             .replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>')
             .replace(/%TECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>')

@@ -35,7 +35,7 @@ exportObj.translations.English =
         "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
         "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
         "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
-        "System": '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>'
+        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>'
         "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
         "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
         "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
@@ -52,7 +52,7 @@ exportObj.translations.English =
         "Cannon": "Cannon"
         "Crew": "Crew"
         "Missile": "Missile"
-        "System": "System"
+        "Sensor": "Sensor"
         "Torpedo": "Torpedo"
         "Turret": "Turret"
         "Hardpoint": "Hardpoint"
@@ -794,7 +794,7 @@ exportObj.cardLoaders.English = () ->
         "Han Solo (Scum)":
            text: """Before you engage, you may perform a red %FOCUS% action."""
         "Havoc":
-           text: """Remove %CREW% slot. Add %SYSTEM% and %ASTROMECH% slots."""
+           text: """Remove %CREW% slot. Add %SENSOR% and %ASTROMECH% slots."""
         "Heavy Laser Cannon":
            text: """Attack: After the Modify Attack Dice step, change all %CRIT% results to %HIT% results."""
         "Heightened Perception":
