@@ -2639,6 +2639,7 @@ exportObj.basicCardData = ->
         {
             name: "IG-88A"
             id: 81
+            unique: true
             faction: "Scum and Villainy"
             ship: "Aggressor"
             skill: 4
@@ -2657,6 +2658,7 @@ exportObj.basicCardData = ->
         {
             name: "IG-88B"
             id: 82
+            unique: true
             faction: "Scum and Villainy"
             ship: "Aggressor"
             skill: 4
@@ -2675,6 +2677,7 @@ exportObj.basicCardData = ->
         {
             name: "IG-88C"
             id: 83
+            unique: true
             faction: "Scum and Villainy"
             ship: "Aggressor"
             skill: 4
@@ -2693,6 +2696,7 @@ exportObj.basicCardData = ->
         {
             name: "IG-88D"
             id: 84
+            unique: true
             faction: "Scum and Villainy"
             ship: "Aggressor"
             skill: 4
