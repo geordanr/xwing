@@ -368,13 +368,13 @@ exportObj.cardLoaders.English = () ->
         "Iden Versio":
            text: """Before a friendly TIE/ln fighter at range 0-1 would suffer 1 or more damage, you may spend 1 %CHARGE%. If you do, prevent that damage."""
         "IG-88A":
-           text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
+           text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "IG-88B":
-           text: """After you perform an attack that misses, you may perform a bonus %CANNON% attack. ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
+           text: """After you perform an attack that misses, you may perform a bonus %CANNON% attack. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "IG-88C":
-           text: """After you perform a %BOOST% action, you may perform an %EVADE% action. ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
+           text: """After you perform a %BOOST% action, you may perform an %EVADE% action. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "IG-88D":
-           text: """While you execute a Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuver, you may use another template of the same speed instead: either the turn (%TURNLEFT% or %TURNRIGHT%) of the same direction or the straight (%STRAIGHT%) template. ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
+           text: """While you execute a Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuver, you may use another template of the same speed instead: either the turn (%TURNLEFT% or %TURNRIGHT%) of the same direction or the straight (%STRAIGHT%) template. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Imdaar Test Pilot":
            text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Inaldra":
