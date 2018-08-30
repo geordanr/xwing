@@ -6,11 +6,15 @@ exportObj.fromXWSFaction =
     'galacticempire': 'Galactic Empire'
     'imperial': 'Galactic Empire'
     'scumandvillainy': 'Scum and Villainy'
+    'firstorder': 'First Order'
+    'resistance': 'Resistance'
 
 exportObj.toXWSFaction =
     'Rebel Alliance': 'rebelalliance'
     'Galactic Empire': 'galacticempire'
     'Scum and Villainy': 'scumandvillainy'
+    'First Order': 'firstorder'
+    'Resistance': 'resistance'
 
 exportObj.toXWSUpgrade =
     'Astromech': 'amd'
@@ -22,8 +26,8 @@ exportObj.fromXWSUpgrade =
     'astromechdroid': 'Astromech'
     'ept': 'Talent'
     'elitepilottalent': 'Talent'
-    'mod': 'Modification'
     'system': 'Sensor'
+    'mod': 'Modification'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 

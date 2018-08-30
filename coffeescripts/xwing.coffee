@@ -1909,10 +1909,10 @@ class exportObj.SquadBuilder
             points: @total_points
             vendor:
                 yasb:
-                    builder: '(Yet Another) X-Wing Miniatures Squad Builder'
+                    builder: 'Yet Another Squad Builder 2.0'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '0.3.0'
+            version: '0.1'
 
         for ship in @ships
             if ship.pilot?
@@ -2032,39 +2032,12 @@ class exportObj.SquadBuilder
                             # console.log "Adding #{addon.data.name} to #{new_ship}..."
 
                             addon_added = false
-                            switch addon.type
-                                when 'Modification'
-                                    for modification in new_ship.modifications
-                                        continue if modification.data?
-                                        modification.setData addon.data
-                                        addon_added = true
-                                        break
-                                when 'Title'
-                                    for title in new_ship.titles
-                                        continue if title.data?
-                                        # Special cases :(
-                                        if addon.data instanceof Array
-                                            # Right now, the only time this happens is because of
-                                            # Heavy Scyk.  Check the rest of the pending addons for torp,
-                                            # cannon, or missiles.  Otherwise, it doesn't really matter.
-                                            slot_guesses = (a.data.slot for a in addons when a.data.slot in ['Cannon', 'Missile', 'Torpedo'])
-                                            # console.log slot_guesses
-                                            if slot_guesses.length > 0
-                                                # console.log "Guessing #{slot_guesses[0]}"
-                                                title.setData exportObj.titlesByLocalizedName[""""Heavy Scyk" Interceptor (#{slot_guesses[0]})"""]
-                                            else
-                                                # console.log "No idea, setting to #{addon.data[0].name}"
-                                                title.setData addon.data[0]
-                                        else
-                                            title.setData addon.data
-                                        addon_added = true
-                                else
-                                    # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
-                                    for upgrade, i in new_ship.upgrades
-                                        continue if upgrade.slot != addon.slot or upgrade.data?
-                                        upgrade.setData addon.data
-                                        addon_added = true
-                                        break
+                            # console.log "Looking for unused #{addon.slot} in #{new_ship}..."
+                            for upgrade, i in new_ship.upgrades
+                                continue if upgrade.slot != addon.slot or upgrade.data?
+                                upgrade.setData addon.data
+                                addon_added = true
+                                break
 
                             if addon_added
                                 # console.log "Successfully added #{addon.data.name} to #{new_ship}"
@@ -3108,6 +3081,7 @@ class GenericAddon
                     
             icon = icon.replace("configuration", "config")
                         .replace("force", "forcepower")
+                        .replace("sensor", "system")
                 
             # Append directly so we don't have to disable markup escaping
             $(container).append """<i class="xwing-miniatures-font xwing-miniatures-font-#{icon}"></i> #{obj.text}"""
