@@ -1053,13 +1053,13 @@ class exportObj.SquadBuilder
 <br />
 <b><i>Total: #{@total_points}</i></b>
 <br />
-<a href="#{@getPermaLink()}">View in Yet Another Squad Builder</a>
+<a href="#{@getPermaLink()}">View in Yet Another Squad Builder 2.0</a>
         """
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
 
 [b][i]Total: #{@total_points}[/i][/b]
 
-[url=#{@getPermaLink()}]View in Yet Another Squad Builder[/url]
+[url=#{@getPermaLink()}]View in Yet Another Squad Builder 2.0[/url]
 """
         # console.log "#{@faction}: Squad updated, checking collection"
         @checkCollection()

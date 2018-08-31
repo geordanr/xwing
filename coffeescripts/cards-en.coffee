@@ -561,7 +561,7 @@ exportObj.cardLoaders.English = () ->
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
         "Sol Sixxa":
            text: """If you would drop a device using a [1 %STRAIGHT%] template, you may drop it using any other speed 1 template instead."""
-        "Soontir Fel":
+        "Soontir Fel Hates Dee Yun":
            text: """At the start of the Engagement Phase, if there is an enemy ship in your %BULLSEYEARC%, gain 1 focus token. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "Spice Runner":
            text: """ """
@@ -609,7 +609,7 @@ exportObj.cardLoaders.English = () ->
            text: """ """
         "Wedge Antilles":
            text: """While you perform an attack, the defender rolls 1 fewer defense die."""
-        '"Whisper"':
+        '"Whisper" Hates Dee Yun':
            text: """After you perform an attack that hits, gain 1 evade token. STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Wild Space Fringer":
            text: """SENSOR BLINDSPOT: While you perform a primary attack at range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
@@ -631,7 +631,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform an action, you may spend 1 %CHARGE% to perform a white action, treating it as red. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Lieutenant Bastian":
            text: """After a ship at range 1-2 is dealt a damage card, you may acquire a lock on that ship. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-        '"Midnight"':
+        '"Midnight" (Not Lockdown)':
            text: """While you defend or perform an attack, if you have a lock on the enemy ship, that ship's dice cannot be modified."""
         '"Longshot"':
            text: """While you perform a primary attack at attack range 3, roll 1 additional attack die."""
