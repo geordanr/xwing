@@ -2792,7 +2792,7 @@ class Ship
                     upgrade_id = parseInt upgrade_id
                     continue if upgrade_id < 0 or isNaN(upgrade_id)
                     # Defer fat upgrades
-                    if @upgrades[i].isOccupied() or @upgrades[i].dataById[upgrade_id].also_occupies_upgrades?
+                    if @upgrades[i].isOccupied() or @upgrades[i].dataById[upgrade_id]?.also_occupies_upgrades?
                         deferred_ids.push upgrade_id
                     else
                         @upgrades[i].setById upgrade_id
