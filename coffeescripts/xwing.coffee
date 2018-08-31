@@ -2803,46 +2803,11 @@ class Ship
                         upgrade.setById deferred_id
                         break
 
-
-                title_id = parseInt title_id
-                @titles[0].setById title_id if title_id >= 0
-
-                modification_id = parseInt modification_id
-                @modifications[0].setById modification_id if modification_id >= 0
-
                 # We confer title addons before modification addons, to pick an arbitrary ordering.
                 if conferredaddon_pairs?
                     conferredaddon_pairs = conferredaddon_pairs.split ','
                 else
                     conferredaddon_pairs = []
-
-                for title, i in @titles
-                    if title?.data? and title.conferredAddons.length > 0
-                        # console.log "Confer title #{title.data.name} at #{i}"
-                        title_conferred_addon_pairs = conferredaddon_pairs.splice 0, title.conferredAddons.length
-                        for conferredaddon_pair, i in title_conferred_addon_pairs
-                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
-                            addon_id = parseInt addon_id
-                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                            conferred_addon = title.conferredAddons[i]
-                            if conferred_addon instanceof addon_cls
-                                conferred_addon.setById addon_id
-                            else
-                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
-
-                for modification in @modifications
-                    if modification?.data? and modification.conferredAddons.length > 0
-                        modification_conferred_addon_pairs = conferredaddon_pairs.splice 0, modification.conferredAddons.length
-                        for conferredaddon_pair, i in modification_conferred_addon_pairs
-                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
-                            addon_id = parseInt addon_id
-                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                            conferred_addon = modification.conferredAddons[i]
-                            if conferred_addon instanceof addon_cls
-                                conferred_addon.setById addon_id
-                            else
-                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
-
 
                 for upgrade in @upgrades
                     if upgrade?.data? and upgrade.conferredAddons.length > 0
