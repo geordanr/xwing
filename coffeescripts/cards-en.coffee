@@ -688,7 +688,7 @@ exportObj.cardLoaders.English = () ->
         "Agent Kallus":
            text: """Setup: Assign the Hunted condition to 1 enemy ship. While you perform an attack against th eship with the Hunted condition, you may change 1 of your %FOCUS% results to a %HIT% result."""
         "Agile Gunner":
-           text: """In the End Phase you may rotate your %TURRET% indi﻿cator﻿"""
+           text: """In the End Phase you may rotate your %SINGLETURRETARC% indicator"""
         "Andrasta":
            text: """<i>Adds: %RELOAD%</i> %LINEBREAK% Add %DEVICE% slot."""
         "Barrage Rockets":
@@ -768,7 +768,7 @@ exportObj.cardLoaders.English = () ->
         "Expert Handling":
            text: """<i>Requires: <r>%BARRELROLL%</r>. Adds: %BARRELROLL% %LINEBREAK% This upgrade has a variable cost, worth 2, 4, or 6 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Ezra Bridger":
-           text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %TURRET% attack from a %TURRET% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
+           text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %SINGLETURRETARC% attack from a %SINGLETURRETARC% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fearless":
            text: """While you perform a %FRONTARC% primary attack, if the attack range is 1 and you are in the defender's %FRONTARC%, you may change 1 of your results to a %HIT% result."""
         "Feedback Array":
@@ -790,7 +790,7 @@ exportObj.cardLoaders.English = () ->
         "Greedo":
            text: """While you perform an attack, you may spend 1 %CHARGE% to change 1 %HIT% result to a %CRIT% result. While you defend, if your %CHARGE% is active, the attacker may change 1 %HIT% result to a %CRIT% result."""
         "Han Solo":
-           text: """During the Engagement Phase, at initiative 7, you may perform a %TURRET% attack. You cannot attack from that %TURRET% again this round."""
+           text: """During the Engagement Phase, at initiative 7, you may perform a %SINGLETURRETARC% attack. You cannot attack from that %SINGLETURRETARC% again this round."""
         "Han Solo (Scum)":
            text: """Before you engage, you may perform a red %FOCUS% action."""
         "Havoc":
@@ -804,7 +804,7 @@ exportObj.cardLoaders.English = () ->
         "Homing Missiles":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. After you declare the defender, the defender may choose to suffer 1 %HIT% damage. If it does, skip the Attack and Defense Dice steps and the attack is treated as hitting."""
         "Hotshot Gunner":
-           text: """While you perform a %TURRET% attack, after the Modify Defense Dice step, the defender removes 1 focus or calculate token."""
+           text: """While you perform a %SINGLETURRETARC% attack, after the Modify Defense Dice step, the defender removes 1 focus or calculate token."""
         "Hound's Tooth":
            text: """1 Z-95 AF4 headhunter can dock with you."""
         "Hull Upgrade":
@@ -860,7 +860,7 @@ exportObj.cardLoaders.English = () ->
         "Lone Wolf":
            text: """While you defend or perform an attack, if there are no other friendly ships at range 0-2, you may spend 1 %CHARGE% to reroll 1 of your dice."""
         "Luke Skywalker":
-           text: """At the start of the Engagement Phase, you may spend 1 %FORCE% to rotate your %TURRET% indicator."""
+           text: """At the start of the Engagement Phase, you may spend 1 %FORCE% to rotate your %SINGLETURRETARC% indicator."""
         "Magva Yarro":
            text: """After you defend, if the attack hit, you may acquire a lock on the attacker."""
         "Marauder":
