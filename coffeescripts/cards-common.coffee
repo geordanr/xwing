@@ -7039,6 +7039,14 @@ exportObj.basicCardData = ->
             modifier_func: (stats) ->
                 stats.force += 1
        }
+       {
+            name: "Dee Yun Loves Twin Laser Turret"
+            id: 188
+            slot: "Turret"
+            attack: 3
+            range: """2-3"""
+            points: 100
+       }
     ]
 
 
