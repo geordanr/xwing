@@ -1394,7 +1394,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'Soontir Fel Hates Dee Yun'
+            name: 'Soontir Fel'
             type: 'pilot'
             count: 1
         }
@@ -1519,7 +1519,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: '"Whisper" Hates Dee Yun'
+            name: '"Whisper"'
             type: 'pilot'
             count: 1
         }

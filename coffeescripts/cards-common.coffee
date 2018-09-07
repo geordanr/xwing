@@ -1910,7 +1910,6 @@ exportObj.basicCardData = ->
         {
             name: "Blue Squadron Scout"
             id: 37
-            unique: true
             faction: "Rebel Alliance"
             ship: "U-Wing"
             skill: 2
@@ -4261,11 +4260,9 @@ exportObj.basicCardData = ->
               ]
         }
         {
-            name: "Soontir Fel Hates Dee Yun"
+            name: "Soontir Fel"
             id: 179
             unique: true
-            canonical_name: 'Soontir Fel'.canonicalize()
-            xws: "soontirfel" 
             faction: "Galactic Empire"
             ship: "TIE Interceptor"
             skill: 6
@@ -4566,11 +4563,9 @@ exportObj.basicCardData = ->
               ]
         }
         {
-            name: '"Whisper" Hates Dee Yun'
+            name: '"Whisper"'
             id: 199
             unique: true
-            canonical_name: '"Whisper"'.canonicalize()
-            xws: "whisper" 
             faction: "Galactic Empire"
             ship: "TIE Phantom"
             skill: 5
@@ -5078,7 +5073,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: '"Midnight" (Not Lockdown)'
+            name: '"Midnight"'
             id: 233
             unique: true
             faction: "First Order"
