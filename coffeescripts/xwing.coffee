@@ -1581,7 +1581,7 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-charge').hide()
 
-                    @info_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', ').replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto double replace for linked actions
+                    @info_container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
                     
                     if data.data.actionsred?
                         @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actionsred ? data.data.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ', '       
@@ -1652,8 +1652,7 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-charge').hide()
 
-                    @info_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">')
-                    #super ghetto double replace for linked actions
+                    @info_container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actions ? exportObj.ships[data.ship].actions)).join(', ')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
     
                     if ships[data.ship].actionsred?
                         @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', action) for action in (data.ship_override?.actionsred ? exportObj.ships[data.ship].actionsred)).join(', ')
@@ -2465,45 +2464,45 @@ class Ship
         for action in effective_stats.actions
             action_icons.push switch action
                 when 'Focus'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
                 when 'Evade'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i> """
                 when 'Barrel Roll'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i> """
                 when 'Lock'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i> """
                 when 'Boost'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i> """
                 when 'Coordinate'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i> """
                 when 'Jam'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i>"""
-                when 'Recover'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-recover"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-jam"></i> """
                 when 'Reinforce'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-reinforce"></i> """
                 when 'Cloak'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i> """
                 when 'Slam'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i> """
                 when 'Rotate Arc'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i> """
                 when 'Reload'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i> """
                 when 'Calculate'
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i>"""
-                when "<r>> Lock</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i></r>"""
-                when "<r>> Barrel Roll</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i></r>"""
-                when "<r>> Focus</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-focus"></i></r>"""
-                when "<r>> Rotate Arc</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i></r>"""
-                when "<r>> Evade</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i></r>"""
-                when "<r>> Calculate</r>"
-                    """<r>> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-calculate"></i></r>"""
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i> """
+                when "R> Lock"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i>&nbsp;"""
+                when "R> Barrel Roll"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i>&nbsp;"""
+                when "R> Focus"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-focus"></i>&nbsp;"""
+                when "R> Rotate Arc"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i>&nbsp;"""
+                when "> Rotate Arc"
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i>&nbsp;"""
+                when "R> Evade"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i>&nbsp;"""
+                when "R> Calculate"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-calculate"></i>&nbsp;"""
                 else
                     """<span>&nbsp;#{action}<span>"""
 
@@ -2523,8 +2522,6 @@ class Ship
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-coordinate"></i>"""
                 when 'Jam'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-jam"></i>"""
-                when 'Recover'
-                    """<i class="xwing-miniatures-font red xwing-miniatures-font-recover"></i>"""
                 when 'Reinforce'
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-reinforce"></i>"""
                 when 'Cloak'
