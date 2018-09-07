@@ -1037,7 +1037,6 @@ exportObj.basicCardData = ->
             shields: 1
             actions: [
                 "Focus"
-                "Lock"
                 "Coordinate"
             ]
             actionsred: [
@@ -2501,6 +2500,11 @@ exportObj.basicCardData = ->
                 "Astromech"
                 "Title"
             ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Coordinate"
+                ]
         }
         {
              name: "Braylen Stramm"
