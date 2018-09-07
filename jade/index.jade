@@ -127,6 +127,9 @@ html
     script(src=`select2-3.4.0/select2.min.js?${now_ts}`)
     script(src=`bower_components/jquery.qrcode/js/jquery-qrcode.min.js?${now_ts}`)
     script(src=`javascripts/xwing.min.js?${now_ts}`)
+    // Additional stuff for Popups
+    //script(src=`selectnav/respond.min.js?${now_ts}`)
+
     script
       :coffee-script
         $ ->
@@ -273,6 +276,11 @@ html
                   e.preventDefault()
                   window.location.href = window.location.href.replace(/^http:/, 'https:')
 
+//Apparently needs to be at the bottom of page
+//script(src=`selectnav/selectnav.min.js?${now_ts}`)
+//script selectnav('select2-results')
+
+
 #xws
 
 .font-hax
@@ -285,3 +293,4 @@ html
   span(style="font-family: XWingShip")
     | &nbsp;
 img.hidden(src="images/xws-obstacles.png")
+
