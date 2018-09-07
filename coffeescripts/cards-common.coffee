@@ -2295,11 +2295,11 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Torpedo"
-                "Gunner"
+                "Turret"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Turret"
+                "Gunner"
                 "Title"
             ]
         }
@@ -2315,11 +2315,11 @@ exportObj.basicCardData = ->
             slots: [
                 "Force"
                 "Torpedo"
-                "Gunner"
+                "Turret"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Turret"
+                "Gunner"
                 "Title"
             ]
         }
@@ -2333,11 +2333,11 @@ exportObj.basicCardData = ->
             points: 72
             slots: [
                 "Torpedo"
-                "Gunner"
+                "Turret"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Turret"
+                "Gunner"
                 "Title"
             ]
             ship_override:
@@ -2356,11 +2356,11 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Torpedo"
-                "Gunner"
+                "Turret"
                 "Crew"
                 "Crew"
                 "Modification"
-                "Turret"
+                "Gunner"
                 "Title"
             ]
         }
