@@ -20,13 +20,13 @@ exportObj.translations.English =
         "Coordinate": '<i class="xwing-miniatures-font xwing-miniatures-font-coordinate"></i>'
         "Cloak": '<i class="xwing-miniatures-font xwing-miniatures-font-cloak"></i>'
         "Slam": '<i class="xwing-miniatures-font xwing-miniatures-font-slam"></i>'
-        "R> Barrel Roll": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i></r>'
-        "R> Focus": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-focus"></i></r>'
-        "R> Lock": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-lock"></i></r>'
+        "R> Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-barrelroll"></i>'
+        "R> Focus": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-focus"></i>'
+        "R> Lock": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-lock"></i>'
         "> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>'
-        "R> Rotate Arc": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i></r>'
-        "R> Evade": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-evade"></i></r>'
-        "R> Calculate": '<r><i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font xwing-miniatures-font-calculate"></i></r>'
+        "R> Rotate Arc": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-rotatearc"></i>'
+        "R> Evade": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-evade"></i>'
+        "R> Calculate": '<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i> <i class="xwing-miniatures-font red xwing-miniatures-font-calculate"></i>'
     sloticon:
         "Astromech": '<i class="xwing-miniatures-font xwing-miniatures-font-astromech"></i>'
         "Force": '<i class="xwing-miniatures-font xwing-miniatures-font-forcepower"></i>'
@@ -561,7 +561,7 @@ exportObj.cardLoaders.English = () ->
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
         "Sol Sixxa":
            text: """If you would drop a device using a [1 %STRAIGHT%] template, you may drop it using any other speed 1 template instead."""
-        "Soontir Fel Hates Dee Yun":
+        "Soontir Fel":
            text: """At the start of the Engagement Phase, if there is an enemy ship in your %BULLSEYEARC%, gain 1 focus token. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
         "Spice Runner":
            text: """ """
@@ -609,7 +609,7 @@ exportObj.cardLoaders.English = () ->
            text: """ """
         "Wedge Antilles":
            text: """While you perform an attack, the defender rolls 1 fewer defense die."""
-        '"Whisper" Hates Dee Yun':
+        '"Whisper"':
            text: """After you perform an attack that hits, gain 1 evade token. STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Wild Space Fringer":
            text: """SENSOR BLINDSPOT: While you perform a primary attack at range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
@@ -631,7 +631,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform an action, you may spend 1 %CHARGE% to perform a white action, treating it as red. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Lieutenant Bastian":
            text: """After a ship at range 1-2 is dealt a damage card, you may acquire a lock on that ship. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-        '"Midnight" (Not Lockdown)':
+        '"Midnight"':
            text: """While you defend or perform an attack, if you have a lock on the enemy ship, that ship's dice cannot be modified."""
         '"Longshot"':
            text: """While you perform a primary attack at attack range 3, roll 1 additional attack die."""
@@ -1039,7 +1039,9 @@ exportObj.cardLoaders.English = () ->
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
         "Rey (Gunner)":
            text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
-            
+        "Dee Yun Loves Twin Laser Turret":
+           text: """Attack: Perform this attack twice (even against a ship outside your firing arc). %LINEBREAK% Each time this attack hits, the defender suffers 1 damage. Then cancel all dice results."""
+        
     condition_translations =
         'Suppressive Fire':
            text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''
