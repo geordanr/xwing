@@ -220,6 +220,7 @@ exportObj.basicCardData = ->
             agility: 2
             hull: 6
             shields: 4
+            medium: true
             actions: [
                 "Focus"
                 "Lock"
@@ -235,7 +236,6 @@ exportObj.basicCardData = ->
               [ 0, 1, 2, 1, 0, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
-            medium: true
         "HWK-290":
             name: "HWK-290"
             xws: "Hwk-290 Light Freighter".canonicalize()

@@ -675,6 +675,10 @@ class exportObj.SquadBuilder
                             <td class="info-header">Ship</td>
                             <td class="info-data"></td>
                         </tr>
+                        <tr class="info-base">
+                            <td class="info-header">Base</td>
+                            <td class="info-data"></td>
+                        </tr>
                         <tr class="info-skill">
                             <td class="info-header">Initiative</td>
                             <td class="info-data info-skill"></td>
@@ -1532,6 +1536,15 @@ class exportObj.SquadBuilder
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
                     @info_container.find('tr.info-ship').show()
+
+                    if data.data.large?
+                        @info_container.find('tr.info-base td.info-data').text "Large"
+                    else if data.data.medium?
+                        @info_container.find('tr.info-base td.info-data').text "Medium"
+                    else
+                        @info_container.find('tr.info-base td.info-data').text "Small"
+                    @info_container.find('tr.info-base').show()
+                    
                     @info_container.find('tr.info-skill td.info-data').text statAndEffectiveStat(data.pilot.skill, effective_stats, 'skill')
                     @info_container.find('tr.info-skill').show()
 
@@ -1606,6 +1619,16 @@ class exportObj.SquadBuilder
                     ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
                     @info_container.find('tr.info-ship').show()
+                    
+                    if ship.large?
+                        @info_container.find('tr.info-base td.info-data').text "Large"
+                    else if ship.medium?
+                        @info_container.find('tr.info-base td.info-data').text "Medium"
+                    else
+                        @info_container.find('tr.info-base td.info-data').text "Small"
+                    @info_container.find('tr.info-base').show()
+
+                    
                     @info_container.find('tr.info-skill td.info-data').text data.skill
                     @info_container.find('tr.info-skill').show()
                     
@@ -1677,6 +1700,7 @@ class exportObj.SquadBuilder
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
+                    @info_container.find('tr.info-base').hide()
                     @info_container.find('tr.info-skill').hide()
                     if data.energy?
                         @info_container.find('tr.info-energy td.info-data').text data.energy

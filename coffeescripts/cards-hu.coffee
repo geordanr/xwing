@@ -45,7 +45,7 @@ exportObj.translations.English =
         "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
-    slot:
+    slot: #EDIT THIS
         "Astromech": "Astromech"
         "Force": "Force"
         "Bomb": "Bomb"
@@ -64,7 +64,7 @@ exportObj.translations.English =
         "Device": "Device"
         "Tech": "Tech"
         "Title": "Title"
-    sources: # needed?
+    sources: #EDIT THIS
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
