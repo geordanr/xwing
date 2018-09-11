@@ -6214,6 +6214,7 @@ exportObj.basicCardData = ->
            points: 6
            attack: 3
            range: """2-3"""
+           rangebonus: true 
            charge: 5
            restriction_func: (ship, upgrade_obj) ->
                ship.hasAnotherUnoccupiedSlotLike upgrade_obj
@@ -6228,6 +6229,7 @@ exportObj.basicCardData = ->
            points: 5
            attack: 3
            range: """1-2"""
+           rangebonus: true 
            charge: 4
        }
        {
@@ -6237,6 +6239,7 @@ exportObj.basicCardData = ->
            points: 6
            attack: 3
            range: """2-3"""
+           rangebonus: true 
            charge: 3
        }
        {
@@ -6246,6 +6249,7 @@ exportObj.basicCardData = ->
            points: 3
            attack: 4
            range: """2-3"""
+           rangebonus: true 
            charge: 2
        }
        {
@@ -6255,6 +6259,7 @@ exportObj.basicCardData = ->
            points: 4
            attack: 3
            range: """2-3"""
+           rangebonus: true 
            charge: 3
        }
        {
@@ -6264,6 +6269,7 @@ exportObj.basicCardData = ->
            points: 7
            attackbull: 5
            range: """1-2"""
+           rangebonus: true 
            charge: 1
        }
        {
@@ -6506,6 +6512,7 @@ exportObj.basicCardData = ->
            points: 6
            attack: 5
            range: """1"""
+           rangebonus: true 
            charge: 1
        }
        {
@@ -6515,6 +6522,7 @@ exportObj.basicCardData = ->
            points: 6
            attack: 4
            range: """2-3"""
+           rangebonus: true 
            charge: 2
        }
        {
@@ -6524,6 +6532,7 @@ exportObj.basicCardData = ->
            points: 9
            attack: 4
            range: """2-3"""
+           rangebonus: true 
            charge: 2
        }
        {
