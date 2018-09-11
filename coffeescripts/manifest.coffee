@@ -1231,7 +1231,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Alpha-Class Star Wing'
             type: 'ship'
-            count: 2
+            count: 3
         }
         {
             name: 'TIE Advanced Prototype'
@@ -1291,7 +1291,7 @@ exportObj.manifestByExpansion =
         {
             name: 'VT-49 Decimator'
             type: 'ship'
-            count: 3
+            count: 2
         }
         {
             name: 'Ved Foslo'
