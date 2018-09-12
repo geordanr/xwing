@@ -652,7 +652,7 @@ class exportObj.SquadBuilder
                         <button class="btn btn-primary choose-obstacles">Choose Obstacles</button>
                     </span>
                  </div>
-               <div class="span3 info-container" />
+               <div class="span3 info-container" id="info-container" />
             </div>
         """
 
@@ -2457,6 +2457,10 @@ class Ship
             @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.english_name} if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
+        @pilot_selector.data('select2').container.on 'touchmove', (e) =>
+            @builder.showTooltip 'Ship', this if @data?
+            scrollTo(0,$('#info-container').offset().top - 10,'smooth')
+            
 
         @pilot_selector.data('select2').container.hide()
 
@@ -3093,6 +3097,9 @@ class GenericAddon
             @ship.builder.showTooltip 'Addon', @dataById[select2_data.id], {addon_type: @type} if select2_data?.id?
         @selector.data('select2').container.on 'mouseover', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
+        @selector.data('select2').container.on 'touchmove', (e) =>
+            @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
+            scrollTo(0,$('#info-container').offset().top - 10,'smooth')                
 
     setById: (id) ->
         @setData @dataById[parseInt id]
