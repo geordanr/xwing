@@ -2623,7 +2623,7 @@ class Ship
                     #{chargeHTML}
                     &nbsp;
                     #{action_bar}
-                    &nbsp;
+                    &nbsp;&nbsp;
                     #{action_bar_red}
                 </div>
             </div>
