@@ -1,6 +1,8 @@
 ## YASB 2.0 Bug Report
 
-**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. Unless you're Dee Yun, in which case it's wholly intentional.
+**Note:** If your page doesn't load, try a hard refresh first. I update at random hours of the day and you may have been accessing the page at one of those times. 
+**Note 2:** If you find your collection has extra ships, this is expected. In order to allow loose ships I have added ships for each kit based on what the kit can convert. This has to be done right now otherwise you would not be able to add loose ships. Until I have time to overhaul the collection system, or all the existing ships are released in their own blister packs, this is the only way to allow loose ships being added.
+
 
 ### Expected Behavior
 
