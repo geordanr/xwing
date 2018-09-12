@@ -854,9 +854,7 @@ exportObj.cardLoaders.English = () ->
         "Ketsu Onyo":
            text: """At the start of the End Phase, you may choose 1 enemy ship at range 0-2 in your firing arc. If you do, that ship does not remove its tractor tokens."""
         "L3-37":
-           text: """Setup: Equip this side faceup. While you defend, you may flip this card. If you do, the attack must reroll all attack dice"""
-        "L3-37's Programming":
-           text: """If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
+           text: """<b>L3-37:</b> Setup: Equip this side faceup. %LINEBREAK% While you defend, you may flip this card. If you do, the attack must reroll all attack dice %LINEBREAK% <b>L3-37's Programming:</b> If you are not shielded, decrease the difficulty of your bank (%BANKLEFT% and %BANKRIGHT%) maneuvers."""
         "Lando Calrissian":
            text: """Action: Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":

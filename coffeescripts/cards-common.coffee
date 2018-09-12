@@ -6615,6 +6615,7 @@ exportObj.basicCardData = ->
        {
            name: "L3-37's Programming"
            id: 145
+           skip: true 
            points: 0
            slot: "Configuration"
            faction: "Scum and Villainy"

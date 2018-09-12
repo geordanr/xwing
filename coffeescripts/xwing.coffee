@@ -287,7 +287,7 @@ class exportObj.SquadBuilder
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="color-print-checkbox">
-                    Print color <input type="checkbox" class="toggle-color-print" />
+                    Print color <input type="checkbox" class="toggle-color-print" checked="checked"/>
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
