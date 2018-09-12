@@ -2575,24 +2575,29 @@ class Ship
         attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
 
         attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
-            <i class="xwing-miniatures-font #{attack_icon}"></i>
+            <i class="xwing-miniatures-font header-attack #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
 
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
+            <i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i>
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
         """ else ''
             
         forceHTML = if (@pilot.force?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>
-            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}</span>
+            <i class="xwing-miniatures-font header-force xwing-miniatures-font-forcecharge"></i>
+            <span class="info-data info-force">#{statAndEffectiveStat((@pilot.ship_override?.force ? @pilot.force), effective_stats, 'force')}<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i></span>
         """ else ''
 
-        chargeHTML = if (@pilot.charge?) then $.trim """
-            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>
-            <span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}</span>
-        """ else ''
+        if @pilot.charge?
+            if @pilot.recurring?
+                chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i>
+                <span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i></span>""" 
+            else
+                chargeHTML = $.trim """<i class="xwing-miniatures-font header-charge xwing-miniatures-font-charge"></i>
+                <span class="info-data info-charge">#{statAndEffectiveStat((@pilot.ship_override?.charge ? @pilot.charge), effective_stats, 'charge')}</span>""" 
+        else 
+            chargeHTML = ''
 
         html = $.trim """
             <div class="fancy-pilot-header">
@@ -2608,11 +2613,11 @@ class Ship
                     <span class="info-data info-skill">PS #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
                     #{energyHTML}
-                    <i class="xwing-miniatures-font xwing-miniatures-font-agility"></i>
+                    <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-hull"></i>
+                    <i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i>
                     <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-shield"></i>
+                    <i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i>
                     <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
                     #{forceHTML}
                     #{chargeHTML}
