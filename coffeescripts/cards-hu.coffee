@@ -1049,8 +1049,6 @@ exportObj.cardLoaders.English = () ->
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
         "Rey (Gunner)":
            text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
-        "Dee Yun Loves Twin Laser Turret":
-           text: """Attack: Perform this attack twice (even against a ship outside your firing arc). %LINEBREAK% Each time this attack hits, the defender suffers 1 damage. Then cancel all dice results."""
         
     condition_translations =
         'Suppressive Fire':
