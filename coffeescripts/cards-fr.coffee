@@ -5,7 +5,7 @@ exportObj.codeToLanguage.fr = 'Français'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.French =
+exportObj.translations['Français'] =
     action: #do not change this anymore. We use Icons instead of words
         "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
         "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
@@ -47,97 +47,99 @@ exportObj.translations.French =
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
     slot:
         "Astromech": "Astromech"
-        "Force": "Force"
-        "Bomb": "Bomb"
-        "Cannon": "Cannon"
-        "Crew": "Crew"
+        "Force": "Pouvoir de la Force"
+        "Bomb": "Bombe"
+        "Cannon": "Canon"
+        "Crew": "Équipage"
         "Missile": "Missile"
-        "Sensor": "Sensor"
-        "Torpedo": "Torpedo"
-        "Turret": "Turret"
-        "Hardpoint": "Hardpoint"
-        "Illicit": "Illicit"
+        "Sensor": "Senseur"
+        "Torpedo": "Torpille"
+        "Turret": "Tourelle"
+        "Hardpoint": "Point d'attache"
+        "Illicit": "Illégal"
         "Configuration": "Configuration"
         "Talent": "Talent"
         "Modification": "Modification"
-        "Gunner": "Gunner"
-        "Device": "Device"
-        "Tech": "Tech"
-        "Title": "Title"
+        "Gunner": "Artilleur"
+        "Device": "Engin"
+        "Tech": "Technologie"
+        "Title": "Titre"
     sources: # needed?
-        "Second Edition Core Set": "Second Edition Core Set"
-        "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
-        "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
-        "T-65 X-Wing Expansion Pack": "T-65 X-Wing Expansion Pack"
-        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4 Y-Wing Expansion Pack"
-        "TIE/ln Fighter Expansion Pack": "TIE/ln Fighter Expansion Pack"
-        "TIE Advanced x1 Expansion Pack": "TIE Advanced x1 Expansion Pack"
-        "Slave 1 Expansion Pack": "Slave 1 Expansion Pack"
-        "Fang Fighter Expansion Pack": "Fang Fighter Expansion Pack"
-        "Lando's Millennium Falcon Expansion Pack": "Lando's Millennium Falcon Expansion Pack"
-        "Saw's Renegades Expansion Pack": "Saw's Renegades Expansion Pack"
-        "TIE Reaper Expansion Pack": "TIE Reaper Expansion Pack"
+        "Second Edition Core Set": "Boîte de base 2.0"
+        "Rebel Alliance Conversion Kit": "Kit de Conversion Alliance Rebelle"
+        "Galactic Empire Conversion Kit": "Kit de Conversion Empire Galactique"
+        "Scum and Villainy Conversion Kit": "Kit de Conversion Racailles et Scélérats"
+        "T-65 X-Wing Expansion Pack": "Paquet d'extension T-65 X-Wing"
+        "BTL-A4 Y-Wing Expansion Pack": "Paquet d'extension BTL-A4 Y-Wing"
+        "TIE/ln Fighter Expansion Pack": "Paquet d'extension Chasseur TIE/ln"
+        "TIE Advanced x1 Expansion Pack": "Paquet d'extension TIE Advanced x1"
+        "Slave I Expansion Pack": "Paquet d'extension Slave I"
+        "Fang Fighter Expansion Pack": "Paquet d'extension Chasseur Fang"
+        "Lando's Millennium Falcon Expansion Pack": "Paquet d'extension Faucon Millenium de Lando"
+        "Saw's Renegades Expansion Pack": "Paquet d'extension Les Renégats de saw"
+        "TIE Reaper Expansion Pack": "Paquet d'extension TIE Reaper"
     ui:
-        shipSelectorPlaceholder: "Select a ship"
-        pilotSelectorPlaceholder: "Select a pilot"
+        shipSelectorPlaceholder: "Choisissez un vaisseau"
+        pilotSelectorPlaceholder: "Choisissez un pilot"
         upgradePlaceholder: (translator, language, slot) ->
-            "No #{translator language, 'slot', slot} Upgrade"
-        modificationPlaceholder: "No Modification"
-        titlePlaceholder: "No Title"
+            "#{translator language, 'slot', slot} (sans amélioration)"
+        modificationPlaceholder: "Pas de modification"
+        titlePlaceholder: "Pas de titre"
         upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Upgrade"
-        unreleased: "unreleased"
-        epic: "epic"
-        limited: "limited"
+            "#{translator language, 'slot', slot}"
+        unreleased: "inédit"
+        epic: "épique"
+        limited: "limité"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
-        '.epic-content-used .translated': 'This squad uses Epic content!'
-        '.illegal-epic-too-many-small-ships .translated': 'You may not field more than 12 of the same type Small ship!'
-        '.illegal-epic-too-many-large-ships .translated': 'You may not field more than 6 of the same type Large ship!'
-        '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        '.unreleased-content-used .translated': 'Cet escadron utilise du contenu inédit !'
+        '.epic-content-used .translated': 'Cet escadron utilise du contenu épique !'
+        '.illegal-epic-too-many-small-ships .translated': 'Vous ne pouvez pas ajouter plus de 12 Petits vaisseaux du même !'
+        '.illegal-epic-too-many-large-ships .translated': 'Vous ne pouvez pas ajouter plus de 12 Grands vaisseaux du même type !'
+        '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="custom"]': 'Custom'
-        '.game-type-selector option[value="epic"]': 'Epic'
-        '.game-type-selector option[value="team-epic"]': 'Team Epic'
+        '.game-type-selector option[value="custom"]': 'Personnalisé'
+        '.game-type-selector option[value="epic"]': 'Épique'
+        '.game-type-selector option[value="team-epic"]': 'Épique en équipe'
         # Card browser
-        '.xwing-card-browser option[value="name"]': 'Name'
+        '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
-        '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
-        '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
+        '.xwing-card-browser option[value="type-by-points"]': 'Type (par Points)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Type (par Nom)'
+        '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte dans la liste à gauche.'
+        '.xwing-card-browser .translate.sort-cards-by': 'Trier les cartes par'
         # Info well
-        '.info-well .info-ship td.info-header': 'Ship'
+        '.info-well .info-ship td.info-header': 'Vaisseau'
         '.info-well .info-skill td.info-header': 'Initiative'
         '.info-well .info-actions td.info-header': 'Actions'
-        '.info-well .info-upgrades td.info-header': 'Upgrades'
-        '.info-well .info-range td.info-header': 'Range'
+        '.info-well .info-upgrades td.info-header': 'Améliorations'
+        '.info-well .info-range td.info-header': 'Portée'
         # Squadron edit buttons
-        '.clear-squad' : 'New Squad'
-        '.save-list' : 'Save'
-        '.save-list-as' : 'Save as…'
-        '.delete-list' : 'Delete'
-        '.backend-list-my-squads' : 'Load squad'
-        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text'
-        '.randomize' : 'Random!'
-        '.randomize-options' : 'Randomizer options…'
-        '.notes-container > span' : 'Squad Notes'
+        '.clear-squad' : 'Nouvel escadron'
+        '.save-list' : 'Enregistrer'
+        '.save-list-as' : 'Enregistrer sous…'
+        '.delete-list' : 'Supprimer'
+        '.backend-list-my-squads' : 'Charger un escadron'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Imprimer/</span>Exporter'
+        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Votre collection</a>'
+        '.randomize' : 'Aléatoire !'
+        '.randomize-options' : 'Options…'
+        '.notes-container > span' : 'Notes sur l\'escadron'
         # Print/View modal
-        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
+        '.bbcode-list' : 'Copiez le BBCode ci-dessous et collez-le dans votre post.<textarea></textarea><button class="btn btn-copy">Copiez</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copiez</button>'
+        '.vertical-space-checkbox' : """Ajouter de l'espace pour les cartes d'amélioration et de dégâts lors de l'impression <input type="checkbox" class="toggle-vertical-space" />"""
+        '.color-print-checkbox' : """Imprimer en couleur <input type="checkbox" class="toggle-color-print" />"""
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Imprimer'
         # Randomizer options
-        '.do-randomize' : 'Randomize!'
+        '.do-randomize' : 'Générer aléatoirement !'
         # Top tab bar
         '#browserTab' : 'Cartes'
-        '#aboutTab' : 'About'
+        '#aboutTab' : 'À propos'
         # Obstacles
-        '.choose-obstacles' : 'Choose Obstacles'
-        '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (This feature is in BETA; support for displaying which obstacles were selected in the printout is not yet supported.)'
+        '.choose-obstacles' : 'Choisir des obstacles'
+        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'
         '.coreasteroid2-select' : 'Core Asteroid 2'
@@ -156,18 +158,21 @@ exportObj.translations.French =
         '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
         '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
         '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        # Import/Export
+        '.from-xws' : 'Importer depuis XWS (beta)'
+        '.to-xws' : 'Importer vers XWS (beta)'
 
     singular:
-        'pilots': 'Pilot'
+        'pilots': 'Pilotes'
         'modifications': 'Modification'
-        'titles': 'Title'
+        'titles': 'Titres'
     types:
-        'Pilot': 'Pilot'
+        'Pilot': 'Pilote'
         'Modification': 'Modification'
-        'Title': 'Title'
+        'Title': 'Titre'
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.French = () ->
+exportObj.cardLoaders['Français'] = () ->
     exportObj.cardLanguage = 'Français'
 
     # Assumes cards-common has been loaded
