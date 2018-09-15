@@ -104,6 +104,7 @@ class exportObj.SquadBuilder
             points: 100
         @total_points = 0
         @isCustom = false
+        @isSecondEdition = false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
 
@@ -193,6 +194,7 @@ class exportObj.SquadBuilder
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
                         <option value="standard">Standard</option>
+                        <option value="second_edition">Second Edition (not Extended)</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -960,16 +962,27 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
+        oldSecondEdition = @isSecondEdition
         switch gametype
             when 'standard'
+                @isSecondEdition = false
+                @isCustom = false
+                @desired_points_input.val 200
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
+            when 'second_edition'
+                @isSecondEdition = true
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'custom'
+                @isSecondEdition = false
                 @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
+        if (oldSecondEdition != @isSecondEdition)
+            @newSquadFromScratch()
         @onPointsUpdated cb
 
     onPointsUpdated: (cb=$.noop) =>
@@ -1095,6 +1108,8 @@ class exportObj.SquadBuilder
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
+            when 'second_edition'
+                'se'
             when 'custom'
                 "c=#{$.trim @desired_points_input.val()}"
         """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
@@ -1116,6 +1131,9 @@ class exportObj.SquadBuilder
                     switch game_type_abbrev
                         when 's'
                             @game_type_selector.val 'standard'
+                            @game_type_selector.change()
+                        when 'se'
+                            @game_type_selector.val 'second_edition'
                             @game_type_selector.change()
                         else
                             @game_type_selector.val 'custom'
@@ -1219,19 +1237,20 @@ class exportObj.SquadBuilder
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and @matcher(ship_data.name, term)
-                if not ship_data.huge or @isCustom
-                    ships.push
-                        id: ship_data.name
-                        text: ship_data.name
-                        english_name: ship_data.english_name
-                        canonical_name: ship_data.canonical_name
+                if (not @isSecondEdition or exportObj.secondEditionCheck(ship_data, @faction))
+                    if not ship_data.huge or @isCustom
+                        ships.push
+                            id: ship_data.name
+                            text: ship_data.name
+                            english_name: ship_data.english_name
+                            canonical_name: ship_data.canonical_name
         ships.sort exportObj.sortHelper
 
         
         
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term) and (not @isSecondEdition or exportObj.secondEditionCheck(pilot)))
 
         eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()))
 
@@ -1256,8 +1275,8 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)))
-        
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
+
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
@@ -1293,7 +1312,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_modifications_in_use = (modification.data for modification in ship.modifications when modification?.data?.limited?)
 
-        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
+        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not @isSecondEdition or exportObj.secondEditionCheck(modification)))
 
         if filter_func != @dfl_filter_func
             available_modifications = (modification for modification in available_modifications when filter_func(modification))
