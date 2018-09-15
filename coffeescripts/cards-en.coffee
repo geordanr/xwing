@@ -792,7 +792,7 @@ exportObj.cardLoaders.English = () ->
         '"Genius"':
            text: """After you fully execute a maneuver, if you have not dropped or launched a device this round, you may drop 1 bomb."""
         "Ghost":
-           text: """You can dock 1 attack shuttle or Sheathipede-class shuttle. Your docked ships can deploy only from your rear guides."""
+           text: """You can dock 1 attack shuttle or Sheathipede-Class shuttle. Your docked ships can deploy only from your rear guides."""
         "Grand Inquisitor":
            text: """After an enemy ship at range 0-2 reveals its dial, you may spend 1 %FORCE% to perform 1 white action on your action bar, treating that action as red."""
         "Grand Moff Tarkin":
