@@ -9,6 +9,29 @@ exportObj.isReleased = (data) ->
         return true if source not in exportObj.unreleasedExpansions
     false
 
+exportObj.secondEditionExpansions = [
+    'Second Edition Core Set',
+    "Saw's Renegades Expansion Pack",
+    'TIE Reaper Expansion Pack',
+    'BTL-A4 Y-Wing Expansion Pack',
+    'TIE/ln Fighter Expansion Pack',
+    'TIE Advanced x1 Expansion Pack',
+    'Slave I Expansion Pack',
+    'Fang Fighter Expansion Pack',
+    "Lando's Millennium Falcon Expansion Pack"
+]
+
+exportObj.secondEditionCheck = (data, faction='') ->
+    # Handle special cases
+    if (data.name == 'Y-Wing' and faction == 'Scum and Villainy')
+        return false
+    else if (data.name == 'TIE Fighter' and faction == 'Rebel Alliance')
+        return false
+
+    for source in data.sources
+        return true if source in exportObj.secondEditionExpansions
+    false
+
 String::canonicalize = ->
     this.toLowerCase()
         .replace(/[^a-z0-9]/g, '')
@@ -7223,6 +7246,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name ?= ship_name
         ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.sources = []
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
@@ -7239,8 +7263,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
                     when 'ship'
-                        # Not used for sourcing
-                        ''
+                        exportObj.ships[card.name].sources.push expansion
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
