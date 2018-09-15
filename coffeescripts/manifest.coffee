@@ -3526,6 +3526,7 @@ class exportObj.Collection
     constructor: (args) ->
         @expansions = args.expansions ? {}
         @singletons = args.singletons ? {}
+        @checkforcollection = args.checks ? {}
         # To save collection (optional)
         @backend = args.backend
 
@@ -3633,6 +3634,11 @@ class exportObj.Collection
             sorted_names = (name for name of names).sort(sortWithoutQuotes)
             singletonsByType[type] = sorted_names
 
+        if @checkforcollection.check = 'checked'
+            checkcollectionsaved = '''checked="checked"'''
+        else
+            checkcollectionsaved = ' '
+            
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
         $('body').append @modal
@@ -3659,6 +3665,10 @@ class exportObj.Collection
             </div>
             <div class="modal-footer hidden-print">
                 <span class="collection-status"></span>
+                &nbsp;
+                <label class="qrcode-checkbox hidden-phone">
+                    Check Collection Requirements <input type="checkbox" class="check-collection" #{checkcollectionsaved} />
+                </label>
                 &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
@@ -3801,6 +3811,7 @@ class exportObj.Collection
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 5000
         .on 'xwing:languageChanged', @onLanguageChange
+        .on 'xwing:collectionCheck:saved', @onCollectionCheckChange
 
         $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
@@ -3824,6 +3835,18 @@ class exportObj.Collection
             # console.log "Input changed, triggering collection change"
             $(exportObj).trigger 'xwing-collection:changed', this
 
+        $ @modal.find('.check-collection').change =>
+            if @checked
+                result = true
+                @modal_status.text """Collection Tracking Active"""
+            else
+                result = false
+                @modal_status.text """Collection Tracking Disabled"""
+            $(exportObj).trigger 'xwing:collectionCheck:saved', this
+            $(exportObj).trigger 'xwing-collection:changed', this
+            @modal_status.fadeIn 100, =>
+                @modal_status.fadeOut 5000
+            
     countToBackgroundColor: (count) ->
         count = parseInt(count)
         switch
@@ -3844,3 +3867,9 @@ class exportObj.Collection
                         # console.log "translating #{$(this).text()} (#{$(this).data('english_name')}) to #{language}"
                         $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
                 @language = language
+
+    onCollectionCheckChange: =>
+            if @modal.find('.expansion-name').prop('checked') != @checkforcollection.check
+                console.log "Check Altered"
+                @checkforcollection.check = @modal.find('.expansion-name').prop('checked')
+                

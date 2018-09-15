@@ -659,6 +659,7 @@ class exportObj.SquadBuilderBackend
         post_args =
             expansions: collection.expansions
             singletons: collection.singletons
+            checks: collection.checkforcollections
         $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
             cb data.success
 
@@ -669,3 +670,4 @@ class exportObj.SquadBuilderBackend
             new exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
+                checks: collection.checkforcollections
