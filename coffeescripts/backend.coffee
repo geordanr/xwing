@@ -655,12 +655,16 @@ class exportObj.SquadBuilderBackend
             else
                 cb 'English'
 
+    getCollectionCheck: (settings, cb=$.noop) =>
+        if settings?.collectioncheck?
+            cb settings.collectioncheck
+        else
+            cb true
+                
     saveCollection: (collection, cb=$.noop) ->
         post_args =
             expansions: collection.expansions
             singletons: collection.singletons
-            checks: collection.checks
-        console.log "Checking values: #{post_args.checks}"
         $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
             cb data.success
 
@@ -671,4 +675,3 @@ class exportObj.SquadBuilderBackend
             new exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
-                checks: collection.checks

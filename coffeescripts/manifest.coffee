@@ -3494,9 +3494,6 @@ exportObj.manifestByExpansion =
     ]        
 
 
-exportObj.manifestSettings = 
-    check: true
-
 class exportObj.Collection
     # collection = new exportObj.Collection
     #   expansions:
@@ -3540,6 +3537,7 @@ class exportObj.Collection
         @reset()
 
         @language = 'English'
+        @collectioncheck = true
 
     reset: ->
         @shelf = {}
@@ -3637,8 +3635,9 @@ class exportObj.Collection
         for type, names of singletonsByType
             sorted_names = (name for name of names).sort(sortWithoutQuotes)
             singletonsByType[type] = sorted_names
-
-        if @checks[0] == true #check is false because we want to default to checking collection
+        
+            
+        if @collectioncheck == true #check is false because we want to default to checking collection
             checkcollectionsaved = ' '
         else
             checkcollectionsaved = '''checked="checked"'''
@@ -3670,7 +3669,7 @@ class exportObj.Collection
             <div class="modal-footer hidden-print">
                 <span class="collection-status"></span>
                 &nbsp;
-                <label class="qrcode-checkbox hidden-print">
+                <label class="qrcode-checkbox hidden">
                     Check Collection Requirements <input type="checkbox" class="check-collection" #{checkcollectionsaved} />
                 </label>
                 &nbsp;
@@ -3815,6 +3814,7 @@ class exportObj.Collection
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 5000
         .on 'xwing:languageChanged', @onLanguageChange
+        .on 'xwing:CollectionCheckChanged', @onCollectionCheckChange
 
         $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
@@ -3845,15 +3845,10 @@ class exportObj.Collection
             else
                 result = true
                 @modal_status.text """Collection Tracking Disabled"""
-            if @checks[0]
-                @checks[0] = result
-            else
-                array = []
-                array.push result
-                @checks = array
+            @collectioncheck = result
             @modal_status.fadeIn 100, =>
                 @modal_status.fadeOut 5000
-            $(exportObj).trigger 'xwing-collection:changed', this
+            $(exportObj).trigger 'xwing:CollectionCheckChanged', this
             
     countToBackgroundColor: (count) ->
         count = parseInt(count)
@@ -3876,3 +3871,8 @@ class exportObj.Collection
                         $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
                 @language = language
 
+    onCollectionCheckChange:
+        (e, check) =>
+            console.log "#{@collectioncheck} vs. #{check}"
+            if check != @collectioncheck
+                @collectioncheck = check
