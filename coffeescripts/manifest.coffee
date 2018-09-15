@@ -3526,7 +3526,6 @@ class exportObj.Collection
     constructor: (args) ->
         @expansions = args.expansions ? {}
         @singletons = args.singletons ? {}
-        @looseships = args.looseships ? {}
         # To save collection (optional)
         @backend = args.backend
 
