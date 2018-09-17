@@ -9,6 +9,30 @@ exportObj.isReleased = (data) ->
         return true if source not in exportObj.unreleasedExpansions
     false
 
+exportObj.secondEditionExpansions = [
+    'Second Edition Core Set',
+    "Saw's Renegades Expansion Pack",
+    'TIE Reaper Expansion Pack',
+    'T-65 X-Wing Expansion Pack',
+    'BTL-A4 Y-Wing Expansion Pack',
+    'TIE/ln Fighter Expansion Pack',
+    'TIE Advanced x1 Expansion Pack',
+    'Slave I Expansion Pack',
+    'Fang Fighter Expansion Pack',
+    "Lando's Millennium Falcon Expansion Pack"
+]
+
+exportObj.secondEditionCheck = (data, faction='') ->
+    # Handle special cases
+    if (data.name == 'Y-Wing' and faction == 'Scum and Villainy')
+        return false
+    else if (data.name == 'TIE Fighter' and faction == 'Rebel Alliance')
+        return false
+
+    for source in data.sources
+        return true if source in exportObj.secondEditionExpansions
+    false
+
 String::canonicalize = ->
     this.toLowerCase()
         .replace(/[^a-z0-9]/g, '')
@@ -306,7 +330,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 3, 2, 2, 2, 3, 0, 0, 0, 3, 3]
               [ 1, 1, 2, 1, 1, 3, 0, 0, 0, 0]
-              [ 0, 3, 1, 3, 0, 0, 0, 0, 0, 0]
+              [ 0, 3, 2, 3, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
             ]
         "TIE Bomber":
@@ -482,7 +506,7 @@ exportObj.basicCardData = ->
             ]
         "StarViper":
             name: "StarViper"
-            xws: "Starviper-class Attack Platform".canonicalize()
+            xws: "Starviper-Class Attack Platform".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 3
@@ -820,9 +844,9 @@ exportObj.basicCardData = ->
                 [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
             ]
-        "Lancer-class Pursuit Craft":
-            name: "Lancer-class Pursuit Craft"
-            xws: "Lancer-class Pursuit Craft".canonicalize()
+        "Lancer-Class Pursuit Craft":
+            name: "Lancer-Class Pursuit Craft"
+            xws: "Lancer-Class Pursuit Craft".canonicalize()
             factions: ["Scum and Villainy"]
             large: true
             attack: 3
@@ -1187,9 +1211,9 @@ exportObj.basicCardData = ->
               [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0]
               [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "TIE/sf Fighter":
-            name: "TIE/sf Fighter"
-            xws: "TIE/sf Fighter".canonicalize()
+        "TIE/SF Fighter":
+            name: "TIE/SF Fighter"
+            xws: "TIE/SF Fighter".canonicalize()
             factions: ["First Order"]
             attack: 0
             attackt: 0
@@ -1216,9 +1240,9 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "Upsilon-class Shuttle":
-            name: "Upsilon-class Shuttle"
-            xws: "Upsilon-class Shuttle".canonicalize()
+        "Upsilon-Class Shuttle":
+            name: "Upsilon-Class Shuttle"
+            xws: "Upsilon-Class Shuttle".canonicalize()
             factions: ["First Order"]
             attack: 0
             agility: 0
@@ -3115,7 +3139,6 @@ exportObj.basicCardData = ->
             skill: 2
             points: 66
             slots: [
-                "Talent"
                 "Cannon"
                 "Missile"
                 "Crew"
@@ -3408,7 +3431,7 @@ exportObj.basicCardData = ->
             id: 125
             unique: true
             faction: "Scum and Villainy"
-            ship: "Lancer-class Pursuit Craft"
+            ship: "Lancer-Class Pursuit Craft"
             skill: 4
             points: 84
             force: 2
@@ -3426,7 +3449,7 @@ exportObj.basicCardData = ->
             id: 126
             unique: true
             faction: "Scum and Villainy"
-            ship: "Lancer-class Pursuit Craft"
+            ship: "Lancer-Class Pursuit Craft"
             skill: 5
             points: 74
             slots: [
@@ -3444,7 +3467,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "sabinewren-lancerclasspursuitcraft"
             faction: "Scum and Villainy"
-            ship: "Lancer-class Pursuit Craft"
+            ship: "Lancer-Class Pursuit Craft"
             skill: 3
             points: 68
             slots: [
@@ -3460,7 +3483,7 @@ exportObj.basicCardData = ->
             name: "Shadowport Hunter"
             id: 128
             faction: "Scum and Villainy"
-            ship: "Lancer-class Pursuit Craft"
+            ship: "Lancer-Class Pursuit Craft"
             skill: 2
             points: 64
             slots: [
@@ -5146,7 +5169,7 @@ exportObj.basicCardData = ->
             id: 238
             unique: true
             faction: "First Order"
-            ship: "Upsilon-class Shuttle"
+            ship: "Upsilon-Class Shuttle"
             skill: 0
             points: 100
             slots: [
@@ -5205,7 +5228,7 @@ exportObj.basicCardData = ->
             id: 242
             unique: true
             faction: "First Order"
-            ship: "TIE/sf Fighter"
+            ship: "TIE/SF Fighter"
             skill: 4
             points: 100
             slots: [
@@ -5221,7 +5244,7 @@ exportObj.basicCardData = ->
             id: 243
             unique: true
             faction: "First Order"
-            ship: "TIE/sf Fighter"
+            ship: "TIE/SF Fighter"
             skill: 0
             points: 100
             slots: [
@@ -6802,7 +6825,7 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Scum and Villainy"
-           ship: "Lancer-class Pursuit Craft"
+           ship: "Lancer-Class Pursuit Craft"
        }
        {
            name: "Slave I"
@@ -7223,6 +7246,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for ship_name, ship_data of basic_cards.ships
         ship_data.english_name ?= ship_name
         ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.sources = []
 
     # Set sources from manifest
     for expansion, cards of exportObj.manifestByExpansion
@@ -7239,8 +7263,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
                     when 'ship'
-                        # Not used for sourcing
-                        ''
+                        exportObj.ships[card.name].sources.push expansion
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e

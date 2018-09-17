@@ -104,8 +104,7 @@ class exportObj.SquadBuilder
             points: 100
         @total_points = 0
         @isCustom = false
-        @isEpic = false
-        @maxEpicPointsAllowed = 0
+        @isSecondEdition = false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
 
@@ -195,15 +194,11 @@ class exportObj.SquadBuilder
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
                         <option value="standard">Standard</option>
+                        <option value="second_edition">Second Edition (not Extended)</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
-                    <span class="total-epic-points-container hidden"><br /><span class="total-epic-points">0</span> / <span class="max-epic-points">5</span> Epic Points</span>
                     <span class="content-warning unreleased-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning epic-content-used hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning illegal-epic-upgrades hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;Navigator cannot be equipped onto Huge ships in Epic tournament play!</span>
-                    <span class="content-warning illegal-epic-too-many-small-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
-                    <span class="content-warning illegal-epic-too-many-large-ships hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                     <span class="content-warning collection-invalid hidden"><br /><i class="fa fa-exclamation-circle"></i>&nbsp;<span class="translated"></span></span>
                 </div>
                 <div class="span5 pull-right button-container">
@@ -419,14 +414,7 @@ class exportObj.SquadBuilder
         @points_remaining_span = $ @points_container.find('.points-remaining')
         @points_remaining_container = $ @points_container.find('.points-remaining-container')
         @unreleased_content_used_container = $ @points_container.find('.unreleased-content-used')
-        @epic_content_used_container = $ @points_container.find('.epic-content-used')
-        @illegal_epic_upgrades_container = $ @points_container.find('.illegal-epic-upgrades')
-        @too_many_small_ships_container = $ @points_container.find('.illegal-epic-too-many-small-ships')
-        @too_many_large_ships_container = $ @points_container.find('.illegal-epic-too-many-large-ships')
         @collection_invalid_container = $ @points_container.find('.collection-invalid')
-        @total_epic_points_container = $ @points_container.find('.total-epic-points-container')
-        @total_epic_points_span = $ @total_epic_points_container.find('.total-epic-points')
-        @max_epic_points_span = $ @points_container.find('.max-epic-points')
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
@@ -974,71 +962,42 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
+        oldSecondEdition = @isSecondEdition
         switch gametype
             when 'standard'
-                @isEpic = false
+                @isSecondEdition = false
+                @isCustom = false
+                @desired_points_input.val 200
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
+            when 'second_edition'
+                @isSecondEdition = true
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'custom'
-                @isEpic = false
+                @isSecondEdition = false
                 @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-        @max_epic_points_span.text @maxEpicPointsAllowed
+        if (oldSecondEdition != @isSecondEdition)
+            @newSquadFromScratch()
         @onPointsUpdated cb
 
     onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
-        @total_epic_points = 0
         unreleased_content_used = false
-        epic_content_used = false
         for ship, i in @ships
             ship.validate()
             @total_points += ship.getPoints()
-            @total_epic_points += ship.getEpicPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
-            ship_uses_epic_content = ship.checkEpicContent()
-            epic_content_used = ship_uses_epic_content if ship_uses_epic_content
         @total_points_span.text @total_points
         points_left = parseInt(@desired_points_input.val()) - @total_points
         @points_remaining_span.text points_left
         @points_remaining_container.toggleClass 'red', (points_left < 0)
         @unreleased_content_used_container.toggleClass 'hidden', not unreleased_content_used
-        @epic_content_used_container.toggleClass 'hidden', (@isEpic or not epic_content_used)
-
-        # Check against Epic restrictions if applicable
-        @illegal_epic_upgrades_container.toggleClass 'hidden', true
-        @too_many_small_ships_container.toggleClass 'hidden', true
-        @too_many_large_ships_container.toggleClass 'hidden', true
-        @total_epic_points_container.toggleClass 'hidden', true
-        if @isEpic
-            @total_epic_points_container.toggleClass 'hidden', false
-            @total_epic_points_span.text @total_epic_points
-            @total_epic_points_span.toggleClass 'red', (@total_epic_points > @maxEpicPointsAllowed)
-            shipCountsByType = {}
-            illegal_for_epic = false
-            for ship, i in @ships
-                if ship?.data?
-                    shipCountsByType[ship.data.name] ?= 0
-                    shipCountsByType[ship.data.name] += 1
-                    if ship.data.huge?
-                        for upgrade in ship.upgrades
-                            if upgrade?.data?.epic_restriction_func?
-                                unless upgrade.data.epic_restriction_func(ship.data, upgrade)
-                                    illegal_for_epic = true
-                                    break
-                            break if illegal_for_epic
-            @illegal_epic_upgrades_container.toggleClass 'hidden', not illegal_for_epic
-            if @maxLargeShipsOfOneType? and @maxSmallShipsOfOneType?
-                for ship_name, count of shipCountsByType
-                    ship_data = exportObj.ships[ship_name]
-                    if ship_data.large? and count > @maxLargeShipsOfOneType
-                        @too_many_large_ships_container.toggleClass 'hidden', false
-                    else if not ship.huge? and count > @maxSmallShipsOfOneType
-                        @too_many_small_ships_container.toggleClass 'hidden', false
 
         @fancy_total_points_container.text @total_points
 
@@ -1149,6 +1108,8 @@ class exportObj.SquadBuilder
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
+            when 'second_edition'
+                'se'
             when 'custom'
                 "c=#{$.trim @desired_points_input.val()}"
         """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
@@ -1170,6 +1131,9 @@ class exportObj.SquadBuilder
                     switch game_type_abbrev
                         when 's'
                             @game_type_selector.val 'standard'
+                            @game_type_selector.change()
+                        when 'se'
+                            @game_type_selector.val 'second_edition'
                             @game_type_selector.change()
                         else
                             @game_type_selector.val 'custom'
@@ -1273,19 +1237,20 @@ class exportObj.SquadBuilder
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and @matcher(ship_data.name, term)
-                if not ship_data.huge or (@isEpic or @isCustom)
-                    ships.push
-                        id: ship_data.name
-                        text: ship_data.name
-                        english_name: ship_data.english_name
-                        canonical_name: ship_data.canonical_name
+                if (not @isSecondEdition or exportObj.secondEditionCheck(ship_data, @faction))
+                    if not ship_data.huge or @isCustom
+                        ships.push
+                            id: ship_data.name
+                            text: ship_data.name
+                            english_name: ship_data.english_name
+                            canonical_name: ship_data.canonical_name
         ships.sort exportObj.sortHelper
 
         
         
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
         # Returns data formatted for Select2
-        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilotsByLocalizedName when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and @matcher(pilot_name, term) and (not @isSecondEdition or exportObj.secondEditionCheck(pilot)))
 
         eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()))
 
@@ -1310,8 +1275,8 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)))
-        
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and @matcher(upgrade_name, term) and (not upgrade.ship? or upgrade.ship == ship.data.name) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
+
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
@@ -1347,14 +1312,10 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_modifications_in_use = (modification.data for modification in ship.modifications when modification?.data?.limited?)
 
-        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name))
+        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when @matcher(modification_name, term) and (not modification.ship? or modification.ship == ship.data.name) and (not @isSecondEdition or exportObj.secondEditionCheck(modification)))
 
         if filter_func != @dfl_filter_func
             available_modifications = (modification for modification in available_modifications when filter_func(modification))
-
-        if ship? and exportObj.hugeOnly(ship) > 0
-            # Only show allowed mods for Epic ships
-            available_modifications = (modification for modification in available_modifications when modification.ship? or not modification.restriction_func? or modification.restriction_func ship)
 
         eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship) and modification not in limited_modifications_in_use)
 
@@ -1899,6 +1860,10 @@ class exportObj.SquadBuilder
             # console.log "collection not ready or is empty"
             return true
         @collection.reset()
+        if @collection?.checks.collectioncheck != "true"
+            # console.log "collection not ready or is empty"
+            return true
+        @collection.reset()
         validity = true
         for ship in @ships
             if ship.pilot?
@@ -2338,9 +2303,6 @@ class Ship
             @points_container.fadeTo 0, 0
         points
 
-    getEpicPoints: ->
-        @data?.epic_points ? 0
-
     updateSelections: ->
         if @pilot?
             @ship_selector.select2 'data',
@@ -2402,7 +2364,7 @@ class Ship
                     results: @builder.getAvailableShipsMatching(query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
-                if @builder.collection?
+                if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
                     not_in_collection = false
                     if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
                         # Currently selected ship; mark as not in collection if it's neither
@@ -2433,7 +2395,7 @@ class Ship
                     results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), @pilot, query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
-                if @builder.collection?
+                if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
                     not_in_collection = false
                     if obj.id == @pilot?.id
                         # Currently selected pilot; mark as not in collection if it's neither
@@ -2615,7 +2577,7 @@ class Ship
             </div>
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
-                    <span class="info-data info-skill">PS #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
+                    <span class="info-data info-skill">INT #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
                     #{energyHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
@@ -2898,7 +2860,7 @@ class Ship
         # Remove addons that violate their validation functions (if any) one by one
         # until everything checks out
         # If there is no explicit validation_func, use restriction_func
-        max_checks = 128 # that's a lot of addons (Epic?)
+        max_checks = 128 # that's a lot of addons
         for i in [0...max_checks]
             valid = true
             for upgrade in @upgrades
@@ -2945,24 +2907,6 @@ class Ship
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
                 #console.log "#{upgrade.data.name} is unreleased"
-                return true
-
-        false
-
-    checkEpicContent: ->
-        if @pilot? and @pilot.epic?
-            return true
-
-        for title in @titles
-            if title?.data?.epic?
-                return true
-
-        for modification in @modifications
-            if modification?.data?.epic?
-                return true
-
-        for upgrade in @upgrades
-            if upgrade?.data?.epic?
                 return true
 
         false
@@ -3074,6 +3018,7 @@ class GenericAddon
                     # Not currently selected; check shelf only
                     not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
+                    #and (@ship.builder.collection.checkcollection?) 
             else
                 ''
         args.formatSelection = (obj, container) =>

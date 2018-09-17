@@ -53,6 +53,7 @@ class exportObj.SquadBuilderBackend
         @squad_display_mode = 'all'
 
         @collection_save_timer = null
+        @collection = {}
 
         @setupHandlers()
         @setupUI()
@@ -615,7 +616,7 @@ class exportObj.SquadBuilderBackend
                     if res
                         $(window).trigger 'xwing-collection:saved', collection
             , 1000
-
+        
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
             cb data.settings
@@ -655,10 +656,18 @@ class exportObj.SquadBuilderBackend
             else
                 cb 'English'
 
+    getCollectionCheck: (settings, cb=$.noop) =>
+        if settings?.collectioncheck?
+            cb settings.collectioncheck
+        else
+            @checkcollection = true
+            cb true
+                
     saveCollection: (collection, cb=$.noop) ->
         post_args =
             expansions: collection.expansions
             singletons: collection.singletons
+            checks: collection.checks
         $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
             cb data.success
 
@@ -666,6 +675,8 @@ class exportObj.SquadBuilderBackend
         # Backend provides an empty collection if none exists yet for the user.
         $.get("#{@server}/collection").done (data, textStatus, jqXHR) ->
             collection = data.collection
-            new exportObj.Collection
+            @collection = new exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
+                checks: collection.checks
+            

@@ -13,6 +13,9 @@ sortWithoutQuotes = (a, b) ->
     else
         0
 
+exportObj.manifestBySettings =
+    'collectioncheck': true
+        
 exportObj.manifestByExpansion =
     'Second Edition Core Set': [
         {
@@ -321,91 +324,6 @@ exportObj.manifestByExpansion =
         }
     ]
     'Rebel Alliance Conversion Kit': [
-        {
-            name: 'A-Wing'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'ARC-170'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Auzituck Gunship'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'B-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'E-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'VCX-100'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'HWK-290'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'K-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'YT-1300'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Attack Shuttle'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Sheathipede-Class Shuttle'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Fighter'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'U-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'X-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Y-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'YT-2400'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Z-95 Headhunter'
-            type: 'ship'
-            count: 4
-        }
         {
             name: 'Thane Kyrell'
             type: 'pilot'
@@ -1229,71 +1147,6 @@ exportObj.manifestByExpansion =
     ]
     'Galactic Empire Conversion Kit': [
         {
-            name: 'Alpha-Class Star Wing'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE Advanced Prototype'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'Lambda-Class Shuttle'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Advanced'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Aggressor'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE Bomber'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE Defender'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Fighter'
-            type: 'ship'
-            count: 4
-        }
-        {
-            name: 'TIE Interceptor'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'TIE Phantom'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Punisher'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'TIE Striker'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'VT-49 Decimator'
-            type: 'ship'
-            count: 2
-        }
-        {
             name: 'Ved Foslo'
             type: 'pilot'
             count: 1
@@ -1975,86 +1828,6 @@ exportObj.manifestByExpansion =
         }
     ]
     'Scum and Villainy Conversion Kit': [
-        {
-            name: 'Kihraxz Fighter'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'YV-666'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Aggressor'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'HWK-290'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'M12-L Kimogila Fighter'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'M3-A Interceptor'
-            type: 'ship'
-            count: 4
-        }
-        {
-            name: 'G-1A Starfighter'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Fang Fighter'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'JumpMaster 5000'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Quadjumper'
-            type: 'ship'
-            count: 3
-        }
-        {
-            name: 'Scurrg H-6 Bomber'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Lancer-class Pursuit Craft'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Firespray-31'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'StarViper'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Y-Wing'
-            type: 'ship'
-            count: 2
-        }
-        {
-            name: 'Z-95 Headhunter'
-            type: 'ship'
-            count: 4
-        }
         {
             name: 'Joy Rekkoff'
             type: 'pilot'
@@ -3455,6 +3228,274 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Loose Ships': [
+        {
+            name: 'A-Wing'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'ARC-170'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Auzituck Gunship'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'B-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'E-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'VCX-100'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'HWK-290'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'K-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'YT-1300'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Attack Shuttle'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Sheathipede-Class Shuttle'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'U-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'YT-2400'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Z-95 Headhunter'
+            type: 'ship'
+            count: 4
+        }
+        {
+            name: 'Alpha-Class Star Wing'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Advanced Prototype'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Lambda-Class Shuttle'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Advanced'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Aggressor'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Bomber'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Defender'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 4
+        }
+        {
+            name: 'TIE Interceptor'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Phantom'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Punisher'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Striker'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'VT-49 Decimator'
+            type: 'ship'
+            count: 2
+        }        
+        {
+            name: 'Kihraxz Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'YV-666'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Aggressor'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'HWK-290'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'M12-L Kimogila Fighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'M3-A Interceptor'
+            type: 'ship'
+            count: 4
+        }
+        {
+            name: 'G-1A Starfighter'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Fang Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'JumpMaster 5000'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Quadjumper'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Scurrg H-6 Bomber'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Lancer-Class Pursuit Craft'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Firespray-31'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'StarViper'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Z-95 Headhunter'
+            type: 'ship'
+            count: 4
+        }
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'B/SF-17 Bomber'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE/SF Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE/FO Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Silencer'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Upsilon-Class Shuttle'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'YT-1300 (Resistance)'
+            type: 'ship'
+            count: 3
+        }
+    ]        
+
 
 class exportObj.Collection
     # collection = new exportObj.Collection
@@ -3489,19 +3530,21 @@ class exportObj.Collection
     constructor: (args) ->
         @expansions = args.expansions ? {}
         @singletons = args.singletons ? {}
+        @checks = args.checks ? {}
         # To save collection (optional)
         @backend = args.backend
-
+        
         @setupUI()
         @setupHandlers()
 
         @reset()
-
+        
         @language = 'English'
 
     reset: ->
         @shelf = {}
         @table = {}
+        
         for expansion, count of @expansions
             try
                 count = parseInt count
@@ -3628,7 +3671,7 @@ class exportObj.Collection
         for type, names of singletonsByType
             sorted_names = (name for name of names).sort(sortWithoutQuotes)
             singletonsByType[type] = sorted_names
-
+        
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
         $('body').append @modal
@@ -3643,8 +3686,6 @@ class exportObj.Collection
                     <li><a data-target="#collection-ships" data-toggle="tab">Ships</a><li>
                     <li><a data-target="#collection-pilots" data-toggle="tab">Pilots</a><li>
                     <li><a data-target="#collection-upgrades" data-toggle="tab">Upgrades</a><li>
-                    <li><a data-target="#collection-modifications" data-toggle="tab">Mods</a><li>
-                    <li><a data-target="#collection-titles" data-toggle="tab">Titles</a><li>
                     <li><a data-target="#collection-components" data-toggle="tab">Inventory</a><li>
                 </ul>
                 <div class="tab-content">
@@ -3652,19 +3693,29 @@ class exportObj.Collection
                     <div id="collection-ships" class="tab-pane active container-fluid collection-ship-content"></div>
                     <div id="collection-pilots" class="tab-pane active container-fluid collection-pilot-content"></div>
                     <div id="collection-upgrades" class="tab-pane active container-fluid collection-upgrade-content"></div>
-                    <div id="collection-modifications" class="tab-pane active container-fluid collection-modification-content"></div>
-                    <div id="collection-titles" class="tab-pane active container-fluid collection-title-content"></div>
                     <div id="collection-components" class="tab-pane container-fluid collection-inventory-content"></div>
                 </div>
             </div>
             <div class="modal-footer hidden-print">
                 <span class="collection-status"></span>
                 &nbsp;
+                <label class="checkbox-check-collection">
+                    Check Collection Requirements <input type="checkbox" class="check-collection"/>
+                </label>
+                &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
         @modal_status = $ @modal.find('.collection-status')
 
+        if @checks.collectioncheck?
+            if @checks.collectioncheck != "false"
+                @modal.find('.check-collection').prop('checked', true)
+        else
+            @checks.collectioncheck = true
+            @modal.find('.check-collection').prop('checked', true)
+        @modal.find('.checkbox-check-collection').show()
+        
         collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
@@ -3682,7 +3733,8 @@ class exportObj.Collection
             input.data 'expansion', expansion
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.expansion-name').data 'english_name', expansion
-            collection_content.append row
+            if expansion != 'Loose Ships'
+                collection_content.append row
 
         shipcollection_content = $ @modal.find('.collection-ship-content')
         for ship in singletonsByType.ship
@@ -3798,8 +3850,10 @@ class exportObj.Collection
         .on 'xwing-collection:saved', (e, collection) =>
             @modal_status.text 'Collection saved'
             @modal_status.fadeIn 100, =>
-                @modal_status.fadeOut 5000
+                @modal_status.fadeOut 1000
         .on 'xwing:languageChanged', @onLanguageChange
+
+        .on 'xwing:CollectionCheck', @onCollectionCheckSet
 
         $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
@@ -3823,6 +3877,18 @@ class exportObj.Collection
             # console.log "Input changed, triggering collection change"
             $(exportObj).trigger 'xwing-collection:changed', this
 
+        $ @modal.find('.check-collection').change (e) =>
+            if @modal.find('.check-collection').prop('checked') == false
+                result = false
+                @modal_status.text """Collection Tracking Disabled"""
+            else
+                result = true
+                @modal_status.text """Collection Tracking Active"""
+            @checks.collectioncheck = result
+            @modal_status.fadeIn 100, =>
+                @modal_status.fadeOut 1000
+            $(exportObj).trigger 'xwing-collection:changed', this
+            
     countToBackgroundColor: (count) ->
         count = parseInt(count)
         switch
