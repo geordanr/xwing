@@ -13,6 +13,7 @@ exportObj.secondEditionExpansions = [
     'Second Edition Core Set',
     "Saw's Renegades Expansion Pack",
     'TIE Reaper Expansion Pack',
+    'T-65 X-Wing Expansion Pack',
     'BTL-A4 Y-Wing Expansion Pack',
     'TIE/ln Fighter Expansion Pack',
     'TIE Advanced x1 Expansion Pack',
