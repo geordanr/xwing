@@ -1244,6 +1244,7 @@ class exportObj.SquadBuilder
                             text: ship_data.name
                             english_name: ship_data.english_name
                             canonical_name: ship_data.canonical_name
+                            xws: ship_data.xws
         ships.sort exportObj.sortHelper
 
         
@@ -2308,7 +2309,8 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
-                canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                #canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{@pilot.name} (#{@pilot.points})"
@@ -2350,7 +2352,7 @@ class Ship
 
         shipResultFormatter = (object, container, query) ->
             # Append directly so we don't have to disable markup escaping
-            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.canonical_name}"></i> #{object.text}"""
+            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.xws}"></i> #{object.text}"""
             # If you return a string, Select2 will render it
             undefined
 
@@ -2568,7 +2570,7 @@ class Ship
 
         html = $.trim """
             <div class="fancy-pilot-header">
-                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.canonical_name}"></i><span class="fancy-ship-type"> #{@data.name}</span></div>
+                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{@data.name}</span></div>
                 <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{@pilot.points}</div>
