@@ -3523,6 +3523,17 @@ class exportObj.Collection
                 (@counts[type] ?= {})[thing] ?= 0
                 @counts[type][thing] += @shelf[type][thing].length
 
+                
+        # Create list of released singletons
+        singletonsByType = {}
+        for expname, items of exportObj.manifestByExpansion
+            for item in items
+                (singletonsByType[item.type] ?= {})[item.name] = true
+        for type, names of singletonsByType
+            sorted_names = (name for name of names).sort(sortWithoutQuotes)
+            singletonsByType[type] = sorted_names
+                
+                
         component_content = $ @modal.find('.collection-inventory-content')
         component_content.text ''
         for own type, things of @counts
@@ -3536,8 +3547,30 @@ class exportObj.Collection
             """
             ul = $ contents.find("ul#counts-#{type}")
             for thing in Object.keys(things).sort(sortWithoutQuotes)
-                ul.append """<li>#{thing} - #{things[thing]}</li>"""
+                if singletonByType[type].[thing]?
+                    ul.append """<li>#{thing} - #{things[thing]}</li>"""
 
+                
+        pilotcollection_content = $ @modal.find('.collection-pilot-content')
+        for pilot in singletonsByType.pilot
+            count = parseInt(@singletons.pilot?[pilot] ? 0)
+            row = $.parseHTML $.trim """
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label>
+                            <input class="singleton-count" type="number" size="3" value="#{count}" />
+                            <span class="pilot-name">#{pilot}</span>
+                        </label>
+                    </div>
+                </div>
+            """
+            input = $ $(row).find('input')
+            input.data 'singletonType', 'pilot'
+            input.data 'singletonName', pilot
+            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
+            $(row).find('.pilot-name').data 'english_name', expansion
+            pilotcollection_content.append row                
+                
     fixName: (name) ->
         # Special case handling for Heavy Scyk :(
         if name.indexOf('"Heavy Scyk" Interceptor') == 0
