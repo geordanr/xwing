@@ -93,9 +93,6 @@ exportObj.translations['Français'] =
     byCSSSelector:
         # Warnings
         '.unreleased-content-used .translated': 'Cet escadron utilise du contenu inédit !'
-        '.epic-content-used .translated': 'Cet escadron utilise du contenu épique !'
-        '.illegal-epic-too-many-small-ships .translated': 'Vous ne pouvez pas ajouter plus de 12 Petits vaisseaux du même !'
-        '.illegal-epic-too-many-large-ships .translated': 'Vous ne pouvez pas ajouter plus de 12 Grands vaisseaux du même type !'
         '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'

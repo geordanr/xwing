@@ -1860,6 +1860,10 @@ class exportObj.SquadBuilder
             # console.log "collection not ready or is empty"
             return true
         @collection.reset()
+        if @collection?.checks.collectioncheck != "true"
+            # console.log "collection not ready or is empty"
+            return true
+        @collection.reset()
         validity = true
         for ship in @ships
             if ship.pilot?
@@ -2360,7 +2364,7 @@ class Ship
                     results: @builder.getAvailableShipsMatching(query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
-                if @builder.collection?
+                if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
                     not_in_collection = false
                     if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
                         # Currently selected ship; mark as not in collection if it's neither
@@ -2391,7 +2395,7 @@ class Ship
                     results: @builder.getAvailablePilotsForShipIncluding(@ship_selector.val(), @pilot, query.term)
             minimumResultsForSearch: if $.isMobile() then -1 else 0
             formatResultCssClass: (obj) =>
-                if @builder.collection?
+                if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
                     not_in_collection = false
                     if obj.id == @pilot?.id
                         # Currently selected pilot; mark as not in collection if it's neither
@@ -2573,7 +2577,7 @@ class Ship
             </div>
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
-                    <span class="info-data info-skill">PS #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
+                    <span class="info-data info-skill">INT #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
                     #{energyHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>

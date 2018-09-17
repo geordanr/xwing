@@ -12,6 +12,9 @@ sortWithoutQuotes = (a, b) ->
         1
     else
         0
+
+exportObj.manifestBySettings =
+    'collectioncheck': true
         
 exportObj.manifestByExpansion =
     'Second Edition Core Set': [
@@ -3527,21 +3530,21 @@ class exportObj.Collection
     constructor: (args) ->
         @expansions = args.expansions ? {}
         @singletons = args.singletons ? {}
-        @checks = args.checks ? []
+        @checks = args.checks ? {}
         # To save collection (optional)
         @backend = args.backend
-
+        
         @setupUI()
         @setupHandlers()
 
         @reset()
-
+        
         @language = 'English'
-        @collectioncheck = true
 
     reset: ->
         @shelf = {}
         @table = {}
+        
         for expansion, count of @expansions
             try
                 count = parseInt count
@@ -3636,12 +3639,6 @@ class exportObj.Collection
             sorted_names = (name for name of names).sort(sortWithoutQuotes)
             singletonsByType[type] = sorted_names
         
-            
-        if @collectioncheck == true #check is false because we want to default to checking collection
-            checkcollectionsaved = ' '
-        else
-            checkcollectionsaved = '''checked="checked"'''
-        
         @modal = $ document.createElement 'DIV'
         @modal.addClass 'modal hide fade collection-modal hidden-print'
         $('body').append @modal
@@ -3669,8 +3666,8 @@ class exportObj.Collection
             <div class="modal-footer hidden-print">
                 <span class="collection-status"></span>
                 &nbsp;
-                <label class="qrcode-checkbox hidden">
-                    Check Collection Requirements <input type="checkbox" class="check-collection" #{checkcollectionsaved} />
+                <label class="checkbox-check-collection">
+                    Check Collection Requirements <input type="checkbox" class="check-collection"/>
                 </label>
                 &nbsp;
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -3678,6 +3675,14 @@ class exportObj.Collection
         """
         @modal_status = $ @modal.find('.collection-status')
 
+        if @checks.collectioncheck?
+            if @checks.collectioncheck != "false"
+                @modal.find('.check-collection').prop('checked', true)
+        else
+            @checks.collectioncheck = true
+            @modal.find('.check-collection').prop('checked', true)
+        @modal.find('.checkbox-check-collection').show()
+        
         collection_content = $ @modal.find('.collection-content')
         for expansion in exportObj.expansions
             count = parseInt(@expansions[expansion] ? 0)
@@ -3812,9 +3817,10 @@ class exportObj.Collection
         .on 'xwing-collection:saved', (e, collection) =>
             @modal_status.text 'Collection saved'
             @modal_status.fadeIn 100, =>
-                @modal_status.fadeOut 5000
+                @modal_status.fadeOut 1000
         .on 'xwing:languageChanged', @onLanguageChange
-        .on 'xwing:CollectionCheckChanged', @onCollectionCheckChange
+
+        .on 'xwing:CollectionCheck', @onCollectionCheckSet
 
         $ @modal.find('input.expansion-count').change (e) =>
             target = $(e.target)
@@ -3839,16 +3845,16 @@ class exportObj.Collection
             $(exportObj).trigger 'xwing-collection:changed', this
 
         $ @modal.find('.check-collection').change (e) =>
-            if @checked
+            if @modal.find('.check-collection').prop('checked') == false
                 result = false
-                @modal_status.text """Collection Tracking Active"""
+                @modal_status.text """Collection Tracking Disabled"""
             else
                 result = true
-                @modal_status.text """Collection Tracking Disabled"""
-            @collectioncheck = result
+                @modal_status.text """Collection Tracking Active"""
+            @checks.collectioncheck = result
             @modal_status.fadeIn 100, =>
-                @modal_status.fadeOut 5000
-            $(exportObj).trigger 'xwing:CollectionCheckChanged', this
+                @modal_status.fadeOut 1000
+            $(exportObj).trigger 'xwing-collection:changed', this
             
     countToBackgroundColor: (count) ->
         count = parseInt(count)
@@ -3870,9 +3876,3 @@ class exportObj.Collection
                         # console.log "translating #{$(this).text()} (#{$(this).data('english_name')}) to #{language}"
                         $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
                 @language = language
-
-    onCollectionCheckChange:
-        (e, check) =>
-            console.log "#{@collectioncheck} vs. #{check}"
-            if check != @collectioncheck
-                @collectioncheck = check

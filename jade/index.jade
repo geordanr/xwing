@@ -262,8 +262,6 @@ html
           window.backend.getSettings (settings) ->
               window.backend.getLanguagePreference settings, (language) ->
                 $(window).trigger 'xwing:languageChanged', language
-              window.backend.getCollectionCheck settings, (collectioncheck) ->
-                $(window).trigger 'xwing:CollectionCheckChanged', collectioncheck
 
           window.setupTranslationUI window.backend
 
