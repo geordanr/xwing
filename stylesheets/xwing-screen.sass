@@ -14,7 +14,6 @@ $upgrade-circle-border-width: 5px
 
 .fancy-header
   border: $fancy-header-height solid black
-  color: white
   border-left-color: transparent
   border-top-color: transparent
   border-right-color: transparent
@@ -130,7 +129,7 @@ $upgrade-circle-border-width: 5px
       
       .xwing-miniatures-font
         vertical-align: middle
-
+    
   .fancy-pilot-text
     margin-left: $fancy-pilot-header-height * 2
     padding: 5px
@@ -210,7 +209,7 @@ $upgrade-circle-border-width: 5px
         margin-right: 8px
         height: 28px
 
-        .upgrade-attack-range
+      .upgrade-attack-range
           vertical-align: middle
           padding: 2px 8px
           color: white
@@ -218,10 +217,17 @@ $upgrade-circle-border-width: 5px
           font-family: kimberley
           font-size: 1.2em
 
-        .info-attack
+      .upgrade-attack-rangebonus
+          vertical-align: middle
+          padding: 2px 8px
+          color: red
+          background-color: black
+          font-family: kimberley        
+        
+      .info-attack
           margin-right: 2px
 
-        .xwing-miniatures-font
+      .xwing-miniatures-font
           vertical-align: middle
 
       .upgrade-text
@@ -242,8 +248,9 @@ $upgrade-circle-border-width: 5px
   height: 200px
   cursor: text
 
-.conditions-container
-  width: 90em
+.indent
+  padding-left: 10px  
+
 
 .condition
   float: left

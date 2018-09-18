@@ -6,6 +6,8 @@ $energy_color: #C7B5E2
 $agility_color: #6BBE44
 $hull_color: #B6B335
 $shields_color: #7ED3E5
+$force_color: #9D899D
+$charge_color: #C2B230
 
 @font-face
   font-family: kimberley
@@ -35,7 +37,11 @@ $shields_color: #7ED3E5
   font-family: BankGothicHD
   src: url('../fonts/bankgthd.ttf')
 
-body, button
+body
+  background-color: #202020
+  font-family: EurostileStandard
+    
+button
   font-family: EurostileStandard
 
 strong
@@ -51,14 +57,8 @@ strong em, em strong
   font-style: normal
   font-weight: normal
 
-.nav-pills
-  border-bottom: thin solid darkgray
-
 .ship-container > .row-fluid
   padding: 10px 0px
-
-.ship
-  border: medium solid black
 
 .card-stat
   font-family: kimberley
@@ -68,44 +68,91 @@ strong em, em strong
   @extend .card-stat
   color: $pilot_skill_color
 
+.info-data-red
+  color: $attack_color
+
 .card-icon
   background: black
   border-radius: 50%
-  padding: 3px
+  padding: 2px
   font-weight: normal
 
+.info-upgrades
+  cellspacing: 3px
+    
 td.info-header
   padding: 3px
 
-i.xwing-miniatures-font
-  color: black
+i.xwing-miniatures-font-focus
+  font-size: 8px
 
-i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180, i.xwing-miniatures-font-attack-bullseye
+i.xwing-miniatures-font
+//  color: black 
+
+i.xwing-miniatures-font-attack, i.xwing-miniatures-font-attack-turret, i.xwing-miniatures-font-attack-frontback, i.xwing-miniatures-font-attack-180
   @extend .card-icon
   color: $attack_color
 
-i.xwing-miniatures-font-attack-frontback
+i.header-attack
+  @extend .card-icon
+  color: $attack_color
+
+i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-bullseyearc, i.xwing-miniatures-font-fullfrontarc
+  padding-left: 6px
+  padding-right: 6px
+
+i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-doubleturretarc
+  padding-left: 9px
+  padding-right: 10px
+
+i.xwing-miniatures-font-rangebonusindicator
+  font-size: 1.1em
+
+i.header-energy
+  @extend .card-icon
+  color: $energy_color
   padding-left: 5px
   padding-right: 5px
 
-i.xwing-miniatures-font-energy
-  @extend .card-icon
-  color: $energy_color
-  padding: 2px 3px 5px 2px
-
-i.xwing-miniatures-font-agility
+i.header-agility
   @extend .card-icon
   color: $agility_color
-  padding: 1px
+  padding-left: 5px
+  padding-right: 4px
 
-i.xwing-miniatures-font-hull
+i.header-hull
   @extend .card-icon
   color: $hull_color
+  padding-left: 7px
+  padding-right: 7px
 
-i.xwing-miniatures-font-shield
+i.header-shield
   @extend .card-icon
   color: $shields_color
-  padding: 2px 3px 4px 3px
+  padding-left: 6px
+  padding-right: 6.5px
+  padding-bottom: 2px
+
+i.header-force
+  @extend .card-icon
+  color: $force_color
+  padding-left: 5px
+  padding-right: 5px
+  padding-bottom: 5px
+
+i.header-charge
+  @extend .card-icon
+  color: $charge_color
+  padding-left: 7px
+  padding-right: 7px
+  padding-bottom: 3px
+
+i.header-range
+  vertical-align: middle
+  padding: 0px 3px
+  background-color: black
+  color: $attack_color
+
 
 .info-data.info-attack
   @extend .card-stat
@@ -127,6 +174,18 @@ i.xwing-miniatures-font-shield
   @extend .card-stat
   color: $shields_color
   padding: 2px
+
+.info-data.info-force
+  @extend .card-stat
+  color: $force_color
+
+.info-data.info-charge
+  @extend .card-stat
+  color: $charge_color
+
+r
+  color: $attack_color 
+
 
 .info-maneuvers table
   table-layout: fixed
@@ -186,7 +245,6 @@ ul.squad-list
 
 .points-display-container
   font-size: 1.2em
-  background-color: rgba(0, 0, 0, 0.5)
   padding-top: 5px
   text-align: center
 
@@ -254,7 +312,7 @@ input[type=number]
   width: 3em
 
 .red
-  color: red
+  color: $attack_color
 
 .squad-notes
   height: 8em
@@ -304,3 +362,12 @@ li.squad-summary
 
 svg > g.maneuver.backwards
   transform: translate(200px, 200px) rotate(180deg)
+
+//.selectnav 
+//  display: none
+
+//@media screen and (max-width: 600px) 
+//  .js #select2-results
+//    display: none
+//  .js .selectnav
+//    display: block
