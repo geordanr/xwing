@@ -184,6 +184,7 @@ exportObj.cardLoaders['Français'] = () ->
         "4-LOM":
            text: """After you fully execute a red maneuver, gain 1 calculate token. At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Academy Pilot":
+           name: "Pilote de l'académie"
            text: """ """
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""
@@ -208,6 +209,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Binayre Pirate":
            text: """ """
         "Black Squadron Ace":
+           name: "As de l’Escadron Noir"
            text: """ """
         "Black Squadron Scout":
            text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
@@ -222,6 +224,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Blade Squadron Veteran":
            text: """ """
         "Blue Squadron Escort":
+           name: "Escorte de l’Escadron Bleu"
            text: """ """
         "Blue Squadron Pilot":
            text: """ """
@@ -378,7 +381,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Ibtisam":
            text: """After you fully execute a maneuver, if you are stressed, you may roll 1 attack die. On a %HIT% or %CRIT% result, remove 1 stress token."""
         "Iden Versio":
-           text: """Before a friendly TIE/ln fighter at range 0-1 would suffer 1 or more damage, you may spend 1 %CHARGE%. If you do, prevent that damage."""
+           text: """Avant qu’un chasseur TIE/ln allié à portée 0–1 ne subisse 1 ou plusieurs dégâts, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, prévenez ce dégât."""
         "IG-88A":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "IG-88B":
@@ -400,7 +403,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Jan Ors":
            text: """While a friendly ship in your firing arc performs a primary attack, if you are not stressed, you may gain 1 stress token. If you do, that ship may roll 1 additional attack die."""
         "Jek Porkins":
-           text: """After you receive a stress token, you may roll 1 attack die to remove it. On a %HIT% result, suffer 1 %HIT% damage."""
+           text: """Après avoir reçu un marqueur de stress, vous pouvez lancer 1 dé d’attaque pour le retirer. Sur un résultat %HIT%, subissez 1 dégat %HIT%."""
         "Joy Rekkoff":
            text: """While you perform an attack, you may spend 1 %CHARGE% from an equipped %TORPEDO% upgrade. If you do, the defender rolls 1 fewer defense die. %LINEBREAK% CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result"""
         "Kaa'to Leeachos":
@@ -460,7 +463,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Lowhhrick":
            text: """After a friendly ship at range 0-1 becomes the defender, you may spend 1 reinforce token. If you do, that ship gains 1 evade token."""
         "Luke Skywalker":
-           text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
+           text: """Après être devenu le défenseur (avant que les dés ne soient lancés), vous pouvez récupérer 1 %FORCE%."""
         "Maarek Stele":
            text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Magva Yarro":
@@ -484,7 +487,7 @@ exportObj.cardLoaders['Français'] = () ->
         "N'dru Suhlak":
            text: """While you perform a primary attack, if there are no other friendly ships at range 0-2, roll 1 additional attack die."""
         '"Night Beast"':
-           text: """After you fully execute a blue maneuver, you may perform a %FOCUS% action."""
+           text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez effectuer une action %FOCUS%."""
         "Norra Wexley":
            text: """While you defend, if there is an enemy ship at range 0-1, add 1 %EVADE% result to your dice results."""
         "Norra Wexley (Y-Wing)":
@@ -492,6 +495,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Nu Squadron Pilot":
            text: """ """
         "Obsidian Squadron Pilot":
+           name: "Pilote de l’Escadron Obsidian"
            text: """ """
         "Old Teroch":
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 1. If you do and you are in its %FRONTARC%, it removes all of its green tokens. %LINEBREAK% CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
@@ -526,6 +530,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Rebel Scout":
            text: """ """
         "Red Squadron Veteran":
+           name: "Vétéran de l’Escadron Rouge"
            text: """ """
         '"Redline"':
            text: """You can maintain up to 2 locks. After you perform an action, you may acquire a lock."""
@@ -608,7 +613,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Unkar Plutt":
            text: """At the start of the Engagement Phase, if there are one or more other ships at range 0, you and each other ship at range 0 gain 1 tractor token. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Valen Rudor":
-           text: """After a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
+           text: """Après qu’un vaisseau allié à portée 0–1 a défendu (après la résolution des dégâts, s’il y en a), vous pouvez effectuer une action."""
         "Ved Foslo":
            text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Viktor Hel":
@@ -696,7 +701,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Advanced SLAM":
            text: """<i>Requires: %SLAM%</i> %LINEBREAK% After you perform a %SLAM% action, if you fully executed that maneuver, you may perform a white action on your action bar, treating that action as red."""
         "Afterburners":
-           text: """<i>Requires: Small Base</i> %LINEBREAK% After you fully execute a speed 3-5 maneuver, you may spend 1 %CHARGE% to perform a %BOOST% action, even while stressed."""
+           name: "Postcombustion"
+           text: """<i>Requiert: petite base</i> %LINEBREAK% Après avoir entièrement exécuté une manœuvre à vitesse 3–5, vous pouvez dépenser 1 %CHARGE% pour effectuer une action %BOOST%, même tant que vous êtes stressé."""
         "Agent Kallus":
            text: """Setup: Assign the Hunted condition to 1 enemy ship. While you perform an attack against th eship with the Hunted condition, you may change 1 of your %FOCUS% results to a %HIT% result."""
         "Agile Gunner":
@@ -772,7 +778,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Electronic Baffle":
            text: """During the End Phase, you may suffer 1 %HIT% damage to remove 1 red token."""
         "Elusive":
-           text: """<i>Requires: Small or Medium Base</i> %LINEBREAK% While you defend, you may spend 1 %CHARGE% to reroll 1 defense die. After you fully execute a red maneuver, recover 1 %CHARGE%."""
+           name: "Insaisissable"
+           text: """<i>Requiert: base petite ou moyenne</i> %LINEBREAK% Tant que vous défendez, vous pouvez dépenser 1 %CHARGE% pour relancer 1 dé de défense. %LINEBREAK% Après avoir entièrement exécuté une manœuvre rouge, récupérez 1 %CHARGE%."""
         "Emperor Palpatine":
            text: """While another friendly ship defends or performs an attack, you may spend 1 %FORCE% to modify 1 of its dice as though that ship had spent 1 %FORCE%."""
         "Engine Upgrade":
@@ -810,7 +817,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Heavy Laser Cannon":
            text: """Attack: After the Modify Attack Dice step, change all %CRIT% results to %HIT% results."""
         "Heightened Perception":
-           text: """At the start of the Engagement Phase, you may spend 1 %FORCE%. If you do, engage at initiative 7 instead of your standard initiative value this phase."""
+           name: "Perception renforcée"
+           text: """Au début de la phase d’engagement, vous pouvez dépenser 1 %FORCE%. Dans ce cas, pendant cette phase, engagez-vous à l’initiative 7 au lieu de le faire à votre valeur d’initiative standard."""
         "Hera Syndulla":
            text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you have 3 or more stress tokens, remove 1 stress token and suffer 1 %HIT% damage."""
         "Homing Missiles":
@@ -820,7 +828,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Hound's Tooth":
            text: """1 Z-95 AF4 headhunter can dock with you."""
         "Hull Upgrade":
-           text: """Add 1 Hull Point %LINEBREAK%<i>This upgrade has a variable cost, worth 2, 3, 5, or 7 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
+           name: "Coque améliorée"
+           text: """Augmente la valeur de coque de 1. %LINEBREAK%<i>Cette amélioration a un coût variable, de 2, 3, 5, ou 7 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "IG-2000":
            text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade."""
         "IG-88D":
@@ -830,7 +839,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Informant":
            text: """Setup: After placing forces, choose 1 enemy ship and assign the Listening Device condition to it."""
         "Instinctive Aim":
-           text: """While you perform a special attack, you may spend 1 %FORCE% to ignore the %FOCUS% or %LOCK% requirement."""
+           name: "Visée instinctive"
+           text: """Tant que vous effectuez une attaque spéciale, vous pouvez dépenser 1 %FORCE% pour ignorer le prérequis %FOCUS% ou %LOCK%."""
         "Intimidation":
            text: """While an enemy ship at range 0 defends, it rolls 1 fewer defense die."""
         "Ion Cannon Turret":
@@ -898,7 +908,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Os-1 Arsenal Loadout":
            text: """While you have exactly 1 disarm token, you can still perform %TORPEDO% and %MISSILE% attacks against targets you have locked. If you do, you cannot spend you lock during the attack. Add %TORPEDO% and %MISSILE% slots."""
         "Outmaneuver":
-           text: """While you perform a %FRONTARC% attack, if you are not in the defender's firing arc, the defender rolls 1 fewer defense die."""
+           text: """Tant que vous effectuez une attaque %FRONTARC%, si vous n’êtes pas dans l’arc de tir du défenseur, il lance 1 dé de défense en moins."""
         "Outrider":
            text: """While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens."""
         "Perceptive Copilot":
@@ -910,13 +920,15 @@ exportObj.cardLoaders['Français'] = () ->
         "Pivot Wing":
            text: """<b>Closed:</b> While you defend, roll 1 fewer defense die. After you execute a [0 %STOP%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card %LINEBREAK% <b>Open:</b> Before you activate, you may flip this card"""
         "Predator":
-           text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
+           name: "Prédateur"
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez relancer 1 dé d’attaque."""
         "Proton Bombs":
            text: """Bomb During the System Phase, you may spend 1 %CHARGE% to drop a Proton Bomb using the [1 %STRAIGHT%] template."""
         "Proton Rockets":
            text: """Attack (%FOCUS%): Spend 1 %CHARGE%."""
         "Proton Torpedoes":
-           text: """Attack (%LOCK%): Spend 1 %CHARGE%. Change 1 %HIT% result to a %CRIT% result."""
+           name: "Torpilles à protons"
+           text: """Attaque (%LOCK%): dépensez 1 %CHARGE%. Changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Proximity Mines":
            text: """Mine During the System Phase, you may spend 1 %CHARGE% to drop a Proximity Mine using the [1 %STRAIGHT%] template. This card's %CHARGE% cannot be recovered."""
         "Punishing One":
@@ -924,19 +936,22 @@ exportObj.cardLoaders['Français'] = () ->
         "Qi'ra":
            text: """While you move and perform attacks, you ignore all obstacles that you are locking."""
         "R2 Astromech":
-           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+           name: "Astromech R2"
+           text: """Après avoir révélé votre cadran, vous pouvez dépenser 1 %CHARGE% et gagner 1 marqueur de désarmement pour récupérer 1 bouclier."""
         "R2-D2":
-           text: """After you reveal your dial, you may spend 1 %CHARGE% and gain 1 disarm token to recover 1 shield."""
+           text: """Après avoir révélé votre cadran, vous pouvez dépenser 1 %CHARGE% et gagner 1 marqueur de désarmement pour récupérer 1 bouclier."""
         "R2-D2 (Crew)":
            text: """During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
         "R3 Astromech":
-           text: """You can maintain up to 2 locks. Each lock must be on a different object. After you perform a %LOCK% action, you may acquire a lock."""
+           name: "Astromech R3"
+           text: """Vous pouvez maintenir jusqu’à 2 cibles verrouillées. Chaque verrouillage doit être sur un objet différent. %LINEBREAK% Après avoir effectué une action %LOCK%, vous pouvez verrouiller une cible."""
         "R4 Astromech":
            text: """<i>Requires: Small Base</i> %LINEBREAK% Decrease the difficulty of your speed 1-2 basic maneuvers (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%)."""
         "R5 Astromech":
-           text: """Action: Spend 1 %CHARGE% to repair 1 facedown damage card. Action: Repair 1 faceup Ship damage card."""
+           name: "Astromech R5"
+           text: """Action : dépensez 1 %CHARGE% pour réparer 1 carte de dégât face cachée. %LINEBREAK% Action : réparez 1 carte de dégât Vaisseau face visible."""
         "R5-D8":
-           text: """Action: Spend 1 %CHARGE% to repair 1 facedown damage card. Action: Repair 1 faceup Ship damage card."""
+           text: """Action : dépensez 1 %CHARGE% pour réparer 1 carte de dégât face cachée. %LINEBREAK% Action : réparez 1 carte de dégât Vaisseau face visible."""
         "R5-P8":
            text: """While you perform an attack against a defender in your %FRONTARC%, you may spend 1 %CHARGE% to reroll 1 attack die. If the rerolled results is a %CRIT%, suffer 1 %CRIT% damage."""
         "R5-TK":
@@ -958,15 +973,18 @@ exportObj.cardLoaders['Français'] = () ->
         "Selfless":
            text: """Whlie another friendly ship at range 0-1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1 %CRIT% damage to cancel 1 %CRIT% result."""
         "Sense":
-           text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1 %FORCE%, you may choose a ship at range 0-3 instead."""
+           name: "Sens"
+           text: """Pendant la phase de système, vous pouvez choisir 1 vaisseau à portée 0–1 et regarder son cadran. Si vous dépensez 1 %FORCE%, vous pouvez choisir un vaisseau à portée 0–3 à la place."""
         "Servomotor S-Foils":
-           text: """<b>Closed:</b> While you perform a primary attack, roll 1 fewer attack die. Before you activate, you may flip this card %LINEBREAK% <i>Adds: %BOOST%, %FOCUS% > <r>%BOOST%</r></i> %LINEBREAK% <b>Open:</b> Before you activate, you may flip this card"""
+           name: "Servomoteur S-Foils"
+           text: """<b>Fermé:</b> Quand vous effectuez une attaque principale, lancez un dé d'attaque en moins. Avant votre activation, vous pouvez retourner cette carte. %LINEBREAK% <i>Ajoute : %BOOST%, %FOCUS% > <r>%BOOST%</r></i> %LINEBREAK% <b>Ouvert:</b> Avant votre activation, vous pouvez retourner cette carte."""
         "Seventh Sister":
            text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
         "Shadow Caster":
            text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
         "Shield Upgrade":
-           text: """Add 1 Shield Point %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
+           name: "Boucliers améliorés"
+           text: """Ajoute la valeur de bouclier de 1. %LINEBREAK%<i>Cette amélioration a un coût variable, de 3, 4, 6, ou 8 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
@@ -980,7 +998,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Stealth Device":
            text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%. %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
         "Supernatural Reflexes":
-           text: """<i>Requires: Small Base</i> %LINEBREAK% Before you activate, you may spend 1 %FORCE% to perform a %BARRELROLL% or %BOOST% action. Then, if you performed an action you do not have on your action bar, suffer 1 %HIT% damage."""
+           name: "Réflexes surnaturels"
+           text: """<i>Requiert: petite base</i> %LINEBREAK% Avant votre activation, vous pouvez dépenser 1 %FORCE% pour effectuer une action %BARRELROLL% ou %BOOST%. Puis, si vous avez effectué une action qui n’est pas dans votre barre d’action, subissez 1 dégât %HIT%."""
         "Swarm Tactics":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 1. If you do, that ship treats its initiative as equal to yours until the end of the round."""
         "Tactical Officer":
