@@ -675,7 +675,7 @@ class exportObj.SquadBuilderBackend
         # Backend provides an empty collection if none exists yet for the user.
         $.get("#{@server}/collection").done (data, textStatus, jqXHR) ->
             collection = data.collection
-            ew exportObj.Collection
+            new exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
                 checks: collection.checks
