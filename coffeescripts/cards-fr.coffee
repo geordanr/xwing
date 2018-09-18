@@ -983,7 +983,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Pendant la phase de système, vous pouvez choisir 1 vaisseau à portée 0–1 et regarder son cadran. Si vous dépensez 1 %FORCE%, vous pouvez choisir un vaisseau à portée 0–3 à la place."""
         "Servomotor S-Foils":
            name: "Servomoteur S-Foils"
-           text: """<b>Fermé:</b> Quand vous effectuez une attaque principale, lancez un dé d'attaque en moins. Avant votre activation, vous pouvez retourner cette carte. %LINEBREAK% <i>Ajoute : %BOOST%, %FOCUS% > <r>%BOOST%</r></i> %LINEBREAK% <b>Ouvert:</b> Avant votre activation, vous pouvez retourner cette carte."""
+           text: """<b>Replié:</b> Tant que vous effectuez une attaque principale, lancez 1 dé d'attaque en moins. Avant votre activation, vous pouvez retourner cette carte. %LINEBREAK% <i>Ajoute : %BOOST%, %FOCUS% > <r>%BOOST%</r></i> %LINEBREAK% <b>Déplié:</b> Avant votre activation, vous pouvez retourner cette carte."""
         "Seventh Sister":
            text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
         "Shadow Caster":
