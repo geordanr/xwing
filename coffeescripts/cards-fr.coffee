@@ -185,6 +185,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """After you fully execute a red maneuver, gain 1 calculate token. At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Academy Pilot":
            name: "Pilote de l'académie"
+           ship: "Chasseur TIE"
            text: """ """
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""

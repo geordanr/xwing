@@ -1,7 +1,7 @@
 ###
-    X-Wing Squad Builder
-    Geordan Rosario <geordan@gmail.com>
-    https://github.com/geordanr/xwing
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
 ###
 exportObj = exports ? this
 
@@ -193,8 +193,8 @@ class exportObj.SquadBuilder
                 <div class="span4 points-display-container">
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
-                        <option value="standard">Standard</option>
-                        <option value="second_edition">Second Edition (not Extended)</option>
+                        <option value="standard">Extended</option>
+                        <option value="second_edition">Second Edition</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -1495,6 +1495,7 @@ class exportObj.SquadBuilder
                     extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
                         el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
                     @info_container.find('tr.info-ship').show()
@@ -2309,7 +2310,7 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
-                #canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                canonical_name: exportObj.ships[@pilot.ship].canonical_name
                 xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id

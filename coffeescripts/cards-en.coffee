@@ -1073,4 +1073,4 @@ exportObj.cardLoaders.English = () ->
 
     title_translations =
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations, 
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations
