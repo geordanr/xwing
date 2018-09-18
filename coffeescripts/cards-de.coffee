@@ -1,11 +1,11 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.en = 'English'
+exportObj.codeToLanguage.en = 'Deutsch'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.English =
+exportObj.translations.Deutsch =
     action: #do not change this anymore. We use Icons instead of words
         "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
         "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
@@ -164,8 +164,8 @@ exportObj.translations.English =
         'Title': 'Title'
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.English = () ->
-    exportObj.cardLanguage = 'English'
+exportObj.cardLoaders.Deutsch = () ->
+    exportObj.cardLanguage = 'Deutsch'
 
     # Assumes cards-common has been loaded
     basic_cards = exportObj.basicCardData()

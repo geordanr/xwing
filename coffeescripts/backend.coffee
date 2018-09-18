@@ -1,8 +1,9 @@
 ###
-    X-Wing Squad Builder
-    Geordan Rosario <geordan@gmail.com>
-    https://github.com/geordanr/xwing
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
 ###
+
 exportObj = exports ? this
 
 class exportObj.SquadBuilderBackend
@@ -53,7 +54,6 @@ class exportObj.SquadBuilderBackend
         @squad_display_mode = 'all'
 
         @collection_save_timer = null
-        @collection = {}
 
         @setupHandlers()
         @setupUI()
@@ -675,7 +675,7 @@ class exportObj.SquadBuilderBackend
         # Backend provides an empty collection if none exists yet for the user.
         $.get("#{@server}/collection").done (data, textStatus, jqXHR) ->
             collection = data.collection
-            @collection = new exportObj.Collection
+            ew exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
                 checks: collection.checks
