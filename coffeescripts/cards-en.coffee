@@ -68,6 +68,7 @@ exportObj.translations.English =
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
+        "Scum and Villainy Conversion Kit": "Scum and Villainy Conversion Kit"
         "T-65 X-Wing Expansion Pack": "T-65 X-Wing Expansion Pack"
         "BTL-A4 Y-Wing Expansion Pack": "BTL-A4 Y-Wing Expansion Pack"
         "TIE/ln Fighter Expansion Pack": "TIE/ln Fighter Expansion Pack"
