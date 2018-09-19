@@ -176,7 +176,8 @@ exportObj.cardLoaders.Magyar = () ->
 
     # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
 
-    exportObj.renameShip 'X-Wing', 'X-Wing'
+
+    ###exportObj.renameShip 'X-Wing', 'X-Wing'
     exportObj.renameShip 'A-Wing', 'A-Wing'
     exportObj.renameShip 'Y-Wing', 'Y-Wing'
     exportObj.renameShip 'B-Wing', 'B-Wing'
@@ -233,7 +234,8 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'TIE/FO Fighter', 'TIE/FO Fighter'
     exportObj.renameShip 'TIE/SF Fighter', 'TIE/SF Fighter'
     exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
-    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'    
+    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle' ###   
+
     # Names don't need updating, but text needs to be set
     pilot_translations =
         "4-LOM":

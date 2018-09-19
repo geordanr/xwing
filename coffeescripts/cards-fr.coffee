@@ -180,9 +180,8 @@ exportObj.cardLoaders['Français'] = () ->
     exportObj.ships = basic_cards.ships
 
     # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
-    # exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
 
-    exportObj.renameShip 'X-Wing', 'X-Wing'
+    ###exportObj.renameShip 'X-Wing', 'X-Wing'
     exportObj.renameShip 'A-Wing', 'A-Wing'
     exportObj.renameShip 'Y-Wing', 'Y-Wing'
     exportObj.renameShip 'B-Wing', 'B-Wing'
@@ -239,15 +238,15 @@ exportObj.cardLoaders['Français'] = () ->
     exportObj.renameShip 'TIE/FO Fighter', 'TIE/FO Fighter'
     exportObj.renameShip 'TIE/SF Fighter', 'TIE/SF Fighter'
     exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
-    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'
-    
+    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'###
+
     # Names don't need updating, but text needs to be set
     pilot_translations =
         "4-LOM":
            text: """After you fully execute a red maneuver, gain 1 calculate token. At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Academy Pilot":
            name: "Pilote de l'académie"
-           ship: "Chasseur TIE"
+           #ship: "Chasseur TIE"
            text: """ """
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""
