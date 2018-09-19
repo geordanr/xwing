@@ -1382,7 +1382,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: '"Sigma Squadron Ace"'
+            name: "Sigma Squadron Ace"
             type: 'pilot'
             count: 2
         }

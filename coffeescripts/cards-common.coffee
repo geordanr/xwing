@@ -4618,7 +4618,7 @@ exportObj.basicCardData = ->
               ]
         }
         {
-            name: '"Sigma Squadron Ace"'
+            name: "Sigma Squadron Ace"
             id: 201
             faction: "Galactic Empire"
             ship: "TIE Phantom"
