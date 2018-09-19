@@ -636,7 +636,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results."""
         "Sienar Specialist":
            text: """ """
-        '"Sigma Squadron Ace"':
+        "Sigma Squadron Ace":
            text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Skull Squadron Pilot":
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""

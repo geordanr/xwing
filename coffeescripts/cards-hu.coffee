@@ -624,7 +624,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Amikor védekezel vagy elsődleges támadást hajtasz végre, elköltheted az ellenfeledre tett bemérés jelződet, hogy hozzáadj 1 %FOCUS% eredményt dobásodhoz."""
         "Sienar Specialist":
            text: """ """
-        '"Sigma Squadron Ace"':
+        "Sigma Squadron Ace":
            text: """STYGUM ARRAY: Miután kijössz az álcázásból végrehajthatsz egy %EVADE% akciót. A vége fázis elején elkölthetsz 1 kitérés jelzőt, hogy kapj egy álcázás jelzőt."""
         "Skull Squadron Pilot":
            text: """CONCORDIA FACEOFF: Amikor védekezel vagy támadást hajtasz végre, ha a támadás 1-es távolságban történik és benne vagy a támadó %FRONTARC% tűzívében, megváltoztathatod 1 dobás eredményed %EVADE% eredményre."""

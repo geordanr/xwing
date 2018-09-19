@@ -414,7 +414,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Drea Renthal":
            name: """Drea Renthal"""
            text: """Solange ein befreundetes nicht-limitiertes Schiff einen Angriff durchführt, falls der Verteidiger in deinem Feuerwinkel ist, darf der Angreifer 1 Angriffswürfel neu werfen."""
-        "Edrio Two Tubes":
+        "Edrio Two-Tubes":
            name: """Edrio Two Tubes"""
            text: """Bevor du aktiviert wirst, falls du fokussiert bist, darfst du eine Aktion durchführen."""
         "Emon Azzameen":
@@ -483,7 +483,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Guri":
            name: """Guri"""
            text: """Zu Beginn der Kampfphase, falls mindestens 1 feindliches Schiff in Reichweite 0–1 ist, darfst du 1 Fokusmarker erhalten.%LINEBREAK%Mikrodüsen: Solange du eine Fassrolle durchführst, musst du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
-        "Han Solo  (Scum)":
+        "Han Solo (Scum)":
            name: """Han Solo"""
            text: """Solange du verteidigst oder einen Primärangriff durchführst, falls der Angriff durch ein Hindernis versperrt ist, darfst du 1 zusätzlichen Würfel werfen."""
         "Han Solo":
