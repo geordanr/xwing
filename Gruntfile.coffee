@@ -45,7 +45,6 @@ module.exports = (grunt) ->
                     'bootstrap/**'
                     'select2-3.4.0/**'
                     'images/**'
-                    'selectnav/**'
                 ]
                 dest: 'app/'
             gh_pages:
