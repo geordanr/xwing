@@ -1407,7 +1407,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Falls du einen Ionen- oder Störsignal-marker erhalten würdest, darfst du ein Schiff in Reichweite 0–1 wählen. Falls du das tust, erhalte 1 Stressmarker und transferiere 1 Ionen- oder Störsignalmarker auf jenes Schiff."""
         "Stealth Device":
            name: """Tarnvorrichtung"""
-           text: """Dieses Upgrade kostet je nach Wendigkeitswert (0,1,2,3) unterschiedlich viele (3,4,6,8) Punkte.Solange du verteidigst, falls deine %CHARGE% aktiv ist, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Nachdem du Schaden erlitten hast, verliere 1 %CHARGE%."""
+           text: """Dieses Upgrade kostet je nach Wendigkeitswert (0,1,2,3) unterschiedlich viele (3,4,6,8) Punkte.%LINEBREAK%Solange du verteidigst, falls deine %CHARGE% aktiv ist, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Nachdem du Schaden erlitten hast, verliere 1 %CHARGE%."""
         "Supernatural Reflexes":
            name: """Übernatürliche Reflexe"""
            text: """Bevor du aktiviert wirst, darfst du 1 %FORCE% ausgeben, um eine %BARRELROLL%- oder %BOOST%-Aktion durchzuführen. Dann, falls du eine Aktion durchgeführt hast, die nicht in deiner Aktionsleiste ist, erleide 1 %HIT%-Schaden."""
