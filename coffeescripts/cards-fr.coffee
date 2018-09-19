@@ -179,6 +179,68 @@ exportObj.cardLoaders['Français'] = () ->
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
 
+    # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
+    # exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
+
+    exportObj.renameShip 'X-Wing', 'X-Wing'
+    exportObj.renameShip 'A-Wing', 'A-Wing'
+    exportObj.renameShip 'Y-Wing', 'Y-Wing'
+    exportObj.renameShip 'B-Wing', 'B-Wing'
+    exportObj.renameShip 'E-Wing', 'E-Wing'
+    exportObj.renameShip 'K-Wing', 'K-Wing'
+    exportObj.renameShip 'U-Wing', 'U-Wing'
+    exportObj.renameShip 'YT-1300', 'YT-1300'
+    exportObj.renameShip 'YT-2400', 'YT-2400'
+    exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
+    exportObj.renameShip 'VCX-100', 'VCX-100'
+    exportObj.renameShip 'Attack Shuttle', 'Attack Shuttle'
+    exportObj.renameShip 'ARC-170', 'ARC-170'
+    exportObj.renameShip 'Auzituck Gunship', 'Auzituck Gunship'
+    exportObj.renameShip 'Sheathipede-Class Shuttle', 'Sheathipede-Class Shuttle'
+
+    exportObj.renameShip 'TIE Fighter', 'Chasseur TIE'
+    exportObj.renameShip 'TIE Advanced', 'TIE Advanced'
+    exportObj.renameShip 'TIE Interceptor', 'Intercepteur TIE'
+    exportObj.renameShip 'TIE Bomber', 'Bombardier TIE'
+    exportObj.renameShip 'TIE Defender', 'Défenseur TIE'
+    exportObj.renameShip 'TIE Phantom', 'TIE Fantôme'
+    exportObj.renameShip 'TIE Advanced Prototype', 'TIE Advanced Prototype'
+    exportObj.renameShip 'TIE Striker', 'TIE Striker'
+    exportObj.renameShip 'TIE Punisher', 'TIE Punisher'
+    exportObj.renameShip 'TIE Aggressor', 'TIE Aggressor'
+    exportObj.renameShip 'TIE Reaper', 'TIE Reaper'
+    exportObj.renameShip 'Alpha-Class Star Wing', 'Alpha-Class Star Wing'
+    exportObj.renameShip 'Lambda-Class Shuttle', 'Navette de classe Lambda'
+    exportObj.renameShip 'VT-49 Decimator', 'Décimateur VT-49'
+    
+    exportObj.renameShip 'Firespray-31', 'Firespray-31'
+    exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A' 
+    exportObj.renameShip 'HWK-290', 'HWK-290'
+    exportObj.renameShip 'StarViper', 'StarViper'
+    exportObj.renameShip 'Aggressor', 'Aggressor'
+    exportObj.renameShip 'YV-666', 'YV-666'
+    exportObj.renameShip 'Kihraxz Fighter', 'Kihraxz Fighter'
+    exportObj.renameShip 'G-1A Starfighter', 'G-1A Starfighter'
+    exportObj.renameShip 'Fang Fighter', 'Fang Fighter'
+    exportObj.renameShip 'YT-1300 (Scum)', 'YT-1300 (Scum)'
+    exportObj.renameShip 'JumpMaster 5000', 'JumpMaster 5000'
+    exportObj.renameShip 'Lancer-Class Pursuit Craft', 'Lancer-Class Pursuit Craft'
+    exportObj.renameShip 'Quadjumper', 'Quadjumper'
+    exportObj.renameShip 'Scurrg H-6 Bomber', 'Scurrg H-6 Bomber'
+    exportObj.renameShip 'M12-L Kimogila Fighter', 'M12-L Kimogila Fighter'
+    exportObj.renameShip 'Escape Craft', 'Escape Craft'
+    exportObj.renameShip 'Mining Guild TIE Fighter', 'Mining Guild TIE Fighter'
+
+    exportObj.renameShip 'T-70 X-Wing', 'T-70 X-Wing'
+    exportObj.renameShip 'RZ-2 A-Wing', 'RZ-2 A-Wing'
+    exportObj.renameShip 'B/SF-17 Bomber', 'B/SF-17 Bomber'
+    exportObj.renameShip 'YT-1300 (Resistance)', 'YT-1300 (Resistance)'
+    
+    exportObj.renameShip 'TIE/FO Fighter', 'TIE/FO Fighter'
+    exportObj.renameShip 'TIE/SF Fighter', 'TIE/SF Fighter'
+    exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
+    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'
+    
     # Names don't need updating, but text needs to be set
     pilot_translations =
         "4-LOM":
@@ -1105,4 +1167,4 @@ exportObj.cardLoaders['Français'] = () ->
 
     title_translations =
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations, 
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations

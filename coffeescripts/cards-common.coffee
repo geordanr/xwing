@@ -7266,7 +7266,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
                     when 'ship'
-                        exportObj.ships[card.name].sources.push expansion
+                        # exportObj.ships[card.name].sources.push expansion
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
