@@ -282,7 +282,7 @@ class exportObj.SquadBuilder
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="color-print-checkbox">
-                    Print color <input type="checkbox" class="toggle-color-print" checked="checked"/>
+                    Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
@@ -3190,13 +3190,32 @@ class GenericAddon
                 </div>
             """ else ''
 
-            energyHTML = if (@data.energy?) then $.trim """
-                <div class="upgrade-energy">
-                    <span class="info-data info-energy">#{@data.energy}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
-                </div>
-            """ else ''
-            
+            if (@data.charge?)
+                if  (@data.recurring?)
+                    chargeHTML = $.trim """
+                        <div class="upgrade-charge">
+                            <span class="info-data info-charge">#{@data.charge}</span>
+                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
+                        </div>
+                        """
+                else
+                    chargeHTML = $.trim """
+                        <div class="upgrade-charge">
+                            <span class="info-data info-charge">#{@data.charge}</span>
+                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>
+                        </div>
+                        """
+            else chargeHTML = $.trim ''
+
+            if (@data.force?)
+                forceHTML = $.trim """
+                    <div class="upgrade-force">
+                        <span class="info-data info-force">#{@data.force}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
+                    </div>
+                    """
+            else forceHTML = $.trim ''
+                
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
@@ -3209,7 +3228,8 @@ class GenericAddon
                         #{restriction_html}
                     </div>
                     #{attackHTML}
-                    #{energyHTML}
+                    #{chargeHTML}
+                    #{forceHTML}
                     <div class="upgrade-text">#{text_str}</div>
                     <div style="clear: both;"></div>
                 </div>

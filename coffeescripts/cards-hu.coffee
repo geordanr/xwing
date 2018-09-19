@@ -125,7 +125,7 @@ exportObj.translations.Magyar =
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Másolás</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Másolás</button>'
         '.vertical-space-checkbox' : """Hagyj helyet a sérülés és fejlesztéskártyáknak nyomtatáskor <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Színes nyomtatás <input type="checkbox" class="toggle-color-print" />"""
+        '.color-print-checkbox' : """Színes nyomtatás <input type="checkbox" class="toggle-color-print" checked="checked" />"""
         '.print-list' : '<i class="fa fa-print"></i>&nbsp;Nyomtatás'
         # Randomizer options
         '.do-randomize' : 'Randomize!'
