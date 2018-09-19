@@ -188,41 +188,43 @@ exportObj.cardLoaders['Français'] = () ->
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
 
-    # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
+    # Rename ships (below is an example of what it should look like. uncomment 
+    # the # on the line to make it active. You must have all pilots that use the 
+    # translated ship name use the tag ship:"Translated ship name")
 
-    exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
-    exportObj.renameShip 'Attack Shuttle', 'Navette d\'attaque'
-    exportObj.renameShip 'Auzituck Gunship', 'Canonnière Auzituck'
-    exportObj.renameShip 'Sheathipede-Class Shuttle', 'Navette de classe Sheathipede'
+    # exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
+    # exportObj.renameShip 'Attack Shuttle', 'Navette d\'attaque'
+    # exportObj.renameShip 'Auzituck Gunship', 'Canonnière Auzituck'
+    # exportObj.renameShip 'Sheathipede-Class Shuttle', 'Navette de classe Sheathipede'
 
     exportObj.renameShip 'TIE Fighter', 'Chasseur TIE'
-    exportObj.renameShip 'TIE Interceptor', 'Intercepteur TIE'
-    exportObj.renameShip 'TIE Bomber', 'Bombardier TIE'
-    exportObj.renameShip 'TIE Defender', 'Défenseur TIE'
-    exportObj.renameShip 'TIE Phantom', 'TIE Fantôme'
-    exportObj.renameShip 'Alpha-Class Star Wing', 'Star Wing de classe Alpha'
-    exportObj.renameShip 'Lambda-Class Shuttle', 'Navette de classe Lambda'
-    exportObj.renameShip 'VT-49 Decimator', 'Décimateur VT-49'
+    # exportObj.renameShip 'TIE Interceptor', 'Intercepteur TIE'
+    # exportObj.renameShip 'TIE Bomber', 'Bombardier TIE'
+    # exportObj.renameShip 'TIE Defender', 'Défenseur TIE'
+    # exportObj.renameShip 'TIE Phantom', 'TIE Fantôme'
+    # exportObj.renameShip 'Alpha-Class Star Wing', 'Star Wing de classe Alpha'
+    # exportObj.renameShip 'Lambda-Class Shuttle', 'Navette de classe Lambda'
+    # exportObj.renameShip 'VT-49 Decimator', 'Décimateur VT-49'
     
-    exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A' 
-    exportObj.renameShip 'HWK-290', 'HWK-290'
-    exportObj.renameShip 'Kihraxz Fighter', 'Chasseur Kihraxz'
-    exportObj.renameShip 'G-1A Starfighter', 'Chasseur G-1A'
-    exportObj.renameShip 'Fang Fighter', 'Chasseur Fang'
-    exportObj.renameShip 'Lancer-Class Pursuit Craft', 'Vaisseau de poursuite de classe Lancer'
-    exportObj.renameShip 'Scurrg H-6 Bomber', 'Bombardier Scurrg H-6'
-    exportObj.renameShip 'M12-L Kimogila Fighter', 'Chasseur M12-L Kimogila'
+    # exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A'
+    # exportObj.renameShip 'HWK-290', 'HWK-290'
+    # exportObj.renameShip 'Kihraxz Fighter', 'Chasseur Kihraxz'
+    # exportObj.renameShip 'G-1A Starfighter', 'Chasseur G-1A'
+    # exportObj.renameShip 'Fang Fighter', 'Chasseur Fang'
+    # exportObj.renameShip 'Lancer-Class Pursuit Craft', 'Vaisseau de poursuite de classe Lancer'
+    # exportObj.renameShip 'Scurrg H-6 Bomber', 'Bombardier Scurrg H-6'
+    # exportObj.renameShip 'M12-L Kimogila Fighter', 'Chasseur M12-L Kimogila'
     exportObj.renameShip 'YT-1300 (Scum)', 'YT-1300 (Racailles)'
     exportObj.renameShip 'Escape Craft', 'Vaisseau de secours'
-    exportObj.renameShip 'Mining Guild TIE Fighter', 'TIE de la Guilde Minière'
+    # exportObj.renameShip 'Mining Guild TIE Fighter', 'TIE de la Guilde Minière'
 
-    exportObj.renameShip 'B/SF-17 Bomber', 'Bombardier B/SF-17'
-    exportObj.renameShip 'YT-1300 (Resistance)', 'YT-1300 (Résistance)'
+    # exportObj.renameShip 'B/SF-17 Bomber', 'Bombardier B/SF-17'
+    # exportObj.renameShip 'YT-1300 (Resistance)', 'YT-1300 (Résistance)'
     
-    exportObj.renameShip 'TIE/FO Fighter', 'Chasseur TIE/FO'
-    exportObj.renameShip 'TIE/SF Fighter', 'Chasseur TIE/SF'
-    exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
-    exportObj.renameShip 'Upsilon-Class Shuttle', 'Navette de commandement de classe Upsilon'
+    # exportObj.renameShip 'TIE/FO Fighter', 'Chasseur TIE/FO'
+    # exportObj.renameShip 'TIE/SF Fighter', 'Chasseur TIE/SF'
+    # exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
+    # exportObj.renameShip 'Upsilon-Class Shuttle', 'Navette de commandement de classe Upsilon'
     
     # Names don't need updating, but text needs to be set
     pilot_translations =
