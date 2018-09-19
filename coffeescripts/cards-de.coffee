@@ -270,7 +270,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Baron of the Empire":
            name: """Imperialer Baron"""
            text: """Sienars TIE-v1-Turbojäger war eine bahnbrechende Entwicklung auf dem Gebiet der Sternenjäger-Technologie. Er verfügt über stärkere Triebwerke, einen Raketenwerfer sowie klappbare S-Flügel."""
-        "Benthic Two Tubes":
+        "Benthic Two-Tubes":
            name: """•Benthic Two Tubes"""
            text: """Nachdem du eine %FOCUS%-Aktion durchgeführt hast, darfst du 1 deiner Fokusmarker auf ein befreundetes Schiff in Reichweite 1–2 transferieren."""
         "Biggs Darklighter":
@@ -382,8 +382,7 @@ exportObj.cardLoaders.Deutsch = () ->
            name: """•Gräfin Ryad"""
            text: """Solange du ein %STRAIGHT%-Manöver ausführen würdest, darfst du die Schwierigkeit des Manövers erhöhen. Falls du das tust, führe es stattdessen als %KTURN%-Manöver aus.%LINEBREAK%Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3–5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Crymorah Goon":
-           name: """Verbrecher der Crymorah
-"""
+           name: """Verbrecher der Crymorah"""
            text: """Mit seinen schweren Hüllenplatten, starken Schilden und schlagkräftigen Geschützen ist der Y-Flügler zwar alles andere als behände, dafür eignet er sich hervorragend als Patrouillenschiff."""
         "Cutlass Squadron Pilot":
            name: """Pilot der Entermesser-Staffel"""
@@ -547,7 +546,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Joy Rekkoff":
            name: """•Joy Rekkoff"""
            text: """Solange du einen Angriff durchführst, darfst du 1 %CHARGE% von einer ausgerüsteten %TORPEDO%-Aufwertung ausgeben. Falls du das tust, wirft der Verteidiger 1 Verteidigungswürfel weniger.%LINEBREAK%Concordianischer Wirbel: Solange du verteidigst, falls die Angriffsreichweite 1 ist und du im %FRONTARC% des Angreifers bist, ändere 1 Ergebnis in ein %EVADE%-Ergebnis."""
-        "Kaa’to Leeachos":
+        "Kaa'to Leeachos":
            name: """•Kaa’to Leeachos"""
            text: """Zu Beginn der Kampfphase darfst du 1 befreundetes Schiff in Reichweite 0–2 wählen. Falls du das tust, transferiere 1 Fokus- oder Ausweichmarker von jenem Schiff auf dich selbst."""
         "Kad Solus":
@@ -589,7 +588,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "L3-37 (Escape Craft)":
            name: """•L3-37"""
            text: """Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%) .%LINEBREAK%Co-Pilot: Solange du angedockt bist, hat dein Träger-Schiff deine Piloten-Fähigkeit zusätzlich zu seiner eigenen."""
-        "Laetin A’shera":
+        "Laetin A'shera":
            name: """•Laetin A’shera"""
            text: """Nachdem du verteidigt oder einen Angriff durchgeführt hast, falls der Angriff verfehlt hat, erhalte 1 Ausweichmarker.%LINEBREAK%Waffenaufhängung: Du kannst 1 %CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Lando Calrissian":
@@ -664,7 +663,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Nu Squadron Pilot":
            name: """Pilot der Nu-Staffel"""
            text: """Inspiriert von anderen Modellen der Cygnus Raumwerften, ist der Sternflügler der Alpha-Klasse ein vielseitiges Kanonenboot, das für verschiedene Einsatzgebiete umgerüstet werden kann und somit ideal für die Spezialeinheiten der Imperialen Flotte ist."""
-        "N’dru Suhlak":
+        "N'dru Suhlak":
            name: """•N’dru Suhlak"""
            text: """Solange du einen Primärangriff durchführst, falls keine anderen befreundeten Schiffe in Reichweite 0–2 sind, wirf 1 zusätzlichen Angriffswürfel."""
         "Obsidian Squadron Pilot":

@@ -31,7 +31,7 @@
         "Baron of the Empire":
            name: """Imperialer Baron"""
            text: """Sienars TIE-v1-Turbojäger war eine bahnbrechende Entwicklung auf dem Gebiet der Sternenjäger-Technologie. Er verfügt über stärkere Triebwerke, einen Raketenwerfer sowie klappbare S-Flügel."""
-        "Benthic Two Tubes":
+        "Benthic Two-Tubes":
            name: """•Benthic Two Tubes"""
            text: """Nachdem du eine %FOCUS%-Aktion durchgeführt hast, darfst du 1 deiner Fokusmarker auf ein befreundetes Schiff in Reichweite 1–2 transferieren."""
         "Biggs Darklighter":
@@ -152,7 +152,7 @@
         "Dace Bonearm":
            name: """•Dace Bonearm"""
            text: """Nachdem ein feindliches Schiff in Reichweite 0–3 mindestens 1 Ionenmarker bekommen hat, darfst du 3 %CHARGE% ausgeben. Falls du das tust, erhält jenes Schiff 2 zusätzliche Ionenmarker."""
-        "Dalan Oberos":
+        "Dalan Oberos (StarViper)":
            name: """•Dalan Oberos"""
            text: """Nachdem du ein Manöver vollständig ausgeführt hast, darfst du 1 Stressmarker erhalten, um dein Schiff um 90° zu drehen.%LINEBREAK%Mikrodüsen: Solange du eine Fassrolle durchführst, musst du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
         "Dalan Oberos":
@@ -191,16 +191,16 @@
         "Ezra Bridger":
            name: """•Ezra Bridger"""
            text: """Solange du verteidigst oder einen Angriff durchführst, falls du gestresst bist, darfst du 1 %FORCE% ausgeben, um bis zu 2 deiner %FOCUS%-Ergebnisse in %EVADE%- oder %HIT%-Ergebnisse zu ändern.%LINEBREAK%Geladen und entsichert: Solange du angedockt bist, nachdem dein Trägerschiff einen %FRONTARC%-Primärangriff oder %TURRET%-Angriff durchgeführt hat, darf es einen Bonus-%REARARC%-Primärangriff durchführen."""
-        "Ezra Bridger":
+        "Ezra Bridger (Sheathipede)":
            name: """•Ezra Bridger"""
            text: """Solange du verteidigst oder einen Angriff durchführst, falls du gestresst bist, darfst du 1 %FORCE% ausgeben, um bis zu 2 deiner %FOCUS%-Ergebnisse in %EVADE%- oder %HIT%-Ergebnisse zu ändern. %LINEBREAK%Kommunikationsantennen: Solange du angedockt bist, erhält dein Trägerschiff %COORDINATE%. Bevor dein Trägerschiff aktiviert wird, darf es eine %COORDINATE%-Aktion durchführen."""
-        "Ezra Bridger":
+        "Ezra Bridger (TIE Fighter)":
            name: """•Ezra Bridger"""
            text: """Solange du verteidigst oder einen Angriff durchführst, falls du gestresst bist, darfst du 1 %FORCE% ausgeben, um bis zu 2 deiner %FOCUS%-Ergebnisse in %EVADE%- oder %HIT%-Ergebnisse zu ändern."""
         "Fenn Rau":
            name: """•Fenn Rau"""
            text: """Solange du verteidigst oder einen Angriff durchführst, falls die Angriffsreichweite 1 ist, darfst du 1 zusätzlichen Würfel werfen.%LINEBREAK%Concordianischer Wirbel: Solange du verteidigst, falls die Angriffsreichweite 1 ist und du im%FRONTARC% des Angreifers bist, ändere 1 Ergebnis in ein %EVADE%-Ergebnis."""
-        "Fenn Rau":
+        "Fenn Rau (Sheathipede)":
            name: """•Fenn Rau"""
            text: """Nachdem ein feindliches Schiff in deinem Feuerwinkel begonnen hat zu kämpfen, falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten. Falls du das tust, kann jenes Schiff keine Marker ausgeben, um Würfel zu modifizieren, solange es während dieser Phase einen Angriff durchführt.%LINEBREAK%Kommunikationsantennen: Solange du angedockt bist, erhält dein Trägerschiff %COORDINATE%. Bevor dein Trägerschiff aktiviert wird, darf es eine %COORDINATE%-Aktion durchführen."""
         "Freighter Captain":
@@ -212,7 +212,7 @@
         "Gand Findsman":
            name: """Gand-Finder"""
            text: """Die legendären Finder der Gand verehren den Nebelschleier, der ihren Heimatplaneten umhüllt. Um ihre Beute aufzuspüren, deuten sie mystische Zeichen und Visionen."""
-        "Garven Dreis":
+        "Garven Dreis (X-Wing)":
            name: """•Garven Dreis"""
            text: """Nachdem du einen Fokusmarker ausgegeben hast, darfst du 1 befreundetes Schiff in Reichweite 1–3 wählen. Jenes Schiff erhält 1 Fokusmarker."""
         "Garven Dreis":
@@ -245,7 +245,7 @@
         "Guri":
            name: """•Guri"""
            text: """Zu Beginn der Kampfphase, falls mindestens 1 feindliches Schiff in Reichweite 0–1 ist, darfst du 1 Fokusmarker erhalten.%LINEBREAK%Mikrodüsen: Solange du eine Fassrolle durchführst, musst du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
-        "Han Solo":
+        "Han Solo  (Scum)":
            name: """•Han Solo"""
            text: """Solange du verteidigst oder einen Primärangriff durchführst, falls der Angriff durch ein Hindernis versperrt ist, darfst du 1 zusätzlichen Würfel werfen."""
         "Han Solo":
@@ -258,7 +258,7 @@
            name: """•Hera Syndulla"""
            text: """Nachdem du ein rotes oder blaues Manöver aufgedeckt hast, darfst du dein Rad auf ein anderes Manöver derselben Schwierigkeit einstellen.%LINEBREAK%Geladen und entsichert: Solange du angedockt bist, nachdem dein Trägerschiff einen %FRONTARC%-Primärangriff oder %TURRET%-Angriff durchgeführt hat, darf es einen Bonus-%REARARC%-Primärangriff durchführen."""
         "Hera Syndulla":
-           name: """•Hera Syndulla"""
+           name: """•Hera Syndulla (VCX-100)"""
            text: """Nachdem du ein rotes oder blaues Manöver aufgedeckt hast, darfst du dein Rad auf ein anderes Manöver derselben Schwierigkeit einstellen.%LINEBREAK%Heckgeschütz: Solange du ein angedocktes Schiff hast, hast du eine %REARARC%-Primärwaffe mit einem Angriffswert in Höhe des Angriffswertes der %FRONTARC%-Primärwaffe deines angedockten Schiffes."""
         "Hired Gun":
            name: """Söldner"""
@@ -347,7 +347,7 @@
         "L3-37":
            name: """•L3-37"""
            text: """Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%) ."""
-        "L3-37":
+        "L3-37 (Escape Craft)":
            name: """•L3-37"""
            text: """Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%) .%LINEBREAK%Co-Pilot: Solange du angedockt bist, hat dein Träger-Schiff deine Piloten-Fähigkeit zusätzlich zu seiner eigenen."""
         "Laetin A’shera":
@@ -356,10 +356,10 @@
         "Lando Calrissian":
            name: """•Lando Calrissian"""
            text: """Nachdem du ein blaues Manöver vollständig ausgeführt hast, darfst du ein befreundetes Schiff in Reichweite 0–3 wählen. Jenes Schiff darf eine Aktion durchführen."""
-        "Lando Calrissian":
+        "Lando Calrissian (Scum)":
            name: """•Lando Calrissian"""
            text: """Nachdem du Würfel geworfen hast, falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten um alle deine Leerseiten neu zu werfen."""
-        "Lando Calrissian":
+        "Lando Calrissian (Scum) (Escape Craft)":
            name: """•Lando Calrissian"""
            text: """Nachdem du Würfel geworfen hast, falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten um alle deine Leerseiten neu zu werfen.%LINEBREAK%Co-Pilot: Solange du angedockt bist, hat dein Träger-Schiff deine Piloten-Fähigkeit zusätzlich zu seiner eigenen."""
         "Latts Razzi":
@@ -416,7 +416,7 @@
         "Moralo Eval":
            name: """•Moralo Eval"""
            text: """Falls du fliehen würdest, darfst du 1 %CHARGE% ausgeben. Falls du das tust, platziere dich selbst stattdessen in der Reserve. Zu Beginn der nächsten Planungsphase platziere dich selbst innerhalb von Reichweite 1 des Spielflächenrandes, über den du geflohen bist."""
-        "Norra Wexley":
+        "Norra Wexley (Y-Wing)":
            name: """•Norra Wexley"""
            text: """Solange du verteidigst, falls ein feindliches Schiff in Reichweite 0–1 ist, füge 1 %EVADE%-Ergebnis zu deinen Würfelergebnissen hinzu."""
         "Norra Wexley":
@@ -497,10 +497,10 @@
         "Sabine Wren":
            name: """•Sabine Wren"""
            text: """Bevor du aktiviert wirst, darfst du eine %BARRELROLL%- oder %BOOST%-Aktion durchführen.%LINEBREAK%Geladen und entsichert: Solange du angedockt bist, nachdem dein Trägerschiff einen %FRONTARC%-Primärangriff oder %TURRET%-Angriff durchgeführt hat, darf es einen Bonus-%REARARC%-Primärangriff durchführen."""
-        "Sabine Wren":
+        "Sabine Wren (TIE Fighter)":
            name: """•Sabine Wren"""
            text: """Bevor du aktiviert wirst, darfst du eine %BARRELROLL%- oder %BOOST%-Aktion durchführen."""
-        "Sabine Wren":
+        "Sabine Wren (Scum)":
            name: """•Sabine Wren"""
            text: """Solange du verteidigst, falls der Angreifer in deinem %SINGLETURRETARC% in Reichweite 0–2 ist, darfst du 1 %FOCUS%-Ergebnis zu deinen Würfelergebnissen hinzufügen."""
         "Sarco Plank":
@@ -680,9 +680,9 @@
         '"Zeb" Orrelios':
            name: """•„Zeb“ Orrelios"""
            text: """Solange du verteidigst, werden %CRIT%-Ergebnisse neutralisiert, bevor %HIT%-Ergebnisse neutralisiert werden.%LINEBREAK%Geladen und entsichert: Solange du angedockt bist, nachdem dein Trägerschiff einen %FRONTARC%-Primärangriff oder %TURRET%-Angriff durchgeführt hat, darf es einen Bonus-%REARARC%-Primärangriff durchführen."""
-        '"Zeb" Orrelios':
+        '"Zeb" Orrelios (Sheathipede)':
            name: """•„Zeb“ Orrelios"""
            text: """Solange du verteidigst, werden %CRIT%-Ergebnisse neutralisiert, bevor %HIT%-Ergebnisse neutralisiert werden.%LINEBREAK%Kommunikationsantennen: Solange du angedockt bist, erhält dein Trägerschiff %COORDINATE%. Bevor dein Trägerschiff aktiviert wird, darf es eine %COORDINATE%-Aktion durchführen."""
-        '"Zeb" Orrelios':
+        '"Zeb" Orrelios (TIE Fighter)':
            name: """•„Zeb“ Orrelios"""
            text: """Solange du verteidigst, werden %CRIT%-Ergebnisse neutralisiert, bevor %HIT%-Ergebnisse neutralisiert werden."""

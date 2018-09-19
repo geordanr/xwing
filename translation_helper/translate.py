@@ -63,7 +63,7 @@ output_text = output_text.replace('<nonbreak>',' ')
 output_text = output_text.replace('<shipability>','')
 output_text = output_text.replace('</shipability>','')
 output_text = output_text.replace('<flavor>','')
-output_text = output_text.replace('</flavor>','')
+output_text = output_text.replace('</flavor>','') # we could also remove all flavor text?
 output_text = output_text.replace('<smallcaps>','')
 output_text = output_text.replace('</smallcaps>','')
 output_text = output_text.replace('<sabold>','')
@@ -108,6 +108,7 @@ output_text = output_text.replace('<crit>','%CRIT%')
 
 # Change quotes in Names, to match the YASB scheme (e.g. replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
 output_text = re.sub('"(.*?)“(.*?)”(.*?)"',r"""'\1"\2"\3'""",output_text)
+output_text = output_text.replace('’',"'")
 
 # write output
 output_file = open("translation.coffee","w")
