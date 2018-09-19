@@ -51,6 +51,9 @@ for card_en in cards_en:
 
 output_text +="\n\n\n    upgrade_translations =\n"
 
+# search for double names (upgrades)
+upgrade_name_list= {}
+
 # create upgrade translations - identically to pilots
 for card_en in cards_en:
     # check if we got a upgrade
@@ -67,9 +70,9 @@ for card_en in cards_en:
     output_text += ('           text: """%s"""\n'%card_de["ability_text"])
     
     # check for double names
-    if card_en["name"] in pilot_name_list:
+    if card_en["name"] in upgrade_name_list:
         manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
-    pilot_name_list[card_en["name"]] = True
+    upgrade_name_list[card_en["name"]] = True
     
 
 # do some replacements
