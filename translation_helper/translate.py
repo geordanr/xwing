@@ -18,7 +18,7 @@ for card in cards_de:
     cards_de_by_id[card["id"]]=card
 
 # store what we will later use as .coffee
-output_text = ""
+output_text = "    pilot_translations =\n"
 
 # store what we need to manually post-process (e.g. FFG differs L3-37 Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
 manual_stuff = ""
@@ -48,6 +48,29 @@ for card_en in cards_en:
     if card_en["name"] in pilot_name_list:
         manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
     pilot_name_list[card_en["name"]] = True
+
+output_text +="\n\n\n    upgrade_translations =\n"
+
+# create upgrade translations - identically to pilots
+for card_en in cards_en:
+    # check if we got a upgrade
+    if card_en["card_type_id"] != 2: #id 2: upgrade
+        continue
+    
+    # get german card
+    card_de = cards_de_by_id[card_en["id"]]
+
+    # translate
+    output_text += ('        "%s":\n'%card_en["name"])
+    output_text += ('           name: """%s"""\n'%card_de["name"])
+    # output_text += ('           ship: """%s"""\n'%card_de["name"]) # currently we don't have an api access to ship data - so we can't find the name of the ship. We got the ship ID, but that doesn't help
+    output_text += ('           text: """%s"""\n'%card_de["ability_text"])
+    
+    # check for double names
+    if card_en["name"] in pilot_name_list:
+        manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
+    pilot_name_list[card_en["name"]] = True
+    
 
 # do some replacements
 output_text = output_text.replace('<leftbank>','%BANKLEFT%')
