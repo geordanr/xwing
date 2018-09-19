@@ -267,9 +267,11 @@ exportObj.cardLoaders.Deutsch = () ->
         "Binayre Pirate":
            text: """ """
         "Black Squadron Ace":
+           name: """Fliegerass der schwarzen Staffel"""
            text: """ """
         "Black Squadron Scout":
-           text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           name: """Aufklärer der schwarzen Staffel"""
+           text: """Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Black Sun Ace":
            text: """ """
         "Black Sun Assassin":
@@ -299,7 +301,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Captain Feroph":
            text: """Solange du verteidigst, falls der Angreifer keine grünen Marker hat, darfst du 1 deiner Leerseiten- oder %FOCUS%-Ergebnisse in ein %EVADE%-Ergebnis ändern. %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Captain Jonus":
-           text: """While a friendly ship at range 0-1 performs a %TORPEDO% or %MISSILE% attack, that ship may reroll up to 2 attack dice. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           text: """Solange ein befreundetes Schiff in Reichweite 0-1 einen %TORPEDO%- oder %MISSILE%-Angriff durchführt, darf jenes Schiff bis zu 2 Angriffswürfel neu werfen. %LINEBREAK% Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         "Captain Jostero":
            text: """After an enemy ship suffers damage, if it is not defending, you may perform a bonus attack against that ship."""
         "Captain Kagi":
@@ -307,7 +309,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Captain Nym":
            text: """Before a friendly bomb or mine would detonate, you may spend 1 %CHARGE% to prevent it from detonating. While you defend against an attack obstructed by a bomb or mine, roll 1 additional defense die."""
         "Captain Oicunn":
-           text: """You can perform primary attacks at range 0."""
+           text: """Du kannst Primärangriffe in Reichweite 0 durchführen."""
         "Captain Rex":
            text: """After you perform an attack, assign the Suppressive Fire condition to the defender."""
         "Cartel Executioner":
@@ -327,7 +329,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Colonel Jendon":
            text: """Zu Beginn der Aktivierungsphase darfst du 1 %CHARGE% ausgeben. Falls du das tust, müssen befreundete Schiffe, solange sie in dieser Runde Ziele erfassen, Ziele jenseits von Reichweite 3 erfassen, anstatt in Reichweite 0-3."""
         "Colonel Vessery":
-           text: """While you perform an attack against a locked ship, after you roll attack dice, you may acquire a lock on the defender. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           text: """Solange du einen Angriff gegen ein erfasstes Schiff durchführst, nachdem du Angriffswürfel geworfen hast, darfst du den Verteidiger als Ziel erfassen. %LINEBREAK% Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Constable Zuvio":
            text: """If you would drop a device, you may launch it using a [1 %STRAIGHT%] template instead. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Contracted Scout":
@@ -335,12 +337,14 @@ exportObj.cardLoaders.Deutsch = () ->
         "Corran Horn":
            text: """At initiative 0, you may perform a bonus primary attack against an enemy ship in your %BULLSEYEARC%. If you do, at the start of the next Planning Phase, gain 1 disarm token. %LINEBREAK% EXPERIMENTAL SCANNERS: You can acquire locks beyond range 3. You cannot acquite locks at range 1."""
         '"Countdown"':
-           text: """While you defend, after the Neutralize Results step, if you are not stressed, you may suffer 1 %HIT% damage and gain 1 stress token. If you do, cancel all dice results. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           text: """Solange du verteidigst, nach dem Schritt \"Ergebnisse neutralisieren\", falls du nicht gestresst bist, darfst du 1 %HIT%-Schaden erleiden und 1 Stressmarker erhalten. Falls du das tust, negiere alle Würfelergebnisse. %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Countess Ryad":
-           text: """While you would execute a %STRAIGHT% maneuver, you may increase the difficulty of the maneuver. If you do, execute it as a %KTURN% maneuver instead. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           name: """Gräfin Ryad"""
+           text: """Solange du ein %STRAIGHT%-Manöver ausführen würdest, darfst du die Schwierigkeit des Manövers erhöhen. Falls du das tust, führe es stattdessen als %KTURN%-Manöver aus. %LINEBREAK% Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Crymorah Goon":
            text: """ """
         "Cutlass Squadron Pilot":
+           name: """Pilot der Entermesser-Staffel"""
            text: """ """
         "Dace Bonearm":
            text: """After an enemy ship at range 0-3 receives at least 1 ion token, you may spend 3 %CHARGE%. If you do, that ship gains 2 additional ion tokens."""
@@ -349,29 +353,34 @@ exportObj.cardLoaders.Deutsch = () ->
         "Dalan Oberos (StarViper)":
            text: """After you fully execute a maneuver, you may gain 1 stress token to rotate your ship 90˚.  %LINEBREAK% MICROTHRUSTERS: While you perform a barrel roll, you MUST use the (1 %BANKLEFT%) or (1 %BANKRIGHT%) template instead of the [1 %STRAIGHT%] template."""
         "Darth Vader":
-           text: """After you perform an action, you may spend 1 %FORCE% to perform an action. %LINEBREAK% ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """Nachdem du eine Aktion durchgeführt hast, darfst du 1 %FORCE% ausgeben, um eine Aktion durchzuführen.  %LINEBREAK% Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Dash Rendar":
            text: """While you move, you ignore obstacles. %LINEBREAK% SENSOR BLINDSPOT: While you perform a primary attack at range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
         '"Deathfire"':
-           text: """After you are destroyed, before you are removed, you may perform an attack and drop or launch 1 device. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           name: """\"Todesfeuer\""""
+           text: """Nachdem du zerstört worden bist, bevor du entfernt wirst, darfst du einen Angruff durchführen und 1 Gerät abwerfen oder starten. %LINEBREAK% Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         '"Deathrain"':
-           text: """After you drop or launch a device, you may perform an action."""
+           name: """\"Todesregen\""""
+           text: """Nachdem du ein Gerät abgeworfen oder gestartet hast, darfst du eine Aktion durchführen."""
         "Del Meeko":
-           text: """While a friendly ship at range 0-2 defends against a damaged attacker, the defender may reroll 1 defense die."""
+           text: """Solange ein befreundetes Schiff in Reichweite 0-2 gegen einen beschädigten Angreifer verteidigt, darf der Verteidiger 1 Verteidigungswürfel neu werfen."""
         "Delta Squadron Pilot":
-           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           name: """Pilot der Delta-Staffel"""
+           text: """Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Dengar":
            text: """After you defend, if the attcker is in your %FRONTARC%, you may spend 1 %CHARGE% to perform a bonus attack against the attacker."""
         '"Double Edge"':
-           text: """After you perform a %TURRET% or %MISSILE% attack that misses, you may perform a bonus attack using a different weapon."""
+           name: """\"Doppelklinge\""""
+           text: """Nachdem du einen %TURRET%- oder %MISSILE%-Angriff durchgeführt hast, der verfehlt hat, darfst du unter Verwendung einer anderen Waffe einen Bonusangriff durchführen."""
         "Drea Renthal":
            text: """While a friendly non-limited ship performs an attack, if the defender is in your firing arc, the attacker may reroll 1 attack die."""
         '"Duchess"':
-           text: """You may choose not to use your Adaptive Ailerons. You may use your Adaptive Ailerons even while stressed. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           name: """\"Herzogin\""""
+           text: """Du darfst wählen, deine Adaptive Querruder nicht zu verwenden. Du darfst Adaptive Querruder verwenden, auch solange du gestresst bist. %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         '"Dutch" Vander':
            text: """After you perform the %LOCK% action, you may choose 1 friendly ship at range 1-3. That ship may acquire a lock on the object you locked, ignoring range restrictions."""
         '"Echo"':
-           text: """While you decloak, you must use the (2 %BANKLEFT%) or (2 %BANKRIGHT%) template instead of the (2 %STRAIGHT%) template. STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
+           text: """Solange du dich enttarnst, musst du die [2 %BANKLEFT%]- oder [2 %BANKRIGHT%]-Schablone anstatt der [2 %STRAIGHT%]-Schablone verwenden. %LINEBREAK% Stygium-Gitter: Nachdem du dich enttarnt hast, darfst du 1 %EVADE%-Aktion durchführen. Zu Beginn der Endphase darfst du 1 %EVADE% ausgeben, um 1 Tarnungsmarker zu erhalten."""
         "Edrio Two-Tubes":
            text: """Before you activate, if you are focused, you may perform an action."""
         "Emon Azzameen":
@@ -393,7 +402,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "Freighter Captain":
            text: """ """
         "Gamma Squadron Ace":
-           text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           name: """Fliegerass der Gamma-Staffel"""
+           text: """Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         "Gand Findsman":
            text: """The legendary Findsmen of Gand worship enshrouding mists of their home planet, using signs, augurs, and mystical rituals to track their quarry."""
         "Garven Dreis":
@@ -405,7 +415,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Genesis Red":
            text: """After you acquire a lock, you must remove all of your focus and evade tokens. Then gain the same number of focus and evade tokens that the locked ship has. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Gideon Hask":
-           text: """While you perform an attack against a damaged defender, roll 1 additional attack die."""
+           text: """Solange du einen Angriff gegen einen beschädigten Verteidiger durchführst, wirf 1 zusätzlichen Angriffswürfel"""
         "Gold Squadron Veteran":
            text: """ """
         "Grand Inquisitor":
@@ -434,11 +444,11 @@ exportObj.cardLoaders.Deutsch = () ->
         "Horton Salm":
            text: """While you perform an attack, you may reroll 1 attack die for each other friendly ship at range 0-1 of the defender."""
         '"Howlrunner"':
-           text: """While a friendly ship at range 0-1 performs a primary attack, that ship may reroll 1 attack die."""
+           text: """Solange ein befreundetes Schiff in Reichweite 0-1 einen Primärangriff durchführt, darf jenes Schiff 1 Angriffswürfel neu werfen."""
         "Ibtisam":
            text: """After you fully execute a maneuver, if you are stressed, you may roll 1 attack die. On a %HIT% or %CRIT% result, remove 1 stress token."""
         "Iden Versio":
-           text: """Before a friendly TIE/ln fighter at range 0-1 would suffer 1 or more damage, you may spend 1 %CHARGE%. If you do, prevent that damage."""
+           text: """Bevor ein befreundeter TIE/ln-Jäger in Reichweite 0-1 1 oder mehr Schaden erleiden würde, darfst du 1 %CHARGE% ausgeben. Falls du das tust, verhindere jenen Schaden."""
         "IG-88A":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "IG-88B":
@@ -448,7 +458,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "IG-88D":
            text: """While you execute a Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuver, you may use another template of the same speed instead: either the turn (%TURNLEFT% or %TURNRIGHT%) of the same direction or the straight (%STRAIGHT%) template. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Imdaar Test Pilot":
-           text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
+           name: """Testpilot von Imdaar"""
+           text: """Stygium-Gitter: Nachdem du dich enttarnt hast, darfst du 1 %EVADE%-Aktion durchführen. Zu Beginn der Endphase darfst du 1 %EVADE% ausgeben, um 1 Tarnungsmarker zu erhalten."""
         "Inaldra":
            text: """While you defend or perform an attack, you may suffer 1 %HIT% damage to reroll any number of your dice. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Inquisitor":
@@ -510,7 +521,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Lieutenant Karsabi":
            text: """Nachdem du einen Entwaffnet-Marker erhalten hast, falls du nicht gestresst bist, darfst du 1 Stressmarker erhalten, um 1 Entwaffnet-Marker zu entfernen."""
         "Lieutenant Kestal":
-           text: """While you perform an attack, after the defender rolls defense dice, you may spend 1 focus token to cancel all of the defender's blank/%FOCUS% results."""
+           text: """Solange du einen Angriff durchführst, nachdem der Verteidiger Verteidigungswürfel geworfen hat, darfst du 1 %FOCUS%-Marker ausgeben, um alle Leerseiten/%FOCUS%-Ergebnisse des Verteidigers zu negieren."""
         "Lieutenant Sai":
            text: """Nachdem du eine %COORDINATE%-Aktion durchgeführt hast, falls das von dir gewählte Schiff eine Aktion aus deiner Aktionsleiste durchgeführt hat, darfst du jene Aktion durchführen."""
         "Lok Revenant":
@@ -522,11 +533,11 @@ exportObj.cardLoaders.Deutsch = () ->
         "Luke Skywalker":
            text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
         "Maarek Stele":
-           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """Solange du einen Angriff durchführst, falls dem Verteidiger eine offene Schadenskarte zugeteilt werden würde, ziehe stattdessen 3 Schadenskarten, wähle 1 und lege die übrigen ab. %LINEBREAK% Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Magva Yarro":
            text: """While a friendly ship at range 0-2 defends, the attacker cannot reroll more than 1 attack die."""
         "Major Rhymer":
-           text: """While you perform a %TORPEDO% or %MISSILE% attack, you may increase or decrease the range requirement by 1, to a limit of 0-3. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           text: """Solange du einen %TORPEDO%- oder %MISSILE%-Angriff durchführst, darfst du die Reichweitenbedinung um 1 erhöhen oder verringern, bis zu einem Limit von 0-3. %LINEBREAK% Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         "Major Vermeil":
            text: """Solange du einen Angriff durchführst, falls der Verteidiger keine grünen Marker hat, darfst du 1 deiner Leerseiten- oder %FOCUS%-Ergebnisse in ein %HIT%-Ergebnis ändern. %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Major Vynder":
@@ -534,7 +545,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Manaroo":
            text: """At the start of the Engagement Phase, you may choose a friendly ship at range 0-1. If you do, transfer all green tokens assigned to you to that ship."""
         '"Mauler" Mithel':
-           text: """While you perform an attack at attack range 1, roll 1 additional attack die."""
+           text: """Solange du einen Angriff in Angriffsreichweite 1 durchführst, wirf 1 zusätzlichen Angriffswürfel."""
         "Miranda Doni":
            text: """While you perform a primary attack, you may either spend 1 shield to roll 1 additional attack die or, if you are not shielded, you may roll 1 fewer attack die to recover 1 shield."""
         "Moralo Eval":
@@ -544,7 +555,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "N'dru Suhlak":
            text: """While you perform a primary attack, if there are no other friendly ships at range 0-2, roll 1 additional attack die."""
         '"Night Beast"':
-           text: """After you fully execute a blue maneuver, you may perform a %FOCUS% action."""
+           name: """\"Nachtbestie\""""
+           text: """Nachdem du ein blaues Manöver vollständig ausgeführt hast, darfst du eine %FOCUS%-Aktion durchführen."""
         "Norra Wexley":
            text: """While you defend, if there is an enemy ship at range 0-1, add 1 %EVADE% result to your dice results."""
         "Norra Wexley (Y-Wing)":
@@ -553,6 +565,7 @@ exportObj.cardLoaders.Deutsch = () ->
            name: """Pilot der Nu-Staffel"""
            text: """ """
         "Obsidian Squadron Pilot":
+           name: """Pilot der Obsidian-Staffel"""
            text: """ """
         "Old Teroch":
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 1. If you do and you are in its %FRONTARC%, it removes all of its green tokens. %LINEBREAK% CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
@@ -560,8 +573,10 @@ exportObj.cardLoaders.Deutsch = () ->
            name: """Pilot der Omicron-Gruppe"""
            text: """ """
         "Onyx Squadron Ace":
-           text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           name: """Fliegerass der Onyx-Staffel"""
+           text: """Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Onyx Squadron Scout":
+           name: """Aufklärer der Onyx-Staffel"""
            text: """ """
         "Outer Rim Pioneer":
            text: """Befreundete Schiffe in Reichweite 0-1 können Angriffe in Reichweite 0 zu Hindernissen durchführen. %LINEBREAK% CO-PILOT: Solange du angedockt bist, hat dein Träger-Schiff deine Pilotenfähigkeit zusätzlich zu seiner eigenen."""
@@ -572,27 +587,32 @@ exportObj.cardLoaders.Deutsch = () ->
         "Partisan Renegade":
            text: """ """
         "Patrol Leader":
+           name: """Patrouillenführer"""
            text: """ """
         "Phoenix Squadron Pilot":
            text: """VECTORED THRUSTERS: After you perform an action, you may perform a red %BOOST% action."""
         "Planetary Sentinel":
-           text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           name: """Planetarer Wachposten"""
+           text: """Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Prince Xizor":
            text: """While you defend, after the Neutralize Results step, another friendly ship at range 0-1 and in the attack arc may suffer 1 %HIT% or %CRIT% damage. If it does, cancel 1 matching result.  %LINEBREAK% MICROTHRUSTERS: While you perform a barrel roll, you MUST use the (1 %BANKLEFT%) or (1 %BANKRIGHT%) template instead of the [1 %STRAIGHT%] template."""
         '"Pure Sabacc"':
-           text: """While you perform an attack, if you have 1 or fewer damage cards, you may roll 1 additional attack die. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
+           name: """\"Voller Sabacc\""""
+           text: """Solange du einen Angriff durchführst, falls du 1 oder weniger Schadenskarten hast, darfst du 1 zustäzlichen Angriffswürfel werfen. %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Quinn Jast":
            text: """At the start of the Engagement Phase, you may gain 1 disarm token to recover 1 %CHARGE% on 1 of your equipped upgrades. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Rear Admiral Chiraneau":
-           text: """While you perform an attack, if you are reinforced and the defender is in the %FULLFRONTARC% or %FULLREARARC% matching your reinforce token, you may change 1 of your %FOCUS% results to a %CRIT% result."""
+           name: """Konteradmiral Chiraneau"""
+           text: """Solange du einen Angriff durchführst, falls du verstärkt bist und der Verteidiger in dem %FULLFRONTARC% oder %FULLREARARC% ist, der zu deinem Verstärkungsmarker passt, darfst du 1 deiner %FOCUS%-Ergebnisse in ein %CRIT%-Ergebnis ändern."""
         "Rebel Scout":
            text: """ """
         "Red Squadron Veteran":
            text: """ """
         '"Redline"':
-           text: """You can maintain up to 2 locks. After you perform an action, you may acquire a lock."""
+           name: """\"Rote Linie\""""
+           text: """Du kannst bis zu 2 Zielerfassungen aufrechterhalten. Nachdem du eine Aktion durchgeführt hast, darfst du ein Ziel erfassen"""
         "Rexler Brath":
-           text: """After you perform an attack that hits, if you are evading, expose 1 of the defender's damage cards. %LINEBREAK% FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
+           text: """Nachdem du einen Angriff durchgeführt hast, der getroffen hat, falls du ausweichst, lege 1 der Schadenskarten des Verteidigers offen. %LINEBREAK% Vollgas: Nachdem du ein Manöver mit Geschwindigkeit 3-5 vollständig ausgeführt hast, darfst du eine %EVADE%-Aktion durchführen."""
         "Rho Squadron Pilot":
            name: """Pilot der Rho-Staffel"""
            text: """ """
@@ -617,24 +637,28 @@ exportObj.cardLoaders.Deutsch = () ->
            name: """Pilot der Scarif-Basis"""
            text: """Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         "Scimitar Squadron Pilot":
-           text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% template of the same speed instead."""
+           name: """Pilot der Scimitar-Staffel"""
+           text: """Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         '"Scourge" Skutu':
-           text: """While you perform an attack against a defender in your %BULLSEYEARC%, roll 1 additional attack die."""
+           name: """\"Geißel\" Skutu"""
+           text: """Solange du einen Angriff gegen einen Verteidiger in deinem %BULLSEYEARC% durchführst, wirf 1 zusätzlichen Angriffswürfel"""
         "Serissu":
            text: """While a friendly ship at range 0-1 defends, it may reroll 1 of its dice. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Seventh Sister":
            name: """Siebte Schwester"""
            text: """Solange du einen Primärangriff durchführst, vor dem Schritt \"Ergebnisse modifizieren\", darfst du 2 %FORCE% ausgeben, um 1 %EVADE%-Ergebnis zu negieren."""
         "Seyn Marana":
-           text: """While you perform an attack, you may spend 1 %CRIT% result. If you do, deal 1 facedown damage card to the defender, then cancel you remaining results."""
+           text: """Solange du einen Angriff durchführst, darfst du 1 %CRIT%-Ergebnis ausgeben. Falls du das tust, teile dem Verteidiger 1 verdeckte Schadenskarte zu, dann negiere deine übrigen Ergebnisse."""
         "Shadowport Hunter":
            text: """Crime syndicates augment the lethal skills of their loyal contractors with the best technology available, like the fast and formidable Lancer-class pursuit craft."""
         "Shara Bey":
            text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results."""
         "Sienar Specialist":
+           name: """Experte von Sienar"""
            text: """ """
         '"Sigma Squadron Ace"':
-           text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
+           name: """Fliegerass der Sigma-Staffel"""
+           text: """Stygium-Gitter: Nachdem du dich enttarnt hast, darfst du 1 %EVADE%-Aktion durchführen. Zu Beginn der Endphase darfst du 1 %EVADE% ausgeben, um 1 Tarnungsmarker zu erhalten."""
         "Skull Squadron Pilot":
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
         "Sol Sixxa":
@@ -644,7 +668,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "Spice Runner":
            text: """ """
         "Storm Squadron Ace":
-           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           name: """Fliegerass der Storm-Staffel"""
+           text: """Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Sunny Bounder":
            text: """While you defend or perform an attack, after you roll or reroll your dice, if you have the same result on each of your dice, you may add 1 matching result. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Tala Squadron Pilot":
@@ -656,13 +681,14 @@ exportObj.cardLoaders.Deutsch = () ->
         "Tel Trevura":
            text: """If you would be destroyed, you may spend 1 %CHARGE%. If you do, discard all of your damage cards, suffer 5 %HIT% damage, and place yourself in reserves instead. At the start of the next planning phase, place yourself within range 1 of your player edge."""
         "Tempest Squadron Pilot":
-           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           name: """Pilot der Tornado-Staffel"""
+           text: """Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Ten Numb":
            text: """While you defend or perform an attack, you may spend 1 stress token to change all of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Thane Kyrell":
            text: """While you perform an attack, you may spend 1 %FOCUS%, %HIT%, or %CRIT% result to look at the defender's facedown damage cards, choose 1, and expose it."""
         "Tomax Bren":
-           text: """After you perform a %RELOAD% action, you may recover 1 %CHARGE% token on 1 of your equipped %TALENT% upgrade cards. %LINEBREAK% NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
+           text: """Nachdem du eine %RELOAD%-Aktion durchgeführt hast, darfst du 1 %CHARGE% von 1 deiner ausgerüsteten %TALENT%-Aufwertungskarten wiederherstellen. %LINEBREAK% Wendiger Bomber: Falls du unter Verwendung einer %STRAIGHT%-Schablone ein Gerät abwerfen würdest, darfst du stattdessen eine %BANKLEFT%- oder %BANKRIGHT%-Schablone derselben Geschwindigkeit verwenden."""
         "Torani Kulda":
            text: """After you perform an attack, each enemy ship in your %BULLSEYEARC% suffers 1 %HIT% damage unless it removes 1 green token. %LINEBREAK% DEAD TO RIGHTS: While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
         "Torkil Mux":
@@ -674,22 +700,23 @@ exportObj.cardLoaders.Deutsch = () ->
         "Unkar Plutt":
            text: """At the start of the Engagement Phase, if there are one or more other ships at range 0, you and each other ship at range 0 gain 1 tractor token. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Valen Rudor":
-           text: """After a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
+           text: """Nachdem ein befreundetes Schiff in Reichweite 0-1 verteidigt hat (nachdem ggf. Schaden abgehandelt worden ist), darfst du eine Aktion durchführen."""
         "Ved Foslo":
-           text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """Solange du ein Manöver ausführst, darfst du stattdessen ein Manöver derselben Flugrichtung und Schwierigkeit, aber einer um 1 höheren oder niedrigeren Geschwindigkeit ausführen. %LINEBREAK% Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Viktor Hel":
            text: """After you defend, if you did not roll exactly 2 defense dice, the attack gains 1 stress token."""
         '"Vizier"':
            name: """\"Wesir\""""
            text: """Nachdem du unter Verwendung deiner Adaptiven Querruder ein Manöver mit Geschwindigkeit 1 vollständig ausgeführt hast, darfst du eine %COORDINATE%-Aktion durchführen. Falls du das tust, überspringe deinen Schritt \"Aktion ausführen\" %LINEBREAK% Adaptive Querruder: Bevor du dein Rad aufdeckst, falls du nicht gestresst bist, musst du ein weißes [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Manöver ausführen."""
         '"Wampa"':
-           text: """While you perform an attack, you may spend 1 %CHARGE% to roll 1 additional attack die. After defending, lose 1 %CHARGE%."""
+           text: """Solange du einen Angriff ausführst, darfst du 1 %CHARGE% ausgeben, um 1 zusätzlichen Angriffswürfel zu werfen. Nach dem Verteidigen, verliere 1 %CHARGE%"""
         "Warden Squadron Pilot":
            text: """ """
         "Wedge Antilles":
            text: """While you perform an attack, the defender rolls 1 fewer defense die."""
         '"Whisper"':
-           text: """After you perform an attack that hits, gain 1 evade token. STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
+           name: """\"Geflüster\""""
+           text: """Nachdem du einen Angriff durchgeführt hast, der getroffen hat, erhalte 1 %EVADE%-Marker. %LINEBREAK% Stygium-Gitter: Nachdem du dich enttarnt hast, darfst du 1 %EVADE%-Aktion durchführen. Zu Beginn der Endphase darfst du 1 %EVADE% ausgeben, um 1 Tarnungsmarker zu erhalten."""
         "Wild Space Fringer":
            text: """SENSOR BLINDSPOT: While you perform a primary attack at range 0-1, do not apply the range 0-1 bonus and roll 1 fewer attack die."""
         "Wullffwarro":
@@ -703,7 +730,7 @@ exportObj.cardLoaders.Deutsch = () ->
         '"Zeb" Orrelios (TIE Fighter)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Zertik Strom":
-           text: """During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship's damage cards. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """Während der Endphase darfst du eine Zielerfassung ausgeben, die du auf einem feindlichen Schiff hast, um 1 der Schadenskarten jenes Schiffs offenzulegen. %LINEBREAK% Verbesserter Zielcomputer: Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1 %HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
         "Zuckuss":
            text: """While you perform a primary attack, you may roll 1 additional attack die. If you do, the defender rolls 1 additional defense die."""
         "Poe Dameron":
