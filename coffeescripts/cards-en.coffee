@@ -173,7 +173,7 @@ exportObj.cardLoaders.English = () ->
 
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
-
+    
     # Names don't need updating, but text needs to be set
     pilot_translations =
         "4-LOM":

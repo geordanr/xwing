@@ -2310,7 +2310,7 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
-                canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                #canonical_name: exportObj.ships[@pilot.ship].canonical_name
                 xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
