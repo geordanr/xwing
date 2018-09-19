@@ -125,7 +125,7 @@ exportObj.translations.Deutsch =
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
+        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
         '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
         # Randomizer options
         '.do-randomize' : 'Randomize!'
@@ -176,7 +176,7 @@ exportObj.cardLoaders.Deutsch = () ->
 
 
     # Rename ships
-    exportObj.renameShip 'X-Wing', 'X-Wing'
+    ###exportObj.renameShip 'X-Wing', 'X-Wing'
     exportObj.renameShip 'A-Wing', 'A-Wing'
     exportObj.renameShip 'Y-Wing', 'Y-Wing'
     exportObj.renameShip 'B-Wing', 'B-Wing'
@@ -233,7 +233,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip 'TIE/FO Fighter', 'TIE/FO Fighter'
     exportObj.renameShip 'TIE/SF Fighter', 'TIE/SF Fighter'
     exportObj.renameShip 'TIE Silencer', 'TIE Silencer'
-    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'
+    exportObj.renameShip 'Upsilon-Class Shuttle', 'Upsilon-Class Shuttle'###
     
     # Only generic names need updating, but text needs to be set
     pilot_translations =

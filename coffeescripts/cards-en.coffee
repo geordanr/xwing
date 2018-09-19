@@ -125,7 +125,7 @@ exportObj.translations.English =
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
+        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
         '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
         # Randomizer options
         '.do-randomize' : 'Randomize!'
