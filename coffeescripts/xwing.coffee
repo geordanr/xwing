@@ -2317,7 +2317,8 @@ class Ship
                 text: "#{@pilot.name} (#{@pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
-                upgrade.updateSelection()
+                points = upgrade.getPoints()
+                upgrade.updateSelection points
             for title in @titles
                 title.updateSelection() if title?
             for modification in @modifications
@@ -2614,7 +2615,8 @@ class Ship
             """
 
             for upgrade in slotted_upgrades
-                html += upgrade.toHTML()
+                points = upgrade.getPoints()
+                html += upgrade.toHTML points
 
             html += $.trim """
                 </div>
@@ -2642,7 +2644,8 @@ class Ship
             .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
-                table_html += upgrade.toTableRow()
+                points = upgrade.getPoints()
+                table_html += upgrade.toTableRow points
 
         # if @getPoints() != @pilot.points
         table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
@@ -2660,7 +2663,8 @@ class Ship
             bbcode +="\n"
             bbcode_upgrades= []
             for upgrade in slotted_upgrades
-                upgrade_bbcode = upgrade.toBBCode()
+                points = upgrade.getPoints()
+                upgrade_bbcode = upgrade.toBBCode points
                 bbcode_upgrades.push upgrade_bbcode if upgrade_bbcode?
             bbcode += bbcode_upgrades.join "\n"
 
@@ -2674,7 +2678,8 @@ class Ship
             .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
-                upgrade_html = upgrade.toSimpleHTML()
+                points = upgrade.getPoints()
+                upgrade_html = upgrade.toSimpleHTML points
                 html += upgrade_html if upgrade_html?
 
         html
@@ -3136,12 +3141,12 @@ class GenericAddon
             Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints * 2))
         else
             @data?.points ? 0
-
-    updateSelection: ->
+            
+    updateSelection: (points) ->
         if @data?
             @selector.select2 'data',
-                id: @data.id
-                text: "#{@data.name} (#{@data.points})"
+            id: @data.id
+            text: "#{@data.name} (#{points})"
         else
             @selector.select2 'data', null
 
@@ -3151,7 +3156,7 @@ class GenericAddon
         else
             "No #{@type}"
 
-    toHTML: ->
+    toHTML: (points) ->
         if @data?
             upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
 
@@ -3215,14 +3220,14 @@ class GenericAddon
                     </div>
                     """
             else forceHTML = $.trim ''
-                
+            
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
                         <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i>#{@data.name}</div>
                         <div class="mask">
                             <div class="outer-circle">
-                                <div class="inner-circle upgrade-points">#{@data.points}</div>
+                                <div class="inner-circle upgrade-points">#{points}</div>
                             </div>
                         </div>
                         #{restriction_html}
@@ -3237,26 +3242,26 @@ class GenericAddon
         else
             ''
 
-    toTableRow: ->
+    toTableRow: (points) ->
         if @data?
             $.trim """
                 <tr class="simple-addon">
                     <td class="name">#{@data.name}</td>
-                    <td class="points">#{@data.points}</td>
+                    <td class="points">#{points}</td>
                 </tr>
             """
         else
             ''
 
-    toBBCode: ->
+    toBBCode: (points) ->
         if @data?
-            """[i]#{@data.name} (#{@data.points})[/i]"""
+            """[i]#{@data.name} (#{points})[/i]"""
         else
             null
 
-    toSimpleHTML: ->
+    toSimpleHTML: (points) ->
         if @data?
-            """<i>#{@data.name} (#{@data.points})</i><br />"""
+            """<i>#{@data.name} (#{points})</i><br />"""
         else
             ''
 
