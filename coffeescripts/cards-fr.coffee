@@ -1,5 +1,13 @@
 ###
+<<<<<<< HEAD
     French localization by
+=======
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
+
+    French translation by
+>>>>>>> Add french translator info
     - Clément Bourgoin <c@iwzr.fr> https://github.com/iwazaru
 ###
 
