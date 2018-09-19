@@ -133,6 +133,9 @@ output_text = output_text.replace('<crit>','%CRIT%')
 output_text = re.sub('"(.*?)“(.*?)”(.*?)"',r"""'\1"\2"\3'""",output_text)
 output_text = output_text.replace('’',"'")
 
+# Remove unique dots
+output_text = output_text.replace('•','')
+
 # write output
 output_file = open("translation.coffee","w")
 output_file.write(output_text)
