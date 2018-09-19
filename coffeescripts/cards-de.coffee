@@ -1,7 +1,7 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.en = 'Deutsch'
+exportObj.codeToLanguage.de = 'Deutsch'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.

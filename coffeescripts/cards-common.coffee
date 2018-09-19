@@ -28,7 +28,6 @@ exportObj.secondEditionCheck = (data, faction='') ->
         return false
     else if (data.name == 'TIE Fighter' and faction == 'Rebel Alliance')
         return false
-
     for source in data.sources
         return true if source in exportObj.secondEditionExpansions
     false
@@ -7266,7 +7265,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
                     when 'ship'
-                        # exportObj.ships[card.name].sources.push expansion
+                        exportObj.ships[card.name].sources.push expansion
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
