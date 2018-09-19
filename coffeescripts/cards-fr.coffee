@@ -1,3 +1,8 @@
+###
+    French localization by
+    - Clément Bourgoin <c@iwzr.fr> https://github.com/iwazaru
+###
+
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
@@ -246,6 +251,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """ """
         "Black Squadron Ace":
            name: "As de l’Escadron Noir"
+           ship: "Chasseur TIE"
            text: """ """
         "Black Squadron Scout":
            text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
@@ -419,6 +425,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Ibtisam":
            text: """After you fully execute a maneuver, if you are stressed, you may roll 1 attack die. On a %HIT% or %CRIT% result, remove 1 stress token."""
         "Iden Versio":
+           ship: "Chasseur TIE"
            text: """Avant qu’un chasseur TIE/ln allié à portée 0–1 ne subisse 1 ou plusieurs dégâts, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, prévenez ce dégât."""
         "IG-88A":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
@@ -525,6 +532,7 @@ exportObj.cardLoaders['Français'] = () ->
         "N'dru Suhlak":
            text: """While you perform a primary attack, if there are no other friendly ships at range 0-2, roll 1 additional attack die."""
         '"Night Beast"':
+           ship: "Chasseur TIE"
            text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez effectuer une action %FOCUS%."""
         "Norra Wexley":
            text: """Tant que vous défendez, si un vaisseau ennemi est à portée 0–1, ajoutez 1 résultat %EVADE% à vos résultats de dés."""
@@ -534,6 +542,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """ """
         "Obsidian Squadron Pilot":
            name: "Pilote de l’Escadron Obsidian"
+           ship: "Chasseur TIE"
            text: """ """
         "Old Teroch":
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship at range 1. If you do and you are in its %FRONTARC%, it removes all of its green tokens. %LINEBREAK% CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
@@ -651,6 +660,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Unkar Plutt":
            text: """At the start of the Engagement Phase, if there are one or more other ships at range 0, you and each other ship at range 0 gain 1 tractor token. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Valen Rudor":
+           ship: "Chasseur TIE"
            text: """Après qu’un vaisseau allié à portée 0–1 a défendu (après la résolution des dégâts, s’il y en a), vous pouvez effectuer une action."""
         "Ved Foslo":
            text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
