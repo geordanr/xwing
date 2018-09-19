@@ -26,14 +26,25 @@ manual_stuff = ""
 # search for double names
 pilot_name_list = {}
 
-# create pilots
+# sort by name
+cards_en = sorted(cards_en, key=lambda k: k['name']) 
+
+# create pilots translation
 for card_en in cards_en:
+    # check if we got a pilot
     if card_en["card_type_id"] != 1: #id 1: pilot
         continue
+    
+    # get german card
     card_de = cards_de_by_id[card_en["id"]]
+
+    # translate
     output_text += ('        "%s":\n'%card_en["name"])
     output_text += ('           name: """%s"""\n'%card_de["name"])
+    # output_text += ('           ship: """%s"""\n'%card_de["name"]) # currently we don't have an api access to ship data - so we can't find the name of the ship. We got the ship ID, but that doesn't help
     output_text += ('           text: """%s"""\n'%card_de["ability_text"])
+    
+    # check for double names
     if card_en["name"] in pilot_name_list:
         manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
     pilot_name_list[card_en["name"]] = True
