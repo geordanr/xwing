@@ -46,7 +46,7 @@ for card_en in cards_en:
     
     # check for double names
     if card_en["name"] in pilot_name_list:
-        manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
+        manual_stuff += ('Found pilot name multiple times: %s\n'%card_en["name"])
     pilot_name_list[card_en["name"]] = True
 
 output_text +="\n\n\n    upgrade_translations =\n"
@@ -71,7 +71,7 @@ for card_en in cards_en:
     
     # check for double names
     if card_en["name"] in upgrade_name_list:
-        manual_stuff += ('Found name multiple times: %s\n'%card_en["name"])
+        manual_stuff += ('Found upgrade name multiple times: %s\n'%card_en["name"])
     upgrade_name_list[card_en["name"]] = True
     
 
@@ -140,15 +140,20 @@ output_text = output_text.replace('’',"'")
 output_text = output_text.replace('•','')
 
 # write output
-output_file = open("translation.coffee","w")
-output_file.write(output_text)
-output_file.close()
+#output_file = open("translation.coffee","w")
+#output_file.write(output_text)
+#output_file.close()
 
 # write manual-ToDo stuff
-output_file = open("todo.txt","w")
-output_file.write(manual_stuff)
-output_file.close()
+#output_file = open("todo.txt","w")
+#output_file.write(manual_stuff)
+#output_file.close()
 
 
 print(manual_stuff)
 
+
+for card_en in cards_en:
+    # check if we got a upgrade
+    if card_en["card_type_id"] != 1 and card_en["card_type_id"] !=2: #id 2: upgrade
+        print(card_en["name"])

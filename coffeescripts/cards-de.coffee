@@ -47,121 +47,121 @@ exportObj.translations.Deutsch =
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
     slot:
         "Astromech": "Astromech"
-        "Force": "Force"
-        "Bomb": "Bomb"
-        "Cannon": "Cannon"
-        "Crew": "Crew"
-        "Missile": "Missile"
+        "Force": "Macht-Fähigkeit"
+        "Bomb": "Bomb" # which slot is this? Bombs belong to the device slot, right?
+        "Cannon": "Kanone"
+        "Crew": "Mannschaft"
+        "Missile": "Rakete"
         "Sensor": "Sensor"
         "Torpedo": "Torpedo"
-        "Turret": "Turret"
-        "Hardpoint": "Hardpoint"
-        "Illicit": "Illicit"
-        "Configuration": "Configuration"
+        "Turret": "Geschütz"
+        "Hardpoint": "Bewaffnung"
+        "Illicit": "Schmuggelware"
+        "Configuration": "Konfiguration"
         "Talent": "Talent"
-        "Modification": "Modification"
-        "Gunner": "Gunner"
-        "Device": "Device"
+        "Modification": "Modifikation"
+        "Gunner": "Bordschütze"
+        "Device": "Vorrichtung"
         "Tech": "Tech"
-        "Title": "Title"
+        "Title": "Titel"
     sources: # needed?
-        "Second Edition Core Set": "Second Edition Core Set"
-        "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
-        "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
-        "T-65 X-Wing Expansion Pack": "T-65 X-Wing Expansion Pack"
-        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4 Y-Wing Expansion Pack"
-        "TIE/ln Fighter Expansion Pack": "TIE/ln Fighter Expansion Pack"
-        "TIE Advanced x1 Expansion Pack": "TIE Advanced x1 Expansion Pack"
-        "Slave 1 Expansion Pack": "Slave 1 Expansion Pack"
-        "Fang Fighter Expansion Pack": "Fang Fighter Expansion Pack"
-        "Lando's Millennium Falcon Expansion Pack": "Lando's Millennium Falcon Expansion Pack"
-        "Saw's Renegades Expansion Pack": "Saw's Renegades Expansion Pack"
-        "TIE Reaper Expansion Pack": "TIE Reaper Expansion Pack"
+        "Second Edition Core Set": "Grundspiel zweite Edition"
+        "Rebel Alliance Conversion Kit": "Konvertierungsset „Rebellenallianz“"
+        "Galactic Empire Conversion Kit": "Konvertierungsset „Galaktisches Imperium“"
+        "T-65 X-Wing Expansion Pack": "T-65-X-Flügler Erweiterung"
+        "BTL-A4 Y-Wing Expansion Pack": "BTL-A4-Y-Flügler Erweiterung"
+        "TIE/ln Fighter Expansion Pack": "TIE/ln-Jäger Erweiterung"
+        "TIE Advanced x1 Expansion Pack": "TIE-x1-Turbojäger Erweiterung"
+        "Slave 1 Expansion Pack": "Sklave 1 Erweiterung"
+        "Fang Fighter Expansion Pack": "Fangjäger Erweiterung"
+        "Lando's Millennium Falcon Expansion Pack": "Landos Millennium Falke Erweiterung"
+        "Saw's Renegades Expansion Pack": "Saws Rebellenmiliz Erweiterung"
+        "TIE Reaper Expansion Pack": "TIE-Schnitter Erweiterung"
     ui:
-        shipSelectorPlaceholder: "Select a ship"
-        pilotSelectorPlaceholder: "Select a pilot"
+        shipSelectorPlaceholder: "Wähle ein Schiff"
+        pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->
-            "No #{translator language, 'slot', slot} Upgrade"
-        modificationPlaceholder: "No Modification"
-        titlePlaceholder: "No Title"
+            "Kein #{translator language, 'slot', slot} Upgrade"
+        modificationPlaceholder: "Keine Modifikation"
+        titlePlaceholder: "Kein Titel"
         upgradeHeader: (translator, language, slot) ->
             "#{translator language, 'slot', slot} Upgrade"
-        unreleased: "unreleased"
-        epic: "epic"
-        limited: "limited"
+        unreleased: "unveröffentlicht"
+        epic: "episch"
+        limited: "limitiert"
     byCSSSelector:
         # Warnings
-        '.unreleased-content-used .translated': 'This squad uses unreleased content!'
-        '.collection-invalid .translated': 'You cannot field this list with your collection!'
+        '.unreleased-content-used .translated': 'Diese Staffel verwendet nicht veröffentlicheten Inhalt!'
+        '.collection-invalid .translated': 'Du kannst diese Staffel nicht mit deiner Sammlung aufstellen!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
-        '.game-type-selector option[value="custom"]': 'Custom'
-        '.game-type-selector option[value="epic"]': 'Epic'
-        '.game-type-selector option[value="team-epic"]': 'Team Epic'
+        '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
+        '.game-type-selector option[value="epic"]': 'Episch'
+        '.game-type-selector option[value="team-epic"]': 'Team Episch'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Name'
-        '.xwing-card-browser option[value="source"]': 'Source'
-        '.xwing-card-browser option[value="type-by-points"]': 'Type (by Points)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Type (by Name)'
-        '.xwing-card-browser .translate.select-a-card': 'Select a card from the list at the left.'
-        '.xwing-card-browser .translate.sort-cards-by': 'Sort cards by'
+        '.xwing-card-browser option[value="source"]': 'Quelle'
+        '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Typ (nach Namen)'
+        '.xwing-card-browser .translate.select-a-card': 'Wähle eine Karte von der Liste auf der linken Seite.'
+        '.xwing-card-browser .translate.sort-cards-by': 'Sortiere Karten nach'
         # Info well
-        '.info-well .info-ship td.info-header': 'Ship'
+        '.info-well .info-ship td.info-header': 'Schiff'
         '.info-well .info-skill td.info-header': 'Initiative'
-        '.info-well .info-actions td.info-header': 'Actions'
+        '.info-well .info-actions td.info-header': 'Aktionen'
         '.info-well .info-upgrades td.info-header': 'Upgrades'
-        '.info-well .info-range td.info-header': 'Range'
+        '.info-well .info-range td.info-header': 'Reichweite'
         # Squadron edit buttons
-        '.clear-squad' : 'New Squad'
-        '.save-list' : 'Save'
-        '.save-list-as' : 'Save as…'
-        '.delete-list' : 'Delete'
-        '.backend-list-my-squads' : 'Load squad'
-        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text'
-        '.randomize' : 'Random!'
-        '.randomize-options' : 'Randomizer options…'
-        '.notes-container > span' : 'Squad Notes'
+        '.clear-squad' : 'Neue Staffel'
+        '.save-list' : 'Speichern'
+        '.save-list-as' : 'Speichern unter…'
+        '.delete-list' : 'Löschen'
+        '.backend-list-my-squads' : 'Staffel laden'
+        '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drucken/Als </span>Text ansehen'
+        '.randomize' : 'Zufall!'
+        '.randomize-options' : 'Zufallsgenerator Optionen…'
+        '.notes-container > span' : 'Staffel Notizen'
         # Print/View modal
-        '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
-        '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
-        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
+        '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
+        '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
+        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Upgradekarten <input type="checkbox" class="toggle-vertical-space" />"""
+        '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
+        '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
         # Randomizer options
-        '.do-randomize' : 'Randomize!'
+        '.do-randomize' : 'Auswürfeln!'
         # Top tab bar
-        '#browserTab' : 'Card Browser'
-        '#aboutTab' : 'About'
+        '#browserTab' : 'Kartendatenbank'
+        '#aboutTab' : 'Impressum'
         # Obstacles
-        '.choose-obstacles' : 'Choose Obstacles'
-        '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (This feature is in BETA; support for displaying which obstacles were selected in the printout is not yet supported.)'
-        '.coreasteroid0-select' : 'Core Asteroid 0'
-        '.coreasteroid1-select' : 'Core Asteroid 1'
-        '.coreasteroid2-select' : 'Core Asteroid 2'
-        '.coreasteroid3-select' : 'Core Asteroid 3'
-        '.coreasteroid4-select' : 'Core Asteroid 4'
-        '.coreasteroid5-select' : 'Core Asteroid 5'
-        '.yt2400debris0-select' : 'YT2400 Debris 0'
-        '.yt2400debris1-select' : 'YT2400 Debris 1'
-        '.yt2400debris2-select' : 'YT2400 Debris 2'
-        '.vt49decimatordebris0-select' : 'VT49 Debris 0'
-        '.vt49decimatordebris1-select' : 'VT49 Debris 1'
-        '.vt49decimatordebris2-select' : 'VT49 Debris 2'
-        '.core2asteroid0-select' : 'Force Awakens Asteroid 0'
-        '.core2asteroid1-select' : 'Force Awakens Asteroid 1'
-        '.core2asteroid2-select' : 'Force Awakens Asteroid 2'
-        '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
-        '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
-        '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        '.choose-obstacles' : 'Wähle Hindernisse'
+        '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Dies ist eine Beta-Funktion, aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
+        '.coreasteroid0-select' : 'Grundspiel Asteroid 0'
+        '.coreasteroid1-select' : 'Grundspiel Asteroid 1'
+        '.coreasteroid2-select' : 'Grundspiel Asteroid 2'
+        '.coreasteroid3-select' : 'Grundspiel Asteroid 3'
+        '.coreasteroid4-select' : 'Grundspiel Asteroid 4'
+        '.coreasteroid5-select' : 'Grundspiel Asteroid 5'
+        '.yt2400debris0-select' : 'YT2400 Trümmerwolke 0'
+        '.yt2400debris1-select' : 'YT2400 Trümmerwolke 1'
+        '.yt2400debris2-select' : 'YT2400 Trümmerwolke 2'
+        '.vt49decimatordebris0-select' : 'VT49 Trümmerwolke 0'
+        '.vt49decimatordebris1-select' : 'VT49 Trümmerwolke 1'
+        '.vt49decimatordebris2-select' : 'VT49 Trümmerwolke 2'
+        '.core2asteroid0-select' : 'Erwachen der Macht Asteroid 0'
+        '.core2asteroid1-select' : 'Erwachen der Macht Asteroid 1'
+        '.core2asteroid2-select' : 'Erwachen der Macht Asteroid 2'
+        '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
+        '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
+        '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
 
     singular:
         'pilots': 'Pilot'
-        'modifications': 'Modification'
-        'titles': 'Title'
+        'modifications': 'Modifikation'
+        'titles': 'Titel'
     types:
         'Pilot': 'Pilot'
-        'Modification': 'Modification'
-        'Title': 'Title'
+        'Modification': 'Modifikation'
+        'Title': 'Titel'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->
