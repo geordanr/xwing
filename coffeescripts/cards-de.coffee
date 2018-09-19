@@ -1255,12 +1255,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Ketsu Onyo":
            name: """Ketsu Onyo"""
            text: """Zu Beginn der Endphase darfst du 1 feindliches Schiff in Reichweite 0–2 in deinem Feuerwinkel wählen. Falls du das tust, entfernt jenes Schiff seine Fangstrahlmarker nicht."""
-        "L3–37":
+        "L3-37":
            name: """L3-37"""
-           text: """Aufbau: Rüste diese Seite offen aus.%LINEBREAK%Solange du verteidigst, darfst du diese Karte umdrehen. Fall du das tust, muss der Angreifer alle Angriffswürfel neu werfen."""
-        "L3–37's Programming":
-           name: """Programmierung von L3-37"""
-           text: """Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%)."""
+           text: """Aufbau: Rüste diese Seite offen aus.%LINEBREAK%Solange du verteidigst, darfst du diese Karte umdrehen. Fall du das tust, muss der Angreifer alle Angriffswürfel neu werfen. %LINEBREAK% Falls du keine Schilde hast, verringere die Schwierigkeit deiner Drehmanöver (%BANKLEFT% und %BANKRIGHT%)."""
         "Lando Calrissian":
            name: """Lando Calrissian"""
            text: """Aktion: Wirf 2 Verteidigungswürfel. Erhalte 1 Fokusmarker für jedes %FOCUS%-Ergebnis. Erhalte 1 Ausweichmarker für jedes %EVADE%-Ergebnis. Falls beide Ergebnisse Leerseiten sind, wählt der Gegenspieler Fokus- oder Ausweichmarker. Du erhältst 1 Marker"""
@@ -1390,7 +1387,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Sense":
            name: """Gespür"""
            text: """Während der Systemphase darfst du 1 Schiff in Reichweite 0–1 wählen und sein Rad ansehen. Falls du 1 %FORCE% ausgibst, darfst du stattdessen ein Schiff in Reichweite 0–3 wählen."""
-        "Servomotor S-foils":
+        "Servomotor S-Foils":
            name: """Servomotorische S-Flügel"""
            text: """Geschlossen: Solange du einen Primärangriff durchführst, wirf 1 Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%Füge die %BOOST%, %FOCUS% und %BOOST%-Aktion hinzu.%LINEBREAK%Geöffnet: Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Seventh Sister":
