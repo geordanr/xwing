@@ -975,7 +975,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du einen Angriff durchführst, nachdem du Angriffswürfel geworfen hast, darfst du eine Art von grünen Markern benennen. Falls du das tust, erhalte 2 Ionenmarker und der Verteidiger kann während dieses Angriffs keine Marker der benannten Art ausgeben."""
         "Andrasta":
            name: """Andrasta"""
-           text: """Füge den <bomb>-Slot hinzu."""
+           text: """Füge die %RELOAD%-Aktion hinzu. %LINEBREAK%Füge den %DEVICE%-Slot hinzu."""
         "Dauntless":
            name: """Dauntless"""
            text: """Nachdem du ein Manöver teilweise ausgeführt hast, darfst du 1 weiße Aktion durchführen, wobei du jene Aktion behandelst, als wäre sie rot."""
@@ -984,7 +984,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Du kannst 1 Jagdshuttle oder eine Raumfähre der Sheathipede-Klasse andocken lassen.%LINEBREAK%Deine angedockten Schiffe können nur von deinen hinteren Stoppern aus abgesetzt werden."""
         "Havoc":
            name: """Havoc"""
-           text: """Entferne den %CREW%-Slot. Füge <sensor>- und %ASTROMECH%-Slots hinzu."""
+           text: """Entferne den %CREW%-Slot. Füge %SENSOR%- und %ASTROMECH%-Slots hinzu."""
         "Hound's Tooth":
            name: """Reißzahn"""
            text: """An dir kann 1 Z-95-AF4-Kopfjäger andocken."""
@@ -993,13 +993,13 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Du hast die Pilotenfähigkeit jedes anderen befreundeten Schiffes mit der Aufwertung IG-2000."""
         "Marauder":
            name: """Marodeur"""
-           text: """Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 Angriffswürfel neu werfen.%LINEBREAK%Füge den <gunner>-Slot hinzu."""
+           text: """Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 Angriffswürfel neu werfen.%LINEBREAK%Füge den %GUNNER%-Slot hinzu."""
         "Millennium Falcon":
            name: """Millennium Falke"""
-           text: """Solange du verteidigst, falls du ausweichst, darfst du 1 Verteidigungswürfel neu werfen."""
+           text: """Füge die %EVADE%-Aktion hinzu. %LINEBREAK%Solange du verteidigst, falls du ausweichst, darfst du 1 Verteidigungswürfel neu werfen."""
         "Mist Hunter":
            name: """Nebeljäger"""
-           text: """Füge den %CANNON%-Slot hinzu."""
+           text: """Füge die %BARRELROLL%-Aktion hinzu. %LINEBREAK%Füge den %CANNON%-Slot hinzu."""
         "Moldy Crow":
            name: """Moldy Crow"""
            text: """Erhalte eine %FRONTARC%-Primärwaffe mit einem Wert von 3.%LINEBREAK%Während der Endphase, entferne bis zu 2 Fokusmarker nicht."""
@@ -1023,7 +1023,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem du ein Wende­­manöver (%TURNLEFT% oder %TURNRIGHT%) oder Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufgedeckt hast, darfst du dein Rad auf das Manöver derselben Geschwindigkeit und Flugrichtung in der anderen Orientierung einstellen.%LINEBREAK%Füge den %TORPEDO%-Slot hinzu."""
         "Virago":
            name: """Virago"""
-           text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den <mod>-Slot hinzu."""
+           text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
         "Ablative Plating":
            name: """Ablative Panzerung"""
            text: """Bevor du Schaden durch ein Hindernis oder die Detonation einer befreundeten Bombe erleiden würdest, darfst du 1 %CHARGE% ausgeben. Falls du das tust, verhindere 1 Schaden."""
@@ -1071,7 +1071,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem du einen Primärangriff durchgeführt hast, der verfehlt hat, falls du nicht gestresst bist, musst du 1 Stressmarker erhalten, um einen Bonus-Primärangriff gegen dasselbe Ziel durchzuführen."""
         "C-3PO":
            name: """C-3PO"""
-           text: """Bevor du Verteidigungswürfel wirfst, darfst du 1 Berechnungs­marker ausgeben, um laut eine Zahl von 1 oder höher zu raten. Falls du das tust und genau so viele %EVADE%-Ergebnisse wirfst, wie du geraten hast, füge 1 %EVADE%-Ergebnis hinzu.%LINEBREAK%Nachdem du die %CALCULATE%-Aktion"""
+           text: """Füge die %CALCULATE%-Aktion hinzu. %LINEBREAK%Bevor du Verteidigungswürfel wirfst, darfst du 1 Berechnungs­marker ausgeben, um laut eine Zahl von 1 oder höher zu raten. Falls du das tust und genau so viele %EVADE%-Ergebnisse wirfst, wie du geraten hast, füge 1 %EVADE%-Ergebnis hinzu.%LINEBREAK%Nachdem du die %CALCULATE%-Aktion"""
         "Cad Bane":
            name: """Cad Bane"""
            text: """Nachdem du ein Gerät abgeworfen oder gestartet hast, darfst du eine rote %BOOST%-Aktion durchführen."""
@@ -1128,16 +1128,16 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Während der Aktivierungsphase können feindliche Schiffe in Reichweite 0–1 keine Stressmarker entfernen."""
         "Debris Gambit":
            name: """Trümmertanz"""
-           text: """Solange du eine rote %EVADE%-Aktion durchführst, falls ein Hindernis in Reichweite 0–1 ist, behandle die Aktion stattdessen, als wäre sie weiß."""
+           text: """Füge die %EVADE%-Aktion hinzu.%LINEBREAK%Solange du eine rote %EVADE%-Aktion durchführst, falls ein Hindernis in Reichweite 0–1 ist, behandle die Aktion stattdessen, als wäre sie weiß."""
         "Dengar":
            name: """Dengar"""
            text: """Nachdem du verteidigt hast, falls der Angreifer in deinem Feuerwinkel ist, darfst du 1 %CHARGE% ausgeben. Falls du das tust, wirf 1 Angriffswürfel, es sei denn, der Angreifer entscheidet sich dafür, 1 grünen Marker zu entfernen. Bei einem %HIT%- oder %CRIT%-Ergebnis erleidet der Angreifer 1 %HIT%-Schaden."""
         "Director Krennic":
            name: """Direktor Krennic"""
-           text: """Aufbau: Bevor die Streitkräfte platziert werden, ordne den Zustand Optimierter Prototyp einem anderen befreundeten Schiff zu."""
+           text: """Füge die %LOCK%-Aktion hinzu.%LINEBREAK%Aufbau: Bevor die Streitkräfte platziert werden, ordne den Zustand Optimierter Prototyp einem anderen befreundeten Schiff zu."""
         "Dorsal Turret":
            name: """Dorsaler Geschützturm"""
-           text: """Angriff"""
+           text: """Füge die %ROTATEARC%-Aktion hinzu.%LINEBREAK%Angriff"""
         "Electronic Baffle":
            name: """Elektronischer Dämpfer"""
            text: """Während der Endphase darfst du 1 %HIT%-Schaden erleiden, um 1 roten Marker zu entfernen."""
@@ -1149,10 +1149,10 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein anderes befreundetes Schiff verteidigt oder einen Angriff durchführt, darfst du 1 %FORCE% ausgeben, um 1 seiner Würfel so zu modifizieren, als hätte jenes Schiff 1 %FORCE% ausgegeben."""
         "Engine Upgrade":
            name: """Verbessertes Triebwerk"""
-           text: """Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
+           text: """Füge die %BOOST%-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Basegröße (klein, mittel, groß) unterschiedlich viele (3, 6, 9) Punkte. %LINEBREAK%Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
         "Expert Handling":
            name: """Flugkunst"""
-           text: """Auch schwere Jäger können in eine Fassrolle gezwungen werden, wobei es einen erfahrenen Piloten braucht, um die Maschine nicht übermäßig zu belasten und dem Feind kein leichtes Ziel zu bieten."""
+           text: """Füge die %BARRELROLL%-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Basegröße (klein, mittel, groß) unterschiedlich viele (2, 4, 6) Punkte. %LINEBREAK%Auch schwere Jäger können in eine Fassrolle gezwungen werden, wobei es einen erfahrenen Piloten braucht, um die Maschine nicht übermäßig zu belasten und dem Feind kein leichtes Ziel zu bieten."""
         "Ezra Bridger":
            name: """Ezra Bridger"""
            text: """Nachdem du einen Primärangriff durchgeführt hast, darfst du 1 %FORCE% ausgeben, um einen Bonus-%SINGLETURRETARC%-Angriff aus einem %SINGLETURRETARC%, aus dem du in dieser Runde noch nicht angegriffen hast, durchzuführen. Falls du das tust und gestresst bist, darfst du 1 Angriffswürfel neu werfen."""
@@ -1206,16 +1206,16 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du einen %SINGLETURRETARC%-Angriff durchführst, nach dem Schritt „Verteidigungswürfel modifizieren“, entfernt der Verteidiger 1 Fokus- oder 1 Berechnungsmarker."""
         "Hull Upgrade":
            name: """Verstärkte Hülle"""
-           text: """Auch wer sich keinen verbesserten Schildgenerator leisten kann, muss nicht auf erhöhten Schutz verzichten, sondern kann sich mit zusätzlichen Panzerplatten an der Schiffshülle behelfen."""
+           text: """Füge 1 Hüllenpunkt hinzu. %LINEBREAK%Dieses Upgrade kostet je nach Wendigkeitswert (0,1,2,3) unterschiedlich viele (2,3,5,7) Punkte. %LINEBREAK%Auch wer sich keinen verbesserten Schildgenerator leisten kann, muss nicht auf erhöhten Schutz verzichten, sondern kann sich mit zusätzlichen Panzerplatten an der Schiffshülle behelfen."""
         "IG-88D":
            name: """IG-88D"""
-           text: """Du hast die Pilotenfähigkeit jedes anderen befreundeten Schiffes mit der Aufwertung IG-2000.%LINEBREAK%Nachdem du eine %CALCULATE%-Aktion durchgeführt hast, erhalte 1 Berechnungsmarker."""
+           text: """Füge die %CALCULATE%-Aktion hinzu.%LINEBREAK%Du hast die Pilotenfähigkeit jedes anderen befreundeten Schiffes mit der Aufwertung IG-2000.%LINEBREAK%Nachdem du eine %CALCULATE%-Aktion durchgeführt hast, erhalte 1 Berechnungsmarker."""
         "ISB Slicer":
            name: """ISB-Hacker"""
            text: """Während der Endphase können feindliche Schiffe in Reichweite 1–2 keine Störsignalmarker entfernen."""
         "Inertial Dampeners":
            name: """Trägheitsdämpfer"""
-           text: """Bevor du ein Manöver ausführen würdest, darfst du 1 Schild ausgeben. Falls du das tust, führe anstatt des Manövers, das du aufgedeckt hast, ein weißes [0 <stop>]-Manöver aus, dann erhalte 1 Stressmarker."""
+           text: """Bevor du ein Manöver ausführen würdest, darfst du 1 Schild ausgeben. Falls du das tust, führe anstatt des Manövers, das du aufgedeckt hast, ein weißes [0 %STOP%]-Manöver aus, dann erhalte 1 Stressmarker."""
         "Informant":
            name: """Informant"""
            text: """Aufbau: Nachdem die Streitkräfte platziert worden sind, wähle 1 feindliches Schiff und ordne ihm den Zustand Abhörgerät zu."""
@@ -1227,7 +1227,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein feindliches Schiff in Reichweite 0 verteidigt, wirft es 1 Verteidigungswürfel weniger."""
         "Ion Cannon":
            name: """Ionenkanone"""
-           text: """Angriff: Falls dieser Angriff trifft, gib 1 %HIT%- oder %CRIT%-Ergebnis aus, um den Verteidiger 1 %HIT%-Schaden erleiden zu lassen. Alle übrigen %HIT%/%CRIT%-Ergebnisse fügen Ionenmarker anstatt Schaden zu."""
+           text: """Füge die %ROTATEARC%-Aktion hinzu.%LINEBREAK%Angriff: Falls dieser Angriff trifft, gib 1 %HIT%- oder %CRIT%-Ergebnis aus, um den Verteidiger 1 %HIT%-Schaden erleiden zu lassen. Alle übrigen %HIT%/%CRIT%-Ergebnisse fügen Ionenmarker anstatt Schaden zu."""
         "Ion Cannon Turret":
            name: """Ionengeschütz"""
            text: """Angriff: Falls dieser Angriff trifft, gib 1 %HIT%- oder %CRIT%-Ergebnis aus, um den Verteidiger 1 %HIT%-Schaden erleiden zu lassen. Alle übrigen %HIT%/%CRIT%-Ergebnisse fügen Ionenmarker anstatt Schaden zu."""
@@ -1293,7 +1293,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Nachdem du Schaden erlitten hast, darfst du 1 Stress­marker erhalten, um 1 %FORCE% wiederherzustellen.%LINEBREAK%Du kannst „Dunkle Seite“-Aufwertungen ausrüsten."""
         "Minister Tua":
            name: """Ministerin Tua"""
-           text: """Zu Beginn der Kampfphase, falls du beschädigt bist, darfst du eine rote <reinforce>-Aktion durchführen."""
+           text: """Zu Beginn der Kampfphase, falls du beschädigt bist, darfst du eine rote %REINFORCE%-Aktion durchführen."""
         "Moff Jerjerrod":
            name: """Moff Jerjerrod"""
            text: """Während der Systemphase darfst du 2 %CHARGE% ausgeben. Falls du das tust, wähle die [1 %BANKLEFT%]-, [1 %STRAIGHT%]- oder [1 %BANKRIGHT%]-Schablone. Jedes befreundete Schiff darf unter Verwendung jener Schablone eine rote %BOOST%-Aktion durchführen."""
@@ -1315,12 +1315,9 @@ exportObj.cardLoaders.Deutsch = () ->
         "Perceptive Copilot":
            name: """Aufmerksamer Co-Pilot"""
            text: """Nachdem du eine %FOCUS%-Aktion durchgeführt hast, erhalte 1 Fokusmarker."""
-        "Pivot Wing (Closed)":
-           name: """Schwenkflügel (geschlossen)"""
-           text: """Solange du verteidigst, wirf 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein [0 <stop>]-Manöver ausgeführt hast, darfst du dein Schiff um 90° oder um 180° drehen.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
-        "Pivot Wing (Open)":
-           name: """Schwenkflügel (geöffnet)"""
-           text: """Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Pivot Wing":
+           name: """Schwenkflügel"""
+           text: """Geschlossen: Solange du verteidigst, wirf 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein [0 %STOP%]-Manöver ausgeführt hast, darfst du dein Schiff um 90° oder um 180° drehen.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%Geöffnet: Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Predator":
            name: """Jagdinstinkt"""
            text: """Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem %BULLSEYEARC% ist, darfst du 1 Angriffswürfel neu werfen."""
@@ -1393,30 +1390,27 @@ exportObj.cardLoaders.Deutsch = () ->
         "Sense":
            name: """Gespür"""
            text: """Während der Systemphase darfst du 1 Schiff in Reichweite 0–1 wählen und sein Rad ansehen. Falls du 1 %FORCE% ausgibst, darfst du stattdessen ein Schiff in Reichweite 0–3 wählen."""
-        "Servomotor S-foils (Closed)":
-           name: """Servomotorische S-Flügel (geschlossen)"""
-           text: """Solange du einen Primärangriff durchführst, wirf 1 Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
-        "Servomotor S-foils (Open)":
-           name: """Servomotorische S-Flügel (geöffnet)"""
-           text: """Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
+        "Servomotor S-foils":
+           name: """Servomotorische S-Flügel"""
+           text: """Geschlossen: Solange du einen Primärangriff durchführst, wirf 1 Angriffswürfel weniger.%LINEBREAK%Bevor du aktiviert wirst, darfst du diese Karte umdrehen.%LINEBREAK%Füge die %BOOST%, %FOCUS% und %BOOST%-Aktion hinzu.%LINEBREAK%Geöffnet: Bevor du aktiviert wirst, darfst du diese Karte umdrehen."""
         "Seventh Sister":
            name: """Siebte Schwester"""
            text: """Falls ein feindliches Schiff in Reichweite 0–1 einen Stressmarker erhalten würde, darfst du 1 %FORCE% ausgeben, um es stattdessen 1 Störsignal- oder 1 Fangstrahlmarker erhalten zu lassen."""
         "Shield Upgrade":
            name: """Verbesserte Schilde"""
-           text: """Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus """
+           text: """Füge 1 Schild hinzu. %LINEBREAK%Dieses Upgrade kostet je nach Wendigkeitswert (0,1,2,3) unterschiedlich viele (3,4,6,8) Punkte. %LINEBREAK%Deflektor­schilde sind der wichtigste Verteidigungsmechanismus der meisten Raumschiffe, abgesehen von extrem leichten Jägern. Eine Verbesserung der Schildkapazität ist eine kostspielige, aber durchaus """
         "Skilled Bombardier":
            name: """Versierte Bombenschützin"""
            text: """Falls du ein Gerät abwerfen oder starten würdest, darfst du eine Schablone mit gleicher Flugrichtung und einer um 1 höheren oder niedrigeren Geschwindigkeit verwenden."""
         "Squad Leader":
            name: """Staffelführer"""
-           text: """Solange du koordinierst, kann das von dir gewählte Schiff eine Aktion nur dann durchführen, falls jene Aktion auch in deiner Aktionsleiste ist."""
+           text: """Füge die %COORDINATE%-Aktion hinzu.%LINEBREAK%Solange du koordinierst, kann das von dir gewählte Schiff eine Aktion nur dann durchführen, falls jene Aktion auch in deiner Aktionsleiste ist."""
         "Static Discharge Vanes":
            name: """Elektrostatischer Entlader"""
            text: """Falls du einen Ionen- oder Störsignal-marker erhalten würdest, darfst du ein Schiff in Reichweite 0–1 wählen. Falls du das tust, erhalte 1 Stressmarker und transferiere 1 Ionen- oder Störsignalmarker auf jenes Schiff."""
         "Stealth Device":
            name: """Tarnvorrichtung"""
-           text: """Solange du verteidigst, falls deine %CHARGE% aktiv ist, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Nachdem du Schaden erlitten hast, verliere 1 %CHARGE%."""
+           text: """Dieses Upgrade kostet je nach Wendigkeitswert (0,1,2,3) unterschiedlich viele (3,4,6,8) Punkte.%LINEBREAK%Solange du verteidigst, falls deine %CHARGE% aktiv ist, wirf 1 zusätzlichen Verteidigungswürfel.%LINEBREAK%Nachdem du Schaden erlitten hast, verliere 1 %CHARGE%."""
         "Supernatural Reflexes":
            name: """Übernatürliche Reflexe"""
            text: """Bevor du aktiviert wirst, darfst du 1 %FORCE% ausgeben, um eine %BARRELROLL%- oder %BOOST%-Aktion durchzuführen. Dann, falls du eine Aktion durchgeführt hast, die nicht in deiner Aktionsleiste ist, erleide 1 %HIT%-Schaden."""
@@ -1425,7 +1419,7 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Zu Beginn der Kampfphase darfst du 1 befreundetes Schiff in Reichweite 1 wählen. Falls du das tust, behandelt jenes Schiff seine Initiative bis zum Ende der Runde so, als würde sie deiner Initiative entsprechen."""
         "Tactical Officer":
            name: """Taktikoffizier"""
-           text: """In den Wirren einer Raumschlacht kann ein einzelner Befehl über Sieg oder totale Auslöschung entscheiden."""
+           text: """Füge die %COORDINATE%-Aktion hinzu.%LINEBREAK%In den Wirren einer Raumschlacht kann ein einzelner Befehl über Sieg oder totale Auslöschung entscheiden."""
         "Tactical Scrambler":
            name: """Taktischer Scrambler"""
            text: """Solange du den Angriff eines feindlichen Schiffes versperrst, wirft der Verteidiger 1 zusätzlichen Verteidigungswürfel."""
