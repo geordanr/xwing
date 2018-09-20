@@ -97,6 +97,7 @@ exportObj.translations.Deutsch =
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
         '.game-type-selector option[value="custom"]': 'Benutzerdefiniert'
+        '.game-type-selector option[value="Second Edition"]': 'Zweite Edition'
         '.game-type-selector option[value="epic"]': 'Episch'
         '.game-type-selector option[value="team-epic"]': 'Team Episch'
         # Card browser
@@ -140,8 +141,7 @@ exportObj.translations.Deutsch =
             """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
             <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
             <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
-         '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
-    </p>
+        '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
         # Print/View modal
         '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
@@ -177,6 +177,9 @@ exportObj.translations.Deutsch =
         '.core2asteroid3-select' : 'Erwachen der Macht Asteroid 3'
         '.core2asteroid4-select' : 'Erwachen der Macht Asteroid 4'
         '.core2asteroid5-select' : 'Erwachen der Macht Asteroid 5'
+        # Collection
+        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Deine Sammlung'
+        '.checkbox-check-collection' : 'Überprüfe Staffeln auf Verfügbarkeit <input class="check-collection" type="checkbox">'
 
     singular:
         'pilots': 'Pilot'
