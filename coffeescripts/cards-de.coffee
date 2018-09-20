@@ -82,11 +82,11 @@ exportObj.translations.Deutsch =
         shipSelectorPlaceholder: "Wähle ein Schiff"
         pilotSelectorPlaceholder: "Wähle einen Piloten"
         upgradePlaceholder: (translator, language, slot) ->
-            "Kein #{translator language, 'slot', slot} Upgrade"
+            "Kein #{translator language, 'slot', slot} Aufwertungskarte"
         modificationPlaceholder: "Keine Modifikation"
         titlePlaceholder: "Kein Titel"
         upgradeHeader: (translator, language, slot) ->
-            "#{translator language, 'slot', slot} Upgrade"
+            "#{translator language, 'slot', slot} Aufwertungskarte"
         unreleased: "unveröffentlicht"
         epic: "episch"
         limited: "limitiert"
@@ -100,6 +100,7 @@ exportObj.translations.Deutsch =
         '.game-type-selector option[value="epic"]': 'Episch'
         '.game-type-selector option[value="team-epic"]': 'Team Episch'
         # Card browser
+        '.select2-choice' : '<span>Typ (nach Namen)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
         '.xwing-card-browser option[value="name"]': 'Name'
         '.xwing-card-browser option[value="source"]': 'Quelle'
         '.xwing-card-browser option[value="type-by-points"]': 'Typ (nach Punkten)'
@@ -110,7 +111,7 @@ exportObj.translations.Deutsch =
         '.info-well .info-ship td.info-header': 'Schiff'
         '.info-well .info-skill td.info-header': 'Initiative'
         '.info-well .info-actions td.info-header': 'Aktionen'
-        '.info-well .info-upgrades td.info-header': 'Upgrades'
+        '.info-well .info-upgrades td.info-header': 'Aufwertungskarten'
         '.info-well .info-range td.info-header': 'Reichweite'
         # Squadron edit buttons
         '.clear-squad' : 'Neue Staffel'
@@ -122,17 +123,33 @@ exportObj.translations.Deutsch =
         '.randomize' : 'Zufall!'
         '.randomize-options' : 'Zufallsgenerator Optionen…'
         '.notes-container > span' : 'Staffel Notizen'
+        '.choose-obstacles' : 'Hindernisse wählen'
+        '.from-xws' : 'Importieren aus XWS-Datei (Beta)'
+        '.to-xws' : 'Exporitieren als XWS-Datei (Beta)'
+        # New Squadron dialog
+        '.discard' : 'Änderungen verwerfen'
+        # Log in dialog
+        '.login-help' : 'Was ist OAuth?'
+        '.oauth-explanation' :
+            """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
+            <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
+            <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
         # Print/View modal
         '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
-        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Upgradekarten <input type="checkbox" class="toggle-vertical-space" />"""
+        '.vertical-space-checkbox' : """Lasse beim Drucken Platz für Schadens-/Aufwertungskarten <input type="checkbox" class="toggle-vertical-space" />"""
         '.color-print-checkbox' : """Farbig drucken <input type="checkbox" class="toggle-color-print" checked="checked" />"""
         '.print-list' : '<i class="fa fa-print"></i>&nbsp;Drucken'
+        '.select-simple-view' : 'Einfach'
+        '.select-fancy-view' : 'Schick'
+        '.close-print-dialog' : 'Schließen'
         # Randomizer options
         '.do-randomize' : 'Auswürfeln!'
         # Top tab bar
         '#browserTab' : 'Kartendatenbank'
         '#aboutTab' : 'Impressum'
+        '.hide-authenticated' : '<i class="fa fa-sign-in hidden-phone hidden-tablet"></i>Anmelden'
+        '.show-authenticated' : '<i class="fa fa-sign-out hidden-phone hidden-tablet"></i>Abmelden'
         # Obstacles
         '.choose-obstacles' : 'Wähle Hindernisse'
         '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Dies ist eine Beta-Funktion, aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
