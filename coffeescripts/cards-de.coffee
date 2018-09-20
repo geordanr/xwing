@@ -119,6 +119,12 @@ exportObj.translations.Deutsch =
         '.save-list-as' : 'Speichern unter…'
         '.delete-list' : 'Löschen'
         '.backend-list-my-squads' : 'Staffel laden'
+        '.delete-squad' : 'Löschen'
+        '.delete-squad' : 'Laden'
+        '.show-standard-squads' : 'Standard'
+        '.show-epic-squads' : 'Episch'
+        '.show-team-epic-squads' : 'Team Episch'
+        '.show-all-squads' : 'Alle'
         '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Drucken/Als </span>Text ansehen'
         '.randomize' : 'Zufall!'
         '.randomize-options' : 'Zufallsgenerator Optionen…'
@@ -134,6 +140,8 @@ exportObj.translations.Deutsch =
             """<p><a href="http://de.wikipedia.org/wiki/OAuth" target="_blank">OAuth</a> ist ein Authentifizierungsservice, der es dir erlaubt dich auf Webseiten anzumelden, ohne einen Nutzerkonto anlegen zu müssen. Stattdessen wählst du einen Anbieter, bei dem du bereits eine Nutzerkonto hast (z.B. Google oder Facebook), und dieser bestätigt deine Identität. Auf diese Weise kann YASB dich beim nächsten Besuch wiedererkennen. </p>
             <p>Das beste hieran ist, dass du dir nicht ständig neue Nutzernamen und Passwörter überlegen musst. Keine Sorge, YASB sammelt keine persönlichen Daten von diesen Anbietern über dich. Teilweise kann ich nicht verhindern, dass ein Minimum an persönlichen Daten übertragen wird, diese werden ignoriert. Alles was gespeichert wird ist eine Identifikationsnummer, anhand der du beim nächsten Besuch wiedererkannt wirst - und die zu dieser ID gehörenden Staffellisten natürlich.</p>
             <p>Um mehr zu erfahren, schau dir <a href="http://hueniverse.com/oauth/guide/intro/" target="_blank">diese Einführung in OAuth (englisch)</a> an.</p>""" # this translation will remove an "Got it!" button. It would not work, if I just add it here, as the connection to the java-script is lost. 
+         '.login-in-progress':"""<em>Die OAuth Anmeldung ist in Arbeit. Bitte beende die Anmeldung bei angegebenen Anbierter über das soeben erstellte Fenster. </em>"""
+    </p>
         # Print/View modal
         '.bbcode-list' : 'Kopiere den BBCode und füge ihn im Forum ein.<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Kopieren</button>'
@@ -148,8 +156,6 @@ exportObj.translations.Deutsch =
         # Top tab bar
         '#browserTab' : 'Kartendatenbank'
         '#aboutTab' : 'Impressum'
-        '.hide-authenticated' : '<i class="fa fa-sign-in hidden-phone hidden-tablet"></i>Anmelden'
-        '.show-authenticated' : '<i class="fa fa-sign-out hidden-phone hidden-tablet"></i>Abmelden'
         # Obstacles
         '.choose-obstacles' : 'Wähle Hindernisse'
         '.choose-obstacles-description' : 'Wähle bis zu drei Hindernisse, die im Link für externe Programme eingebunden werden. (Dies ist eine Beta-Funktion, aktuell ist es nicht möglich die gewählten Hindernisse im Ausdruck anzuzeigen.)'
