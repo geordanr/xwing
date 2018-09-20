@@ -192,7 +192,6 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'ARC-170', 'ARC-170'
     exportObj.renameShip 'Auzituck Gunship', 'Auzituck Gunship'
     exportObj.renameShip 'Sheathipede-Class Shuttle', 'Sheathipede-Class Shuttle'
-
     exportObj.renameShip 'TIE Fighter', 'TIE Fighter'
     exportObj.renameShip 'TIE Advanced', 'TIE Advanced'
     exportObj.renameShip 'TIE Interceptor', 'TIE Interceptor'
@@ -207,7 +206,6 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'Alpha-Class Star Wing', 'Alpha-Class Star Wing'
     exportObj.renameShip 'Lambda-Class Shuttle', 'Lambda-Class Shuttle'
     exportObj.renameShip 'VT-49 Decimator', 'VT-49 Decimator'
-    
     exportObj.renameShip 'Firespray-31', 'Firespray-31'
     exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor' 
     exportObj.renameShip 'HWK-290', 'HWK-290'

@@ -1382,7 +1382,7 @@ exportObj.manifestByExpansion =
             count: 2
         }
         {
-            name: '"Sigma Squadron Ace"'
+            name: "Sigma Squadron Ace"
             type: 'pilot'
             count: 2
         }
@@ -3580,39 +3580,19 @@ class exportObj.Collection
         component_content = $ @modal.find('.collection-inventory-content')
         component_content.text ''
         for own type, things of @counts
-            contents = component_content.append $.trim """
-                <div class="row-fluid">
-                    <div class="span12"><h5>#{type.capitalize()}</h5></div>
-                </div>
-                <div class="row-fluid">
-                    <ul id="counts-#{type}" class="span12"></ul>
-                </div>
-            """
-            ul = $ contents.find("ul#counts-#{type}")
-            for thing in Object.keys(things).sort(sortWithoutQuotes)
-                if singletonByType[type].[thing]?
-                    ul.append """<li>#{thing} - #{things[thing]}</li>"""
-
-                
-        pilotcollection_content = $ @modal.find('.collection-pilot-content')
-        for pilot in singletonsByType.pilot
-            count = parseInt(@singletons.pilot?[pilot] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="pilot-name">#{pilot}</span>
-                        </label>
+            if singletonsByType[type]?
+                contents = component_content.append $.trim """
+                    <div class="row-fluid">
+                        <div class="span12"><h5>#{type.capitalize()}</h5></div>
                     </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'pilot'
-            input.data 'singletonName', pilot
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.pilot-name').data 'english_name', expansion
-            pilotcollection_content.append row                
+                    <div class="row-fluid">
+                        <ul id="counts-#{type}" class="span12"></ul>
+                    </div>
+                """
+                ul = $ contents.find("ul#counts-#{type}")
+                for thing in Object.keys(things).sort(sortWithoutQuotes)
+                    if thing in singletonsByType[type]
+                        ul.append """<li>#{thing} - #{things[thing]}</li>"""
                 
     fixName: (name) ->
         # Special case handling for Heavy Scyk :(

@@ -125,7 +125,7 @@ exportObj.translations.English =
         '.bbcode-list' : 'Copy the BBCode below and paste it into your forum post.<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.html-list' : '<textarea></textarea><button class="btn btn-copy">Copy</button>'
         '.vertical-space-checkbox' : """Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />"""
-        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" />"""
+        '.color-print-checkbox' : """Print color <input type="checkbox" class="toggle-color-print" checked="checked" />"""
         '.print-list' : '<i class="fa fa-print"></i>&nbsp;Print'
         # Randomizer options
         '.do-randomize' : 'Randomize!'
@@ -173,7 +173,7 @@ exportObj.cardLoaders.English = () ->
 
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
-
+    
     # Names don't need updating, but text needs to be set
     pilot_translations =
         "4-LOM":
@@ -457,7 +457,7 @@ exportObj.cardLoaders.English = () ->
         "Luke Skywalker":
            text: """After you become the defender (before dice are rolled), you may recover 1 %FORCE%."""
         "Maarek Stele":
-           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """While you perform an attack, if the defender would be dealt a faceup damage card, instead draw 3 damage cards, choose 1, and discard the rest. %LINEBREAK% ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Magva Yarro":
            text: """While a friendly ship at range 0-2 defends, the attacker cannot reroll more than 1 attack die."""
         "Major Rhymer":
@@ -562,7 +562,7 @@ exportObj.cardLoaders.English = () ->
            text: """While you defend or perform a primary attack, you may spend 1 lock you have on the enemy ship to add 1 %FOCUS% result to your dice results."""
         "Sienar Specialist":
            text: """ """
-        '"Sigma Squadron Ace"':
+        "Sigma Squadron Ace":
            text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Skull Squadron Pilot":
            text: """CONCORDIA FACEOFF: While you defend, if the attack range is 1 and you are in the attackers %FRONTARC%, change 1 result to an %EVADE% result."""
@@ -573,7 +573,7 @@ exportObj.cardLoaders.English = () ->
         "Spice Runner":
            text: """ """
         "Storm Squadron Ace":
-           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Sunny Bounder":
            text: """While you defend or perform an attack, after you roll or reroll your dice, if you have the same result on each of your dice, you may add 1 matching result. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Tala Squadron Pilot":
@@ -585,7 +585,7 @@ exportObj.cardLoaders.English = () ->
         "Tel Trevura":
            text: """If you would be destroyed, you may spend 1 %CHARGE%. If you do, discard all of your damage cards, suffer 5 %HIT% damage, and place yourself in reserves instead. At the start of the next planning phase, place yourself within range 1 of your player edge."""
         "Tempest Squadron Pilot":
-           text: """ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Ten Numb":
            text: """While you defend or perform an attack, you may spend 1 stress token to change all of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Thane Kyrell":
@@ -605,7 +605,7 @@ exportObj.cardLoaders.English = () ->
         "Valen Rudor":
            text: """After a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
         "Ved Foslo":
-           text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """While you execute a maneuver, you may execute a maneuver of the same bearing and difficulty of a speed 1 higher or lower instead. %LINEBREAK% ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Viktor Hel":
            text: """After you defend, if you did not roll exactly 2 defense dice, the attack gains 1 stress token."""
         '"Vizier"':
@@ -631,7 +631,7 @@ exportObj.cardLoaders.English = () ->
         '"Zeb" Orrelios (TIE Fighter)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Zertik Strom":
-           text: """During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship's damage cards. %LINEBREAK% ADVANCED TARGETING COPMUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
+           text: """During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship's damage cards. %LINEBREAK% ADVANCED TARGETING COMPUTER: While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1 %HIT% result to a %CRIT% result."""
         "Zuckuss":
            text: """While you perform a primary attack, you may roll 1 additional attack die. If you do, the defender rolls 1 additional defense die."""
         "Poe Dameron":
@@ -869,7 +869,7 @@ exportObj.cardLoaders.English = () ->
         "Magva Yarro":
            text: """After you defend, if the attack hit, you may acquire a lock on the attacker."""
         "Marauder":
-           text: """While you perform a primary %REARARC% attack,, you may reroll 1 attack die. Add %GUNNER% slot."""
+           text: """While you perform a primary %REARARC% attack, you may reroll 1 attack die. Add %GUNNER% slot."""
         "Marksmanship":
            text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may change 1 %HIT% result to a %CRIT% result."""
         "Maul":
@@ -997,7 +997,7 @@ exportObj.cardLoaders.English = () ->
         "Veteran Turret Gunner":
            text: """<i>Requires: %ROTATEARC%</i> %LINEBREAK% After you perform a primary attack, you may perform a bonus %SINGLETURRETARC% attack using a %SINGLETURRETARC% you did not already attack from this round."""
         "Virago":
-           text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Add %MODIFICATION% slot."""
+           text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Adds %MODIFICATION% slot. Add 1 Shield Point. </i> %LINEBREAK% """
         "Xg-1 Assault Configuration":
            text: """While you have exactly 1 disarm token, you can still perform %CANNON% attacks. While you perform a %CANNON% attack while disarmed, roll a maximum of 3 attack dice. Add %CANNON% slot."""
         '"Zeb" Orrelios':
@@ -1073,4 +1073,4 @@ exportObj.cardLoaders.English = () ->
 
     title_translations =
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations, 
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations

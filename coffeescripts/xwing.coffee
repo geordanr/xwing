@@ -1,7 +1,7 @@
 ###
-    X-Wing Squad Builder
-    Geordan Rosario <geordan@gmail.com>
-    https://github.com/geordanr/xwing
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
 ###
 exportObj = exports ? this
 
@@ -193,8 +193,8 @@ class exportObj.SquadBuilder
                 <div class="span4 points-display-container">
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
-                        <option value="standard">Standard</option>
-                        <option value="second_edition">Second Edition (not Extended)</option>
+                        <option value="standard">Extended</option>
+                        <option value="second_edition">Second Edition</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -282,7 +282,7 @@ class exportObj.SquadBuilder
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="color-print-checkbox">
-                    Print color <input type="checkbox" class="toggle-color-print" checked="checked"/>
+                    Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
@@ -1244,6 +1244,7 @@ class exportObj.SquadBuilder
                             text: ship_data.name
                             english_name: ship_data.english_name
                             canonical_name: ship_data.canonical_name
+                            xws: ship_data.xws
         ships.sort exportObj.sortHelper
 
         
@@ -1494,6 +1495,7 @@ class exportObj.SquadBuilder
                     extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
                         el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
                     @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
                     @info_container.find('tr.info-ship').show()
@@ -2308,13 +2310,15 @@ class Ship
             @ship_selector.select2 'data',
                 id: @pilot.ship
                 text: @pilot.ship
-                canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                #canonical_name: exportObj.ships[@pilot.ship].canonical_name
+                xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{@pilot.name} (#{@pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
-                upgrade.updateSelection()
+                points = upgrade.getPoints()
+                upgrade.updateSelection points
             for title in @titles
                 title.updateSelection() if title?
             for modification in @modifications
@@ -2350,7 +2354,7 @@ class Ship
 
         shipResultFormatter = (object, container, query) ->
             # Append directly so we don't have to disable markup escaping
-            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.canonical_name}"></i> #{object.text}"""
+            $(container).append """<i class="xwing-miniatures-ship xwing-miniatures-ship-#{object.xws}"></i> #{object.text}"""
             # If you return a string, Select2 will render it
             undefined
 
@@ -2421,9 +2425,9 @@ class Ship
             @builder.showTooltip 'Ship', this if @data?
         @pilot_selector.data('select2').container.on 'touchmove', (e) =>
             @builder.showTooltip 'Ship', this if @data?
-            if @data? 
-                scrollTo(0,$('#info-container').offset().top - 10,'smooth')
-            
+            ###if @data? 
+                scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
+
 
         @pilot_selector.data('select2').container.hide()
 
@@ -2568,7 +2572,7 @@ class Ship
 
         html = $.trim """
             <div class="fancy-pilot-header">
-                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.canonical_name}"></i><span class="fancy-ship-type"> #{@data.name}</span></div>
+                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{@data.name}</span></div>
                 <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{@pilot.points}</div>
@@ -2611,7 +2615,8 @@ class Ship
             """
 
             for upgrade in slotted_upgrades
-                html += upgrade.toHTML()
+                points = upgrade.getPoints()
+                html += upgrade.toHTML points
 
             html += $.trim """
                 </div>
@@ -2639,7 +2644,8 @@ class Ship
             .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
-                table_html += upgrade.toTableRow()
+                points = upgrade.getPoints()
+                table_html += upgrade.toTableRow points
 
         # if @getPoints() != @pilot.points
         table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
@@ -2657,7 +2663,8 @@ class Ship
             bbcode +="\n"
             bbcode_upgrades= []
             for upgrade in slotted_upgrades
-                upgrade_bbcode = upgrade.toBBCode()
+                points = upgrade.getPoints()
+                upgrade_bbcode = upgrade.toBBCode points
                 bbcode_upgrades.push upgrade_bbcode if upgrade_bbcode?
             bbcode += bbcode_upgrades.join "\n"
 
@@ -2671,7 +2678,8 @@ class Ship
             .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
-                upgrade_html = upgrade.toSimpleHTML()
+                points = upgrade.getPoints()
+                upgrade_html = upgrade.toSimpleHTML points
                 html += upgrade_html if upgrade_html?
 
         html
@@ -3030,7 +3038,6 @@ class GenericAddon
                     
             icon = icon.replace("configuration", "config")
                         .replace("force", "forcepower")
-                        .replace("sensor", "system")
                 
             # Append directly so we don't have to disable markup escaping
             $(container).append """<i class="xwing-miniatures-font xwing-miniatures-font-#{icon}"></i> #{obj.text}"""
@@ -3050,8 +3057,8 @@ class GenericAddon
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
         @selector.data('select2').container.on 'touchmove', (e) =>
             @ship.builder.showTooltip 'Addon', @data, {addon_type: @type} if @data?
-            if @data?
-                scrollTo(0,$('#info-container').offset().top - 10,'smooth')
+            ###if @data?
+                scrollTo(0,$('#info-container').offset().top - 10,'smooth')###
 
     setById: (id) ->
         @setData @dataById[parseInt id]
@@ -3133,12 +3140,12 @@ class GenericAddon
             Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints * 2))
         else
             @data?.points ? 0
-
-    updateSelection: ->
+            
+    updateSelection: (points) ->
         if @data?
             @selector.select2 'data',
-                id: @data.id
-                text: "#{@data.name} (#{@data.points})"
+            id: @data.id
+            text: "#{@data.name} (#{points})"
         else
             @selector.select2 'data', null
 
@@ -3148,7 +3155,7 @@ class GenericAddon
         else
             "No #{@type}"
 
-    toHTML: ->
+    toHTML: (points) ->
         if @data?
             upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
 
@@ -3187,12 +3194,31 @@ class GenericAddon
                 </div>
             """ else ''
 
-            energyHTML = if (@data.energy?) then $.trim """
-                <div class="upgrade-energy">
-                    <span class="info-data info-energy">#{@data.energy}</span>
-                    <i class="xwing-miniatures-font xwing-miniatures-font-energy"></i>
-                </div>
-            """ else ''
+            if (@data.charge?)
+                if  (@data.recurring?)
+                    chargeHTML = $.trim """
+                        <div class="upgrade-charge">
+                            <span class="info-data info-charge">#{@data.charge}</span>
+                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
+                        </div>
+                        """
+                else
+                    chargeHTML = $.trim """
+                        <div class="upgrade-charge">
+                            <span class="info-data info-charge">#{@data.charge}</span>
+                            <i class="xwing-miniatures-font xwing-miniatures-font-charge"></i>
+                        </div>
+                        """
+            else chargeHTML = $.trim ''
+
+            if (@data.force?)
+                forceHTML = $.trim """
+                    <div class="upgrade-force">
+                        <span class="info-data info-force">#{@data.force}</span>
+                        <i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i><i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>
+                    </div>
+                    """
+            else forceHTML = $.trim ''
             
             $.trim """
                 <div class="upgrade-container">
@@ -3200,13 +3226,14 @@ class GenericAddon
                         <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i>#{@data.name}</div>
                         <div class="mask">
                             <div class="outer-circle">
-                                <div class="inner-circle upgrade-points">#{@data.points}</div>
+                                <div class="inner-circle upgrade-points">#{points}</div>
                             </div>
                         </div>
                         #{restriction_html}
                     </div>
                     #{attackHTML}
-                    #{energyHTML}
+                    #{chargeHTML}
+                    #{forceHTML}
                     <div class="upgrade-text">#{text_str}</div>
                     <div style="clear: both;"></div>
                 </div>
@@ -3214,26 +3241,26 @@ class GenericAddon
         else
             ''
 
-    toTableRow: ->
+    toTableRow: (points) ->
         if @data?
             $.trim """
                 <tr class="simple-addon">
                     <td class="name">#{@data.name}</td>
-                    <td class="points">#{@data.points}</td>
+                    <td class="points">#{points}</td>
                 </tr>
             """
         else
             ''
 
-    toBBCode: ->
+    toBBCode: (points) ->
         if @data?
-            """[i]#{@data.name} (#{@data.points})[/i]"""
+            """[i]#{@data.name} (#{points})[/i]"""
         else
             null
 
-    toSimpleHTML: ->
+    toSimpleHTML: (points) ->
         if @data?
-            """<i>#{@data.name} (#{@data.points})</i><br />"""
+            """<i>#{@data.name} (#{points})</i><br />"""
         else
             ''
 

@@ -28,7 +28,6 @@ exportObj.secondEditionCheck = (data, faction='') ->
         return false
     else if (data.name == 'TIE Fighter' and faction == 'Rebel Alliance')
         return false
-
     for source in data.sources
         return true if source in exportObj.secondEditionExpansions
     false
@@ -377,7 +376,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0]
               [ 0, 1, 2, 1, 0, 0]
               [ 1, 2, 2, 2, 1, 0]
-              [ 1, 1, 1, 1, 1, 3]
+              [ 1, 1, 2, 1, 1, 3]
               [ 0, 0, 1, 0, 0, 3]
             ]
         "TIE Defender":
@@ -742,7 +741,7 @@ exportObj.basicCardData = ->
                 [ 2, 2, 0, 2, 2, 0, 0, 0, 0, 0 ]
                 [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3 ]
                 [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0 ]
-                [ 0, 0, 2, 0, 0, 3, 0, 0, 0, 0 ]
+                [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0 ]
                 [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 ]
             ]
         "G-1A Starfighter":
@@ -4619,7 +4618,7 @@ exportObj.basicCardData = ->
               ]
         }
         {
-            name: '"Sigma Squadron Ace"'
+            name: "Sigma Squadron Ace"
             id: 201
             faction: "Galactic Empire"
             ship: "TIE Phantom"
@@ -6097,6 +6096,9 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Scum and Villainy"
+           recurring: true
+           charge: 1
+
        }
        {
            name: "Ezra Bridger"
@@ -7402,6 +7404,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%FULLFRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>')
             .replace(/%FULLREARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullreararc"></i>')
             .replace(/%DEVICE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>')
+            .replace(/%MODIFICATION%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-modification"></i>')
             .replace(/%RELOAD%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reload"></i>')
             .replace(/%CONFIG%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-config"></i>')
             .replace(/%FORCE%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-forcecharge"></i>')
@@ -7447,7 +7450,6 @@ exportObj.fixIcons = (data) ->
             .replace(/%TURNRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turnright"></i>')
             .replace(/%TURRET%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>')
             .replace(/%UTURN%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-kturn"></i>')
-            .replace(/%HUGESHIPONLY%/g, '<span class="card-restriction">Huge ship only.</span>')
             .replace(/%LARGESHIPONLY%/g, '<span class="card-restriction">Large ship only.</span>')
             .replace(/%SMALLSHIPONLY%/g, '<span class="card-restriction">Small ship only.</span>')
             .replace(/%REBELONLY%/g, '<span class="card-restriction">Rebel only.</span>')
@@ -7455,20 +7457,6 @@ exportObj.fixIcons = (data) ->
             .replace(/%SCUMONLY%/g, '<span class="card-restriction">Scum only.</span>')
             .replace(/%LIMITED%/g, '<span class="card-restriction">Limited.</span>')
             .replace(/%LINEBREAK%/g, '<br /><br />')
-            .replace(/%DE_HUGESHIPONLY%/g, '<span class="card-restriction">Nur für riesige Schiffe.</span>')
-            .replace(/%DE_LARGESHIPONLY%/g, '<span class="card-restriction">Nur für grosse Schiffe.</span>')
-            .replace(/%DE_REBELONLY%/g, '<span class="card-restriction">Nur für Rebellen.</span>')
-            .replace(/%DE_IMPERIALONLY%/g, '<span class="card-restriction">Nur für das Imperium.</span>')
-            .replace(/%DE_SCUMONLY%/g, '<span class="card-restriction">Nur für Abschaum & Kriminelle.</span>')
-            .replace(/%DE_GOZANTIONLY%/g, '<span class="card-restriction">Nur für Kreuzer der <em>Gozanti</em>-Klasse.</span>')
-            .replace(/%DE_LIMITED%/g, '<span class="card-restriction">Limitiert.</span>')
-            .replace(/%DE_SMALLSHIPONLY%/g, '<span class="card-restriction">Nur für kleine Schiffe.</span>')
-            .replace(/%DE_DUALCARD%/g, '<span class="card-restriction">Doppelseiteige Karte.</span>')
-            .replace(/%FR_HUGESHIPONLY%/g, '<span class="card-restriction">Vaisseau immense uniquement.</span>')
-            .replace(/%FR_LARGESHIPONLY%/g, '<span class="card-restriction">Grand vaisseau uniquement.</span>')
-            .replace(/%FR_REBELONLY%/g, '<span class="card-restriction">Rebelle uniquement.</span>')
-            .replace(/%FR_IMPERIALONLY%/g, '<span class="card-restriction">Impérial uniquement.</span>')
-            .replace(/%FR_SCUMONLY%/g, '<span class="card-restriction">Racailles uniquement.</span>')
             
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
