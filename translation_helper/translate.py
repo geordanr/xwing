@@ -17,8 +17,6 @@ cards_de_by_id = {}
 for card in cards_de:
     cards_de_by_id[card["id"]]=card
 
-# store what we will later use as .coffee
-output_text = "    pilot_translations =\n"
 
 # store what we need to manually post-process (e.g. FFG differs L3-37 Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
 manual_stuff = ""
@@ -27,9 +25,24 @@ manual_stuff = ""
 pilot_name_list = {}
 
 # sort by name
-cards_en = sorted(cards_en, key=lambda k: k['name']) 
+cards_en = sorted(cards_en, key=lambda k: k['name'])
 
-# create pilots translation
+# load names changed by yasb
+renamed_cards = json.load(open('renamed_cards.json'))
+
+# load ship translations
+ship_translations = json.load(open('ship_translations.json'))
+
+# store what we will later use as .coffee
+output_text = ""
+
+# create ship translations
+for k, ship in ship_translations.items():
+    output_text += "    exportObj.renameShip '%s', '%s'\n"%(ship['name_yasb'],ship['name_de'])
+
+output_text += "\n\n    pilot_translations =\n"
+
+# create pilot translations
 for card_en in cards_en:
     # check if we got a pilot
     if card_en["card_type_id"] != 1: #id 1: pilot
@@ -38,10 +51,18 @@ for card_en in cards_en:
     # get german card
     card_de = cards_de_by_id[card_en["id"]]
 
+    # check if card has been renamed
+    if str(card_en["id"]) in renamed_cards:
+        # rename english card
+        card_en["name"] = renamed_cards[str(card_en["id"])]
+        if re.findall(".*?( \(.*\)).*",card_en["name"]):
+            # rename translated card, add the (...) to the translated name
+            card_de["name"] += re.sub(".*?( \(.*\)).*",r"\1",card_en["name"])
+
     # translate
     output_text += ('        "%s":\n'%card_en["name"])
     output_text += ('           name: """%s"""\n'%card_de["name"])
-    # output_text += ('           ship: """%s"""\n'%card_de["name"]) # currently we don't have an api access to ship data - so we can't find the name of the ship. We got the ship ID, but that doesn't help
+    output_text += ('           ship: """%s"""\n'%ship_translations[str(card_en["ship_type"])]["name_de"])
     output_text += ('           text: """%s"""\n'%card_de["ability_text"])
     
     # check for double names
@@ -55,7 +76,7 @@ output_text +="\n\n\n    upgrade_translations =\n"
 upgrade_name_list= {}
 possible_double_sided_list = {}
 
-# create upgrade translations - identically to pilots
+# create upgrade translations - basically identical to pilots
 for card_en in cards_en:
     # check if we got a upgrade
     if card_en["card_type_id"] != 2: #id 2: upgrade
@@ -63,6 +84,14 @@ for card_en in cards_en:
     
     # get german card
     card_de = cards_de_by_id[card_en["id"]]
+
+    # check if card has been renamed in yasb
+    if str(card_en["id"]) in renamed_cards:
+        # rename english card
+        card_en["name"] = renamed_cards[str(card_en["id"])]
+        if re.findall(".*?( \(.*\)).*",card_en["name"]):
+            # rename translated card, add the (...) to the translated name
+            card_de["name"] += re.sub(".*?( \(.*\)).*",r"\1",card_en["name"])
 
     # translate
     output_text += ('        "%s":\n'%card_en["name"])

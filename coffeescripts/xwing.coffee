@@ -1863,7 +1863,7 @@ class exportObj.SquadBuilder
             return true
         @collection.reset()
         if @collection?.checks.collectioncheck != "true"
-            # console.log "collection not ready or is empty"
+            # console.log "collection check not enabled"
             return true
         @collection.reset()
         validity = true
