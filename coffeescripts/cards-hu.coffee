@@ -187,30 +187,28 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'U-Wing', 'U-Wing'
     exportObj.renameShip 'YT-1300', 'YT-1300'
     exportObj.renameShip 'YT-2400', 'YT-2400'
-    exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
+    exportObj.renameShip 'Z-95 Headhunter', 'Z-95 Headhunter'
     exportObj.renameShip 'VCX-100', 'VCX-100'
     exportObj.renameShip 'Attack Shuttle', 'Attack Shuttle'
     exportObj.renameShip 'ARC-170', 'ARC-170'
     exportObj.renameShip 'Auzituck Gunship', 'Auzituck Gunship'
     exportObj.renameShip 'Sheathipede-Class Shuttle', 'Sheathipede-Class Shuttle'
-
-    exportObj.renameShip 'TIE Fighter', 'Chasseur TIE'
+    exportObj.renameShip 'TIE Fighter', 'TIE Fighter'
     exportObj.renameShip 'TIE Advanced', 'TIE Advanced'
-    exportObj.renameShip 'TIE Interceptor', 'Intercepteur TIE'
-    exportObj.renameShip 'TIE Bomber', 'Bombardier TIE'
-    exportObj.renameShip 'TIE Defender', 'Défenseur TIE'
-    exportObj.renameShip 'TIE Phantom', 'TIE Fantôme'
+    exportObj.renameShip 'TIE Interceptor', 'TIE Interceptor'
+    exportObj.renameShip 'TIE Bomber', 'TIE Bomber'
+    exportObj.renameShip 'TIE Defender', 'TIE Defender'
+    exportObj.renameShip 'TIE Phantom', 'TIE Phantom'
     exportObj.renameShip 'TIE Advanced Prototype', 'TIE Advanced Prototype'
     exportObj.renameShip 'TIE Striker', 'TIE Striker'
     exportObj.renameShip 'TIE Punisher', 'TIE Punisher'
     exportObj.renameShip 'TIE Aggressor', 'TIE Aggressor'
     exportObj.renameShip 'TIE Reaper', 'TIE Reaper'
     exportObj.renameShip 'Alpha-Class Star Wing', 'Alpha-Class Star Wing'
-    exportObj.renameShip 'Lambda-Class Shuttle', 'Navette de classe Lambda'
-    exportObj.renameShip 'VT-49 Decimator', 'Décimateur VT-49'
-    
+    exportObj.renameShip 'Lambda-Class Shuttle', 'Lambda-Class Shuttle'
+    exportObj.renameShip 'VT-49 Decimator', 'VT-49 Decimator'
     exportObj.renameShip 'Firespray-31', 'Firespray-31'
-    exportObj.renameShip 'M3-A Interceptor', 'Intercepteur M3-A' 
+    exportObj.renameShip 'M3-A Interceptor', 'M3-A Interceptor' 
     exportObj.renameShip 'HWK-290', 'HWK-290'
     exportObj.renameShip 'StarViper', 'StarViper'
     exportObj.renameShip 'Aggressor', 'Aggressor'
@@ -346,7 +344,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Dalan Oberos":
            text: """A ütközet fázis elején választhatsz 1 pajzzsal rendelekező hajót a %BULLSEYEARC% tűzívedben és elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, az a hajó elveszít egy pajzsot, te pedig visszatölthetsz 1 pajzsot.%LINEBREAK% DEAD TO RIGHTS: Amikor végrehajtasz egy támadást, ha a védekező benne van a %BULLSEYEARC% tűzívedben, a védekezőkockák nem módosíthatók zöld jelzőkkel."""
         "Dalan Oberos (StarViper)":
-           text: """Miután teljesen végrehajtasz egy manővert, kaphatsz 1 stressz jelzőt, hogy elforgasd a hajód 90˚-kal.  %LINEBREAK% MICROTHRUSTERS: Amikor orsózást hajtasz végre, a (1 %BANKLEFT%) vagy (1 %BANKRIGHT%) sablont KELL használnod a (1 %STRAIGHT%) helyett."""
+           text: """Miután teljesen végrehajtasz egy manővert, kaphatsz 1 stressz jelzőt, hogy elforgasd a hajód 90 fokkal.  %LINEBREAK% MICROTHRUSTERS: Amikor orsózást hajtasz végre, a (1 %BANKLEFT%) vagy (1 %BANKRIGHT%) sablont KELL használnod a (1 %STRAIGHT%) helyett."""
         "Darth Vader":
            text: """Miután végrehajtasz egy akciót, elkölthetsz 1 %FORCE% jelzőt, hogy végrehajts egy akciót. %LINEBREAK% ADVANCED TARGETING COMPUTER: Amikor végrehajtasz egy elsődleges támadást egy olyan védekező ellen, akit bemértél, 1-gyel több támadókockával dobj és változtasd egy %HIT% eredményt %CRIT% eredményre."""
         "Dash Rendar":
@@ -456,7 +454,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Jakku Gunrunner":
            text: """SPACETUG TRACTOR ARRAY: AKCIÓ: Válassz egy hajót a %FRONTARC% tűzívedben 1-es távolságban. Az a hajó kap 1 vonósugár jelzőt vagy 2 vonósugár jelzőt, ha benne van a %BULLSEYEARC% tűzívedben 1-es távolságban."""
         "Jan Ors":
-           text: """Amikor egy tűzíveden belüli baráti hajó elsődleges támadást hajt végre, ha nem vagy stresszes, kaphatsz 1 stressz jelzőt. Ha így teszel, az a hajó 1-gyel több  támadókockával dobhat"""
+           text: """Amikor egy tűzíveden belüli baráti hajó elsődleges támadást hajt végre, ha nem vagy stresszes, kaphatsz 1 stressz jelzőt. Ha így teszel, az a hajó 1-gyel több támadókockával dobhat"""
         "Jek Porkins":
            text: """Miután kapsz egy stressz jelzőt, dobhatsz 1 támadó kockával, hogy levedd. %HIT% dobás esetén elszenvedsz 1 %HIT% sérülést."""
         "Joy Rekkoff":
@@ -666,7 +664,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Unkar Plutt":
            text: """Az ütközet fázis elején, ha van egy vagy több másik hajó 0-ás távolságban tőled, te és a 0-ás távolságra lévő hajók kapnak egy vonósugár jelzőt. %LINEBREAK% AKCIÓ: Válassz egy hajót a %FRONTARC% tűzívedben 1-es távolságban. Az a hajó kap 1 vonósugár jelzőt vagy 2 vonósugár jelzőt, ha benne van a %BULLSEYEARC% tűzívedben 1-es távolságban."""
         "Valen Rudor":
-           text: """Miután egy baráti hajóAfter a friendly ship at range 0-1 defends (after damage is resolved, if any), you may perform an action."""
+           text: """Miután egy baráti hajó 0-1-es távolságban védekezik - a sérülések elkönyvelése után -, végrehajthatsz egy akciót."""
         "Ved Foslo":
            text: """Amikor végrehajtasz egy manővert, végrehajthatsz egy manővert ugyanabban az irányban és nehézségben, 1-gyel kisebb vagy nagyobb sebességgel. %LINEBREAK% ADVANCED TARGETING COPMUTER: Amikor végrehajtasz egy elsődleges támadást egy olyan védekező ellen, akit bemértél, 1-gyel több támadókockával dobj és változtasd egy %HIT% eredményt %CRIT% eredményre."""
         "Viktor Hel":
@@ -914,7 +912,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Ketsu Onyo":
            text: """A vége fázis elején, kiválaszthatsz 1 ellenséges hajót 0-2-es távolságban a tűzívedben. Ha így teszel, aza a hajó nem veheti le a vonósugár jelzőit."""
         "L3-37":
-           text: """Felhelyezés: felfordítva szereld fel ezt a kártyát. Amikor védekezel, lefordíthetod ezt a kártyát. Ha így teszel, a támadónak újra kell dobnia az összes támadókockát."""
+           text: """Felhelyezés: felfordítva szereld fel ezt a kártyát. Amikor védekezel, lefordíthatod ezt a kártyát. Ha így teszel, a támadónak újra kell dobnia az összes támadókockát.%LINEBREAK%<i>L3-37 programja:</i> Ha nincs pajzsod, csökkentsd a nehézségét a (%BANKLEFT% és %BANKRIGHT%) manővereknek."""
         "Lando Calrissian":
            text: """Akció: dobj 2 védekezőkockával. Minden egyes %FOCUS% eredmény után kapsz 1 fókusz jelzőt. Minden egyes %EVADE% eredmény után kapsz 1 kitérés jelzőt. Ha mindkettő eredmény üres, az ellenfeled választ, hogy fókusz vagy kitérés. Kapsz 1, a választásnak megfelelő jelzőt."""
         "Lando Calrissian (Scum)":
@@ -1060,7 +1058,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Veteran Turret Gunner":
            text: """<i>Követelmény: %ROTATEARC%</i> %LINEBREAK% Amikor végrehajtasz egy elsődleges támadást, végrehajthatsz egy bónusz %SINGLETURRETARC% egy olyan %SINGLETURRETARC% fegyverrel, amit még nem használtál ebben a körben."""
         "Virago":
-           text: """A vége fázis alatt, elkölthetsz 1 %CHARGE% jelzőt, hogy végrehajts egy piros %BOOST% akciót. Kapsz egy %MODIFICATION% fejlesztés helyet."""
+           text: """A vége fázis alatt, elkölthetsz 1 %CHARGE% jelzőt, hogy végrehajts egy piros %BOOST% akciót. Kapsz egy %MODIFICATION% fejlesztés helyet. Adj 1 pajzs értéket a hajódhoz."""
         "Xg-1 Assault Configuration":
            text: """Amikor pontosan 1 'inaktív fegyverzet' jelződ van, akkor is végrehajthatsz %CANNON% támadást. Amikor %CANNON% támadást hajtasz végre 'inaktív fegyverzet' jelzővel, maximum 3 támadókockával dobhatsz. Kapsz egy %CANNON% fejlesztés helyet."""
         '"Zeb" Orrelios':
