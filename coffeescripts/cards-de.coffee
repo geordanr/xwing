@@ -1229,55 +1229,76 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange du einen Angriff durchführst, nachdem du Angriffswürfel geworfen hast, darfst du eine Art von grünen Markern benennen. Falls du das tust, erhalte 2 Ionenmarker und der Verteidiger kann während dieses Angriffs keine Marker der benannten Art ausgeben."""
         "Andrasta":
            name: """Andrasta"""
-           text: """Füge die %RELOAD%-Aktion hinzu. %LINEBREAK%Füge den %DEVICE%-Slot hinzu."""
+           text: """Füge den %DEVICE%-Slot hinzu."""
+           ship: """Patrouillenboot der Firespray-Klasse"""
         "Dauntless":
            name: """Dauntless"""
            text: """Nachdem du ein Manöver teilweise ausgeführt hast, darfst du 1 weiße Aktion durchführen, wobei du jene Aktion behandelst, als wäre sie rot."""
+           ship: """VT-49-Decimator"""
         "Ghost":
            name: """Ghost"""
            text: """Du kannst 1 Jagdshuttle oder eine Raumfähre der Sheathipede-Klasse andocken lassen.%LINEBREAK%Deine angedockten Schiffe können nur von deinen hinteren Stoppern aus abgesetzt werden."""
+           ship: """Leichter VCX-100-Frachter"""
         "Havoc":
            name: """Havoc"""
            text: """Entferne den %CREW%-Slot. Füge %SENSOR%- und %ASTROMECH%-Slots hinzu."""
+           ship: """Scurrg-H-6-Bomber"""
         "Hound's Tooth":
            name: """Reißzahn"""
            text: """An dir kann 1 Z-95-AF4-Kopfjäger andocken."""
+           ship: """Leichter YV-666-Frachter"""
         "IG-2000":
            name: """IG-2000"""
            text: """Du hast die Pilotenfähigkeit jedes anderen befreundeten Schiffes mit der Aufwertung IG-2000."""
+           ship: """Aggressor-Angriffsjäger"""
         "Marauder":
            name: """Marodeur"""
            text: """Solange du einen %REARARC%-Primärangriff durchführst, darfst du 1 Angriffswürfel neu werfen.%LINEBREAK%Füge den %GUNNER%-Slot hinzu."""
+           ship: """Patrouillenboot der Firespray-Klasse"""
         "Millennium Falcon":
            name: """Millennium Falke"""
-           text: """Füge die %EVADE%-Aktion hinzu. %LINEBREAK%Solange du verteidigst, falls du ausweichst, darfst du 1 Verteidigungswürfel neu werfen."""
+           text: """Solange du verteidigst, falls du ausweichst, darfst du 1 Verteidigungswürfel neu werfen."""
+           ship: """Modifizierter leichter YT-1300-Frachter"""
         "Mist Hunter":
            name: """Nebeljäger"""
-           text: """Füge die %BARRELROLL%-Aktion hinzu. %LINEBREAK%Füge den %CANNON%-Slot hinzu."""
+           text: """Füge den %CANNON%-Slot hinzu."""
+           ship: """G-1A Sternenjäger"""
         "Moldy Crow":
            name: """Moldy Crow"""
            text: """Erhalte eine %FRONTARC%-Primärwaffe mit einem Wert von 3.%LINEBREAK%Während der Endphase, entferne bis zu 2 Fokusmarker nicht."""
+           ship: """Leichter HWK-290-Frachter"""
         "Outrider":
            name: """Outrider"""
            text: """Solange du einen versperrten Angriff durchführst, wirft der Verteidiger 1 Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du dich durch ein Hindernis hindurchbewegt oder dich mit ihm überschnitten hast, darfst du 1 deiner roten oder orangefarbenen Marker entfernen."""
+           ship: """Leichter YT-2400-Frachter"""
         "Phantom":
            name: """Phantom"""
-           text: """Du kannst in Reichweite 0–1 andocken."""
+           text: """Du kannst in Reichweite 0-1 andocken."""
+           ship: """Jagdshuttle"""
+        "Phantom (Sheathipede)":
+           name: """Phantom (Sheathipede)"
+           text: """Du kannst in Reichweite 0-1 andocken."""
+           ship: """Raumfähre der Sheathipede-Klasse"""
         "Punishing One":
            name: """Vollstrecker Eins"""
            text: """Solange du einen Primärangriff durchführst, falls der Verteidiger in deinem %FRONTARC% ist, wirf 1 zusätzlichen Angriffswürfel.%LINEBREAK%Entferne den %CREW%-Slot. Füge den %ASTROMECH%-Slot hinzu."""
+           ship: """JumpMaster 5000"""
         "ST-321":
            name: """ST-321"""
-           text: """Nachdem du eine %COORDINATE%-Aktion durchgeführt hast, darfst du ein feindliches Schiff in Reichweite 0–3 des von dir koordinierten Schiffes wählen. Falls du das tust, erfasse jenes feindliche Schiff als Ziel, wobei du die Reichweitenbeschränkung ignorierst."""
+           text: """Nachdem du eine %COORDINATE%-Aktion durchgeführt hast, darfst du ein feindliches Schiff in Reichweite 0-3 des von dir koordinierten Schiffes wählen. Falls du das tust, erfasse jenes feindliche Schiff als Ziel, wobei du die Reichweitenbeschränkung ignorierst."""
+           ship: """T-4A-Raumfähre der Lambda-Klasse"""
         "Shadow Caster":
            name: """Shadow Caster"""
            text: """Nachdem du einen Angriff durchgeführt hast, der getroffen hat, falls der Verteidiger in deinem %SINGLETURRETARC% und in deinem %FRONTARC% ist, erhält der Verteidiger 1 Fangstrahlmarker."""
+           ship: """Jagdschiff der Lanzen-Klasse"""
         "Slave I":
            name: """Sklave I"""
-           text: """Nachdem du ein Wende­­manöver (%TURNLEFT% oder %TURNRIGHT%) oder Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufgedeckt hast, darfst du dein Rad auf das Manöver derselben Geschwindigkeit und Flugrichtung in der anderen Orientierung einstellen.%LINEBREAK%Füge den %TORPEDO%-Slot hinzu."""
+           text: """Nachdem du ein Wendemanöver (%TURNLEFT% oder %TURNRIGHT%) oder Drehmanöver (%BANKLEFT% oder %BANKRIGHT%) aufgedeckt hast, darfst du dein Rad auf das Manöver derselben Geschwindigkeit und Flugrichtung in der anderen Orientierung einstellen.%LINEBREAK%Füge den %TORPEDO%-Slot hinzu."""
+           ship: """Patrouillenboot der Firespray-Klasse"""
         "Virago":
            name: """Virago"""
            text: """Während der Endphase darfst du 1 %CHARGE% ausgeben, um eine rote %BOOST%-Aktion durchzuführen.%LINEBREAK%Füge den %MODIFICATION%-Slot hinzu."""
+           ship: """Angriffsplattform der Sternenviper-Klasse"""
         "Ablative Plating":
            name: """Ablative Panzerung"""
            text: """Bevor du Schaden durch ein Hindernis oder die Detonation einer befreundeten Bombe erleiden würdest, darfst du 1 %CHARGE% ausgeben. Falls du das tust, verhindere 1 Schaden."""

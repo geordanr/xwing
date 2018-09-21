@@ -98,6 +98,15 @@ for card_en in cards_en:
     output_text += ('           name: """%s"""\n'%card_de["name"])
     # output_text += ('           ship: """%s"""\n'%card_de["name"]) # currently we don't have an api access to ship data - so we can't find the name of the ship. We got the ship ID, but that doesn't help
     output_text += ('           text: """%s"""\n'%card_de["ability_text"])
+
+    # check if card has requirements
+    if card_en["restrictions"]:
+        # TODO: Add a translation to the text (e.g. Small base only, Requires Boost, etc.)
+        for restriction in card_en["restrictions"]:
+            if restriction[0]["type"] == "SHIP_TYPE":
+                output_text += ('           ship: """%s"""\n'%ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_de"])
+                if len(restriction) > 1:
+                    manual_stuff += ("Upgrade %s restricted to multiple ships. Only set to %s\n"%(card_en["name"],ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_yasb"]))
     
     # check for double names
     if card_en["name"] in upgrade_name_list:
