@@ -1,3 +1,11 @@
+###
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
+    German translation by
+    - Patrick Mischke https://github.com/patschke
+###
+
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
