@@ -1860,7 +1860,7 @@ class exportObj.SquadBuilder
         # If the collection is uninitialized or empty, don't actually check it.
         if Object.keys(@collection?.expansions ? {}).length == 0
             # console.log "collection not ready or is empty"
-            return true
+            return true 
         @collection.reset()
         if @collection?.checks.collectioncheck != "true"
             # console.log "collection check not enabled"
@@ -2549,7 +2549,31 @@ class Ship
             <i class="xwing-miniatures-font header-attack #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
+        
+        if @pilot.ship_override?.attackb? or @data.attackb?
+            attackbHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackb ? @data.attackb), effective_stats, 'attackb')}</span>""" 
+        else
+            attackbHTML = ''
 
+        if @pilot.ship_override?.attackf? or @data.attackf?
+            attackfHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackf ? @data.attackf), effective_stats, 'attackf')}</span>""" 
+        else
+            attackfHTML = ''
+            
+        if @pilot.ship_override?.attackt? or @data.attackt?
+            attacktHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackt ? @data.attackt), effective_stats, 'attackt')}</span>""" 
+        else
+            attacktHTML = ''
+            
+        if @pilot.ship_override?.attackdt? or @data.attackdt?
+            attackdtHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i>
+            <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackdt ? @data.attackdt), effective_stats, 'attackdt')}</span>""" 
+        else
+            attackdtHTML = ''
+            
         energyHTML = if (@pilot.ship_override?.energy? or @data.energy?) then $.trim """
             <i class="xwing-miniatures-font header-energy xwing-miniatures-font-energy"></i>
             <span class="info-data info-energy">#{statAndEffectiveStat((@pilot.ship_override?.energy ? @data.energy), effective_stats, 'energy')}</span>
@@ -2581,8 +2605,12 @@ class Ship
             </div>
             <div class="fancy-pilot-stats">
                 <div class="pilot-stats-content">
-                    <span class="info-data info-skill">INT #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
+                    <span class="info-data info-skill">INI #{statAndEffectiveStat(@pilot.skill, effective_stats, 'skill')}</span>
                     #{attackHTML}
+                    #{attackbHTML}
+                    #{attackfHTML}
+                    #{attacktHTML}
+                    #{attackdtHTML}
                     #{energyHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
                     <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
