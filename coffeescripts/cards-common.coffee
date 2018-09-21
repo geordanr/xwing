@@ -5407,6 +5407,8 @@ exportObj.basicCardData = ->
                 not (ship.data.large? or ship.data.medium?)
            modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
+                    if turn > 4
+                        continue
                     if stats.maneuvers[1][turn] > 0 
                         if stats.maneuvers[1][turn] == 3
                             stats.maneuvers[1][turn] = 1
@@ -7439,7 +7441,7 @@ exportObj.fixIcons = (data) ->
             .replace(/%SLOOPRIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sloopright"></i>')
             .replace(/%STRAIGHT%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-straight"></i>')
             .replace(/%STOP%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-stop"></i>')
-            .replace(/%SENSOR%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>')
+            .replace(/%SENSOR%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>')
             .replace(/%LOCK%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-lock"></i>')
             .replace(/%TEAM%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-team"></i>')
             .replace(/%TECH%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>')

@@ -1,0 +1,14 @@
+{
+  "requires": "Benötigt %s",
+  "adds": "Fügt %s hinzu",
+  "only": "Nur für %s",
+  "variable_cost": "Diese Aufwertungskarte hat variable Punktekosten.",
+  "or": "oder",
+  "SMALL": "kleines Schiff",
+  "MEDIUM": "mittleres Schiff",
+  "LARGE": "großes Schiff",
+  "Rebel Alliance": "Rebellen",
+  "Scum and Villainy": "Abschaum",
+  "Galactic Empire": "Imperium",
+  "contains": "Staffel, die %s enthält"
+}

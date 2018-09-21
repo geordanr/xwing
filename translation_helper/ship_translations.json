@@ -1,0 +1,182 @@
+{
+  "1": {
+    "name_yasb": "YT-1300",
+    "name_de": "Modifizierter leichter YT-1300-Frachter"
+  },
+  "3": {
+    "name_yasb": "StarViper",
+    "name_de": "Angriffsplattform der Sternenviper-Klasse"
+  },
+  "4": {
+    "name_yasb": "Scurrg H-6 Bomber",
+    "name_de": "Scurrg-H-6-Bomber"
+  },
+  "5": {
+    "name_yasb": "YT-2400",
+    "name_de": "Leichter YT-2400-Frachter"
+  },
+  "6": {
+    "name_yasb": "Auzituck Gunship",
+    "name_de": "Auzituck-Kanonenboot"
+  },
+  "7": {
+    "name_yasb": "Kihraxz Fighter",
+    "name_de": "Kihraxz-Jäger"
+  },
+  "8": {
+    "name_yasb": "Sheathipede-Class Shuttle",
+    "name_de": "Raumfähre der Sheathipede-Klasse"
+  },
+  "9": {
+    "name_yasb": "Quadjumper",
+    "name_de": "Quadrijet-Transferschlepper"
+  },
+  "10": {
+    "name_yasb": "Firespray-31",
+    "name_de": "Patrouillenboot der Firespray-Klasse"
+  },
+  "11": {
+    "name_yasb": "TIE Fighter",
+    "name_de": "TIE/ln-Jäger "
+  },
+  "12": {
+    "name_yasb": "Y-Wing",
+    "name_de": "BTL-A4-Y-Flügler"
+  },
+  "13": {
+    "name_yasb": "TIE Advanced",
+    "name_de": "TIE-x1-Turbojäger"
+  },
+  "14": {
+    "name_yasb": "Alpha-Class Star Wing",
+    "name_de": "Sternflügler der Alpha-Klasse"
+  },
+  "15": {
+    "name_yasb": "U-Wing",
+    "name_de": "UT-60D-U-Flügler"
+  },
+  "16": {
+    "name_yasb": "TIE Striker",
+    "name_de": "TIE/sk-Stürmer"
+  },
+  "17": {
+    "name_yasb": "B-Wing",
+    "name_de": "A/SF-01-B-Flügler"
+  },
+  "18": {
+    "name_yasb": "TIE Defender",
+    "name_de": "TIE/D-Abwehrjäger"
+  },
+  "19": {
+    "name_yasb": "TIE Bomber",
+    "name_de": "TIE/sa-Bomber "
+  },
+  "20": {
+    "name_yasb": "TIE Punisher",
+    "name_de": "TIE/ca-Vergelter"
+  },
+  "21": {
+    "name_yasb": "Aggressor",
+    "name_de": "Aggressor-Angriffsjäger"
+  },
+  "22": {
+    "name_yasb": "G-1A Starfighter",
+    "name_de": "G-1A Sternenjäger"
+  },
+  "23": {
+    "name_yasb": "VCX-100",
+    "name_de": "Leichter VCX-100-Frachter"
+  },
+  "24": {
+    "name_yasb": "YV-666",
+    "name_de": "Leichter YV-666-Frachter"
+  },
+  "25": {
+    "name_yasb": "TIE Advanced Prototype",
+    "name_de": "TIE-v1-Turbojäger"
+  },
+  "26": {
+    "name_yasb": "Lambda-Class Shuttle",
+    "name_de": "T-4A-Raumfähre der Lambda-Klasse"
+  },
+  "27": {
+    "name_yasb": "TIE Phantom",
+    "name_de": "TIE/ph-Phantom"
+  },
+  "28": {
+    "name_yasb": "VT-49 Decimator",
+    "name_de": "VT-49-Decimator"
+  },
+  "29": {
+    "name_yasb": "TIE Aggressor",
+    "name_de": "TIE/ag-Agressor"
+  },
+  "30": {
+    "name_yasb": "K-Wing",
+    "name_de": "BTL-S8-K-Flügler"
+  },
+  "31": {
+    "name_yasb": "ARC-170",
+    "name_de": "ARC-170-Sternenjäger"
+  },
+  "32": {
+    "name_yasb": "Attack Shuttle",
+    "name_de": "Jagdshuttle"
+  },
+  "33": {
+    "name_yasb": "X-Wing",
+    "name_de": "T-65-X-Flügler"
+  },
+  "34": {
+    "name_yasb": "HWK-290",
+    "name_de": "Leichter HWK-290-Frachter"
+  },
+  "35": {
+    "name_yasb": "A-Wing",
+    "name_de": "RZ-1-A-Flügler"
+  },
+  "36": {
+    "name_yasb": "Fang Fighter",
+    "name_de": "Fangjäger"
+  },
+  "38": {
+    "name_yasb": "Z-95 Headhunter",
+    "name_de": "Z-95-AF4-Kopfjäger"
+  },
+  "39": {
+    "name_yasb": "M12-L Kimogila Fighter",
+    "name_de": "M12-L-Kimogila-Jäger"
+  },
+  "40": {
+    "name_yasb": "E-Wing",
+    "name_de": "E-Flügler"
+  },
+  "41": {
+    "name_yasb": "TIE Interceptor",
+    "name_de": "TIE-Abfangjäger"
+  },
+  "42": {
+    "name_yasb": "Lancer-Class Pursuit Craft",
+    "name_de": "Jagdschiff der Lanzen-Klasse"
+  },
+  "43": {
+    "name_yasb": "TIE Reaper",
+    "name_de": "TIE-Schnitter"
+  },
+  "45": {
+    "name_yasb": "JumpMaster 5000",
+    "name_de": "JumpMaster 5000"
+  },
+  "44": {
+    "name_yasb": "M3-A Interceptor",
+    "name_de": "M3-A-Abfangjäger"
+  },
+  "47": {
+    "name_yasb": "YT-1300 (Scum)",
+    "name_de": "Modifizierter YT-1300-Frachter"
+  },
+  "48": {
+    "name_yasb": "Escape Craft",
+    "name_de": "Fluchtschiff"
+  }
+}

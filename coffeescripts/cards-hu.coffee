@@ -35,7 +35,7 @@ exportObj.translations.Magyar =
         "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
         "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
         "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
-        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>'
+        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>'
         "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
         "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
         "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
@@ -68,6 +68,7 @@ exportObj.translations.Magyar =
         "Second Edition Core Set": "Second Edition Core Set"
         "Rebel Alliance Conversion Kit": "Rebel Alliance Conversion Kit"
         "Galactic Empire Conversion Kit": "Galactic Empire Conversion Kit"
+        "Scum and Villainy Conversion Kit": "Scum and Villainy Conversion Kit"
         "T-65 X-Wing Expansion Pack": "T-65 X-Wing Expansion Pack"
         "BTL-A4 Y-Wing Expansion Pack": "BTL-A4 Y-Wing Expansion Pack"
         "TIE/ln Fighter Expansion Pack": "TIE/ln Fighter Expansion Pack"

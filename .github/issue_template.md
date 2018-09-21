@@ -15,4 +15,4 @@ State what actually happens here.
 
 ### Language
 
-HA there aren't any other languages yet. If you be interested in contrubuting to adding a language I would be your best friend <3
+The affected language(s). 
