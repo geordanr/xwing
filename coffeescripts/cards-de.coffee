@@ -43,7 +43,7 @@ exportObj.translations.Deutsch =
         "Crew": '<i class="xwing-miniatures-font xwing-miniatures-font-crew"></i>'
         "Talent": '<i class="xwing-miniatures-font xwing-miniatures-font-talent"></i>'
         "Missile": '<i class="xwing-miniatures-font xwing-miniatures-font-missile"></i>'
-        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-system"></i>'
+        "Sensor": '<i class="xwing-miniatures-font xwing-miniatures-font-sensor"></i>'
         "Torpedo": '<i class="xwing-miniatures-font xwing-miniatures-font-torpedo"></i>'
         "Turret": '<i class="xwing-miniatures-font xwing-miniatures-font-turret"></i>'
         "Illicit": '<i class="xwing-miniatures-font xwing-miniatures-font-illicit"></i>'
@@ -1424,10 +1424,10 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """Solange ein anderes befreundetes Schiff verteidigt oder einen Angriff durchführt, darfst du 1 %FORCE% ausgeben, um 1 seiner Würfel so zu modifizieren, als hätte jenes Schiff 1 %FORCE% ausgegeben."""
         "Engine Upgrade":
            name: """Verbessertes Triebwerk"""
-           text: """Füge die %BOOST%-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Basegröße (klein, mittel, groß) unterschiedlich viele (3, 6, 9) Punkte. %LINEBREAK%Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
+           text: """Füge die %BOOST%-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Schiffgröße (klein, mittel, groß) unterschiedlich viele (3, 6, 9) Punkte. %LINEBREAK%Große Armeen wie das Militär des Galaktischen Imperiums haben meist standardisierte Triebwerke. Freischaffende Piloten und kleinere Organisationen ersetzen oft Energiekopplungen, """
         "Expert Handling":
            name: """Flugkunst"""
-           text: """Füge die <r>%BARRELROLL%</r>-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Basegröße (klein, mittel, groß) unterschiedlich viele (2, 4, 6) Punkte. %LINEBREAK%Auch schwere Jäger können in eine Fassrolle gezwungen werden, wobei es einen erfahrenen Piloten braucht, um die Maschine nicht übermäßig zu belasten und dem Feind kein leichtes Ziel zu bieten."""
+           text: """Füge die <r>%BARRELROLL%</r>-Aktion hinzu.%LINEBREAK%Dieses Upgrade kostet je nach Schiffgröße (klein, mittel, groß) unterschiedlich viele (2, 4, 6) Punkte. %LINEBREAK%Auch schwere Jäger können in eine Fassrolle gezwungen werden, wobei es einen erfahrenen Piloten braucht, um die Maschine nicht übermäßig zu belasten und dem Feind kein leichtes Ziel zu bieten."""
         "Ezra Bridger":
            name: """Ezra Bridger"""
            text: """Nachdem du einen Primärangriff durchgeführt hast, darfst du 1 %FORCE% ausgeben, um einen Bonus-%SINGLETURRETARC%-Angriff aus einem %SINGLETURRETARC%, aus dem du in dieser Runde noch nicht angegriffen hast, durchzuführen. Falls du das tust und gestresst bist, darfst du 1 Angriffswürfel neu werfen."""
