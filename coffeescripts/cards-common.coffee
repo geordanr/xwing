@@ -5407,6 +5407,8 @@ exportObj.basicCardData = ->
                 not (ship.data.large? or ship.data.medium?)
            modifier_func: (stats) ->
                 for turn in [0 ... stats.maneuvers[1].length]
+                    if turn > 4
+                        continue
                     if stats.maneuvers[1][turn] > 0 
                         if stats.maneuvers[1][turn] == 3
                             stats.maneuvers[1][turn] = 1
