@@ -352,7 +352,8 @@ exportObj.cardLoaders['Français'] = () ->
         '"Deathrain"':
            text: """After you drop or launch a device, you may perform an action."""
         "Del Meeko":
-           text: """While a friendly ship at range 0-2 defends against a damaged attacker, the defender may reroll 1 defense die."""
+           ship: "Chasseur TIE"
+           text: """Tant qu’un vaisseau allié à portée 0–2 défend contre un attaquant endommagé, le défenseur peut relancer 1 dé de défense."""
         "Delta Squadron Pilot":
            text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
         "Dengar":
@@ -403,7 +404,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Genesis Red":
            text: """After you acquire a lock, you must remove all of your focus and evade tokens. Then gain the same number of focus and evade tokens that the locked ship has. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Gideon Hask":
-           text: """While you perform an attack against a damaged defender, roll 1 additional attack die."""
+           ship: "Chasseur TIE"
+           text: """Tant que vous effectuez une attaque contre un défenseur endommagé, lancez 1 dé d’attaque supplémentaire."""
         "Gold Squadron Veteran":
            name: "Vétéran de l’Escadron Or"
            text: """ """
@@ -435,7 +437,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Horton Salm":
            text: """Tant que vous effectuez une attaque, vous pouvez relancer 1 dé d’attaque pour chaque autre vaisseau allié à portée 0–1 du défenseur."""
         '"Howlrunner"':
-           text: """While a friendly ship at range 0-1 performs a primary attack, that ship may reroll 1 attack die."""
+           ship: "Chasseur TIE"
+           text: """Tant qu’un vaisseau allié à portée 0–1 effectue une attaque principale, il peut relancer 1 dé d’attaque."""
         "Ibtisam":
            text: """After you fully execute a maneuver, if you are stressed, you may roll 1 attack die. On a %HIT% or %CRIT% result, remove 1 stress token."""
         "Iden Versio":
@@ -545,7 +548,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Manaroo":
            text: """At the start of the Engagement Phase, you may choose a friendly ship at range 0-1. If you do, transfer all green tokens assigned to you to that ship."""
         '"Mauler" Mithel':
-           text: """While you perform an attack at attack range 1, roll 1 additional attack die."""
+           ship: "Chasseur TIE"
+           text: """Tant que vous effectuez une attaque à portée d’attaque 1, lancez 1 dé d’attaque supplémentaire."""
         "Miranda Doni":
            text: """While you perform a primary attack, you may either spend 1 shield to roll 1 additional attack die or, if you are not shielded, you may roll 1 fewer attack die to recover 1 shield."""
         "Moralo Eval":
@@ -633,13 +637,15 @@ exportObj.cardLoaders['Français'] = () ->
         "Scimitar Squadron Pilot":
            text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% template of the same speed instead."""
         '"Scourge" Skutu':
-           text: """While you perform an attack against a defender in your %BULLSEYEARC%, roll 1 additional attack die."""
+           ship: "Chasseur TIE"
+           text: """Tant que vous effectuez une attaque contre un défenseur dans votre %BULLSEYEARC%, lancez 1 dé d’attaque supplémentaire."""
         "Serissu":
            text: """While a friendly ship at range 0-1 defends, it may reroll 1 of its dice. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Seventh Sister":
            text: """While you perform a primary attack, before the Neutralize Results step, you may spend 2 %FORCE% to cancel 1 %EVADE% result."""
         "Seyn Marana":
-           text: """While you perform an attack, you may spend 1 %CRIT% result. If you do, deal 1 facedown damage card to the defender, then cancel you remaining results."""
+           ship: "Chasseur TIE"
+           text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 résultat %CRIT%. Dans ce cas, attribuez 1 carte de dégât face cachée au défenseur, puis annuler vos résultats restants."""
         "Shadowport Hunter":
            text: """Crime syndicates augment the lethal skills of their loyal contractors with the best technology available, like the fast and formidable Lancer-class pursuit craft."""
         "Shara Bey":
@@ -698,7 +704,8 @@ exportObj.cardLoaders['Français'] = () ->
         '"Vizier"':
            text: """After you fully execute a speed 1 maneuver using your Adaptive Ailerons ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         '"Wampa"':
-           text: """While you perform an attack, you may spend 1 %CHARGE% to roll 1 additional attack die. After defending, lose 1 %CHARGE%."""
+           ship: "Chasseur TIE"
+           text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% pour lancer 1 dé d’attaque supplémentaire %LINEBREAK% Après avoir défendu, perdez 1 %CHARGE%."""
         "Warden Squadron Pilot":
            text: """ """
         "Wedge Antilles":
@@ -838,7 +845,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Contraband Cybernetics":
            text: """Before you activate, you may spend 1 %CHARGE%. If you do, until the end of the round, you can perform actions and execute red maneuvers, even while stressed."""
         "Crack Shot":
-           text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, before the Neutralize Results step, you may spend 1 %CHARGE% to cancel 1 %EVADE% result."""
+           name: "Tireur hors pair"
+           text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, avant l’étape « Neutraliser les résultats », vous pouvez dépenser 1 %CHARGE% pour annuler 1 résultat %EVADE%."""
         "Daredevil":
            name: "Casse-cou"
            text: """<i>Requiert : Vaisseau petit, %BOOST% blanche</i> %LINEBREAK% ant que vous effectuez une action %BOOST% blanche, vous pouvez considérer qu’elle est rouge pour utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
@@ -946,7 +954,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Jamming Beam":
            text: """Attack: If this attack hits, all %HIT%/%CRIT% results inflict jam tokens instead of damage."""
         "Juke":
-           text: """<i>Requires: Small or Medium Base</i> %LINEBREAK% While you perform an attack, if you are evading, you may change 1 of the defender's %EVADE% results to a %FOCUS% result."""
+           name: "Feinte"
+           text: """<i>Requiert : vaisseau petit ou moyen</i> %LINEBREAK% Tant que vous effectuez une attaque, si vous avez un marqueur d’évasion, vous pouvez changer 1 des résultats %EVADE% du défenseur en un résultat %FOCUS%."""
         "Jyn Erso":
            text: """If a friendly ship at range 0-3 would gain a focus token, it may gain 1 evade token instead."""
         "Kanan Jarrus":
@@ -975,7 +984,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Marauder":
            text: """While you perform a primary %REARARC% attack,, you may reroll 1 attack die. Add %GUNNER% slot."""
         "Marksmanship":
-           text: """While you perform an attack, if the defender is in your %BULLSEYEARC%, you may change 1 %HIT% result to a %CRIT% result."""
+           name: "Adresse au tir"
+           text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez changer 1 résultat %HIT% en un résultat %CRIT%."""
         "Maul":
            text: """<i>Requires: Scum or Ezra Bridger</i> %LINEBREAK% After you suffer damage, you may gain 1 stress token to recover 1 %FORCE%. You can equip \"Dark Side\" upgrades."""
         "Millennium Falcon":
@@ -1090,7 +1100,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Static Discharge Vanes":
            text: """Before you would gain 1 ion or jam token, if you are not stressed, you may choose another ship at range 0–1 and gain 1 stress token. If you do, the chosen ship gains that ion or jam token instead."""
         "Stealth Device":
-           text: """While you defend, if your %CHARGE% is active, roll 1 additional defense die. After you suffer damage, lost 1 %CHARGE%. %LINEBREAK%<i>This upgrade has a variable cost, worth 3, 4, 6, or 8 points depending on if the ship agility is 0, 1, 2, or 3 respectively.</i>"""
+           name: "Système d'occulation"
+           text: """Tant que vous défendez, si votre %CHARGE% est active, lancez 1 dé de défense supplémentaire. %LINEBREAK% Après avoir subi des dégâts, perdez 1 %CHARGE%. %LINEBREAK%<i>Cette amélioration a un coût variable, de 3, 4, 6, ou 8 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "Supernatural Reflexes":
            name: "Réflexes surnaturels"
            text: """<i>Requiert : petit vaisseau</i> %LINEBREAK% Avant votre activation, vous pouvez dépenser 1 %FORCE% pour effectuer une action %BARRELROLL% ou %BOOST%. Puis, si vous avez effectué une action qui n’est pas dans votre barre d’action, subissez 1 dégât %HIT%."""
