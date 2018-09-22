@@ -232,7 +232,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """After you fully execute a red maneuver, gain 1 calculate token. At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Academy Pilot":
            name: "Pilote de l'académie"
-           #ship: "Chasseur TIE"
+           ship: "Chasseur TIE"
            text: """ """
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""
@@ -305,6 +305,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Captain Oicunn":
            text: """You can perform primary attacks at range 0."""
         "Captain Rex":
+           ship: "Chasseur TIE"
            text: """After you perform an attack, assign the Suppressive Fire condition to the defender."""
         "Cartel Executioner":
            text: """DEAD TO RIGHTS: While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
@@ -382,6 +383,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Ezra Bridger (Sheathipede)":
            text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE%/%HIT% results. %LINEBREAK% COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         "Ezra Bridger (TIE Fighter)":
+           ship: "Chasseur TIE"
            text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Fenn Rau":
            ship: "Chasseur Fang"
@@ -628,6 +630,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Sabine Wren (Scum)":
            text: """While you defend, if the attacker is in your %SINGLETURRETARC% at range 0-2, you may add 1 %FOCUS% result to your dice results."""
         "Sabine Wren (TIE Fighter)":
+           ship: "Chasseur TIE"
            text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action."""
         "Sarco Plank":
            text: """While you defend, you may treat your agility value as equal to the speed of the maneuver you executed this round. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
@@ -728,6 +731,7 @@ exportObj.cardLoaders['Français'] = () ->
         '"Zeb" Orrelios (Sheathipede)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         '"Zeb" Orrelios (TIE Fighter)':
+           ship: "Chasseur TIE"
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Zertik Strom":
            text: """Pendant la phase de dénouement, vous pouvez dépenser un marqueur de verrouillage que vous avez sur un vaisseau ennemi pour exposer 1 carte de dégât de ce dernier. %LINEBREAK% Ordinateur de Visée Avancé : tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
