@@ -6795,6 +6795,7 @@ exportObj.basicCardData = ->
        {
            name: "Phantom (Sheathipede)"
            id: 158
+           skip: true 
            slot: "Title"
            points: 2
            unique: true
@@ -6909,7 +6910,10 @@ exportObj.basicCardData = ->
            points: 2
            unique: true
            faction: "Rebel Alliance"
-           ship: "Attack Shuttle"
+           restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.ship == "Attack Shuttle" or "Sheathipede-Class Shuttle"
+                false
        }
        {
             name: "Hardpoint: Cannon"
