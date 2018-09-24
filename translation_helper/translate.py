@@ -4,11 +4,11 @@ import re
 # We may want to actually load them from the api... 
 
 # load german cards
-data_de = json.load(open('api_export_de.json'))
+data_de = json.load(open('api_export_de.json', encoding = "utf8"))
 cards_de = data_de["cards"]
 
 # load english cards
-data_en = json.load(open('api_export_en.json'))
+data_en = json.load(open('api_export_en.json', encoding = "utf8"))
 cards_en = data_en["cards"]
 
 # sort german cards by id
@@ -26,13 +26,13 @@ pilot_name_list = {}
 cards_en = sorted(cards_en, key=lambda k: k['name'])
 
 # load names changed by yasb
-renamed_cards = json.load(open('renamed_cards.json'))
+renamed_cards = json.load(open('renamed_cards.json', encoding = "utf8"))
 
 # load ship translations
-ship_translations = json.load(open('ship_translations.json'))
+ship_translations = json.load(open('ship_translations.json', encoding = "utf8"))
 
 # load phrase translations
-phrase_translations = json.load(open('phrase_translations.json'))
+phrase_translations = json.load(open('phrase_translations.json', encoding = "utf8"))
 
 # store what we will later use as .coffee
 output_text = ""
