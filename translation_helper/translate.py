@@ -276,7 +276,7 @@ output_text = output_text.replace('–', "-")
 output_text = output_text.replace('•', '')
 
 # write output
-output_file = open("translation_" + lang + ".coffee","w",encoding="utf8")
+output_file = open("translation.coffee","w",encoding="utf8")
 output_file.write(output_text)
 output_file.close()
 
