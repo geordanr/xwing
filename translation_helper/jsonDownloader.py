@@ -1,4 +1,5 @@
 import argparse
+import io
 import json
 import requests
 
@@ -40,10 +41,10 @@ for lang in languages:
 
     print('Downloading file from ' + url + '...')
     # Download the file from `url` and save it locally under `file_name`:
-    with requests.get(url, headers) as response, open(filename, 'w') as outfile:
+    with requests.get(url, headers=headers) as response, io.open(filename, 'w', encoding='utf8') as outfile:
         print('Processing JSON file...')
 
         # We make the file more readable before saving it.
         obj = response.json()
-        json.dump(obj, outfile, sort_keys=True, indent=4)
+        json.dump(obj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
         print("Wrote to " + filename + ".")

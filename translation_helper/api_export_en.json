@@ -166,7 +166,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack, you may spend 1<nonbreak><focus>, <hit>, or <crit> result to look at the defender\u2019s facedown damage cards, choose 1, and expose it.",
+            "ability_text": "While you perform an attack, you may spend 1<nonbreak><focus>, <hit>, or <crit> result to look at the defender’s facedown damage cards, choose 1, and expose it.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -247,7 +247,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, if there is an enemy ship at range 0\u20131, add 1<nonbreak><evade> result to your dice results.",
+            "ability_text": "While you defend, if there is an enemy ship at range 0–1, add 1<nonbreak><evade> result to your dice results.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -337,7 +337,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you spend a focus token, you may choose 1 friendly ship at range 1\u20133. That ship gains 1 focus token.",
+            "ability_text": "After you spend a focus token, you may choose 1 friendly ship at range 1–3. That ship gains 1 focus token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -501,7 +501,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack, you may reroll 1 attack die for each other friendly ship at range 0\u20131 of the defender.",
+            "ability_text": "While you perform an attack, you may reroll 1 attack die for each other friendly ship at range 0–1 of the defender.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -674,7 +674,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform the <targetlock> action, you may choose 1 friendly ship at range 1\u20133. That ship may acquire a lock on the object you locked, ignoring range restrictions.",
+            "ability_text": "After you perform the <targetlock> action, you may choose 1 friendly ship at range 1–3. That ship may acquire a lock on the object you locked, ignoring range restrictions.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -728,7 +728,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_14.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "\u201cDutch\u201d Vander",
+            "name": "“Dutch” Vander",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -805,7 +805,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Commanded by Jon \u201cDutch\u201d Vander, Gold Squadron played an instrumental role in the Battles of Scarif and Yavin.</flavor>",
+            "ability_text": "<flavor>Commanded by Jon “Dutch” Vander, Gold Squadron played an instrumental role in the Battles of Scarif and Yavin.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -896,7 +896,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may spend 1 focus token to choose a friendly ship at range 0\u20131. If you do, that ship rolls 1 additional defense die while defending until the end of the round.",
+            "ability_text": "At the start of the Engagement Phase, you may spend 1 focus token to choose a friendly ship at range 0–1. If you do, that ship rolls 1 additional defense die while defending until the end of the round.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -986,7 +986,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you perform a <barrelroll> or <boost> action, you may choose a friendly ship at range 0\u20131. That ship may perform a <focus> action.</smallbody><return><sasmall><sabold>Vectored Thrusters:</sabold> After you perform an action, you may perform a red <boost> action.</sasmall>",
+            "ability_text": "<smallbody>After you perform a <barrelroll> or <boost> action, you may choose a friendly ship at range 0–1. That ship may perform a <focus> action.</smallbody><return><sasmall><sabold>Vectored Thrusters:</sabold> After you perform an action, you may perform a red <boost> action.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -1473,7 +1473,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a blue maneuver, you may choose a friendly ship at range 0\u20133. That ship may perform an action.",
+            "ability_text": "After you fully execute a blue maneuver, you may choose a friendly ship at range 0–3. That ship may perform an action.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -1564,7 +1564,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you move, you ignore obstacles.<return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0\u20131, do not apply the range 0\u20131 bonus and roll 1 fewer attack die.</shipability>",
+            "ability_text": "While you move, you ignore obstacles.<return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0–1, do not apply the range 0–1 bonus and roll 1 fewer attack die.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -1654,7 +1654,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you defend or perform an attack, if you spent a calculate token, gain 1 calculate token.<return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0\u20131, do not apply the range 0\u20131 bonus and roll 1 fewer attack die.</shipability>",
+            "ability_text": "After you defend or perform an attack, if you spent a calculate token, gain 1 calculate token.<return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0–1, do not apply the range 0–1 bonus and roll 1 fewer attack die.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -1706,7 +1706,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_78.jpg",
             "initiative": 3,
             "is_unique": true,
-            "name": "\u201cLeebo\u201d",
+            "name": "“Leebo”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 3,
@@ -1743,7 +1743,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Although stock YT-2400 light freighters have plenty of room for cargo, that space is often annexed to support modified weapon systems and oversized engines.</flavor><return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0\u20131, do not apply the range 0\u20131 bonus and roll 1 fewer attack die.</shipability>",
+            "ability_text": "<flavor>Although stock YT-2400 light freighters have plenty of room for cargo, that space is often annexed to support modified weapon systems and oversized engines.</flavor><return><shipability><sabold>Sensor Blindspot:</sabold> While you perform a primary attack at attack range 0–1, do not apply the range 0–1 bonus and roll 1 fewer attack die.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -1874,7 +1874,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_80.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cMauler\u201d Mithel",
+            "name": "“Mauler” Mithel",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -1905,7 +1905,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20131 performs a primary attack, that ship may reroll 1 attack die.",
+            "ability_text": "While a friendly ship at range 0–1 performs a primary attack, that ship may reroll 1 attack die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -1947,7 +1947,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_81.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cHowlrunner\u201d",
+            "name": "“Howlrunner”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -1978,7 +1978,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Unlike most Rebel cells, Saw Gerrera\u2019s partisans are willing to use extreme methods to undermine the Galactic Empire\u2019s objectives in brutal battles that rage from Geonosis to Jedha.</flavor>",
+            "ability_text": "<flavor>Unlike most Rebel cells, Saw Gerrera’s partisans are willing to use extreme methods to undermine the Galactic Empire’s objectives in brutal battles that rage from Geonosis to Jedha.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -2101,7 +2101,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_82.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cScourge\u201d Skutu",
+            "name": "“Scourge” Skutu",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -2132,7 +2132,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Before a friendly TIE/ln fighter at range 0\u20131 would suffer 1 or more damage, you may spend 1<nonbreak><standardcharge>. If you do, prevent that damage.",
+            "ability_text": "Before a friendly TIE/ln fighter at range 0–1 would suffer 1 or more damage, you may spend 1<nonbreak><standardcharge>. If you do, prevent that damage.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -2282,7 +2282,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20132 defends against a damaged attacker, the defender may reroll 1 defense die.",
+            "ability_text": "While a friendly ship at range 0–2 defends against a damaged attacker, the defender may reroll 1 defense die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -2426,7 +2426,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly ship at range 0\u20131 defends (after damage is resolved, if any), you may perform an action.",
+            "ability_text": "After a friendly ship at range 0–1 defends (after damage is resolved, if any), you may perform an action.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -2538,7 +2538,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_88.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cNight Beast\u201d",
+            "name": "“Night Beast”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -2610,7 +2610,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_89.jpg",
             "initiative": 1,
             "is_unique": true,
-            "name": "\u201cWampa\u201d",
+            "name": "“Wampa”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -2815,7 +2815,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Sienar Fleet System\u2019s TIE Advanced v1 is a groundbreaking starfighter design, featuring upgraded engines, a missile launcher, and folding s-foils.</flavor>",
+            "ability_text": "<flavor>Sienar Fleet System’s TIE Advanced v1 is a groundbreaking starfighter design, featuring upgraded engines, a missile launcher, and folding s-foils.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -3046,7 +3046,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_110.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cDeathfire\u201d",
+            "name": "“Deathfire”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -3207,7 +3207,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_118.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "\u201cCountdown\u201d",
+            "name": "“Countdown”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -3238,7 +3238,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform an attack that hits, if you are evading, expose 1 of the defender\u2019s damage cards.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3\u20135 maneuver, you may perform an <evade> action.</shipability>",
+            "ability_text": "After you perform an attack that hits, if you are evading, expose 1 of the defender’s damage cards.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3–5 maneuver, you may perform an <evade> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -3587,7 +3587,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 or more friendly ships at range 0\u20133. If you do, transfer all enemy lock tokens from the chosen ships to you.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 or more friendly ships at range 0–3. If you do, transfer all enemy lock tokens from the chosen ships to you.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -3676,7 +3676,7 @@
                     "value": "4"
                 }
             ],
-            "subtitle": "The Emperor\u2019s Shuttle Pilot",
+            "subtitle": "The Emperor’s Shuttle Pilot",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
@@ -3878,7 +3878,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While you defend or perform an attack, if the attack range is 1, you may roll 1 additional die.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<smallbody>While you defend or perform an attack, if the attack range is 1, you may roll 1 additional die.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -4050,7 +4050,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The aces of Skull Squadron favor an aggressive approach, using their craft\u2019s pivot wing technology to achieve unmatched agility in the pursuit of their quarry.</flavor> <return> <sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<flavor>The aces of Skull Squadron favor an aggressive approach, using their craft’s pivot wing technology to achieve unmatched agility in the pursuit of their quarry.</flavor> <return> <sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -4387,7 +4387,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "You can deploy only via emergency deployment, and you have the name, initiative, pilot ability, and ship <standardcharge> of the friendly, destroyed <smallcaps>Hound\u2019s Tooth</smallcaps>.<return><shipability><sabold>Escape Craft:</sabold> <smallcaps>Setup:</smallcaps>Requires the <smallcaps>Hound\u2019s Tooth</smallcaps>. You <bold>must</bold> begin the game docked with the <smallcaps>Hound\u2019s Tooth</smallcaps>.</shipability>",
+            "ability_text": "You can deploy only via emergency deployment, and you have the name, initiative, pilot ability, and ship <standardcharge> of the friendly, destroyed <smallcaps>Hound’s Tooth</smallcaps>.<return><shipability><sabold>Escape Craft:</sabold> <smallcaps>Setup:</smallcaps>Requires the <smallcaps>Hound’s Tooth</smallcaps>. You <bold>must</bold> begin the game docked with the <smallcaps>Hound’s Tooth</smallcaps>.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -4466,7 +4466,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship in your firing arc at range 0\u20132. If you do, transfer 1 focus or evade token from that ship to yourself.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship in your firing arc at range 0–2. If you do, transfer 1 focus or evade token from that ship to yourself.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -4562,7 +4562,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you fully execute a maneuver, you may gain 1 stress token to rotate your ship 90\u00ba.</smallbody><return> <sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
+            "ability_text": "<smallbody>After you fully execute a maneuver, you may gain 1 stress token to rotate your ship 90º.</smallbody><return> <sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -4650,7 +4650,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20131 defends, it may reroll 1 of its dice.<return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
+            "ability_text": "While a friendly ship at range 0–1 defends, it may reroll 1 of its dice.<return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -5419,7 +5419,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose a friendly ship at range 0\u20131. If you do, transfer all green tokens assigned to you to that ship.",
+            "ability_text": "At the start of the Engagement Phase, you may choose a friendly ship at range 0–1. If you do, transfer all green tokens assigned to you to that ship.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -5501,7 +5501,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Due to its heavy weapons array and resilient shielding, the B-wing has solidified itself as the Rebel Alliance\u2019s most innovative assault fighter.</flavor>",
+            "ability_text": "<flavor>Due to its heavy weapons array and resilient shielding, the B-wing has solidified itself as the Rebel Alliance’s most innovative assault fighter.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -5664,7 +5664,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>A unique gyrostabilization system surrounds the B-wing\u2019s cockpit, ensuring that the pilot always remains stationary during flight.</flavor>",
+            "ability_text": "<flavor>A unique gyrostabilization system surrounds the B-wing’s cockpit, ensuring that the pilot always remains stationary during flight.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -5837,7 +5837,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary attack, if there is at least 1 other friendly ship at range 0\u20131 of the defender, you may roll 1 additional attack die.",
+            "ability_text": "While you perform a primary attack, if there is at least 1 other friendly ship at range 0–1 of the defender, you may roll 1 additional attack die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -5998,7 +5998,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Friendly ships at range 0\u20131 can perform attacks at range 0 of obstacles.<return><shipability><sabold>Co-Pilot:</sabold> While you are docked, your carrier ship has your pilot ability in addition to its own.</shipability>",
+            "ability_text": "Friendly ships at range 0–1 can perform attacks at range 0 of obstacles.<return><shipability><sabold>Co-Pilot:</sabold> While you are docked, your carrier ship has your pilot ability in addition to its own.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -6077,7 +6077,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The Z-95 Headhunter was the primary inspiration for Incom Corporation\u2019s exemplary T-65 X-wing starfighter. Though it is considered outdated by modern standards, it remains a versatile and potent snub fighter.</flavor>",
+            "ability_text": "<flavor>The Z-95 Headhunter was the primary inspiration for Incom Corporation’s exemplary T-65 X-wing starfighter. Though it is considered outdated by modern standards, it remains a versatile and potent snub fighter.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -6246,7 +6246,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While another friendly ship at range 0\u20131 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1<nonbreak><hit> or <crit> to cancel 1 matching result.",
+            "ability_text": "While another friendly ship at range 0–1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1<nonbreak><hit> or <crit> to cancel 1 matching result.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -6408,7 +6408,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly ship at range 0\u20131 becomes the defender, you may spend 1 reinforce token. If you do, that ship gains 1 evade token.",
+            "ability_text": "After a friendly ship at range 0–1 becomes the defender, you may spend 1 reinforce token. If you do, that ship gains 1 evade token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -7162,7 +7162,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_83.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "\u201cChopper\u201d",
+            "name": "“Chopper”",
             "restrictions": [
                 [
                     {
@@ -7202,7 +7202,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_99.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "\u201cChopper\u201d",
+            "name": "“Chopper”",
             "restrictions": [
                 [
                     {
@@ -7242,7 +7242,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_143.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "\u201cGenius\u201d",
+            "name": "“Genius”",
             "restrictions": [
                 [
                     {
@@ -7331,7 +7331,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_148.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "<italic>Hound\u2019s Tooth</italic>",
+            "name": "<italic>Hound’s Tooth</italic>",
             "restrictions": [
                 [
                     {
@@ -7364,7 +7364,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "You can dock at range 0\u20131.",
+            "ability_text": "You can dock at range 0–1.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_106.png",
@@ -7469,7 +7469,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship at range 0\u20131. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship at range 0–1. If you do, you gain 1 calculate token unless that ship chooses to gain 1 stress token.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_127.png",
@@ -7523,7 +7523,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After another friendly ship at range 0\u20133 defends, if it is destroyed, the attacker gains 2 stress tokens.<return>While a friendly ship at range 0\u20133 performs an attack against a stressed ship, it may reroll 1 attack die.",
+            "ability_text": "After another friendly ship at range 0–3 defends, if it is destroyed, the attacker gains 2 stress tokens.<return>While a friendly ship at range 0–3 performs an attack against a stressed ship, it may reroll 1 attack die.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_109.png",
@@ -7643,7 +7643,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a <focus> action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0\u20131, to a maximum of 2.",
+            "ability_text": "While you perform a <focus> action, you may treat it as red. If you do, gain 1 additional focus token for each enemy ship at range 0–1, to a maximum of 2.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_79.png",
@@ -7683,7 +7683,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the End Phase, you may choose 2 <illicit> upgrades equipped to friendly ships at range 0\u20131. If you do, you may exchange these upgrades.<return><smallcaps>End of Game:</smallcaps> Return all <illicit> upgrades to their original ships.",
+            "ability_text": "During the End Phase, you may choose 2 <illicit> upgrades equipped to friendly ships at range 0–1. If you do, you may exchange these upgrades.<return><smallcaps>End of Game:</smallcaps> Return all <illicit> upgrades to their original ships.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_131.png",
@@ -7776,7 +7776,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the Activation Phase, enemy ships at range 0\u20131 cannot remove stress tokens.",
+            "ability_text": "During the Activation Phase, enemy ships at range 0–1 cannot remove stress tokens.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_113.png",
@@ -7914,7 +7914,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "If a friendly ship at range 0\u20133 would gain a focus token, it may gain 1 evade token instead.",
+            "ability_text": "If a friendly ship at range 0–3 would gain a focus token, it may gain 1 evade token instead.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_85.png",
@@ -7994,7 +7994,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend or perform an attack, if there are no other friendly ships at range 0\u20132, you may spend 1<nonbreak><standardcharge> to reroll 1 of your dice.",
+            "ability_text": "While you defend or perform an attack, if there are no other friendly ships at range 0–2, you may spend 1<nonbreak><standardcharge> to reroll 1 of your dice.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_9.png",
@@ -8330,7 +8330,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallcaps>Attack (<targetlock>):</smallcaps> Spend 1<nonbreak><standardcharge>. After this attack, you may perform this attack as a bonus attack against a different target at range 0\u20131 of the defender, ignoring the <targetlock> requirement.",
+            "ability_text": "<smallcaps>Attack (<targetlock>):</smallcaps> Spend 1<nonbreak><standardcharge>. After this attack, you may perform this attack as a bonus attack against a different target at range 0–1 of the defender, ignoring the <targetlock> requirement.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_37.png",
@@ -8376,7 +8376,7 @@
             "weapon_range": "1 - 2"
         },
         {
-            "ability_text": "<flavor>Used for deploying troops under the cover of darkness or into the heat of battle, the UT-60D U-wing fulfills the Rebellion\u2019s need for a swift and hardy troop transport.</flavor>",
+            "ability_text": "<flavor>Used for deploying troops under the cover of darkness or into the heat of battle, the UT-60D U-wing fulfills the Rebellion’s need for a swift and hardy troop transport.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -8604,7 +8604,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_43.jpg",
             "initiative": null,
             "is_unique": false,
-            "name": "GNK \u201cGonk\u201d Droid",
+            "name": "GNK “Gonk” Droid",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": null,
@@ -8736,7 +8736,7 @@
             "weapon_range": "1 - 3"
         },
         {
-            "ability_text": "While you perform a <frontarc> attack, if you are not in the defender\u2019s firing arc, the defender rolls 1 fewer defense die.",
+            "ability_text": "While you perform a <frontarc> attack, if you are not in the defender’s firing arc, the defender rolls 1 fewer defense die.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_11.png",
@@ -8852,7 +8852,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_37.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cZeb\u201d Orrelios",
+            "name": "“Zeb” Orrelios",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -8969,7 +8969,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Designed to look like a bird in flight by the Corellian Engineering Corporation, \u201chawk\u201d series ships are exemplary transport craft. Swift and rugged, the HWK-290 is often employed by Rebel agents as a mobile base of operations.</flavor>",
+            "ability_text": "<flavor>Designed to look like a bird in flight by the Corellian Engineering Corporation, “hawk” series ships are exemplary transport craft. Swift and rugged, the HWK-290 is often employed by Rebel agents as a mobile base of operations.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -9187,7 +9187,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_40.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cZeb\u201d Orrelios",
+            "name": "“Zeb” Orrelios",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -9852,7 +9852,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The elite pilots of Rogue Squadron are among the Rebellion\u2019s very best.</flavor> <return> <sasmall><sabold>Experimental Scanners:</sabold> You can acquire locks beyond range 3. You cannot acquire locks at range 1.</sasmall>",
+            "ability_text": "<flavor>The elite pilots of Rogue Squadron are among the Rebellion’s very best.</flavor> <return> <sasmall><sabold>Experimental Scanners:</sabold> You can acquire locks beyond range 3. You cannot acquire locks at range 1.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10204,7 +10204,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Saw Gerrera\u2019s partisans were first established to oppose Separatist forces on Onderon during the Clone Wars, and continued to wage war against galactic tyranny as the Empire rose to power.</flavor>",
+            "ability_text": "<flavor>Saw Gerrera’s partisans were first established to oppose Separatist forces on Onderon during the Clone Wars, and continued to wage war against galactic tyranny as the Empire rose to power.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10286,7 +10286,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Koensayr Manufacturing\u2019s K-wing boasts an advanced SubLight Acceleration Motor and an unprecedented 18 hard points, granting it unrivaled speed and firepower.</flavor>",
+            "ability_text": "<flavor>Koensayr Manufacturing’s K-wing boasts an advanced SubLight Acceleration Motor and an unprecedented 18 hard points, granting it unrivaled speed and firepower.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10573,7 +10573,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_49.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cZeb\u201d Orrelios",
+            "name": "“Zeb” Orrelios",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -10699,7 +10699,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, if there is an enemy ship at range 0\u20131, you may add 1<nonbreak><evade> result to your dice results.",
+            "ability_text": "While you defend, if there is an enemy ship at range 0–1, you may add 1<nonbreak><evade> result to your dice results.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10787,7 +10787,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Friendly ships can acquire locks onto objects at range 0\u20133 of any friendly ship.",
+            "ability_text": "Friendly ships can acquire locks onto objects at range 0–3 of any friendly ship.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10869,7 +10869,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Activation Phase, you may choose 1 friendly ship at range 1\u20133. If you do, that ship removes 1 stress token.",
+            "ability_text": "At the start of the Activation Phase, you may choose 1 friendly ship at range 1–3. If you do, that ship removes 1 stress token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -10951,7 +10951,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20132 defends, the attacker cannot reroll more than 1 attack die.",
+            "ability_text": "While a friendly ship at range 0–2 defends, the attacker cannot reroll more than 1 attack die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11034,7 +11034,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform a <focus> action, you may transfer 1 of your focus tokens to a friendly ship at range 1\u20132.",
+            "ability_text": "After you perform a <focus> action, you may transfer 1 of your focus tokens to a friendly ship at range 1–2.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11116,7 +11116,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20132 defends or performs an attack, it may spend your focus tokens as if that ship has them.",
+            "ability_text": "While a friendly ship at range 0–2 defends or performs an attack, it may spend your focus tokens as if that ship has them.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11214,7 +11214,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you spend a focus token, you may choose 1 friendly ship at range 1\u20133. That ship gains 1 focus token.",
+            "ability_text": "After you spend a focus token, you may choose 1 friendly ship at range 1–3. That ship gains 1 focus token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11478,7 +11478,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you roll dice, if you are at range 0\u20131 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects.",
+            "ability_text": "After you roll dice, if you are at range 0–1 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11756,7 +11756,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty.<return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship\u2019s primary <frontarc> attack value.</shipability>",
+            "ability_text": "After you reveal a red or blue maneuver, you may set your dial to another maneuver of the same difficulty.<return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship’s primary <frontarc> attack value.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11840,7 +11840,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship in your firing arc defends, you may spend 1<nonbreak><forcecharge>. If you do, the attacker rolls 1 fewer attack die.<return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship\u2019s primary <frontarc> attack value.</shipability>",
+            "ability_text": "While a friendly ship in your firing arc defends, you may spend 1<nonbreak><forcecharge>. If you do, the attacker rolls 1 fewer attack die.<return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship’s primary <frontarc> attack value.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -11930,7 +11930,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, each enemy ship at range 0 gains 2 jam tokens. <return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship\u2019s primary <frontarc> attack value.</shipability>",
+            "ability_text": "At the start of the Engagement Phase, each enemy ship at range 0 gains 2 jam tokens. <return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship’s primary <frontarc> attack value.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -11976,7 +11976,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_75.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cChopper\u201d",
+            "name": "“Chopper”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 3,
@@ -12013,7 +12013,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Another successful Corellian Engineering Corporation freighter design, the VCX-100 is larger than the ubiquitous YT-series, boasting more living space and customizability.</flavor><return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship\u2019s primary <frontarc> attack value.</shipability>",
+            "ability_text": "<flavor>Another successful Corellian Engineering Corporation freighter design, the VCX-100 is larger than the ubiquitous YT-series, boasting more living space and customizability.</flavor><return><shipability><sabold>Tail Gun:</sabold> While you have a docked ship, you have a primary <reararc> weapon with an attack value equal to your docked ship’s primary <frontarc> attack value.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -12170,7 +12170,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The TIE fighter\u2019s Twin Ion Engine system was designed for speed, making the TIE/ln one of the most maneuverable starships ever mass-produced.</flavor>",
+            "ability_text": "<flavor>The TIE fighter’s Twin Ion Engine system was designed for speed, making the TIE/ln one of the most maneuverable starships ever mass-produced.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -12477,7 +12477,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship\u2019s damage cards.</smallbody><return><sasmall><sabold>Advanced Targeting Computer:</sabold> While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1<nonbreak><hit> result to a <crit> result.</sasmall>",
+            "ability_text": "<smallbody>During the End Phase, you may spend a lock you have on an enemy ship to expose 1 of that ship’s damage cards.</smallbody><return><sasmall><sabold>Advanced Targeting Computer:</sabold> While you perform a primary attack against a defender you have locked, roll 1 additional attack die and change 1<nonbreak><hit> result to a <crit> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -12637,7 +12637,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend at attack range 1, you may spend 1<nonbreak><forcecharge> to prevent the range 1 bonus. <return>While you perform an attack against a defender at attack range 2\u20133, you may spend 1<nonbreak><forcecharge> to apply the range 1 bonus.",
+            "ability_text": "While you defend at attack range 1, you may spend 1<nonbreak><forcecharge> to prevent the range 1 bonus. <return>While you perform an attack against a defender at attack range 2–3, you may spend 1<nonbreak><forcecharge> to apply the range 1 bonus.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -12915,7 +12915,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Led by Baron Soontir Fel, the pilots of Saber Squadron are among the Empire\u2019s best. Their TIE interceptors are marked with red stripes to designate pilots with at least ten confirmed kills. </flavor> <return> <shipability> <sabold> Autothrusters:</sabold> After you perform an action, you may perform a red <barrelroll> or red <boost> action.</shipability>",
+            "ability_text": "<flavor>Led by Baron Soontir Fel, the pilots of Saber Squadron are among the Empire’s best. Their TIE interceptors are marked with red stripes to designate pilots with at least ten confirmed kills. </flavor> <return> <shipability> <sabold> Autothrusters:</sabold> After you perform an action, you may perform a red <barrelroll> or red <boost> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -13154,7 +13154,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a friendly ship at range 0\u20131 performs a <torpedo> or <missile> attack, that ship may reroll up to 2 attack dice. <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
+            "ability_text": "While a friendly ship at range 0–1 performs a <torpedo> or <missile> attack, that ship may reroll up to 2 attack dice. <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -13239,7 +13239,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a <torpedo> or <missile> attack, you may increase or decrease the range requirement by 1, to a limit of 0\u20133. <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
+            "ability_text": "While you perform a <torpedo> or <missile> attack, you may increase or decrease the range requirement by 1, to a limit of 0–3. <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -13324,7 +13324,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Though it sacrifices a degree of speed and maneuverability compared to a TIE/ln, the TIE bomber\u2019s increased payload can carry enough firepower to destroy virtually any enemy target.</flavor> <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
+            "ability_text": "<flavor>Though it sacrifices a degree of speed and maneuverability compared to a TIE/ln, the TIE bomber’s increased payload can carry enough firepower to destroy virtually any enemy target.</flavor> <return><shipability><sabold>Nimble Bomber:</sabold> If you would drop a device using a <straight> template, you may use a <leftbank> or <rightbank> template of the same speed instead.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -13629,7 +13629,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_115.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cVizier\u201d",
+            "name": "“Vizier”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 2,
@@ -13666,7 +13666,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The TIE reaper was designed to ferry elite troops to flashpoints on the battlefield, notably carrying Director Krennic\u2019s dreaded death troopers at the Battle of Scarif.</flavor><return><sasmall><sabold>Adaptive Ailerons:</sabold> Before you reveal your dial, if you are not stressed, you <bold>must</bold> execute a white [1<nonbreak><leftbank>], [1<nonbreak><straight>], or [1<nonbreak><rightbank>] maneuver.</sasmall>",
+            "ability_text": "<flavor>The TIE reaper was designed to ferry elite troops to flashpoints on the battlefield, notably carrying Director Krennic’s dreaded death troopers at the Battle of Scarif.</flavor><return><sasmall><sabold>Adaptive Ailerons:</sabold> Before you reveal your dial, if you are not stressed, you <bold>must</bold> execute a white [1<nonbreak><leftbank>], [1<nonbreak><straight>], or [1<nonbreak><rightbank>] maneuver.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -13795,7 +13795,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_117.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cDuchess\u201d",
+            "name": "“Duchess”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -13869,7 +13869,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_119.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "\u201cPure Sabacc\u201d",
+            "name": "“Pure Sabacc”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -14047,7 +14047,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While a damaged friendly ship at range 0\u20133 performs an attack, it may reroll 1 attack die.",
+            "ability_text": "While a damaged friendly ship at range 0–3 performs an attack, it may reroll 1 attack die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14130,7 +14130,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The fearsome Inquisitors are given a great deal of autonomy and access to the Empire\u2019s latest technology, like the prototype TIE Advanced v1.</flavor>",
+            "ability_text": "<flavor>The fearsome Inquisitors are given a great deal of autonomy and access to the Empire’s latest technology, like the prototype TIE Advanced v1.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14229,7 +14229,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack against a locked ship, after you roll attack dice, you may acquire a lock on the defender.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3\u20135 maneuver, you may perform an <evade> action.</shipability>",
+            "ability_text": "While you perform an attack against a locked ship, after you roll attack dice, you may acquire a lock on the defender.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3–5 maneuver, you may perform an <evade> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14323,7 +14323,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you would execute a <straight> maneuver, you may increase the difficulty of the maneuver. If you do, execute it as a <kturn> maneuver instead.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3\u20135 maneuver, you may perform an <evade> action.</shipability>",
+            "ability_text": "While you would execute a <straight> maneuver, you may increase the difficulty of the maneuver. If you do, execute it as a <kturn> maneuver instead.<return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3–5 maneuver, you may perform an <evade> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14417,7 +14417,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The experimental TIE defender outclasses all other contemporary starfighters, though its size, speed, and array of weapons come at a tremendous cost in credits.</flavor><return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3\u20135 maneuver, you may perform an <evade> action.</shipability>",
+            "ability_text": "<flavor>The experimental TIE defender outclasses all other contemporary starfighters, though its size, speed, and array of weapons come at a tremendous cost in credits.</flavor><return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3–5 maneuver, you may perform an <evade> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14511,7 +14511,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>In addition to its missile launchers and six wingtip laser cannons, the formidable TIE defender is equipped with deflector shields and a hyperdrive.</flavor><return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3\u20135 maneuver, you may perform an <evade> action.</shipability>",
+            "ability_text": "<flavor>In addition to its missile launchers and six wingtip laser cannons, the formidable TIE defender is equipped with deflector shields and a hyperdrive.</flavor><return><shipability><sabold>Full Throttle:</sabold> After you fully execute a speed 3–5 maneuver, you may perform an <evade> action.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14604,7 +14604,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack, after the defender rolls defense dice, you may spend 1 focus token to cancel all of the defender\u2019s blank/<focus> results.",
+            "ability_text": "While you perform an attack, after the defender rolls defense dice, you may spend 1 focus token to cancel all of the defender’s blank/<focus> results.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -14731,7 +14731,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_128.jpg",
             "initiative": 2,
             "is_unique": true,
-            "name": "\u201cDouble Edge\u201d",
+            "name": "“Double Edge”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -14818,7 +14818,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_131.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cWhisper\u201d",
+            "name": "“Whisper”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -14905,7 +14905,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_132.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "\u201cEcho\u201d",
+            "name": "“Echo”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -15357,7 +15357,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_139.jpg",
             "initiative": 5,
             "is_unique": true,
-            "name": "\u201cRedline\u201d",
+            "name": "“Redline”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 2,
@@ -15455,7 +15455,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_140.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "\u201cDeathrain\u201d",
+            "name": "“Deathrain”",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 2,
@@ -15492,7 +15492,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The TIE punisher\u2019s design builds upon the success of the TIE bomber, adding shielding, a second bomb chute, and three additional ordnance pods, each equipped with a twin ion engine.</flavor>",
+            "ability_text": "<flavor>The TIE punisher’s design builds upon the success of the TIE bomber, adding shielding, a second bomb chute, and three additional ordnance pods, each equipped with a twin ion engine.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -15590,7 +15590,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Activation Phase, you may spend 1<nonbreak><standardcharge>. If you do, while friendly ships acquire locks this round, they must acquire locks beyond range 3 instead of at range 0\u20133.",
+            "ability_text": "At the start of the Activation Phase, you may spend 1<nonbreak><standardcharge>. If you do, while friendly ships acquire locks this round, they must acquire locks beyond range 3 instead of at range 0–3.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -15685,7 +15685,7 @@
                     "value": "2"
                 }
             ],
-            "subtitle": "Darth Vader\u2019s Shuttle Pilot",
+            "subtitle": "Darth Vader’s Shuttle Pilot",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
@@ -15978,7 +15978,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend or perform an attack, you may reroll 1 of your dice for each enemy ship at range 0\u20131.",
+            "ability_text": "While you defend or perform an attack, you may reroll 1 of your dice for each enemy ship at range 0–1.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -16466,7 +16466,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>At the start of the Engagement Phase, you may choose 1 enemy ship at range 1. If you do and you are in its <frontarc>, it removes all of its green tokens.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<smallbody>At the start of the Engagement Phase, you may choose 1 enemy ship at range 1. If you do and you are in its <frontarc>, it removes all of its green tokens.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -16546,7 +16546,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While you perform an attack, you may spend 1<nonbreak><standardcharge> from an equipped <torpedo> upgrade. If you do, the defender rolls 1 fewer defense die.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<smallbody>While you perform an attack, you may spend 1<nonbreak><standardcharge> from an equipped <torpedo> upgrade. If you do, the defender rolls 1 fewer defense die.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -16625,7 +16625,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>After you fully execute a red maneuver, gain 2 focus tokens.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<smallbody>After you fully execute a red maneuver, gain 2 focus tokens.</smallbody><return><sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -16705,7 +16705,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Mandalorian Fang fighter pilots must master the Concordia Faceoff maneuver, leveraging their ships\u2019 narrow attack profile to execute deadly head-on charges.</flavor> <return> <sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker\u2019s <frontarc>, change 1 result to an <evade> result.</sasmall>",
+            "ability_text": "<flavor>Mandalorian Fang fighter pilots must master the Concordia Faceoff maneuver, leveraging their ships’ narrow attack profile to execute deadly head-on charges.</flavor> <return> <sasmall><sabold>Concordia Faceoff:</sabold> While you defend, if the attack range is 1 and you are in the attacker’s <frontarc>, change 1 result to an <evade> result.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17026,7 +17026,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Though far from nimble, the Y-wing\u2019s heavy hull, substantial shielding, and turret-mounted cannons make it an excellent patrol craft.</flavor>",
+            "ability_text": "<flavor>Though far from nimble, the Y-wing’s heavy hull, substantial shielding, and turret-mounted cannons make it an excellent patrol craft.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17116,7 +17116,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a primary attack, if there are no other friendly ships at range 0\u20132, roll 1 additional attack die.",
+            "ability_text": "While you perform a primary attack, if there are no other friendly ships at range 0–2, roll 1 additional attack die.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17159,7 +17159,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_169.jpg",
             "initiative": 4,
             "is_unique": true,
-            "name": "N\u2019dru Suhlak",
+            "name": "N’dru Suhlak",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -17196,7 +17196,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 friendly ship at range 0\u20132. If you do, transfer 1 focus or evade token from that ship to yourself. ",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 friendly ship at range 0–2. If you do, transfer 1 focus or evade token from that ship to yourself. ",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17239,7 +17239,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_170.jpg",
             "initiative": 3,
             "is_unique": true,
-            "name": "Kaa\u2019to Leeachos",
+            "name": "Kaa’to Leeachos",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -17276,7 +17276,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The vast and influential Black Sun crime syndicate can always find a use for talented pilots, provided they aren\u2019t particular about how they earn their credits.</flavor>",
+            "ability_text": "<flavor>The vast and influential Black Sun crime syndicate can always find a use for talented pilots, provided they aren’t particular about how they earn their credits.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17356,7 +17356,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Operating from the Double Worlds, Talus and Tralus, Kath Scarlet\u2019s gang of smugglers and pirates would never be described as reputable or dependable\u2014even by other criminals.</flavor>",
+            "ability_text": "<flavor>Operating from the Double Worlds, Talus and Tralus, Kath Scarlet’s gang of smugglers and pirates would never be described as reputable or dependable—even by other criminals.</flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17435,7 +17435,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After an enemy ship at range 0\u20133 receives at least 1 ion token, you may spend 3<nonbreak><standardcharge>. If you do, that ship gains 2 additional ion tokens.",
+            "ability_text": "After an enemy ship at range 0–3 receives at least 1 ion token, you may spend 3<nonbreak><standardcharge>. If you do, that ship gains 2 additional ion tokens.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -17727,7 +17727,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>At the start of the Engagement Phase, if there is at least 1 enemy ship at range 0\u20131, you may gain 1 focus token.</smallbody><return> <sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
+            "ability_text": "<smallbody>At the start of the Engagement Phase, if there is at least 1 enemy ship at range 0–1, you may gain 1 focus token.</smallbody><return> <sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -17809,13 +17809,13 @@
                     "value": "1"
                 }
             ],
-            "subtitle": "Prince Xizor\u2019s Bodyguard",
+            "subtitle": "Prince Xizor’s Bodyguard",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
         },
         {
-            "ability_text": "<smallbody>While you defend, after the Neutralize Results step, another friendly ship at range 0\u20131 and in the attack arc may suffer 1<nonbreak><hit> or <crit> damage. If it does, cancel 1 matching result.</smallbody><return><sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
+            "ability_text": "<smallbody>While you defend, after the Neutralize Results step, another friendly ship at range 0–1 and in the attack arc may suffer 1<nonbreak><hit> or <crit> damage. If it does, cancel 1 matching result.</smallbody><return><sasmall><sabold>Microthrusters:</sabold> While you perform a barrel roll, you <bold>must</bold> use the <leftbank> or <rightbank> template instead of the <straight> template.</sasmall>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -18213,7 +18213,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_P_185.jpg",
             "initiative": 3,
             "is_unique": true,
-            "name": "Laetin A\u2019shera",
+            "name": "Laetin A’shera",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -18244,7 +18244,7 @@
                     "value": "1"
                 }
             ],
-            "subtitle": "Car\u2019das Enforcer",
+            "subtitle": "Car’das Enforcer",
             "upgrade_types": [],
             "weapon_no_bonus": false,
             "weapon_range": null
@@ -18421,7 +18421,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The defeat of Black Sun ace Talonbane Cobra by Car\u2019das smugglers turned the tide of the Battle of Tansarii Point Station. Survivors of the clash are respected throughout the sector.</flavor> <return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
+            "ability_text": "<flavor>The defeat of Black Sun ace Talonbane Cobra by Car’das smugglers turned the tide of the Battle of Tansarii Point Station. Survivors of the clash are respected throughout the sector.</flavor> <return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -18507,7 +18507,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>MandalMotors\u2019 M3-A \u201cScyk\u201d Interceptor is purchased in large quantities by the Hutt Cartel and the Car\u2019das smugglers due to its low cost and customizability.</flavor> <return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
+            "ability_text": "<flavor>MandalMotors’ M3-A “Scyk” Interceptor is purchased in large quantities by the Hutt Cartel and the Car’das smugglers due to its low cost and customizability.</flavor> <return><shipability><sabold>Weapon Hardpoint:</sabold> You can equip 1 <cannon>, <torpedo>, or <missile> upgrade.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -18837,7 +18837,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>The versatile Kihraxz was modeled after Incom\u2019s popular X-wing starfighter, but an array of after-market modification kits ensure a wide variety of designs. </flavor>",
+            "ability_text": "<flavor>The versatile Kihraxz was modeled after Incom’s popular X-wing starfighter, but an array of after-market modification kits ensure a wide variety of designs. </flavor>",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -18918,7 +18918,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 friendly ship with <calculate> on its action bar at range 1\u20133. If you do, transfer 1 of your calculate tokens to it. <return><shipability><sabold>Advanced Droid Brain:</sabold> After you perform a <calculate> action, gain 1 calculate token.</shipability>",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 friendly ship with <calculate> on its action bar at range 1–3. If you do, transfer 1 of your calculate tokens to it. <return><shipability><sabold>Advanced Droid Brain:</sabold> After you perform a <calculate> action, gain 1 calculate token.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -19100,7 +19100,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you execute a Segnor\u2019s Loop (<leftsloop> or <rightsloop>) maneuver, you may use another template of the same speed instead: either the turn (<leftturn> or <rightturn>) of the same direction or the straight (<straight>) template.<return><shipability><sabold>Advanced Droid Brain:</sabold> After you perform a <calculate> action, gain 1 calculate token.</shipability>",
+            "ability_text": "While you execute a Segnor’s Loop (<leftsloop> or <rightsloop>) maneuver, you may use another template of the same speed instead: either the turn (<leftturn> or <rightturn>) of the same direction or the straight (<straight>) template.<return><shipability><sabold>Advanced Droid Brain:</sabold> After you perform a <calculate> action, gain 1 calculate token.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -19191,7 +19191,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a red maneuver, gain 1 calculate token.<return>At the start of the End Phase, you may choose 1 ship at range 0\u20131. If you do, transfer 1 of your stress tokens to that ship.",
+            "ability_text": "After you fully execute a red maneuver, gain 1 calculate token.<return>At the start of the End Phase, you may choose 1 ship at range 0–1. If you do, transfer 1 of your stress tokens to that ship.",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -20304,7 +20304,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 ship in both your <frontarc> and <turretarc> at range 0\u20131. If you do, it gains 1 tractor token.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 ship in both your <frontarc> and <turretarc> at range 0–1. If you do, it gains 1 tractor token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -20399,7 +20399,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship in your <turretarc> at range 0\u20132 and spend 1<nonbreak><forcecharge>. If you do, that ship gains 1 stress token unless it removes 1 green token.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 enemy ship in your <turretarc> at range 0–2 and spend 1<nonbreak><forcecharge>. If you do, that ship gains 1 stress token unless it removes 1 green token.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -20500,7 +20500,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, if the attacker is in your <turretarc> at range 0\u20132, you may add 1<nonbreak><focus> result to your dice results.",
+            "ability_text": "While you defend, if the attacker is in your <turretarc> at range 0–2, you may add 1<nonbreak><focus> result to your dice results.",
             "available_actions": [
                 {
                     "base_action_id": 2,
@@ -20988,7 +20988,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Sometimes, manufacturer\u2019s warnings are made to be broken.</flavor><return><shipability><sabold>Rigged Energy Cells:</sabold> During the System Phase, if you are not docked, lose 1<nonbreak><standardcharge>. At the end of the Activation Phase, if you have 0 <standardcharge>, you are destroyed. Before you are removed, each ship at range 0\u20131 suffers 1<nonbreak><crit> damage.</shipability>",
+            "ability_text": "<flavor>Sometimes, manufacturer’s warnings are made to be broken.</flavor><return><shipability><sabold>Rigged Energy Cells:</sabold> During the System Phase, if you are not docked, lose 1<nonbreak><standardcharge>. At the end of the Activation Phase, if you have 0 <standardcharge>, you are destroyed. Before you are removed, each ship at range 0–1 suffers 1<nonbreak><crit> damage.</shipability>",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -21148,7 +21148,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a red <evade> action, if there is an obstacle at range 0\u20131, treat the action as white instead.",
+            "ability_text": "While you perform a red <evade> action, if there is an obstacle at range 0–1, treat the action as white instead.",
             "available_actions": [
                 {
                     "base_action_id": 3,
@@ -21310,7 +21310,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform a <frontarc> primary attack, if the attack range is 1 and you are in the defender\u2019s <frontarc>, you may change 1 of your results to a <hit> result.",
+            "ability_text": "While you perform a <frontarc> primary attack, if the attack range is 1 and you are in the defender’s <frontarc>, you may change 1 of your results to a <hit> result.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_6.png",
@@ -21351,7 +21351,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack, if you are evading, you may change 1 of the defender\u2019s <evade> results to a <focus> result.",
+            "ability_text": "While you perform an attack, if you are evading, you may change 1 of the defender’s <evade> results to a <focus> result.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_8.png",
@@ -21466,7 +21466,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you perform an attack, you may choose another friendly ship at range 0\u20131 of the defender. If you do, that ship suffers 1<nonbreak><hit> damage and you may change 1 of your die results to a <hit> result.",
+            "ability_text": "While you perform an attack, you may choose another friendly ship at range 0–1 of the defender. If you do, that ship suffers 1<nonbreak><hit> damage and you may change 1 of your die results to a <hit> result.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_13.png",
@@ -21589,7 +21589,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While another friendly ship at range 0\u20131 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1<nonbreak><crit> damage to cancel 1<nonbreak><crit> result.",
+            "ability_text": "While another friendly ship at range 0–1 defends, before the Neutralize Results step, if you are in the attack arc, you may suffer 1<nonbreak><crit> damage to cancel 1<nonbreak><crit> result.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_15.png",
@@ -21693,7 +21693,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the System Phase, you may choose 1 ship at range 0\u20131 and look at its dial. If you spend 1<nonbreak><forcecharge>, you may choose a ship at range 0\u20133 instead.",
+            "ability_text": "During the System Phase, you may choose 1 ship at range 0–1 and look at its dial. If you spend 1<nonbreak><forcecharge>, you may choose a ship at range 0–3 instead.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_21.png",
@@ -22131,7 +22131,7 @@
             "weapon_range": "2 - 3"
         },
         {
-            "ability_text": "<smallcaps>Attack (<targetlock>):</smallcaps> Spend 1<nonbreak><standardcharge>. After this attack hits, each ship at range 0\u20131 of the defender exposes 1 of its damage cards.",
+            "ability_text": "<smallcaps>Attack (<targetlock>):</smallcaps> Spend 1<nonbreak><standardcharge>. After this attack hits, each ship at range 0–1 of the defender exposes 1 of its damage cards.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_38.png",
@@ -22620,7 +22620,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Decrease the difficulty of your speed 1\u20132 basic maneuvers (<leftturn>, <leftbank>, <straight>, <rightbank>, <rightturn>).",
+            "ability_text": "Decrease the difficulty of your speed 1–2 basic maneuvers (<leftturn>, <leftbank>, <straight>, <rightbank>, <rightturn>).",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_55.png",
@@ -22702,7 +22702,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you are destroyed, each other ship at range 0\u20131 suffers 1<nonbreak><hit> damage.",
+            "ability_text": "After you are destroyed, each other ship at range 0–1 suffers 1<nonbreak><hit> damage.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_59.png",
@@ -22720,7 +22720,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_59.jpg",
             "initiative": null,
             "is_unique": false,
-            "name": "Deadman\u2019s Switch",
+            "name": "Deadman’s Switch",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": null,
@@ -22797,7 +22797,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<bitalic>Mine</bitalic><return>During the System Phase, you may spend 1<nonbreak><standardcharge> to drop a Conner Net using the [1<nonbreak><straight>] template.<return>This card\u2019s <standardcharge> cannot be recovered.",
+            "ability_text": "<bitalic>Mine</bitalic><return>During the System Phase, you may spend 1<nonbreak><standardcharge> to drop a Conner Net using the [1<nonbreak><straight>] template.<return>This card’s <standardcharge> cannot be recovered.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_64.png",
@@ -22977,7 +22977,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<bitalic>Mine</bitalic><return>During the System Phase, you may spend 1<nonbreak><standardcharge> to drop a Proximity Mine using the [1<nonbreak><straight>] template.<return>This card\u2019s <standardcharge> cannot be recovered.",
+            "ability_text": "<bitalic>Mine</bitalic><return>During the System Phase, you may spend 1<nonbreak><standardcharge> to drop a Proximity Mine using the [1<nonbreak><straight>] template.<return>This card’s <standardcharge> cannot be recovered.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_66.png",
@@ -23058,7 +23058,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you fully execute a speed 3\u20135 maneuver, you may spend 1<nonbreak><standardcharge> to perform a <boost> action, even while stressed.",
+            "ability_text": "After you fully execute a speed 3–5 maneuver, you may spend 1<nonbreak><standardcharge> to perform a <boost> action, even while stressed.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_70.png",
@@ -23219,7 +23219,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "<flavor>Deflector shields are a substantial line of defense on most starships beyond the lightest fighters. While enhancing a ship\u2019s shield capacity can be costly, all but the most confident or reckless pilots see the value in this sort of investment.</flavor>",
+            "ability_text": "<flavor>Deflector shields are a substantial line of defense on most starships beyond the lightest fighters. While enhancing a ship’s shield capacity can be costly, all but the most confident or reckless pilots see the value in this sort of investment.</flavor>",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_75.png",
@@ -23259,7 +23259,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "If you would gain an ion or jam token, if you are not stressed, you may choose a ship at range 0\u20131. If you do, gain 1 stress token and transfer 1 ion or jam token to that ship.",
+            "ability_text": "If you would gain an ion or jam token, if you are not stressed, you may choose a ship at range 0–1. If you do, gain 1 stress token and transfer 1 ion or jam token to that ship.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_76.png",
@@ -23379,7 +23379,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you obstruct an enemy ship\u2019s attack, the defender rolls 1 additional defense die.",
+            "ability_text": "While you obstruct an enemy ship’s attack, the defender rolls 1 additional defense die.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_78.png",
@@ -23427,7 +23427,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the System Phase, you may choose 1 enemy ship at range 1\u20132 and guess aloud a bearing and speed, then look at that ship\u2019s dial. If the chosen ship\u2019s bearing and speed match your guess, you may set your dial to another maneuver.",
+            "ability_text": "During the System Phase, you may choose 1 enemy ship at range 1–2 and guess aloud a bearing and speed, then look at that ship’s dial. If the chosen ship’s bearing and speed match your guess, you may set your dial to another maneuver.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_81.png",
@@ -23554,7 +23554,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After a friendly ship at range 0\u20132 fully executes a white maneuver, you may spend 1<nonbreak><forcecharge> to remove 1 stress token from that ship.",
+            "ability_text": "After a friendly ship at range 0–2 fully executes a white maneuver, you may spend 1<nonbreak><forcecharge> to remove 1 stress token from that ship.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_86.png",
@@ -24092,7 +24092,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_94.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "\u201cZeb\u201d Orrelios",
+            "name": "“Zeb” Orrelios",
             "restrictions": [
                 [
                     {
@@ -24206,7 +24206,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Gain a <frontarc> primary weapon with a value of \u201c3.\u201d<return>During the End Phase, do not remove up to 2 focus tokens.",
+            "ability_text": "Gain a <frontarc> primary weapon with a value of “3.”<return>During the End Phase, do not remove up to 2 focus tokens.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_104.png",
@@ -24311,7 +24311,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "While you defend, roll 1 fewer defense die.<Return>After you execute a [0<nonbreak><stop>] maneuver, you may rotate your ship 90\u00ba or 180\u00ba.<return>Before you activate, you may flip this card.",
+            "ability_text": "While you defend, roll 1 fewer defense die.<Return>After you execute a [0<nonbreak><stop>] maneuver, you may rotate your ship 90º or 180º.<return>Before you activate, you may flip this card.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_107b.png",
@@ -24485,7 +24485,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform a <coordinate> action, if the ship you coordinated performed a <barrelroll> or <boost> action, it may gain 1 stress token to rotate 90\u00b0.",
+            "ability_text": "After you perform a <coordinate> action, if the ship you coordinated performed a <barrelroll> or <boost> action, it may gain 1 stress token to rotate 90°.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_111.png",
@@ -24543,7 +24543,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0\u20132 and spend 1<nonbreak><forcecharge>. If you do, that ship suffers 1<nonbreak><hit> damage unless it chooses to remove 1 green token.",
+            "ability_text": "At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0–2 and spend 1<nonbreak><forcecharge>. If you do, that ship suffers 1<nonbreak><hit> damage unless it chooses to remove 1 green token.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_112.png",
@@ -24686,7 +24686,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After an enemy ship at range 0\u20132 reveals its dial, you may spend 1<nonbreak><forcecharge> to perform 1 white action on your action bar, treating that action as red.",
+            "ability_text": "After an enemy ship at range 0–2 reveals its dial, you may spend 1<nonbreak><forcecharge> to perform 1 white action on your action bar, treating that action as red.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_116.png",
@@ -24838,7 +24838,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the End Phase, enemy ships at range 1\u20132 cannot remove jam tokens.",
+            "ability_text": "During the End Phase, enemy ships at range 1–2 cannot remove jam tokens.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_118.png",
@@ -24925,7 +24925,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "If an enemy ship at range 0\u20131 would gain a stress token, you may spend 1<nonbreak><forcecharge> to have it gain 1 jam or tractor token instead.",
+            "ability_text": "If an enemy ship at range 0–1 would gain a stress token, you may spend 1<nonbreak><forcecharge> to have it gain 1 jam or tractor token instead.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_121.png",
@@ -25062,7 +25062,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you perform a <coordinate> action, you may choose an enemy ship at range 0\u20133 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions.",
+            "ability_text": "After you perform a <coordinate> action, you may choose an enemy ship at range 0–3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_124.png",
@@ -25320,7 +25320,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "During the End Phase, you may choose 1 friendly ship at range 0\u20132 and spend 1<nonbreak><standardcharge>. If you do, that ship recovers 1<nonbreak><standardcharge> on 1 of its equipped <illicit> upgrades.",
+            "ability_text": "During the End Phase, you may choose 1 friendly ship at range 0–2 and spend 1<nonbreak><standardcharge>. If you do, that ship recovers 1<nonbreak><standardcharge> on 1 of its equipped <illicit> upgrades.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_133.png",
@@ -25368,7 +25368,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "At the start of the End Phase, you may choose 1 enemy ship at range 0\u20132 in your firing arc. If you do, that ship does not remove its tractor tokens.",
+            "ability_text": "At the start of the End Phase, you may choose 1 enemy ship at range 0–2 in your firing arc. If you do, that ship does not remove its tractor tokens.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_134.png",
@@ -25408,7 +25408,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "After you suffer damage, you may gain 1 stress token to recover 1<nonbreak><forcecharge>.<return>You can equip \u201cDark Side\u201d upgrades.",
+            "ability_text": "After you suffer damage, you may gain 1 stress token to recover 1<nonbreak><forcecharge>.<return>You can equip “Dark Side” upgrades.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/Card_Upgrade_136.png",
@@ -26188,7 +26188,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_158.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "L3\u201337",
+            "name": "L3–37",
             "restrictions": [
                 [
                     {
@@ -26226,7 +26226,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_158b.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "L3\u201337\u2019s Programming",
+            "name": "L3–37’s Programming",
             "restrictions": [
                 [
                     {
@@ -26465,7 +26465,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_161.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "Qi\u2019ra",
+            "name": "Qi’ra",
             "restrictions": [
                 [
                     {
@@ -26790,7 +26790,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_164.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "Lando\u2019s <italic>Millennium Falcon</italic>",
+            "name": "Lando’s <italic>Millennium Falcon</italic>",
             "restrictions": [
                 [
                     {
