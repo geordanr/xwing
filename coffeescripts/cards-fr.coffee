@@ -1205,17 +1205,23 @@ exportObj.cardLoaders['Français'] = () ->
         '''I'll Show You the Dark Side''': 
            text: ''' ??? '''
         'Proton Bomb':
-           text: '''(Bombe) - At the end of the Activation Phase, this device detonates. When this device detonates, each ship at range 0–1 suffers 1 %CRIT% damage.'''
+           name: "Bombe à protons"
+           text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, chaque vaisseau à portée 0–1 subit 1 dégât %CRIT%.'''
         'Seismic Charge':
-           text: '''(Bomb Token) - At the end of the Activation Phase this device detonates. When this device detonates, choose 1 obstacle at range 0–1. Each ship at range 0–1 of the obstacle suffers 1 %HIT% damage. Then remove that obstacle. '''
+           name: 'Charges sismiques'
+           text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, choisissez 1 obstacle à portée 0–1. Chaque vaisseau à portée 0–1 de cet obstacle subit 1 dégât %HIT%. Puis retirez cet obstacle'''
         'Bomblet':
-           text: '''(Bomb Token) - At the end of the Activation Phase this device detonates. When this device detonates, each ship at range 0–1 rolls 2 attack dice. Each ship suffers 1 %HIT% damage for each %HIT%/%CRIT% result.'''
+           name: 'Sous-munitions'
+           text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque l’engin explose, chaque vaisseau à portée 0–1 lance 2 dés d’attaque. Chaque vaisseau subit 1 dégât %HIT% pour chaque résultat %HIT%/%CRIT% obtenu.'''
         'Loose Cargo':
-           text: '''(Debris Token) - Loose cargo is a debris cloud.'''
+           name: 'Cargaison égarée'
+           text: '''(Débris) - La cargaison égarée est considérée comme un nuage de débris.'''
         'Conner Net':
-           text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, the ship suffers 1 %HIT% damage and gains 3 ion tokens.'''
+           name: 'Filet Conner'
+           text: '''(Mine) - Après qu’un vaisseau a chevauché ou s’est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau subit 1 dégât %HIT% et gagne 3 marqueurs ioniques.'''
         'Proximity Mine':
-           text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.'''
+           name: 'Mine de proximité'
+           text: '''(Mine) - Après qu’un vaisseau a chevauché ou s’est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d’attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
             
     modification_translations =
 
