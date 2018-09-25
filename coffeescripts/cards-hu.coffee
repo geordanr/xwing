@@ -961,8 +961,6 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Miután végrehajtasz egy %FOCUS% akciót, kapsz 1 fókusz jelzőt."""
         "Phantom":
            text: """Be tudsz dokkolni 0-1 távolságból."""
-        "Phantom (Sheathipede)":
-           text: """Be tudsz dokkolni 0-1 távolságból."""
         "Pivot Wing":
            text: """<b>Csukva:</b> Amikor védekezel, 1-gyel kevesebb védekezőkockával dobsz. Miután végrehajtasz egy [0 %STOP%] manővert, elforgathatod a hajód 90 vagy 180 fokkal. Mielőtt aktiválódsz, megfordíthatod ezt a kártyát. %LINEBREAK% <b>Nyitva:</b> Mielőtt aktiválódsz, megfordíthatod ezt a kártyát."""
         "Predator":

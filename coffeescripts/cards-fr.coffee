@@ -1029,8 +1029,6 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Après avoir effectué une action %FOCUS%, gagnez 1 marqueur de concentration."""
         "Phantom":
            text: """You can dock at range 0-1."""
-        "Phantom (Sheathipede)":
-           text: """You can dock at range 0-1."""
         "Pivot Wing":
            text: """<b>Closed:</b> While you defend, roll 1 fewer defense die. After you execute a [0 %STOP%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card %LINEBREAK% <b>Open:</b> Before you activate, you may flip this card"""
         "Predator":

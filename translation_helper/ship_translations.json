@@ -1,182 +1,452 @@
 {
   "1": {
     "name_yasb": "YT-1300",
-    "name_de": "Modifizierter leichter YT-1300-Frachter"
+    "name_de": "Modifizierter leichter YT-1300-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "3": {
     "name_yasb": "StarViper",
-    "name_de": "Angriffsplattform der Sternenviper-Klasse"
+    "name_de": "Angriffsplattform der Sternenviper-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "4": {
     "name_yasb": "Scurrg H-6 Bomber",
-    "name_de": "Scurrg-H-6-Bomber"
+    "name_de": "Scurrg-H-6-Bomber",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "5": {
     "name_yasb": "YT-2400",
-    "name_de": "Leichter YT-2400-Frachter"
+    "name_de": "Leichter YT-2400-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "6": {
     "name_yasb": "Auzituck Gunship",
-    "name_de": "Auzituck-Kanonenboot"
+    "name_de": "Auzituck-Kanonenboot",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "7": {
     "name_yasb": "Kihraxz Fighter",
-    "name_de": "Kihraxz-Jäger"
+    "name_de": "Kihraxz-Jäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "8": {
     "name_yasb": "Sheathipede-Class Shuttle",
-    "name_de": "Raumfähre der Sheathipede-Klasse"
+    "name_de": "Raumfähre der Sheathipede-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "9": {
     "name_yasb": "Quadjumper",
-    "name_de": "Quadrijet-Transferschlepper"
+    "name_de": "Quadrijet-Transferschlepper",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "10": {
     "name_yasb": "Firespray-31",
-    "name_de": "Patrouillenboot der Firespray-Klasse"
+    "name_de": "Patrouillenboot der Firespray-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "11": {
     "name_yasb": "TIE Fighter",
-    "name_de": "TIE/ln-Jäger "
+    "name_de": "TIE/ln-Jäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "12": {
     "name_yasb": "Y-Wing",
-    "name_de": "BTL-A4-Y-Flügler"
+    "name_de": "BTL-A4-Y-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "13": {
     "name_yasb": "TIE Advanced",
-    "name_de": "TIE-x1-Turbojäger"
+    "name_de": "TIE-x1-Turbojäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "14": {
     "name_yasb": "Alpha-Class Star Wing",
-    "name_de": "Sternflügler der Alpha-Klasse"
+    "name_de": "Sternflügler der Alpha-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "15": {
     "name_yasb": "U-Wing",
-    "name_de": "UT-60D-U-Flügler"
+    "name_de": "UT-60D-U-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "16": {
     "name_yasb": "TIE Striker",
-    "name_de": "TIE/sk-Stürmer"
+    "name_de": "TIE/sk-Stürmer",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "17": {
     "name_yasb": "B-Wing",
-    "name_de": "A/SF-01-B-Flügler"
+    "name_de": "A/SF-01-B-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "18": {
     "name_yasb": "TIE Defender",
-    "name_de": "TIE/D-Abwehrjäger"
+    "name_de": "TIE/D-Abwehrjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "19": {
     "name_yasb": "TIE Bomber",
-    "name_de": "TIE/sa-Bomber "
+    "name_de": "TIE/sa-Bomber",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "20": {
     "name_yasb": "TIE Punisher",
-    "name_de": "TIE/ca-Vergelter"
+    "name_de": "TIE/ca-Vergelter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "21": {
     "name_yasb": "Aggressor",
-    "name_de": "Aggressor-Angriffsjäger"
+    "name_de": "Aggressor-Angriffsjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "22": {
     "name_yasb": "G-1A Starfighter",
-    "name_de": "G-1A Sternenjäger"
+    "name_de": "G-1A Sternenjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "23": {
     "name_yasb": "VCX-100",
-    "name_de": "Leichter VCX-100-Frachter"
+    "name_de": "Leichter VCX-100-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "24": {
     "name_yasb": "YV-666",
-    "name_de": "Leichter YV-666-Frachter"
+    "name_de": "Leichter YV-666-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "25": {
     "name_yasb": "TIE Advanced Prototype",
-    "name_de": "TIE-v1-Turbojäger"
+    "name_de": "TIE-v1-Turbojäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "26": {
     "name_yasb": "Lambda-Class Shuttle",
-    "name_de": "T-4A-Raumfähre der Lambda-Klasse"
+    "name_de": "T-4A-Raumfähre der Lambda-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "27": {
     "name_yasb": "TIE Phantom",
-    "name_de": "TIE/ph-Phantom"
+    "name_de": "TIE/ph-Phantom",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "28": {
     "name_yasb": "VT-49 Decimator",
-    "name_de": "VT-49-Decimator"
+    "name_de": "VT-49-Decimator",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "29": {
     "name_yasb": "TIE Aggressor",
-    "name_de": "TIE/ag-Agressor"
+    "name_de": "TIE/ag-Agressor",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "30": {
     "name_yasb": "K-Wing",
-    "name_de": "BTL-S8-K-Flügler"
+    "name_de": "BTL-S8-K-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "31": {
     "name_yasb": "ARC-170",
-    "name_de": "ARC-170-Sternenjäger"
+    "name_de": "ARC-170-Sternenjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "32": {
     "name_yasb": "Attack Shuttle",
-    "name_de": "Jagdshuttle"
+    "name_de": "Jagdshuttle",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "33": {
     "name_yasb": "X-Wing",
-    "name_de": "T-65-X-Flügler"
+    "name_de": "T-65-X-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "34": {
     "name_yasb": "HWK-290",
-    "name_de": "Leichter HWK-290-Frachter"
+    "name_de": "Leichter HWK-290-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "35": {
     "name_yasb": "A-Wing",
-    "name_de": "RZ-1-A-Flügler"
+    "name_de": "RZ-1-A-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "36": {
     "name_yasb": "Fang Fighter",
-    "name_de": "Fangjäger"
+    "name_de": "Fangjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "38": {
     "name_yasb": "Z-95 Headhunter",
-    "name_de": "Z-95-AF4-Kopfjäger"
+    "name_de": "Z-95-AF4-Kopfjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "39": {
     "name_yasb": "M12-L Kimogila Fighter",
-    "name_de": "M12-L-Kimogila-Jäger"
+    "name_de": "M12-L-Kimogila-Jäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "40": {
     "name_yasb": "E-Wing",
-    "name_de": "E-Flügler"
+    "name_de": "E-Flügler",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "41": {
     "name_yasb": "TIE Interceptor",
-    "name_de": "TIE-Abfangjäger"
+    "name_de": "TIE-Abfangjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "42": {
     "name_yasb": "Lancer-Class Pursuit Craft",
-    "name_de": "Jagdschiff der Lanzen-Klasse"
+    "name_de": "Jagdschiff der Lanzen-Klasse",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "43": {
     "name_yasb": "TIE Reaper",
-    "name_de": "TIE-Schnitter"
+    "name_de": "TIE-Schnitter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "45": {
     "name_yasb": "JumpMaster 5000",
-    "name_de": "JumpMaster 5000"
+    "name_de": "JumpMaster 5000",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "44": {
     "name_yasb": "M3-A Interceptor",
-    "name_de": "M3-A-Abfangjäger"
+    "name_de": "M3-A-Abfangjäger",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "47": {
     "name_yasb": "YT-1300 (Scum)",
-    "name_de": "Modifizierter YT-1300-Frachter"
+    "name_de": "Modifizierter YT-1300-Frachter",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   },
   "48": {
     "name_yasb": "Escape Craft",
-    "name_de": "Fluchtschiff"
+    "name_de": "Fluchtschiff",
+    "name_en": "CHANGE ME",
+    "name_es": "CHANGE ME",
+    "name_fr": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME"
   }
 }
