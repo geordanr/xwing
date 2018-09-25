@@ -39,7 +39,7 @@ for card in cards_translation:
     cards_translation_by_id[card["id"]] = card
 
 # store what we need to manually post-process (e.g. FFG differs L3-37 Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
-manual_stuff = "Remove L3-37's programming\n"
+manual_stuff = "Please edit the following cards manually: \nL3-37's programming\n"
 
 # search for double names
 pilot_name_list = {}
@@ -132,11 +132,15 @@ for card_en in cards_en:
         for restriction in card_en["restrictions"]:
             # if restricted to ship type (e.g. titles), add a line to the translation specifying the ship
             if restriction[0]["type"] == "SHIP_TYPE":
-                output_text += ('           ship: """%s"""\n'%ship_translations[str(restriction[0]["kwargs"]["pk"])][
-                    "name_" + lang])
+                if len(restriction) == 1:
+                    output_text += ('           ship: """%s"""\n'%ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
                 if len(restriction) > 1:
-                    manual_stuff += ("Upgrade %s restricted to multiple ships. Only set to %s\n" % (
-                        card_en["name"], ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_yasb"]))
+                    ships = ""
+                    for ship in restriction:
+                        if ships:
+                            ships += " or "
+                        ships += '"%s"'%(ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
+                    output_text += '           restriction_func: (ship) ->\n                builder = ship.builder\n                return true if builder.ship == %s\n                false\n'%ships
             # if restricted to given actions, add a note to the text
             elif restriction[0]["type"] == "ACTION":
                 actions = ""
