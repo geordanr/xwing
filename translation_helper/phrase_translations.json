@@ -16,6 +16,21 @@
       "contains": "Staffel, die %s enthält"
     },
     {
+      "language": "en",
+      "requires": "CHANGE ME %s",
+      "adds": "CHANGE ME%s",
+      "only": "CHANGE ME%s",
+      "variable_cost": "CHANGE ME",
+      "or": "CHANGE ME",
+      "SMALL": "CHANGE ME",
+      "MEDIUM": "CHANGE ME",
+      "LARGE": "CHANGE ME",
+      "Rebel Alliance": "CHANGE ME",
+      "Scum and Villainy": "CHANGE ME",
+      "Galactic Empire": "CHANGE ME",
+      "contains": "CHANGE ME%s"
+    },
+    {
       "language": "es",
       "requires": "CHANGE ME %s",
       "adds": "CHANGE ME%s",
