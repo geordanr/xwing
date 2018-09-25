@@ -1273,12 +1273,11 @@ exportObj.cardLoaders.Deutsch = () ->
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Solange du einen versperrten Angriff durchführst, wirft der Verteidiger 1&nbsp;Verteidigungswürfel weniger.%LINEBREAK%Nachdem du ein Manöver vollständig ausgeführt hast, falls du dich durch ein Hindernis hindurchbewegt oder dich mit ihm überschnitten hast, darfst du 1 deiner roten oder orangefarbenen Marker entfernen."""
         "Phantom":
            name: """Phantom"""
-           ship: """Jagdshuttle"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Du kannst in Reichweite 0-1 andocken."""
-        "Phantom (Sheathipede)":
-           name: """Phantom (Sheathipede)"""
-           ship: """Raumfähre der Sheathipede-Klasse"""
-           text: """<i>Nur für Rebellen</i>%LINEBREAK%Du kannst in Reichweite 0-1 andocken."""
+           restriction_func: (ship) ->
+                builder = ship.builder
+                return true if builder.ship == "Jagdshuttle" or "Raumfähre der Sheathipede-Klasse"
+                false
         "Punishing One":
            name: """Vollstrecker Eins"""
            ship: """JumpMaster 5000"""
