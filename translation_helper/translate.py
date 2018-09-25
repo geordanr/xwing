@@ -279,6 +279,13 @@ output_text = output_text.replace('–', "-")
 # Remove unique dots
 output_text = output_text.replace('•', '')
 
+# Add known typos to the ToDo
+known_typos = json.load(open('known_typos.json', encoding = "utf8"))[lang]
+if known_typos :
+    manual_stuff += "Be aware of the following typos! You need to fix them before merging:\n"
+for typo in known_typos:
+    manual_stuff += ('%s\n' % typo)
+
 # write output
 output_file = open("translation.coffee","w",encoding="utf8")
 output_file.write(output_text)
