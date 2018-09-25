@@ -182,11 +182,17 @@ for card_en in cards_en:
         actions = ""
         for action in card_en["available_actions"]:
             if actions:
-                actions += " %s  " % phrase_translations["or"]
-            actions += ("<r>%s</r>" if action["base_action_side_effect"] else "%s") % actions_by_id[
+                actions += " %s  " % ','
+            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[
                 action["base_action_id"]]
-            card_translation["ability_text"] = "<i>" + phrase_translations["adds"]%actions + "</i>" + "%LINEBREAK%" + card_translation[
-                "ability_text"]
+            # if the action can be linked into another action we need to process that one as well
+            linked = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked\"></i>"
+            linked_stress = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked red\"></i>"
+            if action["related_action_id"]:
+                actions += (linked_stress + "&nbsp;<r>%s</r>" if action["related_action_side_effect"] == "stress"
+                            else linked + "&nbsp;'%s") % actions_by_id[action["related_action_id"]]
+        card_translation["ability_text"] = "<i>" + phrase_translations["adds"] % actions + "</i>%LINEBREAK%" + \
+                                  card_translation["ability_text"]
 
     # check for double names
     if card_en["name"] in upgrade_name_list:
