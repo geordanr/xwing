@@ -1274,6 +1274,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Phantom":
            name: """Phantom"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Du kannst in Reichweite 0-1 andocken."""
+           ship: ["""Jagdshuttle""", """Raumfähre der Sheathipede-Klasse"""]
         "Punishing One":
            name: """Vollstrecker Eins"""
            ship: """JumpMaster 5000"""

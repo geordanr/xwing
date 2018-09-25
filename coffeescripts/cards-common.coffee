@@ -6911,7 +6911,6 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            ship: ["Attack Shuttle","Sheathipede-Class Shuttle"]
-
        }
        {
             name: "Hardpoint: Cannon"
