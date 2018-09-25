@@ -1274,8 +1274,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Phantom":
            name: """Phantom"""
            text: """<i>Nur für Rebellen</i>%LINEBREAK%Du kannst in Reichweite 0-1 andocken."""
-           restriction_func: (ship) ->
-                return (ship.data.name == "Jagdshuttle" or ship.data.name == "Raumfähre der Sheathipede-Klasse")
+           ship: ["""Jagdshuttle""", """Raumfähre der Sheathipede-Klasse"""]
         "Punishing One":
            name: """Vollstrecker Eins"""
            ship: """JumpMaster 5000"""

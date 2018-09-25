@@ -6910,8 +6910,7 @@ exportObj.basicCardData = ->
            points: 2
            unique: true
            faction: "Rebel Alliance"
-           restriction_func: (ship) ->
-                return (ship.data.name == "Attack Shuttle" or ship.data.name == "Sheathipede-Class Shuttle")
+           ship: ["Attack Shuttle","Sheathipede-Class Shuttle"]
        }
        {
             name: "Hardpoint: Cannon"
