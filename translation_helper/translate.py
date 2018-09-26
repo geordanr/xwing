@@ -1,4 +1,4 @@
-import argparse
+﻿import argparse
 import json
 import re
 
@@ -138,9 +138,9 @@ for card_en in cards_en:
                     ships = ""
                     for ship in restriction:
                         if ships:
-                            ships += " or "
-                        ships += '"%s"'%(ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
-                    output_text += '           restriction_func: (ship) ->\n                builder = ship.builder\n                return true if builder.ship == %s\n                false\n'%ships
+                            ships += ", "
+                        ships += '"""%s"""'%(ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
+                    output_text += '           ship: [ %s ]\n'%ships
             # if restricted to given actions, add a note to the text
             elif restriction[0]["type"] == "ACTION":
                 actions = ""
