@@ -1021,8 +1021,8 @@ class exportObj.SquadBuilder
             if ship.pilot?
                 @fancy_container.append ship.toHTML()
                 
-                for dial in @fancy_container.find('.fancy-dial')
-                    dial.hidden = true
+                #for dial in @fancy_container.find('.fancy-dial')
+                    #dial.hidden = true
 
                 @simple_container.find('table').append ship.toTableRow()
                 bbcode_ships.push ship.toBBCode()
