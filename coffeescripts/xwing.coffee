@@ -282,7 +282,7 @@ class exportObj.SquadBuilder
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="maneuver-print-checkbox">
-                    Include Maneuvers <input type="checkbox" class="toggle-maneuver-print" />
+                    Include Maneuvers Chart<input type="checkbox" class="toggle-maneuver-print" checked="checked" />
                 </label>
                 <label class="color-print-checkbox">
                     Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
@@ -1020,6 +1020,10 @@ class exportObj.SquadBuilder
         for ship in @ships
             if ship.pilot?
                 @fancy_container.append ship.toHTML()
+                
+                for dial in @fancy_container.find('.fancy-dial')
+                    dial.hidden = true
+
                 @simple_container.find('table').append ship.toTableRow()
                 bbcode_ships.push ship.toBBCode()
                 htmlview_ships.push ship.toSimpleHTML()
@@ -2660,12 +2664,11 @@ class Ship
 
         dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
 
-        ###html += $.trim """
+        html += $.trim """
             <div class="fancy-dial">
                 #{dialHTML}
             </div>
-            """###
-            
+            """
         
         if @pilot.text
             html += $.trim """
