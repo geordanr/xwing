@@ -2660,11 +2660,11 @@ class Ship
 
         dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
 
-        ###html += $.trim """
+        html += $.trim """
             <div class="fancy-dial">
                 #{dialHTML}
             </div>
-            """###
+            """
             
         
         if @pilot.text
