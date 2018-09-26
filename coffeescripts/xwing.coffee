@@ -281,11 +281,11 @@ class exportObj.SquadBuilder
                 <label class="vertical-space-checkbox">
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
+                <label class="maneuver-print-checkbox">
+                    Include Maneuvers <input type="checkbox" class="toggle-maneuver-print" />
+                </label>
                 <label class="color-print-checkbox">
                     Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
-                </label>
-                <label class="maneuver-print-checkbox">
-                    Include Maneuvers <input type="checkbox" class="toggle-maneuver-print" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
@@ -2660,11 +2660,11 @@ class Ship
 
         dialHTML = @builder.getManeuverTableHTML(effective_stats.maneuvers, @data.maneuvers)
 
-        html += $.trim """
+        ###html += $.trim """
             <div class="fancy-dial">
                 #{dialHTML}
             </div>
-            """
+            """###
             
         
         if @pilot.text
