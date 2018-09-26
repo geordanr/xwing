@@ -90,7 +90,7 @@ for card_en in cards_en:
     # translate
     output_text += ('        "%s":\n' % card_en["name"])
     output_text += ('           name: """%s"""\n' % card_translation["name"])
-    output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_de"])
+    output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_" + lang])
     output_text += ('           text: """%s"""\n' % card_translation["ability_text"])
 
     # check for double names
