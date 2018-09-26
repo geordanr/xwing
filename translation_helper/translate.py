@@ -62,7 +62,7 @@ output_text = ""
 
 # create ship translations
 for k,ship in ship_translations.items():
-    output_text += "    exportObj.renameShip '%s', '%s'\n"%(ship['name_yasb'],ship['name_' + lang])
+    output_text += '    exportObj.renameShip """%s""", """%s"""\n'%(ship['name_yasb'],ship['name_' + lang])
 
 output_text += "\n\n    pilot_translations =\n"
 
@@ -278,7 +278,7 @@ output_text = output_text.replace('<hit>', '%HIT%')
 output_text = output_text.replace('<crit>', '%CRIT%')
 
 # Change quotes and some special chars in Names, to match the YASB scheme (e.g. replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
-output_text = re.sub('"(.*?)“(.*?)”(.*?)"', r"""'\1"\2"\3'""", output_text)
+output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r"""'\1"\2"\3'""", output_text)
 output_text = output_text.replace('’', "'")
 output_text = output_text.replace('–', "-")
 
