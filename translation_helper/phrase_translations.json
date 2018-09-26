@@ -17,18 +17,18 @@
     },
     {
       "language": "en",
-      "requires": "requires %s", // Phrase used for upgrad requiring %s, e.g. "requires" coordinate-action
-      "adds": "adds %s", // Phrase used for upgrades adding %s, e.g. "adds" red evade action
-      "only": "%s only", // Phrase used for restrictions on %s e.g. scum or squad containing vader "only"
-      "variable_cost": "This card has variable point costs.", // Phrase added to upgrades with variable point costs.
-      "or": "or", // Used to connect multiple requirements, e.g. large base "or" medium base only
-      "SMALL": "small base", // translation of small base in context of restrictions, e.g. "small base" only
-      "MEDIUM": "medium base", // translation of medium base in context of restrictions, e.g. "medium base" only
-      "LARGE": "large base", // translation of large base in context of restrictions, e.g. "large base" only
-      "Rebel Alliance": "Rebel", // translation of rebel alliance in context of restrictions, e.g. "Rebel" only
-      "Scum and Villainy": "Scum", // translation of scum and villainy in context of restrictions, e.g. "Scum" only
-      "Galactic Empire": "Empire", // translation of galactic empire in context of restrictions, e.g. "Empire" only
-      "contains": "Squad, that contains %s" // translation of restriction to specific cards, e.g. "Squad, that contains" Darth Vader
+      "requires": "requires %s", "commet1": "Phrase used for upgrad requiring %s, e.g. 'requires' coordinate-action",
+      "adds": "adds %s", "comment2": "Phrase used for upgrades adding %s, e.g. 'adds' red evade action",
+      "only": "%s only", "comment3": "Phrase used for restrictions on %s e.g. scum or squad containing vader 'only'",
+      "variable_cost": "This card has variable point costs.", "comment4": "Phrase added to upgrades with variable point costs.",
+      "or": "or", "comment5":  "Phrase used to connect multiple requirements, e.g. large base 'or' medium base only",
+      "SMALL": "small base", "comment6": "translation of small base in context of restrictions, e.g. 'small base' only",
+      "MEDIUM": "medium base", "comment7": "translation of medium base in context of restrictions, e.g. 'medium base' only",
+      "LARGE": "large base", "comment8": "translation of large base in context of restrictions, e.g. 'large base' only",
+      "Rebel Alliance": "Rebel", "comment9": "translation of rebel alliance in context of restrictions, e.g. 'Rebel' only",
+      "Scum and Villainy": "Scum", "comment10": "translation of scum and villainy in context of restrictions, e.g. 'Scum' only",
+      "Galactic Empire": "Empire", "comment11": "translation of galactic empire in context of restrictions, e.g. 'Empire' only",
+      "contains": "Squad, that contains %s", "comment12": "translation of restriction to specific cards, e.g. 'Squad, that contains' Darth Vader"
     },
     {
       "language": "es",
