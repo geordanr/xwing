@@ -12,7 +12,6 @@ def choose_by_language(input_json, chosen_language):
 
 
 # We may want to actually load them from the api...
-
 languages = ['de', 'en', 'fr', 'es', 'it', 'pl', 'pt']
 
 # The user can decide whether to download all JSON files or to select one
@@ -38,7 +37,8 @@ cards_translation_by_id = {}
 for card in cards_translation:
     cards_translation_by_id[card["id"]] = card
 
-# store what we need to manually post-process (e.g. FFG differs L3-37 Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
+# store what we need to manually post-process (e.g.  FFG differs L3-37
+# Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
 manual_stuff = "Please edit the following cards manually: \nL3-37's programming\n"
 
 # search for double names
@@ -62,7 +62,7 @@ output_text = ""
 
 # create ship translations
 for k,ship in ship_translations.items():
-    output_text += '    exportObj.renameShip """%s""", """%s"""\n'%(ship['name_yasb'],ship['name_' + lang])
+    output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'],ship['name_' + lang])
 
 output_text += "\n\n    pilot_translations =\n"
 
@@ -123,24 +123,28 @@ for card_en in cards_en:
 
     # translate name
     output_text += ('        "%s":\n' % card_en["name"])
-    output_text += ('           name: """%s"""\n'%card_translation["name"])
+    output_text += ('           name: """%s"""\n' % card_translation["name"])
 
     # check if card has requirements
     if card_en["restrictions"]:
-        # restrictions are provided in conjunctive normal form (in 2D) e.g. (a or b) and c and (d or e or f).
-        # Currently we don't parse that completly, as one clausal will only contain restrictions of same typ (e.g. large or medium base), or of faction + card (e.g. scum or contains vader)
+        # restrictions are provided in conjunctive normal form (in 2D) e.g.  (a
+        # or b) and c and (d or e or f).
+        # Currently we don't parse that completly, as one clausal will only
+        # contain restrictions of same typ (e.g.  large or medium base), or of
+        # faction + card (e.g.  scum or contains vader)
         for restriction in card_en["restrictions"]:
-            # if restricted to ship type (e.g. titles), add a line to the translation specifying the ship
+            # if restricted to ship type (e.g.  titles), add a line to the
+            # translation specifying the ship
             if restriction[0]["type"] == "SHIP_TYPE":
                 if len(restriction) == 1:
-                    output_text += ('           ship: """%s"""\n'%ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
+                    output_text += ('           ship: """%s"""\n' % ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
                 if len(restriction) > 1:
                     ships = ""
                     for ship in restriction:
                         if ships:
                             ships += ", "
-                        ships += '"""%s"""'%(ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
-                    output_text += '           ship: [ %s ]\n'%ships
+                        ships += '"""%s"""' % (ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
+                    output_text += '           ship: [ %s ]\n' % ships
             # if restricted to given actions, add a note to the text
             elif restriction[0]["type"] == "ACTION":
                 actions = ""
@@ -160,10 +164,13 @@ for card_en in cards_en:
                     sizes += phrase_translations[size["kwargs"]["ship_size_name"]]
                 card_translation["ability_text"] = "<i>" + phrase_translations["only"] % sizes + "</i>" + "%LINEBREAK%" + \
                                           card_translation["ability_text"]
-            # if restricted to faction, add a note. Also covers restrictions on specific cards. 
+            # if restricted to faction, add a note.  Also covers restrictions
+            # on specific cards.
             elif restriction[0]["type"] == "FACTION" or restriction[0]["type"] == "CARD_INCLUDED":
                 factions = ""
-                # as restrictions to cards are referred to by id (e.g. "only vader" is 338 or 93, representing crew or pilot), but we don't want to list them twice, we need to store them
+                # as restrictions to cards are referred to by id (e.g.  "only
+                # vader" is 338 or 93, representing crew or pilot), but we
+                # don't want to list them twice, we need to store them
                 names = {}
                 for faction in restriction:
                     if faction["type"] == "CARD_INCLUDED":
@@ -173,8 +180,8 @@ for card_en in cards_en:
                     if factions:
                         factions += " %s " % phrase_translations["or"]
                     factions += (phrase_translations[faction["kwargs"]["name"]] if faction["type"] == "FACTION" else
-                                 phrase_translations["contains"]%cards_translation_by_id[faction["kwargs"]["pk"]]["name"])
-                card_translation["ability_text"] = "<i>" + phrase_translations["only"]%factions + "</i>" + "%LINEBREAK%" + \
+                                 phrase_translations["contains"] % cards_translation_by_id[faction["kwargs"]["pk"]]["name"])
+                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % factions + "</i>" + "%LINEBREAK%" + \
                                                    card_translation["ability_text"]
 
     # try to find cards, that add actions
@@ -183,9 +190,9 @@ for card_en in cards_en:
         for action in card_en["available_actions"]:
             if actions:
                 actions += " %s  " % ','
-            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[
-                action["base_action_id"]]
-            # if the action can be linked into another action we need to process that one as well
+            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[action["base_action_id"]]
+            # if the action can be linked into another action we need to
+            # process that one as well
             linked = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked\"></i>"
             linked_stress = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked red\"></i>"
             if action["related_action_id"]:
@@ -201,7 +208,7 @@ for card_en in cards_en:
 
     # check for variable point costs
     if card_en["cost"] == "*":
-        manual_stuff += ('Found upgrade with variable point costs: %s\n'%card_en["name"])
+        manual_stuff += ('Found upgrade with variable point costs: %s\n' % card_en["name"])
         card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
@@ -212,7 +219,7 @@ for card_en in cards_en:
         possible_double_sided_list[simple_name] = True
 
     # write translated text (requirements etc have been added to text)
-    output_text += ('           text: """%s"""\n'%card_translation["ability_text"])
+    output_text += ('           text: """%s"""\n' % card_translation["ability_text"])
 
 # do some replacements
 output_text = output_text.replace('<stop>', '%STOP%')
@@ -277,7 +284,8 @@ output_text = output_text.replace('<turretarc>', '%SINGLETURRETARC%')
 output_text = output_text.replace('<hit>', '%HIT%')
 output_text = output_text.replace('<crit>', '%CRIT%')
 
-# Change quotes and some special chars in Names, to match the YASB scheme (e.g. replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
+# Change quotes and some special chars in Names, to match the YASB scheme (e.g.
+# replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
 output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r"""'\1"\2"\3'""", output_text)
 output_text = output_text.replace('’', "'")
 output_text = output_text.replace('–', "-")
