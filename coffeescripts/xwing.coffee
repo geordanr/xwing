@@ -1420,17 +1420,15 @@ class exportObj.SquadBuilder
 
                     outTable += """<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 200 200">"""
 
+                    outlineColor = "black"
+                    maneuverClass2 = "svg-base-maneuver"
+                    if maneuvers[speed][turn] != baseManeuvers[speed][turn]
+                        outlineColor = "mediumblue" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
+                        maneuverClass2 = "svg-modified-maneuver"
+
                     if speed == 0
-                        outTable += """<rect x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
-                    else
-
-                        outlineColor = "black"
-                        maneuverClass2 = "svg-base-maneuver"
-                        if maneuvers[speed][turn] != baseManeuvers[speed][turn]
-                            outlineColor = "mediumblue" # highlight manuevers modified by another card (e.g. R2 Astromech makes all 1 & 2 speed maneuvers green)
-                            maneuverClass2 = "svg-modified-maneuver"
-
-                        
+                        outTable += """<rect class="svg-maneuver-stop #{maneuverClass} #{maneuverClass2}" x="50" y="50" width="100" height="100" style="fill:#{color}" />"""
+                    else                      
 
                         transform = ""
                         className = ""
@@ -1500,8 +1498,8 @@ class exportObj.SquadBuilder
                         outTable += $.trim """
                           <g class="maneuver #{className}">
                             <path class = 'svg-maneuver-outer #{maneuverClass} #{maneuverClass2}' stroke-width='25' fill='none' stroke='#{outlineColor}' d='#{linePath}' />
-                            <path class='svg-maneuver-triangle #{maneuverClass} #{maneuverClass2}' d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
-                            <path class='svg-maneuver-inner #{maneuverClass #{maneuverClass2}}' stroke-width='15' fill='none' stroke='#{color}' d='#{linePath}' />
+                            <path class = 'svg-maneuver-triangle #{maneuverClass} #{maneuverClass2}' d='#{trianglePath}' fill='#{color}' stroke-width='5' stroke='#{outlineColor}' #{transform}/>
+                            <path class = 'svg-maneuver-inner #{maneuverClass} #{maneuverClass2}' stroke-width='15' fill='none' stroke='#{color}' d='#{linePath}' />
                           </g>
                         """
 
