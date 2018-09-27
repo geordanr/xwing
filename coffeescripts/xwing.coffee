@@ -2776,7 +2776,7 @@ class Ship
                 upgrade_reddit = upgrade.toRedditText points
                 reddit_upgrades.push upgrade_reddit if upgrade_reddit?
             reddit += reddit_upgrades.join "    "
-        reddit += """&nbsp;*Ship total: (#{@getPoints()})*    \n"""
+            reddit += """&nbsp;*Ship total: (#{@getPoints()})*    \n"""
 
         reddit
 
