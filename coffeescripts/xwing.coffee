@@ -269,6 +269,10 @@ class exportObj.SquadBuilder
             <div class="modal-body">
                 <div class="fancy-list hidden-phone"></div>
                 <div class="simple-list"></div>
+                <div class="reddit-list">
+                    <p>Copy the below and paste it into your reddit post.</p>
+                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                </div>
                 <div class="bbcode-list">
                     <p>Copy the BBCode below and paste it into your forum post.</p>
                     <textarea></textarea><button class="btn btn-copy">Copy</button>
@@ -296,6 +300,7 @@ class exportObj.SquadBuilder
                 <div class="btn-group list-display-mode">
                     <button class="btn select-simple-view">Simple</button>
                     <button class="btn select-fancy-view hidden-phone">Fancy</button>
+                    <button class="btn select-reddit-view">Reddit</button>
                     <button class="btn select-bbcode-view">BBCode</button>
                     <button class="btn select-html-view">HTML</button>
                 </div>
@@ -306,6 +311,9 @@ class exportObj.SquadBuilder
         @fancy_container = $ @list_modal.find('div.modal-body .fancy-list')
         @fancy_total_points_container = $ @list_modal.find('div.modal-header .total-points')
         @simple_container = $ @list_modal.find('div.modal-body .simple-list')
+        @reddit_container = $ @list_modal.find('div.modal-body .reddit-list')
+        @reddit_textarea = $ @reddit_container.find('textarea')
+        @reddit_textarea.attr 'readonly', 'readonly'
         @bbcode_container = $ @list_modal.find('div.modal-body .bbcode-list')
         @bbcode_textarea = $ @bbcode_container.find('textarea')
         @bbcode_textarea.attr 'readonly', 'readonly'
@@ -350,8 +358,26 @@ class exportObj.SquadBuilder
                 @list_display_mode = 'fancy'
                 @fancy_container.show()
                 @simple_container.hide()
+                @reddit_container.hide()
                 @bbcode_container.hide()
                 @htmlview_container.hide()
+                @toggle_vertical_space_container.show()
+                @toggle_color_print_container.show()
+                @toggle_maneuver_dial_container.show()
+
+        @select_reddit_view_button = $ @list_modal.find('.select-reddit-view')
+        @select_reddit_view_button.click (e) =>
+            @select_reddit_view_button.blur()
+            unless @list_display_mode == 'reddit'
+                @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
+                @select_reddit_view_button.addClass 'btn-inverse'
+                @list_display_mode = 'reddit'
+                @reddit_container.show()
+                @htmlview_container.hide()
+                @simple_container.hide()
+                @fancy_container.hide()
+                @reddit_textarea.select()
+                @reddit_textarea.focus()
                 @toggle_vertical_space_container.show()
                 @toggle_color_print_container.show()
                 @toggle_maneuver_dial_container.show()
@@ -380,6 +406,7 @@ class exportObj.SquadBuilder
                 @list_modal.find('.list-display-mode .btn').removeClass 'btn-inverse'
                 @select_html_view_button.addClass 'btn-inverse'
                 @list_display_mode = 'html'
+                @reddit_container.hide()
                 @bbcode_container.hide()
                 @htmlview_container.show()
                 @simple_container.hide()
@@ -1015,6 +1042,7 @@ class exportObj.SquadBuilder
         # update text list
         @fancy_container.text ''
         @simple_container.html '<table class="simple-table"></table>'
+        reddit_ships = []
         bbcode_ships = []
         htmlview_ships = []
         for ship in @ships
@@ -1025,6 +1053,7 @@ class exportObj.SquadBuilder
                     #dial.hidden = true
 
                 @simple_container.find('table').append ship.toTableRow()
+                reddit_ships.push ship.toRedditText()
                 bbcode_ships.push ship.toBBCode()
                 htmlview_ships.push ship.toSimpleHTML()
         @htmlview_container.find('textarea').val $.trim """#{htmlview_ships.join '<br />'}
@@ -1033,6 +1062,14 @@ class exportObj.SquadBuilder
 <br />
 <a href="#{@getPermaLink()}">View in Yet Another Squad Builder 2.0</a>
         """
+
+        @reddit_container.find('textarea').val $.trim """#{reddit_ships.join "    \n"}
+    \n
+**Total:** *#{@total_points}*    \n
+    \n
+[View in Yet Another Squad Builder 2.0](#{@getPermaLink()})    \n
+"""
+
         @bbcode_container.find('textarea').val $.trim """#{bbcode_ships.join "\n\n"}
 
 [b][i]Total: #{@total_points}[/i][/b]
@@ -2723,6 +2760,23 @@ class Ship
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
 
+    toRedditText: ->
+        reddit = """**#{@pilot.name} (#{@pilot.points})**    \n"""
+        slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
+            .concat (modification for modification in @modifications when modification.data?)
+            .concat (title for title in @titles when title.data?)
+        if slotted_upgrades.length > 0
+            reddit +="    \n"
+            reddit_upgrades= []
+            for upgrade in slotted_upgrades
+                points = upgrade.getPoints()
+                upgrade_reddit = upgrade.toRedditText points
+                reddit_upgrades.push upgrade_reddit if upgrade_reddit?
+            reddit += reddit_upgrades.join "    "
+        reddit += """&nbsp;*Ship total: (#{@getPoints()})*    \n"""
+
+        reddit
+
     toBBCode: ->
         bbcode = """[b]#{@pilot.name} (#{@pilot.points})[/b]"""
 
@@ -3321,6 +3375,12 @@ class GenericAddon
             """
         else
             ''
+
+    toRedditText: (points) ->
+        if @data?
+            """*&nbsp;#{@data.name} (#{points})*    \n"""
+        else
+            null
 
     toBBCode: (points) ->
         if @data?
