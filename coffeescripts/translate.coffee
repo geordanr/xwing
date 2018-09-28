@@ -14,7 +14,12 @@ exportObj.loadCards = (language) ->
     exportObj.cardLoaders[language]()
 
 exportObj.translate = (language, category, what, args...) ->
-    translation = exportObj.translations[language][category][what]
+    try
+        translation = exportObj.translations[language][category][what]
+    catch all
+        console.log(category)
+        console.log(what)
+        throw all
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function

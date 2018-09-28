@@ -71,7 +71,7 @@ getPrimaryFaction = (faction) ->
 conditionToHTML = (condition) ->
     html = $.trim """
         <div class="condition">
-            <div class="name">#{if condition.unique then "&middot;&nbsp;" else ""}#{condition.name}</div>
+            <div class="name">#{if condition.unique then "&middot;&nbsp;" else ""}#{if condition.display_name then condition.display_name else condition.name}</div>
             <div class="text">#{condition.text}</div>
         </div>
     """
@@ -1067,7 +1067,7 @@ class exportObj.SquadBuilder
         cb @total_points
 
     onSquadLoadRequested: (squad) =>
-        console.log(squad.additional_data.obstacles)
+        # console.log(squad.additional_data.obstacles)
         @current_squad = squad
         @backend_delete_list_button.removeClass 'disabled'
         @squad_name_input.val @current_squad.name
@@ -1254,12 +1254,20 @@ class exportObj.SquadBuilder
             if @isOurFaction(ship_data.factions) and @matcher(ship_data.name, term)
                 if (not @isSecondEdition or exportObj.secondEditionCheck(ship_data, @faction))
                     if not ship_data.huge or @isCustom
-                        ships.push
-                            id: ship_data.name
-                            text: ship_data.name
-                            english_name: ship_data.english_name
-                            canonical_name: ship_data.canonical_name
-                            xws: ship_data.xws
+                        if ship_data.display_name
+                            ships.push
+                                id: ship_data.name
+                                text: ship_data.display_name
+                                english_name: ship_data.english_name
+                                canonical_name: ship_data.canonical_name
+                                xws: ship_data.xws
+                        else                        
+                            ships.push
+                                id: ship_data.name
+                                text: ship_data.name
+                                english_name: ship_data.english_name
+                                canonical_name: ship_data.canonical_name
+                                xws: ship_data.xws
         ships.sort exportObj.sortHelper
 
         
@@ -1273,7 +1281,7 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and @matcher(include_pilot.name, term)
             eligible_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
+        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
     dfl_filter_func = ->
         true
@@ -1288,7 +1296,7 @@ class exportObj.SquadBuilder
         count
 
     isShip: (ship, name) ->
-        console.log "returning #{f} #{name}"
+        # console.log "returning #{f} #{name}"
         if ship instanceof Array
             for f in ship
                 if f == name
@@ -1324,7 +1332,7 @@ class exportObj.SquadBuilder
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
         
         # Possibly adjust the upgrade
         if this_upgrade_obj.adjustment_func?
@@ -1357,7 +1365,7 @@ class exportObj.SquadBuilder
         # Re-add selected modification
         if include_modification? and (((include_modification.unique? or include_modification.limited?) and @matcher(include_modification.name, term)))# or current_mod_forcibly_removed)
             eligible_modifications.push include_modification
-        ({ id: modification.id, text: "#{modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
+        ({ id: modification.id, text: "#{if modification.display_name then modification.display_name else modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
 
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
@@ -1370,7 +1378,7 @@ class exportObj.SquadBuilder
         # Re-add selected title
         if include_title? and (((include_title.unique? or include_title.limited?) and @matcher(include_title.name, term)))
             eligible_titles.push include_title
-        ({ id: title.id, text: "#{title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
+        ({ id: title.id, text: "#{if title.display_name then title.display_name else title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1526,7 +1534,7 @@ class exportObj.SquadBuilder
                         el not in (data.pilot.ship_override?.actions ? data.data.actions)
                     extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
                         el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
-                    @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{if data.pilot.display_name then data.pilot.display_name else data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
 
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship
@@ -1609,7 +1617,7 @@ class exportObj.SquadBuilder
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
-                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
@@ -1692,7 +1700,7 @@ class exportObj.SquadBuilder
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
-                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{data.name}#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-base').hide()
@@ -2033,7 +2041,7 @@ class exportObj.SquadBuilder
                             shipnameXWS =
                                 id: ship_data.name
                                 xws: ship_data.xws
-                    console.log "#{pilot.xws}"
+                    # console.log "#{pilot.xws}"
                     try
                         new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilot.id] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilot.id]) when p.ship == shipnameXWS.id)[0]
                     catch err
@@ -2346,7 +2354,7 @@ class Ship
                 xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
-                text: "#{@pilot.name} (#{@pilot.points})"
+                text: "#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 points = upgrade.getPoints()
@@ -2488,7 +2496,7 @@ class Ship
 
     toString: ->
         if @pilot?
-            "Pilot #{@pilot.name} flying #{@data.name}"
+            "Pilot #{if @pilot.display_name then @pilot.display_name else @pilot.name} flying #{if @data.display_name then @data.display_name else @data.name}"
         else
             "Ship without pilot"
 
@@ -2628,7 +2636,7 @@ class Ship
 
         html = $.trim """
             <div class="fancy-pilot-header">
-                <div class="pilot-header-text">#{@pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{@data.name}</span></div>
+                <div class="pilot-header-text">#{if @pilot.display_name then @pilot.display_name else @pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{if @data.display_name then @data.display_name else @data.name}</span></div>
                 <div class="mask">
                     <div class="outer-circle">
                         <div class="inner-circle pilot-points">#{@pilot.points}</div>
@@ -2702,7 +2710,7 @@ class Ship
     toTableRow: ->
         table_html = $.trim """
             <tr class="simple-pilot">
-                <td class="name">#{@pilot.name} &mdash; #{@data.name}</td>
+                <td class="name">#{if @pilot.display_name then @pilot.display_name else @pilot.name} &mdash; #{if @data.display_name then @data.display_name else @data.name}</td>
                 <td class="points">#{@pilot.points}</td>
             </tr>
         """
@@ -2722,7 +2730,7 @@ class Ship
         table_html
 
     toBBCode: ->
-        bbcode = """[b]#{@pilot.name} (#{@pilot.points})[/b]"""
+        bbcode = """[b]#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})[/b]"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
@@ -2739,7 +2747,7 @@ class Ship
         bbcode
 
     toSimpleHTML: ->
-        html = """<b>#{@pilot.name} (#{@pilot.points})</b><br />"""
+        html = """<b>#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})</b><br />"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
             .concat (modification for modification in @modifications when modification.data?)
@@ -3213,13 +3221,13 @@ class GenericAddon
         if @data?
             @selector.select2 'data',
             id: @data.id
-            text: "#{@data.name} (#{points})"
+            text: "#{if @data.display_name then @data.display_name else @data.name} (#{points})"
         else
             @selector.select2 'data', null
 
     toString: ->
         if @data?
-            "#{@data.name} (#{@data.points})"
+            "#{if @data.display_name then @data.display_name else @data.name} (#{@data.points})"
         else
             "No #{@type}"
 
@@ -3291,7 +3299,7 @@ class GenericAddon
             $.trim """
                 <div class="upgrade-container">
                     <div class="upgrade-stats">
-                        <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i>#{@data.name}</div>
+                        <div class="upgrade-name"><i class="xwing-miniatures-font xwing-miniatures-font-#{upgrade_slot_font}"></i>#{if @data.display_name then @data.display_name else @data.name}</div>
                         <div class="mask">
                             <div class="outer-circle">
                                 <div class="inner-circle upgrade-points">#{points}</div>
@@ -3313,7 +3321,7 @@ class GenericAddon
         if @data?
             $.trim """
                 <tr class="simple-addon">
-                    <td class="name">#{@data.name}</td>
+                    <td class="name">#{if @data.display_name then @data.display_name else @data.name}</td>
                     <td class="points">#{points}</td>
                 </tr>
             """
@@ -3322,13 +3330,13 @@ class GenericAddon
 
     toBBCode: (points) ->
         if @data?
-            """[i]#{@data.name} (#{points})[/i]"""
+            """[i]#{if @data.display_name then @data.display_name else @data.name} (#{points})[/i]"""
         else
             null
 
     toSimpleHTML: (points) ->
         if @data?
-            """<i>#{@data.name} (#{points})</i><br />"""
+            """<i>#{if @data.display_name then @data.display_name else @data.name} (#{points})</i><br />"""
         else
             ''
 
