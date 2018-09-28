@@ -105,9 +105,8 @@ exportObj.translations['Français'] =
         '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="second_edition"]': 'Seconde Édition'
         '.game-type-selector option[value="custom"]': 'Personnalisé'
-        '.game-type-selector option[value="epic"]': 'Épique'
-        '.game-type-selector option[value="team-epic"]': 'Épique en équipe'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
