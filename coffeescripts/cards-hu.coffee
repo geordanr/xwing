@@ -175,7 +175,6 @@ exportObj.cardLoaders.Magyar = () ->
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
 
-    # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
 
 
     ###exportObj.renameShip 'X-Wing', 'X-Wing'
