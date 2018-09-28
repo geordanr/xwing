@@ -89,8 +89,8 @@ for card_en in cards_en:
 
     # translate
     output_text += ('        "%s":\n' % card_en["name"])
-    output_text += ('           name: """%s"""\n' % card_translation["name"])
-    output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_" + lang])
+    output_text += ('           display_name: """%s"""\n' % card_translation["name"])
+    # output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_" + lang])
     output_text += ('           text: """%s"""\n' % card_translation["ability_text"])
 
     # check for double names
@@ -123,7 +123,7 @@ for card_en in cards_en:
 
     # translate name
     output_text += ('        "%s":\n' % card_en["name"])
-    output_text += ('           name: """%s"""\n' % card_translation["name"])
+    output_text += ('           display_name: """%s"""\n' % card_translation["name"])
 
     # check if card has requirements
     if card_en["restrictions"]:
@@ -137,8 +137,7 @@ for card_en in cards_en:
             # translation specifying the ship
             if restriction[0]["type"] == "SHIP_TYPE":
                 if len(restriction) == 1:
-                    output_text += ('           ship: """%s"""\n' %
-                                    ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
+                    output_text += ('           ship: """%s"""\n' % ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
                 if len(restriction) > 1:
                     ships = ""
                     for ship in restriction:
@@ -154,8 +153,7 @@ for card_en in cards_en:
                         actions += " %s " % phrase_translations["or"]
                     actions += ("<r>%s</r>" if action["kwargs"]["side_effect_name"] == "STRESS" else "%s") % \
                                actions_by_id[action["kwargs"]["pk"]]
-                card_translation["ability_text"] = "<i>" + phrase_translations[
-                    "requires"] % actions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
+                card_translation["ability_text"] = "<i>" + phrase_translations["requires"] % actions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
             # if restricted to given base size, add a note to the text
             elif restriction[0]["type"] == "SHIP_SIZE":
                 sizes = ""
@@ -163,8 +161,7 @@ for card_en in cards_en:
                     if sizes:
                         sizes += " %s " % phrase_translations["or"]
                     sizes += phrase_translations[size["kwargs"]["ship_size_name"]]
-                card_translation["ability_text"] = "<i>" + phrase_translations[
-                    "only"] % sizes + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
+                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % sizes + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
             # if restricted to faction, add a note.  Also covers restrictions
             # on specific cards.
             elif restriction[0]["type"] == "FACTION" or restriction[0]["type"] == "CARD_INCLUDED":
@@ -181,10 +178,8 @@ for card_en in cards_en:
                     if factions:
                         factions += " %s " % phrase_translations["or"]
                     factions += (phrase_translations[faction["kwargs"]["name"]] if faction["type"] == "FACTION" else
-                                 phrase_translations["contains"] % cards_translation_by_id[faction["kwargs"]["pk"]][
-                                     "name"])
-                card_translation["ability_text"] = "<i>" + phrase_translations[
-                    "only"] % factions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
+                                 phrase_translations["contains"] % cards_translation_by_id[faction["kwargs"]["pk"]]["name"])
+                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % factions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to find cards, that add actions
     if card_en["available_actions"]:
@@ -192,8 +187,7 @@ for card_en in cards_en:
         for action in card_en["available_actions"]:
             if actions:
                 actions += " %s  " % ','
-            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[
-                action["base_action_id"]]
+            actions += ("<r>%s</r>" if action["base_action_side_effect"] == "stress" else "%s") % actions_by_id[action["base_action_id"]]
             # if the action can be linked into another action we need to
             # process that one as well
             linked = "&nbsp;<i class=\"xwing-miniatures-font xwing-miniatures-font-linked\"></i>"
@@ -212,8 +206,7 @@ for card_en in cards_en:
     # check for variable point costs
     if card_en["cost"] == "*":
         manual_stuff += ('Found upgrade with variable point costs: %s\n' % card_en["name"])
-        card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation[
-            "ability_text"]
+        card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
     if "(" in card_en["name"]:
