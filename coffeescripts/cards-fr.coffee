@@ -144,7 +144,7 @@ exportObj.translations['Français'] =
         '#aboutTab' : 'À propos'
         # Obstacles
         '.choose-obstacles' : 'Choisir des obstacles'
-        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.'
+        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'
         '.coreasteroid2-select' : 'Core Asteroid 2'
@@ -165,7 +165,7 @@ exportObj.translations['Français'] =
         '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
         # Import/Export
         '.from-xws' : 'Importer depuis XWS (beta)'
-        '.to-xws' : 'Importer vers XWS (beta)'
+        '.to-xws' : 'Exporter vers XWS (beta)'
 
     singular:
         'pilots': 'Pilotes'
