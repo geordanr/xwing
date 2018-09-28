@@ -54,7 +54,7 @@ exportObj.translations.Magyar =
         "Missile": "Rakéta"
         "Sensor": "Szenzor"
         "Torpedo": "Torpedó"
-        "Turret": "Toronylöveg"
+        "Turret": "Lövegtorony"
         "Hardpoint": "Fegyverfelfüggesztő pont"
         "Illicit": "Tiltott"
         "Configuration": "Konfiguráció"
@@ -134,7 +134,7 @@ exportObj.translations.Magyar =
         '#browserTab' : 'Kártya tallózó'
         '#aboutTab' : 'Rólunk'
         # Obstacles
-        '.choose-obstacles' : 'Choose Obstacles'
+        '.choose-obstacles' : 'Válassz akadályt'
         '.choose-obstacles-description' : 'Choose up to three obstacles to include in the permalink for use in external programs. (This feature is in BETA; support for displaying which obstacles were selected in the printout is not yet supported.)'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'
@@ -430,7 +430,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Horton Salm":
            text: """Amikor támadást hajtasz végre, a védekezőtől 0-1-es távolságban lévő minden más baráti hajó után újradobhatsz 1-1 támadókockát."""
         '"Howlrunner"':
-           text: """Amikor egy 0-1-es távolságban lévő baráti hajó támadást hajt végre, 1 támadókockát újradobhat."""
+           text: """Amikor egy 0-1-es távolságban lévő baráti hajó elsődleges támadást hajt végre, 1 támadókockát újradobhat."""
         "Ibtisam":
            text: """Amikor teljesen végrehajtod a manővered, ha stresszes vagy, dobhatsz 1 támadókockával. %HIT% vagy %CRIT% esetén eltávolíthatsz 1 stressz jelzőt."""
         "Iden Versio":
