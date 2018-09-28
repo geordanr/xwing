@@ -1526,7 +1526,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Rebel Alliance"
             ship: "X-Wing"
-            skill: 3
+            skill: 4
             points: 48
             slots: [
                 "Illicit"
