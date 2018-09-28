@@ -5701,6 +5701,9 @@ exportObj.basicCardData = ->
            points: 4
            unique: true
            faction: "Scum and Villainy"
+           modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+        
        }
        {
            name: "Informant"
