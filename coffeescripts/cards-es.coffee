@@ -9,11 +9,11 @@
 exportObj = exports ? this
 
 exportObj.codeToLanguage ?= {}
-exportObj.codeToLanguage.de = 'Castellano'
+exportObj.codeToLanguage.es = 'Español'
 
 exportObj.translations ?= {}
 # This is here mostly as a template for other languages.
-exportObj.translations.Castellano =
+exportObj.translations['Español'] =
     action: #do not change this anymore. We use Icons instead of words
         "Barrel Roll": '<i class="xwing-miniatures-font xwing-miniatures-font-barrelroll"></i>'
         "Boost": '<i class="xwing-miniatures-font xwing-miniatures-font-boost"></i>'
@@ -195,7 +195,7 @@ exportObj.translations.Castellano =
 
 
 exportObj.cardLoaders ?= {}
-exportObj.cardLoaders.Deutsch = () ->
+exportObj.cardLoaders['Español'] = () ->
     exportObj.cardLanguage = 'Español'
 
     # Assumes cards-common has been loaded
