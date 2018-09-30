@@ -3,6 +3,7 @@ exportObj = exports ? this
 exportObj.fromXWSFaction =
     'rebelalliance': 'Rebel Alliance'
     'rebels': 'Rebel Alliance'
+    'rebel': 'Rebel Alliance'
     'galacticempire': 'Galactic Empire'
     'imperial': 'Galactic Empire'
     'scumandvillainy': 'Scum and Villainy'

@@ -39,7 +39,7 @@ for card in cards_translation:
 
 # store what we need to manually post-process (e.g.  FFG differs L3-37
 # Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
-manual_stuff = "Please edit the following cards manually: \nL3-37's programming\n"
+manual_stuff = "Please edit the following cards manually: \nL3-37's programming: Merge into L3-37\n"
 
 # search for double names
 pilot_name_list = {}
@@ -90,7 +90,8 @@ for card_en in cards_en:
     # translate
     output_text += ('        "%s":\n' % card_en["name"])
     output_text += ('           display_name: """%s"""\n' % card_translation["name"])
-    # output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_" + lang])
+    # output_text += (' ship: """%s"""\n' %
+    # ship_translations[str(card_en["ship_type"])]["name_" + lang])
     output_text += ('           text: """%s"""\n' % card_translation["ability_text"])
 
     # check for double names
@@ -121,6 +122,8 @@ for card_en in cards_en:
             # rename translated card, add the (...) to the translated name
             card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
 
+    card_en["name"] = card_en["name"].replace('’', "'")
+
     # translate name
     output_text += ('        "%s":\n' % card_en["name"])
     output_text += ('           display_name: """%s"""\n' % card_translation["name"])
@@ -134,19 +137,11 @@ for card_en in cards_en:
         # faction + card (e.g.  scum or contains vader)
         for restriction in card_en["restrictions"]:
             # if restricted to ship type (e.g.  titles), add a line to the
-            # translation specifying the ship
-            if restriction[0]["type"] == "SHIP_TYPE":
-                if len(restriction) == 1:
-                    output_text += ('           ship: """%s"""\n' % ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
-                if len(restriction) > 1:
-                    ships = ""
-                    for ship in restriction:
-                        if ships:
-                            ships += ", "
-                        ships += '"""%s"""' % (ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
-                    output_text += '           ship: [ %s ]\n' % ships
+            # translation specifying the ship.  No longer needed, as we do not
+            # change ship names, but ship display_names - so we keep the
+            # english logic of ship to ugrade associations
             # if restricted to given actions, add a note to the text
-            elif restriction[0]["type"] == "ACTION":
+            if restriction[0]["type"] == "ACTION":
                 actions = ""
                 for action in restriction:
                     if actions:
@@ -200,19 +195,19 @@ for card_en in cards_en:
 
     # check for double names
     if card_en["name"] in upgrade_name_list:
-        manual_stuff += ('Found upgrade name multiple times: %s\n' % card_en["name"])
+        manual_stuff += ('%s: Found upgrade name multiple times:\n' % card_en["name"])
     upgrade_name_list[card_en["name"]] = True
 
     # check for variable point costs
     if card_en["cost"] == "*":
-        manual_stuff += ('Found upgrade with variable point costs: %s\n' % card_en["name"])
+        manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
         card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
     if "(" in card_en["name"]:
         simple_name = re.sub('\(.*?\)', '', card_en["name"])
         if simple_name in possible_double_sided_list:
-            manual_stuff += 'Probably found double sided upgrade: %s\n' % simple_name
+            manual_stuff += '%s: Probably double-sided. YASB wants you to merge double-sided-cards together into one. \n' % simple_name
         possible_double_sided_list[simple_name] = True
 
     # write translated text (requirements etc have been added to text)
@@ -283,8 +278,7 @@ output_text = output_text.replace('<crit>', '%CRIT%')
 
 # Change quotes and some special chars in Names, to match the YASB scheme (e.g.
 # replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
-output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r"""'\1"\2"\3'""", output_text)
-output_text = output_text.replace('’', "'")
+output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r""" '\1"\2"\3'""", output_text)
 output_text = output_text.replace('–', "-")
 
 # Remove unique dots
