@@ -1407,7 +1407,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Sense":
            display_name: """Sentir"""
            text: """Durante la fase de Sistemas, puedes elegir 1 nave que tengas a alcance 0-1 y mirar su selector de maniobras. Si gastas 1&nbsp;%FORCE%, en vez de eso puedes elegir una nave que tengas a alcance 0-3."""
-        "Servomotor S-foils":
+        "Servomotor S-Foils":
            display_name: """Alas móviles"""
            text: """<strong>Cara A (Abiertas):</strong> Antes de que te actives, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerradas):</strong> <i>Añade %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK%Mientras efectúas un ataque principal, tira 1 dado de ataque menos.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
         "Seventh Sister":
