@@ -995,71 +995,54 @@ exportObj.cardLoaders['Español'] = () ->
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientras efectúas un ataque, después de tirar los dados de ataque, puedes decir en voz alta un tipo de ficha verde. Si lo haces, recibes 2 fichas de Iones y, durante este ataque, el defensor no puede gastar fichas del tipo que has dicho."""
         "Andrasta":
            display_name: """Andrasta"""
-           ship: """Patrullera clase Firespray"""
            text: """<i>Añade %RELOAD%</i>%LINEBREAK%<i>Sólo Escoria</i>%LINEBREAK%Añádete un espacio %DEVICE%."""
         "Dauntless":
            display_name: """Intrépido"""
-           ship: """VT-49 Diezmador"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Después de que ejecutes parcialmente una maniobra, puedes realizar 1 acción blanca, considerando esa acción como si fuera roja."""
         "Ghost":
            display_name: """Espíritu"""
-           ship: """Carguero ligero VCX-100"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Puedes acoplar 1 lanzadera de ataque o 1 lanzadera clase Sheathipede.%LINEBREAK%Tus naves acopladas sólo pueden desplegarse desde tus salientes traseros."""
         "Havoc":
            display_name: """Estrago"""
-           ship: """Bombardero Scurrg H-6"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Elimínate el espacio %CREW%. Añádete los espacios %SENSOR% y %ASTROMECH%."""
         "Hound's Tooth":
            display_name: """Diente de Perro"""
-           ship: """Carguero ligero YV-666"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%1 Z-95-AF4 Cazacabezas puede acoplarse contigo."""
         "IG-2000":
            display_name: """IG-2000"""
-           ship: """Caza de asalto Agresor"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Posees la capacidad especial de piloto de cada otra nave aliada que tenga la mejora <strong>IG-2000</strong>."""
         "Marauder":
            display_name: """Merodeador"""
-           ship: """Patrullera clase Firespray"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientras efectúas un ataque principal %REARARC%, puedes volver a tirar 1 dado de ataque.%LINEBREAK%Añádete un espacio %GUNNER%."""
         "Millennium Falcon":
            display_name: """Halcón Milenario"""
-           ship: """Carguero ligero YT-1300 modificado"""
            text: """<i>Añade %EVADE%</i>%LINEBREAK%<i>Sólo Rebelde</i>%LINEBREAK%Mientras te defiendes, si estás evadiéndote, puedes volver a tirar 1 dado de defensa."""
         "Mist Hunter":
            display_name: """Cazador de la Niebla"""
-           ship: """Caza estelar G-1A"""
            text: """<i>Añade %BARRELROLL%</i>%LINEBREAK%<i>Sólo Escoria</i>%LINEBREAK%Añádete el espacio %CANNON%."""
         "Moldy Crow":
            display_name: """Cuervo Oxidado"""
-           ship: """Carguero ligero HWK-290"""
            text: """<i>Sólo Rebelde o Escoria</i>%LINEBREAK%Adquieres un armamento principal %FRONTARC% cuyo valor de Ataque es 3.%LINEBREAK%Durante la fase Final, no retires hasta 2 de tus fichas de Concentración."""
         "Outrider":
            display_name: """Jinete del Espacio"""
-           ship: """Carguero ligero YT-2400"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Mientras efectúas un ataque que está obstruido, el defensor tira 1 dado de defensa menos.%LINEBREAK%Después de que ejecutes completamente una maniobra, si te has movido a través de un obstáculo o te has solapado con uno, puedes retirar 1 de tus fichas de color rojo o naranja."""
         "Phantom":
            display_name: """Fantasma"""
-           ship: [ """Lanzadera de ataque""", """Lanzadera clase Sheathipede""" ]
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Puedes acoplarte a alcance 0-1.%LINEBREAK%"""
         "Punishing One":
            display_name: """Castigadora"""
-           ship: """Saltador Maestro 5000"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientas efectúas un ataque principal, si el defensor está situado en tu %FRONTARC%, tira 1 dado de ataque adicional.%LINEBREAK%Elimínate el espacio %CREW%. Añádete el espacio %ASTROMECH%."""
         "ST-321":
            display_name: """ST-321"""
-           ship: """Lanzadera T-4A clase Lambda"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Después de que realices una acción %COORDINATE%, puedes elegir una nave enemiga que esté situada a alcance 0-3 de la nave que has coordinado. Si lo haces, obtienes un Blanco fijado sobre esa nave enemiga, ignorando las restricciones por alcance."""
         "Shadow Caster":
            display_name: """Sombra Alargada"""
-           ship: """Nave de persecución clase Lancero"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que efectúes un ataque que impacte, si el defensor está situado en tu %SINGLETURRETARC% y tu %FRONTARC%, el defensor recibe 1 ficha de Campo de tracción."""
         "Slave I":
            display_name: """Esclavo I"""
-           ship: """Patrullera clase Firespray"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que reveles una maniobra de giro (%TURNLEFT% o %TURNRIGHT%) o de inclinación (%BANKLEFT% o %BANKRIGHT%), puedes establecer en tu selector la maniobra con la misma velocidad que la actual y la dirección opuesta.%LINEBREAK%Añádete un espacio %TORPEDO%."""
         "Virago":
            display_name: """Virago"""
-           ship: """Plataforma de ataque clase Víbora Estelar"""
            text: """Durante la fase Final, puedes gastar 1&nbsp;%CHARGE% para realizar 1 acción %BOOST% roja.%LINEBREAK%Añádete el espacio %MODIFICATION%."""
         "Ablative Plating":
            display_name: """Blindaje ablativo"""
@@ -1208,7 +1191,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Freelance Slicer":
            display_name: """Pirata informático independiente"""
            text: """Mientras te defiendes, antes de que se tiren los dados de ataque, puedes gastar un Blanco fijado que tengas sobre el atacante para tirar 1 dado de ataque. Si lo haces, el atacante recibe 1 ficha de Interferencia. Luego, si has sacado un resultado %HIT% o %CRIT%, recibes 1 ficha de Interferencia."""
-       'GNK "Gonk" Droid':
+        'GNK "Gonk" Droid':
            display_name: """Droide GNK “Gonk”"""
            text: """<strong>Preparación:</strong> Pierdes 1 %CHARGE%.%LINEBREAK%<strong>Acción:</strong> Recupera 1&nbsp;%CHARGE%.%LINEBREAK%<strong>Acción:</strong> Gasta 1&nbsp;%CHARGE% para recuperar 1 escudo."""
         "Grand Inquisitor":
@@ -1294,10 +1277,7 @@ exportObj.cardLoaders['Español'] = () ->
            text: """<i>Sólo Escoria</i>%LINEBREAK%Al comienzo de la fase Final, puedes elegir 1 nave enemiga que tengas en tu arco de fuego a alcance 0-2. Si lo haces, esa nave no retira sus fichas de Campo de tracción."""
         "L3-37":
            display_name: """L3-37"""
-           text: """<i>Sólo Escoria</i>%LINEBREAK%<strong>Preparación:<strong> Equipa esta cara boca arriba.%LINEBREAK%Mientras te defiendes, puedes darle la vuelta a esta carta. Si lo haces, el atacante debe volver a tirar todos los dados de ataque."""
-        "L3-37's Programming":
-           display_name: """Programación de L3-37"""
-           text: """<i>Sólo Escoria</i>%LINEBREAK%Si no estás protegido por escudos, reduce la dificultad de tus maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%)."""
+           text: """<i>Sólo Escoria</i>%LINEBREAK%<strong>Preparación:<strong> Equipa esta cara boca arriba.%LINEBREAK%Mientras te defiendes, puedes darle la vuelta a esta carta. Si lo haces, el atacante debe volver a tirar todos los dados de ataque.%LINEBREAK%<strong>Programación de L3-37</strong>%LINEBREAK%Si no estás protegido por escudos, reduce la dificultad de tus maniobras de inclinación (%BANKLEFT% y %BANKRIGHT%)."""
         "Lando Calrissian":
            display_name: """Lando Calrissian"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%<strong>Acción:</strong> Tira 2 dados de defensa. Por cada resultado %FOCUS%, recibes 1 ficha de Concentración. Por cada resultado %EVADE%, recibes 1 ficha de Evasión. Si ambos resultados son de cara vacía, el jugador adversario elige entre concentración o evasión, y tú recibes 1 ficha del tipo que ha elegido."""
@@ -1306,7 +1286,6 @@ exportObj.cardLoaders['Español'] = () ->
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que tires los dados, puedes gastar 1 ficha verde para volver a tirar hasta 2 de tus resultados."""
         "Lando's Millennium Falcon":
            display_name: """Halcón Milenario de Lando"""
-           ship: """Carguero ligero YT-1300 personalizado"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%1 Nave de escape puede acoplarse contigo.%LINEBREAK%Mientras tienes 1 Nave de escape acoplado, puedes gastar sus escudos como si estuvieran en tu carta de Nave.%LINEBREAK%Mientras efectúas un ataque principal contra una nave bajo tensión, tira 1 dado de ataque adicional."""
         "Latts Razzi":
            display_name: """Latts Razzi"""
@@ -1346,7 +1325,6 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Al final de la ronda, puedes tirar 1 dado de ataque para reparar 1 carta de Daño boca arriba. Luego, si has sacado un resultado %HIT%, expón 1 carta de Daño."""
         "Os-1 Arsenal Loadout":
            display_name: """Configuración de arsenal Os-1"""
-           ship: """Ala Estelar clase Alfa"""
            text: """Mientras tienes exactamente 1 ficha de Desarme, sigues siendo capaz de efectuar ataques %TORPEDO% y %MISSILE% contra objetivos sobre los que tengas un Blanco fijado. Si lo haces, no puedes gastar tu Blanco fijado durante el ataque.%LINEBREAK%Añádete los espacios %TORPEDO% y %MISSILE%."""
         "Outmaneuver":
            display_name: """Superioridad táctica"""
@@ -1354,14 +1332,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Perceptive Copilot":
            display_name: """Copiloto perceptivo"""
            text: """Después de que realices una acción %FOCUS%, recibes 1 ficha de Concentración."""
-        "Pivot Wing (Closed)":
-           display_name: """Ala pivotante (posición cerrada)"""
-           ship: """UT-60D Ala-U"""
-           text: """Mientras te defiendes, tira 1 dado de defensa menos.%LINEBREAK%Después de que ejecutes una maniobra [0&nbsp;%STOP%], puedes cambiar la orientación de tu nave en 90º o 180º.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
-        "Pivot Wing (Open)":
-           display_name: """Ala pivotante (posición abierta)"""
-           ship: """UT-60D Ala-U"""
-           text: """Antes de que te actives, puedes darle la vuelta a esta carta."""
+        "Pivot Wing":
+           display_name: """Ala pivotante"""
+           text: """<strong>Cara A (Abierta):</strong> Antes de que te actives, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerrada):</strong> Mientras te defiendes, tira 1 dado de defensa menos.%LINEBREAK%Después de que ejecutes una maniobra [0&nbsp;%STOP%], puedes cambiar la orientación de tu nave en 90º o 180º.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
         "Predator":
            display_name: """Depredador"""
            text: """Mientras efectúas un ataque principal, si el defensor está situado en tu %BULLSEYEARC%, puedes volver a tirar 1 dado de ataque."""
@@ -1434,14 +1407,9 @@ exportObj.cardLoaders['Español'] = () ->
         "Sense":
            display_name: """Sentir"""
            text: """Durante la fase de Sistemas, puedes elegir 1 nave que tengas a alcance 0-1 y mirar su selector de maniobras. Si gastas 1&nbsp;%FORCE%, en vez de eso puedes elegir una nave que tengas a alcance 0-3."""
-        "Servomotor S-foils (Closed)":
-           display_name: """Alas móviles (posición cerrada)"""
-           ship: """T-65 Ala-X"""
-           text: """<i>Añade %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK%Mientras efectúas un ataque principal, tira 1 dado de ataque menos.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
-        "Servomotor S-foils (Open)":
-           display_name: """Alas móviles (posición abierta)"""
-           ship: """T-65 Ala-X"""
-           text: """Antes de que te actives, puedes darle la vuelta a esta carta."""
+        "Servomotor S-foils":
+           display_name: """Alas móviles"""
+           text: """<strong>Cara A (Abiertas):</strong> Antes de que te actives, puedes darle la vuelta a esta carta.%LINEBREAK%<strong>Cara B (Cerradas):</strong> <i>Añade %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK%Mientras efectúas un ataque principal, tira 1 dado de ataque menos.%LINEBREAK%Antes de que te actives, puedes darle la vuelta a esta carta."""
         "Seventh Sister":
            display_name: """Séptima Hermana"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Si una nave enemiga que tienes a alcance 0-1 va a recibir una ficha de Tensión, puedes gastar 1&nbsp;%FORCE% para que en vez de eso la nave reciba 1 ficha de Interferencia o de Campo de tracción."""
@@ -1495,7 +1463,6 @@ exportObj.cardLoaders['Español'] = () ->
            text: """<i>Necesita <r>%ROTATEARC%</r> o %ROTATEARC%</i>%LINEBREAK%Después de que efectúes un ataque principal, puedes realizar un ataque %SINGLETURRETARC% adicional utilizando un %SINGLETURRETARC% desde el que todavía no has atacado en esta ronda."""
         "Xg-1 Assault Configuration":
            display_name: """Configuración de asalto Xg-1"""
-           ship: """Ala Estelar clase Alfa"""
            text: """Mientras tienes exactamente 1 ficha de Desarme, sigues siendo capaz de efectuar ataques %CANNON%. Mientras efectúas un ataque %CANNON% mientras estás desarmado, tiras un máximo de 3 dados de ataque.%LINEBREAK%Añádete el espacio %CANNON%."""
         "Zuckuss":
            display_name: """Zuckuss"""
