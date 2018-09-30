@@ -41,6 +41,12 @@ Testing
 
     npm test
 
+Translation
+===========
+
+Wanna help translating YASB into your language? See instructions in the
+`translation_helper/README.md` file.
+
 Credits
 -------
 [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) is by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).

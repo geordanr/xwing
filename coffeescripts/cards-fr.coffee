@@ -105,9 +105,8 @@ exportObj.translations['Français'] =
         '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="second_edition"]': 'Seconde Édition'
         '.game-type-selector option[value="custom"]': 'Personnalisé'
-        '.game-type-selector option[value="epic"]': 'Épique'
-        '.game-type-selector option[value="team-epic"]': 'Épique en équipe'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
@@ -145,7 +144,7 @@ exportObj.translations['Français'] =
         '#aboutTab' : 'À propos'
         # Obstacles
         '.choose-obstacles' : 'Choisir des obstacles'
-        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.'
+        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'
         '.coreasteroid2-select' : 'Core Asteroid 2'
@@ -166,7 +165,7 @@ exportObj.translations['Français'] =
         '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
         # Import/Export
         '.from-xws' : 'Importer depuis XWS (beta)'
-        '.to-xws' : 'Importer vers XWS (beta)'
+        '.to-xws' : 'Exporter vers XWS (beta)'
 
     singular:
         'pilots': 'Pilotes'
@@ -858,7 +857,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, avant l’étape « Neutraliser les résultats », vous pouvez dépenser 1 %CHARGE% pour annuler 1 résultat %EVADE%."""
         "Daredevil":
            display_name: "Casse-cou"
-           text: """<i>Requiert : Vaisseau petit, %BOOST% blanche</i> %LINEBREAK% ant que vous effectuez une action %BOOST% blanche, vous pouvez considérer qu’elle est rouge pour utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
+           text: """<i>Requiert : Vaisseau petit, %BOOST% blanche</i> %LINEBREAK% Tant que vous effectuez une action %BOOST% blanche, vous pouvez considérer qu’elle est rouge pour utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
         "Darth Vader":
            text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1 %FORCE%. If you do, that ship suffers 1 %HIT% damage unless it chooses to remove 1 green token."""
         "Dauntless":
@@ -982,6 +981,7 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: "Lando Calrissian (Racailles)"
            text: """Après avoir lancé des dés, vous pouvez dépenser 1 marqueur vert pour relancer jusqu’à 2 de vos résultats."""
         "Lando's Millennium Falcon":
+           display_name: "Faucon Millenium de Lando"
            text: """1 Vaisseau de secours peut s’arrimer à vous. %LINEBREAK% Tant que vous avez un Vaisseau de secours arrimé, vous pouvez dépenser ses boucliers comme s’ils étaient sur votre carte de vaisseau. %LINEBREAK% Tant que vous effectuez une attaque principale contre un vaisseau stressé, lancez 1 dé d’attaque supplémentaire."""
         "Latts Razzi":
            text: """While you defend, if the attacker is stressed, you may remove 1 stress from the attacker to change 1 of your blank/%FOCUS% results to an %EVADE% result."""
