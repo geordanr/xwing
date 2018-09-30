@@ -1297,6 +1297,7 @@ class exportObj.SquadBuilder
                         if ship_data.display_name
                             ships.push
                                 id: ship_data.name
+                                display_name: ship_data.display_name
                                 text: ship_data.display_name
                                 english_name: ship_data.english_name
                                 canonical_name: ship_data.canonical_name
@@ -2293,6 +2294,8 @@ class Ship
             # Ship changed; select first non-unique
             @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
 
+            # TODO: When no non-unique pilot is available, we should maybe select the first one not already beeing in the squad?
+
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)
             if cls.indexOf('ship-') == 0
@@ -2302,7 +2305,7 @@ class Ship
         @remove_button.fadeIn 'fast'
 
         # Ship background
-        @row.addClass "ship-#{ship_type.toLowerCase().replace(/[^a-z0-9]/gi, '')}0"
+        @row.addClass "ship-#{ship_type.toLowerCase().replace(/[^a-z0-9]/gi, '')}"
 
         @builder.container.trigger 'xwing:shipUpdated'
 
@@ -2411,11 +2414,16 @@ class Ship
 
     updateSelections: ->
         if @pilot?
-            @ship_selector.select2 'data',
-                id: @pilot.ship
-                text: @pilot.ship
-                #canonical_name: exportObj.ships[@pilot.ship].canonical_name
-                xws: exportObj.ships[@pilot.ship].xws
+            if exportObj.ships[@pilot.ship].display_name
+                @ship_selector.select2 'data',
+                    id: @pilot.ship
+                    text: exportObj.ships[@pilot.ship].display_name
+                    xws: exportObj.ships[@pilot.ship].xws
+            else
+                @ship_selector.select2 'data',
+                    id: @pilot.ship
+                    text: @pilot.ship
+                    xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
                 text: "#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"
