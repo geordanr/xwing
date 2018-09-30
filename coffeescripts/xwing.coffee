@@ -1990,7 +1990,7 @@ class exportObj.SquadBuilder
                     builder: 'Yet Another Squad Builder 2.0'
                     builder_url: window.location.href.split('?')[0]
                     link: @getPermaLink()
-            version: '0.3.0'
+            version: '2.0.0'
 
         for ship in @ships
             if ship.pilot?
@@ -2045,7 +2045,7 @@ class exportObj.SquadBuilder
             delete xws[k] unless k in ['faction', 'pilots', 'version']
 
         for own k, v of xws.pilots
-            delete xws[k] unless k in ['name', 'ship', 'upgrades', 'multisection_id']
+            delete xws[k] unless k in ['id', 'upgrades', 'multisection_id']
 
         xws
 
@@ -2076,14 +2076,38 @@ class exportObj.SquadBuilder
 
                 for pilot in xws.pilots
                     new_ship = @addShip()
-                    for ship_name, ship_data of exportObj.ships
-                        if @matcher(ship_data.xws, pilot.ship)
-                            shipnameXWS =
-                                id: ship_data.name
-                                xws: ship_data.xws
+                    # we add some backward compatibility here, to allow imports from Launch Bay Next Squad Builder
+                    # According to xws-spec, for 2nd edition we use id instead of name
+                    # however, we will accept a name instead of an id as well.
+                    
+                    if pilot.id
+                        pilotxws = pilot.id
+                    else if pilot.name
+                       pilotxws = pilot.name
+                    else
+                        success = false
+                        error = "Pilot without identifier"
+                        break
+
+                    # pilotsByUniqueName is a weired thing, containing most pilots by xws name, but does weired stuff on pilots that exist multiple times. 
+                    if exportObj.pilotsByUniqueName[pilotxws] and exportObj.pilotsByUniqueName[pilotxws].length == 1
+                        shipname =  exportObj.pilotsByUniqueName[pilotxws][0].ship
+                    
+                    else
+                        for key, possible_pilots of exportObj.pilotsByUniqueName
+                            for possible_pilot in possible_pilots
+                                if (possible_pilot.xws and possible_pilot.xws == pilotxws) or (not possible_pilot.xws and key == pilotxws)
+                                    shipname = possible_pilot.ship
+
+
+                    #for ship_name, ship_data of exportObj.ships
+                    #    if @matcher(ship_data.xws, pilot.ship)
+                    #        shipnameXWS =
+                    #            id: ship_data.name
+                    #            xws: ship_data.xws
                     # console.log "#{pilot.xws}"
                     try
-                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilot.id] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilot.id]) when p.ship == shipnameXWS.id)[0]
+                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0]
                     catch err
                         console.error err.message 
                         continue
@@ -3061,6 +3085,7 @@ class Ship
     toXWS: ->
         xws =
             id: (@pilot.xws ? @pilot.canonical_name)
+            name: (@pilot.xws ? @pilot.canonical_name) # name is no longer part of xws 2.0.0, and was replaced by id. However, we will add it here for some kind of backward compatibility. May be removed, as soon as everybody is using id. 
             points: @getPoints()
             #ship: @data.canonical_name
             ship: @data.xws.canonicalize()
