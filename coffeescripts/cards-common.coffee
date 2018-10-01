@@ -7177,9 +7177,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for pilot_data in basic_cards.pilotsById
         unless pilot_data.skip?
             pilot_data.sources = []
-            pilot_data.english_name = pilot_data.name
-            pilot_data.english_ship = pilot_data.ship
-            pilot_data.canonical_name = pilot_data.english_name.canonicalize() unless pilot_data.canonical_name?
+            pilot_data.canonical_name = pilot_data.name.canonicalize() unless pilot_data.canonical_name?
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
@@ -7188,37 +7186,32 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
             upgrade_data.sources = []
-            upgrade_data.english_name = upgrade_data.name
-            upgrade_data.canonical_name = upgrade_data.english_name.canonicalize() unless upgrade_data.canonical_name?
+            upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
             exportObj.upgrades[upgrade_data.name] = upgrade_data
 
     exportObj.modifications = {}
     for modification_data in basic_cards.modificationsById
         unless modification_data.skip?
             modification_data.sources = []
-            modification_data.english_name = modification_data.name
-            modification_data.canonical_name = modification_data.english_name.canonicalize() unless modification_data.canonical_name?
+            modification_data.canonical_name = modification_data.name.canonicalize() unless modification_data.canonical_name?
             exportObj.modifications[modification_data.name] = modification_data
 
     exportObj.titles = {}
     for title_data in basic_cards.titlesById
         unless title_data.skip?
             title_data.sources = []
-            title_data.english_name = title_data.name
-            title_data.canonical_name = title_data.english_name.canonicalize() unless title_data.canonical_name?
+            title_data.canonical_name = title_data.name.canonicalize() unless title_data.canonical_name?
             exportObj.titles[title_data.name] = title_data
 
     exportObj.conditions = {}
     for condition_data in basic_cards.conditionsById
         unless condition_data.skip?
             condition_data.sources = []
-            condition_data.english_name = condition_data.name
-            condition_data.canonical_name = condition_data.english_name.canonicalize() unless condition_data.canonical_name?
+            condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
 
     for ship_name, ship_data of basic_cards.ships
-        ship_data.english_name ?= ship_name
-        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name.canonicalize()
         ship_data.sources = []
 
     # Set sources from manifest
@@ -7477,15 +7470,10 @@ exportObj.fixIcons = (data) ->
             
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
-        ship_data.english_name = ship_name
-        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name.canonicalize()
 
-exportObj.renameShip = (english_name, new_name) ->
-    # exportObj.ships[new_name] = exportObj.ships[english_name]
-    # exportObj.ships[new_name].name = new_name
-    # exportObj.ships[new_name].english_name = english_name
-    exportObj.ships[english_name].display_name = new_name
-    # delete exportObj.ships[english_name]
+exportObj.renameShip = (name, new_name) ->
+    exportObj.ships[name].display_name = new_name
 
 exportObj.randomizer = (faction_name, points) ->
     shiplistmaster = exportObj.basicCardData #export ship database

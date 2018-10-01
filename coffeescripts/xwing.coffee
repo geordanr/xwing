@@ -1297,16 +1297,16 @@ class exportObj.SquadBuilder
                         if ship_data.display_name
                             ships.push
                                 id: ship_data.name
+                                name: ship_data.name
                                 display_name: ship_data.display_name
                                 text: ship_data.display_name
-                                english_name: ship_data.english_name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
                         else                        
                             ships.push
                                 id: ship_data.name
+                                name: ship_data.name
                                 text: ship_data.name
-                                english_name: ship_data.english_name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
         ships.sort exportObj.sortHelper
@@ -1322,7 +1322,7 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
             eligible_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
+        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
     dfl_filter_func = ->
         true
@@ -1373,7 +1373,7 @@ class exportObj.SquadBuilder
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
         
         # Possibly adjust the upgrade
         if this_upgrade_obj.adjustment_func?
@@ -1406,7 +1406,7 @@ class exportObj.SquadBuilder
         # Re-add selected modification
         if include_modification? and (((include_modification.unique? or include_modification.limited?) and ( @matcher(include_modification.name, term) or (include_modification.display_name and @matcher(include_modification.display_name, term)) ) ))# or current_mod_forcibly_removed)
             eligible_modifications.push include_modification
-        ({ id: modification.id, text: "#{if modification.display_name then modification.display_name else modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
+        ({ id: modification.id, text: "#{if modification.display_name then modification.display_name else modification.name} (#{modification.points})", points: modification.points, name: modification.name, display_name: modification.display_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
 
     getAvailableTitlesIncluding: (ship, include_title, term='') ->
         # Returns data formatted for Select2
@@ -1419,7 +1419,7 @@ class exportObj.SquadBuilder
         # Re-add selected title
         if include_title? and (((include_title.unique? or include_title.limited?) and (@matcher(include_title.name, term) or (include_title.display_name and @matcher(include_title.display_name, term)) )))
             eligible_titles.push include_title
-        ({ id: title.id, text: "#{if title.display_name then title.display_name else title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
+        ({ id: title.id, text: "#{if title.display_name then title.display_name else title.name} (#{title.points})", points: title.points, name: title.name, display_name: title.display_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1565,8 +1565,8 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     if @collection?.counts?
-                        ship_count = @collection.counts?.ship?[data.data.english_name] ? 0
-                        pilot_count = @collection.counts?.pilot?[data.pilot.english_name] ? 0
+                        ship_count = @collection.counts?.ship?[data.data.name] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.pilot.name] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1653,7 +1653,7 @@ class exportObj.SquadBuilder
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        pilot_count = @collection.counts?.pilot?[data.english_name] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.name] ? 0
                         ship_count = @collection.counts.ship?[additional_opts.ship] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
@@ -1737,7 +1737,7 @@ class exportObj.SquadBuilder
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.english_name] ? 0
+                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1951,25 +1951,25 @@ class exportObj.SquadBuilder
         for ship in @ships
             if ship.pilot?
                 # Try to get both the physical model and the pilot card.
-                ship_is_available = @collection.use('ship', ship.pilot.english_ship)
-                pilot_is_available = @collection.use('pilot', ship.pilot.english_name)
-                # console.log "#{@faction}: Ship #{ship.pilot.english_ship} available: #{ship_is_available}"
-                # console.log "#{@faction}: Pilot #{ship.pilot.english_name} available: #{pilot_is_available}"
+                ship_is_available = @collection.use('ship', ship.pilot.ship)
+                pilot_is_available = @collection.use('pilot', ship.pilot.name)
+                # console.log "#{@faction}: Ship #{ship.pilot.ship} available: #{ship_is_available}"
+                # console.log "#{@faction}: Pilot #{ship.pilot.name} available: #{pilot_is_available}"
                 validity = false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
-                        upgrade_is_available = @collection.use('upgrade', upgrade.data.english_name)
-                        # console.log "#{@faction}: Upgrade #{upgrade.data.english_name} available: #{upgrade_is_available}"
+                        upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
+                        # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
                         validity = false unless upgrade_is_available
                 for modification in ship.modifications
                     if modification.data?
-                        modification_is_available = @collection.use('modification', modification.data.english_name)
-                        # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
+                        modification_is_available = @collection.use('modification', modification.data.name)
+                        # console.log "#{@faction}: Modification #{modification.data.name} available: #{modification_is_available}"
                         validity = false unless modification_is_available
                 for title in ship.titles
                     if title?.data?
-                        title_is_available = @collection.use('title', title.data.english_name)
-                        # console.log "#{@faction}: Title #{title.data.english_name} available: #{title_is_available}"
+                        title_is_available = @collection.use('title', title.data.name)
+                        # console.log "#{@faction}: Title #{title.data.name} available: #{title_is_available}"
                         validity = false unless title_is_available
         validity
 
@@ -2485,11 +2485,11 @@ class Ship
                     if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
                         # Currently selected ship; mark as not in collection if it's neither
                         # on the shelf nor on the table
-                        unless (@builder.collection.checkShelf('ship', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                        unless (@builder.collection.checkShelf('ship', obj.name) or @builder.collection.checkTable('pilot', obj.name))
                             not_in_collection = true
                     else
                         # Not currently selected; check shelf only
-                        not_in_collection = not @builder.collection.checkShelf('ship', obj.english_name)
+                        not_in_collection = not @builder.collection.checkShelf('ship', obj.name)
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
@@ -2516,11 +2516,11 @@ class Ship
                     if obj.id == @pilot?.id
                         # Currently selected pilot; mark as not in collection if it's neither
                         # on the shelf nor on the table
-                        unless (@builder.collection.checkShelf('pilot', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                        unless (@builder.collection.checkShelf('pilot', obj.name) or @builder.collection.checkTable('pilot', obj.name))
                             not_in_collection = true
                     else
                         # Not currently selected; check shelf only
-                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.english_name)
+                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.name)
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
@@ -2532,7 +2532,7 @@ class Ship
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
-            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.english_name} if select2_data?.id?
+            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.name} if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
         @pilot_selector.data('select2').container.on 'touchmove', (e) =>
@@ -3186,11 +3186,11 @@ class GenericAddon
                 if obj.id == @data?.id
                     # Currently selected card; mark as not in collection if it's neither
                     # on the shelf nor on the table
-                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name))
                         not_in_collection = true
                 else
                     # Not currently selected; check shelf only
-                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
+                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
                     #and (@ship.builder.collection.checkcollection?) 
             else
