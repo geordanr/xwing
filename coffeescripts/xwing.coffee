@@ -1350,7 +1350,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
@@ -1385,7 +1385,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_modifications_in_use = (modification.data for modification in ship.modifications when modification?.data?.limited?)
 
-        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when ( @matcher(modification_name, term) or (modification.display_name and @matcher(modification.display_name, term)) ) and (not modification.ship? or modification.ship == ship.data.name) and (not @isSecondEdition or exportObj.secondEditionCheck(modification)))
+        available_modifications = (modification for modification_name, modification of exportObj.modifications when ( @matcher(modification_name, term) or (modification.display_name and @matcher(modification.display_name, term)) ) and (not modification.ship? or modification.ship == ship.data.name) and (not @isSecondEdition or exportObj.secondEditionCheck(modification)))
 
         if filter_func != @dfl_filter_func
             available_modifications = (modification for modification in available_modifications when filter_func(modification))
@@ -1412,7 +1412,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         # Titles are no longer unique!
         limited_titles_in_use = (title.data for title in ship.titles when title?.data?.limited?)
-        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when (not title.ship? or title.ship == ship.data.name) and ( @matcher(title_name, term) or (title.display_name and @matcher(title.display_name, term))) )
+        available_titles = (title for title_name, title of exportObj.titles when (not title.ship? or title.ship == ship.data.name) and ( @matcher(title_name, term) or (title.display_name and @matcher(title.display_name, term))) )
 
         eligible_titles = (title for title_name, title of available_titles when (not title.unique? or (title not in @uniques_in_use['Title'] and title.canonical_name.getXWSBaseName() not in (t.canonical_name.getXWSBaseName() for t in @uniques_in_use['Title'])) or title.canonical_name.getXWSBaseName() == include_title?.canonical_name.getXWSBaseName()) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship) and title not in limited_titles_in_use)
 
@@ -2313,7 +2313,7 @@ class Ship
         @setPilot exportObj.pilotsById[parseInt id]
 
     setPilotByName: (name) ->
-        @setPilot exportObj.pilotsByLocalizedName[$.trim name]
+        @setPilot exportObj.pilots[$.trim name]
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
@@ -3499,7 +3499,7 @@ class exportObj.Upgrade extends GenericAddon
         @slot = args.slot
         @type = 'Upgrade'
         @dataById = exportObj.upgradesById
-        @dataByName = exportObj.upgradesByLocalizedName
+        @dataByName = exportObj.upgrades
         @serialization_code = 'U'
 
         @setupSelector()
@@ -3542,7 +3542,7 @@ class exportObj.Title extends GenericAddon
         super args
         @type = 'Title'
         @dataById = exportObj.titlesById
-        @dataByName = exportObj.titlesByLocalizedName
+        @dataByName = exportObj.titles
         @serialization_code = 'T'
 
         @setupSelector()

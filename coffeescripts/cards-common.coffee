@@ -7248,11 +7248,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     exportObj.expansions = {}
 
     exportObj.pilotsById = {}
-    exportObj.pilotsByLocalizedName = {}
     for pilot_name, pilot of exportObj.pilots
         exportObj.fixIcons pilot
         exportObj.pilotsById[pilot.id] = pilot
-        exportObj.pilotsByLocalizedName[pilot.name] = pilot
         for source in pilot.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
@@ -7271,11 +7269,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         
 
     exportObj.upgradesById = {}
-    exportObj.upgradesByLocalizedName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         exportObj.fixIcons upgrade
         exportObj.upgradesById[upgrade.id] = upgrade
-        exportObj.upgradesByLocalizedName[upgrade.name] = upgrade
         for source in upgrade.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
@@ -7290,7 +7286,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
 
     exportObj.modificationsById = {}
-    exportObj.modificationsByLocalizedName = {}
     for modification_name, modification of exportObj.modifications
         exportObj.fixIcons modification
         # Modifications cannot be added to huge ships unless specifically allowed
@@ -7301,7 +7296,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             modification.restriction_func = (ship) ->
                 not (ship.data.huge ? false)
         exportObj.modificationsById[modification.id] = modification
-        exportObj.modificationsByLocalizedName[modification.name] = modification
         for source in modification.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
@@ -7314,11 +7308,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         (exportObj.modificationsByUniqueName ?= {})[modification.canonical_name.getXWSBaseName()] = modification
 
     exportObj.titlesById = {}
-    exportObj.titlesByLocalizedName = {}
     for title_name, title of exportObj.titles
         exportObj.fixIcons title
         exportObj.titlesById[title.id] = title
-        exportObj.titlesByLocalizedName[title.name] = title
         for source in title.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
