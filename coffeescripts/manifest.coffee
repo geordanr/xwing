@@ -3498,32 +3498,6 @@ exportObj.manifestByExpansion =
 
 
 class exportObj.Collection
-    # collection = new exportObj.Collection
-    #   expansions:
-    #     "Core": 2
-    #     "TIE Fighter Expansion Pack": 4
-    #     "B-Wing Expansion Pack": 2
-    #   singletons:
-    #     ship:
-    #       "T-70 X-Wing": 1
-    #     pilot:
-    #       "Academy Pilot": 16
-    #     upgrade:
-    #       "C-3PO": 4
-    #       "Gunner": 5
-    #     title:
-    #       "TIE/x1": 1
-    #
-    # # or
-    #
-    # collection = exportObj.Collection.load(backend)
-    #
-    # collection.use "pilot", "Red Squadron Pilot"
-    # collection.use "upgrade", "R2-D2"
-    # collection.use "upgrade", "Ion Pulse Missiles" # returns false
-    #
-    # collection.release "pilot", "Red Squadron Pilot"
-    # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
         @expansions = args.expansions ? {}
@@ -3773,26 +3747,6 @@ class exportObj.Collection
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
             $(row).find('.upgrade-name').data 'name', expansion
             upgradecollection_content.append row
-
-        ###titlecollection_content = $ @modal.find('.collection-title-content')
-        for title in singletonsByType.title
-            count = parseInt(@singletons.title?[title] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="title-name">#{title}</span>
-                        </label>
-                    </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'title'
-            input.data 'singletonName', title
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.title-name').data 'name', expansion
-            titlecollection_content.append row###
 
     destroyUI: ->
         @modal.modal 'hide'

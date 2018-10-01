@@ -1126,7 +1126,5 @@ exportObj.cardLoaders.Magyar = () ->
            text: '''(Akna jelző) - Miután egy hajó átmozog vagy átfedésbe kerül ezzel az eszközzel, az felrobban. Amikor ez az eszköz felrobban, a hajó elszenved 1 %HIT% sérülést és kap 3 ion jelzőt.'''
         'Proximity Mine':
            text: '''(Akna jelző) - Miután egy hajó átmozog vagy átfedésbe kerül ezzel az eszközzel,  az felrobban. Amikor ez az eszköz felrobban, a hajó dob 2 támadókockával, aztán elszenved 1 %HIT%, valamint a dobott eremény szerint 1-1 %HIT%/%CRIT% sérülést.'''
-            
-    title_translations =
-            
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, title_translations, 
+                        
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations,  

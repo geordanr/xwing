@@ -1223,7 +1223,5 @@ exportObj.cardLoaders['Français'] = () ->
         'Proximity Mine':
            display_name: 'Mine de proximité'
            text: '''(Mine) - Après qu’un vaisseau a chevauché ou s’est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d’attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
-
-    title_translations =
-            
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, title_translations
+       
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, 
