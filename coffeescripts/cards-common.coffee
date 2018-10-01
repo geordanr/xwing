@@ -7145,16 +7145,12 @@ exportObj.basicCardData = ->
         }
     ]
 
-    modificationsById: [
-
-    ]
-
     titlesById: [
 
     ]
 
 
-exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations) ->
+exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations, title_translations) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
         if pilot_data.id != i
@@ -7165,9 +7161,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for title_data, i in basic_cards.titlesById
         if title_data.id != i
             throw new Error("ID mismatch: title at index #{i} has ID #{title_data.id}")
-    for modification_data, i in basic_cards.modificationsById
-        if modification_data.id != i
-            throw new Error("ID mismatch: modification at index #{i} has ID #{modification_data.id}")
     for condition_data, i in basic_cards.conditionsById
         if condition_data.id != i
             throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
@@ -7188,14 +7181,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             upgrade_data.sources = []
             upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
             exportObj.upgrades[upgrade_data.name] = upgrade_data
-
-    exportObj.modifications = {}
-    for modification_data in basic_cards.modificationsById
-        unless modification_data.skip?
-            modification_data.sources = []
-            modification_data.canonical_name = modification_data.name.canonicalize() unless modification_data.canonical_name?
-            exportObj.modifications[modification_data.name] = modification_data
-
+        
     exportObj.titles = {}
     for title_data in basic_cards.titlesById
         unless title_data.skip?
@@ -7225,8 +7211,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                         exportObj.pilots[card.name].sources.push expansion
                     when 'upgrade'
                         exportObj.upgrades[card.name].sources.push expansion
-                    when 'modification'
-                        exportObj.modifications[card.name].sources.push expansion
                     when 'title'
                         exportObj.titles[card.name].sources.push expansion
                     when 'ship'
@@ -7239,8 +7223,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for name, card of exportObj.pilots
         card.sources = card.sources.sort()
     for name, card of exportObj.upgrades
-        card.sources = card.sources.sort()
-    for name, card of exportObj.modifications
         card.sources = card.sources.sort()
     for name, card of exportObj.titles
         card.sources = card.sources.sort()
@@ -7284,28 +7266,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         (exportObj.upgradesBySlotCanonicalName[upgrade.slot] ?= {})[upgrade.canonical_name] = upgrade
         (exportObj.upgradesBySlotXWSName[upgrade.slot] ?= {})[upgrade.xws] = upgrade
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
-
-    exportObj.modificationsById = {}
-    for modification_name, modification of exportObj.modifications
-        exportObj.fixIcons modification
-        # Modifications cannot be added to huge ships unless specifically allowed
-        if modification.huge?
-            unless modification.restriction_func?
-                modification.restriction_func = exportObj.hugeOnly
-        else unless modification.restriction_func?
-            modification.restriction_func = (ship) ->
-                not (ship.data.huge ? false)
-        exportObj.modificationsById[modification.id] = modification
-        for source in modification.sources
-            exportObj.expansions[source] = 1 if source not of exportObj.expansions
-    if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
-        throw new Error("At least one modification shares an ID with another")
-
-    exportObj.modificationsByCanonicalName = {}
-    exportObj.modificationsByUniqueName = {}
-    for modification_name, modification of exportObj.modifications
-        (exportObj.modificationsByCanonicalName ?= {})[modification.canonical_name] = modification
-        (exportObj.modificationsByUniqueName ?= {})[modification.canonical_name.getXWSBaseName()] = modification
 
     exportObj.titlesById = {}
     for title_name, title of exportObj.titles
@@ -7373,15 +7333,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 exportObj.titles[title_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for title #{title_name}"
-                throw e
-
-    for modification_name, translations of modification_translations
-        exportObj.fixIcons translations
-        for field, translation of translations
-            try
-                exportObj.modifications[modification_name][field] = translation
-            catch e
-                console.error "Cannot find translation for attribute #{field} for modification #{modification_name}"
                 throw e
 
     for pilot_name, translations of pilot_translations

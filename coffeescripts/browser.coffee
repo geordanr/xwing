@@ -7,7 +7,7 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades', 'modifications', 'titles' ]
+TYPES = [ 'pilots', 'upgrades', 'titles' ]
 
 byName = (a, b) ->
     a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
@@ -179,7 +179,7 @@ class exportObj.CardBrowser
             else
                 @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
-        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Modification', 'Title' ])
+        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Title' ])
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate @language, 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
