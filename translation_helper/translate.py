@@ -25,11 +25,11 @@ args = parser.parse_args()
 lang = args.language
 
 # load cards in destination language
-data_translation = json.load(open('api_export_' + lang + '.json',encoding="utf8"))
+data_translation = json.load(open('api_export_' + lang + '.json', encoding="utf8"))
 cards_translation = data_translation["cards"]
 
 # load english cards
-data_en = json.load(open('api_export_en.json', encoding = "utf8"))
+data_en = json.load(open('api_export_en.json', encoding="utf8"))
 cards_en = data_en["cards"]
 
 # sort german cards by id
@@ -39,7 +39,7 @@ for card in cards_translation:
 
 # store what we need to manually post-process (e.g.  FFG differs L3-37
 # Escapecraft/Falcon by ID, YASB differs by postfix "(Escape Craft)"
-manual_stuff = "Please edit the following cards manually: \nL3-37's programming\n"
+manual_stuff = "Please edit the following cards manually: \nL3-37's programming: Merge into L3-37\n"
 
 # search for double names
 pilot_name_list = {}
@@ -48,21 +48,21 @@ pilot_name_list = {}
 cards_en = sorted(cards_en, key=lambda k: k['name'])
 
 # load names changed by yasb
-renamed_cards = json.load(open('renamed_cards.json', encoding = "utf8"))
+renamed_cards = json.load(open('renamed_cards.json', encoding="utf8"))
 
 # load ship translations
-ship_translations = json.load(open('ship_translations.json', encoding = "utf8"))
+ship_translations = json.load(open('ship_translations.json', encoding="utf8"))
 
 # load phrase translations by language
-phrase_translation_array = json.load(open('phrase_translations.json',encoding="utf8"))['phrases']
-phrase_translations = choose_by_language(phrase_translation_array,lang)
+phrase_translation_array = json.load(open('phrase_translations.json', encoding="utf8"))['phrases']
+phrase_translations = choose_by_language(phrase_translation_array, lang)
 
 # store what we will later use as .coffee
 output_text = ""
 
 # create ship translations
-for k,ship in ship_translations.items():
-    output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'],ship['name_' + lang])
+for k, ship in ship_translations.items():
+    output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'], ship['name_' + lang])
 
 output_text += "\n\n    pilot_translations =\n"
 
@@ -85,12 +85,13 @@ for card_en in cards_en:
         card_en["name"] = renamed_cards[str(card_en["id"])]
         if re.findall(".*?( \(.*\)).*", card_en["name"]):
             # rename translated card, add the (...) to the translated name
-            card_translation["name"] += re.sub(".*?( \(.*\)).*",r"\1",card_en["name"])
+            card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
 
     # translate
     output_text += ('        "%s":\n' % card_en["name"])
-    output_text += ('           name: """%s"""\n' % card_translation["name"])
-    output_text += ('           ship: """%s"""\n' % ship_translations[str(card_en["ship_type"])]["name_" + lang])
+    output_text += ('           display_name: """%s"""\n' % card_translation["name"])
+    # output_text += (' ship: """%s"""\n' %
+    # ship_translations[str(card_en["ship_type"])]["name_" + lang])
     output_text += ('           text: """%s"""\n' % card_translation["ability_text"])
 
     # check for double names
@@ -119,11 +120,13 @@ for card_en in cards_en:
         card_en["name"] = renamed_cards[str(card_en["id"])]
         if re.findall(".*?( \(.*\)).*", card_en["name"]):
             # rename translated card, add the (...) to the translated name
-            card_translation["name"] += re.sub(".*?( \(.*\)).*",r"\1",card_en["name"])
+            card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
+
+    card_en["name"] = card_en["name"].replace('’', "'")
 
     # translate name
     output_text += ('        "%s":\n' % card_en["name"])
-    output_text += ('           name: """%s"""\n' % card_translation["name"])
+    output_text += ('           display_name: """%s"""\n' % card_translation["name"])
 
     # check if card has requirements
     if card_en["restrictions"]:
@@ -134,27 +137,18 @@ for card_en in cards_en:
         # faction + card (e.g.  scum or contains vader)
         for restriction in card_en["restrictions"]:
             # if restricted to ship type (e.g.  titles), add a line to the
-            # translation specifying the ship
-            if restriction[0]["type"] == "SHIP_TYPE":
-                if len(restriction) == 1:
-                    output_text += ('           ship: """%s"""\n' % ship_translations[str(restriction[0]["kwargs"]["pk"])]["name_" + lang])
-                if len(restriction) > 1:
-                    ships = ""
-                    for ship in restriction:
-                        if ships:
-                            ships += ", "
-                        ships += '"""%s"""' % (ship_translations[str(ship["kwargs"]["pk"])]["name_" + lang])
-                    output_text += '           ship: [ %s ]\n' % ships
+            # translation specifying the ship.  No longer needed, as we do not
+            # change ship names, but ship display_names - so we keep the
+            # english logic of ship to ugrade associations
             # if restricted to given actions, add a note to the text
-            elif restriction[0]["type"] == "ACTION":
+            if restriction[0]["type"] == "ACTION":
                 actions = ""
                 for action in restriction:
                     if actions:
                         actions += " %s " % phrase_translations["or"]
                     actions += ("<r>%s</r>" if action["kwargs"]["side_effect_name"] == "STRESS" else "%s") % \
                                actions_by_id[action["kwargs"]["pk"]]
-                card_translation["ability_text"] = "<i>" + phrase_translations["requires"] % actions + "</i>" + "%LINEBREAK%" + \
-                                          card_translation["ability_text"]
+                card_translation["ability_text"] = "<i>" + phrase_translations["requires"] % actions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
             # if restricted to given base size, add a note to the text
             elif restriction[0]["type"] == "SHIP_SIZE":
                 sizes = ""
@@ -162,8 +156,7 @@ for card_en in cards_en:
                     if sizes:
                         sizes += " %s " % phrase_translations["or"]
                     sizes += phrase_translations[size["kwargs"]["ship_size_name"]]
-                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % sizes + "</i>" + "%LINEBREAK%" + \
-                                          card_translation["ability_text"]
+                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % sizes + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
             # if restricted to faction, add a note.  Also covers restrictions
             # on specific cards.
             elif restriction[0]["type"] == "FACTION" or restriction[0]["type"] == "CARD_INCLUDED":
@@ -181,8 +174,7 @@ for card_en in cards_en:
                         factions += " %s " % phrase_translations["or"]
                     factions += (phrase_translations[faction["kwargs"]["name"]] if faction["type"] == "FACTION" else
                                  phrase_translations["contains"] % cards_translation_by_id[faction["kwargs"]["pk"]]["name"])
-                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % factions + "</i>" + "%LINEBREAK%" + \
-                                                   card_translation["ability_text"]
+                card_translation["ability_text"] = "<i>" + phrase_translations["only"] % factions + "</i>" + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to find cards, that add actions
     if card_en["available_actions"]:
@@ -199,23 +191,23 @@ for card_en in cards_en:
                 actions += (linked_stress + "&nbsp;<r>%s</r>" if action["related_action_side_effect"] == "stress"
                             else linked + "&nbsp;'%s") % actions_by_id[action["related_action_id"]]
         card_translation["ability_text"] = "<i>" + phrase_translations["adds"] % actions + "</i>%LINEBREAK%" + \
-                                  card_translation["ability_text"]
+                                           card_translation["ability_text"]
 
     # check for double names
     if card_en["name"] in upgrade_name_list:
-        manual_stuff += ('Found upgrade name multiple times: %s\n' % card_en["name"])
+        manual_stuff += ('%s: Found upgrade name multiple times:\n' % card_en["name"])
     upgrade_name_list[card_en["name"]] = True
 
     # check for variable point costs
     if card_en["cost"] == "*":
-        manual_stuff += ('Found upgrade with variable point costs: %s\n' % card_en["name"])
+        manual_stuff += ('%s: Variable costs. Added default phrase, you may want to specify on what the point costs depend.\n' % card_en["name"])
         card_translation["ability_text"] = phrase_translations["variable_cost"] + "%LINEBREAK%" + card_translation["ability_text"]
 
     # try to check for double-sided cards
     if "(" in card_en["name"]:
         simple_name = re.sub('\(.*?\)', '', card_en["name"])
-        if (simple_name in possible_double_sided_list):
-            manual_stuff += 'Probably found double sided upgrade: %s\n' % simple_name
+        if simple_name in possible_double_sided_list:
+            manual_stuff += '%s: Probably double-sided. YASB wants you to merge double-sided-cards together into one. \n' % simple_name
         possible_double_sided_list[simple_name] = True
 
     # write translated text (requirements etc have been added to text)
@@ -286,22 +278,21 @@ output_text = output_text.replace('<crit>', '%CRIT%')
 
 # Change quotes and some special chars in Names, to match the YASB scheme (e.g.
 # replace '“Zeb” Orrelios' with '"Zeb" Orrelios')
-output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r"""'\1"\2"\3'""", output_text)
-output_text = output_text.replace('’', "'")
+output_text = re.sub('[^"]"([^"]*?)“(.*?)”(.*?)"', r""" '\1"\2"\3'""", output_text)
 output_text = output_text.replace('–', "-")
 
 # Remove unique dots
 output_text = output_text.replace('•', '')
 
 # Add known typos to the ToDo
-known_typos = json.load(open('known_typos.json', encoding = "utf8"))[lang]
-if known_typos :
+known_typos = json.load(open('known_typos.json', encoding="utf8"))[lang]
+if known_typos:
     manual_stuff += "Be aware of the following typos! You need to fix them before merging:\n"
 for typo in known_typos:
     manual_stuff += ('%s\n' % typo)
 
 # write output
-output_file = open("translation.coffee","w",encoding="utf8")
+output_file = open("translation.coffee", "w", encoding="utf8")
 output_file.write(output_text)
 output_file.close()
 

@@ -105,9 +105,8 @@ exportObj.translations['Français'] =
         '.collection-invalid .translated': 'Vous ne pouvez pas ajouter cette liste à votre collection !'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Standard'
+        '.game-type-selector option[value="second_edition"]': 'Seconde Édition'
         '.game-type-selector option[value="custom"]': 'Personnalisé'
-        '.game-type-selector option[value="epic"]': 'Épique'
-        '.game-type-selector option[value="team-epic"]': 'Épique en équipe'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
@@ -145,7 +144,7 @@ exportObj.translations['Français'] =
         '#aboutTab' : 'À propos'
         # Obstacles
         '.choose-obstacles' : 'Choisir des obstacles'
-        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.'
+        '.choose-obstacles-description' : 'Choisir jusqu\'à trois obstacles à inclure dans le lien permanent à utiliser dans des programmes externes. (Cette fonctionnalité est en beta ; l\'affichage des obstacles sélectionnés dans l\'impression n\'est pas encore supporté.)'
         '.coreasteroid0-select' : 'Core Asteroid 0'
         '.coreasteroid1-select' : 'Core Asteroid 1'
         '.coreasteroid2-select' : 'Core Asteroid 2'
@@ -166,7 +165,7 @@ exportObj.translations['Français'] =
         '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
         # Import/Export
         '.from-xws' : 'Importer depuis XWS (beta)'
-        '.to-xws' : 'Importer vers XWS (beta)'
+        '.to-xws' : 'Exporter vers XWS (beta)'
 
     singular:
         'pilots': 'Pilotes'
@@ -190,7 +189,7 @@ exportObj.cardLoaders['Français'] = () ->
 
     # Rename ships (below is an example of what it should look like. uncomment 
     # the # on the line to make it active. You must have all pilots that use the 
-    # translated ship name use the tag ship:"Translated ship name")
+    # translated ship name use the tag # ship:"Translated ship name")
 
     # exportObj.renameShip 'Z-95 Headhunter', 'Chasseur de têtes Z-95'
     # exportObj.renameShip 'Attack Shuttle', 'Navette d\'attaque'
@@ -231,8 +230,8 @@ exportObj.cardLoaders['Français'] = () ->
         "4-LOM":
            text: """After you fully execute a red maneuver, gain 1 calculate token. At the start of the End Phase, you may choose 1 ship at range 0-1. If you do, transfer 1 of your stress tokens to that ship."""
         "Academy Pilot":
-           name: "Pilote de l'académie"
-           ship: "Chasseur TIE"
+           display_name: "Pilote de l'académie"
+           # ship: "Chasseur TIE"
            text: """ """
         "Airen Cracken":
            text: """After you perform an attack, you may choose 1 friendly ship at range 1. That ship may perform an action, treating it as red."""
@@ -245,8 +244,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Asajj Ventress":
            text: """At the start of the Engagement Phase, you may choose 1 enemy ship in your %SINGLETURRETARC% at range 0-2 and spend 1 %FORCE% token. If you do, that ship gains 1 stress token unless it removes 1 green token."""
         "Autopilot Drone":
-           name: "Drone Automatique"
-           ship: "Vaisseau de secours"
+           display_name: "Drone Automatique"
+           # ship: "Vaisseau de secours"
            text: """Cellules Énergétiques Bidouillées : pendant la phase de système, si vous n’êtes pas arrimé, perdez 1 %CHARGE%. À la fin de la phase d’activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0–1 subit 1 dégât %CRIT%."""
         "Bandit Squadron Pilot":
            text: """ """
@@ -259,8 +258,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Binayre Pirate":
            text: """ """
         "Black Squadron Ace":
-           name: "As de l’Escadron Noir"
-           ship: "Chasseur TIE"
+           display_name: "As de l’Escadron Noir"
+           # ship: "Chasseur TIE"
            text: """ """
         "Black Squadron Scout":
            text: """ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
@@ -275,7 +274,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Blade Squadron Veteran":
            text: """ """
         "Blue Squadron Escort":
-           name: "Escorte de l’Escadron Bleu"
+           display_name: "Escorte de l’Escadron Bleu"
            text: """ """
         "Blue Squadron Pilot":
            text: """ """
@@ -288,7 +287,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Bossk":
            text: """While you perform a primary attack, after the Neutralize Results step, you may spend 1 %CRIT% result to add 2 %HIT% results."""
         "Bounty Hunter":
-           name: "Chasseur de Primes"
+           display_name: "Chasseur de Primes"
            text: """ """
         "Braylen Stramm":
            text: """While you defend or perform an attack, if you are stressed, you may reroll up to 2 of your dice."""
@@ -305,7 +304,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Captain Oicunn":
            text: """You can perform primary attacks at range 0."""
         "Captain Rex":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """After you perform an attack, assign the Suppressive Fire condition to the defender."""
         "Cartel Executioner":
            text: """DEAD TO RIGHTS: While you perform an attack, if the defender is in your %BULLSEYEARC%, defense dice cannot be modified using green tokens."""
@@ -354,7 +353,7 @@ exportObj.cardLoaders['Français'] = () ->
         '"Deathrain"':
            text: """After you drop or launch a device, you may perform an action."""
         "Del Meeko":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant qu’un vaisseau allié à portée 0–2 défend contre un attaquant endommagé, le défenseur peut relancer 1 dé de défense."""
         "Delta Squadron Pilot":
            text: """FULL THROTTLE: After you FULLY execute a speed 3-5 maneuver, you may perform an %EVADE% action."""
@@ -383,16 +382,16 @@ exportObj.cardLoaders['Français'] = () ->
         "Ezra Bridger (Sheathipede)":
            text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE%/%HIT% results. %LINEBREAK% COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         "Ezra Bridger (TIE Fighter)":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """While you defend or perform an attack, if you are stressed, you may spend 1 %FORCE% to change up to 2 of your %FOCUS% results to %EVADE% or %HIT% results."""
         "Fenn Rau":
-           ship: "Chasseur Fang"
+           # ship: "Chasseur Fang"
            text: """Tant que vous défendez ou effectuez une attaque, si la portée d’attaque est 1, vous pouvez lancer 1 dé supplémentaire. %LINEBREAK% CONCORDIA FACEOFF: Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Fenn Rau (Sheathipede)":
            text: """After an enemy ship in your firing arc engages, if you are not stressed, you may gain 1 stress token. If you do, that ship cannot spend tokens to modify dice while it performs an attack during this phase. %LINEBREAK% COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         "Freighter Captain":
-           name: "Capitaine de Cargo"
-           ship: "YT-1300 (Racailles)"
+           display_name: "Capitaine de Cargo"
+           # ship: "YT-1300 (Racailles)"
            text: """ """
         "Gamma Squadron Ace":
            text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% tempate of the same speed instead."""
@@ -407,15 +406,15 @@ exportObj.cardLoaders['Français'] = () ->
         "Genesis Red":
            text: """After you acquire a lock, you must remove all of your focus and evade tokens. Then gain the same number of focus and evade tokens that the locked ship has. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Gideon Hask":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant que vous effectuez une attaque contre un défenseur endommagé, lancez 1 dé d’attaque supplémentaire."""
         "Gold Squadron Veteran":
-           name: "Vétéran de l’Escadron Or"
+           display_name: "Vétéran de l’Escadron Or"
            text: """ """
         "Grand Inquisitor":
            text: """While you defend at attack range 1, you may spend 1 %FORCE% to prevent the range 1 bonus. While you perform an attack against a defender at attack range 2-3, you may spend 1 %FORCE% to apply the range 1 bonus."""
         "Gray Squadron Bomber":
-           name: "Bombardier de l’Escadron Gris"
+           display_name: "Bombardier de l’Escadron Gris"
            text: """ """
         "Graz":
            text: """While you defend, if you are behind the attacker, roll 1 additional defense die. While you perform an attack, if you are behind the defender roll 1 additional attack die."""
@@ -424,8 +423,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Guri":
            text: """At the start of the Engagement Phase, if there is at least 1 enemy ship at range 0-1, you may gain 1 focus token.  %LINEBREAK% MICROTHRUSTERS: While you perform a barrel roll, you MUST use the (1 %BANKLEFT%) or (1 %BANKRIGHT%) template instead of the [1 %STRAIGHT%] template."""
         "Han Solo (Scum)":
-           name: "Han Solo (Racailles)"
-           ship: "YT-1300 (Racailles)"
+           display_name: "Han Solo (Racailles)"
+           # ship: "YT-1300 (Racailles)"
            text: """Tant que vous défendez ou effectuez une attaque principale, si l’attaque est gênée par un obstacle, vous pouvez lancer 1 dé supplémentaire."""
         "Han Solo":
            text: """After you roll dice, if you are at range 0-1 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects."""
@@ -440,12 +439,12 @@ exportObj.cardLoaders['Français'] = () ->
         "Horton Salm":
            text: """Tant que vous effectuez une attaque, vous pouvez relancer 1 dé d’attaque pour chaque autre vaisseau allié à portée 0–1 du défenseur."""
         '"Howlrunner"':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant qu’un vaisseau allié à portée 0–1 effectue une attaque principale, il peut relancer 1 dé d’attaque."""
         "Ibtisam":
            text: """After you fully execute a maneuver, if you are stressed, you may roll 1 attack die. On a %HIT% or %CRIT% result, remove 1 stress token."""
         "Iden Versio":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Avant qu’un chasseur TIE/ln allié à portée 0–1 ne subisse 1 ou plusieurs dégâts, vous pouvez dépenser 1 %CHARGE%. Dans ce cas, prévenez ce dégât."""
         "IG-88A":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship with %CALCULATE% on its action bar at range 1-3. If you do, transfer 1 of your calculate tokens to it. %LINEBREAK% ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
@@ -470,12 +469,12 @@ exportObj.cardLoaders['Français'] = () ->
         "Jek Porkins":
            text: """Après avoir reçu un marqueur de stress, vous pouvez lancer 1 dé d’attaque pour le retirer. Sur un résultat %HIT%, subissez 1 dégat %HIT%."""
         "Joy Rekkoff":
-           ship: "Chasseur Fang"
+           # ship: "Chasseur Fang"
            text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% d’une amélioration %TORPEDO% équipée. Dans ce cas, le défenseur lance 1 dé de défense en moins. %LINEBREAK% Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Kaa'to Leeachos":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 0-2. If you do, transfer 1 focus or evade token from that ship to yourself."""
         "Kad Solus":
-           ship: "Chasseur Fang"
+           # ship: "Chasseur Fang"
            text: """Après avoir entièrement exécuté une manœuvre rouge, gagnez 2 marqueurs de concentration. %LINEBREAK% Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Kanan Jarrus":
            text: """While a friendly ship in your firing arc defends, you may spend 1 %FORCE%. If you do, the attacker rolls 1 fewer attack die. TAIL GUN: While you have a docked ship, you have a primary %REARARC% weapon with an attack value equal to your docked ship's Primary %FRONTARC% attack value."""
@@ -498,23 +497,23 @@ exportObj.cardLoaders['Français'] = () ->
         "Kyle Katarn":
            text: """At the start of the Engagement Phase, you may transfer 1 of your focus tokens to a friendly ship in your firing arc."""
         "L3-37 (Escape Craft)":
-           name: "L3-37 (Vaisseau de secours)"
-           ship: "Vaisseau de secours"
+           display_name: "L3-37 (Vaisseau de secours)"
+           # ship: "Vaisseau de secours"
            text: """Si vous n'êtes pas protégé, diminuez la difficulté de vos manœuvres de virages sur l’aile (%BANKLEFT% and %BANKRIGHT%). %LINEBREAK% COPILOTE: tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
         "L3-37":
-           ship: "YT-1300 (Racailles)"
+           # ship: "YT-1300 (Racailles)"
            text: """Si vous n'êtes pas protégé, diminuez la difficulté de vos manœuvres de virages sur l’aile (%BANKLEFT% and %BANKRIGHT%)."""
         "Laetin A'shera":
            text: """After you defend or perform an attack, if the attack missed, gain 1 evade token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Lando Calrissian (Scum) (Escape Craft)":
-           name: "Lando Calrissian (Racailles) (Vaisseau de secours)"
-           ship: "Vaisseau de secours"
+           display_name: "Lando Calrissian (Racailles) (Vaisseau de secours)"
+           # ship: "Vaisseau de secours"
            text: """Après avoir lancé des dés, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour relancer tous vos résultats vierges. %LINEBREAK% COPILOTE: tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
         "Lando Calrissian":
            text: """After you fully execute a blue maneuver, you may choose a friendly ship at range 0-3. That ship may perform an action."""
         "Lando Calrissian (Scum)":
-           name: "Lando Calrissian (Racailles)"
-           ship: "YT-1300 (Racailles)"
+           display_name: "Lando Calrissian (Racailles)"
+           # ship: "YT-1300 (Racailles)"
            text: """Après avoir lancé des dés, si vous n’êtes pas stressé, vous pouvez gagner 1 marqueur de stress pour relancer tous vos résultats vierges."""
         "Latts Razzi":
            text: """At the start of the Engagement Phase, you may choose a ship at range 1 and spend a lock you have on that ship. If you do, that ship gains 1 tractor token."""
@@ -551,7 +550,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Manaroo":
            text: """At the start of the Engagement Phase, you may choose a friendly ship at range 0-1. If you do, transfer all green tokens assigned to you to that ship."""
         '"Mauler" Mithel':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant que vous effectuez une attaque à portée d’attaque 1, lancez 1 dé d’attaque supplémentaire."""
         "Miranda Doni":
            text: """While you perform a primary attack, you may either spend 1 shield to roll 1 additional attack die or, if you are not shielded, you may roll 1 fewer attack die to recover 1 shield."""
@@ -562,7 +561,7 @@ exportObj.cardLoaders['Français'] = () ->
         "N'dru Suhlak":
            text: """While you perform a primary attack, if there are no other friendly ships at range 0-2, roll 1 additional attack die."""
         '"Night Beast"':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Après avoir entièrement exécuté une manœuvre bleue, vous pouvez effectuer une action %FOCUS%."""
         "Norra Wexley":
            text: """Tant que vous défendez, si un vaisseau ennemi est à portée 0–1, ajoutez 1 résultat %EVADE% à vos résultats de dés."""
@@ -571,12 +570,12 @@ exportObj.cardLoaders['Français'] = () ->
         "Nu Squadron Pilot":
            text: """ """
         "Obsidian Squadron Pilot":
-           name: "Pilote de l’Escadron Obsidian"
-           ship: "Chasseur TIE"
+           display_name: "Pilote de l’Escadron Obsidian"
+           # ship: "Chasseur TIE"
            text: """ """
         "Old Teroch":
-           name: "Vieux Teroch"
-           ship: "Chasseur Fang"
+           display_name: "Vieux Teroch"
+           # ship: "Chasseur Fang"
            text: """Au début de la phase d’engagement, vous pouvez choisir 1 vaisseau ennemi à portée 1. Dans ce cas, si vous êtes dans son , il retire tous ses marqueurs verts. %LINEBREAK% Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Omicron Group Pilot":
            text: """ """
@@ -585,8 +584,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Onyx Squadron Scout":
            text: """ """
         "Outer Rim Pioneer":
-           name: "Colon de la Bordure Extérieure"
-           ship: "Vaisseau de secours"
+           display_name: "Colon de la Bordure Extérieure"
+           # ship: "Vaisseau de secours"
            text: """Les vaisseaux alliés à portée 0–1 peuvent effectuer des attaques en étant à portée 0 des obstacles. %LINEBREAK% COPILOTE: tant que vous êtes arrimé, votre vaisseau porteur bénéficie de votre capacité de pilote en plus de la sienne."""
         "Outer Rim Smuggler":
            text: """ """
@@ -611,7 +610,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Rebel Scout":
            text: """ """
         "Red Squadron Veteran":
-           name: "Vétéran de l’Escadron Rouge"
+           display_name: "Vétéran de l’Escadron Rouge"
            text: """ """
         '"Redline"':
            text: """You can maintain up to 2 locks. After you perform an action, you may acquire a lock."""
@@ -630,7 +629,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Sabine Wren (Scum)":
            text: """While you defend, if the attacker is in your %SINGLETURRETARC% at range 0-2, you may add 1 %FOCUS% result to your dice results."""
         "Sabine Wren (TIE Fighter)":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Before you activate, you may perform a %BARRELROLL% or %BOOST% action."""
         "Sarco Plank":
            text: """While you defend, you may treat your agility value as equal to the speed of the maneuver you executed this round. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
@@ -641,14 +640,14 @@ exportObj.cardLoaders['Français'] = () ->
         "Scimitar Squadron Pilot":
            text: """NIMBLE BOMBER: If you would drop a device using a %STRAIGHT% template, you may use %BANKLEFT% a or %BANKRIGHT% template of the same speed instead."""
         '"Scourge" Skutu':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant que vous effectuez une attaque contre un défenseur dans votre %BULLSEYEARC%, lancez 1 dé d’attaque supplémentaire."""
         "Serissu":
            text: """While a friendly ship at range 0-1 defends, it may reroll 1 of its dice. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Seventh Sister":
            text: """While you perform a primary attack, before the Neutralize Results step, you may spend 2 %FORCE% to cancel 1 %EVADE% result."""
         "Seyn Marana":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 résultat %CRIT%. Dans ce cas, attribuez 1 carte de dégât face cachée au défenseur, puis annuler vos résultats restants."""
         "Shadowport Hunter":
            text: """Crime syndicates augment the lethal skills of their loyal contractors with the best technology available, like the fast and formidable Lancer-class pursuit craft."""
@@ -659,8 +658,8 @@ exportObj.cardLoaders['Français'] = () ->
         "Sigma Squadron Ace":
            text: """STYGUM ARRAY: After you decloak, you may perform an %EVADE% action. At the Start of the End Phase, you may spend 1 evade token to gain one cloak token."""
         "Skull Squadron Pilot":
-           name: "Pilote de l'Escadron Skull"
-           ship: "Chasseur Fang"
+           display_name: "Pilote de l'Escadron Skull"
+           # ship: "Chasseur Fang"
            text: """Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Sol Sixxa":
            text: """If you would drop a device using a [1 %STRAIGHT%] template, you may drop it using any other speed 1 template instead."""
@@ -669,7 +668,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Spice Runner":
            text: """ """
         "Storm Squadron Ace":
-           name: "As de l'Escadron Storm"
+           display_name: "As de l'Escadron Storm"
            text: """Ordinateur de Visée Avancé : tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Sunny Bounder":
            text: """While you defend or perform an attack, after you roll or reroll your dice, if you have the same result on each of your dice, you may add 1 matching result. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
@@ -682,7 +681,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Tel Trevura":
            text: """If you would be destroyed, you may spend 1 %CHARGE%. If you do, discard all of your damage cards, suffer 5 %HIT% damage, and place yourself in reserves instead. At the start of the next planning phase, place yourself within range 1 of your player edge."""
         "Tempest Squadron Pilot":
-           name: "Pilote de l’Escadron Tempest"
+           display_name: "Pilote de l’Escadron Tempest"
            text: """Ordinateur de Visée Avancé : tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Ten Numb":
            text: """While you defend or perform an attack, you may spend 1 stress token to change all of your %FOCUS% results to %EVADE% or %HIT% results."""
@@ -701,7 +700,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Unkar Plutt":
            text: """At the start of the Engagement Phase, if there are one or more other ships at range 0, you and each other ship at range 0 gain 1 tractor token. %LINEBREAK% SPACETUG TRACTOR ARRAY: ACTION: Choose a ship in your %FRONTARC% at range 1. That ship gains one tractor token, or 2 tractor tokens if it is in your %BULLSEYEARC% at range 1"""
         "Valen Rudor":
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Après qu’un vaisseau allié à portée 0–1 a défendu (après la résolution des dégâts, s’il y en a), vous pouvez effectuer une action."""
         "Ved Foslo":
            text: """Tant que vous exécutez une manœuvre, vous pouvez exécuter une manœuvre de même direction et de même difficulté mais avec une vitesse supérieure ou inférieure de 1 à la place. %LINEBREAK% Ordinateur de Visée Avancé : tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
@@ -710,7 +709,7 @@ exportObj.cardLoaders['Français'] = () ->
         '"Vizier"':
            text: """After you fully execute a speed 1 maneuver using your Adaptive Ailerons ship ability, you may perform a %COORDINATE% action. If you do, skip your Perform Action step. %LINEBREAK% ADAPTIVE AILERONS: Before you reveal your dial, if you are not stressed, you MUST execute a white (1 %BANKLEFT%), (1 %STRAIGHT%) or (1 %BANKRIGHT%)"""
         '"Wampa"':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """Tant que vous effectuez une attaque, vous pouvez dépenser 1 %CHARGE% pour lancer 1 dé d’attaque supplémentaire %LINEBREAK% Après avoir défendu, perdez 1 %CHARGE%."""
         "Warden Squadron Pilot":
            text: """ """
@@ -723,15 +722,15 @@ exportObj.cardLoaders['Français'] = () ->
         "Wullffwarro":
            text: """While you perform a primary attack, if you are damaged, you may roll 1 additional attack die."""
         "Zealous Recruit":
-           name: "Recrue Zélée"
-           ship: "Chasseur Fang"
+           display_name: "Recrue Zélée"
+           # ship: "Chasseur Fang"
            text: """Opposition Concordia : tant que vous défendez, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% de l’attaquant, changez 1 résultat en un résultat %EVADE%."""
         '"Zeb" Orrelios':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% LOCKED AND LOADED: While you are docked, after your carrier ship performs a primary %FRONTARC% or %TURRET% attack, it may perform a bonus %REARARC% attack"""
         '"Zeb" Orrelios (Sheathipede)':
            text: """While you defend, %CRIT% results are neutralized before %HIT% results. %LINEBREAK% COMMS SHUTTLE: While you are docked, your carrier ship gains %COORDINATE%. Before your carrier shpi activates, it may perform a %COORDINATE% action."""
         '"Zeb" Orrelios (TIE Fighter)':
-           ship: "Chasseur TIE"
+           # ship: "Chasseur TIE"
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
         "Zertik Strom":
            text: """Pendant la phase de dénouement, vous pouvez dépenser un marqueur de verrouillage que vous avez sur un vaisseau ennemi pour exposer 1 carte de dégât de ce dernier. %LINEBREAK% Ordinateur de Visée Avancé : tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d’attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
@@ -794,12 +793,12 @@ exportObj.cardLoaders['Français'] = () ->
         "Advanced SLAM":
            text: """<i>Requires: %SLAM%</i> %LINEBREAK% After you perform a %SLAM% action, if you fully executed that maneuver, you may perform a white action on your action bar, treating that action as red."""
         "Afterburners":
-           name: "Postcombustion"
+           display_name: "Postcombustion"
            text: """<i>Requiert : petit vaisseau</i> %LINEBREAK% Après avoir entièrement exécuté une manœuvre à vitesse 3–5, vous pouvez dépenser 1 %CHARGE% pour effectuer une action %BOOST%, même tant que vous êtes stressé."""
         "Agent Kallus":
            text: """Setup: Assign the Hunted condition to 1 enemy ship. While you perform an attack against th eship with the Hunted condition, you may change 1 of your %FOCUS% results to a %HIT% result."""
         "Agile Gunner":
-           name: "Canonnier adroit"
+           display_name: "Canonnier adroit"
            text: """Pendant la phase de dénouement, vous pouvez faire pivoter votre indicateur %SINGLETURRETARC%."""
         "Andrasta":
            text: """<i>Ajoute : %RELOAD%</i> %LINEBREAK% Ajoutez un emplacement %DEVICE%."""
@@ -826,7 +825,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Chewbacca":
            text: """At the start of the Engagement Phase, you may spend 2 %CHARGE% to repair 1 faceup damage card."""
         "Chewbacca (Scum)":
-           name: "Chewbacca (Racailles)"
+           display_name: "Chewbacca (Racailles)"
            text: """Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur de concentration pour réparer 1 de vos cartes de dégât face visible."""
         '"Chopper" (Astromech)':
            text: """Action: Spend 1 non-recurring %CHARGE% from another equipped upgrade to recover 1 shield. Action: Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
@@ -839,26 +838,26 @@ exportObj.cardLoaders['Français'] = () ->
         "Cloaking Device":
            text: """<i>Requires: Small or Medium Base</i> %LINEBREAK% Action: Spend 1 %CHARGE% to perform a %CLOAK% action. At the start of the Planning Phase, roll 1 attack die. On a %FOCUS% result, decloak or discard your cloak token."""
         "Cluster Missiles":
-           name: "Missiles groupés"
+           display_name: "Missiles groupés"
            text: """Attaque (%LOCK%): dépensez 1 %CHARGE%. Après cette attaque, vous pouvez effectuer cette attaque en tant qu’attaque bonus contre une cible différente à portée 0–1 du défenseur, en ignorant le prérequis %LOCK%."""
         "Collision Detector":
            text: """While you boost or barrel roll, you can move through and overlap obstacles. After you move through or overlap an obstacle, you may spend 1 %CHARGE% to ignore its effects until the end of the round."""
         "Composure":
-           name: "Maîtrise de soi"
+           display_name: "Maîtrise de soi"
            text: """<i>Requiert : %FOCUS%</i> %LINEBREAK% Après avoir échoué à une action, si vous n’avez aucun marqueur vert, vous pouvez effectuer une action %FOCUS%."""
         "Concussion Missiles":
-           name: "Missiles à concussion"
+           display_name: "Missiles à concussion"
            text: """Attaque (%LOCK%) : dépensez 1 %CHARGE%. Après que cette attaque a touché, chaque vaisseau à portée 0–1 du défenseur expose 1 de ses cartes de dégât."""
         "Conner Nets":
            text: """Mine During the System Phase, you may spend 1 %CHARGE% to drop a Conner Net using the [1 %STRAIGHT%] template. This card's %CHARGE% cannot be recovered."""
         "Contraband Cybernetics":
            text: """Before you activate, you may spend 1 %CHARGE%. If you do, until the end of the round, you can perform actions and execute red maneuvers, even while stressed."""
         "Crack Shot":
-           name: "Tireur hors pair"
+           display_name: "Tireur hors pair"
            text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, avant l’étape « Neutraliser les résultats », vous pouvez dépenser 1 %CHARGE% pour annuler 1 résultat %EVADE%."""
         "Daredevil":
-           name: "Casse-cou"
-           text: """<i>Requiert : Vaisseau petit, %BOOST% blanche</i> %LINEBREAK% ant que vous effectuez une action %BOOST% blanche, vous pouvez considérer qu’elle est rouge pour utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
+           display_name: "Casse-cou"
+           text: """<i>Requiert : Vaisseau petit, %BOOST% blanche</i> %LINEBREAK% Tant que vous effectuez une action %BOOST% blanche, vous pouvez considérer qu’elle est rouge pour utiliser le gabarit [1 %TURNLEFT%] ou [1 %TURNRIGHT%] à la place."""
         "Darth Vader":
            text: """At the start of the Engagement Phase, you may choose 1 ship in your firing arc at range 0-2 and spend 1 %FORCE%. If you do, that ship suffers 1 %HIT% damage unless it chooses to remove 1 green token."""
         "Dauntless":
@@ -878,26 +877,26 @@ exportObj.cardLoaders['Français'] = () ->
         "Electronic Baffle":
            text: """During the End Phase, you may suffer 1 %HIT% damage to remove 1 red token."""
         "Elusive":
-           name: "Insaisissable"
+           display_name: "Insaisissable"
            text: """<i>Requiert : base petite ou moyenne</i> %LINEBREAK% Tant que vous défendez, vous pouvez dépenser 1 %CHARGE% pour relancer 1 dé de défense. %LINEBREAK% Après avoir entièrement exécuté une manœuvre rouge, récupérez 1 %CHARGE%."""
         "Emperor Palpatine":
            text: """While another friendly ship defends or performs an attack, you may spend 1 %FORCE% to modify 1 of its dice as though that ship had spent 1 %FORCE%."""
         "Engine Upgrade":
            text: """<i>Requires: <r>%BOOST%</r>. Adds: %BOOST% %LINEBREAK% This upgrade has a variable cost, worth 3, 6, or 9 points depending on if the ship base is small, medium or large respectively.</i>"""
         "Expert Handling":
-           name: "As de l'espace"
+           display_name: "As de l'espace"
            text: """<i>Requiert : <r>%BARRELROLL%</r>. Ajoute : %BARRELROLL% %LINEBREAK% Cette amélioration a un coût variable, de 2, 4, ou 6 points selon si le vaisseau a une base respectivement petite, moyenne ou grande.</i>"""
         "Ezra Bridger":
            text: """After you perform a primary attack, you may spend 1 %FORCE% to perform a bonus %SINGLETURRETARC% attack from a %SINGLETURRETARC% you have not attacked from this round. If you do and you are stressed, you may reroll 1 attack die."""
         "Fearless":
-           name: "Intrépide"
+           display_name: "Intrépide"
            text: """Tant que vous effectuez une attaque principale %FRONTARC%, si la portée d’attaque est 1 et que vous êtes dans l’%FRONTARC% du défenseur, vous pouvez changer 1 de vos résultats en un résultat %HIT%."""
         "Feedback Array":
            text: """Before you engage, you may gain 1 ion token and 1 disarm token. If you do, each ship at range 0 suffers 1 %HIT% damage."""
         "Fifth Brother":
            text: """While you perform an attack, you may spend 1 %FORCE% to change 1 of your %FOCUS% results to a %CRIT% result."""
         "Fire-Control System":
-           name: "Système de contrôle de tir"
+           display_name: "Système de contrôle de tir"
            text: """Tant que vous effectuez une attaque, si vous avez un verrouillage sur le défenseur, vous pouvez relancer 1 dé d’attaque. Dans ce cas, vous ne pouvez pas dépenser votre marqueur de verrouillage pendant cette attaque."""
         "Freelance Slicer":
            text: """While you defend, before attack dice are rolled, you may spend a lock you have on the attacker to roll 1 attack die. If you do, the attacker gains 1 %JAM% token. Then, on a %HIT% or %CRIT% result, gain 1 %JAM% token."""
@@ -914,15 +913,15 @@ exportObj.cardLoaders['Français'] = () ->
         "Han Solo":
            text: """During the Engagement Phase, at initiative 7, you may perform a %SINGLETURRETARC% attack. You cannot attack from that %SINGLETURRETARC% again this round."""
         "Han Solo (Scum)":
-           name: "Han Solo (Racailles)"
+           display_name: "Han Solo (Racailles)"
            text: """Avant de vous engager, vous pouvez effectuer une action %FOCUS% rouge."""
         "Havoc":
            text: """Remove %CREW% slot. Add %SENSOR% and %ASTROMECH% slots."""
         "Heavy Laser Cannon":
-           name: "Canon Laser Lourd"
+           display_name: "Canon Laser Lourd"
            text: """Attaque : après l’étape « Modifier les dés d’attaque », changez tous les résultats %CRIT% en résultats %HIT%."""
         "Heightened Perception":
-           name: "Perception renforcée"
+           display_name: "Perception renforcée"
            text: """Au début de la phase d’engagement, vous pouvez dépenser 1 %FORCE%. Dans ce cas, pendant cette phase, engagez-vous à l’initiative 7 au lieu de le faire à votre valeur d’initiative standard."""
         "Hera Syndulla":
            text: """You can execute red maneuvers even while stressed. After you fully execute a red maneuver, if you have 3 or more stress tokens, remove 1 stress token and suffer 1 %HIT% damage."""
@@ -933,31 +932,31 @@ exportObj.cardLoaders['Français'] = () ->
         "Hound's Tooth":
            text: """1 Z-95 AF4 headhunter can dock with you."""
         "Hull Upgrade":
-           name: "Coque améliorée"
+           display_name: "Coque améliorée"
            text: """Augmente la valeur de coque de 1. %LINEBREAK%<i>Cette amélioration a un coût variable, de 2, 3, 5, ou 7 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "IG-2000":
            text: """You have the pilot ability of each other friendly ship with the IG-2000 upgrade."""
         "IG-88D":
            text: """<i>Adds: %CALCULATE%</i> %LINEBREAK% You have the pilot ability of each other friendly ship with the IG-2000 upgrade. After you perform a %CALCULATE% action, gain 1 calculate token. ADVANCED DROID BRAIN: After you perform a %CALCULATE% action, gain 1 calculate token."""
         "Inertial Dampeners":
-           name: "Amortisseurs inertiels"
+           display_name: "Amortisseurs inertiels"
            text: """Avant d’exécuter une manœuvre, vous pouvez dépenser 1 bouclier. Dans ce cas, exécutez une manœuvre [0 %STOP%] blanche à la place de celle que vous avez révélée, puis gagnez 1 marqueur de stress."""
         "Informant":
            text: """Setup: After placing forces, choose 1 enemy ship and assign the Listening Device condition to it."""
         "Instinctive Aim":
-           name: "Visée instinctive"
+           display_name: "Visée instinctive"
            text: """Tant que vous effectuez une attaque spéciale, vous pouvez dépenser 1 %FORCE% pour ignorer le prérequis %FOCUS% ou %LOCK%."""
         "Intimidation":
            text: """Tant qu’un vaisseau ennemi à portée 0 défend, il lance un dé de défense en moins."""
         "Ion Cannon Turret":
-           name: "Tourelle à canon ioniques"
+           display_name: "Tourelle à canon ioniques"
            text: """<i>Ajoute : %ROTATEARC%</i> %LINEBREAK% Attaque : si cette attaque touche, dépensez 1 résultat %HIT% ou %CRIT% pour faire subir 1 dégât %HIT% au défenseur. Tous les résultats %HIT%/%CRIT% restants infligent des marqueurs ioniques au lieu des dégâts."""
         "Ion Cannon":
            text: """Attack: If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
         "Ion Missiles":
            text: """Attack (%LOCK%): Spend 1 %CHARGE%. If this attack hits, spend 1 %HIT% or %CRIT% result to cause the defender to suffer 1 %HIT% damage. All remaining %HIT%/%CRIT% results inflict ion tokens instead of damage."""
         "Ion Torpedoes":
-           name: "Torpilles Ioniques"
+           display_name: "Torpilles Ioniques"
            text: """Attaque (%LOCK%): dépensez 1 %CHARGE%. Si cette attaque touche, dépensez 1 résultat %HIT% ou %CRIT% pour faire subir 1 dégât %HIT% au défenseur. Tous les résultats %HIT%/%CRIT% restants infligent des marqueurs ioniques au lieu des dégâts."""
         "ISB Slicer":
            text: """During the End Phase, enemy ships at range 1-2 cannot remove jam tokens."""
@@ -966,7 +965,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Jamming Beam":
            text: """Attack: If this attack hits, all %HIT%/%CRIT% results inflict jam tokens instead of damage."""
         "Juke":
-           name: "Feinte"
+           display_name: "Feinte"
            text: """<i>Requiert : vaisseau petit ou moyen</i> %LINEBREAK% Tant que vous effectuez une attaque, si vous avez un marqueur d’évasion, vous pouvez changer 1 des résultats %EVADE% du défenseur en un résultat %FOCUS%."""
         "Jyn Erso":
            text: """If a friendly ship at range 0-3 would gain a focus token, it may gain 1 evade token instead."""
@@ -979,26 +978,27 @@ exportObj.cardLoaders['Français'] = () ->
         "Lando Calrissian":
            text: """Action: Roll 2 defense dice. For each %FOCUS% result, gain 1 focus token. For each %EVADE% result, gain 1 evade token. If both results are blank, the opposing player chooses focus or evade. You gain 1 token of that type."""
         "Lando Calrissian (Scum)":
-           name: "Lando Calrissian (Racailles)"
+           display_name: "Lando Calrissian (Racailles)"
            text: """Après avoir lancé des dés, vous pouvez dépenser 1 marqueur vert pour relancer jusqu’à 2 de vos résultats."""
         "Lando's Millennium Falcon":
+           display_name: "Faucon Millenium de Lando"
            text: """1 Vaisseau de secours peut s’arrimer à vous. %LINEBREAK% Tant que vous avez un Vaisseau de secours arrimé, vous pouvez dépenser ses boucliers comme s’ils étaient sur votre carte de vaisseau. %LINEBREAK% Tant que vous effectuez une attaque principale contre un vaisseau stressé, lancez 1 dé d’attaque supplémentaire."""
         "Latts Razzi":
            text: """While you defend, if the attacker is stressed, you may remove 1 stress from the attacker to change 1 of your blank/%FOCUS% results to an %EVADE% result."""
         "Leia Organa":
            text: """At the start of the Activation Phase, you may spend 3 %CHARGE%. During this phase, each friendly ship reduces the difficulty of its red maneuvers."""
         "Lone Wolf":
-           name: "Loup solitaire"
+           display_name: "Loup solitaire"
            text: """Tant que vous défendez ou que vous effectuez une attaque, s’il n’y a aucun autre vaisseau allié à portée 0–2, vous pouvez dépenser 1 %CHARGE% pour relancer 1 de vos dés."""
         "Luke Skywalker":
            text: """At the start of the Engagement Phase, you may spend 1 %FORCE% to rotate your %SINGLETURRETARC% indicator."""
         "Magva Yarro":
            text: """After you defend, if the attack hit, you may acquire a lock on the attacker."""
         "Marauder":
-           name: "Marauder"
+           display_name: "Marauder"
            text: """Tant que vous effectuez une attaque principale %REARARC%, vous pouvez relancer 1 dé d’attaque. %LINEBREAK% Ajoutez un emplacement %GUNNER%."""
         "Marksmanship":
-           name: "Adresse au tir"
+           display_name: "Adresse au tir"
            text: """Tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez changer 1 résultat %HIT% en un résultat %CRIT%."""
         "Maul":
            text: """<i>Requires: Scum or Ezra Bridger</i> %LINEBREAK% After you suffer damage, you may gain 1 stress token to recover 1 %FORCE%. You can equip \"Dark Side\" upgrades."""
@@ -1021,49 +1021,49 @@ exportObj.cardLoaders['Français'] = () ->
         "Os-1 Arsenal Loadout":
            text: """While you have exactly 1 disarm token, you can still perform %TORPEDO% and %MISSILE% attacks against targets you have locked. If you do, you cannot spend you lock during the attack. Add %TORPEDO% and %MISSILE% slots."""
         "Outmaneuver":
-           name: "Manoeuvre improbable"
+           display_name: "Manoeuvre improbable"
            text: """Tant que vous effectuez une attaque %FRONTARC%, si vous n’êtes pas dans l’arc de tir du défenseur, il lance 1 dé de défense en moins."""
         "Outrider":
            text: """While you perform an attack that is obstructed by an obstacle, the defender rolls 1 fewer defense die. After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens."""
         "Perceptive Copilot":
-           name: "Copilote perspicace"
+           display_name: "Copilote perspicace"
            text: """Après avoir effectué une action %FOCUS%, gagnez 1 marqueur de concentration."""
         "Phantom":
            text: """You can dock at range 0-1."""
         "Pivot Wing":
            text: """<b>Closed:</b> While you defend, roll 1 fewer defense die. After you execute a [0 %STOP%] maneuver, you may rotate your ship 90˚ or 180˚. Before you activate, you may flip this card %LINEBREAK% <b>Open:</b> Before you activate, you may flip this card"""
         "Predator":
-           name: "Prédateur"
+           display_name: "Prédateur"
            text: """Tant que vous effectuez une attaque principale, si le défenseur est dans votre %BULLSEYEARC%, vous pouvez relancer 1 dé d’attaque."""
         "Proton Bombs":
-           name: "Bombe à protons"
+           display_name: "Bombe à protons"
            text: """<b>Bombe</b> %LINEBREAK% Pendant la phase de système, vous pouvez dépenser 1 %CHARGE% pour larguer une bombe à protons en utilisant le gabarit [1 %STRAIGHT%]."""
         "Proton Rockets":
            text: """Attack (%FOCUS%): Spend 1 %CHARGE%."""
         "Proton Torpedoes":
-           name: "Torpilles à protons"
+           display_name: "Torpilles à protons"
            text: """Attaque (%LOCK%): dépensez 1 %CHARGE%. Changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Proximity Mines":
-           name: "Mines de proximité"
+           display_name: "Mines de proximité"
            text: """<b>Mine</b> %LINEBREAK% Pendant la phase de système, vous pouvez dépenser 1 %CHARGE% pour larguer une mine de proximité en utilisant le gabarit [1 %STRAIGHT%]. %LINEBREAK% Les %CHARGE% de cette carte ne peuvent pas être récupérées."""
         "Punishing One":
            text: """When you perform a primary attack, if the defender is in your %FRONTARC%, roll 1 additional attack die. Remove %CREW% slot. Add %ASTROMECH% slot."""
         "Qi'ra":
            text: """Tant que vous vous déplacez et effectuez des attaques, vous ignorez les obstacles que vous verrouillez."""
         "R2 Astromech":
-           name: "Astromech R2"
+           display_name: "Astromech R2"
            text: """Après avoir révélé votre cadran, vous pouvez dépenser 1 %CHARGE% et gagner 1 marqueur de désarmement pour récupérer 1 bouclier."""
         "R2-D2":
            text: """Après avoir révélé votre cadran, vous pouvez dépenser 1 %CHARGE% et gagner 1 marqueur de désarmement pour récupérer 1 bouclier."""
         "R2-D2 (Crew)":
            text: """During the End Phase, if you are damaged and not shielded, you may roll 1 attack die to recover 1 shield. On a %HIT% result, expose 1 of your damage cards."""
         "R3 Astromech":
-           name: "Astromech R3"
+           display_name: "Astromech R3"
            text: """Vous pouvez maintenir jusqu’à 2 cibles verrouillées. Chaque verrouillage doit être sur un objet différent. %LINEBREAK% Après avoir effectué une action %LOCK%, vous pouvez verrouiller une cible."""
         "R4 Astromech":
            text: """<i>Requiert : vaisseau petit</i> %LINEBREAK% Diminuez la difficulté de vos manœuvres de base (%TURNLEFT%, %BANKLEFT%, %STRAIGHT%, %BANKRIGHT%, %TURNRIGHT%) ayant une vitesse 1–2."""
         "R5 Astromech":
-           name: "Astromech R5"
+           display_name: "Astromech R5"
            text: """Action : dépensez 1 %CHARGE% pour réparer 1 carte de dégât face cachée. %LINEBREAK% Action : réparez 1 carte de dégât Vaisseau face visible."""
         "R5-D8":
            text: """Action : dépensez 1 %CHARGE% pour réparer 1 carte de dégât face cachée. %LINEBREAK% Action : réparez 1 carte de dégât Vaisseau face visible."""
@@ -1072,10 +1072,10 @@ exportObj.cardLoaders['Français'] = () ->
         "R5-TK":
            text: """You can perform attacks against friendly ships."""
         "Rigged Cargo Chute":
-           name: "Largage de cargaison"
+           display_name: "Largage de cargaison"
            text: """<i>Requiert : vaisseau moyen ou grand</i> %LINEBREAK% Action : dépensez 1 %CHARGE%. Larguez 1 cargaison égarée en utilisant le gabarit [1 %STRAIGHT%]."""
         "Ruthless":
-           name: "Impitoyable"
+           display_name: "Impitoyable"
            text: """Tant que vous effectuez une attaque, vous pouvez choisir un autre vaisseau allié à portée 0–1 du défenseur. Dans ce cas, le vaisseau choisi subit 1 dégât %HIT% et vous pouvez changer 1 de vos résultats de dé en un résultat %HIT%."""
         "Sabine Wren":
            text: """Setup: Place 1 ion, 1 jam, 1 stress, and 1 tractor token on this card. After a ship suffers the effect of a friendly bomb, you may remove 1 ion, jam, stress, or tractor token from this card. If you do, that ship gains a matching token."""
@@ -1084,50 +1084,50 @@ exportObj.cardLoaders['Français'] = () ->
         "Saw Gerrera":
            text: """While you perform an attack, you may suffer 1 %HIT% damage to change all of your %FOCUS% results to %CRIT% results."""
         "Seasoned Navigator":
-           name: "Navigateur chevronné"
+           display_name: "Navigateur chevronné"
            text: """Après avoir révélé votre cadran de manœuvres, vous pouvez régler votre cadran sur une autre manœuvre non-rouge de même vitesse. Tant que vous exécutez cette manœuvre, augmentez sa difficulté."""
         "Seismic Charges":
-           name: "Charges sismiques"
+           display_name: "Charges sismiques"
            text: """<b>Bombe</b> %LINEBREAK% Pendant la phase de système, vous pouvez dépenser 1 %CHARGE% pour larguer une charge sismique en utilisant le gabarit [1 %STRAIGHT%]."""
         "Selfless":
-           name: "Altruisme"
+           display_name: "Altruisme"
            text: """Tant qu’un autre vaisseau allié à portée 0–1 défend, avant l’étape « Neutraliser les résultats », si vous êtes dans l’arc de l’attaque, vous pouvez subir 1 dégât %CRIT% pour annuler 1 résultat %HIT%."""
         "Sense":
-           name: "Sens"
+           display_name: "Sens"
            text: """Pendant la phase de système, vous pouvez choisir 1 vaisseau à portée 0–1 et regarder son cadran. Si vous dépensez 1 %FORCE%, vous pouvez choisir un vaisseau à portée 0–3 à la place."""
         "Servomotor S-Foils":
-           name: "Servomoteur S-Foils"
+           display_name: "Servomoteur S-Foils"
            text: """<b>Replié:</b> Tant que vous effectuez une attaque principale, lancez 1 dé d'attaque en moins. Avant votre activation, vous pouvez retourner cette carte. %LINEBREAK% <i>Ajoute : %BOOST%, %FOCUS% > <r>%BOOST%</r></i> %LINEBREAK% <b>Déplié:</b> Avant votre activation, vous pouvez retourner cette carte."""
         "Seventh Sister":
            text: """If an enemy ship at range 0-1 would gain a stress token, you may spend 1 %FORCE% to have it gain 1 jam or tractor token instead."""
         "Shadow Caster":
            text: """After you perform an attack that hits, if the defender is in your %SINGLETURRETARC% and your %FRONTARC%, the defender gains 1 tractor token."""
         "Shield Upgrade":
-           name: "Boucliers améliorés"
+           display_name: "Boucliers améliorés"
            text: """Ajoute la valeur de bouclier de 1. %LINEBREAK%<i>Cette amélioration a un coût variable, de 3, 4, 6, ou 8 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "Skilled Bombardier":
            text: """If you would drop or launch a device, you may use a template of the same bearing with a speed 1 higher or lower."""
         "Slave I":
            text: """Après avoir révélé une manœuvre de virage (%TURNLEFT% or %TURNRIGHT%) ou de virage sur l’aile (%BANKLEFT% or %BANKRIGHT%), vous pouvez régler votre cadran sur la manœuvre de même vitesse mais de direction opposée. %LINEBREAK% Ajoutez un emplacement %TORPEDO%."""
         "Squad Leader":
-           name: "Chef d'escouade"
+           display_name: "Chef d'escouade"
            text: """<i>Ajoute : <r>%COORDINATE%</r></i> %LINEBREAK% Tant que vous coordonnez, le vaisseau que vous avez choisi peut effectuer une action seulement si celle-ci est également dans votre barre d’action."""
         "ST-321":
            text: """After you perform a %COORDINATE% action, you may choose an enemy ship at range 0-3 of the ship you coordinated. If you do, acquire a lock on that enemy ship, ignoring range restrictions."""
         "Static Discharge Vanes":
            text: """Before you would gain 1 ion or jam token, if you are not stressed, you may choose another ship at range 0–1 and gain 1 stress token. If you do, the chosen ship gains that ion or jam token instead."""
         "Stealth Device":
-           name: "Système d'occulation"
+           display_name: "Système d'occulation"
            text: """Tant que vous défendez, si votre %CHARGE% est active, lancez 1 dé de défense supplémentaire. %LINEBREAK% Après avoir subi des dégâts, perdez 1 %CHARGE%. %LINEBREAK%<i>Cette amélioration a un coût variable, de 3, 4, 6, ou 8 points selon si l'agilité du vaisseau est respectivement de 0, 1, 2, ou 3.</i>"""
         "Supernatural Reflexes":
-           name: "Réflexes surnaturels"
+           display_name: "Réflexes surnaturels"
            text: """<i>Requiert : petit vaisseau</i> %LINEBREAK% Avant votre activation, vous pouvez dépenser 1 %FORCE% pour effectuer une action %BARRELROLL% ou %BOOST%. Puis, si vous avez effectué une action qui n’est pas dans votre barre d’action, subissez 1 dégât %HIT%."""
         "Swarm Tactics":
            text: """At the start of the Engagement Phase, you may choose 1 friendly ship at range 1. If you do, that ship treats its initiative as equal to yours until the end of the round."""
         "Tactical Officer":
            text: """<i>Requires: <r>%COORDINATE%</r>. Adds: %COORDINATE%</i>"""
         "Tactical Scrambler":
-           name: "Brouilleur tactique"
+           display_name: "Brouilleur tactique"
            text: """<i>Requiert : vaisseau moyen ou grand</i> %LINEBREAK% Tant que vous gênez l’attaque d’un vaisseau ennemi, le défenseur lance 1 dé de défense supplémentaire."""
         "Tobias Beckett":
            text: """Mise en Place : après avoir placé les forces, vous pouvez choisir 1 obstacle dans la zone de jeu. Dans ce cas, placez-le n’importe où dans la zone de jeu au-delà de la portée 2 de tout bord ou vaisseau et au-delà de la portée 1 de tout autre obstacle."""
@@ -1140,10 +1140,10 @@ exportObj.cardLoaders['Français'] = () ->
         "Unkar Plutt":
            text: """After you partially excute a maneuver, you may suffer 1 %HIT% damage to perform 1 white action."""
         "Veteran Tail Gunner":
-           name: "Artilleur de poupe vétéran"
+           display_name: "Artilleur de poupe vétéran"
            text: """<i>Requiert : %REARARC%</i> %LINEBREAK% Après avoir effectué une attaque principale %FRONTARC%, vous pouvez effectuer une attaque principale %REARARC% bonus."""
         "Veteran Turret Gunner":
-           name: "Artilleur de tourelle vétéran"
+           display_name: "Artilleur de tourelle vétéran"
            text: """<i>Requiert : %ROTATEARC%</i> %LINEBREAK% Après avoir effectué une attaque principale, vous pouvez effectuer une attaque bonus %SINGLETURRETARC% en utilisant une %SINGLETURRETARC% que vous n’avez pas déjà utilisée pour attaquer à ce round."""
         "Virago":
            text: """During the End Phase, you may spend 1 %CHARGE% to perform a red %BOOST% action. Add %MODIFICATION% slot."""
@@ -1206,22 +1206,22 @@ exportObj.cardLoaders['Français'] = () ->
         '''I'll Show You the Dark Side''': 
            text: ''' ??? '''
         'Proton Bomb':
-           name: "Bombe à protons"
+           display_name: "Bombe à protons"
            text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, chaque vaisseau à portée 0–1 subit 1 dégât %CRIT%.'''
         'Seismic Charge':
-           name: 'Charges sismiques'
+           display_name: 'Charges sismiques'
            text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque cet engin explose, choisissez 1 obstacle à portée 0–1. Chaque vaisseau à portée 0–1 de cet obstacle subit 1 dégât %HIT%. Puis retirez cet obstacle'''
         'Bomblet':
-           name: 'Sous-munitions'
+           display_name: 'Sous-munitions'
            text: '''(Bombe) - À la fin de la Phase d’activation, cet engin explose. %LINEBREAK% Lorsque l’engin explose, chaque vaisseau à portée 0–1 lance 2 dés d’attaque. Chaque vaisseau subit 1 dégât %HIT% pour chaque résultat %HIT%/%CRIT% obtenu.'''
         'Loose Cargo':
-           name: 'Cargaison égarée'
+           display_name: 'Cargaison égarée'
            text: '''(Débris) - La cargaison égarée est considérée comme un nuage de débris.'''
         'Conner Net':
-           name: 'Filet Conner'
+           display_name: 'Filet Conner'
            text: '''(Mine) - Après qu’un vaisseau a chevauché ou s’est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau subit 1 dégât %HIT% et gagne 3 marqueurs ioniques.'''
         'Proximity Mine':
-           name: 'Mine de proximité'
+           display_name: 'Mine de proximité'
            text: '''(Mine) - Après qu’un vaisseau a chevauché ou s’est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d’attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
             
     modification_translations =
