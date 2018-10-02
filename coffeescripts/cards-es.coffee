@@ -225,7 +225,7 @@ exportObj.cardLoaders['Español'] = () ->
     exportObj.renameShip """B-Wing""", """A/SF-01 Ala-B"""
     exportObj.renameShip """TIE Defender""", """Defensor TIE/D"""
     exportObj.renameShip """TIE Bomber""", """Bombardero TIE/sa"""
-    exportObj.renameShip """TIE Punisher""", """Casticador TIE/ca"""
+    exportObj.renameShip """TIE Punisher""", """Castigador TIE/ca"""
     exportObj.renameShip """Aggressor""", """Caza de asalto Agresor"""
     exportObj.renameShip """G-1A Starfighter""", """Caza estelar G-1A"""
     exportObj.renameShip """VCX-100""", """Carguero ligero VCX-100"""
@@ -617,10 +617,10 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Al comienzo de la fase de Enfrentamiento, si tienes al menos 1 nave enemiga a alcance 0-1, puedes recibir 1 ficha de Concentración.%LINEBREAK%Micropropulsores: Mientras realizas un tonel volado, debes utilizar la plantilla %BANKLEFT% o %BANKRIGHT% en vez de la plantilla %STRAIGHT%."""
         "Han Solo":
            display_name: """Han Solo"""
-           text: """Mientras te defiendes o efectúas un ataque principal, si el ataque está obstruido por un obstáculo, puedes tirar 1 dado adicional."""
+           text: """Después de que tires los dados, si estás a alcance 0-1 de un obstáculo, puedes volver a tirar todos tus dados. Esto no cuenta como volver a tirar los dados en lo que respecta a otros efectos de juego."""
         "Han Solo (Scum)":
            display_name: """Han Solo (Scum)"""
-           text: """Después de que tires los dados, si estás a alcance 0-1 de un obstáculo, puedes volver a tirar todos tus dados. Esto no cuenta como volver a tirar los dados en lo que respecta a otros efectos de juego."""
+           text: """Mientras te defiendes o efectúas un ataque principal, si el ataque está obstruido por un obstáculo, puedes tirar 1 dado adicional."""
         "Heff Tobber":
            display_name: """Heff Tobber"""
            text: """Después de que una nave enemiga ejecute una maniobra, si esa nave enemiga está situada a alcance 0 de ti, puedes realizar una acción."""
@@ -880,67 +880,67 @@ exportObj.cardLoaders['Español'] = () ->
            display_name: """Zuckuss"""
            text: """Mientras efectúas un ataque principal, puedes tirar 1 dado de ataque adicional. Si lo haces, el defensor tira 1 dado de defensa adicional."""
         '"Chopper"':
-           display_name: """„Chopper“"""
+           display_name: """“Chopper”"""
            text: """Al comienzo de la fase de Enfrentamiento, toda nave enemiga que tengas a alcance 0 recibe 2 fichas de Interferencia.%LINEBREAK%Cañón de cola: Mientras tienes una nave acoplada, posees un armamento principal %REARARC% con un valor de Ataque igual al del armamento principal %FRONTARC% de tu nave acoplada."""
         '"Countdown"':
-           display_name: """„Cuenta Atrás“"""
+           display_name: """“Cuenta Atrás”"""
            text: """Mientras te defiendes, después del paso de “Neutralizar los resultados”, puedes sufrir 1 de daño %HIT% y recibir 1 ficha de Tensión. Si lo haces, anula todos los resultados de los dados.%LINEBREAK%Alerones adaptativos: Antes de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra [1 %BANKLEFT%], [1 %STRAIGHT%] o [1 %BANKRIGHT%] de color blanco."""
         '"Deathfire"':
-           display_name: """„Muerte Ígnea“"""
+           display_name: """“Muerte Ígnea”"""
            text: """Después de que seas destruido, antes de ser retirado de la zona de juego, puedes efectuar un ataque y soltar o lanzar 1 dispositivo. %LINEBREAK%Bombardero ágil: Si vas a soltar un dispositivo utilizando una plantilla %STRAIGHT%, en vez de esa plantilla puedes utilizar una plantilla %BANKLEFT% o %BANKRIGHT% con la misma velocidad."""
         '"Deathrain"':
-           display_name: """„Lluvia de Muerte“"""
+           display_name: """“Lluvia de Muerte”"""
            text: """Después de que sueltes o lances un dispositivo, puedes realizar una acción."""
         '"Double Edge"':
-           display_name: """„Doble Filo“"""
+           display_name: """“Doble Filo”"""
            text: """Después de que efectúes un ataque %TURRET% o %MISSILE% que falle, puedes realizar un ataque adicional utilizando un arma diferente."""
         '"Duchess"':
-           display_name: """„Duquesa“"""
+           display_name: """“Duquesa”"""
            text: """Puedes elegir no utilizar tus alerones adaptativos.%LINEBREAK%Puedes utilizar tus alerones adaptativos incluso aunque estés bajo tensión.%LINEBREAK%Alerones adaptativos: Antes de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra blanca [1 %BANKLEFT%], [1 %STRAIGHT%] o [1 %BANKRIGHT%]."""
         '"Dutch" Vander':
-           display_name: """„Dutch“ Vander"""
+           display_name: """“Dutch” Vander"""
            text: """Después de que realices la acción %LOCK%, puedes elegir 1 nave aliada que tengas a alcance 1-3. Esa nave puede obtener un Blanco fijado sobre el objeto que acabas de fijar como blanco, ignorando las restricciones por alcance."""
         '"Echo"':
-           display_name: """„Eco“"""
+           display_name: """“Eco”"""
            text: """Mientras desactivas el camuflaje, debes utilizar la plantilla [2 %BANKLEFT%] o [2 %BANKRIGHT%] en vez de la plantilla [2 %STRAIGHT%].%LINEBREAK%Matriz de estigio: Después de que desactives el camuflaje, puedes realizar una acción %EVADE%. Al comienzo de la fase Final, puedes gastar 1 ficha de Evasión para recibir 1 ficha de Camuflaje."""
         '"Howlrunner"':
-           display_name: """„Aullador Veloz“"""
+           display_name: """“Aullador Veloz”"""
            text: """Mientras una nave aliada que tienes a alcance 0-1 efectúa un ataque principal, esa nave puede volver a tirar 1 dado de ataque."""
         '"Leebo"':
-           display_name: """„Leebo“"""
+           display_name: """“Leebo”"""
            text: """Después de que te defiendas o efectúes un ataque, si gastaste una ficha de Cálculos, recibes 1 ficha de Cálculos.%LINEBREAK%Punto ciego en los sensores: Mientras efectúas un ataque principal a alcance de ataque 0-1, no apliques el modificador por alcance 0-1 y tira 1 dado de ataque menos."""
         '"Mauler" Mithel':
-           display_name: """„Mutilador“ Mithel"""
+           display_name: """“Mutilador” Mithel"""
            text: """Mientras efectúas un ataque a alcance de ataque 1, tira 1 dado de ataque adicional."""
         '"Night Beast"':
-           display_name: """„Bestia Nocturna“"""
+           display_name: """“Bestia Nocturna”"""
            text: """Después de que ejecutes completamente una maniobra azul, puedes realizar una acción %FOCUS%."""
         '"Pure Sabacc"':
-           display_name: """„Sabacc Puro“"""
+           display_name: """“Sabacc Puro”"""
            text: """Mientras efectúas un ataque, si tienes 1 o menos cartas de Daño, puedes tirar 1 dado de ataque adicional.%LINEBREAK%Alerones adaptativos: Antes de que reveles tu selector, si no estás bajo tensión, debes ejecutar una maniobra [1 %BANKLEFT%], [1 %STRAIGHT%] o [1 %BANKRIGHT%] de color blanco."""
         '"Redline"':
-           display_name: """„Velocidad Terminal“"""
+           display_name: """“Velocidad Terminal”"""
            text: """Puedes mantener hasta 2 Blancos fijados.%LINEBREAK%Después de que realices una acción, puedes obtener un Blanco fijado."""
         '"Scourge" Skutu':
-           display_name: """„Azote“ Skutu"""
+           display_name: """“Azote” Skutu"""
            text: """Mientras efectúas un ataque contra un defensor situado en tu %BULLSEYEARC%, tira 1 dado de ataque adicional."""
         '"Vizier"':
-           display_name: """„Visir“"""
+           display_name: """“Visir”"""
            text: """<smallbody>Después de que ejecutes completamente una maniobra de velocidad 1 utilizando la capacidad <strong>Alerones adaptativos</strong> de tu nave, puedes realizar una acción %COORDINATE%. Si lo haces, omite tu paso de “Realizar una acción”.</smallbody>%LINEBREAK%<sasmall><strong>Alerones adaptativos:</strong> Antes de revelar tu selector, si no estás bajo tensión, <b>debes</b> ejecutar una maniobra [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] o [1&nbsp;%BANKRIGHT%] blanca.</sasmall>"""
         '"Wampa"':
-           display_name: """„Wampa“"""
+           display_name: """“Wampa”"""
            text: """Mientras efectúas un ataque, puedes gastar 1 %CHARGE% para tirar 1 dado de ataque adicional.%LINEBREAK%Después de que te defiendas, pierdes 1 %CHARGE%."""
         '"Whisper"':
-           display_name: """„Susurro“"""
+           display_name: """“Susurro”"""
            text: """Después de que efectúes un ataque que impacte, recibes 1 ficha de Evasión.%LINEBREAK%Matriz de estigio: Después de que desactives el camuflaje, puedes realizar una acción %EVADE%. Al comienzo de la fase Final, puedes gastar 1 ficha de Evasión para recibir 1 ficha de Camuflaje."""
         '"Zeb" Orrelios':
-           display_name: """„Zeb“ Orrelios"""
+           display_name: """“Zeb” Orrelios"""
            text: """Mientras te defiendes, los resultados %CRIT% se neutralizan antes que los resultados %HIT%.%LINEBREAK%Armas preparadas: Mientras estás acoplado, después de que tu nave nodriza efectúe un ataque principal %FRONTARC% o %TURRET%, puede efectuar un ataque principal %REARARC% adicional."""
         '"Zeb" Orrelios (Sheathipede)':
-           display_name: """„Zeb“ Orrelios (Sheathipede)"""
+           display_name: """“Zeb” Orrelios (Sheathipede)"""
            text: """Mientras te defiendes, los resultados %CRIT% se neutralizan antes que los resultados %HIT%.%LINEBREAK%Lanzadera de comunicaciones: Mientras estás acoplado, tu nave nodriza adquiere %COORDINATE%. Antes de que tu nave nodriza se active, puede realizar una acción %COORDINATE%."""
         '"Zeb" Orrelios (TIE Fighter)':
-           display_name: """„Zeb“ Orrelios (TIE Fighter)"""
+           display_name: """“Zeb” Orrelios (TIE Fighter)"""
            text: """Mientras te defiendes, los resultados %CRIT% se neutralizan antes que los resultados %HIT%."""
 
 
@@ -1467,17 +1467,17 @@ exportObj.cardLoaders['Español'] = () ->
         "Zuckuss":
            display_name: """Zuckuss"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Mientras efectúas un ataque, si no estás bajo tensión, puedes elegir 1 dado de defensa y recibir 1 ficha de Tensión. Si lo haces, el defensor debe volver a tirar ese dado."""
-       '"Chopper" (Crew)':
-           display_name: """„Chopper“ (Crew)"""
+        '"Chopper" (Crew)':
+           display_name: """“Chopper” (Crew)"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Durante el paso de “Realizar una acción”, puedes realizar 1 acción, incluso aunque estés bajo tensión. Después de que realices una acción mientras estás bajo tensión, sufres 1 de daño %HIT% a menos que expongas 1 de tus cartas de Daño."""
-       '"Chopper" (Astromech)':
-           display_name: """„Chopper“ (Astromech)"""
+        '"Chopper" (Astromech)':
+           display_name: """“Chopper” (Astromech)"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%<strong>Acción:</strong> Gasta 1&nbsp;%CHARGE% no recurrente de otra carta de Mejora que tengas equipada para recuperar 1 escudo.%LINEBREAK%<strong>Acción:</strong> Gasta 2 escudos para recuperar 1&nbsp;%CHARGE% no recurrente sobre una mejora que tengas equipada."""
-       '"Genius"':
-           display_name: """„Genio“"""
+        '"Genius"':
+           display_name: """“Genio”"""
            text: """<i>Sólo Escoria</i>%LINEBREAK%Después de que ejecutes completamente una maniobra, si no has soltado ni lanzado ningún dispositivo en esta ronda, puedes soltar 1 bomba."""
-       '"Zeb" Orrelios':
-           display_name: """„Zeb“ Orrelios"""
+        '"Zeb" Orrelios':
+           display_name: """“Zeb” Orrelios"""
            text: """<i>Sólo Rebelde</i>%LINEBREAK%Eres capaz de efectuar ataques principales a alcance 0. Las naves enemigas que tengas a alcance 0 son capaces de efectuar ataques principales contra ti."""
 
 
