@@ -955,7 +955,7 @@ class exportObj.SquadBuilder
                     </div>
                     <div class="juggler-container">
                         <div class="qrcode"></div>
-                        <div class="qrcode-text">TOs: Scan to load this squad into List Juggler</div>
+                        <div class="qrcode-text">For List Juggler (When it's updated for 2.0)</div>
                     </div>
                 </div>
                 """
@@ -965,7 +965,7 @@ class exportObj.SquadBuilder
                     ec: 'M'
                     size: if text.length < 144 then 144 else 160
                     text: text
-                text = "https://geordanr.github.io/xwing/#{query}"
+                text = "https://raithos.github.io/#{query}"
                 @printable_container.find('.permalink-container .qrcode').qrcode
                     render: 'div'
                     ec: 'M'
