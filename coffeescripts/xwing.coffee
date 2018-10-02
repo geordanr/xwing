@@ -93,10 +93,6 @@ class exportObj.SquadBuilder
                 []
             Upgrade:
                 []
-            Modification:
-                []
-            Title:
-                []
         @suppress_automatic_new_ship = false
         @tooltip_currently_displaying = null
         @randomizer_options =
@@ -1157,7 +1153,6 @@ class exportObj.SquadBuilder
         @obstacles_select.val(obstacles)
 
     serialize: ->
-        #( "#{ship.pilot.id}:#{ship.upgrades[i].data?.id ? -1 for slot, i in ship.pilot.slots}:#{ship.title?.data?.id ? -1}:#{upgrade.data?.id ? -1 for upgrade in ship.title?.conferredUpgrades ? []}:#{ship.modification?.data?.id ? -1}" for ship in @ships when ship.pilot? ).join ';'
 
         serialization_version = 4
         game_type_abbrev = switch @game_type_selector.val()
@@ -1297,16 +1292,16 @@ class exportObj.SquadBuilder
                         if ship_data.display_name
                             ships.push
                                 id: ship_data.name
+                                name: ship_data.name
                                 display_name: ship_data.display_name
                                 text: ship_data.display_name
-                                english_name: ship_data.english_name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
                         else                        
                             ships.push
                                 id: ship_data.name
+                                name: ship_data.name
                                 text: ship_data.name
-                                english_name: ship_data.english_name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
         ships.sort exportObj.sortHelper
@@ -1322,7 +1317,7 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
             eligible_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, english_name: pilot.english_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
+        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
 
     dfl_filter_func = ->
         true
@@ -1350,20 +1345,13 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgradesByLocalizedName when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
         eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
 
-        # Special case #2 :(
-        # current_upgrade_forcibly_removed = false
-        #for title in ship?.titles ? []
-        #    if title?.data?.special_case == 'A-Wing Test Pilot'
-        #        for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
-        #            eligible_upgrades.removeItem equipped_upgrade
-                    # current_upgrade_forcibly_removed = true if equipped_upgrade == include_upgrade
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
@@ -1373,53 +1361,13 @@ class exportObj.SquadBuilder
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, english_name: upgrade.english_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
         
         # Possibly adjust the upgrade
         if this_upgrade_obj.adjustment_func?
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
         else
             retval
-
-    getAvailableModificationsIncluding: (include_modification, ship, term='', filter_func=@dfl_filter_func) ->
-        # Returns data formatted for Select2
-        limited_modifications_in_use = (modification.data for modification in ship.modifications when modification?.data?.limited?)
-
-        available_modifications = (modification for modification_name, modification of exportObj.modificationsByLocalizedName when ( @matcher(modification_name, term) or (modification.display_name and @matcher(modification.display_name, term)) ) and (not modification.ship? or modification.ship == ship.data.name) and (not @isSecondEdition or exportObj.secondEditionCheck(modification)))
-
-        if filter_func != @dfl_filter_func
-            available_modifications = (modification for modification in available_modifications when filter_func(modification))
-
-        eligible_modifications = (modification for modification_name, modification of available_modifications when (not modification.unique? or modification not in @uniques_in_use['Modification']) and (not modification.faction? or @isOurFaction(modification.faction)) and (not (ship? and modification.restriction_func?) or modification.restriction_func ship) and modification not in limited_modifications_in_use)
-
-        # I finally had to add a special case :(  If something else demands it
-        # then I will try to make this more systematic, but I haven't come up
-        # with a good solution... yet.
-        # current_mod_forcibly_removed = false
-        for thing in (ship?.titles ? []).concat(ship?.upgrades ? [])
-            if thing?.data?.special_case == 'Royal Guard TIE'
-                # Need to refetch by ID because Vaksai may have modified its cost
-                for equipped_modification in (modificationsById[modification.data.id] for modification in ship.modifications when modification?.data?)
-                    eligible_modifications.removeItem equipped_modification
-                    # current_mod_forcibly_removed = true if equipped_modification == include_modification
-
-        # Re-add selected modification
-        if include_modification? and (((include_modification.unique? or include_modification.limited?) and ( @matcher(include_modification.name, term) or (include_modification.display_name and @matcher(include_modification.display_name, term)) ) ))# or current_mod_forcibly_removed)
-            eligible_modifications.push include_modification
-        ({ id: modification.id, text: "#{if modification.display_name then modification.display_name else modification.name} (#{modification.points})", points: modification.points, english_name: modification.english_name, disabled: modification not in eligible_modifications } for modification in available_modifications).sort exportObj.sortHelper
-
-    getAvailableTitlesIncluding: (ship, include_title, term='') ->
-        # Returns data formatted for Select2
-        # Titles are no longer unique!
-        limited_titles_in_use = (title.data for title in ship.titles when title?.data?.limited?)
-        available_titles = (title for title_name, title of exportObj.titlesByLocalizedName when (not title.ship? or title.ship == ship.data.name) and ( @matcher(title_name, term) or (title.display_name and @matcher(title.display_name, term))) )
-
-        eligible_titles = (title for title_name, title of available_titles when (not title.unique? or (title not in @uniques_in_use['Title'] and title.canonical_name.getXWSBaseName() not in (t.canonical_name.getXWSBaseName() for t in @uniques_in_use['Title'])) or title.canonical_name.getXWSBaseName() == include_title?.canonical_name.getXWSBaseName()) and (not title.faction? or @isOurFaction(title.faction)) and (not (ship? and title.restriction_func?) or title.restriction_func ship) and title not in limited_titles_in_use)
-
-        # Re-add selected title
-        if include_title? and (((include_title.unique? or include_title.limited?) and (@matcher(include_title.name, term) or (include_title.display_name and @matcher(include_title.display_name, term)) )))
-            eligible_titles.push include_title
-        ({ id: title.id, text: "#{if title.display_name then title.display_name else title.name} (#{title.points})", points: title.points, english_name: title.english_name, disabled: title not in eligible_titles } for title in available_titles).sort exportObj.sortHelper
 
     # Converts a maneuver table for into an HTML table.
     getManeuverTableHTML: (maneuvers, baseManeuvers) ->
@@ -1565,8 +1513,8 @@ class exportObj.SquadBuilder
                 when 'Ship'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.pilot.sources).sort().join(', ')
                     if @collection?.counts?
-                        ship_count = @collection.counts?.ship?[data.data.english_name] ? 0
-                        pilot_count = @collection.counts?.pilot?[data.pilot.english_name] ? 0
+                        ship_count = @collection.counts?.ship?[data.data.name] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.pilot.name] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1653,7 +1601,7 @@ class exportObj.SquadBuilder
                 when 'Pilot'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        pilot_count = @collection.counts?.pilot?[data.english_name] ? 0
+                        pilot_count = @collection.counts?.pilot?[data.name] ? 0
                         ship_count = @collection.counts.ship?[additional_opts.ship] ? 0
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
@@ -1737,7 +1685,7 @@ class exportObj.SquadBuilder
                 when 'Addon'
                     @info_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
                     if @collection?.counts?
-                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.english_name] ? 0
+                        addon_count = @collection.counts?[additional_opts.addon_type.toLowerCase()]?[data.name] ? 0
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
@@ -1824,9 +1772,6 @@ class exportObj.SquadBuilder
                 for ship in @ships
                     for upgrade in ship.upgrades
                         unused_addons.push upgrade unless upgrade.data?
-                    unused_addons.push ship.title if ship.title? and not ship.title.data?
-                    for modification in ship.modifications
-                        unused_addons.push modification unless modification.data?
                 # 0 is ship, otherwise addon
                 idx = $.randomInt(1 + unused_addons.length)
                 if idx == 0
@@ -1840,19 +1785,13 @@ class exportObj.SquadBuilder
                         new_ship = @addShip()
                         new_ship.setPilotById pilot.id
                 else
-                    # Add upgrade/title/modification
+                    # Add upgrade
                     #console.log "Add addon"
                     addon = unused_addons[idx - 1]
                     switch addon.type
                         when 'Upgrade'
                             available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
                             addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
-                        when 'Title'
-                            available_titles = (title for title in @getAvailableTitlesIncluding(addon.ship) when exportObj.titlesById[title.id].sources.intersects(data.allowed_sources))
-                            addon.setById available_titles[$.randomInt available_titles.length].id if available_titles.length > 0
-                        when 'Modification'
-                            available_modifications = (modification for modification in @getAvailableModificationsIncluding(null, addon.ship) when exportObj.modificationsById[modification.id].sources.intersects(data.allowed_sources))
-                            addon.setById available_modifications[$.randomInt available_modifications.length].id if available_modifications.length > 0
                         else
                             throw new Error("Invalid addon type #{addon.type}")
 
@@ -1864,8 +1803,6 @@ class exportObj.SquadBuilder
                     removable_things.push ship
                     for upgrade in ship.upgrades
                         removable_things.push upgrade if upgrade.data?
-                    removable_things.push ship.title if ship.title?.data?
-                    removable_things.push ship.modification if ship.modification?.data?
                 if removable_things.length > 0
                     thing_to_remove = removable_things[$.randomInt removable_things.length]
                     #console.log "Removing #{thing_to_remove}"
@@ -1926,8 +1863,6 @@ class exportObj.SquadBuilder
                 card_obj[ship.pilot.name] = null
                 for upgrade in ship.upgrades
                     card_obj[upgrade.data.name] = null if upgrade.data?
-                card_obj[ship.title.data.name] = null if ship.title?.data?
-                card_obj[ship.modification.data.name] = null if ship.modification?.data?
         return Object.keys(card_obj).sort()
 
     getNotes: ->
@@ -1951,26 +1886,16 @@ class exportObj.SquadBuilder
         for ship in @ships
             if ship.pilot?
                 # Try to get both the physical model and the pilot card.
-                ship_is_available = @collection.use('ship', ship.pilot.english_ship)
-                pilot_is_available = @collection.use('pilot', ship.pilot.english_name)
-                # console.log "#{@faction}: Ship #{ship.pilot.english_ship} available: #{ship_is_available}"
-                # console.log "#{@faction}: Pilot #{ship.pilot.english_name} available: #{pilot_is_available}"
+                ship_is_available = @collection.use('ship', ship.pilot.ship)
+                pilot_is_available = @collection.use('pilot', ship.pilot.name)
+                # console.log "#{@faction}: Ship #{ship.pilot.ship} available: #{ship_is_available}"
+                # console.log "#{@faction}: Pilot #{ship.pilot.name} available: #{pilot_is_available}"
                 validity = false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
-                        upgrade_is_available = @collection.use('upgrade', upgrade.data.english_name)
-                        # console.log "#{@faction}: Upgrade #{upgrade.data.english_name} available: #{upgrade_is_available}"
+                        upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
+                        # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
                         validity = false unless upgrade_is_available
-                for modification in ship.modifications
-                    if modification.data?
-                        modification_is_available = @collection.use('modification', modification.data.english_name)
-                        # console.log "#{@faction}: Modification #{modification.data.english_name} available: #{modification_is_available}"
-                        validity = false unless modification_is_available
-                for title in ship.titles
-                    if title?.data?
-                        title_is_available = @collection.use('title', title.data.english_name)
-                        # console.log "#{@faction}: Title #{title.data.english_name} available: #{title_is_available}"
-                        validity = false unless title_is_available
         validity
 
     checkCollection: ->
@@ -2193,8 +2118,6 @@ class Ship
         @pilot = null
         @data = null # ship data
         @upgrades = []
-        @modifications = []
-        @titles = []
 
         @setupUI()
 
@@ -2227,26 +2150,6 @@ class Ship
                         other_upgrades[upgrade.slot] ?= []
                         other_upgrades[upgrade.slot].push upgrade
 
-                other_modifications = []
-                for modification in other.modifications
-                    if modification?.data? and not modification.data.unique
-                        other_modifications.push modification
-
-                other_titles = []
-                for title in other.titles
-                    if title?.data? and not title.data.unique
-                        other_titles.push title
-
-                for title in @titles
-                    other_title = other_titles.shift()
-                    if other_title?
-                        title.setById other_title.data.id
-
-                for modification in @modifications
-                    other_modification = other_modifications.shift()
-                    if other_modification?
-                        modification.setById other_modification.data.id
-
                 for upgrade in @upgrades
                     other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
                     if other_upgrade?
@@ -2259,29 +2162,13 @@ class Ship
 
             # set up non-conferred addons
             other_conferred_addons = []
-            other_conferred_addons = other_conferred_addons.concat(other.titles[0].conferredAddons) if other.titles[0]?.data? # and other.titles.conferredAddons.length > 0
-            other_conferred_addons = other_conferred_addons.concat(other.modifications[0].conferredAddons) if other.modifications[0]?.data?
             #console.log "Looking for conferred upgrades..."
             for other_upgrade, i in other.upgrades
                 # console.log "Examining upgrade #{other_upgrade}"
                 if other_upgrade.data? and other_upgrade not in other_conferred_addons and not other_upgrade.data.unique and i < @upgrades.length and ((not other_upgrade.data.max_per_squad?) or @builder.countUpgrades(other_upgrade.data.canonical_name) < other_upgrade.data.max_per_squad)
                     #console.log "Copying non-unique upgrade #{other_upgrade} into slot #{i}"
                     @upgrades[i].setById other_upgrade.data.id
-            #console.log "Checking other ship base title #{other.title ? null}"
-            @titles[0].setById other.titles[0].data.id if other.titles[0]?.data? and not other.titles[0].data.unique
-            #console.log "Checking other ship base modification #{other.modifications[0] ? null}"
-            @modifications[0].setById other.modifications[0].data.id if other.modifications[0]?.data and not other.modifications[0].data.unique
 
-            # set up conferred non-unique addons
-            #console.log "Attempt to copy conferred addons..."
-            if other.titles[0]? and other.titles[0].conferredAddons.length > 0
-                #console.log "Other ship title #{other.titles[0]} confers addons"
-                for other_conferred_addon, i in other.titles[0].conferredAddons
-                    @titles[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
-            if other.modifications[0]? and other.modifications[0].conferredAddons.length > 0
-                #console.log "Other ship base modification #{other.modifications[0]} confers addons"
-                for other_conferred_addon, i in other.modifications[0].conferredAddons
-                    @modifications[0].conferredAddons[i].setById other_conferred_addon.data.id if other_conferred_addon.data? and not other_conferred_addon.data?.unique
 
         @updateSelections()
         @builder.container.trigger 'xwing:pointsUpdated'
@@ -2313,27 +2200,19 @@ class Ship
         @setPilot exportObj.pilotsById[parseInt id]
 
     setPilotByName: (name) ->
-        @setPilot exportObj.pilotsByLocalizedName[$.trim name]
+        @setPilot exportObj.pilots[$.trim name]
 
     setPilot: (new_pilot) ->
         if new_pilot != @pilot
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
             old_upgrades = {}
-            old_titles = []
-            old_modifications = []
             if same_ship
                 # track addons and try to reassign them
                 for upgrade in @upgrades
                     if upgrade?.data?
                         old_upgrades[upgrade.slot] ?= []
                         old_upgrades[upgrade.slot].push upgrade
-                for title in @titles
-                    if title?.data?
-                        old_titles.push title
-                for modification in @modifications
-                    if modification?.data?
-                        old_modifications.push modification
             @resetPilot()
             @resetAddons()
             if new_pilot?
@@ -2345,15 +2224,6 @@ class Ship
                 @copy_button.show()
                 @setShipType @pilot.ship
                 if same_ship
-                    # Hopefully this order is correct
-                    for title in @titles
-                        old_title = old_titles.shift()
-                        if old_title?
-                            title.setById old_title.data.id
-                    for modification in @modifications
-                        old_modification = old_modifications.shift()
-                        if old_modification?
-                            modification.setById old_modification.data.id
                     for upgrade in @upgrades
                         old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
                         if old_upgrade?
@@ -2375,36 +2245,17 @@ class Ship
                 ship: this
                 container: @addon_container
                 slot: slot
-        # Title
-        #if @pilot.ship of exportObj.titlesByShip
-        #    @titles.push new exportObj.Title
-        #        ship: this
-        #        container: @addon_container
-        # Modifications
-        #@modifications.push new exportObj.Modification
-        #    ship: this
-        #    container: @addon_container
 
     resetAddons: ->
         await
-            for title in @titles
-                title.destroy defer() if title?
             for upgrade in @upgrades
                 upgrade.destroy defer() if upgrade?
-            for modification in @modifications
-                modification.destroy defer() if modification?
         @upgrades = []
-        @modifications = []
-        @titles = []
 
     getPoints: ->
         points = @pilot?.points ? 0
-        for title in @titles
-            points += (title?.getPoints() ? 0)
         for upgrade in @upgrades
             points += upgrade.getPoints()
-        for modification in @modifications
-            points += (modification?.getPoints() ? 0)
         @points_container.find('span').text points
         if points > 0
             @points_container.fadeTo 'fast', 1
@@ -2431,10 +2282,6 @@ class Ship
             for upgrade in @upgrades
                 points = upgrade.getPoints()
                 upgrade.updateSelection points
-            for title in @titles
-                title.updateSelection() if title?
-            for modification in @modifications
-                modification.updateSelection() if modification?
         else
             @pilot_selector.select2 'data', null
             @pilot_selector.data('select2').container.toggle(@ship_selector.val() != '')
@@ -2485,11 +2332,11 @@ class Ship
                     if @pilot? and obj.id == exportObj.ships[@pilot.ship].id
                         # Currently selected ship; mark as not in collection if it's neither
                         # on the shelf nor on the table
-                        unless (@builder.collection.checkShelf('ship', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                        unless (@builder.collection.checkShelf('ship', obj.name) or @builder.collection.checkTable('pilot', obj.name))
                             not_in_collection = true
                     else
                         # Not currently selected; check shelf only
-                        not_in_collection = not @builder.collection.checkShelf('ship', obj.english_name)
+                        not_in_collection = not @builder.collection.checkShelf('ship', obj.name)
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
@@ -2516,11 +2363,11 @@ class Ship
                     if obj.id == @pilot?.id
                         # Currently selected pilot; mark as not in collection if it's neither
                         # on the shelf nor on the table
-                        unless (@builder.collection.checkShelf('pilot', obj.english_name) or @builder.collection.checkTable('pilot', obj.english_name))
+                        unless (@builder.collection.checkShelf('pilot', obj.name) or @builder.collection.checkTable('pilot', obj.name))
                             not_in_collection = true
                     else
                         # Not currently selected; check shelf only
-                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.english_name)
+                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.name)
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
@@ -2532,7 +2379,7 @@ class Ship
             @builder.backend_status.fadeOut 'slow'
         @pilot_selector.data('select2').results.on 'mousemove-filtered', (e) =>
             select2_data = $(e.target).closest('.select2-result').data 'select2-data'
-            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.english_name} if select2_data?.id?
+            @builder.showTooltip 'Pilot', exportObj.pilotsById[select2_data.id], {ship: @data?.name} if select2_data?.id?
         @pilot_selector.data('select2').container.on 'mouseover', (e) =>
             @builder.showTooltip 'Ship', this if @data?
         @pilot_selector.data('select2').container.on 'touchmove', (e) =>
@@ -2754,8 +2601,6 @@ class Ship
             """
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-            .concat (modification for modification in @modifications when modification.data?)
-            .concat (title for title in @titles when title.data?)
 
         if slotted_upgrades.length > 0
             html += $.trim """
@@ -2788,8 +2633,6 @@ class Ship
         """
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-            .concat (modification for modification in @modifications when modification.data?)
-            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
                 points = upgrade.getPoints()
@@ -2804,8 +2647,6 @@ class Ship
     toRedditText: ->
         reddit = """**#{@pilot.name} (#{@pilot.points})**    \n"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-            .concat (modification for modification in @modifications when modification.data?)
-            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             reddit +="    \n"
             reddit_upgrades= []
@@ -2822,8 +2663,6 @@ class Ship
         bbcode = """[b]#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})[/b]"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-            .concat (modification for modification in @modifications when modification.data?)
-            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             bbcode +="\n"
             bbcode_upgrades= []
@@ -2839,8 +2678,6 @@ class Ship
         html = """<b>#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})</b><br />"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
-            .concat (modification for modification in @modifications when modification.data?)
-            .concat (title for title in @titles when title.data?)
         if slotted_upgrades.length > 0
             for upgrade in slotted_upgrades
                 points = upgrade.getPoints()
@@ -2850,14 +2687,10 @@ class Ship
         html
 
     toSerialized: ->
-        # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+        # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
 
         # Skip conferred upgrades
         conferred_addons = []
-        for title in @titles
-            conferred_addons = conferred_addons.concat(title?.conferredAddons ? [])
-        for modification in @modifications
-            conferred_addons = conferred_addons.concat(modification?.conferredAddons ? [])
         for upgrade in @upgrades
             conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
         upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
@@ -2869,8 +2702,6 @@ class Ship
         [
             @pilot.id,
             upgrades,
-            @titles[0]?.data?.id ? -1,
-            @modifications[0]?.data?.id ? -1,
             serialized_conferred_addons.join(','),
         ].join ':'
 
@@ -2878,8 +2709,8 @@ class Ship
     fromSerialized: (version, serialized) ->
         switch version
             when 1
-                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:TITLEUPGRADE1,TITLEUPGRADE2:MODIFICATIONID
-                [ pilot_id, upgrade_ids, title_id, title_conferred_upgrade_ids, modification_id ] = serialized.split ':'
+                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEUPGRADE1,TITLEUPGRADE2
+                [ pilot_id, upgrade_ids ] = serialized.split ':'
 
                 @setPilotById parseInt(pilot_id)
 
@@ -2887,20 +2718,9 @@ class Ship
                     upgrade_id = parseInt upgrade_id
                     @upgrades[i].setById upgrade_id if upgrade_id >= 0
 
-                title_id = parseInt title_id
-                @titles[0].setById title_id if title_id >= 0
-
-                if @titles[0]? and @titles[0].conferredAddons.length > 0
-                    for upgrade_id, i in title_conferred_upgrade_ids.split ','
-                        upgrade_id = parseInt upgrade_id
-                        @titles[0].conferredAddons[i].setById upgrade_id if upgrade_id >= 0
-
-                modification_id = parseInt modification_id
-                @modifications[0].setById modification_id if modification_id >= 0
-
             when 2, 3
-                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
-                [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
+                # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+                [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
                 deferred_ids = []
@@ -2918,47 +2738,15 @@ class Ship
                         upgrade.setById deferred_id
                         break
 
-
-                title_id = parseInt title_id
-                @titles[0].setById title_id if title_id >= 0
-
-                modification_id = parseInt modification_id
-                @modifications[0].setById modification_id if modification_id >= 0
-
-                # We confer title addons before modification addons, to pick an arbitrary ordering.
                 if conferredaddon_pairs?
                     conferredaddon_pairs = conferredaddon_pairs.split ','
                 else
                     conferredaddon_pairs = []
 
-                if @titles[0]? and @titles[0].conferredAddons.length > 0
-                    title_conferred_addon_pairs = conferredaddon_pairs.splice 0, @titles[0].conferredAddons.length
-                    for conferredaddon_pair, i in title_conferred_addon_pairs
-                        [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
-                        addon_id = parseInt addon_id
-                        addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                        conferred_addon = @titles[0].conferredAddons[i]
-                        if conferred_addon instanceof addon_cls
-                            conferred_addon.setById addon_id
-                        else
-                            throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
-
-                for modification in @modifications
-                    if modification?.data? and modification.conferredAddons.length > 0
-                        modification_conferred_addon_pairs = conferredaddon_pairs.splice 0, modification.conferredAddons.length
-                        for conferredaddon_pair, i in modification_conferred_addon_pairs
-                            [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
-                            addon_id = parseInt addon_id
-                            addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
-                            conferred_addon = modification.conferredAddons[i]
-                            if conferred_addon instanceof addon_cls
-                                conferred_addon.setById addon_id
-                            else
-                                throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
 
             when 4
-                # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEID:MODIFICATIONID:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
-                [ pilot_id, upgrade_ids, title_id, modification_id, conferredaddon_pairs ] = serialized.split ':'
+                # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+                [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
                 deferred_ids = []
@@ -2977,7 +2765,6 @@ class Ship
                         upgrade.setById deferred_id
                         break
 
-                # We confer title addons before modification addons, to pick an arbitrary ordering.
                 if conferredaddon_pairs?
                     conferredaddon_pairs = conferredaddon_pairs.split ','
                 else
@@ -3022,10 +2809,6 @@ class Ship
 
         for upgrade in @upgrades
             upgrade.data.modifier_func(stats) if upgrade?.data?.modifier_func?
-        for title in @titles
-            title.data.modifier_func(stats) if title?.data?.modifier_func?
-        for modification in @modifications
-            modification.data.modifier_func(stats) if modification?.data?.modifier_func?
         @pilot.modifier_func(stats) if @pilot?.modifier_func?
         stats
 
@@ -3044,21 +2827,6 @@ class Ship
                     valid = false
                     break
 
-            for title in @titles
-                func = title?.data?.validation_func ? title?.data?.restriction_func ? undefined
-                if func? and not func this
-                    #console.log "Invalid title: #{title?.data?.name}"
-                    title.setById null
-                    valid = false
-                    break
-
-            for modification in @modifications
-                func = modification?.data?.validation_func ? modification?.data?.restriction_func ? undefined
-                if func? and not func(this, modification)
-                    #console.log "Invalid modification: #{modification?.data?.name}"
-                    modification.setById null
-                    valid = false
-                    break
             break if valid
         @updateSelections()
 
@@ -3066,16 +2834,6 @@ class Ship
         if @pilot? and not exportObj.isReleased @pilot
             #console.log "#{@pilot.name} is unreleased"
             return true
-
-        for title in @titles
-            if title?.data? and not exportObj.isReleased title.data
-                #console.log "#{title.data.name} is unreleased"
-                return true
-
-        for modification in @modifications
-            if modification?.data? and not exportObj.isReleased modification.data
-                #console.log "#{modification.data.name} is unreleased"
-                return true
 
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
@@ -3106,14 +2864,6 @@ class Ship
         for upgrade in @upgrades
             if upgrade?.data?
                 upgrade.toXWS upgrade_obj
-
-        for modification in @modifications
-            if modification?.data?
-                modification.toXWS upgrade_obj
-
-        for title in @titles
-            if title?.data?
-                title.toXWS upgrade_obj
 
         if Object.keys(upgrade_obj).length > 0
             xws.upgrades = upgrade_obj
@@ -3186,11 +2936,11 @@ class GenericAddon
                 if obj.id == @data?.id
                     # Currently selected card; mark as not in collection if it's neither
                     # on the shelf nor on the table
-                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.english_name))
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name))
                         not_in_collection = true
                 else
                     # Not currently selected; check shelf only
-                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.english_name)
+                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
                     #and (@ship.builder.collection.checkcollection?) 
             else
@@ -3271,10 +3021,6 @@ class GenericAddon
                 addon = new cls args
                 if addon instanceof exportObj.Upgrade
                     @ship.upgrades.push addon
-                else if addon instanceof exportObj.Modification
-                    @ship.modifications.push addon
-                else if addon instanceof exportObj.Title
-                    @ship.titles.push addon
                 else
                     throw new Error("Unexpected addon type for addon #{addon}")
                 @conferredAddons.push addon
@@ -3286,10 +3032,6 @@ class GenericAddon
         for addon in @conferredAddons
             if addon instanceof exportObj.Upgrade
                 @ship.upgrades.removeItem addon
-            else if addon instanceof exportObj.Modification
-                @ship.modifications.removeItem addon
-            else if addon instanceof exportObj.Title
-                @ship.titles.removeItem addon
             else
                 throw new Error("Unexpected addon type for addon #{addon}")
         @conferredAddons = []
@@ -3445,10 +3187,6 @@ class GenericAddon
                 continue if upgrade.slot != slot or upgrade == this or not upgrade.isOccupied()
                 upgrade.setData null
                 break
-        if @data?.unequips_modifications
-            for modification in @ship.modifications
-                continue unless modification == this or modification.isOccupied()
-                modification.setData null
 
     isOccupied: ->
         @data? or @occupied_by?
@@ -3459,10 +3197,6 @@ class GenericAddon
                 continue if upgrade.slot != slot or upgrade == this or upgrade.isOccupied()
                 @occupy upgrade
                 break
-        if @data?.also_occupies_modifications
-            for modification in @ship.modifications
-                continue if modification == this or modification.isOccupied()
-                @occupy modification
 
     deoccupyOtherUpgrades: ->
         for upgrade in @occupying
@@ -3499,7 +3233,7 @@ class exportObj.Upgrade extends GenericAddon
         @slot = args.slot
         @type = 'Upgrade'
         @dataById = exportObj.upgradesById
-        @dataByName = exportObj.upgradesByLocalizedName
+        @dataByName = exportObj.upgrades
         @serialization_code = 'U'
 
         @setupSelector()
@@ -3515,49 +3249,6 @@ class exportObj.Upgrade extends GenericAddon
                     more: false
                     results: @ship.builder.getAvailableUpgradesIncluding(@slot, @data, @ship, this, query.term, @filter_func)
 
-#Temporarily removed modifications as they are now upgrades                    
-#class exportObj.Modification extends GenericAddon
-#    constructor: (args) ->
-#        super args
-#        @type = 'Modification'
-#        @dataById = exportObj.modificationsById
-#        @dataByName = exportObj.modificationsByLocalizedName
-#        @serialization_code = 'M'
-
-#        @setupSelector()
-
-#    setupSelector: ->
-#        super
-#            width: '50%'
-#            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'modificationPlaceholder')
-#            allowClear: true
-#            query: (query) =>
-#                @ship.builder.checkCollection()
-#                query.callback
-#                    more: false
-#                    results: @ship.builder.getAvailableModificationsIncluding(@data, @ship, query.term, @filter_func)
-
-class exportObj.Title extends GenericAddon
-    constructor: (args) ->
-        super args
-        @type = 'Title'
-        @dataById = exportObj.titlesById
-        @dataByName = exportObj.titlesByLocalizedName
-        @serialization_code = 'T'
-
-        @setupSelector()
-
-    setupSelector: ->
-        super
-            width: '50%'
-            placeholder: @placeholderMod_func(exportObj.translate @ship.builder.language, 'ui', 'titlePlaceholder')
-            allowClear: true
-            query: (query) =>
-                @ship.builder.checkCollection()
-                query.callback
-                    more: false
-                    results: @ship.builder.getAvailableTitlesIncluding(@ship, @data, query.term)
-
 class exportObj.RestrictedUpgrade extends exportObj.Upgrade
     constructor: (args) ->
         @filter_func = args.filter_func
@@ -3566,17 +3257,7 @@ class exportObj.RestrictedUpgrade extends exportObj.Upgrade
         if args.auto_equip?
             @setById args.auto_equip
 
-#class exportObj.RestrictedModification extends exportObj.Modification
-#    constructor: (args) ->
-#        @filter_func = args.filter_func
-#        super args
-#        @serialization_code = 'm'
-#        if args.auto_equip?
-#            @setById args.auto_equip
 
 SERIALIZATION_CODE_TO_CLASS =
-    'M': exportObj.Modification
-    'T': exportObj.Title
     'U': exportObj.Upgrade
     'u': exportObj.RestrictedUpgrade
-    'm': exportObj.RestrictedModification

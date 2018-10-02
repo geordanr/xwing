@@ -3498,34 +3498,6 @@ exportObj.manifestByExpansion =
 
 
 class exportObj.Collection
-    # collection = new exportObj.Collection
-    #   expansions:
-    #     "Core": 2
-    #     "TIE Fighter Expansion Pack": 4
-    #     "B-Wing Expansion Pack": 2
-    #   singletons:
-    #     ship:
-    #       "T-70 X-Wing": 1
-    #     pilot:
-    #       "Academy Pilot": 16
-    #     upgrade:
-    #       "C-3PO": 4
-    #       "Gunner": 5
-    #     modification:
-    #       "Engine Upgrade": 2
-    #     title:
-    #       "TIE/x1": 1
-    #
-    # # or
-    #
-    # collection = exportObj.Collection.load(backend)
-    #
-    # collection.use "pilot", "Red Squadron Pilot"
-    # collection.use "upgrade", "R2-D2"
-    # collection.use "upgrade", "Ion Pulse Missiles" # returns false
-    #
-    # collection.release "pilot", "Red Squadron Pilot"
-    # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
         @expansions = args.expansions ? {}
@@ -3712,7 +3684,7 @@ class exportObj.Collection
             input = $ $(row).find('input')
             input.data 'expansion', expansion
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.expansion-name').data 'english_name', expansion
+            $(row).find('.expansion-name').data 'name', expansion
             if expansion != 'Loose Ships'
                 collection_content.append row
 
@@ -3733,7 +3705,7 @@ class exportObj.Collection
             input.data 'singletonType', 'ship'
             input.data 'singletonName', ship
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.ship-name').data 'english_name', expansion
+            $(row).find('.ship-name').data 'name', expansion
             shipcollection_content.append row
 
         pilotcollection_content = $ @modal.find('.collection-pilot-content')
@@ -3753,7 +3725,7 @@ class exportObj.Collection
             input.data 'singletonType', 'pilot'
             input.data 'singletonName', pilot
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.pilot-name').data 'english_name', expansion
+            $(row).find('.pilot-name').data 'name', expansion
             pilotcollection_content.append row
 
         upgradecollection_content = $ @modal.find('.collection-upgrade-content')
@@ -3773,48 +3745,8 @@ class exportObj.Collection
             input.data 'singletonType', 'upgrade'
             input.data 'singletonName', upgrade
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.upgrade-name').data 'english_name', expansion
+            $(row).find('.upgrade-name').data 'name', expansion
             upgradecollection_content.append row
-
-        ###modificationcollection_content = $ @modal.find('.collection-modification-content')
-        for modification in singletonsByType.modification
-            count = parseInt(@singletons.modification?[modification] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="modification-name">#{modification}</span>
-                        </label>
-                    </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'modification'
-            input.data 'singletonName', modification
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.modification-name').data 'english_name', expansion
-            modificationcollection_content.append row ###
-
-        ###titlecollection_content = $ @modal.find('.collection-title-content')
-        for title in singletonsByType.title
-            count = parseInt(@singletons.title?[title] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="title-name">#{title}</span>
-                        </label>
-                    </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'title'
-            input.data 'singletonName', title
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.title-name').data 'english_name', expansion
-            titlecollection_content.append row###
 
     destroyUI: ->
         @modal.modal 'hide'
@@ -3886,6 +3818,6 @@ class exportObj.Collection
                 # console.log "language changed to #{language}"
                 do (language) =>
                     @modal.find('.expansion-name').each ->
-                        # console.log "translating #{$(this).text()} (#{$(this).data('english_name')}) to #{language}"
-                        $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
+                        # console.log "translating #{$(this).text()} (#{$(this).data('name')}) to #{language}"
+                        $(this).text exportObj.translate language, 'sources', $(this).data('name')
                 @language = language

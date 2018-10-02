@@ -1803,8 +1803,4 @@ exportObj.cardLoaders.Deutsch = () ->
         'Proximity Mine':
            text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.'''
             
-    modification_translations =
-
-    title_translations =
-            
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations, 
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations,  

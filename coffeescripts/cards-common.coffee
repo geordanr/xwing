@@ -7145,16 +7145,9 @@ exportObj.basicCardData = ->
         }
     ]
 
-    modificationsById: [
-
-    ]
-
-    titlesById: [
-
-    ]
 
 
-exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations) ->
+exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
         if pilot_data.id != i
@@ -7162,12 +7155,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for upgrade_data, i in basic_cards.upgradesById
         if upgrade_data.id != i
             throw new Error("ID mismatch: upgrade at index #{i} has ID #{upgrade_data.id}")
-    for title_data, i in basic_cards.titlesById
-        if title_data.id != i
-            throw new Error("ID mismatch: title at index #{i} has ID #{title_data.id}")
-    for modification_data, i in basic_cards.modificationsById
-        if modification_data.id != i
-            throw new Error("ID mismatch: modification at index #{i} has ID #{modification_data.id}")
     for condition_data, i in basic_cards.conditionsById
         if condition_data.id != i
             throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
@@ -7177,9 +7164,7 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for pilot_data in basic_cards.pilotsById
         unless pilot_data.skip?
             pilot_data.sources = []
-            pilot_data.english_name = pilot_data.name
-            pilot_data.english_ship = pilot_data.ship
-            pilot_data.canonical_name = pilot_data.english_name.canonicalize() unless pilot_data.canonical_name?
+            pilot_data.canonical_name = pilot_data.name.canonicalize() unless pilot_data.canonical_name?
             exportObj.pilots[pilot_data.name] = pilot_data
     # pilot_name is the English version here as it's the common index into
     # basic card info
@@ -7188,37 +7173,18 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
     for upgrade_data in basic_cards.upgradesById
         unless upgrade_data.skip?
             upgrade_data.sources = []
-            upgrade_data.english_name = upgrade_data.name
-            upgrade_data.canonical_name = upgrade_data.english_name.canonicalize() unless upgrade_data.canonical_name?
+            upgrade_data.canonical_name = upgrade_data.name.canonicalize() unless upgrade_data.canonical_name?
             exportObj.upgrades[upgrade_data.name] = upgrade_data
-
-    exportObj.modifications = {}
-    for modification_data in basic_cards.modificationsById
-        unless modification_data.skip?
-            modification_data.sources = []
-            modification_data.english_name = modification_data.name
-            modification_data.canonical_name = modification_data.english_name.canonicalize() unless modification_data.canonical_name?
-            exportObj.modifications[modification_data.name] = modification_data
-
-    exportObj.titles = {}
-    for title_data in basic_cards.titlesById
-        unless title_data.skip?
-            title_data.sources = []
-            title_data.english_name = title_data.name
-            title_data.canonical_name = title_data.english_name.canonicalize() unless title_data.canonical_name?
-            exportObj.titles[title_data.name] = title_data
 
     exportObj.conditions = {}
     for condition_data in basic_cards.conditionsById
         unless condition_data.skip?
             condition_data.sources = []
-            condition_data.english_name = condition_data.name
-            condition_data.canonical_name = condition_data.english_name.canonicalize() unless condition_data.canonical_name?
+            condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
 
     for ship_name, ship_data of basic_cards.ships
-        ship_data.english_name ?= ship_name
-        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name.canonicalize()
         ship_data.sources = []
 
     # Set sources from manifest
@@ -7232,10 +7198,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                         exportObj.pilots[card.name].sources.push expansion
                     when 'upgrade'
                         exportObj.upgrades[card.name].sources.push expansion
-                    when 'modification'
-                        exportObj.modifications[card.name].sources.push expansion
-                    when 'title'
-                        exportObj.titles[card.name].sources.push expansion
                     when 'ship'
                         exportObj.ships[card.name].sources.push expansion
                     else
@@ -7247,19 +7209,13 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         card.sources = card.sources.sort()
     for name, card of exportObj.upgrades
         card.sources = card.sources.sort()
-    for name, card of exportObj.modifications
-        card.sources = card.sources.sort()
-    for name, card of exportObj.titles
-        card.sources = card.sources.sort()
 
     exportObj.expansions = {}
 
     exportObj.pilotsById = {}
-    exportObj.pilotsByLocalizedName = {}
     for pilot_name, pilot of exportObj.pilots
         exportObj.fixIcons pilot
         exportObj.pilotsById[pilot.id] = pilot
-        exportObj.pilotsByLocalizedName[pilot.name] = pilot
         for source in pilot.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.pilotsById).length != Object.keys(exportObj.pilots).length
@@ -7278,11 +7234,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         
 
     exportObj.upgradesById = {}
-    exportObj.upgradesByLocalizedName = {}
     for upgrade_name, upgrade of exportObj.upgrades
         exportObj.fixIcons upgrade
         exportObj.upgradesById[upgrade.id] = upgrade
-        exportObj.upgradesByLocalizedName[upgrade.name] = upgrade
         for source in upgrade.sources
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.upgradesById).length != Object.keys(exportObj.upgrades).length
@@ -7296,41 +7250,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
         (exportObj.upgradesBySlotXWSName[upgrade.slot] ?= {})[upgrade.xws] = upgrade
         (exportObj.upgradesBySlotUniqueName[upgrade.slot] ?= {})[upgrade.canonical_name.getXWSBaseName()] = upgrade
 
-    exportObj.modificationsById = {}
-    exportObj.modificationsByLocalizedName = {}
-    for modification_name, modification of exportObj.modifications
-        exportObj.fixIcons modification
-        # Modifications cannot be added to huge ships unless specifically allowed
-        if modification.huge?
-            unless modification.restriction_func?
-                modification.restriction_func = exportObj.hugeOnly
-        else unless modification.restriction_func?
-            modification.restriction_func = (ship) ->
-                not (ship.data.huge ? false)
-        exportObj.modificationsById[modification.id] = modification
-        exportObj.modificationsByLocalizedName[modification.name] = modification
-        for source in modification.sources
-            exportObj.expansions[source] = 1 if source not of exportObj.expansions
-    if Object.keys(exportObj.modificationsById).length != Object.keys(exportObj.modifications).length
-        throw new Error("At least one modification shares an ID with another")
-
-    exportObj.modificationsByCanonicalName = {}
-    exportObj.modificationsByUniqueName = {}
-    for modification_name, modification of exportObj.modifications
-        (exportObj.modificationsByCanonicalName ?= {})[modification.canonical_name] = modification
-        (exportObj.modificationsByUniqueName ?= {})[modification.canonical_name.getXWSBaseName()] = modification
-
-    exportObj.titlesById = {}
-    exportObj.titlesByLocalizedName = {}
-    for title_name, title of exportObj.titles
-        exportObj.fixIcons title
-        exportObj.titlesById[title.id] = title
-        exportObj.titlesByLocalizedName[title.name] = title
-        for source in title.sources
-            exportObj.expansions[source] = 1 if source not of exportObj.expansions
-    if Object.keys(exportObj.titlesById).length != Object.keys(exportObj.titles).length
-        throw new Error("At least one title shares an ID with another")
-
     exportObj.conditionsById = {}
     for condition_name, condition of exportObj.conditions
         exportObj.fixIcons condition
@@ -7339,23 +7258,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
             exportObj.expansions[source] = 1 if source not of exportObj.expansions
     if Object.keys(exportObj.conditionsById).length != Object.keys(exportObj.conditions).length
         throw new Error("At least one condition shares an ID with another")
-
-    exportObj.titlesByShip = {}
-    for title_name, title of exportObj.titles
-        if title.ship not of exportObj.titlesByShip
-            exportObj.titlesByShip[title.ship] = []
-        exportObj.titlesByShip[title.ship].push title
-
-    exportObj.titlesByCanonicalName = {}
-    exportObj.titlesByUniqueName = {}
-    for title_name, title of exportObj.titles
-        # Special cases :(
-        if title.canonical_name == '"Heavy Scyk" Interceptor'.canonicalize()
-            ((exportObj.titlesByCanonicalName ?= {})[title.canonical_name] ?= []).push title
-            ((exportObj.titlesByUniqueName ?= {})[title.canonical_name.getXWSBaseName()] ?= []).push title
-        else
-            (exportObj.titlesByCanonicalName ?= {})[title.canonical_name] = title
-            (exportObj.titlesByUniqueName ?= {})[title.canonical_name.getXWSBaseName()] = title
 
     exportObj.conditionsByCanonicalName = {}
     for condition_name, condition of exportObj.conditions
@@ -7379,24 +7281,6 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                 exportObj.conditions[condition_name][field] = translation
             catch e
                 console.error "Cannot find translation for attribute #{field} for condition #{condition_name}"
-                throw e
-                
-    for title_name, translations of title_translations
-        exportObj.fixIcons translations
-        for field, translation of translations
-            try
-                exportObj.titles[title_name][field] = translation
-            catch e
-                console.error "Cannot find translation for attribute #{field} for title #{title_name}"
-                throw e
-
-    for modification_name, translations of modification_translations
-        exportObj.fixIcons translations
-        for field, translation of translations
-            try
-                exportObj.modifications[modification_name][field] = translation
-            catch e
-                console.error "Cannot find translation for attribute #{field} for modification #{modification_name}"
                 throw e
 
     for pilot_name, translations of pilot_translations
@@ -7478,15 +7362,10 @@ exportObj.fixIcons = (data) ->
             
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
-        ship_data.english_name = ship_name
-        ship_data.canonical_name ?= ship_data.english_name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name.canonicalize()
 
-exportObj.renameShip = (english_name, new_name) ->
-    # exportObj.ships[new_name] = exportObj.ships[english_name]
-    # exportObj.ships[new_name].name = new_name
-    # exportObj.ships[new_name].english_name = english_name
-    exportObj.ships[english_name].display_name = new_name
-    # delete exportObj.ships[english_name]
+exportObj.renameShip = (name, new_name) ->
+    exportObj.ships[name].display_name = new_name
 
 exportObj.randomizer = (faction_name, points) ->
     shiplistmaster = exportObj.basicCardData #export ship database
