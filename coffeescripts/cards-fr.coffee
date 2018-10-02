@@ -168,7 +168,7 @@ exportObj.translations['Français'] =
         '.to-xws' : 'Exporter vers XWS (beta)'
 
     singular:
-        'pilots': 'Pilotes'
+        'pilots': 'Pilote'
         'modifications': 'Modification'
         'titles': 'Titres'
     types:
