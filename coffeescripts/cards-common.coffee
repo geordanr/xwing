@@ -1295,9 +1295,9 @@ exportObj.basicCardData = ->
             canonical_name: 'Scavenged YT-1300'.canonicalize()
             xws: "Scavenged YT-1300 Light Freighter".canonicalize()
             factions: [ "Resistance" ]
-            attackdt: 0
-            agility: 0
-            hull: 0
+            attackdt: 3
+            agility: 1
+            hull: 8
             shields: 3
             actions: [
                 "Focus"
@@ -5260,7 +5260,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Resistance"
             ship: "Scavenged YT-1300"
-            skill: 0
+            skill: 5
             points: 100
             force: 2
             slots: [
