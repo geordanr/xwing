@@ -3551,8 +3551,12 @@ class exportObj.Collection
                 
         component_content = $ @modal.find('.collection-inventory-content')
         component_content.text ''
+        card_totals_by_type = {}
+        card_different_by_type = {}
         for own type, things of @counts
             if singletonsByType[type]?
+                card_totals_by_type[type] = 0
+                card_different_by_type[type] = 0
                 contents = component_content.append $.trim """
                     <div class="row-fluid">
                         <div class="span12"><h5>#{type.capitalize()}</h5></div>
@@ -3563,8 +3567,26 @@ class exportObj.Collection
                 """
                 ul = $ contents.find("ul#counts-#{type}")
                 for thing in Object.keys(things).sort(sortWithoutQuotes)
+                    card_totals_by_type[type] += things[thing]
                     if thing in singletonsByType[type]
+                        card_different_by_type[type]++
                         ul.append """<li>#{thing} - #{things[thing]}</li>"""
+
+        summary = ""
+        for type in Object.keys(card_totals_by_type)
+            summary += """<li>#{type.capitalize()} - #{card_totals_by_type[type]} (#{card_different_by_type[type]} different)</li>"""
+
+        component_content.append $.trim """
+            <div class="row-fluid">
+                <div class="span12"><h5>Summary</h5></div>
+            </div>
+            <div class = "row-fluid">
+                <ul id="counts-summary" class="span12">
+                    #{summary}
+                </ul>
+            </div>
+        """
+
                 
     fixName: (name) ->
         # Special case handling for Heavy Scyk :(
