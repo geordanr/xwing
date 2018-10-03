@@ -138,9 +138,9 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 3, 0, 0]
             ]
             large: true
-        "YT-1300 (Scum)":
-            name: "YT-1300 (Scum)"
-            canonical_name: 'YT-1300'.canonicalize()
+        "Customized YT-1300":
+            name: "Customized YT-1300"
+            canonical_name: 'Customized YT-1300'.canonicalize()
             xws: "Customized YT-1300 Light Freighter".canonicalize()
             factions: [ "Scum and Villainy" ]
             attackdt: 2
@@ -1290,10 +1290,10 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
             large: true
-        "YT-1300 (Resistance)":
-            name: "YT-1300 (Resistance)"
-            canonical_name: 'YT-1300'.canonicalize()
-            xws: "??? YT-1300 Light Freighter".canonicalize()
+        "Scavenged YT-1300":
+            name: "Scavenged YT-1300"
+            canonical_name: 'Scavenged YT-1300'.canonicalize()
+            xws: "Scavenged YT-1300 Light Freighter".canonicalize()
             factions: [ "Resistance" ]
             attackdt: 0
             agility: 0
@@ -2816,7 +2816,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "hansolo"
             faction: "Scum and Villainy"
-            ship: "YT-1300 (Scum)"
+            ship: "Customized YT-1300"
             skill: 6
             points: 54
             slots: [
@@ -2836,7 +2836,7 @@ exportObj.basicCardData = ->
             unique: true
             xws: "landocalrissian"
             faction: "Scum and Villainy"
-            ship: "YT-1300 (Scum)"
+            ship: "Customized YT-1300"
             skill: 4
             points: 49
             slots: [
@@ -2855,7 +2855,7 @@ exportObj.basicCardData = ->
             id: 91
             unique: true
             faction: "Scum and Villainy"
-            ship: "YT-1300 (Scum)"
+            ship: "Customized YT-1300"
             skill: 2
             points: 47
             slots: [
@@ -2878,7 +2878,7 @@ exportObj.basicCardData = ->
             name: "Freighter Captain"
             id: 92
             faction: "Scum and Villainy"
-            ship: "YT-1300 (Scum)"
+            ship: "Customized YT-1300"
             skill: 1
             points: 46
             slots: [
@@ -5259,7 +5259,7 @@ exportObj.basicCardData = ->
             id: 244
             unique: true
             faction: "Resistance"
-            ship: "YT-1300 (Resistance)"
+            ship: "Scavenged YT-1300"
             skill: 0
             points: 100
             force: 2
@@ -5269,6 +5269,7 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Gunner"
                 "Modification"
+                "Title"
             ]
         }
         {
@@ -5276,7 +5277,7 @@ exportObj.basicCardData = ->
             id: 245
             unique: true
             faction: "Resistance"
-            ship: "YT-1300 (Resistance)"
+            ship: "Scavenged YT-1300"
             skill: 6
             points: 100
             slots: [
@@ -5285,6 +5286,7 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Gunner"
                 "Modification"
+                "Title"
             ]
         }
         {
@@ -5292,7 +5294,7 @@ exportObj.basicCardData = ->
             id: 246
             unique: true
             faction: "Resistance"
-            ship: "YT-1300 (Resistance)"
+            ship: "Scavenged YT-1300"
             skill: 4
             points: 100
             slots: [
@@ -5301,6 +5303,7 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Gunner"
                 "Modification"
+                "Title"
             ]
         }
         {
@@ -6734,7 +6737,7 @@ exportObj.basicCardData = ->
            points: 6
            unique: true
            faction: "Scum and Villainy"
-           ship: "YT-1300 (Scum)"
+           ship: "Customized YT-1300"
        }
        {
            name: "Marauder"
@@ -6974,6 +6977,7 @@ exportObj.basicCardData = ->
             id: 173
             slot: "Crew"
             points: 0
+            unique: true
             faction: "Resistance"
        }
        {
@@ -6981,6 +6985,7 @@ exportObj.basicCardData = ->
             id: 174
             slot: "Gunner"
             points: 0
+            unique: true
             faction: "Resistance"
        }
        {
@@ -7017,6 +7022,7 @@ exportObj.basicCardData = ->
             points: 0
             force: 1
             faction: "First Order"
+            unique: true
             applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
             modifier_func: (stats) ->
                 stats.force += 1
@@ -7026,6 +7032,7 @@ exportObj.basicCardData = ->
             id: 180
             slot: "Crew"
             points: 0
+            unique: true
             faction: "First Order"
        }
        {
@@ -7046,6 +7053,7 @@ exportObj.basicCardData = ->
             name: "Captain Phasma"
             id: 183
             slot: "Crew"
+            unique: true
             points: 0
             faction: "First Order"
        }
@@ -7053,6 +7061,7 @@ exportObj.basicCardData = ->
             name: "Supreme Leader Snoke"
             id: 184
             slot: "Crew"
+            unique: true
             points: 0
             force: 1
             faction: "First Order"
@@ -7077,14 +7086,70 @@ exportObj.basicCardData = ->
             points: 0
        }
        {
-            name: "Rey (Gunner)"
+            name: "Rey"
             id: 187
             slot: "Gunner"
             points: 0
+            unique: true
             force: 1
             faction: "Resistance"
             modifier_func: (stats) ->
                 stats.force += 1
+       }
+       {
+            name: "Chewbacca (Resistance)"
+            id: 188
+            slot: "Crew"
+            points: 0
+            charge: 2
+            unique: true
+            faction: "Resistance"
+       }
+       {
+            name: "Paige Tico"
+            id: 189
+            slot: "Gunner"
+            points: 0
+            unique: true
+            faction: "Resistance"
+       }
+       {
+            name: "R2-HA"
+            id: 190
+            slot: "Astromech"
+            points: 0
+            unique: true
+            faction: "Resistance"
+       }
+       {
+            name: "C-3PO (Resistance)"
+            id: 191
+            slot: "Crew"
+            points: 0
+            unique: true
+            faction: "Resistance"
+            modifier_func: (stats) ->
+                stats.actions.push 'Calculate' if 'Calculate' not in stats.actions
+                stats.actionsred.push 'Coordinate' if 'Coordinate' not in stats.actionsred
+       }
+       {
+            name: "Han Solo (Resistance)"
+            id: 192
+            slot: "Crew"
+            points: 0
+            unique: true
+            faction: "Resistance"
+            modifier_func: (stats) ->
+                stats.actionsred.push 'Evade' if 'Evade' not in stats.actionsred
+       }
+       {
+            name: "Rey's Millenium Falcon"
+            id: 193
+            slot: "Title"
+            points: 0
+            unique: true
+            ship: "Scavenged YT-1300"
+            faction: "Resistance"
        }
     ]
 
