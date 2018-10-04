@@ -6923,6 +6923,7 @@ exportObj.basicCardData = ->
             id: 168
             slot: "Hardpoint"
             points: 0
+            ignorecollection: true
             confersAddons: [
                 {
                     type: exportObj.Upgrade
@@ -6934,6 +6935,7 @@ exportObj.basicCardData = ->
             name: "Hardpoint: Torpedo"
             id: 169
             slot: "Hardpoint"
+            ignorecollection: true
             points: 0
             confersAddons: [
                 {
@@ -6946,6 +6948,7 @@ exportObj.basicCardData = ->
             name: "Hardpoint: Missile"
             id: 170
             slot: "Hardpoint"
+            ignorecollection: true
             points: 0
             confersAddons: [
                 {

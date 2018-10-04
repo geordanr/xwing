@@ -1893,7 +1893,10 @@ class exportObj.SquadBuilder
                 validity = false unless ship_is_available and pilot_is_available
                 for upgrade in ship.upgrades
                     if upgrade.data?
-                        upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
+                        if upgrade.data.ignorecollection? #ignore hardpoints
+                            upgrade_is_available = true
+                        else
+                            upgrade_is_available = @collection.use('upgrade', upgrade.data.name)
                         # console.log "#{@faction}: Upgrade #{upgrade.data.name} available: #{upgrade_is_available}"
                         validity = false unless upgrade_is_available
         validity
@@ -2844,7 +2847,7 @@ class Ship
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
                 #console.log "#{upgrade.data.id} is unreleased"
-                if upgrade.data.id != (168 or 169 or 170) #ignore hardpoints
+                unless upgrade.data.ignorecollection? #ignore hardpoints
                     return true
 
         false
@@ -2941,14 +2944,18 @@ class GenericAddon
             if @ship.builder.collection?
                 not_in_collection = false
                 if obj.id == @data?.id
-                    # Currently selected card; mark as not in collection if it's neither
-                    # on the shelf nor on the table
-                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name)) or (obj.id == 168)
-                        not_in_collection = true
-                    
+                    if @data.ignorecollection? #ignore hardpoints
+                        not_in_collection = false
+                    else
+                        # Currently selected card; mark as not in collection if it's neither
+                        # on the shelf nor on the table
+                        unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name)) 
+                            not_in_collection = true
                 else
-                    # Not currently selected; check shelf only
-                    if obj.id != (168 or 169 or 170) #ignore hardpoints
+                    if (obj.id == 168) or (obj.id == 169) or (obj.id == 170) #ignore hardpoints
+                        not_in_collection = false
+                    else
+                        # Not currently selected; check shelf only
                         not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
                     #and (@ship.builder.collection.checkcollection?) 
