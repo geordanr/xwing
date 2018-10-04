@@ -2837,8 +2837,9 @@ class Ship
 
         for upgrade in @upgrades
             if upgrade?.data? and not exportObj.isReleased upgrade.data
-                #console.log "#{upgrade.data.name} is unreleased"
-                return true
+                #console.log "#{upgrade.data.id} is unreleased"
+                if upgrade.data.id != (168 or 169 or 170) #ignore hardpoints
+                    return true
 
         false
 
@@ -2936,11 +2937,13 @@ class GenericAddon
                 if obj.id == @data?.id
                     # Currently selected card; mark as not in collection if it's neither
                     # on the shelf nor on the table
-                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name))
+                    unless (@ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name) or @ship.builder.collection.checkTable(@type.toLowerCase(), obj.name)) or (obj.id == 168)
                         not_in_collection = true
+                    
                 else
                     # Not currently selected; check shelf only
-                    not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
+                    if obj.id != (168 or 169 or 170) #ignore hardpoints
+                        not_in_collection = not @ship.builder.collection.checkShelf(@type.toLowerCase(), obj.name)
                 if not_in_collection then 'select2-result-not-in-collection' else ''
                     #and (@ship.builder.collection.checkcollection?) 
             else
