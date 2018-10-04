@@ -175,7 +175,6 @@ exportObj.cardLoaders.Magyar = () ->
     # English names are loaded by default, so no update is needed
     exportObj.ships = basic_cards.ships
 
-    # Rename ships (below is an example of what it should look like. uncomment the # on the line to make it active. You must have all pilots that use the translated ship name use the tag ship:"Translated ship name")
 
 
     ###exportObj.renameShip 'X-Wing', 'X-Wing'
@@ -216,7 +215,7 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'Kihraxz Fighter', 'Kihraxz Fighter'
     exportObj.renameShip 'G-1A Starfighter', 'G-1A Starfighter'
     exportObj.renameShip 'Fang Fighter', 'Fang Fighter'
-    exportObj.renameShip 'YT-1300 (Scum)', 'YT-1300 (Scum)'
+    exportObj.renameShip 'Customized YT-1300', 'YT-1300 (Scum)'
     exportObj.renameShip 'JumpMaster 5000', 'JumpMaster 5000'
     exportObj.renameShip 'Lancer-Class Pursuit Craft', 'Lancer-Class Pursuit Craft'
     exportObj.renameShip 'Quadjumper', 'Quadjumper'
@@ -228,7 +227,7 @@ exportObj.cardLoaders.Magyar = () ->
     exportObj.renameShip 'T-70 X-Wing', 'T-70 X-Wing'
     exportObj.renameShip 'RZ-2 A-Wing', 'RZ-2 A-Wing'
     exportObj.renameShip 'B/SF-17 Bomber', 'B/SF-17 Bomber'
-    exportObj.renameShip 'YT-1300 (Resistance)', 'YT-1300 (Resistance)'
+    exportObj.renameShip 'Scavenged YT-1300', 'YT-1300 (Resistance)'
     
     exportObj.renameShip 'TIE/FO Fighter', 'TIE/FO Fighter'
     exportObj.renameShip 'TIE/SF Fighter', 'TIE/SF Fighter'
@@ -666,7 +665,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Valen Rudor":
            text: """Miután egy baráti hajó 0-1-es távolságban védekezik - a sérülések elkönyvelése után -, végrehajthatsz egy akciót."""
         "Ved Foslo":
-           text: """Amikor végrehajtasz egy manővert, végrehajthatsz egy manővert ugyanabban az irányban és nehézségben, 1-gyel kisebb vagy nagyobb sebességgel. %LINEBREAK% ADVANCED TARGETING COPMUTER: Amikor végrehajtasz egy elsődleges támadást egy olyan védekező ellen, akit bemértél, 1-gyel több támadókockával dobj és változtasd egy %HIT% eredményed %CRIT% eredményre."""
+           text: """Amikor végrehajtasz egy manővert, helyette végrehajthatsz egy manővert ugyanabban az irányban és nehézségben, 1-gyel kisebb vagy nagyobb sebességgel. %LINEBREAK% ADVANCED TARGETING COPMUTER: Amikor végrehajtasz egy elsődleges támadást egy olyan védekező ellen, akit bemértél, 1-gyel több támadókockával dobj és változtasd egy %HIT% eredményed %CRIT% eredményre."""
         "Viktor Hel":
            text: """Miután védekeztél, ha nem pontosan 2 védekezőkockával dobtál, a támadó kap 1 stress jelzőt."""
         '"Vizier"':
@@ -720,7 +719,7 @@ exportObj.cardLoaders.Magyar = () ->
         '"Quickdraw"':
            text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """    
         "Rey":
-           text: """ ... perform an attack, ... in your %FRONTARC%, you may ... change 1 of your blank ... or %HIT% result. """
+           text: """ While you defend or perform an attack, if the enemy ship in your %FRONTARC%, you may spend 1 %FORCE% change 1 of your blank results to an %EVADE% or %HIT% result. """
         "Han Solo (Resistance)":
            text: """ ??? """
         "Chewbacca (Resistance)":
@@ -733,7 +732,6 @@ exportObj.cardLoaders.Magyar = () ->
            text: """ ??? """
         "Finch Dallow":
            text: """ ... drop a bomb, you ... play area touching ... instead. """
-
             
             
     upgrade_translations =
@@ -858,7 +856,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Greedo":
            text: """Amikor végrehajtasz egy támadást, elkölthetsz 1 %CHARGE% jelzőt, hogy megváltoztass 1 %HIT% eredméynyt %CRIT% eredményre. Amikor védekezel, ha a %CHARGE% jelződ aktív, a támadó megváltoztathat 1 %HIT% eredméynyt %CRIT% eredményre."""
         "Han Solo":
-           text: """Az ütközet fázis alatt, 7-es kezdeményezésnél, végrehajthatsz egy SINGLETURRETARC% támadást. Nem támadhatsz újra ezzel a %SINGLETURRETARC% fegyverrel ebben a körben."""
+           text: """Az ütközet fázis alatt, 7-es kezdeményezésnél, végrehajthatsz egy %SINGLETURRETARC% támadást. Nem támadhatsz újra ezzel a %SINGLETURRETARC% fegyverrel ebben a körben."""
         "Han Solo (Scum)":
            text: """Mielőtt sor kerül rád az üzközet fázisban, végrehajthatsz egy piros %FOCUS% akciót."""
         "Havoc":
@@ -1101,9 +1099,21 @@ exportObj.cardLoaders.Magyar = () ->
            text: """ Setup: Before placing forces, you may ... 0 and 6 ... """
         "Advanced Optics":
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
-        "Rey (Gunner)":
+        "Rey":
            text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
-        
+        "Chewbacca (Resistance)":
+           text: """ Setup: Lose 1 %CHARGE%. %LINEBREAK% After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%. %LINEBREAK% While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
+        "Paige Tico":
+           text: """ After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%. After you are destroyed, you may drop 1 bomb. """
+        "R2-HA":
+           text: """ While you defend, you may spend your lock on the attacker to reroll any number of your defense dice. """
+        "C-3PO (Resistance)":
+           text: """ <i>Adds: %CALCULATE% <r>%COORDINATE%</r></i> %LINEBREAK% While you coordinate, you can choose friendly ships beyond range 2 if they have %CALCULATE% on their action bar. %LINEBREAK% After you perform the %CALCULATE% or %COORDINATE% action, gain 1 calculate token. """
+        "Han Solo (Resistance)":
+           text: """ <i>Adds: <r>%EVADE%</r></i> %LINEBREAK% After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1. """
+        "Rey's Millenium Falcon":
+           text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
+                            
     condition_translations =
         'Suppressive Fire':
            text: '''Amikor végrehajtasz egy támadást más hajó ellen mint <strong>Captain Rex</strong>, dobj 1-gyel kevesebb kockával. %LINEBREAK% Miután <strong>Captain Rex</strong> védekezik, vedd le ezt a kártyát.  %LINEBREAK% Az ütközet fázis végén, ha <strong>Captain Rex</strong> nem hajtott végre támadást ebben a fázisban, vedd le ezt a kártyát. %LINEBREAK% Miután <strong>Captain Rex</strong> megsemmisült, vedd le ezt a kártyát.'''
@@ -1127,9 +1137,5 @@ exportObj.cardLoaders.Magyar = () ->
            text: '''(Akna jelző) - Miután egy hajó átmozog vagy átfedésbe kerül ezzel az eszközzel, az felrobban. Amikor ez az eszköz felrobban, a hajó elszenved 1 %HIT% sérülést és kap 3 ion jelzőt.'''
         'Proximity Mine':
            text: '''(Akna jelző) - Miután egy hajó átmozog vagy átfedésbe kerül ezzel az eszközzel,  az felrobban. Amikor ez az eszköz felrobban, a hajó dob 2 támadókockával, aztán elszenved 1 %HIT%, valamint a dobott eremény szerint 1-1 %HIT%/%CRIT% sérülést.'''
-            
-    modification_translations =
-
-    title_translations =
-            
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, modification_translations, title_translations, 
+                        
+    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations,  
