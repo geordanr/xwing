@@ -660,7 +660,7 @@ exportObj.cardLoaders.English = () ->
         '"Quickdraw"':
            text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """    
         "Rey":
-           text: """ ... perform an attack, ... in your %FRONTARC%, you may ... change 1 of your blank ... or %HIT% result. """
+           text: """ While you defend or perform an attack, if the enemy ship in your %FRONTARC%, you may spend 1 %FORCE% change 1 of your blank results to an %EVADE% or %HIT% result. """
         "Han Solo (Resistance)":
            text: """ ??? """
         "Chewbacca (Resistance)":
@@ -1016,9 +1016,9 @@ exportObj.cardLoaders.English = () ->
         "Heroic":
            text: """ While you defend or perform an attack, if you have only blank results and have 2 or more results, you may reroll any number of your dice. """
         "Rose Tico":
-           text: """ ??? """
+           text: """ While you defend or perform an attack, you may spend 1 of your results to acquire a lock on the enemy ship. """
         "Finn":
-           text: """ While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll ... can be rerolled or otherwise ...  """
+           text: """ While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll (this die roll can be rerolled or otherwise modified)  """
         "Integrated S-Foils":
            text: """<b>Closed:</b> While you perform a primary attack, if the defender is not in your %BULLSEYEARC%, roll 1 fewer attack die. Before you activate, you may flip this card. %LINEBREAK% <i>Adds: %BARRELROLL%, %FOCUS% > <r>%BARRELROLL%</r></i> %LINEBREAK% <b>Open:</b> ???"""
         "Targeting Synchronizer":
@@ -1041,8 +1041,21 @@ exportObj.cardLoaders.English = () ->
            text: """ Setup: Before placing forces, you may ... 0 and 6 ... """
         "Advanced Optics":
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
-        "Rey (Gunner)":
+        "Rey":
            text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
+        "Chewbacca (Resistance)":
+           text: """ Setup: Lose 1 %CHARGE%. %LINEBREAK% After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%. %LINEBREAK% While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
+        "Paige Tico":
+           text: """ After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%. After you are destroyed, you may drop 1 bomb. """
+        "R2-HA":
+           text: """ While you defend, you may spend your lock on the attacker to reroll any number of your defense dice. """
+        "C-3PO (Resistance)":
+           text: """ <i>Adds: %CALCULATE% <r>%COORDINATE%</r></i> %LINEBREAK% While you coordinate, you can choose friendly ships beyond range 2 if they have %CALCULATE% on their action bar. %LINEBREAK% After you perform the %CALCULATE% or %COORDINATE% action, gain 1 calculate token. """
+        "Han Solo (Resistance)":
+           text: """ <i>Adds: <r>%EVADE%</r></i> %LINEBREAK% After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1. """
+        "Rey's Millenium Falcon":
+           text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
+            
         
     condition_translations =
         'Suppressive Fire':

@@ -213,7 +213,7 @@ exportObj.cardLoaders['Français'] = () ->
     # exportObj.renameShip 'Lancer-Class Pursuit Craft', 'Vaisseau de poursuite de classe Lancer'
     # exportObj.renameShip 'Scurrg H-6 Bomber', 'Bombardier Scurrg H-6'
     # exportObj.renameShip 'M12-L Kimogila Fighter', 'Chasseur M12-L Kimogila'
-    exportObj.renameShip 'YT-1300 (Scum)', 'YT-1300 (Racailles)'
+    exportObj.renameShip 'Customized YT-1300', 'YT-1300 (Racailles)'
     exportObj.renameShip 'Escape Craft', 'Vaisseau de secours'
     # exportObj.renameShip 'Mining Guild TIE Fighter', 'TIE de la Guilde Minière'
 
@@ -761,7 +761,7 @@ exportObj.cardLoaders['Français'] = () ->
         '"Quickdraw"':
            text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """    
         "Rey":
-           text: """ ... perform an attack, ... in your %FRONTARC%, you may ... change 1 of your blank ... or %HIT% result. """
+           text: """ While you defend or perform an attack, if the enemy ship in your %FRONTARC%, you may spend 1 %FORCE% change 1 of your blank results to an %EVADE% or %HIT% result. """
         "Han Solo (Resistance)":
            text: """ ??? """
         "Chewbacca (Resistance)":
@@ -1191,9 +1191,21 @@ exportObj.cardLoaders['Français'] = () ->
            text: """ Setup: Before placing forces, you may ... 0 and 6 ... """
         "Advanced Optics":
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
-        "Rey (Gunner)":
+        "Rey":
            text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
-        
+        "Chewbacca (Resistance)":
+           text: """ Setup: Lose 1 %CHARGE%. %LINEBREAK% After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%. %LINEBREAK% While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
+        "Paige Tico":
+           text: """ After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%. After you are destroyed, you may drop 1 bomb. """
+        "R2-HA":
+           text: """ While you defend, you may spend your lock on the attacker to reroll any number of your defense dice. """
+        "C-3PO (Resistance)":
+           text: """ <i>Adds: %CALCULATE% <r>%COORDINATE%</r></i> %LINEBREAK% While you coordinate, you can choose friendly ships beyond range 2 if they have %CALCULATE% on their action bar. %LINEBREAK% After you perform the %CALCULATE% or %COORDINATE% action, gain 1 calculate token. """
+        "Han Solo (Resistance)":
+           text: """ <i>Adds: <r>%EVADE%</r></i> %LINEBREAK% After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1. """
+        "Rey's Millenium Falcon":
+           text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
+                    
     condition_translations =
         'Suppressive Fire':
            text: '''While you perform an attack against a ship other than <strong>Captain Rex</strong>, roll 1 fewer attack die. %LINEBREAK% After <strong>Captain Rex</strong> defends, remove this card.  %LINEBREAK% At the end of the Combat Phase, if <strong>Captain Rex</strong> did not perform an attack this phase, remove this card. %LINEBREAK% After <strong>Captain Rex</strong> is destroyed, remove this card.'''

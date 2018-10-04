@@ -3113,7 +3113,7 @@ exportObj.manifestByExpansion =
     ]
     "Lando's Millennium Falcon Expansion Pack": [
         {
-            name: 'YT-1300 (Scum)'
+            name: 'Customized YT-1300'
             type: 'ship'
             count: 1
         }
@@ -3490,7 +3490,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'YT-1300 (Resistance)'
+            name: 'Scavenged YT-1300'
             type: 'ship'
             count: 3
         }
