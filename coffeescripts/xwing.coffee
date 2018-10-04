@@ -1154,7 +1154,7 @@ class exportObj.SquadBuilder
 
     serialize: ->
 
-        serialization_version = 4
+        serialization_version = 5
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
@@ -1175,7 +1175,7 @@ class exportObj.SquadBuilder
             # versioned
             version = parseInt matches[1]
             switch version
-                when 3, 4
+                when 3, 4, 5
                     # parse out game type
                     [ game_type_abbrev, serialized_ships ] = matches[2].split('!')
                     switch game_type_abbrev
@@ -2744,9 +2744,12 @@ class Ship
                     conferredaddon_pairs = []
 
 
-            when 4
+            when 4, 5
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
-                [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
+                if (serialized.split ':').length == 3
+                    [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
+                else 
+                    [ pilot_id, upgrade_ids, version_4_compatibility_placeholder_title, version_4_compatibility_placeholder_mod, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
                 deferred_ids = []
@@ -2777,6 +2780,9 @@ class Ship
                             [ addon_type_serialized, addon_id ] = conferredaddon_pair.split '.'
                             addon_id = parseInt addon_id
                             addon_cls = SERIALIZATION_CODE_TO_CLASS[addon_type_serialized]
+                            if not addon_cls
+                                console.log("Something went wrong... could not serialize properly")
+                                continue
                             conferred_addon = upgrade.conferredAddons[i]
                             if conferred_addon instanceof addon_cls
                                 conferred_addon.setById addon_id
