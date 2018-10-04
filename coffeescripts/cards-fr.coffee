@@ -59,7 +59,7 @@ exportObj.translations['Français'] =
         "Force": "Pouvoir de la Force"
         "Bomb": "Bombe"
         "Cannon": "Canon"
-        "Crew": "Équipage"
+        "Crew": "Equipage"
         "Missile": "Missile"
         "Sensor": "Senseur"
         "Torpedo": "Torpille"
@@ -108,10 +108,11 @@ exportObj.translations['Français'] =
         '.game-type-selector option[value="second_edition"]': 'Seconde Édition'
         '.game-type-selector option[value="custom"]': 'Personnalisé'
         # Card browser
+        '.select2-choice' : '<span>Type (par nom)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
         '.xwing-card-browser option[value="name"]': 'Nom'
         '.xwing-card-browser option[value="source"]': 'Source'
-        '.xwing-card-browser option[value="type-by-points"]': 'Type (par Points)'
-        '.xwing-card-browser option[value="type-by-name"]': 'Type (par Nom)'
+        '.xwing-card-browser option[value="type-by-points"]': 'Type (par points)'
+        '.xwing-card-browser option[value="type-by-name"]': 'Type (par nom)'
         '.xwing-card-browser .translate.select-a-card': 'Sélectionnez une carte dans la liste à gauche.'
         '.xwing-card-browser .translate.sort-cards-by': 'Trier les cartes par'
         # Info well
@@ -168,7 +169,7 @@ exportObj.translations['Français'] =
         '.to-xws' : 'Exporter vers XWS (beta)'
 
     singular:
-        'pilots': 'Pilotes'
+        'pilots': 'Pilote'
         'modifications': 'Modification'
         'titles': 'Titres'
     types:
