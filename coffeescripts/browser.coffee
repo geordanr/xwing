@@ -10,8 +10,14 @@ exportObj = exports ? this
 TYPES = [ 'pilots', 'upgrades' ]
 
 byName = (a, b) ->
-    a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
-    b_name = b.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    if a.display_name
+        a_name = a.display_name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    else
+        a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    if b.display_name
+        b_name = b.display_name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    else
+        b_name = b.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
     if a_name < b_name
         -1
     else if b_name < a_name
@@ -175,9 +181,9 @@ class exportObj.CardBrowser
 
         for type in TYPES
             if type == 'upgrades'
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
             else
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
         @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot' ])
         for card_name, card_data of exportObj.upgrades
@@ -252,12 +258,13 @@ class exportObj.CardBrowser
 
     renderCard: (card) ->
         # Renders card to card container
+        display_name = card.data 'display_name'
         name = card.data 'name'
         type = card.data 'type'
         data = card.data 'card'
         orig_type = card.data 'orig_type'
 
-        @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+        @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if display_name then display_name else name} (#{data.points})#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
         switch orig_type
@@ -387,8 +394,9 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{card.name} (#{card.data.points})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{card.data.points})"
         option.data 'name', card.name
+        option.data 'display_name', card.display_name
         option.data 'type', card.type
         option.data 'card', card.data
         option.data 'orig_type', card.orig_type
