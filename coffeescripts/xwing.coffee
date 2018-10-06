@@ -2618,9 +2618,9 @@ class Ship
                 </div>
             """
         
-        HalfPoints = Math.floor @getPoints() / 2
+        HalfPoints = Math.ceil @getPoints() / 2
         
-        Threshold = Math.floor (effective_stats['hull'] + effective_stats['shields']) / 2
+        Threshold = Math.ceil (effective_stats['hull'] + effective_stats['shields']) / 2
         
         
         # if @getPoints() != @pilot.points
