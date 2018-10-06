@@ -227,7 +227,7 @@ output_text = output_text.replace('<return>', '%LINEBREAK%')
 output_text = output_text.replace('<nonbreak>', '&nbsp;')
 output_text = output_text.replace('<shipability>', '')
 output_text = output_text.replace('</shipability>', '')
-output_text = output_text.replace('<flavor>', '<i>')
+output_text = output_text.replace('<flavor>', '<i class = flavor_text>')
 output_text = output_text.replace('</flavor>', '</i>')  # we could also remove all flavor text?
 output_text = output_text.replace('<smallcaps>', '<strong>')
 output_text = output_text.replace('</smallcaps>', '</strong>')
