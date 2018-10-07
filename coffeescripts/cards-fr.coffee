@@ -238,208 +238,208 @@ exportObj.cardLoaders['Français'] = () ->
     pilot_translations =
         "Academy Pilot":
            display_name: """Pilote de l'Académie"""
-           text: """<i>Produit en masse, rapide et maniable, le TIE/ln développé par Sienar Fleet Systems est le principal chasseur de l'Empire Galactique.</i>"""
+           text: """<i class = flavor_text>Produit en masse, rapide et maniable, le TIE/ln développé par Sienar Fleet Systems est le principal chasseur de l'Empire Galactique.</i>"""
         "Alpha Squadron Pilot":
            display_name: """Pilote de l'Escadron Alpha"""
-           text: """<i>Sienar Fleet Systems a doté les ailes de l'intercepteur TIE de quatre canons laser qui lui confèrent une puissance de feu bien supérieure à celle des précédents modèles.</i>%LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """<i class = flavor_text>Sienar Fleet Systems a doté les ailes de l'intercepteur TIE de quatre canons laser qui lui confèrent une puissance de feu bien supérieure à celle des précédents modèles.</i>%LINEBREAK%<strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
         "Bandit Squadron Pilot":
            display_name: """Pilote de l'Escadron Bandit"""
-           text: """<i>Le Chasseur de Têtes Z-95 a été la principale source d'inspiration d'Incom Corporation pour la conception du X-wing T-65. Bien que considéré comme obsolète, le Chasseur de Têtes Z-95 reste un appareil léger polyvalent et robuste.</i>"""
+           text: """<i class = flavor_text>Le Chasseur de Têtes Z-95 a été la principale source d'inspiration d'Incom Corporation pour la conception du X-wing T-65. Bien que considéré comme obsolète, le Chasseur de Têtes Z-95 reste un appareil léger polyvalent et robuste.</i>"""
         "Baron of the Empire":
            display_name: """Baron de l'Empire"""
-           text: """<i>Le TIE Advanced v1 de Sienar Fleet Systems est un chasseur révolutionnaire, pourvu de moteurs améliorés, d'un lance-missiles et d'ailes mobiles.</i>"""
+           text: """<i class = flavor_text>Le TIE Advanced v1 de Sienar Fleet Systems est un chasseur révolutionnaire, pourvu de moteurs améliorés, d'un lance-missiles et d'ailes mobiles.</i>"""
         "Binayre Pirate":
            display_name: """Pirate Binayre"""
-           text: """<i>Le groupe de contrebandiers et de pirates de Kath Scarlet, qui agit depuis les Mondes Doubles de Talus et Tralus, n'a pas la réputation d'être fiable ni même honorable. Et ce ne sont pas les autres criminels qui diront le contraire…</i>"""
+           text: """<i class = flavor_text>Le groupe de contrebandiers et de pirates de Kath Scarlet, qui agit depuis les Mondes Doubles de Talus et Tralus, n'a pas la réputation d'être fiable ni même honorable. Et ce ne sont pas les autres criminels qui diront le contraire…</i>"""
         "Black Squadron Ace":
            display_name: """As de l'Escadron Noir"""
-           text: """<i>Au cours de la Bataille de Yavin, les pilotes d'élite des chasseurs TIE/ln de l'Escadron Noir escortèrent Dark Vador lors d'une attaque dévastatrice contre les forces Rebelles.</i>"""
+           text: """<i class = flavor_text>Au cours de la Bataille de Yavin, les pilotes d'élite des chasseurs TIE/ln de l'Escadron Noir escortèrent Dark Vador lors d'une attaque dévastatrice contre les forces Rebelles.</i>"""
         "Black Squadron Scout":
            display_name: """Éclaireur de l'Escadron Noir"""
-           text: """<i>Ce vaisseau atmosphérique lourdement armé se sert de ses ailes mobiles pour gagner en vitesse et manœuvrabilité.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """<i class = flavor_text>Ce vaisseau atmosphérique lourdement armé se sert de ses ailes mobiles pour gagner en vitesse et manœuvrabilité.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
         "Black Sun Ace":
            display_name: """As du Soleil Noir"""
-           text: """<i>Le chasseur d'assaut Kihraxz fut développé expressément pour l'organisation criminelle du Soleil Noir, dont les as, très généreusement payés, exigeaient des appareils agiles et puissants, à la hauteur de leur talent.</i>"""
+           text: """<i class = flavor_text>Le chasseur d'assaut Kihraxz fut développé expressément pour l'organisation criminelle du Soleil Noir, dont les as, très généreusement payés, exigeaient des appareils agiles et puissants, à la hauteur de leur talent.</i>"""
         "Black Sun Assassin":
            display_name: """Assassin du Soleil Noir"""
-           text: """<i>Abattre sa cible au coin d'une ruelle sombre ou ajouter une goutte de poison à une boisson sont des méthodes courantes d'assassinat, mais une navette en feu s'écrasant au sol fait passer un tout autre message. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """<i class = flavor_text>Abattre sa cible au coin d'une ruelle sombre ou ajouter une goutte de poison à une boisson sont des méthodes courantes d'assassinat, mais une navette en feu s'écrasant au sol fait passer un tout autre message. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
         "Black Sun Enforcer":
            display_name: """Homme de Main du Soleil Noir"""
-           text: """<i>Le prince Xizor en personne collabora avec MandalMotors pour concevoir la plateforme d'attaque de classe StarViper, l'un des plus redoutables chasseurs de la galaxie. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
+           text: """<i class = flavor_text>Le prince Xizor en personne collabora avec MandalMotors pour concevoir la plateforme d'attaque de classe StarViper, l'un des plus redoutables chasseurs de la galaxie. </i>%LINEBREAK%<strong>Micropropulseurs :</strong> tant que vous effectuez un tonneau, vous devez utiliser le gabarit %BANKLEFT% ou %BANKRIGHT% à la place du gabarit %STRAIGHT%."""
         "Black Sun Soldier":
            display_name: """Soldat du Soleil Noir"""
-           text: """<i>La vaste et influente organisation criminelle du Soleil Noir a toujours besoin de pilotes de talent, pourvu qu'ils ne soient pas trop regardants sur l'origine de leur paye.</i>"""
+           text: """<i class = flavor_text>La vaste et influente organisation criminelle du Soleil Noir a toujours besoin de pilotes de talent, pourvu qu'ils ne soient pas trop regardants sur l'origine de leur paye.</i>"""
         "Blade Squadron Veteran":
            display_name: """Vétéran de l'Escadron Blade"""
-           text: """<i>Un système de stabilisation gyroscopique unique enveloppe le cockpit du B-wing et assure la stabilité du pilote.</i>"""
+           text: """<i class = flavor_text>Un système de stabilisation gyroscopique unique enveloppe le cockpit du B-wing et assure la stabilité du pilote.</i>"""
         "Blue Squadron Escort":
            display_name: """Escorte de l'Escadron Bleu"""
-           text: """<i>Conçu par Incom Corporation, le X-wing T-65 compta rapidement parmi les appareils militaires les plus efficaces de la galaxie et fut d'un réel secours pour la Rébellion.</i>"""
+           text: """<i class = flavor_text>Conçu par Incom Corporation, le X-wing T-65 compta rapidement parmi les appareils militaires les plus efficaces de la galaxie et fut d'un réel secours pour la Rébellion.</i>"""
         "Blue Squadron Pilot":
            display_name: """Pilote de l'Escadron Bleu"""
-           text: """<i>Grâce à son impressionnant panel d'armes lourdes et à ses boucliers très résistants, le B-wing s'est imposé comme le plus redoutable chasseur d'assaut de l'Alliance Rebelle.</i>"""
+           text: """<i class = flavor_text>Grâce à son impressionnant panel d'armes lourdes et à ses boucliers très résistants, le B-wing s'est imposé comme le plus redoutable chasseur d'assaut de l'Alliance Rebelle.</i>"""
         "Blue Squadron Scout":
            display_name: """Éclaireur de l'Escadron Bleu"""
-           text: """<i>Utilisé pour déployer des troupes sous couvert de l'obscurité ou sur les théâtres d'opérations les plus dangereux, le U-wing UT-60D rendit de fiers services à l'Alliance Rebelle qui avait désespérément besoin de transports résistants.</i>"""
+           text: """<i class = flavor_text>Utilisé pour déployer des troupes sous couvert de l'obscurité ou sur les théâtres d'opérations les plus dangereux, le U-wing UT-60D rendit de fiers services à l'Alliance Rebelle qui avait désespérément besoin de transports résistants.</i>"""
         "Bounty Hunter":
            display_name: """Chasseur de Primes"""
-           text: """<i>La sinistre réputation du Patrouilleur de Classe Firespray a pour origine les chasseurs de primes Jango Fett et Boba Fett, qui modifièrent leur appareil avec d'innombrables armes terrifiantes.</i>"""
+           text: """<i class = flavor_text>La sinistre réputation du Patrouilleur de Classe Firespray a pour origine les chasseurs de primes Jango Fett et Boba Fett, qui modifièrent leur appareil avec d'innombrables armes terrifiantes.</i>"""
         "Cartel Executioner":
            display_name: """Exécuteur du Cartel"""
-           text: """<i>De nombreux pilotes chevronnés au service des kajidics Hutt et d'autres organisations criminelles utilisent le chasseur M12-L Kimogila à cause de sa puissance de feu et de la peur qu'il inspire.</i>%LINEBREAK%<strong>Dans le Mille :</strong> tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
+           text: """<i class = flavor_text>De nombreux pilotes chevronnés au service des kajidics Hutt et d'autres organisations criminelles utilisent le chasseur M12-L Kimogila à cause de sa puissance de feu et de la peur qu'il inspire.</i>%LINEBREAK%<strong>Dans le Mille :</strong> tant que vous effectuez une attaque, si le défenseur est dans votre %BULLSEYEARC%, les dés de défense ne peuvent pas être modifiés en utilisant des marqueurs verts."""
         "Cartel Marauder":
            display_name: """Marauder du Cartel"""
-           text: """<i>Le polyvalent Kihraxz fut inspiré du très populaire chasseur X-wing d'Incom, mais toutes sortes d'options permettaient de le personnaliser à loisir. </i>"""
+           text: """<i class = flavor_text>Le polyvalent Kihraxz fut inspiré du très populaire chasseur X-wing d'Incom, mais toutes sortes d'options permettaient de le personnaliser à loisir. </i>"""
         "Cartel Spacer":
            display_name: """Astropilote du Cartel"""
-           text: """<i>L'Intercepteur « Scyk » M3-A de MandalMotors est acheté en grande quantité par le Cartel Hutt et les contrebandiers Car'das en raison de son prix bas et de ses nombreuses possibilités de personnalisation. </i>%LINEBREAK%<strong>Emplacement d'Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>L'Intercepteur « Scyk » M3-A de MandalMotors est acheté en grande quantité par le Cartel Hutt et les contrebandiers Car'das en raison de son prix bas et de ses nombreuses possibilités de personnalisation. </i>%LINEBREAK%<strong>Emplacement d'Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
         "Cavern Angels Zealot":
            display_name: """Extrémiste Anges des Cavernes"""
-           text: """<i>Contrairement à la plupart des cellules Rebelles, les Partisans de Saw Gerrera utilisèrent des méthodes jugées trop radicales pour lutter contre l'Empire Galactique, au cours des sanglants combats qui ravagèrent Géonosis et Jedha.</i>"""
+           text: """<i class = flavor_text>Contrairement à la plupart des cellules Rebelles, les Partisans de Saw Gerrera utilisèrent des méthodes jugées trop radicales pour lutter contre l'Empire Galactique, au cours des sanglants combats qui ravagèrent Géonosis et Jedha.</i>"""
         "Contracted Scout":
            display_name: """Éclaireur Sous Contrat"""
-           text: """<i>Conçu pour les missions de reconnaissance de long cours et le calcul de nouveaux itinéraires hyperspatiaux, le JumpMaster 5000, pourvu d'un armement léger, est souvent réaménagé par ses propriétaires.</i>"""
+           text: """<i class = flavor_text>Conçu pour les missions de reconnaissance de long cours et le calcul de nouveaux itinéraires hyperspatiaux, le JumpMaster 5000, pourvu d'un armement léger, est souvent réaménagé par ses propriétaires.</i>"""
         "Crymorah Goon":
            display_name: """Sbire du Crymorah"""
-           text: """<i>Bien qu'il ne soit pas toujours très maniable, le Y-wing bénéficie d'une solide coque, de boucliers substantiels et de canons montés sur une tourelle qui en font un excellent appareil de patrouille.</i>"""
+           text: """<i class = flavor_text>Bien qu'il ne soit pas toujours très maniable, le Y-wing bénéficie d'une solide coque, de boucliers substantiels et de canons montés sur une tourelle qui en font un excellent appareil de patrouille.</i>"""
         "Cutlass Squadron Pilot":
            display_name: """Pilote de l'Escadron Cutlass"""
-           text: """<i>Le TIE Punisher a été conçu après le bombardier TIE, qui connut un grand succès. Il est pourvu de boucliers, d'une seconde trappe de largage et de trois nacelles d'artillerie supplémentaires, toutes équipées de moteurs ioniques jumelés.</i>"""
+           text: """<i class = flavor_text>Le TIE Punisher a été conçu après le bombardier TIE, qui connut un grand succès. Il est pourvu de boucliers, d'une seconde trappe de largage et de trois nacelles d'artillerie supplémentaires, toutes équipées de moteurs ioniques jumelés.</i>"""
         "Delta Squadron Pilot":
            display_name: """Pilote de l'Escadron Delta"""
-           text: """<i>En plus de ses six canons laser et de ses lance-missiles, le redoutable défenseur TIE est équipé d'écrans déflecteurs et d'un hyperdrive.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """<i class = flavor_text>En plus de ses six canons laser et de ses lance-missiles, le redoutable défenseur TIE est équipé d'écrans déflecteurs et d'un hyperdrive.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
         "Freighter Captain":
            display_name: """Capitaine de Cargo"""
-           text: """<i>De nombreux astropilotes gagnent leur vie en parcourant la Bordure Extérieure, un secteur où la différence entre contrebandier et marchand honnête est souvent ténue. Aux frontières de la civilisation, les clients sont beaucoup moins exigeants sur l'origine des marchandises, tant que les prix sont suffisamment attractifs.</i>"""
+           text: """<i class = flavor_text>De nombreux astropilotes gagnent leur vie en parcourant la Bordure Extérieure, un secteur où la différence entre contrebandier et marchand honnête est souvent ténue. Aux frontières de la civilisation, les clients sont beaucoup moins exigeants sur l'origine des marchandises, tant que les prix sont suffisamment attractifs.</i>"""
         "Gamma Squadron Ace":
            display_name: """As de l'Escadron Gamma"""
-           text: """<i>Bien qu'il ne soit pas aussi maniable et rapide qu'un TIE/ln, le Bombardier TIE a une puissance de feu suffisante pour détruire à peu près n'importe quelle cible. </i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """<i class = flavor_text>Bien qu'il ne soit pas aussi maniable et rapide qu'un TIE/ln, le Bombardier TIE a une puissance de feu suffisante pour détruire à peu près n'importe quelle cible. </i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
         "Gand Findsman":
            display_name: """Trouveur Gand"""
-           text: """<i>Les légendaires Trouveurs de Gand vouaient un véritable culte aux brumes qui recouvraient leur planète natale et se servaient de signes, d'augures et de rituels mystiques pour traquer leurs proies.</i>"""
+           text: """<i class = flavor_text>Les légendaires Trouveurs de Gand vouaient un véritable culte aux brumes qui recouvraient leur planète natale et se servaient de signes, d'augures et de rituels mystiques pour traquer leurs proies.</i>"""
         "Gold Squadron Veteran":
            display_name: """Vétéran de l'Escadron Or"""
-           text: """<i>Sous le commandement de Jon «Dutch» Vander, l'Escadron Or a joué un rôle déterminant au cours des Batailles de Scarif et de Yavin.</i>"""
+           text: """<i class = flavor_text>Sous le commandement de Jon «Dutch» Vander, l'Escadron Or a joué un rôle déterminant au cours des Batailles de Scarif et de Yavin.</i>"""
         "Gray Squadron Bomber":
            display_name: """Bombardier de l'Escadron Gris"""
-           text: """<i>Grâce à sa vitesse, sa robustesse et son armement lourd, le Y-wing resta un élément essentiel de la flotte Rebelle longtemps après sa mise en retraite par l'Empire Galactique.</i>"""
+           text: """<i class = flavor_text>Grâce à sa vitesse, sa robustesse et son armement lourd, le Y-wing resta un élément essentiel de la flotte Rebelle longtemps après sa mise en retraite par l'Empire Galactique.</i>"""
         "Green Squadron Pilot":
            display_name: """Pilote de l'Escadron Vert"""
-           text: """<i>À cause de ses commandes sensibles et de son extrême manœuvrabilité, seuls les meilleurs pilotes﻿ osent prendre place dans le cockpit d'un A-wing.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """<i class = flavor_text>À cause de ses commandes sensibles et de son extrême manœuvrabilité, seuls les meilleurs pilotes﻿ osent prendre place dans le cockpit d'un A-wing.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
         "Hired Gun":
            display_name: """ Soudard"""
-           text: """<i>La simple évocation de crédits Impériaux peut attirer toutes sortes d'individus totalement amoraux dans votre camp.</i>"""
+           text: """<i class = flavor_text>La simple évocation de crédits Impériaux peut attirer toutes sortes d'individus totalement amoraux dans votre camp.</i>"""
         "Imdaar Test Pilot":
            display_name: """Pilote d'Essai Imdaar"""
-           text: """<i>Conçu dans un centre de recherches secret sur Imdaar Alpha, le TIE Fantôme concrétise ce qui semblait impossible : un petit chasseur furtif équipé d'un système d'occultation avancé.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d'évasion pour gagner 1 marqueur d'occultation. """
+           text: """<i class = flavor_text>Conçu dans un centre de recherches secret sur Imdaar Alpha, le TIE Fantôme concrétise ce qui semblait impossible : un petit chasseur furtif équipé d'un système d'occultation avancé.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d'évasion pour gagner 1 marqueur d'occultation. """
         "Inquisitor":
            display_name: """Inquisiteur"""
-           text: """<i>Les redoutables Inquisiteurs bénéficient d'une grande autonomie et ont accès aux technologies les plus récentes de l'Empire, comme le prototype TIE Advanced v1.</i>"""
+           text: """<i class = flavor_text>Les redoutables Inquisiteurs bénéficient d'une grande autonomie et ont accès aux technologies les plus récentes de l'Empire, comme le prototype TIE Advanced v1.</i>"""
         "Jakku Gunrunner":
            display_name: """Trafiquant d'Armes de Jakku"""
-           text: """<i>Le Remorqueur Spatial de Transfert Quadrimoteur, surnommé « Quad jumper », était aussi manœuvrable sous atmosphère que dans l'espace, ce qui le rendait extrêmement populaire auprès des contrebandiers et des explorateurs. </i>%LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s'il est dans votre %BULLSEYEARC% à portée 1."""
+           text: """<i class = flavor_text>Le Remorqueur Spatial de Transfert Quadrimoteur, surnommé « Quad jumper », était aussi manœuvrable sous atmosphère que dans l'espace, ce qui le rendait extrêmement populaire auprès des contrebandiers et des explorateurs. </i>%LINEBREAK%<strong>Dispositif Tracteur de Remorqueur Spatial :</strong> <strong>Action :</strong> choisissez un vaisseau dans votre %FRONTARC% à portée 1. Il gagne 1 marqueur de rayon tracteur, ou 2 marqueurs de rayon tracteur s'il est dans votre %BULLSEYEARC% à portée 1."""
         "Kashyyyk Defender":
            display_name: """Défenseur de Kashyyyk"""
-           text: """<i>Équipée de trois canons laser jumelés Sureggi longue portée, la canonnière Auzituck donnait du fil à retordre aux esclavagistes dans le système de Kashyyyk.</i>"""
+           text: """<i class = flavor_text>Équipée de trois canons laser jumelés Sureggi longue portée, la canonnière Auzituck donnait du fil à retordre aux esclavagistes dans le système de Kashyyyk.</i>"""
         "Knave Squadron Escort":
            display_name: """Escorte de l'Escadron Knave"""
-           text: """<i>Conçu pour combiner les meilleurs atouts de l'A-wing et du X-wing, l'E-wing dispose d'une puissance de feu, d'une vitesse et d'une manœuvrabilité supérieures.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """<i class = flavor_text>Conçu pour combiner les meilleurs atouts de l'A-wing et du X-wing, l'E-wing dispose d'une puissance de feu, d'une vitesse et d'une manœuvrabilité supérieures.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
         "Lok Revenant":
            display_name: """Revenant de Lok"""
-           text: """<i>Le Collectif de Conception Nubien créa le Bombardier Scurrg H-6 en songeant avant tout à sa polyvalence au combat, l'équipant de puissants boucliers et d'un large éventail d'armes destructrices.</i>"""
+           text: """<i class = flavor_text>Le Collectif de Conception Nubien créa le Bombardier Scurrg H-6 en songeant avant tout à sa polyvalence au combat, l'équipant de puissants boucliers et d'un large éventail d'armes destructrices.</i>"""
         "Lothal Rebel":
            display_name: """Rebelle de Lothal"""
-           text: """<i>Autre réussite commerciale de la Corporation Technique Corellienne, le cargo VCX-100 est plus gros que les légendaires appareils de la série YT, et propose un espace de vie plus volumineux et de meilleures possibilités de personnalisation.</i>%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d'une arme principale %REARARC% avec une valeur d'attaque égale à celle de l'attaque principale %FRONTARC% du vaisseau arrimé."""
+           text: """<i class = flavor_text>Autre réussite commerciale de la Corporation Technique Corellienne, le cargo VCX-100 est plus gros que les légendaires appareils de la série YT, et propose un espace de vie plus volumineux et de meilleures possibilités de personnalisation.</i>%LINEBREAK%<strong>Artillerie de Poupe :</strong> tant que vous avez un vaisseau arrimé, vous bénéficiez d'une arme principale %REARARC% avec une valeur d'attaque égale à celle de l'attaque principale %FRONTARC% du vaisseau arrimé."""
         "Nu Squadron Pilot":
            display_name: """Pilote de l'Escadron Nu"""
-           text: """<i>D'une conception similaire aux autres vaisseaux développés par Cygnus Spaceworks, le Star Wing de classe Alpha est un appareil polyvalent attribué aux unités spécialisées de la Marine Impériale qui ont besoin d'un chasseur facilement adaptable pour des missions variées.</i>"""
+           text: """<i class = flavor_text>D'une conception similaire aux autres vaisseaux développés par Cygnus Spaceworks, le Star Wing de classe Alpha est un appareil polyvalent attribué aux unités spécialisées de la Marine Impériale qui ont besoin d'un chasseur facilement adaptable pour des missions variées.</i>"""
         "Obsidian Squadron Pilot":
            display_name: """Pilote de l'Escadron Obsidian"""
-           text: """<i>Le moteur ionique jumelé des chasseurs TIE a été conçu pour la vitesse, ce qui classe ces derniers parmi les vaisseaux les plus maniables jamais produits.</i>"""
+           text: """<i class = flavor_text>Le moteur ionique jumelé des chasseurs TIE a été conçu pour la vitesse, ce qui classe ces derniers parmi les vaisseaux les plus maniables jamais produits.</i>"""
         "Omicron Group Pilot":
            display_name: """Pilote du Groupe Omicron"""
-           text: """<i>Appareil utilitaire léger, la navette de classe Lambda, reconnaissable à sa triple aile caractéristique, joue un rôle de premier plan dans la Marine Impériale, grâce à ses senseurs avancés.</i>"""
+           text: """<i class = flavor_text>Appareil utilitaire léger, la navette de classe Lambda, reconnaissable à sa triple aile caractéristique, joue un rôle de premier plan dans la Marine Impériale, grâce à ses senseurs avancés.</i>"""
         "Onyx Squadron Ace":
            display_name: """As de l'Escadron Onyx"""
-           text: """<i>L'appareil expérimental qu'est le défenseur TIE surclasse tous les vaisseaux de sa génération, mais sa taille, sa vitesse et son arsenal augmentent considérablement son coût de fabrication.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
+           text: """<i class = flavor_text>L'appareil expérimental qu'est le défenseur TIE surclasse tous les vaisseaux de sa génération, mais sa taille, sa vitesse et son arsenal augmentent considérablement son coût de fabrication.</i>%LINEBREAK%<strong>Plein Gaz :</strong> après avoir entièrement exécuté une manœuvre à vitesse 3-5, vous pouvez effectuer une action %EVADE%."""
         "Onyx Squadron Scout":
            display_name: """Éclaireur de l'Escadron Onyx"""
-           text: """<i>Conçu pour les engagements de longue haleine, le TIE/ag est habituellement confié aux pilotes d'élite entraînés pour tirer le meilleur parti de son armement et de sa manœuvrabilité.</i>"""
+           text: """<i class = flavor_text>Conçu pour les engagements de longue haleine, le TIE/ag est habituellement confié aux pilotes d'élite entraînés pour tirer le meilleur parti de son armement et de sa manœuvrabilité.</i>"""
         "Outer Rim Smuggler":
            display_name: """Contrebandier de la Bordure Extérieure"""
-           text: """<i>Connu pour sa robustesse et sa conception modulaire, le YT-1300 est l'un des cargos les plus populaires et répandus de la galaxie.</i>"""
+           text: """<i class = flavor_text>Connu pour sa robustesse et sa conception modulaire, le YT-1300 est l'un des cargos les plus populaires et répandus de la galaxie.</i>"""
         "Partisan Renegade":
            display_name: """Renégat Partisan"""
-           text: """<i>Les Partisans de Saw Gerrera se rassemblèrent d'abord pour combattre les troupes Séparatistes sur Onderon lors de la Guerre des Clones, puis ils continuèrent de lutter contre la tyrannie galactique instaurée par l'Empire.</i>"""
+           text: """<i class = flavor_text>Les Partisans de Saw Gerrera se rassemblèrent d'abord pour combattre les troupes Séparatistes sur Onderon lors de la Guerre des Clones, puis ils continuèrent de lutter contre la tyrannie galactique instaurée par l'Empire.</i>"""
         "Patrol Leader":
            display_name: """Chef de Patrouille"""
-           text: """<i>Recevoir le commandement d'un Décimateur VT-49 est une promotion de taille pour un officier moyen de la Marine Impériale.</i>"""
+           text: """<i class = flavor_text>Recevoir le commandement d'un Décimateur VT-49 est une promotion de taille pour un officier moyen de la Marine Impériale.</i>"""
         "Phoenix Squadron Pilot":
            display_name: """Pilote de l'Escadron Phœnix"""
-           text: """<i>Dirigés par le commandant Jun Sato et malgré leur manque d'expérience, les courageux pilotes de l'Escadron Phœnix firent face à des défis complexes dans leur lutte contre l'Empire Galactique.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
+           text: """<i class = flavor_text>Dirigés par le commandant Jun Sato et malgré leur manque d'expérience, les courageux pilotes de l'Escadron Phœnix firent face à des défis complexes dans leur lutte contre l'Empire Galactique.</i>%LINEBREAK%<strong>Propulseurs Vectoriels :</strong> après avoir effectué une action, vous pouvez effectuer une action %BOOST% rouge."""
         "Planetary Sentinel":
            display_name: """Sentinelle Planétaire"""
-           text: """<i>Pour protéger ses installations militaires, l'Empire a besoin d'une force de défense rapide et vigilante.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
+           text: """<i class = flavor_text>Pour protéger ses installations militaires, l'Empire a besoin d'une force de défense rapide et vigilante.</i>%LINEBREAK%<strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous devez exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]."""
         "Rebel Scout":
            display_name: """Éclaireur Rebelle"""
-           text: """<i>Conçue par la Corporation Technique Corellienne et inspirée d'un oiseau  en vol, la série « hawk » a produit d'excellents cargos légers. Rapide et résistant, le HWK-290 est souvent utilisé par les agents Rebelles en tant que base mobile d'opérations.</i>"""
+           text: """<i class = flavor_text>Conçue par la Corporation Technique Corellienne et inspirée d'un oiseau  en vol, la série « hawk » a produit d'excellents cargos légers. Rapide et résistant, le HWK-290 est souvent utilisé par les agents Rebelles en tant que base mobile d'opérations.</i>"""
         "Red Squadron Veteran":
            display_name: """Vétéran de l'Escadron Rouge"""
-           text: """<i>Conçu comme une unité d'élite pour les combats spatiaux, l'Escadron Rouge comprend certains des meilleurs pilotes de l'Alliance Rebelle.</i>"""
+           text: """<i class = flavor_text>Conçu comme une unité d'élite pour les combats spatiaux, l'Escadron Rouge comprend certains des meilleurs pilotes de l'Alliance Rebelle.</i>"""
         "Rho Squadron Pilot":
            display_name: """Pilote de l'Escadron Rho"""
-           text: """<i>Les pilotes d'élite de l'escadron Rho distillent la peur au sein de la Rébellion, la configuration d'assaut Xg-1 et l'arsenal Os-1 embarqué du Star Wing de classe Alpha ayant des effets dévastateurs.</i>"""
+           text: """<i class = flavor_text>Les pilotes d'élite de l'escadron Rho distillent la peur au sein de la Rébellion, la configuration d'assaut Xg-1 et l'arsenal Os-1 embarqué du Star Wing de classe Alpha ayant des effets dévastateurs.</i>"""
         "Rogue Squadron Escort":
            display_name: """Escorte de l'Escadron Rogue"""
-           text: """<i>Les pilotes d'élite de l'Escadron Rogue font partie des meilleurs pilotes de la Rébellion.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
+           text: """<i class = flavor_text>Les pilotes d'élite de l'Escadron Rogue font partie des meilleurs pilotes de la Rébellion.</i>%LINEBREAK%<strong>Scanners Expérimentaux :</strong> vous pouvez verrouiller une cible au-delà de la portée 3. Vous ne pouvez pas verrouiller de cible à portée 1."""
         "Saber Squadron Ace":
            display_name: """As de l'Escadron Sabre"""
-           text: """<i>Dirigés par le Baron Fel Soontir, les pilotes de l'escadron Sabre sont parmi les meilleurs de l'Empire. Leurs Intercepteurs TIE sont marqués avec des bandes rouges pour désigner les pilotes ayant au moins dix victoires confirmées.</i>%LINEBREAK% <strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
+           text: """<i class = flavor_text>Dirigés par le Baron Fel Soontir, les pilotes de l'escadron Sabre sont parmi les meilleurs de l'Empire. Leurs Intercepteurs TIE sont marqués avec des bandes rouges pour désigner les pilotes ayant au moins dix victoires confirmées.</i>%LINEBREAK% <strong>Autopropulseurs :</strong> après avoir effectué une action, vous pouvez effectuer une action %BARRELROLL% rouge ou %BOOST% rouge."""
         "Scarif Base Pilot":
            display_name: """Pilote de la Base de Scarif"""
-           text: """<i>Le TIE Reaper fut conçu pour déposer des troupes d'élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</i>%LINEBREAK%<sasmall><strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%].</sasmall>"""
+           text: """<i class = flavor_text>Le TIE Reaper fut conçu pour déposer des troupes d'élite sur les points chauds des champs de bataille, comme les terrifiants Death Troopers du Directeur Krennic lors de la Bataille de Scarif.</i>%LINEBREAK%<sasmall><strong>Ailerons Adaptables :</strong> avant de révéler votre cadran, si vous n'êtes pas stressé, vous <b>devez</b> exécuter une manœuvre blanche [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%], ou [1&nbsp;%BANKRIGHT%].</sasmall>"""
         "Scimitar Squadron Pilot":
            display_name: """Scimitar Squadron Pilot"""
-           text: """<i>Le TIE/sa est particulièrement précis pour un bombardier, lui permettant des frappes ciblées tout en évitant d'infliger des dommages collatéraux excessifs à la zone environnante.</i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
+           text: """<i class = flavor_text>Le TIE/sa est particulièrement précis pour un bombardier, lui permettant des frappes ciblées tout en évitant d'infliger des dommages collatéraux excessifs à la zone environnante.</i>%LINEBREAK%<strong>Bombardier Agile :</strong> si vous devez utiliser un gabarit %STRAIGHT% pour larguer un engin, vous pouvez utiliser un gabarit %BANKLEFT% ou %BANKRIGHT% de même vitesse à la place."""
         "Shadowport Hunter":
            display_name: """Chasseur des Ports Fantômes"""
-           text: """<i>Les organisations criminelles confient à leurs agents loyaux des vaisseaux disposant de la meilleure technologie possible, comme le véloce et redoutable Appareil de Poursuite de Classe Lancer, afin de renforcer leurs aptitudes létales.</i>"""
+           text: """<i class = flavor_text>Les organisations criminelles confient à leurs agents loyaux des vaisseaux disposant de la meilleure technologie possible, comme le véloce et redoutable Appareil de Poursuite de Classe Lancer, afin de renforcer leurs aptitudes létales.</i>"""
         "Sienar Specialist":
            display_name: """Spécialiste Sienar"""
-           text: """<i>Lors du développement du TIE Aggressor, Sienar Fleet Systems accorda d'avantage d'importance aux performances et à la polyvalence qu'à la maîtrise des coûts.</i>"""
+           text: """<i class = flavor_text>Lors du développement du TIE Aggressor, Sienar Fleet Systems accorda d'avantage d'importance aux performances et à la polyvalence qu'à la maîtrise des coûts.</i>"""
         "Sigma Squadron Ace":
            display_name: """As de l'Escadron Sigma"""
-           text: """<i>Équipé d'un hyperdrive et de boucliers, le TIE Fantôme dispose également de cinq canons laser qui lui confèrent une puissance de feu inouïe pour un chasseur Impérial.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d'évasion pour gagner 1 marqueur d'occultation. """
+           text: """<i class = flavor_text>Équipé d'un hyperdrive et de boucliers, le TIE Fantôme dispose également de cinq canons laser qui lui confèrent une puissance de feu inouïe pour un chasseur Impérial.</i>%LINEBREAK%<strong>Réseau de Stygium :</strong> après vous être désocculté, vous pouvez effectuer une action %EVADE%. Au début de la phase de dénouement, vous pouvez dépenser 1 marqueur d'évasion pour gagner 1 marqueur d'occultation. """
         "Skull Squadron Pilot":
            display_name: """Pilote de l'Escadron Skull"""
-           text: """<i>Les as de l'Escadron Skull privilégient une approche agressive, profitant de la technologie d'ailes montées sur pivot de leurs appareils, ce qui leur confère une maniabilité exceptionnelle quand ils poursuivent leurs proies. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d'attaque est 1 et que vous êtes dans l'%FRONTARC% de l'attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """<i class = flavor_text>Les as de l'Escadron Skull privilégient une approche agressive, profitant de la technologie d'ailes montées sur pivot de leurs appareils, ce qui leur confère une maniabilité exceptionnelle quand ils poursuivent leurs proies. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d'attaque est 1 et que vous êtes dans l'%FRONTARC% de l'attaquant, changez 1 résultat en un résultat %EVADE%."""
         "Spice Runner":
            display_name: """Trafiquant d'Épice"""
-           text: """<i>Bien que ses soutes soient plus étroites que celles d'autres cargos légers, le petit mais véloce HWK-290 est un vaisseau de prédilection pour ceux qui se spécialisent dans le transport discret de biens précieux.</i>"""
+           text: """<i class = flavor_text>Bien que ses soutes soient plus étroites que celles d'autres cargos légers, le petit mais véloce HWK-290 est un vaisseau de prédilection pour ceux qui se spécialisent dans le transport discret de biens précieux.</i>"""
         "Storm Squadron Ace":
            display_name: """As de l'Escadron Storm"""
-           text: """<i>Le Tie Advanced x1 a été produit en quantités limitées, mais les ingénieurs de Sienar incorporèrent la plus grande partie de ses innovations dans leur nouveau modèle de TIE : l'Intercepteur TIE.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d'attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """<i class = flavor_text>Le Tie Advanced x1 a été produit en quantités limitées, mais les ingénieurs de Sienar incorporèrent la plus grande partie de ses innovations dans leur nouveau modèle de TIE : l'Intercepteur TIE.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d'attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Tala Squadron Pilot":
            display_name: """Pilote de l'Escadron Tala"""
-           text: """<i>L'AF4 est la toute dernière génération du modèle Chasseur de Têtes. Robuste et bon marché, il est très populaire auprès des organisations indépendantes comme la Rébellion.</i>"""
+           text: """<i class = flavor_text>L'AF4 est la toute dernière génération du modèle Chasseur de Têtes. Robuste et bon marché, il est très populaire auprès des organisations indépendantes comme la Rébellion.</i>"""
         "Tansarii Point Veteran":
            display_name: """Vétéran de Tansarii Point"""
-           text: """<i>La défaite de l'as du Soleil Noir, Talonbane Cobra, abattu par des contrebandiers Car'das, changea le cours de la bataille de la station Tansarii Point. Les survivants de cet affrontement sont respectés dans tout le secteur. </i>%LINEBREAK%<strong>Emplacement d'Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
+           text: """<i class = flavor_text>La défaite de l'as du Soleil Noir, Talonbane Cobra, abattu par des contrebandiers Car'das, changea le cours de la bataille de la station Tansarii Point. Les survivants de cet affrontement sont respectés dans tout le secteur. </i>%LINEBREAK%<strong>Emplacement d'Arme :</strong> vous pouvez vous équiper de 1 amélioration %CANNON%, %TORPEDO% ou %MISSILE%."""
         "Tempest Squadron Pilot":
            display_name: """Pilote de l'Escadron Tempest"""
-           text: """<i>Le TIE Advanced est une version améliorée du célèbre chasseur TIE/ln disposant de boucliers, d'un meilleur système d'armement, de panneaux solaires incurvés et d'un hyperdrive.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d'attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
+           text: """<i class = flavor_text>Le TIE Advanced est une version améliorée du célèbre chasseur TIE/ln disposant de boucliers, d'un meilleur système d'armement, de panneaux solaires incurvés et d'un hyperdrive.</i>%LINEBREAK%<strong>Ordinateur de Visée Avancé :</strong> tant que vous effectuez une attaque principale contre un défenseur que vous avez verrouillé, lancez 1 dé d'attaque supplémentaire et changez 1 résultat %HIT% en un résultat %CRIT%."""
         "Trandoshan Slaver":
            display_name: """Esclavagiste Trandosien"""
-           text: """<i>Le spacieux YV-666 est très populaire auprès des chasseurs de primes et des esclavagistes avec ses trois ponts, dont l'un était souvent aménagé pour le transport de prisonniers.</i>"""
+           text: """<i class = flavor_text>Le spacieux YV-666 est très populaire auprès des chasseurs de primes et des esclavagistes avec ses trois ponts, dont l'un était souvent aménagé pour le transport de prisonniers.</i>"""
         "Warden Squadron Pilot":
            display_name: """Pilote de l'Escadron Warden"""
-           text: """<i>Le K-wing de Koensayr Manufacturing peut s'enorgueillir de son moteur à accélération subluminique avancé et de dix-huit points d'emport, ce qui lui confère une vitesse et une puissance de feu inégalées.</i>"""
+           text: """<i class = flavor_text>Le K-wing de Koensayr Manufacturing peut s'enorgueillir de son moteur à accélération subluminique avancé et de dix-huit points d'emport, ce qui lui confère une vitesse et une puissance de feu inégalées.</i>"""
         "Wild Space Fringer":
            display_name: """Frontalier de l'Espace Sauvage"""
-           text: """<i>Certes, le cargo léger YT-2400 possédait une soute de bonne taille, mais celle-ci était souvent encombrée de systèmes d'armement modifiés et de moteurs énormes.</i>%LINEBREAK%<strong>Angle Mort des Senseurs :</strong> tant que vous effectuez une attaque principale à portée d'attaque 0-1, n'appliquez pas le bonus de portée 0-1 et lancez 1 dé d'attaque en moins."""
+           text: """<i class = flavor_text>Certes, le cargo léger YT-2400 possédait une soute de bonne taille, mais celle-ci était souvent encombrée de systèmes d'armement modifiés et de moteurs énormes.</i>%LINEBREAK%<strong>Angle Mort des Senseurs :</strong> tant que vous effectuez une attaque principale à portée d'attaque 0-1, n'appliquez pas le bonus de portée 0-1 et lancez 1 dé d'attaque en moins."""
         "Zealous Recruit":
            display_name: """Recrue Zélée"""
-           text: """<i>Les pilotes de Chasseur Fang Mandalorien doivent maîtriser la manœuvre dite de l'Opposition Concordia, profitant du profil de leurs appareils pour mener des charges sans concession. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d'attaque est 1 et que vous êtes dans l'%FRONTARC% de l'attaquant, changez 1 résultat en un résultat %EVADE%."""
+           text: """<i class = flavor_text>Les pilotes de Chasseur Fang Mandalorien doivent maîtriser la manœuvre dite de l'Opposition Concordia, profitant du profil de leurs appareils pour mener des charges sans concession. </i>%LINEBREAK%<strong>Opposition Concordia :</strong> tant que vous défendez, si la portée d'attaque est 1 et que vous êtes dans l'%FRONTARC% de l'attaquant, changez 1 résultat en un résultat %EVADE%."""
         "4-LOM":
            display_name: """4-LOM"""
            text: """Après avoir entièrement exécuté une manœuvre rouge, gagnez 1 marqueur de calcul.%LINEBREAK%Au début de la phase de dénouement, vous pouvez choisir un vaisseau à portée 0-1. Dans ce cas, transférez 1 de vos marqueurs de stress à ce vaisseau."""
@@ -460,7 +460,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d'engagement, vous pouvez choisir 1 vaisseau ennemi dans votre %SINGLETURRETARC% à portée 0-2 et dépenser 1 %FORCE%. Dans ce cas, ce vaisseau gagne 1 marqueur de stress sauf s'il retire 1 marqueur vert."""
         "Autopilot Drone":
            display_name: """Drone Automatique"""
-           text: """<i>Il est parfois utile d'ignorer les avertissements de sécurité préconisés par les fabricants…</i>%LINEBREAK%Cellules Énergétiques Bidouillées&nbsp;: pendant la phase de système, si vous n'êtes pas arrimé, perdez 1 &nbsp;%CHARGE%. À la fin de la phase d'activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0-1 subit 1 dégât %CRIT%."""
+           text: """<i class = flavor_text>Il est parfois utile d'ignorer les avertissements de sécurité préconisés par les fabricants…</i>%LINEBREAK%Cellules Énergétiques Bidouillées&nbsp;: pendant la phase de système, si vous n'êtes pas arrimé, perdez 1 &nbsp;%CHARGE%. À la fin de la phase d'activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0-1 subit 1 dégât %CRIT%."""
         "Benthic Two-Tubes":
            display_name: """Benthic Deux-Tubes"""
            text: """Après avoir effectué une action %FOCUS%, vous pouvez transférer 1 de vos marqueurs de concentration à un vaisseau allié à portée 1-2."""
@@ -1109,10 +1109,10 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i>Racailles et Scélérats uniquement</i>%LINEBREAK%Tant qu'un autre vaisseau allié défend ou effectue une attaque, vous pouvez dépenser 1&nbsp;%FORCE% pour modifier 1 de ses dés comme si ce vaisseau avait dépensé 1&nbsp;%FORCE%."""
         "Engine Upgrade":
            display_name: """Moteurs Améliorés"""
-           text: """Coût variable%LINEBREAK%<i>Ajoute %BOOST%</i>%LINEBREAK%<i>Requiert <r>%BOOST%</r></i>%LINEBREAK%<i>Les armées de grande taille comme celles de l'Empire Galactique ont des vaisseaux équipés de moteurs standardisés, mais les pilotes indépendants ou les petites organisations remplacent souvent les accouplements, rajoutent des propulseurs ou utilisent du carburant haute performance afin d'obtenir une poussée plus forte.</i>"""
+           text: """Coût variable%LINEBREAK%<i>Ajoute %BOOST%</i>%LINEBREAK%<i>Requiert <r>%BOOST%</r></i>%LINEBREAK%<i class = flavor_text>Les armées de grande taille comme celles de l'Empire Galactique ont des vaisseaux équipés de moteurs standardisés, mais les pilotes indépendants ou les petites organisations remplacent souvent les accouplements, rajoutent des propulseurs ou utilisent du carburant haute performance afin d'obtenir une poussée plus forte.</i>"""
         "Expert Handling":
            display_name: """As de l'Espace"""
-           text: """Coût variable%LINEBREAK%<i>Ajoute %BARRELROLL%</i>%LINEBREAK%<i>Requiert <r>%BARRELROLL%</r></i>%LINEBREAK%<i>Bien que les chasseurs lourds puissent être déportés lors d'un tonneau, les pilotes chevronnés savent comment s'y prendre sans malmener leur vaisseau ou se rendre vulnérable à une attaque.</i>"""
+           text: """Coût variable%LINEBREAK%<i>Ajoute %BARRELROLL%</i>%LINEBREAK%<i>Requiert <r>%BARRELROLL%</r></i>%LINEBREAK%<i class = flavor_text>Bien que les chasseurs lourds puissent être déportés lors d'un tonneau, les pilotes chevronnés savent comment s'y prendre sans malmener leur vaisseau ou se rendre vulnérable à une attaque.</i>"""
         "Ezra Bridger":
            display_name: """Ezra Bridger"""
            text: """<i>Alliance Rebelle uniquement</i>%LINEBREAK%Après avoir effectué une attaque principale, vous pouvez dépenser 1&nbsp;%FORCE% pour effectuer une attaque bonus %SINGLETURRETARC% depuis une %SINGLETURRETARC% avec laquelle vous n'avez pas attaqué à ce round. Dans ce cas et si vous êtes stressé, vous pouvez relancer 1 dé d'attaque."""
@@ -1166,7 +1166,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Tant que vous effectuez une attaque %SINGLETURRETARC%, après l'étape «&nbsp;Modifier les dés de défense&nbsp;», le défenseur retire 1 marqueur de concentration ou de calcul."""
         "Hull Upgrade":
            display_name: """Coque Améliorée"""
-           text: """Coût variable%LINEBREAK%<i>Quand on ne peut pas s'offrir un générateur de boucliers améliorés, souder des plaques de blindage sur la coque du vaisseau peut être un bon substitut.</i>"""
+           text: """Coût variable%LINEBREAK%<i class = flavor_text>Quand on ne peut pas s'offrir un générateur de boucliers améliorés, souder des plaques de blindage sur la coque du vaisseau peut être un bon substitut.</i>"""
         "IG-88D":
            display_name: """IG-88D"""
            text: """<i>Ajoute %CALCULATE%</i>%LINEBREAK%<i>Empire Galactique uniquement</i>%LINEBREAK%Vous avez la capacité de pilote de chaque autre vaisseau allié qui possède l'amélioration <strong>IG-2000</strong>.%LINEBREAK%Après avoir effectué une action %CALCULATE%, gagnez 1 marqueur de calcul."""
@@ -1355,7 +1355,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i>Racailles et Scélérats uniquement</i>%LINEBREAK%Si un vaisseau ennemi à portée 0-1 est censé gagner un marqueur de stress, vous pouvez dépenser 1 %FORCE% pour qu'il gagne 1 marqueur de brouillage ou de rayon tracteur à la place."""
         "Shield Upgrade":
            display_name: """Boucliers Améliorés"""
-           text: """Coût variable%LINEBREAK%<i>Les écrans déflecteurs sont la principale protection de la plupart des vaisseaux, à l'exception des chasseurs légers. Améliorer les boucliers d'un vaisseau peut se révéler coûteux, mais seuls les pilotes les plus présomptueux, ou les plus téméraires, songent à se passer de ce type d'investissement.</i>"""
+           text: """Coût variable%LINEBREAK%<i class = flavor_text>Les écrans déflecteurs sont la principale protection de la plupart des vaisseaux, à l'exception des chasseurs légers. Améliorer les boucliers d'un vaisseau peut se révéler coûteux, mais seuls les pilotes les plus présomptueux, ou les plus téméraires, songent à se passer de ce type d'investissement.</i>"""
         "Skilled Bombardier":
            display_name: """Bombardier Compétent"""
            text: """Si vous devez larguer ou lancer un engin, vous pouvez utiliser un gabarit de même direction mais avec une vitesse supérieure ou inférieure de 1."""
@@ -1376,7 +1376,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """Au début de la phase d'engagement, vous pouvez choisir 1 vaisseau allié à portée 1. Dans ce cas, considérez que son initiative est égale à la vôtre jusqu'à la fin du round."""
         "Tactical Officer":
            display_name: """Officier Tactique"""
-           text: """<i>Ajoute %COORDINATE%</i>%LINEBREAK%<i>Requiert <r>%COORDINATE%</r></i>%LINEBREAK%<i>Dans la confusion d'un combat spatial, un simple ordre peut faire la différence entre une victoire et un carnage.</i>"""
+           text: """<i>Ajoute %COORDINATE%</i>%LINEBREAK%<i>Requiert <r>%COORDINATE%</r></i>%LINEBREAK%<i class = flavor_text>Dans la confusion d'un combat spatial, un simple ordre peut faire la différence entre une victoire et un carnage.</i>"""
         "Tactical Scrambler":
            display_name: """Brouilleur Tactique"""
            text: """<i>Vaisseau grand ou Vaisseau moyen uniquement</i>%LINEBREAK%Tant que vous gênez l'attaque d'un vaisseau ennemi, le défenseur lance 1 dé de défense supplémentaire."""

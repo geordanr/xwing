@@ -87,6 +87,8 @@ for card_en in cards_en:
             # rename translated card, add the (...) to the translated name
             card_translation["name"] += re.sub(".*?( \(.*\)).*", r"\1", card_en["name"])
 
+    card_en["name"] = card_en["name"].replace('’', "'")
+
     # translate
     output_text += ('        "%s":\n' % card_en["name"])
     output_text += ('           display_name: """%s"""\n' % card_translation["name"])
@@ -224,6 +226,7 @@ output_text = output_text.replace('<kturn>', '%KTURN%')
 output_text = output_text.replace('<leftsloop>', '%SLOOPLEFT%')
 output_text = output_text.replace('<rightsloop>', '%SLOOPRIGHT%')
 output_text = output_text.replace('<return>', '%LINEBREAK%')
+output_text = output_text.replace('<Return>', '%LINEBREAK%')
 output_text = output_text.replace('<nonbreak>', '&nbsp;')
 output_text = output_text.replace('<shipability>', '')
 output_text = output_text.replace('</shipability>', '')
@@ -231,6 +234,8 @@ output_text = output_text.replace('<flavor>', '<i class = flavor_text>')
 output_text = output_text.replace('</flavor>', '</i>')  # we could also remove all flavor text?
 output_text = output_text.replace('<smallcaps>', '<strong>')
 output_text = output_text.replace('</smallcaps>', '</strong>')
+output_text = output_text.replace('<smallbody>', '')
+output_text = output_text.replace('</smallbody>', '')
 output_text = output_text.replace('<sabold>', '<strong>')
 output_text = output_text.replace('</sabold>', '</strong>')
 output_text = output_text.replace('<bold>', '<b>')

@@ -1307,7 +1307,7 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Mientras efectúas un ataque, si el defensor está en tu %BULLSEYEARC%, puedes cambiar 1 resultado %HIT% por un resultado %CRIT%."""
         "Maul":
            display_name: """Maul"""
-           text: """<i>Sólo Escoria o Escuadrón que incluya a Ezra Bridger o Escuadrón que incluya a Ezra Bridger (Sheathipede) o Escuadrón que incluya a Ezra Bridger (TIE Fighter)</i>%LINEBREAK%Después de que sufras daño, puedes recibir 1 ficha de Tensión para recuperar 1 %FORCE%.%LINEBREAK%Puedes equiparte con mejoras de “Lado Oscuro”."""
+           text: """<i>Sólo Escoria o Escuadrón que incluya a Ezra Bridger</i>%LINEBREAK%Después de que sufras daño, puedes recibir 1 ficha de Tensión para recuperar 1 %FORCE%.%LINEBREAK%Puedes equiparte con mejoras de “Lado Oscuro”."""
         "Minister Tua":
            display_name: """Ministra Tua"""
            text: """<i>Sólo Imperio</i>%LINEBREAK%Al comienzo de la fase de Enfrentamiento, si estás dañado, puedes realizar una acción %FOCUS% roja."""
