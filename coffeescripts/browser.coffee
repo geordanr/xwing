@@ -70,6 +70,10 @@ class exportObj.CardBrowser
 
                     </div>
                     <div class="span8">
+                        <div class="well card-search-container">
+                            <input type="text" placeholder="Search for name or Text" class = "card-search-text">"""+ #TODO: Add more search input options here. 
+                            """
+                        </div>
                         <div class="well card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
@@ -167,6 +171,8 @@ class exportObj.CardBrowser
         @sort_selector.select2
             minimumResultsForSearch: -1
 
+        @card_search_text = $ @container.find('.xwing-card-browser .card-search-text')
+
     setupHandlers: () ->
         @sort_selector.change (e) =>
             @renderList @sort_selector.val()
@@ -175,6 +181,11 @@ class exportObj.CardBrowser
             @language = language
             @prepareData()
             @renderList @sort_selector.val()
+
+        @card_search_text.change (e) =>
+            @renderList @sort_selector.val()
+
+        # TODO: Make added criteria visible for the code, and add a call to @renderList to start the actual search
 
     prepareData: () ->
         @all_cards = []
@@ -229,29 +240,43 @@ class exportObj.CardBrowser
                 for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', type
-                    @card_selector.append optgroup
 
+                    card_added = false
                     for card in @cards_by_type_name[type]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
+
             when 'type-by-points'
                 for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', type
-                    @card_selector.append optgroup
-
+                    
+                    card_added = false
                     for card in @cards_by_type_points[type]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
             when 'source'
                 for source in @sources
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', source
-                    @card_selector.append optgroup
-
+                    
+                    card_added = false
                     for card in @cards_by_source[source]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
             else
                 for card in @all_cards
-                    @addCardTo @card_selector, card
+                    if @checkSearchCriteria card
+                        @addCardTo @card_selector, card
 
         @card_selector.change (e) =>
             @renderCard $(@card_selector.find(':selected'))
@@ -401,3 +426,12 @@ class exportObj.CardBrowser
         option.data 'card', card.data
         option.data 'orig_type', card.orig_type
         $(container).append option
+
+    checkSearchCriteria: (card) ->
+        # check for text search
+        search_text = @card_search_text[0].value.toLowerCase()
+        return false unless card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text.toLowerCase().indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+
+        #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
+
+        return true
