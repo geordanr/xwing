@@ -71,7 +71,7 @@ class exportObj.CardBrowser
                     </div>
                     <div class="span8">
                         <div class="well card-search-container">
-                            <input type="text" placeholder="Search for name or Text" class = "card-search-text">"""+ #TODO: Add more search input options here. 
+                            <input type="search" placeholder="Search for name or text" class = "card-search-text">"""+ #TODO: Add more search input options here. 
                             """
                         </div>
                         <div class="well card-viewer-placeholder info-well">
@@ -171,7 +171,8 @@ class exportObj.CardBrowser
         @sort_selector.select2
             minimumResultsForSearch: -1
 
-        @card_search_text = $ @container.find('.xwing-card-browser .card-search-text')
+        @card_search_text = ($ @container.find('.xwing-card-browser .card-search-text'))[0]
+        # TODO: Make added inputs easy accessible
 
     setupHandlers: () ->
         @sort_selector.change (e) =>
@@ -182,10 +183,8 @@ class exportObj.CardBrowser
             @prepareData()
             @renderList @sort_selector.val()
 
-        @card_search_text.change (e) =>
-            @renderList @sort_selector.val()
-
-        # TODO: Make added criteria visible for the code, and add a call to @renderList to start the actual search
+        @card_search_text.oninput = => @renderList @sort_selector.val()
+        # TODO: Add a call to @renderList for added inputs, to start the actual search
 
     prepareData: () ->
         @all_cards = []
@@ -429,7 +428,7 @@ class exportObj.CardBrowser
 
     checkSearchCriteria: (card) ->
         # check for text search
-        search_text = @card_search_text[0].value.toLowerCase()
+        search_text = @card_search_text.value.toLowerCase()
         return false unless card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text.toLowerCase().indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
 
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
