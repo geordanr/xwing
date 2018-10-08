@@ -537,10 +537,10 @@ exportObj.cardLoaders.English = () ->
         "Guri":
            display_name: """Guri"""
            text: """At the start of the Engagement Phase, if there is at least 1 enemy ship at range 0-1, you may gain 1 focus token.%LINEBREAK% <sasmall><strong>Microthrusters:</strong> While you perform a barrel roll, you <b>must</b> use the %BANKLEFT% or %BANKRIGHT% template instead of the %STRAIGHT% template.</sasmall>"""
-        "Han Solo (Scum)":
+        "Han Solo":
            display_name: """Han Solo"""
            text: """After you roll dice, if you are at range 0-1 of an obstacle, you may reroll all of your dice. This does not count as rerolling for the purpose of other effects."""
-        "Han Solo":
+        "Han Solo (Scum)":
            display_name: """Han Solo"""
            text: """While you defend or perform a primary attack, if the attack is obstructed by an obstacle, you may roll 1 additional die."""
         "Heff Tobber":
@@ -864,10 +864,6 @@ exportObj.cardLoaders.English = () ->
         '"Zeb" Orrelios (TIE Fighter)':
            display_name: """“Zeb” Orrelios"""
            text: """While you defend, %CRIT% results are neutralized before %HIT% results."""
-
-
-
-
         "Poe Dameron":
            text: """After you perform an action, you may spend 1 %CHARGE% to perform a white action, treating it as red. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Lieutenant Bastian":
