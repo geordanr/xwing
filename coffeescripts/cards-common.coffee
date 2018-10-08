@@ -1243,14 +1243,14 @@ exportObj.basicCardData = ->
             name: "Upsilon-Class Shuttle"
             xws: "Upsilon-Class Shuttle".canonicalize()
             factions: ["First Order"]
-            attack: 0
-            agility: 0
-            hull: 0
+            attack: 4
+            agility: 1
+            hull: 6
             shields: 6
             actions: [
                 "Focus"
-                "Reinforce"
                 "Lock"
+                "Reinforce"
                 "Coordinate"
                 "Jam"
             ]
@@ -5169,7 +5169,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "Upsilon-Class Shuttle"
-            skill: 0
+            skill: 2
             points: 100
             slots: [
                 "Tech"
@@ -5355,6 +5355,24 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Major Stridan"
+            id: 251
+            unique: true
+            faction: "First Order"
+            ship: "Upsilon-Class Shuttle"
+            skill: 4
+            points: 100
+            slots: [
+                "Tech"
+                "Tech"
+                "Crew"
+                "Crew"
+                "Cannon"
+                "Sensor"
                 "Modification"
             ]
         }
@@ -7037,6 +7055,8 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "First Order"
+            restriction_func: (ship) ->
+                "Coordinate" in ship.effectiveStats().actions
        }
        {
             name: "Fanatical"
@@ -7153,6 +7173,14 @@ exportObj.basicCardData = ->
             unique: true
             ship: "Scavenged YT-1300"
             faction: "Resistance"
+       }
+       {
+            name: "Petty Officer Thanisson"
+            id: 194
+            slot: "Crew"
+            points: 0
+            unique: true
+            faction: "First Order"
        }
     ]
 
