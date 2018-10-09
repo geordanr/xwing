@@ -1250,7 +1250,7 @@ exportObj.cardLoaders['Français'] = () ->
            text: """<i>Empire Galactique ou contient Ezra Bridger ou contient Ezra Bridger (Sheathipede) ou contient Ezra Bridger (TIE Fighter) uniquement</i>%LINEBREAK%Après avoir subi des dégâts, vous pouvez gagner 1 marqueur de stress pour récupérer 1&nbsp;%FORCE%.%LINEBREAK%Vous pouvez vous équiper d'améliorations “Côté Obscur”."""
         "Minister Tua":
            display_name: """Ministre Tua"""
-           text: """<i>Racailles et Scélérats uniquement</i>%LINEBREAK%Au début de la phase d'engagement, si vous êtes endommagé, vous pouvez effectuer une action %FOCUS% rouge."""
+           text: """<i>Racailles et Scélérats uniquement</i>%LINEBREAK%Au début de la phase d'engagement, si vous êtes endommagé, vous pouvez effectuer une action %REINFORCE% rouge."""
         "Moff Jerjerrod":
            display_name: """Moff Jerjerrod"""
            text: """<i>Requiert %COORDINATE% ou <r>%COORDINATE%</r></i>%LINEBREAK%<i>Racailles et Scélérats uniquement</i>%LINEBREAK%Pendant la phase de système, vous pouvez dépenser 2&nbsp;%CHARGE%. Dans ce cas, choisissez le gabarit [1&nbsp;%BANKLEFT%], [1&nbsp;%STRAIGHT%] ou [1&nbsp;%BANKRIGHT%]. Chaque vaisseau allié peut effectuer une action %BOOST% rouge en utilisant ce gabarit."""
