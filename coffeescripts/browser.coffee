@@ -73,6 +73,29 @@ class exportObj.CardBrowser
                         <div class="well card-search-container">
                             <input type="search" placeholder="Search for name or text" class = "card-search-text">"""+ #TODO: Add more search input options here. 
                             """
+                            <button class="btn btn-primary show-advanced-search">
+                                Advanced Search
+                            </button>
+                            <div class="advanced-search-container">
+                                <label class = "toggle-rebel-search">
+                                    <input type="checkbox" class="rebel-checkbox" checked="checked" /> Rebel
+                                </label>
+                                <label class = "toggle-imperial-search">
+                                    <input type="checkbox" class="imperial-checkbox" checked="checked" /> Imperial
+                                </label>
+                                <label class = "toggle-scum-search">
+                                    <input type="checkbox" class="scum-checkbox" checked="checked" /> Scum
+                                </label>
+                                <label class = "toggle-fo-search">
+                                    <input type="checkbox" class="fo-checkbox" checked="checked" /> First Order
+                                </label>
+                                <label class = "toggle-resistance-search">
+                                    <input type="checkbox" class="resistance-checkbox" checked="checked" /> Resistance
+                                </label>
+                                <label class = "toggle-factionless-search">
+                                    <input type="checkbox" class="factionless-checkbox" checked="checked" /> Factionless
+                                </label>
+                            </div>
                         </div>
                         <div class="well card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
@@ -166,13 +189,26 @@ class exportObj.CardBrowser
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
         @card_viewer_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
+        @advanced_search_button = ($ @container.find('.xwing-card-browser .show-advanced-search'))[0]
+        @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
+        @advanced_search_container.hide()
+        @advanced_search_active = false
 
         @sort_selector = $ @container.find('select.sort-by')
         @sort_selector.select2
             minimumResultsForSearch: -1
 
-        @card_search_text = ($ @container.find('.xwing-card-browser .card-search-text'))[0]
         # TODO: Make added inputs easy accessible
+
+        @card_search_text = ($ @container.find('.xwing-card-browser .card-search-text'))[0]
+        @faction_selectors = {}
+        @faction_selectors["Rebel Alliance"] = ($ @container.find('.xwing-card-browser .rebel-checkbox'))[0]
+        @faction_selectors["Scum and Villainy"] = ($ @container.find('.xwing-card-browser .scum-checkbox'))[0]
+        @faction_selectors["Galactic Empire"] = ($ @container.find('.xwing-card-browser .imperial-checkbox'))[0]
+        @faction_selectors["Resistance"] = ($ @container.find('.xwing-card-browser .resistance-checkbox'))[0]
+        @faction_selectors["First Order"] = ($ @container.find('.xwing-card-browser .fo-checkbox'))[0]
+        @faction_selectors[undefined] = ($ @container.find('.xwing-card-browser .factionless-checkbox'))[0]
+
 
     setupHandlers: () ->
         @sort_selector.change (e) =>
@@ -185,6 +221,20 @@ class exportObj.CardBrowser
 
         @card_search_text.oninput = => @renderList @sort_selector.val()
         # TODO: Add a call to @renderList for added inputs, to start the actual search
+
+        @advanced_search_button.onclick = @toggleAdvancedSearch
+
+        for faction, checkbox of @faction_selectors
+            checkbox.onclick = => @renderList @sort_selector.val()
+
+
+    toggleAdvancedSearch: () =>
+        if @advanced_search_active
+            @advanced_search_container.hide()
+        else 
+            @advanced_search_container.show()
+        @advanced_search_active = not @advanced_search_active
+        @renderList @sort_selector.val()
 
     prepareData: () ->
         @all_cards = []
@@ -431,6 +481,10 @@ class exportObj.CardBrowser
         search_text = @card_search_text.value.toLowerCase()
         return false unless card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text.toLowerCase().indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
 
+        return true unless @advanced_search_active
+
+        return false unless @faction_selectors[card.data.faction].checked
+        
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
         return true
