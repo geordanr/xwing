@@ -7035,6 +7035,8 @@ exportObj.basicCardData = ->
             id: 178
             slot: "Tech"
             points: 0
+            restriction_func: (ship) ->
+                not (ship.data.large? or ship.data.medium?)
        }
        {
             name: "Kylo Ren"
