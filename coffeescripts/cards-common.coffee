@@ -7037,7 +7037,7 @@ exportObj.basicCardData = ->
             points: 0
        }
        {
-            name: "Kylo Ren (Crew)"
+            name: "Kylo Ren"
             id: 179
             slot: "Crew"
             points: 0
