@@ -76,28 +76,27 @@ class exportObj.CardBrowser
                             <button class="btn btn-primary show-advanced-search">
                                 Advanced Search
                             </button>
-                            <div class="row-fluid advanced-search-container">
-                                <div class="well faction-search-selection-container">
-                                    Faction selection <span tooltip="Select the faction(s) you want to include. A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
-                                    <label class = "toggle-rebel-search">
-                                        <input type="checkbox" class="rebel-checkbox" checked="checked" /> Rebel
-                                    </label>
-                                    <label class = "toggle-imperial-search">
-                                        <input type="checkbox" class="imperial-checkbox" checked="checked" /> Imperial
-                                    </label>
-                                    <label class = "toggle-scum-search">
-                                        <input type="checkbox" class="scum-checkbox" checked="checked" /> Scum
-                                    </label>
-                                    <label class = "toggle-fo-search">
-                                        <input type="checkbox" class="fo-checkbox" checked="checked" /> First Order
-                                    </label>
-                                    <label class = "toggle-resistance-search">
-                                        <input type="checkbox" class="resistance-checkbox" checked="checked" /> Resistance
-                                    </label>
-                                    <label class = "toggle-factionless-search">
-                                        <input type="checkbox" class="factionless-checkbox" checked="checked" /> Factionless
-                                    </label>
-                                </div
+                            <div class="advanced-search-container">
+                                <strong>Faction:</strong>
+                                <label class = "toggle-rebel-search advanced-search-label">
+                                    <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
+                                </label>
+                                <label class = "toggle-imperial-search advanced-search-label">
+                                    <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
+                                </label>
+                                <label class = "toggle-scum-search advanced-search-label">
+                                    <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
+                                </label>
+                                <label class = "toggle-fo-search advanced-search-label">
+                                    <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
+                                </label>
+                                <label class = "toggle-resistance-search advanced-search-label">
+                                    <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
+                                </label>
+                                <label class = "toggle-factionless-search advanced-search-label">
+                                    <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
+                                </label>
+                                <span tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
                             </div>
                         </div>
                         <div class="well card-viewer-placeholder info-well">

@@ -6212,7 +6212,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 8
            restriction_func: (ship) ->
-                "Rotate Arc" in ship.effectiveStats().actions or "Rotate Arc" in ship.effectiveStats().actionsred
+                "Rotate Arc" in ship.effectiveStats().actions or "Rotate Arc" in ship.effectiveStats().actionsred or "> Rotate Arc" in ship.effectiveStats().actions or "R> Rotate Arc" in ship.effectiveStats().actions
        }
        {
            name: "Cloaking Device"
@@ -7035,9 +7035,11 @@ exportObj.basicCardData = ->
             id: 178
             slot: "Tech"
             points: 0
+            restriction_func: (ship) ->
+                not (ship.data.large? or ship.data.medium?)
        }
        {
-            name: "Kylo Ren (Crew)"
+            name: "Kylo Ren"
             id: 179
             slot: "Crew"
             points: 0
