@@ -36,11 +36,6 @@ Building
 3. `npm install` to install the dependencies listed in `package.json`.
 4. `grunt` to build everything into the `app` directory.  The builder is at `app/index.html`.
 
-Testing
-=======
-
-    npm test
-
 Translation
 ===========
 
