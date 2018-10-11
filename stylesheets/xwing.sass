@@ -48,6 +48,14 @@ strong
   font-family: EurostileStandardBold
   font-weight: normal
 
+[tooltip]:before
+  position: absolute
+  content: attr(tooltip)
+  opacity: 0
+
+[tooltip]:hover:before
+  opacity: 1
+
 em
   font-family: EurostileStandardOblique
   font-style: normal
