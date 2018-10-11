@@ -3575,7 +3575,12 @@ class exportObj.Collection
                     card_totals_by_type[type] += things[thing]
                     if thing in singletonsByType[type]
                         card_different_by_type[type]++
-                        ul.append """<li>#{thing} - #{things[thing]}</li>"""
+                        if type == 'pilot'
+                            ul.append """<li>#{if exportObj.pilots[thing].display_name then exportObj.pilots[thing].display_name else thing} - #{things[thing]}</li>"""
+                        if type == 'upgrade'
+                            ul.append """<li>#{if exportObj.upgrades[thing].display_name then exportObj.upgrades[thing].display_name else thing} - #{things[thing]}</li>"""
+                        if type == 'ship'
+                            ul.append """<li>#{if exportObj.ships[thing].display_name then exportObj.ships[thing].display_name else thing} - #{things[thing]}</li>"""
 
         summary = ""
         for type in Object.keys(card_totals_by_type)
@@ -3723,7 +3728,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="ship-name">#{ship}</span>
+                            <span class="ship-name">#{if exportObj.ships[ship].display_name then exportObj.ships[ship].display_name else ship}</span>
                         </label>
                     </div>
                 </div>
@@ -3743,7 +3748,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="pilot-name">#{pilot}</span>
+                            <span class="pilot-name">#{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
                         </label>
                     </div>
                 </div>
@@ -3763,7 +3768,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="upgrade-name">#{upgrade}</span>
+                            <span class="upgrade-name">#{if exportObj.upgrades[upgrade].display_name then exportObj.upgrades[upgrade].display_name else upgrade}</span>
                         </label>
                     </div>
                 </div>
