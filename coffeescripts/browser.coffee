@@ -77,23 +77,24 @@ class exportObj.CardBrowser
                                 Advanced Search
                             </button>
                             <div class="advanced-search-container">
-                                <label class = "toggle-rebel-search">
-                                    <input type="checkbox" class="rebel-checkbox" checked="checked" /> Rebel
+                                <strong>Faction:</strong>
+                                <label class = "toggle-rebel-search advanced-search-label">
+                                    <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
                                 </label>
-                                <label class = "toggle-imperial-search">
-                                    <input type="checkbox" class="imperial-checkbox" checked="checked" /> Imperial
+                                <label class = "toggle-imperial-search advanced-search-label">
+                                    <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
                                 </label>
-                                <label class = "toggle-scum-search">
-                                    <input type="checkbox" class="scum-checkbox" checked="checked" /> Scum
+                                <label class = "toggle-scum-search advanced-search-label">
+                                    <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
                                 </label>
-                                <label class = "toggle-fo-search">
-                                    <input type="checkbox" class="fo-checkbox" checked="checked" /> First Order
+                                <label class = "toggle-fo-search advanced-search-label">
+                                    <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
                                 </label>
-                                <label class = "toggle-resistance-search">
-                                    <input type="checkbox" class="resistance-checkbox" checked="checked" /> Resistance
+                                <label class = "toggle-resistance-search advanced-search-label">
+                                    <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
                                 </label>
-                                <label class = "toggle-factionless-search">
-                                    <input type="checkbox" class="factionless-checkbox" checked="checked" /> Factionless
+                                <label class = "toggle-factionless-search advanced-search-label">
+                                    <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
                                 </label>
                             </div>
                         </div>

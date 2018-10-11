@@ -282,7 +282,7 @@ class exportObj.SquadBuilder
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
                 <label class="maneuver-print-checkbox">
-                    Include Maneuvers Chart<input type="checkbox" class="toggle-maneuver-print" checked="checked" />
+                    Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" checked="checked" />
                 </label>
                 <label class="color-print-checkbox">
                     Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
