@@ -3088,7 +3088,7 @@ class GenericAddon
         if @data?
             upgrade_slot_font = (@data.slot ? @type).toLowerCase().replace(/[^0-9a-z]/gi, '')
 
-            match_array = @data.text.match(/(<span.*<\/span>)<br \/><br \/>(.*)/)
+            match_array = @data.text?match(/(<span.*<\/span>)<br \/><br \/>(.*)/)
 
             if match_array
                 restriction_html = '<div class="card-restriction-container">' + match_array[1] + '</div>'

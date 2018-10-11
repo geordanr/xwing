@@ -481,7 +481,7 @@ class exportObj.CardBrowser
     checkSearchCriteria: (card) ->
         # check for text search
         search_text = @card_search_text.value.toLowerCase()
-        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text.toLowerCase().indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text?toLowerCase()?indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
         if not text_search
             return false unless card.data.ship
             ship = card.data.ship
