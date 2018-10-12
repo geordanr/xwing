@@ -517,6 +517,8 @@ class exportObj.CardBrowser
             else
                 return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
  
+        return false unless card.data.slot != "Hardpoint"
+
         # check if advanced search is enabled
         return true unless @advanced_search_active
 
