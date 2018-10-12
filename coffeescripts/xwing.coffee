@@ -1788,7 +1788,7 @@ class exportObj.SquadBuilder
         if data.keep_running
             #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
             if data.max_points - @total_points <= data.bid_goal and @total_points <= data.max_points
-                # Exact hit!
+                # Hit bid range
                 #console.log "Points reached exactly"
                 data.keep_running = false
             else if @total_points < data.max_points
