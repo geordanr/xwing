@@ -53,7 +53,7 @@ exportObj.setupTranslationUI = (backend) ->
             li.click (e) ->
                 backend.set('language', language) if backend?
                 $(exportObj).trigger 'xwing:languageChanged', language
-        $('ul.dropdown-menu').append li
+        $('.language-picker .dropdown-menu').append li
 
 exportObj.registerBuilderForTranslation = (builder) ->
     builders.push(builder) if builder not in builders

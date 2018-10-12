@@ -97,7 +97,8 @@ class exportObj.SquadBuilder
         @tooltip_currently_displaying = null
         @randomizer_options =
             sources: null
-            points: 100
+            points: 200
+            bid_goal: 5
         @total_points = 0
         @isCustom = false
         @isSecondEdition = false
@@ -168,9 +169,10 @@ class exportObj.SquadBuilder
         @notes.val ''
 
     setupUI: ->
-        DEFAULT_RANDOMIZER_POINTS = 100
-        DEFAULT_RANDOMIZER_TIMEOUT_SEC = 2
+        DEFAULT_RANDOMIZER_POINTS = 200
+        DEFAULT_RANDOMIZER_TIMEOUT_SEC = 4
         DEFAULT_RANDOMIZER_ITERATIONS = 1000
+        DEFAULT_RANDOMIZER_BID_GOAL = 5
 
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
@@ -204,7 +206,7 @@ class exportObj.SquadBuilder
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
                         <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
 
-                        <!--
+                        
                         <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
@@ -212,7 +214,7 @@ class exportObj.SquadBuilder
                         <ul class="dropdown-menu">
                             <li><a class="randomize-options">Randomizer Options...</a></li>
                         </ul>
-                        -->
+                        
 
                     </div>
                 </div>
@@ -508,6 +510,10 @@ class exportObj.SquadBuilder
                         <input type="number" class="randomizer-points" value="#{DEFAULT_RANDOMIZER_POINTS}" placeholder="#{DEFAULT_RANDOMIZER_POINTS}" />
                     </label>
                     <label>
+                        Left bid to stop randomizing
+                        <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
+                    </label>
+                    <label>
                         Sets and Expansions (default all)
                         <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
                         </select>
@@ -544,12 +550,14 @@ class exportObj.SquadBuilder
             else
                 points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
+                bid_goal = parseInt $(@randomizer_options_modal.find('.randomizer-bid-goal')).val()
+                bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(points) or points <= 0)
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
                 iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
                 iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
                 #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
-                @randomSquad(points, @randomizer_source_selector.val(), DEFAULT_RANDOMIZER_TIMEOUT_SEC * 1000, iterations)
+                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, iterations, bid_goal)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -1283,7 +1291,7 @@ class exportObj.SquadBuilder
         else
             getPrimaryFaction(faction) == @faction
 
-    getAvailableShipsMatching: (term='') ->
+    getAvailableShipsMatching: (term='',sorted = true) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
@@ -1304,11 +1312,22 @@ class exportObj.SquadBuilder
                                 text: ship_data.name
                                 canonical_name: ship_data.canonical_name
                                 xws: ship_data.xws
-        ships.sort exportObj.sortHelper
+        if sorted
+            ships.sort exportObj.sortHelper
+        return ships
 
+    getAvailableShipsMatchingAndCheapEnough: (points, term='', sorted=false) ->
+        # returns a list of ships that have at least one pilot cheaper than the given points value
+        possible_ships = @getAvailableShipsMatching(term, sorted)
+        cheap_ships = []
+        for ship in possible_ships
+            pilots = @getAvailablePilotsForShipIncluding(ship.name, null, '', true)
+            if pilots.length and pilots[0].points <= points
+                cheap_ships.push(ship)
+                
+        return cheap_ships
         
-        
-    getAvailablePilotsForShipIncluding: (ship, include_pilot, term='') ->
+    getAvailablePilotsForShipIncluding: (ship, include_pilot, term='', sorted = true) ->
         # Returns data formatted for Select2
         available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (not @isSecondEdition or exportObj.secondEditionCheck(pilot)))
 
@@ -1317,7 +1336,12 @@ class exportObj.SquadBuilder
         # Re-add selected pilot
         if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
             eligible_faction_pilots.push include_pilot
-        ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots).sort exportObj.sortHelper
+
+        retval = ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
+        if sorted
+            retval = retval.sort exportObj.sortHelper
+        retval
+
 
     dfl_filter_func = ->
         true
@@ -1341,7 +1365,7 @@ class exportObj.SquadBuilder
         else
             ship == name
             
-    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func) ->
+    getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func, sorted=true) ->
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
@@ -1361,10 +1385,12 @@ class exportObj.SquadBuilder
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades).sort exportObj.sortHelper
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
+        if sorted
+            retval = retval.sort exportObj.sortHelper
         
         # Possibly adjust the upgrade
-        if this_upgrade_obj.adjustment_func?
+        if this_upgrade_obj?adjustment_func?
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
         else
             retval
@@ -1760,7 +1786,7 @@ class exportObj.SquadBuilder
         if data.keep_running and data.iterations < data.max_iterations
             data.iterations++
             #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
-            if @total_points == data.max_points
+            if data.max_points - @total_points <= data.bid_goal
                 # Exact hit!
                 #console.log "Points reached exactly"
                 data.keep_running = false
@@ -1773,25 +1799,33 @@ class exportObj.SquadBuilder
                     for upgrade in ship.upgrades
                         unused_addons.push upgrade unless upgrade.data?
                 # 0 is ship, otherwise addon
-                idx = $.randomInt(1 + unused_addons.length)
-                if idx == 0
+                idx = $.randomInt(3 + unused_addons.length)
+                if idx < 3
                     # Add random ship
                     #console.log "Add ship"
-                    available_ships = @getAvailableShipsMatching()
-                    ship_type = available_ships[$.randomInt available_ships.length].text
-                    available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
-                    pilot = available_pilots[$.randomInt available_pilots.length]
-                    if exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
-                        new_ship = @addShip()
-                        new_ship.setPilotById pilot.id
-                else
+                    available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points)
+                    if available_ships.length == 0
+                        if unused_addons.length > 0
+                            idx += 3
+                        else 
+                            available_ships = @getAvailableShipsMatching('', false)
+                    if available_ships.length > 0
+                        ship_type = available_ships[$.randomInt available_ships.length].name
+                        available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
+                        pilot = available_pilots[$.randomInt available_pilots.length]
+                        if not pilot.disabled and exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
+                            new_ship = @addShip()
+                            new_ship.setPilotById pilot.id
+                if idx >= 3
                     # Add upgrade
                     #console.log "Add addon"
-                    addon = unused_addons[idx - 1]
+                    addon = unused_addons[idx - 3]
                     switch addon.type
                         when 'Upgrade'
-                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
-                            addon.setById available_upgrades[$.randomInt available_upgrades.length].id if available_upgrades.length > 0
+                            available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
+                            upgrade = available_upgrades[$.randomInt available_upgrades.length] if available_upgrades.length > 0
+                            if upgrade and not upgrade.disabled
+                                addon.setById upgrade.id
                         else
                             throw new Error("Invalid addon type #{addon.type}")
 
@@ -1816,6 +1850,26 @@ class exportObj.SquadBuilder
             window.setTimeout @_makeRandomizerLoopFunc(data), 0
         else
             #console.log "Clearing timer #{data.timer}, iterations=#{data.iterations}, keep_running=#{data.keep_running}"
+            # we have to stop randomizing, but should do a final check on our point costs.
+            while @total_points > data.max_points
+                removable_things = []
+                for ship in @ships
+                    # removable_things.push ship
+                    for upgrade in ship.upgrades
+                        removable_things.push upgrade if upgrade.data?
+                if removable_things.length == 0
+                    for ship in @ships
+                        removable_things.push ship
+                if removable_things.length > 0
+                    thing_to_remove = removable_things[$.randomInt removable_things.length]
+                    #console.log "Removing #{thing_to_remove}"
+                    if thing_to_remove instanceof Ship
+                        @removeShip thing_to_remove
+                    else if thing_to_remove instanceof GenericAddon
+                        thing_to_remove.setData null
+                    else
+                        throw new Error("Unknown thing to remove #{thing_to_remove}")
+
             window.clearTimeout data.timer
             # Update all selectors
             for ship in @ships
@@ -1827,7 +1881,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000) ->
+    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000, bid_goal=5) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
@@ -1837,6 +1891,7 @@ class exportObj.SquadBuilder
         data =
             iterations: 0
             max_points: max_points
+            bid_goal: bid_goal
             max_iterations: max_iterations
             keep_running: true
             allowed_sources: allowed_sources ? exportObj.expansions
