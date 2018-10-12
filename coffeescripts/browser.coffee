@@ -96,8 +96,8 @@ class exportObj.CardBrowser
                                     </label>
                                     <label class = "toggle-factionless-search advanced-search-label">
                                         <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
+                                        <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
                                     </label>
-                                    <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
                                 </div>
                                 <div class = "advanced-search-point-selection-container">
                                     <strong>Point costs:</strong>
@@ -109,6 +109,12 @@ class exportObj.CardBrowser
                                     </label>
                                     <label class = "advanced-search-label toggle-variable-cost-search">
                                         <input type="checkbox" class="variable-point-cost-checkbox advanced-search-checkbox" checked="checked" /> Variable point cost
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-misc-container">
+                                    <label class = "advanced-search-label toggle-second-edition">
+                                        <input type="checkbox" class="second-edition-checkbox advanced-search-checkbox" /> Second-Edition only
+                                        <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
                                     </label>
                                 </div>
                             </div>
@@ -227,6 +233,7 @@ class exportObj.CardBrowser
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
+        @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
 
 
     setupHandlers: () ->
@@ -249,6 +256,7 @@ class exportObj.CardBrowser
         @minimum_point_costs.oninput = => @renderList @sort_selector.val()
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
+        @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
 
 
     toggleAdvancedSearch: () =>
@@ -524,6 +532,9 @@ class exportObj.CardBrowser
 
         # check if faction matches
         return false unless @faction_selectors[card.data.faction].checked
+
+        # check if second-edition only matches
+        return false unless exportObj.secondEditionCheck(card.data) or not @second_edition_checkbox.checked
 
         # check if point costs matches
         return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
