@@ -99,6 +99,7 @@ class exportObj.SquadBuilder
             sources: null
             points: 200
             bid_goal: 5
+            ships_or_upgrades: 3
         @total_points = 0
         @isCustom = false
         @isSecondEdition = false
@@ -171,8 +172,8 @@ class exportObj.SquadBuilder
     setupUI: ->
         DEFAULT_RANDOMIZER_POINTS = 200
         DEFAULT_RANDOMIZER_TIMEOUT_SEC = 4
-        DEFAULT_RANDOMIZER_ITERATIONS = 1000
         DEFAULT_RANDOMIZER_BID_GOAL = 5
+        DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES = 3
 
         @status_container = $ document.createElement 'DIV'
         @status_container.addClass 'container-fluid'
@@ -514,6 +515,11 @@ class exportObj.SquadBuilder
                         <input type="number" class="randomizer-bid-goal" value="#{DEFAULT_RANDOMIZER_BID_GOAL}" placeholder="#{DEFAULT_RANDOMIZER_BID_GOAL}" />
                     </label>
                     <label>
+                        More upgrades
+                        <input type="range" min="0" max="10" class="randomizer-ships-or-upgrades" value="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" placeholder="#{DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES}" />
+                        Less upgrades
+                    </label>
+                    <label>
                         Sets and Expansions (default all)
                         <select class="randomizer-sources" multiple="1" data-placeholder="Use all sets and expansions">
                         </select>
@@ -521,11 +527,7 @@ class exportObj.SquadBuilder
                     <label>
                         Maximum Seconds to Spend Randomizing
                         <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
-                    </label>
-                    <label>
-                        Maximum Randomization Iterations
-                        <input type="number" class="randomizer-iterations" value="#{DEFAULT_RANDOMIZER_ITERATIONS}" placeholder="#{DEFAULT_RANDOMIZER_ITERATIONS}" />
-                    </label>
+                    </label>it
                 </form>
             </div>
             <div class="modal-footer">
@@ -551,13 +553,13 @@ class exportObj.SquadBuilder
                 points = parseInt $(@randomizer_options_modal.find('.randomizer-points')).val()
                 points = DEFAULT_RANDOMIZER_POINTS if (isNaN(points) or points <= 0)
                 bid_goal = parseInt $(@randomizer_options_modal.find('.randomizer-bid-goal')).val()
-                bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(points) or points <= 0)
+                bid_goal = DEFAULT_RANDOMIZER_BID_GOAL if (isNaN(bid_goal) or bid_goal < 0)
+                ships_or_upgrades = parseInt $(@randomizer_options_modal.find('.randomizer-ships-or-upgrades')).val()
+                ships_or_upgrades = DEFAULT_RANDOMIZER_SHIPS_OR_UPGRADES if (isNaN(ships_or_upgrades) or ships_or_upgrades < 0)
                 timeout_sec = parseInt $(@randomizer_options_modal.find('.randomizer-timeout')).val()
                 timeout_sec = DEFAULT_RANDOMIZER_TIMEOUT_SEC if (isNaN(timeout_sec) or timeout_sec <= 0)
-                iterations = parseInt $(@randomizer_options_modal.find('.randomizer-iterations')).val()
-                iterations = DEFAULT_RANDOMIZER_ITERATIONS if (isNaN(iterations) or iterations <= 0)
-                #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}, iterations=#{iterations}"
-                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, iterations, bid_goal)
+                #console.log "points=#{points}, sources=#{@randomizer_source_selector.val()}, timeout=#{timeout_sec}"
+                @randomSquad(points, @randomizer_source_selector.val(), timeout_sec * 1000, bid_goal, ships_or_upgrades)
 
         @randomizer_options_modal.find('button.do-randomize').click (e) =>
             e.preventDefault()
@@ -1783,10 +1785,9 @@ class exportObj.SquadBuilder
             @tooltip_currently_displaying = data
         
     _randomizerLoopBody: (data) =>
-        if data.keep_running and data.iterations < data.max_iterations
-            data.iterations++
+        if data.keep_running
             #console.log "Current points: #{@total_points} of #{data.max_points}, iteration=#{data.iterations} of #{data.max_iterations}, keep_running=#{data.keep_running}"
-            if data.max_points - @total_points <= data.bid_goal
+            if data.max_points - @total_points <= data.bid_goal and @total_points <= data.max_points
                 # Exact hit!
                 #console.log "Points reached exactly"
                 data.keep_running = false
@@ -1799,14 +1800,14 @@ class exportObj.SquadBuilder
                     for upgrade in ship.upgrades
                         unused_addons.push upgrade unless upgrade.data?
                 # 0 is ship, otherwise addon
-                idx = $.randomInt(3 + unused_addons.length)
-                if idx < 3
+                idx = $.randomInt(data.ships_or_upgrades + unused_addons.length)
+                if idx < data.ships_or_upgrades or unused_addons.length == 0
                     # Add random ship
                     #console.log "Add ship"
                     available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points)
                     if available_ships.length == 0
                         if unused_addons.length > 0
-                            idx += 3
+                            idx += data.ships_or_upgrades
                         else 
                             available_ships = @getAvailableShipsMatching('', false)
                     if available_ships.length > 0
@@ -1816,10 +1817,10 @@ class exportObj.SquadBuilder
                         if not pilot.disabled and exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
                             new_ship = @addShip()
                             new_ship.setPilotById pilot.id
-                if idx >= 3
+                if idx >= data.ships_or_upgrades and unused_addons.length != 0
                     # Add upgrade
                     #console.log "Add addon"
-                    addon = unused_addons[idx - 3]
+                    addon = unused_addons[idx - data.ships_or_upgrades]
                     switch addon.type
                         when 'Upgrade'
                             available_upgrades = (upgrade for upgrade in @getAvailableUpgradesIncluding(addon.slot, null, addon.ship, addon,'', @dfl_filter_func, sorted = false) when exportObj.upgradesById[upgrade.id].sources.intersects(data.allowed_sources))
@@ -1834,7 +1835,8 @@ class exportObj.SquadBuilder
                 # Remove something
                 removable_things = []
                 for ship in @ships
-                    removable_things.push ship
+                    for _ in [0...(11-data.ships_or_upgrades)]
+                        removable_things.push ship
                     for upgrade in ship.upgrades
                         removable_things.push upgrade if upgrade.data?
                 if removable_things.length > 0
@@ -1881,7 +1883,7 @@ class exportObj.SquadBuilder
         () =>
             @_randomizerLoopBody(data)
 
-    randomSquad: (max_points=100, allowed_sources=null, timeout_ms=1000, max_iterations=1000, bid_goal=5) ->
+    randomSquad: (max_points=200, allowed_sources=null, timeout_ms=1000, bid_goal=5, ships_or_upgrades=3) ->
         @backend_status.fadeOut 'slow'
         @suppress_automatic_new_ship = true
         # Clear all existing ships
@@ -1889,10 +1891,9 @@ class exportObj.SquadBuilder
             @removeShip @ships[0]
         throw new Error("Ships not emptied") if @ships.length > 0
         data =
-            iterations: 0
             max_points: max_points
             bid_goal: bid_goal
-            max_iterations: max_iterations
+            ships_or_upgrades: ships_or_upgrades
             keep_running: true
             allowed_sources: allowed_sources ? exportObj.expansions
         stopHandler = () =>
