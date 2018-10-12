@@ -204,15 +204,14 @@ class exportObj.SquadBuilder
 
                         <button class="btn btn-primary view-as-text"><span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text</button>
                         <!-- <button class="btn btn-primary print-list hidden-phone hidden-tablet"><i class="fa fa-print"></i>&nbsp;Print</button> -->
-                        <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection</a>
-
+                        <a class="btn btn-primary hidden collection"><i class="fa fa-folder-open hidden-phone hidden-tablet"></i>&nbsp;Your Collection</a>
                         
                         <button class="btn btn-primary randomize" ><i class="fa fa-random hidden-phone hidden-tablet"></i>&nbsp;Random!</button>
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="randomize-options">Randomizer Options...</a></li>
+                            <li><a class="randomize-options">Randomizer Options</a></li>
                         </ul>
                         
 

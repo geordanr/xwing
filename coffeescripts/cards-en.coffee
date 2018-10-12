@@ -114,12 +114,12 @@ exportObj.translations.English =
         '.info-well .info-range td.info-header': 'Range'
         # Squadron edit buttons
         '.clear-squad' : 'New Squad'
-        '.save-list' : 'Save'
-        '.save-list-as' : 'Save as…'
-        '.delete-list' : 'Delete'
-        '.backend-list-my-squads' : 'Load squad'
+        '.save-list' : '<i class="fa fa-floppy-o"></i>&nbsp;Save'
+        '.save-list-as' : '<i class="fa fa-files-o"></i>&nbsp;Save as…'
+        '.delete-list' : '<i class="fa fa-trash-o"></i>&nbsp;Delete'
+        '.backend-list-my-squads' : 'Load Squad'
         '.view-as-text' : '<span class="hidden-phone"><i class="fa fa-print"></i>&nbsp;Print/View as </span>Text'
-        '.randomize' : 'Random!'
+        '.randomize' : '<i class="fa fa-random"></i>&nbsp;Random!'
         '.randomize-options' : 'Randomizer options…'
         '.notes-container > span' : 'Squad Notes'
         # Print/View modal
