@@ -71,31 +71,46 @@ class exportObj.CardBrowser
                     </div>
                     <div class="span8">
                         <div class="well card-search-container">
-                            <input type="search" placeholder="Search for name or text" class = "card-search-text">"""+ #TODO: Add more search input options here. 
+                            <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">"""+ #TODO: Add more search input options here. 
                             """
                             <button class="btn btn-primary show-advanced-search">
                                 Advanced Search
                             </button>
                             <div class="advanced-search-container">
-                                <strong>Faction:</strong>
-                                <label class = "toggle-rebel-search advanced-search-label">
-                                    <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
-                                </label>
-                                <label class = "toggle-imperial-search advanced-search-label">
-                                    <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
-                                </label>
-                                <label class = "toggle-scum-search advanced-search-label">
-                                    <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
-                                </label>
-                                <label class = "toggle-fo-search advanced-search-label">
-                                    <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
-                                </label>
-                                <label class = "toggle-resistance-search advanced-search-label">
-                                    <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
-                                </label>
-                                <label class = "toggle-factionless-search advanced-search-label">
-                                    <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
-                                </label>
+                                <div class= "advanced-search-faction-selection-container">
+                                    <strong>Faction:</strong>
+                                    <label class = "toggle-rebel-search advanced-search-label">
+                                        <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
+                                    </label>
+                                    <label class = "toggle-imperial-search advanced-search-label">
+                                        <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
+                                    </label>
+                                    <label class = "toggle-scum-search advanced-search-label">
+                                        <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
+                                    </label>
+                                    <label class = "toggle-fo-search advanced-search-label">
+                                        <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
+                                    </label>
+                                    <label class = "toggle-resistance-search advanced-search-label">
+                                        <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
+                                    </label>
+                                    <label class = "toggle-factionless-search advanced-search-label">
+                                        <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
+                                    </label>
+                                    <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
+                                </div>
+                                <div class = "advanced-search-point-selection-container">
+                                    <strong>Point costs:</strong>
+                                    <label class = "advanced-search-label set-minimum-points">
+                                        from <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-points">
+                                        to <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
+                                    </label>
+                                    <label class = "advanced-search-label toggle-variable-cost-search">
+                                        <input type="checkbox" class="variable-point-cost-checkbox advanced-search-checkbox" checked="checked" /> Variable point cost
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="well card-viewer-placeholder info-well">
@@ -209,6 +224,9 @@ class exportObj.CardBrowser
         @faction_selectors["Resistance"] = ($ @container.find('.xwing-card-browser .resistance-checkbox'))[0]
         @faction_selectors["First Order"] = ($ @container.find('.xwing-card-browser .fo-checkbox'))[0]
         @faction_selectors[undefined] = ($ @container.find('.xwing-card-browser .factionless-checkbox'))[0]
+        @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
+        @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
+        @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
 
 
     setupHandlers: () ->
@@ -227,6 +245,10 @@ class exportObj.CardBrowser
 
         for faction, checkbox of @faction_selectors
             checkbox.onclick = => @renderList @sort_selector.val()
+            
+        @minimum_point_costs.oninput = => @renderList @sort_selector.val()
+        @maximum_point_costs.oninput = => @renderList @sort_selector.val()
+        @variable_point_costs.onclick = => @renderList @sort_selector.val()
 
 
     toggleAdvancedSearch: () =>
@@ -480,11 +502,31 @@ class exportObj.CardBrowser
     checkSearchCriteria: (card) ->
         # check for text search
         search_text = @card_search_text.value.toLowerCase()
-        return false unless card.name.toLowerCase().indexOf(search_text) > -1 or card.data.text.toLowerCase().indexOf(search_text) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(search_text)) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+        
+        if not text_search
+            return false unless card.data.ship
+            ship = card.data.ship
+            if ship instanceof Array
+                text_in_ship = false
+                for s in ship
+                    if s.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[s].display_name and exportObj.ships[s].display_name.toLowerCase().indexOf(search_text) > -1)
+                        text_in_ship = true
+                        break
+                return false unless text_in_ship
+            else
+                return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
+ 
+        return false unless card.data.slot != "Hardpoint"
 
+        # check if advanced search is enabled
         return true unless @advanced_search_active
 
+        # check if faction matches
         return false unless @faction_selectors[card.data.faction].checked
+
+        # check if point costs matches
+        return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
         
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
