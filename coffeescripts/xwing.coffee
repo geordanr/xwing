@@ -1806,7 +1806,7 @@ class exportObj.SquadBuilder
                     available_ships = @getAvailableShipsMatchingAndCheapEnough(data.max_points - @total_points)
                     if available_ships.length == 0
                         if unused_addons.length > 0
-                            idx += data.ships_or_upgrades
+                            idx = $.randomInt(unused_addons.length) + data.ships_or_upgrades
                         else 
                             available_ships = @getAvailableShipsMatching('', false)
                     if available_ships.length > 0
