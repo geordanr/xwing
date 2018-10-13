@@ -526,7 +526,7 @@ class exportObj.SquadBuilder
                     <label>
                         Maximum Seconds to Spend Randomizing
                         <input type="number" class="randomizer-timeout" value="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" placeholder="#{DEFAULT_RANDOMIZER_TIMEOUT_SEC}" />
-                    </label>it
+                    </label>
                 </form>
             </div>
             <div class="modal-footer">
