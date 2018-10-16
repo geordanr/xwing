@@ -1,30 +1,32 @@
 exportObj = exports ? this
 
 exportObj.fromXWSFaction =
-    'rebel': 'Rebel Alliance'
+    'rebelalliance': 'Rebel Alliance'
     'rebels': 'Rebel Alliance'
-    'empire': 'Galactic Empire'
+    'rebel': 'Rebel Alliance'
+    'galacticempire': 'Galactic Empire'
     'imperial': 'Galactic Empire'
-    'scum': 'Scum and Villainy'
+    'scumandvillainy': 'Scum and Villainy'
+    'firstorder': 'First Order'
+    'resistance': 'Resistance'
 
 exportObj.toXWSFaction =
-    'Rebel Alliance': 'rebel'
-    'Galactic Empire': 'imperial'
-    'Scum and Villainy': 'scum'
+    'Rebel Alliance': 'rebelalliance'
+    'Galactic Empire': 'galacticempire'
+    'Scum and Villainy': 'scumandvillainy'
+    'First Order': 'firstorder'
+    'Resistance': 'resistance'
 
 exportObj.toXWSUpgrade =
-    'Astromech': 'amd'
-    'Elite': 'ept'
-    'Modification': 'mod'
-    'Salvaged Astromech': 'samd'
+    'Modification': 'modification'
 
 exportObj.fromXWSUpgrade =
     'amd': 'Astromech'
     'astromechdroid': 'Astromech'
-    'ept': 'Elite'
-    'elitepilottalent': 'Elite'
+    'ept': 'Talent'
+    'elitepilottalent': 'Talent'
+    'system': 'Sensor'
     'mod': 'Modification'
-    'samd': 'Salvaged Astromech'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 
@@ -39,7 +41,7 @@ class exportObj.XWSManager
         @container.addClass 'hidden-print'
         @container.html $.trim """
             <div class="row-fluid">
-                <div class="span9">
+                <div class="span9 indent">
                     <button class="btn btn-primary from-xws">Import from XWS (beta)</button>
                     <button class="btn btn-primary to-xws">Export to XWS (beta)</button>
                 </div>

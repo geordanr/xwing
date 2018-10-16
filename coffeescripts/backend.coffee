@@ -1,8 +1,9 @@
 ###
-    X-Wing Squad Builder
-    Geordan Rosario <geordan@gmail.com>
-    https://github.com/geordanr/xwing
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
 ###
+
 exportObj = exports ? this
 
 class exportObj.SquadBuilderBackend
@@ -615,7 +616,7 @@ class exportObj.SquadBuilderBackend
                     if res
                         $(window).trigger 'xwing-collection:saved', collection
             , 1000
-
+        
     getSettings: (cb=$.noop) ->
         $.get("#{@server}/settings").done (data, textStatus, jqXHR) =>
             cb data.settings
@@ -655,10 +656,18 @@ class exportObj.SquadBuilderBackend
             else
                 cb 'English'
 
+    getCollectionCheck: (settings, cb=$.noop) =>
+        if settings?.collectioncheck?
+            cb settings.collectioncheck
+        else
+            @collectioncheck = true
+            cb true
+                
     saveCollection: (collection, cb=$.noop) ->
         post_args =
             expansions: collection.expansions
             singletons: collection.singletons
+            checks: collection.checks
         $.post("#{@server}/collection", post_args).done (data, textStatus, jqXHR) ->
             cb data.success
 
@@ -669,3 +678,5 @@ class exportObj.SquadBuilderBackend
             new exportObj.Collection
                 expansions: collection.expansions
                 singletons: collection.singletons
+                checks: collection.checks
+            

@@ -2,12 +2,16 @@ doctype html
 - var now_ts = parseInt(new Date().getTime() / 1000)
 html
   head
-    title (Yet Another) X-Wing Miniatures Squad Builder
+    title YASB 2.0
     meta(charset="utf-8")
 
+    link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
     link(rel="stylesheet", href=`bootstrap/css/bootstrap.min.css?${now_ts}`)
     link(rel="stylesheet", href=`bower_components/font-awesome/css/font-awesome.min.css?${now_ts}`)
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(property="og:url", content="http://raithos.github.io/")
+    meta(property="og:image", content="http://raithos.github.io/images/preview.png")
+    meta(property="og:description", content="YASB 2.0 is a simple, fast, and easy to use squad builder for X-Wing Miniatures by Fantasy Flight Games.")
     link(href=`bootstrap/css/bootstrap-responsive.css?${now_ts}`, rel="stylesheet", media="screen")
     link(rel="stylesheet", href=`select2-3.4.0/select2.css?${now_ts}`)
 
@@ -24,16 +28,20 @@ html
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-43758422-1', 'geordanr.github.io');
+      ga('create', 'UA-123324723-1', 'raithos.github.io');
 
     .tabbable.hidden-print
       ul.nav.nav-pills
         li
-          a#rebelTab('data-toggle'="tab", href='#rebelContent') Rebel Alliance
+          a#rebelTab('data-toggle'="tab", href='#rebelContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel"></i>
         li
-          a#empireTab('data-toggle'="tab", href='#empireContent') Galactic Empire
+          a#empireTab('data-toggle'="tab", href='#empireContent') <i class="xwing-miniatures-font xwing-miniatures-font-empire"></i>
         li
-          a#scumTab('data-toggle'="tab", href='#scumContent') Scum and Villainy
+          a#scumTab('data-toggle'="tab", href='#scumContent') <i class="xwing-miniatures-font xwing-miniatures-font-scum"></i>
+        li
+          a#resistanceTab('data-toggle'="tab", href='#resistanceContent') <i class="xwing-miniatures-font xwing-miniatures-font-rebel-outline"></i>
+        li
+          a#firstorderTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
         li
           a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser
         li
@@ -56,7 +64,7 @@ html
               i.fa.fa-sign-out.hidden-phone.hidden-tablet
               | Log Out
         li
-          a(href='https://github.com/geordanr/xwing/issues/new', target='_blank') Submit Bug/Feature Request
+          a(href='https://github.com/raithos/xwing/issues/new', target='_blank') Submit Bug/Feature Request 
 
       .tab-content
         .tab-pane#rebelContent
@@ -65,16 +73,30 @@ html
           #empire-builder
         .tab-pane#scumContent
           #scum-builder
+        .tab-pane#resistanceContent
+          #resistance-builder
+        .tab-pane#firstorderContent
+          #firstorder-builder
         .tab-pane#browserContent
           #card-browser
         .tab-pane#aboutContent
           .container-fluid
             .row-fluid
               .span8
-                h2 (Yet Another) X-Wing Miniatures Squad Builder
+                h2 YASB for X-Wing 2.0
                 p
                   :markdown
-                    This is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
+                    YASB 2.0 is a simple, fast, no-frills squad builder for [X-Wing Miniatures](http://www.fantasyflightgames.com/edge_minisite.asp?eidm=174&enmi=X-Wing) by [Fantasy Flight Games](http://www.fantasyflightgames.com/index.asp).  
+                    
+                    It is pure HTML, JavaScript, and CSS and requires no backend, and can be dropped into place on any website (with maybe a few CSS tweaks).
+
+                    YASB 2.0  by Stephen Kim.
+
+                    2.0 launch data thanks to Evan Cameron, Jonathan Hon, Devon Monkhouse, and Mark Stewart.
+                    
+                    Translation Team: Patrick Mischke, godgremos, Clément Bourgoin, ManuelWittke
+
+                    Based on the amazing original 1.0 builder: https://geordanr.github.io/xwing/
 
                     Icons and fonts courtesy GeckoTH's excellent PSD, available on [A Few Maneuvers](http://www.afewmaneuvers.com/forums/viewtopic.php?f=28&t=183).
 
@@ -82,29 +104,11 @@ html
 
                     Fancy printout design inspired by TheKestrel on the FFG forums.
 
-                    German translation by [failgod](https://github.com/failgod-marcus) and [strikegun](https://github.com/strikegun) from FFG Forums.
-
-                    Spanish translation by [evil_wins Solo](http://boardgamegeek.com/user/sebaslocox) from BoardGameGeek forums, [negroscuro](https://github.com/negroscuro) and [Kharn](https://github.com/Kharnete).
-
-                    French translation by [pejuaxel](https://github.com/pejuaxel) and [sirmaugan](https://github.com/sirmaugan).
-
-                    Polish translation by [Bober9000](https://github.com/Bober9000).
-
-                    Russian translation by [michigun](https://github.com/michigun).
-
-                    Turkish translation by [ibrahimerol](https://github.com/ibrahimerol).
-
-                    Hungarian translation by [gmodos](https://github.com/gmodos).
-
                     Maneuver dial functionality by [hpanderson](https://github.com/hpanderson).
 
                     Upgrade card text integrated into printouts by [wffurr](https://github.com/wffurr).
 
                     Squad name in the permalink and obstacles choice modal by [zacharyp](https://github.com/zacharyp).
-
-                    Interested in playing with the source or contributing features or bug fixes?  [Fork it on GitHub](http://github.com/geordanr/xwing).  (Issues can also be filed via GitHub.)
-
-                    A backend is available if the ability to save squadrons is needed; it can be [forked on GitHub here](http://github.com/geordanr/xwing-backend).  You can view the privacy policy [here](privacy.html).
 
                     This builder is unofficial and is not affiliated with Fantasy Flight Games, Lucasfilm Ltd., or Disney.
     .footer
@@ -125,6 +129,9 @@ html
     script(src=`select2-3.4.0/select2.min.js?${now_ts}`)
     script(src=`bower_components/jquery.qrcode/js/jquery-qrcode.min.js?${now_ts}`)
     script(src=`javascripts/xwing.min.js?${now_ts}`)
+    // Additional stuff for Popups
+    //script(src=`selectnav/respond.min.js?${now_ts}`)
+
     script
       :coffee-script
         $ ->
@@ -137,6 +144,10 @@ html
               window.location.replace '?f=Galactic Empire'
             when '#scumContent'
               window.location.replace '?f=Scum and Villainy'
+            when '#resistanceContent'
+              window.location.replace '?f=Resistance'
+            when '#firstorderContent'
+              window.location.replace '?f=First Order'
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
@@ -151,6 +162,14 @@ html
             ga 'send', 'pageview',
               page: '/scum'
               title: 'Scum and Villainy'
+          $('#resistanceTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/resistance'
+              title: 'Resistance'
+          $('#firstorderTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/firstorder'
+              title: 'First Order'
           $('#browserTab').click (e) ->
             ga 'send', 'pageview',
               page: '/browser'
@@ -181,6 +200,20 @@ html
               printable_container: '#printable'
           window.registerBuilderForTranslation window.scum_sb
 
+          window.resistance_sb = new window.SquadBuilder
+              tab: '#resistanceTab'
+              faction: 'Resistance'
+              container: '#resistance-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.resistance_sb
+
+          window.firstorder_sb = new window.SquadBuilder
+              tab: '#firstorderTab'
+              faction: 'First Order'
+              container: '#firstorder-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.firstorder_sb
+
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
                 ga 'send', 'pageview',
@@ -197,6 +230,16 @@ html
                   page: '/scum'
                   title: 'Scum and Villainy'
                 $('#scumTab').tab 'show'
+            when 'Resistance'
+                ga 'send', 'pageview',
+                  page: '/resistance'
+                  title: 'Resistance'
+                $('#resistanceTab').tab 'show'
+            when 'First Order'
+                ga 'send', 'pageview',
+                  page: '/firstorder'
+                  title: 'First Order'
+                $('#firstorderTab').tab 'show'
             else
                 ga 'send', 'pageview',
                   page: '/rebels'
@@ -209,6 +252,8 @@ html
                 window.rebel_sb
                 window.empire_sb
                 window.scum_sb
+                window.resistance_sb
+                window.firstorder_sb
               ]
               login_logout_button: '#login-logout'
               auth_status: '#auth-status'
@@ -233,6 +278,8 @@ html
                   e.preventDefault()
                   window.location.href = window.location.href.replace(/^http:/, 'https:')
 
+
+
 #xws
 
 .font-hax
@@ -245,3 +292,4 @@ html
   span(style="font-family: XWingShip")
     | &nbsp;
 img.hidden(src="images/xws-obstacles.png")
+

@@ -11,3 +11,5 @@ coffeelint.json
 node_modules
 
 .idea
+
+*.*~

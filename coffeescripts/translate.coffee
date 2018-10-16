@@ -1,8 +1,9 @@
 ###
-    X-Wing Squad Builder
-    Geordan Rosario <geordan@gmail.com>
-    https://github.com/geordanr/xwing
+    X-Wing Squad Builder 2.0
+    Stephen Kim <raithos@gmail.com>
+    https://raithos.github.io
 ###
+
 DFL_LANGUAGE = 'English'
 
 builders = []
@@ -13,7 +14,12 @@ exportObj.loadCards = (language) ->
     exportObj.cardLoaders[language]()
 
 exportObj.translate = (language, category, what, args...) ->
-    translation = exportObj.translations[language][category][what]
+    try
+        translation = exportObj.translations[language][category][what]
+    catch all
+        console.log(category)
+        console.log(what)
+        throw all
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
@@ -47,7 +53,7 @@ exportObj.setupTranslationUI = (backend) ->
             li.click (e) ->
                 backend.set('language', language) if backend?
                 $(exportObj).trigger 'xwing:languageChanged', language
-        $('ul.dropdown-menu').append li
+        $('.language-picker .dropdown-menu').append li
 
 exportObj.registerBuilderForTranslation = (builder) ->
     builders.push(builder) if builder not in builders
