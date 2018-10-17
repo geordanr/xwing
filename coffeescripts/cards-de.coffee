@@ -589,12 +589,12 @@ exportObj.cardLoaders.Deutsch = () ->
            display_name: """Guri"""
            # ship: """Angriffsplattform der Sternenviper-Klasse"""
            text: """Zu Beginn der Kampfphase, falls mindestens 1 feindliches Schiff in Reichweite 0-1 ist, darfst du 1&nbsp;Fokusmarker erhalten.%LINEBREAK%<strong>Mikrodüsen:</strong> Solange du eine Fassrolle durchführst, <b>musst</b> du die %BANKLEFT%- oder %BANKRIGHT%-Schablone anstatt der %STRAIGHT%-Schablone verwenden."""
-        "Han Solo":
-           display_name: """Han Solo"""
-           # ship: """Modifizierter YT-1300-Frachter"""
-           text: """Solange du verteidigst oder einen Primärangriff durchführst, falls der Angriff durch ein Hindernis versperrt ist, darfst du 1 zusätzlichen Würfel werfen."""
         "Han Solo (Scum)":
            display_name: """Han Solo (Scum)"""
+           # ship: """Modifizierter YT-1300-Frachter"""
+           text: """Solange du verteidigst oder einen Primärangriff durchführst, falls der Angriff durch ein Hindernis versperrt ist, darfst du 1 zusätzlichen Würfel werfen."""
+        "Han Solo":
+           display_name: """Han Solo"""
            # ship: """Modifizierter leichter YT-1300-Frachter"""
            text: """Nachdem du Würfel geworfen hast, falls du in Reichweite 0-1 eines Hindernisses bist, darfst du alle deine Würfel neu werfen. Dies zählt für alle anderen Effekte nicht als Neuwerfen."""
         "Heff Tobber":
