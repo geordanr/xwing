@@ -6806,6 +6806,8 @@ exportObj.basicCardData = ->
            points: 12
            unique: true
            ship: "HWK-290"
+           modifier_func: (stats) ->
+                stats.attack = 3
        }
        {
            name: "Outrider"

@@ -1572,21 +1572,21 @@ class exportObj.SquadBuilder
                     @info_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.data.attack_icon ? 'xwing-miniatures-font-attack')
 
                     @info_container.find('tr.info-attack td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attack ? data.data.attack), effective_stats, 'attack')
-                    @info_container.find('tr.info-attack').toggle(data.pilot.ship_override?.attack? or data.data.attack?)
+                    @info_container.find('tr.info-attack').toggle(effective_stats.attack?)
                     
                     @info_container.find('tr.info-attack-fullfront td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackf ? data.data.attackf), effective_stats, 'attackf')
-                    @info_container.find('tr.info-attack-fullfront').toggle(data.pilot.ship_override?.attackf? or data.data.attackf?)
+                    @info_container.find('tr.info-attack-fullfront').toggle(effective_stats.attackf?)
 
                     @info_container.find('tr.info-attack-bullseye').hide()
                     
                     @info_container.find('tr.info-attack-back td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackb ? data.data.attackb), effective_stats, 'attackb')
-                    @info_container.find('tr.info-attack-back').toggle(data.pilot.ship_override?.attackb? or data.data.attackb?)
+                    @info_container.find('tr.info-attack-back').toggle(effective_stats.attackb?)
 
                     @info_container.find('tr.info-attack-turret td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackt ? data.data.attackt), effective_stats, 'attackt')
-                    @info_container.find('tr.info-attack-turret').toggle(data.pilot.ship_override?.attackt? or data.data.attackt?)
+                    @info_container.find('tr.info-attack-turret').toggle(effective_stats.attackt?)
 
                     @info_container.find('tr.info-attack-doubleturret td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.attackdt ? data.data.attackdt), effective_stats, 'attackdt')
-                    @info_container.find('tr.info-attack-doubleturret').toggle(data.pilot.ship_override?.attackdt? or data.data.attackdt?)
+                    @info_container.find('tr.info-attack-doubleturret').toggle(effective_stats.attackdt?)
                                         
                     @info_container.find('tr.info-energy td.info-data').text statAndEffectiveStat((data.pilot.ship_override?.energy ? data.data.energy), effective_stats, 'energy')
                     @info_container.find('tr.info-energy').toggle(data.pilot.ship_override?.energy? or data.data.energy?)
@@ -2562,30 +2562,30 @@ class Ship
 
         attack_icon = @data.attack_icon ? 'xwing-miniatures-font-frontarc'
 
-        attackHTML = if (@pilot.ship_override?.attack? or @data.attack?) then $.trim """
+        attackHTML = if (effective_stats.attack?) then $.trim """
             <i class="xwing-miniatures-font header-attack #{attack_icon}"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attack ? @data.attack), effective_stats, 'attack')}</span>
         """ else ''
         
-        if @pilot.ship_override?.attackb? or @data.attackb?
+        if effective_stats.attackb?
             attackbHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-reararc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackb ? @data.attackb), effective_stats, 'attackb')}</span>""" 
         else
             attackbHTML = ''
 
-        if @pilot.ship_override?.attackf? or @data.attackf?
+        if effective_stats.attackf?
             attackfHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-fullfrontarc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackf ? @data.attackf), effective_stats, 'attackf')}</span>""" 
         else
             attackfHTML = ''
             
-        if @pilot.ship_override?.attackt? or @data.attackt?
+        if effective_stats.attackt?
             attacktHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-singleturretarc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackt ? @data.attackt), effective_stats, 'attackt')}</span>""" 
         else
             attacktHTML = ''
             
-        if @pilot.ship_override?.attackdt? or @data.attackdt?
+        if effective_stats.attackdt?
             attackdtHTML = $.trim """<i class="xwing-miniatures-font header-attack xwing-miniatures-font-doubleturretarc"></i>
             <span class="info-data info-attack">#{statAndEffectiveStat((@pilot.ship_override?.attackdt ? @data.attackdt), effective_stats, 'attackdt')}</span>""" 
         else
