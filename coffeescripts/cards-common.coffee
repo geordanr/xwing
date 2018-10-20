@@ -282,7 +282,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 3, 0, 0]
               [ 0, 2, 2, 2, 0]
               [ 1, 1, 2, 1, 1]
-              [ 3, 1, 1, 1, 3]
+              [ 3, 1, 2, 1, 3]
               [ 0, 0, 1, 0, 0]
             ]
         "Lambda-Class Shuttle":
@@ -6806,6 +6806,8 @@ exportObj.basicCardData = ->
            points: 12
            unique: true
            ship: "HWK-290"
+           modifier_func: (stats) ->
+                stats.attack = 3
        }
        {
            name: "Outrider"
