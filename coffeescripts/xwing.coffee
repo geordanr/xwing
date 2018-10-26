@@ -280,13 +280,16 @@ class exportObj.SquadBuilder
                 </div>
             </div>
             <div class="modal-footer hidden-print">
-                <label class="vertical-space-checkbox">
+                <label class="vertical-space-checkbox hidden-phone">
                     Add space for damage/upgrade cards when printing <input type="checkbox" class="toggle-vertical-space" />
                 </label>
-                <label class="maneuver-print-checkbox">
+                <label class="maneuver-print-checkbox hidden-phone">
                     Include Maneuvers Chart <input type="checkbox" class="toggle-maneuver-print" checked="checked" />
                 </label>
-                <label class="color-print-checkbox">
+                <label class="expanded-shield-hull-print-checkbox hidden-phone">
+                    Expand Shield and Hull <input type="checkbox" class="toggle-expanded-shield-hull-print" />
+                </label>
+                <label class="color-print-checkbox hidden-phone">
                     Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
                 </label>
                 <label class="qrcode-checkbox hidden-phone">
@@ -321,6 +324,9 @@ class exportObj.SquadBuilder
         @toggle_vertical_space_container = $ @list_modal.find('.vertical-space-checkbox')
         @toggle_color_print_container = $ @list_modal.find('.color-print-checkbox')
         @toggle_maneuver_dial_container = $ @list_modal.find('.maneuver-print-checkbox')
+        @toggle_expanded_shield_hull_container = $ @list_modal.find('.expanded-shield-hull-print-checkbox')
+        @toggle_qrcode_container = $ @list_modal.find('.qrcode-checkbox')
+        @toggle_obstacle_container = $ @list_modal.find('.obstacles-checkbox')
 
         @list_modal.on 'click', 'button.btn-copy', (e) =>
             @self = $(e.currentTarget)
@@ -347,6 +353,9 @@ class exportObj.SquadBuilder
                 @toggle_vertical_space_container.hide()
                 @toggle_color_print_container.hide()
                 @toggle_maneuver_dial_container.hide()
+                @toggle_expanded_shield_hull_container.hide()
+                @toggle_qrcode_container.show()
+                @toggle_obstacle_container.show()
 
         @select_fancy_view_button = $ @list_modal.find('.select-fancy-view')
         @select_fancy_view_button.click (e) =>
@@ -363,6 +372,9 @@ class exportObj.SquadBuilder
                 @toggle_vertical_space_container.show()
                 @toggle_color_print_container.show()
                 @toggle_maneuver_dial_container.show()
+                @toggle_expanded_shield_hull_container.show()
+                @toggle_qrcode_container.show()
+                @toggle_obstacle_container.show()
 
         @select_reddit_view_button = $ @list_modal.find('.select-reddit-view')
         @select_reddit_view_button.click (e) =>
@@ -378,9 +390,12 @@ class exportObj.SquadBuilder
                 @fancy_container.hide()
                 @reddit_textarea.select()
                 @reddit_textarea.focus()
-                @toggle_vertical_space_container.show()
-                @toggle_color_print_container.show()
-                @toggle_maneuver_dial_container.show()
+                @toggle_vertical_space_container.hide()
+                @toggle_color_print_container.hide()
+                @toggle_maneuver_dial_container.hide()
+                @toggle_expanded_shield_hull_container.hide()
+                @toggle_qrcode_container.hide()
+                @toggle_obstacle_container.hide()
 
         @select_bbcode_view_button = $ @list_modal.find('.select-bbcode-view')
         @select_bbcode_view_button.click (e) =>
@@ -396,9 +411,12 @@ class exportObj.SquadBuilder
                 @fancy_container.hide()
                 @bbcode_textarea.select()
                 @bbcode_textarea.focus()
-                @toggle_vertical_space_container.show()
-                @toggle_color_print_container.show()
-                @toggle_maneuver_dial_container.show()
+                @toggle_vertical_space_container.hide()
+                @toggle_color_print_container.hide()
+                @toggle_maneuver_dial_container.hide()
+                @toggle_expanded_shield_hull_container.hide()
+                @toggle_qrcode_container.hide()
+                @toggle_obstacle_container.hide()
 
         @select_html_view_button = $ @list_modal.find('.select-html-view')
         @select_html_view_button.click (e) =>
@@ -414,9 +432,12 @@ class exportObj.SquadBuilder
                 @fancy_container.hide()
                 @html_textarea.select()
                 @html_textarea.focus()
-                @toggle_vertical_space_container.show()
-                @toggle_color_print_container.show()
-                @toggle_maneuver_dial_container.show()
+                @toggle_vertical_space_container.hide()
+                @toggle_color_print_container.hide()
+                @toggle_maneuver_dial_container.hide()
+                @toggle_expanded_shield_hull_container.hide()
+                @toggle_qrcode_container.hide()
+                @toggle_obstacle_container.hide()
 
         if $(window).width() >= 768
             @simple_container.hide()
@@ -909,6 +930,14 @@ class exportObj.SquadBuilder
                     if not @list_modal.find('.toggle-maneuver-print').prop('checked')
                         for dial in @printable_container.find('.fancy-dial')
                             dial.hidden = true
+                    expanded_hull_and_shield = @list_modal.find('.toggle-expanded-shield-hull-print').prop('checked')
+                    console.log(expanded_hull_and_shield)
+                    for container in @printable_container.find('.expanded-hull-or-shield')
+                        console.log(container)
+                        container.hidden = not expanded_hull_and_shield
+                    for container in @printable_container.find('.simple-hull-or-shield')
+                        console.log(container)
+                        container.hidden = expanded_hull_and_shield
 
                     faction = switch @faction
                         when 'Rebel Alliance'
@@ -2611,6 +2640,16 @@ class Ship
         else 
             chargeHTML = ''
 
+        shieldIconHTML = ''
+        if effective_stats.shields?
+            for _ in [1..(effective_stats.shields)]
+                shieldIconHTML += """<i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield expanded-hull-or-shield"></i>"""
+
+        hullIconHTML = ''
+        if effective_stats.hull?
+            for _ in [1..(effective_stats.hull)]
+                hullIconHTML += """<i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull expanded-hull-or-shield"></i>"""
+
         html = $.trim """
             <div class="fancy-pilot-header">
                 <div class="pilot-header-text">#{if @pilot.display_name then @pilot.display_name else @pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{if @data.display_name then @data.display_name else @data.name}</span></div>
@@ -2630,11 +2669,13 @@ class Ship
                     #{attackdtHTML}
                     #{energyHTML}
                     <i class="xwing-miniatures-font header-agility xwing-miniatures-font-agility"></i>
-                    <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>
-                    <i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull"></i>
-                    <span class="info-data info-hull">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
-                    <i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield"></i>
-                    <span class="info-data info-shields">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
+                    <span class="info-data info-agility">#{statAndEffectiveStat((@pilot.ship_override?.agility ? @data.agility), effective_stats, 'agility')}</span>                    
+                    #{hullIconHTML}
+                    <i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull simple-hull-or-shield"></i>
+                    <span class="info-data info-hull simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.hull ? @data.hull), effective_stats, 'hull')}</span>
+                    #{shieldIconHTML}
+                    <i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield simple-hull-or-shield"></i>
+                    <span class="info-data info-shields simple-hull-or-shield">#{statAndEffectiveStat((@pilot.ship_override?.shields ? @data.shields), effective_stats, 'shields')}</span>
                     #{forceHTML}
                     #{chargeHTML}
                     &nbsp;
