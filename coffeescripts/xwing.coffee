@@ -327,6 +327,7 @@ class exportObj.SquadBuilder
         @toggle_expanded_shield_hull_container = $ @list_modal.find('.expanded-shield-hull-print-checkbox')
         @toggle_qrcode_container = $ @list_modal.find('.qrcode-checkbox')
         @toggle_obstacle_container = $ @list_modal.find('.obstacles-checkbox')
+        @btn_print_list = $ @list_modal.find('.print-list')
 
         @list_modal.on 'click', 'button.btn-copy', (e) =>
             @self = $(e.currentTarget)
@@ -356,6 +357,7 @@ class exportObj.SquadBuilder
                 @toggle_expanded_shield_hull_container.hide()
                 @toggle_qrcode_container.show()
                 @toggle_obstacle_container.show()
+                @btn_print_list.disabled = false;
 
         @select_fancy_view_button = $ @list_modal.find('.select-fancy-view')
         @select_fancy_view_button.click (e) =>
@@ -375,6 +377,7 @@ class exportObj.SquadBuilder
                 @toggle_expanded_shield_hull_container.show()
                 @toggle_qrcode_container.show()
                 @toggle_obstacle_container.show()
+                @btn_print_list.disabled = false;
 
         @select_reddit_view_button = $ @list_modal.find('.select-reddit-view')
         @select_reddit_view_button.click (e) =>
@@ -396,6 +399,7 @@ class exportObj.SquadBuilder
                 @toggle_expanded_shield_hull_container.hide()
                 @toggle_qrcode_container.hide()
                 @toggle_obstacle_container.hide()
+                @btn_print_list.disabled = true;
 
         @select_bbcode_view_button = $ @list_modal.find('.select-bbcode-view')
         @select_bbcode_view_button.click (e) =>
@@ -417,6 +421,7 @@ class exportObj.SquadBuilder
                 @toggle_expanded_shield_hull_container.hide()
                 @toggle_qrcode_container.hide()
                 @toggle_obstacle_container.hide()
+                @btn_print_list.disabled = true;
 
         @select_html_view_button = $ @list_modal.find('.select-html-view')
         @select_html_view_button.click (e) =>
@@ -438,6 +443,7 @@ class exportObj.SquadBuilder
                 @toggle_expanded_shield_hull_container.hide()
                 @toggle_qrcode_container.hide()
                 @toggle_obstacle_container.hide()
+                @btn_print_list.disabled = true;
 
         if $(window).width() >= 768
             @simple_container.hide()
@@ -931,12 +937,9 @@ class exportObj.SquadBuilder
                         for dial in @printable_container.find('.fancy-dial')
                             dial.hidden = true
                     expanded_hull_and_shield = @list_modal.find('.toggle-expanded-shield-hull-print').prop('checked')
-                    console.log(expanded_hull_and_shield)
                     for container in @printable_container.find('.expanded-hull-or-shield')
-                        console.log(container)
                         container.hidden = not expanded_hull_and_shield
                     for container in @printable_container.find('.simple-hull-or-shield')
-                        console.log(container)
                         container.hidden = expanded_hull_and_shield
 
                     faction = switch @faction
