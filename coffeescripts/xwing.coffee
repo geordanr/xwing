@@ -327,7 +327,7 @@ class exportObj.SquadBuilder
         @toggle_expanded_shield_hull_container = $ @list_modal.find('.expanded-shield-hull-print-checkbox')
         @toggle_qrcode_container = $ @list_modal.find('.qrcode-checkbox')
         @toggle_obstacle_container = $ @list_modal.find('.obstacles-checkbox')
-        @btn_print_list = $ @list_modal.find('.print-list')
+        @btn_print_list = ($ @list_modal.find('.print-list'))[0]
 
         @list_modal.on 'click', 'button.btn-copy', (e) =>
             @self = $(e.currentTarget)
