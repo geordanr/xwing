@@ -117,6 +117,13 @@ class exportObj.CardBrowser
                                         <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
                                     </label>
                                 </div>
+                                <div class = "advanced-search-slot-container">
+                                    <label class = "advanced-search-label select-slots">
+                                        Available slots
+                                        <select class="advanced-search-selection slot-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        <span class="advanced-search-tooltip" tooltip="Search for pilots having the all selected slots available."> &#9432 </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="well card-viewer-placeholder info-well">
@@ -234,6 +241,13 @@ class exportObj.CardBrowser
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
         @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
+        @slot_selection = ($ @container.find('.xwing-card-browser select.slot-selection'))
+        for slot of exportObj.upgradesBySlotCanonicalName
+            opt = $ document.createElement('OPTION')
+            opt.text slot
+            @slot_selection.append opt
+        @slot_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
 
 
     setupHandlers: () ->
@@ -257,6 +271,7 @@ class exportObj.CardBrowser
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
+        @slot_selection[0].onchange = => @renderList @sort_selector.val()
 
 
     toggleAdvancedSearch: () =>
@@ -524,7 +539,8 @@ class exportObj.CardBrowser
                 return false unless text_in_ship
             else
                 return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
- 
+    
+        # prevent the three virtual hardpoint cards from beeing displayed
         return false unless card.data.slot != "Hardpoint"
 
         # check if advanced search is enabled
@@ -536,9 +552,16 @@ class exportObj.CardBrowser
         # check if second-edition only matches
         return false unless exportObj.secondEditionCheck(card.data) or not @second_edition_checkbox.checked
 
+        # check for slot requirements
+        required_slots = @slot_selection.val()
+        if required_slots
+            for slot in required_slots
+               return false unless card.data.slots? and slot in card.data.slots
+
         # check if point costs matches
         return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
         
+
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
         return true
