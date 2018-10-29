@@ -2644,12 +2644,12 @@ class Ship
             chargeHTML = ''
 
         shieldIconHTML = ''
-        if effective_stats.shields?
+        if effective_stats.shields
             for _ in [1..(effective_stats.shields)]
                 shieldIconHTML += """<i class="xwing-miniatures-font header-shield xwing-miniatures-font-shield expanded-hull-or-shield"></i>"""
 
         hullIconHTML = ''
-        if effective_stats.hull?
+        if effective_stats.hull
             for _ in [1..(effective_stats.hull)]
                 hullIconHTML += """<i class="xwing-miniatures-font header-hull xwing-miniatures-font-hull expanded-hull-or-shield"></i>"""
 
