@@ -154,6 +154,8 @@ exportObj.translations.English =
         '.core2asteroid3-select' : 'Force Awakens Asteroid 3'
         '.core2asteroid4-select' : 'Force Awakens Asteroid 4'
         '.core2asteroid5-select' : 'Force Awakens Asteroid 5'
+        # Collection
+        '.collection': '<i class="fa fa-folder-open hidden-phone hidden-tabler"></i>&nbsp;Your Collection'
 
     singular:
         'pilots': 'Pilot'
