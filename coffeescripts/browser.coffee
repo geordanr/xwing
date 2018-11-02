@@ -111,29 +111,24 @@ class exportObj.CardBrowser
                                         <input type="checkbox" class="variable-point-cost-checkbox advanced-search-checkbox" checked="checked" /> Variable point cost
                                     </label>
                                 </div>
-                                <div class = "advanced-search-misc-container">
-                                    <label class = "advanced-search-label toggle-second-edition">
-                                        <input type="checkbox" class="second-edition-checkbox advanced-search-checkbox" /> Second-Edition only
-                                        <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
-                                    </label>
-                                </div>
                                 <div class = "advanced-search-slot-available-container">
                                     <label class = "advanced-search-label select-available-slots">
-                                        Available slots
+                                        <strong>Available slots: </strong>
                                         <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
                                         <span class="advanced-search-tooltip" tooltip="Search for pilots having all selected slots available."> &#9432 </span>
                                     </label>
                                 </div>
                                 <div class = "advanced-search-slot-used-container">
                                     <label class = "advanced-search-label select-used-slots">
-                                        Uses slot 
+                                        <strong>Used slot: </strong>
                                         <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
                                         <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
                                     </label>
                                 </div>
                                 <div class = "advanced-search-charge-container">
+                                    <strong>Charges:</strong>
                                     <label class = "advanced-search-label set-minimum-charge">
-                                        Has charges from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
+                                        from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
                                     </label>
                                     <label class = "advanced-search-label set-maximum-charge">
                                         to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
@@ -143,6 +138,16 @@ class exportObj.CardBrowser
                                     </label>
                                     <label class = "advanced-search-label has-not-recurring-charge">
                                         <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-misc-container">
+                                    <strong>Misc:</strong>
+                                    <label class = "advanced-search-label toggle-unique">
+                                        <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
+                                    </label>
+                                    <label class = "advanced-search-label toggle-second-edition">
+                                        <input type="checkbox" class="second-edition-checkbox advanced-search-checkbox" /> Second-Edition only
+                                        <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
                                     </label>
                                 </div>
                             </div>
@@ -262,6 +267,7 @@ class exportObj.CardBrowser
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
         @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
+        @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
@@ -304,6 +310,7 @@ class exportObj.CardBrowser
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
+        @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
         @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
         @recurring_charge.onclick = => @renderList @sort_selector.val()
@@ -610,10 +617,13 @@ class exportObj.CardBrowser
                     break
             return false unless matches
         
+        # check for uniqueness
+        return false unless not @unique_checkbox.checked or card.data.unique
+
         # check charge stuff
         return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
-        return false if card.data.recurring? and not @recurring_charge.checked
-        return false if card.data.charge? and not card.data.recurring? and not @not_recurring_charge.checked
+        return false if card.data.recurring and not @recurring_charge.checked
+        return false if card.data.charge and not card.data.recurring and not @not_recurring_charge.checked
 
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
