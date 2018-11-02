@@ -117,11 +117,18 @@ class exportObj.CardBrowser
                                         <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
                                     </label>
                                 </div>
-                                <div class = "advanced-search-slot-container">
-                                    <label class = "advanced-search-label select-slots">
+                                <div class = "advanced-search-slot-available-container">
+                                    <label class = "advanced-search-label select-available-slots">
                                         Available slots
-                                        <select class="advanced-search-selection slot-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                        <span class="advanced-search-tooltip" tooltip="Search for pilots having the all selected slots available."> &#9432 </span>
+                                        <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        <span class="advanced-search-tooltip" tooltip="Search for pilots having all selected slots available."> &#9432 </span>
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-slot-used-container">
+                                    <label class = "advanced-search-label select-used-slots">
+                                        Uses slot 
+                                        <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
                                     </label>
                                 </div>
                                 <div class = "advanced-search-charge-container">
@@ -255,12 +262,19 @@ class exportObj.CardBrowser
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
         @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
-        @slot_selection = ($ @container.find('.xwing-card-browser select.slot-selection'))
+        @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
             opt.text slot
-            @slot_selection.append opt
-        @slot_selection.select2
+            @slot_available_selection.append opt
+        @slot_available_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @slot_used_selection = ($ @container.find('.xwing-card-browser select.slot-used-selection'))
+        for slot of exportObj.upgradesBySlotCanonicalName
+            opt = $ document.createElement('OPTION')
+            opt.text slot
+            @slot_used_selection.append opt
+        @slot_used_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @minimum_charge = ($ @container.find('.xwing-card-browser .minimum-charge'))[0]
         @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
@@ -290,7 +304,8 @@ class exportObj.CardBrowser
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
-        @slot_selection[0].onchange = => @renderList @sort_selector.val()
+        @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
         @recurring_charge.onclick = => @renderList @sort_selector.val()
         @not_recurring_charge.onclick = => @renderList @sort_selector.val()        
         @minimum_charge.oninput = => @renderList @sort_selector.val()
@@ -576,13 +591,24 @@ class exportObj.CardBrowser
         return false unless exportObj.secondEditionCheck(card.data) or not @second_edition_checkbox.checked
 
         # check for slot requirements
-        required_slots = @slot_selection.val()
+        required_slots = @slot_available_selection.val()
         if required_slots
             for slot in required_slots
                return false unless card.data.slots? and slot in card.data.slots
 
         # check if point costs matches
         return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
+
+        # check if used slot matches
+        used_slots = @slot_used_selection.val()
+        if used_slots
+            return false unless card.data.slot?
+            matches = false
+            for slot in used_slots
+                if card.data.slot == slot
+                    matches = true
+                    break
+            return false unless matches
         
         # check charge stuff
         return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
