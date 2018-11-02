@@ -124,6 +124,20 @@ class exportObj.CardBrowser
                                         <span class="advanced-search-tooltip" tooltip="Search for pilots having the all selected slots available."> &#9432 </span>
                                     </label>
                                 </div>
+                                <div class = "advanced-search-charge-container">
+                                    <label class = "advanced-search-label set-minimum-charge">
+                                        Has charges from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-charge">
+                                        to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
+                                    </label>
+                                    <label class = "advanced-search-label has-recurring-charge">
+                                        <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
+                                    </label>
+                                    <label class = "advanced-search-label has-not-recurring-charge">
+                                        <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="well card-viewer-placeholder info-well">
@@ -248,6 +262,11 @@ class exportObj.CardBrowser
             @slot_selection.append opt
         @slot_selection.select2
             minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @minimum_charge = ($ @container.find('.xwing-card-browser .minimum-charge'))[0]
+        @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
+        @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
+        @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
+
 
 
     setupHandlers: () ->
@@ -272,6 +291,10 @@ class exportObj.CardBrowser
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_selection[0].onchange = => @renderList @sort_selector.val()
+        @recurring_charge.onclick = => @renderList @sort_selector.val()
+        @not_recurring_charge.onclick = => @renderList @sort_selector.val()        
+        @minimum_charge.oninput = => @renderList @sort_selector.val()
+        @maximum_charge.oninput = => @renderList @sort_selector.val()
 
 
     toggleAdvancedSearch: () =>
@@ -561,6 +584,10 @@ class exportObj.CardBrowser
         # check if point costs matches
         return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
         
+        # check charge stuff
+        return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
+        return false if card.data.recurring? and not @recurring_charge.checked
+        return false if card.data.charge? and not card.data.recurring? and not @not_recurring_charge.checked
 
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
