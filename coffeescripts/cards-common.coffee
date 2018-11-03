@@ -6156,6 +6156,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Scum and Villainy"
            charge: 1
+           recurring: true 
        }
        {
            name: "Han Solo"

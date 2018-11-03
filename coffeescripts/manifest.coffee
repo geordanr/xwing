@@ -3750,7 +3750,7 @@ class exportObj.Collection
             input.data 'singletonType', 'ship'
             input.data 'singletonName', ship
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.ship-name').data 'name', expansion
+            $(row).find('.ship-name').data 'name', ship
             shipcollection_content.append row
 
         pilotcollection_content = $ @modal.find('.collection-pilot-content')
@@ -3770,7 +3770,7 @@ class exportObj.Collection
             input.data 'singletonType', 'pilot'
             input.data 'singletonName', pilot
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.pilot-name').data 'name', expansion
+            $(row).find('.pilot-name').data 'name', pilot
             pilotcollection_content.append row
 
         upgradecollection_content = $ @modal.find('.collection-upgrade-content')
@@ -3790,7 +3790,7 @@ class exportObj.Collection
             input.data 'singletonType', 'upgrade'
             input.data 'singletonName', upgrade
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.upgrade-name').data 'name', expansion
+            $(row).find('.upgrade-name').data 'name', upgrade
             upgradecollection_content.append row
 
     destroyUI: ->
@@ -3861,10 +3861,17 @@ class exportObj.Collection
 
     onLanguageChange:
         (e, language) =>
-            if language != @language
+            @language = language
+            if language != @old_language
+                @old_language = language
                 # console.log "language changed to #{language}"
                 do (language) =>
                     @modal.find('.expansion-name').each ->
                         # console.log "translating #{$(this).text()} (#{$(this).data('name')}) to #{language}"
                         $(this).text exportObj.translate language, 'sources', $(this).data('name')
-                @language = language
+                    @modal.find('.ship-name').each ->
+                        $(this).text (if exportObj.ships[$(this).data('name')].display_name then exportObj.ships[$(this).data('name')].display_name else $(this).data('name'))
+                    @modal.find('.pilot-name').each ->
+                        $(this).text (if exportObj.pilots[$(this).data('name')].display_name then exportObj.pilots[$(this).data('name')].display_name else $(this).data('name'))
+                    @modal.find('.upgrade-name').each ->
+                        $(this).text (if exportObj.upgrades[$(this).data('name')].display_name then exportObj.upgrades[$(this).data('name')].display_name else $(this).data('name'))
