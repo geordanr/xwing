@@ -2747,6 +2747,11 @@ class Ship
 
         # if @getPoints() != @pilot.points
         table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
+        
+        halfPoints = Math.ceil @getPoints() / 2        
+        threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
+
+        table_html += """<tr class="simple-ship-half-points"><td colspan="2">Half Points: #{halfPoints} Threshold: #{threshold}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
