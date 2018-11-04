@@ -6,7 +6,9 @@
 exportObj = exports ? this
 
 exportObj.sortHelper = (a, b) ->
-    if a.points == b.points
+    if typeof(a.points) == "string" # handling cases where points value is "*" instead of a number
+        1
+    else if a.points == b.points
         a_name = a.text.replace(/[^a-z0-9]/ig, '')
         b_name = b.text.replace(/[^a-z0-9]/ig, '')
         if a_name == b_name
@@ -1421,7 +1423,7 @@ class exportObj.SquadBuilder
         retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
         if sorted
             retval = retval.sort exportObj.sortHelper
-        
+
         # Possibly adjust the upgrade
         if this_upgrade_obj?adjustment_func?
             (this_upgrade_obj.adjustment_func(upgrade) for upgrade in retval)
