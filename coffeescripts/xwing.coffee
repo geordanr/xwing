@@ -6,16 +6,16 @@
 exportObj = exports ? this
 
 exportObj.sortHelper = (a, b) ->
-    if typeof(a.points) == "string" # handling cases where points value is "*" instead of a number
-        1
-    else if a.points == b.points
+    if a.points == b.points
         a_name = a.text.replace(/[^a-z0-9]/ig, '')
         b_name = b.text.replace(/[^a-z0-9]/ig, '')
         if a_name == b_name
             0
         else
             if a_name > b_name then 1 else -1
-    else
+    else if typeof(a.points) == "string" # handling cases where points value is "*" instead of a number
+        1
+    else 
         if a.points > b.points then 1 else -1
 
 $.isMobile = ->
