@@ -339,11 +339,11 @@ exportObj.cardLoaders.Magyar = () ->
         "Cutlass Squadron Pilot":
            text: """ """
         "Dace Bonearm":
-           text: """Miután egy ellenséges hajó 0-3-as távolságban kap legalább 1 ion jelzőt, elkölthetsz 3 %CHARGE% jelzőt. Ha így teszel az a hajó kap 2 további ion jelzőt."""
+           text: """Miután egy ellenséges hajó 0-3-as távolságban kap legalább 1 ion jelzőt, elkölthetsz 3 %CHARGE% jelzőt. Ha így teszel, az a hajó kap 2 további ion jelzőt."""
         "Dalan Oberos":
            text: """A ütközet fázis elején választhatsz 1 pajzzsal rendelekező hajót a %BULLSEYEARC% tűzívedben és elkölthetsz 1 %CHARGE% jelzőt. Ha így teszel, az a hajó elveszít egy pajzsot, te pedig visszatölthetsz 1 pajzsot.%LINEBREAK% DEAD TO RIGHTS: Amikor végrehajtasz egy támadást, ha a védekező benne van a %BULLSEYEARC% tűzívedben, a védekezőkockák nem módosíthatók zöld jelzőkkel."""
         "Dalan Oberos (StarViper)":
-           text: """Miután teljesen végrehajtasz egy manővert, kaphatsz 1 stressz jelzőt, hogy elforgasd a hajód 90 fokkal.  %LINEBREAK% MICROTHRUSTERS: Amikor orsózást hajtasz végre, a (1 %BANKLEFT%) vagy (1 %BANKRIGHT%) sablont KELL használnod a (1 %STRAIGHT%) helyett."""
+           text: """Miután teljesen végrehajtasz egy manővert, kaphatsz 1 stressz jelzőt, hogy elforgasd a hajód 90 fokkal. %LINEBREAK% MICROTHRUSTERS: Amikor orsózást hajtasz végre, a (1 %BANKLEFT%) vagy (1 %BANKRIGHT%) sablont KELL használnod a (1 %STRAIGHT%) helyett."""
         "Darth Vader":
            text: """Miután végrehajtasz egy akciót, elkölthetsz 1 %FORCE% jelzőt, hogy végrehajts egy akciót. %LINEBREAK% ADVANCED TARGETING COMPUTER: Amikor végrehajtasz egy elsődleges támadást egy olyan védekező ellen, akit bemértél, 1-gyel több támadókockával dobj és változtasd egy %HIT% eredményed %CRIT% eredményre."""
         "Dash Rendar":
@@ -383,7 +383,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Ezra Bridger (TIE Fighter)":
            text: """Amikor védekezel vagy támadást hajtasz végre, ha stresszes vagy, elkölthetsz 1 %FORCE%-t, hogy legfeljebb 2 %FOCUS% eredményt %EVADE% vagy %HIT% eredményre módosíts."""
         "Fenn Rau":
-           text: """Amikor védekezel vagy támadást hajtasz végre, ha a támadás 1-es távolságban történik, 1-gyel több kockával dobhatsz. %LINEBREAK% CONCORDIA FACEOFF: Amikor védekezel vagy támadást hajtasz végre, ha a támadás 1-es távolságban történik és benne vagy a támadó %FRONTARC% tűzívében, megváltoztathatod 1 dobás eredményed %EVADE% eredményre."""
+           text: """Amikor védekezel vagy támadást hajtasz végre, ha a támadás 1-es távolságban történik, 1-gyel több kockával dobhatsz. %LINEBREAK% CONCORDIA FACEOFF: Amikor védekezel, ha a támadás 1-es távolságban történik és benne vagy a támadó %FRONTARC% tűzívében, megváltoztathatod 1 dobás eredményed %EVADE% eredményre."""
         "Fenn Rau (Sheathipede)":
            text: """Miután egy ellenséges hajó a tűzívedben sorra kerül az Ütközet fázisban, ha nem vagy stresszes, kaphatsz 1 stressz jelzőt. Ha így teszel, az a hajó nem költhet el jelzőt, hogy módosítsa támadókockáit e fázis alatt.%LINEBREAK% COMMS SHUTTLE: Amikor dokkolva vagy, anyahajód %COORDINATE% akció lehetőséget kap. Anyahajód az aktiválása előtt végrehajthat egy %COORDINATE% akciót."""
         "Freighter Captain":
@@ -471,7 +471,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Kavil":
            text: """Amikor egy nem-%FRONTARC% támadást hajtasz végre, dobj 1-gyel több támadókockával."""
         "Ketsu Onyo":
-           text: """A ütközet fázis elején választhatsz egy hajót ami a %FRONTARC% and %SINGLETURRETARC% tűzívedben is benne van 0-1-es távolságban. Ha így teszel, az a hajó kap egy vonósugár jelzőt."""
+           text: """A ütközet fázis elején választhatsz egy hajót ami a %FRONTARC% és %SINGLETURRETARC% tűzívedben is benne van 0-1-es távolságban. Ha így teszel, az a hajó kap egy vonósugár jelzőt."""
         "Knave Squadron Escort":
            text: """EXPERIMENTAL SCANNERS: 3-as távolságon túl is bemérhetsz. Nem mérhetsz be 1-es távolságra."""
         "Koshka Frost":
@@ -732,7 +732,8 @@ exportObj.cardLoaders.Magyar = () ->
            text: """ ??? """
         "Finch Dallow":
            text: """ ... drop a bomb, you ... play area touching ... instead. """
-            
+        "Major Stridan":
+           text: """ While you coordinate or resolve the effect of one of your upgrades, you may treat friendly ships at range 2-3 as being at range 0 or range 1. %LINEBREAK% LINKED BATTERY: While you perform a %CANNON% attack, roll 1 addtional die. """            
             
     upgrade_translations =
         "0-0-0":
@@ -990,7 +991,7 @@ exportObj.cardLoaders.Magyar = () ->
         "R5-D8":
            text: """Akció: Költs el 1 %CHARGE% jelzőt, hogy megjavíts egy lefordított sérülés kártyát.%LINEBREAK%Akció: Javíts meg 1 felfordított 'Ship' sérülés kártyát."""
         "R5-P8":
-           text: """Amikor végrehajtasz egy támadást a %FRONTARC% tűzívedben lévő védekező ellen, elkölthetsz 1 %CHARGE% jelzőt, hogy újradobj 1 támadókockát. Ha az újradobott eredmény %CRIT%, szenved el 1 %CRIT% sérüléste."""
+           text: """Amikor végrehajtasz egy támadást a %FRONTARC% tűzívedben lévő védekező ellen, elkölthetsz 1 %CHARGE% jelzőt, hogy újradobj 1 támadókockát. Ha az újradobott eredmény %CRIT%, szenvedj el 1 %CRIT% sérülést."""
         "R5-TK":
            text: """Végrehajthatsz támadást baráti hajó ellen."""
         "Rigged Cargo Chute":
@@ -1052,7 +1053,7 @@ exportObj.cardLoaders.Magyar = () ->
         "Veteran Tail Gunner":
            text: """<i>Követelmény: %REARARC%</i> %LINEBREAK% miután végrehajtasz egy elsődleges %FRONTARC% támadást, végrehajthatsz egy bónusz elsődleges %REARARC% támadást."""
         "Veteran Turret Gunner":
-           text: """<i>Követelmény: %ROTATEARC%</i> %LINEBREAK% Amikor végrehajtasz egy elsődleges támadást, végrehajthatsz egy bónusz %SINGLETURRETARC% egy olyan %SINGLETURRETARC% fegyverrel, amit még nem használtál ebben a körben."""
+           text: """<i>Követelmény: %ROTATEARC%</i> %LINEBREAK% Amikor végrehajtasz egy elsődleges támadást, végrehajthatsz egy bónusz %SINGLETURRETARC% támadást egy olyan %SINGLETURRETARC% tűzívben, amiből még nem támadtál ebben a körben."""
         "Virago":
            text: """A vége fázis alatt, elkölthetsz 1 %CHARGE% jelzőt, hogy végrehajts egy piros %BOOST% akciót. Kapsz egy %MODIFICATION% fejlesztés helyet. Adj 1 pajzs értéket a hajódhoz."""
         "Xg-1 Assault Configuration":
@@ -1083,7 +1084,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """<i>Requires: %LOCK%</i> %LINEBREAK% While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the %LOCK% attack requirement. """
         "Primed Thrusters":
            text: """<i>Requires: Small Base</i> %LINEBREAK% While you have 2 or fewer stress tokens, you can perform %BARRELROLL% and %BOOST% actions even while stressed. """
-        "Kylo Ren (Crew)":
+        "Kylo Ren":
            text: """ Action: Choose 1 enemy ship at range 1-3. If you do, spend 1 %FORCE% to assign the I'll Show You the Dark Side condition to that ship. """
         "General Hux":
            text: """ ... perform a white %COORDINATE% action ... it as red. If you do, you ... up to 2 additional ships ... ship type, and each ship you coordinate must perform the same action, treating that action as red. """
@@ -1113,7 +1114,9 @@ exportObj.cardLoaders.Magyar = () ->
            text: """ <i>Adds: <r>%EVADE%</r></i> %LINEBREAK% After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1. """
         "Rey's Millenium Falcon":
            text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
-                            
+        "Petty Officer Thanisson":
+           text: """ During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. if you do, that ship gains an additional token of the type that it gained. """
+            
     condition_translations =
         'Suppressive Fire':
            text: '''Amikor végrehajtasz egy támadást más hajó ellen mint <strong>Captain Rex</strong>, dobj 1-gyel kevesebb kockával. %LINEBREAK% Miután <strong>Captain Rex</strong> védekezik, vedd le ezt a kártyát.  %LINEBREAK% Az ütközet fázis végén, ha <strong>Captain Rex</strong> nem hajtott végre támadást ebben a fázisban, vedd le ezt a kártyát. %LINEBREAK% Miután <strong>Captain Rex</strong> megsemmisült, vedd le ezt a kártyát.'''
