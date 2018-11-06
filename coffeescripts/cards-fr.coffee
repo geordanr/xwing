@@ -54,6 +54,7 @@ exportObj.translations['Français'] =
         "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
     slot:
         "Astromech": "Astromech"
         "Force": "Pouvoir de la Force"

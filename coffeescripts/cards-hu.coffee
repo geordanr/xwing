@@ -45,6 +45,7 @@ exportObj.translations.Magyar =
         "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
     slot: #EDIT THIS
         "Astromech": "Astromech"
         "Force": "Erő"

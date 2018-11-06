@@ -1214,8 +1214,8 @@ exportObj.basicCardData = ->
             name: "TIE/SF Fighter"
             xws: "TIE/SF Fighter".canonicalize()
             factions: ["First Order"]
-            attack: 0
-            attackt: 0
+            attack: 2
+            attackt: 2
             agility: 2
             hull: 3
             shields: 3
@@ -5073,6 +5073,7 @@ exportObj.basicCardData = ->
             charge: 1
             recurring: true 
             slots: [
+                "Talent"
                 "Astromech"
                 "Modification"
                 "Configuration"
@@ -5244,7 +5245,9 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "TIE/SF Fighter"
-            skill: 0
+            skill: 6
+            charge: 1
+            recurring: true 
             points: 100
             slots: [
                 "Talent"
@@ -5355,6 +5358,9 @@ exportObj.basicCardData = ->
             points: 100
             slots: [
                 "Talent"
+                "Sensor"
+                "Device"
+                "Device"
                 "Modification"
             ]
         }
@@ -5373,6 +5379,153 @@ exportObj.basicCardData = ->
                 "Crew"
                 "Cannon"
                 "Sensor"
+                "Modification"
+            ]
+        }
+        {
+            name: "Kare Kun"
+            id: 252
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 4
+            points: 100
+            slots: [
+                "Talent"
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Joph Seastriker"
+            id: 253
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Lieutenant Bastian"
+            id: 254
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 2
+            points: 100
+            slots: [
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Jaycris Tubbs"
+            id: 255
+            unique: true
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 1
+            points: 100
+            slots: [
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Black Squadron Ace (T-70)"
+            id: 256
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 4
+            points: 100
+            slots: [
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Red Squadron Expert"
+            id: 257
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 3
+            points: 100
+            slots: [
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Blue Squadron Rookie"
+            id: 258
+            faction: "Resistance"
+            ship: "T-70 X-Wing"
+            skill: 1
+            points: 100
+            slots: [
+                "Astromech"
+                "Modification"
+                "Configuration"
+                "Tech"
+                "Title"
+                "Hardpoint"
+            ]
+        }
+        {
+            name: "Zeta Squadron Survivor"
+            id: 259
+            faction: "First Order"
+            ship: "TIE/SF Fighter"
+            skill: 2
+            points: 100
+            slots: [
+                "Talent"
+                "Tech"
+                "Gunner"
+                "Sensor"
+                "Modification"
+            ]
+        }
+        {
+            name: "Cobalt Squadron Bomber"
+            id: 260
+            faction: "Resistance"
+            ship: "B/SF-17 Bomber"
+            skill: 1
+            points: 100
+            slots: [
+                "Sensor"
+                "Device"
+                "Device"
                 "Modification"
             ]
         }
@@ -7186,6 +7339,31 @@ exportObj.basicCardData = ->
             points: 0
             unique: true
             faction: "First Order"
+       }
+       {
+            name: "BB-8"
+            id: 195
+            slot: "Astromech"
+            points: 0
+            charge: 2
+            unique: true
+            faction: "Resistance"
+       }
+       {
+            name: "BB Astromech"
+            id: 196
+            slot: "Astromech"
+            points: 0
+            charge: 2
+            faction: "Resistance"
+       }
+       {
+            name: "M9-G8"
+            id: 197
+            slot: "Astromech"
+            points: 0
+            unique: true
+            faction: "Resistance"
        }
     ]
 

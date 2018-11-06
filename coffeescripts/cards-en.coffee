@@ -45,6 +45,7 @@ exportObj.translations.English =
         "Device": '<i class="xwing-miniatures-font xwing-miniatures-font-device"></i>'
         "Tech": '<i class="xwing-miniatures-font xwing-miniatures-font-tech"></i>'
         "Title": '<i class="xwing-miniatures-font xwing-miniatures-font-title"></i>'
+        "Hardpoint": '<i class="xwing-miniatures-font xwing-miniatures-font-hardpoint"></i>'
     slot:
         "Astromech": "Astromech"
         "Force": "Force"
@@ -933,9 +934,11 @@ exportObj.cardLoaders.English = () ->
         "Lulo Lampar":
            text: """While you defend or perform a primary attack, if you are stressed, you must roll 1 fewer defense die or 1 additional attack die."""
         '"Backdraft"':
-           text: """ ... perform a %TURRET% primary ... defender is in your %BACKARC% ... additional dice. %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """
+           text: """ ... perform a %TURRET% primary ... defender is in your %REARARC% ... additional dice. %LINEBREAK% HEAVY WEAPON TURRET: You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %MISSILE% upgrades as %SINGLETURRETARC%.  """
         '"Quickdraw"':
-           text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """    
+           text: """ After you lose a shield, you may spend 1 %CHARGE%. If you do, you may perform a bonus primary attack. %LINEBREAK% HEAVY WEAPON TURRET: You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %MISSILE% upgrades as %SINGLETURRETARC%. """
+        "Zeta Squadron Survivor":
+           text: """ ... %LINEBREAK% HEAVY WEAPON TURRET: You can rotate your %SINGLETURRETARC% indicator only to your %FRONTARC% or %REARARC%. You must treat the %FRONTARC% requirement of your equipped %MISSILE% upgrades as %SINGLETURRETARC%. """
         "Rey":
            text: """ While you defend or perform an attack, if the enemy ship in your %FRONTARC%, you may spend 1 %FORCE% change 1 of your blank results to an %EVADE% or %HIT% result. """
         "Han Solo (Resistance)":
@@ -952,6 +955,24 @@ exportObj.cardLoaders.English = () ->
            text: """ ... drop a bomb, you ... play area touching ... instead. """
         "Major Stridan":
            text: """ While you coordinate or resolve the effect of one of your upgrades, you may treat friendly ships at range 2-3 as being at range 0 or range 1. %LINEBREAK% LINKED BATTERY: While you perform a %CANNON% attack, roll 1 addtional die. """
+        "Kare Kun":
+           text: """ While you boost, you may use the (1 %TURNLEFT%) or (1 %TURNRIGHT%) template instead. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Joph Seastriker":
+           text: """ After you lose 1 shield, gain 1 evade token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Lieutenant Bastian":
+           text: """ After a ship at range 1-2 is dealt a damage card, you may acquire a lock on that ship. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Jaycris Tubbs":
+           text: """ After you fully execute a blue maneuver, you may choose a friendly ship at range 0-1. If you do, that ship removes 1 stress token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Joph Seastriker":
+           text: """ After you lose 1 shield, gain 1 evade token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Black Squadron Ace (T-70)":
+           text: """ <i class = flavor_text>During the Cold War, Poe Dameron's Black Squadron conducted daring covert operations against the First Order in defiance of treaties ratified by the New Republic Senate.</i> %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Red Squadron Expert":
+           text: """ <i class = flavor_text>Although the bulk of the Resistance Starfighter Corps is made up of young volunteers from the New Republic, their ranks are bolstered by the veterans of the Galactic Civil War determined to finish what they started decades ago.</i> %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Blue Squadron Rookie":
+           text: """ <i class = flavor_text>The Incom-FreiTek T-70 X-Wing was designed to improve upon the tactical flexibility of the venerable T-65. The starfighters's advanced droid socket is compatible with a wide array of astromechs, and it's modular weapons pods allow for ground crews to tailor its payload for specific missions.</i> %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
+        "Cobalt Squadron Bomber":
+           text: """ ... """
             
             
     upgrade_translations =
@@ -993,7 +1014,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Rebel or Scum only</i>%LINEBREAK%Gain a %FRONTARC% primary weapon with a value of “3.”%LINEBREAK%During the End Phase, do not remove up to 2 focus tokens."""
         "Outrider":
            display_name: """Outrider"""
-           text: """<i>Rebel only</i>%LINEBREAK%While you perform an attack that is obsructed by an obstacle, the defender rolls 1 fewer defense die.%LINEBREAK%After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens.%LINEBREAK%<i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
+           text: """<i>Rebel only</i>%LINEBREAK% While you perform an attack that is obsructed by an obstacle, the defender rolls 1 fewer defense die. %LINEBREAK% After you fully execute a maneuver, if you moved through or overlapped an obstacle, you may remove 1 of your red or orange tokens. %LINEBREAK% <i>Errata (since rules reference 1.0.2): changed "obstructed attack" to "an attack that is obstructed by an obstacle"</i>"""
         "Phantom":
            display_name: """Phantom"""
            text: """<i>Rebel only</i>%LINEBREAK%You can dock at range 0-1."""
@@ -1302,7 +1323,7 @@ exportObj.cardLoaders.English = () ->
            text: """After you perform a %FOCUS% action, gain 1 focus token."""
         "Pivot Wing":
            display_name: """Pivot Wing"""
-           text: """<strong>Closed:</strong>While you defend, roll 1 fewer defense die.%LINEBREAK%After you execute a [0&nbsp;%STOP%] maneuver, you may rotate your ship 90º or 180º.%LINEBREAK%Before you activate, you may flip this card.%LINEBREAK%<strong>Open:</Strong>Before you activate, you may flip this card."""
+           text: """<strong>Closed: </strong>While you defend, roll 1 fewer defense die.%LINEBREAK%After you execute a [0&nbsp;%STOP%] maneuver, you may rotate your ship 90º or 180º.%LINEBREAK%Before you activate, you may flip this card.%LINEBREAK%<strong>Open:</Strong> Before you activate, you may flip this card."""
         "Predator":
            display_name: """Predator"""
            text: """While you perform a primary attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 attack die."""
@@ -1377,7 +1398,7 @@ exportObj.cardLoaders.English = () ->
            text: """During the System Phase, you may choose 1 ship at range 0-1 and look at its dial. If you spend 1&nbsp;%FORCE%, you may choose a ship at range 0-3 instead."""
         "Servomotor S-Foils":
            display_name: """Servomotor S-foils"""
-           text: """<strong>Closed:</strong><i>Adds %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked red"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK%While you perform a primary attack, roll 1 fewer attack die.%LINEBREAK%Before you activate, you may flip this card.%LINEBREAK%<strong>Open:</strong>Before you activate, you may flip this card."""
+           text: """<strong>Closed: </strong><i>Adds %BOOST% ,  %FOCUS%&nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i>&nbsp;<r>%BOOST%</r></i>%LINEBREAK% While you perform a primary attack, roll 1 fewer attack die.%LINEBREAK%Before you activate, you may flip this card.%LINEBREAK%<strong>Open:</strong> Before you activate, you may flip this card."""
         "Seventh Sister":
            display_name: """Seventh Sister"""
            text: """<i>Empire only</i>%LINEBREAK%If an enemy ship at range 0-1 would gain a stress token, you may spend 1&nbsp;%FORCE% to have it gain 1 jam or tractor token instead."""
@@ -1463,7 +1484,7 @@ exportObj.cardLoaders.English = () ->
         "Finn":
            text: """ While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll (this die roll can be rerolled or otherwise modified)  """
         "Integrated S-Foils":
-           text: """<b>Closed:</b> While you perform a primary attack, if the defender is not in your %BULLSEYEARC%, roll 1 fewer attack die. Before you activate, you may flip this card. %LINEBREAK% <i>Adds: %BARRELROLL%, %FOCUS% > <r>%BARRELROLL%</r></i> %LINEBREAK% <b>Open:</b> ???"""
+           text: """<strong>Closed: </strong><i>Adds %BARRELROLL%, %FOCUS% &nbsp;<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i>&nbsp;<r>%BARRELROLL%</r></i>%LINEBREAK% While you perform a primary attack, if the defender is not in your %BULLSEYEARC%, roll 1 fewer attack die. %LINEBREAK% Before you activate, you may flip this card. %LINEBREAK% <b>Open:</b> Before you activate, you may flip this card."""
         "Targeting Synchronizer":
            text: """<i>Requires: %LOCK%</i> %LINEBREAK% While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the %LOCK% attack requirement. """
         "Primed Thrusters":
@@ -1500,6 +1521,12 @@ exportObj.cardLoaders.English = () ->
            text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
         "Petty Officer Thanisson":
            text: """ During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. if you do, that ship gains an additional token of the type that it gained. """
+        "BB-8":
+           text: """ Before you execute a blue maneuver, you may spend 1 %CHARGE% to perform a %BARRELROLL% or %BOOST% action. """
+        "BB Astromech":
+           text: """ Before you execute a blue maneuver, you may spend 1 %CHARGE% to perform a %BARRELROLL% action. """
+        "M9-G8":
+           text: """ While a ship you are locking performs an attack, you may choose 1 attack die. If you do, the attacker rerolls that die. """
             
         
     condition_translations =
