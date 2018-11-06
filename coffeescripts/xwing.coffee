@@ -6,16 +6,16 @@
 exportObj = exports ? this
 
 exportObj.sortHelper = (a, b) ->
-    if typeof(a.points) == "string" # handling cases where points value is "*" instead of a number
-        1
-    else if a.points == b.points
+    if a.points == b.points
         a_name = a.text.replace(/[^a-z0-9]/ig, '')
         b_name = b.text.replace(/[^a-z0-9]/ig, '')
         if a_name == b_name
             0
         else
             if a_name > b_name then 1 else -1
-    else
+    else if typeof(a.points) == "string" # handling cases where points value is "*" instead of a number
+        1
+    else 
         if a.points > b.points then 1 else -1
 
 $.isMobile = ->
@@ -2749,6 +2749,11 @@ class Ship
 
         # if @getPoints() != @pilot.points
         table_html += """<tr class="simple-ship-total"><td colspan="2">Ship Total: #{@getPoints()}</td></tr>"""
+        
+        halfPoints = Math.ceil @getPoints() / 2        
+        threshold = Math.ceil (@effectiveStats()['hull'] + @effectiveStats()['shields']) / 2
+
+        table_html += """<tr class="simple-ship-half-points"><td colspan="2">Half Points: #{halfPoints} Threshold: #{threshold}</td></tr>"""
 
         table_html += '<tr><td>&nbsp;</td><td></td></tr>'
         table_html
