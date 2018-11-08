@@ -5529,6 +5529,112 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
+        {
+            name: "TN-3465"
+            id: 261
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 2
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Scorch"'
+            id: 262
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 4
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Longshot"'
+            id: 263
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 3
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Static"'
+            id: 264
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 4
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Lieutenant Rivas"
+            id: 265
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 1
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Commander Malarus"
+            id: 266
+            unique: true
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 5
+            points: 100
+            charge: 2
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Omega Squadron Ace"
+            id: 267
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 3
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Zeta Squadron Pilot"
+            id: 268
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 2
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Epsilon Squadron Cadet"
+            id: 269
+            faction: "First Order"
+            ship: "TIE/FO Fighter"
+            skill: 1
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
     ]
 
 

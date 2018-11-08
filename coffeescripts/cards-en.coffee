@@ -973,6 +973,24 @@ exportObj.cardLoaders.English = () ->
            text: """ <i class = flavor_text>The Incom-FreiTek T-70 X-Wing was designed to improve upon the tactical flexibility of the venerable T-65. The starfighters's advanced droid socket is compatible with a wide array of astromechs, and it's modular weapons pods allow for ground crews to tailor its payload for specific missions.</i> %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Cobalt Squadron Bomber":
            text: """ ... """
+        "TN-3465":
+           text: """ While another friendly ship performs an attack, if you are at range 0-1 of the defender, you may suffer 1 %CRIT% damage to change 1 of the attacker's results to a %CRIT% result. """
+        '"Scorch"':
+           text: """ While you perform a primary attack, if you are not stressed, you may gain 1 stress token to roll 1 additional attack die. """
+        '"Longshot"':
+           text: """ While you perform a primary attack at attack range 3, roll 1 additional attack die. """
+        '"Static"':
+           text: """ While you perform a primary attack, you may spend your lock on the defender and a focus token to change all of your results to %CRIT% results. """
+        "Lieutenant Rivas":
+           text: """ After a ship at range 1-2 gains a red or orange token, if you do not have that ship locked, you may acquire a lock on that ship. """
+        "Commander Malarus":
+           text: """ At the start of the Engagement Phase, you may spend 1 %CHARGE% and gain 1 stress token. If you do, until the end of the round, while you defend or perform an attack, you may change all of your %FOCUS% results to %EVADE% or %HIT% results. """
+        "Omega Squadron Ace":
+           text: """ <i class = flavor_text>Only pilots who have demonstrated both exceptional skill and unwavering dedication are rewarded with coveted positions in the First Order squadrons operating secretly against the New Republic during the Cold War.</i> """
+        "Zeta Squadron Pilot":
+           text: """ <i class = flavor_text>Unhampered by a cumbersome galactic bureaucracy, technologies originally researched by the Empire's TIE Advanced program are now mass-produced on the First Order starfighters. As a result, TIE/fo pilots enjoy higher survival rates than their predecessors in the Galactic Empire.</i> """
+        "Epsilon Squadron Cadet":
+           text: """ <i class = flavor_text>Trained from childhood aboard Resurgent-class Star Destroyers in deep space, many First Order TIE pilots have never even set foot on a planet's surface.</i> """
             
             
     upgrade_translations =
@@ -1461,7 +1479,7 @@ exportObj.cardLoaders.English = () ->
            text: """<i>Rebel only</i>%LINEBREAK%During the Perform Action step, you may perform 1 action, even while stressed. After you perform an action while stressed, suffer 1&nbsp;%HIT% damage unless you expose 1 of your damage cards."""
         '"Chopper" (Astromech)':
            display_name: """“Chopper”"""
-           text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Spend 1&nbsp;%CHARGE% from another equipped upgrade to recover 1 shield. %LINEBREAK%<strong>Action:</strong> Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
+           text: """<i>Rebel only</i>%LINEBREAK%<strong>Action:</strong> Spend 1 non-recurring %CHARGE% from another equipped upgrade to recover 1 shield. %LINEBREAK%<strong>Action:</strong> Spend 2 shields to recover 1 non-recurring %CHARGE% on an equipped upgrade."""
         '"Genius"':
            display_name: """“Genius”"""
            text: """<i>Scum only</i>%LINEBREAK%After you fully execute a maneuver, if you have not dropped or launched a device this round, you may drop 1 bomb."""
