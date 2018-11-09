@@ -591,7 +591,24 @@ class exportObj.CardBrowser
         option.data 'type', card.type
         option.data 'card', card.data
         option.data 'orig_type', card.orig_type
+        if @getCollectionNumber(card) == 0
+            option[0].classList.add('result-not-in-collection')
         $(container).append option
+
+    getCollectionNumber: (card) ->
+        # returns number of copies of the given card in the collection, or -1 if no collection loaded
+        if not (exportObj.builders[0].collection? and exportObj.builders[0].collection.counts?)
+            return -1
+        owned_copies = 0
+        switch card.orig_type
+            when 'Pilot'
+                owned_copies = exportObj.builders[0].collection.counts.pilot[card.name] ? 0 
+            when 'Ship'
+                owned_copies = exportObj.builders[0].collection.counts.ship[card.name] ? 0
+            else # type is e.g. astromech
+                owned_copies = exportObj.builders[0].collection.counts.upgrade[card.name] ? 0
+        owned_copies
+
 
     checkSearchCriteria: (card) ->
         # check for text search
@@ -653,14 +670,7 @@ class exportObj.CardBrowser
 
         # check collection status
         if exportObj.builders[0].collection.counts? # ignore collection stuff, if no collection available
-            owned_copies = 0
-            switch card.type
-                when 'pilot'
-                    owned_copies = exportObj.builders[0].collection.counts.pilot[card.name] ? 0 
-                when 'ship'
-                    owned_copies = exportObj.builders[0].collection.counts.ship[card.name] ? 0
-                else # type is e.g. astromech
-                    owned_copies = exportObj.builders[0].collection.counts.upgrade[card.name] ? 0
+            owned_copies = @getCollectionNumber(card)
             return false unless owned_copies >= @minimum_owned_copies.value and owned_copies <= @maximum_owned_copies.value
 
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
