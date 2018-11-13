@@ -795,7 +795,7 @@ exportObj.basicCardData = ->
         "ARC-170":
             name: "ARC-170"
             xws: "Arc-170 Starfighter".canonicalize()
-            factions: ["Rebel Alliance"]
+            factions: ["Rebel Alliance","Galactic Republic"]
             attack: 3
             attackb: 2
             agility: 1
@@ -1141,16 +1141,16 @@ exportObj.basicCardData = ->
             name: "RZ-2 A-Wing"
             xws: "RZ-2 A-Wing".canonicalize()
             factions: ["Resistance"]
-            attack: 2
             attackt: 2
             agility: 3
-            hull: 3
+            hull: 2
             shields: 2
             actions: [
                 "Focus"
                 "Evade"
                 "Lock"
                 "Barrel Roll"
+                "Boost"
             ]
             actionsred: [
             ]
@@ -1337,6 +1337,102 @@ exportObj.basicCardData = ->
               [ 1, 1, 2, 1, 1, 3]
               [ 0, 0, 1, 0, 0, 0]
               [ 0, 0, 3, 0, 0, 0]
+            ]
+        "V-19 Torrent":
+            name: "V-19 Torrent"
+            xws: "V-19 Torrent".canonicalize()
+            factions: ["Galactic Republic"]
+            attack: 2
+            agility: 2
+            hull: 5
+            shields: 0
+            actions: [
+                "Focus"
+                "Evade"
+                "Lock"
+                "R> Evade"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
+              [ 0, 1, 2, 1, 0, 3, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ]
+        "Delta-7 Aethersprite":
+            name: "Delta-7 Aethersprite"
+            xws: "Delta-7 Aethersprite".canonicalize()
+            factions: ["Galactic Republic"]
+            attack: 2
+            agility: 3
+            hull: 3
+            shields: 1
+            actions: [
+                "Focus"
+                "F-Evade"
+                "Lock"
+                "Barrel Roll"
+                "Boost"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 2, 0, 2, 1, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0]
+              [ 0, 1, 2, 1, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+            ]
+        "Sith Infiltrator":
+            name: "Sith Infiltrator"
+            xws: "Sith Infiltrator".canonicalize()
+            factions: ["Separatist Alliance"]
+            attack: 3
+            agility: 1
+            hull: 6
+            shields: 4
+            actions: [
+                "Focus"
+                "Lock"
+            ]
+            actionsred: [
+                "Barrel Roll"
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 1, 0, 3, 3, 0, 0]
+              [ 1, 1, 2, 1, 1, 0, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+            ]
+        "Vulture-class Droid Fighter":
+            name: "Vulture-class Droid Fighter"
+            xws: "Vulture-class Droid Fighter".canonicalize()
+            factions: ["Separatist Alliance"]
+            attack: 2
+            agility: 2
+            hull: 3
+            shields: 0
+            actions: [
+                "Calculate"
+                "Lock"
+                "Barrel Roll"
+                "R> Calculate"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 0, 0, 0, 1, 3, 0, 0, 0, 0]
+              [ 2, 1, 2, 1, 2, 0, 0, 0, 3, 3]
+              [ 1, 3, 2, 3, 1, 0, 0, 0, 0, 0]
+              [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
     # name field is for convenience only
     pilotsById: [
@@ -5183,7 +5279,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Lulo Lampar"
+            name: "L'ulo L'ampar"
             id: 239
             unique: true
             faction: "Resistance"
@@ -5193,6 +5289,8 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Missile"
+                "Tech"
+                "Modification"
             ]
         }
         {
@@ -5208,20 +5306,14 @@ exportObj.basicCardData = ->
             slots: [
                 "Talent"
                 "Missile"
+                "Tech"
+                "Modification"
             ]
         }
         {
-            name: "Lulo Lampar"
+            name: "blanks"
             id: 241
-            unique: true
-            faction: "Resistance"
-            ship: "RZ-2 A-Wing"
-            skill: 5
-            points: 100
-            slots: [
-                "Talent"
-                "Missile"
-            ]
+            skip: true
         }
         {
             name: '"Backdraft"'
@@ -5637,6 +5729,166 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Greer Sonnel"
+            id: 270
+            unique: true
+            faction: "Resistance"
+            ship: "RZ-2 A-Wing"
+            skill: 4
+            points: 100
+            slots: [
+                "Talent"
+                "Missile"
+                "Tech"
+                "Modification"
+            ]
+        }
+        {
+            name: "Zari Bangel"
+            id: 271
+            unique: true
+            faction: "Resistance"
+            ship: "RZ-2 A-Wing"
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Missile"
+                "Tech"
+                "Modification"
+            ]
+        }
+        {
+            name: "Darth Maul"
+            id: 272
+            unique: true
+            faction: "Separatist Alliance"
+            ship: "Sith Infiltrator"
+            skill: 5
+            force: 3
+            points: 100
+            slots: [
+                "Force"
+                "Modification"
+            ]
+        }
+        {
+            name: "Anakin Skylwaker"
+            id: 273
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 6
+            force: 3
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Luminara Unduli"
+            id: 274
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 4
+            force: 2
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Barriss Offee"
+            id: 275
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 6
+            force: 3
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Ahsoka Tano"
+            id: 276
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 3
+            force: 2
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Jedi Knight"
+            id: 277
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 3
+            force: 1
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Obi-Wan Kenobi"
+            id: 278
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 5
+            force: 2
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Trade Federation Drone"
+            id: 279
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 100
+            slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: '"Sinker"'
+            id: 280
+            faction: "Galactic Republic"
+            ship: "ARC-170"
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Torpedo"
+                "Crew"
+                "Gunner"
+                "Astromech"
                 "Modification"
             ]
         }
@@ -7476,7 +7728,41 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Resistance"
        }
-    ]
+       {
+            name: "Ferrosphere Paint"
+            id: 198
+            slot: "Tech"
+            points: 0
+            faction: "Resistance"
+       }
+       {
+            name: "Brilliant Evasion"
+            id: 199
+            slot: "Force"
+            points: 0
+       }
+       {
+            name: "Calibrated Laser Targeting"
+            id: 200
+            slot: "Configuration"
+            ship: "Delta-7 Aethersprite"
+            points: 0
+            also_occupies_upgrades: [ "Modification" ]
+       }
+       {
+            name: "Delta-7B"
+            id: 201
+            slot: "Configuration"
+            ship: "Delta-7 Aethersprite"
+            points: 0
+            modifier_func: (stats) ->
+                stats.attack += 1
+                stats.agility += -1
+                stats.shields += 2
+       }
+
+
+]
 
 
     conditionsById: [
@@ -7691,6 +7977,8 @@ exportObj.fixIcons = (data) ->
             .replace(/%SINGLETURRETARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-singleturretarc"></i>')
             .replace(/%FRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-frontarc"></i>')
             .replace(/%REARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-reararc"></i>')
+            .replace(/%LEFTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-leftarc"></i>')
+            .replace(/%RIGHTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-rightarc"></i>')
             .replace(/%ROTATEARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-rotatearc"></i>')
             .replace(/%FULLFRONTARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullfrontarc"></i>')
             .replace(/%FULLREARARC%/g, '<i class="xwing-miniatures-font xwing-miniatures-font-fullreararc"></i>')

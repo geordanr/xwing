@@ -43,6 +43,10 @@ html
         li
           a#firstorderTab('data-toggle'="tab", href='#firstorderContent') <i class="xwing-miniatures-font xwing-miniatures-font-firstorder"></i>
         li
+          a#republicTab('data-toggle'="tab", href='#republicContent') <i class="xwing-miniatures-font xwing-miniatures-font-republic"></i>
+        li
+          a#separatistTab('data-toggle'="tab", href='#separatistContent') <i class="xwing-miniatures-font xwing-miniatures-font-separatists"></i>
+        li
           a#browserTab('data-toggle'="tab", href='#browserContent') Card Browser
         li
           a#aboutTab('data-toggle'="tab", href='#aboutContent') About
@@ -77,6 +81,10 @@ html
           #resistance-builder
         .tab-pane#firstorderContent
           #firstorder-builder
+        .tab-pane#republicContent
+          #republic-builder
+        .tab-pane#separatistContent
+          #separatist-builder
         .tab-pane#browserContent
           #card-browser
         .tab-pane#aboutContent
@@ -148,6 +156,10 @@ html
               window.location.replace '?f=Resistance'
             when '#firstorderContent'
               window.location.replace '?f=First Order'
+            when '#republicContent'
+              window.location.replace '?f=Galactic Republic'
+            when '#separatistContent'
+              window.location.replace '?f=Separatist Alliance'
 
           $('.site-placeholder').text """http://\#{window.location.host}\#{window.location.pathname}"""
           $('#rebelTab').click (e) ->
@@ -170,6 +182,14 @@ html
             ga 'send', 'pageview',
               page: '/firstorder'
               title: 'First Order'
+          $('#firstorderTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/republic'
+              title: 'Galactic Republic'
+          $('#firstorderTab').click (e) ->
+            ga 'send', 'pageview',
+              page: '/separatist'
+              title: 'Separatist Alliance'
           $('#browserTab').click (e) ->
             ga 'send', 'pageview',
               page: '/browser'
@@ -213,6 +233,20 @@ html
               container: '#firstorder-builder'
               printable_container: '#printable'
           window.registerBuilderForTranslation window.firstorder_sb
+          
+          window.republic_sb = new window.SquadBuilder
+              tab: '#republicTab'
+              faction: 'Galactic Republic'
+              container: '#republic-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.republic_sb
+
+          window.separatist_sb = new window.SquadBuilder
+              tab: '#separatistTab'
+              faction: 'Separatist Alliance'
+              container: '#separatist-builder'
+              printable_container: '#printable'
+          window.registerBuilderForTranslation window.separatist_sb
 
           switch $.getParameterByName 'f'
             when 'Rebel Alliance'
@@ -240,6 +274,16 @@ html
                   page: '/firstorder'
                   title: 'First Order'
                 $('#firstorderTab').tab 'show'
+            when 'Galactic Republic'
+                ga 'send', 'pageview',
+                  page: '/republic'
+                  title: 'Galactic Republic'
+                $('#republicTab').tab 'show'
+            when 'Separatist Alliance'
+                ga 'send', 'pageview',
+                  page: '/separatist'
+                  title: 'Separatist Alliance'
+                $('#separatistTab').tab 'show'
             else
                 ga 'send', 'pageview',
                   page: '/rebels'
@@ -254,6 +298,8 @@ html
                 window.scum_sb
                 window.resistance_sb
                 window.firstorder_sb
+                window.republic_sb
+                window.separatist_sb
               ]
               login_logout_button: '#login-logout'
               auth_status: '#auth-status'
