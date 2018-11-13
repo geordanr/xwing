@@ -1560,6 +1560,8 @@ exportObj.cardLoaders.English = () ->
            text: """ While you defend, if you are not in the attacker's %BULLSEYEARC%, you may spend 1 %FORCE% to change 2 of your %FOCUS% results to %EVADE% results. """
         "Calibrated Laser Targeting":
            text: """ While you perform a primary attack, if the defender is in your %BULLSEYEARC%, add 1 %FOCUS% result. """
+        "Delta-7B":
+           text: """ <i>Adds: 1 attack, 2 shields %LINEBREAK% Removes: 1 agility</i> """
             
         
     condition_translations =

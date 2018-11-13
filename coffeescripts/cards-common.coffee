@@ -7747,6 +7747,7 @@ exportObj.basicCardData = ->
             slot: "Configuration"
             ship: "Delta-7 Aethersprite"
             points: 0
+            unequips_upgrades: [ "Modification" ]
             also_occupies_upgrades: [ "Modification" ]
        }
        {
