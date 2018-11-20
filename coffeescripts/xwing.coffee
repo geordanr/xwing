@@ -283,7 +283,7 @@ class exportObj.SquadBuilder
                 </div>
                 <div class="tts-list">
                     <p>Copy the below and paste it into the Tabletop Simulator.</p>
-                    <textarea></textarea><button class="btn btn-copy">Copy</button>
+                    <textarea></textarea><br><button class="btn btn-copy">Copy</button>
                 </div>
                 <div class="bbcode-list">
                     <p>Copy the BBCode below and paste it into your forum post.</p>
