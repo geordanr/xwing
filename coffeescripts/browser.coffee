@@ -94,6 +94,12 @@ class exportObj.CardBrowser
                                     <label class = "toggle-resistance-search advanced-search-label">
                                         <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
                                     </label>
+                                    <label class = "toggle-separatist-search advanced-search-label">
+                                        <input type="checkbox" class="separatist-checkbox advanced-search-checkbox" checked="checked" /> Separatist
+                                    </label>
+                                    <label class = "toggle-republic-search advanced-search-label">
+                                        <input type="checkbox" class="republic-checkbox advanced-search-checkbox" checked="checked" /> Republic
+                                    </label>
                                     <label class = "toggle-factionless-search advanced-search-label">
                                         <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
                                         <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
@@ -273,6 +279,8 @@ class exportObj.CardBrowser
         @faction_selectors["Galactic Empire"] = ($ @container.find('.xwing-card-browser .imperial-checkbox'))[0]
         @faction_selectors["Resistance"] = ($ @container.find('.xwing-card-browser .resistance-checkbox'))[0]
         @faction_selectors["First Order"] = ($ @container.find('.xwing-card-browser .fo-checkbox'))[0]
+        @faction_selectors["Separatist Alliance"] = ($ @container.find('.xwing-card-browser .separatist-checkbox'))[0]
+        @faction_selectors["Galactic Republic"] = ($ @container.find('.xwing-card-browser .republic-checkbox'))[0]
         @faction_selectors[undefined] = ($ @container.find('.xwing-card-browser .factionless-checkbox'))[0]
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
