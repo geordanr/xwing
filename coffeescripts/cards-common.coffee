@@ -7953,7 +7953,7 @@ exportObj.basicCardData = ->
             name: "Rose Tico"
             id: 173
             slot: "Crew"
-            points: 0
+            points: 9
             unique: true
             faction: "Resistance"
        }
@@ -7961,7 +7961,7 @@ exportObj.basicCardData = ->
             name: "Finn"
             id: 174
             slot: "Gunner"
-            points: 0
+            points: 10
             unique: true
             faction: "Resistance"
        }

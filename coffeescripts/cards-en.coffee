@@ -1580,7 +1580,7 @@ exportObj.cardLoaders.English = () ->
         "Advanced Optics":
            text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
         "Rey":
-           text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
+           text: """ While you defend or perform an attack, if the enemy ship is in your %SINGLETURRETARC%, you may spend 1 %FORCE% to change 1 of your blank results to a %EVADE% or %HIT% result. """
         "Chewbacca (Resistance)":
            text: """ Setup: Lose 1 %CHARGE%. %LINEBREAK% After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%. %LINEBREAK% While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
         "Paige Tico":
