@@ -7939,6 +7939,7 @@ exportObj.basicCardData = ->
             name: "Black One"
             id: 171
             slot: "Title"
+            unique: true
             charge: 1
             points: 2
             faction: "Resistance"
