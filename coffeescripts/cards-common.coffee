@@ -8254,6 +8254,12 @@ exportObj.basicCardData = ->
             charge: 2
             points: 3
        }
+       {
+            name: "Pattern Analyzer"
+            id: 206
+            slot: "Tech"
+            points: 5
+       }
 
 
 ]
