@@ -8252,7 +8252,7 @@ exportObj.basicCardData = ->
             slot: "Astromech"
             faction: "Resistance"
             charge: 2
-            points: 3
+            points: 5
        }
        {
             name: "Pattern Analyzer"
