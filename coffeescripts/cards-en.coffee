@@ -1570,7 +1570,7 @@ exportObj.cardLoaders.English = () ->
         "Fanatical":
            text: """ While you perform a primary attack, if you are not shielded, you may change 1 %FOCUS% result to a %HIT% result. """
         "Special Forces Gunner":
-           text: """ After you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1 additional attack die. After you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %REARARC%, you may perform a bonus primary %SINGLETURRETARC% attack. """
+           text: """ While you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1 additional attack die. After you perform a primary %FRONTARC% attack, if your %SINGLETURRETARC% is in your %REARARC%, you may perform a bonus primary %SINGLETURRETARC% attack. """
         "Captain Phasma":
            text: """ At the end of the Engagement Phase, each enemy ship at range 0-1 that is not stressed gains 1 stress token. """
         "Supreme Leader Snoke":
