@@ -7170,7 +7170,7 @@ exportObj.basicCardData = ->
            slot: "Gunner"
            points: 8
            restriction_func: (ship) ->
-                "Rotate Arc" in ship.effectiveStats().actions or "Rotate Arc" in ship.effectiveStats().actionsred or "> Rotate Arc" in ship.effectiveStats().actions or "R> Rotate Arc" in ship.effectiveStats().actions
+                "Rotate Arc" in ship.effectiveStats().actions or "Rotate Arc" in ship.effectiveStats().actionsred
        }
        {
            name: "Cloaking Device"
