@@ -1618,7 +1618,7 @@ exportObj.cardLoaders.English = () ->
         "R5-X3":
            text: """ Before you activate or engage, you may spend 1 %CHARGE% to ignore obstacles until the end of this phase. """
         "Pattern Analyzer":
-           text: """ ... """
+           text: """ While you fully execute a red maneuver, before the Check Difficulty step, you may perform 1 action. """
         
             
         
