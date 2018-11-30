@@ -4113,7 +4113,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'B/SF-17 Bomber'
+            name: 'MG-100 StarFortress'
             type: 'ship'
             count: 3
         }

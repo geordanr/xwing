@@ -8233,7 +8233,13 @@ exportObj.basicCardData = ->
             slot: "Astromech"
             faction: "Resistance"
             charge: 2
-            points: 3
+            points: 5
+       }
+       {
+            name: "Pattern Analyzer"
+            id: 206
+            slot: "Tech"
+            points: 5
        }
 
 
@@ -8354,7 +8360,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
+                console.log(e)
                 console.error "Error adding card #{card.name} (#{card.type}) from #{expansion}"
+
 
     for name, card of exportObj.pilots
         card.sources = card.sources.sort()
