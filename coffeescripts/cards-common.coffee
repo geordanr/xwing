@@ -8131,7 +8131,7 @@ exportObj.basicCardData = ->
             name: "Rey's Millenium Falcon"
             id: 193
             slot: "Title"
-            points: 0
+            points: 5
             unique: true
             ship: "Scavenged YT-1300"
             faction: "Resistance"
