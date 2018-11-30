@@ -19,7 +19,11 @@ exportObj.secondEditionExpansions = [
     'TIE Advanced x1 Expansion Pack',
     'Slave I Expansion Pack',
     'Fang Fighter Expansion Pack',
-    "Lando's Millennium Falcon Expansion Pack"
+    "Lando's Millennium Falcon Expansion Pack",
+    'T-70 X-Wing Expansion Pack',
+    'RZ-2 A-Wing Expansion Pack',
+    'Mining Guild TIE Expansion Pack',
+    'TIE/FO Fighter Expansion Pack'
 ]
 
 exportObj.secondEditionCheck = (data, faction='') ->
@@ -6017,7 +6021,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Sienar-Jaemus Enginner"
+            name: "Sienar-Jaemus Engineer"
             id: 286
             faction: "First Order"
             ship: "TIE Silencer"
@@ -8131,7 +8135,7 @@ exportObj.basicCardData = ->
             name: "Rey's Millenium Falcon"
             id: 193
             slot: "Title"
-            points: 0
+            points: 5
             unique: true
             ship: "Scavenged YT-1300"
             faction: "Resistance"
