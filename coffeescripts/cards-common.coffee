@@ -1137,6 +1137,29 @@ exportObj.basicCardData = ->
               [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
+        "B/SF-17 Bomber":
+            name: "B/SF-17 Bomber"
+            xws: "B/SF-17 Bomber".canonicalize()
+            factions: [ "Resistance"]
+            attack: 3
+            attackdt: 2
+            agility: 1
+            hull: 9
+            shields: 3
+            actions: [
+                "Focus"
+                "Lock"
+                "Rotate Arc"
+                "Reload"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+                [ 0, 0, 3, 0, 0, 0]
+                [ 3, 2, 2, 2, 3, 0]
+                [ 1, 1, 2, 1, 1, 0]
+                [ 0, 1, 1, 1, 0, 0]
+            ]
         "RZ-2 A-Wing":
             name: "RZ-2 A-Wing"
             xws: "RZ-2 A-Wing".canonicalize()
@@ -8350,7 +8373,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
                     else
                         throw new Error("Unexpected card type #{card.type} for card #{card.name} of #{expansion}")
             catch e
+                console.log(e)
                 console.error "Error adding card #{card.name} (#{card.type}) from #{expansion}"
+
 
     for name, card of exportObj.pilots
         card.sources = card.sources.sort()
