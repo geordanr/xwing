@@ -3271,7 +3271,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Cobalt Squadron Bomber'
             type: 'pilot'
-            count: 1
+            count: 3
         }
         {
             name: 'Rey'
@@ -3291,7 +3291,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Resistance Sympathizer'
             type: 'pilot'
-            count: 1
+            count: 3
         }
         {
             name: 'Poe Dameron'
@@ -3339,23 +3339,13 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Black Squadron Ace (T-70)'
-            type: 'pilot'
-            count: 1
-        }
-        {
             name: 'Red Squadron Expert'
             type: 'pilot'
-            count: 1
+            count: 4
         }
         {
             name: 'Blue Squadron Rookie'
             type: 'pilot'
-            count: 1
-        }
-        {
-            name: "Rey's Millenium Falcon"
-            type: 'upgrade'
             count: 1
         }
         {
@@ -3369,29 +3359,34 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Heroic'
-            type: 'upgrade'
-            count: 1
-        }
-        {
             name: 'R5-X3'
-            type: 'upgrade'
-            count: 1
-        }
-        {
-            name: 'Black One'
             type: 'upgrade'
             count: 1
         }
         {
             name: 'BB Astromech'
             type: 'upgrade'
-            count: 1
+            count: 4
         }
         {
-            name: 'Primed Thrusters'
+            name: 'R2 Astromech'
             type: 'upgrade'
-            count: 1
+            count: 2
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R4 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R5 Astromech'
+            type: 'upgrade'
+            count: 2
         }
         {
             name: 'M9-G8'
@@ -3424,6 +3419,16 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
+            name: "Rey's Millenium Falcon"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Black One'
+            type: 'upgrade'
+            count: 1
+        }
+        {
             name: 'Integrated S-Foils'
             type: 'upgrade'
             count: 4
@@ -3437,6 +3442,326 @@ exportObj.manifestByExpansion =
             name: 'Paige Tico'
             type: 'upgrade'
             count: 1
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heroic'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trajectory Simulator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'GNK "Gonk" Droid'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Informant'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Novice Technician'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seasoned Navigator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hotshot Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Skilled Bombardier'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Veteran Turret Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Deadman's Switch"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Nets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 2
         }
     ]
     'T-70 X-Wing Expansion Pack': [
