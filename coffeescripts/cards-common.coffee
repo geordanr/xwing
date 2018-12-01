@@ -5578,6 +5578,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 50
             slots: [
+                "Talent"
                 "Astromech"
                 "Modification"
                 "Configuration"
@@ -5594,6 +5595,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 48
             slots: [
+                "Talent"
                 "Astromech"
                 "Modification"
                 "Configuration"

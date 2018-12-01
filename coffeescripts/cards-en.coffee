@@ -222,7 +222,7 @@ exportObj.cardLoaders.English = () ->
     exportObj.renameShip """TIE Reaper""", """TIE Reaper"""
     exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
     exportObj.renameShip """M3-A Interceptor""", """M3-A Interceptor"""
-    exportObj.renameShip """Scavenged YT-1300""", """Customized YT-1300 Light Freighter"""
+    exportObj.renameShip """Scavenged YT-1300""", """Scavenged YT-1300 Light Freighter"""
     exportObj.renameShip """Escape Craft""", """Escape Craft"""
 
     # Names don't need updating, but text needs to be set
