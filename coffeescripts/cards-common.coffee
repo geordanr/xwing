@@ -36,6 +36,16 @@ exportObj.secondEditionCheck = (data, faction='') ->
         return true if source in exportObj.secondEditionExpansions
     false
 
+exportObj.hyperspaceCheck = (data, faction='') ->
+# Handle special cases
+    if (data.name == 'Y-Wing' and faction == 'Scum and Villainy')
+        return false
+    else if (data.name == 'TIE Fighter' and faction == 'Rebel Alliance')
+        return false
+    for source in data.sources
+        return true if source in exportObj.secondEditionExpansions
+    return data.isHyperspace
+
 String::canonicalize = ->
     this.toLowerCase()
         .replace(/[^a-z0-9]/g, '')
@@ -142,6 +152,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 3, 0, 0]
             ]
             large: true
+            isHyperspace: true
         "Customized YT-1300":
             name: "Customized YT-1300"
             canonical_name: 'Customized YT-1300'.canonicalize()
@@ -938,6 +949,7 @@ exportObj.basicCardData = ->
                 [ 1, 2, 2, 2, 1, 0, 3, 3 ]
                 [ 0, 1, 2, 1, 0, 0, 0, 0 ]
             ]
+            isHyperspace: true
         "Auzituck Gunship":
             name: "Auzituck Gunship"
             xws: "Auzituck Gunship".canonicalize()
@@ -2136,6 +2148,7 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
+            isHyperspace: true
         }
         {
             name: "Lando Calrissian"
@@ -2156,6 +2169,7 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
+            isHyperspace: true
         }
         {
             name: "Chewbacca"
@@ -2177,6 +2191,7 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
+            isHyperspace: true
         }
         {
             name: "Outer Rim Smuggler"
@@ -2194,6 +2209,7 @@ exportObj.basicCardData = ->
                 "Title"
                 "Illicit"
             ]
+            isHyperspace: true
         }
         {
             name: "Jan Ors"
@@ -4869,6 +4885,7 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
               ]
+            isHyperspace: true
         }
         {
             name: '"Pure Sabacc"'
@@ -4884,6 +4901,7 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
               ]
+            isHyperspace: true
         }
         {
             name: '"Duchess"'
@@ -4899,6 +4917,7 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
               ]
+            isHyperspace: true
         }
         {
             name: "Black Squadron Scout"
@@ -4913,6 +4932,7 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
               ]
+            isHyperspace: true
         }
         {
             name: "Planetary Sentinel"
@@ -4926,6 +4946,7 @@ exportObj.basicCardData = ->
                 "Device"
                 "Modification"
               ]
+            isHyperspace: true
         }
         {
             name: "Rear Admiral Chiraneau"
@@ -6532,7 +6553,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            charge: 2
-           recurring: true 
+           recurring: true
+           isHyperspace: true
        }
        {
            name: "Chewbacca (Scum)"
@@ -6757,6 +6779,7 @@ exportObj.basicCardData = ->
            points: 5
            unique: true
            faction: "Rebel Alliance"
+           isHyperspace: true
        }
        {
            name: "Lando Calrissian (Scum)"
@@ -6775,7 +6798,8 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            charge: 3
-           recurring: true 
+           recurring: true
+           isHyperspace: true
        }
        {
            name: "Latts Razzi"
@@ -6849,6 +6873,7 @@ exportObj.basicCardData = ->
                             s[3] = 2
                         else if s[3] = 3
                             s[3] = 1
+           isHyperspace: true
        }
        {
            name: "Novice Technician"
@@ -6879,6 +6904,7 @@ exportObj.basicCardData = ->
            points: 8
            unique: true
            faction: "Rebel Alliance"
+           isHyperspace: true
        }
        {
            name: "Sabine Wren"
@@ -7125,6 +7151,7 @@ exportObj.basicCardData = ->
            points: 12
            unique: true
            faction: "Rebel Alliance"
+           isHyperspace: true
        }
        {
            name: "Han Solo (Scum)"
@@ -7149,6 +7176,7 @@ exportObj.basicCardData = ->
            force: 1
            unique: true
            faction: "Rebel Alliance"
+           isHyperspace: true
            modifier_func: (stats) ->
                 stats.force += 1
        }
@@ -7739,6 +7767,7 @@ exportObj.basicCardData = ->
            unique: true
            faction: "Rebel Alliance"
            ship: "YT-1300"
+           isHyperspace: true
            modifier_func: (stats) ->
                 stats.actions.push 'Evade' if 'Evade' not in stats.actions
        }
