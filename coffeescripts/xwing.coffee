@@ -22,7 +22,7 @@ exportObj.toTTS = (txt) ->
     if not txt?
         null
     else 
-        txt.replace(/\(.*\)/g,"").replace("“",'"').replace("”",'"')
+        txt.replace(/\(.*\)/g,"").replace("ï¿½",'"').replace("ï¿½",'"')
 
     
 
@@ -113,6 +113,7 @@ class exportObj.SquadBuilder
         @total_points = 0
         @isCustom = false
         @isSecondEdition = false
+        @isHyperspace = false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
 
@@ -203,6 +204,7 @@ class exportObj.SquadBuilder
                     Points: <span class="total-points">0</span> / <input type="number" class="desired-points" value="100">
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
+                        <option value="hyperspace">Hyperspace</option>
                         <option value="second_edition">Second Edition</option>
                         <option value="custom">Custom</option>
                     </select>
@@ -1087,25 +1089,36 @@ class exportObj.SquadBuilder
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
         oldSecondEdition = @isSecondEdition
+        oldHyperspace = @isHyperspace
         switch gametype
             when 'standard'
                 @isSecondEdition = false
+                @isHyperspace = false
+                @isCustom = false
+                @desired_points_input.val 200
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
+            when 'hyperspace'
+                @isSecondEdition = false
+                @isHyperspace = true
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'second_edition'
                 @isSecondEdition = true
+                @isHyperspace = false
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'custom'
                 @isSecondEdition = false
+                @isHyperspace = false
                 @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-        if (oldSecondEdition != @isSecondEdition)
+        if (oldSecondEdition != @isSecondEdition || oldHyperspace != @isHyperspace)
             @newSquadFromScratch()
         @onPointsUpdated cb
 
@@ -1248,6 +1261,8 @@ class exportObj.SquadBuilder
         game_type_abbrev = switch @game_type_selector.val()
             when 'standard'
                 's'
+            when 'hyperspace'
+                'h'
             when 'second_edition'
                 'se'
             when 'custom'
@@ -1271,6 +1286,9 @@ class exportObj.SquadBuilder
                     switch game_type_abbrev
                         when 's'
                             @game_type_selector.val 'standard'
+                            @game_type_selector.change()
+                        when 'h'
+                            @game_type_selector.val 'hyperspace'
                             @game_type_selector.change()
                         when 'se'
                             @game_type_selector.val 'second_edition'
@@ -1373,11 +1391,19 @@ class exportObj.SquadBuilder
         else
             getPrimaryFaction(faction) == @faction
 
+    isItemAvailable: (item_data) ->
+        if (not @isSecondEdition and not @isHyperspace)
+            return true
+        else if (@isSecondEdition)
+            return exportObj.secondEditionCheck(item_data, @faction)
+        else # hyperspace
+            return exportObj.hyperspaceCheck(item_data, @faction)
+
     getAvailableShipsMatching: (term='',sorted = true) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
-                if (not @isSecondEdition or exportObj.secondEditionCheck(ship_data, @faction))
+                if (@isItemAvailable(ship_data))
                     if not ship_data.huge or @isCustom
                         if ship_data.display_name
                             ships.push
@@ -1411,7 +1437,7 @@ class exportObj.SquadBuilder
         
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='', sorted = true) ->
         # Returns data formatted for Select2
-        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (not @isSecondEdition or exportObj.secondEditionCheck(pilot)))
+        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (@isItemAvailable(pilot)))
 
         eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()))
 
@@ -1451,7 +1477,7 @@ class exportObj.SquadBuilder
         # Returns data formatted for Select2
         limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
 
-        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (not @isSecondEdition or exportObj.secondEditionCheck(upgrade)))
+        available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
