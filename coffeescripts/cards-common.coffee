@@ -5704,6 +5704,7 @@ exportObj.basicCardData = ->
             name: "Black Squadron Ace (T-70)"
             id: 256
             faction: "Resistance"
+            xws: "blacksquadronace-t70xwing" 
             ship: "T-70 X-Wing"
             skill: 4
             points: 50
@@ -8433,9 +8434,10 @@ exportObj.basicCardData = ->
             isHyperspace: true
        }
        {
-            name: "Rey's Millenium Falcon"
+            name: "Rey's Millennium Falcon"
             id: 193
             slot: "Title"
+            xws: ""
             points: 5
             unique: true
             ship: "Scavenged YT-1300"
