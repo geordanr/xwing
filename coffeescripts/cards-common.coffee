@@ -5931,6 +5931,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Tech"
             ]
+            isHyperspace: true
         }
         {
             name: "Zari Bangel"
@@ -5946,6 +5947,7 @@ exportObj.basicCardData = ->
                 "Missile"
                 "Tech"
             ]
+            isHyperspace: true
         }
         {
             name: "Darth Maul"
