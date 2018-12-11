@@ -610,11 +610,11 @@ class exportObj.CardBrowser
         owned_copies = 0
         switch card.orig_type
             when 'Pilot'
-                owned_copies = exportObj.builders[0].collection.counts.pilot[card.name] ? 0 
+                owned_copies = exportObj.builders[0].collection.counts.pilot?[card.name] ? 0
             when 'Ship'
-                owned_copies = exportObj.builders[0].collection.counts.ship[card.name] ? 0
+                owned_copies = exportObj.builders[0].collection.counts.ship?[card.name] ? 0
             else # type is e.g. astromech
-                owned_copies = exportObj.builders[0].collection.counts.upgrade[card.name] ? 0
+                owned_copies = exportObj.builders[0].collection.counts.upgrade?[card.name] ? 0
         owned_copies
 
 
