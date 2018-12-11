@@ -677,7 +677,7 @@ class exportObj.CardBrowser
         return false if card.data.charge and not card.data.recurring and not @not_recurring_charge.checked
 
         # check collection status
-        if exportObj.builders[0].collection.counts? # ignore collection stuff, if no collection available
+        if exportObj.builders[0].collection?.counts? # ignore collection stuff, if no collection available
             owned_copies = @getCollectionNumber(card)
             return false unless owned_copies >= @minimum_owned_copies.value and owned_copies <= @maximum_owned_copies.value
 
