@@ -1279,6 +1279,9 @@ class exportObj.SquadBuilder
         if matches?
             # versioned
             version = parseInt matches[1]
+            # version 1-3 are 1st edition only (may be removed here)
+            # version 4 is the final version of 1st edition x-wing, and has been the first few weeks of YASB 2.0
+            # version 5 is the current version
             switch version
                 when 3, 4, 5
                     # parse out game type
@@ -1297,10 +1300,17 @@ class exportObj.SquadBuilder
                             @game_type_selector.val 'custom'
                             @desired_points_input.val parseInt(game_type_abbrev.split('=')[1])
                             @desired_points_input.change()
+                    ships_with_unmet_dependencies = []
                     for serialized_ship in serialized_ships.split(';')
                         unless serialized_ship == ''
                             new_ship = @addShip()
-                            new_ship.fromSerialized version, serialized_ship
+                            # try to create ship. returns false, if some upgrade have been skipped as they are not legal until now (e.g. 0-0-0 but vader is not yet in the squad)
+                            if not new_ship.fromSerialized version, serialized_ship
+                                ships_with_unmet_dependencies.push [new_ship, serialized_ship]
+                    for ship in ships_with_unmet_dependencies
+                        # 2nd attempt to load ships with unmet dependencies. 
+                        ship[0].fromSerialized version, ship[1]
+                            
                 when 2
                     for serialized_ship in matches[2].split(';')
                         unless serialized_ship == ''
@@ -2904,7 +2914,14 @@ class Ship
 
 
     fromSerialized: (version, serialized) ->
+    # adds a ship from the given serialized data to the squad. 
+    # returns true, if all upgrades have been added successfully, false otherwise
+    # returning false does not necessary mean nothing has been added, but some stuff might have been dropped (e.g. 0-0-0 if vader is not yet in the squad)
+        everythingadded = true
         switch version
+        # version 1-3 are 1st edition x-wing only, so we may as well delete them. 
+        # version 4 was the final version of 1st edition, and the first few weeks of 2nd edition. 
+        # version 5 is the current version. It handles titles and mods as regular upgrades. 
             when 1
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEUPGRADE1,TITLEUPGRADE2
                 [ pilot_id, upgrade_ids ] = serialized.split ':'
@@ -2943,9 +2960,12 @@ class Ship
 
             when 4, 5
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+                # version 5 is the same as version 4, but title and mod has been dropped (as they are treated as upgrades anyways). Thus, we may differ by length
                 if (serialized.split ':').length == 3
+                    # version 5
                     [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
                 else 
+                    # version 4
                     [ pilot_id, upgrade_ids, version_4_compatibility_placeholder_title, version_4_compatibility_placeholder_mod, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
 
@@ -2958,11 +2978,15 @@ class Ship
                         deferred_ids.push upgrade_id
                     else
                         @upgrades[i].setById upgrade_id
+                        everythingadded &= @upgrades[i].lastSetValid
 
                 for deferred_id in deferred_ids
                     for upgrade, i in @upgrades
-                        continue if upgrade.isOccupied() or upgrade.slot != exportObj.upgradesById[deferred_id].slot
+                        if upgrade.isOccupied() or upgrade.slot != exportObj.upgradesById[deferred_id].slot
+                            everythingadded = false
+                            continue
                         upgrade.setById deferred_id
+                        everythingadded &= upgrade.lastSetValid
                         break
 
                 if conferredaddon_pairs?
@@ -2983,10 +3007,12 @@ class Ship
                             conferred_addon = upgrade.conferredAddons[i]
                             if conferred_addon instanceof addon_cls
                                 conferred_addon.setById addon_id
+                                everythingadded &= conferred_addon.lastSetValid
                             else
                                 throw new Error("Expected addon class #{addon_cls.constructor.name} for conferred addon at index #{i} but #{conferred_addon.constructor.name} is there")
 
         @updateSelections()
+        everythingadded
 
     effectiveStats: ->
         stats =
@@ -3019,6 +3045,8 @@ class Ship
         # Remove addons that violate their validation functions (if any) one by one
         # until everything checks out
         # If there is no explicit validation_func, use restriction_func
+        # Returns true, if nothing has been changed, and false otherwise
+        unchanged = true
         max_checks = 128 # that's a lot of addons
         for i in [0...max_checks]
             valid = true
@@ -3028,10 +3056,12 @@ class Ship
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
+                    unchanged = false
                     break
 
             break if valid
         @updateSelections()
+        unchanged
 
     checkUnreleasedContent: ->
         if @pilot? and not exportObj.isReleased @pilot
@@ -3188,6 +3218,7 @@ class GenericAddon
 
     setById: (id) ->
         @setData @dataById[parseInt id]
+        
 
     setByName: (name) ->
         @setData @dataByName[$.trim name]
@@ -3214,6 +3245,8 @@ class GenericAddon
             else
                 @deoccupyOtherUpgrades()
 
+            # this will remove not allowed upgrades (is also done on pointsUpdated). We do it explicitly so we can tell if the setData was successfull
+            @lastSetValid = @ship.validate()
             @ship.builder.container.trigger 'xwing:pointsUpdated'
 
     conferAddons: ->
