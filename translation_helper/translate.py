@@ -45,7 +45,7 @@ manual_stuff = "Please edit the following cards manually: \nL3-37's programming:
 pilot_name_list = {}
 
 # sort by name
-cards_en = sorted(cards_en, key=lambda k: k['name'])
+cards_en = sorted(cards_en, key=lambda k: k['name'][1:] if k['name'].startswith( '•' ) else k['name'])
 
 # load names changed by yasb
 renamed_cards = json.load(open('renamed_cards.json', encoding="utf8"))
