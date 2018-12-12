@@ -8441,7 +8441,6 @@ exportObj.basicCardData = ->
             name: "Rey's Millennium Falcon"
             id: 193
             slot: "Title"
-            xws: ""
             points: 5
             unique: true
             ship: "Scavenged YT-1300"
