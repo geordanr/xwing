@@ -256,7 +256,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip """TIE Reaper""", """TIE-Schnitter"""
     exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
     exportObj.renameShip """M3-A Interceptor""", """M3-A-Abfangjäger"""
-    exportObj.renameShip """Scavenged YT-1300""", """Modifizierter YT-1300-Frachter"""
+    exportObj.renameShip """Customized YT-1300""", """Modifizierter YT-1300-Frachter"""
     exportObj.renameShip """Escape Craft""", """Fluchtschiff"""
     exportObj.renameShip """TIE/FO Fighter""", """TIE/eo-Jäger"""
     exportObj.renameShip """TIE/SF Fighter""", """TIE/sf Jäger"""
@@ -265,6 +265,8 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip """T-70 X-Wing""", """T-70-X-Flügler"""
     exportObj.renameShip """RZ-2 A-Wing""", """RZ-2-A-Flügler"""
     exportObj.renameShip """MG-100 StarFortress""", """MG-100-SternenFestung"""
+    exportObj.renameShip """Mining Guild TIE Fighter""", """Modifizierter TIE/ln-Jäger"""
+    exportObj.renameShip """Scavenged YT-1300""", """YT-1300 vom Schrottplatz"""
 
 
     pilot_translations =
