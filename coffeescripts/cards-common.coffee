@@ -6398,7 +6398,7 @@ exportObj.basicCardData = ->
             isHyperspace: true
         }
         {
-            name: "Nien Numb"
+            name: "Nien Nunb"
             id: 298
             unique: true
             faction: "Resistance"

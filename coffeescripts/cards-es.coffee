@@ -981,7 +981,8 @@ exportObj.cardLoaders['Español'] = () ->
            text: """ ... drop a bomb, you ... play area touching ... instead. """
         "Major Stridan":
            text: """ While you coordinate or resolve the effect of one of your upgrades, you may treat friendly ships at range 2-3 as being at range 0 or range 1. %LINEBREAK% LINKED BATTERY: While you perform a %CANNON% attack, roll 1 addtional die. """
-
+        "Nien Nunb":
+           text: """ After you gain a stress token, if there is an enemy ship in your %FRONTARC% at range 0-1, you may remove that stress token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
 
     upgrade_translations =
         "0-0-0":
