@@ -448,5 +448,75 @@
     "name_pl": "CHANGE ME",
     "name_pt": "CHANGE ME",
     "name_fr": "Vaisseau de secours"
+  },
+  "49": {
+    "name_yasb": "TIE/FO Fighter",
+    "name_de": "TIE/eo-Jäger",
+    "name_en": "TIE/FO Fighter",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "50": {
+    "name_yasb": "TIE/SF Fighter",
+    "name_de": "TIE/sf Jäger",
+    "name_en": "TIE/SF Fighter",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "51": {
+    "name_yasb": "Upsilon-Class Shuttle",
+    "name_de": "Kommandoshuttle der Ypsilon-Klasse",
+    "name_en": "Upsilon-Class Shuttle",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "52": {
+    "name_yasb": "TIE Silencer",
+    "name_de": "TIE/vn-Dämpfer",
+    "name_en": "TIE/vn Silencer",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "53": {
+    "name_yasb": "T-70 X-Wing",
+    "name_de": "T-70-X-Flügler",
+    "name_en": "T-70 X-Wing",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "54": {
+    "name_yasb": "RZ-2 A-Wing",
+    "name_de": "RZ-2-A-Flügler",
+    "name_en": "RZ-2 A-Wing",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
+  },
+  "55": {
+    "name_yasb": "MG-100 StarFortress",
+    "name_de": "MG-100-SternenFestung",
+    "name_en": "MG-100 StarFortress",
+    "name_es": "CHANGE ME",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "CHANGE ME"
   }
 }

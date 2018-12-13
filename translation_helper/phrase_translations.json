@@ -13,7 +13,9 @@
       "Rebel Alliance": "Rebellen",
       "Scum and Villainy": "Abschaum",
       "Galactic Empire": "Imperium",
-      "contains": "Staffel, die %s enthält"
+      "contains": "Staffel, die %s enthält",
+      "Resistance": "Widerstand",
+      "First Order": "Widerstand"
     },
     {
       "language": "en",
@@ -40,7 +42,9 @@
       "Galactic Empire": "Empire",
       "Empire_COMMENT": "translation of galactic empire in context of restrictions, e.g. 'Empire' only",
       "contains": "Squad including %s",
-      "contains_COMMENT": "translation of restriction to specific cards, e.g. 'Squad including' Darth Vader"
+      "contains_COMMENT": "translation of restriction to specific cards, e.g. 'Squad including' Darth Vader",
+      "Resistance": "Resistance",
+      "First Order": "First Order"
     },
     {
       "language": "es",
@@ -55,7 +59,9 @@
       "Rebel Alliance": "Rebelde",
       "Scum and Villainy": "Escoria",
       "Galactic Empire": "Imperio",
-      "contains": "Escuadrón que incluya a %s"
+      "contains": "Escuadrón que incluya a %s",
+      "Resistance": "CHANGE ME",
+      "First Order": "CHANGE ME"
     },
     {
       "language": "fr",
@@ -70,7 +76,9 @@
       "Rebel Alliance": "Alliance Rebelle",
       "Scum and Villainy": "Racailles et Scélérats",
       "Galactic Empire": "Empire Galactique",
-      "contains": "contient %s"
+      "contains": "contient %s",
+      "Resistance": "CHANGE ME",
+      "First Order": "CHANGE ME"
     },
     {
       "language": "it",
@@ -85,7 +93,9 @@
       "Rebel Alliance": "CHANGE ME",
       "Scum and Villainy": "CHANGE ME",
       "Galactic Empire": "CHANGE ME",
-      "contains": "CHANGE ME%s"
+      "contains": "CHANGE ME%s",
+      "Resistance": "CHANGE ME",
+      "First Order": "CHANGE ME"
     },
     {
       "language": "pl",
@@ -100,7 +110,9 @@
       "Rebel Alliance": "CHANGE ME",
       "Scum and Villainy": "CHANGE ME",
       "Galactic Empire": "CHANGE ME",
-      "contains": "CHANGE ME%s"
+      "contains": "CHANGE ME%s",
+      "Resistance": "CHANGE ME",
+      "First Order": "CHANGE ME"
     },
     {
       "language": "pt",
@@ -115,7 +127,9 @@
       "Rebel Alliance": "CHANGE ME",
       "Scum and Villainy": "CHANGE ME",
       "Galactic Empire": "CHANGE ME",
-      "contains": "CHANGE ME%s"
+      "contains": "CHANGE ME%s",
+      "Resistance": "CHANGE ME",
+      "First Order": "CHANGE ME"
     }
   ]
 }

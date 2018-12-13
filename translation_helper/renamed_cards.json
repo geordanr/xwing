@@ -1,6 +1,6 @@
 {
   "4": "Garven Dreis (X-Wing)",
-  "9":  "Edrio Two-Tubes",
+  "9": "Edrio Two-Tubes",
   "13": "Norra Wexley (Y-Wing)",
   "38": "Fenn Rau (Sheathipede)",
   "39": "Ezra Bridger (Sheathipede)",
@@ -22,5 +22,10 @@
   "323": "“Chopper” (Astromech)",
   "382": "Chewbacca (Scum)",
   "385": "Lando Calrissian (Scum)",
-  "389": "Han Solo (Scum)"
+  "389": "Han Solo (Scum)",
+  "427": "Han Solo (Resistance)",
+  "429": "Chewbacca (Resistance)",
+  "472": "C-3PO (Resistance)",
+  "473": "Chewbacca (Resistance)",
+  "474":  "Han Solo (Resistance)"
 }
