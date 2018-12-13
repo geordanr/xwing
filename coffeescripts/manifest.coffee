@@ -3304,7 +3304,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Nien Numb'
+            name: 'Nien Nunb'
             type: 'pilot'
             count: 1
         }
@@ -3781,7 +3781,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Nien Numb'
+            name: 'Nien Nunb'
             type: 'pilot'
             count: 1
         }
