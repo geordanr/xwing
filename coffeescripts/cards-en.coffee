@@ -1034,7 +1034,7 @@ exportObj.cardLoaders.English = () ->
            text: """ While you defend or perform an attack, you may spend 1 %CHARGE% or 1 non-recurring %CHARGE% from your equipped %ASTROMECH% upgrade to reroll up to 1 of your dice for each other friendly ship at range 0-1. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Temmin Wexley":
            text: """ After you fully execute a speed 2-4 maneuver, you may perform a %BOOST% action. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-        "Nien Numb":
+        "Nien Nunb":
            text: """ After you gain a stress token, if there is an enemy ship in your %FRONTARC% at range 0-1, you may remove that stress token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
         "Ello Asty":
            text: """ After you reveal a red Tallon Roll (%TROLLLEFT% or %TROLLRIGHT%), if you have 2 or fewer stress tokens, treat that maneuver as white. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
