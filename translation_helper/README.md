@@ -41,5 +41,5 @@ It also creates a `todo.txt`, telling you on which cards it may need some help.
    touch empty
    git merge-file ../coffescript/cards-[LANGUAGE].coffe ./empty ./translation.coffee
 
-This will merge the new translation into the existing one for your language (so e.g. new cards will be added). 
+This will merge the new translation into the existing one for your language (so e.g. new cards will be added). If the merge does not recognice any matches, make sure the line endings match ;-)
 Proceed as usual for git merges.
