@@ -6300,6 +6300,7 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
             isHyperspace: true
+            applies_condition: 'Rattled'.canonicalize()
         }
         {
             name: "Edon Kappehl"
@@ -8616,6 +8617,10 @@ exportObj.basicCardData = ->
         {
             name: 'Proximity Mine'
             id: 11
+        }
+        {
+            name: 'Rattled'
+            id: 12
         }
     ]
 
