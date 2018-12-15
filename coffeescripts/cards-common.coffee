@@ -5509,6 +5509,7 @@ exportObj.basicCardData = ->
             name: "Han Solo (Resistance)"
             id: 245
             unique: true
+            xws: "hansolo-scavengedyt1300"
             faction: "Resistance"
             ship: "Scavenged YT-1300"
             skill: 6
@@ -8432,7 +8433,6 @@ exportObj.basicCardData = ->
             id: 192
             slot: "Crew"
             points: 6
-            xws: "hansolo-scavengedyt1300"
             unique: true
             faction: "Resistance"
             modifier_func: (stats) ->
