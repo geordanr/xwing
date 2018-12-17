@@ -6234,7 +6234,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "First Order"
             ship: "Upsilon-Class Shuttle"
-            skill: 2
+            skill: 3
             charge: 2
             recurring: true
             points: 62
