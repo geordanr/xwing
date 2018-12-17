@@ -1619,8 +1619,7 @@ exportObj.cardLoaders.Magyar = () ->
            text: """Mielőtt aktiválódsz vagy rád kerül a sor az Ütközet fázisban, elkölthetsz 1&nbsp;%CHARGE% jelzőt, hogy figyelmen kívül hagyd az akadályokat annak a fázisnak a végéig."""
         "Pattern Analyzer":
            text: """Amikor teljesen végrehajtasz egy piros manővert, a <strong>Nehézség ellenőrzése</strong> lépés előtt végrehjathatsz 1 akciót."""
-        
-            
+          
         
     condition_translations =
         'Suppressive Fire':

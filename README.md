@@ -36,10 +36,16 @@ Building
 3. `npm install` to install the dependencies listed in `package.json`.
 4. `grunt` to build everything into the `app` directory.  The builder is at `app/index.html`.
 
-Testing
-=======
+Translation
+===========
 
-    npm test
+Wanna help translating YASB into your language? See instructions in the
+`translation_helper/README.md` file.
+
+Exporting Squads
+===========
+
+https://yasb2-xws.herokuapp.com allows you to export squads you have created to xws format for use in other places. Take the url of the squad you have built, replace the "https://raithos.github.io/" part of the url with "https://yasb2-xws.herokuapp.com" and it will output your squad to be used for whatever.
 
 Credits
 -------

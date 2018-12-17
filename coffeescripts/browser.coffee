@@ -7,11 +7,17 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades', 'modifications', 'titles' ]
+TYPES = [ 'pilots', 'upgrades' ]
 
 byName = (a, b) ->
-    a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
-    b_name = b.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    if a.display_name
+        a_name = a.display_name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    else
+        a_name = a.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    if b.display_name
+        b_name = b.display_name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+    else
+        b_name = b.name.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
     if a_name < b_name
         -1
     else if b_name < a_name
@@ -64,6 +70,103 @@ class exportObj.CardBrowser
 
                     </div>
                     <div class="span8">
+                        <div class="well card-search-container">
+                            <input type="search" placeholder="Search for name, text or ship" class = "card-search-text">"""+ #TODO: Add more search input options here. 
+                            """
+                            <button class="btn btn-primary show-advanced-search">
+                                Advanced Search
+                            </button>
+                            <div class="advanced-search-container">
+                                <div class= "advanced-search-faction-selection-container">
+                                    <strong>Faction:</strong>
+                                    <label class = "toggle-rebel-search advanced-search-label">
+                                        <input type="checkbox" class="rebel-checkbox advanced-search-checkbox" checked="checked" /> Rebel
+                                    </label>
+                                    <label class = "toggle-imperial-search advanced-search-label">
+                                        <input type="checkbox" class="imperial-checkbox advanced-search-checkbox" checked="checked" /> Imperial
+                                    </label>
+                                    <label class = "toggle-scum-search advanced-search-label">
+                                        <input type="checkbox" class="scum-checkbox advanced-search-checkbox" checked="checked" /> Scum
+                                    </label>
+                                    <label class = "toggle-fo-search advanced-search-label">
+                                        <input type="checkbox" class="fo-checkbox advanced-search-checkbox" checked="checked" /> First Order
+                                    </label>
+                                    <label class = "toggle-resistance-search advanced-search-label">
+                                        <input type="checkbox" class="resistance-checkbox advanced-search-checkbox" checked="checked" /> Resistance
+                                    </label>
+                                    <label class = "toggle-separatist-search advanced-search-label">
+                                        <input type="checkbox" class="separatist-checkbox advanced-search-checkbox" checked="checked" /> Separatist
+                                    </label>
+                                    <label class = "toggle-republic-search advanced-search-label">
+                                        <input type="checkbox" class="republic-checkbox advanced-search-checkbox" checked="checked" /> Republic
+                                    </label>
+                                    <label class = "toggle-factionless-search advanced-search-label">
+                                        <input type="checkbox" class="factionless-checkbox advanced-search-checkbox" checked="checked" /> Factionless
+                                        <span class="advanced-search-tooltip" tooltip="A card is considered factionless, if it can be used by more than one faction."> &#9432 </span>
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-point-selection-container">
+                                    <strong>Point costs:</strong>
+                                    <label class = "advanced-search-label set-minimum-points">
+                                        from <input type="number" class="minimum-point-cost advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-points">
+                                        to <input type="number" class="maximum-point-cost advanced-search-number-input" value="200" /> 
+                                    </label>
+                                    <label class = "advanced-search-label toggle-variable-cost-search">
+                                        <input type="checkbox" class="variable-point-cost-checkbox advanced-search-checkbox" checked="checked" /> Variable point cost
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-collection-container">
+                                    <strong>Owned copies:</strong>
+                                    <label class = "advanced-search-label set-minimum-owned-copies">
+                                        from <input type="number" class="minimum-owned-copies advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-owened-copies">
+                                        to <input type="number" class="maximum-owned-copies advanced-search-number-input" value="100" /> 
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-slot-available-container">
+                                    <label class = "advanced-search-label select-available-slots">
+                                        <strong>Available slots: </strong>
+                                        <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        <span class="advanced-search-tooltip" tooltip="Search for pilots having all selected slots available."> &#9432 </span>
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-slot-used-container">
+                                    <label class = "advanced-search-label select-used-slots">
+                                        <strong>Used slot: </strong>
+                                        <select class="advanced-search-selection slot-used-selection" multiple="1" data-placeholder="No slots selected"></select>
+                                        <span class="advanced-search-tooltip" tooltip="Search for upgrades using any of the selected slots."> &#9432 </span>
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-charge-container">
+                                    <strong>Charges:</strong>
+                                    <label class = "advanced-search-label set-minimum-charge">
+                                        from <input type="number" class="minimum-charge advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-charge">
+                                        to <input type="number" class="maximum-charge advanced-search-number-input" value="5" /> 
+                                    </label>
+                                    <label class = "advanced-search-label has-recurring-charge">
+                                        <input type="checkbox" class="advanced-search-checkbox has-recurring-charge-checkbox" checked="checked"/> recurring
+                                    </label>
+                                    <label class = "advanced-search-label has-not-recurring-charge">
+                                        <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
+                                    </label>
+                                </div>
+                                <div class = "advanced-search-misc-container">
+                                    <strong>Misc:</strong>
+                                    <label class = "advanced-search-label toggle-unique">
+                                        <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
+                                    </label>
+                                    <label class = "advanced-search-label toggle-second-edition">
+                                        <input type="checkbox" class="second-edition-checkbox advanced-search-checkbox" /> Second-Edition only
+                                        <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="well card-viewer-placeholder info-well">
                             <p class="translate select-a-card">Select a card from the list at the left.</p>
                         </div>
@@ -73,6 +176,8 @@ class exportObj.CardBrowser
                             <span class="info-type"></span>
                             <br />
                             <span class="info-sources"></span>
+                            <br />
+                            <span class="info-collection"></span>
                             <table>
                                 <tbody>
                                     <tr class="info-skill">
@@ -156,10 +261,54 @@ class exportObj.CardBrowser
         @card_viewer_container = $ @container.find('.xwing-card-browser .card-viewer-container')
         @card_viewer_container.hide()
         @card_viewer_placeholder = $ @container.find('.xwing-card-browser .card-viewer-placeholder')
+        @advanced_search_button = ($ @container.find('.xwing-card-browser .show-advanced-search'))[0]
+        @advanced_search_container = $ @container.find('.xwing-card-browser .advanced-search-container')
+        @advanced_search_container.hide()
+        @advanced_search_active = false
 
         @sort_selector = $ @container.find('select.sort-by')
         @sort_selector.select2
             minimumResultsForSearch: -1
+
+        # TODO: Make added inputs easy accessible
+
+        @card_search_text = ($ @container.find('.xwing-card-browser .card-search-text'))[0]
+        @faction_selectors = {}
+        @faction_selectors["Rebel Alliance"] = ($ @container.find('.xwing-card-browser .rebel-checkbox'))[0]
+        @faction_selectors["Scum and Villainy"] = ($ @container.find('.xwing-card-browser .scum-checkbox'))[0]
+        @faction_selectors["Galactic Empire"] = ($ @container.find('.xwing-card-browser .imperial-checkbox'))[0]
+        @faction_selectors["Resistance"] = ($ @container.find('.xwing-card-browser .resistance-checkbox'))[0]
+        @faction_selectors["First Order"] = ($ @container.find('.xwing-card-browser .fo-checkbox'))[0]
+        @faction_selectors["Separatist Alliance"] = ($ @container.find('.xwing-card-browser .separatist-checkbox'))[0]
+        @faction_selectors["Galactic Republic"] = ($ @container.find('.xwing-card-browser .republic-checkbox'))[0]
+        @faction_selectors[undefined] = ($ @container.find('.xwing-card-browser .factionless-checkbox'))[0]
+        @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
+        @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
+        @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
+        @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
+        @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
+        @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
+        for slot of exportObj.upgradesBySlotCanonicalName
+            opt = $ document.createElement('OPTION')
+            opt.text slot
+            @slot_available_selection.append opt
+        @slot_available_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @slot_used_selection = ($ @container.find('.xwing-card-browser select.slot-used-selection'))
+        for slot of exportObj.upgradesBySlotCanonicalName
+            opt = $ document.createElement('OPTION')
+            opt.text slot
+            @slot_used_selection.append opt
+        @slot_used_selection.select2
+            minimumResultsForSearch: if $.isMobile() then -1 else 0
+        @minimum_charge = ($ @container.find('.xwing-card-browser .minimum-charge'))[0]
+        @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
+        @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
+        @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
+        @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
+        @maximum_owned_copies = ($ @container.find('.xwing-card-browser .maximum-owned-copies'))[0]
+
+
 
     setupHandlers: () ->
         @sort_selector.change (e) =>
@@ -170,16 +319,47 @@ class exportObj.CardBrowser
             @prepareData()
             @renderList @sort_selector.val()
 
+        @card_search_text.oninput = => @renderList @sort_selector.val()
+        # TODO: Add a call to @renderList for added inputs, to start the actual search
+
+        @advanced_search_button.onclick = @toggleAdvancedSearch
+
+        for faction, checkbox of @faction_selectors
+            checkbox.onclick = => @renderList @sort_selector.val()
+            
+        @minimum_point_costs.oninput = => @renderList @sort_selector.val()
+        @maximum_point_costs.oninput = => @renderList @sort_selector.val()
+        @variable_point_costs.onclick = => @renderList @sort_selector.val()
+        @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
+        @unique_checkbox.onclick = => @renderList @sort_selector.val()
+        @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
+        @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
+        @recurring_charge.onclick = => @renderList @sort_selector.val()
+        @not_recurring_charge.onclick = => @renderList @sort_selector.val()
+        @minimum_charge.oninput = => @renderList @sort_selector.val()
+        @maximum_charge.oninput = => @renderList @sort_selector.val()
+        @minimum_owned_copies.oninput = => @renderList @sort_selector.val()
+        @maximum_owned_copies.oninput = => @renderList @sort_selector.val()
+
+
+    toggleAdvancedSearch: () =>
+        if @advanced_search_active
+            @advanced_search_container.hide()
+        else 
+            @advanced_search_container.show()
+        @advanced_search_active = not @advanced_search_active
+        @renderList @sort_selector.val()
+
     prepareData: () ->
         @all_cards = []
 
         for type in TYPES
             if type == 'upgrades'
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'ui', 'upgradeHeader', card_data.slot), data: card_data, orig_type: card_data.slot } for card_name, card_data of exportObj[type] )
             else
-                @all_cards = @all_cards.concat ( { name: card_data.name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
+                @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
-        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Modification', 'Title' ])
+        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot' ])
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate @language, 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
@@ -223,47 +403,68 @@ class exportObj.CardBrowser
                 for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', type
-                    @card_selector.append optgroup
 
+                    card_added = false
                     for card in @cards_by_type_name[type]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
+
             when 'type-by-points'
                 for type in @types
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', type
-                    @card_selector.append optgroup
-
+                    
+                    card_added = false
                     for card in @cards_by_type_points[type]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
             when 'source'
                 for source in @sources
                     optgroup = $ document.createElement('OPTGROUP')
                     optgroup.attr 'label', source
-                    @card_selector.append optgroup
-
+                    
+                    card_added = false
                     for card in @cards_by_source[source]
-                        @addCardTo optgroup, card
+                        if @checkSearchCriteria card
+                            @addCardTo optgroup, card
+                            card_added = true
+                    if card_added
+                        @card_selector.append optgroup
             else
                 for card in @all_cards
-                    @addCardTo @card_selector, card
+                    if @checkSearchCriteria card
+                        @addCardTo @card_selector, card
 
         @card_selector.change (e) =>
             @renderCard $(@card_selector.find(':selected'))
 
     renderCard: (card) ->
         # Renders card to card container
+        display_name = card.data 'display_name'
         name = card.data 'name'
         type = card.data 'type'
         data = card.data 'card'
         orig_type = card.data 'orig_type'
 
-        @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{name} (#{data.points})#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+        @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if display_name then display_name else name} (#{data.points})#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
         @card_viewer_container.find('p.info-text').html data.text ? ''
         @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
         switch orig_type
             when 'Pilot'
                 ship = exportObj.ships[data.ship]
                 @card_viewer_container.find('.info-type').text "#{data.ship} Pilot (#{data.faction})"
+                if exportObj.builders[0].collection?.counts?
+                    ship_count = exportObj.builders[0].collection.counts?.ship?[data.ship] ? 0
+                    pilot_count = exportObj.builders[0].collection.counts?.pilot?[data.name] ? 0
+                    @card_viewer_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
+                else
+                    @card_viewer_container.find('.info-collection').text ''
                 @card_viewer_container.find('tr.info-skill td.info-data').text data.skill
                 @card_viewer_container.find('tr.info-skill').show()
 
@@ -327,6 +528,11 @@ class exportObj.CardBrowser
             else
                 @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
+                if exportObj.builders[0].collection?.counts?
+                    addon_count = exportObj.builders[0].collection.counts.upgrade[data.name] ? 0
+                    @card_viewer_container.find('.info-collection').text """You have #{addon_count} in your collection."""
+                else
+                    @card_viewer_container.find('.info-collection').text ''
                 @card_viewer_container.find('tr.info-ship').hide()
                 @card_viewer_container.find('tr.info-skill').hide()
                 if data.energy?
@@ -387,9 +593,94 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{card.name} (#{card.data.points})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{card.data.points})"
         option.data 'name', card.name
+        option.data 'display_name', card.display_name
         option.data 'type', card.type
         option.data 'card', card.data
         option.data 'orig_type', card.orig_type
+        if @getCollectionNumber(card) == 0
+            option[0].classList.add('result-not-in-collection')
         $(container).append option
+
+    getCollectionNumber: (card) ->
+        # returns number of copies of the given card in the collection, or -1 if no collection loaded
+        if not (exportObj.builders[0].collection? and exportObj.builders[0].collection.counts?)
+            return -1
+        owned_copies = 0
+        switch card.orig_type
+            when 'Pilot'
+                owned_copies = exportObj.builders[0].collection.counts.pilot?[card.name] ? 0
+            when 'Ship'
+                owned_copies = exportObj.builders[0].collection.counts.ship?[card.name] ? 0
+            else # type is e.g. astromech
+                owned_copies = exportObj.builders[0].collection.counts.upgrade?[card.name] ? 0
+        owned_copies
+
+
+    checkSearchCriteria: (card) ->
+        # check for text search
+        search_text = @card_search_text.value.toLowerCase()
+        text_search = card.name.toLowerCase().indexOf(search_text) > -1 or (card.data.text and card.data.text.toLowerCase().indexOf(search_text)) > -1 or (card.display_name and card.display_name.toLowerCase().indexOf(search_text) > -1)
+        
+        if not text_search
+            return false unless card.data.ship
+            ship = card.data.ship
+            if ship instanceof Array
+                text_in_ship = false
+                for s in ship
+                    if s.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[s].display_name and exportObj.ships[s].display_name.toLowerCase().indexOf(search_text) > -1)
+                        text_in_ship = true
+                        break
+                return false unless text_in_ship
+            else
+                return false unless ship.toLowerCase().indexOf(search_text) > -1 or (exportObj.ships[ship].display_name and exportObj.ships[ship].display_name.toLowerCase().indexOf(search_text) > -1)
+    
+        # prevent the three virtual hardpoint cards from beeing displayed
+        return false unless card.data.slot != "Hardpoint"
+
+        # check if advanced search is enabled
+        return true unless @advanced_search_active
+
+        # check if faction matches
+        return false unless @faction_selectors[card.data.faction].checked
+
+        # check if second-edition only matches
+        return false unless exportObj.secondEditionCheck(card.data) or not @second_edition_checkbox.checked
+
+        # check for slot requirements
+        required_slots = @slot_available_selection.val()
+        if required_slots
+            for slot in required_slots
+               return false unless card.data.slots? and slot in card.data.slots
+
+        # check if point costs matches
+        return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
+
+        # check if used slot matches
+        used_slots = @slot_used_selection.val()
+        if used_slots
+            return false unless card.data.slot?
+            matches = false
+            for slot in used_slots
+                if card.data.slot == slot
+                    matches = true
+                    break
+            return false unless matches
+        
+        # check for uniqueness
+        return false unless not @unique_checkbox.checked or card.data.unique
+
+        # check charge stuff
+        return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
+        return false if card.data.recurring and not @recurring_charge.checked
+        return false if card.data.charge and not card.data.recurring and not @not_recurring_charge.checked
+
+        # check collection status
+        if exportObj.builders[0].collection?.counts? # ignore collection stuff, if no collection available
+            owned_copies = @getCollectionNumber(card)
+            return false unless owned_copies >= @minimum_owned_copies.value and owned_copies <= @maximum_owned_copies.value
+
+        #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
+
+        return true

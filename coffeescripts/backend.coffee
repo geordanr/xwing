@@ -660,7 +660,7 @@ class exportObj.SquadBuilderBackend
         if settings?.collectioncheck?
             cb settings.collectioncheck
         else
-            @checkcollection = true
+            @collectioncheck = true
             cb true
                 
     saveCollection: (collection, cb=$.noop) ->

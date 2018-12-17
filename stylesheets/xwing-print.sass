@@ -35,6 +35,44 @@ body
       .xwing-miniatures-font
         color: black
 
+    .fancy-dial
+      .svg-maneuver-triangle.svg-base-maneuver
+        fill: black
+        stroke: black
+      .svg-maneuver-triangle.svg-modified-maneuver
+        fill: black
+        stroke: gray
+      .svg-maneuver-inner.svg-white-maneuver
+        stroke: white
+      .svg-maneuver-inner.svg-blue-maneuver
+        stroke: gray
+      .svg-maneuver-inner.svg-red-maneuver
+        stroke: black
+      .svg-maneuver-outer.svg-base-maneuver
+        stroke: black
+      .svg-maneuver-outer.svg-modified-maneuver
+        stroke: gray
+      .svg-maneuver-stop.svg-red-maneuver
+        fill: black !important
+      .svg-maneuver-stop.svg-white-maneuver
+        fill: white !important
+        stroke: black !important
+      .svg-maneuver-stop.svg-blue-maneuver
+        fill: gray !important
+        stroke: black !important
+      .svg-maneuver-stop.svg-modified-maneuver
+        stroke: gray !important
+        stroke-width: 10px
+      .svg-maneuver-stop.svg-base-maneuver
+        stroke: black !important
+        stroke-width: 10px
+
+    .fancy-dial table > tbody > tr > td ~ td
+      background-color: white !important
+
+    .fancy-dial table > tbody > tr > td
+      border: 2px solid gray !important
+
     i.xwing-miniatures-font-agility, i.xwing-miniatures-font-hull, i.xwing-miniatures-font-shield, i.xwing-miniatures-font-attack-bullseye, i.xwing-miniatures-font-forcecharge, i.xwing-miniatures-font-charge, i.xwing-miniatures-font-doubleturretarc, i.xwing-miniatures-font-singleturretarc, i.xwing-miniatures-font-frontarc, i.xwing-miniatures-font-reararc, i.xwing-miniatures-font-fullfrontarc
       background: white
     
@@ -205,6 +243,28 @@ body
       .info-data, .xwing-miniatures-font
         position: relative
         bottom: $fancy-pilot-header-height * 0.16
+
+
+		
+    .fancy-dial
+      float: right
+      padding: 5px
+      margin-left: $fancy-pilot-header-height * 2
+      table-layout: fixed
+
+    .fancy-dial table > tbody > tr > td
+      border: 2px solid #d6c9d2
+
+    .fancy-dial table > tbody > tr > td:first-child
+      color: white
+      text-align: center
+      padding: 3px
+      background-color: #888888
+      background-image: linear-gradient(rgba(45, 45, 45, .2) 50%, transparent 50%, transparent)
+      background-size: 5px 5px
+
+    .fancy-dial table > tbody > tr > td ~ td
+      background-color: #a29199
 
     .fancy-pilot-text
       margin-left: $fancy-pilot-header-height * 2
@@ -416,4 +476,3 @@ body
     font-family: EurostileStandardBold
     font-weight: 100
     font-style: italic
-

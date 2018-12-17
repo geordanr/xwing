@@ -3,15 +3,29 @@ exportObj = exports ? this
 String::startsWith ?= (t) ->
     @indexOf t == 0
 
-sortWithoutQuotes = (a, b) ->
-    a_name = a.replace /[^a-z0-9]/ig, ''
-    b_name = b.replace /[^a-z0-9]/ig, ''
+sortWithoutQuotes = (a, b, type = '') ->
+    a_name = displayName(a,type).replace /[^a-z0-9]/ig, ''
+    b_name = displayName(b,type).replace /[^a-z0-9]/ig, ''
     if a_name < b_name
         -1
     else if a_name > b_name
         1
     else
         0
+
+displayName = (name, type) ->
+    obj = undefined
+    if type == 'ship'
+        obj = exportObj.ships[name]
+    else if type == 'upgrade'
+        obj = exportObj.upgrades[name]
+    else if type == 'pilot'
+        obj = exportObj.pilots[name]
+    else
+        return name
+    if obj and obj.display_name
+        return obj.display_name
+    return name
 
 exportObj.manifestBySettings =
     'collectioncheck': true
@@ -3113,7 +3127,7 @@ exportObj.manifestByExpansion =
     ]
     "Lando's Millennium Falcon Expansion Pack": [
         {
-            name: 'YT-1300 (Scum)'
+            name: 'Customized YT-1300'
             type: 'ship'
             count: 1
         }
@@ -3228,6 +3242,1549 @@ exportObj.manifestByExpansion =
             count: 1
         }
     ]
+    'Resistance Conversion Kit': [
+        {
+            name: 'Finch Dallow'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Edon Kappehl'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ben Teene'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Vennie'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cat'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Cobalt Squadron Bomber'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'Rey'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Han Solo (Resistance)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Chewbacca (Resistance)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Resistance Sympathizer'
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: 'Poe Dameron'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ello Asty'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nien Nunb'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Temmin Wexley'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kare Kun'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jessika Pava'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Joph Seastriker'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jaycris Tubbs'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Bastian'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Expert'
+            type: 'pilot'
+            count: 4
+        }
+        {
+            name: 'Blue Squadron Rookie'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'R2-HA'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BB-8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'R5-X3'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BB Astromech'
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: 'R2 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R3 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R4 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'R5 Astromech'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'M9-G8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'C-3PO (Resistance)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Rey'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Finn'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Han Solo (Resistance)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Chewbacca (Resistance)'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Rey's Millennium Falcon"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Black One'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Integrated S-Foils'
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: 'Rose Tico'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Paige Tico'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heroic'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trajectory Simulator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'GNK "Gonk" Droid'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Informant'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Novice Technician'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seasoned Navigator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Officer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hotshot Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Skilled Bombardier'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Veteran Turret Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Deadman's Switch"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Nets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    'T-70 X-Wing Expansion Pack': [
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Poe Dameron'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ello Asty'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Nien Nunb'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Temmin Wexley'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Kare Kun'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jessika Pava'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Joph Seastriker'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Jaycris Tubbs'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Bastian'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black Squadron Ace (T-70)'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Red Squadron Expert'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Rookie'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Black One'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BB-8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'BB Astromech'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Integrated S-Foils'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'M9-G8'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'RZ-2 A-Wing Expansion Pack': [
+        {
+            name: 'RZ-2 A-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: "L'ulo L'ampar"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Greer Sonnel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Tallissan Lintra'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zari Bangel'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Green Squadron Expert'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Blue Squadron Recruit'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Heroic'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Ferrosphere Paint'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 1
+        }
+    ]
+    'Mining Guild TIE Expansion Pack': [
+        {
+            name: 'Mining Guild TIE Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Foreman Proach'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Ahhav'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Captain Seevor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Overseer Yushyn'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mining Guild Surveyor'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Mining Guild Sentry'
+            type: 'pilot'
+            count: 1
+        }
+    ]
+    'First Order Conversion Kit': [
+        {
+            name: 'Epsilon Squadron Cadet'
+            type: 'pilot'
+            count: 7
+        }
+        {
+            name: 'Zeta Squadron Pilot'
+            type: 'pilot'
+            count: 7
+        }
+        {
+            name: 'Omega Squadron Ace'
+            type: 'pilot'
+            count: 6
+        }
+        {
+            name: '"Null"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Rivas'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Muse"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'TN-3465'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Longshot"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Static"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Scorch"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Commander Malarus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Midnight"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Quickdraw"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Backdraft"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Omega Squadron Expert"
+            type: 'pilot'
+            count: 4
+        }
+        {
+            name: "Zeta Squadron Survivor"
+            type: 'pilot'
+            count: 5
+        }
+        {
+            name: "Kylo Ren"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Blackout"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Recoil"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Avenger"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "First Order Test Pilot"
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: "Sienar-Jaemus Engineer"
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: "Captain Cardinal"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Major Stridan"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Lieutenant Tavson"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Lieutenant Dormitz"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Petty Officer Thanisson"
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: "Starkiller Base Pilot"
+            type: 'pilot'
+            count: 3
+        }
+        {
+            name: "Primed Thrusters"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Hyperspace Tracking Data"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Special Forces Gunner"
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: "Supreme Leader Snoke"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Petty Officer Thanisson"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Kylo Ren"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "General Hux"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Captain Phasma"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Biohexacrypt Codes"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Predictive Shot"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: "Hate"
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fanatical'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hyperspace Tracking Data'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'GNK "Gonk" Droid'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Informant'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Novice Technician'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seasoned Navigator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hotshot Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+    'TIE/FO Fighter Expansion Pack': [
+        {
+            name: 'TIE/FO Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Epsilon Squadron Cadet'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Zeta Squadron Pilot'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Omega Squadron Ace'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Null"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Lieutenant Rivas'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Muse"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'TN-3465'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Longshot"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Static"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Scorch"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Commander Malarus'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: '"Midnight"'
+            type: 'pilot'
+            count: 1
+        }
+        {
+            name: 'Fanatical'
+            type: 'upgrade'
+            count: 3
+        }
+        {
+            name: 'Crack Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Daredevil'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Debris Gambit'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Elusive'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Intimidation'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Juke'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Lone Wolf'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Marksmanship'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Outmaneuver'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Predator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Squad Leader'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Swarm Tactics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Trick Shot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Optics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Pattern Analyzer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Primed Thrusters'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Targeting Synchronizer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hyperspace Tracking Data'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced Sensors'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Collision Detector'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Fire-Control System'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Heavy Laser Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Cannon'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Jamming Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tractor Beam'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Adv. Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Torpedoes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Cluster Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Concussion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Homing Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ion Missiles'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Rockets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Freelance Slicer'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'GNK "Gonk" Droid'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Informant'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Novice Technician'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Perceptive Copilot'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seasoned Navigator'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hotshot Gunner'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Special Forces Gunner'
+            type: 'upgrade'
+            count: 4
+        }
+        {
+            name: 'Contraband Cybernetics'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: "Deadman's Switch"
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Feedback Array'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Inertial Dampeners'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Rigged Cargo Chute'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Bomblet Generator'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Conner Nets'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proton Bombs'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Proximity Mines'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Seismic Charges'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Ablative Plating'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Advanced SLAM'
+            type: 'upgrade'
+            count: 1
+        }
+        {
+            name: 'Electronic Baffle'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Engine Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Hull Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Munitions Failsafe'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Shield Upgrade'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Static Discharge Vanes'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Stealth Device'
+            type: 'upgrade'
+            count: 2
+        }
+        {
+            name: 'Tactical Scrambler'
+            type: 'upgrade'
+            count: 2
+        }
+    ]
+
     'Loose Ships': [
         {
             name: 'A-Wing'
@@ -3465,7 +5022,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'B/SF-17 Bomber'
+            name: 'MG-100 StarFortress'
             type: 'ship'
             count: 3
         }
@@ -3490,42 +5047,115 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'YT-1300 (Resistance)'
+            name: 'Scavenged YT-1300'
             type: 'ship'
             count: 3
         }
     ]        
-
+    'Hyperspace': [
+        {
+            name: 'YT-1300'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'U-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'X-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Y-Wing'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Advanced'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'TIE Fighter'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Striker'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'TIE Reaper'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Fang Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Firespray-31'
+            type: 'ship'
+            count: 2
+        }
+        {
+            name: 'Customized YT-1300'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Escape Craft'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'T-70 X-Wing'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'MG-100 StarFortress'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'RZ-2 A-Wing'
+            type: 'ship'
+            count: 1
+        }
+        {
+            name: 'Scavenged YT-1300'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE/SF Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE/FO Fighter'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'Upsilon-Class Shuttle'
+            type: 'ship'
+            count: 3
+        }
+        {
+            name: 'TIE Silencer'
+            type: 'ship'
+            count: 3
+        }
+    ]
 
 class exportObj.Collection
-    # collection = new exportObj.Collection
-    #   expansions:
-    #     "Core": 2
-    #     "TIE Fighter Expansion Pack": 4
-    #     "B-Wing Expansion Pack": 2
-    #   singletons:
-    #     ship:
-    #       "T-70 X-Wing": 1
-    #     pilot:
-    #       "Academy Pilot": 16
-    #     upgrade:
-    #       "C-3PO": 4
-    #       "Gunner": 5
-    #     modification:
-    #       "Engine Upgrade": 2
-    #     title:
-    #       "TIE/x1": 1
-    #
-    # # or
-    #
-    # collection = exportObj.Collection.load(backend)
-    #
-    # collection.use "pilot", "Red Squadron Pilot"
-    # collection.use "upgrade", "R2-D2"
-    # collection.use "upgrade", "Ion Pulse Missiles" # returns false
-    #
-    # collection.release "pilot", "Red Squadron Pilot"
-    # collection.release "pilot", "Sigma Squadron Pilot" # returns false
 
     constructor: (args) ->
         @expansions = args.expansions ? {}
@@ -3557,8 +5187,13 @@ class exportObj.Collection
 
         for type, counts of @singletons
             for name, count of counts
-                for _ in [0...count]
-                    ((@shelf[type] ?= {})[name] ?= []).push 'singleton'
+                if count > 0
+                    for _ in [0...count]
+                        ((@shelf[type] ?= {})[name] ?= []).push 'singleton'
+                else if count < 0
+                    for _ in [0...count]
+                        if ((@shelf[type] ?= {})[name] ?= []).length > 0
+                            @shelf[type][name].pop()
 
         @counts = {}
         for own type of @shelf
@@ -3573,14 +5208,17 @@ class exportObj.Collection
             for item in items
                 (singletonsByType[item.type] ?= {})[item.name] = true
         for type, names of singletonsByType
-            sorted_names = (name for name of names).sort(sortWithoutQuotes)
+            sorted_names = (name for name of names).sort((a,b) -> sortWithoutQuotes(a,b,type))
             singletonsByType[type] = sorted_names
-                
                 
         component_content = $ @modal.find('.collection-inventory-content')
         component_content.text ''
+        card_totals_by_type = {}
+        card_different_by_type = {}
         for own type, things of @counts
             if singletonsByType[type]?
+                card_totals_by_type[type] = 0
+                card_different_by_type[type] = 0
                 contents = component_content.append $.trim """
                     <div class="row-fluid">
                         <div class="span12"><h5>#{type.capitalize()}</h5></div>
@@ -3590,9 +5228,32 @@ class exportObj.Collection
                     </div>
                 """
                 ul = $ contents.find("ul#counts-#{type}")
-                for thing in Object.keys(things).sort(sortWithoutQuotes)
+                for thing in Object.keys(things).sort((a,b) -> sortWithoutQuotes(a,b,type))
+                    card_totals_by_type[type] += things[thing]
                     if thing in singletonsByType[type]
-                        ul.append """<li>#{thing} - #{things[thing]}</li>"""
+                        card_different_by_type[type]++
+                        if type == 'pilot'
+                            ul.append """<li>#{if exportObj.pilots[thing].display_name then exportObj.pilots[thing].display_name else thing} - #{things[thing]}</li>"""
+                        if type == 'upgrade'
+                            ul.append """<li>#{if exportObj.upgrades[thing].display_name then exportObj.upgrades[thing].display_name else thing} - #{things[thing]}</li>"""
+                        if type == 'ship'
+                            ul.append """<li>#{if exportObj.ships[thing].display_name then exportObj.ships[thing].display_name else thing} - #{things[thing]}</li>"""
+
+        summary = ""
+        for type in Object.keys(card_totals_by_type)
+            summary += """<li>#{type.capitalize()} - #{card_totals_by_type[type]} (#{card_different_by_type[type]} different)</li>"""
+
+        component_content.append $.trim """
+            <div class="row-fluid">
+                <div class="span12"><h5>Summary</h5></div>
+            </div>
+            <div class = "row-fluid">
+                <ul id="counts-summary" class="span12">
+                    #{summary}
+                </ul>
+            </div>
+        """
+
                 
     fixName: (name) ->
         # Special case handling for Heavy Scyk :(
@@ -3649,7 +5310,7 @@ class exportObj.Collection
             for item in items
                 (singletonsByType[item.type] ?= {})[item.name] = true
         for type, names of singletonsByType
-            sorted_names = (name for name of names).sort(sortWithoutQuotes)
+            sorted_names = (name for name of names).sort((a,b) -> sortWithoutQuotes(a,b,type))
             singletonsByType[type] = sorted_names
         
         @modal = $ document.createElement 'DIV'
@@ -3712,8 +5373,8 @@ class exportObj.Collection
             input = $ $(row).find('input')
             input.data 'expansion', expansion
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.expansion-name').data 'english_name', expansion
-            if expansion != 'Loose Ships'
+            $(row).find('.expansion-name').data 'name', expansion
+            if expansion != 'Loose Ships' or 'Hyperspace'
                 collection_content.append row
 
         shipcollection_content = $ @modal.find('.collection-ship-content')
@@ -3724,7 +5385,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="ship-name">#{ship}</span>
+                            <span class="ship-name">#{if exportObj.ships[ship].display_name then exportObj.ships[ship].display_name else ship}</span>
                         </label>
                     </div>
                 </div>
@@ -3733,7 +5394,7 @@ class exportObj.Collection
             input.data 'singletonType', 'ship'
             input.data 'singletonName', ship
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.ship-name').data 'english_name', expansion
+            $(row).find('.ship-name').data 'name', ship
             shipcollection_content.append row
 
         pilotcollection_content = $ @modal.find('.collection-pilot-content')
@@ -3744,7 +5405,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="pilot-name">#{pilot}</span>
+                            <span class="pilot-name">#{if exportObj.pilots[pilot].display_name then exportObj.pilots[pilot].display_name else pilot}</span>
                         </label>
                     </div>
                 </div>
@@ -3753,7 +5414,7 @@ class exportObj.Collection
             input.data 'singletonType', 'pilot'
             input.data 'singletonName', pilot
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.pilot-name').data 'english_name', expansion
+            $(row).find('.pilot-name').data 'name', pilot
             pilotcollection_content.append row
 
         upgradecollection_content = $ @modal.find('.collection-upgrade-content')
@@ -3764,7 +5425,7 @@ class exportObj.Collection
                     <div class="span12">
                         <label>
                             <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="upgrade-name">#{upgrade}</span>
+                            <span class="upgrade-name">#{if exportObj.upgrades[upgrade].display_name then exportObj.upgrades[upgrade].display_name else upgrade}</span>
                         </label>
                     </div>
                 </div>
@@ -3773,48 +5434,8 @@ class exportObj.Collection
             input.data 'singletonType', 'upgrade'
             input.data 'singletonName', upgrade
             input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.upgrade-name').data 'english_name', expansion
+            $(row).find('.upgrade-name').data 'name', upgrade
             upgradecollection_content.append row
-
-        ###modificationcollection_content = $ @modal.find('.collection-modification-content')
-        for modification in singletonsByType.modification
-            count = parseInt(@singletons.modification?[modification] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="modification-name">#{modification}</span>
-                        </label>
-                    </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'modification'
-            input.data 'singletonName', modification
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.modification-name').data 'english_name', expansion
-            modificationcollection_content.append row ###
-
-        ###titlecollection_content = $ @modal.find('.collection-title-content')
-        for title in singletonsByType.title
-            count = parseInt(@singletons.title?[title] ? 0)
-            row = $.parseHTML $.trim """
-                <div class="row-fluid">
-                    <div class="span12">
-                        <label>
-                            <input class="singleton-count" type="number" size="3" value="#{count}" />
-                            <span class="title-name">#{title}</span>
-                        </label>
-                    </div>
-                </div>
-            """
-            input = $ $(row).find('input')
-            input.data 'singletonType', 'title'
-            input.data 'singletonName', title
-            input.closest('div').css 'background-color', @countToBackgroundColor(input.val())
-            $(row).find('.title-name').data 'english_name', expansion
-            titlecollection_content.append row###
 
     destroyUI: ->
         @modal.modal 'hide'
@@ -3841,7 +5462,7 @@ class exportObj.Collection
             target.val(0) if val < 0 or isNaN(parseInt(val))
             @expansions[target.data 'expansion'] = parseInt(target.val())
 
-            target.closest('div').css 'background-color', @countToBackgroundColor(val)
+            target.closest('div').css 'background-color', @countToBackgroundColor(target.val())
 
             # console.log "Input changed, triggering collection change"
             $(exportObj).trigger 'xwing-collection:changed', this
@@ -3849,10 +5470,10 @@ class exportObj.Collection
         $ @modal.find('input.singleton-count').change (e) =>
             target = $(e.target)
             val = target.val()
-            target.val(0) if val < 0 or isNaN(parseInt(val))
+            target.val(0) if isNaN(parseInt(val))
             (@singletons[target.data 'singletonType'] ?= {})[target.data 'singletonName'] = parseInt(target.val())
 
-            target.closest('div').css 'background-color', @countToBackgroundColor(val)
+            target.closest('div').css 'background-color', @countToBackgroundColor(target.val())
 
             # console.log "Input changed, triggering collection change"
             $(exportObj).trigger 'xwing-collection:changed', this
@@ -3872,20 +5493,29 @@ class exportObj.Collection
     countToBackgroundColor: (count) ->
         count = parseInt(count)
         switch
+            when count < 0
+                'red'
             when count == 0
                 ''
-            when count < 12
+            when count > 0
                 i = parseInt(200 * Math.pow(0.9, count - 1))
                 "rgb(#{i}, 255, #{i})"
             else
-                'red'
+                ''
 
     onLanguageChange:
         (e, language) =>
-            if language != @language
+            @language = language
+            if language != @old_language
+                @old_language = language
                 # console.log "language changed to #{language}"
                 do (language) =>
                     @modal.find('.expansion-name').each ->
-                        # console.log "translating #{$(this).text()} (#{$(this).data('english_name')}) to #{language}"
-                        $(this).text exportObj.translate language, 'sources', $(this).data('english_name')
-                @language = language
+                        # console.log "translating #{$(this).text()} (#{$(this).data('name')}) to #{language}"
+                        $(this).text exportObj.translate language, 'sources', $(this).data('name')
+                    @modal.find('.ship-name').each ->
+                        $(this).text (if exportObj.ships[$(this).data('name')].display_name then exportObj.ships[$(this).data('name')].display_name else $(this).data('name'))
+                    @modal.find('.pilot-name').each ->
+                        $(this).text (if exportObj.pilots[$(this).data('name')].display_name then exportObj.pilots[$(this).data('name')].display_name else $(this).data('name'))
+                    @modal.find('.upgrade-name').each ->
+                        $(this).text (if exportObj.upgrades[$(this).data('name')].display_name then exportObj.upgrades[$(this).data('name')].display_name else $(this).data('name'))

@@ -3,6 +3,7 @@ exportObj = exports ? this
 exportObj.fromXWSFaction =
     'rebelalliance': 'Rebel Alliance'
     'rebels': 'Rebel Alliance'
+    'rebel': 'Rebel Alliance'
     'galacticempire': 'Galactic Empire'
     'imperial': 'Galactic Empire'
     'scumandvillainy': 'Scum and Villainy'
@@ -17,9 +18,7 @@ exportObj.toXWSFaction =
     'Resistance': 'resistance'
 
 exportObj.toXWSUpgrade =
-    'Astromech': 'amd'
-    'Talent': 'ept'
-    'Modification': 'mod'
+    'Modification': 'modification'
 
 exportObj.fromXWSUpgrade =
     'amd': 'Astromech'
