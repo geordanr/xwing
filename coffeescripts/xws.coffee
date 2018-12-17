@@ -19,6 +19,7 @@ exportObj.toXWSFaction =
 
 exportObj.toXWSUpgrade =
     'Modification': 'modification'
+    'Force':'force-power'
 
 exportObj.fromXWSUpgrade =
     'amd': 'Astromech'
@@ -27,6 +28,7 @@ exportObj.fromXWSUpgrade =
     'elitepilottalent': 'Talent'
     'system': 'Sensor'
     'mod': 'Modification'
+    'force-power':'Force'
 
 SPEC_URL = 'https://github.com/elistevens/xws-spec'
 

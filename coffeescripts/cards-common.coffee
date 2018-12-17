@@ -1213,9 +1213,9 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0]
             ]
             isHyperspace: true
-        "TIE Silencer":
-            name: "TIE Silencer"
-            xws: "TIE Silencer".canonicalize()
+        "TIE/VN Silencer":
+            name: "TIE/VN Silencer"
+            xws: "TIE/VN Silencer".canonicalize()
             factions: ["First Order"]
             attack: 3
             agility: 3
@@ -5357,7 +5357,7 @@ exportObj.basicCardData = ->
             id: 236
             unique: true
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 5
             force: 2
             points: 82
@@ -5376,7 +5376,7 @@ exportObj.basicCardData = ->
             id: 237
             unique: true
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 5
             points: 70
             slots: [
@@ -6132,7 +6132,7 @@ exportObj.basicCardData = ->
             id: 283
             unique: true
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 3
             points: 62
             slots: [
@@ -6149,7 +6149,7 @@ exportObj.basicCardData = ->
             id: 284
             unique: true
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 4
             points: 63
             slots: [
@@ -6182,7 +6182,7 @@ exportObj.basicCardData = ->
             name: "Sienar-Jaemus Engineer"
             id: 286
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 1
             points: 56
             slots: [
@@ -6197,7 +6197,7 @@ exportObj.basicCardData = ->
             name: "First Order Test Pilot"
             id: 287
             faction: "First Order"
-            ship: "TIE Silencer"
+            ship: "TIE/VN Silencer"
             skill: 4
             points: 62
             slots: [

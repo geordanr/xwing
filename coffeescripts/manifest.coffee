@@ -5037,7 +5037,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'TIE Silencer'
+            name: 'TIE/VN Silencer'
             type: 'ship'
             count: 3
         }
@@ -5149,7 +5149,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'TIE Silencer'
+            name: 'TIE/VN Silencer'
             type: 'ship'
             count: 3
         }
