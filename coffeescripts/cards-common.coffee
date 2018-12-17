@@ -5496,6 +5496,7 @@ exportObj.basicCardData = ->
             force: 2
             slots: [
                 "Force"
+                "Missile"
                 "Crew"
                 "Crew"
                 "Gunner"
@@ -5516,6 +5517,7 @@ exportObj.basicCardData = ->
             points: 76
             slots: [
                 "Talent"
+                "Missile"
                 "Crew"
                 "Crew"
                 "Gunner"
@@ -5536,6 +5538,7 @@ exportObj.basicCardData = ->
             points: 72
             slots: [
                 "Talent"
+                "Missile"
                 "Crew"
                 "Crew"
                 "Gunner"
@@ -6351,6 +6354,7 @@ exportObj.basicCardData = ->
             skill: 2
             points: 68
             slots: [
+                "Missile"
                 "Crew"
                 "Crew"
                 "Gunner"
