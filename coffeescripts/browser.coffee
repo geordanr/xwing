@@ -155,6 +155,15 @@ class exportObj.CardBrowser
                                         <input type="checkbox" class="advanced-search-checkbox has-not-recurring-charge-checkbox" checked="checked"/> not recurring
                                     </label>
                                 </div>
+                                <div class = "advanced-search-ini-container">
+                                    <strong>Initiative:</strong>
+                                    <label class = "advanced-search-label set-minimum-ini">
+                                        from <input type="number" class="minimum-ini advanced-search-number-input" value="0" /> 
+                                    </label>
+                                    <label class = "advanced-search-label set-maximum-ini">
+                                        to <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
+                                    </label>
+                                </div>
                                 <div class = "advanced-search-misc-container">
                                     <strong>Misc:</strong>
                                     <label class = "advanced-search-label toggle-unique">
@@ -303,6 +312,8 @@ class exportObj.CardBrowser
             minimumResultsForSearch: if $.isMobile() then -1 else 0
         @minimum_charge = ($ @container.find('.xwing-card-browser .minimum-charge'))[0]
         @maximum_charge = ($ @container.find('.xwing-card-browser .maximum-charge'))[0]
+        @minimum_ini = ($ @container.find('.xwing-card-browser .minimum-ini'))[0]
+        @maximum_ini = ($ @container.find('.xwing-card-browser .maximum-ini'))[0]
         @recurring_charge = ($ @container.find('.xwing-card-browser .has-recurring-charge-checkbox'))[0]
         @not_recurring_charge = ($ @container.find('.xwing-card-browser .has-not-recurring-charge-checkbox'))[0]
         @minimum_owned_copies = ($ @container.find('.xwing-card-browser .minimum-owned-copies'))[0]
@@ -338,6 +349,8 @@ class exportObj.CardBrowser
         @not_recurring_charge.onclick = => @renderList @sort_selector.val()
         @minimum_charge.oninput = => @renderList @sort_selector.val()
         @maximum_charge.oninput = => @renderList @sort_selector.val()
+        @minimum_ini.oninput = => @renderList @sort_selector.val()
+        @maximum_ini.oninput = => @renderList @sort_selector.val()
         @minimum_owned_copies.oninput = => @renderList @sort_selector.val()
         @maximum_owned_copies.oninput = => @renderList @sort_selector.val()
 
@@ -680,6 +693,13 @@ class exportObj.CardBrowser
         if exportObj.builders[0].collection?.counts? # ignore collection stuff, if no collection available
             owned_copies = @getCollectionNumber(card)
             return false unless owned_copies >= @minimum_owned_copies.value and owned_copies <= @maximum_owned_copies.value
+
+        # check for ini
+        if card.data.skill?
+            return false unless card.data.skill >= @minimum_ini.value and card.data.skill <= @maximum_ini.value
+        else 
+            # if the card has no ini value (is not a pilot) return false, if the ini criteria has been set (is not 0 to 6)
+            return false unless @minimum_ini.value <= 0 and @maximum_ini.value >= 6
 
         #TODO: Add logic of addiditional search criteria here. Have a look at card.data, to see what data is available. Add search inputs at the todo marks above. 
 
