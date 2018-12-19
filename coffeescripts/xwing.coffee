@@ -1125,8 +1125,11 @@ class exportObj.SquadBuilder
     onPointsUpdated: (cb=$.noop) =>
         @total_points = 0
         unreleased_content_used = false
-        for ship, i in @ships
+        # validating may remove the ship, if not only some upgrade, but the pilot himself is not valid. Thus iterate backwards over the array, so that is probably fine?
+        for i in [@ships.length - 1 ... -1]
+            ship = @ships[i]
             ship.validate()
+            continue unless ship # if the ship has been removed, we no longer care about it
             @total_points += ship.getPoints()
             ship_uses_unreleased_content = ship.checkUnreleasedContent()
             unreleased_content_used = ship_uses_unreleased_content if ship_uses_unreleased_content
@@ -1304,11 +1307,15 @@ class exportObj.SquadBuilder
                     for serialized_ship in serialized_ships.split(';')
                         unless serialized_ship == ''
                             new_ship = @addShip()
-                            # try to create ship. returns false, if some upgrade have been skipped as they are not legal until now (e.g. 0-0-0 but vader is not yet in the squad)
-                            if not new_ship.fromSerialized version, serialized_ship
+                            # try to create ship. fromSerialized returns false, if some upgrade have been skipped as they are not legal until now (e.g. 0-0-0 but vader is not yet in the squad)
+                            # if not the entire ship is valid, we'll try again later - but keep the valid part added, so other ships may already see some upgrades
+                            if (not new_ship.fromSerialized version, serialized_ship) or not new_ship.pilot # also check, if the pilot has been set (the pilot himself was not invalid) 
                                 ships_with_unmet_dependencies.push [new_ship, serialized_ship]
                     for ship in ships_with_unmet_dependencies
                         # 2nd attempt to load ships with unmet dependencies. 
+                        if not ship[0].pilot
+                            # create ship, if the ship was so invalid, that it in fact decided to not exist
+                            ship[0] = @addShip()
                         ship[0].fromSerialized version, ship[1]
                             
                 when 2
@@ -2459,7 +2466,7 @@ class Ship
                 upgrade.updateSelection points
         else
             @pilot_selector.select2 'data', null
-            @pilot_selector.data('select2').container.toggle(@ship_selector.val() != '')
+            #@pilot_selector.data('select2').container.toggle(@ship_selector.val() != '')
 
     setupUI: ->
         @row = $ document.createElement 'DIV'
@@ -2970,6 +2977,8 @@ class Ship
                     # version 4
                     [ pilot_id, upgrade_ids, version_4_compatibility_placeholder_title, version_4_compatibility_placeholder_mod, conferredaddon_pairs ] = serialized.split ':'
                 @setPilotById parseInt(pilot_id)
+                # make sure the pilot is valid 
+                return false unless @validate
 
                 deferred_ids = []
                 for upgrade_id, i in upgrade_ids.split ','
@@ -3052,6 +3061,12 @@ class Ship
         max_checks = 128 # that's a lot of addons
         for i in [0...max_checks]
             valid = true
+            pilot_func = @pilot?.validation_func ? @pilot?.restriction_func ? undefined
+            if pilot_func? and not pilot_func(this, @pilot)
+                # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappears, right?
+                @builder.removeShip this 
+                return false # no need to check anything further, as we do not exist anymore 
+
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
                 if func? and not func(this, upgrade)
