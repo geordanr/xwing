@@ -4185,6 +4185,12 @@ exportObj.basicCardData = ->
                 "Illicit"
                 "Modification"
               ]
+            restriction_func: (ship) ->
+                builder = ship.builder
+                for t, things of builder.uniques_in_use
+                    return true if 'houndstooth' in (thing.canonical_name.getXWSBaseName() for thing in things)
+                false
+
         }
         {
             name: "Major Vynder"
