@@ -3346,7 +3346,7 @@ exportObj.manifestByExpansion =
         {
             name: 'Blue Squadron Rookie'
             type: 'pilot'
-            count: 1
+            count: 4
         }
         {
             name: 'R2-HA'
