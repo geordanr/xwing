@@ -9,94 +9,6 @@ exportObj.isReleased = (data) ->
         return true if source not in exportObj.unreleasedExpansions
     false
 
-# Upgrades in conversion kits that are not in Hyperspace
-exportObj.hyperspaceExclusions = [
-    {name: 'Y-Wing', faction: 'Scum and Villainy'},
-    {name: 'TIE Fighter', faction: 'Rebel Alliance'},
-    {name: 'Biohexacrypt Codes', faction: ''},
-    {name: 'Ion Cannon', faction: ''},
-    {name: 'Jamming Beam', faction: ''},
-    {name: 'Tractor Beam', faction: ''},
-    {name: 'Freelance Slicer', faction: ''},
-    {name: 'GNK "Gonk" Droid', faction: ''},
-    {name: 'Novice Technician', faction: ''},
-    {name: 'Bomblet Generator', faction: ''},
-    {name: 'Cloaking Device', faction: ''},
-    {name: 'Contraband Cybernetics', faction: ''},
-    {name: 'Feedback Array', faction: ''},
-    {name: 'Barrage Rockets', faction: ''},
-    {name: 'Ablative Plating', faction: ''},
-    {name: 'Advanced SLAM', faction: ''},
-    {name: 'Electronic Baffle', faction: ''},
-    {name: 'Tactical Scrambler', faction: ''},
-    {name: 'Debris Gambit', faction: ''},
-    {name: 'Saturation Salvo', faction: ''},
-    {name: 'Adv. Proton Torpedoes', faction: ''},
-    {name: 'Dorsal Turret', faction: ''}
-]
-
-# Ships not released, and only in conversion kits
-exportObj.hyperspaceShipInclusions = [
-    {name: 'YT-1300', faction: 'Rebel Alliance'},
-    {name: 'TIE Striker', faction: 'Galactic Empire'},
-    {name: 'Scavenged YT-1300', faction: 'Resistance'},
-    {name: 'MG-100 StarFortress', faction: 'Resistance'},
-    {name: 'TIE/VN Silencer', faction: 'First Order'},
-    {name: 'TIE/SF Fighter', faction: 'First Order'},
-    {name: 'Upsilon-Class Shuttle', faction: 'First Order'}
-]
-
-# Upgrades in Hyperspace that were only in the three original conversion kits
-exportObj.hyperspaceUpgradeInclusions = [
-    {name: 'Chewbacca', faction: 'Rebel Alliance', slot: 'Crew'},
-    {name: 'Lando Calrissian', faction: 'Rebel Alliance', slot: 'Crew'},
-    {name: 'Leia Organa', faction: 'Rebel Alliance', slot: 'Crew'},
-    {name: 'Nien Nunb', faction: 'Rebel Alliance', slot: 'Crew'},
-    {name: 'R2-D2', faction: 'Rebel Alliance', slot: 'Crew'},
-    {name: 'Han Solo', faction: 'Rebel Alliance', slot: 'Gunner'},
-    {name: 'Luke Skywalker', faction: 'Rebel Alliance', slot: 'Gunner'},
-    {name: 'Millennium Falcon', faction: 'Rebel Alliance', slot: 'Title'}
-]
-
-exportObj.hyperspaceExpansions = [
-    'Second Edition Core Set',
-    "Saw's Renegades Expansion Pack",
-    'TIE Reaper Expansion Pack',
-    'T-65 X-Wing Expansion Pack',
-    'BTL-A4 Y-Wing Expansion Pack',
-    'TIE/ln Fighter Expansion Pack',
-    'TIE Advanced x1 Expansion Pack',
-    'Slave I Expansion Pack',
-    'Fang Fighter Expansion Pack',
-    "Lando's Millennium Falcon Expansion Pack",
-    'T-70 X-Wing Expansion Pack',
-    'RZ-2 A-Wing Expansion Pack',
-    'Mining Guild TIE Expansion Pack',
-    'TIE/FO Fighter Expansion Pack',
-    'First Order Conversion Kit',
-    'Resistance Conversion Kit'
-]
-
-exportObj.hyperspaceCheck = (data, faction='') ->
-    # Handle exclusions first
-    for exc in exportObj.hyperspaceExclusions
-        if (data.name == exc.name && (exc.faction == faction || exc.faction == ''))
-            return false
-    # ships/pilots only in conversion kits
-    if (data.ship != null)
-        for ship in exportObj.hyperspaceShipInclusions
-            # checks against name and ship for both the ship itself and also pilot inclusions
-            if ((data.name == ship.name || data.ship == ship.name) && (ship.faction == faction || ship.faction == ''))
-                return true
-    # included original three conversion kit upgrades
-    for inc in exportObj.hyperspaceUpgradeInclusions
-        if (data.name == inc.name && (inc.faction == faction) && (data.slot == inc.slot))
-            return true
-    # rest of the expansion upgrades / pilots / ships
-    for source in data.sources
-        return true if source in exportObj.hyperspaceExpansions
-    return false
-
 String::canonicalize = ->
     this.toLowerCase()
         .replace(/[^a-z0-9]/g, '')
@@ -8614,8 +8526,126 @@ exportObj.randomizer = (faction_name, points) ->
     listcount = 0 #start count at 0
     #for shiplistmaster in shiplistmaster.pilotsbyid.faction == faction_name loop grab pilots by faction
         #if Math.random() >= 0.9
-        #append.shiplistmaster.pilotsbyid.xws ? shiplistmaster.pilotsbyid.canonical_name ? shiplistmaster.pilotsbyid.name.canonicalize())    
-            
-        
-    
-    
+        #append.shiplistmaster.pilotsbyid.xws ? shiplistmaster.pilotsbyid.canonical_name ? shiplistmaster.pilotsbyid.name.canonicalize())
+
+exportObj.hyperspaceShipInclusions = [
+    {name: 'X-Wing', faction: 'Rebel Alliance'},
+    {name: 'YT-1300', faction: 'Rebel Alliance'},
+    {name: 'Y-Wing', faction: 'Rebel Alliance'},
+    {name: 'U-Wing', faction: 'Rebel Alliance'},
+    {name: 'TIE Advanced', faction: 'Galactic Empire'},
+    {name: 'TIE Fighter', faction: 'Galactic Empire'},
+    {name: 'TIE Reaper', faction: 'Galactic Empire'},
+    {name: 'TIE Striker', faction: 'Galactic Empire'},
+    {name: 'Firespray-31', faction: 'Scum and Villainy'},
+    {name: 'Escape Craft', faction: 'Scum and Villainy'},
+    {name: 'Fang Fighter', faction: 'Scum and Villainy'},
+    {name: 'Customized YT-1300', faction: 'Scum and Villainy'},
+    {name: 'TIE Fighter', faction: 'Scum and Villainy'},
+    {name: 'Scavenged YT-1300', faction: 'Resistance'},
+    {name: 'T-70 X-Wing', faction: 'Resistance'},
+    {name: 'RZ-2 A-Wing', faction: 'Resistance'},
+    {name: 'MG-100 StarFortress', faction: 'Resistance'},
+    {name: 'TIE/FO Fighter', faction: 'First Order'},
+    {name: 'TIE/VN Silencer', faction: 'First Order'},
+    {name: 'TIE/SF Fighter', faction: 'First Order'},
+    {name: 'Upsilon-Class Shuttle', faction: 'First Order'}
+]
+
+# Used to exclude pilots from included ships
+exportObj.hyperspacePilotExclusions = [
+    'Bodhi Rook',
+    'Cassian Andor',
+    'Heff Tobber',
+    'Blue Squadron Scout'
+]
+
+# Upgrades in that are not in Hyperspace
+# No need to check titles/configurations, as those are already included/excluded by ship
+exportObj.hyperspaceUpgradeExclusions = [
+    # Generic
+    'Ion Cannon',
+    'Jamming Beam',
+    'Tractor Beam',
+    'Freelance Slicer',
+    'GNK "Gonk" Droid',
+    'Novice Technician',
+    'Bomblet Generator',
+    'Cloaking Device',
+    'Contraband Cybernetics',
+    'Feedback Array',
+    'Barrage Rockets',
+    'Ablative Plating',
+    'Advanced SLAM',
+    'Electronic Baffle',
+    'Tactical Scrambler',
+    'Debris Gambit',
+    'Saturation Salvo',
+    'Adv. Proton Torpedoes',
+    'Dorsal Turret',
+
+    # Rebel Alliance
+    '"Chopper" (Astromech)',
+    '"Zeb" Orrelios'
+    '"Chopper" (Crew)',
+    'Baze Malbus',
+    'C-3PO',
+    'Cassian Andor',
+    'Hera Syndulla',
+    'Jyn Erso',
+    'Kanan Jarrus',
+    'Sabine Wren',
+    'Bistan',
+    'Ezra Bridger',
+
+    # Galactic Empire
+    'Admiral Sloane'
+    'Agent Kallus'
+    'Ciena Ree',
+    'Darth Vader',
+    'Grand Inquisitor',
+    'Grand Moff Tarkin',
+    'Minister Tua',
+    'Moff Jerjerrod',
+    'Seventh Sister',
+    'Emperor Palpatine',
+    'Fifth Brother',
+
+    # Scum and Villainy
+    '"Genius"',
+    'R5-TK',
+    'R5-P8',
+    '0-0-0',
+    '4-LOM',
+    'Cad Bane',
+    'Cikatro Vizago',
+    'IG-88D',
+    'Ketsu Onyo',
+    'Latts Razzi',
+    'Maul',
+    'Unkar Plutt',
+    'Zuckuss',
+    'Jabba the Hutt',
+    'Bossk',
+    'BT-1',
+    'Dengar',
+    'Greedo'
+
+    # FO
+    'Biohexacrypt Codes'
+]
+
+# Ships/Pilots excluded unless in the included list (with further excluded pilots list for included ships, i.e u-wing)
+# while upgrades assumed included unless on the excluded list
+exportObj.hyperspaceCheck = (data, faction='', shipCheck=false) ->
+    # check ship/pilot first
+    if (shipCheck or data.ship?)
+        if (data.name in exportObj.hyperspacePilotExclusions)
+            return false
+        for ship in exportObj.hyperspaceShipInclusions
+            # checks against name for ship itself or ship name/faction for pilot inclusions
+            if (ship.faction == faction && (data.name == ship.name || data.ship == ship.name))
+                return true
+        return false
+    else
+        return data.name not in exportObj.hyperspaceUpgradeExclusions

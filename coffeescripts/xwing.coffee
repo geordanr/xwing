@@ -1390,17 +1390,17 @@ class exportObj.SquadBuilder
         else
             getPrimaryFaction(faction) == @faction
 
-    isItemAvailable: (item_data) ->
+    isItemAvailable: (item_data, shipCheck=false) ->
         if (not @isHyperspace)
             return true
         else # hyperspace
-            return exportObj.hyperspaceCheck(item_data, @faction)
+            return exportObj.hyperspaceCheck(item_data, @faction, shipCheck)
 
     getAvailableShipsMatching: (term='',sorted = true) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
-                if (@isItemAvailable(ship_data))
+                if (@isItemAvailable(ship_data, true))
                     if not ship_data.huge or @isCustom
                         if ship_data.display_name
                             ships.push
