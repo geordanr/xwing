@@ -1271,7 +1271,7 @@ exportObj.basicCardData = ->
         "Scavenged YT-1300":
             name: "Scavenged YT-1300"
             canonical_name: 'Scavenged YT-1300'.canonicalize()
-            xws: "Scavenged YT-1300 Light Freighter".canonicalize()
+            xws: "Scavenged YT-1300".canonicalize()
             factions: [ "Resistance" ]
             attackdt: 3
             agility: 1
