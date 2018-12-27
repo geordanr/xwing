@@ -104,10 +104,8 @@ exportObj.translations['Español'] =
         '.collection-invalid .translated': 'No puedes desplegar esta lista con tu colección!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Ampliada'
+        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
         '.game-type-selector option[value="custom"]': 'Personalizada'
-        '.game-type-selector option[value="Second Edition"]': 'Segunda Edición'
-        '.game-type-selector option[value="epic"]': 'Épico'
-        '.game-type-selector option[value="team-epic"]': 'Épico por Equipos'
         # Card browser
         '.select2-choice' : '<span>Tipo (por Nombre)</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a>'  # default-option
         '.xwing-card-browser option[value="name"]': 'Nombre'

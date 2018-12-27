@@ -98,9 +98,8 @@ exportObj.translations.Magyar =
         '.collection-invalid .translated': 'Ez a lista nem vihető pályára a készletedből!'
         # Type selector
         '.game-type-selector option[value="standard"]': 'Kiterjesztett'
+        '.game-type-selector option[value="hyperspace"]': 'Hyperspace'
         '.game-type-selector option[value="custom"]': 'Egyéni'
-        '.game-type-selector option[value="epic"]': 'Epikus'
-        '.game-type-selector option[value="team-epic"]': 'Csapat epikus'
         # Card browser
         '.xwing-card-browser option[value="name"]': 'Név'
         '.xwing-card-browser option[value="source"]': 'Forrás'
