@@ -112,7 +112,6 @@ class exportObj.SquadBuilder
             ships_or_upgrades: 3
         @total_points = 0
         @isCustom = false
-        @isSecondEdition = false
         @isHyperspace = false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
@@ -205,7 +204,6 @@ class exportObj.SquadBuilder
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
-                        <option value="second_edition">Second Edition</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -1088,37 +1086,26 @@ class exportObj.SquadBuilder
             @container.trigger 'xwing-backend:squadDirtinessChanged'
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
-        oldSecondEdition = @isSecondEdition
         oldHyperspace = @isHyperspace
         switch gametype
             when 'standard'
-                @isSecondEdition = false
                 @isHyperspace = false
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'hyperspace'
-                @isSecondEdition = false
                 @isHyperspace = true
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-            when 'second_edition'
-                @isSecondEdition = true
-                @isHyperspace = false
-                @isCustom = false
-                @desired_points_input.val 200
-                @maxSmallShipsOfOneType = null
-                @maxLargeShipsOfOneType = null
             when 'custom'
-                @isSecondEdition = false
                 @isHyperspace = false
                 @isCustom = true
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-        if (oldSecondEdition != @isSecondEdition || oldHyperspace != @isHyperspace)
+        if (oldHyperspace != @isHyperspace)
             @newSquadFromScratch()
         @onPointsUpdated cb
 
@@ -1266,8 +1253,6 @@ class exportObj.SquadBuilder
                 's'
             when 'hyperspace'
                 'h'
-            when 'second_edition'
-                'se'
             when 'custom'
                 "c=#{$.trim @desired_points_input.val()}"
         """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
@@ -1295,9 +1280,6 @@ class exportObj.SquadBuilder
                             @game_type_selector.change()
                         when 'h'
                             @game_type_selector.val 'hyperspace'
-                            @game_type_selector.change()
-                        when 'se'
-                            @game_type_selector.val 'second_edition'
                             @game_type_selector.change()
                         else
                             @game_type_selector.val 'custom'
@@ -1408,19 +1390,17 @@ class exportObj.SquadBuilder
         else
             getPrimaryFaction(faction) == @faction
 
-    isItemAvailable: (item_data) ->
-        if (not @isSecondEdition and not @isHyperspace)
+    isItemAvailable: (item_data, shipCheck=false) ->
+        if (not @isHyperspace)
             return true
-        else if (@isSecondEdition)
-            return exportObj.secondEditionCheck(item_data, @faction)
         else # hyperspace
-            return exportObj.hyperspaceCheck(item_data, @faction)
+            return exportObj.hyperspaceCheck(item_data, @faction, shipCheck)
 
     getAvailableShipsMatching: (term='',sorted = true) ->
         ships = []
         for ship_name, ship_data of exportObj.ships
             if @isOurFaction(ship_data.factions) and (@matcher(ship_data.name, term) or (ship_data.display_name and @matcher(ship_data.display_name, term)))
-                if (@isItemAvailable(ship_data))
+                if (@isItemAvailable(ship_data, true))
                     if not ship_data.huge or @isCustom
                         if ship_data.display_name
                             ships.push
