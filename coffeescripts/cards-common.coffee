@@ -8539,6 +8539,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE Striker', faction: 'Galactic Empire'},
     {name: 'Firespray-31', faction: 'Scum and Villainy'},
     {name: 'Escape Craft', faction: 'Scum and Villainy'},
+    {name: 'Mining Guild TIE Fighter', faction: 'Scum and Villainy'},
     {name: 'Fang Fighter', faction: 'Scum and Villainy'},
     {name: 'Customized YT-1300', faction: 'Scum and Villainy'},
     {name: 'TIE Fighter', faction: 'Scum and Villainy'},
