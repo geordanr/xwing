@@ -169,9 +169,9 @@ class exportObj.CardBrowser
                                     <label class = "advanced-search-label toggle-unique">
                                         <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
                                     </label>
-                                    <label class = "advanced-search-label toggle-second-edition">
-                                        <input type="checkbox" class="second-edition-checkbox advanced-search-checkbox" /> Second-Edition only
-                                        <span class="advanced-search-tooltip" tooltip="Check to exclude cards only obtainable from conversion kits."> &#9432 </span>
+                                    <label class = "advanced-search-label toggle-hyperspace">
+                                        <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" /> Hyperspace only
+                                        <span class="advanced-search-tooltip" tooltip="Check to search only hyperspace compatible cards."> &#9432 </span>
                                     </label>
                                 </div>
                             </div>
@@ -294,7 +294,7 @@ class exportObj.CardBrowser
         @minimum_point_costs = ($ @container.find('.xwing-card-browser .minimum-point-cost'))[0]
         @maximum_point_costs = ($ @container.find('.xwing-card-browser .maximum-point-cost'))[0]
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
-        @second_edition_checkbox = ($ @container.find('.xwing-card-browser .second-edition-checkbox'))[0]
+        @hyperspace_checkbox = ($ @container.find('.xwing-card-browser .hyperspace-checkbox'))[0]
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
         @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
@@ -341,7 +341,7 @@ class exportObj.CardBrowser
         @minimum_point_costs.oninput = => @renderList @sort_selector.val()
         @maximum_point_costs.oninput = => @renderList @sort_selector.val()
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
-        @second_edition_checkbox.onclick = => @renderList @sort_selector.val()
+        @hyperspace_checkbox.onclick = => @renderList @sort_selector.val()
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
         @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
@@ -658,8 +658,8 @@ class exportObj.CardBrowser
         # check if faction matches
         return false unless @faction_selectors[card.data.faction].checked
 
-        # check if second-edition only matches
-        return false unless exportObj.secondEditionCheck(card.data) or not @second_edition_checkbox.checked
+        # check if hyperspace only matches
+        return false unless exportObj.hyperspaceCheck(card.data) or not @hyperspace_checkbox.checked
 
         # check for slot requirements
         required_slots = @slot_available_selection.val()
