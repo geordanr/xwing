@@ -8067,6 +8067,7 @@ exportObj.basicCardData = ->
             name: "Rey"
             id: 187
             slot: "Gunner"
+            xws: "rey-gunner"
             points: 14
             unique: true
             force: 1
@@ -8103,6 +8104,7 @@ exportObj.basicCardData = ->
             name: "C-3PO (Resistance)"
             id: 191
             slot: "Crew"
+            xws: "c3po-crew"
             points: 6
             unique: true
             faction: "Resistance"
