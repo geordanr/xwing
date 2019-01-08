@@ -1654,7 +1654,21 @@ class exportObj.SquadBuilder
                         el not in (data.pilot.ship_override?.actions ? data.data.actions)
                     extra_actions_red = $.grep effective_stats.actionsred, (el, i) ->
                         el not in (data.pilot.ship_override?.actionsred ? data.data.actionsred)
-                    @info_container.find('.info-name').html """#{if data.pilot.unique then "&middot;&nbsp;" else ""}#{if data.pilot.display_name then data.pilot.display_name else data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    
+                    #logic to determine how many dots to use for uniqueness
+                    if data.pilot.unique?
+                        uniquedots = "&middot;&nbsp;"
+                    else if data.pilot.restricted?
+                        count = 0
+                        uniquedots = ""
+                        while (count < data.pilot.restricted)
+                            uniquedots = uniquedots.concat("&middot;")
+                            ++count
+                        uniquedots = uniquedots.concat("&nbsp;")
+                    else
+                        uniquedots = ""
+                            
+                    @info_container.find('.info-name').html """#{uniquedots}#{if data.pilot.display_name then data.pilot.display_name else data.pilot.name} #{if exportObj.isReleased(data.pilot) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
 
                     @info_container.find('p.info-text').html data.pilot.text ? ''
                     @info_container.find('tr.info-ship td.info-data').text data.pilot.ship

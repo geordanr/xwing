@@ -1045,7 +1045,18 @@ exportObj.cardLoaders.English = () ->
            text: """ Before you engage, you may choose 1 enemy ship in your %BULLSEYEARC% at range 1-2 and gain 1 disarm token. If you do, that ship gains 1 tractor token. %LINEBREAK% NOTCHED STABILIZERS: While you move, you ignore asteroids. """
         "Overseer Yushyn":
            text: """ Before a friendly ship at range 1 would gain a disarm token, if that ship is not stressed you may spend 1 %CHARGE%. If you do, that ship gains 1 stress token instead. %LINEBREAK% NOTCHED STABILIZERS: While you move, you ignore asteroids. """
-            
+        "General Grevious":
+           text: """ While you perform a primary attack, if you are not in the defender's firing arc, you may reroll up to 2 attack dice. """
+        "Wat Tambor":
+           text: """ While you perform a primary attack, you may reroll 1 attack die for each calculating friendly ship at range 1 of the defender. """
+        "Captain Sear":
+           text: """ While a friendly ship at range 0-3 performs a primary attack, if the defender is in its %BULLSEYEARC%, before the Neutralize Results step, the friendly ship may spend 1 calculate token to cancel 1 %EVADE% result. """
+        "Precise Hunter":
+           text: """ While you perform an attack, if the defender is in your %BULLSEYEARC%, you may reroll 1 blank result. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result. """
+        "Hadr Chall Prototype":
+           text: """ After an enemy ship in your %BULLSEYEARC% at range 0-2 declares another friendly ship as the defender, you may perform a %CALCULATE% or %LOCK% action. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result. """
+        "DFS-081":
+           text: """ While a friendly ship at range 0-1 defends, it may spend 1 calculate token to change all %CRIT% results to %HIT% results. %LINEBREAK% NETWORKED CALCULATIONS: While you defend or perform an attack, you may spend 1 calculate token from a friendly ship at range 0-1 to change 1 %FOCUS% result to an %EVADE% or %HIT% result. """
             
 
     upgrade_translations =
@@ -1618,7 +1629,10 @@ exportObj.cardLoaders.English = () ->
            text: """ Before you activate or engage, you may spend 1 %CHARGE% to ignore obstacles until the end of this phase. """
         "Pattern Analyzer":
            text: """ While you fully execute a red maneuver, before the Check Difficulty step, you may perform 1 action. """
-        
+        "Impervium Plating":
+           text: """ Before you would be dealt a faceup Ship damage card, you may spend 1 %CHARGE% to discard it instead. """
+        "Grappling Struts":
+           text: """<strong>Closed: </strong> Setup: Equip this side faceup. %LINEBREAK% While you execute a manuever, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card. %LINEBREAK% <b>Open:</b> You ignore obstacles at range 0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2 %STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card."""
             
         
     condition_translations =

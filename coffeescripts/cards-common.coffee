@@ -1412,6 +1412,33 @@ exportObj.basicCardData = ->
               [ 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
+        "Belbullab-22 Starfighter":
+            name: "Belbullab-22 Starfighter"
+            xws: "Belbullab-22 Starfighter".canonicalize()
+            factions: ["Separatist Alliance"]
+            attack: 3
+            agility: 2
+            hull: 3
+            shields: 2
+            actions: [
+                "Focus"
+                "Lock"
+                "Barrel Roll"
+                "R> Focus"
+                "Boost"
+                "R> Focus"
+            ]
+            actionsred: [
+            ]
+            maneuvers: [
+              [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+              [ 1, 1, 0, 1, 1, 3, 0, 0, 0, 0]
+              [ 1, 2, 2, 2, 2, 0, 0, 0, 0, 0]
+              [ 3, 1, 2, 1, 3, 0, 3, 3, 0, 0]
+              [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+              [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+            ]
+        
     # name field is for convenience only
     pilotsById: [
         {
@@ -5898,6 +5925,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
+                "Configuration"
                 "Modification"
             ]
         }
@@ -6316,6 +6344,104 @@ exportObj.basicCardData = ->
             skill: 1
             points: 24
             slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "General Grevious"
+            id: 305
+            faction: "Separatist Alliance"
+            ship: "Belbullab-22 Starfighter"
+            unique: true
+            skill: 4
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Wat Tambor"
+            id: 306
+            faction: "Separatist Alliance"
+            ship: "Belbullab-22 Starfighter"
+            unique: true
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Feethan Ottraw Autopilot"
+            id: 307
+            faction: "Separatist Alliance"
+            ship: "Belbullab-22 Starfighter"
+            skill: 1
+            points: 100
+            slots: [
+                "Modification"
+            ]
+            ship_override:
+                actions: [
+                    "Calculate"
+                    "Lock"
+                    "Barrel Roll"
+                    "R> Calculate"
+                    "Boost"
+                    "R> Calculate"
+                ]
+        }
+        {
+            name: "Captain Sear"
+            id: 308
+            faction: "Separatist Alliance"
+            ship: "Belbullab-22 Starfighter"
+            unique: true
+            skill: 2
+            points: 100
+            slots: [
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Precise Hunter"
+            id: 309
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 3
+            points: 100
+            restricted: 3
+            slots: [
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Hadr Chall Prototype"
+            id: 310
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 1
+            points: 100
+            restricted: 2
+            slots: [
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "DFS-081"
+            id: 311
+            faction: "Separatist Alliance"
+            ship: "Vulture-class Droid Fighter"
+            skill: 3
+            points: 100
+            unique: true
+            slots: [
+                "Configuration"
                 "Modification"
             ]
         }
@@ -8231,6 +8357,21 @@ exportObj.basicCardData = ->
             id: 206
             slot: "Tech"
             points: 5
+       }
+       {
+            name: "Impervium Plating"
+            id: 207
+            ship: "Belbullab-22 Starfighter"
+            charge: 2
+            slot: "Modification"
+            points: 100
+       }
+       {
+            name: "Grappling Struts"
+            id: 208
+            ship: "Vulture-class Droid Fighter"
+            slot: "Configuration"
+            points: 100
        }
 
 
