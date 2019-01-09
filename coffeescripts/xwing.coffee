@@ -1751,7 +1751,21 @@ class exportObj.SquadBuilder
                         @info_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} and #{pilot_count} pilot card#{if pilot_count > 1 then 's' else ''} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
-                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                        
+                    #logic to determine how many dots to use for uniqueness
+                    if data.unique?
+                        uniquedots = "&middot;&nbsp;"
+                    else if data.restricted?
+                        count = 0
+                        uniquedots = ""
+                        while (count < data.restricted)
+                            uniquedots = uniquedots.concat("&middot;")
+                            ++count
+                        uniquedots = uniquedots.concat("&nbsp;")
+                    else
+                        uniquedots = ""
+                        
+                    @info_container.find('.info-name').html """#{uniquedots}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     ship = exportObj.ships[data.ship]
                     @info_container.find('tr.info-ship td.info-data').text data.ship
@@ -2582,7 +2596,17 @@ class Ship
         @copy_button = $ @row.find('button.copy-pilot')
         @copy_button.click (e) =>
             clone = @builder.ships[@builder.ships.length - 1]
-            clone.copyFrom(this)
+            
+            # Restricted Check
+            if this.pilot.restricted
+                count = 0
+                # for ship in @builder.ships
+                    # shipname = ship.pilot.name
+                if count < this.pilot.restricted
+                    clone.copyFrom(this)
+            else
+                clone.copyFrom(this)
+                
         @copy_button.hide()
 
     teardownUI: ->
