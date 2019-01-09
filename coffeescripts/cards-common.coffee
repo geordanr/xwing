@@ -4255,6 +4255,7 @@ exportObj.basicCardData = ->
             skill: 5
             points: 58
             force: 2
+            darkside: true
             slots: [       
                 "Force"
                 "Sensor"
@@ -4270,6 +4271,7 @@ exportObj.basicCardData = ->
             skill: 4
             points: 48
             force: 2
+            darkside: true
             slots: [       
                 "Force"
                 "Sensor"
@@ -4284,6 +4286,7 @@ exportObj.basicCardData = ->
             skill: 3
             points: 40
             force: 1
+            darkside: true
             slots: [       
                 "Force"
                 "Sensor"
@@ -4310,6 +4313,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced"
             skill: 6
+            darkside: true
             points: 70
             force: 3
             slots: [       
@@ -5254,6 +5258,7 @@ exportObj.basicCardData = ->
             ship: "TIE/VN Silencer"
             skill: 5
             force: 2
+            darkside: true
             points: 82
             applies_condition: '''I'll Show You the Dark Side'''.canonicalize()
             slots: [
@@ -5822,6 +5827,7 @@ exportObj.basicCardData = ->
             ship: "Sith Infiltrator"
             skill: 5
             force: 3
+            darkside: true
             points: 100
             slots: [
                 "Force"
@@ -6904,6 +6910,7 @@ exportObj.basicCardData = ->
            force: 1
            modifier_func: (stats) ->
                 stats.force += 1
+                stats.darkside = true
            restriction_func: (ship) ->
                 builder = ship.builder
                 return true if builder.faction == "Scum and Villainy"
@@ -8343,6 +8350,9 @@ exportObj.basicCardData = ->
             id: 204
             slot: "Force"
             points: 3
+            # waiting to hear from official ruling
+            # restriction_func: (ship) ->
+                # ship.effectiveStats().darkside == true
        }
        {
             name: "R5-X3"
