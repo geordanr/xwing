@@ -1216,9 +1216,9 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
             ]
-        "Upsilon-Class Shuttle":
-            name: "Upsilon-Class Shuttle"
-            xws: "Upsilon-Class Shuttle".canonicalize()
+        "Upsilon-Class Command Shuttle":
+            name: "Upsilon-Class Command Shuttle"
+            xws: "Upsilon-Class Command Shuttle".canonicalize()
             factions: ["First Order"]
             attack: 4
             agility: 1
@@ -5290,7 +5290,7 @@ exportObj.basicCardData = ->
             id: 238
             unique: true
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 2
             points: 60
             slots: [
@@ -5501,7 +5501,7 @@ exportObj.basicCardData = ->
             id: 251
             unique: true
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 4
             points: 63
             slots: [
@@ -5956,7 +5956,7 @@ exportObj.basicCardData = ->
             id: 281
             unique: true
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 1
             points: 60
             charge: 1
@@ -5977,7 +5977,7 @@ exportObj.basicCardData = ->
             id: 282
             unique: true
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 4
             points: 64
             charge: 2
@@ -6073,7 +6073,7 @@ exportObj.basicCardData = ->
             name: "Starkiller Base Pilot"
             id: 288
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 2
             points: 56
             slots: [
@@ -6092,7 +6092,7 @@ exportObj.basicCardData = ->
             id: 289
             unique: true
             faction: "First Order"
-            ship: "Upsilon-Class Shuttle"
+            ship: "Upsilon-Class Command Shuttle"
             skill: 3
             charge: 2
             recurring: true
@@ -8703,7 +8703,7 @@ exportObj.hyperspaceShipInclusions = [
     {name: 'TIE/FO Fighter', faction: 'First Order'},
     {name: 'TIE/VN Silencer', faction: 'First Order'},
     {name: 'TIE/SF Fighter', faction: 'First Order'},
-    {name: 'Upsilon-Class Shuttle', faction: 'First Order'}
+    {name: 'Upsilon-Class Command Shuttle', faction: 'First Order'}
 ]
 
 # Used to exclude pilots from included ships

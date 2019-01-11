@@ -258,7 +258,7 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip """Escape Craft""", """Fluchtschiff"""
     exportObj.renameShip """TIE/FO Fighter""", """TIE/eo-Jäger"""
     exportObj.renameShip """TIE/SF Fighter""", """TIE/sf Jäger"""
-    exportObj.renameShip """Upsilon-Class Shuttle""", """Kommandoshuttle der Ypsilon-Klasse"""
+    exportObj.renameShip """Upsilon-Class Command Shuttle""", """Kommandoshuttle der Ypsilon-Klasse"""
     exportObj.renameShip """TIE/VN Silencer""", """TIE/vn-Dämpfer"""
     exportObj.renameShip """T-70 X-Wing""", """T-70-X-Flügler"""
     exportObj.renameShip """RZ-2 A-Wing""", """RZ-2-A-Flügler"""
