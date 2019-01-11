@@ -4747,7 +4747,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'Upsilon-Class Shuttle'
+            name: 'Upsilon-Class Command Shuttle'
             type: 'ship'
             count: 3
         }
@@ -4849,7 +4849,7 @@ exportObj.manifestByExpansion =
             count: 3
         }
         {
-            name: 'Upsilon-Class Shuttle'
+            name: 'Upsilon-Class Command Shuttle'
             type: 'ship'
             count: 3
         }
