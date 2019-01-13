@@ -543,18 +543,33 @@ class exportObj.CardBrowser
             when 'Ship'
                 # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
                 possible_inis = []
+                slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. -1: undefined
+                for slot of exportObj.upgradesBySlotCanonicalName
+                    slot_types[slot] = -1
                 for name, pilot of exportObj.pilots
-                    console.log(pilot)
                     if pilot.ship != data.name 
                         continue
                     if not (pilot.skill in possible_inis)
                         possible_inis.push(pilot.skill)
-                        console.log(possible_inis)
+                    for slot, state of slot_types
+                        if slot in pilot.slots
+                            switch state
+                                when -1
+                                    slot_types[slot] = 1
+                                when 0
+                                    slot_types[slot] = 2
+                        else 
+                            switch state
+                                when -1
+                                    slot_types[slot] = 0
+                                when 1
+                                    slot_types[slot] = 2
+                                
                 possible_inis.sort()
 
                 @card_viewer_container.find('.info-type').text type
                 if exportObj.builders[0].collection?.counts?
-                    ship_count = @getCollectionNumber(card)
+                    ship_count = @getCollectionNumber({orig_type: 'Ship', name: name})
                     @card_viewer_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
                 else
                     @card_viewer_container.find('.info-collection').text ''
@@ -566,65 +581,56 @@ class exportObj.CardBrowser
                     first = false
                 @card_viewer_container.find('tr.info-skill td.info-data').text inis
                 @card_viewer_container.find('tr.info-skill').show()
-                ###
-                @card_viewer_container.find('tr.info-attack td.info-data').text(data.ship_override?.attack ? ship.attack)
-                @card_viewer_container.find('tr.info-attack-bullseye td.info-data').text(ship.attackbull)
-                @card_viewer_container.find('tr.info-attack-fullfront td.info-data').text(ship.attackf)
-                @card_viewer_container.find('tr.info-attack-back td.info-data').text(ship.attackb)
-                @card_viewer_container.find('tr.info-attack-turret td.info-data').text(ship.attackt)
-                @card_viewer_container.find('tr.info-attack-doubleturret td.info-data').text(ship.attackdt)
+                
+                @card_viewer_container.find('tr.info-attack td.info-data').text(data.attack)
+                @card_viewer_container.find('tr.info-attack-bullseye td.info-data').text(data.attackbull)
+                @card_viewer_container.find('tr.info-attack-fullfront td.info-data').text(data.attackf)
+                @card_viewer_container.find('tr.info-attack-back td.info-data').text(data.attackb)
+                @card_viewer_container.find('tr.info-attack-turret td.info-data').text(data.attackt)
+                @card_viewer_container.find('tr.info-attack-doubleturret td.info-data').text(data.attackdt)
 
-                @card_viewer_container.find('tr.info-attack').toggle(ship.attack?)
-                @card_viewer_container.find('tr.info-attack-bullseye').toggle(ship.attackbull?)
-                @card_viewer_container.find('tr.info-attack-fullfront').toggle(ship.attackf?)
-                @card_viewer_container.find('tr.info-attack-back').toggle(ship.attackb?)
-                @card_viewer_container.find('tr.info-attack-turret').toggle(ship.attackt?)
-                @card_viewer_container.find('tr.info-attack-doubleturret').toggle(ship.attackdt?)
+                @card_viewer_container.find('tr.info-attack').toggle(data.attack?)
+                @card_viewer_container.find('tr.info-attack-bullseye').toggle(data.attackbull?)
+                @card_viewer_container.find('tr.info-attack-fullfront').toggle(data.attackf?)
+                @card_viewer_container.find('tr.info-attack-back').toggle(data.attackb?)
+                @card_viewer_container.find('tr.info-attack-turret').toggle(data.attackt?)
+                @card_viewer_container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
                 
                 
                 
                 for cls in @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
                     @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
-                @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(ship.attack_icon ? 'xwing-miniatures-font-attack')
+                @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.attack_icon ? 'xwing-miniatures-font-attack')
 
-                @card_viewer_container.find('tr.info-energy td.info-data').text(data.ship_override?.energy ? ship.energy)
-                @card_viewer_container.find('tr.info-energy').toggle(data.ship_override?.energy? or ship.energy?)
+                @card_viewer_container.find('tr.info-energy td.info-data').text(data.energy)
+                @card_viewer_container.find('tr.info-energy').toggle(data.energy?)
                 @card_viewer_container.find('tr.info-range').hide()
-                @card_viewer_container.find('tr.info-agility td.info-data').text(data.ship_override?.agility ? ship.agility)
+                @card_viewer_container.find('tr.info-agility td.info-data').text(data.agility)
                 @card_viewer_container.find('tr.info-agility').show()
-                @card_viewer_container.find('tr.info-hull td.info-data').text(data.ship_override?.hull ? ship.hull)
+                @card_viewer_container.find('tr.info-hull td.info-data').text(data.hull)
                 @card_viewer_container.find('tr.info-hull').show()
-                @card_viewer_container.find('tr.info-shields td.info-data').text(data.ship_override?.shields ? ship.shields)
+                @card_viewer_container.find('tr.info-shields td.info-data').text(data.shields)
                 @card_viewer_container.find('tr.info-shields').show()
+                
+                # One may want to check for force sensitive pilots and display the possible values here (like done for ini), but I'll skip this for now. 
+                @card_viewer_container.find('tr.info-force').hide() 
 
-                if data.force?
-                    @card_viewer_container.find('tr.info-force td.info-data').html (data.force + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>') 
-                    @card_viewer_container.find('tr.info-force td.info-header').show()
-                    @card_viewer_container.find('tr.info-force').show()
-                else
-                    @card_viewer_container.find('tr.info-force').hide() 
+                @card_viewer_container.find('tr.info-charge').hide()
 
-                if data.charge?
-                    if data.recurring?
-                        @card_viewer_container.find('tr.info-charge td.info-data').html (data.charge + '<i class="xwing-miniatures-font xwing-miniatures-font-recurring"></i>')
-                    else
-                        @card_viewer_container.find('tr.info-charge td.info-data').text data.charge
-                    @card_viewer_container.find('tr.info-charge').show()
-                else
-                    @card_viewer_container.find('tr.info-charge').hide()
-
-                @card_viewer_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto double replace for linked actions
+                
+                @card_viewer_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in data.actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto quadruple replace for linked actions
                 @card_viewer_container.find('tr.info-actions').show()
 
-                if ships[data.ship].actionsred?
-                    @card_viewer_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', action) for action in exportObj.ships[data.ship].actionsred).join(' ')
+                if data.actionsred?
+                    @card_viewer_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', action) for action in data.actionsred).join(' ')
                     @card_viewer_container.find('tr.info-actions-red').show()
                 else
                     @card_viewer_container.find('tr.info-actions-red').hide()
-
+                
+                # Display all available slots, put brackets aroudn slots that are only available for some pilots
                 @card_viewer_container.find('tr.info-upgrades').show()
-                @card_viewer_container.find('tr.info-upgrades td.info-data').html((exportObj.translate(@language, 'sloticon', slot) for slot in data.slots).join(' ') or 'None')
-                ###
+                @card_viewer_container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')')) for slot, state of slot_types).join(' ') or 'None')
+                
             else
                 @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
