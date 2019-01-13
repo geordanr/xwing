@@ -192,10 +192,12 @@ exportObj.translations.Deutsch =
         'pilots': 'Pilot'
         'modifications': 'Modifikation'
         'titles': 'Titel'
+        'ships' : 'Schiff'
     types:
         'Pilot': 'Pilot'
         'Modification': 'Modifikation'
         'Title': 'Titel'
+        'Ship': 'Schiff'
 
 
 exportObj.cardLoaders ?= {}

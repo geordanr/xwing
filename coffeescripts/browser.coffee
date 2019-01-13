@@ -7,7 +7,7 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades' ]
+TYPES = [ 'pilots', 'upgrades', 'ships' ]
 
 byName = (a, b) ->
     if a.display_name
@@ -372,7 +372,7 @@ class exportObj.CardBrowser
             else
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
-        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot' ])
+        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Ship' ])
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate @language, 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
@@ -390,6 +390,7 @@ class exportObj.CardBrowser
         @cards_by_type_name = {}
         for type in sorted_types
             @cards_by_type_name[type] = ( card for card in @all_cards when card.type == type ).sort byName
+            # TODO: Functionality should not rely on translations. Here the translated type is used. Replace with orig_type and just display translation. Don't use it internally...
 
         @cards_by_type_points = {}
         for type in sorted_types

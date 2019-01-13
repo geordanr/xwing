@@ -173,10 +173,12 @@ exportObj.translations['Français'] =
         'pilots': 'Pilote'
         'modifications': 'Modification'
         'titles': 'Titres'
+        'ships' : 'Ship'
     types:
         'Pilot': 'Pilote'
         'Modification': 'Modification'
         'Title': 'Titre'
+        'Ship':: 'Ship'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Français'] = () ->

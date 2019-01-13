@@ -162,10 +162,12 @@ exportObj.translations.Magyar =
         'pilots': 'Pilóta'
         'modifications': 'Módosítás'
         'titles': 'Nevesítés'
+        'ships' : 'Ship'
     types:
         'Pilot': 'Pilóta'
         'Modification': 'Módosítás'
-        'Title': 'Nevesítés'
+        'Title': 'Nevesíés'
+        'Ship' : 'Ship'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Magyar = () ->

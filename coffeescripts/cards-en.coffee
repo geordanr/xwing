@@ -162,10 +162,12 @@ exportObj.translations.English =
         'pilots': 'Pilot'
         'modifications': 'Modification'
         'titles': 'Title'
+        'ships' : 'Ship'
     types:
         'Pilot': 'Pilot'
         'Modification': 'Modification'
         'Title': 'Title'
+        'Ship': 'Ship'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->
