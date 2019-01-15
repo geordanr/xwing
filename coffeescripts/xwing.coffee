@@ -982,7 +982,9 @@ class exportObj.SquadBuilder
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
-                    @printable_container.find('.printable-body').toggleClass 'skip-text', not @list_modal.find('.toggle-skip-text-print').prop('checked')
+                    if @list_modal.find('.toggle-skip-text-print').prop('checked')
+                        for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
+                            text.hidden = true
                     if not @list_modal.find('.toggle-maneuver-print').prop('checked')
                         for dial in @printable_container.find('.fancy-dial')
                             dial.hidden = true
