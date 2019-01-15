@@ -173,13 +173,6 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.English = () ->
     exportObj.cardLanguage = 'English'
 
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # YASB Names are loaded by default (mostly 1.0 names of ships), so we want to update to official 2nd edition
-    exportObj.ships = basic_cards.ships
-
     exportObj.renameShip """YT-1300""", """Modified YT-1300 Light Freighter"""
     exportObj.renameShip """StarViper""", """StarViper-class Attack Platform"""
     exportObj.renameShip """Scurrg H-6 Bomber""", """Scurrg H-6 Bomber"""
@@ -1663,4 +1656,4 @@ exportObj.cardLoaders.English = () ->
         'Proximity Mine':
            text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.%LINEBREAK%<i>Errata (since rules reference 1.0.2): Add: "1 %HIT% plus"</i>'''
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

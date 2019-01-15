@@ -8450,7 +8450,7 @@ exportObj.basicCardData = ->
 
 
 
-exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations, condition_translations) ->
+exportObj.setupCommonCardData = (basic_cards) ->
     # assert that each ID is the index into BLAHById (should keep this, in general)
     for pilot_data, i in basic_cards.pilotsById
         if pilot_data.id != i
@@ -8570,6 +8570,9 @@ exportObj.setupCardData = (basic_cards, pilot_translations, upgrade_translations
 
     exportObj.expansions = Object.keys(exportObj.expansions).sort()
 
+
+    
+exportObj.setupTranslationCardData = (pilot_translations, upgrade_translations, condition_translations) ->
     for upgrade_name, translations of upgrade_translations
         exportObj.fixIcons translations
         for field, translation of translations

@@ -184,13 +184,6 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Français'] = () ->
     exportObj.cardLanguage = 'Français'
 
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # English names are loaded by default, so no update is needed
-    exportObj.ships = basic_cards.ships
-
     exportObj.renameShip """YT-1300""", """Cargo Léger YT-1300 modifié"""
     exportObj.renameShip """StarViper""", """StarViper"""
     exportObj.renameShip """Scurrg H-6 Bomber""", """Bombardier Scurrg H-6"""
@@ -1454,4 +1447,4 @@ exportObj.cardLoaders['Français'] = () ->
            display_name: 'Mine de proximité'
            text: '''(Mine) - Après qu'un vaisseau a chevauché ou s'est déplacé à travers cet engin, ce dernier explose. Lorsque cet engin explose, le vaisseau lance 2 dés d'attaque. Puis ce vaisseau subit 1 dégât %HIT% plus 1 dégât %HIT%/%CRIT% pour chaque résultat correspondant obtenu.'''
        
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, 
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, 

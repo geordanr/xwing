@@ -198,14 +198,6 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders['Español'] = () ->
     exportObj.cardLanguage = 'Español'
 
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # English names are loaded by default, so no update is needed
-    exportObj.ships = basic_cards.ships
-
-
     # Rename ships
     exportObj.renameShip """YT-1300""", """Carguero ligero YT-1300 modificado"""
     exportObj.renameShip """StarViper""", """Plataforma de ataque clase Víbora Estelar"""
@@ -1592,4 +1584,4 @@ exportObj.cardLoaders['Español'] = () ->
            display_name: """Mina de proximidad"""
            text: '''(Ficha de Mina) - Después de que una nave se solape con este dispositivo o pase a través de él, este dispositivo se detona.%LINEBREAK%Cuando este dispositivo se detona, la nave que provocó su detonación tira 2 dados de ataque. Esa nave sufre a continuación 1 de daño %HIT% además de 1 de daño %HIT%/%CRIT% por cada resultado equivalente obtenido en la tirada.'''
 
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations, 
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations, 

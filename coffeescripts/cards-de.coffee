@@ -204,14 +204,6 @@ exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Deutsch = () ->
     exportObj.cardLanguage = 'Deutsch'
 
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # English names are loaded by default, so no update is needed
-    exportObj.ships = basic_cards.ships
-
-
     # Rename ships
     exportObj.renameShip """YT-1300""", """Modifizierter leichter YT-1300-Frachter"""
     exportObj.renameShip """StarViper""", """Angriffsplattform der Sternenviper-Klasse"""
@@ -1784,5 +1776,5 @@ exportObj.cardLoaders.Deutsch = () ->
         'Proximity Mine':
            text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.'''
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations,  
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
 
