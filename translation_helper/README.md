@@ -36,6 +36,7 @@ It will create a file named `translation_[LANGUAGE].coffee`, which contains
 translations for pilots and upgrades.
 
 It also creates a `todo.txt`, telling you on which cards it may need some help. 
+
 4. Merge the translation file into the existing translation:
 
    touch empty

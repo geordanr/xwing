@@ -33716,7 +33716,7 @@
                 }
             ],
             "available_upgrades": [],
-            "card_image": null,
+            "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/e3b44142faf0f13e541bf674a6c06dbc.png",
             "card_set_ids": [],
             "card_type_id": 2,
             "cost": "0",
@@ -33724,7 +33724,7 @@
             "ffg_id": "XW_U_192b",
             "force_side": null,
             "id": 486,
-            "image": null,
+            "image": "https://sb-cdn.fantasyflightgames.com/card_art/a8233a67adce770e91e4b6b9025670ed.jpg",
             "initiative": null,
             "is_unique": false,
             "name": "Integrated S-foils (Closed)",
@@ -33754,7 +33754,7 @@
             "ability_text": "Before you activate, you may flip this card.",
             "available_actions": [],
             "available_upgrades": [],
-            "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/e3b44142faf0f13e541bf674a6c06dbc.png",
+            "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/49372b4efb974ff673a1b79441186fd5.png",
             "card_set_ids": [
                 15,
                 18
@@ -33765,7 +33765,7 @@
             "ffg_id": "XW_U_192",
             "force_side": null,
             "id": 487,
-            "image": "https://sb-cdn.fantasyflightgames.com/card_art/a8233a67adce770e91e4b6b9025670ed.jpg",
+            "image": "https://sb-cdn.fantasyflightgames.com/card_art/bf5e7b98158570f9d4fc259b5553f4ca.jpg",
             "initiative": null,
             "is_unique": false,
             "name": "Integrated S-foils (Open)",

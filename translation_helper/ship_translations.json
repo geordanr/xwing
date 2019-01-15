@@ -409,16 +409,6 @@
     "name_pt": "CHANGE ME",
     "name_fr": "TIE Reaper"
   },
-  "45": {
-    "name_yasb": "JumpMaster 5000",
-    "name_de": "JumpMaster 5000",
-    "name_en": "JumpMaster 5000",
-    "name_es": "Saltador Maestro 5000",
-    "name_it": "CHANGE ME",
-    "name_pl": "CHANGE ME",
-    "name_pt": "CHANGE ME",
-    "name_fr": "JumpMaster 5000"
-  },
   "44": {
     "name_yasb": "M3-A Interceptor",
     "name_de": "M3-A-Abfangjäger",
@@ -428,6 +418,16 @@
     "name_pl": "CHANGE ME",
     "name_pt": "CHANGE ME",
     "name_fr": "Intercepteur M3-A"
+  },
+  "45": {
+    "name_yasb": "JumpMaster 5000",
+    "name_de": "JumpMaster 5000",
+    "name_en": "JumpMaster 5000",
+    "name_es": "Saltador Maestro 5000",
+    "name_it": "CHANGE ME",
+    "name_pl": "CHANGE ME",
+    "name_pt": "CHANGE ME",
+    "name_fr": "JumpMaster 5000"
   },
   "47": {
     "name_yasb": "Customized YT-1300",
