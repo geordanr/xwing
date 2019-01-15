@@ -62,7 +62,8 @@ output_text = ""
 
 # create ship translations
 for k, ship in ship_translations.items():
-    output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'], ship['name_' + lang])
+    if ship['name_' + lang] != 'CHANGE ME':
+        output_text += '    exportObj.renameShip """%s""", """%s"""\n' % (ship['name_yasb'], ship['name_' + lang])
 
 output_text += "\n\n    pilot_translations =\n"
 
