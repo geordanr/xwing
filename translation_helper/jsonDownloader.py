@@ -48,6 +48,9 @@ for lang in languages:
         # Sort the cards array by id to make it better comparable
         sorted_cards = sorted(obj["cards"], key=lambda k: k["id"])
         obj = {"cards": sorted_cards}
+
+        for card in obj["cards"]:
+            card["name"] = card["name"].replace("\n","")
         # Save the JSON to an easily readable file.
         json.dump(obj, outfile, sort_keys=True, indent=4, ensure_ascii=False)
         print("Wrote to " + filename + ".")

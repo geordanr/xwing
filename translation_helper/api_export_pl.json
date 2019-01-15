@@ -26385,7 +26385,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_158b.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "•Oprogramowanie L3-37\n",
+            "name": "•Oprogramowanie L3-37",
             "restrictions": [
                 [
                     {
@@ -31297,7 +31297,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/ad058d0b6d46f668f06bf0007207a30a.jpg",
             "initiative": 2,
             "is_unique": false,
-            "name": "Inspektor \nGildii Wydobywczej",
+            "name": "Inspektor Gildii Wydobywczej",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -31368,7 +31368,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/09c955b8008750a30fe398c200431160.jpg",
             "initiative": 1,
             "is_unique": false,
-            "name": "Strażnik \nGildii Wydobywczej",
+            "name": "Strażnik Gildii Wydobywczej",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
