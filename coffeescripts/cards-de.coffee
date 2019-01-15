@@ -246,8 +246,8 @@ exportObj.cardLoaders.Deutsch = () ->
     exportObj.renameShip """TIE Interceptor""", """TIE-Abfangjäger"""
     exportObj.renameShip """Lancer-Class Pursuit Craft""", """Jagdschiff der Lanzen-Klasse"""
     exportObj.renameShip """TIE Reaper""", """TIE-Schnitter"""
-    exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
     exportObj.renameShip """M3-A Interceptor""", """M3-A-Abfangjäger"""
+    exportObj.renameShip """JumpMaster 5000""", """JumpMaster 5000"""
     exportObj.renameShip """Customized YT-1300""", """Modifizierter YT-1300-Frachter"""
     exportObj.renameShip """Escape Craft""", """Fluchtschiff"""
     exportObj.renameShip """TIE/FO Fighter""", """TIE/eo-Jäger"""
@@ -313,8 +313,8 @@ exportObj.cardLoaders.Deutsch = () ->
         "Black Squadron Ace":
            display_name: """Fliegerass der schwarzen Staffel"""
            text: """<i class = flavor_text>In der Schlacht von Yavin begleiteten die Elite­-piloten der schwarzen Staffel mit ihren TIE/ln-Jägern Darth Vader auf seinem vernichtenden Schlag gegen die Rebellion.</i>"""
-        "Black Squadron Ace":
-           display_name: """Fliegerass der schwarzen Staffel"""
+        "Black Squadron Ace (T-70)":
+           display_name: """Fliegerass der schwarzen Staffel (T-70)"""
            text: """<i class = flavor_text>Während des Kalten Krieges führte Poe Damerons schwarze Staffel gewagte Geheimoperationen gegen die Erste Ordnung durch und verstieß dabei gegen Verträge, die vom Senat der Neuen Republik ratifiziert worden waren.</i>%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1&nbsp;%CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
         "Black Squadron Scout":
            display_name: """Aufklärer der schwarzen Staffel"""
@@ -472,12 +472,7 @@ exportObj.cardLoaders.Deutsch = () ->
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Solange ein befreundetes nicht-limitiertes Schiff einen Angriff durchführt, falls der Verteidiger in deinem Feuerwinkel ist, darf der Angreifer 1 Angriffswürfel neu werfen."""
-        "Edrio Two-Tubes":
-           display_name: """Edrio Two Tubes"""
-           text: """Bevor du aktiviert wirst, falls du fokussiert bist, darfst du eine Aktion durchführen."""
-        "Emon Azzameen":
-           display_name: """Emon Azzameen"""
-           text: """Falls du unter Verwendung der [1&nbsp;%STRAIGHT%]-Schablone ein Gerät abwerfen würdest, darfst du stattdessen die [3&nbsp;%TURNLEFT%]-, [3&nbsp;%STRAIGHT%]-&nbsp;oder [3&nbsp;%TURNRIGHT%]-Schablone verwenden."""
+
         "Edon Kappehl":
            display_name: """Edon Kappehl"""
            text: """Nachdem du ein blaues oder weißes Manöver vollständig ausgeführt hast, falls du in dieser Runde noch kein Gerät abgeworfen oder gestartet hast, darfst du 1 Gerät abwerfen."""
@@ -712,9 +707,6 @@ exportObj.cardLoaders.Deutsch = () ->
         "Leevan Tenza":
            display_name: """Leevan Tenza"""
            text: """Nachdem du eine %BARRELROLL%- oder %BOOST%-Aktion durchgeführt hast, darfst du eine rote %EVADE%-Aktion durchführen."""
-        "Lieutenant Blount":
-           display_name: """Lieutenant Blount"""
-           text: """Solange du einen Primärangriff durchführst, falls mindestens 1 anderes befreundetes Schiff in Reichweite 0-1 des Verteidigers ist, darfst du 1 zusätzlichen Angriffswürfel werfen."""
         "Lieutenant Bastian":
            display_name: """Lieutenant Bastian"""
            text: """Nachdem einem Schiff in Reichweite 1-2 eine Schadenskarte zugeteilt worden ist, darfst du jenes Schiff als Ziel erfassen.%LINEBREAK%<strong>Waffenaufhängung:</strong> Du kannst 1&nbsp;%CANNON%-, %TORPEDO%- oder %MISSILE%-Aufwertung ausrüsten."""
@@ -1039,9 +1031,6 @@ exportObj.cardLoaders.Deutsch = () ->
         "Zertik Strom":
            display_name: """Zertik Strom"""
            text: """Während der Endphase darfst du eine Zielerfassung ausgeben, die du auf einem feindlichen Schiff hast, um 1 der Schadenskarten jenes Schiffes offenzulegen.%LINEBREAK%<strong>Verbesserter Zielcomputer:</strong> Solange du einen Primärangriff gegen einen Verteidiger durchführst, den du als Ziel erfasst hast, wirf 1 zusätzlichen Angriffswürfel und ändere 1&nbsp;%HIT%-Ergebnis in ein %CRIT%-Ergebnis."""
-        "Zuckuss":
-           display_name: """Zuckuss"""
-           text: """Solange du einen Primärangriff durchführst, darfst du 1 zusätzlichen Angriffswürfel werfen. Falls du das tust, wirft der Verteidiger 1&nbsp;zusätzlichen Verteidigungswürfel."""
         "Zeta Squadron Pilot":
            display_name: """Pilot der Zeta-Staffel"""
            text: """<i class = flavor_text>Frei von den Hürden der galaktischen Bürokratie kann die Erste Ordnung Technologien, die ursprünglich für den imperialen TIE-Turbojäger entwickelt wurden, in Massen produzieren lassen. Das Ergebnis ist der TIE/eo, dessen Piloten eine deutlich höhere Lebenserwartung genießen als ihre Vorgänger zu Zeiten des Imperiums.</i>"""
@@ -1373,9 +1362,6 @@ exportObj.cardLoaders.Deutsch = () ->
         "Feedback Array":
            display_name: """Rückkopplungsfeld"""
            text: """Bevor du kämpfst, darfst du 1&nbsp;Ionenmarker und 1 Entwaffnet-Marker erhalten. Falls du das tust, erleidet jedes Schiff in Reichweite 0 1&nbsp;%HIT%-Schaden."""
-        "Fifth Brother":
-           display_name: """Fünfter Bruder"""
-           text: """<i>Nur für Imperium</i>%LINEBREAK%Solange du einen Angriff durchführst, darfst du 1&nbsp;%FORCE%&nbsp;ausgeben, um 1&nbsp;deiner %FOCUS%-Ergebnisse in ein %CRIT%-Ergebnis zu ändern."""
         "Ferrosphere Paint":
            display_name: """Ferrosphärenfarbe"""
            text: """<i>Nur für Widerstand</i>%LINEBREAK%Nachdem ein feindliches Schiff dich als Ziel erfasst hat, falls du nicht im %BULLSEYEARC%&nbsp;jenes Schiffes bist, erhält jenes Schiff 1 Stressmarker."""
@@ -1775,4 +1761,3 @@ exportObj.cardLoaders.Deutsch = () ->
            text: '''(Mine Token) - After a ship overlaps or moves through this device, it detonates. When this device detonates, that ship rolls 2 attack dice. That ship then suffers 1 %HIT% plus 1 %HIT%/%CRIT% damage for each matching result.'''
             
     exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations
-
