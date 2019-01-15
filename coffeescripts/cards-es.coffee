@@ -936,46 +936,6 @@ exportObj.cardLoaders['Español'] = () ->
            text: """Mientras te defiendes, los resultados %CRIT% se neutralizan antes que los resultados %HIT%."""
 
 
-
-        "Poe Dameron":
-           text: """After you perform an action, you may spend 1 %CHARGE% to perform a white action, treating it as red. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-        "Lieutenant Bastian":
-           text: """After a ship at range 1-2 is dealt a damage card, you may acquire a lock on that ship. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-        '"Midnight"':
-           text: """While you defend or perform an attack, if you have a lock on the enemy ship, that ship's dice cannot be modified."""
-        '"Longshot"':
-           text: """While you perform a primary attack at attack range 3, roll 1 additional attack die."""
-        '"Muse"':
-           text: """At the start of the Engagement Phase, you may choose a friendly ship at range 0-1. If you do, that ship removes 1 stress token."""
-        "Kylo Ren":
-           text: """ After you defend, you may spend 1 %FORCE% to assign the I'll Show You the Dark Side condition to the attacker. %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
-        '"Blackout"':
-           text: """ ??? %LINEBREAK% AUTOTHRUSTERS: After you perform an action. you may perform a red %BARRELROLL% or a red %BOOST% action."""
-        "Lieutenant Dormitz":
-           text: """ ... are placed, other ... be placed anywhere in ... range 0-2 of you. %LINEBREAK% ... : while you perform a %CANNON% ... additional die. """
-        '"Backdraft"':
-           text: """ ... perform a %TURRET% primary ... defender is in your %BACKARC% ... additional dice. %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """
-        '"Quickdraw"':
-           text: """ ??? %LINEBREAK% ... TURRET: You can... indicator only to your ... must treat the %FRONTARC% ... your equipped %MISSILE% ... as %TURRET%. """
-        "Rey":
-           text: """ While you defend or perform an attack, if the enemy ship in your %FRONTARC%, you may spend 1 %FORCE% change 1 of your blank results to an %EVADE% or %HIT% result. """
-        "Han Solo (Resistance)":
-           text: """ ??? """
-        "Chewbacca (Resistance)":
-           text: """ ??? """
-        "Captain Seevor":
-           text: """ While you defend or perform an attack, before the attack dice are rolled, if you are not in the enemy ship's %BULLSEYEARC%, you may spend 1 %CHARGE%. If you do, the enemy ship gains one jam token. """
-        "Mining Guild Surveyor":
-           text: """ """
-        "Ahhav":
-           text: """ ??? """
-        "Finch Dallow":
-           text: """ ... drop a bomb, you ... play area touching ... instead. """
-        "Major Stridan":
-           text: """ While you coordinate or resolve the effect of one of your upgrades, you may treat friendly ships at range 2-3 as being at range 0 or range 1. %LINEBREAK% LINKED BATTERY: While you perform a %CANNON% attack, roll 1 addtional die. """
-        "Nien Nunb":
-           text: """ After you gain a stress token, if there is an enemy ship in your %FRONTARC% at range 0-1, you may remove that stress token. %LINEBREAK% WEAPON HARDPOINT: You can equip 1 %CANNON%, %TORPEDO% or %MISSILE% upgrade."""
-
     upgrade_translations =
         "0-0-0":
            display_name: """0-0-0"""
@@ -1472,83 +1432,6 @@ exportObj.cardLoaders['Español'] = () ->
 
 
 
-
-        "Hardpoint: Cannon":
-           text: """Adds a %CANNON% slot"""
-        "Hardpoint: Missile":
-           text: """Adds a %MISSILE% slot"""
-        "Hardpoint: Torpedo":
-           text: """Adds a %TORPEDO% slot"""
-        "Black One":
-           text: """<i>Adds: %SLAM%</i> %LINEBREAK% After you perform a %SLAM% action, lose 1 %CHARGE%. Then you may gain 1 ion token to remove 1 disarm token. %LINEBREAK% If your charge is inactive, you cannot perform the %SLAM% action."""
-        "Heroic":
-           text: """ While you defend or perform an attack, if you have only blank results and have 2 or more results, you may reroll any number of your dice. """
-        "Rose Tico":
-           text: """ ??? """
-        "Finn":
-           text: """ While you defend or perform a primary attack, if the enemy ship is in your %FRONTARC%, you may add 1 blank result to your roll ... can be rerolled or otherwise ...  """
-        "Integrated S-Foils":
-           text: """<b>Closed:</b> While you perform a primary attack, if the defender is not in your %BULLSEYEARC%, roll 1 fewer attack die. Before you activate, you may flip this card. %LINEBREAK% <i>Adds: %BARRELROLL%, %FOCUS% > <r>%BARRELROLL%</r></i> %LINEBREAK% <b>Open:</b> ???"""
-        "Targeting Synchronizer":
-           text: """<i>Requires: %LOCK%</i> %LINEBREAK% While a friendly ship at range 1-2 performs an attack against a target you have locked, that ship ignores the %LOCK% attack requirement. """
-        "Primed Thrusters":
-           text: """<i>Requires: Small Base</i> %LINEBREAK% While you have 2 or fewer stress tokens, you can perform %BARRELROLL% and %BOOST% actions even while stressed. """
-        "Kylo Ren":
-           text: """ Action: Choose 1 enemy ship at range 1-3. If you do, spend 1 %FORCE% to assign the I'll Show You the Dark Side condition to that ship. """
-        "General Hux":
-           text: """ ... perform a white %COORDINATE% action ... it as red. If you do, you ... up to 2 additional ships ... ship type, and each ship you coordinate must perform the same action, treating that action as red. """
-        "Fanatical":
-           text: """ While you perform a primary attack, if you are not shielded, you may change 1 %FOCUS% result to a %HIT% result. """
-        "Special Forces Gunner":
-           text: """ ... you perform a primary %FRONTARC% attack, ... your %SINGLETURRETARC% is in your %FRONTARC%, you may roll 1 additional attack die. After you perform a primary %FRONTARC% attack, ... your %TURRET% is in your %BACKARC%, you may perform a bonus primary %SINGLETURRETARC% attack. """
-        "Captain Phasma":
-           text: """ ??? """
-        "Supreme Leader Snoke":
-           text: """ ??? """
-        "Hyperspace Tracking Data":
-           text: """ Setup: Before placing forces, you may ... 0 and 6 ... """
-        "Advanced Optics":
-           text: """ While you perform an attack, you may spend 1 focus to change 1 of your blank results to a %HIT% result. """
-        "Rey":
-           text: """ ... defend or ... If the ... in your %SINGLETURRETARC% ... 1 %FORCE% to ... 1 of your blank results to a %EVADE% or %HIT% result. """
-        "Chewbacca (Resistance)":
-           text: """ Setup: Lose 1 %CHARGE%. %LINEBREAK% After a friendly ship at range 0-3 is dealt 1 damage card, recover 1 %CHARGE%. %LINEBREAK% While you perform an attack, you may spend 2 %CHARGE% to change 1 %FOCUS% result to a %CRIT% result."""
-        "Paige Tico":
-           text: """ After you perform a primary attack, you may drop 1 bomb or rotate your %SINGLETURRETARC%. After you are destroyed, you may drop 1 bomb. """
-        "R2-HA":
-           text: """ While you defend, you may spend your lock on the attacker to reroll any number of your defense dice. """
-        "C-3PO (Resistance)":
-           text: """ <i>Adds: %CALCULATE% <r>%COORDINATE%</r></i> %LINEBREAK% While you coordinate, you can choose friendly ships beyond range 2 if they have %CALCULATE% on their action bar. %LINEBREAK% After you perform the %CALCULATE% or %COORDINATE% action, gain 1 calculate token. """
-        "Han Solo (Resistance)":
-           text: """ <i>Adds: <r>%EVADE%</r></i> %LINEBREAK% After you perform an %EVADE% action, gain additional evade tokens equal to the number of enemy ships at range 0-1. """
-        "Rey's Millennium Falcon":
-           text: """ If you have 2 or fewer stress tokens, ou can execute red Segnor's Loop (%SLOOPLEFT% or %SLOOPRIGHT%) maneuvers and perform %BOOST% and %ROTATEARC% actions even while stressed. """
-        "Petty Officer Thanisson":
-           text: """ During the Activation or Engagement Phase, after an enemy ship in your %FRONTARC% at range 0-1 gains a red or orange token, if you are not stressed, you may gain 1 stress token. if you do, that ship gains an additional token of the type that it gained. """
-        "BB-8":
-           text: """ Before you execute a blue maneuver, you may spend 1 %CHARGE% to perform a %BARRELROLL% or %BOOST% action. """
-        "BB Astromech":
-           text: """ Before you execute a blue maneuver, you may spend 1 %CHARGE% to perform a %BARRELROLL% action. """
-        "M9-G8":
-           text: """ While a ship you are locking performs an attack, you may choose 1 attack die. If you do, the attacker rerolls that die. """
-        "Ferrosphere Paint":
-           text: """ After an enemy ship locks you, if you are not in that ship's %BULLSEYEARC%, that ship gains 1 stress token. """
-        "Brilliant Evasion":
-           text: """ While you defend, if you are not in the attacker's %BULLSEYEARC%, you may spend 1 %FORCE% to change 2 of your %FOCUS% results to %EVADE% results. """
-        "Calibrated Laser Targeting":
-           text: """ While you perform a primary attack, if the defender is in your %BULLSEYEARC%, add 1 %FOCUS% result. """
-        "Delta-7B":
-           text: """ <i>Adds: 1 attack, 2 shields %LINEBREAK% Removes: 1 agility</i> """
-        "Biohexacrypt Codes":
-           text: """ While you coordinate or jam, if you have a lock on a ship, you may spend that lock to choose that ship, ignoring range restrictions. """
-        "Predictive Shot":
-           text: """ After you declare an attack, if the defender is in your %BULLSEYEARC%, you may spend 1 %FORCE%. If you do, during the Roll Defense Dice step, the defender cannot roll more defense dice than the number of your %HIT%/%CRIT% results. """
-        "Hate":
-           text: """ After you suffer 1 or more damage, recover that many %FORCE% """
-        "R5-X3":
-           text: """ Before you activate or engage, you may spend 1 %CHARGE% to ignore obstacles until the end of this phase. """
-        "Pattern Analyzer":
-           text: """ While you fully execute a red maneuver, before the Check Difficulty step, you may perform 1 action. """   
            
     condition_translations =
         'Suppressive Fire':
@@ -1563,8 +1446,6 @@ exportObj.cardLoaders['Español'] = () ->
         'Optimized Prototype':
            display_name: """Prototipo optimizado"""
            text: '''Cuando estés efectuando un ataque de armamento principal %FRONTARC% contra una nave que esté fijada como blanco por una nave aliada equipada con la mejora <strong>Director Krennic</strong> puedes gastar 1 resultado %HIT%, %CRIT% o %FOCUS%. Si lo haces, elige entre: el defensor pierde 1 ficha de Escudos, o el defensor le da la vuelta a 1 de sus cartas de Daño que tenga boca abajo.'''
-        '''I'll Show You the Dark Side''':
-           text: ''' ??? '''
         'Proton Bomb':
            display_name: """Bomba de protones"""
            text: '''(Ficha de Bomba) - Al final de la fase de Activación, este dispositivo se detona.%LINEBREAK%Cuando este dispositivo se detona, toda nave que tenga a alcance 0–1 sufre 1 de daño %CRIT%.'''
