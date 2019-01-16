@@ -1745,7 +1745,7 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('tr.info-charge').hide()
 
-                    @info_container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions))).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
+                    @info_container.find('tr.info-actions td.info-data').html ((exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actions ? data.data.actions).concat( ("#{exportObj.translate @language, 'action', action}" for action in extra_actions))).join ', ').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked')
                     
                     if data.data.actionsred?
                         @info_container.find('tr.info-actions-red td.info-data-red').html (exportObj.translate(@language, 'action', a) for a in (data.pilot.ship_override?.actionsred ? data.data.actionsred).concat( ("<strong>#{exportObj.translate @language, 'action', action}</strong>" for action in extra_actions_red))).join ', '       
@@ -2640,6 +2640,8 @@ class Ship
             action_icons.push switch action
                 when 'Focus'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
+                when '*Focus'
+                    """<i class="xwing-miniatures-font xwing-miniatures-font-focus"></i> """
                 when 'Evade'
                     """<i class="xwing-miniatures-font xwing-miniatures-font-evade"></i> """
                 when 'Barrel Roll'
@@ -2668,14 +2670,14 @@ class Ship
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-lock"></i>&nbsp;"""
                 when "R> Barrel Roll"
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-barrelroll"></i>&nbsp;"""
+                when "R> Boost"
+                    """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-boost"></i>&nbsp;"""
                 when "R> Focus"
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-focus"></i>&nbsp;"""
                 when "> Rotate Arc"
                     """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack xwing-miniatures-font-rotatearc"></i>&nbsp;"""
                 when "R> Rotate Arc"
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i>&nbsp;"""
-                when "> Rotate Arc"
-                    """<i class="xwing-miniatures-font xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-rotatearc"></i>&nbsp;"""
                 when "R> Evade"
                     """<i class="xwing-miniatures-font red xwing-miniatures-font-linked"></i> <i class="xwing-miniatures-font info-attack red xwing-miniatures-font-evade"></i>&nbsp;"""
                 when "R> Calculate"

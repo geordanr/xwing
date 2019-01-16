@@ -7725,6 +7725,10 @@ exportObj.basicCardData = ->
            points: 0
            slot: "Configuration"
            ship: "X-Wing"
+           modifier_func: (stats) ->
+                stats.actions.push 'Boost'
+                stats.actions.push '*Focus'
+                stats.actions.push 'R> Boost'
        }
        {
            name: "Blank"
@@ -8102,6 +8106,10 @@ exportObj.basicCardData = ->
             points: 0
             faction: "Resistance"
             ship: "T-70 X-Wing"
+            modifier_func: (stats) ->
+                stats.actions.push 'Barrel Roll'
+                stats.actions.push '*Focus'
+                stats.actions.push 'R> Barrel Roll'
        }
        {
             name: "Integrated S-Foils (Open)"
