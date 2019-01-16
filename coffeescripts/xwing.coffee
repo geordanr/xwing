@@ -306,6 +306,9 @@ class exportObj.SquadBuilder
                 <label class="color-print-checkbox hidden-phone">
                     Print color <input type="checkbox" class="toggle-color-print" checked="checked" />
                 </label>
+                <label class="color-skip-text-checkbox hidden-phone">
+                    Skip texts <input type="checkbox" class="toggle-skip-text-print" />
+                </label>
                 <label class="qrcode-checkbox hidden-phone">
                     Include QR codes <input type="checkbox" class="toggle-juggler-qrcode" checked="checked" />
                 </label>
@@ -979,6 +982,9 @@ class exportObj.SquadBuilder
                         @printable_container.find('.printable-body').append ship.toHTML() if ship.pilot?
                     @printable_container.find('.fancy-ship').toggleClass 'tall', @list_modal.find('.toggle-vertical-space').prop('checked')
                     @printable_container.find('.printable-body').toggleClass 'bw', not @list_modal.find('.toggle-color-print').prop('checked')
+                    if @list_modal.find('.toggle-skip-text-print').prop('checked')
+                        for text in @printable_container.find('.upgrade-text, .fancy-pilot-text')
+                            text.hidden = true
                     if not @list_modal.find('.toggle-maneuver-print').prop('checked')
                         for dial in @printable_container.find('.fancy-dial')
                             dial.hidden = true

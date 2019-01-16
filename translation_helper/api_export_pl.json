@@ -22728,7 +22728,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Gdy masz otrzymać 1 żeton jonizacji albo zakłócania, jeżeli nie posiadasz żetonu stresu, możesz wskazać inny statek w zasięgu 0–1 i otrzymać żeton stresu. Jeżeli tak zrobisz, wskazany statek otrzymuje ten żeton jonizacji albo zakłócania.",
+            "ability_text": "Zanim rzucisz kośćmi obrony, możesz wydać 1 żeton obliczeń, aby zadeklarować na głos liczbę większą od 0. Jeżeli tak zrobisz i rzucisz dokładnie tyle wyników <evade>, dodaj 1 wynik <evade>.<return>Gdy wykonasz akcję <calculate>, otrzymujesz 1 żeton obliczeń.",
             "available_actions": [
                 {
                     "base_action_id": 9,
@@ -26385,7 +26385,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/Card_art_XW_U_158b.jpg",
             "initiative": null,
             "is_unique": true,
-            "name": "•Oprogramowanie L3-37\n",
+            "name": "•Oprogramowanie L3-37",
             "restrictions": [
                 [
                     {
@@ -31297,7 +31297,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/ad058d0b6d46f668f06bf0007207a30a.jpg",
             "initiative": 2,
             "is_unique": false,
-            "name": "Inspektor \nGildii Wydobywczej",
+            "name": "Inspektor Gildii Wydobywczej",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -31368,7 +31368,7 @@
             "image": "https://sb-cdn.fantasyflightgames.com/card_art/09c955b8008750a30fe398c200431160.jpg",
             "initiative": 1,
             "is_unique": false,
-            "name": "Strażnik \nGildii Wydobywczej",
+            "name": "Strażnik Gildii Wydobywczej",
             "restrictions": [],
             "ship_ability_text": null,
             "ship_size": 1,
@@ -33193,7 +33193,7 @@
             "weapon_range": null
         },
         {
-            "ability_text": "Gdy wykonasz akcję <evade>,otrzymujesz tyle dodatkowych żetonów uników, ile wrogich statków znajduje się w zasięgu 0–1.",
+            "ability_text": "Gdy się bronisz albo wykonujesz atak, możesz wydać 1 z twoich wyników, aby namierzyć wrogi statek, z którym prowadzisz starcie.",
             "available_actions": [],
             "available_upgrades": [],
             "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/pl/77f4259d8a04822ded98b6581d1a9b5e.png",
@@ -33716,7 +33716,7 @@
                 }
             ],
             "available_upgrades": [],
-            "card_image": null,
+            "card_image": "https://sb-cdn.fantasyflightgames.com/card_images/en/e3b44142faf0f13e541bf674a6c06dbc.png",
             "card_set_ids": [],
             "card_type_id": 2,
             "cost": "0",
@@ -33724,7 +33724,7 @@
             "ffg_id": "XW_U_192b",
             "force_side": null,
             "id": 486,
-            "image": null,
+            "image": "https://sb-cdn.fantasyflightgames.com/card_art/a8233a67adce770e91e4b6b9025670ed.jpg",
             "initiative": null,
             "is_unique": false,
             "name": "Zintegrowane stabilizatory (zamknięte)",
@@ -33765,7 +33765,7 @@
             "ffg_id": "XW_U_192",
             "force_side": null,
             "id": 487,
-            "image": "https://sb-cdn.fantasyflightgames.com/card_art/a8233a67adce770e91e4b6b9025670ed.jpg",
+            "image": "https://sb-cdn.fantasyflightgames.com/card_art/bf5e7b98158570f9d4fc259b5553f4ca.jpg",
             "initiative": null,
             "is_unique": false,
             "name": "Zintegrowane stabilizatory (otwarte)",

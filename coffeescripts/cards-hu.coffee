@@ -162,21 +162,16 @@ exportObj.translations.Magyar =
         'pilots': 'Pilóta'
         'modifications': 'Módosítás'
         'titles': 'Nevesítés'
+        'ships' : 'Ship'
     types:
         'Pilot': 'Pilóta'
         'Modification': 'Módosítás'
-        'Title': 'Nevesítés'
+        'Title': 'Nevesíés'
+        'Ship' : 'Ship'
 
 exportObj.cardLoaders ?= {}
 exportObj.cardLoaders.Magyar = () ->
     exportObj.cardLanguage = 'Magyar'
-
-    # Assumes cards-common has been loaded
-    basic_cards = exportObj.basicCardData()
-    exportObj.canonicalizeShipNames basic_cards
-
-    # YASB Names are loaded by default (mostly 1.0 names of ships), so we want to update to official 2nd edition
-    exportObj.ships = basic_cards.ships
 
     exportObj.renameShip """YT-1300""", """Modified YT-1300 Light Freighter"""
     exportObj.renameShip """StarViper""", """StarViper-class Attack Platform"""
@@ -1646,4 +1641,4 @@ exportObj.cardLoaders.Magyar = () ->
         'Proximity Mine':
            text: '''(Akna jelző) - Miután egy hajó átmozog vagy átfedésbe kerül ezzel az eszközzel, az felrobban. Amikor ez az eszköz felrobban, a hajó dob 2 támadókockával, aztán elszenved 1&nbsp;%HIT%, valamint a dobott eremény szerint 1-1 %HIT%/%CRIT% sérülést.'''
             
-    exportObj.setupCardData basic_cards, pilot_translations, upgrade_translations, condition_translations
+    exportObj.setupTranslationCardData pilot_translations, upgrade_translations, condition_translations

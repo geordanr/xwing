@@ -7,7 +7,7 @@ exportObj = exports ? this
 
 # Assumes cards.js has been loaded
 
-TYPES = [ 'pilots', 'upgrades' ]
+TYPES = [ 'pilots', 'upgrades', 'ships' ]
 
 byName = (a, b) ->
     if a.display_name
@@ -372,7 +372,7 @@ class exportObj.CardBrowser
             else
                 @all_cards = @all_cards.concat ( { name: card_data.name, display_name: card_data.display_name, type: exportObj.translate(@language, 'singular', type), data: card_data, orig_type: exportObj.translate('English', 'singular', type) } for card_name, card_data of exportObj[type] )
 
-        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot' ])
+        @types = (exportObj.translate(@language, 'types', type) for type in [ 'Pilot', 'Ship' ])
         for card_name, card_data of exportObj.upgrades
             upgrade_text = exportObj.translate @language, 'ui', 'upgradeHeader', card_data.slot
             @types.push upgrade_text if upgrade_text not in @types
@@ -390,6 +390,7 @@ class exportObj.CardBrowser
         @cards_by_type_name = {}
         for type in sorted_types
             @cards_by_type_name[type] = ( card for card in @all_cards when card.type == type ).sort byName
+            # TODO: Functionality should not rely on translations. Here the translated type is used. Replace with orig_type and just display translation. Don't use it internally...
 
         @cards_by_type_points = {}
         for type in sorted_types
@@ -538,6 +539,98 @@ class exportObj.CardBrowser
 
                 @card_viewer_container.find('tr.info-upgrades').show()
                 @card_viewer_container.find('tr.info-upgrades td.info-data').html((exportObj.translate(@language, 'sloticon', slot) for slot in data.slots).join(' ') or 'None')
+
+            when 'Ship'
+                # we get all pilots for the ship, to display stuff like available slots which are treated as pilot properties, not ship properties (which makes sense, as they depend on the pilot, e.g. talent or force slots)
+                possible_inis = []
+                slot_types = {} # one number per slot: 0: not available for that ship. 1: always available for that ship. 2: available for some pilots on that ship. -1: undefined
+                for slot of exportObj.upgradesBySlotCanonicalName
+                    slot_types[slot] = -1
+                for name, pilot of exportObj.pilots
+                    if pilot.ship != data.name 
+                        continue
+                    if not (pilot.skill in possible_inis)
+                        possible_inis.push(pilot.skill)
+                    for slot, state of slot_types
+                        if slot in pilot.slots
+                            switch state
+                                when -1
+                                    slot_types[slot] = 1
+                                when 0
+                                    slot_types[slot] = 2
+                        else 
+                            switch state
+                                when -1
+                                    slot_types[slot] = 0
+                                when 1
+                                    slot_types[slot] = 2
+                                
+                possible_inis.sort()
+
+                @card_viewer_container.find('.info-type').text type
+                if exportObj.builders[0].collection?.counts?
+                    ship_count = @getCollectionNumber({orig_type: 'Ship', name: name})
+                    @card_viewer_container.find('.info-collection').text """You have #{ship_count} ship model#{if ship_count > 1 then 's' else ''} in your collection."""
+                else
+                    @card_viewer_container.find('.info-collection').text ''
+                first = true
+                inis = String(possible_inis[0])
+                for ini in possible_inis
+                    if not first
+                        inis += ", " + ini
+                    first = false
+                @card_viewer_container.find('tr.info-skill td.info-data').text inis
+                @card_viewer_container.find('tr.info-skill').show()
+                
+                @card_viewer_container.find('tr.info-attack td.info-data').text(data.attack)
+                @card_viewer_container.find('tr.info-attack-bullseye td.info-data').text(data.attackbull)
+                @card_viewer_container.find('tr.info-attack-fullfront td.info-data').text(data.attackf)
+                @card_viewer_container.find('tr.info-attack-back td.info-data').text(data.attackb)
+                @card_viewer_container.find('tr.info-attack-turret td.info-data').text(data.attackt)
+                @card_viewer_container.find('tr.info-attack-doubleturret td.info-data').text(data.attackdt)
+
+                @card_viewer_container.find('tr.info-attack').toggle(data.attack?)
+                @card_viewer_container.find('tr.info-attack-bullseye').toggle(data.attackbull?)
+                @card_viewer_container.find('tr.info-attack-fullfront').toggle(data.attackf?)
+                @card_viewer_container.find('tr.info-attack-back').toggle(data.attackb?)
+                @card_viewer_container.find('tr.info-attack-turret').toggle(data.attackt?)
+                @card_viewer_container.find('tr.info-attack-doubleturret').toggle(data.attackdt?)
+                
+                
+                
+                for cls in @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font')[0].classList
+                    @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').removeClass(cls) if cls.startsWith('xwing-miniatures-font-attack')
+                @card_viewer_container.find('tr.info-attack td.info-header i.xwing-miniatures-font').addClass(data.attack_icon ? 'xwing-miniatures-font-attack')
+
+                @card_viewer_container.find('tr.info-energy td.info-data').text(data.energy)
+                @card_viewer_container.find('tr.info-energy').toggle(data.energy?)
+                @card_viewer_container.find('tr.info-range').hide()
+                @card_viewer_container.find('tr.info-agility td.info-data').text(data.agility)
+                @card_viewer_container.find('tr.info-agility').show()
+                @card_viewer_container.find('tr.info-hull td.info-data').text(data.hull)
+                @card_viewer_container.find('tr.info-hull').show()
+                @card_viewer_container.find('tr.info-shields td.info-data').text(data.shields)
+                @card_viewer_container.find('tr.info-shields').show()
+                
+                # One may want to check for force sensitive pilots and display the possible values here (like done for ini), but I'll skip this for now. 
+                @card_viewer_container.find('tr.info-force').hide() 
+
+                @card_viewer_container.find('tr.info-charge').hide()
+
+                
+                @card_viewer_container.find('tr.info-actions td.info-data').html (((exportObj.translate(@language, 'action', action) for action in data.actions).join(', ')).replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <r><i class="xwing-miniatures-font xwing-miniatures-font-linked">')).replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked red">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked red">').replace(/, <i class="xwing-miniatures-font xwing-miniatures-font-linked">/g,' <i class="xwing-miniatures-font xwing-miniatures-font-linked">') #super ghetto quadruple replace for linked actions
+                @card_viewer_container.find('tr.info-actions').show()
+
+                if data.actionsred?
+                    @card_viewer_container.find('tr.info-actions-red td.info-data').html (exportObj.translate(@language, 'action', action) for action in data.actionsred).join(' ')
+                    @card_viewer_container.find('tr.info-actions-red').show()
+                else
+                    @card_viewer_container.find('tr.info-actions-red').hide()
+                
+                # Display all available slots, put brackets aroudn slots that are only available for some pilots
+                @card_viewer_container.find('tr.info-upgrades').show()
+                @card_viewer_container.find('tr.info-upgrades td.info-data').html(((if state == 1 then exportObj.translate(@language, 'sloticon', slot) else (if state == 2 then '('+exportObj.translate(@language, 'sloticon', slot)+')')) for slot, state of slot_types).join(' ') or 'None')
+                
             else
                 @card_viewer_container.find('.info-type').text type
                 @card_viewer_container.find('.info-type').append " &ndash; #{data.faction} only" if data.faction?
@@ -606,7 +699,7 @@ class exportObj.CardBrowser
 
     addCardTo: (container, card) ->
         option = $ document.createElement('OPTION')
-        option.text "#{if card.display_name then card.display_name else card.name} (#{card.data.points})"
+        option.text "#{if card.display_name then card.display_name else card.name} (#{if card.data.points? then card.data.points else '*'})"
         option.data 'name', card.name
         option.data 'display_name', card.display_name
         option.data 'type', card.type
@@ -656,19 +749,39 @@ class exportObj.CardBrowser
         return true unless @advanced_search_active
 
         # check if faction matches
-        return false unless @faction_selectors[card.data.faction].checked
+        return false unless @faction_selectors[card.data.faction].checked or card.orig_type == 'Ship' # checks if the faction tag of upgrades and pilots matches. ships have a factions list instead
+        if card.orig_type == 'Ship'
+            faction_matches = false
+            for faction in card.data.factions
+                if @faction_selectors[faction].checked
+                    faction_matches = true
+            return false unless faction_matches
+
 
         # check if hyperspace only matches
-        return false unless exportObj.hyperspaceCheck(card.data) or not @hyperspace_checkbox.checked
+        if @hyperspace_checkbox.checked
+            for faction, checkbox of @faction_selectors
+                hyperspace_legal = hyperspace_legal or (checkbox.checked and exportObj.hyperspaceCheck(card.data, faction, card.orig_type == 'Ship' ))
+            return false unless hyperspace_legal
 
         # check for slot requirements
         required_slots = @slot_available_selection.val()
         if required_slots
+            slots = card.data.slots
+            if card.orig_type == 'Ship'
+                slots = []
+                for faction, checkbox of @faction_selectors
+                    if checkbox.checked and faction != 'undefined' # yep. JS is ugly. If I define a[undefined] = b, it will assign: a[undefined] == b and a['undefined'] == b. If I now run a loop over key, content of a, it will give 'undefined' instead of undefined as key...
+                        for name, pilots of exportObj.pilotsByFactionCanonicalName[faction]
+                            for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
+                                if pilot.ship == card.data.name
+                                    slots.push.apply(slots, pilot.slots)
+                                    console.log(slots)
             for slot in required_slots
-               return false unless card.data.slots? and slot in card.data.slots
+               return false unless slots? and slot in slots
 
         # check if point costs matches
-        return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and card.data.points == "*")
+        return false unless (card.data.points >= @minimum_point_costs.value and card.data.points <= @maximum_point_costs.value) or (@variable_point_costs.checked and (card.data.points == "*" or not card.data.points?))
 
         # check if used slot matches
         used_slots = @slot_used_selection.val()
@@ -680,10 +793,10 @@ class exportObj.CardBrowser
                     matches = true
                     break
             return false unless matches
-        
+
         # check for uniqueness
         return false unless not @unique_checkbox.checked or card.data.unique
-
+        
         # check charge stuff
         return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
         return false if card.data.recurring and not @recurring_charge.checked
