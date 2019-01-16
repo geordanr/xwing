@@ -1736,6 +1736,8 @@ exportObj.cardLoaders.English = () ->
            text: """ Before you would be dealt a faceup Ship damage card, you may spend 1 %CHARGE% to discard it instead. """
         "Grappling Struts":
            text: """<strong>Closed: </strong> Setup: Equip this side faceup. %LINEBREAK% While you execute a manuever, if you overlap an asteroid or debris cloud and there are 1 or fewer other friendly ships at range 0 of that obstacle, you may flip this card. %LINEBREAK% <b>Open:</b> You ignore obstacles at range 0 and while you move through them. After you reveal your dial, if you reveal a maneuver other than a [2 %STRAIGHT%] and are at range 0 of an asteroid or debris cloud, skip your Execute Maneuver step and remove 1 stress token; if you revealed a right or left maneuver, rotate your ship 90º in that direction. After you execute a maneuver, flip this card."""
+        "Energy-Shell Charges":
+           text: """ <strong>Attack (%CALCULATE%):</strong> Spend 1 %CHARGE%. While you perform this attack, you may spend 1 calculate token to change 1 %FOCUS% result to a %CRIT% result. %LINEBREAK% <strong>Action:</strong> Reload this card."""
             
         
     condition_translations =

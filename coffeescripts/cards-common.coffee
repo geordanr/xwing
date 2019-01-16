@@ -5931,6 +5931,7 @@ exportObj.basicCardData = ->
             skill: 1
             points: 100
             slots: [
+                "Missile"
                 "Configuration"
                 "Modification"
             ]
@@ -6421,6 +6422,7 @@ exportObj.basicCardData = ->
             points: 100
             restricted: 3
             slots: [
+                "Missile"
                 "Configuration"
                 "Modification"
             ]
@@ -6434,6 +6436,7 @@ exportObj.basicCardData = ->
             points: 100
             restricted: 2
             slots: [
+                "Missile"
                 "Configuration"
                 "Modification"
             ]
@@ -6447,6 +6450,7 @@ exportObj.basicCardData = ->
             points: 100
             unique: true
             slots: [
+                "Missile"
                 "Configuration"
                 "Modification"
             ]
@@ -8382,6 +8386,19 @@ exportObj.basicCardData = ->
             ship: "Vulture-class Droid Fighter"
             slot: "Configuration"
             points: 100
+       }
+       {
+            name: "Energy-Shell Charges"
+            id: 209
+            faction: "Separatist Alliance"
+            slot: "Missile"
+            attack: 3
+            range: """2-3"""
+            rangebonus: true 
+            charge: 1
+            points: 100
+            restriction_func: (ship) ->
+                "Calculate" in ship.effectiveStats().actions or "Calculate" in ship.effectiveStats().actionsred
        }
 
 
