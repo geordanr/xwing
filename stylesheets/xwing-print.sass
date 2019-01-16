@@ -15,7 +15,7 @@ $upgrade-circle-border-width: 0.0625in
 
 body
   -webkit-print-color-adjust: exact
-  color-adjust: exact
+  color-adjust: exact !important
   background-color: transparent !important
   zoom: 75%
 
@@ -104,7 +104,7 @@ body
     position: relative
 
   .fancy-header
-    border: $fancy-header-height solid black
+    border: $fancy-header-height solid #4e4e4e
     color: white
     border-left-color: transparent
     border-top-color: transparent
@@ -112,6 +112,7 @@ body
     font-family: EurostileStandard, Impact, sans-serif
 
     .squad-name
+      color: white
       position: absolute
       font-size: $fancy-header-height * 0.8
       margin-top: $fancy-header-height * 0.25
