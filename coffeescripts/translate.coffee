@@ -32,9 +32,12 @@ exportObj.translate = (language, category, what, args...) ->
     try
         translation = exportObj.translations[language][category][what]
     catch all
-        console.log(category)
-        console.log(what)
-        throw all
+        # Most likely some translation did not exist. If we are already in default language, that's bad. 
+        # Otherwise we just continue and try to get the english translation in belows else block.
+        if not all instanceof TypeError or language == DFL_LANGUAGE
+            console.log(category)
+            console.log(what)
+            throw all
     if translation?
         if translation instanceof Function
             # pass this function in case we need to do further translation inside the function
