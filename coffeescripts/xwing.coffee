@@ -3100,15 +3100,17 @@ class Ship
                 # we go ahead and happily remove ourself. Of course, when calling a method like validate on an object, you have to expect that it will dissappears, right?
                 @builder.removeShip this 
                 return false # no need to check anything further, as we do not exist anymore 
-
+            # everything is limited in X-Wing 2.0, so we need to check if any upgrade is equipped more than once
+            equipped_upgrades = []
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
-                if func? and not func(this, upgrade)
+                if (func? and not func(this, upgrade)) or upgrade in equipped_upgrades
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
                     unchanged = false
                     break
+                equipped_upgrades.push(upgrade)
 
             break if valid
         @updateSelections()
