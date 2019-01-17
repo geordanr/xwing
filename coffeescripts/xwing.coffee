@@ -3104,13 +3104,14 @@ class Ship
             equipped_upgrades = []
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
-                if (func? and not func(this, upgrade)) or upgrade in equipped_upgrades
+                if (func? and not func(this, upgrade)) or (upgrade?.data? and upgrade.data in equipped_upgrades)
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
                     unchanged = false
                     break
-                equipped_upgrades.push(upgrade)
+                if upgrade?.data? and upgrade.data
+                    equipped_upgrades.push(upgrade?.data)
 
             break if valid
         @updateSelections()
