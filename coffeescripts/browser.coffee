@@ -2,6 +2,8 @@
     X-Wing Card Browser
     Geordan Rosario <geordan@gmail.com>
     https://github.com/geordanr/xwing
+    Advanced search by Patrick Mischke
+    https://github.com/patschke
 ###
 exportObj = exports ? this
 
@@ -130,7 +132,7 @@ class exportObj.CardBrowser
                                     <label class = "advanced-search-label select-available-slots">
                                         <strong>Available slots: </strong>
                                         <select class="advanced-search-selection slot-available-selection" multiple="1" data-placeholder="No slots selected"></select>
-                                        <span class="advanced-search-tooltip" tooltip="Search for pilots having all selected slots available."> &#9432 </span>
+                                        <span class="advanced-search-tooltip" tooltip="Search for pilots and ships having all selected slots available."> &#9432 </span>
                                     </label>
                                 </div>
                                 <div class = "advanced-search-slot-used-container">
@@ -168,6 +170,9 @@ class exportObj.CardBrowser
                                     <strong>Misc:</strong>
                                     <label class = "advanced-search-label toggle-unique">
                                         <input type="checkbox" class="unique-checkbox advanced-search-checkbox" /> Is unique
+                                    </label>
+                                    <label class = "advanced-search-label toggle-non-unique">
+                                        <input type="checkbox" class="non-unique-checkbox advanced-search-checkbox" /> Is not unique
                                     </label>
                                     <label class = "advanced-search-label toggle-hyperspace">
                                         <input type="checkbox" class="hyperspace-checkbox advanced-search-checkbox" /> Hyperspace only
@@ -296,6 +301,7 @@ class exportObj.CardBrowser
         @variable_point_costs = ($ @container.find('.xwing-card-browser .variable-point-cost-checkbox'))[0]
         @hyperspace_checkbox = ($ @container.find('.xwing-card-browser .hyperspace-checkbox'))[0]
         @unique_checkbox = ($ @container.find('.xwing-card-browser .unique-checkbox'))[0]
+        @non_unique_checkbox = ($ @container.find('.xwing-card-browser .non-unique-checkbox'))[0]
         @slot_available_selection = ($ @container.find('.xwing-card-browser select.slot-available-selection'))
         for slot of exportObj.upgradesBySlotCanonicalName
             opt = $ document.createElement('OPTION')
@@ -343,6 +349,7 @@ class exportObj.CardBrowser
         @variable_point_costs.onclick = => @renderList @sort_selector.val()
         @hyperspace_checkbox.onclick = => @renderList @sort_selector.val()
         @unique_checkbox.onclick = => @renderList @sort_selector.val()
+        @non_unique_checkbox.onclick = => @renderList @sort_selector.val()
         @slot_available_selection[0].onchange = => @renderList @sort_selector.val()
         @slot_used_selection[0].onchange = => @renderList @sort_selector.val()
         @recurring_charge.onclick = => @renderList @sort_selector.val()
@@ -796,6 +803,7 @@ class exportObj.CardBrowser
 
         # check for uniqueness
         return false unless not @unique_checkbox.checked or card.data.unique
+        return false unless not @non_unique_checkbox.checked or not card.data.unique
         
         # check charge stuff
         return false unless (card.data.charge? and card.data.charge <= @maximum_charge.value and card.data.charge >= @minimum_charge.value) or (@minimum_charge.value <= 0 and not card.data.charge?)
