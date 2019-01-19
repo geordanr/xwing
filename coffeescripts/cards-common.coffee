@@ -23,7 +23,7 @@ exportObj.basicCardData = ->
     ships:
         "X-Wing":
             name: "X-Wing"
-            xws: "T-65 X-Wing".canonicalize()
+            xws: "T-65 X-wing".canonicalize()
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 2
@@ -45,7 +45,7 @@ exportObj.basicCardData = ->
             ]
         "Y-Wing":
             name: "Y-Wing"
-            xws: "BTL-A4 Y-Wing".canonicalize()
+            xws: "BTL-A4 Y-wing".canonicalize()
             factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attack: 2
             agility: 1
@@ -68,7 +68,7 @@ exportObj.basicCardData = ->
             ]
         "A-Wing":
             name: "A-Wing"
-            xws: "RZ-1 A-Wing".canonicalize()
+            xws: "RZ-1 A-wing".canonicalize()
             factions: [ "Rebel Alliance" ]
             attack: 2
             agility: 3
@@ -142,7 +142,7 @@ exportObj.basicCardData = ->
             large: true
         "TIE Fighter":
             name: "TIE Fighter"
-            xws: "TIE/LN Fighter".canonicalize()
+            xws: "TIE/ln Fighter".canonicalize()
             factions: ["Rebel Alliance", "Galactic Empire"]
             attack: 2
             agility: 3
@@ -165,7 +165,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced":
             name: "TIE Advanced"
-            xws: "TIE Advanced X1".canonicalize()
+            xws: "TIE Advanced x1".canonicalize()
             factions: [ "Galactic Empire" ]
             attack: 2
             agility: 3
@@ -213,7 +213,7 @@ exportObj.basicCardData = ->
             ]
         "Firespray-31":
             name: "Firespray-31"
-            xws: "Firespray-Class Patrol Craft".canonicalize()
+            xws: "Firespray-class Patrol Craft".canonicalize()
             factions: [ "Scum and Villainy", ]
             attack: 3
             attackb: 3
@@ -238,7 +238,7 @@ exportObj.basicCardData = ->
             ]
         "HWK-290":
             name: "HWK-290"
-            xws: "Hwk-290 Light Freighter".canonicalize()
+            xws: "HWK-290 Light Freighter".canonicalize()
             factions: [ "Rebel Alliance", "Scum and Villainy" ]
             attackt: 2
             agility: 2
@@ -264,7 +264,7 @@ exportObj.basicCardData = ->
             ]
         "Lambda-Class Shuttle":
             name: "Lambda-Class Shuttle"
-            xws: "Lambda-Class T-4a Shuttle".canonicalize()
+            xws: "Lambda-class T-4a Shuttle".canonicalize()
             factions: [ "Galactic Empire", ]
             attack: 3
             attackb: 2
@@ -288,7 +288,7 @@ exportObj.basicCardData = ->
             large: true
         "B-Wing":
             name: "B-Wing"
-            xws: "A/SF-01 B-Wing".canonicalize()
+            xws: "A/SF-01 B-wing".canonicalize()
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 1
@@ -311,7 +311,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Bomber":
             name: "TIE Bomber"
-            xws: "TIE/SA Bomber".canonicalize()
+            xws: "TIE/sa Bomber".canonicalize()
             factions: [ "Galactic Empire", ]
             attack: 2
             agility: 2
@@ -383,7 +383,7 @@ exportObj.basicCardData = ->
             ]
         "E-Wing":
             name: "E-Wing"
-            xws: "E-Wing".canonicalize()
+            xws: "E-wing".canonicalize()
             factions: [ "Rebel Alliance", ]
             attack: 3
             agility: 3
@@ -410,7 +410,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Phantom":
             name: "TIE Phantom"
-            xws: "TIE/PH Phantom".canonicalize()
+            xws: "TIE/ph Phantom".canonicalize()
             factions: [ "Galactic Empire", ]
             attack: 3
             agility: 2
@@ -482,7 +482,7 @@ exportObj.basicCardData = ->
             ]
         "StarViper":
             name: "StarViper"
-            xws: "Starviper-Class Attack Platform".canonicalize()
+            xws: "StarViper-class Attack Platform".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 3
@@ -600,7 +600,7 @@ exportObj.basicCardData = ->
             ]
         "K-Wing":
             name: "K-Wing"
-            xws: "BTL-S8 K-Wing".canonicalize()
+            xws: "BTL-S8 K-wing".canonicalize()
             factions: ["Rebel Alliance"]
             attackdt: 2
             agility: 1
@@ -624,7 +624,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Punisher":
             name: "TIE Punisher"
-            xws: "TIE/CA Punisher".canonicalize()
+            xws: "TIE/ca Punisher".canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 1
@@ -696,7 +696,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Advanced Prototype":
             name: "TIE Advanced Prototype"
-            xws: "TIE Advanced V1".canonicalize()
+            xws: "TIE Advanced v1".canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 3
@@ -771,7 +771,7 @@ exportObj.basicCardData = ->
             ]
         "ARC-170":
             name: "ARC-170"
-            xws: "Arc-170 Starfighter".canonicalize()
+            xws: "ARC-170 Starfighter".canonicalize()
             factions: ["Rebel Alliance","Galactic Republic"]
             attack: 3
             attackb: 2
@@ -796,7 +796,7 @@ exportObj.basicCardData = ->
         "Fang Fighter":
             name: "Fang Fighter"
             canonical_name: 'Protectorate Starfighter'.canonicalize()
-            xws: "Fang fighter".canonicalize()
+            xws: "Fang Fighter".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 3
             agility: 3
@@ -822,7 +822,7 @@ exportObj.basicCardData = ->
             ]
         "Lancer-Class Pursuit Craft":
             name: "Lancer-Class Pursuit Craft"
-            xws: "Lancer-Class Pursuit Craft".canonicalize()
+            xws: "Lancer-class Pursuit Craft".canonicalize()
             factions: ["Scum and Villainy"]
             large: true
             attack: 3
@@ -869,7 +869,7 @@ exportObj.basicCardData = ->
             ]
         "U-Wing":
             name: "U-Wing"
-            xws: "UT-60D U-Wing".canonicalize()
+            xws: "UT-60D U-wing".canonicalize()
             factions: ["Rebel Alliance"]
             medium: true
             attack: 3
@@ -892,7 +892,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Striker":
             name: "TIE Striker"
-            xws: "TIE/SK Striker".canonicalize()
+            xws: "TIE/sk Striker".canonicalize()
             factions: ["Galactic Empire"]
             attack: 3
             agility: 2
@@ -958,7 +958,7 @@ exportObj.basicCardData = ->
             ]
         "TIE Aggressor":
             name: "TIE Aggressor"
-            xws: "TIE/AG Aggressor".canonicalize()
+            xws: "TIE/ag Aggressor".canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 2
@@ -981,7 +981,7 @@ exportObj.basicCardData = ->
             ]
         "Alpha-Class Star Wing":
             name: "Alpha-Class Star Wing"
-            xws: "Alpha-Class Star Wing".canonicalize()
+            xws: "Alpha-class Star Wing".canonicalize()
             factions: ["Galactic Empire"]
             attack: 2
             agility: 2
@@ -1028,7 +1028,7 @@ exportObj.basicCardData = ->
             ]
         "Sheathipede-Class Shuttle":
             name: "Sheathipede-Class Shuttle"
-            xws: "Sheathipede-Class Shuttle".canonicalize()
+            xws: "Sheathipede-class Shuttle".canonicalize()
             factions: ["Rebel Alliance"]
             attack: 2
             attackb: 2
@@ -1094,7 +1094,7 @@ exportObj.basicCardData = ->
             ]
         "T-70 X-Wing":
             name: "T-70 X-Wing"
-            xws: "T-70 X-Wing".canonicalize()
+            xws: "T-70 X-wing".canonicalize()
             factions: [ "Resistance"]
             attack: 3
             agility: 2
@@ -1116,7 +1116,7 @@ exportObj.basicCardData = ->
             ]
         "RZ-2 A-Wing":
             name: "RZ-2 A-Wing"
-            xws: "RZ-2 A-Wing".canonicalize()
+            xws: "RZ-2 A-wing".canonicalize()
             factions: ["Resistance"]
             attackt: 2
             agility: 3
@@ -1141,7 +1141,7 @@ exportObj.basicCardData = ->
             ]
         "TIE/FO Fighter":
             name: "TIE/FO Fighter"
-            xws: "TIE/FO Fighter".canonicalize()
+            xws: "TIE/fo Fighter".canonicalize()
             factions: ["First Order"]
             attack: 2
             agility: 3
@@ -1165,7 +1165,7 @@ exportObj.basicCardData = ->
             ]
         "TIE/VN Silencer":
             name: "TIE/VN Silencer"
-            xws: "TIE/VN Silencer".canonicalize()
+            xws: "TIE/vn Silencer".canonicalize()
             factions: ["First Order"]
             attack: 3
             agility: 3
@@ -1189,7 +1189,7 @@ exportObj.basicCardData = ->
             ]
         "TIE/SF Fighter":
             name: "TIE/SF Fighter"
-            xws: "TIE/SF Fighter".canonicalize()
+            xws: "TIE/sf Fighter".canonicalize()
             factions: ["First Order"]
             attack: 2
             attackt: 2
@@ -1218,7 +1218,7 @@ exportObj.basicCardData = ->
             ]
         "Upsilon-Class Command Shuttle":
             name: "Upsilon-Class Command Shuttle"
-            xws: "Upsilon-Class Command Shuttle".canonicalize()
+            xws: "Upsilon-class command shuttle".canonicalize()
             factions: ["First Order"]
             attack: 4
             agility: 1
@@ -1295,7 +1295,7 @@ exportObj.basicCardData = ->
             large: true
         "Mining Guild TIE Fighter":
             name: "Mining Guild TIE Fighter"
-            xws: "Modified TIE/LN Fighter".canonicalize()
+            xws: "Modified TIE/ln Fighter".canonicalize()
             factions: ["Scum and Villainy"]
             attack: 2
             agility: 3
@@ -1318,7 +1318,7 @@ exportObj.basicCardData = ->
             ]
         "V-19 Torrent":
             name: "V-19 Torrent"
-            xws: "V-19 Torrent".canonicalize()
+            xws: "V-19 Torrent Starfighter".canonicalize()
             factions: ["Galactic Republic"]
             attack: 2
             agility: 2
