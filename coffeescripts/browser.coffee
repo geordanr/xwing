@@ -164,6 +164,7 @@ class exportObj.CardBrowser
                                     </label>
                                     <label class = "advanced-search-label set-maximum-ini">
                                         to <input type="number" class="maximum-ini advanced-search-number-input" value="6" /> 
+                                        <span class="advanced-search-tooltip" tooltip="Changing these values will also hide all upgrades. "> &#9432 </span>
                                     </label>
                                 </div>
                                 <div class = "advanced-search-base-size-container">
