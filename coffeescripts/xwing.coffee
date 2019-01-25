@@ -2236,7 +2236,7 @@ class exportObj.SquadBuilder
                     #            xws: ship_data.xws
                     # console.log "#{pilot.xws}"
                     try
-                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0]
+                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0], true
                     catch err
                         console.error err.message 
                         continue
@@ -2343,7 +2343,7 @@ class Ship
             # Look for cheapest generic or available unique, otherwise do nothing
             available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
             if available_pilots.length > 0
-                @setPilotById available_pilots[0].id
+                @setPilotById available_pilots[0].id, true
                 # Can't just copy upgrades since slots may be different
                 # Similar to setPilot() when ship is the same
 
@@ -2361,7 +2361,7 @@ class Ship
                 return
         else
             # Exact clone, so we can copy things over directly
-            @setPilotById other.pilot.id
+            @setPilotById other.pilot.id, true
 
             # set up non-conferred addons
             other_conferred_addons = []
@@ -2399,13 +2399,13 @@ class Ship
 
         @builder.container.trigger 'xwing:shipUpdated'
 
-    setPilotById: (id) ->
-        @setPilot exportObj.pilotsById[parseInt id]
+    setPilotById: (id, noautoequip = false) ->
+        @setPilot exportObj.pilotsById[parseInt id], noautoequip
 
     setPilotByName: (name) ->
         @setPilot exportObj.pilots[$.trim name]
 
-    setPilot: (new_pilot) ->
+    setPilot: (new_pilot, noautoequip = false) ->
         if new_pilot != @pilot
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
@@ -2426,13 +2426,19 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.show()
                 @setShipType @pilot.ship
+                if (@pilot.autoequip? or (exportObj.ships[@pilot.ship].autoequip? and not same_ship)) and not noautoequip
+                    autoequip = (@pilot.autoequip ? []).concat(exportObj.ships[@pilot.ship].autoequip ? [])
+                    for upgrade_name in autoequip
+                        auto_equip_upgrade = exportObj.upgrades[upgrade_name]
+                        for upgrade in @upgrades
+                            if upgrade.slot == auto_equip_upgrade.slot
+                                upgrade.setData auto_equip_upgrade
                 if same_ship
                     for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
                         for upgrade in @upgrades
                             old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
                             if old_upgrade?
                                 upgrade.setById old_upgrade.data.id
-                    console.log(old_upgrades)
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
@@ -2970,7 +2976,7 @@ class Ship
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEUPGRADE1,TITLEUPGRADE2
                 [ pilot_id, upgrade_ids ] = serialized.split ':'
 
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
 
                 for upgrade_id, i in upgrade_ids.split ','
                     upgrade_id = parseInt upgrade_id
@@ -2979,7 +2985,7 @@ class Ship
             when 2, 3
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
                 [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
 
                 deferred_ids = []
                 for upgrade_id, i in upgrade_ids.split ','
@@ -3011,7 +3017,7 @@ class Ship
                 else 
                     # version 4
                     [ pilot_id, upgrade_ids, version_4_compatibility_placeholder_title, version_4_compatibility_placeholder_mod, conferredaddon_pairs ] = serialized.split ':'
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
                 # make sure the pilot is valid 
                 return false unless @validate
 

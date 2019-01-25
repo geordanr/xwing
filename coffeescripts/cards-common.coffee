@@ -43,6 +43,9 @@ exportObj.basicCardData = ->
               [ 1, 1, 1, 1, 1, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
             ]
+            autoequip: [
+              "Servomotor S-Foils"
+            ]
         "Y-Wing":
             name: "Y-Wing"
             xws: "BTL-A4 Y-Wing".canonicalize()
@@ -890,6 +893,9 @@ exportObj.basicCardData = ->
                 [ 0, 1, 1, 1, 0 ]
                 [ 0, 0, 1, 0, 0 ]
             ]
+            autoequip: [
+              "Pivot Wing"
+            ]
         "TIE Striker":
             name: "TIE Striker"
             xws: "TIE/SK Striker".canonicalize()
@@ -1113,6 +1119,9 @@ exportObj.basicCardData = ->
               [ 1, 2, 2, 2, 1, 0, 0, 0, 0, 0]
               [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
               [ 0, 0, 1, 0, 0, 3, 0, 0, 0, 0]
+            ]
+            autoequip: [
+              "Integrated S-Foils"
             ]
         "RZ-2 A-Wing":
             name: "RZ-2 A-Wing"
@@ -5193,20 +5202,8 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Lieutenant Bastian"
-            id: 232
-            unique: true
-            faction: "Resistance"
-            ship: "T-70 X-Wing"
-            skill: 2
-            points: 1
-            slots: [
-                "Astromech"
-                "Modification"
-                "Configuration"
-                "Tech"
-                "Hardpoint"
-            ]
+            id: 232 # duplicate, has been removed 
+            skip: true
         }
         {
             name: '"Midnight"'
