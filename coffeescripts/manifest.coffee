@@ -3970,7 +3970,7 @@ exportObj.manifestByExpansion =
             name: 'Commander Malarus'
             type: 'pilot'
             count: 1
-        {
+        }
         {
             name: 'TN-3456'
             type: 'pilot'
