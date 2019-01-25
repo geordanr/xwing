@@ -2427,10 +2427,12 @@ class Ship
                 @copy_button.show()
                 @setShipType @pilot.ship
                 if same_ship
-                    for upgrade in @upgrades
-                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
-                        if old_upgrade?
-                            upgrade.setById old_upgrade.data.id
+                    for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
+                        for upgrade in @upgrades
+                            old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                            if old_upgrade?
+                                upgrade.setById old_upgrade.data.id
+                    console.log(old_upgrades)
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
