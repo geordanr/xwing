@@ -3967,6 +3967,16 @@ exportObj.manifestByExpansion =
     ]
     'First Order Conversion Kit': [
         {
+            name: 'Commander Malarus'
+            type: 'pilot'
+            count: 1
+        {
+        {
+            name: 'TN-3456'
+            type: 'pilot'
+            count: 1
+        }
+        {
             name: 'Epsilon Squadron Cadet'
             type: 'pilot'
             count: 7
