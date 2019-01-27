@@ -1503,7 +1503,7 @@ class exportObj.SquadBuilder
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{this_upgrade_obj.getPoints(upgrade)}#{if upgrade.points == '*' then '*' else ''})", points: this_upgrade_obj.getPoints(upgrade), name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
         if sorted
             retval = retval.sort exportObj.sortHelper
 
@@ -3341,18 +3341,18 @@ class GenericAddon
                 throw new Error("Unexpected addon type for addon #{addon}")
         @conferredAddons = []
 
-    getPoints: ->
+    getPoints: (data = @data, ship = @ship) ->
         # Moar special case jankiness
-        if @data?.variableagility? and @ship?
-            Math.max(@data?.basepoints ? 0, (@data?.basepoints ? 0) + ((@ship?.data.agility - 1)*2) + 1)
-        else if @data?.variablebase? and not (@ship.data.medium? or @ship.data.large?)
-            Math.max(0, @data?.basepoints)
-        else if @data?.variablebase? and @ship?.data.medium?
-            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints))
-        else if @data?.variablebase? and @ship?.data.large?
-            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints * 2))
+        if data?.variableagility? and ship?
+            Math.max(data?.basepoints ? 0, (data?.basepoints ? 0) + ((ship?.data.agility - 1)*2) + 1)
+        else if data?.variablebase? and not (ship.data.medium? or ship.data.large?)
+            Math.max(0, data?.basepoints)
+        else if data?.variablebase? and ship?.data.medium?
+            Math.max(0, (data?.basepoints ? 0) + (data?.basepoints))
+        else if data?.variablebase? and ship?.data.large?
+            Math.max(0, (data?.basepoints ? 0) + (data?.basepoints * 2))
         else
-            @data?.points ? 0
+            data?.points ? 0
             
     updateSelection: (points) ->
         if @data?
@@ -3364,7 +3364,7 @@ class GenericAddon
 
     toString: ->
         if @data?
-            "#{if @data.display_name then @data.display_name else @data.name} (#{@data.points})"
+            "#{if @data.display_name then @data.display_name else @data.name} (#{@getPoints()})"
         else
             "No #{@type}"
 
