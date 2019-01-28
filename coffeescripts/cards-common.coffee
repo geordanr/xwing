@@ -7461,7 +7461,7 @@ exportObj.basicCardData = ->
            name: "Static Discharge Vanes"
            id: 109
            slot: "Modification"
-           points: 6
+           points: 8
        }
        {
            name: "Tactical Scrambler"
@@ -7642,7 +7642,7 @@ exportObj.basicCardData = ->
            name: "Trick Shot"
            id: 133
            slot: "Talent"
-           points: 1
+           points: 2
        }
        {
            name: "Adv. Proton Torpedoes"
