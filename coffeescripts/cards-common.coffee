@@ -8221,7 +8221,7 @@ exportObj.basicCardData = ->
             name: "Chewbacca (Resistance)"
             id: 188
             slot: "Crew"
-           xws: "chewbacca-crew-swz19" 
+            xws: "chewbacca-crew-swz19" 
             points: 5
             charge: 2
             unique: true
