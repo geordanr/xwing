@@ -129,6 +129,9 @@ class exportObj.SquadBuilderBackend
         @show_all_squads_button.click()
         @squad_list_modal.modal 'show'
 
+        # This counter keeps tracked of the number of squads marked to be deleted (to hide the delete-selected button if none is selected)
+        @number_of_selected_squads_to_be_deleted = 0
+
         url = if all then "#{@server}/all" else "#{@server}/squads/list"
         $.get url, (data, textStatus, jqXHR) =>
             if data[builder.faction].length == 0
@@ -141,6 +144,7 @@ class exportObj.SquadBuilderBackend
                     li.addClass 'squad-summary'
                     li.data 'squad', squad
                     li.data 'builder', builder
+                    li.data 'selectedForDeletion', false
                     list_ul.append li
                     li.append $.trim """
                         <div class="row-fluid">
@@ -186,23 +190,36 @@ class exportObj.SquadBuilderBackend
                         else
                             builder.container.trigger 'xwing-backend:squadLoadRequested', li.data('squad')
 
-                    li.find('button.delete-squad').click (e) ->
+                    li.find('button.delete-squad').click (e) =>
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
                         builder = li.data('builder')
-                        do (li) ->
+                        li.data 'selectedForDeletion', true
+                        do (li) =>
                             li.find('.squad-description').fadeOut 'fast', ->
                                 li.find('.squad-delete-confirm').fadeIn 'fast'
+                            # show delete multiple section if not yet shown
+                            if not @number_of_selected_squads_to_be_deleted
+                                @squad_list_modal.find('div.delete-multiple-squads').show()
+                        # increment counter
+                        @number_of_selected_squads_to_be_deleted += 1
 
-                    li.find('button.cancel-delete-squad').click (e) ->
+
+                    li.find('button.cancel-delete-squad').click (e) =>
                         e.preventDefault()
                         button = $ e.target
                         li = button.closest 'li'
                         builder = li.data('builder')
-                        do (li) ->
+                        li.data 'selectedForDeletion', false
+                        # decrement counter
+                        @number_of_selected_squads_to_be_deleted -= 1
+                        do (li) =>
                             li.find('.squad-delete-confirm').fadeOut 'fast', ->
                                 li.find('.squad-description').fadeIn 'fast'
+                            # hide delete multiple section if this was the last selected squad
+                            if not @number_of_selected_squads_to_be_deleted
+                                @squad_list_modal.find('div.delete-multiple-squads').hide()
 
                     li.find('button.confirm-delete-squad').click (e) =>
                         e.preventDefault()
@@ -212,10 +229,15 @@ class exportObj.SquadBuilderBackend
                         li.find('.cancel-delete-squad').fadeOut 'fast'
                         li.find('.confirm-delete-squad').addClass 'disabled'
                         li.find('.confirm-delete-squad').text 'Deleting...'
-                        @delete li.data('squad').id, (results) ->
+                        @delete li.data('squad').id, (results) =>
                             if results.success
                                 li.slideUp 'fast', ->
                                     $(li).remove()
+                                # decrement counter
+                                @number_of_selected_squads_to_be_deleted -= 1
+                                # hide delete multiple section if this was the last selected squad
+                                if not @number_of_selected_squads_to_be_deleted
+                                    @squad_list_modal.find('div.delete-multiple-squads').hide()
                             else
                                 li.html $.trim """
                                     Error deleting #{li.data('squad').name}: <em>#{results.error}</em>
@@ -390,6 +412,10 @@ class exportObj.SquadBuilderBackend
                 </p>
             </div>
             <div class="modal-footer">
+                <div class="btn-group delete-multiple-squads">
+                    <button class="btn select-all">Select All</button>
+                    <button class="btn btn-danger delete-selected">Delete Selected</button>
+                </div>
                 <div class="btn-group squad-display-mode">
                     <button class="btn btn-inverse show-all-squads">All</button>
                     <button class="btn show-standard-squads">Standard</button>
@@ -400,6 +426,48 @@ class exportObj.SquadBuilderBackend
             </div>
         """
         @squad_list_modal.find('ul.squad-list').hide()
+
+        # The delete multiple section only appeares, when somebody hits the delete button of one squad. 
+        @squad_list_modal.find('div.delete-multiple-squads').hide() 
+
+        @delete_selected_button = $ @squad_list_modal.find('button.delete-selected')
+        @delete_selected_button.click (e) =>
+            ul = @squad_list_modal.find('ul.squad-list') 
+            for li in ul.find('li')
+                li = $ li
+                if li.data 'selectedForDeletion'
+                    do (li) =>
+                        li.find('.cancel-delete-squad').fadeOut 'fast'
+                        li.find('.confirm-delete-squad').addClass 'disabled'
+                        li.find('.confirm-delete-squad').text 'Deleting...'
+                        @delete li.data('squad').id, (results) =>
+                            if results.success
+                                li.slideUp 'fast', ->
+                                    $(li).remove()
+                                # decrement counter
+                                @number_of_selected_squads_to_be_deleted -= 1
+                                # hide delete multiple section if this was the last selected squad
+                                if not @number_of_selected_squads_to_be_deleted
+                                    @squad_list_modal.find('div.delete-multiple-squads').hide()
+                            else
+                                li.html $.trim """
+                                    Error deleting #{li.data('squad').name}: <em>#{results.error}</em>
+                                """
+
+        @select_all_button = $ @squad_list_modal.find('button.select-all')
+        @select_all_button.click (e) =>
+            ul = @squad_list_modal.find('ul.squad-list') 
+            for li in ul.find('li')
+                li = $ li
+                if not li.data 'selectedForDeletion'
+                    li.data 'selectedForDeletion', true
+                    do (li) =>
+                        li.find('.squad-description').fadeOut 'fast', ->
+                             li.find('.squad-delete-confirm').fadeIn 'fast'
+                    @number_of_selected_squads_to_be_deleted += 1
+
+        # Hide selection of Standard/epic/team epic as those modes do not exist.
+        @squad_list_modal.find('div.squad-display-mode').hide()
 
         @show_all_squads_button = $ @squad_list_modal.find('.show-all-squads')
         @show_all_squads_button.click (e) =>

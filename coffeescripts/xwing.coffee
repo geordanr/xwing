@@ -1485,25 +1485,25 @@ class exportObj.SquadBuilder
             
     getAvailableUpgradesIncluding: (slot, include_upgrade, ship, this_upgrade_obj, term='', filter_func=@dfl_filter_func, sorted=true) ->
         # Returns data formatted for Select2
-        limited_upgrades_in_use = (upgrade.data for upgrade in ship.upgrades when upgrade?.data?.limited?)
+        upgrades_in_use = (upgrade.data for upgrade in ship.upgrades)
 
         available_upgrades = (upgrade for upgrade_name, upgrade of exportObj.upgrades when upgrade.slot == slot and ( @matcher(upgrade_name, term) or (upgrade.display_name and @matcher(upgrade.display_name, term)) ) and (not upgrade.ship? or @isShip(upgrade.ship, ship.data.name)) and (not upgrade.faction? or @isOurFaction(upgrade.faction)) and (@isItemAvailable(upgrade)))
 
         if filter_func != @dfl_filter_func
             available_upgrades = (upgrade for upgrade in available_upgrades when filter_func(upgrade))
 
-        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in limited_upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
+        eligible_upgrades = (upgrade for upgrade_name, upgrade of available_upgrades when (not upgrade.unique? or upgrade not in @uniques_in_use['Upgrade']) and (not (ship? and upgrade.restriction_func?) or upgrade.restriction_func(ship, this_upgrade_obj)) and upgrade not in upgrades_in_use and ((not upgrade.max_per_squad?) or ship.builder.countUpgrades(upgrade.canonical_name) < upgrade.max_per_squad))
 
 
         for equipped_upgrade in (upgrade.data for upgrade in ship.upgrades when upgrade?.data?)
             eligible_upgrades.removeItem equipped_upgrade
 
         # Re-enable selected upgrade
-        if include_upgrade? and (((include_upgrade.unique? or include_upgrade.limited? or include_upgrade.max_per_squad?) and ( @matcher(include_upgrade.name, term) or (include_upgrade.display_name and @matcher(include_upgrade.display_name, term))) ))# or current_upgrade_forcibly_removed)
+        if include_upgrade? and ((( @matcher(include_upgrade.name, term) or (include_upgrade.display_name and @matcher(include_upgrade.display_name, term))) ))# or current_upgrade_forcibly_removed)
             # available_upgrades.push include_upgrade
             eligible_upgrades.push include_upgrade
 
-        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{upgrade.points})", points: upgrade.points, name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
+        retval = ({ id: upgrade.id, text: "#{if upgrade.display_name then upgrade.display_name else upgrade.name} (#{this_upgrade_obj.getPoints(upgrade)}#{if upgrade.points == '*' then '*' else ''})", points: this_upgrade_obj.getPoints(upgrade), name: upgrade.name, display_name: upgrade.display_name, disabled: upgrade not in eligible_upgrades } for upgrade in available_upgrades)
         if sorted
             retval = retval.sort exportObj.sortHelper
 
@@ -2236,7 +2236,7 @@ class exportObj.SquadBuilder
                     #            xws: ship_data.xws
                     # console.log "#{pilot.xws}"
                     try
-                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0]
+                        new_ship.setPilot (p for p in (exportObj.pilotsByFactionXWS[@faction][pilotxws] ?= exportObj.pilotsByFactionCanonicalName[@faction][pilotxws]) when p.ship == shipname)[0], true
                     catch err
                         console.error err.message 
                         continue
@@ -2343,7 +2343,7 @@ class Ship
             # Look for cheapest generic or available unique, otherwise do nothing
             available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
             if available_pilots.length > 0
-                @setPilotById available_pilots[0].id
+                @setPilotById available_pilots[0].id, true
                 # Can't just copy upgrades since slots may be different
                 # Similar to setPilot() when ship is the same
 
@@ -2361,7 +2361,7 @@ class Ship
                 return
         else
             # Exact clone, so we can copy things over directly
-            @setPilotById other.pilot.id
+            @setPilotById other.pilot.id, true
 
             # set up non-conferred addons
             other_conferred_addons = []
@@ -2399,13 +2399,13 @@ class Ship
 
         @builder.container.trigger 'xwing:shipUpdated'
 
-    setPilotById: (id) ->
-        @setPilot exportObj.pilotsById[parseInt id]
+    setPilotById: (id, noautoequip = false) ->
+        @setPilot exportObj.pilotsById[parseInt id], noautoequip
 
     setPilotByName: (name) ->
         @setPilot exportObj.pilots[$.trim name]
 
-    setPilot: (new_pilot) ->
+    setPilot: (new_pilot, noautoequip = false) ->
         if new_pilot != @pilot
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
@@ -2426,11 +2426,19 @@ class Ship
                 @setupAddons() if @pilot?
                 @copy_button.show()
                 @setShipType @pilot.ship
+                if (@pilot.autoequip? or (exportObj.ships[@pilot.ship].autoequip? and not same_ship)) and not noautoequip
+                    autoequip = (@pilot.autoequip ? []).concat(exportObj.ships[@pilot.ship].autoequip ? [])
+                    for upgrade_name in autoequip
+                        auto_equip_upgrade = exportObj.upgrades[upgrade_name]
+                        for upgrade in @upgrades
+                            if upgrade.slot == auto_equip_upgrade.slot
+                                upgrade.setData auto_equip_upgrade
                 if same_ship
-                    for upgrade in @upgrades
-                        old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
-                        if old_upgrade?
-                            upgrade.setById old_upgrade.data.id
+                    for _ in [1..2] # try this twice, as upgrades added in the first run may add new slots that are filled in the second run.
+                        for upgrade in @upgrades
+                            old_upgrade = (old_upgrades[upgrade.slot] ? []).shift()
+                            if old_upgrade?
+                                upgrade.setById old_upgrade.data.id
             else
                 @copy_button.hide()
             @builder.container.trigger 'xwing:pointsUpdated'
@@ -2968,7 +2976,7 @@ class Ship
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:TITLEUPGRADE1,TITLEUPGRADE2
                 [ pilot_id, upgrade_ids ] = serialized.split ':'
 
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
 
                 for upgrade_id, i in upgrade_ids.split ','
                     upgrade_id = parseInt upgrade_id
@@ -2977,7 +2985,7 @@ class Ship
             when 2, 3
                 # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
                 [ pilot_id, upgrade_ids, conferredaddon_pairs ] = serialized.split ':'
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
 
                 deferred_ids = []
                 for upgrade_id, i in upgrade_ids.split ','
@@ -3009,7 +3017,7 @@ class Ship
                 else 
                     # version 4
                     [ pilot_id, upgrade_ids, version_4_compatibility_placeholder_title, version_4_compatibility_placeholder_mod, conferredaddon_pairs ] = serialized.split ':'
-                @setPilotById parseInt(pilot_id)
+                @setPilotById parseInt(pilot_id), true
                 # make sure the pilot is valid 
                 return false unless @validate
 
@@ -3333,18 +3341,18 @@ class GenericAddon
                 throw new Error("Unexpected addon type for addon #{addon}")
         @conferredAddons = []
 
-    getPoints: ->
+    getPoints: (data = @data, ship = @ship) ->
         # Moar special case jankiness
-        if @data?.variableagility? and @ship?
-            Math.max(@data?.basepoints ? 0, (@data?.basepoints ? 0) + ((@ship?.data.agility - 1)*2) + 1)
-        else if @data?.variablebase? and not (@ship.data.medium? or @ship.data.large?)
-            Math.max(0, @data?.basepoints)
-        else if @data?.variablebase? and @ship?.data.medium?
-            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints))
-        else if @data?.variablebase? and @ship?.data.large?
-            Math.max(0, (@data?.basepoints ? 0) + (@data?.basepoints * 2))
+        if data?.variableagility? and ship?
+            Math.max(data?.basepoints ? 0, (data?.basepoints ? 0) + ((ship?.data.agility - 1)*2) + 1)
+        else if data?.variablebase? and not (ship.data.medium? or ship.data.large?)
+            Math.max(0, data?.basepoints)
+        else if data?.variablebase? and ship?.data.medium?
+            Math.max(0, (data?.basepoints ? 0) + (data?.basepoints))
+        else if data?.variablebase? and ship?.data.large?
+            Math.max(0, (data?.basepoints ? 0) + (data?.basepoints * 2))
         else
-            @data?.points ? 0
+            data?.points ? 0
             
     updateSelection: (points) ->
         if @data?
@@ -3356,7 +3364,7 @@ class GenericAddon
 
     toString: ->
         if @data?
-            "#{if @data.display_name then @data.display_name else @data.name} (#{@data.points})"
+            "#{if @data.display_name then @data.display_name else @data.name} (#{@getPoints()})"
         else
             "No #{@type}"
 
