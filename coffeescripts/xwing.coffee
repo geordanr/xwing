@@ -223,6 +223,7 @@ class exportObj.SquadBuilder
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="randomize-options">Randomizer Options</a></li>
+                            <li><a class="misc-settings">Misc Settings</a></li>
                         </ul>
                         
 
@@ -537,6 +538,7 @@ class exportObj.SquadBuilder
         @view_list_button = $ @status_container.find('div.button-container button.view-as-text')
         @randomize_button = $ @status_container.find('div.button-container button.randomize')
         @customize_randomizer = $ @status_container.find('div.button-container a.randomize-options')
+        @misc_settings = $ @status_container.find('div.button-container a.misc-settings')
         @backend_status = $ @status_container.find('.backend-status')
         @backend_status.hide()
 
@@ -579,7 +581,7 @@ class exportObj.SquadBuilder
                 @squad_name_input.closest('div').hide()
 
         @randomizer_options_modal = $ document.createElement('DIV')
-        @randomizer_options_modal.addClass 'modal hide fade'
+        @randomizer_options_modal.addClass 'modal hide fade randomizer-modal'
         $('body').append @randomizer_options_modal
         @randomizer_options_modal.append $.trim """
             <div class="modal-header">
@@ -647,10 +649,66 @@ class exportObj.SquadBuilder
             e.preventDefault()
             @randomizer_options_modal.modal('hide')
             @randomize_button.click()
-
+            
         @customize_randomizer.click (e) =>
             e.preventDefault()
             @randomizer_options_modal.modal()
+
+        @misc_settings_modal = $ document.createElement('DIV')
+        @misc_settings_modal.addClass 'modal hide fade'
+        $('body').append @misc_settings_modal
+        @misc_settings_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Miscellaneous Settings</h3>
+            </div>
+            <div class="modal-body">
+                <label class = "toggle-initiative-prefix-names misc-settings-label">
+                    <input type="checkbox" class="initiative-prefix-names-checkbox misc-settings-checkbox" /> Put INI as prefix in front of names. 
+                </label>
+            </div>
+            <div class="modal-footer">
+                <span class="misc-settings-infoline"></span>
+                &nbsp;
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        """
+        @misc_settings_infoline = $ @misc_settings_modal.find('.misc-settings-infoline')
+        @misc_settings_initiative_prefix = $ @misc_settings_modal.find('.initiative-prefix-names-checkbox')
+        if @backend? 
+            @backend.getSettings (st) =>
+                exportObj.settings ?= []
+                exportObj.settings.initiative_prefix = st.showInitiativeInFrontOfPilotName?
+                if st.showInitiativeInFrontOfPilotName? 
+                    @misc_settings_initiative_prefix.prop('checked', true)
+        else 
+            @waiting_for_backend ?= []
+            @waiting_for_backend.push => 
+                @backend.getSettings (st) =>
+                    exportObj.settings ?= []
+                    exportObj.settings.initiative_prefix = st.showInitiativeInFrontOfPilotName?
+                    if st.showInitiativeInFrontOfPilotName? 
+                        @misc_settings_initiative_prefix.prop('checked', true)
+                        
+        @misc_settings_initiative_prefix.click (e) =>
+            exportObj.settings ?= []
+            exportObj.settings.initiative_prefix = @misc_settings_initiative_prefix.prop('checked')
+            if @backend? 
+                if @misc_settings_initiative_prefix.prop('checked')
+                    @backend.set 'showInitiativeInFrontOfPilotName', '1', (ds) =>
+                        @misc_settings_infoline.text "Changes Saved"
+                        @misc_settings_infoline.fadeIn 100, =>
+                            @misc_settings_infoline.fadeOut 3000
+                else 
+                    @backend.deleteSetting 'showInitiativeInFrontOfPilotName', (dd) =>
+                        @misc_settings_infoline.text "Changes Saved"
+                        @misc_settings_infoline.fadeIn 100, =>
+                            @misc_settings_infoline.fadeOut 3000
+
+        @misc_settings.click (e) =>
+            e.preventDefault()
+            @misc_settings_modal.modal()
+            @misc_settings_initiative_prefix.prop('checked', exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix)
 
         @choose_obstacles_modal = $ document.createElement 'DIV'
         @choose_obstacles_modal.addClass 'modal hide fade choose-obstacles-modal'
@@ -1455,7 +1513,7 @@ class exportObj.SquadBuilder
         if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
             eligible_faction_pilots.push include_pilot
 
-        retval = ({ id: pilot.id, text: "#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
+        retval = ({ id: pilot.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then pilot.skill + ' - ' else ''}#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
         if sorted
             retval = retval.sort exportObj.sortHelper
         retval
@@ -1861,7 +1919,7 @@ class exportObj.SquadBuilder
                         @info_container.find('.info-collection').text """You have #{addon_count} in your collection."""
                     else
                         @info_container.find('.info-collection').text ''
-                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
+                    @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
                     @info_container.find('p.info-text').html data.text ? ''
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-base').hide()
@@ -2052,6 +2110,9 @@ class exportObj.SquadBuilder
 
     setBackend: (backend) ->
         @backend = backend
+        if @waiting_for_backend?
+            for meth in @waiting_for_backend
+                meth()
 
     describeSquad: ->
         (ship.pilot.name for ship in @ships when ship.pilot?).join ', '
@@ -2488,7 +2549,7 @@ class Ship
                     xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
-                text: "#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"
+                text: "#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"#"#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 points = upgrade.getPoints()
