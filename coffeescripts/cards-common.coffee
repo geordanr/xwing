@@ -6765,7 +6765,7 @@ exportObj.basicCardData = ->
            name: "Grand Inquisitor"
            id: 33
            slot: "Crew"
-           points: 16
+           points: 14
            unique: true
            force: 1 
            faction: "Galactic Empire"
