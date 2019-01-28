@@ -8224,6 +8224,7 @@ exportObj.basicCardData = ->
             name: "Chewbacca (Resistance)"
             id: 188
             slot: "Crew"
+           xws: "chewbacca-crew-swz19" 
             points: 5
             charge: 2
             unique: true
@@ -8261,6 +8262,7 @@ exportObj.basicCardData = ->
             name: "Han Solo (Resistance)"
             id: 192
             slot: "Crew"
+            xws: "hansolo-crew"
             points: 6
             unique: true
             faction: "Resistance"
