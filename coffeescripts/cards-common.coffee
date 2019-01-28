@@ -2098,7 +2098,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Missile"
                 "Gunner"
-                "Crew"
                 "Modification"
                 "Title"
                 "Illicit"
@@ -2431,6 +2430,7 @@ exportObj.basicCardData = ->
             points: 73
             slots: [
                 "Talent"
+                "Sensor"
                 "Torpedo"
                 "Turret"
                 "Crew"
@@ -2451,6 +2451,7 @@ exportObj.basicCardData = ->
             points: 84
             slots: [
                 "Force"
+                "Sensor"
                 "Torpedo"
                 "Turret"
                 "Crew"
@@ -2470,6 +2471,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Torpedo"
+                "Sensor"
                 "Turret"
                 "Crew"
                 "Crew"
@@ -2493,6 +2495,7 @@ exportObj.basicCardData = ->
             points: 68
             slots: [
                 "Torpedo"
+                "Sensor"
                 "Turret"
                 "Crew"
                 "Crew"
@@ -6872,7 +6875,7 @@ exportObj.basicCardData = ->
            id: 44
            slot: "Crew"
            xws: "landocalrissian" 
-           points: 8
+           points: 2
            unique: true
            faction: "Rebel Alliance"
        }
