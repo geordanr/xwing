@@ -171,10 +171,10 @@ class exportObj.SquadBuilder
         @container.trigger 'xwing-backend:squadNameChanged'
         @container.trigger 'xwing-backend:squadDirtinessChanged'
 
-    newSquadFromScratch: ->
-        @squad_name_input.val 'New Squadron'
+    newSquadFromScratch: (squad_name = 'New Squadron') ->
+        @squad_name_input.val squad_name
         @removeAllShips()
-        @addShip()
+        @addShip() if not @suppress_automatic_new_ship
         @current_obstacles = []
         @resetCurrentSquad()
         @notes.val ''
@@ -1120,7 +1120,7 @@ class exportObj.SquadBuilder
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
         if (oldHyperspace != @isHyperspace)
-            @newSquadFromScratch()
+            @newSquadFromScratch($.trim(@current_squad.name))
         @onPointsUpdated cb
 
     onPointsUpdated: (cb=$.noop) =>
