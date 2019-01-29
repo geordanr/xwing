@@ -482,7 +482,7 @@ class exportObj.SquadBuilderBackend
                 builder = li.data('builder')
                 squadProcessingStack.push () => 
                     sqd = squadDataStack.pop()
-                    console.log("loading " + sqd.name)
+                    # console.log("loading " + sqd.name)
                     builder.container.trigger 'xwing-backend:squadLoadRequested', [ sqd, () =>
                         additional_data =
                             points: builder.total_points
@@ -490,7 +490,7 @@ class exportObj.SquadBuilderBackend
                             cards: builder.listCards()
                             notes: builder.notes.val().substr(0, 1024)
                             obstacles: builder.getObstacles()
-                        console.log("saving " + builder.current_squad.name)
+                        # console.log("saving " + builder.current_squad.name)
                         @save builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, squadProcessingStack.pop() ]
                         
             @squad_list_modal.modal 'hide'
