@@ -1921,7 +1921,17 @@ class exportObj.SquadBuilder
                     else
                         @info_container.find('.info-collection').text ''
                     @info_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if data.display_name then data.display_name else data.name}#{if exportObj.isReleased(data) then  "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
-                    @info_container.find('p.info-text').html data.text ? ''
+                    if data.pointsarray? 
+                        point_info = "<i>Point cost " + data.pointsarray + " when "
+                        if data.variableagility? and data.variableagility
+                            point_info += "agility is " + [0..data.pointsarray.length-1]
+                        else if data.variableinit? and data.variableinit
+                            point_info += "initiative is " + [0..data.pointsarray.length-1]
+                        else if data.variablebase? and data.variablebase
+                            point_info += " base size is small, medium or large"
+                        point_info += "</i><br/><br/>"
+
+                    @info_container.find('p.info-text').html (point_info ? '') + (data.text ? '')
                     @info_container.find('tr.info-ship').hide()
                     @info_container.find('tr.info-base').hide()
                     @info_container.find('tr.info-skill').hide()
