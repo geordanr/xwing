@@ -493,7 +493,18 @@ class exportObj.CardBrowser
         orig_type = card.data 'orig_type'
 
         @card_viewer_container.find('.info-name').html """#{if data.unique then "&middot;&nbsp;" else ""}#{if display_name then display_name else name} (#{data.points})#{if data.limited? then " (#{exportObj.translate(@language, 'ui', 'limited')})" else ""}#{if data.epic? then " (#{exportObj.translate(@language, 'ui', 'epic')})" else ""}#{if exportObj.isReleased(data) then "" else " (#{exportObj.translate(@language, 'ui', 'unreleased')})"}"""
-        @card_viewer_container.find('p.info-text').html data.text ? ''
+        
+        if data.pointsarray? 
+            point_info = "<i>Point cost " + data.pointsarray + " when "
+            if data.variableagility? and data.variableagility
+                point_info += "agility is " + [0..data.pointsarray.length-1]
+            else if data.variableinit? and data.variableinit
+                point_info += "initiative is " + [0..data.pointsarray.length-1]
+            else if data.variablebase? and data.variablebase
+                point_info += " base size is small, medium or large"
+            point_info += "</i><br/><br/>"
+
+        @card_viewer_container.find('p.info-text').html (point_info ? '') + (data.text ? '')
         @card_viewer_container.find('.info-sources').text (exportObj.translate(@language, 'sources', source) for source in data.sources).sort().join(', ')
         switch orig_type
             when 'Pilot'
@@ -802,7 +813,6 @@ class exportObj.CardBrowser
                             for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
                                 if pilot.ship == card.data.name
                                     slots.push.apply(slots, pilot.slots)
-                                    console.log(slots)
             for slot in required_slots
                return false unless slots? and slot in slots
 
