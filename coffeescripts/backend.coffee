@@ -394,6 +394,22 @@ class exportObj.SquadBuilderBackend
                 methods_ul.append li
             @ui_ready = true
 
+        @reload_done_modal = $ document.createElement('DIV')
+        @reload_done_modal.addClass 'modal hide fade hidden-print'
+        $(document.body).append @reload_done_modal
+        @reload_done_modal.append $.trim """
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Reload Done</h3>
+            </div>
+            <div class="modal-body">
+                <p>All squads of that faction have been reloaded.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" aria-hidden="true" data-dismiss="modal">Well done!</button>
+            </div>
+        """
+
         @squad_list_modal = $ document.createElement('DIV')
         @squad_list_modal.addClass 'modal hide fade hidden-print squad-list'
         $(document.body).append @squad_list_modal
@@ -422,6 +438,7 @@ class exportObj.SquadBuilderBackend
                     <button class="btn show-epic-squads">Epic</button>
                     <button class="btn show-team-epic-squads">Team<span class="hidden-phone"> Epic</span></button>
                 </div>
+                <button class="btn btn reload-all">Reload all squads (this might take a while)</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         """
@@ -453,6 +470,35 @@ class exportObj.SquadBuilderBackend
                                 li.html $.trim """
                                     Error deleting #{li.data('squad').name}: <em>#{results.error}</em>
                                 """
+
+        @squad_list_modal.find('button.reload-all').click (e) =>
+            ul = @squad_list_modal.find('ul.squad-list') 
+            squadProcessingStack = [ () =>
+                @reload_done_modal.modal 'show' ]
+            squadDataStack = []
+            for li in ul.find('li')
+                li = $ li
+                squadDataStack.push li.data('squad')
+                builder = li.data('builder')
+                squadProcessingStack.push () => 
+                    sqd = squadDataStack.pop()
+                    console.log("loading " + sqd.name)
+                    builder.container.trigger 'xwing-backend:squadLoadRequested', [ sqd, () =>
+                        additional_data =
+                            points: builder.total_points
+                            description: builder.describeSquad()
+                            cards: builder.listCards()
+                            notes: builder.notes.val().substr(0, 1024)
+                            obstacles: builder.getObstacles()
+                        console.log("saving " + builder.current_squad.name)
+                        @save builder.serialize(), builder.current_squad.id, builder.current_squad.name, builder.faction, additional_data, squadProcessingStack.pop() ]
+                        
+            @squad_list_modal.modal 'hide'
+            if builder.current_squad.dirty
+                    @warnUnsaved builder, squadProcessingStack.pop()
+            else
+                squadProcessingStack.pop()()
+
 
         @select_all_button = $ @squad_list_modal.find('button.select-all')
         @select_all_button.click (e) =>
