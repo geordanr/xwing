@@ -813,7 +813,6 @@ class exportObj.CardBrowser
                             for pilot in pilots # there are sometimes multiple pilots with the same name, so we have another array layer here
                                 if pilot.ship == card.data.name
                                     slots.push.apply(slots, pilot.slots)
-                                    console.log(slots)
             for slot in required_slots
                return false unless slots? and slot in slots
 
