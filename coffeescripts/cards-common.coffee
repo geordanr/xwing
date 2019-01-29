@@ -8375,9 +8375,8 @@ exportObj.basicCardData = ->
             id: 204
             slot: "Force"
             points: 3
-            # waiting to hear from official ruling
-            # restriction_func: (ship) ->
-                # ship.effectiveStats().darkside == true
+            restriction_func: (ship) ->
+                ship.effectiveStats().darkside == true
        }
        {
             name: "R5-X3"
