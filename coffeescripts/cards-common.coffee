@@ -2098,7 +2098,6 @@ exportObj.basicCardData = ->
             slots: [
                 "Missile"
                 "Gunner"
-                "Crew"
                 "Modification"
                 "Title"
                 "Illicit"
@@ -2431,6 +2430,7 @@ exportObj.basicCardData = ->
             points: 73
             slots: [
                 "Talent"
+                "Sensor"
                 "Torpedo"
                 "Turret"
                 "Crew"
@@ -2451,6 +2451,7 @@ exportObj.basicCardData = ->
             points: 84
             slots: [
                 "Force"
+                "Sensor"
                 "Torpedo"
                 "Turret"
                 "Crew"
@@ -2470,6 +2471,7 @@ exportObj.basicCardData = ->
             points: 70
             slots: [
                 "Torpedo"
+                "Sensor"
                 "Turret"
                 "Crew"
                 "Crew"
@@ -2493,6 +2495,7 @@ exportObj.basicCardData = ->
             points: 68
             slots: [
                 "Torpedo"
+                "Sensor"
                 "Turret"
                 "Crew"
                 "Crew"
@@ -4389,7 +4392,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced"
             skill: 3
-            points: 38
+            points: 40
             slots: [       
                 "Talent"
                 "Sensor"
@@ -4403,7 +4406,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Empire"
             ship: "TIE Advanced"
             skill: 2
-            points: 41
+            points: 38
             slots: [  
                 "Sensor"
                 "Missile"
@@ -6765,7 +6768,7 @@ exportObj.basicCardData = ->
            name: "Grand Inquisitor"
            id: 33
            slot: "Crew"
-           points: 16
+           points: 14
            unique: true
            force: 1 
            faction: "Galactic Empire"
@@ -6872,7 +6875,7 @@ exportObj.basicCardData = ->
            id: 44
            slot: "Crew"
            xws: "landocalrissian" 
-           points: 8
+           points: 2
            unique: true
            faction: "Rebel Alliance"
        }
@@ -7458,7 +7461,7 @@ exportObj.basicCardData = ->
            name: "Static Discharge Vanes"
            id: 109
            slot: "Modification"
-           points: 6
+           points: 8
        }
        {
            name: "Tactical Scrambler"
@@ -7639,7 +7642,7 @@ exportObj.basicCardData = ->
            name: "Trick Shot"
            id: 133
            slot: "Talent"
-           points: 1
+           points: 2
        }
        {
            name: "Adv. Proton Torpedoes"
