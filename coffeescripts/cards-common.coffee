@@ -6457,6 +6457,106 @@ exportObj.basicCardData = ->
                 "Modification"
             ]
         }
+        {
+            name: "Plo Koon"
+            id: 312
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 5
+            force: 2
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Saesee Tiin"
+            id: 313
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 4
+            force: 2
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: "Mace Windu"
+            id: 314
+            unique: true
+            faction: "Galactic Republic"
+            ship: "Delta-7 Aethersprite"
+            skill: 4
+            force: 3
+            points: 100
+            slots: [
+                "Force"
+                "Configuration"
+                "Modification"
+            ]
+        }
+        {
+            name: '"Kickback"'
+            id: 315
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 4
+            points: 100
+            slots: [
+            ]
+        }
+        {
+            name: '"Odd Ball"'
+            id: 316
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 5
+            points: 100
+            slots: [
+            ]
+        }
+        {
+            name: '"Swoop"'
+            id: 317
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 3
+            points: 100
+            slots: [
+            ]
+        }
+        {
+            name: '"Axe"'
+            id: 318
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 3
+            points: 100
+            slots: [
+            ]
+        }
+        {
+            name: '"Tucker"'
+            id: 319
+            unique: true
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 2
+            points: 100
+            slots: [
+            ]
+        }
     ]
 
 

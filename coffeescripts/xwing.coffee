@@ -955,8 +955,9 @@ class exportObj.SquadBuilder
                 @onPointsUpdated () =>
                     @isUpdatingPoints = false
                     cb()
-        .on 'xwing-backend:squadLoadRequested', (e, squad) =>
+        .on 'xwing-backend:squadLoadRequested', (e, squad, cb=$.noop) =>
             @onSquadLoadRequested squad
+            cb()
         .on 'xwing-backend:squadDirtinessChanged', (e) =>
             @onSquadDirtinessChanged()
         .on 'xwing-backend:squadNameChanged', (e) =>
@@ -2126,7 +2127,7 @@ class exportObj.SquadBuilder
                 meth()
 
     describeSquad: ->
-        (ship.pilot.name for ship in @ships when ship.pilot?).join ', '
+        ((ship.pilot.name for ship in @ships when ship.pilot?).join ', ') + ', Squad saved: ' + (new Date()).toLocaleString()
 
     listCards: ->
         card_obj = {}
