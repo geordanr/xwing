@@ -1345,7 +1345,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
               [ 3, 2, 2, 2, 3, 0, 0, 0, 0, 0]
               [ 1, 1, 2, 1, 1, 0, 0, 0, 3, 3]
-              [ 0, 1, 2, 1, 0, 3, 0, 0, 0, 0]
+              [ 0, 3, 2, 3, 0, 3, 0, 0, 0, 0]
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
@@ -1397,6 +1397,7 @@ exportObj.basicCardData = ->
               [ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
               [ 0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
             ]
+        large: true
         "Vulture-class Droid Fighter":
             name: "Vulture-class Droid Fighter"
             xws: "Vulture-class Droid Fighter".canonicalize()
