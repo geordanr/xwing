@@ -3090,7 +3090,7 @@ class Ship
                 <div class="pilot-header-text">#{if @pilot.display_name then @pilot.display_name else @pilot.name} <i class="xwing-miniatures-ship xwing-miniatures-ship-#{@data.xws}"></i><span class="fancy-ship-type"> #{if @data.display_name then @data.display_name else @data.name}</span></div>
                 <div class="mask">
                     <div class="outer-circle">
-                        <div class="inner-circle pilot-points">#{@pilot.points}</div>
+                        <div class="inner-circle pilot-points">#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points}</div>
                     </div>
                 </div>
             </div>
@@ -3153,8 +3153,6 @@ class Ship
         
         Threshold = Math.ceil (effective_stats['hull'] + effective_stats['shields']) / 2
         
-        
-        # if @getPoints() != @pilot.points
         html += $.trim """
             <div class="ship-points-total">
                 <strong>Ship Total: #{@getPoints()}, Half Points: #{HalfPoints}, Threshold: #{Threshold}</strong> 
@@ -3167,7 +3165,7 @@ class Ship
         table_html = $.trim """
             <tr class="simple-pilot">
                 <td class="name">#{if @pilot.display_name then @pilot.display_name else @pilot.name} &mdash; #{if @data.display_name then @data.display_name else @data.name}</td>
-                <td class="points">#{@pilot.points}</td>
+                <td class="points">#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points}</td>
             </tr>
         """
 
@@ -3189,7 +3187,7 @@ class Ship
         table_html
 
     toRedditText: ->
-        reddit = """**#{@pilot.name} (#{@pilot.points})**    \n"""
+        reddit = """**#{@pilot.name} (#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points})**    \n"""
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
         if slotted_upgrades.length > 0
             reddit +="    \n"
@@ -3214,7 +3212,7 @@ class Ship
         tts
 
     toBBCode: ->
-        bbcode = """[b]#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})[/b]"""
+        bbcode = """[b]#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points})[/b]"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
         if slotted_upgrades.length > 0
@@ -3229,7 +3227,7 @@ class Ship
         bbcode
 
     toSimpleHTML: ->
-        html = """<b>#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})</b><br />"""
+        html = """<b>#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points})</b><br />"""
 
         slotted_upgrades = (upgrade for upgrade in @upgrades when upgrade.data?)
         if slotted_upgrades.length > 0
