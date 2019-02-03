@@ -113,6 +113,7 @@ class exportObj.SquadBuilder
         @total_points = 0
         @isCustom = false
         @isHyperspace = false
+        @isQuickbuild = false
         @maxSmallShipsOfOneType = null
         @maxLargeShipsOfOneType = null
 
@@ -204,6 +205,7 @@ class exportObj.SquadBuilder
                     <select class="game-type-selector">
                         <option value="standard">Extended</option>
                         <option value="hyperspace">Hyperspace</option>
+                        <option value="quickbuild">Quickbuild</option>
                         <option value="custom">Custom</option>
                     </select>
                     <span class="points-remaining-container">(<span class="points-remaining"></span>&nbsp;left)</span>
@@ -1160,25 +1162,37 @@ class exportObj.SquadBuilder
 
     onGameTypeChanged: (gametype, cb=$.noop) =>
         oldHyperspace = @isHyperspace
+        oldQuickbuild = @isQuickbuild
         switch gametype
             when 'standard'
                 @isHyperspace = false
+                @isQuickbuild = false
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'hyperspace'
                 @isHyperspace = true
+                @isQuickbuild = false
                 @isCustom = false
                 @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
             when 'custom'
                 @isHyperspace = false
+                @isQuickbuild = false
                 @isCustom = true
+                @desired_points_input.val 200
                 @maxSmallShipsOfOneType = null
                 @maxLargeShipsOfOneType = null
-        if (oldHyperspace != @isHyperspace)
+            when 'quickbuild'
+                @isHyperspace = false
+                @isQuickbuild = true
+                @isCustom = false
+                @desired_points_input.val 8
+                @maxSmallShipsOfOneType = null
+                @maxLargeShipsOfOneType = null
+        if (oldHyperspace != @isHyperspace) or (oldQuickbuild != @isQuickbuild)
             @newSquadFromScratch($.trim(@current_squad.name))
         @onPointsUpdated cb
 
@@ -1326,6 +1340,8 @@ class exportObj.SquadBuilder
                 's'
             when 'hyperspace'
                 'h'
+            when 'quickbuild'
+                'q'
             when 'custom'
                 "c=#{$.trim @desired_points_input.val()}"
         """v#{serialization_version}!#{game_type_abbrev}!#{( ship.toSerialized() for ship in @ships when ship.pilot? ).join ';'}"""
@@ -1353,6 +1369,9 @@ class exportObj.SquadBuilder
                             @game_type_selector.change()
                         when 'h'
                             @game_type_selector.val 'hyperspace'
+                            @game_type_selector.change()
+                        when 'q'
+                            @game_type_selector.val 'quickbuild'
                             @game_type_selector.change()
                         else
                             @game_type_selector.val 'custom'
@@ -1464,6 +1483,7 @@ class exportObj.SquadBuilder
             getPrimaryFaction(faction) == @faction
 
     isItemAvailable: (item_data, shipCheck=false) ->
+        # this method is not invoked to check availability for quickbuild squads, as they don't care about hyperspace. Keep that in mind when adding stuff here.
         if (not @isHyperspace)
             return true
         else # hyperspace
@@ -1507,15 +1527,37 @@ class exportObj.SquadBuilder
         
     getAvailablePilotsForShipIncluding: (ship, include_pilot, term='', sorted = true) ->
         # Returns data formatted for Select2
-        available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (@isItemAvailable(pilot)))
+        retval = []
+        if not @isQuickbuild
+            # select available pilots according to ususal pilot selection
+            available_faction_pilots = (pilot for pilot_name, pilot of exportObj.pilots when (not ship? or pilot.ship == ship) and @isOurFaction(pilot.faction) and (@matcher(pilot_name, term) or (pilot.display_name and @matcher(pilot.display_name, term)) ) and (@isItemAvailable(pilot)))
 
-        eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
+            eligible_faction_pilots = (pilot for pilot_name, pilot of available_faction_pilots when (not pilot.unique? or pilot not in @uniques_in_use['Pilot'] or pilot.canonical_name.getXWSBaseName() == include_pilot?.canonical_name.getXWSBaseName()) and (not pilot.restriction_func? or pilot.restriction_func((builder: @) , pilot)))
 
-        # Re-add selected pilot
-        if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
-            eligible_faction_pilots.push include_pilot
+            # Re-add selected pilot
+            if include_pilot? and include_pilot.unique? and (@matcher(include_pilot.name, term) or (include_pilot.display_name and @matcher(include_pilot.display_name, term)) )
+                eligible_faction_pilots.push include_pilot
 
-        retval = ({ id: pilot.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then pilot.skill + ' - ' else ''}#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
+            retval = ({ id: pilot.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then pilot.skill + ' - ' else ''}#{if pilot.display_name then pilot.display_name else pilot.name} (#{pilot.points})", points: pilot.points, ship: pilot.ship, name: pilot.name, display_name: pilot.display_name, disabled: pilot not in eligible_faction_pilots } for pilot in available_faction_pilots)
+        else
+            # select according to quickbuild cards
+            # filter for faction and ship
+            quickbuilds_matching_ship_and_faction = (quickbuild for id, quickbuild of exportObj.quickbuildsById when (not ship? or quickbuild.ship == ship) and @isOurFaction(quickbuild.faction) and (@matcher(quickbuild.pilot, term) or (exportObj.pilots[quickbuild.pilot].display_name? and @matcher(exportObj.pilots[quickbuild.pilot].display_name, term)) ))
+
+            # filter for uniques in use
+            allowed_quickbuilds_containing_uniques_in_use = []
+            loop: for id, quickbuild of quickbuilds_matching_ship_and_faction
+                if exportObj.pilots[quickbuild.pilot] in @uniques_in_use.Pilot
+                    allowed_quickbuilds_containing_uniques_in_use.push id
+                    continue
+                if quickbuild.upgrades? 
+                    for upgrade in quickbuild.upgrades
+                        if exportObj.upgrades[upgrade] in @uniques_in_use.Upgrade
+                            allowed_quickbuilds_containing_uniques_in_use.push (parseInt id)
+                            break
+
+            retval = ({id: quickbuild.id, text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then exportObj.pilots[quickbuild.pilot].skill + ' - ' else ''}#{if exportObj.pilots[quickbuild.pilot].display_name then exportObj.pilots[quickbuild.pilot].display_name else quickbuild.pilot}#{quickbuild.suffix} (#{quickbuild.threat})", points: quickbuild.threat, ship: quickbuild.ship, disabled: "#{quickbuild.id}" in allowed_quickbuilds_containing_uniques_in_use} for quickbuild in quickbuilds_matching_ship_and_faction)
+
         if sorted
             retval = retval.sort exportObj.sortHelper
         retval
@@ -2027,8 +2069,11 @@ class exportObj.SquadBuilder
                     if available_ships.length > 0
                         ship_type = available_ships[$.randomInt available_ships.length].name
                         available_pilots = @getAvailablePilotsForShipIncluding(ship_type)
+                        if available_pilots.length == 0 
+                            # edge case: It might have been a ship selected, that has only unique pilots - which all have been already selected 
+                            return
                         pilot = available_pilots[$.randomInt available_pilots.length]
-                        if not pilot.disabled and exportObj.pilotsById[pilot.id].sources.intersects(data.allowed_sources)
+                        if not pilot.disabled and (if @isQuickbuild then exportObj.pilots[exportObj.quickbuildsById[pilot.id].pilot] else exportObj.pilotsById[pilot.id]).sources.intersects(data.allowed_sources)
                             new_ship = @addShip()
                             new_ship.setPilotById pilot.id
                 if idx >= data.ships_or_upgrades and unused_addons.length != 0
@@ -2393,6 +2438,7 @@ class Ship
         # internal state
         @pilot = null
         @data = null # ship data
+        @quickbuildId = -1
         @upgrades = []
 
         @setupUI()
@@ -2420,18 +2466,35 @@ class Ship
                 # Can't just copy upgrades since slots may be different
                 # Similar to setPilot() when ship is the same
 
-                other_upgrades = {}
-                for upgrade in other.upgrades
-                    if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
-                        other_upgrades[upgrade.slot] ?= []
-                        other_upgrades[upgrade.slot].push upgrade
+                if not @builder.isQuickbuild 
+                # In case of quick build upgrades are equipped when setPilotById is called, so no need to copy anything. 
+                    other_upgrades = {}
+                    for upgrade in other.upgrades
+                        if upgrade?.data? and not upgrade.data.unique and ((not upgrade.data.max_per_squad?) or @builder.countUpgrades(upgrade.data.canonical_name) < upgrade.data.max_per_squad)
+                            other_upgrades[upgrade.slot] ?= []
+                            other_upgrades[upgrade.slot].push upgrade
 
-                for upgrade in @upgrades
-                    other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
-                    if other_upgrade?
-                        upgrade.setById other_upgrade.data.id
+                    for upgrade in @upgrades
+                        other_upgrade = (other_upgrades[upgrade.slot] ? []).shift()
+                        if other_upgrade?
+                            upgrade.setById other_upgrade.data.id
             else
                 return
+        else if @builder.isQuickbuild        
+            # check if any upgrades are unique. In that case the whole ship may not be copied
+            no_uniques_involved = true
+            for upgrade in other.upgrades
+                if upgrade.data?.unique? and upgrade.data.unique
+                    no_uniques_involved = false
+                    # select cheapest generic like above
+                    available_pilots = (pilot_data for pilot_data in @builder.getAvailablePilotsForShipIncluding(other.data.name) when not pilot_data.disabled)
+                    if available_pilots.length > 0
+                        @setPilotById available_pilots[0].id, true
+                        break
+                    else
+                        return
+            if no_uniques_involved
+                @setPilotById other.quickbuildId
         else
             # Exact clone, so we can copy things over directly
             @setPilotById other.pilot.id, true
@@ -2454,12 +2517,17 @@ class Ship
     setShipType: (ship_type) ->
         @pilot_selector.data('select2').container.show()
         if ship_type != @pilot?.ship
-            # Ship changed; select first non-unique
-            pilot = (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
-            if pilot # if there is a non-unique, use this one
-                @setPilot pilot
-            else # otherwise just set it to the first available pilot
-                @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when ((not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func(@)) and not (exportObj.pilotsById[result.id] in @builder.uniques_in_use.Pilot)))[0]
+            if not @builder.isQuickbuild
+                # Ship changed; select first non-unique
+                pilot = (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
+                if pilot # if there is a non-unique, use this one
+                    @setPilot pilot
+                else # otherwise just set it to the first available pilot
+                    @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when ((not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func(@)) and not (exportObj.pilotsById[result.id] in @builder.uniques_in_use.Pilot)))[0]
+            else
+                # get the first available pilot
+                quickbuild_id = (result.id for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not result.disabled)[0]
+                @setPilotById quickbuild_id
 
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)
@@ -2475,12 +2543,34 @@ class Ship
         @builder.container.trigger 'xwing:shipUpdated'
 
     setPilotById: (id, noautoequip = false) ->
-        @setPilot exportObj.pilotsById[parseInt id], noautoequip
-
-    setPilotByName: (name) ->
-        @setPilot exportObj.pilots[$.trim name]
+        #sets pilot of this ship according to given id. Id might be pilotId or quickbuildId depending on mode. 
+        if not @builder.isQuickbuild
+            @setPilot exportObj.pilotsById[parseInt id], noautoequip
+        else
+            if id != @quickbuildId
+                @quickbuildId = id
+                @builder.current_squad.dirty = true
+                @resetPilot()
+                @resetAddons()
+                if id? and id > -1
+                    quickbuild = exportObj.quickbuildsById[parseInt id]
+                    new_pilot = exportObj.pilots[quickbuild.pilot]
+                    @data = exportObj.ships[quickbuild.ship]
+                    if new_pilot?.unique?
+                        await @builder.container.trigger 'xwing:claimUnique', [ new_pilot, 'Pilot', defer() ]
+                    @pilot = new_pilot
+                    @setupAddons() if @pilot?
+                    @copy_button.show()
+                    @setShipType @pilot.ship
+                else
+                    @copy_button.hide()
+                @builder.container.trigger 'xwing:pointsUpdated'
+                @builder.container.trigger 'xwing-backend:squadDirtinessChanged'
+            
 
     setPilot: (new_pilot, noautoequip = false) ->
+        # don't call this method directly, unless you know what you do. Use setPilotById for proper quickbuild handling
+
         if new_pilot != @pilot
             @builder.current_squad.dirty = true
             same_ship = @pilot? and new_pilot?.ship == @pilot.ship
@@ -2525,12 +2615,24 @@ class Ship
         @pilot = null
 
     setupAddons: ->
-        # Upgrades from pilot
-        for slot in @pilot.slots ? []
-            @upgrades.push new exportObj.Upgrade
-                ship: this
-                container: @addon_container
-                slot: slot
+        if not @builder.isQuickbuild
+            # Upgrades from pilot
+            for slot in @pilot.slots ? []
+                @upgrades.push new exportObj.Upgrade
+                    ship: this
+                    container: @addon_container
+                    slot: slot
+        else 
+            # Upgrades from quickbuild
+            for upgrade_name in exportObj.quickbuildsById[@quickbuildId].upgrades ? []
+                upgrade_data = exportObj.upgrades[upgrade_name]
+                upgrade = new exportObj.QuickbuildUpgrade
+                    ship: this
+                    container: @addon_container
+                    slot: upgrade_data.slot
+                    upgrade: upgrade_data
+                upgrade.setData upgrade_data
+                @upgrades.push upgrade
 
     resetAddons: ->
         await
@@ -2539,15 +2641,24 @@ class Ship
         @upgrades = []
 
     getPoints: ->
-        points = @pilot?.points ? 0
-        for upgrade in @upgrades
-            points += upgrade.getPoints()
-        @points_container.find('span').text points
-        if points > 0
-            @points_container.fadeTo 'fast', 1
+        if not @builder.isQuickbuild
+            points = @pilot?.points ? 0
+            for upgrade in @upgrades
+                points += upgrade.getPoints()
+            @points_container.find('span').text points
+            if points > 0
+                @points_container.fadeTo 'fast', 1
+            else
+                @points_container.fadeTo 0, 0
+            points
         else
-            @points_container.fadeTo 0, 0
-        points
+            threat = exportObj.quickbuildsById[@quickbuildId]?.threat ? 0
+            @points_container.find('span').text threat
+            if threat > 0
+                @points_container.fadeTo 'fast', 1
+            else
+                @points_container.fadeTo 0, 0
+            threat
 
     updateSelections: ->
         if @pilot?
@@ -2563,7 +2674,7 @@ class Ship
                     xws: exportObj.ships[@pilot.ship].xws
             @pilot_selector.select2 'data',
                 id: @pilot.id
-                text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{@pilot.points})"
+                text: "#{if exportObj.settings?.initiative_prefix? and exportObj.settings.initiative_prefix then @pilot.skill + ' - ' else ''}#{if @pilot.display_name then @pilot.display_name else @pilot.name} (#{if @builder.isQuickbuild then exportObj.quickbuildsById[@quickbuildId].threat else @pilot.points})"
             @pilot_selector.data('select2').container.show()
             for upgrade in @upgrades
                 points = upgrade.getPoints()
@@ -2646,14 +2757,19 @@ class Ship
             formatResultCssClass: (obj) =>
                 if @builder.collection? and (@builder.collection.checks.collectioncheck == "true")
                     not_in_collection = false
+                    name = ""
+                    if @builder.isQuickbuild
+                        name = exportObj.quickbuildsById[obj.id].pilot
+                    else
+                        name = obj.name
                     if obj.id == @pilot?.id
                         # Currently selected pilot; mark as not in collection if it's neither
                         # on the shelf nor on the table
-                        unless (@builder.collection.checkShelf('pilot', obj.name) or @builder.collection.checkTable('pilot', obj.name))
+                        unless (@builder.collection.checkShelf('pilot', name) or @builder.collection.checkTable('pilot', name))
                             not_in_collection = true
                     else
                         # Not currently selected; check shelf only
-                        not_in_collection = not @builder.collection.checkShelf('pilot', obj.name)
+                        not_in_collection = not @builder.collection.checkShelf('pilot', name)
                     if not_in_collection then 'select2-result-not-in-collection' else ''
                 else
                     ''
@@ -3020,22 +3136,24 @@ class Ship
 
     toSerialized: ->
         # PILOT_ID:UPGRADEID1,UPGRADEID2:CONFERREDADDONTYPE1.CONFERREDADDONID1,CONFERREDADDONTYPE2.CONFERREDADDONID2
+        if @builder.isQuickbuild
+            """#{@quickbuildId}:"""
+        else
+            # Skip conferred upgrades
+            conferred_addons = []
+            for upgrade in @upgrades
+                conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
+            upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
 
-        # Skip conferred upgrades
-        conferred_addons = []
-        for upgrade in @upgrades
-            conferred_addons = conferred_addons.concat(upgrade?.conferredAddons ? [])
-        upgrades = """#{upgrade?.data?.id ? -1 for upgrade, i in @upgrades when upgrade not in conferred_addons}"""
+            serialized_conferred_addons = []
+            for addon in conferred_addons
+                serialized_conferred_addons.push addon.toSerialized()
 
-        serialized_conferred_addons = []
-        for addon in conferred_addons
-            serialized_conferred_addons.push addon.toSerialized()
-
-        [
-            @pilot.id,
-            upgrades,
-            serialized_conferred_addons.join(','),
-        ].join ':'
+            [
+                @pilot.id,
+                upgrades,
+                serialized_conferred_addons.join(','),
+            ].join ':'
 
 
     fromSerialized: (version, serialized) ->
@@ -3646,6 +3764,45 @@ class exportObj.RestrictedUpgrade extends exportObj.Upgrade
         if args.auto_equip?
             @setById args.auto_equip
 
+class exportObj.QuickbuildUpgrade extends GenericAddon
+    constructor: (args) ->
+        super args
+        @slot = args.slot
+        @type = 'Upgrade'
+        @dataById = exportObj.upgradesById
+        @dataByName = exportObj.upgrades
+        @serialization_code = 'U'
+        @upgrade = args.upgrade
+        @setupSelector()
+
+    setupSelector: ->
+        super
+            width: '50%'
+            allowClear: false
+            query: (query) =>
+                @ship.builder.checkCollection()
+                query.callback
+                    more: false
+                    results: [{
+                            id: @upgrade.id
+                            text: if @upgrade.display_name then @upgrade.display_name else @upgrade.name
+                            points: 0
+                            name: @upgrade.name
+                            display_name: @upgrade.display_name
+                        }]
+
+    getPoints: (args) ->
+        0
+            
+    updateSelection: (args) ->
+        if @data?
+            @selector.select2 'data',
+            id: @data.id
+            text: "#{if @data.display_name then @data.display_name else @data.name}"
+        else
+            @selector.select2 'data', null
+            
+        
 
 SERIALIZATION_CODE_TO_CLASS =
     'U': exportObj.Upgrade
