@@ -2455,9 +2455,11 @@ class Ship
         @pilot_selector.data('select2').container.show()
         if ship_type != @pilot?.ship
             # Ship changed; select first non-unique
-            @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
-
-            # TODO: When no non-unique pilot is available, we should maybe select the first one not already beeing in the squad?
+            pilot = (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when not exportObj.pilotsById[result.id].unique)[0]
+            if pilot # if there is a non-unique, use this one
+                @setPilot pilot
+            else # otherwise just set it to the first available pilot
+                @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when (not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func({builder: @})))[0]
 
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)
