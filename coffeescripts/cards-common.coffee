@@ -8586,6 +8586,39 @@ exportObj.basicCardData = ->
         }
     ]
 
+    quickbuildsById: [
+        {
+            id: 0
+            faction: "Galactic Empire"
+            pilot: "Valen Rudor"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 1
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 2
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+        }
+    ]
+
 
 
 exportObj.setupCommonCardData = (basic_cards) ->
@@ -8599,6 +8632,10 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for condition_data, i in basic_cards.conditionsById
         if condition_data.id != i
             throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
+    for quickbuild_data, i in basic_cards.quickbuildsById
+        if quickbuild_data.id != i
+            throw new Error("ID mismatch: quickbuild  at index #{i} has ID #{quickbuild_data.id}")
+
 
     exportObj.pilots = {}
     # Assuming a given pilot is unique by name...
@@ -8623,6 +8660,19 @@ exportObj.setupCommonCardData = (basic_cards) ->
             condition_data.sources = []
             condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
+
+    # there is no exportObj.quickbuilds generated from basic_cards.quickbuildsById, as reference by pilot name might be ambigous (e.g. there are multiple Black Sq. Aces having different upgrades)
+
+    exportObj.quickbuildsById = {}
+    quickbuild_count = 0
+    for quickbuild_data in basic_cards.quickbuildsById
+        unless quickbuild_data.skip? 
+            quickbuild_count += 1
+            # Sometimes there is something to be appended to the pilot name for displaying, e.g. (x2) for two TIEs at the cost of 3 threat points. If nothing specified set as empty string. 
+            quickbuild_data.suffix = "" unless quickbuild_data.suffix? 
+            exportObj.quickbuildsById[quickbuild_data.id] = quickbuild_data
+    if Object.keys(exportObj.quickbuildsById).length != quickbuild_count
+        throw new Error("At least one quickbuild shares an ID with another")
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.canonical_name ?= ship_data.name.canonicalize()
