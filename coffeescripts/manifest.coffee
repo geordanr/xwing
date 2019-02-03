@@ -4974,16 +4974,9 @@ class exportObj.Collection
             </div>
         """
 
-                
-    fixName: (name) ->
-        # Special case handling for Heavy Scyk :(
-        if name.indexOf('"Heavy Scyk" Interceptor') == 0
-            '"Heavy Scyk" Interceptor'
-        else
-            name
 
     check: (where, type, name) ->
-        (((where[type] ? {})[@fixName name] ? []).length ? 0) != 0
+        (((where[type] ? {})[name] ? []).length ? 0) != 0
 
     checkShelf: (type, name) ->
         @check @shelf, type, name
@@ -4992,7 +4985,6 @@ class exportObj.Collection
         @check @table, type, name
 
     use: (type, name) ->
-        name = @fixName name
         try
             card = @shelf[type][name].pop()
         catch e
@@ -5005,7 +4997,6 @@ class exportObj.Collection
             false
 
     release: (type, name) ->
-        name = @fixName name
         try
             card = @table[type][name].pop()
         catch e
