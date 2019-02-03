@@ -8617,6 +8617,163 @@ exportObj.basicCardData = ->
             ship: "TIE Fighter"
             threat: 1
         }
+        {
+            id: 3
+            faction: "Galactic Empire"
+            pilot: "Iden Versio"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 4
+            faction: "Galactic Empire"
+            pilot: '"Night Beast"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 5
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 6
+            faction: "Galactic Empire"
+            pilot: '"Scourge" Skutu'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 7
+            faction: "Galactic Empire"
+            pilot: '"Wampa"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Hull Upgrade"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 8
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 9
+            faction: "Galactic Empire"
+            pilot: "Gideon Hask"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 10
+            faction: "Galactic Empire"
+            pilot: "Del Meeko"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 11
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+            skip: true
+        }
+        {
+            id: 12
+            faction: "Galactic Empire"
+            pilot: '"Howlrunner"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 13
+            faction: "Galactic Empire"
+            pilot: "Seyn Marana"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Marksmanship"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 14
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 3
+            upgrades: [
+                "Juke"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 15
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 16
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 2
+        }
+        {
+            id: 17
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+            skip: true
+        }
     ]
 
 
