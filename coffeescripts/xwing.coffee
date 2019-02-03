@@ -2459,7 +2459,7 @@ class Ship
             if pilot # if there is a non-unique, use this one
                 @setPilot pilot
             else # otherwise just set it to the first available pilot
-                @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when (not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func({builder: @})))[0]
+                @setPilot (exportObj.pilotsById[result.id] for result in @builder.getAvailablePilotsForShipIncluding(ship_type) when ((not exportObj.pilotsById[result.id].restriction_func? or exportObj.pilotsById[result.id].restriction_func(@)) and not (exportObj.pilotsById[result.id] in @builder.uniques_in_use.Pilot)))[0]
 
         # Clear ship background class
         for cls in @row.attr('class').split(/\s+/)
