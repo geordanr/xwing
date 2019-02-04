@@ -9132,7 +9132,7 @@ exportObj.basicCardData = ->
             id: 48
             faction: "Galactic Empire"
             pilot: "Deathfire"
-            ship: "TIE/sa Bomber"
+            ship: "TIE Bomber"
             threat: 4
             upgrades: [
                 "Cluster Missiles"
