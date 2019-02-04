@@ -8587,6 +8587,564 @@ exportObj.basicCardData = ->
         }
     ]
 
+    quickbuildsById: [
+        {
+            id: 0
+            faction: "Galactic Empire"
+            pilot: "Valen Rudor"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 1
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 2
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 3
+            faction: "Galactic Empire"
+            pilot: "Iden Versio"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 4
+            faction: "Galactic Empire"
+            pilot: '"Night Beast"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Hull Upgrade"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 5
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+        }
+        {
+            id: 6
+            faction: "Galactic Empire"
+            pilot: '"Scourge" Skutu'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Predator"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 7
+            faction: "Galactic Empire"
+            pilot: '"Wampa"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Hull Upgrade"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 8
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 9
+            faction: "Galactic Empire"
+            pilot: "Gideon Hask"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 10
+            faction: "Galactic Empire"
+            pilot: "Del Meeko"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 11
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+            skip: true
+        }
+        {
+            id: 12
+            faction: "Galactic Empire"
+            pilot: '"Howlrunner"'
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Juke"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 13
+            faction: "Galactic Empire"
+            pilot: "Seyn Marana"
+            ship: "TIE Fighter"
+            threat: 2
+            upgrades: [
+                "Marksmanship"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 14
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Ace"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 3
+            upgrades: [
+                "Juke"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 15
+            faction: "Galactic Empire"
+            pilot: "Obsidian Squadron Pilot"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 16
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            suffix: " (x2)"
+            ship: "TIE Fighter"
+            threat: 2
+        }
+        {
+            id: 17
+            faction: "Galactic Empire"
+            pilot: "Academy Pilot"
+            ship: "TIE Fighter"
+            threat: 1
+            skip: true
+        }
+        {
+            id: 18
+            faction: "Galactic Empire"
+            pilot: "Darth Vader"
+            ship: "TIE Advanced"
+            threat: 4
+            upgrades: [
+                "Supernatural Reflexes"
+                "Fire-Control System"
+                "Afterburners"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 19
+            faction: "Galactic Empire"
+            pilot: "Maarek Stele"
+            ship: "TIE Advanced"
+            threat: 3
+            upgrades: [
+                "Ruthless"
+                "Fire-Control System"
+                "Cluster Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 20
+            faction: "Galactic Empire"
+            pilot: "Storm Squadron Ace"
+            ship: "TIE Advanced"
+            threat: 2
+            upgrades: [
+                "Fire-Control System"
+            ]
+        }
+        {
+            id: 21
+            faction: "Galactic Empire"
+            pilot: "Ved Foslo"
+            ship: "TIE Advanced"
+            threat: 3
+            upgrades: [
+                "Outmaneuver"
+                "Fire-Control System"
+                "Cluster Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 22
+            faction: "Galactic Empire"
+            pilot: "Zertik Strom"
+            ship: "TIE Advanced"
+            threat: 3
+            upgrades: [
+                "Squad Leader"
+                "Fire-Control System"
+                "Cluster Missiles"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 23
+            faction: "Galactic Empire"
+            pilot: "Tempest Squadron Pilot"
+            ship: "TIE Advanced"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+            ]
+        }
+        {
+            id: 24
+            faction: "Galactic Empire"
+            pilot: "Colonel Jendon"
+            ship: "Lambda-Class Shuttle"
+            threat: 3
+            upgrades: [
+                "Collision Detector"
+                "Ion Cannon"
+                "Darth Vader"
+                "Freelance Slicer"
+                "ST-321"
+            ]
+        }
+        {
+            id: 25
+            faction: "Galactic Empire"
+            pilot: "Captain Kagi"
+            ship: "Lambda-Class Shuttle"
+            threat: 3
+            upgrades: [
+                "Collision Detector"
+                "Tractor Beam"
+                "Emperor Palpatine"
+                "Shield Upgrade"
+                "Static Discharge Vanes"
+            ]
+        }
+        {
+            id: 26
+            faction: "Galactic Empire"
+            pilot: "Lieutenant Sai"
+            ship: "Lambda-Class Shuttle"
+            threat: 3
+            upgrades: [
+                "Ciena Ree"
+                'GNK "Gonk" Droid'
+                "Advanced Sensors"
+                "Jamming Beam"
+            ]
+        }
+        {
+            id: 27
+            faction: "Galactic Empire"
+            pilot: "Omicron Group Pilot"
+            ship: "Lambda-Class Shuttle"
+            threat: 2
+            upgrades: [
+                "Admiral Sloane"
+                "Jamming Beam"
+            ]
+        }
+        {
+            id: 28
+            faction: "Galactic Empire"
+            pilot: "Lieutenant Kestal"
+            ship: "TIE Aggressor"
+            threat: 2
+            upgrades: [
+                "Elusive"
+                "Barrage Rockets"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 29
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Scout"
+            ship: "TIE Aggressor"
+            threat: 2
+            upgrades: [
+                "Outmaneuver"
+                "Dorsal Turret"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 30
+            faction: "Galactic Empire"
+            pilot: '"Double Edge"'
+            ship: "TIE Aggressor"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Concussion Missiles"
+                "Hotshot Gunner"
+            ]
+        }
+        {
+            id: 31
+            faction: "Galactic Empire"
+            pilot: "Sienar Specialist"
+            ship: "TIE Aggressor"
+            threat: 2
+            upgrades: [
+                "Ion Cannon Turret"
+                "Homing Missiles"
+                "Veteran Turret Gunner"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 32
+            faction: "Galactic Empire"
+            pilot: '"Whisper"'
+            ship: "TIE Phantom"
+            threat: 3
+            upgrades: [
+                "Juke"
+                "Advanced Sensors"
+                "Agent Kallus"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 33
+            faction: "Galactic Empire"
+            pilot: "Sigma Squadron Ace"
+            ship: "TIE Phantom"
+            threat: 3
+            upgrades: [
+                "Predator"
+                "Advanced Sensors"
+                "Grand Inquisitor"
+            ]
+        }
+        {
+            id: 34
+            faction: "Galactic Empire"
+            pilot: '"Echo"'
+            ship: "TIE Phantom"
+            threat: 3
+            upgrades: [
+                "Lone Wolf"
+                "Collision Detector"
+                "Perceptive Copilot"
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 35
+            faction: "Galactic Empire"
+            pilot: "Imdaar Test Pilot"
+            ship: "TIE Phantom"
+            threat: 2
+            upgrades: [
+                "Moff Jerjerrod"
+            ]
+        }
+        {
+            id: 36
+            faction: "Galactic Empire"
+            pilot: '"Duchess"'
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Trick Shot"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 37
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Scout"
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Skilled Bombardier"
+                "Proximity Mines"
+                "Hull Upgrade"
+            ]
+        }
+        {
+            id: 38
+            faction: "Galactic Empire"
+            pilot: '"Countdown"'
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 39
+            faction: "Galactic Empire"
+            pilot: "Planetary Sentinel"
+            suffix: " x2"
+            ship: "TIE Striker"
+            threat: 3
+            upgrades: [
+                "Conner Nets"
+            ]
+        }
+        {
+            id: 40
+            faction: "Galactic Empire"
+            pilot: '"Pure Sabacc"'
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Stealth Device"
+            ]
+        }
+        {
+            id: 41
+            faction: "Galactic Empire"
+            pilot: "Black Squadron Scout"
+            ship: "TIE Striker"
+            threat: 2
+            upgrades: [
+                "Skilled Bombardier"
+                "Proximity Mines"
+                "Hull Upgrade"
+            ]
+            skip: true
+        }
+        {
+            id: 42
+            faction: "Galactic Empire"
+            pilot: "Countess Ryad"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Outmaneuver"
+                "Afterburners"
+            ]
+        }
+        {
+            id: 43
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Ace"
+            ship: "TIE Defender"
+            threat: 3
+        }
+        {
+            id: 44
+            faction: "Galactic Empire"
+            pilot: "Rexler Brath"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Juke"
+                "Collision Detector"
+                "Cluster Missiles"
+            ]
+        }
+        {
+            id: 45
+            faction: "Galactic Empire"
+            pilot: "Colonel Vessery"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Juke"
+                "Fire-Control System"
+                "Cluster Missiles"
+            ]
+        }
+        {
+            id: 46
+            faction: "Galactic Empire"
+            pilot: "Onyx Squadron Ace"
+            ship: "TIE Defender"
+            threat: 4
+            upgrades: [
+                "Elusive"
+                "Advanced Sensors"
+                "Proton Rockets"
+            ]
+        }
+        {
+            id: 47
+            faction: "Galactic Empire"
+            pilot: "Tomax Bren"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+                "Proton Torpedoes"
+                "Proton Bombs"
+            ]
+        }
+        {
+            id: 48
+            faction: "Galactic Empire"
+            pilot: '"Deathfire"'
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Cluster Missiles"
+                "Skilled Bombardier"
+                "Seismic Charges"
+                "Proximity Mines"
+                "Electronic Baffle"
+            ]
+        }
+    ]
+
 
 
 exportObj.setupCommonCardData = (basic_cards) ->
@@ -8600,6 +9158,10 @@ exportObj.setupCommonCardData = (basic_cards) ->
     for condition_data, i in basic_cards.conditionsById
         if condition_data.id != i
             throw new Error("ID mismatch: condition at index #{i} has ID #{condition_data.id}")
+    for quickbuild_data, i in basic_cards.quickbuildsById
+        if quickbuild_data.id != i
+            throw new Error("ID mismatch: quickbuild  at index #{i} has ID #{quickbuild_data.id}")
+
 
     exportObj.pilots = {}
     # Assuming a given pilot is unique by name...
@@ -8624,6 +9186,19 @@ exportObj.setupCommonCardData = (basic_cards) ->
             condition_data.sources = []
             condition_data.canonical_name = condition_data.name.canonicalize() unless condition_data.canonical_name?
             exportObj.conditions[condition_data.name] = condition_data
+
+    # there is no exportObj.quickbuilds generated from basic_cards.quickbuildsById, as reference by pilot name might be ambigous (e.g. there are multiple Black Sq. Aces having different upgrades)
+
+    exportObj.quickbuildsById = {}
+    quickbuild_count = 0
+    for quickbuild_data in basic_cards.quickbuildsById
+        unless quickbuild_data.skip? 
+            quickbuild_count += 1
+            # Sometimes there is something to be appended to the pilot name for displaying, e.g. (x2) for two TIEs at the cost of 3 threat points. If nothing specified set as empty string. 
+            quickbuild_data.suffix = "" unless quickbuild_data.suffix? 
+            exportObj.quickbuildsById[quickbuild_data.id] = quickbuild_data
+    if Object.keys(exportObj.quickbuildsById).length != quickbuild_count
+        throw new Error("At least one quickbuild shares an ID with another")
 
     for ship_name, ship_data of basic_cards.ships
         ship_data.canonical_name ?= ship_data.name.canonicalize()

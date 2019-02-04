@@ -91,7 +91,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """<i class = flavor_text>Grazie al suo arsenale di armi pesanti e alla sua resistente schermatura, l’Ala-B si è consolidato come il caccia d’assalto più innovativo dell’Alleanza Ribelle.</i>"""
         "Blue Squadron Recruit":
            display_name: """Recluta della Squadriglia Blu"""
-           text: """<i class = flavor_text>I giovani di tutta la galassia sono cresciuti ascoltando le storie degli atti eroici della Guerra Civile Galattica e molti di loro hanno imparato a volare negli stessi abitacoli in cui i loro genitori combatterono contro l’Impero.</i>%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """<i class = flavor_text>I giovani di tutta la galassia sono cresciuti ascoltando le storie degli atti eroici della Guerra Civile Galattica e molti di loro hanno imparato a volare negli stessi abitacoli in cui i loro genitori combatterono contro l’Impero.</i>%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Blue Squadron Rookie":
            display_name: """Matricola della Squadriglia Blu"""
            text: """<i class = flavor_text>L’Ala-X T-70 della Incom-FreiTek fu progettato per migliorare la flessibilità tattica del vetusto T-65. L’innesto avanzato per droidi di cui è dotato lo rende compatibile con una vasta gamma di droidi astromeccanici e i suoi blocchi di armi modulari permettono al pilota di adattare l’arsenale ai bisogni di ogni specifica missione.</i>%LINEBREAK%<strong>Innesto Armato:</strong> Puoi dotarti di 1 miglioria&nbsp;%CANNON%, %TORPEDO% o %MISSILE%."""
@@ -304,13 +304,13 @@ exportObj.cardLoaders.Italiano = () ->
            text: """Mentre difendi, se sei dietro l’attaccante, tira 1 dado di difesa aggiuntivo.%LINEBREAK%Mentre effettui un attacco, se sei dietro il difensore, tira 1 dado di attacco aggiuntivo."""
         "Green Squadron Expert":
            display_name: """Esperto della Squadriglia Verde"""
-           text: """<i class = flavor_text>Il frutto di anni di modifiche e collaudi sul campo si è concretizzato nel modello RZ-2, ma i piloti più temerari vedono nella maggiore affidabilità della nave una sfida a spingere le sue prestazioni verso nuovi limiti.</i>%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """<i class = flavor_text>Il frutto di anni di modifiche e collaudi sul campo si è concretizzato nel modello RZ-2, ma i piloti più temerari vedono nella maggiore affidabilità della nave una sfida a spingere le sue prestazioni verso nuovi limiti.</i>%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Green Squadron Pilot":
            display_name: """Pilota della Squadriglia Verde"""
            text: """<i class = flavor_text>Grazie ai suoi comandi sensibili e alla sua alta manovrabilità, l’abitacolo di un Ala-A era un luogo riservato soltanto ai piloti più dotati.</i>%LINEBREAK%<strong>Propulsori Vettoriali:</strong> Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% rossa."""
         "Greer Sonnel":
            display_name: """Greer Sonnel"""
-           text: """Dopo che hai eseguito completamente una manovra, puoi ruotare il tuo segnalatore %SINGLETURRETARC%.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """Dopo che hai eseguito completamente una manovra, puoi ruotare il tuo segnalatore %SINGLETURRETARC%.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Guri":
            display_name: """Guri"""
            text: """All’inizio della Fase di Ingaggio, se ci sono navi nemiche a gittata 0-1, puoi ottenere 1 segnalino concentrazione.%LINEBREAK%<strong>Micropropulsori:</strong> Mentre effettui un avvitamento, devi usare il modello %BANKLEFT% o %BANKRIGHT% invece del modello %STRAIGHT%."""
@@ -493,7 +493,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """Dopo che sei diventato il difensore (prima che i dadi siano tirati), puoi recuperare 1&nbsp;%FORCE%."""
         "L'ulo L'ampar":
            display_name: """L’ulo L’ampar"""
-           text: """Mentre difendi o effettui un attacco primario, se sei in tensione, <b>devi </b>tirare 1 dado di difesa in meno o 1 dado di attacco aggiuntivo.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """Mentre difendi o effettui un attacco primario, se sei in tensione, <b>devi </b>tirare 1 dado di difesa in meno o 1 dado di attacco aggiuntivo.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Maarek Stele":
            display_name: """Maarek Stele"""
            text: """Mentre effettui un attacco, se al difensore sta per essere inflitta una carta danno a faccia in su, pesca invece 3 carte danno, scegline 1 e scarta le altre.%LINEBREAK%<strong>Computer d’Attacco Avanzato:</strong> Mentre effettui un attacco primario contro un difensore che hai acquisito come bersaglio, tira 1 dado di attacco aggiuntivo e cambia 1 risultato %HIT% in 1 risultato %CRIT%."""
@@ -706,7 +706,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """<i class = flavor_text>La serie AF4 è l’ultima di una lunga linea di modelli Headhunter. Questo caccia economico e relativamente resistente è uno dei veicoli preferiti dalle organizzazioni indipendenti come la Ribellione.</i>"""
         "Tallissan Lintra":
            display_name: """Tallissan Lintra"""
-           text: """Mentre una nave nemica nel tuo %BULLSEYEARC% effettua un attacco, puoi spendere 1 %CHARGE%. Se lo fai, il difensore tira 1 dado aggiuntivo.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """Mentre una nave nemica nel tuo %BULLSEYEARC% effettua un attacco, puoi spendere 1 %CHARGE%. Se lo fai, il difensore tira 1 dado aggiuntivo.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Talonbane Cobra":
            display_name: """Talonbane Cobra"""
            text: """Mentre difendi a gittata di attacco 3 o effettui un attacco a gittata di attacco 1, tira 1 dado aggiuntivo."""
@@ -772,7 +772,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """Mentre effettui un attacco primario, se sei danneggiato, puoi tirare 1 dado di attacco aggiuntivo."""
         "Zari Bangel":
            display_name: """Zari Bangel"""
-           text: """Dopo che hai eseguito parzialmente una manovra, non saltare il tuo passo “Effettuare l’Azione”.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o <rotate> rossa."""
+           text: """Dopo che hai eseguito parzialmente una manovra, non saltare il tuo passo “Effettuare l’Azione”.%LINEBREAK%<strong>Girostabilizzatori Affinati:</strong> Puoi ruotare il tuo segnalatore %SINGLETURRETARC% solo sui tuoi %FRONTARC% o %REARARC%. Dopo che hai effettuato un’azione, puoi effettuare 1 azione %BOOST% o %ROTATEARC% rossa."""
         "Zealous Recruit":
            display_name: """Recluta Zelante"""
            text: """<i class = flavor_text>I piloti dei Caccia Fang mandaloriani devono imparare a padroneggiare la Carica Frontale di Concordia, una manovra che sfrutta l’esile profilo di attacco delle loro navi per lanciarsi in una micidiale carica frontale.</i>%LINEBREAK%<strong>Carica Frontale di Concordia:</strong> Mentre difendi, se la gittata di attacco è 1 e sei nel %FRONTARC% dell’attaccante, cambia 1 risultato in 1 risultato %EVADE%."""
@@ -1364,7 +1364,7 @@ exportObj.cardLoaders.Italiano = () ->
            text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Mentre difendi o effettui un attacco, se la nave nemica è nel tuo %SINGLETURRETARC%, puoi spendere 1 %FORCE% per cambiare 1 tuo risultato vuoto in 1 risultato %EVADE% o %HIT%."""
         "Rey's Millennium Falcon":
            display_name: """Millennium Falcon di Rey"""
-           text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Se possiedi 2 o meno segnalini tensione, puoi eseguire le manovre loop di Segnor [%SLOOPLEFT% o %SLOOPRIGHT%] rosse ed effettuare le azioni %BOOST% e&nbsp;<rotate> anche mentre sei in tensione."""
+           text: """<i>CHANGE MECHANGE ME</i>%LINEBREAK%Se possiedi 2 o meno segnalini tensione, puoi eseguire le manovre loop di Segnor [%SLOOPLEFT% o %SLOOPRIGHT%] rosse ed effettuare le azioni %BOOST% e&nbsp;%ROTATEARC% anche mentre sei in tensione."""
         "Rigged Cargo Chute":
            display_name: """Rampa di Carico Attrezzata"""
            text: """<i>CHANGE MECHANGE ME CHANGE ME CHANGE ME</i>%LINEBREAK%<strong>Azione:</strong> Spendi 1 %CHARGE%. Sgancia 1 carico sparso usando il modello [1&nbsp;%STRAIGHT%]."""
