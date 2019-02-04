@@ -9116,6 +9116,18 @@ exportObj.basicCardData = ->
                 "Proton Rockets"
             ]
         }
+        {
+            id: 47
+            faction: "Galactic Empire"
+            pilot: "Tomax Bren"
+            ship: "TIE/sa Bomber"
+            threat: 2
+            upgrades: [
+                "Crack Shot"
+		        "Proton Torpedoes"
+		        "Proton Bombs"
+            ]
+        }
     ]
 
 
