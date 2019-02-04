@@ -433,7 +433,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Autopilot Drone":
            display_name: """Dron autopilotado"""
            text: """<i class = flavor_text>A veces, las advertencias del fabricante están hechas para ser ignoradas.</i>%LINEBREAK%<strong>Células de energía manipuladas:</strong>  Durante la fase de Sistemas, si no estás acoplado, pierdes 1 %CHARGE%. Al final de la fase de Activación, si tienes 0 %CHARGE%, eres destruido. Antes de ser retirado de la zona de juego, toda nave que tengas a alcance 0-1 sufre 1 de daño %CRIT%."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Dos Tubos"""
            text: """Después de que realices una acción %FOCUS%, puedes transferir 1 de tus fichas de Concentración a una nave aliada que tengas a alcance 1-2."""
         "Biggs Darklighter":
@@ -517,7 +517,7 @@ exportObj.cardLoaders['Español'] = () ->
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Mientras una nave aliada que no sea limitada efectúa un ataque, si el defensor está situado en tu arco de fuego, el atacante puede volver a tirar 1 dado de ataque."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Dos Tubos"""
            text: """Antes de que te actives, si estás concentrado, puedes realizar una acción."""
         "Emon Azzameen":

@@ -417,7 +417,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Autopilot Drone":
            display_name: """Drone Automatique"""
            text: """<i class = flavor_text>Il est parfois utile d'ignorer les avertissements de sécurité préconisés par les fabricants…</i>%LINEBREAK%Cellules Énergétiques Bidouillées&nbsp;: pendant la phase de système, si vous n'êtes pas arrimé, perdez 1 &nbsp;%CHARGE%. À la fin de la phase d'activation, vous êtes détruit si vous avez 0 %CHARGE%. Avant de retirer votre figurine, chaque vaisseau à porté 0-1 subit 1 dégât %CRIT%."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Deux-Tubes"""
            text: """Après avoir effectué une action %FOCUS%, vous pouvez transférer 1 de vos marqueurs de concentration à un vaisseau allié à portée 1-2."""
         "Biggs Darklighter":
@@ -501,7 +501,7 @@ exportObj.cardLoaders['Français'] = () ->
         "Drea Renthal":
            display_name: """Drea Renthal"""
            text: """Tant qu'un vaisseau allié non-limité effectue une attaque, si le défenseur est dans votre arc de tir, l'attaquant peut relancer 1 dé d'attaque."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Deux-Tubes"""
            text: """Avant votre activation, si vous êtes concentré, vous pouvez effectuer une action."""
         "Emon Azzameen":

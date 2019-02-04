@@ -269,7 +269,7 @@ exportObj.cardLoaders.English = () ->
         "Ben Teene":
            display_name: """Ben Teene"""
            text: """After you perform an attack, if the defender is in your %SINGLETURRETARC%, assign the <strong>Rattled</strong> condition to the defender."""
-        "Benthic Two-Tubes":
+        "Benthic Two Tubes":
            display_name: """Benthic Two Tubes"""
            text: """After you perform a %FOCUS% action, you may transfer 1 of your focus tokens to a friendly ship at range 1-2."""
         "Biggs Darklighter":
@@ -446,7 +446,7 @@ exportObj.cardLoaders.English = () ->
         "Edon Kappehl":
            display_name: """Edon Kappehl"""
            text: """After you fully execute a blue or white maneuver, if you have not dropped or launched a device this round, you may drop 1 device."""
-        "Edrio Two-Tubes":
+        "Edrio Two Tubes":
            display_name: """Edrio Two Tubes"""
            text: """Before you activate, if you are focused, you may perform an action."""
         "Ello Asty":

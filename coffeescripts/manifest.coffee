@@ -200,7 +200,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Benthic Two-Tubes'
+            name: 'Benthic Two Tubes'
             type: 'pilot'
             count: 1
         }
@@ -220,7 +220,7 @@ exportObj.manifestByExpansion =
             count: 1
         }
         {
-            name: 'Edrio Two-Tubes'
+            name: 'Edrio Two Tubes'
             type: 'pilot'
             count: 1
         }

@@ -1578,7 +1578,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Edrio Two-Tubes"
+            name: "Edrio Two Tubes"
             id: 8
             unique: true
             faction: "Rebel Alliance"
@@ -2023,7 +2023,7 @@ exportObj.basicCardData = ->
             ]
         }
         {
-            name: "Benthic Two-Tubes"
+            name: "Benthic Two Tubes"
             id: 36
             unique: true
             faction: "Rebel Alliance"
