@@ -9100,7 +9100,7 @@ exportObj.basicCardData = ->
             threat: 4
             upgrades: [
                 "Juke"
-                "Fire Control System"
+                "Fire-Control System"
                 "Cluster Missiles"
             ]
         }
@@ -9120,12 +9120,12 @@ exportObj.basicCardData = ->
             id: 47
             faction: "Galactic Empire"
             pilot: "Tomax Bren"
-            ship: "TIE/sa Bomber"
+            ship: "TIE Bomber"
             threat: 2
             upgrades: [
                 "Crack Shot"
-		"Proton Torpedoes"
-		"Proton Bombs"
+                "Proton Torpedoes"
+                "Proton Bombs"
             ]
         }
     ]
