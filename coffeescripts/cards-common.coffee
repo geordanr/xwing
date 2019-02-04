@@ -9201,7 +9201,7 @@ exportObj.setupCommonCardData = (basic_cards) ->
         throw new Error("At least one quickbuild shares an ID with another")
 
     for ship_name, ship_data of basic_cards.ships
-        ship_data.canonical_name ?= ship_data.name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name?.canonicalize()
         ship_data.sources = []
 
     # Set sources from manifest
@@ -9386,7 +9386,7 @@ exportObj.fixIcons = (data) ->
             
 exportObj.canonicalizeShipNames = (card_data) ->
     for ship_name, ship_data of card_data.ships
-        ship_data.canonical_name ?= ship_data.name.canonicalize()
+        ship_data.canonical_name ?= ship_data.name?.canonicalize()
 
 exportObj.renameShip = (name, new_name) ->
     exportObj.ships[name].display_name = new_name
