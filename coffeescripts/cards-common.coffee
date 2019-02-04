@@ -9131,7 +9131,7 @@ exportObj.basicCardData = ->
         {
             id: 48
             faction: "Galactic Empire"
-            pilot: "Deathfire"
+            pilot: '"Deathfire"'
             ship: "TIE Bomber"
             threat: 2
             upgrades: [
