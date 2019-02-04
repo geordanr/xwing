@@ -9124,8 +9124,8 @@ exportObj.basicCardData = ->
             threat: 2
             upgrades: [
                 "Crack Shot"
-		        "Proton Torpedoes"
-		        "Proton Bombs"
+		"Proton Torpedoes"
+		"Proton Bombs"
             ]
         }
     ]
