@@ -3409,7 +3409,7 @@ class Ship
             equipped_upgrades = []
             for upgrade in @upgrades
                 func = upgrade?.data?.validation_func ? upgrade?.data?.restriction_func ? undefined
-                if (func? and not func(this, upgrade)) or (upgrade?.data? and upgrade.data in equipped_upgrades)
+                if ((func? and not func(this, upgrade)) or (upgrade?.data? and upgrade.data in equipped_upgrades)) and not @builder.isQuickbuild # check restriction func, check limited (is upgrade already in equipped_upgrades?), ignore building rules for Quickbuild
                     #console.log "Invalid upgrade: #{upgrade?.data?.name}"
                     upgrade.setById null
                     valid = false
