@@ -9128,6 +9128,20 @@ exportObj.basicCardData = ->
                 "Proton Bombs"
             ]
         }
+        {
+            id: 48
+            faction: "Galactic Empire"
+            pilot: "Deathfire"
+            ship: "TIE/sa Bomber"
+            threat: 4
+            upgrades: [
+                "Cluster Missiles"
+                "Skilled Bombardier"
+                "Seismic Charges"
+                "Proximity Mines"
+                "Electronic Baffle"
+            ]
+        }
     ]
 
 
