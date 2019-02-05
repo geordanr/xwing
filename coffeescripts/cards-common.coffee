@@ -9165,6 +9165,17 @@ exportObj.basicCardData = ->
                 "Proton Bombs"
             ]
         }
+        {
+            id: 51
+            faction: "Galactic Empire"
+            pilot: "Captain Jonus"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Proton Torpedoes"
+                "Shield Upgrade"
+            ]
+        }
     ]
 
 
