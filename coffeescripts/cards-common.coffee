@@ -5922,7 +5922,7 @@ exportObj.basicCardData = ->
             faction: "Galactic Republic"
             ship: "Delta-7 Aethersprite"
             skill: 5
-            force: 2
+            force: 3
             points: 100
             slots: [
                 "Force"
@@ -6494,7 +6494,7 @@ exportObj.basicCardData = ->
             unique: true
             faction: "Galactic Republic"
             ship: "Delta-7 Aethersprite"
-            skill: 4
+            skill: 5
             force: 3
             points: 100
             slots: [
@@ -6512,6 +6512,8 @@ exportObj.basicCardData = ->
             skill: 4
             points: 100
             slots: [
+                "Talent"
+                "Modification"
             ]
         }
         {
@@ -6523,6 +6525,8 @@ exportObj.basicCardData = ->
             skill: 5
             points: 100
             slots: [
+                "Talent"
+                "Modification"
             ]
         }
         {
@@ -6534,6 +6538,8 @@ exportObj.basicCardData = ->
             skill: 3
             points: 100
             slots: [
+                "Talent"
+                "Modification"
             ]
         }
         {
@@ -6545,6 +6551,8 @@ exportObj.basicCardData = ->
             skill: 3
             points: 100
             slots: [
+                "Talent"
+                "Modification"
             ]
         }
         {
@@ -6556,6 +6564,30 @@ exportObj.basicCardData = ->
             skill: 2
             points: 100
             slots: [
+                "Modification"
+            ]
+        }
+        {
+            name: "Blue Squadron Protector"
+            id: 320
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 3
+            points: 100
+            slots: [
+                "Talent"
+                "Modification"
+            ]
+        }
+        {
+            name: "Gold Squadron Trooper"
+            id: 321
+            faction: "Galactic Republic"
+            ship: "V-19 Torrent"
+            skill: 2
+            points: 100
+            slots: [
+                "Modification"
             ]
         }
     ]
