@@ -9154,6 +9154,17 @@ exportObj.basicCardData = ->
                 "Cluster Missiles"
             ]
         }
+        {
+            id: 50
+            faction: "Galactic Empire"
+            pilot: "Scimitar Squadron Pilot x2"
+            ship: "TIE Bomber"
+            threat: 3
+            upgrades: [
+                "Ion Missiles"
+                "Proton Bombs"
+            ]
+        }
     ]
 
 
