@@ -9142,6 +9142,18 @@ exportObj.basicCardData = ->
                 "Electronic Baffle"
             ]
         }
+        {
+            id: 49
+            faction: "Galactic Empire"
+            pilot: "Major Rhymer"
+            ship: "TIE Bomber"
+            threat: 2
+            upgrades: [
+                "Intimidation"
+                "Adv. Proton Torpedoes"
+                "Cluster Missiles"
+            ]
+        }
     ]
 
 
