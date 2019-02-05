@@ -9132,7 +9132,7 @@ exportObj.basicCardData = ->
         {
             id: 48
             faction: "Galactic Empire"
-            pilot: "Deathfire"
+            pilot: '"Deathfire"'
             ship: "TIE Bomber"
             threat: 2
             upgrades: [
@@ -9158,7 +9158,8 @@ exportObj.basicCardData = ->
         {
             id: 50
             faction: "Galactic Empire"
-            pilot: "Scimitar Squadron Pilot x2"
+            pilot: "Scimitar Squadron Pilot"
+            suffix: " x2"
             ship: "TIE Bomber"
             threat: 3
             upgrades: [
