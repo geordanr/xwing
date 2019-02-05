@@ -9396,6 +9396,85 @@ exportObj.basicCardData = ->
                 "Connor Nets"
             ]
         }
+        {
+            id: 69
+            faction: "Galactic Empire"
+            pilot: "Captain Oicunn"
+            ship: "VT-49 Decimator"
+            threat: 4
+            upgrades: [
+                "Intimidation"
+                "Grand Moff Tarkin"
+                "Dauntless"
+            ]
+        }
+        {
+            id: 70
+            faction: "Galactic Empire"
+            pilot: "Rear Admiral Chiraneau"
+            ship: "VT-49 Decimator"
+            threat: 4
+            upgrades: [
+                "Swarm Tactics"
+                "Minister Tua"
+                "Tactical Officer"
+            ]
+        }
+        {
+            id: 71
+            faction: "Galactic Empire"
+            pilot: "Patrol Leader"
+            ship: "VT-49 Decimator"
+            threat: 4
+            upgrades: [
+                "Informant"
+                "Seventh Sister"
+                "Fifth Brother"
+            ]
+        }
+        {
+            id: 72
+            faction: "Galactic Empire"
+            pilot: '"Vizier"'
+            ship: "TIE Reaper"
+            threat: 2
+            upgrades: [
+                "Director Krennic"
+            ]
+        }
+        {
+            id: 73
+            faction: "Galactic Empire"
+            pilot: "Scarif Base Pilot"
+            ship: "TIE Reaper"
+            threat: 2
+            upgrades: [
+                "Death Troopers"
+                "Shield Upgrade"
+            ]
+        }
+        {
+            id: 74
+            faction: "Galactic Empire"
+            pilot: "Major Vermeil"
+            ship: "TIE Reaper"
+            threat: 2
+            upgrades: [
+                "Swarm Tactics"
+                "Tactical Officer"
+            ]
+        }
+        {
+            id: 75
+            faction: "Galactic Empire"
+            pilot: "Captain Feroph"
+            ship: "TIE Reaper"
+            threat: 2
+            upgrades: [
+                "Swarm Tactics"
+                "ISB Slicer"
+            ]
+        }
     ]
 
 
