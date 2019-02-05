@@ -9200,6 +9200,18 @@ exportObj.basicCardData = ->
                 "Concussion Missiles"
             ]
         }
+        {
+            id: 54
+            faction: "Galactic Empire"
+            pilot: "Inquisitor"
+            ship: "TIE Advanced Prototype"
+            threat: 2
+            upgrades: [
+                "Instinctive Aim"
+                "Cluster Missiles"
+                "Munitions Failsafe"
+            ]
+        }
     ]
 
 
